@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -45,6 +49,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> _subnets = new List<string>();
         private string _vPCId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public LoadBalancerDescription() { }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -64,7 +72,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property BackendServerDescriptions. 
         /// <para>
@@ -82,7 +89,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._backendServerDescriptions != null && this._backendServerDescriptions.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CanonicalHostedZoneName. 
@@ -106,7 +112,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._canonicalHostedZoneName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CanonicalHostedZoneNameID. 
         /// <para>
@@ -129,7 +134,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._canonicalHostedZoneNameID != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
@@ -148,7 +152,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._createdTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
@@ -166,7 +169,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._dNSName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HealthCheck. 
@@ -187,7 +189,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._healthCheck != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
@@ -205,7 +206,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._instances != null && this._instances.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ListenerDescriptions. 
@@ -226,7 +226,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._listenerDescriptions != null && this._listenerDescriptions.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
@@ -245,7 +244,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._loadBalancerName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
@@ -263,7 +261,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._policies != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Scheme. 
@@ -297,7 +294,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._scheme != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
@@ -315,7 +311,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SourceSecurityGroup. 
@@ -338,7 +333,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._sourceSecurityGroup != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
@@ -356,7 +350,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._subnets != null && this._subnets.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VPCId. 

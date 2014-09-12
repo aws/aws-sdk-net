@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,141 +29,122 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the QueryObjects operation.
-    /// <para>Queries a pipeline for the names of objects that match a specified set of conditions.</para> <para>The objects returned by
-    /// QueryObjects are paginated and then filtered by the value you set for query. This means the action may return an empty result set with a
-    /// value set for marker. If <c>HasMoreResults</c> is set to <c>True</c> , you should continue to call QueryObjects, passing in the returned
-    /// value for marker, until <c>HasMoreResults</c> returns <c>False</c> .</para>
+    /// Queries a pipeline for the names of objects that match a specified set of conditions.
+    /// 
+    ///  
+    /// <para>
+    /// The objects returned by <a>QueryObjects</a> are paginated and then filtered by the
+    /// value you set for query. This means the action may return an empty result set with
+    /// a value set for marker. If <code>HasMoreResults</code> is set to <code>True</code>,
+    /// you should continue to call <a>QueryObjects</a>, passing in the returned value for
+    /// marker, until <code>HasMoreResults</code> returns <code>False</code>.
+    /// </para>
     /// </summary>
-    public partial class QueryObjectsRequest : AmazonWebServiceRequest
+    public partial class QueryObjectsRequest : AmazonDataPipelineRequest
     {
-        private string pipelineId;
-        private Query query;
-        private string sphere;
-        private string marker;
-        private int? limit;
+        private int? _limit;
+        private string _marker;
+        private string _pipelineId;
+        private Query _query;
+        private string _sphere;
 
         /// <summary>
-        /// Identifier of the pipeline to be queried for object names.
-        ///  
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Specifies the maximum number of object names that <a>QueryObjects</a> will return
+        /// in a single call. The default value is 100. 
         /// </para>
-        /// </summary>
-        public string PipelineId
-        {
-            get { return this.pipelineId; }
-            set { this.pipelineId = value; }
-        }
-
-        // Check to see if PipelineId property is set
-        internal bool IsSetPipelineId()
-        {
-            return this.pipelineId != null;
-        }
-
-        /// <summary>
-        /// Query that defines the objects to be returned. The <a>Query</a> object can contain a maximum of ten selectors. The conditions in the query
-        /// are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.
-        ///  
-        /// </summary>
-        public Query Query
-        {
-            get { return this.query; }
-            set { this.query = value; }
-        }
-
-        // Check to see if Query property is set
-        internal bool IsSetQuery()
-        {
-            return this.query != null;
-        }
-
-        /// <summary>
-        /// Specifies whether the query applies to components or instances. Allowable values: <c>COMPONENT</c>, <c>INSTANCE</c>, <c>ATTEMPT</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Sphere
-        {
-            get { return this.sphere; }
-            set { this.sphere = value; }
-        }
-
-        // Check to see if Sphere property is set
-        internal bool IsSetSphere()
-        {
-            return this.sphere != null;
-        }
-
-        /// <summary>
-        /// The starting point for the results to be returned. The first time you call <a>QueryObjects</a>, this value should be empty. As long as the
-        /// action returns <c>HasMoreResults</c> as <c>True</c>, you can call <a>QueryObjects</a> again and pass the marker value from the response to
-        /// retrieve the next set of results.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// Specifies the maximum number of object names that <a>QueryObjects</a> will return in a single call. The default value is 100.
-        ///  
         /// </summary>
         public int Limit
         {
-            get { return this.limit ?? default(int); }
-            set { this.limit = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;
+            return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///  The starting point for the results to be returned. The first time you call <a>QueryObjects</a>,
+        /// this value should be empty. As long as the action returns <code>HasMoreResults</code>
+        /// as <code>True</code>, you can call <a>QueryObjects</a> again and pass the marker value
+        /// from the response to retrieve the next set of results. 
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineId. 
+        /// <para>
+        /// Identifier of the pipeline to be queried for object names.
+        /// </para>
+        /// </summary>
+        public string PipelineId
+        {
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
+        }
+
+        // Check to see if PipelineId property is set
+        internal bool IsSetPipelineId()
+        {
+            return this._pipelineId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Query. 
+        /// <para>
+        ///  Query that defines the objects to be returned. The <a>Query</a> object can contain
+        /// a maximum of ten selectors. The conditions in the query are limited to top-level String
+        /// fields in the object. These filters can be applied to components, instances, and attempts.
+        /// 
+        /// </para>
+        /// </summary>
+        public Query Query
+        {
+            get { return this._query; }
+            set { this._query = value; }
+        }
+
+        // Check to see if Query property is set
+        internal bool IsSetQuery()
+        {
+            return this._query != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sphere. 
+        /// <para>
+        ///  Specifies whether the query applies to components or instances. Allowable values:
+        /// <code>COMPONENT</code>, <code>INSTANCE</code>, <code>ATTEMPT</code>. 
+        /// </para>
+        /// </summary>
+        public string Sphere
+        {
+            get { return this._sphere; }
+            set { this._sphere = value; }
+        }
+
+        // Check to see if Sphere property is set
+        internal bool IsSetSphere()
+        {
+            return this._sphere != null;
         }
 
     }
 }
-    

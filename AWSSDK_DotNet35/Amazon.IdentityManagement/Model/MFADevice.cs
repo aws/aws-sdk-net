@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,6 +42,23 @@ namespace Amazon.IdentityManagement.Model
         private string _serialNumber;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public MFADevice() { }
+
+        /// <summary>
+        /// Instantiates MFADevice with the parameterized properties
+        /// </summary>
+        /// <param name="userName">The user with whom the MFA device is associated.</param>
+        /// <param name="serialNumber">The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</param>
+        /// <param name="enableDate">The date when the MFA device was enabled for the user.</param>
+        public MFADevice(string userName, string serialNumber, DateTime enableDate)
+        {
+            _userName = userName;
+            _serialNumber = serialNumber;
+            _enableDate = enableDate;
+        }
 
         /// <summary>
         /// Gets and sets the property EnableDate. 
@@ -57,7 +78,6 @@ namespace Amazon.IdentityManagement.Model
             return this._enableDate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
@@ -76,7 +96,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._serialNumber != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

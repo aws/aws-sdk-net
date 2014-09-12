@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,54 +12,71 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeDBSecurityGroups action. </para>
+    /// This data type is used as a response element in the <a>DescribeDBSecurityGroups</a>
+    /// action.
     /// </summary>
-    public class IPRange
+    public partial class IPRange
     {
-        
-        private string status;
-        private string cIDRIP;
-
+        private string _cIDRIP;
+        private string _status;
 
         /// <summary>
-        /// Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
+        public IPRange() { }
 
         /// <summary>
-        /// Specifies the IP range.
-        ///  
+        /// Gets and sets the property CIDRIP. 
+        /// <para>
+        ///  Specifies the IP range. 
+        /// </para>
         /// </summary>
         public string CIDRIP
         {
-            get { return this.cIDRIP; }
-            set { this.cIDRIP = value; }
+            get { return this._cIDRIP; }
+            set { this._cIDRIP = value; }
         }
 
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;
+            return this._cIDRIP != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  Specifies the status of the IP range. Status can be "authorizing", "authorized",
+        /// "revoking", and "revoked". 
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

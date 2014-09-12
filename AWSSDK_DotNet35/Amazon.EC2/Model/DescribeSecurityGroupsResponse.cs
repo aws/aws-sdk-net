@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeSecurityGroups response and response metadata.
+    /// Configuration for accessing Amazon DescribeSecurityGroups service
     /// </summary>
     public partial class DescribeSecurityGroupsResponse : DescribeSecurityGroupsResult
     {
         /// <summary>
         /// Gets and sets the DescribeSecurityGroupsResult property.
-        /// 
+        /// Represents the output of a DescribeSecurityGroups operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeSecurityGroupsResult class are now available on the DescribeSecurityGroupsResponse class. You should use the properties on DescribeSecurityGroupsResponse instead of accessing them through DescribeSecurityGroupsResult.")]
         public DescribeSecurityGroupsResult DescribeSecurityGroupsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

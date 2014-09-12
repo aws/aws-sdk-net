@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,64 +33,70 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Task Status Request Marshaller
+    /// SetTaskStatus Request Marshaller
     /// </summary>       
-    internal class SetTaskStatusRequestMarshaller : IMarshaller<IRequest, SetTaskStatusRequest> 
+    public class SetTaskStatusRequestMarshaller : IMarshaller<IRequest, SetTaskStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(SetTaskStatusRequest setTaskStatusRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((SetTaskStatusRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(setTaskStatusRequest, "AmazonDataPipeline");
+        public IRequest Marshall(SetTaskStatusRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.SetTaskStatus";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetTaskId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetErrorId())
                 {
-                    writer.WritePropertyName("taskId");
-                    writer.Write(setTaskStatusRequest.TaskId);
-                }
-                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetTaskStatus()) 
-                {
-                    writer.WritePropertyName("taskStatus");
-                    writer.Write(setTaskStatusRequest.TaskStatus);
-                }
-                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetErrorId()) 
-                {
-                    writer.WritePropertyName("errorId");
-                    writer.Write(setTaskStatusRequest.ErrorId);
-                }
-                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetErrorMessage()) 
-                {
-                    writer.WritePropertyName("errorMessage");
-                    writer.Write(setTaskStatusRequest.ErrorMessage);
-                }
-                if (setTaskStatusRequest != null && setTaskStatusRequest.IsSetErrorStackTrace()) 
-                {
-                    writer.WritePropertyName("errorStackTrace");
-                    writer.Write(setTaskStatusRequest.ErrorStackTrace);
+                    context.Writer.WritePropertyName("errorId");
+                    context.Writer.Write(publicRequest.ErrorId);
                 }
 
+                if(publicRequest.IsSetErrorMessage())
+                {
+                    context.Writer.WritePropertyName("errorMessage");
+                    context.Writer.Write(publicRequest.ErrorMessage);
+                }
+
+                if(publicRequest.IsSetErrorStackTrace())
+                {
+                    context.Writer.WritePropertyName("errorStackTrace");
+                    context.Writer.Write(publicRequest.ErrorStackTrace);
+                }
+
+                if(publicRequest.IsSetTaskId())
+                {
+                    context.Writer.WritePropertyName("taskId");
+                    context.Writer.Write(publicRequest.TaskId);
+                }
+
+                if(publicRequest.IsSetTaskStatus())
+                {
+                    context.Writer.WritePropertyName("taskStatus");
+                    context.Writer.Write(publicRequest.TaskStatus);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

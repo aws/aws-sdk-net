@@ -13,11 +13,16 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
+
 
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.Redshift.Model;
 using Amazon.Redshift.Model.Internal.MarshallTransformations;
@@ -65,19 +70,9 @@ namespace Amazon.Redshift
     /// and maintain the databases that make up your            data warehouse. 
     /// </para>
     /// </summary>
-    public partial class AmazonRedshiftClient : AmazonWebServiceClient, IAmazonRedshift
+    public partial class AmazonRedshiftClient : AmazonServiceClient, IAmazonRedshift
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
+        
         #region Constructors
 
         /// <summary>
@@ -106,7 +101,7 @@ namespace Amazon.Redshift
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonRedshiftClient Configuration Object</param>
         public AmazonRedshiftClient(AWSCredentials credentials, AmazonRedshiftConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -139,7 +134,7 @@ namespace Amazon.Redshift
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonRedshiftClient Configuration Object</param>
         public AmazonRedshiftClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRedshiftConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -175,8 +170,27 @@ namespace Amazon.Redshift
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonRedshiftClient Configuration Object</param>
         public AmazonRedshiftClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonRedshiftConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        } 
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
@@ -186,16 +200,10 @@ namespace Amazon.Redshift
 
         internal AuthorizeClusterSecurityGroupIngressResponse AuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request)
         {
-            var task = AuthorizeClusterSecurityGroupIngressAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AuthorizeClusterSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeClusterSecurityGroupIngressRequest,AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -208,11 +216,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AuthorizeClusterSecurityGroupIngressResponse> AuthorizeClusterSecurityGroupIngressAsync(AuthorizeClusterSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AuthorizeClusterSecurityGroupIngressResponse> AuthorizeClusterSecurityGroupIngressAsync(AuthorizeClusterSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeClusterSecurityGroupIngressRequestMarshaller();
             var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AuthorizeClusterSecurityGroupIngressRequest, AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AuthorizeClusterSecurityGroupIngressRequest,AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -221,16 +231,10 @@ namespace Amazon.Redshift
 
         internal AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request)
         {
-            var task = AuthorizeSnapshotAccessAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AuthorizeSnapshotAccessRequestMarshaller();
+            var unmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeSnapshotAccessRequest,AuthorizeSnapshotAccessResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -243,11 +247,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AuthorizeSnapshotAccessResponse> AuthorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AuthorizeSnapshotAccessResponse> AuthorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeSnapshotAccessRequestMarshaller();
             var unmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AuthorizeSnapshotAccessRequest, AuthorizeSnapshotAccessResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AuthorizeSnapshotAccessRequest,AuthorizeSnapshotAccessResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -256,16 +262,10 @@ namespace Amazon.Redshift
 
         internal CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
         {
-            var task = CopyClusterSnapshotAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CopyClusterSnapshotRequest,CopyClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -278,11 +278,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CopyClusterSnapshotResponse> CopyClusterSnapshotAsync(CopyClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CopyClusterSnapshotResponse> CopyClusterSnapshotAsync(CopyClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyClusterSnapshotRequestMarshaller();
             var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CopyClusterSnapshotRequest, CopyClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CopyClusterSnapshotRequest,CopyClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -291,16 +293,10 @@ namespace Amazon.Redshift
 
         internal CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var task = CreateClusterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -313,11 +309,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateClusterRequest, CreateClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateClusterRequest,CreateClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -326,16 +324,10 @@ namespace Amazon.Redshift
 
         internal CreateClusterParameterGroupResponse CreateClusterParameterGroup(CreateClusterParameterGroupRequest request)
         {
-            var task = CreateClusterParameterGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterParameterGroupRequest,CreateClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -348,11 +340,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateClusterParameterGroupResponse> CreateClusterParameterGroupAsync(CreateClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateClusterParameterGroupResponse> CreateClusterParameterGroupAsync(CreateClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterParameterGroupRequestMarshaller();
             var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateClusterParameterGroupRequest, CreateClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateClusterParameterGroupRequest,CreateClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -361,16 +355,10 @@ namespace Amazon.Redshift
 
         internal CreateClusterSecurityGroupResponse CreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request)
         {
-            var task = CreateClusterSecurityGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateClusterSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterSecurityGroupRequest,CreateClusterSecurityGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -383,11 +371,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateClusterSecurityGroupResponse> CreateClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateClusterSecurityGroupResponse> CreateClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterSecurityGroupRequestMarshaller();
             var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateClusterSecurityGroupRequest, CreateClusterSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateClusterSecurityGroupRequest,CreateClusterSecurityGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -396,16 +386,10 @@ namespace Amazon.Redshift
 
         internal CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request)
         {
-            var task = CreateClusterSnapshotAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateClusterSnapshotRequestMarshaller();
+            var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterSnapshotRequest,CreateClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -418,11 +402,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateClusterSnapshotResponse> CreateClusterSnapshotAsync(CreateClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateClusterSnapshotResponse> CreateClusterSnapshotAsync(CreateClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterSnapshotRequestMarshaller();
             var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateClusterSnapshotRequest, CreateClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateClusterSnapshotRequest,CreateClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -431,16 +417,10 @@ namespace Amazon.Redshift
 
         internal CreateClusterSubnetGroupResponse CreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request)
         {
-            var task = CreateClusterSubnetGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateClusterSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterSubnetGroupRequest,CreateClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -453,11 +433,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateClusterSubnetGroupResponse> CreateClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateClusterSubnetGroupResponse> CreateClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterSubnetGroupRequestMarshaller();
             var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateClusterSubnetGroupRequest, CreateClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateClusterSubnetGroupRequest,CreateClusterSubnetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -466,16 +448,10 @@ namespace Amazon.Redshift
 
         internal CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var task = CreateEventSubscriptionAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -488,11 +464,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEventSubscriptionRequestMarshaller();
             var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateEventSubscriptionRequest, CreateEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -501,16 +479,10 @@ namespace Amazon.Redshift
 
         internal CreateHsmClientCertificateResponse CreateHsmClientCertificate(CreateHsmClientCertificateRequest request)
         {
-            var task = CreateHsmClientCertificateAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateHsmClientCertificateRequestMarshaller();
+            var unmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHsmClientCertificateRequest,CreateHsmClientCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -523,11 +495,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateHsmClientCertificateResponse> CreateHsmClientCertificateAsync(CreateHsmClientCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateHsmClientCertificateResponse> CreateHsmClientCertificateAsync(CreateHsmClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHsmClientCertificateRequestMarshaller();
             var unmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateHsmClientCertificateRequest, CreateHsmClientCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateHsmClientCertificateRequest,CreateHsmClientCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -536,16 +510,10 @@ namespace Amazon.Redshift
 
         internal CreateHsmConfigurationResponse CreateHsmConfiguration(CreateHsmConfigurationRequest request)
         {
-            var task = CreateHsmConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateHsmConfigurationRequestMarshaller();
+            var unmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHsmConfigurationRequest,CreateHsmConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -558,11 +526,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateHsmConfigurationResponse> CreateHsmConfigurationAsync(CreateHsmConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateHsmConfigurationResponse> CreateHsmConfigurationAsync(CreateHsmConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHsmConfigurationRequestMarshaller();
             var unmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateHsmConfigurationRequest, CreateHsmConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateHsmConfigurationRequest,CreateHsmConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -571,16 +541,10 @@ namespace Amazon.Redshift
 
         internal DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var task = DeleteClusterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteClusterRequestMarshaller();
+            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -593,11 +557,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteClusterRequest, DeleteClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -606,16 +572,10 @@ namespace Amazon.Redshift
 
         internal DeleteClusterParameterGroupResponse DeleteClusterParameterGroup(DeleteClusterParameterGroupRequest request)
         {
-            var task = DeleteClusterParameterGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteClusterParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterParameterGroupRequest,DeleteClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -628,11 +588,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClusterParameterGroupResponse> DeleteClusterParameterGroupAsync(DeleteClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteClusterParameterGroupResponse> DeleteClusterParameterGroupAsync(DeleteClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterParameterGroupRequestMarshaller();
             var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteClusterParameterGroupRequest, DeleteClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteClusterParameterGroupRequest,DeleteClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -641,16 +603,10 @@ namespace Amazon.Redshift
 
         internal DeleteClusterSecurityGroupResponse DeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request)
         {
-            var task = DeleteClusterSecurityGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteClusterSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterSecurityGroupRequest,DeleteClusterSecurityGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -663,11 +619,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClusterSecurityGroupResponse> DeleteClusterSecurityGroupAsync(DeleteClusterSecurityGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteClusterSecurityGroupResponse> DeleteClusterSecurityGroupAsync(DeleteClusterSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterSecurityGroupRequestMarshaller();
             var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteClusterSecurityGroupRequest, DeleteClusterSecurityGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteClusterSecurityGroupRequest,DeleteClusterSecurityGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -676,16 +634,10 @@ namespace Amazon.Redshift
 
         internal DeleteClusterSnapshotResponse DeleteClusterSnapshot(DeleteClusterSnapshotRequest request)
         {
-            var task = DeleteClusterSnapshotAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteClusterSnapshotRequestMarshaller();
+            var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterSnapshotRequest,DeleteClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -698,11 +650,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClusterSnapshotResponse> DeleteClusterSnapshotAsync(DeleteClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteClusterSnapshotResponse> DeleteClusterSnapshotAsync(DeleteClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterSnapshotRequestMarshaller();
             var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteClusterSnapshotRequest, DeleteClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteClusterSnapshotRequest,DeleteClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -711,16 +665,10 @@ namespace Amazon.Redshift
 
         internal DeleteClusterSubnetGroupResponse DeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request)
         {
-            var task = DeleteClusterSubnetGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteClusterSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterSubnetGroupRequest,DeleteClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -733,11 +681,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClusterSubnetGroupResponse> DeleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteClusterSubnetGroupResponse> DeleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteClusterSubnetGroupRequest,DeleteClusterSubnetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -746,16 +696,10 @@ namespace Amazon.Redshift
 
         internal DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var task = DeleteEventSubscriptionAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -768,11 +712,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEventSubscriptionRequestMarshaller();
             var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteEventSubscriptionRequest, DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -781,16 +727,10 @@ namespace Amazon.Redshift
 
         internal DeleteHsmClientCertificateResponse DeleteHsmClientCertificate(DeleteHsmClientCertificateRequest request)
         {
-            var task = DeleteHsmClientCertificateAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteHsmClientCertificateRequestMarshaller();
+            var unmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHsmClientCertificateRequest,DeleteHsmClientCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -803,11 +743,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteHsmClientCertificateResponse> DeleteHsmClientCertificateAsync(DeleteHsmClientCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteHsmClientCertificateResponse> DeleteHsmClientCertificateAsync(DeleteHsmClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHsmClientCertificateRequestMarshaller();
             var unmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteHsmClientCertificateRequest, DeleteHsmClientCertificateResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteHsmClientCertificateRequest,DeleteHsmClientCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -816,16 +758,10 @@ namespace Amazon.Redshift
 
         internal DeleteHsmConfigurationResponse DeleteHsmConfiguration(DeleteHsmConfigurationRequest request)
         {
-            var task = DeleteHsmConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteHsmConfigurationRequestMarshaller();
+            var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHsmConfigurationRequest,DeleteHsmConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -838,11 +774,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHsmConfigurationRequestMarshaller();
             var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteHsmConfigurationRequest, DeleteHsmConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteHsmConfigurationRequest,DeleteHsmConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -855,16 +793,10 @@ namespace Amazon.Redshift
         }
         internal DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request)
         {
-            var task = DescribeClusterParameterGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterParameterGroupsRequest,DescribeClusterParameterGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -877,11 +809,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterParameterGroupsRequest, DescribeClusterParameterGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterParameterGroupsRequest,DescribeClusterParameterGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -890,16 +824,10 @@ namespace Amazon.Redshift
 
         internal DescribeClusterParametersResponse DescribeClusterParameters(DescribeClusterParametersRequest request)
         {
-            var task = DescribeClusterParametersAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterParametersRequest,DescribeClusterParametersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -912,11 +840,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterParametersResponse> DescribeClusterParametersAsync(DescribeClusterParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterParametersResponse> DescribeClusterParametersAsync(DescribeClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterParametersRequestMarshaller();
             var unmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterParametersRequest, DescribeClusterParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterParametersRequest,DescribeClusterParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -929,16 +859,10 @@ namespace Amazon.Redshift
         }
         internal DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var task = DescribeClustersAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClustersRequestMarshaller();
+            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -951,11 +875,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClustersRequest, DescribeClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -968,16 +894,10 @@ namespace Amazon.Redshift
         }
         internal DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request)
         {
-            var task = DescribeClusterSecurityGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterSecurityGroupsRequest,DescribeClusterSecurityGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -990,11 +910,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(DescribeClusterSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(DescribeClusterSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterSecurityGroupsRequestMarshaller();
             var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterSecurityGroupsRequest, DescribeClusterSecurityGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterSecurityGroupsRequest,DescribeClusterSecurityGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1007,16 +929,10 @@ namespace Amazon.Redshift
         }
         internal DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request)
         {
-            var task = DescribeClusterSnapshotsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterSnapshotsRequest,DescribeClusterSnapshotsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1029,11 +945,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterSnapshotsRequestMarshaller();
             var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterSnapshotsRequest,DescribeClusterSnapshotsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1046,16 +964,10 @@ namespace Amazon.Redshift
         }
         internal DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request)
         {
-            var task = DescribeClusterSubnetGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterSubnetGroupsRequest,DescribeClusterSubnetGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1068,11 +980,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(DescribeClusterSubnetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(DescribeClusterSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterSubnetGroupsRequest, DescribeClusterSubnetGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterSubnetGroupsRequest,DescribeClusterSubnetGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1085,16 +999,10 @@ namespace Amazon.Redshift
         }
         internal DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request)
         {
-            var task = DescribeClusterVersionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterVersionsRequestMarshaller();
+            var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterVersionsRequest,DescribeClusterVersionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1107,11 +1015,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(DescribeClusterVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(DescribeClusterVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterVersionsRequestMarshaller();
             var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterVersionsRequest, DescribeClusterVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterVersionsRequest,DescribeClusterVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1120,16 +1030,10 @@ namespace Amazon.Redshift
 
         internal DescribeDefaultClusterParametersResponse DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request)
         {
-            var task = DescribeDefaultClusterParametersAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeDefaultClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDefaultClusterParametersRequest,DescribeDefaultClusterParametersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1142,11 +1046,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeDefaultClusterParametersResponse> DescribeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeDefaultClusterParametersResponse> DescribeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDefaultClusterParametersRequestMarshaller();
             var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeDefaultClusterParametersRequest, DescribeDefaultClusterParametersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeDefaultClusterParametersRequest,DescribeDefaultClusterParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1159,16 +1065,10 @@ namespace Amazon.Redshift
         }
         internal DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var task = DescribeEventCategoriesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1181,11 +1081,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventCategoriesRequestMarshaller();
             var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeEventCategoriesRequest, DescribeEventCategoriesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1198,16 +1100,10 @@ namespace Amazon.Redshift
         }
         internal DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var task = DescribeEventsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1220,11 +1116,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1237,16 +1135,10 @@ namespace Amazon.Redshift
         }
         internal DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var task = DescribeEventSubscriptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1259,11 +1151,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1276,16 +1170,10 @@ namespace Amazon.Redshift
         }
         internal DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request)
         {
-            var task = DescribeHsmClientCertificatesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeHsmClientCertificatesRequestMarshaller();
+            var unmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHsmClientCertificatesRequest,DescribeHsmClientCertificatesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1298,11 +1186,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(DescribeHsmClientCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(DescribeHsmClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHsmClientCertificatesRequestMarshaller();
             var unmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeHsmClientCertificatesRequest, DescribeHsmClientCertificatesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeHsmClientCertificatesRequest,DescribeHsmClientCertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1315,16 +1205,10 @@ namespace Amazon.Redshift
         }
         internal DescribeHsmConfigurationsResponse DescribeHsmConfigurations(DescribeHsmConfigurationsRequest request)
         {
-            var task = DescribeHsmConfigurationsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeHsmConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHsmConfigurationsRequest,DescribeHsmConfigurationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1337,11 +1221,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(DescribeHsmConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(DescribeHsmConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHsmConfigurationsRequestMarshaller();
             var unmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeHsmConfigurationsRequest, DescribeHsmConfigurationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeHsmConfigurationsRequest,DescribeHsmConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1350,16 +1236,10 @@ namespace Amazon.Redshift
 
         internal DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest request)
         {
-            var task = DescribeLoggingStatusAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeLoggingStatusRequestMarshaller();
+            var unmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoggingStatusRequest,DescribeLoggingStatusResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1372,11 +1252,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeLoggingStatusResponse> DescribeLoggingStatusAsync(DescribeLoggingStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeLoggingStatusResponse> DescribeLoggingStatusAsync(DescribeLoggingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLoggingStatusRequestMarshaller();
             var unmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeLoggingStatusRequest, DescribeLoggingStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeLoggingStatusRequest,DescribeLoggingStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1389,16 +1271,10 @@ namespace Amazon.Redshift
         }
         internal DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request)
         {
-            var task = DescribeOrderableClusterOptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeOrderableClusterOptionsRequestMarshaller();
+            var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrderableClusterOptionsRequest,DescribeOrderableClusterOptionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1411,11 +1287,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeOrderableClusterOptionsResponse> DescribeOrderableClusterOptionsAsync(DescribeOrderableClusterOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeOrderableClusterOptionsResponse> DescribeOrderableClusterOptionsAsync(DescribeOrderableClusterOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOrderableClusterOptionsRequestMarshaller();
             var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeOrderableClusterOptionsRequest,DescribeOrderableClusterOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1428,16 +1306,10 @@ namespace Amazon.Redshift
         }
         internal DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request)
         {
-            var task = DescribeReservedNodeOfferingsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeReservedNodeOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedNodeOfferingsRequest,DescribeReservedNodeOfferingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1450,11 +1322,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(DescribeReservedNodeOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(DescribeReservedNodeOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedNodeOfferingsRequestMarshaller();
             var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeReservedNodeOfferingsRequest, DescribeReservedNodeOfferingsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeReservedNodeOfferingsRequest,DescribeReservedNodeOfferingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1467,16 +1341,10 @@ namespace Amazon.Redshift
         }
         internal DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request)
         {
-            var task = DescribeReservedNodesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeReservedNodesRequestMarshaller();
+            var unmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedNodesRequest,DescribeReservedNodesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1489,11 +1357,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeReservedNodesResponse> DescribeReservedNodesAsync(DescribeReservedNodesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeReservedNodesResponse> DescribeReservedNodesAsync(DescribeReservedNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedNodesRequestMarshaller();
             var unmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeReservedNodesRequest, DescribeReservedNodesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeReservedNodesRequest,DescribeReservedNodesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1502,16 +1372,10 @@ namespace Amazon.Redshift
 
         internal DescribeResizeResponse DescribeResize(DescribeResizeRequest request)
         {
-            var task = DescribeResizeAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeResizeRequestMarshaller();
+            var unmarshaller = DescribeResizeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResizeRequest,DescribeResizeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1524,11 +1388,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeResizeRequestMarshaller();
             var unmarshaller = DescribeResizeResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeResizeRequest, DescribeResizeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeResizeRequest,DescribeResizeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1537,16 +1403,10 @@ namespace Amazon.Redshift
 
         internal DisableLoggingResponse DisableLogging(DisableLoggingRequest request)
         {
-            var task = DisableLoggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DisableLoggingRequestMarshaller();
+            var unmarshaller = DisableLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<DisableLoggingRequest,DisableLoggingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1559,11 +1419,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DisableLoggingResponse> DisableLoggingAsync(DisableLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DisableLoggingResponse> DisableLoggingAsync(DisableLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableLoggingRequestMarshaller();
             var unmarshaller = DisableLoggingResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DisableLoggingRequest, DisableLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DisableLoggingRequest,DisableLoggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1572,16 +1434,10 @@ namespace Amazon.Redshift
 
         internal DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest request)
         {
-            var task = DisableSnapshotCopyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DisableSnapshotCopyRequestMarshaller();
+            var unmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
+
+            return Invoke<DisableSnapshotCopyRequest,DisableSnapshotCopyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1594,11 +1450,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DisableSnapshotCopyResponse> DisableSnapshotCopyAsync(DisableSnapshotCopyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DisableSnapshotCopyResponse> DisableSnapshotCopyAsync(DisableSnapshotCopyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableSnapshotCopyRequestMarshaller();
             var unmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DisableSnapshotCopyRequest, DisableSnapshotCopyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DisableSnapshotCopyRequest,DisableSnapshotCopyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1607,16 +1465,10 @@ namespace Amazon.Redshift
 
         internal EnableLoggingResponse EnableLogging(EnableLoggingRequest request)
         {
-            var task = EnableLoggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new EnableLoggingRequestMarshaller();
+            var unmarshaller = EnableLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<EnableLoggingRequest,EnableLoggingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1629,11 +1481,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<EnableLoggingResponse> EnableLoggingAsync(EnableLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<EnableLoggingResponse> EnableLoggingAsync(EnableLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableLoggingRequestMarshaller();
             var unmarshaller = EnableLoggingResponseUnmarshaller.Instance;
-            return Invoke<IRequest, EnableLoggingRequest, EnableLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<EnableLoggingRequest,EnableLoggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1642,16 +1496,10 @@ namespace Amazon.Redshift
 
         internal EnableSnapshotCopyResponse EnableSnapshotCopy(EnableSnapshotCopyRequest request)
         {
-            var task = EnableSnapshotCopyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new EnableSnapshotCopyRequestMarshaller();
+            var unmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
+
+            return Invoke<EnableSnapshotCopyRequest,EnableSnapshotCopyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1664,11 +1512,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<EnableSnapshotCopyResponse> EnableSnapshotCopyAsync(EnableSnapshotCopyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<EnableSnapshotCopyResponse> EnableSnapshotCopyAsync(EnableSnapshotCopyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableSnapshotCopyRequestMarshaller();
             var unmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
-            return Invoke<IRequest, EnableSnapshotCopyRequest, EnableSnapshotCopyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<EnableSnapshotCopyRequest,EnableSnapshotCopyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1677,16 +1527,10 @@ namespace Amazon.Redshift
 
         internal ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
         {
-            var task = ModifyClusterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ModifyClusterRequestMarshaller();
+            var unmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterRequest,ModifyClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1699,11 +1543,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyClusterRequestMarshaller();
             var unmarshaller = ModifyClusterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ModifyClusterRequest, ModifyClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ModifyClusterRequest,ModifyClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1712,16 +1558,10 @@ namespace Amazon.Redshift
 
         internal ModifyClusterParameterGroupResponse ModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request)
         {
-            var task = ModifyClusterParameterGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ModifyClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterParameterGroupRequest,ModifyClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1734,11 +1574,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ModifyClusterParameterGroupResponse> ModifyClusterParameterGroupAsync(ModifyClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ModifyClusterParameterGroupResponse> ModifyClusterParameterGroupAsync(ModifyClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyClusterParameterGroupRequestMarshaller();
             var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ModifyClusterParameterGroupRequest, ModifyClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ModifyClusterParameterGroupRequest,ModifyClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1747,16 +1589,10 @@ namespace Amazon.Redshift
 
         internal ModifyClusterSubnetGroupResponse ModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request)
         {
-            var task = ModifyClusterSubnetGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ModifyClusterSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterSubnetGroupRequest,ModifyClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1769,11 +1605,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ModifyClusterSubnetGroupResponse> ModifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ModifyClusterSubnetGroupResponse> ModifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyClusterSubnetGroupRequestMarshaller();
             var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ModifyClusterSubnetGroupRequest, ModifyClusterSubnetGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ModifyClusterSubnetGroupRequest,ModifyClusterSubnetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1782,16 +1620,10 @@ namespace Amazon.Redshift
 
         internal ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var task = ModifyEventSubscriptionAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1804,11 +1636,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyEventSubscriptionRequestMarshaller();
             var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ModifyEventSubscriptionRequest, ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1817,16 +1651,10 @@ namespace Amazon.Redshift
 
         internal ModifySnapshotCopyRetentionPeriodResponse ModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request)
         {
-            var task = ModifySnapshotCopyRetentionPeriodAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ModifySnapshotCopyRetentionPeriodRequestMarshaller();
+            var unmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySnapshotCopyRetentionPeriodRequest,ModifySnapshotCopyRetentionPeriodResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1839,11 +1667,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ModifySnapshotCopyRetentionPeriodResponse> ModifySnapshotCopyRetentionPeriodAsync(ModifySnapshotCopyRetentionPeriodRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ModifySnapshotCopyRetentionPeriodResponse> ModifySnapshotCopyRetentionPeriodAsync(ModifySnapshotCopyRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifySnapshotCopyRetentionPeriodRequestMarshaller();
             var unmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ModifySnapshotCopyRetentionPeriodRequest, ModifySnapshotCopyRetentionPeriodResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ModifySnapshotCopyRetentionPeriodRequest,ModifySnapshotCopyRetentionPeriodResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1852,16 +1682,10 @@ namespace Amazon.Redshift
 
         internal PurchaseReservedNodeOfferingResponse PurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request)
         {
-            var task = PurchaseReservedNodeOfferingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PurchaseReservedNodeOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseReservedNodeOfferingRequest,PurchaseReservedNodeOfferingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1874,11 +1698,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PurchaseReservedNodeOfferingResponse> PurchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PurchaseReservedNodeOfferingResponse> PurchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseReservedNodeOfferingRequestMarshaller();
             var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
-            return Invoke<IRequest, PurchaseReservedNodeOfferingRequest, PurchaseReservedNodeOfferingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<PurchaseReservedNodeOfferingRequest,PurchaseReservedNodeOfferingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1887,16 +1713,10 @@ namespace Amazon.Redshift
 
         internal RebootClusterResponse RebootCluster(RebootClusterRequest request)
         {
-            var task = RebootClusterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RebootClusterRequestMarshaller();
+            var unmarshaller = RebootClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RebootClusterRequest,RebootClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1909,11 +1729,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RebootClusterResponse> RebootClusterAsync(RebootClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RebootClusterResponse> RebootClusterAsync(RebootClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootClusterRequestMarshaller();
             var unmarshaller = RebootClusterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RebootClusterRequest, RebootClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RebootClusterRequest,RebootClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1922,16 +1744,10 @@ namespace Amazon.Redshift
 
         internal ResetClusterParameterGroupResponse ResetClusterParameterGroup(ResetClusterParameterGroupRequest request)
         {
-            var task = ResetClusterParameterGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ResetClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ResetClusterParameterGroupRequest,ResetClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1944,11 +1760,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ResetClusterParameterGroupResponse> ResetClusterParameterGroupAsync(ResetClusterParameterGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ResetClusterParameterGroupResponse> ResetClusterParameterGroupAsync(ResetClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetClusterParameterGroupRequestMarshaller();
             var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ResetClusterParameterGroupRequest, ResetClusterParameterGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ResetClusterParameterGroupRequest,ResetClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1957,16 +1775,10 @@ namespace Amazon.Redshift
 
         internal RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request)
         {
-            var task = RestoreFromClusterSnapshotAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1979,11 +1791,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RestoreFromClusterSnapshotResponse> RestoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RestoreFromClusterSnapshotResponse> RestoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
             var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RestoreFromClusterSnapshotRequest, RestoreFromClusterSnapshotResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -1992,16 +1806,10 @@ namespace Amazon.Redshift
 
         internal RevokeClusterSecurityGroupIngressResponse RevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request)
         {
-            var task = RevokeClusterSecurityGroupIngressAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RevokeClusterSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeClusterSecurityGroupIngressRequest,RevokeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2014,11 +1822,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeClusterSecurityGroupIngressRequestMarshaller();
             var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RevokeClusterSecurityGroupIngressRequest, RevokeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RevokeClusterSecurityGroupIngressRequest,RevokeClusterSecurityGroupIngressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -2027,16 +1837,10 @@ namespace Amazon.Redshift
 
         internal RevokeSnapshotAccessResponse RevokeSnapshotAccess(RevokeSnapshotAccessRequest request)
         {
-            var task = RevokeSnapshotAccessAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RevokeSnapshotAccessRequestMarshaller();
+            var unmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeSnapshotAccessRequest,RevokeSnapshotAccessResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2049,11 +1853,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RevokeSnapshotAccessResponse> RevokeSnapshotAccessAsync(RevokeSnapshotAccessRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RevokeSnapshotAccessResponse> RevokeSnapshotAccessAsync(RevokeSnapshotAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeSnapshotAccessRequestMarshaller();
             var unmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RevokeSnapshotAccessRequest, RevokeSnapshotAccessResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RevokeSnapshotAccessRequest,RevokeSnapshotAccessResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -2062,16 +1868,10 @@ namespace Amazon.Redshift
 
         internal RotateEncryptionKeyResponse RotateEncryptionKey(RotateEncryptionKeyRequest request)
         {
-            var task = RotateEncryptionKeyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RotateEncryptionKeyRequestMarshaller();
+            var unmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
+
+            return Invoke<RotateEncryptionKeyRequest,RotateEncryptionKeyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2084,11 +1884,13 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RotateEncryptionKeyResponse> RotateEncryptionKeyAsync(RotateEncryptionKeyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RotateEncryptionKeyResponse> RotateEncryptionKeyAsync(RotateEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RotateEncryptionKeyRequestMarshaller();
             var unmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RotateEncryptionKeyRequest, RotateEncryptionKeyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RotateEncryptionKeyRequest,RotateEncryptionKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

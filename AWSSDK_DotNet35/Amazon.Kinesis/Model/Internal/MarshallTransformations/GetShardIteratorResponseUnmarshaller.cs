@@ -12,74 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Kinesis.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Kinesis.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GetShardIterator operation
+    /// </summary>  
+    public class GetShardIteratorResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for GetShardIterator operation
-      /// </summary>
-      internal class GetShardIteratorResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetShardIteratorResponse response = new GetShardIteratorResponse();       
-          
+            GetShardIteratorResponse response = new GetShardIteratorResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("ShardIterator", targetDepth))
-              {
-                response.ShardIterator = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("ShardIterator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ShardIterator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
-          {
-            return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
-          {
-            return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetShardIteratorResponseUnmarshaller instance;
-        public static GetShardIteratorResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new GetShardIteratorResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+            {
+                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
+            {
+                return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static GetShardIteratorResponseUnmarshaller _instance = new GetShardIteratorResponseUnmarshaller();        
+
+        internal static GetShardIteratorResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static GetShardIteratorResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

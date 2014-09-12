@@ -12,41 +12,52 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Export Tasks Request Marshaller
+    /// DescribeExportTasks Request Marshaller
     /// </summary>       
-    public class DescribeExportTasksRequestMarshaller : IMarshaller<IRequest, DescribeExportTasksRequest>
+    public class DescribeExportTasksRequestMarshaller : IMarshaller<IRequest, DescribeExportTasksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeExportTasksRequest describeExportTasksRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeExportTasksRequest, "AmazonEC2");
+            return this.Marshall((DescribeExportTasksRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeExportTasksRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeExportTasks");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeExportTasksRequest != null)
-            {
-                List<string> exportTaskIdsList = describeExportTasksRequest.ExportTaskIds;
 
-                int exportTaskIdsListIndex = 1;
-                foreach (string exportTaskIdsListValue in exportTaskIdsList)
-                { 
-                    request.Parameters.Add("ExportTaskId." + exportTaskIdsListIndex, StringUtils.FromString(exportTaskIdsListValue));
-                    exportTaskIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetExportTaskIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ExportTaskIds)
+                    {
+                        request.Parameters.Add("ExportTaskId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

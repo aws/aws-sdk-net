@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private string _ifMatch;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteDistributionRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteDistributionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="id">The distribution id.</param>
+        /// <param name="ifMatch">The value of the ETag header you received when you disabled the distribution. For example: E2QWRUHAPOMQZL.</param>
+        public DeleteDistributionRequest(string id, string ifMatch)
+        {
+            _id = id;
+            _ifMatch = ifMatch;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. The distribution id.
@@ -47,7 +66,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property IfMatch. The value of the ETag header you received when

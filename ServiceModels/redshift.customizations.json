@@ -1,0 +1,27 @@
+{
+    "noArgOverloads": [
+        "DescribeClusterParameterGroups",
+        "DescribeClusterSecurityGroups",
+        "DescribeClusterSnapshots",
+        "DescribeClusterSubnetGroups",
+        "DescribeClusterVersions",
+        "DescribeClusters",
+        "DescribeEventCategories",
+        "DescribeEventSubscriptions",
+        "DescribeEvents",
+        "DescribeHsmClientCertificates",
+        "DescribeHsmConfigurations",
+        "DescribeOrderableClusterOptions",
+        "DescribeReservedNodeOfferings",
+        "DescribeReservedNodes"
+    ],
+    "shapeModifiers": {
+        "ClusterVersion": {
+            "modify": [
+                {
+                    "ClusterVersion": { "emitPropertyName": "Version" }
+                }
+            ]
+        }
+    }
+}

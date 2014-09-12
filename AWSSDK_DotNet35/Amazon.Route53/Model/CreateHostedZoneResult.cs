@@ -12,99 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type containing the response information for the new hosted zone.</para>
+    /// A complex type containing the response information for the new hosted zone.
     /// </summary>
     public partial class CreateHostedZoneResult : AmazonWebServiceResponse
     {
-        
-        private HostedZone hostedZone;
-        private ChangeInfo changeInfo;
-        private DelegationSet delegationSet;
-        private string location;
-
+        private HostedZone _hostedZone;
+        private ChangeInfo _changeInfo;
+        private DelegationSet _delegationSet;
+        private string _location;
 
         /// <summary>
+        /// Gets and sets the property HostedZone. 
+        /// <para>
         /// A complex type that contains identifying information about the hosted zone.
-        ///  
+        /// </para>
         /// </summary>
         public HostedZone HostedZone
         {
-            get { return this.hostedZone; }
-            set { this.hostedZone = value; }
+            get { return this._hostedZone; }
+            set { this._hostedZone = value; }
         }
 
         // Check to see if HostedZone property is set
         internal bool IsSetHostedZone()
         {
-            return this.hostedZone != null;
+            return this._hostedZone != null;
         }
 
         /// <summary>
-        /// A complex type that contains information about the request to create a hosted zone. This includes an ID that you use when you call the
-        /// <a>GetChange</a> action to get the current status of the change request.
-        ///  
+        /// Gets and sets the property ChangeInfo. 
+        /// <para>
+        /// A complex type that contains information about the request to create a hosted zone.
+        /// This includes an ID that you use when you call the <a>GetChange</a> action to get
+        /// the current status of the change request.
+        /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo
         {
-            get { return this.changeInfo; }
-            set { this.changeInfo = value; }
+            get { return this._changeInfo; }
+            set { this._changeInfo = value; }
         }
 
         // Check to see if ChangeInfo property is set
         internal bool IsSetChangeInfo()
         {
-            return this.changeInfo != null;
+            return this._changeInfo != null;
         }
 
         /// <summary>
+        /// Gets and sets the property DelegationSet. 
+        /// <para>
         /// A complex type that contains name server information.
-        ///  
+        /// </para>
         /// </summary>
         public DelegationSet DelegationSet
         {
-            get { return this.delegationSet; }
-            set { this.delegationSet = value; }
+            get { return this._delegationSet; }
+            set { this._delegationSet = value; }
         }
 
         // Check to see if DelegationSet property is set
         internal bool IsSetDelegationSet()
         {
-            return this.delegationSet != null;
+            return this._delegationSet != null;
         }
 
         /// <summary>
-        /// The unique URL representing the new hosted zone.
-        ///  
+        /// Gets and sets the property Location. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// The unique URL representing the new hosted zone.
         /// </para>
         /// </summary>
         public string Location
         {
-            get { return this.location; }
-            set { this.location = value; }
+            get { return this._location; }
+            set { this._location = value; }
         }
 
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;
+            return this._location != null;
         }
+
     }
 }

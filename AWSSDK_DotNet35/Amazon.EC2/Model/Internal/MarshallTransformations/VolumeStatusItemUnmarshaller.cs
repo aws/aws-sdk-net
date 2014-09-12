@@ -12,87 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VolumeStatusItem Unmarshaller
-     /// </summary>
-    internal class VolumeStatusItemUnmarshaller : IUnmarshaller<VolumeStatusItem, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusItem, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VolumeStatusItem Object
+    /// </summary>  
+    public class VolumeStatusItemUnmarshaller : IUnmarshaller<VolumeStatusItem, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusItem, JsonUnmarshallerContext>
     {
-        public VolumeStatusItem Unmarshall(XmlUnmarshallerContext context) 
+        public VolumeStatusItem Unmarshall(XmlUnmarshallerContext context)
         {
-            VolumeStatusItem volumeStatusItem = new VolumeStatusItem();
+            VolumeStatusItem unmarshalledObject = new VolumeStatusItem();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("volumeId", targetDepth))
+                    if (context.TestExpression("actionsSet/item", targetDepth))
                     {
-                        volumeStatusItem.VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = VolumeStatusActionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Actions.Add(item);
                         continue;
                     }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        volumeStatusItem.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("volumeStatus", targetDepth))
-                    {
-                        volumeStatusItem.VolumeStatus = VolumeStatusInfoUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("eventsSet/item", targetDepth))
                     {
-                        volumeStatusItem.Events.Add(VolumeStatusEventUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = VolumeStatusEventUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Events.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("actionsSet/item", targetDepth))
+                    if (context.TestExpression("volumeId", targetDepth))
                     {
-                        volumeStatusItem.Actions.Add(VolumeStatusActionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("volumeStatus", targetDepth))
+                    {
+                        var unmarshaller = VolumeStatusInfoUnmarshaller.Instance;
+                        unmarshalledObject.VolumeStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return volumeStatusItem;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return volumeStatusItem;
+            return unmarshalledObject;
         }
 
-        public VolumeStatusItem Unmarshall(JsonUnmarshallerContext context) 
+        public VolumeStatusItem Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VolumeStatusItemUnmarshaller instance;
 
-        public static VolumeStatusItemUnmarshaller GetInstance() 
+        private static VolumeStatusItemUnmarshaller _instance = new VolumeStatusItemUnmarshaller();        
+
+        public static VolumeStatusItemUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VolumeStatusItemUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

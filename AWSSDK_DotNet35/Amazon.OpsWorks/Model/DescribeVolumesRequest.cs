@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private List<string> _volumeIds = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -61,7 +64,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RaidArrayId. 
@@ -82,7 +84,6 @@ namespace Amazon.OpsWorks.Model
             return this._raidArrayId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -100,7 +101,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VolumeIds. 

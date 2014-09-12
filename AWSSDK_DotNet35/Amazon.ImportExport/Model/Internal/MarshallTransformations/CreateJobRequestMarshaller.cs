@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,46 +12,59 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ImportExport.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Job Request Marshaller
+    /// CreateJob Request Marshaller
     /// </summary>       
-    public class CreateJobRequestMarshaller : IMarshaller<IRequest, CreateJobRequest>
+    public class CreateJobRequestMarshaller : IMarshaller<IRequest, CreateJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateJobRequest createJobRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createJobRequest, "AmazonImportExport");
+            return this.Marshall((CreateJobRequest)input);
+        }
+    
+        public IRequest Marshall(CreateJobRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ImportExport");
             request.Parameters.Add("Action", "CreateJob");
             request.Parameters.Add("Version", "2010-06-01");
-            if (createJobRequest != null && createJobRequest.IsSetJobType())
-            {
-                request.Parameters.Add("JobType", StringUtils.FromString(createJobRequest.JobType));
-            }
-            if (createJobRequest != null && createJobRequest.IsSetManifest())
-            {
-                request.Parameters.Add("Manifest", StringUtils.FromString(createJobRequest.Manifest));
-            }
-            if (createJobRequest != null && createJobRequest.IsSetManifestAddendum())
-            {
-                request.Parameters.Add("ManifestAddendum", StringUtils.FromString(createJobRequest.ManifestAddendum));
-            }
-            if (createJobRequest != null && createJobRequest.IsSetValidateOnly())
-            {
-                request.Parameters.Add("ValidateOnly", StringUtils.FromBool(createJobRequest.ValidateOnly));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetJobType())
+                {
+                    request.Parameters.Add("JobType", StringUtils.FromString(publicRequest.JobType));
+                }
+                if(publicRequest.IsSetManifest())
+                {
+                    request.Parameters.Add("Manifest", StringUtils.FromString(publicRequest.Manifest));
+                }
+                if(publicRequest.IsSetManifestAddendum())
+                {
+                    request.Parameters.Add("ManifestAddendum", StringUtils.FromString(publicRequest.ManifestAddendum));
+                }
+                if(publicRequest.IsSetValidateOnly())
+                {
+                    request.Parameters.Add("ValidateOnly", StringUtils.FromBool(publicRequest.ValidateOnly));
+                }
+            }
             return request;
         }
     }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,61 +33,35 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Multipart Uploads Request Marshaller
+    /// ListMultipartUploads Request Marshaller
     /// </summary>       
-    internal class ListMultipartUploadsRequestMarshaller : IMarshaller<IRequest, ListMultipartUploadsRequest> 
+    public class ListMultipartUploadsRequestMarshaller : IMarshaller<IRequest, ListMultipartUploadsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListMultipartUploadsRequest listMultipartUploadsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListMultipartUploadsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listMultipartUploadsRequest, "AmazonGlacier");
-            string target = "Glacier.ListMultipartUploads";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(ListMultipartUploadsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads?marker={marker};limit={limit}"; 
-            if(listMultipartUploadsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listMultipartUploadsRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(listMultipartUploadsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(listMultipartUploadsRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(listMultipartUploadsRequest.IsSetUploadIdMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listMultipartUploadsRequest.UploadIdMarker) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
-            if(listMultipartUploadsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listMultipartUploadsRequest.Limit) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
-            int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            string queryString = uriResourcePath.Substring(queryPosition + 1);
-            uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
-        
-            foreach (string s in queryString.Split('&', ';')) 
-            {
-                string[] nameValuePair = s.Split('=');
-                if (nameValuePair.Length == 2) 
-                {
-                    if (nameValuePair[1].Length > 0)
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             
+            if (publicRequest.IsSetLimit())
+                request.Parameters.Add("limit", Amazon.Runtime.Internal.Util.StringUtils.FromInt(publicRequest.Limit));
+            
+            if (publicRequest.IsSetUploadIdMarker())
+                request.Parameters.Add("marker", StringUtils.FromString(publicRequest.UploadIdMarker));
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

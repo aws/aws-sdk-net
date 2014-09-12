@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private string _volumeType;
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
@@ -62,7 +65,6 @@ namespace Amazon.OpsWorks.Model
             return this._availabilityZone != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
@@ -80,7 +82,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._createdAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Device. 
@@ -100,7 +101,6 @@ namespace Amazon.OpsWorks.Model
             return this._device != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -118,7 +118,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Iops. 
@@ -138,7 +137,6 @@ namespace Amazon.OpsWorks.Model
             return this._iops.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MountPoint. 
         /// <para>
@@ -156,7 +154,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._mountPoint != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -176,7 +173,6 @@ namespace Amazon.OpsWorks.Model
             return this._name != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NumberOfDisks. 
         /// <para>
@@ -194,7 +190,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._numberOfDisks.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RaidArrayId. 
@@ -214,7 +209,6 @@ namespace Amazon.OpsWorks.Model
             return this._raidArrayId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RaidLevel. 
         /// <para>
@@ -232,7 +226,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._raidLevel.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Size. 
@@ -252,7 +245,6 @@ namespace Amazon.OpsWorks.Model
             return this._size.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -270,7 +262,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VolumeType. 

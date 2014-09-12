@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// AddCommunicationToCase Request Marshaller
     /// </summary>       
-    public class AddCommunicationToCaseRequestMarshaller : IMarshaller<IRequest, AddCommunicationToCaseRequest> 
+    public class AddCommunicationToCaseRequestMarshaller : IMarshaller<IRequest, AddCommunicationToCaseRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AddCommunicationToCaseRequest)input);
+        }
+
         public IRequest Marshall(AddCommunicationToCaseRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,33 +56,34 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttachmentSetId())
                 {
-                    writer.WritePropertyName("attachmentSetId");
-                    writer.Write(publicRequest.AttachmentSetId);
+                    context.Writer.WritePropertyName("attachmentSetId");
+                    context.Writer.Write(publicRequest.AttachmentSetId);
                 }
 
                 if(publicRequest.IsSetCaseId())
                 {
-                    writer.WritePropertyName("caseId");
-                    writer.Write(publicRequest.CaseId);
+                    context.Writer.WritePropertyName("caseId");
+                    context.Writer.Write(publicRequest.CaseId);
                 }
 
                 if(publicRequest.IsSetCcEmailAddresses())
                 {
-                    writer.WritePropertyName("ccEmailAddresses");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("ccEmailAddresses");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
                     {
-                        writer.Write(publicRequestCcEmailAddressesListValue);
+                            context.Writer.Write(publicRequestCcEmailAddressesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetCommunicationBody())
                 {
-                    writer.WritePropertyName("communicationBody");
-                    writer.Write(publicRequest.CommunicationBody);
+                    context.Writer.WritePropertyName("communicationBody");
+                    context.Writer.Write(publicRequest.CommunicationBody);
                 }
 
         

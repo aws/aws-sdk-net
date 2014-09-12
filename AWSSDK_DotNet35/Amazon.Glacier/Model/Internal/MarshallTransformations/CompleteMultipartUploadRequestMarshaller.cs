@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,37 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Complete Multipart Upload Request Marshaller
+    /// CompleteMultipartUpload Request Marshaller
     /// </summary>       
-    internal class CompleteMultipartUploadRequestMarshaller : IMarshaller<IRequest, CompleteMultipartUploadRequest> 
+    public class CompleteMultipartUploadRequestMarshaller : IMarshaller<IRequest, CompleteMultipartUploadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CompleteMultipartUploadRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(completeMultipartUploadRequest, "AmazonGlacier");
-            string target = "Glacier.CompleteMultipartUpload";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+        public IRequest Marshall(CompleteMultipartUploadRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            if(completeMultipartUploadRequest.IsSetArchiveSize())
-                request.Headers.Add("x-amz-archive-size", StringUtils.FromString(completeMultipartUploadRequest.ArchiveSize));
 
-            
-            if(completeMultipartUploadRequest.IsSetChecksum())
-                request.Headers.Add("x-amz-sha256-tree-hash", StringUtils.FromString(completeMultipartUploadRequest.Checksum));
-
-            
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
-            if(completeMultipartUploadRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(completeMultipartUploadRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(completeMultipartUploadRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(completeMultipartUploadRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(completeMultipartUploadRequest.IsSetUploadId())
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(completeMultipartUploadRequest.UploadId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{uploadId}", publicRequest.IsSetUploadId() ? StringUtils.FromString(publicRequest.UploadId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+        
+            if(publicRequest.IsSetArchiveSize())
+                request.Headers["x-amz-archive-size"] = publicRequest.ArchiveSize;
+        
+            if(publicRequest.IsSetChecksum())
+                request.Headers["x-amz-sha256-tree-hash"] = publicRequest.Checksum;
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

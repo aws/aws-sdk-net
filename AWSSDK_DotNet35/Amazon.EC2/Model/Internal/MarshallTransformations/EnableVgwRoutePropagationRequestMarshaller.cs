@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Vgw Route Propagation Request Marshaller
+    /// EnableVgwRoutePropagation Request Marshaller
     /// </summary>       
-    public class EnableVgwRoutePropagationRequestMarshaller : IMarshaller<IRequest, EnableVgwRoutePropagationRequest>
+    public class EnableVgwRoutePropagationRequestMarshaller : IMarshaller<IRequest, EnableVgwRoutePropagationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(enableVgwRoutePropagationRequest, "AmazonEC2");
+            return this.Marshall((EnableVgwRoutePropagationRequest)input);
+        }
+    
+        public IRequest Marshall(EnableVgwRoutePropagationRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "EnableVgwRoutePropagation");
             request.Parameters.Add("Version", "2014-06-15");
-            if (enableVgwRoutePropagationRequest != null && enableVgwRoutePropagationRequest.IsSetRouteTableId())
-            {
-                request.Parameters.Add("RouteTableId", StringUtils.FromString(enableVgwRoutePropagationRequest.RouteTableId));
-            }
-            if (enableVgwRoutePropagationRequest != null && enableVgwRoutePropagationRequest.IsSetGatewayId())
-            {
-                request.Parameters.Add("GatewayId", StringUtils.FromString(enableVgwRoutePropagationRequest.GatewayId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGatewayId())
+                {
+                    request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
+                }
+                if(publicRequest.IsSetRouteTableId())
+                {
+                    request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
+                }
+            }
             return request;
         }
     }

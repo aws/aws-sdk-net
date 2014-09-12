@@ -29,8 +29,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Bucket Request Marshaller
     /// </summary>       
-    public class PutBucketRequestMarshaller : IMarshaller<IRequest, PutBucketRequest>
-    {
+    public class PutBucketRequestMarshaller : IMarshaller<IRequest, PutBucketRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((PutBucketRequest)input);
+		}
+
         public IRequest Marshall(PutBucketRequest putBucketRequest)
         {
             IRequest request = new DefaultRequest(putBucketRequest, "AmazonS3");

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.CloudFront.Model
         private string _eTag;
         private StreamingDistribution _streamingDistribution;
 
-
         /// <summary>
         /// Gets and sets the property ETag. The current version of the streaming distribution's
         /// information. For example: E2QWRUHAPOMQZL.
@@ -47,7 +50,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._eTag != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StreamingDistribution. The streaming distribution's information.

@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   HostedZone Unmarshaller
-     /// </summary>
-    internal class HostedZoneUnmarshaller : IUnmarshaller<HostedZone, XmlUnmarshallerContext>, IUnmarshaller<HostedZone, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for HostedZone Object
+    /// </summary>  
+    public class HostedZoneUnmarshaller : IUnmarshaller<HostedZone, XmlUnmarshallerContext>
     {
-        public HostedZone Unmarshall(XmlUnmarshallerContext context) 
+        public HostedZone Unmarshall(XmlUnmarshallerContext context)
         {
-            HostedZone hostedZone = new HostedZone();
+            HostedZone unmarshalledObject = new HostedZone();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,60 +52,51 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        hostedZone.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))
                     {
-                        hostedZone.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CallerReference", targetDepth))
                     {
-                        hostedZone.CallerReference = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Config", targetDepth))
                     {
-                        hostedZone.Config = HostedZoneConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = HostedZoneConfigUnmarshaller.Instance;
+                        unmarshalledObject.Config = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourceRecordSetCount", targetDepth))
                     {
-                        hostedZone.ResourceRecordSetCount = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ResourceRecordSetCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return hostedZone;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static HostedZoneUnmarshaller _instance = new HostedZoneUnmarshaller();        
+
+        public static HostedZoneUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return hostedZone;
-        }
-
-        public HostedZone Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static HostedZoneUnmarshaller instance;
-
-        public static HostedZoneUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new HostedZoneUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

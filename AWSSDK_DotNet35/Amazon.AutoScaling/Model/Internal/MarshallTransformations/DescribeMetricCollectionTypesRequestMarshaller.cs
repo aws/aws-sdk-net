@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeMetricCollectionTypes Request Marshaller
     /// </summary>       
-    public class DescribeMetricCollectionTypesRequestMarshaller : IMarshaller<IRequest, DescribeMetricCollectionTypesRequest>
+    public class DescribeMetricCollectionTypesRequestMarshaller : IMarshaller<IRequest, DescribeMetricCollectionTypesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeMetricCollectionTypesRequest)input);
+        }
+    
         public IRequest Marshall(DescribeMetricCollectionTypesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");

@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Run Object
+    /// </summary>  
+    public class RunUnmarshaller : IUnmarshaller<Run, XmlUnmarshallerContext>, IUnmarshaller<Run, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RunUnmarshaller
-      /// </summary>
-      internal class RunUnmarshaller : IUnmarshaller<Run, XmlUnmarshallerContext>, IUnmarshaller<Run, JsonUnmarshallerContext>
-      {
         Run IUnmarshaller<Run, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Run Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Run run = new Run();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Run unmarshalledObject = new Run();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("runId", targetDepth))
-              {
-                run.RunId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("runId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return run;
+            return unmarshalledObject;
         }
 
-        private static RunUnmarshaller instance;
-        public static RunUnmarshaller GetInstance()
+
+        private static RunUnmarshaller _instance = new RunUnmarshaller();        
+
+        public static RunUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RunUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

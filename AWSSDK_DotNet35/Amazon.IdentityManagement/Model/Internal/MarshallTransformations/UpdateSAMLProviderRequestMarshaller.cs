@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateSAMLProvider Request Marshaller
     /// </summary>       
-    public class UpdateSAMLProviderRequestMarshaller : IMarshaller<IRequest, UpdateSAMLProviderRequest>
+    public class UpdateSAMLProviderRequestMarshaller : IMarshaller<IRequest, UpdateSAMLProviderRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateSAMLProviderRequest)input);
+        }
+    
         public IRequest Marshall(UpdateSAMLProviderRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Source Identifier To Subscription Request Marshaller
+    /// AddSourceIdentifierToSubscription Request Marshaller
     /// </summary>       
-    public class AddSourceIdentifierToSubscriptionRequestMarshaller : IMarshaller<IRequest, AddSourceIdentifierToSubscriptionRequest>
+    public class AddSourceIdentifierToSubscriptionRequestMarshaller : IMarshaller<IRequest, AddSourceIdentifierToSubscriptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(addSourceIdentifierToSubscriptionRequest, "AmazonRDS");
+            return this.Marshall((AddSourceIdentifierToSubscriptionRequest)input);
+        }
+    
+        public IRequest Marshall(AddSourceIdentifierToSubscriptionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "AddSourceIdentifierToSubscription");
             request.Parameters.Add("Version", "2013-09-09");
-            if (addSourceIdentifierToSubscriptionRequest != null && addSourceIdentifierToSubscriptionRequest.IsSetSubscriptionName())
-            {
-                request.Parameters.Add("SubscriptionName", StringUtils.FromString(addSourceIdentifierToSubscriptionRequest.SubscriptionName));
-            }
-            if (addSourceIdentifierToSubscriptionRequest != null && addSourceIdentifierToSubscriptionRequest.IsSetSourceIdentifier())
-            {
-                request.Parameters.Add("SourceIdentifier", StringUtils.FromString(addSourceIdentifierToSubscriptionRequest.SourceIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSourceIdentifier())
+                {
+                    request.Parameters.Add("SourceIdentifier", StringUtils.FromString(publicRequest.SourceIdentifier));
+                }
+                if(publicRequest.IsSetSubscriptionName())
+                {
+                    request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
+                }
+            }
             return request;
         }
     }

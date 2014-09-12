@@ -12,38 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>UpdateAvailabilityOptions</c> request. Contains the status of the domain's availability options. </para>
+    /// The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status
+    /// of the domain's availability options.
     /// </summary>
     public partial class UpdateAvailabilityOptionsResult : AmazonWebServiceResponse
     {
-        
-        private AvailabilityOptionsStatus availabilityOptions;
-
+        private AvailabilityOptionsStatus _availabilityOptions;
 
         /// <summary>
-        /// The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain.
-        ///  
+        /// Gets and sets the property AvailabilityOptions. 
+        /// <para>
+        /// The newly-configured availability options. Indicates whether Multi-AZ is enabled for
+        /// the domain. 
+        /// </para>
         /// </summary>
         public AvailabilityOptionsStatus AvailabilityOptions
         {
-            get { return this.availabilityOptions; }
-            set { this.availabilityOptions = value; }
+            get { return this._availabilityOptions; }
+            set { this._availabilityOptions = value; }
         }
 
         // Check to see if AvailabilityOptions property is set
         internal bool IsSetAvailabilityOptions()
         {
-            return this.availabilityOptions != null;
+            return this._availabilityOptions != null;
         }
+
     }
 }

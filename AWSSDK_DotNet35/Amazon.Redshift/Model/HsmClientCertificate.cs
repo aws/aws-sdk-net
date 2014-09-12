@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.Redshift.Model
         private string _hsmClientCertificateIdentifier;
         private string _hsmClientCertificatePublicKey;
 
-
         /// <summary>
         /// Gets and sets the property HsmClientCertificateIdentifier. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.Redshift.Model
         {
             return this._hsmClientCertificateIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmClientCertificatePublicKey. 

@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DomainInfo Object
+    /// </summary>  
+    public class DomainInfoUnmarshaller : IUnmarshaller<DomainInfo, XmlUnmarshallerContext>, IUnmarshaller<DomainInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DomainInfoUnmarshaller
-      /// </summary>
-      internal class DomainInfoUnmarshaller : IUnmarshaller<DomainInfo, XmlUnmarshallerContext>, IUnmarshaller<DomainInfo, JsonUnmarshallerContext>
-      {
         DomainInfo IUnmarshaller<DomainInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DomainInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DomainInfo domainInfo = new DomainInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DomainInfo unmarshalledObject = new DomainInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("name", targetDepth))
-              {
-                domainInfo.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("status", targetDepth))
-              {
-                domainInfo.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("description", targetDepth))
-              {
-                domainInfo.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return domainInfo;
+            return unmarshalledObject;
         }
 
-        private static DomainInfoUnmarshaller instance;
-        public static DomainInfoUnmarshaller GetInstance()
+
+        private static DomainInfoUnmarshaller _instance = new DomainInfoUnmarshaller();        
+
+        public static DomainInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DomainInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

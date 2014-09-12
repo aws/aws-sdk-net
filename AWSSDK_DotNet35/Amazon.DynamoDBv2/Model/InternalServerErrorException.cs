@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.DynamoDBv2.Model
 {
     ///<summary>
-    /// AmazonDynamoDB exception
+    /// DynamoDB exception
     /// </summary>
     public class InternalServerErrorException : AmazonDynamoDBException 
     {
@@ -45,6 +49,5 @@ namespace Amazon.DynamoDBv2.Model
         public InternalServerErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

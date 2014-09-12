@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,49 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.S3.Model;
 
 namespace Amazon.S3
 {
     /// <summary>
-    /// Interface for accessing AmazonS3.
-    /// 
+    /// Interface for accessing S3
+    ///
     /// 
     /// </summary>
-    /// <summary>
-    /// Interface for Amazon S3 Clients.
-    /// For more information about Amazon S3, go to <see href="http://aws.amazon.com/s3" />
-    /// </summary>
-	public partial interface IAmazonS3 : IDisposable
+    public partial interface IAmazonS3 : IDisposable
     {
- 
+
+        
+        #region  AbortMultipartUpload
 
         /// <summary>
-        /// <para>Aborts a multipart upload.</para>
-        /// </summary>
+        /// Aborts a multipart upload.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method on
-        /// AmazonS3.</param>
-		AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request);
+        ///  
+        /// <para>
+        /// To verify that all parts have been removed, so you don't get charged for the part
+        /// storage, you should call the List Parts operation and ensure the parts list is empty.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
+        /// 
+        /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload operation.</param>
@@ -51,22 +62,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CompleteMultipartUpload
 
         /// <summary>
-        /// <para>Completes a multipart upload by assembling previously uploaded parts.</para>
+        /// Completes a multipart upload by assembling previously uploaded parts.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CompleteMultipartUpload service method, as returned by AmazonS3.</returns>
-		CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request);
+        /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CompleteMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload operation.</param>
@@ -74,21 +86,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CopyObject
 
         /// <summary>
-        /// <para>Creates a copy of an object that is already stored in Amazon S3.</para>
+        /// Creates a copy of an object that is already stored in Amazon S3.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CopyObject service method, as returned by AmazonS3.</returns>
-		CopyObjectResponse CopyObject(CopyObjectRequest request);
+        /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        CopyObjectResponse CopyObject(CopyObjectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyObject operation.</param>
@@ -96,21 +110,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CopyPart
 
         /// <summary>
-        /// <para>Uploads a part by copying data from an existing object as data source.</para>
+        /// Uploads a part by copying data from an existing object as data source.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CopyPart service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CopyPart service method, as returned by AmazonS3.</returns>
-		CopyPartResponse CopyPart(CopyPartRequest request);
+        /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        CopyPartResponse CopyPart(CopyPartRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyPart"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyPart operation.</param>
@@ -118,20 +134,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucket
 
         /// <summary>
-        /// <para>Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket
-        /// itself can be deleted.</para>
+        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// in the bucket must be deleted before the bucket itself can be deleted.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method on AmazonS3.</param>
-		DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
+        /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucket"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket operation.</param>
@@ -139,20 +159,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucketPolicy
 
         /// <summary>
-        /// <para>Deletes the policy from the bucket.</para>
+        /// Deletes the policy from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method on
-        /// AmazonS3.</param>
-		DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
+        /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketPolicy"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy operation.</param>
@@ -160,20 +183,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucketTagging
 
         /// <summary>
-        /// <para>Deletes the tags from the bucket.</para>
+        /// Deletes the tags from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method on
-        /// AmazonS3.</param>
-		DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request);
+        /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketTagging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging operation.</param>
@@ -181,20 +207,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucketWebsite
 
         /// <summary>
-        /// <para>This operation removes the website configuration from the bucket.</para>
+        /// This operation removes the website configuration from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method on
-        /// AmazonS3.</param>
-		DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request);
+        /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite operation.</param>
@@ -202,20 +231,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCORSConfiguration
 
         /// <summary>
-        /// <para>Deletes the cors configuration information set for the bucket.</para>
+        /// Deletes the cors configuration information set for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method on
-        /// AmazonS3.</param>
-		DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request);
+        /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteCORSConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration operation.</param>
@@ -223,20 +255,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLifecycleConfiguration
 
         /// <summary>
-        /// <para>Deletes the lifecycle configuration from the bucket.</para>
+        /// Deletes the lifecycle configuration from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method on
-        /// AmazonS3.</param>
-		DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request);
+        /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration operation.</param>
@@ -244,22 +279,25 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteObject
 
         /// <summary>
-        /// <para>Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object.
-        /// If there isn''t a null version, Amazon S3 does not remove any objects.</para>
+        /// Removes the null version (if there is one) of an object and inserts a delete marker,
+        /// which becomes the latest version of the object. If there isn't a null version, Amazon
+        /// S3 does not remove any objects.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the DeleteObject service method, as returned by AmazonS3.</returns>
-		DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
+        /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject operation.</param>
@@ -267,22 +305,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteObjects
 
         /// <summary>
-        /// <para>This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000
-        /// keys.</para>
+        /// This operation enables you to delete multiple objects from a bucket using a single
+        /// HTTP request. You may specify up to 1000 keys.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the DeleteObjects service method, as returned by AmazonS3.</returns>
-		DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request);
+        /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObjects"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects operation.</param>
@@ -290,21 +330,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetACL
 
         /// <summary>
-        /// <para>Returns the access control list (ACL) of an object.</para>
+        /// Gets the access control policy for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetACL service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by AmazonS3.</returns>
-		GetACLResponse GetACL(GetACLRequest request);
+        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        GetACLResponse GetACL(GetACLRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetACL"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetACL operation.</param>
@@ -312,22 +354,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketLocation
 
         /// <summary>
-        /// <para>Returns the region the bucket resides in.</para>
+        /// Returns the region the bucket resides in.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketLocation service method, as returned by AmazonS3.</returns>
-		GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request);
+        /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLocation operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLocation"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation operation.</param>
@@ -335,23 +378,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketLogging
 
         /// <summary>
-        /// <para>Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the
-        /// bucket owner.</para>
+        /// Returns the logging status of a bucket and the permissions users have to view and
+        /// modify that status. To use GET, you must be the bucket owner.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketLogging service method, as returned by AmazonS3.</returns>
-		GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request);
+        /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLogging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging operation.</param>
@@ -359,22 +403,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketNotification
 
         /// <summary>
-        /// <para>Return the notification configuration of a bucket.</para>
+        /// Return the notification configuration of a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketNotification service method, as returned by AmazonS3.</returns>
-		GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request);
+        /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketNotification"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification operation.</param>
@@ -382,22 +427,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketPolicy
 
         /// <summary>
-        /// <para>Returns the policy of a specified bucket.</para>
+        /// Returns the policy of a specified bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketPolicy service method, as returned by AmazonS3.</returns>
-		GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request);
+        /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketPolicy"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy operation.</param>
@@ -405,22 +451,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketRequestPayment
 
         /// <summary>
-        /// <para>Returns the request payment configuration of a bucket.</para>
+        /// Returns the request payment configuration of a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketRequestPayment service method, as returned by AmazonS3.</returns>
-		GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request);
+        /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketRequestPayment"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment operation.</param>
@@ -428,22 +475,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketTagging
 
         /// <summary>
-        /// <para>Returns the tag set associated with the bucket.</para>
+        /// Returns the tag set associated with the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketTagging service method, as returned by AmazonS3.</returns>
-		GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request);
+        /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketTagging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging operation.</param>
@@ -451,22 +499,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketVersioning
 
         /// <summary>
-        /// <para>Returns the versioning state of a bucket.</para>
+        /// Returns the versioning state of a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketVersioning service method, as returned by AmazonS3.</returns>
-		GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request);
+        /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketVersioning"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning operation.</param>
@@ -474,22 +523,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketWebsite
 
         /// <summary>
-        /// <para>Returns the website configuration for a bucket.</para>
+        /// Returns the website configuration for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketWebsite service method, as returned by AmazonS3.</returns>
-		GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request);
+        /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite operation.</param>
@@ -497,21 +547,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCORSConfiguration
 
         /// <summary>
-        /// <para>Returns the cors configuration for the bucket.</para>
+        /// Returns the cors configuration for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetCORSConfiguration service method, as returned by AmazonS3.</returns>
-		GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request);
+        /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetCORSConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration operation.</param>
@@ -519,22 +571,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLifecycleConfiguration
 
         /// <summary>
-        /// <para>Returns the lifecycle configuration information set on the bucket.</para>
+        /// Returns the lifecycle configuration information set on the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by AmazonS3.</returns>
-		GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request);
+        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration operation.</param>
@@ -542,21 +595,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetObject
 
         /// <summary>
-        /// <para>Retrieves objects from Amazon S3.</para>
+        /// Retrieves objects from Amazon S3.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetObject service method, as returned by AmazonS3.</returns>
-		GetObjectResponse GetObject(GetObjectRequest request);
+        /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        GetObjectResponse GetObject(GetObjectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObject operation.</param>
@@ -564,24 +619,25 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetObjectMetadata
 
         /// <summary>
-        /// Returns information about a specified object.
+        /// The HEAD operation retrieves metadata from an object without returning the object
+        /// itself. This operation is useful if you're only interested in an object's metadata.
+        /// To use HEAD, you must have READ access to the object.
         /// </summary>
-        /// <remarks>
-        /// Retrieves information about a specific object or object size, without actually fetching the object itself.
-        /// This is useful if you're only interested in the object metadata, and don't want to waste bandwidth on the object data.
-        /// The response is identical to the GetObject response, except that there is no response body.
-        /// </remarks>
-        /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method on AmazonS3.</param>
-        /// <returns>The response from the HeadObject service method, as returned by AmazonS3.</returns>
-		GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request);
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectMetadata operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectMetadata"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata operation.</param>
@@ -589,22 +645,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetObjectTorrent
 
         /// <summary>
-        /// <para>Return torrent files from a bucket.</para>
+        /// Return torrent files from a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetObjectTorrent service method, as returned by AmazonS3.</returns>
-		GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request);
+        /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectTorrent operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectTorrent"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent operation.</param>
@@ -612,29 +669,31 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  InitiateMultipartUpload
 
         /// <summary>
-        /// <para>Initiates a multipart upload and returns an upload ID.</para>
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method on
-        /// AmazonS3.</param>
+        /// Initiates a multipart upload and returns an upload ID.
         /// 
-        /// <returns>The response from the InitiateMultipartUpload service method, as returned by AmazonS3.</returns>
-		InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request);
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
+        /// 
+        /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.InitiateMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload operation.</param>
@@ -642,21 +701,30 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBuckets
 
         /// <summary>
-        /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
+        /// Returns a list of all buckets owned by the authenticated sender of the request.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method on AmazonS3.</param>
+        /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        ListBucketsResponse ListBuckets();
+
+        /// <summary>
+        /// Returns a list of all buckets owned by the authenticated sender of the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
-        /// <returns>The response from the ListBuckets service method, as returned by AmazonS3.</returns>
-		ListBucketsResponse ListBuckets(ListBucketsRequest request);
+        /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        ListBucketsResponse ListBuckets(ListBucketsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBuckets operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListBuckets"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets operation.</param>
@@ -664,30 +732,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the ListBuckets service method, as returned by AmazonS3.</returns>
-		ListBucketsResponse ListBuckets();
- 
+        Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMultipartUploads
 
         /// <summary>
-        /// <para>This operation lists in-progress multipart uploads.</para>
+        /// This operation lists in-progress multipart uploads.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListMultipartUploads service method, as returned by AmazonS3.</returns>
-		ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request);
+        /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListMultipartUploads"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads operation.</param>
@@ -695,22 +756,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListObjects
 
         /// <summary>
-        /// <para>Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a
-        /// subset of the objects in a bucket.</para>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListObjects service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListObjects service method, as returned by AmazonS3.</returns>
-		ListObjectsResponse ListObjects(ListObjectsRequest request);
+        /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        ListObjectsResponse ListObjects(ListObjectsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListObjects"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListObjects operation.</param>
@@ -718,21 +781,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListParts
 
         /// <summary>
-        /// <para>Lists the parts that have been uploaded for a specific multipart upload.</para>
+        /// Lists the parts that have been uploaded for a specific multipart upload.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListParts service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListParts service method, as returned by AmazonS3.</returns>
-		ListPartsResponse ListParts(ListPartsRequest request);
+        /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        ListPartsResponse ListParts(ListPartsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListParts"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListParts operation.</param>
@@ -740,22 +805,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListVersions
 
         /// <summary>
-        /// <para>Returns metadata about all of the versions of objects in a bucket.</para>
+        /// Returns metadata about all of the versions of objects in a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListVersions service method, as returned by AmazonS3.</returns>
-		ListVersionsResponse ListVersions(ListVersionsRequest request);
+        /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        ListVersionsResponse ListVersions(ListVersionsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVersions operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListVersions"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVersions operation.</param>
@@ -763,19 +829,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutACL
 
         /// <summary>
-        /// <para>uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket</para>
+        /// Sets the permissions on a bucket using access control lists (ACL).
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutObjectAcl service method on AmazonS3.</param>
-		PutACLResponse PutACL(PutACLRequest request);
+        /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        PutACLResponse PutACL(PutACLRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutACL"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutACL operation.</param>
@@ -783,21 +853,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutACLResponse> PutACLAsync(PutACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutACLResponse> PutACLAsync(PutACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucket
 
         /// <summary>
-        /// <para>Creates a new bucket.</para>
+        /// Creates a new bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucket service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the PutBucket service method, as returned by AmazonS3.</returns>
-		PutBucketResponse PutBucket(PutBucketRequest request);
+        /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        PutBucketResponse PutBucket(PutBucketRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucket"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucket operation.</param>
@@ -805,21 +877,25 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketLogging
 
         /// <summary>
-        /// <para>Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the
-        /// logging status of a bucket, you must be the bucket owner.</para>
+        /// Set the logging parameters for a bucket and to specify permissions for who can view
+        /// and modify the logging parameters. To set the logging status of a bucket, you must
+        /// be the bucket owner.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method on
-        /// AmazonS3.</param>
-		PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request);
+        /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketLogging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging operation.</param>
@@ -827,20 +903,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketNotification
 
         /// <summary>
-        /// <para>Enables notifications of specified events for a bucket.</para>
+        /// Enables notifications of specified events for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method on
-        /// AmazonS3.</param>
-		PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request);
+        /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketNotification"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification operation.</param>
@@ -848,20 +927,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketPolicy
 
         /// <summary>
-        /// <para>Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.</para>
+        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
+        /// request completely replaces it.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method on
-        /// AmazonS3.</param>
-		PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request);
+        /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketPolicy"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy operation.</param>
@@ -869,22 +952,26 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketRequestPayment
 
         /// <summary>
-        /// <para>Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This
-        /// configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the
-        /// download.</para>
+        /// Sets the request payment configuration for a bucket. By default, the bucket owner
+        /// pays for downloads from the bucket. This configuration parameter enables the bucket
+        /// owner (only) to specify that the person requesting the download will be charged for
+        /// the download.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method on
-        /// AmazonS3.</param>
-		PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request);
+        /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketRequestPayment"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment operation.</param>
@@ -892,20 +979,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketTagging
 
         /// <summary>
-        /// <para>Sets the tags for a bucket.</para>
+        /// Sets the tags for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method on
-        /// AmazonS3.</param>
-		PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request);
+        /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketTagging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging operation.</param>
@@ -913,20 +1003,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketVersioning
 
         /// <summary>
-        /// <para>Puts the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.</para>
+        /// Sets the versioning state of an existing bucket. To set the versioning state, you
+        /// must be the bucket owner.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method on
-        /// AmazonS3.</param>
-		PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request);
+        /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketVersioning"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning operation.</param>
@@ -934,20 +1028,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketWebsite
 
         /// <summary>
-        /// <para>Set the website configuration for a bucket.</para>
+        /// Set the website configuration for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method on
-        /// AmazonS3.</param>
-		PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request);
+        /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite operation.</param>
@@ -955,19 +1052,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutCORSConfiguration
 
         /// <summary>
-        /// <para>Sets the cors configuration for a bucket.</para>
+        /// Sets the cors configuration for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method on AmazonS3.</param>
-		PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request);
+        /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutCORSConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration operation.</param>
@@ -975,20 +1076,24 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutLifecycleConfiguration
 
         /// <summary>
-        /// <para>Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.</para>
+        /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
+        /// it replaces it.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method on
-        /// AmazonS3.</param>
-		PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request);
+        /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration operation.</param>
@@ -996,21 +1101,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutObject
 
         /// <summary>
-        /// <para>Adds an object to a bucket.</para>
+        /// Adds an object to a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the PutObject service method, as returned by AmazonS3.</returns>
-		PutObjectResponse PutObject(PutObjectRequest request);
+        /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        PutObjectResponse PutObject(PutObjectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutObject operation.</param>
@@ -1018,19 +1125,23 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestoreObject
 
         /// <summary>
-        /// <para>Restores an archived copy of an object back into Amazon S3</para>
+        /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method on AmazonS3.</param>
-		RestoreObjectResponse RestoreObject(RestoreObjectRequest request);
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        RestoreObjectResponse RestoreObject(RestoreObjectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.RestoreObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject operation.</param>
@@ -1038,28 +1149,31 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UploadPart
 
         /// <summary>
-        /// <para>Uploads a part in a multipart upload.</para>
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">Container for the necessary parameters to execute the UploadPart service method on AmazonS3.</param>
+        /// Uploads a part in a multipart upload.
         /// 
-        /// <returns>The response from the UploadPart service method, as returned by AmazonS3.</returns>
-		UploadPartResponse UploadPart(UploadPartRequest request);
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
+        /// 
+        /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        UploadPartResponse UploadPart(UploadPartRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.UploadPart"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadPart operation.</param>
@@ -1067,6 +1181,9 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

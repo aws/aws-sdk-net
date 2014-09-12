@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateTable response and response metadata.
+    /// Configuration for accessing Amazon UpdateTable service
     /// </summary>
     public partial class UpdateTableResponse : UpdateTableResult
     {
         /// <summary>
         /// Gets and sets the UpdateTableResult property.
-        /// Represents the output of an UpdateTable operation.
+        /// Represents the output of a UpdateTable operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateTableResult class are now available on the UpdateTableResponse class. You should use the properties on UpdateTableResponse instead of accessing them through UpdateTableResult.")]
         public UpdateTableResult UpdateTableResult
@@ -40,4 +40,3 @@ namespace Amazon.DynamoDBv2.Model
         }
     }
 }
-    

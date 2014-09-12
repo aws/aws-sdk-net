@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,31 +29,46 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpnGateway operation.
-    /// <para>Deletes the specified virtual private gateway. We recommend that before you delete a virtual private gateway, you detach it from the
-    /// VPC and delete the VPN connection. Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN
-    /// connection between your VPC and your network.</para>
+    /// Deletes the specified virtual private gateway. We recommend that before you delete
+    /// a virtual private gateway, you detach it from the VPC and delete the VPN connection.
+    /// Note that you don't need to delete the virtual private gateway if you plan to delete
+    /// and recreate the VPN connection between your VPC and your network.
     /// </summary>
     public partial class DeleteVpnGatewayRequest : AmazonEC2Request
     {
-        private string vpnGatewayId;
-
+        private string _vpnGatewayId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteVpnGatewayRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteVpnGatewayRequest with the parameterized properties
+        /// </summary>
+        /// <param name="vpnGatewayId">The ID of the virtual private gateway.</param>
+        public DeleteVpnGatewayRequest(string vpnGatewayId)
+        {
+            _vpnGatewayId = vpnGatewayId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnGatewayId. 
+        /// <para>
         /// The ID of the virtual private gateway.
-        ///  
+        /// </para>
         /// </summary>
         public string VpnGatewayId
         {
-            get { return this.vpnGatewayId; }
-            set { this.vpnGatewayId = value; }
+            get { return this._vpnGatewayId; }
+            set { this._vpnGatewayId = value; }
         }
 
         // Check to see if VpnGatewayId property is set
         internal bool IsSetVpnGatewayId()
         {
-            return this.vpnGatewayId != null;
+            return this._vpnGatewayId != null;
         }
 
     }
 }
-    

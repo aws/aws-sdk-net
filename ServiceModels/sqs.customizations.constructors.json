@@ -1,0 +1,153 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "GetQueueUrlRequest" : {
+                "constructorForms" : [
+                    [
+                        "QueueName"
+                    ]
+                ]
+            },
+            "DeleteMessageBatchRequest" : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "Entries"
+                    ]
+                ]
+            },
+            "SendMessageBatchRequest"   : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "Entries"
+                    ]
+                ]
+            },
+            "ChangeMessageVisibilityBatchRequestEntry" : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "ReceiptHandle"
+                    ]
+                ]
+            },
+            "SendMessageBatchRequestEntry"             : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "MessageBody"
+                    ]
+                ]
+            },
+            "DeleteMessageBatchRequestEntry"           : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "ReceiptHandle"
+                    ]
+                ]
+            },
+            "ChangeMessageVisibilityBatchRequest"      : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "Entries"
+                    ]
+                ]
+            },
+            "AddPermissionRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "Label",
+                        "AWSAccountIds",
+                        "Actions"
+                    ]
+                ]
+            },
+            "ListQueuesRequest"                        : {
+                "constructorForms" : [
+                    [
+                        "QueueNamePrefix"
+                    ]
+                ]
+            },
+            "DeleteQueueRequest"                       : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl"
+                    ]
+                ]
+            },
+            "DeleteMessageRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "ReceiptHandle"
+                    ]
+                ]
+            },
+            "ReceiveMessageRequest"                    : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl"
+                    ]
+                ]
+            },
+            "Message"                                  : {
+                "constructorForms" : [
+                ]
+            },
+            "RemovePermissionRequest"                  : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "Label"
+                    ]
+                ]
+            },
+            "SetQueueAttributesRequest"                : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "Attributes"
+                    ]
+                ]
+            },
+            "ChangeMessageVisibilityRequest"           : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "ReceiptHandle",
+                        "VisibilityTimeout"
+                    ]
+                ]
+            },
+            "GetQueueAttributesRequest"                : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "AttributeNames"
+                    ]
+                ]
+            },
+            "SendMessageRequest"                       : {
+                "constructorForms" : [
+                    [
+                        "QueueUrl",
+                        "MessageBody"
+                    ]
+                ]
+            },
+            "CreateQueueRequest"                       : {
+                "constructorForms" : [
+                    [
+                        "QueueName"
+                    ]
+                ]
+            }
+        }
+    }
+}

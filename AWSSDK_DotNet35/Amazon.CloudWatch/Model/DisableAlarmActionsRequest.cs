@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,38 +29,30 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableAlarmActions operation.
-    /// <para> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's
-    /// actions will execute. </para>
+    /// Disables actions for the specified alarms. When an alarm's actions are disabled the
+    /// alarm's state may change, but none of the alarm's actions will execute.
     /// </summary>
-    public partial class DisableAlarmActionsRequest : AmazonWebServiceRequest
+    public partial class DisableAlarmActionsRequest : AmazonCloudWatchRequest
     {
-        private List<string> alarmNames = new List<string>();
+        private List<string> _alarmNames = new List<string>();
 
         /// <summary>
-        /// The names of the alarms to disable actions for.
-        ///  
+        /// Gets and sets the property AlarmNames. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
+        ///  The names of the alarms to disable actions for. 
         /// </para>
         /// </summary>
         public List<string> AlarmNames
         {
-            get { return this.alarmNames; }
-            set { this.alarmNames = value; }
+            get { return this._alarmNames; }
+            set { this._alarmNames = value; }
         }
 
         // Check to see if AlarmNames property is set
         internal bool IsSetAlarmNames()
         {
-            return this.alarmNames.Count > 0;
+            return this._alarmNames != null && this._alarmNames.Count > 0; 
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,47 +29,69 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAddress operation.
-    /// <para>Disassociates an Elastic IP address from the instance or network interface it's associated with.</para> <para>This is an idempotent
-    /// operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</para>
+    /// Disassociates an Elastic IP address from the instance or network interface it's associated
+    /// with.
+    /// 
+    ///  
+    /// <para>
+    /// This is an idempotent operation. If you perform the operation more than once, Amazon
+    /// EC2 doesn't return an error.
+    /// </para>
     /// </summary>
     public partial class DisassociateAddressRequest : AmazonEC2Request
     {
-        private string publicIp;
-        private string associationId;
-
+        private string _associationId;
+        private string _publicIp;
 
         /// <summary>
-        /// [EC2-Classic] The Elastic IP address.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string PublicIp
-        {
-            get { return this.publicIp; }
-            set { this.publicIp = value; }
-        }
+        public DisassociateAddressRequest() { }
 
-        // Check to see if PublicIp property is set
-        internal bool IsSetPublicIp()
+        /// <summary>
+        /// Instantiates DisassociateAddressRequest with the parameterized properties
+        /// </summary>
+        /// <param name="publicIp">[EC2-Classic] The Elastic IP address.</param>
+        public DisassociateAddressRequest(string publicIp)
         {
-            return this.publicIp != null;
+            _publicIp = publicIp;
         }
 
         /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
         /// [EC2-VPC] The association ID.
-        ///  
+        /// </para>
         /// </summary>
         public string AssociationId
         {
-            get { return this.associationId; }
-            set { this.associationId = value; }
+            get { return this._associationId; }
+            set { this._associationId = value; }
         }
 
         // Check to see if AssociationId property is set
         internal bool IsSetAssociationId()
         {
-            return this.associationId != null;
+            return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIp. 
+        /// <para>
+        /// [EC2-Classic] The Elastic IP address.
+        /// </para>
+        /// </summary>
+        public string PublicIp
+        {
+            get { return this._publicIp; }
+            set { this._publicIp = value; }
+        }
+
+        // Check to see if PublicIp property is set
+        internal bool IsSetPublicIp()
+        {
+            return this._publicIp != null;
         }
 
     }
 }
-    

@@ -12,114 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents a global secondary index.</para>
+    /// Represents a global secondary index.
     /// </summary>
     public partial class GlobalSecondaryIndex
     {
-        
-        private string indexName;
-        private List<KeySchemaElement> keySchema = new List<KeySchemaElement>();
-        private Projection projection;
-        private ProvisionedThroughput provisionedThroughput;
-
+        private string _indexName;
+        private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
+        private Projection _projection;
+        private ProvisionedThroughput _provisionedThroughput;
 
         /// <summary>
-        /// The name of the global secondary index. The name must be unique among all other indexes on this table.
-        ///  
+        /// Gets and sets the property IndexName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
+        /// The name of the global secondary index. The name must be unique among all other indexes
+        /// on this table.
         /// </para>
         /// </summary>
         public string IndexName
         {
-            get { return this.indexName; }
-            set { this.indexName = value; }
+            get { return this._indexName; }
+            set { this._indexName = value; }
         }
 
         // Check to see if IndexName property is set
         internal bool IsSetIndexName()
         {
-            return this.indexName != null;
+            return this._indexName != null;
         }
 
         /// <summary>
-        /// The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
-        /// <c>RANGE</c>).
-        ///  
+        /// Gets and sets the property KeySchema. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 2</description>
-        ///     </item>
-        /// </list>
+        /// The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names      and key types (<code>HASH</code> or <code>RANGE</code>).
         /// </para>
         /// </summary>
         public List<KeySchemaElement> KeySchema
         {
-            get { return this.keySchema; }
-            set { this.keySchema = value; }
+            get { return this._keySchema; }
+            set { this._keySchema = value; }
         }
 
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this.keySchema.Count > 0;
+            return this._keySchema != null && this._keySchema.Count > 0; 
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
-        /// index key attributes, which are automatically projected.
-        ///  
+        /// Gets and sets the property Projection.
         /// </summary>
         public Projection Projection
         {
-            get { return this.projection; }
-            set { this.projection = value; }
+            get { return this._projection; }
+            set { this._projection = value; }
         }
 
         // Check to see if Projection property is set
         internal bool IsSetProjection()
         {
-            return this.projection != null;
+            return this._projection != null;
         }
 
         /// <summary>
-        /// Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i>
-        /// operation. For current minimum and maximum provisioned throughput values, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB Developer Guide.
-        ///  
+        /// Gets and sets the property ProvisionedThroughput.
         /// </summary>
         public ProvisionedThroughput ProvisionedThroughput
         {
-            get { return this.provisionedThroughput; }
-            set { this.provisionedThroughput = value; }
+            get { return this._provisionedThroughput; }
+            set { this._provisionedThroughput = value; }
         }
 
         // Check to see if ProvisionedThroughput property is set
         internal bool IsSetProvisionedThroughput()
         {
-            return this.provisionedThroughput != null;
+            return this._provisionedThroughput != null;
         }
+
     }
 }

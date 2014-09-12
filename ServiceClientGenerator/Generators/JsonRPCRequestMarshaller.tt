@@ -1,0 +1,97 @@
+﻿<#@ template language="C#" inherits="JsonRPCStructureMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+
+	AddCommonUsingStatements();
+#>
+using ThirdParty.Json.LitJson;
+
+namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+	/// <summary>
+	/// <#=this.Operation.Name #> Request Marshaller
+	/// </summary>       
+	public class <#=this.Operation.Name #>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name #>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((<#=this.Operation.Name#>Request)input);
+        }
+
+		public IRequest Marshall(<#=        this.Operation.Name #>Request publicRequest)
+		{
+			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
+<# if(!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
+	{#>
+			string target = "<#=this.Config.ServiceModel.TargetPrefix#>.<#=this.Operation.Name#>";
+			request.Headers["X-Amz-Target"] = target;
+<#
+	}
+	if(this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
+	{
+#>
+			request.Headers["Content-Type"] = "application/x-amz-json-<#=this.Config.ServiceModel.JsonVersion#>";
+<#
+	}
+#>
+			request.HttpMethod = "<#=this.Operation.HttpMethod #>";
+
+<#
+	var requestStructure = this.Operation.RequestStructure;
+	
+    // Generates code to add members of the request to the request being created by the marshaller
+	ProcessRequestUri(this.Operation);
+	ProcessUriMembers("publicRequest", this.Operation);
+	ProcessQueryStringMembers("publicRequest", this.Operation);
+	ProcessStreamingMember("publicRequest",this.Operation.RequestStreamingMember);	
+	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
+#>
+			request.ResourcePath = uriResourcePath;
+<#    
+	// Process any members which are marshalled as part of the request body
+	if(this.Operation.RequestHasBodyMembers)
+	{
+#>
+			using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+			{
+				JsonWriter writer = new JsonWriter(stringWriter);
+				writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+<#		
+		if(this.Operation.RequestPayloadMember!=null)	
+		{
+			//ProcessMembers(1, "publicRequest." + this.Operation.RequestPayloadMember.PropertyName, this.Operation.RequestPayloadMember.Shape.Members);
+            ProcessRequestPayloadMember(0, "publicRequest." + this.Operation.RequestPayloadMember.PropertyName, this.Operation.RequestPayloadMember.Shape);
+		}
+		else
+		{
+			ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
+		}
+#>
+		
+				writer.WriteObjectEnd();
+				string snippet = stringWriter.ToString();
+				request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+			}
+
+<#
+	}
+
+	// If there aren't any members that are marshalled as part of the body or streamed	
+	if(this.Operation.UseQueryString)
+	{
+#>
+			request.UseQueryString = true;
+<#	}
+#>
+
+			return request;
+		}
+
+
+	}
+}

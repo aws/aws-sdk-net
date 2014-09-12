@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DirectConnect.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DirectConnect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for RouteFilterPrefix Object
+    /// </summary>  
+    public class RouteFilterPrefixUnmarshaller : IUnmarshaller<RouteFilterPrefix, XmlUnmarshallerContext>, IUnmarshaller<RouteFilterPrefix, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RouteFilterPrefixUnmarshaller
-      /// </summary>
-      internal class RouteFilterPrefixUnmarshaller : IUnmarshaller<RouteFilterPrefix, XmlUnmarshallerContext>, IUnmarshaller<RouteFilterPrefix, JsonUnmarshallerContext>
-      {
         RouteFilterPrefix IUnmarshaller<RouteFilterPrefix, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public RouteFilterPrefix Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            RouteFilterPrefix routeFilterPrefix = new RouteFilterPrefix();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            RouteFilterPrefix unmarshalledObject = new RouteFilterPrefix();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("cidr", targetDepth))
-              {
-                routeFilterPrefix.Cidr = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("cidr", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return routeFilterPrefix;
+            return unmarshalledObject;
         }
 
-        private static RouteFilterPrefixUnmarshaller instance;
-        public static RouteFilterPrefixUnmarshaller GetInstance()
+
+        private static RouteFilterPrefixUnmarshaller _instance = new RouteFilterPrefixUnmarshaller();        
+
+        public static RouteFilterPrefixUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RouteFilterPrefixUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

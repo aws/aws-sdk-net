@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// TerminateJobFlows Request Marshaller
     /// </summary>       
-    public class TerminateJobFlowsRequestMarshaller : IMarshaller<IRequest, TerminateJobFlowsRequest> 
+    public class TerminateJobFlowsRequestMarshaller : IMarshaller<IRequest, TerminateJobFlowsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((TerminateJobFlowsRequest)input);
+        }
+
         public IRequest Marshall(TerminateJobFlowsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,15 +56,16 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetJobFlowIds())
                 {
-                    writer.WritePropertyName("JobFlowIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("JobFlowIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
                     {
-                        writer.Write(publicRequestJobFlowIdsListValue);
+                            context.Writer.Write(publicRequestJobFlowIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

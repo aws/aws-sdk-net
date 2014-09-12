@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.ElasticMapReduce.Model
         private string _key;
         private string _value;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public KeyValue() { }
+
+        /// <summary>
+        /// Instantiates KeyValue with the parameterized properties
+        /// </summary>
+        /// <param name="key">The unique identifier of a key value pair.</param>
+        /// <param name="value">The value part of the identified key.</param>
+        public KeyValue(string key, string value)
+        {
+            _key = key;
+            _value = value;
+        }
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -49,7 +68,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._key != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Value. 

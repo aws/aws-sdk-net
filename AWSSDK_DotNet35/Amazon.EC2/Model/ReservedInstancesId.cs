@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the ID of a Reserved Instance.</para>
+    /// Describes the ID of a Reserved Instance.
     /// </summary>
     public partial class ReservedInstancesId
     {
-        
-        private string id;
-
+        private string _id;
 
         /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
         /// The ID of the Reserved Instance.
-        ///  
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }

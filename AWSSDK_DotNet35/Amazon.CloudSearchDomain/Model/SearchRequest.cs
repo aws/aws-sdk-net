@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -66,7 +70,6 @@ namespace Amazon.CloudSearchDomain.Model
         private string _sort;
         private long? _start;
 
-
         /// <summary>
         /// Gets and sets the property Cursor. 
         /// <para>
@@ -95,7 +98,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._cursor != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Expr. 
         /// <para>
@@ -119,7 +121,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._expr != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Facet. 
@@ -181,7 +182,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._facet != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property FilterQuery. 
         /// <para>
@@ -210,7 +210,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._filterQuery != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Highlight. 
@@ -250,7 +249,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._highlight != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Partial. 
         /// <para>
@@ -276,7 +274,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._partial.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Query. 
@@ -305,7 +302,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._query != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property QueryOptions. 
@@ -404,7 +400,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._queryOptions != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property QueryParser. 
         /// <para>
@@ -450,7 +445,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._queryParser != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Return. 
         /// <para>
@@ -473,7 +467,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._return != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
@@ -491,7 +484,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._size.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Sort. 
@@ -522,7 +514,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._sort != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Start. 

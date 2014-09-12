@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IndexFieldStatus Unmarshaller
-     /// </summary>
-    internal class IndexFieldStatusUnmarshaller : IUnmarshaller<IndexFieldStatus, XmlUnmarshallerContext>, IUnmarshaller<IndexFieldStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IndexFieldStatus Object
+    /// </summary>  
+    public class IndexFieldStatusUnmarshaller : IUnmarshaller<IndexFieldStatus, XmlUnmarshallerContext>, IUnmarshaller<IndexFieldStatus, JsonUnmarshallerContext>
     {
-        public IndexFieldStatus Unmarshall(XmlUnmarshallerContext context) 
+        public IndexFieldStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            IndexFieldStatus indexFieldStatus = new IndexFieldStatus();
+            IndexFieldStatus unmarshalledObject = new IndexFieldStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Options", targetDepth))
                     {
-                        indexFieldStatus.Options = IndexFieldUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IndexFieldUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        indexFieldStatus.Status = OptionStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = OptionStatusUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return indexFieldStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return indexFieldStatus;
+            return unmarshalledObject;
         }
 
-        public IndexFieldStatus Unmarshall(JsonUnmarshallerContext context) 
+        public IndexFieldStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IndexFieldStatusUnmarshaller instance;
 
-        public static IndexFieldStatusUnmarshaller GetInstance() 
+        private static IndexFieldStatusUnmarshaller _instance = new IndexFieldStatusUnmarshaller();        
+
+        public static IndexFieldStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IndexFieldStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

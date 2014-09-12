@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,113 +12,116 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DeleteDBInstance operation
-    /// </summary>
-    internal class DeleteDBInstanceResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DeleteDBInstance operation
+    /// </summary>  
+    public class DeleteDBInstanceResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteDBInstanceResponse response = new DeleteDBInstanceResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                
                 if (context.IsStartElement)
-                {
-                    
+                {                    
                     if(context.TestExpression("DeleteDBInstanceResult", 2))
                     {
-                        UnmarshallResult(context,response);                    
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
-                
             }
-                
 
             return response;
         }
-        
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DeleteDBInstanceResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteDBInstanceResponse response)
         {
+            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DBInstance", targetDepth))
+
+                    if ( context.TestExpression("DBInstance", targetDepth))
                     {
-                        response.DBInstance = DBInstanceUnmarshaller.GetInstance().Unmarshall(context);
+                        response.DBInstance = DBInstanceUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
+                } 
+           }
+
+            return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceNotFound"))
             {
                 return new DBInstanceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
-            {
-                return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotQuotaExceeded"))
-            {
-                return new SnapshotQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBSnapshotAlreadyExists"))
             {
                 return new DBSnapshotAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
+            {
+                return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotQuotaExceeded"))
+            {
+                return new SnapshotQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DeleteDBInstanceResponseUnmarshaller instance;
+        private static DeleteDBInstanceResponseUnmarshaller _instance = new DeleteDBInstanceResponseUnmarshaller();        
 
-        public static DeleteDBInstanceResponseUnmarshaller GetInstance()
+        internal static DeleteDBInstanceResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DeleteDBInstanceResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DeleteDBInstanceResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

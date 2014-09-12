@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WriteRequest Object
+    /// </summary>  
+    public class WriteRequestUnmarshaller : IUnmarshaller<WriteRequest, XmlUnmarshallerContext>, IUnmarshaller<WriteRequest, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WriteRequestUnmarshaller
-      /// </summary>
-      internal class WriteRequestUnmarshaller : IUnmarshaller<WriteRequest, XmlUnmarshallerContext>, IUnmarshaller<WriteRequest, JsonUnmarshallerContext>
-      {
         WriteRequest IUnmarshaller<WriteRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WriteRequest Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WriteRequest writeRequest = new WriteRequest();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WriteRequest unmarshalledObject = new WriteRequest();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("PutRequest", targetDepth))
-              {
-                writeRequest.PutRequest = PutRequestUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DeleteRequest", targetDepth))
-              {
-                writeRequest.DeleteRequest = DeleteRequestUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("DeleteRequest", targetDepth))
+                {
+                    var unmarshaller = DeleteRequestUnmarshaller.Instance;
+                    unmarshalledObject.DeleteRequest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PutRequest", targetDepth))
+                {
+                    var unmarshaller = PutRequestUnmarshaller.Instance;
+                    unmarshalledObject.PutRequest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return writeRequest;
+            return unmarshalledObject;
         }
 
-        private static WriteRequestUnmarshaller instance;
-        public static WriteRequestUnmarshaller GetInstance()
+
+        private static WriteRequestUnmarshaller _instance = new WriteRequestUnmarshaller();        
+
+        public static WriteRequestUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WriteRequestUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNetworkAcl operation.
-    /// <para>Deletes the specified network ACL. You can't delete the ACL if it's associated with any subnets. You can't delete the default network
-    /// ACL.</para>
+    /// Deletes the specified network ACL. You can't delete the ACL if it's associated with
+    /// any subnets. You can't delete the default network ACL.
     /// </summary>
     public partial class DeleteNetworkAclRequest : AmazonEC2Request
     {
-        private string networkAclId;
-
+        private string _networkAclId;
 
         /// <summary>
+        /// Gets and sets the property NetworkAclId. 
+        /// <para>
         /// The ID of the network ACL.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkAclId
         {
-            get { return this.networkAclId; }
-            set { this.networkAclId = value; }
+            get { return this._networkAclId; }
+            set { this._networkAclId = value; }
         }
 
         // Check to see if NetworkAclId property is set
         internal bool IsSetNetworkAclId()
         {
-            return this.networkAclId != null;
+            return this._networkAclId != null;
         }
 
     }
 }
-    

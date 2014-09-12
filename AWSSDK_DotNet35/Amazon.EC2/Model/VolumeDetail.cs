@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an Amazon EBS volume.</para>
+    /// Describes an Amazon EBS volume.
     /// </summary>
     public partial class VolumeDetail
     {
-        
-        private long? size;
-
+        private long? _size;
 
         /// <summary>
-        /// The size of the volume.
-        ///  
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The size of the volume, in GiB.
+        /// </para>
         /// </summary>
         public long Size
         {
-            get { return this.size ?? default(long); }
-            set { this.size = value; }
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
         }
 
         // Check to see if Size property is set
         internal bool IsSetSize()
         {
-            return this.size.HasValue;
+            return this._size.HasValue; 
         }
+
     }
 }

@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DefineSuggester response and response metadata.
+    /// Configuration for accessing Amazon DefineSuggester service
     /// </summary>
     public partial class DefineSuggesterResponse : DefineSuggesterResult
     {
         /// <summary>
         /// Gets and sets the DefineSuggesterResult property.
-        /// The result of a DefineSuggester request. Contains the status of the newly-configured suggester.
+        /// Represents the output of a DefineSuggester operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DefineSuggesterResult class are now available on the DefineSuggesterResponse class. You should use the properties on DefineSuggesterResponse instead of accessing them through DefineSuggesterResult.")]
         public DefineSuggesterResult DefineSuggesterResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

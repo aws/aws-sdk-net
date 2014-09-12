@@ -12,30 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Domain Names Request Marshaller
+    /// ListDomainNames Request Marshaller
     /// </summary>       
-    public class ListDomainNamesRequestMarshaller : IMarshaller<IRequest, ListDomainNamesRequest>
+    public class ListDomainNamesRequestMarshaller : IMarshaller<IRequest, ListDomainNamesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ListDomainNamesRequest listDomainNamesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(listDomainNamesRequest, "AmazonCloudSearch");
+            return this.Marshall((ListDomainNamesRequest)input);
+        }
+    
+        public IRequest Marshall(ListDomainNamesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "ListDomainNames");
             request.Parameters.Add("Version", "2013-01-01");
 
+            if(publicRequest != null)
+            {
+            }
             return request;
         }
     }

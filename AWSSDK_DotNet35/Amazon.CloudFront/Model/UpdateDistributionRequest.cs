@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,23 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private string _ifMatch;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateDistributionRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateDistributionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="id">The distribution's id.</param>
+        /// <param name="ifMatch">The value of the ETag header you received when retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="distributionConfig">The distribution's configuration information.</param>
+        public UpdateDistributionRequest(string id, string ifMatch, DistributionConfig distributionConfig)
+        {
+            _id = id;
+            _ifMatch = ifMatch;
+            _distributionConfig = distributionConfig;
+        }
 
         /// <summary>
         /// Gets and sets the property DistributionConfig. The distribution's configuration information.
@@ -49,7 +70,6 @@ namespace Amazon.CloudFront.Model
             return this._distributionConfig != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. The distribution's id.
         /// </summary>
@@ -64,7 +84,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property IfMatch. The value of the ETag header you received when

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,6 +47,23 @@ namespace Amazon.IdentityManagement.Model
         private string _privateKey;
         private string _serverCertificateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UploadServerCertificateRequest() { }
+
+        /// <summary>
+        /// Instantiates UploadServerCertificateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="serverCertificateName">The name for the server certificate. Do not include the path in this value.</param>
+        /// <param name="certificateBody">The contents of the public key certificate in PEM-encoded format.</param>
+        /// <param name="privateKey">The contents of the private key in PEM-encoded format.</param>
+        public UploadServerCertificateRequest(string serverCertificateName, string certificateBody, string privateKey)
+        {
+            _serverCertificateName = serverCertificateName;
+            _certificateBody = certificateBody;
+            _privateKey = privateKey;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateBody. 
@@ -62,7 +83,6 @@ namespace Amazon.IdentityManagement.Model
             return this._certificateBody != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
@@ -81,7 +101,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._certificateChain != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -106,7 +125,6 @@ namespace Amazon.IdentityManagement.Model
             return this._path != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PrivateKey. 
         /// <para>
@@ -124,7 +142,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._privateKey != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ServerCertificateName. 

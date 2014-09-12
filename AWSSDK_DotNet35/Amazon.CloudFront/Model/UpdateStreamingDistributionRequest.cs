@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,23 @@ namespace Amazon.CloudFront.Model
         private string _ifMatch;
         private StreamingDistributionConfig _streamingDistributionConfig;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateStreamingDistributionRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateStreamingDistributionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="id">The streaming distribution's id.</param>
+        /// <param name="ifMatch">The value of the ETag header you received when retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="streamingDistributionConfig">The streaming distribution's configuration information.</param>
+        public UpdateStreamingDistributionRequest(string id, string ifMatch, StreamingDistributionConfig streamingDistributionConfig)
+        {
+            _id = id;
+            _ifMatch = ifMatch;
+            _streamingDistributionConfig = streamingDistributionConfig;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. The streaming distribution's id.
@@ -49,7 +70,6 @@ namespace Amazon.CloudFront.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property IfMatch. The value of the ETag header you received when
         /// retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.
@@ -65,7 +85,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._ifMatch != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's

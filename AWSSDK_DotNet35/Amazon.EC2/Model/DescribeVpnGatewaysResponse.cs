@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeVpnGateways response and response metadata.
+    /// Configuration for accessing Amazon DescribeVpnGateways service
     /// </summary>
     public partial class DescribeVpnGatewaysResponse : DescribeVpnGatewaysResult
     {
         /// <summary>
         /// Gets and sets the DescribeVpnGatewaysResult property.
-        /// 
+        /// Represents the output of a DescribeVpnGateways operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeVpnGatewaysResult class are now available on the DescribeVpnGatewaysResponse class. You should use the properties on DescribeVpnGatewaysResponse instead of accessing them through DescribeVpnGatewaysResult.")]
         public DescribeVpnGatewaysResult DescribeVpnGatewaysResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

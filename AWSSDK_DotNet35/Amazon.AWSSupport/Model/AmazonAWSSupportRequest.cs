@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.AWSSupport

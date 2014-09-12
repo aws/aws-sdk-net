@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateDomainNameservers Request Marshaller
     /// </summary>       
-    public class UpdateDomainNameserversRequestMarshaller : IMarshaller<IRequest, UpdateDomainNameserversRequest> 
+    public class UpdateDomainNameserversRequestMarshaller : IMarshaller<IRequest, UpdateDomainNameserversRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateDomainNameserversRequest)input);
+        }
+
         public IRequest Marshall(UpdateDomainNameserversRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
@@ -47,39 +56,27 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDomainName())
                 {
-                    writer.WritePropertyName("DomainName");
-                    writer.Write(publicRequest.DomainName);
+                    context.Writer.WritePropertyName("DomainName");
+                    context.Writer.Write(publicRequest.DomainName);
                 }
 
                 if(publicRequest.IsSetNameservers())
                 {
-                    writer.WritePropertyName("Nameservers");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Nameservers");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestNameserversListValue in publicRequest.Nameservers)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestNameserversListValue.IsSetGlueIps())
-                        {
-                            writer.WritePropertyName("GlueIps");
-                            writer.WriteArrayStart();
-                            foreach(var publicRequestNameserversListValueGlueIpsListValue in publicRequestNameserversListValue.GlueIps)
-                            {
-                                writer.Write(publicRequestNameserversListValueGlueIpsListValue);
-                            }
-                            writer.WriteArrayEnd();
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestNameserversListValue.IsSetName())
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(publicRequestNameserversListValue.Name);
-                        }
+                        var marshaller = NameserverMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNameserversListValue, context);
 
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

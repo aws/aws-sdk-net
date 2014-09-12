@@ -12,88 +12,102 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a block device mapping entry.</para>
+    /// Describes a block device mapping entry.
     /// </summary>
     public partial class InstanceBlockDeviceMappingSpecification
     {
-        
-        private string deviceName;
-        private EbsInstanceBlockDeviceSpecification ebs;
-        private string virtualName;
-        private string noDevice;
-
+        private string _deviceName;
+        private EbsInstanceBlockDeviceSpecification _ebs;
+        private string _noDevice;
+        private string _virtualName;
 
         /// <summary>
+        /// Gets and sets the property DeviceName. 
+        /// <para>
         /// The device name exposed to the instance (for example, <filename>/dev/sdh</filename>).
-        ///  
+        /// </para>
         /// </summary>
         public string DeviceName
         {
-            get { return this.deviceName; }
-            set { this.deviceName = value; }
+            get { return this._deviceName; }
+            set { this._deviceName = value; }
         }
 
         // Check to see if DeviceName property is set
         internal bool IsSetDeviceName()
         {
-            return this.deviceName != null;
+            return this._deviceName != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Ebs. 
+        /// <para>
         /// Parameters used to automatically set up Amazon EBS volumes when the instance is launched.
-        ///  
+        /// </para>
         /// </summary>
         public EbsInstanceBlockDeviceSpecification Ebs
         {
-            get { return this.ebs; }
-            set { this.ebs = value; }
+            get { return this._ebs; }
+            set { this._ebs = value; }
         }
 
         // Check to see if Ebs property is set
         internal bool IsSetEbs()
         {
-            return this.ebs != null;
+            return this._ebs != null;
         }
 
         /// <summary>
-        /// The virtual device name.
-        ///  
-        /// </summary>
-        public string VirtualName
-        {
-            get { return this.virtualName; }
-            set { this.virtualName = value; }
-        }
-
-        // Check to see if VirtualName property is set
-        internal bool IsSetVirtualName()
-        {
-            return this.virtualName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property NoDevice. 
+        /// <para>
         /// suppress the specified device included in the block device mapping.
-        ///  
+        /// </para>
         /// </summary>
         public string NoDevice
         {
-            get { return this.noDevice; }
-            set { this.noDevice = value; }
+            get { return this._noDevice; }
+            set { this._noDevice = value; }
         }
 
         // Check to see if NoDevice property is set
         internal bool IsSetNoDevice()
         {
-            return this.noDevice != null;
+            return this._noDevice != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property VirtualName. 
+        /// <para>
+        /// The virtual device name.
+        /// </para>
+        /// </summary>
+        public string VirtualName
+        {
+            get { return this._virtualName; }
+            set { this._virtualName = value; }
+        }
+
+        // Check to see if VirtualName property is set
+        internal bool IsSetVirtualName()
+        {
+            return this._virtualName != null;
+        }
+
     }
 }

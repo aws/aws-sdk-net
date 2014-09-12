@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,68 +29,93 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedInstancesOffering operation.
-    /// <para>Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved Instances, you obtain a capacity reservation for a
-    /// certain instance configuration over a specified period of time. You pay a lower usage rate than with On-Demand instances for the time that
-    /// you actually use the capacity reservation.</para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
+    /// Instances, you obtain a capacity reservation for a certain instance configuration
+    /// over a specified period of time. You pay a lower usage rate than with On-Demand instances
+    /// for the time that you actually use the capacity reservation.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+    /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PurchaseReservedInstancesOfferingRequest : AmazonEC2Request
     {
-        private string reservedInstancesOfferingId;
-        private int? instanceCount;
-        private ReservedInstanceLimitPrice limitPrice;
-
+        private int? _instanceCount;
+        private ReservedInstanceLimitPrice _limitPrice;
+        private string _reservedInstancesOfferingId;
 
         /// <summary>
-        /// The ID of the Reserved Instance offering to purchase.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string ReservedInstancesOfferingId
-        {
-            get { return this.reservedInstancesOfferingId; }
-            set { this.reservedInstancesOfferingId = value; }
-        }
+        public PurchaseReservedInstancesOfferingRequest() { }
 
-        // Check to see if ReservedInstancesOfferingId property is set
-        internal bool IsSetReservedInstancesOfferingId()
+        /// <summary>
+        /// Instantiates PurchaseReservedInstancesOfferingRequest with the parameterized properties
+        /// </summary>
+        /// <param name="reservedInstancesOfferingId">The ID of the Reserved Instance offering to purchase.</param>
+        /// <param name="instanceCount">The number of Reserved Instances to purchase.</param>
+        public PurchaseReservedInstancesOfferingRequest(string reservedInstancesOfferingId, int instanceCount)
         {
-            return this.reservedInstancesOfferingId != null;
+            _reservedInstancesOfferingId = reservedInstancesOfferingId;
+            _instanceCount = instanceCount;
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceCount. 
+        /// <para>
         /// The number of Reserved Instances to purchase.
-        ///  
+        /// </para>
         /// </summary>
         public int InstanceCount
         {
-            get { return this.instanceCount ?? default(int); }
-            set { this.instanceCount = value; }
+            get { return this._instanceCount.GetValueOrDefault(); }
+            set { this._instanceCount = value; }
         }
 
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;
+            return this._instanceCount.HasValue; 
         }
 
         /// <summary>
-        /// Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at
-        /// unexpected prices.
-        ///  
+        /// Gets and sets the property LimitPrice. 
+        /// <para>
+        /// Specified for Reserved Instance Marketplace offerings to limit the total order and
+        /// ensure that the Reserved Instances are not purchased at unexpected prices.
+        /// </para>
         /// </summary>
         public ReservedInstanceLimitPrice LimitPrice
         {
-            get { return this.limitPrice; }
-            set { this.limitPrice = value; }
+            get { return this._limitPrice; }
+            set { this._limitPrice = value; }
         }
 
         // Check to see if LimitPrice property is set
         internal bool IsSetLimitPrice()
         {
-            return this.limitPrice != null;
+            return this._limitPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesOfferingId. 
+        /// <para>
+        /// The ID of the Reserved Instance offering to purchase.
+        /// </para>
+        /// </summary>
+        public string ReservedInstancesOfferingId
+        {
+            get { return this._reservedInstancesOfferingId; }
+            set { this._reservedInstancesOfferingId = value; }
+        }
+
+        // Check to see if ReservedInstancesOfferingId property is set
+        internal bool IsSetReservedInstancesOfferingId()
+        {
+            return this._reservedInstancesOfferingId != null;
         }
 
     }
 }
-    

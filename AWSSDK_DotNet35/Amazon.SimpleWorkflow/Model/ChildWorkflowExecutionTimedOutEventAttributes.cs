@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,116 +12,126 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>ChildWorkflowExecutionTimedOut</c> event. </para>
+    /// Provides details of the <code>ChildWorkflowExecutionTimedOut</code> event.
     /// </summary>
-    public class ChildWorkflowExecutionTimedOutEventAttributes
+    public partial class ChildWorkflowExecutionTimedOutEventAttributes
     {
-        
-        private WorkflowExecution workflowExecution;
-        private WorkflowType workflowType;
-        private WorkflowExecutionTimeoutType timeoutType;
-        private long? initiatedEventId;
-        private long? startedEventId;
+        private long? _initiatedEventId;
+        private long? _startedEventId;
+        private WorkflowExecutionTimeoutType _timeoutType;
+        private WorkflowExecution _workflowExecution;
+        private WorkflowType _workflowType;
 
         /// <summary>
-        /// The child workflow execution that timed out.
-        ///  
-        /// </summary>
-        public WorkflowExecution WorkflowExecution
-        {
-            get { return this.workflowExecution; }
-            set { this.workflowExecution = value; }
-        }
-
-        // Check to see if WorkflowExecution property is set
-        internal bool IsSetWorkflowExecution()
-        {
-            return this.workflowExecution != null;
-        }
-
-        /// <summary>
-        /// The type of the child workflow execution.
-        ///  
-        /// </summary>
-        public WorkflowType WorkflowType
-        {
-            get { return this.workflowType; }
-            set { this.workflowType = value; }
-        }
-
-        // Check to see if WorkflowType property is set
-        internal bool IsSetWorkflowType()
-        {
-            return this.workflowType != null;
-        }
-
-        /// <summary>
-        /// The type of the timeout that caused the child workflow execution to time out.
-        ///  
+        /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>START_TO_CLOSE</description>
-        ///     </item>
-        /// </list>
+        ///  The id of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
+        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child
+        /// workflow execution. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event. 
         /// </para>
-        /// </summary>
-        public WorkflowExecutionTimeoutType TimeoutType
-        {
-            get { return this.timeoutType; }
-            set { this.timeoutType = value; }
-        }
-
-        // Check to see if TimeoutType property is set
-        internal bool IsSetTimeoutType()
-        {
-            return this.timeoutType != null;
-        }
-
-        /// <summary>
-        /// The id of the <c>StartChildWorkflowExecutionInitiated</c> event corresponding to the <c>StartChildWorkflowExecution</c> <a>Decision</a> to
-        /// start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up
-        /// to this event.
-        ///  
         /// </summary>
         public long InitiatedEventId
         {
-            get { return this.initiatedEventId ?? default(long); }
-            set { this.initiatedEventId = value; }
+            get { return this._initiatedEventId.GetValueOrDefault(); }
+            set { this._initiatedEventId = value; }
         }
 
         // Check to see if InitiatedEventId property is set
         internal bool IsSetInitiatedEventId()
         {
-            return this.initiatedEventId.HasValue;
+            return this._initiatedEventId.HasValue; 
         }
 
         /// <summary>
-        /// The Id of the <c>ChildWorkflowExecutionStarted</c> event recorded when this child workflow execution was started. This information can be
-        /// useful for diagnosing problems by tracing back the chain of events leading up to this event.
-        ///  
+        /// Gets and sets the property StartedEventId. 
+        /// <para>
+        ///  The Id of the <code>ChildWorkflowExecutionStarted</code> event recorded when this
+        /// child workflow execution was started. This information can be useful for diagnosing
+        /// problems by tracing back the chain of events leading up to this event. 
+        /// </para>
         /// </summary>
         public long StartedEventId
         {
-            get { return this.startedEventId ?? default(long); }
-            set { this.startedEventId = value; }
+            get { return this._startedEventId.GetValueOrDefault(); }
+            set { this._startedEventId = value; }
         }
 
         // Check to see if StartedEventId property is set
         internal bool IsSetStartedEventId()
         {
-            return this.startedEventId.HasValue;
+            return this._startedEventId.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutType. 
+        /// <para>
+        ///  The type of the timeout that caused the child workflow execution to time out. 
+        /// </para>
+        /// </summary>
+        public WorkflowExecutionTimeoutType TimeoutType
+        {
+            get { return this._timeoutType; }
+            set { this._timeoutType = value; }
+        }
+
+        // Check to see if TimeoutType property is set
+        internal bool IsSetTimeoutType()
+        {
+            return this._timeoutType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowExecution. 
+        /// <para>
+        ///  The child workflow execution that timed out. 
+        /// </para>
+        /// </summary>
+        public WorkflowExecution WorkflowExecution
+        {
+            get { return this._workflowExecution; }
+            set { this._workflowExecution = value; }
+        }
+
+        // Check to see if WorkflowExecution property is set
+        internal bool IsSetWorkflowExecution()
+        {
+            return this._workflowExecution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowType. 
+        /// <para>
+        ///  The type of the child workflow execution. 
+        /// </para>
+        /// </summary>
+        public WorkflowType WorkflowType
+        {
+            get { return this._workflowType; }
+            set { this._workflowType = value; }
+        }
+
+        // Check to see if WorkflowType property is set
+        internal bool IsSetWorkflowType()
+        {
+            return this._workflowType != null;
+        }
+
     }
 }

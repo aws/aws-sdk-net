@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,58 +12,71 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe D B Engine Versions Request Marshaller
+    /// DescribeDBEngineVersions Request Marshaller
     /// </summary>       
-    public class DescribeDBEngineVersionsRequestMarshaller : IMarshaller<IRequest, DescribeDBEngineVersionsRequest>
+    public class DescribeDBEngineVersionsRequestMarshaller : IMarshaller<IRequest, DescribeDBEngineVersionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeDBEngineVersionsRequest, "AmazonRDS");
+            return this.Marshall((DescribeDBEngineVersionsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeDBEngineVersionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeDBEngineVersions");
             request.Parameters.Add("Version", "2013-09-09");
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetEngine())
-            {
-                request.Parameters.Add("Engine", StringUtils.FromString(describeDBEngineVersionsRequest.Engine));
-            }
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetEngineVersion())
-            {
-                request.Parameters.Add("EngineVersion", StringUtils.FromString(describeDBEngineVersionsRequest.EngineVersion));
-            }
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetDBParameterGroupFamily())
-            {
-                request.Parameters.Add("DBParameterGroupFamily", StringUtils.FromString(describeDBEngineVersionsRequest.DBParameterGroupFamily));
-            }
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeDBEngineVersionsRequest.MaxRecords));
-            }
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeDBEngineVersionsRequest.Marker));
-            }
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetDefaultOnly())
-            {
-                request.Parameters.Add("DefaultOnly", StringUtils.FromBool(describeDBEngineVersionsRequest.DefaultOnly));
-            }
-            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetListSupportedCharacterSets())
-            {
-                request.Parameters.Add("ListSupportedCharacterSets", StringUtils.FromBool(describeDBEngineVersionsRequest.ListSupportedCharacterSets));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDBParameterGroupFamily())
+                {
+                    request.Parameters.Add("DBParameterGroupFamily", StringUtils.FromString(publicRequest.DBParameterGroupFamily));
+                }
+                if(publicRequest.IsSetDefaultOnly())
+                {
+                    request.Parameters.Add("DefaultOnly", StringUtils.FromBool(publicRequest.DefaultOnly));
+                }
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
+                }
+                if(publicRequest.IsSetListSupportedCharacterSets())
+                {
+                    request.Parameters.Add("ListSupportedCharacterSets", StringUtils.FromBool(publicRequest.ListSupportedCharacterSets));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

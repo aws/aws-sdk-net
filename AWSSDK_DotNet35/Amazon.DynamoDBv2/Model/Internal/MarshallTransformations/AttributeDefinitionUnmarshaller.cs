@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AttributeDefinition Object
+    /// </summary>  
+    public class AttributeDefinitionUnmarshaller : IUnmarshaller<AttributeDefinition, XmlUnmarshallerContext>, IUnmarshaller<AttributeDefinition, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// AttributeDefinitionUnmarshaller
-      /// </summary>
-      internal class AttributeDefinitionUnmarshaller : IUnmarshaller<AttributeDefinition, XmlUnmarshallerContext>, IUnmarshaller<AttributeDefinition, JsonUnmarshallerContext>
-      {
         AttributeDefinition IUnmarshaller<AttributeDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public AttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            AttributeDefinition attributeDefinition = new AttributeDefinition();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            AttributeDefinition unmarshalledObject = new AttributeDefinition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("AttributeName", targetDepth))
-              {
-                attributeDefinition.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AttributeType", targetDepth))
-              {
-                attributeDefinition.AttributeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("AttributeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttributeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AttributeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttributeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return attributeDefinition;
+            return unmarshalledObject;
         }
 
-        private static AttributeDefinitionUnmarshaller instance;
-        public static AttributeDefinitionUnmarshaller GetInstance()
+
+        private static AttributeDefinitionUnmarshaller _instance = new AttributeDefinitionUnmarshaller();        
+
+        public static AttributeDefinitionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new AttributeDefinitionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

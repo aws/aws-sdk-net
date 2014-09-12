@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,38 +29,30 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheck operation.
-    /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2013-04-01/healthcheck/health check ID </c> resource. </para>
+    /// To retrieve the health check, send a <code>GET</code> request to the <code>2013-04-01/healthcheck/<i>health
+    /// check ID</i></code> resource.
     /// </summary>
     public partial class GetHealthCheckRequest : AmazonRoute53Request
     {
-        private string healthCheckId;
-
+        private string _healthCheckId;
 
         /// <summary>
-        /// The ID of the health check to retrieve.
-        ///  
+        /// Gets and sets the property HealthCheckId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 64</description>
-        ///     </item>
-        /// </list>
+        /// The ID of the health check to retrieve.
         /// </para>
         /// </summary>
         public string HealthCheckId
         {
-            get { return this.healthCheckId; }
-            set { this.healthCheckId = value; }
+            get { return this._healthCheckId; }
+            set { this._healthCheckId = value; }
         }
 
         // Check to see if HealthCheckId property is set
         internal bool IsSetHealthCheckId()
         {
-            return this.healthCheckId != null;
+            return this._healthCheckId != null;
         }
 
     }
 }
-    

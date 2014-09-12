@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,6 +46,25 @@ namespace Amazon.IdentityManagement.Model
         private string _serverCertificateName;
         private DateTime? _uploadDate;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ServerCertificateMetadata() { }
+
+        /// <summary>
+        /// Instantiates ServerCertificateMetadata with the parameterized properties
+        /// </summary>
+        /// <param name="path">Path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="serverCertificateName">The name that identifies the server certificate.</param>
+        /// <param name="serverCertificateId">The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="arn">The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        public ServerCertificateMetadata(string path, string serverCertificateName, string serverCertificateId, string arn)
+        {
+            _path = path;
+            _serverCertificateName = serverCertificateName;
+            _serverCertificateId = serverCertificateId;
+            _arn = arn;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -63,7 +86,6 @@ namespace Amazon.IdentityManagement.Model
             return this._arn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Expiration. 
         /// <para>
@@ -81,7 +103,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._expiration.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -101,7 +122,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._path != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ServerCertificateId. 
@@ -123,7 +143,6 @@ namespace Amazon.IdentityManagement.Model
             return this._serverCertificateId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ServerCertificateName. 
         /// <para>
@@ -141,7 +160,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._serverCertificateName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UploadDate. 

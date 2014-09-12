@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -114,6 +118,19 @@ namespace Amazon.SecurityToken.Model
         private string _name;
         private string _policy;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetFederationTokenRequest() { }
+
+        /// <summary>
+        /// Instantiates GetFederationTokenRequest with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the federated user. The name is used as an identifier for the temporary security   credentials (such as <code>Bob</code>). For example, you can reference the federated user name   in a resource-based policy, such as in an Amazon S3 bucket policy. </param>
+        public GetFederationTokenRequest(string name)
+        {
+            _name = name;
+        }
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
@@ -138,7 +155,6 @@ namespace Amazon.SecurityToken.Model
             return this._durationSeconds.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -159,7 +175,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Policy. 

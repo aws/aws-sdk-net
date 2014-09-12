@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.Redshift.Model
         private List<Subnet> _subnets = new List<Subnet>();
         private string _vpcId;
 
-
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSubnetGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -71,7 +73,6 @@ namespace Amazon.Redshift.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SubnetGroupStatus. 
@@ -92,7 +93,6 @@ namespace Amazon.Redshift.Model
             return this._subnetGroupStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
@@ -110,7 +110,6 @@ namespace Amazon.Redshift.Model
         {
             return this._subnets != null && this._subnets.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcId. 

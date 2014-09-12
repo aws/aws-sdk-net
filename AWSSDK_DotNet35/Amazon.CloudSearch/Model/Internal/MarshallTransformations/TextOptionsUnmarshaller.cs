@@ -12,93 +12,103 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   TextOptions Unmarshaller
-     /// </summary>
-    internal class TextOptionsUnmarshaller : IUnmarshaller<TextOptions, XmlUnmarshallerContext>, IUnmarshaller<TextOptions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for TextOptions Object
+    /// </summary>  
+    public class TextOptionsUnmarshaller : IUnmarshaller<TextOptions, XmlUnmarshallerContext>, IUnmarshaller<TextOptions, JsonUnmarshallerContext>
     {
-        public TextOptions Unmarshall(XmlUnmarshallerContext context) 
+        public TextOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            TextOptions textOptions = new TextOptions();
+            TextOptions unmarshalledObject = new TextOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AnalysisScheme", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AnalysisScheme = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        textOptions.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SourceField", targetDepth))
-                    {
-                        textOptions.SourceField = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ReturnEnabled", targetDepth))
-                    {
-                        textOptions.ReturnEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SortEnabled", targetDepth))
-                    {
-                        textOptions.SortEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HighlightEnabled", targetDepth))
                     {
-                        textOptions.HighlightEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.HighlightEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AnalysisScheme", targetDepth))
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
                     {
-                        textOptions.AnalysisScheme = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ReturnEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SortEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SortEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceField", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceField = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return textOptions;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return textOptions;
+            return unmarshalledObject;
         }
 
-        public TextOptions Unmarshall(JsonUnmarshallerContext context) 
+        public TextOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static TextOptionsUnmarshaller instance;
 
-        public static TextOptionsUnmarshaller GetInstance() 
+        private static TextOptionsUnmarshaller _instance = new TextOptionsUnmarshaller();        
+
+        public static TextOptionsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TextOptionsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

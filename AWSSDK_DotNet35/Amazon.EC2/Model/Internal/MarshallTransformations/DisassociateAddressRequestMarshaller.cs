@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Disassociate Address Request Marshaller
+    /// DisassociateAddress Request Marshaller
     /// </summary>       
-    public class DisassociateAddressRequestMarshaller : IMarshaller<IRequest, DisassociateAddressRequest>
+    public class DisassociateAddressRequestMarshaller : IMarshaller<IRequest, DisassociateAddressRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DisassociateAddressRequest disassociateAddressRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(disassociateAddressRequest, "AmazonEC2");
+            return this.Marshall((DisassociateAddressRequest)input);
+        }
+    
+        public IRequest Marshall(DisassociateAddressRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DisassociateAddress");
             request.Parameters.Add("Version", "2014-06-15");
-            if (disassociateAddressRequest != null && disassociateAddressRequest.IsSetPublicIp())
-            {
-                request.Parameters.Add("PublicIp", StringUtils.FromString(disassociateAddressRequest.PublicIp));
-            }
-            if (disassociateAddressRequest != null && disassociateAddressRequest.IsSetAssociationId())
-            {
-                request.Parameters.Add("AssociationId", StringUtils.FromString(disassociateAddressRequest.AssociationId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAssociationId())
+                {
+                    request.Parameters.Add("AssociationId", StringUtils.FromString(publicRequest.AssociationId));
+                }
+                if(publicRequest.IsSetPublicIp())
+                {
+                    request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
+                }
+            }
             return request;
         }
     }

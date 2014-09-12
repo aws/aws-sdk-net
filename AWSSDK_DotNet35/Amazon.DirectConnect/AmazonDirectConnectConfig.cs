@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,17 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.DirectConnect
 {
-
     /// <summary>
-    /// Configuration for accessing AmazonDirectConnect service
+    /// Configuration for accessing Amazon DirectConnect service
     /// </summary>
-    public class AmazonDirectConnectConfig : ClientConfig
+    public partial class AmazonDirectConnectConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
@@ -39,9 +45,7 @@ namespace Amazon.DirectConnect
         {
             get
             {
-                
                 return "directconnect";
-                    
             }
         }
 
@@ -57,5 +61,3 @@ namespace Amazon.DirectConnect
         }
     }
 }
-
-    

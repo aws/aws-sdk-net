@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
+
 using System;
 
 namespace Amazon.ElasticBeanstalk.Model

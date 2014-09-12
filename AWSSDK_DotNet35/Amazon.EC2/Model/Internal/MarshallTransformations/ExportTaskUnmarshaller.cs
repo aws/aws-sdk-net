@@ -12,93 +12,103 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ExportTask Unmarshaller
-     /// </summary>
-    internal class ExportTaskUnmarshaller : IUnmarshaller<ExportTask, XmlUnmarshallerContext>, IUnmarshaller<ExportTask, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ExportTask Object
+    /// </summary>  
+    public class ExportTaskUnmarshaller : IUnmarshaller<ExportTask, XmlUnmarshallerContext>, IUnmarshaller<ExportTask, JsonUnmarshallerContext>
     {
-        public ExportTask Unmarshall(XmlUnmarshallerContext context) 
+        public ExportTask Unmarshall(XmlUnmarshallerContext context)
         {
-            ExportTask exportTask = new ExportTask();
+            ExportTask unmarshalledObject = new ExportTask();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("exportTaskId", targetDepth))
-                    {
-                        exportTask.ExportTaskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("description", targetDepth))
                     {
-                        exportTask.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("state", targetDepth))
+                    if (context.TestExpression("exportTaskId", targetDepth))
                     {
-                        exportTask.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("statusMessage", targetDepth))
-                    {
-                        exportTask.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceExport", targetDepth))
-                    {
-                        exportTask.InstanceExportDetails = InstanceExportDetailsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExportTaskId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("exportToS3", targetDepth))
                     {
-                        exportTask.ExportToS3Task = ExportToS3TaskUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ExportToS3TaskUnmarshaller.Instance;
+                        unmarshalledObject.ExportToS3Task = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceExport", targetDepth))
+                    {
+                        var unmarshaller = InstanceExportDetailsUnmarshaller.Instance;
+                        unmarshalledObject.InstanceExportDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("statusMessage", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return exportTask;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return exportTask;
+            return unmarshalledObject;
         }
 
-        public ExportTask Unmarshall(JsonUnmarshallerContext context) 
+        public ExportTask Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ExportTaskUnmarshaller instance;
 
-        public static ExportTaskUnmarshaller GetInstance() 
+        private static ExportTaskUnmarshaller _instance = new ExportTaskUnmarshaller();        
+
+        public static ExportTaskUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ExportTaskUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

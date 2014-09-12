@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,47 +29,49 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignPrivateIpAddresses operation.
-    /// <para>Unassigns one or more secondary private IP addresses from a network interface.</para>
+    /// Unassigns one or more secondary private IP addresses from a network interface.
     /// </summary>
     public partial class UnassignPrivateIpAddressesRequest : AmazonEC2Request
     {
-        private string networkInterfaceId;
-        private List<string> privateIpAddresses = new List<string>();
-
+        private string _networkInterfaceId;
+        private List<string> _privateIpAddresses = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
         /// The ID of the network interface.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkInterfaceId
         {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
         }
 
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;
+            return this._networkInterfaceId != null;
         }
 
         /// <summary>
-        /// The secondary private IP addresses to unassign from the network interface. You can specify this option multiple times to unassign more than
-        /// one IP address.
-        ///  
+        /// Gets and sets the property PrivateIpAddresses. 
+        /// <para>
+        /// The secondary private IP addresses to unassign from the network interface. You can
+        /// specify this option multiple times to unassign more than one IP address.
+        /// </para>
         /// </summary>
         public List<string> PrivateIpAddresses
         {
-            get { return this.privateIpAddresses; }
-            set { this.privateIpAddresses = value; }
+            get { return this._privateIpAddresses; }
+            set { this._privateIpAddresses = value; }
         }
 
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this.privateIpAddresses.Count > 0;
+            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
         }
 
     }
 }
-    

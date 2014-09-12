@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// ModifyLoadBalancerAttributes Request Marshaller
     /// </summary>       
-    public class ModifyLoadBalancerAttributesRequestMarshaller : IMarshaller<IRequest, ModifyLoadBalancerAttributesRequest>
+    public class ModifyLoadBalancerAttributesRequestMarshaller : IMarshaller<IRequest, ModifyLoadBalancerAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ModifyLoadBalancerAttributesRequest)input);
+        }
+    
         public IRequest Marshall(ModifyLoadBalancerAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");

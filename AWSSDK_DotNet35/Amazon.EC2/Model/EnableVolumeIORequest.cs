@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableVolumeIO operation.
-    /// <para>Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially
-    /// inconsistent.</para>
+    /// Enables I/O operations for a volume that had I/O operations disabled because the data
+    /// on the volume was potentially inconsistent.
     /// </summary>
     public partial class EnableVolumeIORequest : AmazonEC2Request
     {
-        private string volumeId;
-
+        private string _volumeId;
 
         /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
         /// The ID of the volume.
-        ///  
+        /// </para>
         /// </summary>
         public string VolumeId
         {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
         }
 
         // Check to see if VolumeId property is set
         internal bool IsSetVolumeId()
         {
-            return this.volumeId != null;
+            return this._volumeId != null;
         }
 
     }
 }
-    

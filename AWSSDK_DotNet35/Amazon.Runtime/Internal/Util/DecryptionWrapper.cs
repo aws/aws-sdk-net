@@ -28,21 +28,20 @@ using Amazon.Runtime;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    public class DecryptionWrapper : IDecryptionWrapper
+    public abstract class DecryptionWrapper : IDecryptionWrapper
     {
         private SymmetricAlgorithm algorithm;
         private ICryptoTransform decryptor;
         private const int encryptionKeySize = 256;
 
-        public DecryptionWrapper(string algorithmName)
+        protected DecryptionWrapper()
         {
-            if (string.IsNullOrEmpty(algorithmName))
-                throw new ArgumentNullException("algorithmName");
-
-            algorithm = SymmetricAlgorithm.Create(algorithmName);
+            algorithm = CreateAlgorithm();
         }
 
         #region IDecryptionWrapper Members
+
+        protected abstract SymmetricAlgorithm CreateAlgorithm();
         
         public ICryptoTransform Transformer
         {
@@ -67,9 +66,13 @@ namespace Amazon.Runtime.Internal.Util
 
     public class DecryptionWrapperAES : DecryptionWrapper
     {
-        private const string aesAlgorithmName = "AES";
         public DecryptionWrapperAES()
-            : base(aesAlgorithmName)
+            : base()
         { }
+
+        protected override SymmetricAlgorithm CreateAlgorithm()
+        {
+            return AesManaged.Create();
+        }
     }
 }

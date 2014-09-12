@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteIndexField response and response metadata.
+    /// Configuration for accessing Amazon DeleteIndexField service
     /// </summary>
     public partial class DeleteIndexFieldResponse : DeleteIndexFieldResult
     {
         /// <summary>
         /// Gets and sets the DeleteIndexFieldResult property.
-        /// The result of a DeleteIndexField request.
+        /// Represents the output of a DeleteIndexField operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteIndexFieldResult class are now available on the DeleteIndexFieldResponse class. You should use the properties on DeleteIndexFieldResponse instead of accessing them through DeleteIndexFieldResult.")]
         public DeleteIndexFieldResult DeleteIndexFieldResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

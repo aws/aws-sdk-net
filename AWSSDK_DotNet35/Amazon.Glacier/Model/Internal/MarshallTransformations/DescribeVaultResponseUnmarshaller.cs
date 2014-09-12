@@ -12,109 +12,116 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeVault operation
+    /// </summary>  
+    public class DescribeVaultResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for DescribeVault operation
-      /// </summary>
-      internal class DescribeVaultResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeVaultResponse response = new DescribeVaultResponse();       
-          
+            DescribeVaultResponse response = new DescribeVaultResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("VaultARN", targetDepth))
-              {
-                response.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VaultName", targetDepth))
-              {
-                response.VaultName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreationDate", targetDepth))
-              {
-                response.CreationDate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LastInventoryDate", targetDepth))
-              {
-                response.LastInventoryDate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NumberOfArchives", targetDepth))
-              {
-                response.NumberOfArchives = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SizeInBytes", targetDepth))
-              {
-                response.SizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    response.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastInventoryDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    response.LastInventoryDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfArchives", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.NumberOfArchives = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.SizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
-          {
-            return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
-          {
-            return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
-          {
-            return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeVaultResponseUnmarshaller instance;
-        public static DescribeVaultResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new DescribeVaultResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
+            {
+                return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+            {
+                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static DescribeVaultResponseUnmarshaller _instance = new DescribeVaultResponseUnmarshaller();        
+
+        internal static DescribeVaultResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static DescribeVaultResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

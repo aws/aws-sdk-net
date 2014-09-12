@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeVpcPeeringConnections response and response metadata.
+    /// Configuration for accessing Amazon DescribeVpcPeeringConnections service
     /// </summary>
     public partial class DescribeVpcPeeringConnectionsResponse : DescribeVpcPeeringConnectionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeVpcPeeringConnectionsResult property.
-        /// 
+        /// Represents the output of a DescribeVpcPeeringConnections operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeVpcPeeringConnectionsResult class are now available on the DescribeVpcPeeringConnectionsResponse class. You should use the properties on DescribeVpcPeeringConnectionsResponse instead of accessing them through DescribeVpcPeeringConnectionsResult.")]
         public DescribeVpcPeeringConnectionsResult DescribeVpcPeeringConnectionsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

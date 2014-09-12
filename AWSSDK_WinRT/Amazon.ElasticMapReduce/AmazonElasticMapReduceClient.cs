@@ -13,11 +13,16 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
+
 
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
@@ -42,19 +47,9 @@ namespace Amazon.ElasticMapReduce
     /// file analysis, machine         learning, scientific simulation, and data warehousing.
     /// </para>
     /// </summary>
-    public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, IAmazonElasticMapReduce
+    public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
+        
         #region Constructors
 
         /// <summary>
@@ -83,7 +78,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials, AmazonElasticMapReduceConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -116,7 +111,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticMapReduceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -152,8 +147,27 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticMapReduceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        } 
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
@@ -163,16 +177,10 @@ namespace Amazon.ElasticMapReduce
 
         internal AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
         {
-            var task = AddInstanceGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<AddInstanceGroupsRequest,AddInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -185,11 +193,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddInstanceGroupsRequestMarshaller();
             var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AddInstanceGroupsRequest, AddInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AddInstanceGroupsRequest,AddInstanceGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -198,16 +208,10 @@ namespace Amazon.ElasticMapReduce
 
         internal AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
-            var task = AddJobFlowStepsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
+
+            return Invoke<AddJobFlowStepsRequest,AddJobFlowStepsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -220,11 +224,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddJobFlowStepsRequestMarshaller();
             var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AddJobFlowStepsRequest, AddJobFlowStepsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AddJobFlowStepsRequest,AddJobFlowStepsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -233,16 +239,10 @@ namespace Amazon.ElasticMapReduce
 
         internal AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var task = AddTagsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -255,11 +255,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AddTagsRequest, AddTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -272,16 +274,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var task = DescribeClusterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -294,11 +290,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterRequestMarshaller();
             var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeClusterRequest, DescribeClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -311,16 +309,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
-            var task = DescribeJobFlowsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -333,11 +325,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobFlowsRequestMarshaller();
             var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeJobFlowsRequest, DescribeJobFlowsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -350,16 +344,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal DescribeStepResponse DescribeStep(DescribeStepRequest request)
         {
-            var task = DescribeStepAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeStepRequestMarshaller();
+            var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStepRequest,DescribeStepResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -372,11 +360,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStepRequestMarshaller();
             var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeStepRequest, DescribeStepResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeStepRequest,DescribeStepResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -389,16 +379,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
         {
-            var task = ListBootstrapActionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListBootstrapActionsRequestMarshaller();
+            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -411,11 +395,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBootstrapActionsRequestMarshaller();
             var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListBootstrapActionsRequest, ListBootstrapActionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -428,16 +414,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var task = ListClustersAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -450,11 +430,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListClustersRequest, ListClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -467,16 +449,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
         {
-            var task = ListInstanceGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListInstanceGroupsRequestMarshaller();
+            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -489,11 +465,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInstanceGroupsRequestMarshaller();
             var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListInstanceGroupsRequest, ListInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -506,16 +484,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var task = ListInstancesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListInstancesRequestMarshaller();
+            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstancesRequest,ListInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -528,11 +500,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInstancesRequestMarshaller();
             var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListInstancesRequest, ListInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListInstancesRequest,ListInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -545,16 +519,10 @@ namespace Amazon.ElasticMapReduce
         }
         internal ListStepsResponse ListSteps(ListStepsRequest request)
         {
-            var task = ListStepsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListStepsRequestMarshaller();
+            var unmarshaller = ListStepsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStepsRequest,ListStepsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -567,11 +535,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStepsRequestMarshaller();
             var unmarshaller = ListStepsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListStepsRequest, ListStepsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListStepsRequest,ListStepsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -580,16 +550,10 @@ namespace Amazon.ElasticMapReduce
 
         internal ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
         {
-            var task = ModifyInstanceGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -602,11 +566,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -615,16 +581,10 @@ namespace Amazon.ElasticMapReduce
 
         internal RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var task = RemoveTagsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -637,11 +597,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RemoveTagsRequest, RemoveTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -650,16 +612,10 @@ namespace Amazon.ElasticMapReduce
 
         internal RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
         {
-            var task = RunJobFlowAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RunJobFlowRequestMarshaller();
+            var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
+
+            return Invoke<RunJobFlowRequest,RunJobFlowResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -672,11 +628,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RunJobFlowRequestMarshaller();
             var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RunJobFlowRequest, RunJobFlowResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RunJobFlowRequest,RunJobFlowResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -685,16 +643,10 @@ namespace Amazon.ElasticMapReduce
 
         internal SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
         {
-            var task = SetTerminationProtectionAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<SetTerminationProtectionRequest,SetTerminationProtectionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -707,11 +659,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTerminationProtectionRequestMarshaller();
             var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SetTerminationProtectionRequest, SetTerminationProtectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SetTerminationProtectionRequest,SetTerminationProtectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -720,16 +674,10 @@ namespace Amazon.ElasticMapReduce
 
         internal SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
         {
-            var task = SetVisibleToAllUsersAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
+
+            return Invoke<SetVisibleToAllUsersRequest,SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -742,11 +690,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetVisibleToAllUsersRequestMarshaller();
             var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SetVisibleToAllUsersRequest, SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SetVisibleToAllUsersRequest,SetVisibleToAllUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -755,16 +705,10 @@ namespace Amazon.ElasticMapReduce
 
         internal TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
         {
-            var task = TerminateJobFlowsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateJobFlowsRequest,TerminateJobFlowsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -777,11 +721,13 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateJobFlowsRequestMarshaller();
             var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, TerminateJobFlowsRequest, TerminateJobFlowsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<TerminateJobFlowsRequest,TerminateJobFlowsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

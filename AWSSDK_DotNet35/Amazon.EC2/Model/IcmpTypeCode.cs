@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the ICMP type and code.</para>
+    /// Describes the ICMP type and code.
     /// </summary>
     public partial class IcmpTypeCode
     {
-        
-        private int? type;
-        private int? code;
-
+        private int? _code;
+        private int? _type;
 
         /// <summary>
-        /// The ICMP code. A value of -1 means all codes for the specified ICMP type.
-        ///  
-        /// </summary>
-        public int Type
-        {
-            get { return this.type ?? default(int); }
-            set { this.type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this.type.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
         /// The ICMP type. A value of -1 means all types.
-        ///  
+        /// </para>
         /// </summary>
         public int Code
         {
-            get { return this.code ?? default(int); }
-            set { this.code = value; }
+            get { return this._code.GetValueOrDefault(); }
+            set { this._code = value; }
         }
 
         // Check to see if Code property is set
         internal bool IsSetCode()
         {
-            return this.code.HasValue;
+            return this._code.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The ICMP code. A value of -1 means all codes for the specified ICMP type.
+        /// </para>
+        /// </summary>
+        public int Type
+        {
+            get { return this._type.GetValueOrDefault(); }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type.HasValue; 
+        }
+
     }
 }

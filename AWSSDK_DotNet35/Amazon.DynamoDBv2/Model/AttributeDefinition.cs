@@ -12,72 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents an attribute for describing the key schema for the table and indexes.</para>
+    /// Represents an attribute for describing the key schema for the table and indexes.
     /// </summary>
     public partial class AttributeDefinition
     {
-        
-        private string attributeName;
-        private ScalarAttributeType attributeType;
-
+        private string _attributeName;
+        private ScalarAttributeType _attributeType;
 
         /// <summary>
-        /// A name for the attribute.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AttributeDefinition() { }
+
+        /// <summary>
+        /// Instantiates AttributeDefinition with the parameterized properties
+        /// </summary>
+        /// <param name="attributeName">A name for the attribute.</param>
+        /// <param name="attributeType">The data type for the attribute.</param>
+        public AttributeDefinition(string attributeName, ScalarAttributeType attributeType)
+        {
+            _attributeName = attributeName;
+            _attributeType = attributeType;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttributeName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        /// A name for the attribute.
         /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
         /// <summary>
-        /// The data type for the attribute.
-        ///  
+        /// Gets and sets the property AttributeType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>S, N, B</description>
-        ///     </item>
-        /// </list>
+        /// The data type for the attribute.
         /// </para>
         /// </summary>
         public ScalarAttributeType AttributeType
         {
-            get { return this.attributeType; }
-            set { this.attributeType = value; }
+            get { return this._attributeType; }
+            set { this._attributeType = value; }
         }
 
         // Check to see if AttributeType property is set
         internal bool IsSetAttributeType()
         {
-            return this.attributeType != null;
+            return this._attributeType != null;
         }
+
     }
 }

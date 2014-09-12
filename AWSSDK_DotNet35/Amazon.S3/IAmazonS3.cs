@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,1807 +12,1820 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
 
-using Amazon.S3;
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+
+
+using System;
+using System.Collections.Generic;
+
 using Amazon.S3.Model;
 
 namespace Amazon.S3
 {
     /// <summary>
-    /// Interface for accessing AmazonS3.
-    ///  
-    ///  
+    /// Interface for accessing S3
+    ///
+    /// 
     /// </summary>
     public partial interface IAmazonS3 : IDisposable
     {
 
-        #region GetCORSConfiguration
+        
+        #region  AbortMultipartUpload
 
         /// <summary>
-        /// <para>Returns the cors configuration for the bucket.</para>
+        /// Aborts a multipart upload.
+        /// 
+        ///  
+        /// <para>
+        /// To verify that all parts have been removed, so you don't get charged for the part
+        /// storage, you should call the List Parts operation and ensure the parts list is empty.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
-        /// <param name="getCORSConfigurationRequest">Container for the necessary parameters to execute the GetCORSConfiguration service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetCORSConfiguration service method, as returned by AmazonS3.</returns>
-        /// 
-        GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest getCORSConfigurationRequest);
+        /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetCORSConfiguration"/>
+        /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="getCORSConfigurationRequest">Container for the necessary parameters to execute the GetCORSConfiguration operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCORSConfiguration
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartUpload
         ///         operation.</returns>
-        IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest getCORSConfigurationRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetCORSConfiguration"/>
+        /// Finishes the asynchronous execution of the  AbortMultipartUpload operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// 
-        /// <returns>Returns a GetCORSConfigurationResult from AmazonS3.</returns>
-        GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult);
-        
-        #endregion
+        /// <returns>Returns a  AbortMultipartUploadResult from S3.</returns>
+        AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult);
 
-        #region GetObjectTorrent
-
-        /// <summary>
-        /// <para>Return torrent files from a bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="getObjectTorrentRequest">Container for the necessary parameters to execute the GetObjectTorrent service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetObjectTorrent service method, as returned by AmazonS3.</returns>
-        /// 
-        GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest getObjectTorrentRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetObjectTorrent operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectTorrent"/>
-        /// </summary>
-        /// 
-        /// <param name="getObjectTorrentRequest">Container for the necessary parameters to execute the GetObjectTorrent operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTorrent
-        ///         operation.</returns>
-        IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest getObjectTorrentRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetObjectTorrent operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectTorrent"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTorrent.</param>
-        /// 
-        /// <returns>Returns a GetObjectTorrentResult from AmazonS3.</returns>
-        GetObjectTorrentResponse EndGetObjectTorrent(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region PutObject
-
-        /// <summary>
-        /// <para>Adds an object to a bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="putObjectRequest">Container for the necessary parameters to execute the PutObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the PutObject service method, as returned by AmazonS3.</returns>
-        /// 
-        PutObjectResponse PutObject(PutObjectRequest putObjectRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutObject"/>
-        /// </summary>
-        /// 
-        /// <param name="putObjectRequest">Container for the necessary parameters to execute the PutObject operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObject
-        ///         operation.</returns>
-        IAsyncResult BeginPutObject(PutObjectRequest putObjectRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutObject"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
-        /// 
-        /// <returns>Returns a PutObjectResult from AmazonS3.</returns>
-        PutObjectResponse EndPutObject(IAsyncResult asyncResult);
-        
-        #endregion
-
-
-        #region PutLifecycleConfiguration
-
-        /// <summary>
-        /// <para>Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.</para>
-        /// </summary>
-        /// 
-        /// <param name="putLifecycleConfigurationRequest">Container for the necessary parameters to execute the PutLifecycleConfiguration service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest putLifecycleConfigurationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutLifecycleConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="putLifecycleConfigurationRequest">Container for the necessary parameters to execute the PutLifecycleConfiguration operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest putLifecycleConfigurationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutLifecycleConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
-        PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult);
-        
-        #endregion
-
-
-        #region PutCORSConfiguration
-
-        /// <summary>
-        /// <para>Sets the cors configuration for a bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="putCORSConfigurationRequest">Container for the necessary parameters to execute the PutCORSConfiguration service method on AmazonS3.</param>
-        /// 
-        PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest putCORSConfigurationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutCORSConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="putCORSConfigurationRequest">Container for the necessary parameters to execute the PutCORSConfiguration operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest putCORSConfigurationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutCORSConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
-        PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region PutBucketTagging
-
-        /// <summary>
-        /// <para>Sets the tags for a bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="putBucketTaggingRequest">Container for the necessary parameters to execute the PutBucketTagging service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest putBucketTaggingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketTagging"/>
-        /// </summary>
-        /// 
-        /// <param name="putBucketTaggingRequest">Container for the necessary parameters to execute the PutBucketTagging operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest putBucketTaggingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketTagging"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
-        PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region PutBucket
-
-        /// <summary>
-        /// <para>Creates a new bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="putBucketRequest">Container for the necessary parameters to execute the PutBucket service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the PutBucket service method, as returned by AmazonS3.</returns>
-        /// 
-        PutBucketResponse PutBucket(PutBucketRequest putBucketRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucket"/>
-        /// </summary>
-        /// 
-        /// <param name="putBucketRequest">Container for the necessary parameters to execute the PutBucket operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucket
-        ///         operation.</returns>
-        IAsyncResult BeginPutBucket(PutBucketRequest putBucketRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucket"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
-        /// 
-        /// <returns>Returns a PutBucketResult from AmazonS3.</returns>
-        PutBucketResponse EndPutBucket(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region ListVersions
-
-        /// <summary>
-        /// <para>Returns metadata about all of the versions of objects in a bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="listVersionsRequest">Container for the necessary parameters to execute the ListVersions service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListVersions service method, as returned by AmazonS3.</returns>
-        /// 
-        ListVersionsResponse ListVersions(ListVersionsRequest listVersionsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListVersions operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListVersions"/>
-        /// </summary>
-        /// 
-        /// <param name="listVersionsRequest">Container for the necessary parameters to execute the ListVersions operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndListVersions operation.</returns>
-        IAsyncResult BeginListVersions(ListVersionsRequest listVersionsRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the ListVersions operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListVersions"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
-        /// 
-        /// <returns>Returns a ListVersionsResult from AmazonS3.</returns>
-        ListVersionsResponse EndListVersions(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region DeleteObjects
-
-        /// <summary>
-        /// <para>This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000
-        /// keys.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteObjectsRequest">Container for the necessary parameters to execute the DeleteObjects service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the DeleteObjects service method, as returned by AmazonS3.</returns>
-        /// 
-        DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest deleteObjectsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObjects"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteObjectsRequest">Container for the necessary parameters to execute the DeleteObjects operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjects
-        ///         operation.</returns>
-        IAsyncResult BeginDeleteObjects(DeleteObjectsRequest deleteObjectsRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObjects"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
-        /// 
-        /// <returns>Returns a DeleteObjectsResult from AmazonS3.</returns>
-        DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region GetBucketTagging
-
-        /// <summary>
-        /// <para>Returns the tag set associated with the bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="getBucketTaggingRequest">Container for the necessary parameters to execute the GetBucketTagging service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketTagging service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest getBucketTaggingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketTagging"/>
-        /// </summary>
-        /// 
-        /// <param name="getBucketTaggingRequest">Container for the necessary parameters to execute the GetBucketTagging operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketTagging
-        ///         operation.</returns>
-        IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest getBucketTaggingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketTagging"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
-        /// 
-        /// <returns>Returns a GetBucketTaggingResult from AmazonS3.</returns>
-        GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region GetBucketLocation
-
-        /// <summary>
-        /// <para>Returns the region the bucket resides in.</para>
-        /// </summary>
-        /// 
-        /// <param name="getBucketLocationRequest">Container for the necessary parameters to execute the GetBucketLocation service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketLocation service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest getBucketLocationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketLocation operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLocation"/>
-        /// </summary>
-        /// 
-        /// <param name="getBucketLocationRequest">Container for the necessary parameters to execute the GetBucketLocation operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLocation
-        ///         operation.</returns>
-        IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest getBucketLocationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketLocation operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLocation"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
-        /// 
-        /// <returns>Returns a GetBucketLocationResult from AmazonS3.</returns>
-        GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult);
-        
-        #endregion
-
-        #region PutBucketPolicy
-
-        /// <summary>
-        /// <para>Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.</para>
-        /// </summary>
-        /// 
-        /// <param name="putBucketPolicyRequest">Container for the necessary parameters to execute the PutBucketPolicy service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest putBucketPolicyRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="putBucketPolicyRequest">Container for the necessary parameters to execute the PutBucketPolicy operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest putBucketPolicyRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
-        PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult);
-        
-        #endregion
-
-
-
-        #region PutBucketLogging
-
-        /// <summary>
-        /// <para>Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the
-        /// logging status of a bucket, you must be the bucket owner.</para>
-        /// </summary>
-        /// 
-        /// <param name="putBucketLoggingRequest">Container for the necessary parameters to execute the PutBucketLogging service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest putBucketLoggingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketLogging"/>
-        /// </summary>
-        /// 
-        /// <param name="putBucketLoggingRequest">Container for the necessary parameters to execute the PutBucketLogging operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest putBucketLoggingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketLogging"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketLogging.</param>
-        PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult);
-        
         #endregion
         
-    
-
-        #region PutBucketNotification
+        #region  CompleteMultipartUpload
 
         /// <summary>
-        /// <para>Enables notifications of specified events for a bucket.</para>
+        /// Completes a multipart upload by assembling previously uploaded parts.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
-        /// <param name="putBucketNotificationRequest">Container for the necessary parameters to execute the PutBucketNotification service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest putBucketNotificationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketNotification"/>
-        /// </summary>
-        /// 
-        /// <param name="putBucketNotificationRequest">Container for the necessary parameters to execute the PutBucketNotification operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest putBucketNotificationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketNotification"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketNotification.</param>
-        PutBucketNotificationResponse EndPutBucketNotification(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteBucket
-
-        /// <summary>
-        /// <para>Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket
-        /// itself can be deleted.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteBucketRequest">Container for the necessary parameters to execute the DeleteBucket service method on AmazonS3.</param>
-        /// 
-        DeleteBucketResponse DeleteBucket(DeleteBucketRequest deleteBucketRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucket"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteBucketRequest">Container for the necessary parameters to execute the DeleteBucket operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteBucket(DeleteBucketRequest deleteBucketRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucket"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
-        DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region ListMultipartUploads
-
-        /// <summary>
-        /// <para>This operation lists in-progress multipart uploads.</para>
-        /// </summary>
-        /// 
-        /// <param name="listMultipartUploadsRequest">Container for the necessary parameters to execute the ListMultipartUploads service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListMultipartUploads service method, as returned by AmazonS3.</returns>
-        /// 
-        ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest listMultipartUploadsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListMultipartUploads operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListMultipartUploads"/>
-        /// </summary>
-        /// 
-        /// <param name="listMultipartUploadsRequest">Container for the necessary parameters to execute the ListMultipartUploads operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndListMultipartUploads operation.</returns>
-        IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest listMultipartUploadsRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the ListMultipartUploads operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListMultipartUploads"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
-        /// 
-        /// <returns>Returns a ListMultipartUploadsResult from AmazonS3.</returns>
-        ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteBucketTagging
-
-        /// <summary>
-        /// <para>Deletes the tags from the bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteBucketTaggingRequest">Container for the necessary parameters to execute the DeleteBucketTagging service method on
-        ///          AmazonS3.</param>
-        /// 
-        DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest deleteBucketTaggingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketTagging"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteBucketTaggingRequest">Container for the necessary parameters to execute the DeleteBucketTagging operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest deleteBucketTaggingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketTagging"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
-        DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region CompleteMultipartUpload
-
-        /// <summary>
-        /// <para>Completes a multipart upload by assembling previously uploaded parts.</para>
-        /// </summary>
-        /// 
-        /// <param name="completeMultipartUploadRequest">Container for the necessary parameters to execute the CompleteMultipartUpload service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CompleteMultipartUpload service method, as returned by AmazonS3.</returns>
-        /// 
-        CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest completeMultipartUploadRequest);
+        /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CompleteMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="completeMultipartUploadRequest">Container for the necessary parameters to execute the CompleteMultipartUpload operation on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCompleteMultipartUpload operation.</returns>
-        IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest completeMultipartUploadRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartUpload
+        ///         operation.</returns>
+        IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CompleteMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CompleteMultipartUpload"/>
+        /// Finishes the asynchronous execution of the  CompleteMultipartUpload operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// 
-        /// <returns>Returns a CompleteMultipartUploadResult from AmazonS3.</returns>
+        /// <returns>Returns a  CompleteMultipartUploadResult from S3.</returns>
         CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult);
-        
-        #endregion
 
-
-
-        #region GetLifecycleConfiguration
-
-        /// <summary>
-        /// <para>Returns the lifecycle configuration information set on the bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="getLifecycleConfigurationRequest">Container for the necessary parameters to execute the GetLifecycleConfiguration service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by AmazonS3.</returns>
-        /// 
-        GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest getLifecycleConfigurationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetLifecycleConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="getLifecycleConfigurationRequest">Container for the necessary parameters to execute the GetLifecycleConfiguration operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetLifecycleConfiguration operation.</returns>
-        IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest getLifecycleConfigurationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetLifecycleConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to GetLifecycleConfiguration.</param>
-        /// 
-        /// <returns>Returns a GetLifecycleConfigurationResult from AmazonS3.</returns>
-        GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult);
-        
         #endregion
         
-    
-
-        #region GetACL
+        #region  CopyObject
 
         /// <summary>
-        /// <para>Returns the access control list (ACL) of an object or bucket.</para>
+        /// Creates a copy of an object that is already stored in Amazon S3.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
-        /// <param name="getACLRequest">Container for the necessary parameters to execute the GetACL service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by AmazonS3.</returns>
-        /// 
-        GetACLResponse GetACL(GetACLRequest getACLRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetACL"/>
-        /// </summary>
-        /// 
-        /// <param name="getAclRequest">Container for the necessary parameters to execute the GetACL operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectAcl
-        ///         operation.</returns>
-        IAsyncResult BeginGetACL(GetACLRequest getAclRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetACL"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
-        /// 
-        /// <returns>Returns a GetACLResult from AmazonS3.</returns>
-        GetACLResponse EndGetACL(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region CopyObject
-
-        /// <summary>
-        /// <para>Creates a copy of an object that is already stored in Amazon S3.</para>
-        /// </summary>
-        /// 
-        /// <param name="copyObjectRequest">Container for the necessary parameters to execute the CopyObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CopyObject service method, as returned by AmazonS3.</returns>
-        /// 
-        CopyObjectResponse CopyObject(CopyObjectRequest copyObjectRequest);
+        /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        CopyObjectResponse CopyObject(CopyObjectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="copyObjectRequest">Container for the necessary parameters to execute the CopyObject operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CopyObject operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyObject
         ///         operation.</returns>
-        IAsyncResult BeginCopyObject(CopyObjectRequest copyObjectRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CopyObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyObject"/>
+        /// Finishes the asynchronous execution of the  CopyObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyObject.</param>
         /// 
-        /// <returns>Returns a CopyObjectResult from AmazonS3.</returns>
+        /// <returns>Returns a  CopyObjectResult from S3.</returns>
         CopyObjectResponse EndCopyObject(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region DeleteBucketPolicy
+        #region  CopyPart
 
         /// <summary>
-        /// <para>Deletes the policy from the bucket.</para>
+        /// Uploads a part by copying data from an existing object as data source.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
-        /// <param name="deleteBucketPolicyRequest">Container for the necessary parameters to execute the DeleteBucketPolicy service method on
-        ///          AmazonS3.</param>
-        /// 
-        DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest deleteBucketPolicyRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteBucketPolicyRequest">Container for the necessary parameters to execute the DeleteBucketPolicy operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest deleteBucketPolicyRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
-        DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region GetObject
-
-        /// <summary>
-        /// <para>Retrieves objects from Amazon S3.</para>
-        /// </summary>
-        /// 
-        /// <param name="getObjectRequest">Container for the necessary parameters to execute the GetObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetObject service method, as returned by AmazonS3.</returns>
-        /// 
-        GetObjectResponse GetObject(GetObjectRequest getObjectRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObject"/>
-        /// </summary>
-        /// 
-        /// <param name="getObjectRequest">Container for the necessary parameters to execute the GetObject operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObject
-        ///         operation.</returns>
-        IAsyncResult BeginGetObject(GetObjectRequest getObjectRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObject"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
-        /// 
-        /// <returns>Returns a GetObjectResult from AmazonS3.</returns>
-        GetObjectResponse EndGetObject(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region AbortMultipartUpload
-
-        /// <summary>
-        /// <para>Aborts a multipart upload.</para>
-        /// </summary>
-        /// 
-        /// <param name="abortMultipartUploadRequest">Container for the necessary parameters to execute the AbortMultipartUpload service method on
-        ///          AmazonS3.</param>
-        /// 
-        AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// 
-        /// <param name="abortMultipartUploadRequest">Container for the necessary parameters to execute the AbortMultipartUpload operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the AbortMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
-        AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region UploadPart
-
-        /// <summary>
-        /// <para>Uploads a part in a multipart upload.</para>
-        /// </summary>
-        /// <remarks>
-        /// <para>        
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="uploadPartRequest">Container for the necessary parameters to execute the UploadPart service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the UploadPart service method, as returned by AmazonS3.</returns>
-        /// 
-        UploadPartResponse UploadPart(UploadPartRequest uploadPartRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.UploadPart"/>
-        /// </summary>
-        /// <remarks>
-        /// <para>        
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
-        /// for their storage.
-        /// </para>
-        /// </remarks> 
-        /// <param name="uploadPartRequest">Container for the necessary parameters to execute the UploadPart operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPart
-        ///         operation.</returns>
-        IAsyncResult BeginUploadPart(UploadPartRequest uploadPartRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UploadPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.UploadPart"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
-        /// 
-        /// <returns>Returns a UploadPartResult from AmazonS3.</returns>
-        UploadPartResponse EndUploadPart(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region RestoreObject
-
-        /// <summary>
-        /// <para>Restores an archived copy of an object back into Amazon S3</para>
-        /// </summary>
-        /// 
-        /// <param name="restoreObjectRequest">Container for the necessary parameters to execute the RestoreObject service method on AmazonS3.</param>
-        /// 
-        RestoreObjectResponse RestoreObject(RestoreObjectRequest restoreObjectRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RestoreObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.RestoreObject"/>
-        /// </summary>
-        /// 
-        /// <param name="restoreObjectRequest">Container for the necessary parameters to execute the RestoreObject operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginRestoreObject(RestoreObjectRequest restoreObjectRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the RestoreObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.RestoreObject"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
-        RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region GetBucketPolicy
-
-        /// <summary>
-        /// <para>Returns the policy of a specified bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="getBucketPolicyRequest">Container for the necessary parameters to execute the GetBucketPolicy service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketPolicy service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest getBucketPolicyRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="getBucketPolicyRequest">Container for the necessary parameters to execute the GetBucketPolicy operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicy
-        ///         operation.</returns>
-        IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest getBucketPolicyRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
-        /// 
-        /// <returns>Returns a GetBucketPolicyResult from AmazonS3.</returns>
-        GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region GetBucketLogging
-
-        /// <summary>
-        /// <para>Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the
-        /// bucket owner.</para>
-        /// </summary>
-        /// 
-        /// <param name="getBucketLoggingRequest">Container for the necessary parameters to execute the GetBucketLogging service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketLogging service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest getBucketLoggingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLogging"/>
-        /// </summary>
-        /// 
-        /// <param name="getBucketLoggingRequest">Container for the necessary parameters to execute the GetBucketLogging operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLogging
-        ///         operation.</returns>
-        IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest getBucketLoggingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLogging"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
-        /// 
-        /// <returns>Returns a GetBucketLoggingResult from AmazonS3.</returns>
-        GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteObject
-
-        /// <summary>
-        /// <para>Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object.
-        /// If there isn''t a null version, Amazon S3 does not remove any objects.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteObjectRequest">Container for the necessary parameters to execute the DeleteObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the DeleteObject service method, as returned by AmazonS3.</returns>
-        /// 
-        DeleteObjectResponse DeleteObject(DeleteObjectRequest deleteObjectRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObject"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteObjectRequest">Container for the necessary parameters to execute the DeleteObject operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObject
-        ///         operation.</returns>
-        IAsyncResult BeginDeleteObject(DeleteObjectRequest deleteObjectRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObject"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
-        /// 
-        /// <returns>Returns a DeleteObjectResult from AmazonS3.</returns>
-        DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult);
-        
-        #endregion
-
-
-
-        #region InitiateMultipartUpload
-
-        /// <summary>
-        /// <para>Initiates a multipart upload and returns an upload ID.</para>
-        /// </summary>
-        /// <remarks> 
-        /// <para>        
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="initiateMultipartUploadRequest">Container for the necessary parameters to execute the InitiateMultipartUpload service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the InitiateMultipartUpload service method, as returned by AmazonS3.</returns>
-        /// 
-        InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest initiateMultipartUploadRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.InitiateMultipartUpload"/>
-        /// </summary>
-        /// <remarks> 
-        /// <para>        
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="initiateMultipartUploadRequest">Container for the necessary parameters to execute the InitiateMultipartUpload operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndInitiateMultipartUpload operation.</returns>
-        IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest initiateMultipartUploadRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the InitiateMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.InitiateMultipartUpload"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
-        /// 
-        /// <returns>Returns a InitiateMultipartUploadResult from AmazonS3.</returns>
-        InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult);
-        
-        #endregion
-
-
-
-        #region DeleteCORSConfiguration
-
-        /// <summary>
-        /// <para>Deletes the cors configuration information set for the bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteCORSConfigurationRequest">Container for the necessary parameters to execute the DeleteCORSConfiguration service method on
-        ///          AmazonS3.</param>
-        /// 
-        DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest deleteCORSConfigurationRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteCORSConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteCORSConfigurationRequest">Container for the necessary parameters to execute the DeleteCORSConfiguration operation on AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest deleteCORSConfigurationRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteCORSConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
-        DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult);
-        
-        #endregion
-
-
-
-        #region PutBucketVersioning
-
-        /// <summary>
-        /// <para>Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.</para>
-        /// </summary>
-        /// 
-        /// <param name="putBucketVersioningRequest">Container for the necessary parameters to execute the PutBucketVersioning service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest putBucketVersioningRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketVersioning"/>
-        /// </summary>
-        /// 
-        /// <param name="putBucketVersioningRequest">Container for the necessary parameters to execute the PutBucketVersioning operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest putBucketVersioningRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketVersioning"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketVersioning.</param>
-        PutBucketVersioningResponse EndPutBucketVersioning(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region CopyPart
-
-        /// <summary>
-        /// <para>Uploads a part by copying data from an existing object as data source.</para>
-        /// </summary>
-        /// 
-        /// <param name="copyPartRequest">Container for the necessary parameters to execute the CopyPart service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CopyPart service method, as returned by AmazonS3.</returns>
-        /// 
-        CopyPartResponse CopyPart(CopyPartRequest copyPartRequest);
+        /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        CopyPartResponse CopyPart(CopyPartRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyPart"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="copyPartRequest">Container for the necessary parameters to execute the CopyPart operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CopyPart operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyPart
         ///         operation.</returns>
-        IAsyncResult BeginCopyPart(CopyPartRequest copyPartRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CopyPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyPart"/>
+        /// Finishes the asynchronous execution of the  CopyPart operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
         /// 
-        /// <returns>Returns a CopyPartResult from AmazonS3.</returns>
+        /// <returns>Returns a  CopyPartResult from S3.</returns>
         CopyPartResponse EndCopyPart(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region PutBucketWebsite
+        #region  DeleteBucket
 
         /// <summary>
-        /// <para>Set the website configuration for a bucket.</para>
+        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// in the bucket must be deleted before the bucket itself can be deleted.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
-        /// <param name="putBucketWebsiteRequest">Container for the necessary parameters to execute the PutBucketWebsite service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest putBucketWebsiteRequest);
+        /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketWebsite"/>
+        /// Initiates the asynchronous execution of the DeleteBucket operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="putBucketWebsiteRequest">Container for the necessary parameters to execute the PutBucketWebsite operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest putBucketWebsiteRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucket
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketWebsite"/>
+        /// Finishes the asynchronous execution of the  DeleteBucket operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
-        PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult);
-        
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketResult from S3.</returns>
+        DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult);
+
         #endregion
-
-
-
-        #region DeleteLifecycleConfiguration
+        
+        #region  DeleteBucketPolicy
 
         /// <summary>
-        /// <para>Deletes the lifecycle configuration from the bucket.</para>
+        /// Deletes the policy from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="deleteLifecycleConfigurationRequest">Container for the necessary parameters to execute the DeleteBucketLifecycle service method on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         /// 
-        DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest deleteLifecycleConfigurationRequest);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketPolicy
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketPolicy operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketPolicyResult from S3.</returns>
+        DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucketTagging
+
+        /// <summary>
+        /// Deletes the tags from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketTagging
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketTagging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketTaggingResult from S3.</returns>
+        DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucketWebsite
+
+        /// <summary>
+        /// This operation removes the website configuration from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketWebsite
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketWebsite operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketWebsiteResult from S3.</returns>
+        DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCORSConfiguration
+
+        /// <summary>
+        /// Deletes the cors configuration information set for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCORSConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCORSConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteCORSConfigurationResult from S3.</returns>
+        DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLifecycleConfiguration
+
+        /// <summary>
+        /// Deletes the lifecycle configuration from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="deleteLifecycleConfigurationRequest">Container for the necessary parameters to execute the DeleteBucketLifecycle operation on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest deleteLifecycleConfigurationRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecycleConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteLifecycleConfiguration"/>
+        /// Finishes the asynchronous execution of the  DeleteLifecycleConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteLifecycleConfigurationResult from S3.</returns>
         DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region PutBucketRequestPayment
+        #region  DeleteObject
 
         /// <summary>
-        /// <para>Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This
-        /// configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the
-        /// download.</para>
+        /// Removes the null version (if there is one) of an object and inserts a delete marker,
+        /// which becomes the latest version of the object. If there isn't a null version, Amazon
+        /// S3 does not remove any objects.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
-        /// <param name="putBucketRequestPaymentRequest">Container for the necessary parameters to execute the PutBucketRequestPayment service method on
-        ///          AmazonS3.</param>
-        /// 
-        PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest putBucketRequestPaymentRequest);
+        /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketRequestPayment"/>
+        /// Initiates the asynchronous execution of the DeleteObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="putBucketRequestPaymentRequest">Container for the necessary parameters to execute the PutBucketRequestPayment operation on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObject operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest putBucketRequestPaymentRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObject
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the PutBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketRequestPayment"/>
+        /// Finishes the asynchronous execution of the  DeleteObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketRequestPayment.</param>
-        PutBucketRequestPaymentResponse EndPutBucketRequestPayment(IAsyncResult asyncResult);
-        
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
+        /// 
+        /// <returns>Returns a  DeleteObjectResult from S3.</returns>
+        DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult);
+
         #endregion
-
-
-
-        #region PutACL
+        
+        #region  DeleteObjects
 
         /// <summary>
-        /// <para>uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket</para>
+        /// This operation enables you to delete multiple objects from a bucket using a single
+        /// HTTP request. You may specify up to 1000 keys.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
-        /// <param name="putACLRequest">Container for the necessary parameters to execute the PutACL service method on AmazonS3.</param>
-        /// 
-        PutACLResponse PutACL(PutACLRequest putACLRequest);
+        /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutACL"/>
+        /// Initiates the asynchronous execution of the DeleteObjects operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="putACLRequest">Container for the necessary parameters to execute the PutACL operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjects operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginPutACL(PutACLRequest putACLRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjects
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the PutACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutACL"/>
+        /// Finishes the asynchronous execution of the  DeleteObjects operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutACL.</param>
-        PutACLResponse EndPutACL(IAsyncResult asyncResult);
-        
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
+        /// 
+        /// <returns>Returns a  DeleteObjectsResult from S3.</returns>
+        DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult);
+
         #endregion
         
-    
-
-        #region GetBucketWebsite
+        #region  GetACL
 
         /// <summary>
-        /// <para>Returns the website configuration for a bucket.</para>
+        /// Gets the access control policy for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
+        /// 
+        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        GetACLResponse GetACL(GetACLRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetACL operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="getBucketWebsiteRequest">Container for the necessary parameters to execute the GetBucketWebsite service method on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetACL operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>The response from the GetBucketWebsite service method, as returned by AmazonS3.</returns>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetACL
+        ///         operation.</returns>
+        IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetACL operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
         /// 
-        GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest getBucketWebsiteRequest);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
+        /// 
+        /// <returns>Returns a  GetACLResult from S3.</returns>
+        GetACLResponse EndGetACL(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketLocation
+
+        /// <summary>
+        /// Returns the region the bucket resides in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketLocation operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLocation
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketLocation operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
+        /// 
+        /// <returns>Returns a  GetBucketLocationResult from S3.</returns>
+        GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketLogging
+
+        /// <summary>
+        /// Returns the logging status of a bucket and the permissions users have to view and
+        /// modify that status. To use GET, you must be the bucket owner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketLogging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLogging
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketLogging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
+        /// 
+        /// <returns>Returns a  GetBucketLoggingResult from S3.</returns>
+        GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketNotification
+
+        /// <summary>
+        /// Return the notification configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketNotification operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketNotification
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketNotification operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketNotification.</param>
+        /// 
+        /// <returns>Returns a  GetBucketNotificationResult from S3.</returns>
+        GetBucketNotificationResponse EndGetBucketNotification(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketPolicy
+
+        /// <summary>
+        /// Returns the policy of a specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketPolicy operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicy
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketPolicy operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetBucketPolicyResult from S3.</returns>
+        GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketRequestPayment
+
+        /// <summary>
+        /// Returns the request payment configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketRequestPayment operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketRequestPayment
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketRequestPayment operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketRequestPayment.</param>
+        /// 
+        /// <returns>Returns a  GetBucketRequestPaymentResult from S3.</returns>
+        GetBucketRequestPaymentResponse EndGetBucketRequestPayment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketTagging
+
+        /// <summary>
+        /// Returns the tag set associated with the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketTagging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketTagging
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketTagging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
+        /// 
+        /// <returns>Returns a  GetBucketTaggingResult from S3.</returns>
+        GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketVersioning
+
+        /// <summary>
+        /// Returns the versioning state of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketVersioning operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketVersioning
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketVersioning operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
+        /// 
+        /// <returns>Returns a  GetBucketVersioningResult from S3.</returns>
+        GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketWebsite
+
+        /// <summary>
+        /// Returns the website configuration for a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="getBucketWebsiteRequest">Container for the necessary parameters to execute the GetBucketWebsite operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketWebsite
         ///         operation.</returns>
-        IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest getBucketWebsiteRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketWebsite"/>
+        /// Finishes the asynchronous execution of the  GetBucketWebsite operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketWebsite.</param>
         /// 
-        /// <returns>Returns a GetBucketWebsiteResult from AmazonS3.</returns>
+        /// <returns>Returns a  GetBucketWebsiteResult from S3.</returns>
         GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region DeleteBucketWebsite
+        #region  GetCORSConfiguration
 
         /// <summary>
-        /// <para>This operation removes the website configuration from the bucket.</para>
+        /// Returns the cors configuration for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
-        /// <param name="deleteBucketWebsiteRequest">Container for the necessary parameters to execute the DeleteBucketWebsite service method on
-        ///          AmazonS3.</param>
-        /// 
-        DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest deleteBucketWebsiteRequest);
+        /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketWebsite"/>
+        /// Initiates the asynchronous execution of the GetCORSConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="deleteBucketWebsiteRequest">Container for the necessary parameters to execute the DeleteBucketWebsite operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest deleteBucketWebsiteRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketWebsite"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
-        DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region GetBucketRequestPayment
-
-        /// <summary>
-        /// <para>Returns the request payment configuration of a bucket.</para>
-        /// </summary>
-        /// 
-        /// <param name="getBucketRequestPaymentRequest">Container for the necessary parameters to execute the GetBucketRequestPayment service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketRequestPayment service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest getBucketRequestPaymentRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketRequestPayment"/>
-        /// </summary>
-        /// 
-        /// <param name="getBucketRequestPaymentRequest">Container for the necessary parameters to execute the GetBucketRequestPayment operation on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetBucketRequestPayment operation.</returns>
-        IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest getBucketRequestPaymentRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCORSConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketRequestPayment"/>
+        /// Finishes the asynchronous execution of the  GetCORSConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketRequestPayment.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
         /// 
-        /// <returns>Returns a GetBucketRequestPaymentResult from AmazonS3.</returns>
-        GetBucketRequestPaymentResponse EndGetBucketRequestPayment(IAsyncResult asyncResult);
-        
+        /// <returns>Returns a  GetCORSConfigurationResult from S3.</returns>
+        GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult);
+
         #endregion
-
-
-
-        #region GetObjectMetadata
+        
+        #region  GetLifecycleConfiguration
 
         /// <summary>
-        /// Returns information about a specified object.
+        /// Returns the lifecycle configuration information set on the bucket.
         /// </summary>
-        /// <remarks>
-        /// Retrieves information about a specific object or object size, without actually fetching the object itself. 
-        /// This is useful if you're only interested in the object metadata, and don't want to waste bandwidth on the object data.
-        /// The response is identical to the GetObject response, except that there is no response body.
-        /// </remarks>
-        /// <param name="getObjectMetadataRequest">Container for the necessary parameters to execute the GetObjectMetadata service method on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
-        /// <returns>The response from the HeadObject service method, as returned by AmazonS3.</returns>
+        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
         /// 
-        GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest);
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLifecycleConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLifecycleConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetLifecycleConfigurationResult from S3.</returns>
+        GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetObject
+
+        /// <summary>
+        /// Retrieves objects from Amazon S3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
+        /// 
+        /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        GetObjectResponse GetObject(GetObjectRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObject operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObject
+        ///         operation.</returns>
+        IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
+        /// 
+        /// <returns>Returns a  GetObjectResult from S3.</returns>
+        GetObjectResponse EndGetObject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetObjectMetadata
+
+        /// <summary>
+        /// The HEAD operation retrieves metadata from an object without returning the object
+        /// itself. This operation is useful if you're only interested in an object's metadata.
+        /// To use HEAD, you must have READ access to the object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectMetadata operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectMetadata"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="getObjectMetadataRequest">Container for the necessary parameters to execute the GetObjectMetadata operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectMetadata
         ///         operation.</returns>
-        IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetObjectMetadata operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectMetadata"/>
+        /// Finishes the asynchronous execution of the  GetObjectMetadata operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectMetadata.</param>
         /// 
-        /// <returns>Returns a HeadObjectResult from AmazonS3.</returns>
+        /// <returns>Returns a  GetObjectMetadataResult from S3.</returns>
         GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region ListObjects
+        #region  GetObjectTorrent
 
         /// <summary>
-        /// <para>Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a
-        /// subset of the objects in a bucket.</para>
+        /// Return torrent files from a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
-        /// <param name="listObjectsRequest">Container for the necessary parameters to execute the ListObjects service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListObjects service method, as returned by AmazonS3.</returns>
-        /// 
-        ListObjectsResponse ListObjects(ListObjectsRequest listObjectsRequest);
+        /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListObjects"/>
+        /// Initiates the asynchronous execution of the GetObjectTorrent operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="listObjectsRequest">Container for the necessary parameters to execute the ListObjects operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjects
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTorrent
         ///         operation.</returns>
-        IAsyncResult BeginListObjects(ListObjectsRequest listObjectsRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListObjects"/>
+        /// Finishes the asynchronous execution of the  GetObjectTorrent operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTorrent.</param>
         /// 
-        /// <returns>Returns a ListObjectsResult from AmazonS3.</returns>
-        ListObjectsResponse EndListObjects(IAsyncResult asyncResult);
-        
+        /// <returns>Returns a  GetObjectTorrentResult from S3.</returns>
+        GetObjectTorrentResponse EndGetObjectTorrent(IAsyncResult asyncResult);
+
         #endregion
         
-    
-
-        #region GetBucketNotification
+        #region  InitiateMultipartUpload
 
         /// <summary>
-        /// <para>Return the notification configuration of a bucket.</para>
+        /// Initiates a multipart upload and returns an upload ID.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
-        /// <param name="getBucketNotificationRequest">Container for the necessary parameters to execute the GetBucketNotification service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketNotification service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest getBucketNotificationRequest);
+        /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketNotification"/>
+        /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="getBucketNotificationRequest">Container for the necessary parameters to execute the GetBucketNotification operation on
-        ///          AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetBucketNotification operation.</returns>
-        IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest getBucketNotificationRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateMultipartUpload
+        ///         operation.</returns>
+        IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketNotification"/>
+        /// Finishes the asynchronous execution of the  InitiateMultipartUpload operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketNotification.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// 
-        /// <returns>Returns a GetBucketNotificationResult from AmazonS3.</returns>
-        GetBucketNotificationResponse EndGetBucketNotification(IAsyncResult asyncResult);
-        
+        /// <returns>Returns a  InitiateMultipartUploadResult from S3.</returns>
+        InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult);
+
         #endregion
         
-    
-
-        #region GetBucketVersioning
+        #region  ListBuckets
 
         /// <summary>
-        /// <para>Returns the versioning state of a bucket.</para>
+        /// Returns a list of all buckets owned by the authenticated sender of the request.
         /// </summary>
         /// 
-        /// <param name="getBucketVersioningRequest">Container for the necessary parameters to execute the GetBucketVersioning service method on
-        ///          AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketVersioning service method, as returned by AmazonS3.</returns>
-        /// 
-        GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest getBucketVersioningRequest);
+        /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        ListBucketsResponse ListBuckets();
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketVersioning"/>
+        /// Returns a list of all buckets owned by the authenticated sender of the request.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
-        /// <param name="getBucketVersioningRequest">Container for the necessary parameters to execute the GetBucketVersioning operation on
-        ///          AmazonS3.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetBucketVersioning operation.</returns>
-        IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest getBucketVersioningRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketVersioning"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
-        /// 
-        /// <returns>Returns a GetBucketVersioningResult from AmazonS3.</returns>
-        GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region ListBuckets
-
-        /// <summary>
-        /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
-        /// </summary>
-        /// 
-        /// <param name="listBucketsRequest">Container for the necessary parameters to execute the ListBuckets service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListBuckets service method, as returned by AmazonS3.</returns>
-        /// 
-        ListBucketsResponse ListBuckets(ListBucketsRequest listBucketsRequest);
+        /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        ListBucketsResponse ListBuckets(ListBucketsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBuckets operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListBuckets"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="listBucketsRequest">Container for the necessary parameters to execute the ListBuckets operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuckets operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuckets
         ///         operation.</returns>
-        IAsyncResult BeginListBuckets(ListBucketsRequest listBucketsRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListBuckets operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListBuckets"/>
+        /// Finishes the asynchronous execution of the  ListBuckets operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuckets.</param>
         /// 
-        /// <returns>Returns a ListBucketsResult from AmazonS3.</returns>
+        /// <returns>Returns a  ListBucketsResult from S3.</returns>
         ListBucketsResponse EndListBuckets(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListBuckets service method, as returned by AmazonS3.</returns>
-        /// 
-        ListBucketsResponse ListBuckets();
-        
         #endregion
         
-    
-
-        #region ListParts
+        #region  ListMultipartUploads
 
         /// <summary>
-        /// <para>Lists the parts that have been uploaded for a specific multipart upload.</para>
+        /// This operation lists in-progress multipart uploads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
+        /// 
+        /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMultipartUploads operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="listPartsRequest">Container for the necessary parameters to execute the ListParts service method on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>The response from the ListParts service method, as returned by AmazonS3.</returns>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartUploads
+        ///         operation.</returns>
+        IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMultipartUploads operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
         /// 
-        ListPartsResponse ListParts(ListPartsRequest listPartsRequest);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
+        /// 
+        /// <returns>Returns a  ListMultipartUploadsResult from S3.</returns>
+        ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListObjects
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
+        /// 
+        /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        ListObjectsResponse ListObjects(ListObjectsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjects operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjects operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjects
+        ///         operation.</returns>
+        IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListObjects operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
+        /// 
+        /// <returns>Returns a  ListObjectsResult from S3.</returns>
+        ListObjectsResponse EndListObjects(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListParts
+
+        /// <summary>
+        /// Lists the parts that have been uploaded for a specific multipart upload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
+        /// 
+        /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        ListPartsResponse ListParts(ListPartsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListParts"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
-        /// <param name="listPartsRequest">Container for the necessary parameters to execute the ListParts operation on AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListParts operation on AmazonS3Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParts
         ///         operation.</returns>
-        IAsyncResult BeginListParts(ListPartsRequest listPartsRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListParts operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListParts"/>
+        /// Finishes the asynchronous execution of the  ListParts operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// 
-        /// <returns>Returns a ListPartsResult from AmazonS3.</returns>
+        /// <returns>Returns a  ListPartsResult from S3.</returns>
         ListPartsResponse EndListParts(IAsyncResult asyncResult);
-        
-        #endregion
 
+        #endregion
+        
+        #region  ListVersions
+
+        /// <summary>
+        /// Returns metadata about all of the versions of objects in a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        ListVersionsResponse ListVersions(ListVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVersions operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVersions operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVersions
+        ///         operation.</returns>
+        IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVersions operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
+        /// 
+        /// <returns>Returns a  ListVersionsResult from S3.</returns>
+        ListVersionsResponse EndListVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutACL
+
+        /// <summary>
+        /// Sets the permissions on a bucket using access control lists (ACL).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
+        /// 
+        /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        PutACLResponse PutACL(PutACLRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutACL operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutACL operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutACL
+        ///         operation.</returns>
+        IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutACL operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutACL.</param>
+        /// 
+        /// <returns>Returns a  PutACLResult from S3.</returns>
+        PutACLResponse EndPutACL(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucket
+
+        /// <summary>
+        /// Creates a new bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
+        /// 
+        /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        PutBucketResponse PutBucket(PutBucketRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucket operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucket operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucket
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucket operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
+        /// 
+        /// <returns>Returns a  PutBucketResult from S3.</returns>
+        PutBucketResponse EndPutBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketLogging
+
+        /// <summary>
+        /// Set the logging parameters for a bucket and to specify permissions for who can view
+        /// and modify the logging parameters. To set the logging status of a bucket, you must
+        /// be the bucket owner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketLogging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketLogging
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketLogging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketLogging.</param>
+        /// 
+        /// <returns>Returns a  PutBucketLoggingResult from S3.</returns>
+        PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketNotification
+
+        /// <summary>
+        /// Enables notifications of specified events for a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketNotification operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketNotification
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketNotification operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketNotification.</param>
+        /// 
+        /// <returns>Returns a  PutBucketNotificationResult from S3.</returns>
+        PutBucketNotificationResponse EndPutBucketNotification(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketPolicy
+
+        /// <summary>
+        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
+        /// request completely replaces it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketPolicy operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketPolicy
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketPolicy operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutBucketPolicyResult from S3.</returns>
+        PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketRequestPayment
+
+        /// <summary>
+        /// Sets the request payment configuration for a bucket. By default, the bucket owner
+        /// pays for downloads from the bucket. This configuration parameter enables the bucket
+        /// owner (only) to specify that the person requesting the download will be charged for
+        /// the download.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketRequestPayment
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketRequestPayment operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketRequestPayment.</param>
+        /// 
+        /// <returns>Returns a  PutBucketRequestPaymentResult from S3.</returns>
+        PutBucketRequestPaymentResponse EndPutBucketRequestPayment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketTagging
+
+        /// <summary>
+        /// Sets the tags for a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketTagging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketTagging
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketTagging operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
+        /// 
+        /// <returns>Returns a  PutBucketTaggingResult from S3.</returns>
+        PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketVersioning
+
+        /// <summary>
+        /// Sets the versioning state of an existing bucket. To set the versioning state, you
+        /// must be the bucket owner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketVersioning operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketVersioning
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketVersioning operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketVersioning.</param>
+        /// 
+        /// <returns>Returns a  PutBucketVersioningResult from S3.</returns>
+        PutBucketVersioningResponse EndPutBucketVersioning(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketWebsite
+
+        /// <summary>
+        /// Set the website configuration for a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketWebsite operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketWebsite
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketWebsite operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
+        /// 
+        /// <returns>Returns a  PutBucketWebsiteResult from S3.</returns>
+        PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutCORSConfiguration
+
+        /// <summary>
+        /// Sets the cors configuration for a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCORSConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutCORSConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutCORSConfigurationResult from S3.</returns>
+        PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutLifecycleConfiguration
+
+        /// <summary>
+        /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
+        /// it replaces it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLifecycleConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutLifecycleConfiguration operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutLifecycleConfigurationResult from S3.</returns>
+        PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutObject
+
+        /// <summary>
+        /// Adds an object to a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
+        /// 
+        /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        PutObjectResponse PutObject(PutObjectRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObject operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObject
+        ///         operation.</returns>
+        IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
+        /// 
+        /// <returns>Returns a  PutObjectResult from S3.</returns>
+        PutObjectResponse EndPutObject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RestoreObject
+
+        /// <summary>
+        /// Restores an archived copy of an object back into Amazon S3
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
+        /// 
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        RestoreObjectResponse RestoreObject(RestoreObjectRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreObject operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreObject
+        ///         operation.</returns>
+        IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreObject operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
+        /// 
+        /// <returns>Returns a  RestoreObjectResult from S3.</returns>
+        RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UploadPart
+
+        /// <summary>
+        /// Uploads a part in a multipart upload.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
+        /// 
+        /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        UploadPartResponse UploadPart(UploadPartRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadPart operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadPart operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPart
+        ///         operation.</returns>
+        IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UploadPart operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
+        /// 
+        /// <returns>Returns a  UploadPartResult from S3.</returns>
+        UploadPartResponse EndUploadPart(IAsyncResult asyncResult);
+
+        #endregion
+        
     }
 }
-    

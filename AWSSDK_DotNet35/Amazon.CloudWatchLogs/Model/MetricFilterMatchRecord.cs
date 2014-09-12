@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _eventNumber;
         private Dictionary<string, string> _extractedValues = new Dictionary<string, string>();
 
-
         /// <summary>
         /// Gets and sets the property EventMessage.
         /// </summary>
@@ -48,7 +51,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._eventMessage != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EventNumber.
         /// </summary>
@@ -63,7 +65,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._eventNumber.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ExtractedValues.

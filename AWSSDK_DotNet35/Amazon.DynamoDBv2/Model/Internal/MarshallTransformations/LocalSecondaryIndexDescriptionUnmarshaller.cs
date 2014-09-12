@@ -12,82 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for LocalSecondaryIndexDescription Object
+    /// </summary>  
+    public class LocalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<LocalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<LocalSecondaryIndexDescription, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// LocalSecondaryIndexDescriptionUnmarshaller
-      /// </summary>
-      internal class LocalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<LocalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<LocalSecondaryIndexDescription, JsonUnmarshallerContext>
-      {
         LocalSecondaryIndexDescription IUnmarshaller<LocalSecondaryIndexDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public LocalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            LocalSecondaryIndexDescription localSecondaryIndexDescription = new LocalSecondaryIndexDescription();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            LocalSecondaryIndexDescription unmarshalledObject = new LocalSecondaryIndexDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("IndexName", targetDepth))
-              {
-                localSecondaryIndexDescription.IndexName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("KeySchema", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<KeySchemaElement,KeySchemaElementUnmarshaller>(
-                    KeySchemaElementUnmarshaller.GetInstance());                  
-                localSecondaryIndexDescription.KeySchema = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Projection", targetDepth))
-              {
-                localSecondaryIndexDescription.Projection = ProjectionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("IndexSizeBytes", targetDepth))
-              {
-                localSecondaryIndexDescription.IndexSizeBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ItemCount", targetDepth))
-              {
-                localSecondaryIndexDescription.ItemCount = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("IndexName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexSizeBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.IndexSizeBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ItemCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeySchema", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
+                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Projection", targetDepth))
+                {
+                    var unmarshaller = ProjectionUnmarshaller.Instance;
+                    unmarshalledObject.Projection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return localSecondaryIndexDescription;
+            return unmarshalledObject;
         }
 
-        private static LocalSecondaryIndexDescriptionUnmarshaller instance;
-        public static LocalSecondaryIndexDescriptionUnmarshaller GetInstance()
+
+        private static LocalSecondaryIndexDescriptionUnmarshaller _instance = new LocalSecondaryIndexDescriptionUnmarshaller();        
+
+        public static LocalSecondaryIndexDescriptionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new LocalSecondaryIndexDescriptionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribePlacementGroupsResult : AmazonWebServiceResponse
     {
-        
-        private List<PlacementGroup> placementGroups = new List<PlacementGroup>();
-
+        private List<PlacementGroup> _placementGroups = new List<PlacementGroup>();
 
         /// <summary>
+        /// Gets and sets the property PlacementGroups. 
+        /// <para>
         /// One or more placement groups.
-        ///  
+        /// </para>
         /// </summary>
         public List<PlacementGroup> PlacementGroups
         {
-            get { return this.placementGroups; }
-            set { this.placementGroups = value; }
+            get { return this._placementGroups; }
+            set { this._placementGroups = value; }
         }
 
         // Check to see if PlacementGroups property is set
         internal bool IsSetPlacementGroups()
         {
-            return this.placementGroups.Count > 0;
+            return this._placementGroups != null && this._placementGroups.Count > 0; 
         }
+
     }
 }

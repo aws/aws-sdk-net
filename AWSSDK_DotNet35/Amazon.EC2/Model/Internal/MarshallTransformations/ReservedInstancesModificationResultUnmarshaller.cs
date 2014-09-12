@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedInstancesModificationResult Unmarshaller
-     /// </summary>
-    internal class ReservedInstancesModificationResultUnmarshaller : IUnmarshaller<ReservedInstancesModificationResult, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesModificationResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedInstancesModificationResult Object
+    /// </summary>  
+    public class ReservedInstancesModificationResultUnmarshaller : IUnmarshaller<ReservedInstancesModificationResult, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesModificationResult, JsonUnmarshallerContext>
     {
-        public ReservedInstancesModificationResult Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedInstancesModificationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedInstancesModificationResult reservedInstancesModificationResult = new ReservedInstancesModificationResult();
+            ReservedInstancesModificationResult unmarshalledObject = new ReservedInstancesModificationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("reservedInstancesId", targetDepth))
                     {
-                        reservedInstancesModificationResult.ReservedInstancesId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedInstancesId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetConfiguration", targetDepth))
                     {
-                        reservedInstancesModificationResult.TargetConfiguration = ReservedInstancesConfigurationUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ReservedInstancesConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedInstancesModificationResult;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedInstancesModificationResult;
+            return unmarshalledObject;
         }
 
-        public ReservedInstancesModificationResult Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedInstancesModificationResult Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedInstancesModificationResultUnmarshaller instance;
 
-        public static ReservedInstancesModificationResultUnmarshaller GetInstance() 
+        private static ReservedInstancesModificationResultUnmarshaller _instance = new ReservedInstancesModificationResultUnmarshaller();        
+
+        public static ReservedInstancesModificationResultUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedInstancesModificationResultUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

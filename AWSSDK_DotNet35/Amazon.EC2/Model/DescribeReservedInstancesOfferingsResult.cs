@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesOfferingsResult : AmazonWebServiceResponse
     {
-        
-        private List<ReservedInstancesOffering> reservedInstancesOfferings = new List<ReservedInstancesOffering>();
-        private string nextToken;
-
+        private string _nextToken;
+        private List<ReservedInstancesOffering> _reservedInstancesOfferings = new List<ReservedInstancesOffering>();
 
         /// <summary>
-        /// A list of Reserved Instances offerings.
-        ///  
-        /// </summary>
-        public List<ReservedInstancesOffering> ReservedInstancesOfferings
-        {
-            get { return this.reservedInstancesOfferings; }
-            set { this.reservedInstancesOfferings = value; }
-        }
-
-        // Check to see if ReservedInstancesOfferings property is set
-        internal bool IsSetReservedInstancesOfferings()
-        {
-            return this.reservedInstancesOfferings.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
         /// The next paginated set of results to return.
-        ///  
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesOfferings. 
+        /// <para>
+        /// A list of Reserved Instances offerings.
+        /// </para>
+        /// </summary>
+        public List<ReservedInstancesOffering> ReservedInstancesOfferings
+        {
+            get { return this._reservedInstancesOfferings; }
+            set { this._reservedInstancesOfferings = value; }
+        }
+
+        // Check to see if ReservedInstancesOfferings property is set
+        internal bool IsSetReservedInstancesOfferings()
+        {
+            return this._reservedInstancesOfferings != null && this._reservedInstancesOfferings.Count > 0; 
+        }
+
     }
 }

@@ -66,14 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static RoutingRuleConditionUnmarshaller instance;
+        private static RoutingRuleConditionUnmarshaller _instance;
 
-        public static RoutingRuleConditionUnmarshaller GetInstance() 
+        public static RoutingRuleConditionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RoutingRuleConditionUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new RoutingRuleConditionUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

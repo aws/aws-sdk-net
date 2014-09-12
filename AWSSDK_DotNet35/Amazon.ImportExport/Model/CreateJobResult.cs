@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,132 +12,122 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
-    /// <para> Output structure for the CreateJob operation. </para>
+    /// Output structure for the CreateJob operation.
     /// </summary>
     public partial class CreateJobResult : AmazonWebServiceResponse
     {
-        
-        private string jobId;
-        private JobType jobType;
-        private string awsShippingAddress;
-        private string signature;
-        private string signatureFileContents;
-        private string warningMessage;
+        private string _awsShippingAddress;
+        private string _jobId;
+        private JobType _jobType;
+        private string _signature;
+        private string _signatureFileContents;
+        private string _warningMessage;
 
         /// <summary>
-        /// A unique identifier which refers to a particular job.
-        ///  
-        /// </summary>
-        public string JobId
-        {
-            get { return this.jobId; }
-            set { this.jobId = value; }
-        }
-
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
-        {
-            return this.jobId != null;
-        }
-
-        /// <summary>
-        /// Specifies whether the job to initiate is an import or export job.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Import, Export</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public JobType JobType
-        {
-            get { return this.jobType; }
-            set { this.jobType = value; }
-        }
-
-        // Check to see if JobType property is set
-        internal bool IsSetJobType()
-        {
-            return this.jobType != null;
-        }
-
-        /// <summary>
-        /// Address you ship your storage device to.
-        ///  
+        /// Gets and sets the property AwsShippingAddress.
         /// </summary>
         public string AwsShippingAddress
         {
-            get { return this.awsShippingAddress; }
-            set { this.awsShippingAddress = value; }
+            get { return this._awsShippingAddress; }
+            set { this._awsShippingAddress = value; }
         }
 
         // Check to see if AwsShippingAddress property is set
         internal bool IsSetAwsShippingAddress()
         {
-            return this.awsShippingAddress != null;
+            return this._awsShippingAddress != null;
         }
 
         /// <summary>
-        /// An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
-        /// want to create the signature file yourself. Generally you should use the SignatureFileContents value.
-        ///  
+        /// Gets and sets the property JobId.
+        /// </summary>
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType.
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Signature.
         /// </summary>
         public string Signature
         {
-            get { return this.signature; }
-            set { this.signature = value; }
+            get { return this._signature; }
+            set { this._signature = value; }
         }
 
         // Check to see if Signature property is set
         internal bool IsSetSignature()
         {
-            return this.signature != null;
+            return this._signature != null;
         }
 
         /// <summary>
-        /// The actual text of the SIGNATURE file to be written to disk.
-        ///  
+        /// Gets and sets the property SignatureFileContents.
         /// </summary>
         public string SignatureFileContents
         {
-            get { return this.signatureFileContents; }
-            set { this.signatureFileContents = value; }
+            get { return this._signatureFileContents; }
+            set { this._signatureFileContents = value; }
         }
 
         // Check to see if SignatureFileContents property is set
         internal bool IsSetSignatureFileContents()
         {
-            return this.signatureFileContents != null;
+            return this._signatureFileContents != null;
         }
 
         /// <summary>
-        /// An optional message notifying you of non-fatal issues with the job, such as use of an incompatible Amazon S3 bucket name.
-        ///  
+        /// Gets and sets the property WarningMessage.
         /// </summary>
         public string WarningMessage
         {
-            get { return this.warningMessage; }
-            set { this.warningMessage = value; }
+            get { return this._warningMessage; }
+            set { this._warningMessage = value; }
         }
 
         // Check to see if WarningMessage property is set
         internal bool IsSetWarningMessage()
         {
-            return this.warningMessage != null;
+            return this._warningMessage != null;
         }
+
     }
 }

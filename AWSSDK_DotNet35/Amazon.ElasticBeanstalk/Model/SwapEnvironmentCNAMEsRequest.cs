@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,18 +38,17 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _sourceEnvironmentId;
         private string _sourceEnvironmentName;
 
-
         /// <summary>
         /// Gets and sets the property DestinationEnvironmentId. 
         /// <para>
-        ///          The ID of the destination environment.      
+        ///  The ID of the destination environment. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You must specify at least the <code>DestinationEnvironmentID</code>
-        /// or the <code>DestinationEnvironmentName</code>.          You may also specify both.
-        ///         You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
-        ///      
+        ///  Condition: You must specify at least the <code>DestinationEnvironmentID</code> or
+        /// the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify
+        /// the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
+        /// 
         /// </para>
         /// </summary>
         public string DestinationEnvironmentId
@@ -60,18 +63,17 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._destinationEnvironmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DestinationEnvironmentName. 
         /// <para>
-        ///          The name of the destination environment.      
+        ///  The name of the destination environment. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You must specify at least the <code>DestinationEnvironmentID</code>
-        /// or the <code>DestinationEnvironmentName</code>.          You may also specify both.
-        /// You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
-        ///      
+        ///  Condition: You must specify at least the <code>DestinationEnvironmentID</code> or
+        /// the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify
+        /// the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
+        /// 
         /// </para>
         /// </summary>
         public string DestinationEnvironmentName
@@ -86,18 +88,17 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._destinationEnvironmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceEnvironmentId. 
         /// <para>
-        ///          The ID of the source environment.      
+        ///  The ID of the source environment. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You must specify at least the <code>SourceEnvironmentID</code>
-        /// or the <code>SourceEnvironmentName</code>.          You may also specify both.   
-        ///      If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
-        ///      
+        ///  Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+        /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+        /// <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
+        /// 
         /// </para>
         /// </summary>
         public string SourceEnvironmentId
@@ -112,18 +113,17 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._sourceEnvironmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceEnvironmentName. 
         /// <para>
-        ///          The name of the source environment.      
+        ///  The name of the source environment. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You must specify at least the <code>SourceEnvironmentID</code>
-        /// or the <code>SourceEnvironmentName</code>.          You may also specify both.   
-        ///      If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
-        ///      
+        ///  Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+        /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+        /// <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
+        /// 
         /// </para>
         /// </summary>
         public string SourceEnvironmentName

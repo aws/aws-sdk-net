@@ -1,0 +1,12 @@
+﻿HTTP/1.1 200 OK
+x-amz-id-2: +fsw92WhZCX2zhITZqVuTD+LH77WfTDVDH468DcMqJOq2Y16Er6+mzVNcXn9JvWxOpqqh1ozqYg=
+x-amz-request-id: 9D1C59D16D4BB0BB
+Date: Wed, 16 Jul 2014 19:17:30 GMT
+Last-Modified: Wed, 07 May 2014 01:53:09 GMT
+ETag: "54b0c58c7ce9f2a8b551351102ee0938"
+Accept-Ranges: bytes
+Content-Type: text/plain
+Content-Length: 14
+Server: AmazonS3
+
+this is a test

@@ -12,66 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Kinesis.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Kinesis.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for MergeShards operation
+    /// </summary>  
+    public class MergeShardsResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for MergeShards operation
-      /// </summary>
-      internal class MergeShardsResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          MergeShardsResponse response = new MergeShardsResponse();
-          
-          return response;
-        }        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-          {
-            return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-          {
-            return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
-          {
-            return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            MergeShardsResponse response = new MergeShardsResponse();
+
+
+            return response;
         }
 
-        private static MergeShardsResponseUnmarshaller instance;
-        public static MergeShardsResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new MergeShardsResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+            {
+                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+            {
+                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static MergeShardsResponseUnmarshaller _instance = new MergeShardsResponseUnmarshaller();        
+
+        internal static MergeShardsResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static MergeShardsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

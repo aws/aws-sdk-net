@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateVolume Request Marshaller
     /// </summary>       
-    public class UpdateVolumeRequestMarshaller : IMarshaller<IRequest, UpdateVolumeRequest> 
+    public class UpdateVolumeRequestMarshaller : IMarshaller<IRequest, UpdateVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateVolumeRequest)input);
+        }
+
         public IRequest Marshall(UpdateVolumeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,22 +56,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMountPoint())
                 {
-                    writer.WritePropertyName("MountPoint");
-                    writer.Write(publicRequest.MountPoint);
+                    context.Writer.WritePropertyName("MountPoint");
+                    context.Writer.Write(publicRequest.MountPoint);
                 }
 
                 if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetVolumeId())
                 {
-                    writer.WritePropertyName("VolumeId");
-                    writer.Write(publicRequest.VolumeId);
+                    context.Writer.WritePropertyName("VolumeId");
+                    context.Writer.Write(publicRequest.VolumeId);
                 }
 
         

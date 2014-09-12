@@ -1,0 +1,9 @@
+{
+  "noArgOverloads": [
+    "DescribeConnections",
+	"DescribeInterconnects",
+	"DescribeLocations",
+    "DescribeVirtualGateways",
+    "DescribeVirtualInterfaces"
+  ]
+}

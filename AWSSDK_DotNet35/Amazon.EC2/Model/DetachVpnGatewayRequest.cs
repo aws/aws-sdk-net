@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,49 +29,73 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachVpnGateway operation.
-    /// <para>Detaches a virtual private gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can
-    /// confirm a virtual private gateway has been completely detached from a VPC by describing the virtual private gateway (any attachments to the
-    /// virtual private gateway are also described).</para> <para>You must wait for the attachment's state to switch to <c>detached</c> before you
-    /// can delete the VPC or attach a different VPC to the virtual private gateway.</para>
+    /// Detaches a virtual private gateway from a VPC. You do this if you're planning to turn
+    /// off the VPC and not use it anymore. You can confirm a virtual private gateway has
+    /// been completely detached from a VPC by describing the virtual private gateway (any
+    /// attachments to the virtual private gateway are also described).
+    /// 
+    ///  
+    /// <para>
+    /// You must wait for the attachment's state to switch to <code>detached</code> before
+    /// you can delete the VPC or attach a different VPC to the virtual private gateway.
+    /// </para>
     /// </summary>
     public partial class DetachVpnGatewayRequest : AmazonEC2Request
     {
-        private string vpnGatewayId;
-        private string vpcId;
-
+        private string _vpcId;
+        private string _vpnGatewayId;
 
         /// <summary>
-        /// The ID of the virtual private gateway.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string VpnGatewayId
-        {
-            get { return this.vpnGatewayId; }
-            set { this.vpnGatewayId = value; }
-        }
+        public DetachVpnGatewayRequest() { }
 
-        // Check to see if VpnGatewayId property is set
-        internal bool IsSetVpnGatewayId()
+        /// <summary>
+        /// Instantiates DetachVpnGatewayRequest with the parameterized properties
+        /// </summary>
+        /// <param name="vpnGatewayId">The ID of the virtual private gateway.</param>
+        /// <param name="vpcId">The ID of the VPC.</param>
+        public DetachVpnGatewayRequest(string vpnGatewayId, string vpcId)
         {
-            return this.vpnGatewayId != null;
+            _vpnGatewayId = vpnGatewayId;
+            _vpcId = vpcId;
         }
 
         /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
         /// The ID of the VPC.
-        ///  
+        /// </para>
         /// </summary>
         public string VpcId
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;
+            return this._vpcId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnGatewayId. 
+        /// <para>
+        /// The ID of the virtual private gateway.
+        /// </para>
+        /// </summary>
+        public string VpnGatewayId
+        {
+            get { return this._vpnGatewayId; }
+            set { this._vpnGatewayId = value; }
+        }
+
+        // Check to see if VpnGatewayId property is set
+        internal bool IsSetVpnGatewayId()
+        {
+            return this._vpnGatewayId != null;
         }
 
     }
 }
-    

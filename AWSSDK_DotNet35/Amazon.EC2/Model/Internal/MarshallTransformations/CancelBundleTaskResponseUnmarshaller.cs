@@ -12,62 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for CancelBundleTask operation
-    /// </summary>
-    internal class CancelBundleTaskResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for CancelBundleTask operation
+    /// </summary>  
+    public class CancelBundleTaskResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             CancelBundleTaskResponse response = new CancelBundleTaskResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("bundleInstanceTask", targetDepth))
                     {
-                        response.BundleTask = BundleTaskUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BundleTaskUnmarshaller.Instance;
+                        response.BundleTask = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static CancelBundleTaskResponseUnmarshaller instance;
+        private static CancelBundleTaskResponseUnmarshaller _instance = new CancelBundleTaskResponseUnmarshaller();        
 
-        public static CancelBundleTaskResponseUnmarshaller GetInstance()
+        internal static CancelBundleTaskResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new CancelBundleTaskResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static CancelBundleTaskResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,45 +29,45 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySubnetAttribute operation.
-    /// <para>Modifies a subnet attribute.</para>
+    /// Modifies a subnet attribute.
     /// </summary>
     public partial class ModifySubnetAttributeRequest : AmazonEC2Request
     {
-        private string subnetId;
-        private bool? mapPublicIpOnLaunch;
-
-
-        /// <summary>
-        /// The ID of the subnet.
-        ///  
-        /// </summary>
-        public string SubnetId
-        {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
-        }
-
-        // Check to see if SubnetId property is set
-        internal bool IsSetSubnetId()
-        {
-            return this.subnetId != null;
-        }
+        private bool? _mapPublicIpOnLaunch;
+        private string _subnetId;
 
         /// <summary>
-        /// Modifies the public IP addressing behavior for the subnet. Specify true to indicate that instances launched into the specified subnet should be assigned a public IP address. /// If set to true, the instance receives a public IP address only if the instance is launched with a single, new network interface with the device index of 0.
+        /// Gets and sets the property MapPublicIpOnLaunch.
         /// </summary>
         public bool MapPublicIpOnLaunch
         {
-            get { return this.mapPublicIpOnLaunch ?? default(bool); }
-            set { this.mapPublicIpOnLaunch = value; }
+            get { return this._mapPublicIpOnLaunch.GetValueOrDefault(); }
+            set { this._mapPublicIpOnLaunch = value; }
         }
 
         // Check to see if MapPublicIpOnLaunch property is set
         internal bool IsSetMapPublicIpOnLaunch()
         {
-            return this.mapPublicIpOnLaunch.HasValue;
+            return this._mapPublicIpOnLaunch.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
         }
 
     }
 }
-    

@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.EC2
 {
-
     /// <summary>
-    /// Configuration for accessing Amazon Elastic Compute Cloud service
+    /// Configuration for accessing Amazon EC2 service
     /// </summary>
     public partial class AmazonEC2Config : ClientConfig
     {
@@ -29,7 +35,7 @@ namespace Amazon.EC2
         /// </summary>
         public AmazonEC2Config()
         {
-            
+            this.AuthenticationServiceName = "ec2";
         }
 
         /// <summary>
@@ -39,9 +45,7 @@ namespace Amazon.EC2
         {
             get
             {
-                
                 return "ec2";
-                    
             }
         }
 
@@ -57,5 +61,3 @@ namespace Amazon.EC2
         }
     }
 }
-
-    

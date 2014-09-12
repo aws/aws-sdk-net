@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,64 +29,44 @@ namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStemmingOptions operation.
-    /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
-    /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
+    /// Configures a stemming dictionary for the search domain. The stemming dictionary is
+    /// used during indexing and when processing search requests. The maximum size of the
+    /// stemming dictionary is 500 KB.
     /// </summary>
     public partial class UpdateStemmingOptionsRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private string stems;
-
+        private string _domainName;
+        private string _stems;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property DomainName.
         /// </summary>
         public string DomainName
         {
-            get { return this.domainName; }
-            set { this.domainName = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;
+            return this._domainName != null;
         }
 
         /// <summary>
-        /// Maps terms to their stems, serialized as a JSON document. The document has a single object with one property "stems" whose value is an
-        /// object mapping terms to their stems. The maximum size of a stemming document is 500 KB. Example: <c>{ "stems": {"people": "person",
-        /// "walking": "walk"} }</c>
-        ///  
+        /// Gets and sets the property Stems.
         /// </summary>
         public string Stems
         {
-            get { return this.stems; }
-            set { this.stems = value; }
+            get { return this._stems; }
+            set { this._stems = value; }
         }
 
         // Check to see if Stems property is set
         internal bool IsSetStems()
         {
-            return this.stems != null;
+            return this._stems != null;
         }
 
     }
 }
-    

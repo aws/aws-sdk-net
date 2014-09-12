@@ -12,87 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IpPermission Unmarshaller
-     /// </summary>
-    internal class IpPermissionUnmarshaller : IUnmarshaller<IpPermission, XmlUnmarshallerContext>, IUnmarshaller<IpPermission, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IpPermission Object
+    /// </summary>  
+    public class IpPermissionUnmarshaller : IUnmarshaller<IpPermission, XmlUnmarshallerContext>, IUnmarshaller<IpPermission, JsonUnmarshallerContext>
     {
-        public IpPermission Unmarshall(XmlUnmarshallerContext context) 
+        public IpPermission Unmarshall(XmlUnmarshallerContext context)
         {
-            IpPermission ipPermission = new IpPermission();
+            IpPermission unmarshalledObject = new IpPermission();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ipProtocol", targetDepth))
-                    {
-                        ipPermission.IpProtocol = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("fromPort", targetDepth))
                     {
-                        ipPermission.FromPort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.FromPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("toPort", targetDepth))
+                    if (context.TestExpression("ipProtocol", targetDepth))
                     {
-                        ipPermission.ToPort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("groups/item", targetDepth))
-                    {
-                        ipPermission.UserIdGroupPairs.Add(UserIdGroupPairUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpProtocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipRanges/item/cidrIp", targetDepth))
                     {
-                        ipPermission.IpRanges.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IpRanges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("toPort", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ToPort = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("groups/item", targetDepth))
+                    {
+                        var unmarshaller = UserIdGroupPairUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.UserIdGroupPairs.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return ipPermission;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return ipPermission;
+            return unmarshalledObject;
         }
 
-        public IpPermission Unmarshall(JsonUnmarshallerContext context) 
+        public IpPermission Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IpPermissionUnmarshaller instance;
 
-        public static IpPermissionUnmarshaller GetInstance() 
+        private static IpPermissionUnmarshaller _instance = new IpPermissionUnmarshaller();        
+
+        public static IpPermissionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IpPermissionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,48 +29,63 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRegions operation.
-    /// <para>Describes one or more regions that are currently available to you.</para> <para>For a list of the regions supported by Amazon EC2, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region" >Regions and Endpoints</a> .</para>
+    /// Describes one or more regions that are currently available to you.
+    /// 
+    ///  
+    /// <para>
+    /// For a list of the regions supported by Amazon EC2, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
+    /// and Endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeRegionsRequest : AmazonEC2Request
     {
-        private List<string> regionNames = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// The names of one or more regions.
-        ///  
-        /// </summary>
-        public List<string> RegionNames
-        {
-            get { return this.regionNames; }
-            set { this.regionNames = value; }
-        }
-
-        // Check to see if RegionNames property is set
-        internal bool IsSetRegionNames()
-        {
-            return this.regionNames.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _regionNames = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>endpoint</c> - The endpoint of the region (for example, <c>ec2.us-east-1.amazonaws.com</c>). </li> <li>
-        /// <c>region-name</c> - The name of the region (for example, <c>us-east-1</c>). </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionNames. 
+        /// <para>
+        /// The names of one or more regions.
+        /// </para>
+        /// </summary>
+        public List<string> RegionNames
+        {
+            get { return this._regionNames; }
+            set { this._regionNames = value; }
+        }
+
+        // Check to see if RegionNames property is set
+        internal bool IsSetRegionNames()
+        {
+            return this._regionNames != null && this._regionNames.Count > 0; 
         }
 
     }
 }
-    

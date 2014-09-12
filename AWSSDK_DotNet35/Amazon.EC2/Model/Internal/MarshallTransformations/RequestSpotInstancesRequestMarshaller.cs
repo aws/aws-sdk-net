@@ -12,280 +12,248 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Request Spot Instances Request Marshaller
+    /// RequestSpotInstances Request Marshaller
     /// </summary>       
-    public class RequestSpotInstancesRequestMarshaller : IMarshaller<IRequest, RequestSpotInstancesRequest>
+    public class RequestSpotInstancesRequestMarshaller : IMarshaller<IRequest, RequestSpotInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(RequestSpotInstancesRequest requestSpotInstancesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(requestSpotInstancesRequest, "AmazonEC2");
+            return this.Marshall((RequestSpotInstancesRequest)input);
+        }
+    
+        public IRequest Marshall(RequestSpotInstancesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RequestSpotInstances");
             request.Parameters.Add("Version", "2014-06-15");
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetSpotPrice())
-            {
-                request.Parameters.Add("SpotPrice", StringUtils.FromString(requestSpotInstancesRequest.SpotPrice));
-            }
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetInstanceCount())
-            {
-                request.Parameters.Add("InstanceCount", StringUtils.FromInt(requestSpotInstancesRequest.InstanceCount));
-            }
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetType())
-            {
-                request.Parameters.Add("Type", StringUtils.FromString(requestSpotInstancesRequest.Type));
-            }
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetValidFrom())
-            {
-                request.Parameters.Add("ValidFrom", StringUtils.FromDateTime(requestSpotInstancesRequest.ValidFrom));
-            }
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetValidUntil())
-            {
-                request.Parameters.Add("ValidUntil", StringUtils.FromDateTime(requestSpotInstancesRequest.ValidUntil));
-            }
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetLaunchGroup())
-            {
-                request.Parameters.Add("LaunchGroup", StringUtils.FromString(requestSpotInstancesRequest.LaunchGroup));
-            }
-            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetAvailabilityZoneGroup())
-            {
-                request.Parameters.Add("AvailabilityZoneGroup", StringUtils.FromString(requestSpotInstancesRequest.AvailabilityZoneGroup));
-            }
-            if (requestSpotInstancesRequest != null)
-            {
-                LaunchSpecification launchSpecification = requestSpotInstancesRequest.LaunchSpecification;
-                if (launchSpecification != null && launchSpecification.IsSetImageId())
-                {
-                    request.Parameters.Add("LaunchSpecification.ImageId", StringUtils.FromString(launchSpecification.ImageId));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetKeyName())
-                {
-                    request.Parameters.Add("LaunchSpecification.KeyName", StringUtils.FromString(launchSpecification.KeyName));
-                }
 
-                if (launchSpecification != null)
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAvailabilityZoneGroup())
                 {
-                    List<GroupIdentifier> allSecurityGroupsList = launchSpecification.AllSecurityGroups;
-                    int allSecurityGroupsListIndex = 1;
-                    foreach (GroupIdentifier allSecurityGroupsListValue in allSecurityGroupsList)
+                    request.Parameters.Add("AvailabilityZoneGroup", StringUtils.FromString(publicRequest.AvailabilityZoneGroup));
+                }
+                if(publicRequest.IsSetInstanceCount())
+                {
+                    request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
+                }
+                if(publicRequest.IsSetLaunchGroup())
+                {
+                    request.Parameters.Add("LaunchGroup", StringUtils.FromString(publicRequest.LaunchGroup));
+                }
+                if(publicRequest.IsSetLaunchSpecification())
+                {
+                    if(publicRequest.LaunchSpecification.IsSetAddressingType())
                     {
-                        if (allSecurityGroupsListValue != null && allSecurityGroupsListValue.IsSetGroupName())
-                        {
-                            request.Parameters.Add("LaunchSpecification.GroupSet." + allSecurityGroupsListIndex + ".GroupName", StringUtils.FromString(allSecurityGroupsListValue.GroupName));
-                        }
-                        if (allSecurityGroupsListValue != null && allSecurityGroupsListValue.IsSetGroupId())
-                        {
-                            request.Parameters.Add("LaunchSpecification.GroupSet." + allSecurityGroupsListIndex + ".GroupId", StringUtils.FromString(allSecurityGroupsListValue.GroupId));
-                        }
-
-                        allSecurityGroupsListIndex++;
+                        request.Parameters.Add("LaunchSpecification" + "." + "AddressingType", StringUtils.FromString(publicRequest.LaunchSpecification.AddressingType));
                     }
-                }
-                if (launchSpecification != null)
-                {
-                    List<string> securityGroupsList = launchSpecification.SecurityGroups;
-
-                    int securityGroupsListIndex = 1;
-                    foreach (string securityGroupsListValue in securityGroupsList)
-                    { 
-                        request.Parameters.Add("LaunchSpecification.SecurityGroup." + securityGroupsListIndex, StringUtils.FromString(securityGroupsListValue));
-                        securityGroupsListIndex++;
-                    }
-                }
-                if (launchSpecification != null && launchSpecification.IsSetUserData())
-                {
-                    request.Parameters.Add("LaunchSpecification.UserData", StringUtils.FromString(launchSpecification.UserData));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetAddressingType())
-                {
-                    request.Parameters.Add("LaunchSpecification.AddressingType", StringUtils.FromString(launchSpecification.AddressingType));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetInstanceType())
-                {
-                    request.Parameters.Add("LaunchSpecification.InstanceType", StringUtils.FromString(launchSpecification.InstanceType));
-                }
-                if (launchSpecification != null)
-                {
-                    SpotPlacement placement = launchSpecification.Placement;
-                    if (placement != null && placement.IsSetAvailabilityZone())
+                    if(publicRequest.LaunchSpecification.IsSetBlockDeviceMappings())
                     {
-                        request.Parameters.Add("LaunchSpecification.Placement.AvailabilityZone", StringUtils.FromString(placement.AvailabilityZone));
-                    }
-                    if (placement != null && placement.IsSetGroupName())
-                    {
-                        request.Parameters.Add("LaunchSpecification.Placement.GroupName", StringUtils.FromString(placement.GroupName));
-                    }
-                }
-                if (launchSpecification != null && launchSpecification.IsSetKernelId())
-                {
-                    request.Parameters.Add("LaunchSpecification.KernelId", StringUtils.FromString(launchSpecification.KernelId));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetRamdiskId())
-                {
-                    request.Parameters.Add("LaunchSpecification.RamdiskId", StringUtils.FromString(launchSpecification.RamdiskId));
-                }
-
-                if (launchSpecification != null)
-                {
-                    List<BlockDeviceMapping> blockDeviceMappingsList = launchSpecification.BlockDeviceMappings;
-                    int blockDeviceMappingsListIndex = 1;
-                    foreach (BlockDeviceMapping blockDeviceMappingsListValue in blockDeviceMappingsList)
-                    {
-                        if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetVirtualName())
+                        int publicRequestLaunchSpecificationlistValueIndex = 1;
+                        foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.BlockDeviceMappings)
                         {
-                            request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.FromString(blockDeviceMappingsListValue.VirtualName));
-                        }
-                        if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetDeviceName())
-                        {
-                            request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.FromString(blockDeviceMappingsListValue.DeviceName));
-                        }
-                        if (blockDeviceMappingsListValue != null)
-                        {
-                            EbsBlockDevice ebs = blockDeviceMappingsListValue.Ebs;
-                            if (ebs != null && ebs.IsSetSnapshotId())
+                            if(publicRequestLaunchSpecificationlistValue.IsSetDeviceName())
                             {
-                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.FromString(ebs.SnapshotId));
+                                request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.DeviceName));
                             }
-                            if (ebs != null && ebs.IsSetVolumeSize())
+                            if(publicRequestLaunchSpecificationlistValue.IsSetEbs())
                             {
-                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.FromInt(ebs.VolumeSize));
-                            }
-                            if (ebs != null && ebs.IsSetDeleteOnTermination())
-                            {
-                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.FromBool(ebs.DeleteOnTermination));
-                            }
-                            if (ebs != null && ebs.IsSetVolumeType())
-                            {
-                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.FromString(ebs.VolumeType));
-                            }
-                            if (ebs != null && ebs.IsSetIops())
-                            {
-                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.FromInt(ebs.Iops));
-                            }
-                            if (ebs != null && ebs.IsSetEncrypted())
-                            {
-                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.FromBool(ebs.Encrypted));
-                            }
-                        }
-                        if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetNoDevice())
-                        {
-                            request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.FromString(blockDeviceMappingsListValue.NoDevice));
-                        }
-
-                        blockDeviceMappingsListIndex++;
-                    }
-                }
-                if (launchSpecification != null && launchSpecification.IsSetMonitoringEnabled())
-                {
-                    request.Parameters.Add("LaunchSpecification.Monitoring.Enabled", StringUtils.FromBool(launchSpecification.MonitoringEnabled));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetSubnetId())
-                {
-                    request.Parameters.Add("LaunchSpecification.SubnetId", StringUtils.FromString(launchSpecification.SubnetId));
-                }
-
-                if (launchSpecification != null)
-                {
-                    List<InstanceNetworkInterfaceSpecification> networkInterfacesList = launchSpecification.NetworkInterfaces;
-                    int networkInterfacesListIndex = 1;
-                    foreach (InstanceNetworkInterfaceSpecification networkInterfacesListValue in networkInterfacesList)
-                    {
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetNetworkInterfaceId())
-                        {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.FromString(networkInterfacesListValue.NetworkInterfaceId));
-                        }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetDeviceIndex())
-                        {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.FromInt(networkInterfacesListValue.DeviceIndex));
-                        }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetSubnetId())
-                        {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SubnetId", StringUtils.FromString(networkInterfacesListValue.SubnetId));
-                        }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetDescription())
-                        {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Description", StringUtils.FromString(networkInterfacesListValue.Description));
-                        }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetPrivateIpAddress())
-                        {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.FromString(networkInterfacesListValue.PrivateIpAddress));
-                        }
-                        if (networkInterfacesListValue != null)
-                        {
-                            List<string> groupsList = networkInterfacesListValue.Groups;
-
-                            int groupsListIndex = 1;
-                            foreach (string groupsListValue in groupsList)
-                            { 
-                                request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.FromString(groupsListValue));
-                                groupsListIndex++;
-                            }
-                        }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetDeleteOnTermination())
-                        {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.FromBool(networkInterfacesListValue.DeleteOnTermination));
-                        }
-
-                        if (networkInterfacesListValue != null)
-                        {
-                            List<PrivateIpAddressSpecification> privateIpAddressesList = networkInterfacesListValue.PrivateIpAddresses;
-                            int privateIpAddressesListIndex = 1;
-                            foreach (PrivateIpAddressSpecification privateIpAddressesListValue in privateIpAddressesList)
-                            {
-                                if (privateIpAddressesListValue != null && privateIpAddressesListValue.IsSetPrivateIpAddress())
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetDeleteOnTermination())
                                 {
-                                    request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.FromString(privateIpAddressesListValue.PrivateIpAddress));
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.Ebs.DeleteOnTermination));
                                 }
-                                if (privateIpAddressesListValue != null && privateIpAddressesListValue.IsSetPrimary())
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetEncrypted())
                                 {
-                                    request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.FromBool(privateIpAddressesListValue.Primary));
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.Ebs.Encrypted));
                                 }
-
-                                privateIpAddressesListIndex++;
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetIops())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.Iops));
+                                }
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetSnapshotId())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.Ebs.SnapshotId));
+                                }
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetVolumeSize())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.VolumeSize));
+                                }
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetVolumeType())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.Ebs.VolumeType));
+                                }
                             }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetNoDevice())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.NoDevice));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetVirtualName())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.VirtualName));
+                            }
+                            publicRequestLaunchSpecificationlistValueIndex++;
                         }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetSecondaryPrivateIpAddressCount())
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetEbsOptimized())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "EbsOptimized", StringUtils.FromBool(publicRequest.LaunchSpecification.EbsOptimized));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetIamInstanceProfile())
+                    {
+                        if(publicRequest.LaunchSpecification.IamInstanceProfile.IsSetArn())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.FromInt(networkInterfacesListValue.SecondaryPrivateIpAddressCount));
+                            request.Parameters.Add("LaunchSpecification" + "." + "IamInstanceProfile" + "." + "Arn", StringUtils.FromString(publicRequest.LaunchSpecification.IamInstanceProfile.Arn));
                         }
-                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetAssociatePublicIpAddress())
+                        if(publicRequest.LaunchSpecification.IamInstanceProfile.IsSetName())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.FromBool(networkInterfacesListValue.AssociatePublicIpAddress));
+                            request.Parameters.Add("LaunchSpecification" + "." + "IamInstanceProfile" + "." + "Name", StringUtils.FromString(publicRequest.LaunchSpecification.IamInstanceProfile.Name));
                         }
-
-                        networkInterfacesListIndex++;
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetImageId())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "ImageId", StringUtils.FromString(publicRequest.LaunchSpecification.ImageId));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetInstanceType())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "InstanceType", StringUtils.FromString(publicRequest.LaunchSpecification.InstanceType));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetKernelId())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "KernelId", StringUtils.FromString(publicRequest.LaunchSpecification.KernelId));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetKeyName())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "KeyName", StringUtils.FromString(publicRequest.LaunchSpecification.KeyName));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetMonitoringEnabled())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "Monitoring.Enabled", StringUtils.FromBool(publicRequest.LaunchSpecification.MonitoringEnabled));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetNetworkInterfaces())
+                    {
+                        int publicRequestLaunchSpecificationlistValueIndex = 1;
+                        foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.NetworkInterfaces)
+                        {
+                            if(publicRequestLaunchSpecificationlistValue.IsSetAssociatePublicIpAddress())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.AssociatePublicIpAddress));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetDeleteOnTermination())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.DeleteOnTermination));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetDescription())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.Description));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetDeviceIndex())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.DeviceIndex));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetGroups())
+                            {
+                                int publicRequestLaunchSpecificationlistValuelistValueIndex = 1;
+                                foreach(var publicRequestLaunchSpecificationlistValuelistValue in publicRequestLaunchSpecificationlistValue.Groups)
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "SecurityGroupId" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue));
+                                    publicRequestLaunchSpecificationlistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetNetworkInterfaceId())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.NetworkInterfaceId));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetPrivateIpAddress())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.PrivateIpAddress));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetPrivateIpAddresses())
+                            {
+                                int publicRequestLaunchSpecificationlistValuelistValueIndex = 1;
+                                foreach(var publicRequestLaunchSpecificationlistValuelistValue in publicRequestLaunchSpecificationlistValue.PrivateIpAddresses)
+                                {
+                                    if(publicRequestLaunchSpecificationlistValuelistValue.IsSetPrimary())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "PrivateIpAddressesSet" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestLaunchSpecificationlistValuelistValue.Primary));
+                                    }
+                                    if(publicRequestLaunchSpecificationlistValuelistValue.IsSetPrivateIpAddress())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "PrivateIpAddressesSet" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue.PrivateIpAddress));
+                                    }
+                                    publicRequestLaunchSpecificationlistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetSecondaryPrivateIpAddressCount())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.SecondaryPrivateIpAddressCount));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetSubnetId())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.SubnetId));
+                            }
+                            publicRequestLaunchSpecificationlistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetPlacement())
+                    {
+                        if(publicRequest.LaunchSpecification.Placement.IsSetAvailabilityZone())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZone));
+                        }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetGroupName())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.GroupName));
+                        }
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetRamdiskId())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "RamdiskId", StringUtils.FromString(publicRequest.LaunchSpecification.RamdiskId));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetSubnetId())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "SubnetId", StringUtils.FromString(publicRequest.LaunchSpecification.SubnetId));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetUserData())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "UserData", StringUtils.FromString(publicRequest.LaunchSpecification.UserData));
                     }
                 }
-                if (launchSpecification != null)
+                if(publicRequest.IsSetSpotPrice())
                 {
-                    IamInstanceProfileSpecification iamInstanceProfile = launchSpecification.IamInstanceProfile;
-                    if (iamInstanceProfile != null && iamInstanceProfile.IsSetArn())
-                    {
-                        request.Parameters.Add("LaunchSpecification.IamInstanceProfile.Arn", StringUtils.FromString(iamInstanceProfile.Arn));
-                    }
-                    if (iamInstanceProfile != null && iamInstanceProfile.IsSetName())
-                    {
-                        request.Parameters.Add("LaunchSpecification.IamInstanceProfile.Name", StringUtils.FromString(iamInstanceProfile.Name));
-                    }
+                    request.Parameters.Add("SpotPrice", StringUtils.FromString(publicRequest.SpotPrice));
                 }
-                if (launchSpecification != null && launchSpecification.IsSetEbsOptimized())
+                if(publicRequest.IsSetType())
                 {
-                    request.Parameters.Add("LaunchSpecification.EbsOptimized", StringUtils.FromBool(launchSpecification.EbsOptimized));
+                    request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
+                }
+                if(publicRequest.IsSetValidFrom())
+                {
+                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTime(publicRequest.ValidFrom));
+                }
+                if(publicRequest.IsSetValidUntil())
+                {
+                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTime(publicRequest.ValidUntil));
                 }
             }
-
             return request;
         }
     }

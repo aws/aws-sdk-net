@@ -12,17 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Returns information about the  CreateTable response and response metadata.
+    /// Configuration for accessing Amazon CreateTable service
     /// </summary>
     public partial class CreateTableResponse : CreateTableResult
     {
@@ -40,4 +40,3 @@ namespace Amazon.DynamoDBv2.Model
         }
     }
 }
-    

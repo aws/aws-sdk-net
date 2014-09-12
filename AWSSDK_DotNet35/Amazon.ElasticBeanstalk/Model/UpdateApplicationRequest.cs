@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,24 +29,32 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates the specified application to have the specified         properties.      
-    /// 
-    ///       <note>         If a property (for example, <code>description</code>) is not
-    /// provided, the         value         remains unchanged. To clear these properties,
-    /// specify an empty string.      </note>
+    /// Updates the specified application to have the specified properties.
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
         private string _description;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateApplicationRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateApplicationRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName"> The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
+        public UpdateApplicationRequest(string applicationName)
+        {
+            _applicationName = applicationName;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application to update. If no such application         is
-        /// found, <code>UpdateApplication</code> returns an         <code>InvalidParameterValue</code>
-        ///         error.      
+        ///  The name of the application to update. If no such application is found, <code>UpdateApplication</code>
+        /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -57,16 +69,15 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///          A new description for the application.          
+        ///  A new description for the application. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        /// Default:         If not specified, AWS Elastic Beanstalk         does not update the
-        /// description.      
+        /// Default: If not specified, AWS Elastic Beanstalk does not update the description.
+        /// 
         /// </para>
         /// </summary>
         public string Description

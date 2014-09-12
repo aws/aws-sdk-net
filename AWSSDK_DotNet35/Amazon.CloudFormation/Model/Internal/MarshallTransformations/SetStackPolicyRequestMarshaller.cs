@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Stack Policy Request Marshaller
+    /// SetStackPolicy Request Marshaller
     /// </summary>       
-    public class SetStackPolicyRequestMarshaller : IMarshaller<IRequest, SetStackPolicyRequest>
+    public class SetStackPolicyRequestMarshaller : IMarshaller<IRequest, SetStackPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(SetStackPolicyRequest setStackPolicyRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(setStackPolicyRequest, "AmazonCloudFormation");
+            return this.Marshall((SetStackPolicyRequest)input);
+        }
+    
+        public IRequest Marshall(SetStackPolicyRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "SetStackPolicy");
             request.Parameters.Add("Version", "2010-05-15");
-            if (setStackPolicyRequest != null && setStackPolicyRequest.IsSetStackName())
-            {
-                request.Parameters.Add("StackName", StringUtils.FromString(setStackPolicyRequest.StackName));
-            }
-            if (setStackPolicyRequest != null && setStackPolicyRequest.IsSetStackPolicyBody())
-            {
-                request.Parameters.Add("StackPolicyBody", StringUtils.FromString(setStackPolicyRequest.StackPolicyBody));
-            }
-            if (setStackPolicyRequest != null && setStackPolicyRequest.IsSetStackPolicyURL())
-            {
-                request.Parameters.Add("StackPolicyURL", StringUtils.FromString(setStackPolicyRequest.StackPolicyURL));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetStackName())
+                {
+                    request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
+                }
+                if(publicRequest.IsSetStackPolicyBody())
+                {
+                    request.Parameters.Add("StackPolicyBody", StringUtils.FromString(publicRequest.StackPolicyBody));
+                }
+                if(publicRequest.IsSetStackPolicyURL())
+                {
+                    request.Parameters.Add("StackPolicyURL", StringUtils.FromString(publicRequest.StackPolicyURL));
+                }
+            }
             return request;
         }
     }

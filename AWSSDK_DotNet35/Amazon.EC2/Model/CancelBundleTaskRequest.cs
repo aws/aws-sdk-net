@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,43 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelBundleTask operation.
-    /// <para>Cancels a bundling operation for an instance store-backed Windows instance.</para>
+    /// Cancels a bundling operation for an instance store-backed Windows instance.
     /// </summary>
     public partial class CancelBundleTaskRequest : AmazonEC2Request
     {
-        private string bundleId;
-
+        private string _bundleId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CancelBundleTaskRequest() { }
+
+        /// <summary>
+        /// Instantiates CancelBundleTaskRequest with the parameterized properties
+        /// </summary>
+        /// <param name="bundleId">The ID of the bundle task.</param>
+        public CancelBundleTaskRequest(string bundleId)
+        {
+            _bundleId = bundleId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BundleId. 
+        /// <para>
         /// The ID of the bundle task.
-        ///  
+        /// </para>
         /// </summary>
         public string BundleId
         {
-            get { return this.bundleId; }
-            set { this.bundleId = value; }
+            get { return this._bundleId; }
+            set { this._bundleId = value; }
         }
 
         // Check to see if BundleId property is set
         internal bool IsSetBundleId()
         {
-            return this.bundleId != null;
+            return this._bundleId != null;
         }
 
     }
 }
-    

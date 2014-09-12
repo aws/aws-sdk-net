@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for a DescribeStackResources action.</para>
+    /// The output for a <a>DescribeStackResources</a> action.
     /// </summary>
     public partial class DescribeStackResourcesResult : AmazonWebServiceResponse
     {
-        
-        private List<StackResource> stackResources = new List<StackResource>();
-
+        private List<StackResource> _stackResources = new List<StackResource>();
 
         /// <summary>
-        /// A list of <c>StackResource</c> structures.
-        ///  
+        /// Gets and sets the property StackResources. 
+        /// <para>
+        /// A list of <code>StackResource</code> structures.
+        /// </para>
         /// </summary>
         public List<StackResource> StackResources
         {
-            get { return this.stackResources; }
-            set { this.stackResources = value; }
+            get { return this._stackResources; }
+            set { this._stackResources = value; }
         }
 
         // Check to see if StackResources property is set
         internal bool IsSetStackResources()
         {
-            return this.stackResources.Count > 0;
+            return this._stackResources != null && this._stackResources.Count > 0; 
         }
+
     }
 }

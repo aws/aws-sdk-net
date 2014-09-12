@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Respond Activity Task Completed Request Marshaller
+    /// RespondActivityTaskCompleted Request Marshaller
     /// </summary>       
-    internal class RespondActivityTaskCompletedRequestMarshaller : IMarshaller<IRequest, RespondActivityTaskCompletedRequest> 
+    public class RespondActivityTaskCompletedRequestMarshaller : IMarshaller<IRequest, RespondActivityTaskCompletedRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((RespondActivityTaskCompletedRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(respondActivityTaskCompletedRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(RespondActivityTaskCompletedRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.RespondActivityTaskCompleted";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (respondActivityTaskCompletedRequest != null && respondActivityTaskCompletedRequest.IsSetTaskToken()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResult())
                 {
-                    writer.WritePropertyName("taskToken");
-                    writer.Write(respondActivityTaskCompletedRequest.TaskToken);
-                }
-                if (respondActivityTaskCompletedRequest != null && respondActivityTaskCompletedRequest.IsSetResult()) 
-                {
-                    writer.WritePropertyName("result");
-                    writer.Write(respondActivityTaskCompletedRequest.Result);
+                    context.Writer.WritePropertyName("result");
+                    context.Writer.Write(publicRequest.Result);
                 }
 
+                if(publicRequest.IsSetTaskToken())
+                {
+                    context.Writer.WritePropertyName("taskToken");
+                    context.Writer.Write(publicRequest.TaskToken);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,67 +32,65 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateAddressResult : AmazonWebServiceResponse
     {
-        
-        private string publicIp;
-        private DomainType domain;
-        private string allocationId;
-
+        private string _allocationId;
+        private DomainType _domain;
+        private string _publicIp;
 
         /// <summary>
-        /// The Elastic IP address.
-        ///  
-        /// </summary>
-        public string PublicIp
-        {
-            get { return this.publicIp; }
-            set { this.publicIp = value; }
-        }
-
-        // Check to see if PublicIp property is set
-        internal bool IsSetPublicIp()
-        {
-            return this.publicIp != null;
-        }
-
-        /// <summary>
-        /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<c>standard</c>) or instances in a VPC (<c>vpc</c>).
-        ///  
+        /// Gets and sets the property AllocationId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>vpc, standard</description>
-        ///     </item>
-        /// </list>
+        /// [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address
+        /// for use with instances in a VPC.
         /// </para>
-        /// </summary>
-        public DomainType Domain
-        {
-            get { return this.domain; }
-            set { this.domain = value; }
-        }
-
-        // Check to see if Domain property is set
-        internal bool IsSetDomain()
-        {
-            return this.domain != null;
-        }
-
-        /// <summary>
-        /// [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.
-        ///  
         /// </summary>
         public string AllocationId
         {
-            get { return this.allocationId; }
-            set { this.allocationId = value; }
+            get { return this._allocationId; }
+            set { this._allocationId = value; }
         }
 
         // Check to see if AllocationId property is set
         internal bool IsSetAllocationId()
         {
-            return this.allocationId != null;
+            return this._allocationId != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic
+        /// (<code>standard</code>) or instances in a VPC (<code>vpc</code>).
+        /// </para>
+        /// </summary>
+        public DomainType Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIp. 
+        /// <para>
+        /// The Elastic IP address.
+        /// </para>
+        /// </summary>
+        public string PublicIp
+        {
+            get { return this._publicIp; }
+            set { this._publicIp = value; }
+        }
+
+        // Check to see if PublicIp property is set
+        internal bool IsSetPublicIp()
+        {
+            return this._publicIp != null;
+        }
+
     }
 }

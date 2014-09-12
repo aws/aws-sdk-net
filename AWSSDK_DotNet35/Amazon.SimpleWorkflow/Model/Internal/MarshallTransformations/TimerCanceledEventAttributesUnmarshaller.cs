@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TimerCanceledEventAttributes Object
+    /// </summary>  
+    public class TimerCanceledEventAttributesUnmarshaller : IUnmarshaller<TimerCanceledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<TimerCanceledEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TimerCanceledEventAttributesUnmarshaller
-      /// </summary>
-      internal class TimerCanceledEventAttributesUnmarshaller : IUnmarshaller<TimerCanceledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<TimerCanceledEventAttributes, JsonUnmarshallerContext>
-      {
         TimerCanceledEventAttributes IUnmarshaller<TimerCanceledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TimerCanceledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TimerCanceledEventAttributes timerCanceledEventAttributes = new TimerCanceledEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TimerCanceledEventAttributes unmarshalledObject = new TimerCanceledEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("timerId", targetDepth))
-              {
-                timerCanceledEventAttributes.TimerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                timerCanceledEventAttributes.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
-              {
-                timerCanceledEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return timerCanceledEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static TimerCanceledEventAttributesUnmarshaller instance;
-        public static TimerCanceledEventAttributesUnmarshaller GetInstance()
+
+        private static TimerCanceledEventAttributesUnmarshaller _instance = new TimerCanceledEventAttributesUnmarshaller();        
+
+        public static TimerCanceledEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TimerCanceledEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

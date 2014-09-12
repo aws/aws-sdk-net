@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,47 +29,66 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmProductInstance operation.
-    /// <para>Determines whether a product code is associated with an instance. This action can only be used by the owner of the product code. It is
-    /// useful when a product code owner needs to verify whether another user's instance is eligible for support.</para>
+    /// Determines whether a product code is associated with an instance. This action can
+    /// only be used by the owner of the product code. It is useful when a product code owner
+    /// needs to verify whether another user's instance is eligible for support.
     /// </summary>
     public partial class ConfirmProductInstanceRequest : AmazonEC2Request
     {
-        private string productCode;
-        private string instanceId;
-
+        private string _instanceId;
+        private string _productCode;
 
         /// <summary>
-        /// The product code. This must be an Amazon DevPay product code that you own.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string ProductCode
-        {
-            get { return this.productCode; }
-            set { this.productCode = value; }
-        }
+        public ConfirmProductInstanceRequest() { }
 
-        // Check to see if ProductCode property is set
-        internal bool IsSetProductCode()
+        /// <summary>
+        /// Instantiates ConfirmProductInstanceRequest with the parameterized properties
+        /// </summary>
+        /// <param name="productCode">The product code. This must be an Amazon DevPay product code that you own.</param>
+        /// <param name="instanceId">The ID of the instance.</param>
+        public ConfirmProductInstanceRequest(string productCode, string instanceId)
         {
-            return this.productCode != null;
+            _productCode = productCode;
+            _instanceId = instanceId;
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The ID of the instance.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductCode. 
+        /// <para>
+        /// The product code. This must be an Amazon DevPay product code that you own.
+        /// </para>
+        /// </summary>
+        public string ProductCode
+        {
+            get { return this._productCode; }
+            set { this._productCode = value; }
+        }
+
+        // Check to see if ProductCode property is set
+        internal bool IsSetProductCode()
+        {
+            return this._productCode != null;
         }
 
     }
 }
-    

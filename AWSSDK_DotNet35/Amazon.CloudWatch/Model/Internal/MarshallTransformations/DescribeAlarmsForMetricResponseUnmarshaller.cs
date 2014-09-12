@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeAlarmsForMetric operation
-    /// </summary>
-    internal class DescribeAlarmsForMetricResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeAlarmsForMetric operation
+    /// </summary>  
+    public class DescribeAlarmsForMetricResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeAlarmsForMetricResponse response = new DescribeAlarmsForMetricResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeAlarmsForMetricResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeAlarmsForMetricResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeAlarmsForMetricResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,46 +71,43 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("MetricAlarms/member", targetDepth))
                     {
-                        response.MetricAlarms.Add(MetricAlarmUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = MetricAlarmUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.MetricAlarms.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeAlarmsForMetricResponseUnmarshaller instance;
+        private static DescribeAlarmsForMetricResponseUnmarshaller _instance = new DescribeAlarmsForMetricResponseUnmarshaller();        
 
-        public static DescribeAlarmsForMetricResponseUnmarshaller GetInstance()
+        internal static DescribeAlarmsForMetricResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeAlarmsForMetricResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeAlarmsForMetricResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

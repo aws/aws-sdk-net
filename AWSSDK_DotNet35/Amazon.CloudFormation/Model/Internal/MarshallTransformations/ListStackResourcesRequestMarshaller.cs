@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Stack Resources Request Marshaller
+    /// ListStackResources Request Marshaller
     /// </summary>       
-    public class ListStackResourcesRequestMarshaller : IMarshaller<IRequest, ListStackResourcesRequest>
+    public class ListStackResourcesRequestMarshaller : IMarshaller<IRequest, ListStackResourcesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ListStackResourcesRequest listStackResourcesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(listStackResourcesRequest, "AmazonCloudFormation");
+            return this.Marshall((ListStackResourcesRequest)input);
+        }
+    
+        public IRequest Marshall(ListStackResourcesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "ListStackResources");
             request.Parameters.Add("Version", "2010-05-15");
-            if (listStackResourcesRequest != null && listStackResourcesRequest.IsSetStackName())
-            {
-                request.Parameters.Add("StackName", StringUtils.FromString(listStackResourcesRequest.StackName));
-            }
-            if (listStackResourcesRequest != null && listStackResourcesRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(listStackResourcesRequest.NextToken));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetStackName())
+                {
+                    request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
+                }
+            }
             return request;
         }
     }

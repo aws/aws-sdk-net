@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInternetGateway operation.
-    /// <para>Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete it.</para>
+    /// Deletes the specified Internet gateway. You must detach the Internet gateway from
+    /// the VPC before you can delete it.
     /// </summary>
     public partial class DeleteInternetGatewayRequest : AmazonEC2Request
     {
-        private string internetGatewayId;
-
+        private string _internetGatewayId;
 
         /// <summary>
+        /// Gets and sets the property InternetGatewayId. 
+        /// <para>
         /// The ID of the Internet gateway.
-        ///  
+        /// </para>
         /// </summary>
         public string InternetGatewayId
         {
-            get { return this.internetGatewayId; }
-            set { this.internetGatewayId = value; }
+            get { return this._internetGatewayId; }
+            set { this._internetGatewayId = value; }
         }
 
         // Check to see if InternetGatewayId property is set
         internal bool IsSetInternetGatewayId()
         {
-            return this.internetGatewayId != null;
+            return this._internetGatewayId != null;
         }
 
     }
 }
-    

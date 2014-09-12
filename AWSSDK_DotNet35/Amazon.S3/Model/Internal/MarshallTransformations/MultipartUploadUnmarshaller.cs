@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Initiator", targetDepth))
                     {
-                        uploadsItem.Initiator = InitiatorUnmarshaller.GetInstance().Unmarshall(context);
+                        uploadsItem.Initiator = InitiatorUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -57,7 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Owner", targetDepth))
                     {
-                        uploadsItem.Owner = OwnerUnmarshaller.GetInstance().Unmarshall(context);
+                        uploadsItem.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -90,15 +90,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static MultipartUploadUnmarshaller instance;
+        private static MultipartUploadUnmarshaller _instance;
 
-        public static MultipartUploadUnmarshaller GetInstance() 
+        public static MultipartUploadUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new MultipartUploadUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new MultipartUploadUnmarshaller();
+                }
+                return _instance;
+            }
         }
+
     }
 }
     

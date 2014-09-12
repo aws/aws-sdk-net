@@ -12,76 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Network Interface Request Marshaller
+    /// CreateNetworkInterface Request Marshaller
     /// </summary>       
-    public class CreateNetworkInterfaceRequestMarshaller : IMarshaller<IRequest, CreateNetworkInterfaceRequest>
+    public class CreateNetworkInterfaceRequestMarshaller : IMarshaller<IRequest, CreateNetworkInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateNetworkInterfaceRequest createNetworkInterfaceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createNetworkInterfaceRequest, "AmazonEC2");
+            return this.Marshall((CreateNetworkInterfaceRequest)input);
+        }
+    
+        public IRequest Marshall(CreateNetworkInterfaceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateNetworkInterface");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createNetworkInterfaceRequest != null && createNetworkInterfaceRequest.IsSetSubnetId())
-            {
-                request.Parameters.Add("SubnetId", StringUtils.FromString(createNetworkInterfaceRequest.SubnetId));
-            }
-            if (createNetworkInterfaceRequest != null && createNetworkInterfaceRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createNetworkInterfaceRequest.Description));
-            }
-            if (createNetworkInterfaceRequest != null && createNetworkInterfaceRequest.IsSetPrivateIpAddress())
-            {
-                request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(createNetworkInterfaceRequest.PrivateIpAddress));
-            }
-            if (createNetworkInterfaceRequest != null)
-            {
-                List<string> groupsList = createNetworkInterfaceRequest.Groups;
 
-                int groupsListIndex = 1;
-                foreach (string groupsListValue in groupsList)
-                { 
-                    request.Parameters.Add("SecurityGroupId." + groupsListIndex, StringUtils.FromString(groupsListValue));
-                    groupsListIndex++;
-                }
-            }
-
-            if (createNetworkInterfaceRequest != null)
+            if(publicRequest != null)
             {
-                List<PrivateIpAddressSpecification> privateIpAddressesList = createNetworkInterfaceRequest.PrivateIpAddresses;
-                int privateIpAddressesListIndex = 1;
-                foreach (PrivateIpAddressSpecification privateIpAddressesListValue in privateIpAddressesList)
+                if(publicRequest.IsSetDescription())
                 {
-                    if (privateIpAddressesListValue != null && privateIpAddressesListValue.IsSetPrivateIpAddress())
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetGroups())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Groups)
                     {
-                        request.Parameters.Add("PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.FromString(privateIpAddressesListValue.PrivateIpAddress));
+                        request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (privateIpAddressesListValue != null && privateIpAddressesListValue.IsSetPrimary())
+                }
+                if(publicRequest.IsSetPrivateIpAddress())
+                {
+                    request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));
+                }
+                if(publicRequest.IsSetPrivateIpAddresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PrivateIpAddresses)
                     {
-                        request.Parameters.Add("PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.FromBool(privateIpAddressesListValue.Primary));
+                        if(publicRequestlistValue.IsSetPrimary())
+                        {
+                            request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValue.Primary));
+                        }
+                        if(publicRequestlistValue.IsSetPrivateIpAddress())
+                        {
+                            request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValue.PrivateIpAddress));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    privateIpAddressesListIndex++;
+                }
+                if(publicRequest.IsSetSecondaryPrivateIpAddressCount())
+                {
+                    request.Parameters.Add("SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequest.SecondaryPrivateIpAddressCount));
+                }
+                if(publicRequest.IsSetSubnetId())
+                {
+                    request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
             }
-            if (createNetworkInterfaceRequest != null && createNetworkInterfaceRequest.IsSetSecondaryPrivateIpAddressCount())
-            {
-                request.Parameters.Add("SecondaryPrivateIpAddressCount", StringUtils.FromInt(createNetworkInterfaceRequest.SecondaryPrivateIpAddressCount));
-            }
-
             return request;
         }
     }

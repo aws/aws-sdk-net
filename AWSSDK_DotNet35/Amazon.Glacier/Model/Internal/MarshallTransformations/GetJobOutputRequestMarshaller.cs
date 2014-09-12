@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,43 +33,33 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Job Output Request Marshaller
+    /// GetJobOutput Request Marshaller
     /// </summary>       
-    internal class GetJobOutputRequestMarshaller : IMarshaller<IRequest, GetJobOutputRequest> 
+    public class GetJobOutputRequestMarshaller : IMarshaller<IRequest, GetJobOutputRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(GetJobOutputRequest getJobOutputRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((GetJobOutputRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(getJobOutputRequest, "AmazonGlacier");
-            string target = "Glacier.GetJobOutput";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(GetJobOutputRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            if(getJobOutputRequest.IsSetRange())
-                request.Headers.Add("Range", StringUtils.FromString(getJobOutputRequest.Range));
 
-            
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output"; 
-            if(getJobOutputRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(getJobOutputRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(getJobOutputRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(getJobOutputRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(getJobOutputRequest.IsSetJobId())
-                uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(getJobOutputRequest.JobId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{jobId}", "" ); 
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{jobId}", publicRequest.IsSetJobId() ? StringUtils.FromString(publicRequest.JobId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+        
+            if(publicRequest.IsSetRange())
+                request.Headers["Range"] = publicRequest.Range;
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

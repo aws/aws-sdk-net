@@ -12,127 +12,128 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The status of domain configuration option.</para>
+    /// The status of domain configuration option.
     /// </summary>
     public partial class OptionStatus
     {
-        
-        private DateTime? creationDate;
-        private DateTime? updateDate;
-        private int? updateVersion;
-        private OptionState state;
-        private bool? pendingDeletion;
-
+        private DateTime? _creationDate;
+        private bool? _pendingDeletion;
+        private OptionState _state;
+        private DateTime? _updateDate;
+        private int? _updateVersion;
 
         /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
         /// A timestamp for when this option was created.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreationDate
         {
-            get { return this.creationDate ?? default(DateTime); }
-            set { this.creationDate = value; }
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
         }
 
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;
+            return this._creationDate.HasValue; 
         }
 
         /// <summary>
-        /// A timestamp for when this option was last updated.
-        ///  
-        /// </summary>
-        public DateTime UpdateDate
-        {
-            get { return this.updateDate ?? default(DateTime); }
-            set { this.updateDate = value; }
-        }
-
-        // Check to see if UpdateDate property is set
-        internal bool IsSetUpdateDate()
-        {
-            return this.updateDate.HasValue;
-        }
-
-        /// <summary>
-        /// A unique integer that indicates when this option was last updated.
-        ///  
+        /// Gets and sets the property PendingDeletion. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - </description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int UpdateVersion
-        {
-            get { return this.updateVersion ?? default(int); }
-            set { this.updateVersion = value; }
-        }
-
-        // Check to see if UpdateVersion property is set
-        internal bool IsSetUpdateVersion()
-        {
-            return this.updateVersion.HasValue;
-        }
-
-        /// <summary>
-        /// The state of processing a change to an option. Possible values:<ul> <li><c>RequiresIndexDocuments</c>: the option's latest value will not be
-        /// deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li><c>Processing</c>: the option's latest value is in
-        /// the process of being activated. </li> <li><c>Active</c>: the option's latest value is completely deployed.</li> <li><c>FailedToValidate</c>:
-        /// the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or
-        /// update or remove the incompatible documents.</li> </ul>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>RequiresIndexDocuments, Processing, Active, FailedToValidate</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public OptionState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
         /// Indicates that the option will be deleted once processing is complete.
-        ///  
+        /// </para>
         /// </summary>
         public bool PendingDeletion
         {
-            get { return this.pendingDeletion ?? default(bool); }
-            set { this.pendingDeletion = value; }
+            get { return this._pendingDeletion.GetValueOrDefault(); }
+            set { this._pendingDeletion = value; }
         }
 
         // Check to see if PendingDeletion property is set
         internal bool IsSetPendingDeletion()
         {
-            return this.pendingDeletion.HasValue;
+            return this._pendingDeletion.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of processing a change to an option. Possible values:
+        /// </para>
+        ///  <ul> <li> <code>RequiresIndexDocuments</code>: the option's latest value will not
+        /// be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li>
+        /// <li> <code>Processing</code>: the option's latest value is in the process of being
+        /// activated. </li> <li> <code>Active</code>: the option's latest value is completely
+        /// deployed.</li> <li> <code>FailedToValidate</code>: the option value is not compatible
+        /// with the domain's data and cannot be used to index the data. You must either modify
+        /// the option value or update or remove the incompatible documents.</li> </ul>
+        /// </summary>
+        public OptionState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateDate. 
+        /// <para>
+        /// A timestamp for when this option was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime UpdateDate
+        {
+            get { return this._updateDate.GetValueOrDefault(); }
+            set { this._updateDate = value; }
+        }
+
+        // Check to see if UpdateDate property is set
+        internal bool IsSetUpdateDate()
+        {
+            return this._updateDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateVersion. 
+        /// <para>
+        /// A unique integer that indicates when this option was last updated.
+        /// </para>
+        /// </summary>
+        public int UpdateVersion
+        {
+            get { return this._updateVersion.GetValueOrDefault(); }
+            set { this._updateVersion = value; }
+        }
+
+        // Check to see if UpdateVersion property is set
+        internal bool IsSetUpdateVersion()
+        {
+            return this._updateVersion.HasValue; 
+        }
+
     }
 }

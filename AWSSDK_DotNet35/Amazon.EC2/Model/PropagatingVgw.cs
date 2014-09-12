@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a virtual private gateway propagating route.</para>
+    /// Describes a virtual private gateway propagating route.
     /// </summary>
     public partial class PropagatingVgw
     {
-        
-        private string gatewayId;
-
+        private string _gatewayId;
 
         /// <summary>
+        /// Gets and sets the property GatewayId. 
+        /// <para>
         /// The ID of the virtual private gateway (VGW).
-        ///  
+        /// </para>
         /// </summary>
         public string GatewayId
         {
-            get { return this.gatewayId; }
-            set { this.gatewayId = value; }
+            get { return this._gatewayId; }
+            set { this._gatewayId = value; }
         }
 
         // Check to see if GatewayId property is set
         internal bool IsSetGatewayId()
         {
-            return this.gatewayId != null;
+            return this._gatewayId != null;
         }
+
     }
 }

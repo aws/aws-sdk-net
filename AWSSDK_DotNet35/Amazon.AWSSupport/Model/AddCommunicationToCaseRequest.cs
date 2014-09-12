@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -47,7 +51,6 @@ namespace Amazon.AWSSupport.Model
         private List<string> _ccEmailAddresses = new List<string>();
         private string _communicationBody;
 
-
         /// <summary>
         /// Gets and sets the property AttachmentSetId. 
         /// <para>
@@ -66,7 +69,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._attachmentSetId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CaseId. 
@@ -87,7 +89,6 @@ namespace Amazon.AWSSupport.Model
             return this._caseId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CcEmailAddresses. 
         /// <para>
@@ -105,7 +106,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._ccEmailAddresses != null && this._ccEmailAddresses.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CommunicationBody. 

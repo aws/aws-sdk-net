@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
@@ -40,19 +44,8 @@ namespace Amazon.ElasticMapReduce
     /// file analysis, machine         learning, scientific simulation, and data warehousing.
     /// </para>
     /// </summary>
-    public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, IAmazonElasticMapReduce
+    public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -71,7 +64,7 @@ namespace Amazon.ElasticMapReduce
         ///
         /// </summary>
         public AmazonElasticMapReduceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -90,7 +83,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticMapReduceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -109,7 +102,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="config">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Credentials
@@ -137,7 +130,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials, AmazonElasticMapReduceConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -170,7 +163,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticMapReduceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -206,15 +199,33 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticMapReduceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AddInstanceGroups
-
 
         /// <summary>
         /// AddInstanceGroups adds an instance group to a running cluster.
@@ -228,8 +239,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeAddInstanceGroups(request, null, null, true);
-            return EndAddInstanceGroups(asyncResult);
+            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<AddInstanceGroupsRequest,AddInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -246,10 +259,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginAddInstanceGroups(AddInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddInstanceGroups(request, callback, state, false);
+            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddInstanceGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddInstanceGroups operation.
@@ -261,21 +276,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  AddInstanceGroupsResult from ElasticMapReduce.</returns>
         public  AddInstanceGroupsResponse EndAddInstanceGroups(IAsyncResult asyncResult)
         {
-            return endOperation< AddInstanceGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddInstanceGroups(AddInstanceGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddInstanceGroupsRequestMarshaller();
-            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddInstanceGroupsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AddJobFlowSteps
-
 
         /// <summary>
         /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are
@@ -320,8 +326,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
-            IAsyncResult asyncResult = invokeAddJobFlowSteps(request, null, null, true);
-            return EndAddJobFlowSteps(asyncResult);
+            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
+
+            return Invoke<AddJobFlowStepsRequest,AddJobFlowStepsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -338,10 +346,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginAddJobFlowSteps(AddJobFlowStepsRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddJobFlowSteps(request, callback, state, false);
+            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddJobFlowStepsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddJobFlowSteps operation.
@@ -353,21 +363,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  AddJobFlowStepsResult from ElasticMapReduce.</returns>
         public  AddJobFlowStepsResponse EndAddJobFlowSteps(IAsyncResult asyncResult)
         {
-            return endOperation< AddJobFlowStepsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddJobFlowSteps(AddJobFlowStepsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddJobFlowStepsRequestMarshaller();
-            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddJobFlowStepsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AddTags
-
 
         /// <summary>
         /// Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in
@@ -386,8 +387,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeAddTags(request, null, null, true);
-            return EndAddTags(asyncResult);
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -404,10 +407,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddTags(request, callback, state, false);
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddTags operation.
@@ -419,15 +424,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  AddTagsResult from ElasticMapReduce.</returns>
         public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
-            return endOperation< AddTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddTags(AddTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddTagsRequestMarshaller();
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddTagsResponse>(asyncResult);
         }
 
         #endregion
@@ -466,8 +463,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCluster(request, null, null, true);
-            return EndDescribeCluster(asyncResult);
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -484,10 +483,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCluster(request, callback, state, false);
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCluster operation.
@@ -499,15 +500,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  DescribeClusterResult from ElasticMapReduce.</returns>
         public  DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeClusterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeClusterRequestMarshaller();
-            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeClusterResponse>(asyncResult);
         }
 
         #endregion
@@ -592,8 +585,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeJobFlows(request, null, null, true);
-            return EndDescribeJobFlows(asyncResult);
+            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -610,10 +605,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeJobFlows(request, callback, state, false);
+            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeJobFlowsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeJobFlows operation.
@@ -625,15 +622,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  DescribeJobFlowsResult from ElasticMapReduce.</returns>
         public  DescribeJobFlowsResponse EndDescribeJobFlows(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeJobFlowsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeJobFlowsRequestMarshaller();
-            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeJobFlowsResponse>(asyncResult);
         }
 
         #endregion
@@ -670,8 +659,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public DescribeStepResponse DescribeStep(DescribeStepRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStep(request, null, null, true);
-            return EndDescribeStep(asyncResult);
+            var marshaller = new DescribeStepRequestMarshaller();
+            var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStepRequest,DescribeStepResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -688,10 +679,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginDescribeStep(DescribeStepRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStep(request, callback, state, false);
+            var marshaller = new DescribeStepRequestMarshaller();
+            var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStepRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStep operation.
@@ -703,15 +696,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  DescribeStepResult from ElasticMapReduce.</returns>
         public  DescribeStepResponse EndDescribeStep(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeStepResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeStep(DescribeStepRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeStepRequestMarshaller();
-            var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeStepResponse>(asyncResult);
         }
 
         #endregion
@@ -748,8 +733,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
         {
-            IAsyncResult asyncResult = invokeListBootstrapActions(request, null, null, true);
-            return EndListBootstrapActions(asyncResult);
+            var marshaller = new ListBootstrapActionsRequestMarshaller();
+            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -766,10 +753,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginListBootstrapActions(ListBootstrapActionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListBootstrapActions(request, callback, state, false);
+            var marshaller = new ListBootstrapActionsRequestMarshaller();
+            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListBootstrapActionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListBootstrapActions operation.
@@ -781,15 +770,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  ListBootstrapActionsResult from ElasticMapReduce.</returns>
         public  ListBootstrapActionsResponse EndListBootstrapActions(IAsyncResult asyncResult)
         {
-            return endOperation< ListBootstrapActionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListBootstrapActions(ListBootstrapActionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListBootstrapActionsRequestMarshaller();
-            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListBootstrapActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -834,8 +815,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            IAsyncResult asyncResult = invokeListClusters(request, null, null, true);
-            return EndListClusters(asyncResult);
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -852,10 +835,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
-            return invokeListClusters(request, callback, state, false);
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListClustersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListClusters operation.
@@ -867,15 +852,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  ListClustersResult from ElasticMapReduce.</returns>
         public  ListClustersResponse EndListClusters(IAsyncResult asyncResult)
         {
-            return endOperation< ListClustersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListClusters(ListClustersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListClustersRequestMarshaller();
-            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListClustersResponse>(asyncResult);
         }
 
         #endregion
@@ -912,8 +889,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeListInstanceGroups(request, null, null, true);
-            return EndListInstanceGroups(asyncResult);
+            var marshaller = new ListInstanceGroupsRequestMarshaller();
+            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -930,10 +909,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginListInstanceGroups(ListInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListInstanceGroups(request, callback, state, false);
+            var marshaller = new ListInstanceGroupsRequestMarshaller();
+            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInstanceGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstanceGroups operation.
@@ -945,15 +926,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  ListInstanceGroupsResult from ElasticMapReduce.</returns>
         public  ListInstanceGroupsResponse EndListInstanceGroups(IAsyncResult asyncResult)
         {
-            return endOperation< ListInstanceGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListInstanceGroups(ListInstanceGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListInstanceGroupsRequestMarshaller();
-            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListInstanceGroupsResponse>(asyncResult);
         }
 
         #endregion
@@ -996,8 +969,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeListInstances(request, null, null, true);
-            return EndListInstances(asyncResult);
+            var marshaller = new ListInstancesRequestMarshaller();
+            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstancesRequest,ListInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1014,10 +989,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginListInstances(ListInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListInstances(request, callback, state, false);
+            var marshaller = new ListInstancesRequestMarshaller();
+            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstances operation.
@@ -1029,15 +1006,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  ListInstancesResult from ElasticMapReduce.</returns>
         public  ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
         {
-            return endOperation< ListInstancesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListInstances(ListInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListInstancesRequestMarshaller();
-            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListInstancesResponse>(asyncResult);
         }
 
         #endregion
@@ -1074,8 +1043,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public ListStepsResponse ListSteps(ListStepsRequest request)
         {
-            IAsyncResult asyncResult = invokeListSteps(request, null, null, true);
-            return EndListSteps(asyncResult);
+            var marshaller = new ListStepsRequestMarshaller();
+            var unmarshaller = ListStepsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStepsRequest,ListStepsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1092,10 +1063,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginListSteps(ListStepsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListSteps(request, callback, state, false);
+            var marshaller = new ListStepsRequestMarshaller();
+            var unmarshaller = ListStepsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStepsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSteps operation.
@@ -1107,21 +1080,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  ListStepsResult from ElasticMapReduce.</returns>
         public  ListStepsResponse EndListSteps(IAsyncResult asyncResult)
         {
-            return endOperation< ListStepsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListSteps(ListStepsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListStepsRequestMarshaller();
-            var unmarshaller = ListStepsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListStepsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ModifyInstanceGroups
-
 
         /// <summary>
         /// ModifyInstanceGroups modifies the number of nodes and configuration settings of an
@@ -1138,8 +1102,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyInstanceGroups(request, null, null, true);
-            return EndModifyInstanceGroups(asyncResult);
+            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1156,10 +1122,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginModifyInstanceGroups(ModifyInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyInstanceGroups(request, callback, state, false);
+            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyInstanceGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyInstanceGroups operation.
@@ -1171,21 +1139,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  ModifyInstanceGroupsResult from ElasticMapReduce.</returns>
         public  ModifyInstanceGroupsResponse EndModifyInstanceGroups(IAsyncResult asyncResult)
         {
-            return endOperation< ModifyInstanceGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeModifyInstanceGroups(ModifyInstanceGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
-            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ModifyInstanceGroupsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RemoveTags
-
 
         /// <summary>
         /// Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters
@@ -1209,8 +1168,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeRemoveTags(request, null, null, true);
-            return EndRemoveTags(asyncResult);
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1227,10 +1188,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeRemoveTags(request, callback, state, false);
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveTags operation.
@@ -1242,21 +1205,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  RemoveTagsResult from ElasticMapReduce.</returns>
         public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
-            return endOperation< RemoveTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RemoveTagsRequestMarshaller();
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RemoveTagsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RunJobFlow
-
 
         /// <summary>
         /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
@@ -1302,8 +1256,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
         {
-            IAsyncResult asyncResult = invokeRunJobFlow(request, null, null, true);
-            return EndRunJobFlow(asyncResult);
+            var marshaller = new RunJobFlowRequestMarshaller();
+            var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
+
+            return Invoke<RunJobFlowRequest,RunJobFlowResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1320,10 +1276,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginRunJobFlow(RunJobFlowRequest request, AsyncCallback callback, object state)
         {
-            return invokeRunJobFlow(request, callback, state, false);
+            var marshaller = new RunJobFlowRequestMarshaller();
+            var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RunJobFlowRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RunJobFlow operation.
@@ -1335,21 +1293,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  RunJobFlowResult from ElasticMapReduce.</returns>
         public  RunJobFlowResponse EndRunJobFlow(IAsyncResult asyncResult)
         {
-            return endOperation< RunJobFlowResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRunJobFlow(RunJobFlowRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RunJobFlowRequestMarshaller();
-            var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RunJobFlowResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetTerminationProtection
-
 
         /// <summary>
         /// SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster
@@ -1388,8 +1337,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
         {
-            IAsyncResult asyncResult = invokeSetTerminationProtection(request, null, null, true);
-            return EndSetTerminationProtection(asyncResult);
+            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<SetTerminationProtectionRequest,SetTerminationProtectionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1406,10 +1357,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginSetTerminationProtection(SetTerminationProtectionRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetTerminationProtection(request, callback, state, false);
+            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetTerminationProtectionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetTerminationProtection operation.
@@ -1421,21 +1374,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  SetTerminationProtectionResult from ElasticMapReduce.</returns>
         public  SetTerminationProtectionResponse EndSetTerminationProtection(IAsyncResult asyncResult)
         {
-            return endOperation< SetTerminationProtectionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetTerminationProtection(SetTerminationProtectionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetTerminationProtectionRequestMarshaller();
-            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetTerminationProtectionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetVisibleToAllUsers
-
 
         /// <summary>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
@@ -1453,8 +1397,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
         {
-            IAsyncResult asyncResult = invokeSetVisibleToAllUsers(request, null, null, true);
-            return EndSetVisibleToAllUsers(asyncResult);
+            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
+
+            return Invoke<SetVisibleToAllUsersRequest,SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1471,10 +1417,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginSetVisibleToAllUsers(SetVisibleToAllUsersRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetVisibleToAllUsers(request, callback, state, false);
+            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetVisibleToAllUsersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetVisibleToAllUsers operation.
@@ -1486,21 +1434,12 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  SetVisibleToAllUsersResult from ElasticMapReduce.</returns>
         public  SetVisibleToAllUsersResponse EndSetVisibleToAllUsers(IAsyncResult asyncResult)
         {
-            return endOperation< SetVisibleToAllUsersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetVisibleToAllUsers(SetVisibleToAllUsersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
-            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetVisibleToAllUsersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  TerminateJobFlows
-
 
         /// <summary>
         /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut
@@ -1526,8 +1465,10 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         public TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
         {
-            IAsyncResult asyncResult = invokeTerminateJobFlows(request, null, null, true);
-            return EndTerminateJobFlows(asyncResult);
+            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateJobFlowsRequest,TerminateJobFlowsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1544,10 +1485,12 @@ namespace Amazon.ElasticMapReduce
         ///         operation.</returns>
         public IAsyncResult BeginTerminateJobFlows(TerminateJobFlowsRequest request, AsyncCallback callback, object state)
         {
-            return invokeTerminateJobFlows(request, callback, state, false);
+            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TerminateJobFlowsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TerminateJobFlows operation.
@@ -1559,15 +1502,7 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  TerminateJobFlowsResult from ElasticMapReduce.</returns>
         public  TerminateJobFlowsResponse EndTerminateJobFlows(IAsyncResult asyncResult)
         {
-            return endOperation< TerminateJobFlowsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeTerminateJobFlows(TerminateJobFlowsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new TerminateJobFlowsRequestMarshaller();
-            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<TerminateJobFlowsResponse>(asyncResult);
         }
 
         #endregion

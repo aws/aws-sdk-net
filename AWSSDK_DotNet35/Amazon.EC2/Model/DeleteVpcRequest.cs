@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,31 +29,47 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpc operation.
-    /// <para>Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete
-    /// it. For example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default
-    /// one), delete all route tables associated with the VPC (except the default one), and so on.</para>
+    /// Deletes the specified VPC. You must detach or delete all gateways and resources that
+    /// are associated with the VPC before you can delete it. For example, you must terminate
+    /// all instances running in the VPC, delete all security groups associated with the VPC
+    /// (except the default one), delete all route tables associated with the VPC (except
+    /// the default one), and so on.
     /// </summary>
     public partial class DeleteVpcRequest : AmazonEC2Request
     {
-        private string vpcId;
-
+        private string _vpcId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteVpcRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteVpcRequest with the parameterized properties
+        /// </summary>
+        /// <param name="vpcId">The ID of the VPC.</param>
+        public DeleteVpcRequest(string vpcId)
+        {
+            _vpcId = vpcId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
         /// The ID of the VPC.
-        ///  
+        /// </para>
         /// </summary>
         public string VpcId
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;
+            return this._vpcId != null;
         }
 
     }
 }
-    

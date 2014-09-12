@@ -13,18 +13,22 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.Redshift.Model;
 
 namespace Amazon.Redshift
 {
     /// <summary>
-    /// Implementation for accessing Redshift
+    /// Interface for accessing Redshift
     ///
     /// Amazon Redshift        <b>Overview</b>        
     /// <para>
@@ -65,7 +69,6 @@ namespace Amazon.Redshift
 
         
         #region  AuthorizeClusterSecurityGroupIngress
-
 
         /// <summary>
         /// Adds an inbound (ingress) rule to an Amazon Redshift security group. 
@@ -125,7 +128,6 @@ namespace Amazon.Redshift
         
         #region  AuthorizeSnapshotAccess
 
-
         /// <summary>
         /// Authorizes the specified AWS customer account to restore the specified
         /// snapshot.        
@@ -166,7 +168,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  CopyClusterSnapshot
-
 
         /// <summary>
         /// Copies the specified automated cluster snapshot to a new manual cluster snapshot.
@@ -222,7 +223,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  CreateCluster
-
 
         /// <summary>
         /// Creates a new cluster. To create the cluster in virtual private cloud
@@ -306,7 +306,6 @@ namespace Amazon.Redshift
         
         #region  CreateClusterParameterGroup
 
-
         /// <summary>
         /// Creates an Amazon Redshift parameter group. 
         /// 
@@ -355,7 +354,6 @@ namespace Amazon.Redshift
         
         #region  CreateClusterSecurityGroup
 
-
         /// <summary>
         /// Creates a new Amazon Redshift security group. You use security       
         ///      groups to control access to non-VPC clusters.         
@@ -395,7 +393,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  CreateClusterSnapshot
-
 
         /// <summary>
         /// Creates a manual snapshot of the specified cluster.         The cluster must
@@ -441,7 +438,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  CreateClusterSubnetGroup
-
 
         /// <summary>
         /// Creates a new Amazon Redshift subnet group. You must provide a list of
@@ -497,7 +493,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  CreateEventSubscription
-
 
         /// <summary>
         /// Creates an Amazon Redshift event notification subscription. This action
@@ -583,7 +578,6 @@ namespace Amazon.Redshift
         
         #region  CreateHsmClientCertificate
 
-
         /// <summary>
         /// Creates an HSM client certificate that an Amazon Redshift cluster will use to connect
         /// to the client's HSM            in order to store and retrieve the keys used to encrypt
@@ -628,7 +622,6 @@ namespace Amazon.Redshift
         
         #region  CreateHsmConfiguration
 
-
         /// <summary>
         /// Creates an HSM configuration that contains the information required by an Amazon Redshift
         /// cluster            to store and use database encryption keys in a Hardware Security
@@ -672,7 +665,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  DeleteCluster
-
 
         /// <summary>
         /// Deletes a previously provisioned cluster. A successful response      
@@ -719,7 +711,6 @@ namespace Amazon.Redshift
         
         #region  DeleteClusterParameterGroup
 
-
         /// <summary>
         /// Deletes a specified Amazon Redshift parameter group.             <note>You
         /// cannot delete a parameter group if it is associated with a cluster.</note>
@@ -752,7 +743,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  DeleteClusterSecurityGroup
-
 
         /// <summary>
         /// Deletes an Amazon Redshift security group.         
@@ -791,7 +781,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  DeleteClusterSnapshot
-
 
         /// <summary>
         /// Deletes the specified manual snapshot. The snapshot must be in the <code>available</code>
@@ -835,7 +824,6 @@ namespace Amazon.Redshift
         
         #region  DeleteClusterSubnetGroup
 
-
         /// <summary>
         /// Deletes the specified cluster subnet group.
         /// </summary>
@@ -870,7 +858,6 @@ namespace Amazon.Redshift
         
         #region  DeleteEventSubscription
 
-
         /// <summary>
         /// Deletes an Amazon Redshift event notification subscription.
         /// </summary>
@@ -903,7 +890,6 @@ namespace Amazon.Redshift
         
         #region  DeleteHsmClientCertificate
 
-
         /// <summary>
         /// Deletes the specified HSM client certificate.
         /// </summary>
@@ -934,7 +920,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  DeleteHsmConfiguration
-
 
         /// <summary>
         /// Deletes the specified Amazon Redshift HSM configuration.
@@ -1025,7 +1010,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  DescribeClusterParameters
-
 
         /// <summary>
         /// Returns a detailed list of parameters contained within the specified Amazon
@@ -1295,7 +1279,6 @@ namespace Amazon.Redshift
         
         #region  DescribeDefaultClusterParameters
 
-
         /// <summary>
         /// Returns a list of parameter settings for the specified parameter group family.
         ///        
@@ -1526,7 +1509,6 @@ namespace Amazon.Redshift
         
         #region  DescribeLoggingStatus
 
-
         /// <summary>
         /// Describes whether information, such as queries and connection attempts,          
         ///  is being logged for the specified Amazon Redshift cluster.
@@ -1702,7 +1684,6 @@ namespace Amazon.Redshift
         
         #region  DescribeResize
 
-
         /// <summary>
         /// Returns information about the last resize operation for the specified cluster.
         ///         If no resize operation has ever been initiated for the specified cluster,
@@ -1743,7 +1724,6 @@ namespace Amazon.Redshift
         
         #region  DisableLogging
 
-
         /// <summary>
         /// Stops logging information, such as queries and connection attempts,           for
         /// the specified Amazon Redshift cluster.
@@ -1771,7 +1751,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  DisableSnapshotCopy
-
 
         /// <summary>
         /// Disables the automatic copying of snapshots from one region to another region for
@@ -1809,7 +1788,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  EnableLogging
-
 
         /// <summary>
         /// Starts logging information, such as queries and connection attempts,            for
@@ -1854,7 +1832,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  EnableSnapshotCopy
-
 
         /// <summary>
         /// Enables the automatic copy of snapshots from one region to another region for a specified
@@ -1902,7 +1879,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  ModifyCluster
-
 
         /// <summary>
         /// Modifies the settings for a cluster.         For example, you can add
@@ -1982,7 +1958,6 @@ namespace Amazon.Redshift
         
         #region  ModifyClusterParameterGroup
 
-
         /// <summary>
         /// Modifies the parameters of a parameter group.         
         /// 
@@ -2020,7 +1995,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  ModifyClusterSubnetGroup
-
 
         /// <summary>
         /// Modifies a cluster subnet group to include the specified list of VPC subnets.
@@ -2066,7 +2040,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  ModifyEventSubscription
-
 
         /// <summary>
         /// Modifies an existing Amazon Redshift event notification subscription.
@@ -2125,7 +2098,6 @@ namespace Amazon.Redshift
         
         #region  ModifySnapshotCopyRetentionPeriod
 
-
         /// <summary>
         /// Modifies the number of days to retain automated snapshots in the destination
         /// region after they are copied from the source region.
@@ -2163,7 +2135,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  PurchaseReservedNodeOffering
-
 
         /// <summary>
         /// Allows you to purchase reserved nodes. Amazon Redshift offers a predefined
@@ -2211,7 +2182,6 @@ namespace Amazon.Redshift
         
         #region  RebootCluster
 
-
         /// <summary>
         /// Reboots a cluster.         This action is taken as soon as possible. It results
         /// in a momentary outage to the cluster,        during which the cluster status is set
@@ -2248,7 +2218,6 @@ namespace Amazon.Redshift
         
         #region  ResetClusterParameterGroup
 
-
         /// <summary>
         /// Sets one or more parameters of the specified parameter group to their
         /// default values and sets the             source values of the parameters to "engine-default".
@@ -2284,7 +2253,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  RestoreFromClusterSnapshot
-
 
         /// <summary>
         /// Creates a new cluster from a snapshot. Amazon Redshift creates the resulting
@@ -2393,7 +2361,6 @@ namespace Amazon.Redshift
         
         #region  RevokeClusterSecurityGroupIngress
 
-
         /// <summary>
         /// Revokes an ingress rule in an Amazon Redshift security group for a previously
         /// authorized IP range or         Amazon EC2 security group. To add        an ingress
@@ -2432,7 +2399,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  RevokeSnapshotAccess
-
 
         /// <summary>
         /// Removes the ability of the specified AWS customer account to restore the
@@ -2476,7 +2442,6 @@ namespace Amazon.Redshift
         #endregion
         
         #region  RotateEncryptionKey
-
 
         /// <summary>
         /// Rotates the encryption keys for a cluster.

@@ -12,64 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type containing the response information for the new health check.</para>
+    /// A complex type containing the response information for the new health check.
     /// </summary>
     public partial class CreateHealthCheckResult : AmazonWebServiceResponse
     {
-        
-        private HealthCheck healthCheck;
-        private string location;
-
+        private HealthCheck _healthCheck;
+        private string _location;
 
         /// <summary>
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
         /// A complex type that contains identifying information about the health check.
-        ///  
+        /// </para>
         /// </summary>
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheck; }
-            set { this.healthCheck = value; }
+            get { return this._healthCheck; }
+            set { this._healthCheck = value; }
         }
 
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;
+            return this._healthCheck != null;
         }
 
         /// <summary>
-        /// The unique URL representing the new health check.
-        ///  
+        /// Gets and sets the property Location. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// The unique URL representing the new health check.
         /// </para>
         /// </summary>
         public string Location
         {
-            get { return this.location; }
-            set { this.location = value; }
+            get { return this._location; }
+            set { this._location = value; }
         }
 
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;
+            return this._location != null;
         }
+
     }
 }

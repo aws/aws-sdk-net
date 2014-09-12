@@ -12,71 +12,49 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Change Request Marshaller
+    /// GetChange Request Marshaller
     /// </summary>       
-    public class GetChangeRequestMarshaller : IMarshaller<IRequest, GetChangeRequest>
+    public class GetChangeRequestMarshaller : IMarshaller<IRequest, GetChangeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-    
-        public IRequest Marshall(GetChangeRequest getChangeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(getChangeRequest, "AmazonRoute53");
+            return this.Marshall((GetChangeRequest)input);
+        }
 
-
-
+        public IRequest Marshall(GetChangeRequest publicRequest)
+        {
+            var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/change/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", getChangeRequest.IsSetId() ? getChangeRequest.Id.ToString() : "" ); 
-
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                
-                uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
-                
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                
-                }
-            }
-            
+            string uriResourcePath = "/2013-04-01/change/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

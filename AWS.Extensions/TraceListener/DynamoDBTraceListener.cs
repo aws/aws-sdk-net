@@ -198,7 +198,7 @@ namespace Amazon.TraceListener
 
                         if (Configuration.Region != null)
                             config.RegionEndpoint = Configuration.Region;
-                        if (Configuration.ServiceURL != null)
+                        else if (!string.IsNullOrEmpty(Configuration.ServiceURL))
                             config.ServiceURL = Configuration.ServiceURL;
 
                         AWSCredentials credentials = null;
@@ -274,15 +274,18 @@ namespace Amazon.TraceListener
                                 if (Configuration.CreateTableIfNotExist)
                                     _table = CreateTable();
                                 else
+                                {
                                     DisableListener(string.Format("Table {0} was not found to be used to log, and autocreate is turned off.", Configuration.TableName));
+                                    return null;
+                                }
                             }
 
                             // Validate table
                             if (_table == null)
                                 DisableListener(string.Format("Table {0} could not be found or created", Configuration.TableName));
-                            if (_table.HashKeys == null || _table.HashKeys.Count != 1)
+                            else if (_table.HashKeys == null || _table.HashKeys.Count != 1)
                                 DisableListener(string.Format("Table {0} was found, but does not contain a single hash key", Configuration.TableName));
-                            if (_table.RangeKeys == null || _table.RangeKeys.Count != 1)
+                            else if (_table.RangeKeys == null || _table.RangeKeys.Count != 1)
                                 DisableListener(string.Format("Table {0} was found, but does not contain a single range key", Configuration.TableName));
                         }
                     }

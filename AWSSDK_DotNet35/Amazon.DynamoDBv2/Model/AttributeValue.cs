@@ -12,122 +12,163 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the data for an attribute. You can set one, and only one, of the elements.</para>
+    /// Represents the data for an attribute. You can set one, and only one, of the elements.
     /// </summary>
     public partial class AttributeValue
     {
-        
-        private string s;
-        private string n;
-        private MemoryStream b;
-        private List<string> sS = new List<string>();
-        private List<string> nS = new List<string>();
-        private List<MemoryStream> bS = new List<MemoryStream>();
-
+        private MemoryStream _b;
+        private List<MemoryStream> _bS = new List<MemoryStream>();
+        private string _n;
+        private List<string> _nS = new List<string>();
+        private string _s;
+        private List<string> _sS = new List<string>();
 
         /// <summary>
-        /// A String data type
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string S
-        {
-            get { return this.s; }
-            set { this.s = value; }
-        }
-
-        // Check to see if S property is set
-        internal bool IsSetS()
-        {
-            return this.s != null;
-        }
+        public AttributeValue() { }
 
         /// <summary>
-        /// A Number data type
-        ///  
+        /// Instantiates AttributeValue with the parameterized properties
         /// </summary>
-        public string N
+        /// <param name="s">A String data type</param>
+        public AttributeValue(string s)
         {
-            get { return this.n; }
-            set { this.n = value; }
-        }
-
-        // Check to see if N property is set
-        internal bool IsSetN()
-        {
-            return this.n != null;
+            _s = s;
         }
 
         /// <summary>
+        /// Instantiates AttributeValue with the parameterized properties
+        /// </summary>
+        /// <param name="ss">A String set data type</param>
+        public AttributeValue(List<string> ss)
+        {
+            _sS = ss;
+        }
+
+        /// <summary>
+        /// Gets and sets the property B. 
+        /// <para>
         /// A Binary data type
-        ///  
+        /// </para>
         /// </summary>
         public MemoryStream B
         {
-            get { return this.b; }
-            set { this.b = value; }
+            get { return this._b; }
+            set { this._b = value; }
         }
 
         // Check to see if B property is set
         internal bool IsSetB()
         {
-            return this.b != null;
+            return this._b != null;
         }
 
         /// <summary>
-        /// A String set data type
-        ///  
-        /// </summary>
-        public List<string> SS
-        {
-            get { return this.sS; }
-            set { this.sS = value; }
-        }
-
-        // Check to see if SS property is set
-        internal bool IsSetSS()
-        {
-            return this.sS.Count > 0;
-        }
-
-        /// <summary>
-        /// Number set data type
-        ///  
-        /// </summary>
-        public List<string> NS
-        {
-            get { return this.nS; }
-            set { this.nS = value; }
-        }
-
-        // Check to see if NS property is set
-        internal bool IsSetNS()
-        {
-            return this.nS.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property BS. 
+        /// <para>
         /// A Binary set data type
-        ///  
+        /// </para>
         /// </summary>
         public List<MemoryStream> BS
         {
-            get { return this.bS; }
-            set { this.bS = value; }
+            get { return this._bS; }
+            set { this._bS = value; }
         }
 
         // Check to see if BS property is set
         internal bool IsSetBS()
         {
-            return this.bS.Count > 0;
+            return this._bS != null && this._bS.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property N. 
+        /// <para>
+        /// A Number data type
+        /// </para>
+        /// </summary>
+        public string N
+        {
+            get { return this._n; }
+            set { this._n = value; }
+        }
+
+        // Check to see if N property is set
+        internal bool IsSetN()
+        {
+            return this._n != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NS. 
+        /// <para>
+        ///  Number set data type
+        /// </para>
+        /// </summary>
+        public List<string> NS
+        {
+            get { return this._nS; }
+            set { this._nS = value; }
+        }
+
+        // Check to see if NS property is set
+        internal bool IsSetNS()
+        {
+            return this._nS != null && this._nS.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S. 
+        /// <para>
+        /// A String data type
+        /// </para>
+        /// </summary>
+        public string S
+        {
+            get { return this._s; }
+            set { this._s = value; }
+        }
+
+        // Check to see if S property is set
+        internal bool IsSetS()
+        {
+            return this._s != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SS. 
+        /// <para>
+        /// A String set data type
+        /// </para>
+        /// </summary>
+        public List<string> SS
+        {
+            get { return this._sS; }
+            set { this._sS = value; }
+        }
+
+        // Check to see if SS property is set
+        internal bool IsSetSS()
+        {
+            return this._sS != null && this._sS.Count > 0; 
+        }
+
     }
 }

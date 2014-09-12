@@ -12,62 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ReplaceNetworkAclAssociation operation
-    /// </summary>
-    internal class ReplaceNetworkAclAssociationResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for ReplaceNetworkAclAssociation operation
+    /// </summary>  
+    public class ReplaceNetworkAclAssociationResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             ReplaceNetworkAclAssociationResponse response = new ReplaceNetworkAclAssociationResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("newAssociationId", targetDepth))
                     {
-                        response.NewAssociationId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NewAssociationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ReplaceNetworkAclAssociationResponseUnmarshaller instance;
+        private static ReplaceNetworkAclAssociationResponseUnmarshaller _instance = new ReplaceNetworkAclAssociationResponseUnmarshaller();        
 
-        public static ReplaceNetworkAclAssociationResponseUnmarshaller GetInstance()
+        internal static ReplaceNetworkAclAssociationResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new ReplaceNetworkAclAssociationResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static ReplaceNetworkAclAssociationResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

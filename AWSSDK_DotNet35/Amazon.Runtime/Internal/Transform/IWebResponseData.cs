@@ -22,11 +22,24 @@ using System.Text;
 namespace Amazon.Runtime.Internal.Transform
 {
     public interface IWebResponseData
-    {
+    {        
+        long ContentLength { get; }
         string ContentType { get; }
         HttpStatusCode StatusCode { get; }
+        bool IsSuccessStatusCode { get; }
         string[] GetHeaderNames();
         bool IsHeaderPresent(string headerName);
         string GetHeaderValue(string headerName);
+
+        IHttpResponseBody ResponseBody { get; }
+    }
+
+    public interface IHttpResponseBody : IDisposable
+    {
+        Stream OpenResponse();
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        System.Threading.Tasks.Task<Stream> OpenResponseAsync();
+#endif
     }
 }

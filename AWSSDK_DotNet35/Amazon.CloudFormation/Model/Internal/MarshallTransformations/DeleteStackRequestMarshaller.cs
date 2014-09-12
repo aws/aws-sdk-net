@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Stack Request Marshaller
+    /// DeleteStack Request Marshaller
     /// </summary>       
-    public class DeleteStackRequestMarshaller : IMarshaller<IRequest, DeleteStackRequest>
+    public class DeleteStackRequestMarshaller : IMarshaller<IRequest, DeleteStackRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteStackRequest deleteStackRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteStackRequest, "AmazonCloudFormation");
+            return this.Marshall((DeleteStackRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteStackRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "DeleteStack");
             request.Parameters.Add("Version", "2010-05-15");
-            if (deleteStackRequest != null && deleteStackRequest.IsSetStackName())
-            {
-                request.Parameters.Add("StackName", StringUtils.FromString(deleteStackRequest.StackName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetStackName())
+                {
+                    request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
+                }
+            }
             return request;
         }
     }

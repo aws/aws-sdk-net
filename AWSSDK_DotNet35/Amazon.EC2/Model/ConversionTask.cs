@@ -12,148 +12,159 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a conversion task.</para>
+    /// Describes a conversion task.
     /// </summary>
     public partial class ConversionTask
     {
-        
-        private string conversionTaskId;
-        private string expirationTime;
-        private ImportInstanceTaskDetails importInstance;
-        private ImportVolumeTaskDetails importVolume;
-        private ConversionTaskState state;
-        private string statusMessage;
-        private List<Tag> tags = new List<Tag>();
-
+        private string _conversionTaskId;
+        private string _expirationTime;
+        private ImportInstanceTaskDetails _importInstance;
+        private ImportVolumeTaskDetails _importVolume;
+        private ConversionTaskState _state;
+        private string _statusMessage;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
+        /// Gets and sets the property ConversionTaskId. 
+        /// <para>
         /// The ID of the conversion task.
-        ///  
+        /// </para>
         /// </summary>
         public string ConversionTaskId
         {
-            get { return this.conversionTaskId; }
-            set { this.conversionTaskId = value; }
+            get { return this._conversionTaskId; }
+            set { this._conversionTaskId = value; }
         }
 
         // Check to see if ConversionTaskId property is set
         internal bool IsSetConversionTaskId()
         {
-            return this.conversionTaskId != null;
+            return this._conversionTaskId != null;
         }
 
         /// <summary>
-        /// The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.
-        ///  
+        /// Gets and sets the property ExpirationTime. 
+        /// <para>
+        /// The time when the task expires. If the upload isn't complete before the expiration
+        /// time, we automatically cancel the task.
+        /// </para>
         /// </summary>
         public string ExpirationTime
         {
-            get { return this.expirationTime; }
-            set { this.expirationTime = value; }
+            get { return this._expirationTime; }
+            set { this._expirationTime = value; }
         }
 
         // Check to see if ExpirationTime property is set
         internal bool IsSetExpirationTime()
         {
-            return this.expirationTime != null;
+            return this._expirationTime != null;
         }
 
         /// <summary>
-        /// If the task is for importing an instance, this contains information about the import instance task.
-        ///  
+        /// Gets and sets the property ImportInstance. 
+        /// <para>
+        /// If the task is for importing an instance, this contains information about the import
+        /// instance task.
+        /// </para>
         /// </summary>
         public ImportInstanceTaskDetails ImportInstance
         {
-            get { return this.importInstance; }
-            set { this.importInstance = value; }
+            get { return this._importInstance; }
+            set { this._importInstance = value; }
         }
 
         // Check to see if ImportInstance property is set
         internal bool IsSetImportInstance()
         {
-            return this.importInstance != null;
+            return this._importInstance != null;
         }
 
         /// <summary>
-        /// If the task is for importing a volume, this contains information about the import volume task.
-        ///  
+        /// Gets and sets the property ImportVolume. 
+        /// <para>
+        /// If the task is for importing a volume, this contains information about the import
+        /// volume task.
+        /// </para>
         /// </summary>
         public ImportVolumeTaskDetails ImportVolume
         {
-            get { return this.importVolume; }
-            set { this.importVolume = value; }
+            get { return this._importVolume; }
+            set { this._importVolume = value; }
         }
 
         // Check to see if ImportVolume property is set
         internal bool IsSetImportVolume()
         {
-            return this.importVolume != null;
+            return this._importVolume != null;
         }
 
         /// <summary>
-        /// The state of the conversion task.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>active, cancelling, cancelled, completed</description>
-        ///     </item>
-        /// </list>
+        /// The state of the conversion task.
         /// </para>
         /// </summary>
         public ConversionTaskState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
 
         /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
         /// The status message related to the conversion task.
-        ///  
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
-            get { return this.statusMessage; }
-            set { this.statusMessage = value; }
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
         }
 
         // Check to see if StatusMessage property is set
         internal bool IsSetStatusMessage()
         {
-            return this.statusMessage != null;
+            return this._statusMessage != null;
         }
 
         /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
+
     }
 }

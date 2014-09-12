@@ -12,88 +12,103 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The TemplateParameter data type.</para>
+    /// The TemplateParameter data type.
     /// </summary>
     public partial class TemplateParameter
     {
-        
-        private string parameterKey;
-        private string defaultValue;
-        private bool? noEcho;
-        private string description;
-
+        private string _defaultValue;
+        private string _description;
+        private bool? _noEcho;
+        private string _parameterKey;
 
         /// <summary>
-        /// The name associated with the parameter.
-        ///  
-        /// </summary>
-        public string ParameterKey
-        {
-            get { return this.parameterKey; }
-            set { this.parameterKey = value; }
-        }
-
-        // Check to see if ParameterKey property is set
-        internal bool IsSetParameterKey()
-        {
-            return this.parameterKey != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
         /// The default value associated with the parameter.
-        ///  
+        /// </para>
         /// </summary>
         public string DefaultValue
         {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;
+            return this._defaultValue != null;
         }
 
         /// <summary>
-        /// Flag indicating whether the parameter should be displayed as plain text in logs and UIs.
-        ///  
-        /// </summary>
-        public bool NoEcho
-        {
-            get { return this.noEcho ?? default(bool); }
-            set { this.noEcho = value; }
-        }
-
-        // Check to see if NoEcho property is set
-        internal bool IsSetNoEcho()
-        {
-            return this.noEcho.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// User defined description associated with the parameter.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property NoEcho. 
+        /// <para>
+        /// Flag indicating whether the parameter should be displayed as plain text in logs and
+        /// UIs.
+        /// </para>
+        /// </summary>
+        public bool NoEcho
+        {
+            get { return this._noEcho.GetValueOrDefault(); }
+            set { this._noEcho = value; }
+        }
+
+        // Check to see if NoEcho property is set
+        internal bool IsSetNoEcho()
+        {
+            return this._noEcho.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterKey. 
+        /// <para>
+        /// The name associated with the parameter.
+        /// </para>
+        /// </summary>
+        public string ParameterKey
+        {
+            get { return this._parameterKey; }
+            set { this._parameterKey = value; }
+        }
+
+        // Check to see if ParameterKey property is set
+        internal bool IsSetParameterKey()
+        {
+            return this._parameterKey != null;
+        }
+
     }
 }

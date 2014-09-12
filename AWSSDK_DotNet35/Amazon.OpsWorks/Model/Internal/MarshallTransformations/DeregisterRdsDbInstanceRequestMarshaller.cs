@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeregisterRdsDbInstance Request Marshaller
     /// </summary>       
-    public class DeregisterRdsDbInstanceRequestMarshaller : IMarshaller<IRequest, DeregisterRdsDbInstanceRequest> 
+    public class DeregisterRdsDbInstanceRequestMarshaller : IMarshaller<IRequest, DeregisterRdsDbInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeregisterRdsDbInstanceRequest)input);
+        }
+
         public IRequest Marshall(DeregisterRdsDbInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,10 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetRdsDbInstanceArn())
                 {
-                    writer.WritePropertyName("RdsDbInstanceArn");
-                    writer.Write(publicRequest.RdsDbInstanceArn);
+                    context.Writer.WritePropertyName("RdsDbInstanceArn");
+                    context.Writer.Write(publicRequest.RdsDbInstanceArn);
                 }
 
         

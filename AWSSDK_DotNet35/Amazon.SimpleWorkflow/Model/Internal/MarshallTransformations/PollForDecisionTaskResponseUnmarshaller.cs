@@ -12,70 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PollForDecisionTask operation
+    /// </summary>  
+    public class PollForDecisionTaskResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for PollForDecisionTask operation
-      /// </summary>
-      internal class PollForDecisionTaskResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          PollForDecisionTaskResponse response = new PollForDecisionTaskResponse();
-          
-          UnmarshallResult(context,response);          
-          
-          return response;
-        }        
-        
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,PollForDecisionTaskResponse response)
-        {                   
-          response.DecisionTask = DecisionTaskUnmarshaller.GetInstance().Unmarshall(context);
-          return;
-        }
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-          {
-            return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
-          {
-            return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-          {
-            return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonSimpleWorkflowException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            PollForDecisionTaskResponse response = new PollForDecisionTaskResponse();
+
+            response.DecisionTask = DecisionTaskUnmarshaller.Instance.Unmarshall(context);
+
+            return response;
         }
 
-        private static PollForDecisionTaskResponseUnmarshaller instance;
-        public static PollForDecisionTaskResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new PollForDecisionTaskResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededFault"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedFault"))
+            {
+                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceFault"))
+            {
+                return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonSimpleWorkflowException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static PollForDecisionTaskResponseUnmarshaller _instance = new PollForDecisionTaskResponseUnmarshaller();        
+
+        internal static PollForDecisionTaskResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static PollForDecisionTaskResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

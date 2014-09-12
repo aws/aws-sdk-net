@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  CreateDhcpOptions response and response metadata.
+    /// Configuration for accessing Amazon CreateDhcpOptions service
     /// </summary>
     public partial class CreateDhcpOptionsResponse : CreateDhcpOptionsResult
     {
         /// <summary>
         /// Gets and sets the CreateDhcpOptionsResult property.
-        /// 
+        /// Represents the output of a CreateDhcpOptions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateDhcpOptionsResult class are now available on the CreateDhcpOptionsResponse class. You should use the properties on CreateDhcpOptionsResponse instead of accessing them through CreateDhcpOptionsResult.")]
         public CreateDhcpOptionsResult CreateDhcpOptionsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

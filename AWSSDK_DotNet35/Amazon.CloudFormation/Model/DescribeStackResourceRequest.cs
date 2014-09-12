@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,47 +29,64 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackResource operation.
-    /// <para>Returns a description of the specified resource in the specified stack.</para> <para>For deleted stacks, DescribeStackResource returns
-    /// resource information for up to 90 days after the stack has been deleted.</para>
+    /// Returns a description of the specified resource in the specified stack.
+    /// 
+    ///  
+    /// <para>
+    /// For deleted stacks, DescribeStackResource returns resource information for up to 90
+    /// days after the stack has been deleted.
+    /// </para>
     /// </summary>
     public partial class DescribeStackResourceRequest : AmazonCloudFormationRequest
     {
-        private string stackName;
-        private string logicalResourceId;
-
-
-        /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: There is no default value.
-        ///  
-        /// </summary>
-        public string StackName
-        {
-            get { return this.stackName; }
-            set { this.stackName = value; }
-        }
-
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
-        {
-            return this.stackName != null;
-        }
+        private string _logicalResourceId;
+        private string _stackName;
 
         /// <summary>
-        /// The logical name of the resource as specified in the template. Default: There is no default value.
+        /// Gets and sets the property LogicalResourceId. 
+        /// <para>
+        /// The logical name of the resource as specified in the template.
+        /// </para>
         ///  
+        /// <para>
+        /// Default: There is no default value.
+        /// </para>
         /// </summary>
         public string LogicalResourceId
         {
-            get { return this.logicalResourceId; }
-            set { this.logicalResourceId = value; }
+            get { return this._logicalResourceId; }
+            set { this._logicalResourceId = value; }
         }
 
         // Check to see if LogicalResourceId property is set
         internal bool IsSetLogicalResourceId()
         {
-            return this.logicalResourceId != null;
+            return this._logicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackName. 
+        /// <para>
+        /// The name or the unique identifier associated with the stack, which are not always
+        /// interchangeable:
+        /// </para>
+        ///  <ul> <li>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> 
+        /// <para>
+        /// Default: There is no default value.
+        /// </para>
+        /// </summary>
+        public string StackName
+        {
+            get { return this._stackName; }
+            set { this._stackName = value; }
+        }
+
+        // Check to see if StackName property is set
+        internal bool IsSetStackName()
+        {
+            return this._stackName != null;
         }
 
     }
 }
-    

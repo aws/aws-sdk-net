@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a recurring charge.</para>
+    /// Describes a recurring charge.
     /// </summary>
     public partial class RecurringCharge
     {
-        
-        private RecurringChargeFrequency frequency;
-        private double? amount;
-
+        private double? _amount;
+        private RecurringChargeFrequency _frequency;
 
         /// <summary>
-        /// The frequency of the recurring charge.
-        ///  
+        /// Gets and sets the property Amount. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Hourly</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public RecurringChargeFrequency Frequency
-        {
-            get { return this.frequency; }
-            set { this.frequency = value; }
-        }
-
-        // Check to see if Frequency property is set
-        internal bool IsSetFrequency()
-        {
-            return this.frequency != null;
-        }
-
-        /// <summary>
         /// The amount of the recurring charge.
-        ///  
+        /// </para>
         /// </summary>
         public double Amount
         {
-            get { return this.amount ?? default(double); }
-            set { this.amount = value; }
+            get { return this._amount.GetValueOrDefault(); }
+            set { this._amount = value; }
         }
 
         // Check to see if Amount property is set
         internal bool IsSetAmount()
         {
-            return this.amount.HasValue;
+            return this._amount.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Frequency. 
+        /// <para>
+        /// The frequency of the recurring charge.
+        /// </para>
+        /// </summary>
+        public RecurringChargeFrequency Frequency
+        {
+            get { return this._frequency; }
+            set { this._frequency = value; }
+        }
+
+        // Check to see if Frequency property is set
+        internal bool IsSetFrequency()
+        {
+            return this._frequency != null;
+        }
+
     }
 }

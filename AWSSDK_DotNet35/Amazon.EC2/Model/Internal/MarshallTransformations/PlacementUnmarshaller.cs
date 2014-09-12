@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Placement Unmarshaller
-     /// </summary>
-    internal class PlacementUnmarshaller : IUnmarshaller<Placement, XmlUnmarshallerContext>, IUnmarshaller<Placement, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Placement Object
+    /// </summary>  
+    public class PlacementUnmarshaller : IUnmarshaller<Placement, XmlUnmarshallerContext>, IUnmarshaller<Placement, JsonUnmarshallerContext>
     {
-        public Placement Unmarshall(XmlUnmarshallerContext context) 
+        public Placement Unmarshall(XmlUnmarshallerContext context)
         {
-            Placement placement = new Placement();
+            Placement unmarshalledObject = new Placement();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        placement.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupName", targetDepth))
                     {
-                        placement.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tenancy", targetDepth))
                     {
-                        placement.Tenancy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return placement;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return placement;
+            return unmarshalledObject;
         }
 
-        public Placement Unmarshall(JsonUnmarshallerContext context) 
+        public Placement Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PlacementUnmarshaller instance;
 
-        public static PlacementUnmarshaller GetInstance() 
+        private static PlacementUnmarshaller _instance = new PlacementUnmarshaller();        
+
+        public static PlacementUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PlacementUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

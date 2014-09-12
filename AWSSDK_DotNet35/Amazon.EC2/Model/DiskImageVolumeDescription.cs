@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DiskImageVolumeDescription
     {
-        
-        private long? size;
-        private string id;
-
+        private string _id;
+        private long? _size;
 
         /// <summary>
-        /// The size of the volume.
-        ///  
-        /// </summary>
-        public long Size
-        {
-            get { return this.size ?? default(long); }
-            set { this.size = value; }
-        }
-
-        // Check to see if Size property is set
-        internal bool IsSetSize()
-        {
-            return this.size.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
         /// The volume identifier.
-        ///  
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The size of the volume.
+        /// </para>
+        /// </summary>
+        public long Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeCommunications Request Marshaller
     /// </summary>       
-    public class DescribeCommunicationsRequestMarshaller : IMarshaller<IRequest, DescribeCommunicationsRequest> 
+    public class DescribeCommunicationsRequestMarshaller : IMarshaller<IRequest, DescribeCommunicationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeCommunicationsRequest)input);
+        }
+
         public IRequest Marshall(DescribeCommunicationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,34 +56,35 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAfterTime())
                 {
-                    writer.WritePropertyName("afterTime");
-                    writer.Write(publicRequest.AfterTime);
+                    context.Writer.WritePropertyName("afterTime");
+                    context.Writer.Write(publicRequest.AfterTime);
                 }
 
                 if(publicRequest.IsSetBeforeTime())
                 {
-                    writer.WritePropertyName("beforeTime");
-                    writer.Write(publicRequest.BeforeTime);
+                    context.Writer.WritePropertyName("beforeTime");
+                    context.Writer.Write(publicRequest.BeforeTime);
                 }
 
                 if(publicRequest.IsSetCaseId())
                 {
-                    writer.WritePropertyName("caseId");
-                    writer.Write(publicRequest.CaseId);
+                    context.Writer.WritePropertyName("caseId");
+                    context.Writer.Write(publicRequest.CaseId);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
-                    writer.WritePropertyName("maxResults");
-                    writer.Write(publicRequest.MaxResults);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
                 if(publicRequest.IsSetNextToken())
                 {
-                    writer.WritePropertyName("nextToken");
-                    writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

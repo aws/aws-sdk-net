@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DelegationSet Unmarshaller
-     /// </summary>
-    internal class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, XmlUnmarshallerContext>, IUnmarshaller<DelegationSet, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DelegationSet Object
+    /// </summary>  
+    public class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, XmlUnmarshallerContext>
     {
-        public DelegationSet Unmarshall(XmlUnmarshallerContext context) 
+        public DelegationSet Unmarshall(XmlUnmarshallerContext context)
         {
-            DelegationSet delegationSet = new DelegationSet();
+            DelegationSet unmarshalledObject = new DelegationSet();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,36 +52,27 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("NameServers/NameServer", targetDepth))
                     {
-                        delegationSet.NameServers.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NameServers.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return delegationSet;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static DelegationSetUnmarshaller _instance = new DelegationSetUnmarshaller();        
+
+        public static DelegationSetUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return delegationSet;
-        }
-
-        public DelegationSet Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static DelegationSetUnmarshaller instance;
-
-        public static DelegationSetUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new DelegationSetUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

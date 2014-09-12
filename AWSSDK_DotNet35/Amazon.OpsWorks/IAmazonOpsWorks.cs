@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.OpsWorks.Model;
 
 namespace Amazon.OpsWorks
 {
     /// <summary>
-    /// Implementation for accessing OpsWorks
+    /// Interface for accessing OpsWorks
     ///
     /// AWS OpsWorks 
     /// <para>
@@ -82,7 +87,6 @@ namespace Amazon.OpsWorks
         
         #region  AssignVolume
 
-
         /// <summary>
         /// Assigns one of the stack's registered Amazon EBS volumes to a specified instance.
         /// The volume must first be registered with the stack by calling <a>RegisterVolume</a>.
@@ -137,7 +141,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  AssociateElasticIp
-
 
         /// <summary>
         /// Associates one of the stack's registered Elastic IP addresses with a specified instance.
@@ -194,7 +197,6 @@ namespace Amazon.OpsWorks
         
         #region  AttachElasticLoadBalancer
 
-
         /// <summary>
         /// Attaches an Elastic Load Balancing load balancer to a specified layer. For more information,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
@@ -249,7 +251,6 @@ namespace Amazon.OpsWorks
         
         #region  CloneStack
 
-
         /// <summary>
         /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
         /// a Stack</a>.
@@ -303,7 +304,6 @@ namespace Amazon.OpsWorks
         
         #region  CreateApp
 
-
         /// <summary>
         /// Creates an app for a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
         /// Apps</a>.
@@ -356,7 +356,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateDeployment
-
 
         /// <summary>
         /// Deploys a stack or app.
@@ -419,7 +418,6 @@ namespace Amazon.OpsWorks
         
         #region  CreateInstance
 
-
         /// <summary>
         /// Creates an instance in a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
         /// an Instance to a Layer</a>.
@@ -472,7 +470,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateLayer
-
 
         /// <summary>
         /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
@@ -527,7 +524,6 @@ namespace Amazon.OpsWorks
         
         #region  CreateStack
 
-
         /// <summary>
         /// Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
         /// a New Stack</a>.
@@ -578,7 +574,6 @@ namespace Amazon.OpsWorks
         
         #region  CreateUserProfile
 
-
         /// <summary>
         /// Creates a new user profile.
         /// 
@@ -627,7 +622,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteApp
-
 
         /// <summary>
         /// Deletes a specified app.
@@ -680,7 +674,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteInstance
-
 
         /// <summary>
         /// Deletes a specified instance. You must stop an instance before you can delete it.
@@ -736,7 +729,6 @@ namespace Amazon.OpsWorks
         
         #region  DeleteLayer
 
-
         /// <summary>
         /// Deletes a specified layer. You must first stop and then delete all associated instances.
         /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How
@@ -790,7 +782,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteStack
-
 
         /// <summary>
         /// Deletes a specified stack. You must first delete all instances, layers, and apps.
@@ -846,7 +837,6 @@ namespace Amazon.OpsWorks
         
         #region  DeleteUserProfile
 
-
         /// <summary>
         /// Deletes a user profile.
         /// 
@@ -898,7 +888,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeregisterElasticIp
-
 
         /// <summary>
         /// Deregisters a specified Elastic IP address. The address can then be registered by
@@ -954,7 +943,6 @@ namespace Amazon.OpsWorks
         
         #region  DeregisterRdsDbInstance
 
-
         /// <summary>
         /// Deregisters an Amazon RDS instance.
         /// 
@@ -1006,7 +994,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeregisterVolume
-
 
         /// <summary>
         /// Deregisters an Amazon EBS volume. The volume can then be registered by another stack.
@@ -1062,7 +1049,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeApps
 
-
         /// <summary>
         /// Requests a description of a specified set of apps.
         /// 
@@ -1114,7 +1100,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeCommands
-
 
         /// <summary>
         /// Describes the results of specified commands.
@@ -1168,7 +1153,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeDeployments
 
-
         /// <summary>
         /// Requests a description of a specified set of deployments.
         /// 
@@ -1220,7 +1204,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeElasticIps
-
 
         /// <summary>
         /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
@@ -1348,7 +1331,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeInstances
 
-
         /// <summary>
         /// Requests a description of a set of instances.
         /// 
@@ -1401,7 +1383,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeLayers
 
-
         /// <summary>
         /// Requests a description of one or more layers in a specified stack.
         /// 
@@ -1453,7 +1434,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeLoadBasedAutoScaling
-
 
         /// <summary>
         /// Describes load-based auto scaling configurations for specified layers.
@@ -1568,7 +1548,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribePermissions
 
-
         /// <summary>
         /// Describes the permissions for a specified stack.
         /// 
@@ -1621,7 +1600,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeRaidArrays
 
-
         /// <summary>
         /// Describe an instance's RAID arrays.
         /// 
@@ -1673,7 +1651,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeRdsDbInstances
-
 
         /// <summary>
         /// Describes Amazon RDS instances.
@@ -1873,7 +1850,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeStackSummary
 
-
         /// <summary>
         /// Describes the number of layers and apps in a specified stack, and the number of instances
         /// in each state, such as <code>running_setup</code> or <code>online</code>.
@@ -1926,7 +1902,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeTimeBasedAutoScaling
-
 
         /// <summary>
         /// Describes time-based auto scaling configurations for specified instances.
@@ -2053,7 +2028,6 @@ namespace Amazon.OpsWorks
         
         #region  DescribeVolumes
 
-
         /// <summary>
         /// Describes an instance's Amazon EBS volumes.
         /// 
@@ -2106,7 +2080,6 @@ namespace Amazon.OpsWorks
         
         #region  DetachElasticLoadBalancer
 
-
         /// <summary>
         /// Detaches a specified Elastic Load Balancing instance from its layer.
         /// 
@@ -2155,7 +2128,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DisassociateElasticIp
-
 
         /// <summary>
         /// Disassociates an Elastic IP address from its instance. The address remains registered
@@ -2211,7 +2183,6 @@ namespace Amazon.OpsWorks
         
         #region  GetHostnameSuggestion
 
-
         /// <summary>
         /// Gets a generated host name for the specified layer, based on the current host name
         /// theme.
@@ -2265,7 +2236,6 @@ namespace Amazon.OpsWorks
         
         #region  RebootInstance
 
-
         /// <summary>
         /// Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
         /// Stopping, and Rebooting Instances</a>.
@@ -2318,7 +2288,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RegisterElasticIp
-
 
         /// <summary>
         /// Registers an Elastic IP address with a specified stack. An address can be registered
@@ -2376,7 +2345,6 @@ namespace Amazon.OpsWorks
         
         #region  RegisterRdsDbInstance
 
-
         /// <summary>
         /// Registers an Amazon RDS instance with a stack.
         /// 
@@ -2428,7 +2396,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RegisterVolume
-
 
         /// <summary>
         /// Registers an Amazon EBS volume with a specified stack. A volume can be registered
@@ -2485,7 +2452,6 @@ namespace Amazon.OpsWorks
         
         #region  SetLoadBasedAutoScaling
 
-
         /// <summary>
         /// Specify the load-based auto scaling configuration for a specified layer. For more
         /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
@@ -2540,7 +2506,6 @@ namespace Amazon.OpsWorks
         
         #region  SetPermission
 
-
         /// <summary>
         /// Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security
         /// and Permissions</a>.
@@ -2593,7 +2558,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  SetTimeBasedAutoScaling
-
 
         /// <summary>
         /// Specify the time-based auto scaling configuration for a specified instance. For more
@@ -2649,7 +2613,6 @@ namespace Amazon.OpsWorks
         
         #region  StartInstance
 
-
         /// <summary>
         /// Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
         /// Stopping, and Rebooting Instances</a>.
@@ -2703,7 +2666,6 @@ namespace Amazon.OpsWorks
         
         #region  StartStack
 
-
         /// <summary>
         /// Starts a stack's instances. 
         /// 
@@ -2755,7 +2717,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  StopInstance
-
 
         /// <summary>
         /// Stops a specified instance. When you stop a standard instance, the data disappears
@@ -2812,7 +2773,6 @@ namespace Amazon.OpsWorks
         
         #region  StopStack
 
-
         /// <summary>
         /// Stops a specified stack.
         /// 
@@ -2864,7 +2824,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UnassignVolume
-
 
         /// <summary>
         /// Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack.
@@ -2920,7 +2879,6 @@ namespace Amazon.OpsWorks
         
         #region  UpdateApp
 
-
         /// <summary>
         /// Updates a specified app.
         /// 
@@ -2972,7 +2930,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateElasticIp
-
 
         /// <summary>
         /// Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
@@ -3027,7 +2984,6 @@ namespace Amazon.OpsWorks
         
         #region  UpdateInstance
 
-
         /// <summary>
         /// Updates a specified instance.
         /// 
@@ -3079,7 +3035,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateLayer
-
 
         /// <summary>
         /// Updates a specified layer.
@@ -3200,7 +3155,6 @@ namespace Amazon.OpsWorks
         
         #region  UpdateRdsDbInstance
 
-
         /// <summary>
         /// Updates an Amazon RDS instance.
         /// 
@@ -3252,7 +3206,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateStack
-
 
         /// <summary>
         /// Updates a specified stack.
@@ -3306,7 +3259,6 @@ namespace Amazon.OpsWorks
         
         #region  UpdateUserProfile
 
-
         /// <summary>
         /// Updates a specified user profile.
         /// 
@@ -3358,7 +3310,6 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateVolume
-
 
         /// <summary>
         /// Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource

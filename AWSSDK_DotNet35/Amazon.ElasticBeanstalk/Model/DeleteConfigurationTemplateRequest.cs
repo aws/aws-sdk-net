@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -26,22 +30,32 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the DeleteConfigurationTemplate operation.
     /// Deletes the specified configuration template.
-    /// 
-    ///       <note>When you launch an environment using a configuration template, the   
-    ///      environment         gets a copy of the template. You can delete or modify the
-    /// environment's copy of         the template without         affecting the running environment.</note>
     /// </summary>
     public partial class DeleteConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
         private string _templateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteConfigurationTemplateRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteConfigurationTemplateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName"> The name of the application to delete the configuration template from. </param>
+        /// <param name="templateName">The name of the configuration template to delete.</param>
+        public DeleteConfigurationTemplateRequest(string applicationName, string templateName)
+        {
+            _applicationName = applicationName;
+            _templateName = templateName;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application to delete the configuration         template
-        /// from.      
+        ///  The name of the application to delete the configuration template from. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -55,7 +69,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._applicationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TemplateName. 

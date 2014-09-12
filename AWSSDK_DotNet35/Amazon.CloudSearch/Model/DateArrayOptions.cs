@@ -12,124 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>Options for a field that contains an array of dates. Present if <c>IndexFieldType</c> specifies the field is of type
-    /// <c>date-array</c> . All options are enabled by default.</para>
+    /// Options for a field that contains an array of dates. Present if <code>IndexFieldType</code>
+    /// specifies the field is of type <code>date-array</code>. All options are enabled by
+    /// default.
     /// </summary>
     public partial class DateArrayOptions
     {
-        
-        private string defaultValue;
-        private string sourceFields;
-        private bool? facetEnabled;
-        private bool? searchEnabled;
-        private bool? returnEnabled;
-
+        private string _defaultValue;
+        private bool? _facetEnabled;
+        private bool? _returnEnabled;
+        private bool? _searchEnabled;
+        private string _sourceFields;
 
         /// <summary>
-        /// A value to use for the field if the field isn't specified for a document.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property DefaultValue. A value to use for the field if the field
+        /// isn't specified for a document.
         /// </summary>
         public string DefaultValue
         {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;
+            return this._defaultValue != null;
         }
 
         /// <summary>
-        /// A list of source fields to map to the field.
-        ///  
+        /// Gets and sets the property FacetEnabled. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>\s*[a-z][a-z0-9_]*\s*(,\s*[a-z][a-z0-9_]*\s*)*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SourceFields
-        {
-            get { return this.sourceFields; }
-            set { this.sourceFields = value; }
-        }
-
-        // Check to see if SourceFields property is set
-        internal bool IsSetSourceFields()
-        {
-            return this.sourceFields != null;
-        }
-
-        /// <summary>
         /// Whether facet information can be returned for the field.
-        ///  
+        /// </para>
         /// </summary>
         public bool FacetEnabled
         {
-            get { return this.facetEnabled ?? default(bool); }
-            set { this.facetEnabled = value; }
+            get { return this._facetEnabled.GetValueOrDefault(); }
+            set { this._facetEnabled = value; }
         }
 
         // Check to see if FacetEnabled property is set
         internal bool IsSetFacetEnabled()
         {
-            return this.facetEnabled.HasValue;
+            return this._facetEnabled.HasValue; 
         }
 
         /// <summary>
-        /// Whether the contents of the field are searchable.
-        ///  
-        /// </summary>
-        public bool SearchEnabled
-        {
-            get { return this.searchEnabled ?? default(bool); }
-            set { this.searchEnabled = value; }
-        }
-
-        // Check to see if SearchEnabled property is set
-        internal bool IsSetSearchEnabled()
-        {
-            return this.searchEnabled.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property ReturnEnabled. 
+        /// <para>
         /// Whether the contents of the field can be returned in the search results.
-        ///  
+        /// </para>
         /// </summary>
         public bool ReturnEnabled
         {
-            get { return this.returnEnabled ?? default(bool); }
-            set { this.returnEnabled = value; }
+            get { return this._returnEnabled.GetValueOrDefault(); }
+            set { this._returnEnabled = value; }
         }
 
         // Check to see if ReturnEnabled property is set
         internal bool IsSetReturnEnabled()
         {
-            return this.returnEnabled.HasValue;
+            return this._returnEnabled.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SearchEnabled. 
+        /// <para>
+        /// Whether the contents of the field are searchable.
+        /// </para>
+        /// </summary>
+        public bool SearchEnabled
+        {
+            get { return this._searchEnabled.GetValueOrDefault(); }
+            set { this._searchEnabled = value; }
+        }
+
+        // Check to see if SearchEnabled property is set
+        internal bool IsSetSearchEnabled()
+        {
+            return this._searchEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceFields. 
+        /// <para>
+        /// A list of source fields to map to the field. 
+        /// </para>
+        /// </summary>
+        public string SourceFields
+        {
+            get { return this._sourceFields; }
+            set { this._sourceFields = value; }
+        }
+
+        // Check to see if SourceFields property is set
+        internal bool IsSetSourceFields()
+        {
+            return this._sourceFields != null;
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,72 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para>This data type is used as a response element to DownloadDBLogFilePortion.</para>
+    /// This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
     /// </summary>
     public partial class DownloadDBLogFilePortionResult : AmazonWebServiceResponse
     {
-        
-        private string logFileData;
-        private string marker;
-        private bool? additionalDataPending;
-
+        private bool? _additionalDataPending;
+        private string _logFileData;
+        private string _marker;
 
         /// <summary>
-        /// Entries from the specified log file.
-        ///  
-        /// </summary>
-        public string LogFileData
-        {
-            get { return this.logFileData; }
-            set { this.logFileData = value; }
-        }
-
-        // Check to see if LogFileData property is set
-        internal bool IsSetLogFileData()
-        {
-            return this.logFileData != null;
-        }
-
-        /// <summary>
-        /// An optional pagination token provided by a previous DownloadDBLogFilePortion request.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// Boolean value that if true, indicates there is more data to be downloaded.
-        ///  
+        /// Gets and sets the property AdditionalDataPending. 
+        /// <para>
+        ///  Boolean value that if true, indicates there is more data to be downloaded. 
+        /// </para>
         /// </summary>
         public bool AdditionalDataPending
         {
-            get { return this.additionalDataPending ?? default(bool); }
-            set { this.additionalDataPending = value; }
+            get { return this._additionalDataPending.GetValueOrDefault(); }
+            set { this._additionalDataPending = value; }
         }
 
         // Check to see if AdditionalDataPending property is set
         internal bool IsSetAdditionalDataPending()
         {
-            return this.additionalDataPending.HasValue;
+            return this._additionalDataPending.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property LogFileData. 
+        /// <para>
+        ///  Entries from the specified log file. 
+        /// </para>
+        /// </summary>
+        public string LogFileData
+        {
+            get { return this._logFileData; }
+            set { this._logFileData = value; }
+        }
+
+        // Check to see if LogFileData property is set
+        internal bool IsSetLogFileData()
+        {
+            return this._logFileData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///  An optional pagination token provided by a previous DownloadDBLogFilePortion request.
+        /// 
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

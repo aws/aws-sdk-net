@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,65 +29,54 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAvailabilityOptions operation.
-    /// <para>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional
-    /// Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can
-    /// take about half an hour to become active. For more information, see <a
-    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" >Configuring Availability
-    /// Options</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
+    /// Configures the availability options for a domain. Enabling the Multi-AZ option expands
+    /// an Amazon CloudSearch domain to an additional Availability Zone in the same Region
+    /// to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ
+    /// option can take about half an hour to become active. For more information, see <a
+    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+    /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
+    /// Developer Guide</i>.
     /// </summary>
     public partial class UpdateAvailabilityOptionsRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private bool? multiAZ;
-
+        private string _domainName;
+        private bool? _multiAZ;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property DomainName.
         /// </summary>
         public string DomainName
         {
-            get { return this.domainName; }
-            set { this.domainName = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;
+            return this._domainName != null;
         }
 
         /// <summary>
-        /// You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the
-        /// Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <c>false</c>.
-        ///  
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// You expand an existing search domain to a second Availability Zone by setting the
+        /// Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade
+        /// the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>.
+        /// 
+        /// </para>
         /// </summary>
         public bool MultiAZ
         {
-            get { return this.multiAZ ?? default(bool); }
-            set { this.multiAZ = value; }
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
         }
 
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
-            return this.multiAZ.HasValue;
+            return this._multiAZ.HasValue; 
         }
 
     }
 }
-    

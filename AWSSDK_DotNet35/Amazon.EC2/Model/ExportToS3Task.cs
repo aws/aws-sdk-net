@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,94 +32,81 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ExportToS3Task
     {
-        
-        private DiskImageFormat diskImageFormat;
-        private ContainerFormat containerFormat;
-        private string s3Bucket;
-        private string s3Key;
-
+        private ContainerFormat _containerFormat;
+        private DiskImageFormat _diskImageFormat;
+        private string _s3Bucket;
+        private string _s3Key;
 
         /// <summary>
-        /// The format for the exported image.
-        ///  
+        /// Gets and sets the property ContainerFormat. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>VMDK, RAW, VHD</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public DiskImageFormat DiskImageFormat
-        {
-            get { return this.diskImageFormat; }
-            set { this.diskImageFormat = value; }
-        }
-
-        // Check to see if DiskImageFormat property is set
-        internal bool IsSetDiskImageFormat()
-        {
-            return this.diskImageFormat != null;
-        }
-
-        /// <summary>
-        /// The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ova</description>
-        ///     </item>
-        /// </list>
+        /// The container format used to combine disk images with metadata (such as OVF). If absent,
+        /// only the disk image is exported.
         /// </para>
         /// </summary>
         public ContainerFormat ContainerFormat
         {
-            get { return this.containerFormat; }
-            set { this.containerFormat = value; }
+            get { return this._containerFormat; }
+            set { this._containerFormat = value; }
         }
 
         // Check to see if ContainerFormat property is set
         internal bool IsSetContainerFormat()
         {
-            return this.containerFormat != null;
+            return this._containerFormat != null;
         }
 
         /// <summary>
-        /// The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACL permissions to the AWS
-        /// account <c>vm-import-export@amazon.com</c>.
-        ///  
+        /// Gets and sets the property DiskImageFormat. 
+        /// <para>
+        /// The format for the exported image.
+        /// </para>
+        /// </summary>
+        public DiskImageFormat DiskImageFormat
+        {
+            get { return this._diskImageFormat; }
+            set { this._diskImageFormat = value; }
+        }
+
+        // Check to see if DiskImageFormat property is set
+        internal bool IsSetDiskImageFormat()
+        {
+            return this._diskImageFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Bucket. 
+        /// <para>
+        /// The Amazon S3 bucket for the destination image. The destination bucket must exist
+        /// and grant WRITE and READ_ACL permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+        /// </para>
         /// </summary>
         public string S3Bucket
         {
-            get { return this.s3Bucket; }
-            set { this.s3Bucket = value; }
+            get { return this._s3Bucket; }
+            set { this._s3Bucket = value; }
         }
 
         // Check to see if S3Bucket property is set
         internal bool IsSetS3Bucket()
         {
-            return this.s3Bucket != null;
+            return this._s3Bucket != null;
         }
 
         /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property S3Key.
         /// </summary>
         public string S3Key
         {
-            get { return this.s3Key; }
-            set { this.s3Key = value; }
+            get { return this._s3Key; }
+            set { this._s3Key = value; }
         }
 
         // Check to see if S3Key property is set
         internal bool IsSetS3Key()
         {
-            return this.s3Key != null;
+            return this._s3Key != null;
         }
+
     }
 }

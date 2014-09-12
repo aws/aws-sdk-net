@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.CognitoSync.Model
         private List<Record> _records = new List<Record>();
         private string _syncSessionToken;
 
-
         /// <summary>
         /// Gets and sets the property Count. Total number of records.
         /// </summary>
@@ -53,7 +56,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._count.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DatasetDeletedAfterRequestedSyncCount. A boolean value
@@ -71,7 +73,6 @@ namespace Amazon.CognitoSync.Model
             return this._datasetDeletedAfterRequestedSyncCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DatasetExists. Indicates whether the dataset exists.
         /// </summary>
@@ -86,7 +87,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._datasetExists.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DatasetSyncCount. Server sync count for this dataset.
@@ -103,7 +103,6 @@ namespace Amazon.CognitoSync.Model
             return this._datasetSyncCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LastModifiedBy.
         /// </summary>
@@ -119,7 +118,6 @@ namespace Amazon.CognitoSync.Model
             return this._lastModifiedBy != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MergedDatasetNames. Names of merged datasets.
         /// </summary>
@@ -134,7 +132,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._mergedDatasetNames != null && this._mergedDatasetNames.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. A pagination token for obtaining the next page
@@ -152,7 +149,6 @@ namespace Amazon.CognitoSync.Model
             return this._nextToken != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Records. A list of all records.
         /// </summary>
@@ -167,7 +163,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._records != null && this._records.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SyncSessionToken. A token containing a session ID, identity

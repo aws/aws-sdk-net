@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PriceSchedule Unmarshaller
-     /// </summary>
-    internal class PriceScheduleUnmarshaller : IUnmarshaller<PriceSchedule, XmlUnmarshallerContext>, IUnmarshaller<PriceSchedule, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PriceSchedule Object
+    /// </summary>  
+    public class PriceScheduleUnmarshaller : IUnmarshaller<PriceSchedule, XmlUnmarshallerContext>, IUnmarshaller<PriceSchedule, JsonUnmarshallerContext>
     {
-        public PriceSchedule Unmarshall(XmlUnmarshallerContext context) 
+        public PriceSchedule Unmarshall(XmlUnmarshallerContext context)
         {
-            PriceSchedule priceSchedule = new PriceSchedule();
+            PriceSchedule unmarshalledObject = new PriceSchedule();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("term", targetDepth))
+                    if (context.TestExpression("active", targetDepth))
                     {
-                        priceSchedule.Term = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("price", targetDepth))
-                    {
-                        priceSchedule.Price = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Active = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("currencyCode", targetDepth))
                     {
-                        priceSchedule.CurrencyCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("active", targetDepth))
+                    if (context.TestExpression("price", targetDepth))
                     {
-                        priceSchedule.Active = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.Price = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("term", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.Term = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return priceSchedule;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return priceSchedule;
+            return unmarshalledObject;
         }
 
-        public PriceSchedule Unmarshall(JsonUnmarshallerContext context) 
+        public PriceSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PriceScheduleUnmarshaller instance;
 
-        public static PriceScheduleUnmarshaller GetInstance() 
+        private static PriceScheduleUnmarshaller _instance = new PriceScheduleUnmarshaller();        
+
+        public static PriceScheduleUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PriceScheduleUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

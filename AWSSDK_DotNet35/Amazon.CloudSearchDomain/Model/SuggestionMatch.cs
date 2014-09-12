@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudSearchDomain.Model
         private long? _score;
         private string _suggestion;
 
-
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
@@ -69,7 +71,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._score.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Suggestion. 

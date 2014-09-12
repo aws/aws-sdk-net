@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string _dataType;
         private string _stringValue;
 
-
         /// <summary>
         /// Gets and sets the property BinaryValue. 
         /// <para>
@@ -61,7 +64,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._binaryValue != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DataType. 
@@ -82,7 +84,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._dataType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StringValue. 

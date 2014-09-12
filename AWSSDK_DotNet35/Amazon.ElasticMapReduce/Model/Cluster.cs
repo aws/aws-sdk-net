@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.ElasticMapReduce.Model
         private bool? _terminationProtected;
         private bool? _visibleToAllUsers;
 
-
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
@@ -60,7 +63,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._applications != null && this._applications.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property AutoTerminate. 
@@ -80,7 +82,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._autoTerminate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Ec2InstanceAttributes.
         /// </summary>
@@ -95,7 +96,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._ec2InstanceAttributes != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -115,7 +115,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
@@ -133,7 +132,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._logUri != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -153,7 +151,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._name != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RequestedAmiVersion. 
         /// <para>
@@ -171,7 +168,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._requestedAmiVersion != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RunningAmiVersion. 
@@ -192,7 +188,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._runningAmiVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
@@ -212,7 +207,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._serviceRole != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
@@ -231,7 +225,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
@@ -249,7 +242,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._tags != null && this._tags.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property TerminationProtected. 
@@ -270,7 +262,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._terminationProtected.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 

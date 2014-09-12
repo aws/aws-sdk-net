@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Synonym Options Request Marshaller
+    /// DescribeSynonymOptions Request Marshaller
     /// </summary>       
-    public class DescribeSynonymOptionsRequestMarshaller : IMarshaller<IRequest, DescribeSynonymOptionsRequest>
+    public class DescribeSynonymOptionsRequestMarshaller : IMarshaller<IRequest, DescribeSynonymOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeSynonymOptionsRequest describeSynonymOptionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeSynonymOptionsRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeSynonymOptionsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeSynonymOptionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch_2011_02_01");
             request.Parameters.Add("Action", "DescribeSynonymOptions");
             request.Parameters.Add("Version", "2011-02-01");
-            if (describeSynonymOptionsRequest != null && describeSynonymOptionsRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeSynonymOptionsRequest.DomainName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+            }
             return request;
         }
     }

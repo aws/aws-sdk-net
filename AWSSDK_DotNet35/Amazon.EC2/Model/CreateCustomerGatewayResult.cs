@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateCustomerGatewayResult : AmazonWebServiceResponse
     {
-        
-        private CustomerGateway customerGateway;
-
+        private CustomerGateway _customerGateway;
 
         /// <summary>
+        /// Gets and sets the property CustomerGateway. 
+        /// <para>
         /// Information about the customer gateway.
-        ///  
+        /// </para>
         /// </summary>
         public CustomerGateway CustomerGateway
         {
-            get { return this.customerGateway; }
-            set { this.customerGateway = value; }
+            get { return this._customerGateway; }
+            set { this._customerGateway = value; }
         }
 
         // Check to see if CustomerGateway property is set
         internal bool IsSetCustomerGateway()
         {
-            return this.customerGateway != null;
+            return this._customerGateway != null;
         }
+
     }
 }

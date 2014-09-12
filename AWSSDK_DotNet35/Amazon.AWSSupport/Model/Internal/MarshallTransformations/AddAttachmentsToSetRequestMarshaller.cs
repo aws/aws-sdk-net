@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// AddAttachmentsToSet Request Marshaller
     /// </summary>       
-    public class AddAttachmentsToSetRequestMarshaller : IMarshaller<IRequest, AddAttachmentsToSetRequest> 
+    public class AddAttachmentsToSetRequestMarshaller : IMarshaller<IRequest, AddAttachmentsToSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AddAttachmentsToSetRequest)input);
+        }
+
         public IRequest Marshall(AddAttachmentsToSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,34 +56,27 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttachments())
                 {
-                    writer.WritePropertyName("attachments");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("attachments");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestAttachmentsListValue.IsSetData())
-                        {
-                            writer.WritePropertyName("data");
-                            writer.Write(StringUtils.FromMemoryStream(publicRequestAttachmentsListValue.Data));
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestAttachmentsListValue.IsSetFileName())
-                        {
-                            writer.WritePropertyName("fileName");
-                            writer.Write(publicRequestAttachmentsListValue.FileName);
-                        }
+                        var marshaller = AttachmentMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAttachmentsListValue, context);
 
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetAttachmentSetId())
                 {
-                    writer.WritePropertyName("attachmentSetId");
-                    writer.Write(publicRequest.AttachmentSetId);
+                    context.Writer.WritePropertyName("attachmentSetId");
+                    context.Writer.Write(publicRequest.AttachmentSetId);
                 }
 
         

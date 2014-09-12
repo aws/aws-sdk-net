@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A response message that contains the stemming options for a search domain.</para>
+    /// A response message that contains the stemming options for a search domain.
     /// </summary>
     public partial class DescribeStemmingOptionsResult : AmazonWebServiceResponse
     {
-        
-        private StemmingOptionsStatus stems;
-
+        private StemmingOptionsStatus _stems;
 
         /// <summary>
-        /// The stemming options configured for this search domain and the current status of those options.
-        ///  
+        /// Gets and sets the property Stems.
         /// </summary>
         public StemmingOptionsStatus Stems
         {
-            get { return this.stems; }
-            set { this.stems = value; }
+            get { return this._stems; }
+            set { this._stems = value; }
         }
 
         // Check to see if Stems property is set
         internal bool IsSetStems()
         {
-            return this.stems != null;
+            return this._stems != null;
         }
+
     }
 }

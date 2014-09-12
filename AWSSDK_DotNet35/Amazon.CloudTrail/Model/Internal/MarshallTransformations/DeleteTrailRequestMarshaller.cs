@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Trail Request Marshaller
+    /// DeleteTrail Request Marshaller
     /// </summary>       
-    internal class DeleteTrailRequestMarshaller : IMarshaller<IRequest, DeleteTrailRequest> 
+    public class DeleteTrailRequestMarshaller : IMarshaller<IRequest, DeleteTrailRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteTrailRequest deleteTrailRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteTrailRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteTrailRequest, "AmazonCloudTrail");
-            string target = "CloudTrail_20131101.DeleteTrail";
+        public IRequest Marshall(DeleteTrailRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
+            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteTrail";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteTrailRequest != null && deleteTrailRequest.IsSetName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(deleteTrailRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

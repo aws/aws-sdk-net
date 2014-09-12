@@ -1,0 +1,206 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "RegisterInstancesWithLoadBalancerRequest" : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "Instances"
+                    ]
+                ]
+            },
+            "DeregisterInstancesFromLoadBalancerRequest" : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "Instances"
+                    ]
+                ]
+            },
+            "PolicyAttribute"                            : {
+                "constructorForms" : [
+                    [
+                        "AttributeName",
+                        "AttributeValue"
+                    ]
+                ]
+            },
+            "DeleteLoadBalancerPolicyRequest"            : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "DeleteLoadBalancerRequest"                  : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName"
+                    ]
+                ]
+            },
+            "SetLoadBalancerPoliciesOfListenerRequest"   : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "LoadBalancerPort",
+                        "PolicyNames"
+                    ]
+                ]
+            },
+            "Listener"                                   : {
+                "constructorForms" : [
+                    [
+                        "Protocol",
+                        "LoadBalancerPort",
+                        "InstancePort"
+                    ]
+                ]
+            },
+            "DescribeInstanceHealthRequest"              : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName"
+                    ]
+                ]
+            },
+            "EnableAvailabilityZonesForLoadBalancerRequest" : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "AvailabilityZones"
+                    ]
+                ]
+            },
+            "CreateLoadBalancerRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName"
+                    ],
+                    [
+                        "LoadBalancerName",
+                        "Listeners",
+                        "AvailabilityZones"
+                    ]
+                ]
+            },
+            "DisableAvailabilityZonesForLoadBalancerRequest" : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "AvailabilityZones"
+                    ]
+                ]
+            },
+            "DescribeLoadBalancersRequest"                   : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerNames"
+                    ]
+                ]
+            },
+            "DeleteLoadBalancerListenersRequest"             : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "LoadBalancerPorts"
+                    ]
+                ]
+            },
+            "HealthCheck"                                    : {
+                "constructorForms" : [
+                    [
+                        "Target",
+                        "Interval",
+                        "Timeout",
+                        "UnhealthyThreshold",
+                        "HealthyThreshold"
+                    ]
+                ]
+            },
+            "LoadBalancerDescription"                        : {
+                "constructorForms" : [
+                ]
+            },
+            "Policies"                                       : {
+                "constructorForms" : [
+                ]
+            },
+            "Instance"                                       : {
+                "constructorForms" : [
+                    [
+                        "InstanceId"
+                    ]
+                ]
+            },
+            "CreateLoadBalancerListenersRequest"             : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "Listeners"
+                    ]
+                ]
+            },
+            "CreateLBCookieStickinessPolicyRequest"          : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "LBCookieStickinessPolicy"                       : {
+                "constructorForms" : [
+                    [
+                        "PolicyName",
+                        "CookieExpirationPeriod"
+                    ]
+                ]
+            },
+            "InstanceState"                                  : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateAppCookieStickinessPolicyRequest"         : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "PolicyName",
+                        "CookieName"
+                    ]
+                ]
+            },
+            "AppCookieStickinessPolicy"                      : {
+                "constructorForms" : [
+                    [
+                        "PolicyName",
+                        "CookieName"
+                    ]
+                ]
+            },
+            "ListenerDescription"                            : {
+                "constructorForms" : [
+                ]
+            },
+            "SetLoadBalancerListenerSSLCertificateRequest"   : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "LoadBalancerPort",
+                        "SSLCertificateId"
+                    ]
+                ]
+            },
+            "ConfigureHealthCheckRequest"                    : {
+                "constructorForms" : [
+                    [
+                        "LoadBalancerName",
+                        "HealthCheck"
+                    ]
+                ]
+            }
+        }
+    }
+}

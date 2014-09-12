@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Deregister Image Request Marshaller
+    /// DeregisterImage Request Marshaller
     /// </summary>       
-    public class DeregisterImageRequestMarshaller : IMarshaller<IRequest, DeregisterImageRequest>
+    public class DeregisterImageRequestMarshaller : IMarshaller<IRequest, DeregisterImageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeregisterImageRequest deregisterImageRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deregisterImageRequest, "AmazonEC2");
+            return this.Marshall((DeregisterImageRequest)input);
+        }
+    
+        public IRequest Marshall(DeregisterImageRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DeregisterImage");
             request.Parameters.Add("Version", "2014-06-15");
-            if (deregisterImageRequest != null && deregisterImageRequest.IsSetImageId())
-            {
-                request.Parameters.Add("ImageId", StringUtils.FromString(deregisterImageRequest.ImageId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetImageId())
+                {
+                    request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
+                }
+            }
             return request;
         }
     }

@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Versioning Request Marshaller
     /// </summary>       
-    public class GetBucketVersioningRequestMarshaller : IMarshaller<IRequest, GetBucketVersioningRequest>
-    {
+    public class GetBucketVersioningRequestMarshaller : IMarshaller<IRequest, GetBucketVersioningRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketVersioningRequest)input);
+		}
+
         public IRequest Marshall(GetBucketVersioningRequest getBucketVersioningRequest)
         {
             IRequest request = new DefaultRequest(getBucketVersioningRequest, "AmazonS3");

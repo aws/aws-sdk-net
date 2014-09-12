@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ChapInfo Object
+    /// </summary>  
+    public class ChapInfoUnmarshaller : IUnmarshaller<ChapInfo, XmlUnmarshallerContext>, IUnmarshaller<ChapInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ChapInfoUnmarshaller
-      /// </summary>
-      internal class ChapInfoUnmarshaller : IUnmarshaller<ChapInfo, XmlUnmarshallerContext>, IUnmarshaller<ChapInfo, JsonUnmarshallerContext>
-      {
         ChapInfo IUnmarshaller<ChapInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ChapInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ChapInfo chapInfo = new ChapInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ChapInfo unmarshalledObject = new ChapInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TargetARN", targetDepth))
-              {
-                chapInfo.TargetARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SecretToAuthenticateInitiator", targetDepth))
-              {
-                chapInfo.SecretToAuthenticateInitiator = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InitiatorName", targetDepth))
-              {
-                chapInfo.InitiatorName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SecretToAuthenticateTarget", targetDepth))
-              {
-                chapInfo.SecretToAuthenticateTarget = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("InitiatorName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InitiatorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretToAuthenticateInitiator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretToAuthenticateInitiator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretToAuthenticateTarget", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretToAuthenticateTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return chapInfo;
+            return unmarshalledObject;
         }
 
-        private static ChapInfoUnmarshaller instance;
-        public static ChapInfoUnmarshaller GetInstance()
+
+        private static ChapInfoUnmarshaller _instance = new ChapInfoUnmarshaller();        
+
+        public static ChapInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ChapInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

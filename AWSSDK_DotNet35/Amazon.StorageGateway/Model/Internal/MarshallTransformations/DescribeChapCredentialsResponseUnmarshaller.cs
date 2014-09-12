@@ -12,73 +12,78 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeChapCredentials operation
+    /// </summary>  
+    public class DescribeChapCredentialsResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for DescribeChapCredentials operation
-      /// </summary>
-      internal class DescribeChapCredentialsResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeChapCredentialsResponse response = new DescribeChapCredentialsResponse();       
-          
+            DescribeChapCredentialsResponse response = new DescribeChapCredentialsResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("ChapCredentials", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<ChapInfo,ChapInfoUnmarshaller>(
-                    ChapInfoUnmarshaller.GetInstance());                  
-                response.ChapCredentials = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("ChapCredentials", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ChapInfo, ChapInfoUnmarshaller>(ChapInfoUnmarshaller.Instance);
+                    response.ChapCredentials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
-          {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException"))
-          {
-            return new InvalidGatewayRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeChapCredentialsResponseUnmarshaller instance;
-        public static DescribeChapCredentialsResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new DescribeChapCredentialsResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
+            {
+                return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException"))
+            {
+                return new InvalidGatewayRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static DescribeChapCredentialsResponseUnmarshaller _instance = new DescribeChapCredentialsResponseUnmarshaller();        
+
+        internal static DescribeChapCredentialsResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static DescribeChapCredentialsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

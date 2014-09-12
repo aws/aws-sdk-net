@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,19 @@ namespace Amazon.CloudFront.Model
     {
         private DistributionConfig _distributionConfig;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateDistributionRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateDistributionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="distributionConfig">The distribution's configuration information.</param>
+        public CreateDistributionRequest(DistributionConfig distributionConfig)
+        {
+            _distributionConfig = distributionConfig;
+        }
 
         /// <summary>
         /// Gets and sets the property DistributionConfig. The distribution's configuration information.

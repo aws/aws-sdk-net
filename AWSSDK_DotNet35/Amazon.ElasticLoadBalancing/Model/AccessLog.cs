@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         private bool? _enabled;
         private string _s3BucketName;
         private string _s3BucketPrefix;
-
 
         /// <summary>
         /// Gets and sets the property EmitInterval. 
@@ -57,7 +60,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._emitInterval.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
@@ -76,7 +78,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._enabled.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
@@ -94,7 +95,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._s3BucketName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property S3BucketPrefix. 

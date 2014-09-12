@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,35 +12,36 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.CloudSearch_2011_02_01
 {
 
-
-    /// <summary>Index Field Type
+    /// <summary>
+    /// Constants used for properties of type IndexFieldType.
     /// </summary>
     public class IndexFieldType : ConstantClass
     {
 
-
-       /// <summary>Constant Literal for IndexFieldType
-       /// </summary>
+        /// <summary>
+        /// Constant Literal for IndexFieldType
+        /// </summary>
         public static readonly IndexFieldType Literal = new IndexFieldType("literal");
-    
-
-       /// <summary>Constant Text for IndexFieldType
-       /// </summary>
+        /// <summary>
+        /// Constant Text for IndexFieldType
+        /// </summary>
         public static readonly IndexFieldType Text = new IndexFieldType("text");
-    
-
-       /// <summary>Constant Uint for IndexFieldType
-       /// </summary>
+        /// <summary>
+        /// Constant Uint for IndexFieldType
+        /// </summary>
         public static readonly IndexFieldType Uint = new IndexFieldType("uint");
-    
 
         /// <summary>
         /// Default Constructor
@@ -65,28 +66,26 @@ namespace Amazon.CloudSearch_2011_02_01
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Option State
+
+    /// <summary>
+    /// Constants used for properties of type OptionState.
     /// </summary>
     public class OptionState : ConstantClass
     {
 
-
-       /// <summary>Constant Active for OptionState
-       /// </summary>
+        /// <summary>
+        /// Constant Active for OptionState
+        /// </summary>
         public static readonly OptionState Active = new OptionState("Active");
-    
-
-       /// <summary>Constant Processing for OptionState
-       /// </summary>
+        /// <summary>
+        /// Constant Processing for OptionState
+        /// </summary>
         public static readonly OptionState Processing = new OptionState("Processing");
-    
-
-       /// <summary>Constant RequiresIndexDocuments for OptionState
-       /// </summary>
+        /// <summary>
+        /// Constant RequiresIndexDocuments for OptionState
+        /// </summary>
         public static readonly OptionState RequiresIndexDocuments = new OptionState("RequiresIndexDocuments");
-    
 
         /// <summary>
         /// Default Constructor
@@ -111,28 +110,26 @@ namespace Amazon.CloudSearch_2011_02_01
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Source Data Function
+
+    /// <summary>
+    /// Constants used for properties of type SourceDataFunction.
     /// </summary>
     public class SourceDataFunction : ConstantClass
     {
 
-
-       /// <summary>Constant Copy for SourceDataFunction
-       /// </summary>
+        /// <summary>
+        /// Constant Copy for SourceDataFunction
+        /// </summary>
         public static readonly SourceDataFunction Copy = new SourceDataFunction("Copy");
-    
-
-       /// <summary>Constant Map for SourceDataFunction
-       /// </summary>
+        /// <summary>
+        /// Constant Map for SourceDataFunction
+        /// </summary>
         public static readonly SourceDataFunction Map = new SourceDataFunction("Map");
-    
-
-       /// <summary>Constant TrimTitle for SourceDataFunction
-       /// </summary>
+        /// <summary>
+        /// Constant TrimTitle for SourceDataFunction
+        /// </summary>
         public static readonly SourceDataFunction TrimTitle = new SourceDataFunction("TrimTitle");
-    
 
         /// <summary>
         /// Default Constructor
@@ -157,7 +154,5 @@ namespace Amazon.CloudSearch_2011_02_01
             return FindValue(value);
         }
     }
-    
 
 }
-        

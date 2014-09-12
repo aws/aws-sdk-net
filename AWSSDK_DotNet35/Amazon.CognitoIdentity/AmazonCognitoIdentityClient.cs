@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CognitoIdentity.Model;
 using Amazon.CognitoIdentity.Model.Internal.MarshallTransformations;
@@ -45,19 +49,8 @@ namespace Amazon.CognitoIdentity
     /// any information provided about third-party logins.
     /// </para>
     /// </summary>
-    public partial class AmazonCognitoIdentityClient : AmazonWebServiceClient, IAmazonCognitoIdentity
+    public partial class AmazonCognitoIdentityClient : AmazonServiceClient, IAmazonCognitoIdentity
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -76,7 +69,7 @@ namespace Amazon.CognitoIdentity
         ///
         /// </summary>
         public AmazonCognitoIdentityClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoIdentityConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoIdentityConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with the credentials loaded from the application's
@@ -95,7 +88,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoIdentityClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoIdentityConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoIdentityConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with the credentials loaded from the application's
@@ -114,7 +107,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         /// <param name="config">The AmazonCognitoIdentityClient Configuration Object</param>
         public AmazonCognitoIdentityClient(AmazonCognitoIdentityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with AWS Credentials
@@ -142,7 +135,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCognitoIdentityClient Configuration Object</param>
         public AmazonCognitoIdentityClient(AWSCredentials credentials, AmazonCognitoIdentityConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -175,7 +168,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCognitoIdentityClient Configuration Object</param>
         public AmazonCognitoIdentityClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCognitoIdentityConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -211,15 +204,33 @@ namespace Amazon.CognitoIdentity
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCognitoIdentityClient Configuration Object</param>
         public AmazonCognitoIdentityClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCognitoIdentityConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CreateIdentityPool
-
 
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
@@ -248,8 +259,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateIdentityPool(request, null, null, true);
-            return EndCreateIdentityPool(asyncResult);
+            var marshaller = new CreateIdentityPoolRequestMarshaller();
+            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdentityPoolRequest,CreateIdentityPoolResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -266,10 +279,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginCreateIdentityPool(CreateIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateIdentityPool(request, callback, state, false);
+            var marshaller = new CreateIdentityPoolRequestMarshaller();
+            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateIdentityPoolRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateIdentityPool operation.
@@ -281,21 +296,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  CreateIdentityPoolResult from CognitoIdentity.</returns>
         public  CreateIdentityPoolResponse EndCreateIdentityPool(IAsyncResult asyncResult)
         {
-            return endOperation< CreateIdentityPoolResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateIdentityPool(CreateIdentityPoolRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateIdentityPoolRequestMarshaller();
-            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateIdentityPoolResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteIdentityPool
-
 
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
@@ -321,8 +327,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteIdentityPool(request, null, null, true);
-            return EndDeleteIdentityPool(asyncResult);
+            var marshaller = new DeleteIdentityPoolRequestMarshaller();
+            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentityPoolRequest,DeleteIdentityPoolResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -339,10 +347,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginDeleteIdentityPool(DeleteIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteIdentityPool(request, callback, state, false);
+            var marshaller = new DeleteIdentityPoolRequestMarshaller();
+            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteIdentityPoolRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteIdentityPool operation.
@@ -354,21 +364,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  DeleteIdentityPoolResult from CognitoIdentity.</returns>
         public  DeleteIdentityPoolResponse EndDeleteIdentityPool(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteIdentityPoolResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteIdentityPool(DeleteIdentityPoolRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteIdentityPoolRequestMarshaller();
-            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteIdentityPoolResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeIdentityPool
-
 
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
@@ -394,8 +395,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeIdentityPool(request, null, null, true);
-            return EndDescribeIdentityPool(asyncResult);
+            var marshaller = new DescribeIdentityPoolRequestMarshaller();
+            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityPoolRequest,DescribeIdentityPoolResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -412,10 +415,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginDescribeIdentityPool(DescribeIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeIdentityPool(request, callback, state, false);
+            var marshaller = new DescribeIdentityPoolRequestMarshaller();
+            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIdentityPoolRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeIdentityPool operation.
@@ -427,21 +432,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  DescribeIdentityPoolResult from CognitoIdentity.</returns>
         public  DescribeIdentityPoolResponse EndDescribeIdentityPool(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeIdentityPoolResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeIdentityPool(DescribeIdentityPoolRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeIdentityPoolRequestMarshaller();
-            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeIdentityPoolResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetId
-
 
         /// <summary>
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
@@ -473,8 +469,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public GetIdResponse GetId(GetIdRequest request)
         {
-            IAsyncResult asyncResult = invokeGetId(request, null, null, true);
-            return EndGetId(asyncResult);
+            var marshaller = new GetIdRequestMarshaller();
+            var unmarshaller = GetIdResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdRequest,GetIdResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -491,10 +489,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginGetId(GetIdRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetId(request, callback, state, false);
+            var marshaller = new GetIdRequestMarshaller();
+            var unmarshaller = GetIdResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetIdRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetId operation.
@@ -506,21 +506,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  GetIdResult from CognitoIdentity.</returns>
         public  GetIdResponse EndGetId(IAsyncResult asyncResult)
         {
-            return endOperation< GetIdResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetId(GetIdRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetIdRequestMarshaller();
-            var unmarshaller = GetIdResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetIdResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetOpenIdToken
-
 
         /// <summary>
         /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
@@ -550,8 +541,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
-            IAsyncResult asyncResult = invokeGetOpenIdToken(request, null, null, true);
-            return EndGetOpenIdToken(asyncResult);
+            var marshaller = new GetOpenIdTokenRequestMarshaller();
+            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetOpenIdTokenRequest,GetOpenIdTokenResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -568,10 +561,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginGetOpenIdToken(GetOpenIdTokenRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetOpenIdToken(request, callback, state, false);
+            var marshaller = new GetOpenIdTokenRequestMarshaller();
+            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetOpenIdTokenRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetOpenIdToken operation.
@@ -583,21 +578,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  GetOpenIdTokenResult from CognitoIdentity.</returns>
         public  GetOpenIdTokenResponse EndGetOpenIdToken(IAsyncResult asyncResult)
         {
-            return endOperation< GetOpenIdTokenResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetOpenIdToken(GetOpenIdTokenRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetOpenIdTokenRequestMarshaller();
-            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetOpenIdTokenResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListIdentities
-
 
         /// <summary>
         /// Lists the identities in a pool.
@@ -622,8 +608,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
-            IAsyncResult asyncResult = invokeListIdentities(request, null, null, true);
-            return EndListIdentities(asyncResult);
+            var marshaller = new ListIdentitiesRequestMarshaller();
+            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -640,10 +628,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListIdentities(request, callback, state, false);
+            var marshaller = new ListIdentitiesRequestMarshaller();
+            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListIdentitiesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListIdentities operation.
@@ -655,21 +645,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  ListIdentitiesResult from CognitoIdentity.</returns>
         public  ListIdentitiesResponse EndListIdentities(IAsyncResult asyncResult)
         {
-            return endOperation< ListIdentitiesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListIdentitiesRequestMarshaller();
-            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListIdentitiesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListIdentityPools
-
 
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
@@ -691,8 +672,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
-            IAsyncResult asyncResult = invokeListIdentityPools(request, null, null, true);
-            return EndListIdentityPools(asyncResult);
+            var marshaller = new ListIdentityPoolsRequestMarshaller();
+            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityPoolsRequest,ListIdentityPoolsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -709,10 +692,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginListIdentityPools(ListIdentityPoolsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListIdentityPools(request, callback, state, false);
+            var marshaller = new ListIdentityPoolsRequestMarshaller();
+            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListIdentityPoolsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListIdentityPools operation.
@@ -724,21 +709,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  ListIdentityPoolsResult from CognitoIdentity.</returns>
         public  ListIdentityPoolsResponse EndListIdentityPools(IAsyncResult asyncResult)
         {
-            return endOperation< ListIdentityPoolsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListIdentityPools(ListIdentityPoolsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListIdentityPoolsRequestMarshaller();
-            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListIdentityPoolsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UnlinkIdentity
-
 
         /// <summary>
         /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
@@ -768,8 +744,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
-            IAsyncResult asyncResult = invokeUnlinkIdentity(request, null, null, true);
-            return EndUnlinkIdentity(asyncResult);
+            var marshaller = new UnlinkIdentityRequestMarshaller();
+            var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<UnlinkIdentityRequest,UnlinkIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -786,10 +764,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginUnlinkIdentity(UnlinkIdentityRequest request, AsyncCallback callback, object state)
         {
-            return invokeUnlinkIdentity(request, callback, state, false);
+            var marshaller = new UnlinkIdentityRequestMarshaller();
+            var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UnlinkIdentityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UnlinkIdentity operation.
@@ -801,21 +781,12 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  UnlinkIdentityResult from CognitoIdentity.</returns>
         public  UnlinkIdentityResponse EndUnlinkIdentity(IAsyncResult asyncResult)
         {
-            return endOperation< UnlinkIdentityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUnlinkIdentity(UnlinkIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UnlinkIdentityRequestMarshaller();
-            var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UnlinkIdentityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateIdentityPool
-
 
         /// <summary>
         /// Updates a user pool.
@@ -843,8 +814,10 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         public UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateIdentityPool(request, null, null, true);
-            return EndUpdateIdentityPool(asyncResult);
+            var marshaller = new UpdateIdentityPoolRequestMarshaller();
+            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdentityPoolRequest,UpdateIdentityPoolResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -861,10 +834,12 @@ namespace Amazon.CognitoIdentity
         ///         operation.</returns>
         public IAsyncResult BeginUpdateIdentityPool(UpdateIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateIdentityPool(request, callback, state, false);
+            var marshaller = new UpdateIdentityPoolRequestMarshaller();
+            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateIdentityPoolRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateIdentityPool operation.
@@ -876,15 +851,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>Returns a  UpdateIdentityPoolResult from CognitoIdentity.</returns>
         public  UpdateIdentityPoolResponse EndUpdateIdentityPool(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateIdentityPoolResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateIdentityPool(UpdateIdentityPoolRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateIdentityPoolRequestMarshaller();
-            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateIdentityPoolResponse>(asyncResult);
         }
 
         #endregion

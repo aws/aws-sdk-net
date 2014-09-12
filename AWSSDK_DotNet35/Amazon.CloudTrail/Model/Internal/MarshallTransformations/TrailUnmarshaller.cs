@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.CloudTrail.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.CloudTrail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Trail Object
+    /// </summary>  
+    public class TrailUnmarshaller : IUnmarshaller<Trail, XmlUnmarshallerContext>, IUnmarshaller<Trail, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrailUnmarshaller
-      /// </summary>
-      internal class TrailUnmarshaller : IUnmarshaller<Trail, XmlUnmarshallerContext>, IUnmarshaller<Trail, JsonUnmarshallerContext>
-      {
         Trail IUnmarshaller<Trail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Trail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Trail trail = new Trail();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Trail unmarshalledObject = new Trail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Name", targetDepth))
-              {
-                trail.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("S3BucketName", targetDepth))
-              {
-                trail.S3BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("S3KeyPrefix", targetDepth))
-              {
-                trail.S3KeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SnsTopicName", targetDepth))
-              {
-                trail.SnsTopicName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
-              {
-                trail.IncludeGlobalServiceEvents = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeGlobalServiceEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BucketName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3KeyPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnsTopicName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnsTopicName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trail;
+            return unmarshalledObject;
         }
 
-        private static TrailUnmarshaller instance;
-        public static TrailUnmarshaller GetInstance()
+
+        private static TrailUnmarshaller _instance = new TrailUnmarshaller();        
+
+        public static TrailUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrailUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

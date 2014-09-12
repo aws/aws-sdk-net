@@ -22,8 +22,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// List Parts Request Marshaller
     /// </summary>       
-    public class ListPartsRequestMarshaller : IMarshaller<IRequest, ListPartsRequest>
-    {
+    public class ListPartsRequestMarshaller : IMarshaller<IRequest, ListPartsRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((ListPartsRequest)input);
+		}
+
         public IRequest Marshall(ListPartsRequest listPartsRequest)
         {
             IRequest request = new DefaultRequest(listPartsRequest, "AmazonS3");

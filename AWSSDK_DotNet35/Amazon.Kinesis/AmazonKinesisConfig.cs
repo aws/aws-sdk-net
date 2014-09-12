@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.Kinesis
 {
-
     /// <summary>
-    /// Configuration for accessing Amazon Kinesis Service API Reference service
+    /// Configuration for accessing Amazon Kinesis service
     /// </summary>
     public partial class AmazonKinesisConfig : ClientConfig
     {
@@ -39,9 +45,7 @@ namespace Amazon.Kinesis
         {
             get
             {
-                
                 return "kinesis";
-                    
             }
         }
 
@@ -57,5 +61,3 @@ namespace Amazon.Kinesis
         }
     }
 }
-
-    

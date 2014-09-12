@@ -30,22 +30,22 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class Body
     {
-        /// <summary>
-        /// Default constructor for a new Body object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Body() { }
+        ///// <summary>
+        ///// Default constructor for a new Body object.  Callers should use the
+        ///// properties to initialize this object after creating it.
+        ///// </summary>
+        //public Body() { }
 
-        /// <summary>
-        /// Constructs a new Body object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="text"> The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks
-        /// (such as mobile devices). </param>
-        public Body(Content text)
-        {
-            this.Text = text;
-        }
+        ///// <summary>
+        ///// Constructs a new Body object.
+        ///// Callers should use the properties initialize any additional object members.
+        ///// </summary>
+        ///// 
+        ///// <param name="text"> The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks
+        ///// (such as mobile devices). </param>
+        //public Body(Content text)
+        //{
+        //    this.Text = text;
+        //}
     }
 }

@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a message about an Availability Zone.</para>
+    /// Describes a message about an Availability Zone.
     /// </summary>
     public partial class AvailabilityZoneMessage
     {
-        
-        private string message;
-
+        private string _message;
 
         /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
         /// The message about the Availability Zone.
-        ///  
+        /// </para>
         /// </summary>
         public string Message
         {
-            get { return this.message; }
-            set { this.message = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;
+            return this._message != null;
         }
+
     }
 }

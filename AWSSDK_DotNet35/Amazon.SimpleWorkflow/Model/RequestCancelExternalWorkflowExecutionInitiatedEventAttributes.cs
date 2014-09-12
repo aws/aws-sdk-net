@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,116 +12,107 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>RequestCancelExternalWorkflowExecutionInitiated</c> event. </para>
+    /// Provides details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>
+    /// event.
     /// </summary>
-    public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
+    public partial class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
     {
-        
-        private string workflowId;
-        private string runId;
-        private long? decisionTaskCompletedEventId;
-        private string control;
+        private string _control;
+        private long? _decisionTaskCompletedEventId;
+        private string _runId;
+        private string _workflowId;
 
         /// <summary>
-        /// The <c>workflowId</c> of the external workflow execution to be canceled.
-        ///  
+        /// Gets and sets the property Control. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string WorkflowId
-        {
-            get { return this.workflowId; }
-            set { this.workflowId = value; }
-        }
-
-        // Check to see if WorkflowId property is set
-        internal bool IsSetWorkflowId()
-        {
-            return this.workflowId != null;
-        }
-
-        /// <summary>
-        /// The <c>runId</c> of the external workflow execution to be canceled.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string RunId
-        {
-            get { return this.runId; }
-            set { this.runId = value; }
-        }
-
-        // Check to see if RunId property is set
-        internal bool IsSetRunId()
-        {
-            return this.runId != null;
-        }
-
-        /// <summary>
-        /// The id of the <c>DecisionTaskCompleted</c> event corresponding to the decision task that resulted in the
-        /// <c>RequestCancelExternalWorkflowExecution</c> decision for this cancellation request. This information can be useful for diagnosing problems
-        /// by tracing back the cause of events.
-        ///  
-        /// </summary>
-        public long DecisionTaskCompletedEventId
-        {
-            get { return this.decisionTaskCompletedEventId ?? default(long); }
-            set { this.decisionTaskCompletedEventId = value; }
-        }
-
-        // Check to see if DecisionTaskCompletedEventId property is set
-        internal bool IsSetDecisionTaskCompletedEventId()
-        {
-            return this.decisionTaskCompletedEventId.HasValue;
-        }
-
-        /// <summary>
-        /// Optional data attached to the event that can be used by the decider in subsequent workflow tasks.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32768</description>
-        ///     </item>
-        /// </list>
+        ///  Optional data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks. 
         /// </para>
         /// </summary>
         public string Control
         {
-            get { return this.control; }
-            set { this.control = value; }
+            get { return this._control; }
+            set { this._control = value; }
         }
 
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;
+            return this._control != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property DecisionTaskCompletedEventId. 
+        /// <para>
+        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision
+        /// for this cancellation request. This information can be useful for diagnosing problems
+        /// by tracing back the cause of events. 
+        /// </para>
+        /// </summary>
+        public long DecisionTaskCompletedEventId
+        {
+            get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
+            set { this._decisionTaskCompletedEventId = value; }
+        }
+
+        // Check to see if DecisionTaskCompletedEventId property is set
+        internal bool IsSetDecisionTaskCompletedEventId()
+        {
+            return this._decisionTaskCompletedEventId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        ///  The <code>runId</code> of the external workflow execution to be canceled. 
+        /// </para>
+        /// </summary>
+        public string RunId
+        {
+            get { return this._runId; }
+            set { this._runId = value; }
+        }
+
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
+        {
+            return this._runId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        ///  The <code>workflowId</code> of the external workflow execution to be canceled. 
+        /// </para>
+        /// </summary>
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
+        }
+
     }
 }

@@ -12,69 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the new provisioned throughput settings to be applied to a global secondary index.</para>
+    /// Represents the new provisioned throughput settings to be applied to a global secondary
+    /// index.
     /// </summary>
     public partial class UpdateGlobalSecondaryIndexAction
     {
-        
-        private string indexName;
-        private ProvisionedThroughput provisionedThroughput;
-
+        private string _indexName;
+        private ProvisionedThroughput _provisionedThroughput;
 
         /// <summary>
-        /// The name of the global secondary index to be updated.
-        ///  
+        /// Gets and sets the property IndexName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
+        /// The name of the global secondary index to be updated.
         /// </para>
         /// </summary>
         public string IndexName
         {
-            get { return this.indexName; }
-            set { this.indexName = value; }
+            get { return this._indexName; }
+            set { this._indexName = value; }
         }
 
         // Check to see if IndexName property is set
         internal bool IsSetIndexName()
         {
-            return this.indexName != null;
+            return this._indexName != null;
         }
 
         /// <summary>
-        /// Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i>
-        /// operation. For current minimum and maximum provisioned throughput values, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB Developer Guide.
-        ///  
+        /// Gets and sets the property ProvisionedThroughput.
         /// </summary>
         public ProvisionedThroughput ProvisionedThroughput
         {
-            get { return this.provisionedThroughput; }
-            set { this.provisionedThroughput = value; }
+            get { return this._provisionedThroughput; }
+            set { this._provisionedThroughput = value; }
         }
 
         // Check to see if ProvisionedThroughput property is set
         internal bool IsSetProvisionedThroughput()
         {
-            return this.provisionedThroughput != null;
+            return this._provisionedThroughput != null;
         }
+
     }
 }

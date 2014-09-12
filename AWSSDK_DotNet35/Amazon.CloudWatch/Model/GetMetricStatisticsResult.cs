@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The output for the GetMetricStatistics action. </para>
+    /// The output for the <a>GetMetricStatistics</a> action.
     /// </summary>
     public partial class GetMetricStatisticsResult : AmazonWebServiceResponse
     {
-        
-        private string label;
-        private List<Datapoint> datapoints = new List<Datapoint>();
+        private List<Datapoint> _datapoints = new List<Datapoint>();
+        private string _label;
 
         /// <summary>
-        /// A label describing the specified metric.
-        ///  
-        /// </summary>
-        public string Label
-        {
-            get { return this.label; }
-            set { this.label = value; }
-        }
-
-        // Check to see if Label property is set
-        internal bool IsSetLabel()
-        {
-            return this.label != null;
-        }
-
-        /// <summary>
-        /// The datapoints for the specified metric.
-        ///  
+        /// Gets and sets the property Datapoints. 
+        /// <para>
+        ///  The datapoints for the specified metric. 
+        /// </para>
         /// </summary>
         public List<Datapoint> Datapoints
         {
-            get { return this.datapoints; }
-            set { this.datapoints = value; }
+            get { return this._datapoints; }
+            set { this._datapoints = value; }
         }
 
         // Check to see if Datapoints property is set
         internal bool IsSetDatapoints()
         {
-            return this.datapoints.Count > 0;
+            return this._datapoints != null && this._datapoints.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        ///  A label describing the specified metric. 
+        /// </para>
+        /// </summary>
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
+
     }
 }

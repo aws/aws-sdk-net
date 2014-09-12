@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for NetworkInterface Object
+    /// </summary>  
+    public class NetworkInterfaceUnmarshaller : IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterface, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// NetworkInterfaceUnmarshaller
-      /// </summary>
-      internal class NetworkInterfaceUnmarshaller : IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterface, JsonUnmarshallerContext>
-      {
         NetworkInterface IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public NetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            NetworkInterface networkInterface = new NetworkInterface();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            NetworkInterface unmarshalledObject = new NetworkInterface();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Ipv4Address", targetDepth))
-              {
-                networkInterface.Ipv4Address = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MacAddress", targetDepth))
-              {
-                networkInterface.MacAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Ipv6Address", targetDepth))
-              {
-                networkInterface.Ipv6Address = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Ipv4Address", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipv4Address = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Ipv6Address", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MacAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MacAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return networkInterface;
+            return unmarshalledObject;
         }
 
-        private static NetworkInterfaceUnmarshaller instance;
-        public static NetworkInterfaceUnmarshaller GetInstance()
+
+        private static NetworkInterfaceUnmarshaller _instance = new NetworkInterfaceUnmarshaller();        
+
+        public static NetworkInterfaceUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new NetworkInterfaceUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

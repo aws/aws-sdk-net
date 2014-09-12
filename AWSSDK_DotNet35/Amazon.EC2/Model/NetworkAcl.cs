@@ -12,122 +12,140 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a network ACL.</para>
+    /// Describes a network ACL.
     /// </summary>
     public partial class NetworkAcl
     {
-        
-        private string networkAclId;
-        private string vpcId;
-        private bool? isDefault;
-        private List<NetworkAclEntry> entries = new List<NetworkAclEntry>();
-        private List<NetworkAclAssociation> associations = new List<NetworkAclAssociation>();
-        private List<Tag> tags = new List<Tag>();
-
+        private List<NetworkAclAssociation> _associations = new List<NetworkAclAssociation>();
+        private List<NetworkAclEntry> _entries = new List<NetworkAclEntry>();
+        private bool? _isDefault;
+        private string _networkAclId;
+        private List<Tag> _tags = new List<Tag>();
+        private string _vpcId;
 
         /// <summary>
-        /// The ID of the network ACL.
-        ///  
-        /// </summary>
-        public string NetworkAclId
-        {
-            get { return this.networkAclId; }
-            set { this.networkAclId = value; }
-        }
-
-        // Check to see if NetworkAclId property is set
-        internal bool IsSetNetworkAclId()
-        {
-            return this.networkAclId != null;
-        }
-
-        /// <summary>
-        /// The ID of the VPC for the network ACL.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// Indicates whether this is the default network ACL for the VPC.
-        ///  
-        /// </summary>
-        public bool IsDefault
-        {
-            get { return this.isDefault ?? default(bool); }
-            set { this.isDefault = value; }
-        }
-
-        // Check to see if IsDefault property is set
-        internal bool IsSetIsDefault()
-        {
-            return this.isDefault.HasValue;
-        }
-
-        /// <summary>
-        /// One or more entries (rules) in the network ACL.
-        ///  
-        /// </summary>
-        public List<NetworkAclEntry> Entries
-        {
-            get { return this.entries; }
-            set { this.entries = value; }
-        }
-
-        // Check to see if Entries property is set
-        internal bool IsSetEntries()
-        {
-            return this.entries.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Associations. 
+        /// <para>
         /// Any associations between the network ACL and one or more subnets
-        ///  
+        /// </para>
         /// </summary>
         public List<NetworkAclAssociation> Associations
         {
-            get { return this.associations; }
-            set { this.associations = value; }
+            get { return this._associations; }
+            set { this._associations = value; }
         }
 
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this.associations.Count > 0;
+            return this._associations != null && this._associations.Count > 0; 
         }
 
         /// <summary>
+        /// Gets and sets the property Entries. 
+        /// <para>
+        /// One or more entries (rules) in the network ACL.
+        /// </para>
+        /// </summary>
+        public List<NetworkAclEntry> Entries
+        {
+            get { return this._entries; }
+            set { this._entries = value; }
+        }
+
+        // Check to see if Entries property is set
+        internal bool IsSetEntries()
+        {
+            return this._entries != null && this._entries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Indicates whether this is the default network ACL for the VPC.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkAclId. 
+        /// <para>
+        /// The ID of the network ACL.
+        /// </para>
+        /// </summary>
+        public string NetworkAclId
+        {
+            get { return this._networkAclId; }
+            set { this._networkAclId = value; }
+        }
+
+        // Check to see if NetworkAclId property is set
+        internal bool IsSetNetworkAclId()
+        {
+            return this._networkAclId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
         /// Any tags assigned to the network ACL.
-        ///  
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC for the network ACL.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

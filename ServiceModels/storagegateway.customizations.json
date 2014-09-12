@@ -1,0 +1,6 @@
+{
+  "noArgOverloads": [
+    "DescribeTapeArchives",
+    "ListGateways"
+  ]
+}

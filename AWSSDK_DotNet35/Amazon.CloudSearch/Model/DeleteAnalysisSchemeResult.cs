@@ -12,38 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DeleteAnalysisScheme</c> request. Contains the status of the deleted analysis scheme.</para>
+    /// The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of
+    /// the deleted analysis scheme.
     /// </summary>
     public partial class DeleteAnalysisSchemeResult : AmazonWebServiceResponse
     {
-        
-        private AnalysisSchemeStatus analysisScheme;
-
+        private AnalysisSchemeStatus _analysisScheme;
 
         /// <summary>
+        /// Gets and sets the property AnalysisScheme. 
+        /// <para>
         /// The status of the analysis scheme being deleted.
-        ///  
+        /// </para>
         /// </summary>
         public AnalysisSchemeStatus AnalysisScheme
         {
-            get { return this.analysisScheme; }
-            set { this.analysisScheme = value; }
+            get { return this._analysisScheme; }
+            set { this._analysisScheme = value; }
         }
 
         // Check to see if AnalysisScheme property is set
         internal bool IsSetAnalysisScheme()
         {
-            return this.analysisScheme != null;
+            return this._analysisScheme != null;
         }
+
     }
 }

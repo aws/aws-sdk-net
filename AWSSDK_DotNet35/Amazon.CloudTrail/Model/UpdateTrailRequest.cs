@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,99 +29,115 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTrail operation.
-    /// <para>From the command line, use <c>update-subscription</c> .</para> <para>Updates the settings that specify delivery of log files. Changes
-    /// to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing
-    /// bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. </para>
+    /// From the command line, use <code>update-subscription</code>.
+    /// 
+    ///  
+    /// <para>
+    /// Updates the settings that specify delivery of log files. Changes to a trail do not
+    /// require stopping the CloudTrail service. Use this action to designate an existing
+    /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
+    /// log files, an IAM policy exists for the bucket. 
+    /// </para>
     /// </summary>
     public partial class UpdateTrailRequest : AmazonCloudTrailRequest
     {
-        private string name;
-        private string s3BucketName;
-        private string s3KeyPrefix;
-        private string snsTopicName;
-        private bool? includeGlobalServiceEvents;
-
-
-        /// <summary>
-        /// Specifies the name of the trail.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
+        private bool? _includeGlobalServiceEvents;
+        private string _name;
+        private string _s3BucketName;
+        private string _s3KeyPrefix;
+        private string _snsTopicName;
 
         /// <summary>
-        /// Specifies the name of the Amazon S3 bucket designated for publishing log files.
-        ///  
-        /// </summary>
-        public string S3BucketName
-        {
-            get { return this.s3BucketName; }
-            set { this.s3BucketName = value; }
-        }
-
-        // Check to see if S3BucketName property is set
-        internal bool IsSetS3BucketName()
-        {
-            return this.s3BucketName != null;
-        }
-
-        /// <summary>
-        /// Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.
-        ///  
-        /// </summary>
-        public string S3KeyPrefix
-        {
-            get { return this.s3KeyPrefix; }
-            set { this.s3KeyPrefix = value; }
-        }
-
-        // Check to see if S3KeyPrefix property is set
-        internal bool IsSetS3KeyPrefix()
-        {
-            return this.s3KeyPrefix != null;
-        }
-
-        /// <summary>
-        /// Specifies the name of the Amazon SNS topic defined for notification of log file delivery.
-        ///  
-        /// </summary>
-        public string SnsTopicName
-        {
-            get { return this.snsTopicName; }
-            set { this.snsTopicName = value; }
-        }
-
-        // Check to see if SnsTopicName property is set
-        internal bool IsSetSnsTopicName()
-        {
-            return this.snsTopicName != null;
-        }
-
-        /// <summary>
-        /// Specifies whether the trail is publishing events from global services such as IAM to the log files.
-        ///  
+        /// Gets and sets the property IncludeGlobalServiceEvents. 
+        /// <para>
+        /// Specifies whether the trail is publishing events from global services such as IAM
+        /// to the log files. 
+        /// </para>
         /// </summary>
         public bool IncludeGlobalServiceEvents
         {
-            get { return this.includeGlobalServiceEvents ?? default(bool); }
-            set { this.includeGlobalServiceEvents = value; }
+            get { return this._includeGlobalServiceEvents.GetValueOrDefault(); }
+            set { this._includeGlobalServiceEvents = value; }
         }
 
         // Check to see if IncludeGlobalServiceEvents property is set
         internal bool IsSetIncludeGlobalServiceEvents()
         {
-            return this.includeGlobalServiceEvents.HasValue;
+            return this._includeGlobalServiceEvents.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies the name of the trail.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketName. 
+        /// <para>
+        /// Specifies the name of the Amazon S3 bucket designated for publishing log files.
+        /// </para>
+        /// </summary>
+        public string S3BucketName
+        {
+            get { return this._s3BucketName; }
+            set { this._s3BucketName = value; }
+        }
+
+        // Check to see if S3BucketName property is set
+        internal bool IsSetS3BucketName()
+        {
+            return this._s3BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3KeyPrefix. 
+        /// <para>
+        /// Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated
+        /// for log file delivery.
+        /// </para>
+        /// </summary>
+        public string S3KeyPrefix
+        {
+            get { return this._s3KeyPrefix; }
+            set { this._s3KeyPrefix = value; }
+        }
+
+        // Check to see if S3KeyPrefix property is set
+        internal bool IsSetS3KeyPrefix()
+        {
+            return this._s3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsTopicName. 
+        /// <para>
+        /// Specifies the name of the Amazon SNS topic defined for notification of log file delivery.
+        /// </para>
+        /// </summary>
+        public string SnsTopicName
+        {
+            get { return this._snsTopicName; }
+            set { this._snsTopicName = value; }
+        }
+
+        // Check to see if SnsTopicName property is set
+        internal bool IsSetSnsTopicName()
+        {
+            return this._snsTopicName != null;
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,6 +40,23 @@ namespace Amazon.SimpleNotificationService.Model
         private string _protocol;
         private string _topicArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SubscribeRequest() { }
+
+        /// <summary>
+        /// Instantiates SubscribeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
+        /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul>   <li><code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>   <li><code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li>   <li><code>email</code> -- delivery of message via SMTP</li>   <li><code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>   <li><code>sms</code> -- delivery of message via SMS</li>   <li><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue</li>   <li><code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.</li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul>   <li>For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"</li>   <li>For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"</li>   <li>For the <code>email</code> protocol, the endpoint is an email address</li>   <li>For the <code>email-json</code> protocol, the endpoint is an email address</li>   <li>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device</li>   <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue</li>   <li>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</li> </ul></param>
+        public SubscribeRequest(string topicArn, string protocol, string endpoint)
+        {
+            _topicArn = topicArn;
+            _protocol = protocol;
+            _endpoint = endpoint;
+        }
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
@@ -63,7 +84,6 @@ namespace Amazon.SimpleNotificationService.Model
             return this._endpoint != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
@@ -88,7 +108,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._protocol != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TopicArn. 

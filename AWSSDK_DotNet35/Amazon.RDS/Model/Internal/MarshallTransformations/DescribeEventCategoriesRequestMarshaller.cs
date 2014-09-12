@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Event Categories Request Marshaller
+    /// DescribeEventCategories Request Marshaller
     /// </summary>       
-    public class DescribeEventCategoriesRequestMarshaller : IMarshaller<IRequest, DescribeEventCategoriesRequest>
+    public class DescribeEventCategoriesRequestMarshaller : IMarshaller<IRequest, DescribeEventCategoriesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeEventCategoriesRequest describeEventCategoriesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeEventCategoriesRequest, "AmazonRDS");
+            return this.Marshall((DescribeEventCategoriesRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeEventCategoriesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeEventCategories");
             request.Parameters.Add("Version", "2013-09-09");
-            if (describeEventCategoriesRequest != null && describeEventCategoriesRequest.IsSetSourceType())
-            {
-                request.Parameters.Add("SourceType", StringUtils.FromString(describeEventCategoriesRequest.SourceType));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSourceType())
+                {
+                    request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
+                }
+            }
             return request;
         }
     }

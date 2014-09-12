@@ -12,68 +12,77 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Report Instance Status Request Marshaller
+    /// ReportInstanceStatus Request Marshaller
     /// </summary>       
-    public class ReportInstanceStatusRequestMarshaller : IMarshaller<IRequest, ReportInstanceStatusRequest>
+    public class ReportInstanceStatusRequestMarshaller : IMarshaller<IRequest, ReportInstanceStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ReportInstanceStatusRequest reportInstanceStatusRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(reportInstanceStatusRequest, "AmazonEC2");
+            return this.Marshall((ReportInstanceStatusRequest)input);
+        }
+    
+        public IRequest Marshall(ReportInstanceStatusRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ReportInstanceStatus");
             request.Parameters.Add("Version", "2014-06-15");
-            if (reportInstanceStatusRequest != null)
-            {
-                List<string> instancesList = reportInstanceStatusRequest.Instances;
 
-                int instancesListIndex = 1;
-                foreach (string instancesListValue in instancesList)
-                { 
-                    request.Parameters.Add("InstanceId." + instancesListIndex, StringUtils.FromString(instancesListValue));
-                    instancesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetEndTime())
+                {
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                }
+                if(publicRequest.IsSetInstances())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Instances)
+                    {
+                        request.Parameters.Add("InstanceId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetReasonCodes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ReasonCodes)
+                    {
+                        request.Parameters.Add("ReasonCode" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetStartTime())
+                {
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
+                }
+                if(publicRequest.IsSetStatus())
+                {
+                    request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
                 }
             }
-            if (reportInstanceStatusRequest != null && reportInstanceStatusRequest.IsSetStatus())
-            {
-                request.Parameters.Add("Status", StringUtils.FromString(reportInstanceStatusRequest.Status));
-            }
-            if (reportInstanceStatusRequest != null && reportInstanceStatusRequest.IsSetStartTime())
-            {
-                request.Parameters.Add("StartTime", StringUtils.FromDateTime(reportInstanceStatusRequest.StartTime));
-            }
-            if (reportInstanceStatusRequest != null && reportInstanceStatusRequest.IsSetEndTime())
-            {
-                request.Parameters.Add("EndTime", StringUtils.FromDateTime(reportInstanceStatusRequest.EndTime));
-            }
-            if (reportInstanceStatusRequest != null)
-            {
-                List<string> reasonCodesList = reportInstanceStatusRequest.ReasonCodes;
-
-                int reasonCodesListIndex = 1;
-                foreach (string reasonCodesListValue in reasonCodesList)
-                { 
-                    request.Parameters.Add("ReasonCode." + reasonCodesListIndex, StringUtils.FromString(reasonCodesListValue));
-                    reasonCodesListIndex++;
-                }
-            }
-            if (reportInstanceStatusRequest != null && reportInstanceStatusRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(reportInstanceStatusRequest.Description));
-            }
-
             return request;
         }
     }

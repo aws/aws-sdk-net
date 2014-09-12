@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,53 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.SimpleDB.Model;
 
 namespace Amazon.SimpleDB
 {
     /// <summary>
-    /// Interface for accessing AmazonSimpleDB.
-    /// 
-    /// Amazon SimpleDB <para> Amazon SimpleDB is a web service providing the core database functions of data indexing and querying in the cloud. By
-    /// offloading the time and effort associated with building and operating a web-scale database, SimpleDB provides developers the freedom to
-    /// focus on application development. </para> <para> A traditional, clustered relational database requires a sizable upfront capital outlay, is
-    /// complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring
-    /// no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative
-    /// burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven
-    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit <a href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for more information. </para>
+    /// Interface for accessing SimpleDB
+    ///
+    /// Amazon SimpleDB is a web service providing the core database functions of data indexing
+    /// and querying in the cloud. By offloading the time and effort associated with building
+    /// and operating a web-scale database, SimpleDB provides developers the freedom to focus
+    /// on application development. 
+    /// <para>
+    ///  A traditional, clustered relational database requires a sizable upfront capital outlay,
+    /// is complex to design, and often requires extensive and repetitive database administration.
+    /// Amazon SimpleDB is dramatically simpler, requiring no schema, automatically indexing
+    /// your data and providing a simple API for storage and access. This approach eliminates
+    /// the administrative burden of data modeling, index maintenance, and performance tuning.
+    /// Developers gain access to this functionality within Amazon's proven computing environment,
+    /// are able to scale instantly, and pay only for what they use. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  Visit <a href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a>
+    /// for more information. 
+    /// </para>
     /// </summary>
-	public partial interface IAmazonSimpleDB : IDisposable
+    public partial interface IAmazonSimpleDB : IDisposable
     {
- 
+
+        
+        #region  BatchDeleteAttributes
 
         /// <summary>
-        /// <para> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB
-        /// to optimize requests, which generally yields better throughput. </para> <para><b>NOTE:</b> If you specify BatchDeleteAttributes without
-        /// attributes or values, all the attributes for the item are deleted. BatchDeleteAttributes is an idempotent operation; running it multiple
-        /// times on the same item or attribute doesn't result in an error. The BatchDeleteAttributes operation succeeds or fails in its entirety. There
-        /// are no partial deletes. You can execute multiple BatchDeleteAttributes operations and other operations in parallel. However, large numbers
-        /// of concurrent BatchDeleteAttributes calls can result in Service Unavailable (503) responses. This operation is vulnerable to exceeding the
-        /// maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using Expected.X.Name,
-        /// Expected.X.Value, or Expected.X.Exists. </para> <para> The following limitations are enforced for this operation:
-        /// <ul>
-        /// <li>1 MB request size</li>
-        /// <li>25 item limit per BatchDeleteAttributes operation</li>
+        /// Performs multiple DeleteAttributes operations in a single call, which reduces round
+        /// trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally
+        /// yields better throughput. 
         /// 
-        /// </ul>
+        ///  
+        /// <para>
+        ///  The following limitations are enforced for this operation: <ul> <li>1 MB request
+        /// size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> 
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method on
-        /// AmazonSimpleDB.</param>
-		BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request);
+        /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
+        BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchDeleteAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.BatchDeleteAttributes"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes operation.</param>
@@ -66,59 +81,100 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchPutAttributes
 
         /// <summary>
-        /// <para> The <c>BatchPutAttributes</c> operation creates or replaces attributes within one or more items. By using this operation, the client
-        /// can perform multiple PutAttribute operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon
-        /// SimpleDB to optimize requests and generally produce better throughput. </para> <para> The client may specify the item name with the
-        /// <c>Item.X.ItemName</c> parameter. The client may specify new attributes using a combination of the <c>Item.X.Attribute.Y.Name</c> and
-        /// <c>Item.X.Attribute.Y.Value</c> parameters. The client may specify the first attribute for the first item using the parameters
-        /// <c>Item.0.Attribute.0.Name</c> and <c>Item.0.Attribute.0.Value</c> ,
-        /// and for the second attribute for the first item by the parameters <c>Item.0.Attribute.1.Name</c> and <c>Item.0.Attribute.1.Value</c> ,
-        /// and so on. </para> <para> Attributes are uniquely identified within an item by their name/value combination. For example, a single item
-        /// can have the attributes <c>{ "first_name", "first_value" }</c> and <c>{ "first_name", "second_value" }</c> .
-        /// However, it cannot have two attribute instances where both the <c>Item.X.Attribute.Y.Name</c> and <c>Item.X.Attribute.Y.Value</c> are the
-        /// same. </para> <para> Optionally, the requester can supply the <c>Replace</c> parameter for each individual value. Setting this value to
-        /// <c>true</c> will cause the new attribute values to replace the existing attribute values. For example, if an item <c>I</c> has the
-        /// attributes <c>{ 'a', '1' }, { 'b', '2'}</c> and <c>{ 'b', '3' }</c> and the requester does a BatchPutAttributes of <c>{'I', 'b', '4' }</c>
-        /// with the Replace parameter set to true, the final attributes of the item will be <c>{ 'a', '1' }</c> and <c>{ 'b', '4' }</c> ,
-        /// replacing the previous values of the 'b' attribute with the new value. </para> <para><b>NOTE:</b> You cannot specify an empty string as an
-        /// item or as an attribute name. The BatchPutAttributes operation succeeds or fails in its entirety. There are no partial puts. </para>
-        /// <para><b>IMPORTANT:</b> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method.
-        /// This operation does not support conditions using Expected.X.Name, Expected.X.Value, or Expected.X.Exists. </para> <para> You can execute
-        /// multiple <c>BatchPutAttributes</c> operations and other operations in parallel. However, large numbers of concurrent
-        /// <c>BatchPutAttributes</c> calls can result in Service Unavailable (503) responses. </para> <para> The following limitations are enforced for
-        /// this operation:
-        /// <ul>
-        /// <li>256 attribute name-value pairs per item</li>
-        /// <li>1 MB request size</li>
-        /// <li>1 billion attributes per domain</li>
-        /// <li>10 GB of total user data storage per domain</li>
-        /// <li>25 item limit per <c>BatchPutAttributes</c> operation</li>
+        /// The <code>BatchPutAttributes</code> operation creates or replaces attributes within
+        /// one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a>
+        /// operation with a single call. This helps yield savings in round trips and latencies,
+        /// enabling Amazon SimpleDB to optimize requests and generally produce better throughput.
         /// 
-        /// </ul>
+        /// 
+        ///  
+        /// <para>
+        ///  The client may specify the item name with the <code>Item.X.ItemName</code> parameter.
+        /// The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code>
+        /// and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first
+        /// attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code>
+        /// and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first
+        /// item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>,
+        /// and so on. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Attributes are uniquely identified within an item by their name/value combination.
+        /// For example, a single item can have the attributes <code>{ "first_name", "first_value"
+        /// }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have
+        /// two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code>
+        /// are the same. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Optionally, the requester can supply the <code>Replace</code> parameter for each
+        /// individual value. Setting this value to <code>true</code> will cause the new attribute
+        /// values to replace the existing attribute values. For example, if an item <code>I</code>
+        /// has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code>
+        /// and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with
+        /// the Replace parameter set to true, the final attributes of the item will be <code>{
+        /// 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of
+        /// the 'b' attribute with the new value. 
+        /// </para>
+        ///  <important> This operation is vulnerable to exceeding the maximum URL size when making
+        /// a REST request using the HTTP GET method. This operation does not support conditions
+        /// using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>.
+        /// </important> 
+        /// <para>
+        ///  You can execute multiple <code>BatchPutAttributes</code> operations and other operations
+        /// in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code>
+        /// calls can result in Service Unavailable (503) responses. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The following limitations are enforced for this operation: <ul> <li>256 attribute
+        /// name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes
+        /// per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit
+        /// per <code>BatchPutAttributes</code> operation</li> </ul> 
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.DuplicateItemNameException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberDomainBytesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberSubmittedAttributesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberDomainAttributesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberItemAttributesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request);
+        /// <returns>The response from the BatchPutAttributes service method, as returned by SimpleDB.</returns>
+        /// <exception cref="DuplicateItemNameException">
+        /// The item name was specified more than once.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NoSuchDomainException">
+        /// The specified domain does not exist.
+        /// </exception>
+        /// <exception cref="NumberDomainAttributesExceededException">
+        /// Too many attributes in this domain.
+        /// </exception>
+        /// <exception cref="NumberDomainBytesExceededException">
+        /// Too many bytes in this domain.
+        /// </exception>
+        /// <exception cref="NumberItemAttributesExceededException">
+        /// Too many attributes in this item.
+        /// </exception>
+        /// <exception cref="NumberSubmittedAttributesExceededException">
+        /// Too many attributes exist in a single call.
+        /// </exception>
+        /// <exception cref="NumberSubmittedItemsExceededException">
+        /// Too many items exist in a single call.
+        /// </exception>
+        BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchPutAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.BatchPutAttributes"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes operation.</param>
@@ -126,28 +182,44 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDomain
 
         /// <summary>
-        /// <para> The <c>CreateDomain</c> operation creates a new domain. The domain name should be unique among the domains associated with the Access
-        /// Key ID provided in the request. The <c>CreateDomain</c> operation may take 10 or more seconds to complete. </para> <para><b>NOTE:</b>
-        /// CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </para>
-        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a> .
+        /// The <code>CreateDomain</code> operation creates a new domain. The domain name should
+        /// be unique among the domains associated with the Access Key ID provided in the request.
+        /// The <code>CreateDomain</code> operation may take 10 or more seconds to complete. 
+        /// 
+        ///  
+        /// <para>
+        ///  The client can create up to 100 domains per account. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
+        /// http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. 
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberDomainsExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		CreateDomainResponse CreateDomain(CreateDomainRequest request);
+        /// <returns>The response from the CreateDomain service method, as returned by SimpleDB.</returns>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NumberDomainsExceededException">
+        /// Too many domains exist per this account.
+        /// </exception>
+        CreateDomainResponse CreateDomain(CreateDomainRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.CreateDomain"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain operation.</param>
@@ -155,30 +227,49 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAttributes
 
         /// <summary>
-        /// <para> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </para>
-        /// <para><b>NOTE:</b> If DeleteAttributes is called without being passed any attributes or values specified, all the attributes for the item
-        /// are deleted. </para> <para> <c>DeleteAttributes</c> is an idempotent operation; running it multiple times on the same item or attribute does
-        /// not result in an error response. </para> <para> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency
-        /// update model, performing a GetAttributes or Select operation (read) immediately after a <c>DeleteAttributes</c> or PutAttributes operation
-        /// (write) might not return updated item data. </para>
+        /// Deletes one or more attributes associated with an item. If all attributes of the
+        /// item are deleted, the item is deleted. 
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DeleteAttributes</code> is an idempotent operation; running it multiple times
+        /// on the same item or attribute does not result in an error response. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency
+        /// update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read)
+        /// immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation
+        /// (write) might not return updated item data. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.AttributeDoesNotExistException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request);
+        /// <returns>The response from the DeleteAttributes service method, as returned by SimpleDB.</returns>
+        /// <exception cref="AttributeDoesNotExistException">
+        /// The specified attribute does not exist.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NoSuchDomainException">
+        /// The specified domain does not exist.
+        /// </exception>
+        DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.DeleteAttributes"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes operation.</param>
@@ -186,24 +277,28 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDomain
 
         /// <summary>
-        /// <para> The <c>DeleteDomain</c> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The
-        /// <c>DeleteDomain</c> operation might take 10 or more seconds to complete. </para> <para><b>NOTE:</b> Running DeleteDomain on a domain that
-        /// does not exist or running the function multiple times using the same domain name will not result in an error response. </para>
+        /// The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes)
+        /// in the domain are deleted as well. The <code>DeleteDomain</code> operation might take
+        /// 10 or more seconds to complete.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		DeleteDomainResponse DeleteDomain(DeleteDomainRequest request);
+        /// <returns>The response from the DeleteDomain service method, as returned by SimpleDB.</returns>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        DeleteDomainResponse DeleteDomain(DeleteDomainRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.DeleteDomain"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation.</param>
@@ -211,26 +306,31 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DomainMetadata
 
         /// <summary>
-        /// <para> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and
-        /// the size of the attribute names and values. </para>
+        /// Returns information about the domain, including when the domain was created, the
+        /// number of items and attributes in the domain, and the size of the attribute names
+        /// and values.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DomainMetadata service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DomainMetadata service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <returns>The response from the DomainMetadata service method, as returned by AmazonSimpleDB.</returns>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		DomainMetadataResponse DomainMetadata(DomainMetadataRequest request);
+        /// <returns>The response from the DomainMetadata service method, as returned by SimpleDB.</returns>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NoSuchDomainException">
+        /// The specified domain does not exist.
+        /// </exception>
+        DomainMetadataResponse DomainMetadata(DomainMetadataRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DomainMetadata operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.DomainMetadata"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DomainMetadata operation.</param>
@@ -238,30 +338,41 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAttributes
 
         /// <summary>
-        /// <para> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more
-        /// attributes by specifying an attribute name parameter. </para> <para> If the item does not exist on the replica that was accessed for this
-        /// operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas.
-        /// </para> <para><b>NOTE:</b> If GetAttributes is called without being passed any attribute names, all the attributes for the item are
-        /// returned. </para>
+        /// Returns all of the attributes associated with the specified item. Optionally, the
+        /// attributes returned can be limited to one or more attributes by specifying an attribute
+        /// name parameter. 
+        /// 
+        ///  
+        /// <para>
+        ///  If the item does not exist on the replica that was accessed for this operation, an
+        /// empty set is returned. The system does not return an error as it cannot guarantee
+        /// the item does not exist on other replicas. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttributes service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAttributes service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <returns>The response from the GetAttributes service method, as returned by AmazonSimpleDB.</returns>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		GetAttributesResponse GetAttributes(GetAttributesRequest request);
+        /// <returns>The response from the GetAttributes service method, as returned by SimpleDB.</returns>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NoSuchDomainException">
+        /// The specified domain does not exist.
+        /// </exception>
+        GetAttributesResponse GetAttributes(GetAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.GetAttributes"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetAttributes operation.</param>
@@ -269,28 +380,52 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDomains
 
         /// <summary>
-        /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a> .
-        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
-        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
-        /// names with each successive operation call. </para>
+        /// The <code>ListDomains</code> operation lists all domains associated with the Access
+        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
+        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
+        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
+        /// names with each successive operation call.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDomains service method on AmazonSimpleDB.</param>
+        /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
+        /// <exception cref="InvalidNextTokenException">
+        /// The specified NextToken is not valid.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        ListDomainsResponse ListDomains();
+
+        /// <summary>
+        /// The <code>ListDomains</code> operation lists all domains associated with the Access
+        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
+        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
+        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
+        /// names with each successive operation call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
-        /// <returns>The response from the ListDomains service method, as returned by AmazonSimpleDB.</returns>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNextTokenException" />
-		ListDomainsResponse ListDomains(ListDomainsRequest request);
+        /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
+        /// <exception cref="InvalidNextTokenException">
+        /// The specified NextToken is not valid.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        ListDomainsResponse ListDomains(ListDomainsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.ListDomains"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDomains operation.</param>
@@ -298,66 +433,86 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a> .
-        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
-        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
-        /// names with each successive operation call. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the ListDomains service method, as returned by AmazonSimpleDB.</returns>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNextTokenException" />
-		ListDomainsResponse ListDomains();
- 
+        Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAttributes
 
         /// <summary>
-        /// <para> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of
-        /// the <c>Attribute.X.Name</c> and <c>Attribute.X.Value</c> parameters. The client specifies the first attribute by the parameters
-        /// <c>Attribute.0.Name</c> and <c>Attribute.0.Value</c> ,
-        /// the second attribute by the parameters <c>Attribute.1.Name</c> and <c>Attribute.1.Value</c> , and so on. </para> <para> Attributes are
-        /// uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <c>{ "first_name",
-        /// "first_value" }</c> and <c>{ "first_name", second_value" }</c> . However, it cannot have two attribute instances where both the
-        /// <c>Attribute.X.Name</c> and <c>Attribute.X.Value</c> are the same. </para> <para> Optionally, the requestor can supply the <c>Replace</c>
-        /// parameter for each individual attribute. Setting this value to <c>true</c> causes the new attribute value to replace the existing attribute
-        /// value(s). For example, if an item has the attributes <c>{ 'a', '1' }</c> ,
+        /// The PutAttributes operation creates or replaces attributes in an item. The client
+        /// may specify new attributes using a combination of the <code>Attribute.X.Name</code>
+        /// and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute
+        /// by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>,
+        /// the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>,
+        /// and so on. 
         /// 
-        /// <c>{ 'b', '2'}</c> and <c>{ 'b', '3' }</c> and the requestor calls <c>PutAttributes</c> using the attributes <c>{ 'b',
-        /// '4' }</c> with the <c>Replace</c> parameter set to true, the final attributes of the item are changed to <c>{ 'a', '1' }</c> and <c>{ 'b',
-        /// '4' }</c> , which replaces the previous values of the 'b' attribute with the new value. </para> <para><b>NOTE:</b> Using PutAttributes to
-        /// replace attribute values that do not exist will not result in an error response. </para> <para> You cannot specify an empty string as an
-        /// attribute name. </para> <para> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model,
-        /// an immediate GetAttributes or Select operation (read) immediately after a PutAttributes or DeleteAttributes operation (write) might not
-        /// return the updated data. </para> <para> The following limitations are enforced for this operation:
-        /// <ul>
-        /// <li>256 total attribute name-value pairs per item</li>
-        /// <li>One billion attributes per domain</li>
-        /// <li>10 GB of total user data storage per domain</li>
-        /// 
-        /// </ul>
+        ///  
+        /// <para>
+        ///  Attributes are uniquely identified in an item by their name/value combination. For
+        /// example, a single item can have the attributes <code>{ "first_name", "first_value"
+        /// }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have
+        /// two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code>
+        /// are the same. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Optionally, the requestor can supply the <code>Replace</code> parameter for each
+        /// individual attribute. Setting this value to <code>true</code> causes the new attribute
+        /// value to replace the existing attribute value(s). For example, if an item has the
+        /// attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3'
+        /// }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{
+        /// 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes
+        /// of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>,
+        /// which replaces the previous values of the 'b' attribute with the new value. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You cannot specify an empty string as an attribute name. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Because Amazon SimpleDB makes multiple copies of client data and uses an eventual
+        /// consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation
+        /// (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation
+        /// (write) might not return the updated data. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The following limitations are enforced for this operation: <ul> <li>256 total attribute
+        /// name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB
+        /// of total user data storage per domain</li> </ul> 
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method on
-        /// AmazonSimpleDB.</param>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberDomainBytesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberDomainAttributesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NumberItemAttributesExceededException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.AttributeDoesNotExistException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-		PutAttributesResponse PutAttributes(PutAttributesRequest request);
+        /// <returns>The response from the PutAttributes service method, as returned by SimpleDB.</returns>
+        /// <exception cref="AttributeDoesNotExistException">
+        /// The specified attribute does not exist.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NoSuchDomainException">
+        /// The specified domain does not exist.
+        /// </exception>
+        /// <exception cref="NumberDomainAttributesExceededException">
+        /// Too many attributes in this domain.
+        /// </exception>
+        /// <exception cref="NumberDomainBytesExceededException">
+        /// Too many bytes in this domain.
+        /// </exception>
+        /// <exception cref="NumberItemAttributesExceededException">
+        /// Too many attributes in this item.
+        /// </exception>
+        PutAttributesResponse PutAttributes(PutAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.PutAttributes"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes operation.</param>
@@ -365,36 +520,67 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  Select
 
         /// <summary>
-        /// <para> The <c>Select</c> operation returns a set of attributes for <c>ItemNames</c> that match the select expression. <c>Select</c> is
-        /// similar to the standard SQL SELECT statement. </para> <para> The total size of the response cannot exceed 1 MB in total size. Amazon
-        /// SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500
-        /// items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <c>NextToken</c> so the client can access
-        /// the next page of results. </para> <para> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB
-        /// Queries in the Developer Guide. </para>
+        /// The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code>
+        /// that match the select expression. <code>Select</code> is similar to the standard SQL
+        /// SELECT statement. 
+        /// 
+        ///  
+        /// <para>
+        ///  The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB
+        /// automatically adjusts the number of items returned per page to enforce this limit.
+        /// For example, if the client asks to retrieve 2500 items, but each individual item is
+        /// 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code>
+        /// so the client can access the next page of results. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information on how to construct select expressions, see Using Select to Create
+        /// Amazon SimpleDB Queries in the Developer Guide. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Select service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the Select service method on AmazonSimpleDB.</param>
-        /// 
-        /// <returns>The response from the Select service method, as returned by AmazonSimpleDB.</returns>
-        /// 
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidQueryExpressionException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.RequestTimeoutException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNumberPredicatesException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.NoSuchDomainException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNextTokenException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.TooManyRequestedAttributesException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
-        /// <exception cref="T:Amazon.SimpleDB.Model.InvalidNumberValueTestsException" />
-		SelectResponse Select(SelectRequest request);
+        /// <returns>The response from the Select service method, as returned by SimpleDB.</returns>
+        /// <exception cref="InvalidNextTokenException">
+        /// The specified NextToken is not valid.
+        /// </exception>
+        /// <exception cref="InvalidNumberPredicatesException">
+        /// Too many predicates exist in the query expression.
+        /// </exception>
+        /// <exception cref="InvalidNumberValueTestsException">
+        /// Too many predicates exist in the query expression.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidQueryExpressionException">
+        /// The specified query expression syntax is not valid.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// The request must contain the specified missing parameter.
+        /// </exception>
+        /// <exception cref="NoSuchDomainException">
+        /// The specified domain does not exist.
+        /// </exception>
+        /// <exception cref="RequestTimeoutException">
+        /// A timeout occurred when attempting to query the specified domain with specified query
+        /// expression.
+        /// </exception>
+        /// <exception cref="TooManyRequestedAttributesException">
+        /// Too many attributes requested.
+        /// </exception>
+        SelectResponse Select(SelectRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Select operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB.Select"/>
+        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Select operation.</param>
@@ -402,6 +588,9 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SelectResponse> SelectAsync(SelectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SelectResponse> SelectAsync(SelectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

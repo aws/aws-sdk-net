@@ -12,62 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Import Volume Request Marshaller
+    /// ImportVolume Request Marshaller
     /// </summary>       
-    public class ImportVolumeRequestMarshaller : IMarshaller<IRequest, ImportVolumeRequest>
+    public class ImportVolumeRequestMarshaller : IMarshaller<IRequest, ImportVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ImportVolumeRequest importVolumeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(importVolumeRequest, "AmazonEC2");
+            return this.Marshall((ImportVolumeRequest)input);
+        }
+    
+        public IRequest Marshall(ImportVolumeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ImportVolume");
             request.Parameters.Add("Version", "2014-06-15");
-            if (importVolumeRequest != null && importVolumeRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(importVolumeRequest.AvailabilityZone));
-            }
-            if (importVolumeRequest != null)
-            {
-                DiskImageDetail image = importVolumeRequest.Image;
-                if (image != null && image.IsSetFormat())
-                {
-                    request.Parameters.Add("Image.Format", StringUtils.FromString(image.Format));
-                }
-                if (image != null && image.IsSetBytes())
-                {
-                    request.Parameters.Add("Image.Bytes", StringUtils.FromLong(image.Bytes));
-                }
-                if (image != null && image.IsSetImportManifestUrl())
-                {
-                    request.Parameters.Add("Image.ImportManifestUrl", StringUtils.FromString(image.ImportManifestUrl));
-                }
-            }
-            if (importVolumeRequest != null && importVolumeRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(importVolumeRequest.Description));
-            }
-            if (importVolumeRequest != null)
-            {
-                VolumeDetail volume = importVolumeRequest.Volume;
-                if (volume != null && volume.IsSetSize())
-                {
-                    request.Parameters.Add("Volume.Size", StringUtils.FromLong(volume.Size));
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetImage())
+                {
+                    if(publicRequest.Image.IsSetBytes())
+                    {
+                        request.Parameters.Add("Image" + "." + "Bytes", StringUtils.FromLong(publicRequest.Image.Bytes));
+                    }
+                    if(publicRequest.Image.IsSetFormat())
+                    {
+                        request.Parameters.Add("Image" + "." + "Format", StringUtils.FromString(publicRequest.Image.Format));
+                    }
+                    if(publicRequest.Image.IsSetImportManifestUrl())
+                    {
+                        request.Parameters.Add("Image" + "." + "ImportManifestUrl", StringUtils.FromString(publicRequest.Image.ImportManifestUrl));
+                    }
+                }
+                if(publicRequest.IsSetVolume())
+                {
+                    if(publicRequest.Volume.IsSetSize())
+                    {
+                        request.Parameters.Add("Volume" + "." + "Size", StringUtils.FromLong(publicRequest.Volume.Size));
+                    }
+                }
+            }
             return request;
         }
     }

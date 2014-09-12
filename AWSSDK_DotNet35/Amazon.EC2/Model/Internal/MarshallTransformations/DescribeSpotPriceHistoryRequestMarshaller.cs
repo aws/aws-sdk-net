@@ -12,98 +12,102 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Spot Price History Request Marshaller
+    /// DescribeSpotPriceHistory Request Marshaller
     /// </summary>       
-    public class DescribeSpotPriceHistoryRequestMarshaller : IMarshaller<IRequest, DescribeSpotPriceHistoryRequest>
+    public class DescribeSpotPriceHistoryRequestMarshaller : IMarshaller<IRequest, DescribeSpotPriceHistoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeSpotPriceHistoryRequest, "AmazonEC2");
+            return this.Marshall((DescribeSpotPriceHistoryRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeSpotPriceHistoryRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeSpotPriceHistory");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeSpotPriceHistoryRequest != null && describeSpotPriceHistoryRequest.IsSetStartTime())
-            {
-                request.Parameters.Add("StartTime", StringUtils.FromDateTime(describeSpotPriceHistoryRequest.StartTime));
-            }
-            if (describeSpotPriceHistoryRequest != null && describeSpotPriceHistoryRequest.IsSetEndTime())
-            {
-                request.Parameters.Add("EndTime", StringUtils.FromDateTime(describeSpotPriceHistoryRequest.EndTime));
-            }
-            if (describeSpotPriceHistoryRequest != null)
-            {
-                List<string> instanceTypesList = describeSpotPriceHistoryRequest.InstanceTypes;
 
-                int instanceTypesListIndex = 1;
-                foreach (string instanceTypesListValue in instanceTypesList)
-                { 
-                    request.Parameters.Add("InstanceType." + instanceTypesListIndex, StringUtils.FromString(instanceTypesListValue));
-                    instanceTypesListIndex++;
-                }
-            }
-            if (describeSpotPriceHistoryRequest != null)
+            if(publicRequest != null)
             {
-                List<string> productDescriptionsList = describeSpotPriceHistoryRequest.ProductDescriptions;
-
-                int productDescriptionsListIndex = 1;
-                foreach (string productDescriptionsListValue in productDescriptionsList)
-                { 
-                    request.Parameters.Add("ProductDescription." + productDescriptionsListIndex, StringUtils.FromString(productDescriptionsListValue));
-                    productDescriptionsListIndex++;
-                }
-            }
-
-            if (describeSpotPriceHistoryRequest != null)
-            {
-                List<Filter> filtersList = describeSpotPriceHistoryRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetAvailabilityZone())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetEndTime())
+                {
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetInstanceTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.InstanceTypes)
+                    {
+                        request.Parameters.Add("InstanceType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMaxResults())
+                {
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetProductDescriptions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ProductDescriptions)
+                    {
+                        request.Parameters.Add("ProductDescription" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetStartTime())
+                {
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
                 }
             }
-            if (describeSpotPriceHistoryRequest != null && describeSpotPriceHistoryRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(describeSpotPriceHistoryRequest.AvailabilityZone));
-            }
-            if (describeSpotPriceHistoryRequest != null && describeSpotPriceHistoryRequest.IsSetMaxResults())
-            {
-                request.Parameters.Add("MaxResults", StringUtils.FromInt(describeSpotPriceHistoryRequest.MaxResults));
-            }
-            if (describeSpotPriceHistoryRequest != null && describeSpotPriceHistoryRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeSpotPriceHistoryRequest.NextToken));
-            }
-
             return request;
         }
     }

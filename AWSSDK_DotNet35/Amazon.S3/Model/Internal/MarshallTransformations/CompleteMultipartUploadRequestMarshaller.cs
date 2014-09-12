@@ -28,8 +28,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Complete Multipart Upload Request Marshaller
     /// </summary>       
-    public class CompleteMultipartUploadRequestMarshaller : IMarshaller<IRequest, CompleteMultipartUploadRequest>
-    {
+    public class CompleteMultipartUploadRequestMarshaller : IMarshaller<IRequest, CompleteMultipartUploadRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((CompleteMultipartUploadRequest)input);
+		}
+
         public IRequest Marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest)
         {
             IRequest request = new DefaultRequest(completeMultipartUploadRequest, "AmazonS3");

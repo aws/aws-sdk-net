@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeDhcpOptionsResult : AmazonWebServiceResponse
     {
-        
-        private List<DhcpOptions> dhcpOptions = new List<DhcpOptions>();
-
+        private List<DhcpOptions> _dhcpOptions = new List<DhcpOptions>();
 
         /// <summary>
+        /// Gets and sets the property DhcpOptions. 
+        /// <para>
         /// Information about one or more DHCP options sets.
-        ///  
+        /// </para>
         /// </summary>
         public List<DhcpOptions> DhcpOptions
         {
-            get { return this.dhcpOptions; }
-            set { this.dhcpOptions = value; }
+            get { return this._dhcpOptions; }
+            set { this._dhcpOptions = value; }
         }
 
         // Check to see if DhcpOptions property is set
         internal bool IsSetDhcpOptions()
         {
-            return this.dhcpOptions.Count > 0;
+            return this._dhcpOptions != null && this._dhcpOptions.Count > 0; 
         }
+
     }
 }

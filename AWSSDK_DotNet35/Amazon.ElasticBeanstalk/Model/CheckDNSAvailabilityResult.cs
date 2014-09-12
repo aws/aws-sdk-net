@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,27 +35,23 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? _available;
         private string _fullyQualifiedCNAME;
 
-
         /// <summary>
         /// Gets and sets the property Available. 
         /// <para>
-        ///          Indicates if the specified CNAME is available:        
+        ///  Indicates if the specified CNAME is available: 
         /// </para>
-        ///       <enumValues>         <value name="true">            
+        ///  <enumValues> <value name="true"> 
         /// <para>
-        ///                <code>true</code>               : The CNAME is available.         
-        ///   
+        ///  <code>true</code> : The CNAME is available. 
         /// </para>
-        ///          </value>         <value name="false">            
+        ///  </value> <value name="false"> 
         /// <para>
-        ///                <code>true</code>               : The CNAME is not available.     
-        ///       
+        ///  <code>true</code> : The CNAME is not available. 
         /// </para>
-        ///          </value>      </enumValues>      
+        ///  </value> </enumValues> 
         /// <para>
-        ///          <ul>            <li>               <code>true</code>               : The
-        /// CNAME is available.            </li>            <li>               <code>false</code>
-        ///               : The CNAME is not available.            </li>         </ul>      
+        ///  <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code>
+        /// : The CNAME is not available. </li> </ul> 
         /// </para>
         /// </summary>
         public bool Available
@@ -66,12 +66,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._available.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property FullyQualifiedCNAME. 
         /// <para>
-        /// The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called     
-        ///    with the provided prefix.
+        /// The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with
+        /// the provided prefix.
         /// </para>
         /// </summary>
         public string FullyQualifiedCNAME

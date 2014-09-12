@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,12 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplicationVersion operation.
-    /// Creates an application version for the specified         application.
-    /// 
-    ///       <note>Once you create an application version with a specified Amazon S3    
-    ///     bucket         and key location, you cannot change that Amazon S3 location. If
-    /// you change the         Amazon S3 location,         you receive an exception when you
-    /// attempt to launch an environment from the         application version. </note>
+    /// Creates an application version for the specified application.
     /// </summary>
     public partial class CreateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
@@ -40,13 +39,27 @@ namespace Amazon.ElasticBeanstalk.Model
         private S3Location _sourceBundle;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateApplicationVersionRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateApplicationVersionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName"> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="versionLabel">A label identifying this version. Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
+        public CreateApplicationVersionRequest(string applicationName, string versionLabel)
+        {
+            _applicationName = applicationName;
+            _versionLabel = versionLabel;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application.         If no application is found with this
-        /// name,         and         <code>AutoCreateApplication</code>         is         <code>false</code>,
-        /// returns an         <code>InvalidParameterValue</code>         error.      
+        ///  The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code>
+        /// is <code>false</code>, returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -61,37 +74,32 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AutoCreateApplication. 
         /// <para>
-        ///          Determines how the system behaves if the specified         application for
-        /// this         version does not already exist:      
+        ///  Determines how the system behaves if the specified application for this version does
+        /// not already exist: 
         /// </para>
-        ///       <enumValues>         <value name="true">            
+        ///  <enumValues> <value name="true"> 
         /// <para>
-        ///                <code>true</code>: Automatically creates the specified application
-        /// for this               version if it does not already exist.            
+        ///  <code>true</code>: Automatically creates the specified application for this version
+        /// if it does not already exist. 
         /// </para>
-        ///          </value>         <value name="false">            
+        ///  </value> <value name="false"> 
         /// <para>
-        ///                <code>false</code>: Returns an               <code>InvalidParameterValue</code>
-        ///               if the specified application for this version does not already     
-        ///          exist.            
+        ///  <code>false</code>: Returns an <code>InvalidParameterValue</code> if the specified
+        /// application for this version does not already exist. 
         /// </para>
-        ///          </value>      </enumValues>      <ul>         <li>            <code>true</code>
-        ///            : Automatically creates the specified application for this            release
-        /// if it does not already exist.         </li>         <li>            <code>false</code>
-        ///            : Throws an            <code>InvalidParameterValue</code>            if
-        /// the specified application for this release does not already            exist.    
-        ///     </li>      </ul>      
+        ///  </value> </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
+        /// application for this release if it does not already exist. </li> <li> <code>false</code>
+        /// : Throws an <code>InvalidParameterValue</code> if the specified application for this
+        /// release does not already exist. </li> </ul> 
         /// <para>
-        ///          Default:         <code>false</code>      
+        ///  Default: <code>false</code> 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Valid Values:         <code>true</code>         |         <code>false</code>
-        ///      
+        ///  Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool AutoCreateApplication
@@ -105,7 +113,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._autoCreateApplication.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -125,26 +132,24 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceBundle. 
         /// <para>
-        ///  The Amazon S3 bucket and key that identify the location of the         source   
-        ///      bundle for this version. 
+        ///  The Amazon S3 bucket and key that identify the location of the source bundle for
+        /// this version. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If data found at the Amazon S3 location exceeds the maximum allowed     
-        ///    source bundle size, AWS Elastic Beanstalk         returns an         <code>InvalidParameterValue</code>
-        ///         error. The maximum size allowed is 512 MB.      
+        ///  If data found at the Amazon S3 location exceeds the maximum allowed source bundle
+        /// size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The
+        /// maximum size allowed is 512 MB. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        /// Default:         If not specified, AWS Elastic Beanstalk         uses a sample application.
-        ///         If only partially specified (for example, a bucket is provided but not   
-        ///      the key)         or if no data is found at the Amazon S3 location, AWS Elastic
-        /// Beanstalk         returns an         <code>InvalidParameterCombination</code>    
-        ///     error.      
+        /// Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only
+        /// partially specified (for example, a bucket is provided but not the key) or if no data
+        /// is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
+        /// error. 
         /// </para>
         /// </summary>
         public S3Location SourceBundle
@@ -159,18 +164,16 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._sourceBundle != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
         /// A label identifying this version.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        /// Constraint:         Must be unique per application. If an application version already
-        ///         exists with this label for the specified application, AWS Elastic Beanstalk
-        ///         returns an         <code>InvalidParameterValue</code>         error.     
-        /// 
+        /// Constraint: Must be unique per application. If an application version already exists
+        /// with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string VersionLabel

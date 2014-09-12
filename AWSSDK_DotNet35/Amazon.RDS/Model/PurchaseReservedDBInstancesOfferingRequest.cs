@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,80 +29,109 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedDBInstancesOffering operation.
-    /// <para> Purchases a reserved DB instance offering. </para>
+    /// Purchases a reserved DB instance offering.
     /// </summary>
     public partial class PurchaseReservedDBInstancesOfferingRequest : AmazonRDSRequest
     {
-        private string reservedDBInstancesOfferingId;
-        private string reservedDBInstanceId;
-        private int? dBInstanceCount;
-        private List<Tag> tags = new List<Tag>();
-
+        private int? _dBInstanceCount;
+        private string _reservedDBInstanceId;
+        private string _reservedDBInstancesOfferingId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// The ID of the Reserved DB instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string ReservedDBInstancesOfferingId
-        {
-            get { return this.reservedDBInstancesOfferingId; }
-            set { this.reservedDBInstancesOfferingId = value; }
-        }
-
-        // Check to see if ReservedDBInstancesOfferingId property is set
-        internal bool IsSetReservedDBInstancesOfferingId()
-        {
-            return this.reservedDBInstancesOfferingId != null;
-        }
+        public PurchaseReservedDBInstancesOfferingRequest() { }
 
         /// <summary>
-        /// Customer-specified identifier to track this reservation. Example: myreservationID
-        ///  
+        /// Instantiates PurchaseReservedDBInstancesOfferingRequest with the parameterized properties
         /// </summary>
-        public string ReservedDBInstanceId
+        /// <param name="reservedDBInstancesOfferingId"> The ID of the Reserved DB instance offering to purchase.  Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</param>
+        public PurchaseReservedDBInstancesOfferingRequest(string reservedDBInstancesOfferingId)
         {
-            get { return this.reservedDBInstanceId; }
-            set { this.reservedDBInstanceId = value; }
-        }
-
-        // Check to see if ReservedDBInstanceId property is set
-        internal bool IsSetReservedDBInstanceId()
-        {
-            return this.reservedDBInstanceId != null;
+            _reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
         }
 
         /// <summary>
-        /// The number of instances to reserve. Default: <c>1</c>
+        /// Gets and sets the property DBInstanceCount. 
+        /// <para>
+        ///  The number of instances to reserve. 
+        /// </para>
         ///  
+        /// <para>
+        /// Default: <code>1</code>
+        /// </para>
         /// </summary>
         public int DBInstanceCount
         {
-            get { return this.dBInstanceCount ?? default(int); }
-            set { this.dBInstanceCount = value; }
+            get { return this._dBInstanceCount.GetValueOrDefault(); }
+            set { this._dBInstanceCount = value; }
         }
 
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {
-            return this.dBInstanceCount.HasValue;
+            return this._dBInstanceCount.HasValue; 
         }
 
         /// <summary>
-        /// A list of tags.
+        /// Gets and sets the property ReservedDBInstanceId. 
+        /// <para>
+        ///  Customer-specified identifier to track this reservation. 
+        /// </para>
         ///  
+        /// <para>
+        /// Example: myreservationID
+        /// </para>
+        /// </summary>
+        public string ReservedDBInstanceId
+        {
+            get { return this._reservedDBInstanceId; }
+            set { this._reservedDBInstanceId = value; }
+        }
+
+        // Check to see if ReservedDBInstanceId property is set
+        internal bool IsSetReservedDBInstanceId()
+        {
+            return this._reservedDBInstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedDBInstancesOfferingId. 
+        /// <para>
+        ///  The ID of the Reserved DB instance offering to purchase. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// </para>
+        /// </summary>
+        public string ReservedDBInstancesOfferingId
+        {
+            get { return this._reservedDBInstancesOfferingId; }
+            set { this._reservedDBInstancesOfferingId = value; }
+        }
+
+        // Check to see if ReservedDBInstancesOfferingId property is set
+        internal bool IsSetReservedDBInstancesOfferingId()
+        {
+            return this._reservedDBInstancesOfferingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,72 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EventCategoriesMap Unmarshaller
-     /// </summary>
-    internal class EventCategoriesMapUnmarshaller : IUnmarshaller<EventCategoriesMap, XmlUnmarshallerContext>, IUnmarshaller<EventCategoriesMap, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EventCategoriesMap Object
+    /// </summary>  
+    public class EventCategoriesMapUnmarshaller : IUnmarshaller<EventCategoriesMap, XmlUnmarshallerContext>, IUnmarshaller<EventCategoriesMap, JsonUnmarshallerContext>
     {
-        public EventCategoriesMap Unmarshall(XmlUnmarshallerContext context) 
+        public EventCategoriesMap Unmarshall(XmlUnmarshallerContext context)
         {
-            EventCategoriesMap eventCategoriesMap = new EventCategoriesMap();
+            EventCategoriesMap unmarshalledObject = new EventCategoriesMap();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SourceType", targetDepth))
-                    {
-                        eventCategoriesMap.SourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("EventCategories/EventCategory", targetDepth))
                     {
-                        eventCategoriesMap.EventCategories.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EventCategories.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return eventCategoriesMap;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return eventCategoriesMap;
+            return unmarshalledObject;
         }
 
-        public EventCategoriesMap Unmarshall(JsonUnmarshallerContext context) 
+        public EventCategoriesMap Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EventCategoriesMapUnmarshaller instance;
 
-        public static EventCategoriesMapUnmarshaller GetInstance() 
+        private static EventCategoriesMapUnmarshaller _instance = new EventCategoriesMapUnmarshaller();        
+
+        public static EventCategoriesMapUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EventCategoriesMapUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

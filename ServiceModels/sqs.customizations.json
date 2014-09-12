@@ -1,0 +1,8 @@
+{ 
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addAfter", "newType":"Amazon.SQS.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"},
+			{"operation":"addBefore", "newType":"Amazon.SQS.Internal.ValidationResponseHandler", "targetType":"Amazon.Runtime.Internal.Unmarshaller"}
+		]
+	}
+}

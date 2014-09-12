@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private string _type;
 
-
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._createdAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -73,7 +75,6 @@ namespace Amazon.OpsWorks.Model
             return this._instanceId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
@@ -91,7 +92,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._message != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ServiceErrorId. 
@@ -111,7 +111,6 @@ namespace Amazon.OpsWorks.Model
             return this._serviceErrorId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -129,7 +128,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Type. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// ListEndpointsByPlatformApplication Request Marshaller
     /// </summary>       
-    public class ListEndpointsByPlatformApplicationRequestMarshaller : IMarshaller<IRequest, ListEndpointsByPlatformApplicationRequest>
+    public class ListEndpointsByPlatformApplicationRequestMarshaller : IMarshaller<IRequest, ListEndpointsByPlatformApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListEndpointsByPlatformApplicationRequest)input);
+        }
+    
         public IRequest Marshall(ListEndpointsByPlatformApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");

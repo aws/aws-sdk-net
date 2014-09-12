@@ -12,8 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CloudFormation.Model;
 using Amazon.CloudFormation.Model.Internal.MarshallTransformations;
@@ -22,35 +28,40 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
-
 namespace Amazon.CloudFormation
 {
     /// <summary>
-    /// Implementation for accessing AmazonCloudFormation.
+    /// Implementation for accessing CloudFormation
+    ///
+    /// AWS CloudFormation 
+    /// <para>
+    /// AWS CloudFormation enables you to create and manage AWS infrastructure deployments
+    /// predictably and repeatedly. AWS CloudFormation helps you leverage AWS products such
+    /// as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly
+    /// scalable, cost effective applications without worrying about creating and configuring
+    /// the underlying AWS infrastructure.
+    /// </para>
     ///  
-    /// AWS CloudFormation <para>AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS
-    /// CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly
-    /// scalable, cost effective applications without worrying about creating and configuring the underlying AWS infrastructure.</para> <para>With
-    /// AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as
-    /// a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies
-    /// between the resources for you.</para> <para>For more information about this product, go to the <a
-    /// href="http://aws.amazon.com/cloudformation/" >CloudFormation Product Page</a> .</para> <para>Amazon CloudFormation makes use of other AWS
-    /// products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at
-    /// <a href="http://aws.amazon.com/documentation/" >http://aws.amazon.com/documentation/</a> .</para>
+    /// <para>
+    /// With AWS CloudFormation, you declare all of your resources and dependencies in a template
+    /// file. The template defines a collection of resources as a single unit called a stack.
+    /// AWS CloudFormation creates and deletes all member resources of the stack together
+    /// and manages all dependencies between the resources for you.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation
+    /// Product Page</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
+    /// information about a specific AWS product, you can find the product's technical documentation
+    /// at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
+    /// </para>
     /// </summary>
-    public partial class AmazonCloudFormationClient : AmazonWebServiceClient, IAmazonCloudFormation
+    public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
     {
-    AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -69,7 +80,7 @@ namespace Amazon.CloudFormation
         ///
         /// </summary>
         public AmazonCloudFormationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's
@@ -88,7 +99,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFormationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's
@@ -105,9 +116,9 @@ namespace Amazon.CloudFormation
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonCloudFormation Configuration Object</param>
+        /// <param name="config">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(AmazonCloudFormationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with AWS Credentials
@@ -135,7 +146,7 @@ namespace Amazon.CloudFormation
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(AWSCredentials credentials, AmazonCloudFormationConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -168,7 +179,7 @@ namespace Amazon.CloudFormation
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudFormationConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -204,1038 +215,932 @@ namespace Amazon.CloudFormation
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudFormationConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
         #endregion
 
+        #region Overrides
 
-        #region CancelUpdateStack
-
-        /// <summary>
-        /// <para>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the
-        /// previous stack configuration.</para> <para><b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</para>
-        /// </summary>
-        /// 
-        /// <param name="cancelUpdateStackRequest">Container for the necessary parameters to execute the CancelUpdateStack service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        public CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest)
+        protected override AbstractAWSSigner CreateSigner()
         {
-            IAsyncResult asyncResult = invokeCancelUpdateStack(cancelUpdateStackRequest, null, null, true);
-            return EndCancelUpdateStack(asyncResult);
+            return new AWS4Signer();
         }
 
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudFormation.Internal.ProcessRequestHandler());
+        }    
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         
+        #region  CancelUpdateStack
+
+        /// <summary>
+        /// Cancels an update on the specified stack. If the call completes successfully, the
+        /// stack will roll back the update and revert to the previous stack configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
+        /// 
+        /// <returns>The response from the CancelUpdateStack service method, as returned by CloudFormation.</returns>
+        public CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
+        {
+            var marshaller = new CancelUpdateStackRequestMarshaller();
+            var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
+
+            return Invoke<CancelUpdateStackRequest,CancelUpdateStackResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.CancelUpdateStack"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="cancelUpdateStackRequest">Container for the necessary parameters to execute the CancelUpdateStack operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginCancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelUpdateStack
+        ///         operation.</returns>
+        public IAsyncResult BeginCancelUpdateStack(CancelUpdateStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeCancelUpdateStack(cancelUpdateStackRequest, callback, state, false);
+            var marshaller = new CancelUpdateStackRequestMarshaller();
+            var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CancelUpdateStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CancelUpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.CancelUpdateStack"/>
+        /// Finishes the asynchronous execution of the  CancelUpdateStack operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelUpdateStack.</param>
-        public CancelUpdateStackResponse EndCancelUpdateStack(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  CancelUpdateStackResult from CloudFormation.</returns>
+        public  CancelUpdateStackResponse EndCancelUpdateStack(IAsyncResult asyncResult)
         {
-            return endOperation<CancelUpdateStackResponse>(asyncResult);
+            return EndInvoke<CancelUpdateStackResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CancelUpdateStackRequestMarshaller().Marshall(cancelUpdateStackRequest);
-            var unmarshaller = CancelUpdateStackResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateStack
+        
+        #region  CreateStack
 
         /// <summary>
-        /// <para>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the
-        /// status of the stack via the DescribeStacks API.</para> <para><b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account per
-        /// region. </para>
+        /// Creates a stack as specified in the template. After the call completes successfully,
+        /// the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a>
+        /// API.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// 
-        /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the CreateStack service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        /// <exception cref="AlreadyExistsException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InsufficientCapabilitiesException"/>
-        public CreateStackResponse CreateStack(CreateStackRequest createStackRequest)
+        /// <returns>The response from the CreateStack service method, as returned by CloudFormation.</returns>
+        /// <exception cref="AlreadyExistsException">
+        /// Resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// Quota for the resource has already been reached.
+        /// </exception>
+        public CreateStackResponse CreateStack(CreateStackRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateStack(createStackRequest, null, null, true);
-            return EndCreateStack(asyncResult);
-        }
+            var marshaller = new CreateStackRequestMarshaller();
+            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.CreateStack"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStack operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
         ///         operation.</returns>
-        public IAsyncResult BeginCreateStack(CreateStackRequest createStackRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateStack(createStackRequest, callback, state, false);
+            var marshaller = new CreateStackRequestMarshaller();
+            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.CreateStack"/>
+        /// Finishes the asynchronous execution of the  CreateStack operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStack.</param>
         /// 
-        /// <returns>Returns a CreateStackResult from AmazonCloudFormation.</returns>
-        public CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateStackResult from CloudFormation.</returns>
+        public  CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
         {
-            return endOperation<CreateStackResponse>(asyncResult);
+            return EndInvoke<CreateStackResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateStack(CreateStackRequest createStackRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateStackRequestMarshaller().Marshall(createStackRequest);
-            var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteStack
+        
+        #region  DeleteStack
 
         /// <summary>
-        /// <para>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the
-        /// DescribeStacks API if the deletion has been completed successfully.</para>
+        /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
+        /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
+        /// been completed successfully.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
-        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        public DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest)
+        /// <returns>The response from the DeleteStack service method, as returned by CloudFormation.</returns>
+        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteStack(deleteStackRequest, null, null, true);
-            return EndDeleteStack(asyncResult);
-        }
+            var marshaller = new DeleteStackRequestMarshaller();
+            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DeleteStack"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStack operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginDeleteStack(DeleteStackRequest deleteStackRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStack
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteStack(deleteStackRequest, callback, state, false);
+            var marshaller = new DeleteStackRequestMarshaller();
+            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DeleteStack"/>
+        /// Finishes the asynchronous execution of the  DeleteStack operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
-        public DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  DeleteStackResult from CloudFormation.</returns>
+        public  DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteStackResponse>(asyncResult);
+            return EndInvoke<DeleteStackResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteStack(DeleteStackRequest deleteStackRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteStackRequestMarshaller().Marshall(deleteStackRequest);
-            var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeStackEvents
+        
+        #region  DescribeStackEvents
 
         /// <summary>
-        /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html" >Stacks</a> in the AWS CloudFormation User
-        /// Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has been successfully deleted.</para>
+        /// Returns all stack related events for a specified stack. For more information about
+        /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+        /// in the AWS CloudFormation User Guide.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents service method.</param>
         /// 
-        /// <param name="describeStackEventsRequest">Container for the necessary parameters to execute the DescribeStackEvents service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the DescribeStackEvents service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest describeStackEventsRequest)
+        /// <returns>The response from the DescribeStackEvents service method, as returned by CloudFormation.</returns>
+        public DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStackEvents(describeStackEventsRequest, null, null, true);
-            return EndDescribeStackEvents(asyncResult);
-        }
+            var marshaller = new DescribeStackEventsRequestMarshaller();
+            var unmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeStackEventsRequest,DescribeStackEventsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStackEvents"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="describeStackEventsRequest">Container for the necessary parameters to execute the DescribeStackEvents operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeStackEvents operation.</returns>
-        public IAsyncResult BeginDescribeStackEvents(DescribeStackEventsRequest describeStackEventsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackEvents
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStackEvents(DescribeStackEventsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStackEvents(describeStackEventsRequest, callback, state, false);
+            var marshaller = new DescribeStackEventsRequestMarshaller();
+            var unmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStackEvents operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStackEvents"/>
+        /// Finishes the asynchronous execution of the  DescribeStackEvents operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackEvents.</param>
         /// 
-        /// <returns>Returns a DescribeStackEventsResult from AmazonCloudFormation.</returns>
-        public DescribeStackEventsResponse EndDescribeStackEvents(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeStackEventsResult from CloudFormation.</returns>
+        public  DescribeStackEventsResponse EndDescribeStackEvents(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeStackEventsResponse>(asyncResult);
+            return EndInvoke<DescribeStackEventsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeStackEvents(DescribeStackEventsRequest describeStackEventsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeStackEventsRequestMarshaller().Marshall(describeStackEventsRequest);
-            var unmarshaller = DescribeStackEventsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeStackResource
+        
+        #region  DescribeStackResource
 
         /// <summary>
-        /// <para>Returns a description of the specified resource in the specified stack.</para> <para>For deleted stacks, DescribeStackResource returns
-        /// resource information for up to 90 days after the stack has been deleted.</para>
+        /// Returns a description of the specified resource in the specified stack.
+        /// 
+        ///  
+        /// <para>
+        /// For deleted stacks, DescribeStackResource returns resource information for up to 90
+        /// days after the stack has been deleted.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResource service method.</param>
         /// 
-        /// <param name="describeStackResourceRequest">Container for the necessary parameters to execute the DescribeStackResource service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the DescribeStackResource service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest describeStackResourceRequest)
+        /// <returns>The response from the DescribeStackResource service method, as returned by CloudFormation.</returns>
+        public DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStackResource(describeStackResourceRequest, null, null, true);
-            return EndDescribeStackResource(asyncResult);
-        }
+            var marshaller = new DescribeStackResourceRequestMarshaller();
+            var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeStackResourceRequest,DescribeStackResourceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStackResource"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="describeStackResourceRequest">Container for the necessary parameters to execute the DescribeStackResource operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResource operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeStackResource operation.</returns>
-        public IAsyncResult BeginDescribeStackResource(DescribeStackResourceRequest describeStackResourceRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackResource
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStackResource(DescribeStackResourceRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStackResource(describeStackResourceRequest, callback, state, false);
+            var marshaller = new DescribeStackResourceRequestMarshaller();
+            var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStackResource operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStackResource"/>
+        /// Finishes the asynchronous execution of the  DescribeStackResource operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackResource.</param>
         /// 
-        /// <returns>Returns a DescribeStackResourceResult from AmazonCloudFormation.</returns>
-        public DescribeStackResourceResponse EndDescribeStackResource(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeStackResourceResult from CloudFormation.</returns>
+        public  DescribeStackResourceResponse EndDescribeStackResource(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeStackResourceResponse>(asyncResult);
+            return EndInvoke<DescribeStackResourceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeStackResource(DescribeStackResourceRequest describeStackResourceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeStackResourceRequestMarshaller().Marshall(describeStackResourceRequest);
-            var unmarshaller = DescribeStackResourceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeStackResources
+        
+        #region  DescribeStackResources
 
         /// <summary>
-        /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
-        /// are part of the stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources of the stack that the resource
-        /// belongs to are returned.</para> <para><b>NOTE:</b>Only the first 100 resources will be returned. If your stack has more resources than this,
-        /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
-        /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
-        /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
-        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide"
-        /// >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>A ValidationError is returned if you specify both StackName and
-        /// PhysicalResourceId in the same request.</para>
+        /// Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code>
+        /// is specified, all the associated resources that are part of the stack are returned.
+        /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
+        /// that the resource belongs to are returned.
+        /// 
+        ///  
+        /// <para>
+        /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
+        /// for up to 90 days after the stack has been deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
+        /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
+        /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
+        /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// CloudFormation User Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources service method.</param>
         /// 
-        /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest)
+        /// <returns>The response from the DescribeStackResources service method, as returned by CloudFormation.</returns>
+        public DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStackResources(describeStackResourcesRequest, null, null, true);
-            return EndDescribeStackResources(asyncResult);
-        }
+            var marshaller = new DescribeStackResourcesRequestMarshaller();
+            var unmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeStackResourcesRequest,DescribeStackResourcesResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStackResources"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeStackResources operation.</returns>
-        public IAsyncResult BeginDescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackResources
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStackResources(DescribeStackResourcesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStackResources(describeStackResourcesRequest, callback, state, false);
+            var marshaller = new DescribeStackResourcesRequestMarshaller();
+            var unmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackResourcesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStackResources"/>
+        /// Finishes the asynchronous execution of the  DescribeStackResources operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackResources.</param>
         /// 
-        /// <returns>Returns a DescribeStackResourcesResult from AmazonCloudFormation.</returns>
-        public DescribeStackResourcesResponse EndDescribeStackResources(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeStackResourcesResult from CloudFormation.</returns>
+        public  DescribeStackResourcesResponse EndDescribeStackResources(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeStackResourcesResponse>(asyncResult);
+            return EndInvoke<DescribeStackResourcesResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeStackResourcesRequestMarshaller().Marshall(describeStackResourcesRequest);
-            var unmarshaller = DescribeStackResourcesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeStacks
+        
+        #region  DescribeStacks
 
         /// <summary>
-        /// <para>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
-        /// created.</para>
+        /// Returns the description for the specified stack; if no stack name was specified, then
+        /// it returns the description for all the stacks created.
         /// </summary>
         /// 
-        /// <param name="describeStacksRequest">Container for the necessary parameters to execute the DescribeStacks service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the DescribeStacks service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest describeStacksRequest)
+        /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        public DescribeStacksResponse DescribeStacks()
         {
-            IAsyncResult asyncResult = invokeDescribeStacks(describeStacksRequest, null, null, true);
-            return EndDescribeStacks(asyncResult);
+            return DescribeStacks(new DescribeStacksRequest());
         }
 
-        
+        /// <summary>
+        /// Returns the description for the specified stack; if no stack name was specified, then
+        /// it returns the description for all the stacks created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        {
+            var marshaller = new DescribeStacksRequestMarshaller();
+            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStacks"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="describeStacksRequest">Container for the necessary parameters to execute the DescribeStacks operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStacks operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStacks
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeStacks(DescribeStacksRequest describeStacksRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStacks(describeStacksRequest, callback, state, false);
+            var marshaller = new DescribeStacksRequestMarshaller();
+            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStacksRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStacks operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.DescribeStacks"/>
+        /// Finishes the asynchronous execution of the  DescribeStacks operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStacks.</param>
         /// 
-        /// <returns>Returns a DescribeStacksResult from AmazonCloudFormation.</returns>
-        public DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeStacksResult from CloudFormation.</returns>
+        public  DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeStacksResponse>(asyncResult);
+            return EndInvoke<DescribeStacksResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeStacks(DescribeStacksRequest describeStacksRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeStacksRequestMarshaller().Marshall(describeStacksRequest);
-            var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
-        /// created.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeStacks service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public DescribeStacksResponse DescribeStacks()
-        {
-            return DescribeStacks(new DescribeStacksRequest());
-        }
-        
 
         #endregion
-    
-        #region EstimateTemplateCost
+        
+        #region  EstimateTemplateCost
 
         /// <summary>
-        /// <para>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that
-        /// describes the resources required to run the template.</para>
+        /// Returns the estimated monthly cost of a template. The return value is an AWS Simple
+        /// Monthly Calculator URL with a query string that describes the resources required to
+        /// run the template.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EstimateTemplateCost service method.</param>
         /// 
-        /// <param name="estimateTemplateCostRequest">Container for the necessary parameters to execute the EstimateTemplateCost service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the EstimateTemplateCost service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest)
+        /// <returns>The response from the EstimateTemplateCost service method, as returned by CloudFormation.</returns>
+        public EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
         {
-            IAsyncResult asyncResult = invokeEstimateTemplateCost(estimateTemplateCostRequest, null, null, true);
-            return EndEstimateTemplateCost(asyncResult);
-        }
+            var marshaller = new EstimateTemplateCostRequestMarshaller();
+            var unmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
 
-        
+            return Invoke<EstimateTemplateCostRequest,EstimateTemplateCostResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.EstimateTemplateCost"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="estimateTemplateCostRequest">Container for the necessary parameters to execute the EstimateTemplateCost operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EstimateTemplateCost operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndEstimateTemplateCost operation.</returns>
-        public IAsyncResult BeginEstimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEstimateTemplateCost
+        ///         operation.</returns>
+        public IAsyncResult BeginEstimateTemplateCost(EstimateTemplateCostRequest request, AsyncCallback callback, object state)
         {
-            return invokeEstimateTemplateCost(estimateTemplateCostRequest, callback, state, false);
+            var marshaller = new EstimateTemplateCostRequestMarshaller();
+            var unmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EstimateTemplateCostRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the EstimateTemplateCost operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.EstimateTemplateCost"/>
+        /// Finishes the asynchronous execution of the  EstimateTemplateCost operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEstimateTemplateCost.</param>
         /// 
-        /// <returns>Returns a EstimateTemplateCostResult from AmazonCloudFormation.</returns>
-        public EstimateTemplateCostResponse EndEstimateTemplateCost(IAsyncResult asyncResult)
+        /// <returns>Returns a  EstimateTemplateCostResult from CloudFormation.</returns>
+        public  EstimateTemplateCostResponse EndEstimateTemplateCost(IAsyncResult asyncResult)
         {
-            return endOperation<EstimateTemplateCostResponse>(asyncResult);
+            return EndInvoke<EstimateTemplateCostResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeEstimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new EstimateTemplateCostRequestMarshaller().Marshall(estimateTemplateCostRequest);
-            var unmarshaller = EstimateTemplateCostResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region GetStackPolicy
+        
+        #region  GetStackPolicy
 
         /// <summary>
-        /// <para>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</para>
+        /// Returns the stack policy for a specified stack. If a stack doesn't have a policy,
+        /// a null value is returned.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStackPolicy service method.</param>
         /// 
-        /// <param name="getStackPolicyRequest">Container for the necessary parameters to execute the GetStackPolicy service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the GetStackPolicy service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest getStackPolicyRequest)
+        /// <returns>The response from the GetStackPolicy service method, as returned by CloudFormation.</returns>
+        public GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeGetStackPolicy(getStackPolicyRequest, null, null, true);
-            return EndGetStackPolicy(asyncResult);
-        }
+            var marshaller = new GetStackPolicyRequestMarshaller();
+            var unmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
 
-        
+            return Invoke<GetStackPolicyRequest,GetStackPolicyResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStackPolicy operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.GetStackPolicy"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="getStackPolicyRequest">Container for the necessary parameters to execute the GetStackPolicy operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStackPolicy operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStackPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginGetStackPolicy(GetStackPolicyRequest getStackPolicyRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginGetStackPolicy(GetStackPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetStackPolicy(getStackPolicyRequest, callback, state, false);
+            var marshaller = new GetStackPolicyRequestMarshaller();
+            var unmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetStackPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the GetStackPolicy operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.GetStackPolicy"/>
+        /// Finishes the asynchronous execution of the  GetStackPolicy operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStackPolicy.</param>
         /// 
-        /// <returns>Returns a GetStackPolicyResult from AmazonCloudFormation.</returns>
-        public GetStackPolicyResponse EndGetStackPolicy(IAsyncResult asyncResult)
+        /// <returns>Returns a  GetStackPolicyResult from CloudFormation.</returns>
+        public  GetStackPolicyResponse EndGetStackPolicy(IAsyncResult asyncResult)
         {
-            return endOperation<GetStackPolicyResponse>(asyncResult);
+            return EndInvoke<GetStackPolicyResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeGetStackPolicy(GetStackPolicyRequest getStackPolicyRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new GetStackPolicyRequestMarshaller().Marshall(getStackPolicyRequest);
-            var unmarshaller = GetStackPolicyResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region GetTemplate
+        
+        #region  GetTemplate
 
         /// <summary>
-        /// <para>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</para> <para>For deleted
-        /// stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</para> <para><b>NOTE:</b> If the template does
-        /// not exist, a ValidationError is returned. </para>
+        /// Returns the template body for a specified stack. You can get the template for running
+        /// or deleted stacks.
+        /// 
+        ///  
+        /// <para>
+        /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
+        /// has been deleted.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
-        /// <param name="getTemplateRequest">Container for the necessary parameters to execute the GetTemplate service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the GetTemplate service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public GetTemplateResponse GetTemplate(GetTemplateRequest getTemplateRequest)
+        /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
+        public GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            IAsyncResult asyncResult = invokeGetTemplate(getTemplateRequest, null, null, true);
-            return EndGetTemplate(asyncResult);
-        }
+            var marshaller = new GetTemplateRequestMarshaller();
+            var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
-        
+            return Invoke<GetTemplateRequest,GetTemplateResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.GetTemplate"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="getTemplateRequest">Container for the necessary parameters to execute the GetTemplate operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplate operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemplate
         ///         operation.</returns>
-        public IAsyncResult BeginGetTemplate(GetTemplateRequest getTemplateRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginGetTemplate(GetTemplateRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetTemplate(getTemplateRequest, callback, state, false);
+            var marshaller = new GetTemplateRequestMarshaller();
+            var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTemplateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the GetTemplate operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.GetTemplate"/>
+        /// Finishes the asynchronous execution of the  GetTemplate operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTemplate.</param>
         /// 
-        /// <returns>Returns a GetTemplateResult from AmazonCloudFormation.</returns>
-        public GetTemplateResponse EndGetTemplate(IAsyncResult asyncResult)
+        /// <returns>Returns a  GetTemplateResult from CloudFormation.</returns>
+        public  GetTemplateResponse EndGetTemplate(IAsyncResult asyncResult)
         {
-            return endOperation<GetTemplateResponse>(asyncResult);
+            return EndInvoke<GetTemplateResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeGetTemplate(GetTemplateRequest getTemplateRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new GetTemplateRequestMarshaller().Marshall(getTemplateRequest);
-            var unmarshaller = GetTemplateResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ListStackResources
+        
+        #region  ListStackResources
 
         /// <summary>
-        /// <para>Returns descriptions of all resources of the specified stack.</para> <para>For deleted stacks, ListStackResources returns resource
-        /// information for up to 90 days after the stack has been deleted.</para>
+        /// Returns descriptions of all resources of the specified stack.
+        /// 
+        ///  
+        /// <para>
+        /// For deleted stacks, ListStackResources returns resource information for up to 90 days
+        /// after the stack has been deleted.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackResources service method.</param>
         /// 
-        /// <param name="listStackResourcesRequest">Container for the necessary parameters to execute the ListStackResources service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the ListStackResources service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest listStackResourcesRequest)
+        /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
+        public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
         {
-            IAsyncResult asyncResult = invokeListStackResources(listStackResourcesRequest, null, null, true);
-            return EndListStackResources(asyncResult);
-        }
+            var marshaller = new ListStackResourcesRequestMarshaller();
+            var unmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ListStackResourcesRequest,ListStackResourcesResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.ListStackResources"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="listStackResourcesRequest">Container for the necessary parameters to execute the ListStackResources operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackResources operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndListStackResources operation.</returns>
-        public IAsyncResult BeginListStackResources(ListStackResourcesRequest listStackResourcesRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackResources
+        ///         operation.</returns>
+        public IAsyncResult BeginListStackResources(ListStackResourcesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListStackResources(listStackResourcesRequest, callback, state, false);
+            var marshaller = new ListStackResourcesRequestMarshaller();
+            var unmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStackResourcesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ListStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.ListStackResources"/>
+        /// Finishes the asynchronous execution of the  ListStackResources operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackResources.</param>
         /// 
-        /// <returns>Returns a ListStackResourcesResult from AmazonCloudFormation.</returns>
-        public ListStackResourcesResponse EndListStackResources(IAsyncResult asyncResult)
+        /// <returns>Returns a  ListStackResourcesResult from CloudFormation.</returns>
+        public  ListStackResourcesResponse EndListStackResources(IAsyncResult asyncResult)
         {
-            return endOperation<ListStackResourcesResponse>(asyncResult);
+            return EndInvoke<ListStackResourcesResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeListStackResources(ListStackResourcesRequest listStackResourcesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ListStackResourcesRequestMarshaller().Marshall(listStackResourcesRequest);
-            var unmarshaller = ListStackResourcesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ListStacks
+        
+        #region  ListStacks
 
         /// <summary>
-        /// <para>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that
-        /// have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks
-        /// is returned (including existing stacks and stacks that have been deleted).</para>
+        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Summary information for stacks that have been deleted is kept for 90 days after the
+        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
+        /// stacks is returned (including existing stacks and stacks that have been deleted).
         /// </summary>
         /// 
-        /// <param name="listStacksRequest">Container for the necessary parameters to execute the ListStacks service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the ListStacks service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public ListStacksResponse ListStacks(ListStacksRequest listStacksRequest)
+        /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        public ListStacksResponse ListStacks()
         {
-            IAsyncResult asyncResult = invokeListStacks(listStacksRequest, null, null, true);
-            return EndListStacks(asyncResult);
+            return ListStacks(new ListStacksRequest());
         }
 
-        
+        /// <summary>
+        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Summary information for stacks that have been deleted is kept for 90 days after the
+        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
+        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStacks service method.</param>
+        /// 
+        /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        public ListStacksResponse ListStacks(ListStacksRequest request)
+        {
+            var marshaller = new ListStacksRequestMarshaller();
+            var unmarshaller = ListStacksResponseUnmarshaller.Instance;
+
+            return Invoke<ListStacksRequest,ListStacksResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.ListStacks"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="listStacksRequest">Container for the necessary parameters to execute the ListStacks operation on AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListStacks operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStacks
         ///         operation.</returns>
-        public IAsyncResult BeginListStacks(ListStacksRequest listStacksRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginListStacks(ListStacksRequest request, AsyncCallback callback, object state)
         {
-            return invokeListStacks(listStacksRequest, callback, state, false);
+            var marshaller = new ListStacksRequestMarshaller();
+            var unmarshaller = ListStacksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStacksRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ListStacks operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.ListStacks"/>
+        /// Finishes the asynchronous execution of the  ListStacks operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStacks.</param>
         /// 
-        /// <returns>Returns a ListStacksResult from AmazonCloudFormation.</returns>
-        public ListStacksResponse EndListStacks(IAsyncResult asyncResult)
+        /// <returns>Returns a  ListStacksResult from CloudFormation.</returns>
+        public  ListStacksResponse EndListStacks(IAsyncResult asyncResult)
         {
-            return endOperation<ListStacksResponse>(asyncResult);
+            return EndInvoke<ListStacksResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeListStacks(ListStacksRequest listStacksRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ListStacksRequestMarshaller().Marshall(listStacksRequest);
-            var unmarshaller = ListStacksResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that
-        /// have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks
-        /// is returned (including existing stacks and stacks that have been deleted).</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListStacks service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public ListStacksResponse ListStacks()
-        {
-            return ListStacks(new ListStacksRequest());
-        }
-        
 
         #endregion
-    
-        #region SetStackPolicy
+        
+        #region  SetStackPolicy
 
         /// <summary>
-        /// <para>Sets a stack policy for a specified stack.</para>
+        /// Sets a stack policy for a specified stack.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetStackPolicy service method.</param>
         /// 
-        /// <param name="setStackPolicyRequest">Container for the necessary parameters to execute the SetStackPolicy service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        public SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest setStackPolicyRequest)
+        /// <returns>The response from the SetStackPolicy service method, as returned by CloudFormation.</returns>
+        public SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeSetStackPolicy(setStackPolicyRequest, null, null, true);
-            return EndSetStackPolicy(asyncResult);
-        }
+            var marshaller = new SetStackPolicyRequestMarshaller();
+            var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
 
-        
+            return Invoke<SetStackPolicyRequest,SetStackPolicyResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStackPolicy operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.SetStackPolicy"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="setStackPolicyRequest">Container for the necessary parameters to execute the SetStackPolicy operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SetStackPolicy operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginSetStackPolicy(SetStackPolicyRequest setStackPolicyRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetStackPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginSetStackPolicy(SetStackPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetStackPolicy(setStackPolicyRequest, callback, state, false);
+            var marshaller = new SetStackPolicyRequestMarshaller();
+            var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetStackPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the SetStackPolicy operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.SetStackPolicy"/>
+        /// Finishes the asynchronous execution of the  SetStackPolicy operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetStackPolicy.</param>
-        public SetStackPolicyResponse EndSetStackPolicy(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  SetStackPolicyResult from CloudFormation.</returns>
+        public  SetStackPolicyResponse EndSetStackPolicy(IAsyncResult asyncResult)
         {
-            return endOperation<SetStackPolicyResponse>(asyncResult);
+            return EndInvoke<SetStackPolicyResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeSetStackPolicy(SetStackPolicyRequest setStackPolicyRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new SetStackPolicyRequestMarshaller().Marshall(setStackPolicyRequest);
-            var unmarshaller = SetStackPolicyResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region UpdateStack
+        
+        #region  UpdateStack
 
         /// <summary>
-        /// <para>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status
-        /// of the stack via the DescribeStacks action.</para> <para> <b>Note: </b> You cannot update <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html" >AWS::S3::Bucket</a> resources, for
-        /// example, to add or modify tags.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
-        /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
-        /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
-        /// progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html" >Updating
-        /// a Stack</a> .</para>
+        /// Updates a stack as specified in the template. After the call completes successfully,
+        /// the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a>
+        /// action.
+        /// 
+        ///  
+        /// <para>
+        /// To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags that were associated with this stack during creation time will still be associated
+        /// with the stack after an <code>UpdateStack</code> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about creating an update template, updating a stack, and monitoring
+        /// the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
+        /// a Stack</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStack service method.</param>
         /// 
-        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the UpdateStack service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        /// <exception cref="InsufficientCapabilitiesException"/>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest updateStackRequest)
+        /// <returns>The response from the UpdateStack service method, as returned by CloudFormation.</returns>
+        /// <exception cref="InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
+        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateStack(updateStackRequest, null, null, true);
-            return EndUpdateStack(asyncResult);
-        }
+            var marshaller = new UpdateStackRequestMarshaller();
+            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
-        
+            return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStack operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateStack(UpdateStackRequest updateStackRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateStack(updateStackRequest, callback, state, false);
+            var marshaller = new UpdateStackRequestMarshaller();
+            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack"/>
+        /// Finishes the asynchronous execution of the  UpdateStack operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
         /// 
-        /// <returns>Returns a UpdateStackResult from AmazonCloudFormation.</returns>
-        public UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateStackResult from CloudFormation.</returns>
+        public  UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
         {
-            return endOperation<UpdateStackResponse>(asyncResult);
+            return EndInvoke<UpdateStackResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeUpdateStack(UpdateStackRequest updateStackRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateStackRequestMarshaller().Marshall(updateStackRequest);
-            var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ValidateTemplate
+        
+        #region  ValidateTemplate
 
         /// <summary>
-        /// <para>Validates a specified template.</para>
+        /// Validates a specified template.
         /// </summary>
         /// 
-        /// <param name="validateTemplateRequest">Container for the necessary parameters to execute the ValidateTemplate service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the ValidateTemplate service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest validateTemplateRequest)
+        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        public ValidateTemplateResponse ValidateTemplate()
         {
-            IAsyncResult asyncResult = invokeValidateTemplate(validateTemplateRequest, null, null, true);
-            return EndValidateTemplate(asyncResult);
+            return ValidateTemplate(new ValidateTemplateRequest());
         }
 
-        
+        /// <summary>
+        /// Validates a specified template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        public ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
+        {
+            var marshaller = new ValidateTemplateRequestMarshaller();
+            var unmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateTemplateRequest,ValidateTemplateResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.ValidateTemplate"/>
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
-        /// <param name="validateTemplateRequest">Container for the necessary parameters to execute the ValidateTemplate operation on
-        ///          AmazonCloudFormation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateTemplate operation on AmazonCloudFormationClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateTemplate
         ///         operation.</returns>
-        public IAsyncResult BeginValidateTemplate(ValidateTemplateRequest validateTemplateRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginValidateTemplate(ValidateTemplateRequest request, AsyncCallback callback, object state)
         {
-            return invokeValidateTemplate(validateTemplateRequest, callback, state, false);
+            var marshaller = new ValidateTemplateRequestMarshaller();
+            var unmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ValidateTemplateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ValidateTemplate operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation.ValidateTemplate"/>
+        /// Finishes the asynchronous execution of the  ValidateTemplate operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateTemplate.</param>
         /// 
-        /// <returns>Returns a ValidateTemplateResult from AmazonCloudFormation.</returns>
-        public ValidateTemplateResponse EndValidateTemplate(IAsyncResult asyncResult)
+        /// <returns>Returns a  ValidateTemplateResult from CloudFormation.</returns>
+        public  ValidateTemplateResponse EndValidateTemplate(IAsyncResult asyncResult)
         {
-            return endOperation<ValidateTemplateResponse>(asyncResult);
+            return EndInvoke<ValidateTemplateResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeValidateTemplate(ValidateTemplateRequest validateTemplateRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ValidateTemplateRequestMarshaller().Marshall(validateTemplateRequest);
-            var unmarshaller = ValidateTemplateResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para>Validates a specified template.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ValidateTemplate service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        public ValidateTemplateResponse ValidateTemplate()
-        {
-            return ValidateTemplate(new ValidateTemplateRequest());
-        }
-        
 
         #endregion
-    
+        
     }
 }
-    

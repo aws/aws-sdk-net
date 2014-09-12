@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,11 +35,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<ConfigurationOptionDescription> _options = new List<ConfigurationOptionDescription>();
         private string _solutionStackName;
 
-
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        ///          A list of         <a>ConfigurationOptionDescription</a>.      
+        ///  A list of <a>ConfigurationOptionDescription</a>. 
         /// </para>
         /// </summary>
         public List<ConfigurationOptionDescription> Options
@@ -50,11 +53,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._options != null && this._options.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///          The name of the solution stack these configuration options belong to.        
+        ///  The name of the solution stack these configuration options belong to. 
         /// </para>
         /// </summary>
         public string SolutionStackName

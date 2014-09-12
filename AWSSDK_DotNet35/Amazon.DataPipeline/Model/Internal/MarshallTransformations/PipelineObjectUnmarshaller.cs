@@ -12,70 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DataPipeline.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DataPipeline.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PipelineObject Object
+    /// </summary>  
+    public class PipelineObjectUnmarshaller : IUnmarshaller<PipelineObject, XmlUnmarshallerContext>, IUnmarshaller<PipelineObject, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// PipelineObjectUnmarshaller
-      /// </summary>
-      internal class PipelineObjectUnmarshaller : IUnmarshaller<PipelineObject, XmlUnmarshallerContext>, IUnmarshaller<PipelineObject, JsonUnmarshallerContext>
-      {
         PipelineObject IUnmarshaller<PipelineObject, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public PipelineObject Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            PipelineObject pipelineObject = new PipelineObject();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            PipelineObject unmarshalledObject = new PipelineObject();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("id", targetDepth))
-              {
-                pipelineObject.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("name", targetDepth))
-              {
-                pipelineObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("fields", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Field,FieldUnmarshaller>(
-                    FieldUnmarshaller.GetInstance());                  
-                pipelineObject.Fields = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("fields", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return pipelineObject;
+            return unmarshalledObject;
         }
 
-        private static PipelineObjectUnmarshaller instance;
-        public static PipelineObjectUnmarshaller GetInstance()
+
+        private static PipelineObjectUnmarshaller _instance = new PipelineObjectUnmarshaller();        
+
+        public static PipelineObjectUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new PipelineObjectUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

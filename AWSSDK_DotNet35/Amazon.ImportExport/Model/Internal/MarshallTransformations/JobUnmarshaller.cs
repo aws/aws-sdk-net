@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ImportExport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Job Unmarshaller
-     /// </summary>
-    internal class JobUnmarshaller : IUnmarshaller<Job, XmlUnmarshallerContext>, IUnmarshaller<Job, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Job Object
+    /// </summary>  
+    public class JobUnmarshaller : IUnmarshaller<Job, XmlUnmarshallerContext>, IUnmarshaller<Job, JsonUnmarshallerContext>
     {
-        public Job Unmarshall(XmlUnmarshallerContext context) 
+        public Job Unmarshall(XmlUnmarshallerContext context)
         {
-            Job job = new Job();
+            Job unmarshalledObject = new Job();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("JobId", targetDepth))
-                    {
-                        job.JobId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CreationDate", targetDepth))
                     {
-                        job.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IsCanceled", targetDepth))
                     {
-                        job.IsCanceled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsCanceled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("JobId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("JobType", targetDepth))
                     {
-                        job.JobType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.JobType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return job;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return job;
+            return unmarshalledObject;
         }
 
-        public Job Unmarshall(JsonUnmarshallerContext context) 
+        public Job Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static JobUnmarshaller instance;
 
-        public static JobUnmarshaller GetInstance() 
+        private static JobUnmarshaller _instance = new JobUnmarshaller();        
+
+        public static JobUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new JobUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

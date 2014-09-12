@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
-    /// Returns information about the BatchPutAttributes response metadata.
-    /// The BatchPutAttributes operation has a void result type.
+    /// Configuration for accessing Amazon BatchPutAttributes service
     /// </summary>
-    public partial class BatchPutAttributesResponse : AmazonWebServiceResponse
+    public partial class BatchPutAttributesResponse : BatchPutAttributesResult
     {
+        /// <summary>
+        /// Gets and sets the BatchPutAttributesResult property.
+        /// Represents the output of a BatchPutAttributes operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the BatchPutAttributesResult class are now available on the BatchPutAttributesResponse class. You should use the properties on BatchPutAttributesResponse instead of accessing them through BatchPutAttributesResult.")]
+        public BatchPutAttributesResult BatchPutAttributesResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

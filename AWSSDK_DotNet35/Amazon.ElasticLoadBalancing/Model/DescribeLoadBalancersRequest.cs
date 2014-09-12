@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,19 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _marker;
         private int? _pageSize;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeLoadBalancersRequest() { }
+
+        /// <summary>
+        /// Instantiates DescribeLoadBalancersRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerNames"> A list of load balancer names associated with the account. </param>
+        public DescribeLoadBalancersRequest(List<string> loadBalancerNames)
+        {
+            _loadBalancerNames = loadBalancerNames;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
@@ -54,7 +71,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
@@ -73,7 +89,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PageSize. 

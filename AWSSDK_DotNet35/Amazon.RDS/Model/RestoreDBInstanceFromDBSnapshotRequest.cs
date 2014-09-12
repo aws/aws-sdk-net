@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,288 +29,410 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
-    /// <para> Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same
-    /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
+    /// Creates a new DB instance from a DB snapshot. The target database is created from
+    /// the source database restore point with the same configuration as the original source
+    /// database, except that the new RDS instance is created with the default security group.
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
-        private string dBInstanceIdentifier;
-        private string dBSnapshotIdentifier;
-        private string dBInstanceClass;
-        private int? port;
-        private string availabilityZone;
-        private string dBSubnetGroupName;
-        private bool? multiAZ;
-        private bool? publiclyAccessible;
-        private bool? autoMinorVersionUpgrade;
-        private string licenseModel;
-        private string dBName;
-        private string engine;
-        private int? iops;
-        private string optionGroupName;
-        private List<Tag> tags = new List<Tag>();
-
+        private bool? _autoMinorVersionUpgrade;
+        private string _availabilityZone;
+        private string _dBInstanceClass;
+        private string _dBInstanceIdentifier;
+        private string _dBName;
+        private string _dBSnapshotIdentifier;
+        private string _dBSubnetGroupName;
+        private string _engine;
+        private int? _iops;
+        private string _licenseModel;
+        private bool? _multiAZ;
+        private string _optionGroupName;
+        private int? _port;
+        private bool? _publiclyAccessible;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier for the DB snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-        /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string DBInstanceIdentifier
-        {
-            get { return this.dBInstanceIdentifier; }
-            set { this.dBInstanceIdentifier = value; }
-        }
-
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
-        {
-            return this.dBInstanceIdentifier != null;
-        }
+        public RestoreDBInstanceFromDBSnapshotRequest() { }
 
         /// <summary>
-        /// Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to
-        /// 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
-        /// consecutive hyphens</li> </ul> Example: <c>my-snapshot-id</c>
-        ///  
+        /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
-        public string DBSnapshotIdentifier
+        /// <param name="dbInstanceIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbSnapshotIdentifier"> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
+        public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
-            get { return this.dBSnapshotIdentifier; }
-            set { this.dBSnapshotIdentifier = value; }
-        }
-
-        // Check to see if DBSnapshotIdentifier property is set
-        internal bool IsSetDBSnapshotIdentifier()
-        {
-            return this.dBSnapshotIdentifier != null;
+            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dBSnapshotIdentifier = dbSnapshotIdentifier;
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-        /// db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</c>
-        ///  
-        /// </summary>
-        public string DBInstanceClass
-        {
-            get { return this.dBInstanceClass; }
-            set { this.dBInstanceClass = value; }
-        }
-
-        // Check to see if DBInstanceClass property is set
-        internal bool IsSetDBInstanceClass()
-        {
-            return this.dBInstanceClass != null;
-        }
-
-        /// <summary>
-        /// The port number on which the database accepts connections. Default: The same port as the original DB instance Constraints: Value must be
-        /// <c>1150-65535</c>
-        ///  
-        /// </summary>
-        public int Port
-        {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
-        }
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this.port.HasValue;
-        }
-
-        /// <summary>
-        /// The EC2 Availability Zone that the database instance will be created in. Default: A random, system-chosen Availability Zone. Constraint: You
-        /// cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to <c>true</c>. Example: <c>us-east-1a</c>
-        ///  
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this.availabilityZone != null;
-        }
-
-        /// <summary>
-        /// The DB subnet group name to use for the new instance.
-        ///  
-        /// </summary>
-        public string DBSubnetGroupName
-        {
-            get { return this.dBSubnetGroupName; }
-            set { this.dBSubnetGroupName = value; }
-        }
-
-        // Check to see if DBSubnetGroupName property is set
-        internal bool IsSetDBSubnetGroupName()
-        {
-            return this.dBSubnetGroupName != null;
-        }
-
-        /// <summary>
-        /// Specifies if the DB instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
-        /// parameter is set to <c>true</c>.
-        ///  
-        /// </summary>
-        public bool MultiAZ
-        {
-            get { return this.multiAZ ?? default(bool); }
-            set { this.multiAZ = value; }
-        }
-
-        // Check to see if MultiAZ property is set
-        internal bool IsSetMultiAZ()
-        {
-            return this.multiAZ.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
-        /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
-        /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
-        /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
-        /// part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet
-        /// group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
-        ///  
-        /// </summary>
-        public bool PubliclyAccessible
-        {
-            get { return this.publiclyAccessible ?? default(bool); }
-            set { this.publiclyAccessible = value; }
-        }
-
-        // Check to see if PubliclyAccessible property is set
-        internal bool IsSetPubliclyAccessible()
-        {
-            return this.publiclyAccessible.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window.
-        ///  
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        ///  Indicates that minor version upgrades will be applied automatically to the DB instance
+        /// during the maintenance window. 
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
-            get { return this.autoMinorVersionUpgrade ?? default(bool); }
-            set { this.autoMinorVersionUpgrade = value; }
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
         }
 
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
-        /// License model information for the restored DB instance. Default: Same as source. Valid values: <c>license-included</c> |
-        /// <c>bring-your-own-license</c> | <c>general-public-license</c>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///  The EC2 Availability Zone that the database instance will be created in. 
+        /// </para>
         ///  
+        /// <para>
+        /// Default: A random, system-chosen Availability Zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter
+        /// is set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>us-east-1a</code>
+        /// </para>
         /// </summary>
-        public string LicenseModel
+        public string AvailabilityZone
         {
-            get { return this.licenseModel; }
-            set { this.licenseModel = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
-        // Check to see if LicenseModel property is set
-        internal bool IsSetLicenseModel()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.licenseModel != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
-        /// The database name for the restored DB instance. <note> This parameter doesn't apply to the MySQL engine. </note>
+        /// Gets and sets the property DBInstanceClass. 
+        /// <para>
+        ///  The compute and memory capacity of the Amazon RDS DB instance. 
+        /// </para>
         ///  
+        /// <para>
+        /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
+        /// | db.m2.2xlarge | db.m2.4xlarge</code>
+        /// </para>
+        /// </summary>
+        public string DBInstanceClass
+        {
+            get { return this._dBInstanceClass; }
+            set { this._dBInstanceClass = value; }
+        }
+
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
+        {
+            return this._dBInstanceClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceIdentifier. 
+        /// <para>
+        ///  The identifier for the DB snapshot to restore from. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
+        /// hyphens</li> </ul>
+        /// </summary>
+        public string DBInstanceIdentifier
+        {
+            get { return this._dBInstanceIdentifier; }
+            set { this._dBInstanceIdentifier = value; }
+        }
+
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
+        {
+            return this._dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBName. 
+        /// <para>
+        ///  The database name for the restored DB instance. 
+        /// </para>
         /// </summary>
         public string DBName
         {
-            get { return this.dBName; }
-            set { this.dBName = value; }
+            get { return this._dBName; }
+            set { this._dBName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this.dBName != null;
+            return this._dBName != null;
         }
 
         /// <summary>
-        /// The database engine to use for the new instance. Default: The same as source Constraint: Must be compatible with the engine of the source
-        /// Example: <c>oracle-ee</c>
+        /// Gets and sets the property DBSnapshotIdentifier. 
+        /// <para>
+        ///  Name of the DB instance to create from the DB snapshot. This parameter isn't case
+        /// sensitive. 
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First
+        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
+        /// hyphens</li> </ul> 
+        /// <para>
+        /// Example: <code>my-snapshot-id</code>
+        /// </para>
+        /// </summary>
+        public string DBSnapshotIdentifier
+        {
+            get { return this._dBSnapshotIdentifier; }
+            set { this._dBSnapshotIdentifier = value; }
+        }
+
+        // Check to see if DBSnapshotIdentifier property is set
+        internal bool IsSetDBSnapshotIdentifier()
+        {
+            return this._dBSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        ///  The DB subnet group name to use for the new instance. 
+        /// </para>
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this._dBSubnetGroupName; }
+            set { this._dBSubnetGroupName = value; }
+        }
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this._dBSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  The database engine to use for the new instance. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: The same as source
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: Must be compatible with the engine of the source
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>oracle-ee</code>
+        /// </para>
         /// </summary>
         public string Engine
         {
-            get { return this.engine; }
-            set { this.engine = value; }
+            get { return this._engine; }
+            set { this._engine = value; }
         }
 
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;
+            return this._engine != null;
         }
 
         /// <summary>
-        /// Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter is not specified,
-        /// the IOPS value will be taken from the backup. If this parameter is set to 0, the new instance will be converted to a non-PIOPS instance,
-        /// which will take additional time, though your DB instance will be available for connections before the conversion starts. Constraints: Must
-        /// be an integer greater than 1000.
+        /// Gets and sets the property Iops. 
+        /// <para>
+        ///  Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations
+        /// per second. If this parameter is not specified, the IOPS value will be taken from
+        /// the backup. If this parameter is set to 0, the new instance will be converted to a
+        /// non-PIOPS instance, which will take additional time, though your DB instance will
+        /// be available for connections before the conversion starts. 
+        /// </para>
         ///  
+        /// <para>
+        ///  Constraints: Must be an integer greater than 1000.
+        /// </para>
         /// </summary>
         public int Iops
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
         }
 
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;
+            return this._iops.HasValue; 
         }
 
         /// <summary>
-        /// The name of the option group to be used for the restored DB instance. <!-- Note that persistent options, such as the TDE_SQLServer option
-        /// for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated with the option group. --> Permanent
-        /// options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be
-        /// removed from a DB instance once it is associated with a DB instance
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        ///  License model information for the restored DB instance. 
+        /// </para>
         ///  
+        /// <para>
+        ///  Default: Same as source. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// | <code>general-public-license</code> 
+        /// </para>
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
+        }
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the DB instance is a Multi-AZ deployment. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter
+        /// is set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        ///  The name of the option group to be used for the restored DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
+        /// be removed from an option group, and that option group cannot be removed from a DB
+        /// instance once it is associated with a DB instance 
+        /// </para>
         /// </summary>
         public string OptionGroupName
         {
-            get { return this.optionGroupName; }
-            set { this.optionGroupName = value; }
+            get { return this._optionGroupName; }
+            set { this._optionGroupName = value; }
         }
 
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;
+            return this._optionGroupName != null;
         }
 
         /// <summary>
-        /// A list of tags.
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  The port number on which the database accepts connections. 
+        /// </para>
         ///  
+        /// <para>
+        /// Default: The same port as the original DB instance
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Value must be <code>1150-65535</code>
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        ///  Specifies the accessibility options for the DB instance. A value of true specifies
+        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
+        /// a public IP address. A value of false specifies an internal instance with a DNS name
+        /// that resolves to a private IP address. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: The default behavior varies depending on whether a VPC has been requested
+        /// or not. The following list shows the default behavior in each case. 
+        /// </para>
+        ///  <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> 
+        /// <para>
+        ///  If no DB subnet group has been specified as part of the request and the PubliclyAccessible
+        /// value has not been set, the DB instance will be publicly accessible. If a specific
+        /// DB subnet group has been specified as part of the request and the PubliclyAccessible
+        /// value has not been set, the DB instance will be private. 
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.CloudFront.Model
         private S3Origin _s3Origin;
         private TrustedSigners _trustedSigners;
 
-
         /// <summary>
         /// Gets and sets the property Aliases. A complex type that contains information about
         /// CNAMEs (alternate domain names), if any, for this streaming distribution.
@@ -54,18 +57,17 @@ namespace Amazon.CloudFront.Model
             return this._aliases != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CallerReference. A unique number that ensures the request
-        /// can't be replayed.    If the CallerReference is new (no matter the content of the
-        /// StreamingDistributionConfig object), a new streaming distribution is created.    If
-        /// the CallerReference is a value you already sent in a previous request to create a
-        /// streaming distribution, and the content of the StreamingDistributionConfig is identical
-        /// to the original request (ignoring white space),    the response includes the same
-        /// information returned to the original request.    If the CallerReference is a value
-        /// you already sent in a previous request to create a streaming distribution but the
-        /// content of the StreamingDistributionConfig is different from the original request,
-        ///    CloudFront returns a DistributionAlreadyExists error.
+        /// can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig
+        /// object), a new streaming distribution is created. If the CallerReference is a value
+        /// you already sent in a previous request to create a streaming distribution, and the
+        /// content of the StreamingDistributionConfig is identical to the original request (ignoring
+        /// white space), the response includes the same information returned to the original
+        /// request. If the CallerReference is a value you already sent in a previous request
+        /// to create a streaming distribution but the content of the StreamingDistributionConfig
+        /// is different from the original request, CloudFront returns a DistributionAlreadyExists
+        /// error.
         /// </summary>
         public string CallerReference
         {
@@ -78,7 +80,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._callerReference != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Comment. Any comments you want to include about the streaming
@@ -96,7 +97,6 @@ namespace Amazon.CloudFront.Model
             return this._comment != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Enabled. Whether the streaming distribution is enabled
         /// to accept end user requests for content.
@@ -112,7 +112,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._enabled.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Logging. A complex type that controls whether access logs
@@ -130,7 +129,6 @@ namespace Amazon.CloudFront.Model
             return this._logging != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PriceClass. A complex type that contains information about
         /// price class for this streaming distribution.
@@ -147,11 +145,9 @@ namespace Amazon.CloudFront.Model
             return this._priceClass != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property S3Origin. A complex type that contains information about
-        /// the Amazon S3    bucket from which you want CloudFront to get your media files for
-        ///    distribution.
+        /// the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
         /// </summary>
         public S3Origin S3Origin
         {
@@ -165,19 +161,17 @@ namespace Amazon.CloudFront.Model
             return this._s3Origin != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TrustedSigners. A complex type that specifies the AWS accounts,
-        /// if any, that you want    to allow to create signed URLs for private content.    If
-        /// you want to require signed URLs in requests for objects in the target    origin that
-        /// match the PathPattern for this cache behavior, specify true    for Enabled, and specify
-        /// the applicable values for Quantity and Items.    For more information, go to Using
-        /// a Signed URL to Serve Private Content    in the Amazon CloudFront Developer Guide.
-        ///    If you don't want to require signed URLs in requests for objects that match   
-        /// PathPattern, specify false for Enabled and 0 for Quantity. Omit    Items.    To add,
-        /// change, or remove one or more trusted signers, change Enabled    to true (if it's
-        /// currently false), change Quantity as applicable, and    specify all of the trusted
-        /// signers that you want to include in the updated    distribution.
+        /// if any, that you want to allow to create signed URLs for private content. If you want
+        /// to require signed URLs in requests for objects in the target origin that match the
+        /// PathPattern for this cache behavior, specify true for Enabled, and specify the applicable
+        /// values for Quantity and Items. For more information, go to Using a Signed URL to Serve
+        /// Private Content in the Amazon CloudFront Developer Guide. If you don't want to require
+        /// signed URLs in requests for objects that match PathPattern, specify false for Enabled
+        /// and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers,
+        /// change Enabled to true (if it's currently false), change Quantity as applicable, and
+        /// specify all of the trusted signers that you want to include in the updated distribution.
         /// </summary>
         public TrustedSigners TrustedSigners
         {

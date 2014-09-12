@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Vpn Connection Route Request Marshaller
+    /// CreateVpnConnectionRoute Request Marshaller
     /// </summary>       
-    public class CreateVpnConnectionRouteRequestMarshaller : IMarshaller<IRequest, CreateVpnConnectionRouteRequest>
+    public class CreateVpnConnectionRouteRequestMarshaller : IMarshaller<IRequest, CreateVpnConnectionRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createVpnConnectionRouteRequest, "AmazonEC2");
+            return this.Marshall((CreateVpnConnectionRouteRequest)input);
+        }
+    
+        public IRequest Marshall(CreateVpnConnectionRouteRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateVpnConnectionRoute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createVpnConnectionRouteRequest != null && createVpnConnectionRouteRequest.IsSetVpnConnectionId())
-            {
-                request.Parameters.Add("VpnConnectionId", StringUtils.FromString(createVpnConnectionRouteRequest.VpnConnectionId));
-            }
-            if (createVpnConnectionRouteRequest != null && createVpnConnectionRouteRequest.IsSetDestinationCidrBlock())
-            {
-                request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(createVpnConnectionRouteRequest.DestinationCidrBlock));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDestinationCidrBlock())
+                {
+                    request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
+                }
+                if(publicRequest.IsSetVpnConnectionId())
+                {
+                    request.Parameters.Add("VpnConnectionId", StringUtils.FromString(publicRequest.VpnConnectionId));
+                }
+            }
             return request;
         }
     }

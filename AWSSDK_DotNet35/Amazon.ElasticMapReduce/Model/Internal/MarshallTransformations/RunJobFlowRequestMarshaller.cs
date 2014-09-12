@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// RunJobFlow Request Marshaller
     /// </summary>       
-    public class RunJobFlowRequestMarshaller : IMarshaller<IRequest, RunJobFlowRequest> 
+    public class RunJobFlowRequestMarshaller : IMarshaller<IRequest, RunJobFlowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((RunJobFlowRequest)input);
+        }
+
         public IRequest Marshall(RunJobFlowRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,346 +56,133 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAdditionalInfo())
                 {
-                    writer.WritePropertyName("AdditionalInfo");
-                    writer.Write(publicRequest.AdditionalInfo);
+                    context.Writer.WritePropertyName("AdditionalInfo");
+                    context.Writer.Write(publicRequest.AdditionalInfo);
                 }
 
                 if(publicRequest.IsSetAmiVersion())
                 {
-                    writer.WritePropertyName("AmiVersion");
-                    writer.Write(publicRequest.AmiVersion);
+                    context.Writer.WritePropertyName("AmiVersion");
+                    context.Writer.Write(publicRequest.AmiVersion);
                 }
 
                 if(publicRequest.IsSetBootstrapActions())
                 {
-                    writer.WritePropertyName("BootstrapActions");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("BootstrapActions");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestBootstrapActionsListValue in publicRequest.BootstrapActions)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestBootstrapActionsListValue.IsSetName())
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(publicRequestBootstrapActionsListValue.Name);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestBootstrapActionsListValue.IsSetScriptBootstrapAction())
-                        {
-                            writer.WritePropertyName("ScriptBootstrapAction");
-                            writer.WriteObjectStart();
-                            if(publicRequestBootstrapActionsListValue.ScriptBootstrapAction.IsSetArgs())
-                            {
-                                writer.WritePropertyName("Args");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestBootstrapActionsListValueScriptBootstrapActionArgsListValue in publicRequestBootstrapActionsListValue.ScriptBootstrapAction.Args)
-                                {
-                                    writer.Write(publicRequestBootstrapActionsListValueScriptBootstrapActionArgsListValue);
-                                }
-                                writer.WriteArrayEnd();
-                            }
+                        var marshaller = BootstrapActionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBootstrapActionsListValue, context);
 
-                            if(publicRequestBootstrapActionsListValue.ScriptBootstrapAction.IsSetPath())
-                            {
-                                writer.WritePropertyName("Path");
-                                writer.Write(publicRequestBootstrapActionsListValue.ScriptBootstrapAction.Path);
-                            }
-
-                            writer.WriteObjectEnd();
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetInstances())
                 {
-                    writer.WritePropertyName("Instances");
-                    writer.WriteObjectStart();
-                    if(publicRequest.Instances.IsSetEc2KeyName())
-                    {
-                        writer.WritePropertyName("Ec2KeyName");
-                        writer.Write(publicRequest.Instances.Ec2KeyName);
-                    }
+                    context.Writer.WritePropertyName("Instances");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.Instances.IsSetEc2SubnetId())
-                    {
-                        writer.WritePropertyName("Ec2SubnetId");
-                        writer.Write(publicRequest.Instances.Ec2SubnetId);
-                    }
+                    var marshaller = JobFlowInstancesConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Instances, context);
 
-                    if(publicRequest.Instances.IsSetHadoopVersion())
-                    {
-                        writer.WritePropertyName("HadoopVersion");
-                        writer.Write(publicRequest.Instances.HadoopVersion);
-                    }
-
-                    if(publicRequest.Instances.IsSetInstanceCount())
-                    {
-                        writer.WritePropertyName("InstanceCount");
-                        writer.Write(publicRequest.Instances.InstanceCount);
-                    }
-
-                    if(publicRequest.Instances.IsSetInstanceGroups())
-                    {
-                        writer.WritePropertyName("InstanceGroups");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestInstancesInstanceGroupsListValue in publicRequest.Instances.InstanceGroups)
-                        {
-                            writer.WriteObjectStart();
-                            if(publicRequestInstancesInstanceGroupsListValue.IsSetBidPrice())
-                            {
-                                writer.WritePropertyName("BidPrice");
-                                writer.Write(publicRequestInstancesInstanceGroupsListValue.BidPrice);
-                            }
-
-                            if(publicRequestInstancesInstanceGroupsListValue.IsSetInstanceCount())
-                            {
-                                writer.WritePropertyName("InstanceCount");
-                                writer.Write(publicRequestInstancesInstanceGroupsListValue.InstanceCount);
-                            }
-
-                            if(publicRequestInstancesInstanceGroupsListValue.IsSetInstanceRole())
-                            {
-                                writer.WritePropertyName("InstanceRole");
-                                writer.Write(publicRequestInstancesInstanceGroupsListValue.InstanceRole);
-                            }
-
-                            if(publicRequestInstancesInstanceGroupsListValue.IsSetInstanceType())
-                            {
-                                writer.WritePropertyName("InstanceType");
-                                writer.Write(publicRequestInstancesInstanceGroupsListValue.InstanceType);
-                            }
-
-                            if(publicRequestInstancesInstanceGroupsListValue.IsSetMarket())
-                            {
-                                writer.WritePropertyName("Market");
-                                writer.Write(publicRequestInstancesInstanceGroupsListValue.Market);
-                            }
-
-                            if(publicRequestInstancesInstanceGroupsListValue.IsSetName())
-                            {
-                                writer.WritePropertyName("Name");
-                                writer.Write(publicRequestInstancesInstanceGroupsListValue.Name);
-                            }
-
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.Instances.IsSetKeepJobFlowAliveWhenNoSteps())
-                    {
-                        writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
-                        writer.Write(publicRequest.Instances.KeepJobFlowAliveWhenNoSteps);
-                    }
-
-                    if(publicRequest.Instances.IsSetMasterInstanceType())
-                    {
-                        writer.WritePropertyName("MasterInstanceType");
-                        writer.Write(publicRequest.Instances.MasterInstanceType);
-                    }
-
-                    if(publicRequest.Instances.IsSetPlacement())
-                    {
-                        writer.WritePropertyName("Placement");
-                        writer.WriteObjectStart();
-                        if(publicRequest.Instances.Placement.IsSetAvailabilityZone())
-                        {
-                            writer.WritePropertyName("AvailabilityZone");
-                            writer.Write(publicRequest.Instances.Placement.AvailabilityZone);
-                        }
-
-                        writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.Instances.IsSetSlaveInstanceType())
-                    {
-                        writer.WritePropertyName("SlaveInstanceType");
-                        writer.Write(publicRequest.Instances.SlaveInstanceType);
-                    }
-
-                    if(publicRequest.Instances.IsSetTerminationProtected())
-                    {
-                        writer.WritePropertyName("TerminationProtected");
-                        writer.Write(publicRequest.Instances.TerminationProtected);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetJobFlowRole())
                 {
-                    writer.WritePropertyName("JobFlowRole");
-                    writer.Write(publicRequest.JobFlowRole);
+                    context.Writer.WritePropertyName("JobFlowRole");
+                    context.Writer.Write(publicRequest.JobFlowRole);
                 }
 
                 if(publicRequest.IsSetLogUri())
                 {
-                    writer.WritePropertyName("LogUri");
-                    writer.Write(publicRequest.LogUri);
+                    context.Writer.WritePropertyName("LogUri");
+                    context.Writer.Write(publicRequest.LogUri);
                 }
 
                 if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetNewSupportedProducts())
                 {
-                    writer.WritePropertyName("NewSupportedProducts");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("NewSupportedProducts");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestNewSupportedProductsListValue in publicRequest.NewSupportedProducts)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestNewSupportedProductsListValue.IsSetArgs())
-                        {
-                            writer.WritePropertyName("Args");
-                            writer.WriteArrayStart();
-                            foreach(var publicRequestNewSupportedProductsListValueArgsListValue in publicRequestNewSupportedProductsListValue.Args)
-                            {
-                                writer.Write(publicRequestNewSupportedProductsListValueArgsListValue);
-                            }
-                            writer.WriteArrayEnd();
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestNewSupportedProductsListValue.IsSetName())
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(publicRequestNewSupportedProductsListValue.Name);
-                        }
+                        var marshaller = SupportedProductConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNewSupportedProductsListValue, context);
 
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetServiceRole())
                 {
-                    writer.WritePropertyName("ServiceRole");
-                    writer.Write(publicRequest.ServiceRole);
+                    context.Writer.WritePropertyName("ServiceRole");
+                    context.Writer.Write(publicRequest.ServiceRole);
                 }
 
                 if(publicRequest.IsSetSteps())
                 {
-                    writer.WritePropertyName("Steps");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Steps");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestStepsListValue in publicRequest.Steps)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestStepsListValue.IsSetActionOnFailure())
-                        {
-                            writer.WritePropertyName("ActionOnFailure");
-                            writer.Write(publicRequestStepsListValue.ActionOnFailure);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestStepsListValue.IsSetHadoopJarStep())
-                        {
-                            writer.WritePropertyName("HadoopJarStep");
-                            writer.WriteObjectStart();
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetArgs())
-                            {
-                                writer.WritePropertyName("Args");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestStepsListValueHadoopJarStepArgsListValue in publicRequestStepsListValue.HadoopJarStep.Args)
-                                {
-                                    writer.Write(publicRequestStepsListValueHadoopJarStepArgsListValue);
-                                }
-                                writer.WriteArrayEnd();
-                            }
+                        var marshaller = StepConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStepsListValue, context);
 
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetJar())
-                            {
-                                writer.WritePropertyName("Jar");
-                                writer.Write(publicRequestStepsListValue.HadoopJarStep.Jar);
-                            }
-
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetMainClass())
-                            {
-                                writer.WritePropertyName("MainClass");
-                                writer.Write(publicRequestStepsListValue.HadoopJarStep.MainClass);
-                            }
-
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetProperties())
-                            {
-                                writer.WritePropertyName("Properties");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestStepsListValueHadoopJarStepPropertiesListValue in publicRequestStepsListValue.HadoopJarStep.Properties)
-                                {
-                                    writer.WriteObjectStart();
-                                    if(publicRequestStepsListValueHadoopJarStepPropertiesListValue.IsSetKey())
-                                    {
-                                        writer.WritePropertyName("Key");
-                                        writer.Write(publicRequestStepsListValueHadoopJarStepPropertiesListValue.Key);
-                                    }
-
-                                    if(publicRequestStepsListValueHadoopJarStepPropertiesListValue.IsSetValue())
-                                    {
-                                        writer.WritePropertyName("Value");
-                                        writer.Write(publicRequestStepsListValueHadoopJarStepPropertiesListValue.Value);
-                                    }
-
-                                    writer.WriteObjectEnd();
-                                }
-                                writer.WriteArrayEnd();
-                            }
-
-                            writer.WriteObjectEnd();
-                        }
-
-                        if(publicRequestStepsListValue.IsSetName())
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(publicRequestStepsListValue.Name);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetSupportedProducts())
                 {
-                    writer.WritePropertyName("SupportedProducts");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("SupportedProducts");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestSupportedProductsListValue in publicRequest.SupportedProducts)
                     {
-                        writer.Write(publicRequestSupportedProductsListValue);
+                            context.Writer.Write(publicRequestSupportedProductsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTags())
                 {
-                    writer.WritePropertyName("Tags");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestTagsListValue.IsSetKey())
-                        {
-                            writer.WritePropertyName("Key");
-                            writer.Write(publicRequestTagsListValue.Key);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestTagsListValue.IsSetValue())
-                        {
-                            writer.WritePropertyName("Value");
-                            writer.Write(publicRequestTagsListValue.Value);
-                        }
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetVisibleToAllUsers())
                 {
-                    writer.WritePropertyName("VisibleToAllUsers");
-                    writer.Write(publicRequest.VisibleToAllUsers);
+                    context.Writer.WritePropertyName("VisibleToAllUsers");
+                    context.Writer.Write(publicRequest.VisibleToAllUsers);
                 }
 
         

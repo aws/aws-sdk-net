@@ -12,117 +12,127 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   StackResourceDetail Unmarshaller
-     /// </summary>
-    internal class StackResourceDetailUnmarshaller : IUnmarshaller<StackResourceDetail, XmlUnmarshallerContext>, IUnmarshaller<StackResourceDetail, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for StackResourceDetail Object
+    /// </summary>  
+    public class StackResourceDetailUnmarshaller : IUnmarshaller<StackResourceDetail, XmlUnmarshallerContext>, IUnmarshaller<StackResourceDetail, JsonUnmarshallerContext>
     {
-        public StackResourceDetail Unmarshall(XmlUnmarshallerContext context) 
+        public StackResourceDetail Unmarshall(XmlUnmarshallerContext context)
         {
-            StackResourceDetail stackResourceDetail = new StackResourceDetail();
+            StackResourceDetail unmarshalledObject = new StackResourceDetail();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("StackName", targetDepth))
+                    if (context.TestExpression("Description", targetDepth))
                     {
-                        stackResourceDetail.StackName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("StackId", targetDepth))
-                    {
-                        stackResourceDetail.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LogicalResourceId", targetDepth))
-                    {
-                        stackResourceDetail.LogicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PhysicalResourceId", targetDepth))
-                    {
-                        stackResourceDetail.PhysicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceType", targetDepth))
-                    {
-                        stackResourceDetail.ResourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
                     {
-                        stackResourceDetail.LastUpdatedTimestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ResourceStatus", targetDepth))
+                    if (context.TestExpression("LogicalResourceId", targetDepth))
                     {
-                        stackResourceDetail.ResourceStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceStatusReason", targetDepth))
-                    {
-                        stackResourceDetail.ResourceStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        stackResourceDetail.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Metadata", targetDepth))
                     {
-                        stackResourceDetail.Metadata = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PhysicalResourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceStatusReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceStatusReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return stackResourceDetail;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return stackResourceDetail;
+            return unmarshalledObject;
         }
 
-        public StackResourceDetail Unmarshall(JsonUnmarshallerContext context) 
+        public StackResourceDetail Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static StackResourceDetailUnmarshaller instance;
 
-        public static StackResourceDetailUnmarshaller GetInstance() 
+        private static StackResourceDetailUnmarshaller _instance = new StackResourceDetailUnmarshaller();        
+
+        public static StackResourceDetailUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new StackResourceDetailUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

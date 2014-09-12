@@ -1,0 +1,178 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "DeleteCacheClusterRequest" : {
+                "constructorForms" : [
+                    [
+                        "CacheClusterId"
+                    ]
+                ]
+            },
+            "Parameter"                 : {
+                "constructorForms" : [
+                ]
+            },
+            "ModifyCacheClusterRequest" : {
+                "constructorForms" : [
+                    [
+                        "CacheClusterId"
+                    ]
+                ]
+            },
+            "Event"                     : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeCacheParametersRequest" : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupName"
+                    ]
+                ]
+            },
+            "DescribeCacheParameterGroupsRequest" : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupName"
+                    ]
+                ]
+            },
+            "DescribeEventsRequest"               : {
+                "constructorForms" : [
+                ]
+            },
+            "CacheSecurityGroupMembership"        : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteCacheParameterGroupRequest"    : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupName"
+                    ]
+                ]
+            },
+            "DeleteCacheSecurityGroupRequest"     : {
+                "constructorForms" : [
+                    [
+                        "CacheSecurityGroupName"
+                    ]
+                ]
+            },
+            "DescribeEngineDefaultParametersRequest" : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupFamily"
+                    ]
+                ]
+            },
+            "CacheNode"                              : {
+                "constructorForms" : [
+                ]
+            },
+            "CacheNodeTypeSpecificParameter"         : {
+                "constructorForms" : [
+                ]
+            },
+            "ParameterNameValue"                     : {
+                "constructorForms" : [
+                    [
+                        "ParameterName"
+                    ],
+                    [
+                        "ParameterName",
+                        "ParameterValue"
+                    ]
+                ]
+            },
+            "CreateCacheClusterRequest"              : {
+                "constructorForms" : [
+                    [
+                        "CacheClusterId",
+                        "NumCacheNodes",
+                        "CacheNodeType",
+                        "Engine",
+                        "CacheSecurityGroupNames"
+                    ]
+                ]
+            },
+            "Endpoint"                               : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeCacheSecurityGroupsRequest"     : {
+                "constructorForms" : [
+                    [
+                        "CacheSecurityGroupName"
+                    ]
+                ]
+            },
+            "CacheNodeTypeSpecificValue"             : {
+                "constructorForms" : [
+                ]
+            },
+            "CacheParameterGroupStatus"              : {
+                "constructorForms" : [
+                ]
+            },
+            "ModifyCacheParameterGroupRequest"       : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupName",
+                        "ParameterNameValues"
+                    ]
+                ]
+            },
+            "CreateCacheParameterGroupRequest"       : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupName",
+                        "CacheParameterGroupFamily",
+                        "Description"
+                    ]
+                ]
+            },
+            "PendingModifiedValues"                  : {
+                "constructorForms" : [
+                ]
+            },
+            "EC2SecurityGroup"                       : {
+                "constructorForms" : [
+                ]
+            },
+            "RebootCacheClusterRequest"              : {
+                "constructorForms" : [
+                    [
+                        "CacheClusterId",
+                        "CacheNodeIdsToReboot"
+                    ]
+                ]
+            },
+            "NotificationConfiguration"              : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeCacheClustersRequest"           : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateCacheSecurityGroupRequest"        : {
+                "constructorForms" : [
+                    [
+                        "CacheSecurityGroupName",
+                        "Description"
+                    ]
+                ]
+            },
+            "ResetCacheParameterGroupRequest"        : {
+                "constructorForms" : [
+                    [
+                        "CacheParameterGroupName",
+                        "ParameterNameValues"
+                    ]
+                ]
+            }
+        }
+    }
+}

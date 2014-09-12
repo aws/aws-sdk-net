@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,65 +33,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Poll For Activity Task Request Marshaller
+    /// PollForActivityTask Request Marshaller
     /// </summary>       
-    internal class PollForActivityTaskRequestMarshaller : IMarshaller<IRequest, PollForActivityTaskRequest> 
+    public class PollForActivityTaskRequestMarshaller : IMarshaller<IRequest, PollForActivityTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(PollForActivityTaskRequest pollForActivityTaskRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((PollForActivityTaskRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(pollForActivityTaskRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(PollForActivityTaskRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.PollForActivityTask";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (pollForActivityTaskRequest != null && pollForActivityTaskRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(pollForActivityTaskRequest.Domain);
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
-                if (pollForActivityTaskRequest != null) 
+                if(publicRequest.IsSetIdentity())
                 {
-                    TaskList taskList = pollForActivityTaskRequest.TaskList;
-                    if (taskList != null)
-                    {
-                        writer.WritePropertyName("taskList");
-                        writer.WriteObjectStart();
-                        if (taskList != null && taskList.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(taskList.Name);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-                if (pollForActivityTaskRequest != null && pollForActivityTaskRequest.IsSetIdentity()) 
-                {
-                    writer.WritePropertyName("identity");
-                    writer.Write(pollForActivityTaskRequest.Identity);
+                    context.Writer.WritePropertyName("identity");
+                    context.Writer.Write(publicRequest.Identity);
                 }
 
+                if(publicRequest.IsSetTaskList())
+                {
+                    context.Writer.WritePropertyName("taskList");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskListMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskList, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains the output from the GetPipelineDefinition action.</para>
+    /// Contains the output from the <a>GetPipelineDefinition</a> action.
     /// </summary>
     public partial class GetPipelineDefinitionResult : AmazonWebServiceResponse
     {
-        
-        private List<PipelineObject> pipelineObjects = new List<PipelineObject>();
+        private List<PipelineObject> _pipelineObjects = new List<PipelineObject>();
 
         /// <summary>
+        /// Gets and sets the property PipelineObjects. 
+        /// <para>
         /// An array of objects defined in the pipeline.
-        ///  
+        /// </para>
         /// </summary>
         public List<PipelineObject> PipelineObjects
         {
-            get { return this.pipelineObjects; }
-            set { this.pipelineObjects = value; }
+            get { return this._pipelineObjects; }
+            set { this._pipelineObjects = value; }
         }
 
         // Check to see if PipelineObjects property is set
         internal bool IsSetPipelineObjects()
         {
-            return this.pipelineObjects.Count > 0;
+            return this._pipelineObjects != null && this._pipelineObjects.Count > 0; 
         }
+
     }
 }

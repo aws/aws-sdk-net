@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteNetworkAcl response metadata.
-    /// The DeleteNetworkAcl operation has a void result type.
+    /// Configuration for accessing Amazon DeleteNetworkAcl service
     /// </summary>
-    public partial class DeleteNetworkAclResponse : AmazonWebServiceResponse
+    public partial class DeleteNetworkAclResponse : DeleteNetworkAclResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteNetworkAclResult property.
+        /// Represents the output of a DeleteNetworkAcl operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteNetworkAclResult class are now available on the DeleteNetworkAclResponse class. You should use the properties on DeleteNetworkAclResponse instead of accessing them through DeleteNetworkAclResult.")]
+        public DeleteNetworkAclResult DeleteNetworkAclResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

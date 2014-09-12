@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,6 +47,10 @@ namespace Amazon.CloudFront.Model
         private string _status;
         private ViewerCertificate _viewerCertificate;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DistributionSummary() { }
 
         /// <summary>
         /// Gets and sets the property Aliases. A complex type that contains information about
@@ -60,7 +68,6 @@ namespace Amazon.CloudFront.Model
             return this._aliases != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheBehaviors. A complex type that contains zero or more
         /// CacheBehavior elements.
@@ -76,7 +83,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._cacheBehaviors != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Comment. The comment originally specified when this distribution
@@ -94,7 +100,6 @@ namespace Amazon.CloudFront.Model
             return this._comment != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CustomErrorResponses. A complex type that contains zero
         /// or more CustomErrorResponses elements.
@@ -111,12 +116,11 @@ namespace Amazon.CloudFront.Model
             return this._customErrorResponses != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. A complex type that describes the
-        /// default cache behavior if you do not    specify a CacheBehavior element or if files
-        /// don't match any of the values    of PathPattern in CacheBehavior elements.You must
-        /// create exactly    one default cache behavior.
+        /// default cache behavior if you do not specify a CacheBehavior element or if files don't
+        /// match any of the values of PathPattern in CacheBehavior elements.You must create exactly
+        /// one default cache behavior.
         /// </summary>
         public DefaultCacheBehavior DefaultCacheBehavior
         {
@@ -129,7 +133,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._defaultCacheBehavior != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DomainName. The domain name corresponding to the distribution.
@@ -147,7 +150,6 @@ namespace Amazon.CloudFront.Model
             return this._domainName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Enabled. Whether the distribution is enabled to accept
         /// end user requests for content.
@@ -164,7 +166,6 @@ namespace Amazon.CloudFront.Model
             return this._enabled.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. The identifier for the distribution. For example: EDFDVBD632BHDS5.
         /// </summary>
@@ -179,7 +180,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LastModifiedTime. The date and time the distribution was
@@ -197,7 +197,6 @@ namespace Amazon.CloudFront.Model
             return this._lastModifiedTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Origins. A complex type that contains information about
         /// origins for this distribution.
@@ -214,7 +213,6 @@ namespace Amazon.CloudFront.Model
             return this._origins != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PriceClass.
         /// </summary>
@@ -229,7 +227,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._priceClass != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Restrictions.
@@ -246,11 +243,10 @@ namespace Amazon.CloudFront.Model
             return this._restrictions != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. This response element indicates the current status
-        /// of the distribution.    When the status is Deployed, the distribution's information
-        /// is fully propagated throughout the Amazon CloudFront system.
+        /// of the distribution. When the status is Deployed, the distribution's information is
+        /// fully propagated throughout the Amazon CloudFront system.
         /// </summary>
         public string Status
         {
@@ -263,7 +259,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ViewerCertificate.

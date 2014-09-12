@@ -12,67 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Customer Gateways Request Marshaller
+    /// DescribeCustomerGateways Request Marshaller
     /// </summary>       
-    public class DescribeCustomerGatewaysRequestMarshaller : IMarshaller<IRequest, DescribeCustomerGatewaysRequest>
+    public class DescribeCustomerGatewaysRequestMarshaller : IMarshaller<IRequest, DescribeCustomerGatewaysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeCustomerGatewaysRequest, "AmazonEC2");
+            return this.Marshall((DescribeCustomerGatewaysRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeCustomerGatewaysRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeCustomerGateways");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeCustomerGatewaysRequest != null)
-            {
-                List<string> customerGatewayIdsList = describeCustomerGatewaysRequest.CustomerGatewayIds;
 
-                int customerGatewayIdsListIndex = 1;
-                foreach (string customerGatewayIdsListValue in customerGatewayIdsList)
-                { 
-                    request.Parameters.Add("CustomerGatewayId." + customerGatewayIdsListIndex, StringUtils.FromString(customerGatewayIdsListValue));
-                    customerGatewayIdsListIndex++;
-                }
-            }
-
-            if (describeCustomerGatewaysRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeCustomerGatewaysRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetCustomerGatewayIds())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.CustomerGatewayIds)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
+                        request.Parameters.Add("CustomerGatewayId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (filtersListValue != null)
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
                 }
             }
-
             return request;
         }
     }

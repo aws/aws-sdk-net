@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedInstancesConfiguration Unmarshaller
-     /// </summary>
-    internal class ReservedInstancesConfigurationUnmarshaller : IUnmarshaller<ReservedInstancesConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesConfiguration, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedInstancesConfiguration Object
+    /// </summary>  
+    public class ReservedInstancesConfigurationUnmarshaller : IUnmarshaller<ReservedInstancesConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesConfiguration, JsonUnmarshallerContext>
     {
-        public ReservedInstancesConfiguration Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedInstancesConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedInstancesConfiguration reservedInstancesConfiguration = new ReservedInstancesConfiguration();
+            ReservedInstancesConfiguration unmarshalledObject = new ReservedInstancesConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        reservedInstancesConfiguration.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("platform", targetDepth))
-                    {
-                        reservedInstancesConfiguration.Platform = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceCount", targetDepth))
                     {
-                        reservedInstancesConfiguration.InstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceType", targetDepth))
                     {
-                        reservedInstancesConfiguration.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("platform", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedInstancesConfiguration;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedInstancesConfiguration;
+            return unmarshalledObject;
         }
 
-        public ReservedInstancesConfiguration Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedInstancesConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedInstancesConfigurationUnmarshaller instance;
 
-        public static ReservedInstancesConfigurationUnmarshaller GetInstance() 
+        private static ReservedInstancesConfigurationUnmarshaller _instance = new ReservedInstancesConfigurationUnmarshaller();        
+
+        public static ReservedInstancesConfigurationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedInstancesConfigurationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,49 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for GetTemplate action.</para>
+    /// The output for <a>GetTemplate</a> action.
     /// </summary>
     public partial class GetTemplateResult : AmazonWebServiceResponse
     {
-        
-        private string templateBody;
-
+        private string _templateBody;
 
         /// <summary>
-        /// Structure containing the template body. (For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation
-        /// User Guide.)
-        ///  
+        /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// Anatomy</a> in the AWS CloudFormation User Guide.)
         /// </para>
         /// </summary>
         public string TemplateBody
         {
-            get { return this.templateBody; }
-            set { this.templateBody = value; }
+            get { return this._templateBody; }
+            set { this._templateBody = value; }
         }
 
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;
+            return this._templateBody != null;
         }
+
     }
 }

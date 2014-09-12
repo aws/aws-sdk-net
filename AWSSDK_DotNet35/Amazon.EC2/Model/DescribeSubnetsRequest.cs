@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,59 +29,112 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSubnets operation.
-    /// <para>Describes one or more of your subnets.</para> <para>For more information about subnets, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html" >Your VPC and Subnets</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i> .</para>
+    /// Describes one or more of your subnets.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+    /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeSubnetsRequest : AmazonEC2Request
     {
-        private List<string> subnetIds = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// One or more subnet IDs. Default: Describes all your subnets.
-        ///  
-        /// </summary>
-        public List<string> SubnetIds
-        {
-            get { return this.subnetIds; }
-            set { this.subnetIds = value; }
-        }
-
-        // Check to see if SubnetIds property is set
-        internal bool IsSetSubnetIds()
-        {
-            return this.subnetIds.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _subnetIds = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>availabilityZone</c> - The Availability Zone for the subnet. You can also use <c>availability-zone</c> as
-        /// the filter name. </li> <li> <c>available-ip-address-count</c> - The number of IP addresses in the subnet that are available. </li> <li>
-        /// <c>cidrBlock</c> - The CIDR block of the subnet. The CIDR block you specify must exactly match the subnet's CIDR block for information to be
-        /// returned for the subnet. You can also use <c>cidr</c> or <c>cidr-block</c> as the filter names. </li> <li> <c>defaultForAz</c> - Indicates
-        /// whether this is the default subnet for the Availability Zone. You can also use <c>default-for-az</c> as the filter name. </li> <li>
-        /// <c>state</c> - The state of the subnet (<c>pending</c> | <c>available</c>). </li> <li> <c>subnet-id</c> - The ID of the subnet. </li> <li>
-        /// <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a
-        /// tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
-        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
-        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
-        /// independent of the <c>tag-key</c> filter. </li> <li> <c>vpc-id</c> - The ID of the VPC for the subnet. </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>availabilityZone</code> - The Availability Zone for the subnet. You can also
+        /// use <code>availability-zone</code> as the filter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>available-ip-address-count</code> - The number of IP addresses in the subnet
+        /// that are available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>cidrBlock</code> - The CIDR block of the subnet. The CIDR block you specify
+        /// must exactly match the subnet's CIDR block for information to be returned for the
+        /// subnet. You can also use <code>cidr</code> or <code>cidr-block</code> as the filter
+        /// names.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability
+        /// Zone. You can also use <code>default-for-az</code> as the filter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>subnet-id</code> - The ID of the subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        /// to the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
+        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
+        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
+        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
+        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
+        /// filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        /// is independent of the <code>tag-key</code> filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-id</code> - The ID of the VPC for the subnet.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// One or more subnet IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Describes all your subnets.
+        /// </para>
+        /// </summary>
+        public List<string> SubnetIds
+        {
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
+        }
+
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
+        {
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
 
     }
 }
-    

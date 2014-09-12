@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVolumePermissionModifications
     {
-        
-        private List<CreateVolumePermission> add = new List<CreateVolumePermission>();
-        private List<CreateVolumePermission> remove = new List<CreateVolumePermission>();
-
+        private List<CreateVolumePermission> _add = new List<CreateVolumePermission>();
+        private List<CreateVolumePermission> _remove = new List<CreateVolumePermission>();
 
         /// <summary>
+        /// Gets and sets the property Add. 
+        /// <para>
         /// Adds a specific AWS account ID or group to a volume's list of create volume permissions.
-        ///  
+        /// </para>
         /// </summary>
         public List<CreateVolumePermission> Add
         {
-            get { return this.add; }
-            set { this.add = value; }
+            get { return this._add; }
+            set { this._add = value; }
         }
 
         // Check to see if Add property is set
         internal bool IsSetAdd()
         {
-            return this.add.Count > 0;
+            return this._add != null && this._add.Count > 0; 
         }
 
         /// <summary>
+        /// Gets and sets the property Remove. 
+        /// <para>
         /// Removes a specific AWS account ID or group from a volume's list of create volume permissions.
-        ///  
+        /// </para>
         /// </summary>
         public List<CreateVolumePermission> Remove
         {
-            get { return this.remove; }
-            set { this.remove = value; }
+            get { return this._remove; }
+            set { this._remove = value; }
         }
 
         // Check to see if Remove property is set
         internal bool IsSetRemove()
         {
-            return this.remove.Count > 0;
+            return this._remove != null && this._remove.Count > 0; 
         }
+
     }
 }

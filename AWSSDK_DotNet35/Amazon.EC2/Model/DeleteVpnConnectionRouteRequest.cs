@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,47 +29,50 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpnConnectionRoute operation.
-    /// <para>Deletes the specified static route associated with a VPN connection between an existing virtual private gateway and a VPN customer
-    /// gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.</para>
+    /// Deletes the specified static route associated with a VPN connection between an existing
+    /// virtual private gateway and a VPN customer gateway. The static route allows traffic
+    /// to be routed from the virtual private gateway to the VPN customer gateway.
     /// </summary>
     public partial class DeleteVpnConnectionRouteRequest : AmazonEC2Request
     {
-        private string vpnConnectionId;
-        private string destinationCidrBlock;
-
-
-        /// <summary>
-        /// The ID of the VPN connection.
-        ///  
-        /// </summary>
-        public string VpnConnectionId
-        {
-            get { return this.vpnConnectionId; }
-            set { this.vpnConnectionId = value; }
-        }
-
-        // Check to see if VpnConnectionId property is set
-        internal bool IsSetVpnConnectionId()
-        {
-            return this.vpnConnectionId != null;
-        }
+        private string _destinationCidrBlock;
+        private string _vpnConnectionId;
 
         /// <summary>
+        /// Gets and sets the property DestinationCidrBlock. 
+        /// <para>
         /// The CIDR block associated with the local subnet of the customer network.
-        ///  
+        /// </para>
         /// </summary>
         public string DestinationCidrBlock
         {
-            get { return this.destinationCidrBlock; }
-            set { this.destinationCidrBlock = value; }
+            get { return this._destinationCidrBlock; }
+            set { this._destinationCidrBlock = value; }
         }
 
         // Check to see if DestinationCidrBlock property is set
         internal bool IsSetDestinationCidrBlock()
         {
-            return this.destinationCidrBlock != null;
+            return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnConnectionId. 
+        /// <para>
+        /// The ID of the VPN connection.
+        /// </para>
+        /// </summary>
+        public string VpnConnectionId
+        {
+            get { return this._vpnConnectionId; }
+            set { this._vpnConnectionId = value; }
+        }
+
+        // Check to see if VpnConnectionId property is set
+        internal bool IsSetVpnConnectionId()
+        {
+            return this._vpnConnectionId != null;
         }
 
     }
 }
-    

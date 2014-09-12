@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.CloudFront.Model
         private string _distributionId;
         private string _id;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetInvalidationRequest() { }
+
+        /// <summary>
+        /// Instantiates GetInvalidationRequest with the parameterized properties
+        /// </summary>
+        /// <param name="distributionId">The distribution's id.</param>
+        /// <param name="id">The invalidation's id.</param>
+        public GetInvalidationRequest(string distributionId, string id)
+        {
+            _distributionId = distributionId;
+            _id = id;
+        }
 
         /// <summary>
         /// Gets and sets the property DistributionId. The distribution's id.
@@ -47,7 +66,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._distributionId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. The invalidation's id.

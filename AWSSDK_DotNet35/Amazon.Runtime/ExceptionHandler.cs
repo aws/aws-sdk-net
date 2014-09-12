@@ -5,7 +5,7 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.Runtime
 {
-    public delegate void ExceptionEventHandler(object sender, ExceptionEventArgs args);
+    public delegate void ExceptionEventHandler(object sender, ExceptionEventArgs e);
 
     public class ExceptionEventArgs : EventArgs
     {

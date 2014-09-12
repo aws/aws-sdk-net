@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,68 +33,69 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Objects Request Marshaller
+    /// DescribeObjects Request Marshaller
     /// </summary>       
-    internal class DescribeObjectsRequestMarshaller : IMarshaller<IRequest, DescribeObjectsRequest> 
+    public class DescribeObjectsRequestMarshaller : IMarshaller<IRequest, DescribeObjectsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeObjectsRequest describeObjectsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeObjectsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeObjectsRequest, "AmazonDataPipeline");
+        public IRequest Marshall(DescribeObjectsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.DescribeObjects";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeObjectsRequest != null && describeObjectsRequest.IsSetPipelineId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEvaluateExpressions())
                 {
-                    writer.WritePropertyName("pipelineId");
-                    writer.Write(describeObjectsRequest.PipelineId);
+                    context.Writer.WritePropertyName("evaluateExpressions");
+                    context.Writer.Write(publicRequest.EvaluateExpressions);
                 }
 
-                if (describeObjectsRequest != null && describeObjectsRequest.ObjectIds != null && describeObjectsRequest.ObjectIds.Count > 0) 
+                if(publicRequest.IsSetMarker())
                 {
-                    List<string> objectIdsList = describeObjectsRequest.ObjectIds;
-                    writer.WritePropertyName("objectIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
 
-                    foreach (string objectIdsListValue in objectIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(objectIdsListValue));
+                if(publicRequest.IsSetObjectIds())
+                {
+                    context.Writer.WritePropertyName("objectIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestObjectIdsListValue in publicRequest.ObjectIds)
+                    {
+                            context.Writer.Write(publicRequestObjectIdsListValue);
                     }
-
-                    writer.WriteArrayEnd();
-                }
-                if (describeObjectsRequest != null && describeObjectsRequest.IsSetEvaluateExpressions()) 
-                {
-                    writer.WritePropertyName("evaluateExpressions");
-                    writer.Write(describeObjectsRequest.EvaluateExpressions);
-                }
-                if (describeObjectsRequest != null && describeObjectsRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("marker");
-                    writer.Write(describeObjectsRequest.Marker);
+                    context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPipelineId())
+                {
+                    context.Writer.WritePropertyName("pipelineId");
+                    context.Writer.Write(publicRequest.PipelineId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

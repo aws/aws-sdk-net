@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.ElastiCache.Model
         private string _snapshottingClusterId;
         private string _status;
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -54,7 +57,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MemberClusters. 
@@ -74,7 +76,6 @@ namespace Amazon.ElastiCache.Model
             return this._memberClusters != null && this._memberClusters.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NodeGroups. 
         /// <para>
@@ -92,7 +93,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._nodeGroups != null && this._nodeGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
@@ -113,7 +113,6 @@ namespace Amazon.ElastiCache.Model
             return this._pendingModifiedValues != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
@@ -131,7 +130,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._replicationGroupId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshottingClusterId. 
@@ -151,7 +149,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._snapshottingClusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

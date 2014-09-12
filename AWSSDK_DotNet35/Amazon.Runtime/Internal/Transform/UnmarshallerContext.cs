@@ -116,9 +116,9 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         /// <summary>
-        /// Reads the next token at depth greater than or equal to terget depth.
+        /// Reads the next token at depth greater than or equal to target depth.
         /// </summary>
-        /// <param name="targetDepth">Tokens are read at depth greater than or equal to terget depth.</param>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to target depth.</param>
         /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
         public bool ReadAtDepth(int targetDepth)
         {

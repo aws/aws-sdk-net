@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,46 +12,59 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Option Group Options Request Marshaller
+    /// DescribeOptionGroupOptions Request Marshaller
     /// </summary>       
-    public class DescribeOptionGroupOptionsRequestMarshaller : IMarshaller<IRequest, DescribeOptionGroupOptionsRequest>
+    public class DescribeOptionGroupOptionsRequestMarshaller : IMarshaller<IRequest, DescribeOptionGroupOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeOptionGroupOptionsRequest, "AmazonRDS");
+            return this.Marshall((DescribeOptionGroupOptionsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeOptionGroupOptionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeOptionGroupOptions");
             request.Parameters.Add("Version", "2013-09-09");
-            if (describeOptionGroupOptionsRequest != null && describeOptionGroupOptionsRequest.IsSetEngineName())
-            {
-                request.Parameters.Add("EngineName", StringUtils.FromString(describeOptionGroupOptionsRequest.EngineName));
-            }
-            if (describeOptionGroupOptionsRequest != null && describeOptionGroupOptionsRequest.IsSetMajorEngineVersion())
-            {
-                request.Parameters.Add("MajorEngineVersion", StringUtils.FromString(describeOptionGroupOptionsRequest.MajorEngineVersion));
-            }
-            if (describeOptionGroupOptionsRequest != null && describeOptionGroupOptionsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeOptionGroupOptionsRequest.MaxRecords));
-            }
-            if (describeOptionGroupOptionsRequest != null && describeOptionGroupOptionsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeOptionGroupOptionsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetEngineName())
+                {
+                    request.Parameters.Add("EngineName", StringUtils.FromString(publicRequest.EngineName));
+                }
+                if(publicRequest.IsSetMajorEngineVersion())
+                {
+                    request.Parameters.Add("MajorEngineVersion", StringUtils.FromString(publicRequest.MajorEngineVersion));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Reset Image Attribute Request Marshaller
+    /// ResetImageAttribute Request Marshaller
     /// </summary>       
-    public class ResetImageAttributeRequestMarshaller : IMarshaller<IRequest, ResetImageAttributeRequest>
+    public class ResetImageAttributeRequestMarshaller : IMarshaller<IRequest, ResetImageAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ResetImageAttributeRequest resetImageAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(resetImageAttributeRequest, "AmazonEC2");
+            return this.Marshall((ResetImageAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(ResetImageAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ResetImageAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (resetImageAttributeRequest != null && resetImageAttributeRequest.IsSetImageId())
-            {
-                request.Parameters.Add("ImageId", StringUtils.FromString(resetImageAttributeRequest.ImageId));
-            }
-            if (resetImageAttributeRequest != null && resetImageAttributeRequest.IsSetAttribute())
-            {
-                request.Parameters.Add("Attribute", StringUtils.FromString(resetImageAttributeRequest.Attribute));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttribute())
+                {
+                    request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
+                }
+                if(publicRequest.IsSetImageId())
+                {
+                    request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
+                }
+            }
             return request;
         }
     }

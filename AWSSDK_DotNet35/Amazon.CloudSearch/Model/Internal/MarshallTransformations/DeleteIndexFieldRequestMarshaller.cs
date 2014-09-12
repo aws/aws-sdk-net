@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Index Field Request Marshaller
+    /// DeleteIndexField Request Marshaller
     /// </summary>       
-    public class DeleteIndexFieldRequestMarshaller : IMarshaller<IRequest, DeleteIndexFieldRequest>
+    public class DeleteIndexFieldRequestMarshaller : IMarshaller<IRequest, DeleteIndexFieldRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteIndexFieldRequest deleteIndexFieldRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteIndexFieldRequest, "AmazonCloudSearch");
+            return this.Marshall((DeleteIndexFieldRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteIndexFieldRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DeleteIndexField");
             request.Parameters.Add("Version", "2013-01-01");
-            if (deleteIndexFieldRequest != null && deleteIndexFieldRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(deleteIndexFieldRequest.DomainName));
-            }
-            if (deleteIndexFieldRequest != null && deleteIndexFieldRequest.IsSetIndexFieldName())
-            {
-                request.Parameters.Add("IndexFieldName", StringUtils.FromString(deleteIndexFieldRequest.IndexFieldName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetIndexFieldName())
+                {
+                    request.Parameters.Add("IndexFieldName", StringUtils.FromString(publicRequest.IndexFieldName));
+                }
+            }
             return request;
         }
     }

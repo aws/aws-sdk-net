@@ -12,46 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Scaling Parameters Request Marshaller
+    /// UpdateScalingParameters Request Marshaller
     /// </summary>       
-    public class UpdateScalingParametersRequestMarshaller : IMarshaller<IRequest, UpdateScalingParametersRequest>
+    public class UpdateScalingParametersRequestMarshaller : IMarshaller<IRequest, UpdateScalingParametersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UpdateScalingParametersRequest updateScalingParametersRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(updateScalingParametersRequest, "AmazonCloudSearch");
+            return this.Marshall((UpdateScalingParametersRequest)input);
+        }
+    
+        public IRequest Marshall(UpdateScalingParametersRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "UpdateScalingParameters");
             request.Parameters.Add("Version", "2013-01-01");
-            if (updateScalingParametersRequest != null && updateScalingParametersRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(updateScalingParametersRequest.DomainName));
-            }
-            if (updateScalingParametersRequest != null)
-            {
-                ScalingParameters scalingParameters = updateScalingParametersRequest.ScalingParameters;
-                if (scalingParameters != null && scalingParameters.IsSetDesiredInstanceType())
-                {
-                    request.Parameters.Add("ScalingParameters.DesiredInstanceType", StringUtils.FromString(scalingParameters.DesiredInstanceType));
-                }
-                if (scalingParameters != null && scalingParameters.IsSetDesiredReplicationCount())
-                {
-                    request.Parameters.Add("ScalingParameters.DesiredReplicationCount", StringUtils.FromInt(scalingParameters.DesiredReplicationCount));
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetScalingParameters())
+                {
+                    if(publicRequest.ScalingParameters.IsSetDesiredInstanceType())
+                    {
+                        request.Parameters.Add("ScalingParameters" + "." + "DesiredInstanceType", StringUtils.FromString(publicRequest.ScalingParameters.DesiredInstanceType));
+                    }
+                    if(publicRequest.ScalingParameters.IsSetDesiredPartitionCount())
+                    {
+                        request.Parameters.Add("ScalingParameters" + "." + "DesiredPartitionCount", StringUtils.FromInt(publicRequest.ScalingParameters.DesiredPartitionCount));
+                    }
+                    if(publicRequest.ScalingParameters.IsSetDesiredReplicationCount())
+                    {
+                        request.Parameters.Add("ScalingParameters" + "." + "DesiredReplicationCount", StringUtils.FromInt(publicRequest.ScalingParameters.DesiredReplicationCount));
+                    }
+                }
+            }
             return request;
         }
     }

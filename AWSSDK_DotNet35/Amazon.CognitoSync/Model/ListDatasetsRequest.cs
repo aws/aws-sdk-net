@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.CognitoSync.Model
         private int? _maxResults;
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property IdentityId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
         /// created by Amazon Cognito. GUID generation is unique within a region.
@@ -50,7 +53,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._identityId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property IdentityPoolId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -68,7 +70,6 @@ namespace Amazon.CognitoSync.Model
             return this._identityPoolId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxResults. The maximum number of results to be returned.
         /// </summary>
@@ -83,7 +84,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._maxResults.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. A pagination token for obtaining the next page

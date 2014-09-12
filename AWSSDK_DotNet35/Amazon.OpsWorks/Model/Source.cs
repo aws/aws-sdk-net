@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.OpsWorks.Model
         private string _url;
         private string _username;
 
-
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
@@ -63,7 +66,6 @@ namespace Amazon.OpsWorks.Model
             return this._password != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
@@ -84,7 +86,6 @@ namespace Amazon.OpsWorks.Model
             return this._revision != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SshKey. 
         /// <para>
@@ -102,7 +103,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._sshKey != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Type. 
@@ -122,7 +122,6 @@ namespace Amazon.OpsWorks.Model
             return this._type != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
@@ -140,7 +139,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._url != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Username. 

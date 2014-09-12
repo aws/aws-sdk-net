@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ReleaseAddress response metadata.
-    /// The ReleaseAddress operation has a void result type.
+    /// Configuration for accessing Amazon ReleaseAddress service
     /// </summary>
-    public partial class ReleaseAddressResponse : AmazonWebServiceResponse
+    public partial class ReleaseAddressResponse : ReleaseAddressResult
     {
+        /// <summary>
+        /// Gets and sets the ReleaseAddressResult property.
+        /// Represents the output of a ReleaseAddress operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ReleaseAddressResult class are now available on the ReleaseAddressResponse class. You should use the properties on ReleaseAddressResponse instead of accessing them through ReleaseAddressResult.")]
+        public ReleaseAddressResult ReleaseAddressResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

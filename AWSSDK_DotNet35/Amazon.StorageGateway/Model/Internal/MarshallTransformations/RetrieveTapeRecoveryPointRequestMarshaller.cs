@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Retrieve Tape Recovery Point Request Marshaller
+    /// RetrieveTapeRecoveryPoint Request Marshaller
     /// </summary>       
-    internal class RetrieveTapeRecoveryPointRequestMarshaller : IMarshaller<IRequest, RetrieveTapeRecoveryPointRequest> 
+    public class RetrieveTapeRecoveryPointRequestMarshaller : IMarshaller<IRequest, RetrieveTapeRecoveryPointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((RetrieveTapeRecoveryPointRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(retrieveTapeRecoveryPointRequest, "AmazonStorageGateway");
+        public IRequest Marshall(RetrieveTapeRecoveryPointRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.RetrieveTapeRecoveryPoint";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (retrieveTapeRecoveryPointRequest != null && retrieveTapeRecoveryPointRequest.IsSetTapeARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGatewayARN())
                 {
-                    writer.WritePropertyName("TapeARN");
-                    writer.Write(retrieveTapeRecoveryPointRequest.TapeARN);
-                }
-                if (retrieveTapeRecoveryPointRequest != null && retrieveTapeRecoveryPointRequest.IsSetGatewayARN()) 
-                {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(retrieveTapeRecoveryPointRequest.GatewayARN);
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
                 }
 
+                if(publicRequest.IsSetTapeARN())
+                {
+                    context.Writer.WritePropertyName("TapeARN");
+                    context.Writer.Write(publicRequest.TapeARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

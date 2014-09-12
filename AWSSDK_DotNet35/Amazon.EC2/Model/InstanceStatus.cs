@@ -12,123 +12,143 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the status of an instance.</para>
+    /// Describes the status of an instance.
     /// </summary>
     public partial class InstanceStatus
     {
-        
-        private string instanceId;
-        private string availabilityZone;
-        private List<InstanceStatusEvent> events = new List<InstanceStatusEvent>();
-        private InstanceState instanceState;
-        private InstanceStatusSummary systemStatus;
-        private InstanceStatusSummary status;
-
+        private string _availabilityZone;
+        private List<InstanceStatusEvent> _events = new List<InstanceStatusEvent>();
+        private string _instanceId;
+        private InstanceState _instanceState;
+        private InstanceStatusSummary _status;
+        private InstanceStatusSummary _systemStatus;
 
         /// <summary>
-        /// The ID of the instance.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
         /// The Availability Zone of the instance.
-        ///  
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
         /// Extra information regarding events associated with the instance.
-        ///  
+        /// </para>
         /// </summary>
         public List<InstanceStatusEvent> Events
         {
-            get { return this.events; }
-            set { this.events = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;
+            return this._events != null && this._events.Count > 0; 
         }
 
         /// <summary>
-        /// The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the <c>running</c> state.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceState. 
+        /// <para>
+        /// The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an
+        /// instance be in the <code>running</code> state.
+        /// </para>
         /// </summary>
         public InstanceState InstanceState
         {
-            get { return this.instanceState; }
-            set { this.instanceState = value; }
+            get { return this._instanceState; }
+            set { this._instanceState = value; }
         }
 
         // Check to see if InstanceState property is set
         internal bool IsSetInstanceState()
         {
-            return this.instanceState != null;
+            return this._instanceState != null;
         }
 
         /// <summary>
-        /// Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network
-        /// connectivity problems.
-        ///  
-        /// </summary>
-        public InstanceStatusSummary SystemStatus
-        {
-            get { return this.systemStatus; }
-            set { this.systemStatus = value; }
-        }
-
-        // Check to see if SystemStatus property is set
-        internal bool IsSetSystemStatus()
-        {
-            return this.systemStatus != null;
-        }
-
-        /// <summary>
-        /// Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.
-        ///  
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Reports impaired functionality that stems from issues internal to the instance, such
+        /// as impaired reachability.
+        /// </para>
         /// </summary>
         public InstanceStatusSummary Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property SystemStatus. 
+        /// <para>
+        /// Reports impaired functionality that stems from issues related to the systems that
+        /// support an instance, such as hardware failures and network connectivity problems.
+        /// </para>
+        /// </summary>
+        public InstanceStatusSummary SystemStatus
+        {
+            get { return this._systemStatus; }
+            set { this._systemStatus = value; }
+        }
+
+        // Check to see if SystemStatus property is set
+        internal bool IsSetSystemStatus()
+        {
+            return this._systemStatus != null;
+        }
+
     }
 }

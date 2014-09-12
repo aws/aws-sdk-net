@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         private ConnectionDraining _connectionDraining;
         private ConnectionSettings _connectionSettings;
         private CrossZoneLoadBalancing _crossZoneLoadBalancing;
-
 
         /// <summary>
         /// Gets and sets the property AccessLog. 
@@ -59,7 +62,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._accessLog != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ConnectionDraining. 
         /// <para>
@@ -84,7 +86,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._connectionDraining != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ConnectionSettings. 
@@ -115,7 +116,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._connectionSettings != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CrossZoneLoadBalancing. 

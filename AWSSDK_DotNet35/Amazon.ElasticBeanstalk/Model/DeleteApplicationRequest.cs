@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,18 +29,27 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes the specified application along with all         associated versions
-    /// and         configurations. The application versions will not be deleted from your
-    /// Amazon S3 bucket.      
-    /// 
-    ///       <note>You cannot delete an application that has a running environment.     
-    /// </note>
+    /// Deletes the specified application along with all associated versions and configurations.
+    /// The application versions will not be deleted from your Amazon S3 bucket.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
         private bool? _terminateEnvByForce;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteApplicationRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteApplicationRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName">The name of the application to delete.</param>
+        public DeleteApplicationRequest(string applicationName)
+        {
+            _applicationName = applicationName;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -55,7 +68,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._applicationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TerminateEnvByForce. 

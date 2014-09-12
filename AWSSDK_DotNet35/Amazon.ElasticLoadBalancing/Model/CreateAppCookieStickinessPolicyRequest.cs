@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -55,6 +59,23 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _loadBalancerName;
         private string _policyName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateAppCookieStickinessPolicyRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateAppCookieStickinessPolicyRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        /// <param name="policyName"> The name of the policy being created. The name must be unique within the set of policies for this load balancer. </param>
+        /// <param name="cookieName"> Name of the application cookie used for stickiness. </param>
+        public CreateAppCookieStickinessPolicyRequest(string loadBalancerName, string policyName, string cookieName)
+        {
+            _loadBalancerName = loadBalancerName;
+            _policyName = policyName;
+            _cookieName = cookieName;
+        }
 
         /// <summary>
         /// Gets and sets the property CookieName. 
@@ -74,7 +95,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._cookieName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
@@ -92,7 +112,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PolicyName. 

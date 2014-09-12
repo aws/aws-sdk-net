@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a launch permission.</para>
+    /// Describes a launch permission.
     /// </summary>
     public partial class LaunchPermission
     {
-        
-        private string userId;
-        private PermissionGroup group;
-
+        private PermissionGroup _group;
+        private string _userId;
 
         /// <summary>
-        /// The AWS account ID.
-        ///  
-        /// </summary>
-        public string UserId
-        {
-            get { return this.userId; }
-            set { this.userId = value; }
-        }
-
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
-        {
-            return this.userId != null;
-        }
-
-        /// <summary>
-        /// The name of the group.
-        ///  
+        /// Gets and sets the property Group. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>all</description>
-        ///     </item>
-        /// </list>
+        /// The name of the group.
         /// </para>
         /// </summary>
         public PermissionGroup Group
         {
-            get { return this.group; }
-            set { this.group = value; }
+            get { return this._group; }
+            set { this._group = value; }
         }
 
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;
+            return this._group != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The AWS account ID.
+        /// </para>
+        /// </summary>
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
+        }
+
     }
 }

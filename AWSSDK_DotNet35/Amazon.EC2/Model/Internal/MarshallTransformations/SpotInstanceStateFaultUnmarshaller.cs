@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SpotInstanceStateFault Unmarshaller
-     /// </summary>
-    internal class SpotInstanceStateFaultUnmarshaller : IUnmarshaller<SpotInstanceStateFault, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceStateFault, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SpotInstanceStateFault Object
+    /// </summary>  
+    public class SpotInstanceStateFaultUnmarshaller : IUnmarshaller<SpotInstanceStateFault, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceStateFault, JsonUnmarshallerContext>
     {
-        public SpotInstanceStateFault Unmarshall(XmlUnmarshallerContext context) 
+        public SpotInstanceStateFault Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotInstanceStateFault spotInstanceStateFault = new SpotInstanceStateFault();
+            SpotInstanceStateFault unmarshalledObject = new SpotInstanceStateFault();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("code", targetDepth))
                     {
-                        spotInstanceStateFault.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("message", targetDepth))
                     {
-                        spotInstanceStateFault.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return spotInstanceStateFault;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return spotInstanceStateFault;
+            return unmarshalledObject;
         }
 
-        public SpotInstanceStateFault Unmarshall(JsonUnmarshallerContext context) 
+        public SpotInstanceStateFault Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SpotInstanceStateFaultUnmarshaller instance;
 
-        public static SpotInstanceStateFaultUnmarshaller GetInstance() 
+        private static SpotInstanceStateFaultUnmarshaller _instance = new SpotInstanceStateFaultUnmarshaller();        
+
+        public static SpotInstanceStateFaultUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SpotInstanceStateFaultUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

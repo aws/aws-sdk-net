@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeServices Request Marshaller
     /// </summary>       
-    public class DescribeServicesRequestMarshaller : IMarshaller<IRequest, DescribeServicesRequest> 
+    public class DescribeServicesRequestMarshaller : IMarshaller<IRequest, DescribeServicesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeServicesRequest)input);
+        }
+
         public IRequest Marshall(DescribeServicesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,21 +56,22 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetLanguage())
                 {
-                    writer.WritePropertyName("language");
-                    writer.Write(publicRequest.Language);
+                    context.Writer.WritePropertyName("language");
+                    context.Writer.Write(publicRequest.Language);
                 }
 
                 if(publicRequest.IsSetServiceCodeList())
                 {
-                    writer.WritePropertyName("serviceCodeList");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("serviceCodeList");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestServiceCodeListListValue in publicRequest.ServiceCodeList)
                     {
-                        writer.Write(publicRequestServiceCodeListListValue);
+                            context.Writer.Write(publicRequestServiceCodeListListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.OpsWorks.Model;
 using Amazon.OpsWorks.Model.Internal.MarshallTransformations;
@@ -82,19 +86,8 @@ namespace Amazon.OpsWorks
     /// Versions</a>.
     /// </para>
     /// </summary>
-    public partial class AmazonOpsWorksClient : AmazonWebServiceClient, IAmazonOpsWorks
+    public partial class AmazonOpsWorksClient : AmazonServiceClient, IAmazonOpsWorks
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -113,7 +106,7 @@ namespace Amazon.OpsWorks
         ///
         /// </summary>
         public AmazonOpsWorksClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
@@ -132,7 +125,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOpsWorksClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
@@ -151,7 +144,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="config">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(AmazonOpsWorksConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with AWS Credentials
@@ -179,7 +172,7 @@ namespace Amazon.OpsWorks
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(AWSCredentials credentials, AmazonOpsWorksConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -212,7 +205,7 @@ namespace Amazon.OpsWorks
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonOpsWorksConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -248,15 +241,33 @@ namespace Amazon.OpsWorks
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonOpsWorksConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AssignVolume
-
 
         /// <summary>
         /// Assigns one of the stack's registered Amazon EBS volumes to a specified instance.
@@ -283,8 +294,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public AssignVolumeResponse AssignVolume(AssignVolumeRequest request)
         {
-            IAsyncResult asyncResult = invokeAssignVolume(request, null, null, true);
-            return EndAssignVolume(asyncResult);
+            var marshaller = new AssignVolumeRequestMarshaller();
+            var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<AssignVolumeRequest,AssignVolumeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -301,10 +314,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginAssignVolume(AssignVolumeRequest request, AsyncCallback callback, object state)
         {
-            return invokeAssignVolume(request, callback, state, false);
+            var marshaller = new AssignVolumeRequestMarshaller();
+            var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssignVolumeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssignVolume operation.
@@ -316,21 +331,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  AssignVolumeResult from OpsWorks.</returns>
         public  AssignVolumeResponse EndAssignVolume(IAsyncResult asyncResult)
         {
-            return endOperation< AssignVolumeResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAssignVolume(AssignVolumeRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AssignVolumeRequestMarshaller();
-            var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AssignVolumeResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AssociateElasticIp
-
 
         /// <summary>
         /// Associates one of the stack's registered Elastic IP addresses with a specified instance.
@@ -357,8 +363,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
         {
-            IAsyncResult asyncResult = invokeAssociateElasticIp(request, null, null, true);
-            return EndAssociateElasticIp(asyncResult);
+            var marshaller = new AssociateElasticIpRequestMarshaller();
+            var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateElasticIpRequest,AssociateElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -375,10 +383,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginAssociateElasticIp(AssociateElasticIpRequest request, AsyncCallback callback, object state)
         {
-            return invokeAssociateElasticIp(request, callback, state, false);
+            var marshaller = new AssociateElasticIpRequestMarshaller();
+            var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateElasticIpRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssociateElasticIp operation.
@@ -390,21 +400,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  AssociateElasticIpResult from OpsWorks.</returns>
         public  AssociateElasticIpResponse EndAssociateElasticIp(IAsyncResult asyncResult)
         {
-            return endOperation< AssociateElasticIpResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAssociateElasticIp(AssociateElasticIpRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AssociateElasticIpRequestMarshaller();
-            var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AssociateElasticIpResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AttachElasticLoadBalancer
-
 
         /// <summary>
         /// Attaches an Elastic Load Balancing load balancer to a specified layer. For more information,
@@ -430,8 +431,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeAttachElasticLoadBalancer(request, null, null, true);
-            return EndAttachElasticLoadBalancer(asyncResult);
+            var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
+            var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<AttachElasticLoadBalancerRequest,AttachElasticLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -448,10 +451,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeAttachElasticLoadBalancer(request, callback, state, false);
+            var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
+            var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachElasticLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AttachElasticLoadBalancer operation.
@@ -463,21 +468,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  AttachElasticLoadBalancerResult from OpsWorks.</returns>
         public  AttachElasticLoadBalancerResponse EndAttachElasticLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< AttachElasticLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
-            var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AttachElasticLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CloneStack
-
 
         /// <summary>
         /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
@@ -502,8 +498,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CloneStackResponse CloneStack(CloneStackRequest request)
         {
-            IAsyncResult asyncResult = invokeCloneStack(request, null, null, true);
-            return EndCloneStack(asyncResult);
+            var marshaller = new CloneStackRequestMarshaller();
+            var unmarshaller = CloneStackResponseUnmarshaller.Instance;
+
+            return Invoke<CloneStackRequest,CloneStackResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -520,10 +518,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCloneStack(CloneStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeCloneStack(request, callback, state, false);
+            var marshaller = new CloneStackRequestMarshaller();
+            var unmarshaller = CloneStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CloneStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CloneStack operation.
@@ -535,21 +535,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CloneStackResult from OpsWorks.</returns>
         public  CloneStackResponse EndCloneStack(IAsyncResult asyncResult)
         {
-            return endOperation< CloneStackResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCloneStack(CloneStackRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CloneStackRequestMarshaller();
-            var unmarshaller = CloneStackResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CloneStackResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateApp
-
 
         /// <summary>
         /// Creates an app for a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
@@ -574,8 +565,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateApp(request, null, null, true);
-            return EndCreateApp(asyncResult);
+            var marshaller = new CreateAppRequestMarshaller();
+            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -592,10 +585,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateApp(request, callback, state, false);
+            var marshaller = new CreateAppRequestMarshaller();
+            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAppRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApp operation.
@@ -607,21 +602,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CreateAppResult from OpsWorks.</returns>
         public  CreateAppResponse EndCreateApp(IAsyncResult asyncResult)
         {
-            return endOperation< CreateAppResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateApp(CreateAppRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateAppRequestMarshaller();
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateAppResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateDeployment
-
 
         /// <summary>
         /// Deploys a stack or app.
@@ -654,8 +640,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDeployment(request, null, null, true);
-            return EndCreateDeployment(asyncResult);
+            var marshaller = new CreateDeploymentRequestMarshaller();
+            var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -672,10 +660,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDeployment(request, callback, state, false);
+            var marshaller = new CreateDeploymentRequestMarshaller();
+            var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDeploymentRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDeployment operation.
@@ -687,21 +677,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CreateDeploymentResult from OpsWorks.</returns>
         public  CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
-            return endOperation< CreateDeploymentResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateDeploymentRequestMarshaller();
-            var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateDeploymentResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateInstance
-
 
         /// <summary>
         /// Creates an instance in a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
@@ -726,8 +707,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateInstance(request, null, null, true);
-            return EndCreateInstance(asyncResult);
+            var marshaller = new CreateInstanceRequestMarshaller();
+            var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceRequest,CreateInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -744,10 +727,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateInstance(request, callback, state, false);
+            var marshaller = new CreateInstanceRequestMarshaller();
+            var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateInstance operation.
@@ -759,21 +744,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CreateInstanceResult from OpsWorks.</returns>
         public  CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
         {
-            return endOperation< CreateInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateInstanceRequestMarshaller();
-            var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLayer
-
 
         /// <summary>
         /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
@@ -798,8 +774,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CreateLayerResponse CreateLayer(CreateLayerRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLayer(request, null, null, true);
-            return EndCreateLayer(asyncResult);
+            var marshaller = new CreateLayerRequestMarshaller();
+            var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLayerRequest,CreateLayerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -816,10 +794,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCreateLayer(CreateLayerRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLayer(request, callback, state, false);
+            var marshaller = new CreateLayerRequestMarshaller();
+            var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLayerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLayer operation.
@@ -831,21 +811,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CreateLayerResult from OpsWorks.</returns>
         public  CreateLayerResponse EndCreateLayer(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLayerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLayer(CreateLayerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLayerRequestMarshaller();
-            var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLayerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateStack
-
 
         /// <summary>
         /// Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
@@ -867,8 +838,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CreateStackResponse CreateStack(CreateStackRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateStack(request, null, null, true);
-            return EndCreateStack(asyncResult);
+            var marshaller = new CreateStackRequestMarshaller();
+            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -885,10 +858,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateStack(request, callback, state, false);
+            var marshaller = new CreateStackRequestMarshaller();
+            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateStack operation.
@@ -900,21 +875,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CreateStackResult from OpsWorks.</returns>
         public  CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
         {
-            return endOperation< CreateStackResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateStack(CreateStackRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateStackRequestMarshaller();
-            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateStackResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateUserProfile
-
 
         /// <summary>
         /// Creates a new user profile.
@@ -935,8 +901,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateUserProfile(request, null, null, true);
-            return EndCreateUserProfile(asyncResult);
+            var marshaller = new CreateUserProfileRequestMarshaller();
+            var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserProfileRequest,CreateUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -953,10 +921,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateUserProfile(request, callback, state, false);
+            var marshaller = new CreateUserProfileRequestMarshaller();
+            var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateUserProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateUserProfile operation.
@@ -968,21 +938,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  CreateUserProfileResult from OpsWorks.</returns>
         public  CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult)
         {
-            return endOperation< CreateUserProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateUserProfileRequestMarshaller();
-            var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateUserProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteApp
-
 
         /// <summary>
         /// Deletes a specified app.
@@ -1006,8 +967,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteApp(request, null, null, true);
-            return EndDeleteApp(asyncResult);
+            var marshaller = new DeleteAppRequestMarshaller();
+            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1024,10 +987,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteApp(request, callback, state, false);
+            var marshaller = new DeleteAppRequestMarshaller();
+            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAppRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApp operation.
@@ -1039,21 +1004,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeleteAppResult from OpsWorks.</returns>
         public  DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteAppResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteAppRequestMarshaller();
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteAppResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteInstance
-
 
         /// <summary>
         /// Deletes a specified instance. You must stop an instance before you can delete it.
@@ -1079,8 +1035,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteInstance(request, null, null, true);
-            return EndDeleteInstance(asyncResult);
+            var marshaller = new DeleteInstanceRequestMarshaller();
+            var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceRequest,DeleteInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1097,10 +1055,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteInstance(request, callback, state, false);
+            var marshaller = new DeleteInstanceRequestMarshaller();
+            var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteInstance operation.
@@ -1112,21 +1072,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeleteInstanceResult from OpsWorks.</returns>
         public  DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteInstanceRequestMarshaller();
-            var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLayer
-
 
         /// <summary>
         /// Deletes a specified layer. You must first stop and then delete all associated instances.
@@ -1152,8 +1103,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLayer(request, null, null, true);
-            return EndDeleteLayer(asyncResult);
+            var marshaller = new DeleteLayerRequestMarshaller();
+            var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLayerRequest,DeleteLayerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1170,10 +1123,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLayer(DeleteLayerRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLayer(request, callback, state, false);
+            var marshaller = new DeleteLayerRequestMarshaller();
+            var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLayerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLayer operation.
@@ -1185,21 +1140,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeleteLayerResult from OpsWorks.</returns>
         public  DeleteLayerResponse EndDeleteLayer(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLayerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLayer(DeleteLayerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLayerRequestMarshaller();
-            var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLayerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteStack
-
 
         /// <summary>
         /// Deletes a specified stack. You must first delete all instances, layers, and apps.
@@ -1225,8 +1171,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteStack(request, null, null, true);
-            return EndDeleteStack(asyncResult);
+            var marshaller = new DeleteStackRequestMarshaller();
+            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1243,10 +1191,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteStack(request, callback, state, false);
+            var marshaller = new DeleteStackRequestMarshaller();
+            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteStack operation.
@@ -1258,21 +1208,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeleteStackResult from OpsWorks.</returns>
         public  DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteStackResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteStackRequestMarshaller();
-            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteStackResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteUserProfile
-
 
         /// <summary>
         /// Deletes a user profile.
@@ -1296,8 +1237,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteUserProfile(request, null, null, true);
-            return EndDeleteUserProfile(asyncResult);
+            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserProfileRequest,DeleteUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1314,10 +1257,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteUserProfile(request, callback, state, false);
+            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUserProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteUserProfile operation.
@@ -1329,21 +1274,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeleteUserProfileResult from OpsWorks.</returns>
         public  DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteUserProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteUserProfileRequestMarshaller();
-            var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteUserProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeregisterElasticIp
-
 
         /// <summary>
         /// Deregisters a specified Elastic IP address. The address can then be registered by
@@ -1369,8 +1305,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
         {
-            IAsyncResult asyncResult = invokeDeregisterElasticIp(request, null, null, true);
-            return EndDeregisterElasticIp(asyncResult);
+            var marshaller = new DeregisterElasticIpRequestMarshaller();
+            var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterElasticIpRequest,DeregisterElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1387,10 +1325,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeregisterElasticIp(request, callback, state, false);
+            var marshaller = new DeregisterElasticIpRequestMarshaller();
+            var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterElasticIpRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterElasticIp operation.
@@ -1402,21 +1342,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeregisterElasticIpResult from OpsWorks.</returns>
         public  DeregisterElasticIpResponse EndDeregisterElasticIp(IAsyncResult asyncResult)
         {
-            return endOperation< DeregisterElasticIpResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeregisterElasticIp(DeregisterElasticIpRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeregisterElasticIpRequestMarshaller();
-            var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeregisterElasticIpResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeregisterRdsDbInstance
-
 
         /// <summary>
         /// Deregisters an Amazon RDS instance.
@@ -1440,8 +1371,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeDeregisterRdsDbInstance(request, null, null, true);
-            return EndDeregisterRdsDbInstance(asyncResult);
+            var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
+            var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterRdsDbInstanceRequest,DeregisterRdsDbInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1458,10 +1391,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeregisterRdsDbInstance(request, callback, state, false);
+            var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
+            var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterRdsDbInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterRdsDbInstance operation.
@@ -1473,21 +1408,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeregisterRdsDbInstanceResult from OpsWorks.</returns>
         public  DeregisterRdsDbInstanceResponse EndDeregisterRdsDbInstance(IAsyncResult asyncResult)
         {
-            return endOperation< DeregisterRdsDbInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
-            var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeregisterRdsDbInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeregisterVolume
-
 
         /// <summary>
         /// Deregisters an Amazon EBS volume. The volume can then be registered by another stack.
@@ -1513,8 +1439,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
         {
-            IAsyncResult asyncResult = invokeDeregisterVolume(request, null, null, true);
-            return EndDeregisterVolume(asyncResult);
+            var marshaller = new DeregisterVolumeRequestMarshaller();
+            var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterVolumeRequest,DeregisterVolumeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1531,10 +1459,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDeregisterVolume(DeregisterVolumeRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeregisterVolume(request, callback, state, false);
+            var marshaller = new DeregisterVolumeRequestMarshaller();
+            var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterVolumeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterVolume operation.
@@ -1546,21 +1476,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DeregisterVolumeResult from OpsWorks.</returns>
         public  DeregisterVolumeResponse EndDeregisterVolume(IAsyncResult asyncResult)
         {
-            return endOperation< DeregisterVolumeResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeregisterVolume(DeregisterVolumeRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeregisterVolumeRequestMarshaller();
-            var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeregisterVolumeResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeApps
-
 
         /// <summary>
         /// Requests a description of a specified set of apps.
@@ -1584,8 +1505,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeApps(request, null, null, true);
-            return EndDescribeApps(asyncResult);
+            var marshaller = new DescribeAppsRequestMarshaller();
+            var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppsRequest,DescribeAppsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1602,10 +1525,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeApps(DescribeAppsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeApps(request, callback, state, false);
+            var marshaller = new DescribeAppsRequestMarshaller();
+            var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAppsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeApps operation.
@@ -1617,21 +1542,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeAppsResult from OpsWorks.</returns>
         public  DescribeAppsResponse EndDescribeApps(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAppsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeApps(DescribeAppsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAppsRequestMarshaller();
-            var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAppsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeCommands
-
 
         /// <summary>
         /// Describes the results of specified commands.
@@ -1655,8 +1571,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCommands(request, null, null, true);
-            return EndDescribeCommands(asyncResult);
+            var marshaller = new DescribeCommandsRequestMarshaller();
+            var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCommandsRequest,DescribeCommandsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1673,10 +1591,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCommands(DescribeCommandsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCommands(request, callback, state, false);
+            var marshaller = new DescribeCommandsRequestMarshaller();
+            var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCommandsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCommands operation.
@@ -1688,21 +1608,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeCommandsResult from OpsWorks.</returns>
         public  DescribeCommandsResponse EndDescribeCommands(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCommandsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCommands(DescribeCommandsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCommandsRequestMarshaller();
-            var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCommandsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeDeployments
-
 
         /// <summary>
         /// Requests a description of a specified set of deployments.
@@ -1726,8 +1637,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDeployments(request, null, null, true);
-            return EndDescribeDeployments(asyncResult);
+            var marshaller = new DescribeDeploymentsRequestMarshaller();
+            var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDeploymentsRequest,DescribeDeploymentsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1744,10 +1657,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeDeployments(DescribeDeploymentsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDeployments(request, callback, state, false);
+            var marshaller = new DescribeDeploymentsRequestMarshaller();
+            var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDeploymentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDeployments operation.
@@ -1759,21 +1674,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeDeploymentsResult from OpsWorks.</returns>
         public  DescribeDeploymentsResponse EndDescribeDeployments(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeDeploymentsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeDeployments(DescribeDeploymentsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeDeploymentsRequestMarshaller();
-            var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeDeploymentsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeElasticIps
-
 
         /// <summary>
         /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
@@ -1798,8 +1704,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeElasticIps(request, null, null, true);
-            return EndDescribeElasticIps(asyncResult);
+            var marshaller = new DescribeElasticIpsRequestMarshaller();
+            var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeElasticIpsRequest,DescribeElasticIpsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1816,10 +1724,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeElasticIps(DescribeElasticIpsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeElasticIps(request, callback, state, false);
+            var marshaller = new DescribeElasticIpsRequestMarshaller();
+            var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeElasticIpsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeElasticIps operation.
@@ -1831,15 +1741,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeElasticIpsResult from OpsWorks.</returns>
         public  DescribeElasticIpsResponse EndDescribeElasticIps(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeElasticIpsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeElasticIps(DescribeElasticIpsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeElasticIpsRequestMarshaller();
-            var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeElasticIpsResponse>(asyncResult);
         }
 
         #endregion
@@ -1892,8 +1794,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeElasticLoadBalancers(request, null, null, true);
-            return EndDescribeElasticLoadBalancers(asyncResult);
+            var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeElasticLoadBalancersRequest,DescribeElasticLoadBalancersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1910,10 +1814,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeElasticLoadBalancers(request, callback, state, false);
+            var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeElasticLoadBalancersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeElasticLoadBalancers operation.
@@ -1925,21 +1831,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeElasticLoadBalancersResult from OpsWorks.</returns>
         public  DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeElasticLoadBalancersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
-            var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeElasticLoadBalancersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeInstances
-
 
         /// <summary>
         /// Requests a description of a set of instances.
@@ -1963,8 +1860,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeInstances(request, null, null, true);
-            return EndDescribeInstances(asyncResult);
+            var marshaller = new DescribeInstancesRequestMarshaller();
+            var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancesRequest,DescribeInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1981,10 +1880,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeInstances(request, callback, state, false);
+            var marshaller = new DescribeInstancesRequestMarshaller();
+            var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeInstances operation.
@@ -1996,21 +1897,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeInstancesResult from OpsWorks.</returns>
         public  DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeInstancesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeInstancesRequestMarshaller();
-            var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeInstancesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeLayers
-
 
         /// <summary>
         /// Requests a description of one or more layers in a specified stack.
@@ -2034,8 +1926,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLayers(request, null, null, true);
-            return EndDescribeLayers(asyncResult);
+            var marshaller = new DescribeLayersRequestMarshaller();
+            var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLayersRequest,DescribeLayersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2052,10 +1946,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLayers(DescribeLayersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLayers(request, callback, state, false);
+            var marshaller = new DescribeLayersRequestMarshaller();
+            var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLayersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLayers operation.
@@ -2067,21 +1963,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeLayersResult from OpsWorks.</returns>
         public  DescribeLayersResponse EndDescribeLayers(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLayersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLayers(DescribeLayersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLayersRequestMarshaller();
-            var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLayersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeLoadBasedAutoScaling
-
 
         /// <summary>
         /// Describes load-based auto scaling configurations for specified layers.
@@ -2105,8 +1992,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLoadBasedAutoScaling(request, null, null, true);
-            return EndDescribeLoadBasedAutoScaling(asyncResult);
+            var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
+            var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBasedAutoScalingRequest,DescribeLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2123,10 +2012,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLoadBasedAutoScaling(request, callback, state, false);
+            var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
+            var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLoadBasedAutoScalingRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBasedAutoScaling operation.
@@ -2138,15 +2029,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeLoadBasedAutoScalingResult from OpsWorks.</returns>
         public  DescribeLoadBasedAutoScalingResponse EndDescribeLoadBasedAutoScaling(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLoadBasedAutoScalingResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
-            var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLoadBasedAutoScalingResponse>(asyncResult);
         }
 
         #endregion
@@ -2187,8 +2070,10 @@ namespace Amazon.OpsWorks
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         public DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeMyUserProfile(request, null, null, true);
-            return EndDescribeMyUserProfile(asyncResult);
+            var marshaller = new DescribeMyUserProfileRequestMarshaller();
+            var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMyUserProfileRequest,DescribeMyUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2205,10 +2090,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeMyUserProfile(DescribeMyUserProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeMyUserProfile(request, callback, state, false);
+            var marshaller = new DescribeMyUserProfileRequestMarshaller();
+            var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeMyUserProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeMyUserProfile operation.
@@ -2220,21 +2107,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeMyUserProfileResult from OpsWorks.</returns>
         public  DescribeMyUserProfileResponse EndDescribeMyUserProfile(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeMyUserProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeMyUserProfile(DescribeMyUserProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeMyUserProfileRequestMarshaller();
-            var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeMyUserProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribePermissions
-
 
         /// <summary>
         /// Describes the permissions for a specified stack.
@@ -2258,8 +2136,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribePermissions(request, null, null, true);
-            return EndDescribePermissions(asyncResult);
+            var marshaller = new DescribePermissionsRequestMarshaller();
+            var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePermissionsRequest,DescribePermissionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2276,10 +2156,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribePermissions(DescribePermissionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribePermissions(request, callback, state, false);
+            var marshaller = new DescribePermissionsRequestMarshaller();
+            var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePermissionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribePermissions operation.
@@ -2291,21 +2173,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribePermissionsResult from OpsWorks.</returns>
         public  DescribePermissionsResponse EndDescribePermissions(IAsyncResult asyncResult)
         {
-            return endOperation< DescribePermissionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribePermissions(DescribePermissionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribePermissionsRequestMarshaller();
-            var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribePermissionsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeRaidArrays
-
 
         /// <summary>
         /// Describe an instance's RAID arrays.
@@ -2329,8 +2202,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeRaidArrays(request, null, null, true);
-            return EndDescribeRaidArrays(asyncResult);
+            var marshaller = new DescribeRaidArraysRequestMarshaller();
+            var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRaidArraysRequest,DescribeRaidArraysResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2347,10 +2222,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeRaidArrays(DescribeRaidArraysRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeRaidArrays(request, callback, state, false);
+            var marshaller = new DescribeRaidArraysRequestMarshaller();
+            var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeRaidArraysRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeRaidArrays operation.
@@ -2362,21 +2239,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeRaidArraysResult from OpsWorks.</returns>
         public  DescribeRaidArraysResponse EndDescribeRaidArrays(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeRaidArraysResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeRaidArrays(DescribeRaidArraysRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeRaidArraysRequestMarshaller();
-            var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeRaidArraysResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeRdsDbInstances
-
 
         /// <summary>
         /// Describes Amazon RDS instances.
@@ -2400,8 +2268,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeRdsDbInstances(request, null, null, true);
-            return EndDescribeRdsDbInstances(asyncResult);
+            var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
+            var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRdsDbInstancesRequest,DescribeRdsDbInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2418,10 +2288,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeRdsDbInstances(DescribeRdsDbInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeRdsDbInstances(request, callback, state, false);
+            var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
+            var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeRdsDbInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeRdsDbInstances operation.
@@ -2433,15 +2305,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeRdsDbInstancesResult from OpsWorks.</returns>
         public  DescribeRdsDbInstancesResponse EndDescribeRdsDbInstances(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeRdsDbInstancesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeRdsDbInstances(DescribeRdsDbInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
-            var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeRdsDbInstancesResponse>(asyncResult);
         }
 
         #endregion
@@ -2494,8 +2358,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeServiceErrors(request, null, null, true);
-            return EndDescribeServiceErrors(asyncResult);
+            var marshaller = new DescribeServiceErrorsRequestMarshaller();
+            var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceErrorsRequest,DescribeServiceErrorsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2512,10 +2378,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeServiceErrors(DescribeServiceErrorsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeServiceErrors(request, callback, state, false);
+            var marshaller = new DescribeServiceErrorsRequestMarshaller();
+            var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeServiceErrorsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeServiceErrors operation.
@@ -2527,15 +2395,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeServiceErrorsResult from OpsWorks.</returns>
         public  DescribeServiceErrorsResponse EndDescribeServiceErrors(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeServiceErrorsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeServiceErrors(DescribeServiceErrorsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeServiceErrorsRequestMarshaller();
-            var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeServiceErrorsResponse>(asyncResult);
         }
 
         #endregion
@@ -2588,8 +2448,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStacks(request, null, null, true);
-            return EndDescribeStacks(asyncResult);
+            var marshaller = new DescribeStacksRequestMarshaller();
+            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2606,10 +2468,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStacks(request, callback, state, false);
+            var marshaller = new DescribeStacksRequestMarshaller();
+            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStacksRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStacks operation.
@@ -2621,21 +2485,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeStacksResult from OpsWorks.</returns>
         public  DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeStacksResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeStacksRequestMarshaller();
-            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeStacksResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeStackSummary
-
 
         /// <summary>
         /// Describes the number of layers and apps in a specified stack, and the number of instances
@@ -2660,8 +2515,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStackSummary(request, null, null, true);
-            return EndDescribeStackSummary(asyncResult);
+            var marshaller = new DescribeStackSummaryRequestMarshaller();
+            var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackSummaryRequest,DescribeStackSummaryResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2678,10 +2535,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeStackSummary(DescribeStackSummaryRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStackSummary(request, callback, state, false);
+            var marshaller = new DescribeStackSummaryRequestMarshaller();
+            var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackSummaryRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStackSummary operation.
@@ -2693,21 +2552,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeStackSummaryResult from OpsWorks.</returns>
         public  DescribeStackSummaryResponse EndDescribeStackSummary(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeStackSummaryResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeStackSummary(DescribeStackSummaryRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeStackSummaryRequestMarshaller();
-            var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeStackSummaryResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeTimeBasedAutoScaling
-
 
         /// <summary>
         /// Describes time-based auto scaling configurations for specified instances.
@@ -2731,8 +2581,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTimeBasedAutoScaling(request, null, null, true);
-            return EndDescribeTimeBasedAutoScaling(asyncResult);
+            var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
+            var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTimeBasedAutoScalingRequest,DescribeTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2749,10 +2601,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTimeBasedAutoScaling(request, callback, state, false);
+            var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
+            var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTimeBasedAutoScalingRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTimeBasedAutoScaling operation.
@@ -2764,15 +2618,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeTimeBasedAutoScalingResult from OpsWorks.</returns>
         public  DescribeTimeBasedAutoScalingResponse EndDescribeTimeBasedAutoScaling(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTimeBasedAutoScalingResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
-            var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTimeBasedAutoScalingResponse>(asyncResult);
         }
 
         #endregion
@@ -2825,8 +2671,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeUserProfiles(request, null, null, true);
-            return EndDescribeUserProfiles(asyncResult);
+            var marshaller = new DescribeUserProfilesRequestMarshaller();
+            var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserProfilesRequest,DescribeUserProfilesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2843,10 +2691,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeUserProfiles(DescribeUserProfilesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeUserProfiles(request, callback, state, false);
+            var marshaller = new DescribeUserProfilesRequestMarshaller();
+            var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeUserProfilesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeUserProfiles operation.
@@ -2858,21 +2708,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeUserProfilesResult from OpsWorks.</returns>
         public  DescribeUserProfilesResponse EndDescribeUserProfiles(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeUserProfilesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeUserProfiles(DescribeUserProfilesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeUserProfilesRequestMarshaller();
-            var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeUserProfilesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeVolumes
-
 
         /// <summary>
         /// Describes an instance's Amazon EBS volumes.
@@ -2896,8 +2737,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeVolumes(request, null, null, true);
-            return EndDescribeVolumes(asyncResult);
+            var marshaller = new DescribeVolumesRequestMarshaller();
+            var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVolumesRequest,DescribeVolumesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2914,10 +2757,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeVolumes(request, callback, state, false);
+            var marshaller = new DescribeVolumesRequestMarshaller();
+            var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeVolumesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeVolumes operation.
@@ -2929,21 +2774,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeVolumesResult from OpsWorks.</returns>
         public  DescribeVolumesResponse EndDescribeVolumes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeVolumesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeVolumesRequestMarshaller();
-            var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeVolumesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DetachElasticLoadBalancer
-
 
         /// <summary>
         /// Detaches a specified Elastic Load Balancing instance from its layer.
@@ -2964,8 +2800,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeDetachElasticLoadBalancer(request, null, null, true);
-            return EndDetachElasticLoadBalancer(asyncResult);
+            var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
+            var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<DetachElasticLoadBalancerRequest,DetachElasticLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2982,10 +2820,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeDetachElasticLoadBalancer(request, callback, state, false);
+            var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
+            var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachElasticLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DetachElasticLoadBalancer operation.
@@ -2997,21 +2837,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DetachElasticLoadBalancerResult from OpsWorks.</returns>
         public  DetachElasticLoadBalancerResponse EndDetachElasticLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< DetachElasticLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
-            var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DetachElasticLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DisassociateElasticIp
-
 
         /// <summary>
         /// Disassociates an Elastic IP address from its instance. The address remains registered
@@ -3037,8 +2868,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
         {
-            IAsyncResult asyncResult = invokeDisassociateElasticIp(request, null, null, true);
-            return EndDisassociateElasticIp(asyncResult);
+            var marshaller = new DisassociateElasticIpRequestMarshaller();
+            var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateElasticIpRequest,DisassociateElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3055,10 +2888,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest request, AsyncCallback callback, object state)
         {
-            return invokeDisassociateElasticIp(request, callback, state, false);
+            var marshaller = new DisassociateElasticIpRequestMarshaller();
+            var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateElasticIpRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisassociateElasticIp operation.
@@ -3070,21 +2905,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DisassociateElasticIpResult from OpsWorks.</returns>
         public  DisassociateElasticIpResponse EndDisassociateElasticIp(IAsyncResult asyncResult)
         {
-            return endOperation< DisassociateElasticIpResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDisassociateElasticIp(DisassociateElasticIpRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DisassociateElasticIpRequestMarshaller();
-            var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DisassociateElasticIpResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetHostnameSuggestion
-
 
         /// <summary>
         /// Gets a generated host name for the specified layer, based on the current host name
@@ -3109,8 +2935,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
         {
-            IAsyncResult asyncResult = invokeGetHostnameSuggestion(request, null, null, true);
-            return EndGetHostnameSuggestion(asyncResult);
+            var marshaller = new GetHostnameSuggestionRequestMarshaller();
+            var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostnameSuggestionRequest,GetHostnameSuggestionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3127,10 +2955,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginGetHostnameSuggestion(GetHostnameSuggestionRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetHostnameSuggestion(request, callback, state, false);
+            var marshaller = new GetHostnameSuggestionRequestMarshaller();
+            var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetHostnameSuggestionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetHostnameSuggestion operation.
@@ -3142,21 +2972,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  GetHostnameSuggestionResult from OpsWorks.</returns>
         public  GetHostnameSuggestionResponse EndGetHostnameSuggestion(IAsyncResult asyncResult)
         {
-            return endOperation< GetHostnameSuggestionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetHostnameSuggestion(GetHostnameSuggestionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetHostnameSuggestionRequestMarshaller();
-            var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetHostnameSuggestionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RebootInstance
-
 
         /// <summary>
         /// Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
@@ -3181,8 +3002,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeRebootInstance(request, null, null, true);
-            return EndRebootInstance(asyncResult);
+            var marshaller = new RebootInstanceRequestMarshaller();
+            var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RebootInstanceRequest,RebootInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3199,10 +3022,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeRebootInstance(request, callback, state, false);
+            var marshaller = new RebootInstanceRequestMarshaller();
+            var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RebootInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RebootInstance operation.
@@ -3214,21 +3039,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  RebootInstanceResult from OpsWorks.</returns>
         public  RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult)
         {
-            return endOperation< RebootInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RebootInstanceRequestMarshaller();
-            var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RebootInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RegisterElasticIp
-
 
         /// <summary>
         /// Registers an Elastic IP address with a specified stack. An address can be registered
@@ -3256,8 +3072,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
         {
-            IAsyncResult asyncResult = invokeRegisterElasticIp(request, null, null, true);
-            return EndRegisterElasticIp(asyncResult);
+            var marshaller = new RegisterElasticIpRequestMarshaller();
+            var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterElasticIpRequest,RegisterElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3274,10 +3092,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginRegisterElasticIp(RegisterElasticIpRequest request, AsyncCallback callback, object state)
         {
-            return invokeRegisterElasticIp(request, callback, state, false);
+            var marshaller = new RegisterElasticIpRequestMarshaller();
+            var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterElasticIpRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterElasticIp operation.
@@ -3289,21 +3109,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  RegisterElasticIpResult from OpsWorks.</returns>
         public  RegisterElasticIpResponse EndRegisterElasticIp(IAsyncResult asyncResult)
         {
-            return endOperation< RegisterElasticIpResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRegisterElasticIp(RegisterElasticIpRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RegisterElasticIpRequestMarshaller();
-            var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RegisterElasticIpResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RegisterRdsDbInstance
-
 
         /// <summary>
         /// Registers an Amazon RDS instance with a stack.
@@ -3327,8 +3138,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeRegisterRdsDbInstance(request, null, null, true);
-            return EndRegisterRdsDbInstance(asyncResult);
+            var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
+            var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterRdsDbInstanceRequest,RegisterRdsDbInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3345,10 +3158,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginRegisterRdsDbInstance(RegisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeRegisterRdsDbInstance(request, callback, state, false);
+            var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
+            var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterRdsDbInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterRdsDbInstance operation.
@@ -3360,21 +3175,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  RegisterRdsDbInstanceResult from OpsWorks.</returns>
         public  RegisterRdsDbInstanceResponse EndRegisterRdsDbInstance(IAsyncResult asyncResult)
         {
-            return endOperation< RegisterRdsDbInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRegisterRdsDbInstance(RegisterRdsDbInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
-            var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RegisterRdsDbInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RegisterVolume
-
 
         /// <summary>
         /// Registers an Amazon EBS volume with a specified stack. A volume can be registered
@@ -3401,8 +3207,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
         {
-            IAsyncResult asyncResult = invokeRegisterVolume(request, null, null, true);
-            return EndRegisterVolume(asyncResult);
+            var marshaller = new RegisterVolumeRequestMarshaller();
+            var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterVolumeRequest,RegisterVolumeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3419,10 +3227,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginRegisterVolume(RegisterVolumeRequest request, AsyncCallback callback, object state)
         {
-            return invokeRegisterVolume(request, callback, state, false);
+            var marshaller = new RegisterVolumeRequestMarshaller();
+            var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterVolumeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterVolume operation.
@@ -3434,21 +3244,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  RegisterVolumeResult from OpsWorks.</returns>
         public  RegisterVolumeResponse EndRegisterVolume(IAsyncResult asyncResult)
         {
-            return endOperation< RegisterVolumeResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRegisterVolume(RegisterVolumeRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RegisterVolumeRequestMarshaller();
-            var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RegisterVolumeResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetLoadBasedAutoScaling
-
 
         /// <summary>
         /// Specify the load-based auto scaling configuration for a specified layer. For more
@@ -3474,8 +3275,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
         {
-            IAsyncResult asyncResult = invokeSetLoadBasedAutoScaling(request, null, null, true);
-            return EndSetLoadBasedAutoScaling(asyncResult);
+            var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
+            var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<SetLoadBasedAutoScalingRequest,SetLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3492,10 +3295,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginSetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetLoadBasedAutoScaling(request, callback, state, false);
+            var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
+            var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetLoadBasedAutoScalingRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBasedAutoScaling operation.
@@ -3507,21 +3312,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  SetLoadBasedAutoScalingResult from OpsWorks.</returns>
         public  SetLoadBasedAutoScalingResponse EndSetLoadBasedAutoScaling(IAsyncResult asyncResult)
         {
-            return endOperation< SetLoadBasedAutoScalingResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
-            var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetLoadBasedAutoScalingResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetPermission
-
 
         /// <summary>
         /// Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security
@@ -3546,8 +3342,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public SetPermissionResponse SetPermission(SetPermissionRequest request)
         {
-            IAsyncResult asyncResult = invokeSetPermission(request, null, null, true);
-            return EndSetPermission(asyncResult);
+            var marshaller = new SetPermissionRequestMarshaller();
+            var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<SetPermissionRequest,SetPermissionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3564,10 +3362,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginSetPermission(SetPermissionRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetPermission(request, callback, state, false);
+            var marshaller = new SetPermissionRequestMarshaller();
+            var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetPermissionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetPermission operation.
@@ -3579,21 +3379,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  SetPermissionResult from OpsWorks.</returns>
         public  SetPermissionResponse EndSetPermission(IAsyncResult asyncResult)
         {
-            return endOperation< SetPermissionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetPermission(SetPermissionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetPermissionRequestMarshaller();
-            var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetPermissionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetTimeBasedAutoScaling
-
 
         /// <summary>
         /// Specify the time-based auto scaling configuration for a specified instance. For more
@@ -3619,8 +3410,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
         {
-            IAsyncResult asyncResult = invokeSetTimeBasedAutoScaling(request, null, null, true);
-            return EndSetTimeBasedAutoScaling(asyncResult);
+            var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
+            var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<SetTimeBasedAutoScalingRequest,SetTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3637,10 +3430,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetTimeBasedAutoScaling(request, callback, state, false);
+            var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
+            var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetTimeBasedAutoScalingRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetTimeBasedAutoScaling operation.
@@ -3652,21 +3447,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  SetTimeBasedAutoScalingResult from OpsWorks.</returns>
         public  SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult)
         {
-            return endOperation< SetTimeBasedAutoScalingResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
-            var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetTimeBasedAutoScalingResponse>(asyncResult);
         }
 
         #endregion
         
         #region  StartInstance
-
 
         /// <summary>
         /// Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
@@ -3691,8 +3477,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeStartInstance(request, null, null, true);
-            return EndStartInstance(asyncResult);
+            var marshaller = new StartInstanceRequestMarshaller();
+            var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<StartInstanceRequest,StartInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3709,10 +3497,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginStartInstance(StartInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeStartInstance(request, callback, state, false);
+            var marshaller = new StartInstanceRequestMarshaller();
+            var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StartInstance operation.
@@ -3724,21 +3514,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  StartInstanceResult from OpsWorks.</returns>
         public  StartInstanceResponse EndStartInstance(IAsyncResult asyncResult)
         {
-            return endOperation< StartInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeStartInstance(StartInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new StartInstanceRequestMarshaller();
-            var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<StartInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  StartStack
-
 
         /// <summary>
         /// Starts a stack's instances. 
@@ -3762,8 +3543,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public StartStackResponse StartStack(StartStackRequest request)
         {
-            IAsyncResult asyncResult = invokeStartStack(request, null, null, true);
-            return EndStartStack(asyncResult);
+            var marshaller = new StartStackRequestMarshaller();
+            var unmarshaller = StartStackResponseUnmarshaller.Instance;
+
+            return Invoke<StartStackRequest,StartStackResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3780,10 +3563,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginStartStack(StartStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeStartStack(request, callback, state, false);
+            var marshaller = new StartStackRequestMarshaller();
+            var unmarshaller = StartStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StartStack operation.
@@ -3795,21 +3580,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  StartStackResult from OpsWorks.</returns>
         public  StartStackResponse EndStartStack(IAsyncResult asyncResult)
         {
-            return endOperation< StartStackResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeStartStack(StartStackRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new StartStackRequestMarshaller();
-            var unmarshaller = StartStackResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<StartStackResponse>(asyncResult);
         }
 
         #endregion
         
         #region  StopInstance
-
 
         /// <summary>
         /// Stops a specified instance. When you stop a standard instance, the data disappears
@@ -3836,8 +3612,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeStopInstance(request, null, null, true);
-            return EndStopInstance(asyncResult);
+            var marshaller = new StopInstanceRequestMarshaller();
+            var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<StopInstanceRequest,StopInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3854,10 +3632,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginStopInstance(StopInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeStopInstance(request, callback, state, false);
+            var marshaller = new StopInstanceRequestMarshaller();
+            var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopInstance operation.
@@ -3869,21 +3649,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  StopInstanceResult from OpsWorks.</returns>
         public  StopInstanceResponse EndStopInstance(IAsyncResult asyncResult)
         {
-            return endOperation< StopInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeStopInstance(StopInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new StopInstanceRequestMarshaller();
-            var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<StopInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  StopStack
-
 
         /// <summary>
         /// Stops a specified stack.
@@ -3907,8 +3678,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public StopStackResponse StopStack(StopStackRequest request)
         {
-            IAsyncResult asyncResult = invokeStopStack(request, null, null, true);
-            return EndStopStack(asyncResult);
+            var marshaller = new StopStackRequestMarshaller();
+            var unmarshaller = StopStackResponseUnmarshaller.Instance;
+
+            return Invoke<StopStackRequest,StopStackResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3925,10 +3698,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginStopStack(StopStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeStopStack(request, callback, state, false);
+            var marshaller = new StopStackRequestMarshaller();
+            var unmarshaller = StopStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopStack operation.
@@ -3940,21 +3715,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  StopStackResult from OpsWorks.</returns>
         public  StopStackResponse EndStopStack(IAsyncResult asyncResult)
         {
-            return endOperation< StopStackResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeStopStack(StopStackRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new StopStackRequestMarshaller();
-            var unmarshaller = StopStackResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<StopStackResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UnassignVolume
-
 
         /// <summary>
         /// Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack.
@@ -3980,8 +3746,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
         {
-            IAsyncResult asyncResult = invokeUnassignVolume(request, null, null, true);
-            return EndUnassignVolume(asyncResult);
+            var marshaller = new UnassignVolumeRequestMarshaller();
+            var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<UnassignVolumeRequest,UnassignVolumeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3998,10 +3766,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUnassignVolume(UnassignVolumeRequest request, AsyncCallback callback, object state)
         {
-            return invokeUnassignVolume(request, callback, state, false);
+            var marshaller = new UnassignVolumeRequestMarshaller();
+            var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UnassignVolumeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UnassignVolume operation.
@@ -4013,21 +3783,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UnassignVolumeResult from OpsWorks.</returns>
         public  UnassignVolumeResponse EndUnassignVolume(IAsyncResult asyncResult)
         {
-            return endOperation< UnassignVolumeResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUnassignVolume(UnassignVolumeRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UnassignVolumeRequestMarshaller();
-            var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UnassignVolumeResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateApp
-
 
         /// <summary>
         /// Updates a specified app.
@@ -4051,8 +3812,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateApp(request, null, null, true);
-            return EndUpdateApp(asyncResult);
+            var marshaller = new UpdateAppRequestMarshaller();
+            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppRequest,UpdateAppResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4069,10 +3832,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateApp(UpdateAppRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateApp(request, callback, state, false);
+            var marshaller = new UpdateAppRequestMarshaller();
+            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAppRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApp operation.
@@ -4084,21 +3849,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateAppResult from OpsWorks.</returns>
         public  UpdateAppResponse EndUpdateApp(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateAppResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateApp(UpdateAppRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateAppRequestMarshaller();
-            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateAppResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateElasticIp
-
 
         /// <summary>
         /// Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
@@ -4123,8 +3879,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateElasticIp(request, null, null, true);
-            return EndUpdateElasticIp(asyncResult);
+            var marshaller = new UpdateElasticIpRequestMarshaller();
+            var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateElasticIpRequest,UpdateElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4141,10 +3899,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateElasticIp(request, callback, state, false);
+            var marshaller = new UpdateElasticIpRequestMarshaller();
+            var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateElasticIpRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateElasticIp operation.
@@ -4156,21 +3916,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateElasticIpResult from OpsWorks.</returns>
         public  UpdateElasticIpResponse EndUpdateElasticIp(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateElasticIpResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateElasticIp(UpdateElasticIpRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateElasticIpRequestMarshaller();
-            var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateElasticIpResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateInstance
-
 
         /// <summary>
         /// Updates a specified instance.
@@ -4194,8 +3945,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateInstance(request, null, null, true);
-            return EndUpdateInstance(asyncResult);
+            var marshaller = new UpdateInstanceRequestMarshaller();
+            var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceRequest,UpdateInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4212,10 +3965,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateInstance(request, callback, state, false);
+            var marshaller = new UpdateInstanceRequestMarshaller();
+            var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateInstance operation.
@@ -4227,21 +3982,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateInstanceResult from OpsWorks.</returns>
         public  UpdateInstanceResponse EndUpdateInstance(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateInstanceRequestMarshaller();
-            var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateLayer
-
 
         /// <summary>
         /// Updates a specified layer.
@@ -4265,8 +4011,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateLayer(request, null, null, true);
-            return EndUpdateLayer(asyncResult);
+            var marshaller = new UpdateLayerRequestMarshaller();
+            var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLayerRequest,UpdateLayerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4283,10 +4031,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateLayer(UpdateLayerRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateLayer(request, callback, state, false);
+            var marshaller = new UpdateLayerRequestMarshaller();
+            var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateLayerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateLayer operation.
@@ -4298,15 +4048,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateLayerResult from OpsWorks.</returns>
         public  UpdateLayerResponse EndUpdateLayer(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateLayerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateLayer(UpdateLayerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateLayerRequestMarshaller();
-            var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateLayerResponse>(asyncResult);
         }
 
         #endregion
@@ -4353,8 +4095,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateMyUserProfile(request, null, null, true);
-            return EndUpdateMyUserProfile(asyncResult);
+            var marshaller = new UpdateMyUserProfileRequestMarshaller();
+            var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMyUserProfileRequest,UpdateMyUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4371,10 +4115,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateMyUserProfile(UpdateMyUserProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateMyUserProfile(request, callback, state, false);
+            var marshaller = new UpdateMyUserProfileRequestMarshaller();
+            var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateMyUserProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateMyUserProfile operation.
@@ -4386,21 +4132,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateMyUserProfileResult from OpsWorks.</returns>
         public  UpdateMyUserProfileResponse EndUpdateMyUserProfile(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateMyUserProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateMyUserProfile(UpdateMyUserProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateMyUserProfileRequestMarshaller();
-            var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateMyUserProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateRdsDbInstance
-
 
         /// <summary>
         /// Updates an Amazon RDS instance.
@@ -4424,8 +4161,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateRdsDbInstance(request, null, null, true);
-            return EndUpdateRdsDbInstance(asyncResult);
+            var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
+            var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRdsDbInstanceRequest,UpdateRdsDbInstanceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4442,10 +4181,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateRdsDbInstance(UpdateRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateRdsDbInstance(request, callback, state, false);
+            var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
+            var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateRdsDbInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateRdsDbInstance operation.
@@ -4457,21 +4198,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateRdsDbInstanceResult from OpsWorks.</returns>
         public  UpdateRdsDbInstanceResponse EndUpdateRdsDbInstance(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateRdsDbInstanceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateRdsDbInstance(UpdateRdsDbInstanceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
-            var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateRdsDbInstanceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateStack
-
 
         /// <summary>
         /// Updates a specified stack.
@@ -4495,8 +4227,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateStack(request, null, null, true);
-            return EndUpdateStack(asyncResult);
+            var marshaller = new UpdateStackRequestMarshaller();
+            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4513,10 +4247,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateStack(request, callback, state, false);
+            var marshaller = new UpdateStackRequestMarshaller();
+            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateStack operation.
@@ -4528,21 +4264,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateStackResult from OpsWorks.</returns>
         public  UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateStackResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateStackRequestMarshaller();
-            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateStackResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateUserProfile
-
 
         /// <summary>
         /// Updates a specified user profile.
@@ -4566,8 +4293,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateUserProfile(request, null, null, true);
-            return EndUpdateUserProfile(asyncResult);
+            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserProfileRequest,UpdateUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4584,10 +4313,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateUserProfile(request, callback, state, false);
+            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateUserProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateUserProfile operation.
@@ -4599,21 +4330,12 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateUserProfileResult from OpsWorks.</returns>
         public  UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateUserProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateUserProfileRequestMarshaller();
-            var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateUserProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateVolume
-
 
         /// <summary>
         /// Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
@@ -4638,8 +4360,10 @@ namespace Amazon.OpsWorks
         /// </exception>
         public UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateVolume(request, null, null, true);
-            return EndUpdateVolume(asyncResult);
+            var marshaller = new UpdateVolumeRequestMarshaller();
+            var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVolumeRequest,UpdateVolumeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4656,10 +4380,12 @@ namespace Amazon.OpsWorks
         ///         operation.</returns>
         public IAsyncResult BeginUpdateVolume(UpdateVolumeRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateVolume(request, callback, state, false);
+            var marshaller = new UpdateVolumeRequestMarshaller();
+            var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateVolumeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateVolume operation.
@@ -4671,15 +4397,7 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  UpdateVolumeResult from OpsWorks.</returns>
         public  UpdateVolumeResponse EndUpdateVolume(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateVolumeResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateVolume(UpdateVolumeRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateVolumeRequestMarshaller();
-            var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateVolumeResponse>(asyncResult);
         }
 
         #endregion

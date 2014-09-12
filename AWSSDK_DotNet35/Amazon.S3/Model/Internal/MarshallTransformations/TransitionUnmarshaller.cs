@@ -72,14 +72,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static TransitionUnmarshaller instance;
+        private static TransitionUnmarshaller _instance;
 
-        public static TransitionUnmarshaller GetInstance() 
+        public static TransitionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TransitionUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TransitionUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

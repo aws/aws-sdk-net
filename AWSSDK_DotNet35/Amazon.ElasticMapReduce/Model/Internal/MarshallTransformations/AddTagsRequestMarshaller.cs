@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// AddTags Request Marshaller
     /// </summary>       
-    public class AddTagsRequestMarshaller : IMarshaller<IRequest, AddTagsRequest> 
+    public class AddTagsRequestMarshaller : IMarshaller<IRequest, AddTagsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AddTagsRequest)input);
+        }
+
         public IRequest Marshall(AddTagsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,34 +56,27 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetResourceId())
                 {
-                    writer.WritePropertyName("ResourceId");
-                    writer.Write(publicRequest.ResourceId);
+                    context.Writer.WritePropertyName("ResourceId");
+                    context.Writer.Write(publicRequest.ResourceId);
                 }
 
                 if(publicRequest.IsSetTags())
                 {
-                    writer.WritePropertyName("Tags");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestTagsListValue.IsSetKey())
-                        {
-                            writer.WritePropertyName("Key");
-                            writer.Write(publicRequestTagsListValue.Key);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestTagsListValue.IsSetValue())
-                        {
-                            writer.WritePropertyName("Value");
-                            writer.Write(publicRequestTagsListValue.Value);
-                        }
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

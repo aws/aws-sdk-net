@@ -46,31 +46,13 @@ namespace Amazon.Glacier
     /// 
     /// </ul>
     /// </summary>
-    public partial class AmazonGlacierClient : AmazonWebServiceClient, IAmazonGlacier
+    public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {
         protected override void Initialize()
         {
             this.Config.SetUseNagleIfAvailable(true);
             this.Config.ResignRetries = true;
             base.Initialize();
-        }
-
-        /// <summary>
-        /// Add API version header
-        /// </summary>
-        /// <param name="request"></param>
-        protected override void ProcessRequestHandlers(IRequest request)
-        {
-            if (request.ResourcePath != null)
-            {
-                if (request.ResourcePath.StartsWith("//", StringComparison.Ordinal))
-                {
-                    request.ResourcePath = "/-" + request.ResourcePath.Substring(1);
-                }
-            }
-
-            base.ProcessRequestHandlers(request);
-            request.Headers["x-amz-glacier-version"] = "2012-06-01";
         }
     }
 }

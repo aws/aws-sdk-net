@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for CancelExportTask operation
-    /// </summary>
-    internal class CancelExportTaskResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for CancelExportTask operation
+    /// </summary>  
+    public class CancelExportTaskResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             CancelExportTaskResponse response = new CancelExportTaskResponse();
-            
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
-                
+                if (context.IsStartElement || context.IsAttribute)
+                {
+
+                } 
             }
-                
 
             return response;
         }
-        
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static CancelExportTaskResponseUnmarshaller instance;
+        private static CancelExportTaskResponseUnmarshaller _instance = new CancelExportTaskResponseUnmarshaller();        
 
-        public static CancelExportTaskResponseUnmarshaller GetInstance()
+        internal static CancelExportTaskResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new CancelExportTaskResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static CancelExportTaskResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

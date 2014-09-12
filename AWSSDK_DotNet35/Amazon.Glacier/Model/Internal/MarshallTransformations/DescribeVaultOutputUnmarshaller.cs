@@ -12,84 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeVaultOutput Object
+    /// </summary>  
+    public class DescribeVaultOutputUnmarshaller : IUnmarshaller<DescribeVaultOutput, XmlUnmarshallerContext>, IUnmarshaller<DescribeVaultOutput, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DescribeVaultOutputUnmarshaller
-      /// </summary>
-      internal class DescribeVaultOutputUnmarshaller : IUnmarshaller<DescribeVaultOutput, XmlUnmarshallerContext>, IUnmarshaller<DescribeVaultOutput, JsonUnmarshallerContext>
-      {
         DescribeVaultOutput IUnmarshaller<DescribeVaultOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DescribeVaultOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DescribeVaultOutput describeVaultOutput = new DescribeVaultOutput();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DescribeVaultOutput unmarshalledObject = new DescribeVaultOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("VaultARN", targetDepth))
-              {
-                describeVaultOutput.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VaultName", targetDepth))
-              {
-                describeVaultOutput.VaultName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreationDate", targetDepth))
-              {
-                describeVaultOutput.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LastInventoryDate", targetDepth))
-              {
-                describeVaultOutput.LastInventoryDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NumberOfArchives", targetDepth))
-              {
-                describeVaultOutput.NumberOfArchives = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SizeInBytes", targetDepth))
-              {
-                describeVaultOutput.SizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastInventoryDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastInventoryDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfArchives", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfArchives = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VaultARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VaultName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return describeVaultOutput;
+            return unmarshalledObject;
         }
 
-        private static DescribeVaultOutputUnmarshaller instance;
-        public static DescribeVaultOutputUnmarshaller GetInstance()
+
+        private static DescribeVaultOutputUnmarshaller _instance = new DescribeVaultOutputUnmarshaller();        
+
+        public static DescribeVaultOutputUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DescribeVaultOutputUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.DirectConnect
 {
     /// <summary>
-    /// Base class for AmazonDirectConnect operation requests.
+    /// Base class for DirectConnect operation requests.
     /// </summary>
     public partial class AmazonDirectConnectRequest : AmazonWebServiceRequest
     {
     }
 }
-    

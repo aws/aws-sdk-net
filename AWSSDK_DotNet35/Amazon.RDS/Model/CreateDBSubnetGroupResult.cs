@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The results from the CreateDBSubnetGroup action.
+    /// Contains the result of a successful invocation of the following actions: 
+    /// 
+    ///  <ul> <li><a>CreateDBSubnetGroup</a></li> <li><a>ModifyDBSubnetGroup</a></li> <li><a>DescribeDBSubnetGroups</a></li>
+    /// <li><a>DeleteDBSubnetGroup</a></li> </ul> 
+    /// <para>
+    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class CreateDBSubnetGroupResult : AmazonWebServiceResponse
     {
-        private DBSubnetGroup dBSubnetGroupValue;
+        private DBSubnetGroup _response;
 
-        /// <summary>
-        /// Gets and sets the CreateDBSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the CreateDBSubnetGroup
-        /// action.
-        /// </summary>
         public DBSubnetGroup DBSubnetGroup
         {
-            get { return this.dBSubnetGroupValue; }
-            set { this.dBSubnetGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

@@ -12,48 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <c>GetShardIterator</c> operation.</para>
+    /// Represents the output for <code>GetShardIterator</code>.
     /// </summary>
     public partial class GetShardIteratorResult : AmazonWebServiceResponse
     {
-        
-        private string shardIterator;
-
+        private string _shardIterator;
 
         /// <summary>
-        /// The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence
-        /// number of a data record in a shard.
-        ///  
+        /// Gets and sets the property ShardIterator. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        /// </list>
+        /// The position in the shard from which to start reading data records sequentially. A
+        /// shard iterator specifies this position using the sequence number of a data record
+        /// in a shard.
         /// </para>
         /// </summary>
         public string ShardIterator
         {
-            get { return this.shardIterator; }
-            set { this.shardIterator = value; }
+            get { return this._shardIterator; }
+            set { this._shardIterator = value; }
         }
 
         // Check to see if ShardIterator property is set
         internal bool IsSetShardIterator()
         {
-            return this.shardIterator != null;
+            return this._shardIterator != null;
         }
+
     }
 }

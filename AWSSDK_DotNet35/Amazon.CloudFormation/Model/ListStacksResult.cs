@@ -12,64 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for ListStacks action.</para>
+    /// The output for <a>ListStacks</a> action.
     /// </summary>
     public partial class ListStacksResult : AmazonWebServiceResponse
     {
-        
-        private List<StackSummary> stackSummaries = new List<StackSummary>();
-        private string nextToken;
-
+        private string _nextToken;
+        private List<StackSummary> _stackSummaries = new List<StackSummary>();
 
         /// <summary>
-        /// A list of <c>StackSummary</c> structures containing information about the specified stacks.
-        ///  
-        /// </summary>
-        public List<StackSummary> StackSummaries
-        {
-            get { return this.stackSummaries; }
-            set { this.stackSummaries = value; }
-        }
-
-        // Check to see if StackSummaries property is set
-        internal bool IsSetStackSummaries()
-        {
-            return this.stackSummaries.Count > 0;
-        }
-
-        /// <summary>
-        /// String that identifies the start of the next list of stacks, if there is one.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// String that identifies the start of the next list of stacks, if there is one.
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property StackSummaries. 
+        /// <para>
+        /// A list of <code>StackSummary</code> structures containing information about the specified
+        /// stacks.
+        /// </para>
+        /// </summary>
+        public List<StackSummary> StackSummaries
+        {
+            get { return this._stackSummaries; }
+            set { this._stackSummaries = value; }
+        }
+
+        // Check to see if StackSummaries property is set
+        internal bool IsSetStackSummaries()
+        {
+            return this._stackSummaries != null && this._stackSummaries.Count > 0; 
+        }
+
     }
 }

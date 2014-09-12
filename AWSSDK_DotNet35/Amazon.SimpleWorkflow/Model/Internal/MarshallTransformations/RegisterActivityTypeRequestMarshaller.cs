@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,95 +33,99 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Register Activity Type Request Marshaller
+    /// RegisterActivityType Request Marshaller
     /// </summary>       
-    internal class RegisterActivityTypeRequestMarshaller : IMarshaller<IRequest, RegisterActivityTypeRequest> 
+    public class RegisterActivityTypeRequestMarshaller : IMarshaller<IRequest, RegisterActivityTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(RegisterActivityTypeRequest registerActivityTypeRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((RegisterActivityTypeRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(registerActivityTypeRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(RegisterActivityTypeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.RegisterActivityType";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultTaskHeartbeatTimeout())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(registerActivityTypeRequest.Domain);
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetName()) 
-                {
-                    writer.WritePropertyName("name");
-                    writer.Write(registerActivityTypeRequest.Name);
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetVersion()) 
-                {
-                    writer.WritePropertyName("version");
-                    writer.Write(registerActivityTypeRequest.Version);
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetDescription()) 
-                {
-                    writer.WritePropertyName("description");
-                    writer.Write(registerActivityTypeRequest.Description);
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetDefaultTaskStartToCloseTimeout()) 
-                {
-                    writer.WritePropertyName("defaultTaskStartToCloseTimeout");
-                    writer.Write(registerActivityTypeRequest.DefaultTaskStartToCloseTimeout);
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetDefaultTaskHeartbeatTimeout()) 
-                {
-                    writer.WritePropertyName("defaultTaskHeartbeatTimeout");
-                    writer.Write(registerActivityTypeRequest.DefaultTaskHeartbeatTimeout);
+                    context.Writer.WritePropertyName("defaultTaskHeartbeatTimeout");
+                    context.Writer.Write(publicRequest.DefaultTaskHeartbeatTimeout);
                 }
 
-                if (registerActivityTypeRequest != null) 
+                if(publicRequest.IsSetDefaultTaskList())
                 {
-                    TaskList defaultTaskList = registerActivityTypeRequest.DefaultTaskList;
-                    if (defaultTaskList != null)
-                    {
-                        writer.WritePropertyName("defaultTaskList");
-                        writer.WriteObjectStart();
-                        if (defaultTaskList != null && defaultTaskList.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(defaultTaskList.Name);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetDefaultTaskScheduleToStartTimeout()) 
-                {
-                    writer.WritePropertyName("defaultTaskScheduleToStartTimeout");
-                    writer.Write(registerActivityTypeRequest.DefaultTaskScheduleToStartTimeout);
-                }
-                if (registerActivityTypeRequest != null && registerActivityTypeRequest.IsSetDefaultTaskScheduleToCloseTimeout()) 
-                {
-                    writer.WritePropertyName("defaultTaskScheduleToCloseTimeout");
-                    writer.Write(registerActivityTypeRequest.DefaultTaskScheduleToCloseTimeout);
+                    context.Writer.WritePropertyName("defaultTaskList");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskListMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultTaskList, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDefaultTaskScheduleToCloseTimeout())
+                {
+                    context.Writer.WritePropertyName("defaultTaskScheduleToCloseTimeout");
+                    context.Writer.Write(publicRequest.DefaultTaskScheduleToCloseTimeout);
+                }
+
+                if(publicRequest.IsSetDefaultTaskScheduleToStartTimeout())
+                {
+                    context.Writer.WritePropertyName("defaultTaskScheduleToStartTimeout");
+                    context.Writer.Write(publicRequest.DefaultTaskScheduleToStartTimeout);
+                }
+
+                if(publicRequest.IsSetDefaultTaskStartToCloseTimeout())
+                {
+                    context.Writer.WritePropertyName("defaultTaskStartToCloseTimeout");
+                    context.Writer.Write(publicRequest.DefaultTaskStartToCloseTimeout);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetVersion())
+                {
+                    context.Writer.WritePropertyName("version");
+                    context.Writer.Write(publicRequest.Version);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

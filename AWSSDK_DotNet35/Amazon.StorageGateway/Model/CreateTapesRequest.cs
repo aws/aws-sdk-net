@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,151 +29,110 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTapes operation.
-    /// <para>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.</para> <para><b>NOTE:</b>Cache
-    /// storage must be allocated to the gateway before you can create virtual tapes. Use the AddCache operation to add cache storage to a gateway.
-    /// </para>
+    /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
+    /// the tapes.
     /// </summary>
     public partial class CreateTapesRequest : AmazonStorageGatewayRequest
     {
-        private string gatewayARN;
-        private long? tapeSizeInBytes;
-        private string clientToken;
-        private int? numTapesToCreate;
-        private string tapeBarcodePrefix;
-
-
-        /// <summary>
-        /// The unique Amazon Resource Name(ARN) that represents the gateway to associate the virtual tapes with. Use the <a>ListGateways</a> operation
-        /// to return a list of gateways for your account and region.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string GatewayARN
-        {
-            get { return this.gatewayARN; }
-            set { this.gatewayARN = value; }
-        }
-
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
-        {
-            return this.gatewayARN != null;
-        }
+        private string _clientToken;
+        private string _gatewayARN;
+        private int? _numTapesToCreate;
+        private string _tapeBarcodePrefix;
+        private long? _tapeSizeInBytes;
 
         /// <summary>
-        /// The size, in bytes, of the virtual tapes you want to create. <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
-        ///  
+        /// Gets and sets the property ClientToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>107374182400 - 2748779069440</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public long TapeSizeInBytes
-        {
-            get { return this.tapeSizeInBytes ?? default(long); }
-            set { this.tapeSizeInBytes = value; }
-        }
-
-        // Check to see if TapeSizeInBytes property is set
-        internal bool IsSetTapeSizeInBytes()
-        {
-            return this.tapeSizeInBytes.HasValue;
-        }
-
-        /// <summary>
-        /// A unique identifier that you use to retry a request. If you retry a request, use the same <c>ClientToken</c> you specified in the initial
-        /// request. <note>Using the same <c>ClientToken</c> prevents creating the tape multiple times.</note>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>5 - 100</description>
-        ///     </item>
-        /// </list>
+        /// A unique identifier that you use to retry a request. If you retry a request, use the
+        /// same <code>ClientToken</code> you specified in the initial request.
         /// </para>
         /// </summary>
         public string ClientToken
         {
-            get { return this.clientToken; }
-            set { this.clientToken = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this.clientToken != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// The number of virtual tapes you want to create.
-        ///  
+        /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 10</description>
-        ///     </item>
-        /// </list>
+        /// The unique Amazon Resource Name(ARN) that represents the gateway to associate the
+        /// virtual tapes with. Use the <a>ListGateways</a> operation to return a list of gateways
+        /// for your account and region.
+        /// </para>
+        /// </summary>
+        public string GatewayARN
+        {
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
+        }
+
+        // Check to see if GatewayARN property is set
+        internal bool IsSetGatewayARN()
+        {
+            return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumTapesToCreate. 
+        /// <para>
+        /// The number of virtual tapes you want to create.
         /// </para>
         /// </summary>
         public int NumTapesToCreate
         {
-            get { return this.numTapesToCreate ?? default(int); }
-            set { this.numTapesToCreate = value; }
+            get { return this._numTapesToCreate.GetValueOrDefault(); }
+            set { this._numTapesToCreate = value; }
         }
 
         // Check to see if NumTapesToCreate property is set
         internal bool IsSetNumTapesToCreate()
         {
-            return this.numTapesToCreate.HasValue;
+            return this._numTapesToCreate.HasValue; 
         }
 
         /// <summary>
-        /// A prefix you append to the barcode of the virtual tape you are creating. This makes a barcode unique. <note>The prefix must be 1 to 4
-        /// characters in length and must be upper-case letters A-Z.</note>
-        ///  
+        /// Gets and sets the property TapeBarcodePrefix. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 4</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^[A-Z]*$</description>
-        ///     </item>
-        /// </list>
+        /// A prefix you append to the barcode of the virtual tape you are creating. This makes
+        /// a barcode unique.
         /// </para>
         /// </summary>
         public string TapeBarcodePrefix
         {
-            get { return this.tapeBarcodePrefix; }
-            set { this.tapeBarcodePrefix = value; }
+            get { return this._tapeBarcodePrefix; }
+            set { this._tapeBarcodePrefix = value; }
         }
 
         // Check to see if TapeBarcodePrefix property is set
         internal bool IsSetTapeBarcodePrefix()
         {
-            return this.tapeBarcodePrefix != null;
+            return this._tapeBarcodePrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TapeSizeInBytes. 
+        /// <para>
+        /// The size, in bytes, of the virtual tapes you want to create.
+        /// </para>
+        /// </summary>
+        public long TapeSizeInBytes
+        {
+            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            set { this._tapeSizeInBytes = value; }
+        }
+
+        // Check to see if TapeSizeInBytes property is set
+        internal bool IsSetTapeSizeInBytes()
+        {
+            return this._tapeSizeInBytes.HasValue; 
         }
 
     }
 }
-    

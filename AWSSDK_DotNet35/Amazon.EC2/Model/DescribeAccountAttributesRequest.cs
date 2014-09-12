@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,29 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// <para>Describes the specified attribute of your AWS account.</para>
+    /// Describes the specified attribute of your AWS account.
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonEC2Request
     {
-        private List<string> attributeNames = new List<string>();
-
+        private List<string> _attributeNames = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property AttributeNames. 
+        /// <para>
         /// One or more account attribute names.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> AttributeNames
         {
-            get { return this.attributeNames; }
-            set { this.attributeNames = value; }
+            get { return this._attributeNames; }
+            set { this._attributeNames = value; }
         }
 
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this.attributeNames.Count > 0;
+            return this._attributeNames != null && this._attributeNames.Count > 0; 
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,33 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.AutoScaling.Model;
 
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// Implementation for accessing AutoScaling
-    /// 
-    /// Auto Scaling
+    /// Interface for accessing AutoScaling
+    ///
+    /// Auto Scaling 
     /// <para>
-    /// Auto Scaling is a web service designed to automatically launch or terminate Amazon
+    ///  Auto Scaling is a web service designed to automatically launch or terminate Amazon
     /// Elastic Compute Cloud (Amazon EC2) instances based on user-defined policies, schedules,
     /// and health checks. This service is used in conjunction with Amazon CloudWatch and
-    /// Elastic Load Balancing services.
+    /// Elastic Load Balancing services. 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// Auto Scaling provides APIs that you can call by submitting a Query Request. Query
     /// requests are HTTP or HTTPS requests that use the HTTP verbs GET or POST and a Query
     /// parameter named <i>Action</i> or <i>Operation</i> that specifies the API you are calling.
     /// Action is used throughout this documentation, although Operation is also supported
-    /// for backward compatibility with other Amazon Web Services (AWS) Query APIs.
+    /// for backward compatibility with other Amazon Web Services (AWS) Query APIs. 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// Calling the API using a Query request is the most direct way to access the web service,
     /// but requires that your application handle low-level details such as generating the
@@ -47,47 +54,49 @@ namespace Amazon.AutoScaling
     /// of the API. For information about signing a a query request, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/api_requests.html">Use
     /// Query Requests to Call Auto Scaling APIs</a>
     /// </para>
-    /// 
+    ///  
     /// <para>
-    /// This guide provides detailed information about Auto Scaling actions, data types,
+    ///  This guide provides detailed information about Auto Scaling actions, data types,
     /// parameters, and errors. For detailed information about Auto Scaling features and their
     /// associated API actions, go to the <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/">Auto
-    /// Scaling Developer Guide</a>.
+    /// Scaling Developer Guide</a>. 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// This reference is based on the current WSDL, which is available at:
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// <a href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl">http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a>
     /// 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// <b>Endpoints</b>
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// The examples in this guide assume that your instances are launched in the US East
     /// (Northern Virginia) region and use us-east-1 as the endpoint.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// You can set up your Auto Scaling infrastructure in other AWS regions. For information
     /// about this product's regions and endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
-    /// and Endpoints</a> in the Amazon Web Services General Reference.
+    /// and Endpoints</a> in the Amazon Web Services General Reference. 
     /// </para>
     /// </summary>
-	public partial interface IAmazonAutoScaling : IDisposable
+    public partial interface IAmazonAutoScaling : IDisposable
     {
- 
+
+        
+        #region  AttachInstances
 
         /// <summary>
         /// Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After
-        /// the instance(s) is attached, it becomes a part of the Auto Scaling group.
+        /// the instance(s) is attached, it becomes a part of the Auto Scaling group. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
         /// Amazon EC2 Instances to Your Existing Auto Scaling Group</a> in the <i>Auto Scaling
@@ -97,11 +106,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the AttachInstances service method.</param>
         /// 
         /// <returns>The response from the AttachInstances service method, as returned by AutoScaling.</returns>
-		AttachInstancesResponse AttachInstances(AttachInstancesRequest request);
+        AttachInstancesResponse AttachInstances(AttachInstancesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInstances operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.AttachInstances"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachInstances operation.</param>
@@ -109,25 +118,28 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CompleteLifecycleAction
 
         /// <summary>
         /// Completes the lifecycle action for the associated token initiated under the given
-        /// lifecycle hook with the specified result.
+        /// lifecycle hook with the specified result. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// This operation is a part of the basic sequence for adding a lifecycle hook to an
-        /// Auto Scaling group:
+        ///  This operation is a part of the basic sequence for adding a lifecycle hook to an
+        /// Auto Scaling group: 
         /// </para>
-        /// <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
+        ///  <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
         /// or an Amazon SNS topic. </li> <li> Create an IAM role. This role allows Auto Scaling
         /// to publish lifecycle notifications to the designated SQS queue or SNS topic. </li>
         /// <li> Create the lifecycle hook. You can create a hook that acts when instances launch
         /// or when instances terminate. </li> <li> If necessary, record the lifecycle action
         /// heartbeat to keep the instance in a pending state. </li> <li> <b>Complete the lifecycle
-        /// action.</b> </li> </ol>
+        /// action.</b> </li> </ol> 
         /// <para>
         /// To learn more, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
         /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
@@ -137,11 +149,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CompleteLifecycleAction service method.</param>
         /// 
         /// <returns>The response from the CompleteLifecycleAction service method, as returned by AutoScaling.</returns>
-		CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request);
+        CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteLifecycleAction operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.CompleteLifecycleAction"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CompleteLifecycleAction operation.</param>
@@ -149,8 +161,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAutoScalingGroup
 
         /// <summary>
         /// Creates a new Auto Scaling group with the specified name and other attributes. When
@@ -160,18 +175,18 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the CreateAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException">
+        /// <exception cref="AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request);
+        CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAutoScalingGroup operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.CreateAutoScalingGroup"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup operation.</param>
@@ -179,8 +194,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLaunchConfiguration
 
         /// <summary>
         /// Creates a new launch configuration. The launch configuration name must be unique
@@ -191,18 +209,18 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration service method.</param>
         /// 
         /// <returns>The response from the CreateLaunchConfiguration service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException">
+        /// <exception cref="AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request);
+        CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLaunchConfiguration operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.CreateLaunchConfiguration"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration operation.</param>
@@ -210,13 +228,16 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateOrUpdateTags
 
         /// <summary>
-        /// Creates new tags or updates existing tags for an Auto Scaling group.
+        /// Creates new tags or updates existing tags for an Auto Scaling group. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For information on creating tags for your Auto Scaling group, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tag
         /// Your Auto Scaling Groups and Amazon EC2 Instances</a>.
@@ -225,18 +246,18 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CreateOrUpdateTags service method.</param>
         /// 
         /// <returns>The response from the CreateOrUpdateTags service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException">
+        /// <exception cref="AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request);
+        CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOrUpdateTags operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.CreateOrUpdateTags"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateOrUpdateTags operation.</param>
@@ -244,8 +265,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAutoScalingGroup
 
         /// <summary>
         /// Deletes the specified Auto Scaling group if the group has no instances and no scaling
@@ -254,19 +278,19 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ResourceInUseException">
+        /// <exception cref="ResourceInUseException">
         /// This is returned when you cannot delete a launch configuration or Auto Scaling group
         /// because it is being used.
         /// </exception>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException">
+        /// <exception cref="ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
-		DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request);
+        DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAutoScalingGroup operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeleteAutoScalingGroup"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup operation.</param>
@@ -274,15 +298,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLaunchConfiguration
 
         /// <summary>
-        /// Deletes the specified <a>LaunchConfiguration</a>.
+        /// Deletes the specified <a>LaunchConfiguration</a>. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// The specified launch configuration must not be attached to an Auto Scaling group.
+        ///  The specified launch configuration must not be attached to an Auto Scaling group.
         /// When this call completes, the launch configuration is no longer available for use.
         /// 
         /// </para>
@@ -290,15 +317,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLaunchConfiguration service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ResourceInUseException">
+        /// <exception cref="ResourceInUseException">
         /// This is returned when you cannot delete a launch configuration or Auto Scaling group
         /// because it is being used.
         /// </exception>
-		DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request);
+        DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLaunchConfiguration operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeleteLaunchConfiguration"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfiguration operation.</param>
@@ -306,8 +333,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLifecycleHook
 
         /// <summary>
         /// Deletes the specified lifecycle hook. If there are any outstanding lifecycle actions,
@@ -317,11 +347,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleHook service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleHook service method, as returned by AutoScaling.</returns>
-		DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request);
+        DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleHook operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeleteLifecycleHook"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleHook operation.</param>
@@ -329,8 +359,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteNotificationConfiguration
 
         /// <summary>
         /// Deletes notifications created by <a>PutNotificationConfiguration</a>.
@@ -338,11 +371,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteNotificationConfiguration service method, as returned by AutoScaling.</returns>
-		DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request);
+        DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNotificationConfiguration operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeleteNotificationConfiguration"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationConfiguration operation.</param>
@@ -350,8 +383,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePolicy
 
         /// <summary>
         /// Deletes a policy created by <a>PutScalingPolicy</a>.
@@ -359,11 +395,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
         /// 
         /// <returns>The response from the DeletePolicy service method, as returned by AutoScaling.</returns>
-		DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
+        DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicy operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeletePolicy"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy operation.</param>
@@ -371,8 +407,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteScheduledAction
 
         /// <summary>
         /// Deletes a scheduled action previously created using the <a>PutScheduledUpdateGroupAction</a>.
@@ -380,11 +419,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
         /// 
         /// <returns>The response from the DeleteScheduledAction service method, as returned by AutoScaling.</returns>
-		DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request);
+        DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeleteScheduledAction"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction operation.</param>
@@ -392,8 +431,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTags
 
         /// <summary>
         /// Removes the specified tags or a set of tags from a set of resources.
@@ -401,11 +443,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
         /// <returns>The response from the DeleteTags service method, as returned by AutoScaling.</returns>
-		DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
+        DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DeleteTags"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
@@ -413,19 +455,23 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAccountLimits
+
         /// <summary>
         /// Returns the limits for the Auto Scaling resources currently allowed for your AWS
-        /// account.
+        /// account. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// Your AWS account comes with default limits on resources for Auto Scaling. There is
         /// a default limit of <code>20</code> Auto Scaling groups and <code>100</code> launch
         /// configurations per region.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If you reach the limits for the number of Auto Scaling groups or the launch configurations,
         /// you can go to the <a href="https://aws.amazon.com/support/">Support Center</a> and
@@ -434,20 +480,19 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by AutoScaling.</returns>
-		DescribeAccountLimitsResponse DescribeAccountLimits();
- 
+        DescribeAccountLimitsResponse DescribeAccountLimits();
 
         /// <summary>
         /// Returns the limits for the Auto Scaling resources currently allowed for your AWS
-        /// account.
+        /// account. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// Your AWS account comes with default limits on resources for Auto Scaling. There is
         /// a default limit of <code>20</code> Auto Scaling groups and <code>100</code> launch
         /// configurations per region.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If you reach the limits for the number of Auto Scaling groups or the launch configurations,
         /// you can go to the <a href="https://aws.amazon.com/support/">Support Center</a> and
@@ -457,11 +502,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by AutoScaling.</returns>
-		DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request);
+        DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAccountLimits"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits operation.</param>
@@ -469,15 +514,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAdjustmentTypes
+
         /// <summary>
         /// Returns policy adjustment types for use in the <a>PutScalingPolicy</a> action.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
-		DescribeAdjustmentTypesResponse DescribeAdjustmentTypes();
- 
+        DescribeAdjustmentTypesResponse DescribeAdjustmentTypes();
 
         /// <summary>
         /// Returns policy adjustment types for use in the <a>PutScalingPolicy</a> action.
@@ -485,11 +533,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAdjustmentTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
-		DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request);
+        DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAdjustmentTypes operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAdjustmentTypes"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAdjustmentTypes operation.</param>
@@ -497,51 +545,54 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// Returns a full description of each Auto Scaling group in the given list. This includes
-        /// all Amazon EC2 instances that are members of the group. If a list of names is not
-        /// provided, the service returns the full details of all Auto Scaling groups.
-        /// 
-        /// 
-        /// <para>
-        /// This action supports pagination by returning a token if there are more pages to retrieve.
-        /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
-        /// parameter.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is invalid.
-        /// </exception>
-		DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups();
- 
+        Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAutoScalingGroups
 
         /// <summary>
         /// Returns a full description of each Auto Scaling group in the given list. This includes
         /// all Amazon EC2 instances that are members of the group. If a list of names is not
-        /// provided, the service returns the full details of all Auto Scaling groups.
+        /// provided, the service returns the full details of all Auto Scaling groups. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// This action supports pagination by returning a token if there are more pages to retrieve.
+        ///  This action supports pagination by returning a token if there are more pages to retrieve.
         /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
-        /// parameter.
+        /// parameter. 
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
+        /// <exception cref="InvalidNextTokenException">
+        /// The <code>NextToken</code> value is invalid.
+        /// </exception>
+        DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups();
+
+        /// <summary>
+        /// Returns a full description of each Auto Scaling group in the given list. This includes
+        /// all Amazon EC2 instances that are members of the group. If a list of names is not
+        /// provided, the service returns the full details of all Auto Scaling groups. 
+        /// 
+        ///  
+        /// <para>
+        ///  This action supports pagination by returning a token if there are more pages to retrieve.
+        /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
+        /// parameter. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request);
+        DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingGroups operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAutoScalingGroups"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingGroups operation.</param>
@@ -549,51 +600,54 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// Returns a description of each Auto Scaling instance in the <code>InstanceIds</code>
-        /// list. If a list is not provided, the service returns the full details of all instances
-        /// up to a maximum of 50. By default, the service returns a list of 20 items.
-        /// 
-        /// 
-        /// <para>
-        /// This action supports pagination by returning a token if there are more pages to retrieve.
-        /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
-        /// parameter.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is invalid.
-        /// </exception>
-		DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances();
- 
+        Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAutoScalingInstances
 
         /// <summary>
         /// Returns a description of each Auto Scaling instance in the <code>InstanceIds</code>
         /// list. If a list is not provided, the service returns the full details of all instances
-        /// up to a maximum of 50. By default, the service returns a list of 20 items.
+        /// up to a maximum of 50. By default, the service returns a list of 20 items. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// This action supports pagination by returning a token if there are more pages to retrieve.
+        ///  This action supports pagination by returning a token if there are more pages to retrieve.
         /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
-        /// parameter.
+        /// parameter. 
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="InvalidNextTokenException">
+        /// The <code>NextToken</code> value is invalid.
+        /// </exception>
+        DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances();
+
+        /// <summary>
+        /// Returns a description of each Auto Scaling instance in the <code>InstanceIds</code>
+        /// list. If a list is not provided, the service returns the full details of all instances
+        /// up to a maximum of 50. By default, the service returns a list of 20 items. 
+        /// 
+        ///  
+        /// <para>
+        ///  This action supports pagination by returning a token if there are more pages to retrieve.
+        /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
+        /// parameter. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request);
+        DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingInstances operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAutoScalingInstances"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingInstances operation.</param>
@@ -601,15 +655,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAutoScalingNotificationTypes
+
         /// <summary>
         /// Returns a list of all notification types that are supported by Auto Scaling.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
-		DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes();
- 
+        DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes();
 
         /// <summary>
         /// Returns a list of all notification types that are supported by Auto Scaling.
@@ -617,11 +674,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingNotificationTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
-		DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request);
+        DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingNotificationTypes operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAutoScalingNotificationTypes"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingNotificationTypes operation.</param>
@@ -629,47 +686,50 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLaunchConfigurations
+
         /// <summary>
         /// Returns a full description of the launch configurations, or the specified launch
-        /// configurations, if they exist.
+        /// configurations, if they exist. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// If no name is specified, then the full details of all launch configurations are returned.
+        ///  If no name is specified, then the full details of all launch configurations are returned.
         /// 
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations();
- 
+        DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations();
 
         /// <summary>
         /// Returns a full description of the launch configurations, or the specified launch
-        /// configurations, if they exist.
+        /// configurations, if they exist. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// If no name is specified, then the full details of all launch configurations are returned.
+        ///  If no name is specified, then the full details of all launch configurations are returned.
         /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurations service method.</param>
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request);
+        DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLaunchConfigurations operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeLaunchConfigurations"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurations operation.</param>
@@ -677,8 +737,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLifecycleHooks
 
         /// <summary>
         /// Describes the lifecycle hooks that currently belong to the specified Auto Scaling
@@ -687,11 +750,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHooks service method.</param>
         /// 
         /// <returns>The response from the DescribeLifecycleHooks service method, as returned by AutoScaling.</returns>
-		DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request);
+        DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLifecycleHooks operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeLifecycleHooks"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHooks operation.</param>
@@ -699,8 +762,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLifecycleHooksResponse> DescribeLifecycleHooksAsync(DescribeLifecycleHooksRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLifecycleHooksResponse> DescribeLifecycleHooksAsync(DescribeLifecycleHooksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLifecycleHookTypes
 
         /// <summary>
         /// Describes the available types of lifecycle hooks.
@@ -708,11 +774,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHookTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeLifecycleHookTypes service method, as returned by AutoScaling.</returns>
-		DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request);
+        DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLifecycleHookTypes operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeLifecycleHookTypes"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHookTypes operation.</param>
@@ -720,15 +786,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLifecycleHookTypesResponse> DescribeLifecycleHookTypesAsync(DescribeLifecycleHookTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLifecycleHookTypesResponse> DescribeLifecycleHookTypesAsync(DescribeLifecycleHookTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMetricCollectionTypes
+
         /// <summary>
         /// Returns a list of metrics and a corresponding list of granularities for each metric.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
-		DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes();
- 
+        DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes();
 
         /// <summary>
         /// Returns a list of metrics and a corresponding list of granularities for each metric.
@@ -736,11 +805,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
-		DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request);
+        DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricCollectionTypes operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeMetricCollectionTypes"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes operation.</param>
@@ -748,19 +817,22 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeNotificationConfigurations
+
         /// <summary>
         /// Returns a list of notification actions associated with Auto Scaling groups for specified
         /// events.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations();
- 
+        DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations();
 
         /// <summary>
         /// Returns a list of notification actions associated with Auto Scaling groups for specified
@@ -769,14 +841,14 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeNotificationConfigurations service method.</param>
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request);
+        DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNotificationConfigurations operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeNotificationConfigurations"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeNotificationConfigurations operation.</param>
@@ -784,8 +856,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribePolicies
+
         /// <summary>
         /// Returns descriptions of what each policy does. This action supports pagination. If
         /// the response includes a token, there are more records available. To get the additional
@@ -794,11 +870,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribePoliciesResponse DescribePolicies();
- 
+        DescribePoliciesResponse DescribePolicies();
 
         /// <summary>
         /// Returns descriptions of what each policy does. This action supports pagination. If
@@ -809,14 +884,14 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribePolicies service method.</param>
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request);
+        DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePolicies operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribePolicies"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribePolicies operation.</param>
@@ -824,59 +899,62 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeScalingActivities
+
         /// <summary>
-        /// Returns the scaling activities for the specified Auto Scaling group.
+        /// Returns the scaling activities for the specified Auto Scaling group. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// If the specified <code>ActivityIds</code> list is empty, all the activities from
+        ///  If the specified <code>ActivityIds</code> list is empty, all the activities from
         /// the past six weeks are returned. Activities are sorted by the start time. Activities
-        /// still in progress appear first on the list.
+        /// still in progress appear first on the list. 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// This action supports pagination. If the response includes a token, there are more
+        ///  This action supports pagination. If the response includes a token, there are more
         /// records available. To get the additional records, repeat the request with the response
-        /// token as the <code>NextToken</code> parameter.
+        /// token as the <code>NextToken</code> parameter. 
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeScalingActivitiesResponse DescribeScalingActivities();
- 
+        DescribeScalingActivitiesResponse DescribeScalingActivities();
 
         /// <summary>
-        /// Returns the scaling activities for the specified Auto Scaling group.
+        /// Returns the scaling activities for the specified Auto Scaling group. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// If the specified <code>ActivityIds</code> list is empty, all the activities from
+        ///  If the specified <code>ActivityIds</code> list is empty, all the activities from
         /// the past six weeks are returned. Activities are sorted by the start time. Activities
-        /// still in progress appear first on the list.
+        /// still in progress appear first on the list. 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// This action supports pagination. If the response includes a token, there are more
+        ///  This action supports pagination. If the response includes a token, there are more
         /// records available. To get the additional records, repeat the request with the response
-        /// token as the <code>NextToken</code> parameter.
+        /// token as the <code>NextToken</code> parameter. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request);
+        DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingActivities operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeScalingActivities"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities operation.</param>
@@ -884,16 +962,19 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeScalingProcessTypes
+
         /// <summary>
         /// Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
         /// actions.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
-		DescribeScalingProcessTypesResponse DescribeScalingProcessTypes();
- 
+        DescribeScalingProcessTypesResponse DescribeScalingProcessTypes();
 
         /// <summary>
         /// Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
@@ -902,11 +983,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingProcessTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
-		DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request);
+        DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingProcessTypes operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeScalingProcessTypes"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingProcessTypes operation.</param>
@@ -914,19 +995,22 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeScheduledActions
+
         /// <summary>
         /// Lists all the actions scheduled for your Auto Scaling group that haven't been executed.
         /// To see a list of actions already executed, see the activity record returned in <a>DescribeScalingActivities</a>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeScheduledActionsResponse DescribeScheduledActions();
- 
+        DescribeScheduledActionsResponse DescribeScheduledActions();
 
         /// <summary>
         /// Lists all the actions scheduled for your Auto Scaling group that haven't been executed.
@@ -935,14 +1019,14 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request);
+        DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeScheduledActions"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions operation.</param>
@@ -950,61 +1034,64 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTags
+
         /// <summary>
-        /// Lists the Auto Scaling group tags.
+        /// Lists the Auto Scaling group tags. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// You can use filters to limit results when describing tags. For example, you can query
+        ///  You can use filters to limit results when describing tags. For example, you can query
         /// for tags of a particular Auto Scaling group. You can specify multiple values for a
         /// filter. A tag must match at least one of the specified values for it to be included
-        /// in the results.
+        /// in the results. 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// You can also specify multiple filters. The result includes information for a particular
+        ///  You can also specify multiple filters. The result includes information for a particular
         /// tag only if it matches all your filters. If there's no match, no special message is
-        /// returned.
+        /// returned. 
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeTagsResponse DescribeTags();
- 
+        DescribeTagsResponse DescribeTags();
 
         /// <summary>
-        /// Lists the Auto Scaling group tags.
+        /// Lists the Auto Scaling group tags. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// You can use filters to limit results when describing tags. For example, you can query
+        ///  You can use filters to limit results when describing tags. For example, you can query
         /// for tags of a particular Auto Scaling group. You can specify multiple values for a
         /// filter. A tag must match at least one of the specified values for it to be included
-        /// in the results.
+        /// in the results. 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// You can also specify multiple filters. The result includes information for a particular
+        ///  You can also specify multiple filters. The result includes information for a particular
         /// tag only if it matches all your filters. If there's no match, no special message is
-        /// returned.
+        /// returned. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// <exception cref="InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
-		DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeTags"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
@@ -1012,15 +1099,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTerminationPolicyTypes
+
         /// <summary>
         /// Returns a list of all termination policies supported by Auto Scaling.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
-		DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes();
- 
+        DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes();
 
         /// <summary>
         /// Returns a list of all termination policies supported by Auto Scaling.
@@ -1028,11 +1118,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
-		DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request);
+        DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTerminationPolicyTypes operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeTerminationPolicyTypes"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes operation.</param>
@@ -1040,15 +1130,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DetachInstances
 
         /// <summary>
         /// Using <code>DetachInstances</code>, you can remove an instance from an Auto Scaling
         /// group. After the instances are detached, you can manage them independently from the
         /// rest of the Auto Scaling group.
         /// 
-        /// 
+        ///  
         /// <para>
         /// To learn more about detaching instances, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
         /// Amazon EC2 Instances From Your Auto Scaling Group</a>.
@@ -1057,11 +1150,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DetachInstances service method.</param>
         /// 
         /// <returns>The response from the DetachInstances service method, as returned by AutoScaling.</returns>
-		DetachInstancesResponse DetachInstances(DetachInstancesRequest request);
+        DetachInstancesResponse DetachInstances(DetachInstancesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInstances operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DetachInstances"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachInstances operation.</param>
@@ -1069,8 +1162,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisableMetricsCollection
 
         /// <summary>
         /// Disables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code>.
@@ -1079,11 +1175,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DisableMetricsCollection service method.</param>
         /// 
         /// <returns>The response from the DisableMetricsCollection service method, as returned by AutoScaling.</returns>
-		DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request);
+        DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableMetricsCollection operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DisableMetricsCollection"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableMetricsCollection operation.</param>
@@ -1091,17 +1187,20 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableMetricsCollection
 
         /// <summary>
         /// Enables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code>.
         /// You can specify the list of enabled metrics with the <code>Metrics</code> parameter.
         /// 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// Auto Scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code>
+        ///  Auto Scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code>
         /// flag, in the Auto Scaling group's launch configuration, is set to <code>True</code>.
         /// 
         /// </para>
@@ -1109,11 +1208,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection service method.</param>
         /// 
         /// <returns>The response from the EnableMetricsCollection service method, as returned by AutoScaling.</returns>
-		EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request);
+        EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMetricsCollection operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.EnableMetricsCollection"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection operation.</param>
@@ -1121,13 +1220,16 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnterStandby
 
         /// <summary>
-        /// Move instances in an Auto Scaling group into a Standby mode.
+        /// Move instances in an Auto Scaling group into a Standby mode. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// To learn more about how to put instances into a Standby mode, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
         /// Scaling InService State</a>.
@@ -1136,11 +1238,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
         /// 
         /// <returns>The response from the EnterStandby service method, as returned by AutoScaling.</returns>
-		EnterStandbyResponse EnterStandby(EnterStandbyRequest request);
+        EnterStandbyResponse EnterStandby(EnterStandbyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnterStandby operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.EnterStandby"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby operation.</param>
@@ -1148,8 +1250,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<EnterStandbyResponse> EnterStandbyAsync(EnterStandbyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<EnterStandbyResponse> EnterStandbyAsync(EnterStandbyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExecutePolicy
 
         /// <summary>
         /// Executes the specified policy.
@@ -1157,15 +1262,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ExecutePolicy service method.</param>
         /// 
         /// <returns>The response from the ExecutePolicy service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException">
+        /// <exception cref="ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
-		ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request);
+        ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ExecutePolicy operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.ExecutePolicy"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ExecutePolicy operation.</param>
@@ -1173,13 +1278,16 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExitStandby
 
         /// <summary>
-        /// Move an instance out of Standby mode.
+        /// Move an instance out of Standby mode. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// To learn more about how to put instances that are in a Standby mode back into service,
         /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
@@ -1189,11 +1297,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
         /// 
         /// <returns>The response from the ExitStandby service method, as returned by AutoScaling.</returns>
-		ExitStandbyResponse ExitStandby(ExitStandbyRequest request);
+        ExitStandbyResponse ExitStandby(ExitStandbyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ExitStandby operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.ExitStandby"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby operation.</param>
@@ -1201,30 +1309,33 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ExitStandbyResponse> ExitStandbyAsync(ExitStandbyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ExitStandbyResponse> ExitStandbyAsync(ExitStandbyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutLifecycleHook
 
         /// <summary>
         /// Creates or updates a lifecycle hook for an Auto Scaling Group.
         /// 
-        /// 
+        ///  
         /// <para>
         /// A lifecycle hook tells Auto Scaling that you want to perform an action on an instance
         /// that is not actively in service; for example, either when the instance launches or
         /// before the instance terminates.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// This operation is a part of the basic sequence for adding a lifecycle hook to an
-        /// Auto Scaling group:
+        ///  This operation is a part of the basic sequence for adding a lifecycle hook to an
+        /// Auto Scaling group: 
         /// </para>
-        /// <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
+        ///  <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
         /// or an Amazon SNS topic. </li> <li> Create an IAM role. This role allows Auto Scaling
         /// to publish lifecycle notifications to the designated SQS queue or SNS topic. </li>
         /// <li> <b>Create the lifecycle hook. You can create a hook that acts when instances
         /// launch or when instances terminate.</b> </li> <li> If necessary, record the lifecycle
         /// action heartbeat to keep the instance in a pending state. </li> <li> Complete the
-        /// lifecycle action. </li> </ol>
+        /// lifecycle action. </li> </ol> 
         /// <para>
         /// To learn more, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
         /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
@@ -1234,15 +1345,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleHook service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleHook service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request);
+        PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleHook operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.PutLifecycleHook"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleHook operation.</param>
@@ -1250,20 +1361,23 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutLifecycleHookResponse> PutLifecycleHookAsync(PutLifecycleHookRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutLifecycleHookResponse> PutLifecycleHookAsync(PutLifecycleHookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutNotificationConfiguration
 
         /// <summary>
         /// Configures an Auto Scaling group to send notifications when specified events take
         /// place. Subscribers to this topic can have messages for events delivered to an endpoint
-        /// such as a web server or email address.
+        /// such as a web server or email address. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Get
         /// Email Notifications When Your Auto Scaling Group Changes</a>
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// A new <code>PutNotificationConfiguration</code> overwrites an existing configuration.
         /// 
@@ -1272,15 +1386,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutNotificationConfiguration service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request);
+        PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutNotificationConfiguration operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.PutNotificationConfiguration"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationConfiguration operation.</param>
@@ -1288,8 +1402,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutScalingPolicy
 
         /// <summary>
         /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
@@ -1300,15 +1417,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 
         /// <returns>The response from the PutScalingPolicy service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request);
+        PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutScalingPolicy operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.PutScalingPolicy"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy operation.</param>
@@ -1316,15 +1433,18 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutScheduledUpdateGroupAction
 
         /// <summary>
         /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
         /// a scheduled scaling action, if you leave a parameter unspecified, the corresponding
-        /// value remains unchanged in the affected Auto Scaling group.
+        /// value remains unchanged in the affected Auto Scaling group. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For information on creating or updating a scheduled action for your Auto Scaling group,
         /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scale
@@ -1334,18 +1454,18 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction service method.</param>
         /// 
         /// <returns>The response from the PutScheduledUpdateGroupAction service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.AlreadyExistsException">
+        /// <exception cref="AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="T:Amazon.AutoScaling.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
-		PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request);
+        PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutScheduledUpdateGroupAction operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.PutScheduledUpdateGroupAction"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction operation.</param>
@@ -1353,26 +1473,29 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RecordLifecycleActionHeartbeat
 
         /// <summary>
         /// Records a heartbeat for the lifecycle action associated with a specific token. This
         /// extends the timeout by the length of time defined by the <code>HeartbeatTimeout</code>
-        /// parameter of the <a>PutLifecycleHook</a> operation.
+        /// parameter of the <a>PutLifecycleHook</a> operation. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// This operation is a part of the basic sequence for adding a lifecycle hook to an
-        /// Auto Scaling group:
+        ///  This operation is a part of the basic sequence for adding a lifecycle hook to an
+        /// Auto Scaling group: 
         /// </para>
-        /// <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
+        ///  <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
         /// or an Amazon SNS topic. </li> <li> Create an IAM role. This role allows Auto Scaling
         /// to publish lifecycle notifications to the designated SQS queue or SNS topic. </li>
         /// <li> Create the lifecycle hook. You can create a hook that acts when instances launch
         /// or when instances terminate. </li> <li> <b>If necessary, record the lifecycle action
         /// heartbeat to keep the instance in a pending state.</b> </li> <li> Complete the lifecycle
-        /// action. </li> </ol>
+        /// action. </li> </ol> 
         /// <para>
         /// To learn more, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
         /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
@@ -1382,11 +1505,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the RecordLifecycleActionHeartbeat service method.</param>
         /// 
         /// <returns>The response from the RecordLifecycleActionHeartbeat service method, as returned by AutoScaling.</returns>
-		RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request);
+        RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the RecordLifecycleActionHeartbeat operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.RecordLifecycleActionHeartbeat"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RecordLifecycleActionHeartbeat operation.</param>
@@ -1394,8 +1517,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<RecordLifecycleActionHeartbeatResponse> RecordLifecycleActionHeartbeatAsync(RecordLifecycleActionHeartbeatRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<RecordLifecycleActionHeartbeatResponse> RecordLifecycleActionHeartbeatAsync(RecordLifecycleActionHeartbeatRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResumeProcesses
 
         /// <summary>
         /// Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information
@@ -1405,11 +1531,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ResumeProcesses service method.</param>
         /// 
         /// <returns>The response from the ResumeProcesses service method, as returned by AutoScaling.</returns>
-		ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request);
+        ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResumeProcesses operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.ResumeProcesses"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResumeProcesses operation.</param>
@@ -1417,8 +1543,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetDesiredCapacity
 
         /// <summary>
         /// Sets the desired size of the specified <a>AutoScalingGroup</a>.
@@ -1426,15 +1555,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity service method.</param>
         /// 
         /// <returns>The response from the SetDesiredCapacity service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException">
+        /// <exception cref="ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
-		SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request);
+        SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetDesiredCapacity operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.SetDesiredCapacity"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity operation.</param>
@@ -1442,14 +1571,17 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetInstanceHealth
 
         /// <summary>
         /// Sets the health status of a specified instance that belongs to any of your Auto Scaling
-        /// groups.
+        /// groups. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html">Configure
         /// Health Checks for Your Auto Scaling group</a>.
@@ -1458,11 +1590,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the SetInstanceHealth service method.</param>
         /// 
         /// <returns>The response from the SetInstanceHealth service method, as returned by AutoScaling.</returns>
-		SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request);
+        SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetInstanceHealth operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.SetInstanceHealth"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetInstanceHealth operation.</param>
@@ -1470,8 +1602,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SuspendProcesses
 
         /// <summary>
         /// Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process
@@ -1479,26 +1614,26 @@ namespace Amazon.AutoScaling
         /// To suspend all process types, omit the <code>ScalingProcesses.member.N</code> parameter.
         /// 
         /// 
-        /// <important>
+        ///  <important> 
         /// <para>
-        /// Suspending either of the two primary process types, <code>Launch</code> or <code>Terminate</code>,
-        /// can prevent other process types from functioning properly.
+        ///  Suspending either of the two primary process types, <code>Launch</code> or <code>Terminate</code>,
+        /// can prevent other process types from functioning properly. 
         /// </para>
-        /// </important>
+        ///  </important> 
         /// <para>
-        /// To resume processes that have been suspended, use <a>ResumeProcesses</a> For more
+        ///  To resume processes that have been suspended, use <a>ResumeProcesses</a> For more
         /// information on suspending and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
-        /// and Resume Auto Scaling Process</a>.
+        /// and Resume Auto Scaling Process</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses service method.</param>
         /// 
         /// <returns>The response from the SuspendProcesses service method, as returned by AutoScaling.</returns>
-		SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request);
+        SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SuspendProcesses operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.SuspendProcesses"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses operation.</param>
@@ -1506,8 +1641,11 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TerminateInstanceInAutoScalingGroup
 
         /// <summary>
         /// Terminates the specified instance. Optionally, the desired group size can be adjusted.
@@ -1515,15 +1653,15 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the TerminateInstanceInAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException">
+        /// <exception cref="ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
-		TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request);
+        TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstanceInAutoScalingGroup operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.TerminateInstanceInAutoScalingGroup"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup operation.</param>
@@ -1531,31 +1669,34 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAutoScalingGroup
 
         /// <summary>
-        /// Updates the configuration for the specified <a>AutoScalingGroup</a>.
+        /// Updates the configuration for the specified <a>AutoScalingGroup</a>. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// The new settings are registered upon the completion of this call. Any launch configuration
+        ///  The new settings are registered upon the completion of this call. Any launch configuration
         /// settings take effect on any triggers after this call returns. Scaling activities that
-        /// are currently in progress aren't affected.
+        /// are currently in progress aren't affected. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="T:Amazon.AutoScaling.Model.ScalingActivityInProgressException">
+        /// <exception cref="ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
-		UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request);
+        UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAutoScalingGroup operation.
-        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup"/>
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutoScalingGroup operation.</param>
@@ -1563,6 +1704,9 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

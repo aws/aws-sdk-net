@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
     {
         public UpdateStackRequest()
         {
-            this.notificationARNs = new AutoConstructedList<string>();
+            this._notificationARNs = new AutoConstructedList<string>();
         }
     }
 }

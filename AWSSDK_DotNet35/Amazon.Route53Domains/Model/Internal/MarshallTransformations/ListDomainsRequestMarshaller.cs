@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListDomains Request Marshaller
     /// </summary>       
-    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> 
+    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListDomainsRequest)input);
+        }
+
         public IRequest Marshall(ListDomainsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
@@ -47,16 +56,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMarker())
                 {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(publicRequest.Marker);
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
                 }
 
                 if(publicRequest.IsSetMaxItems())
                 {
-                    writer.WritePropertyName("MaxItems");
-                    writer.Write(publicRequest.MaxItems);
+                    context.Writer.WritePropertyName("MaxItems");
+                    context.Writer.Write(publicRequest.MaxItems);
                 }
 
         

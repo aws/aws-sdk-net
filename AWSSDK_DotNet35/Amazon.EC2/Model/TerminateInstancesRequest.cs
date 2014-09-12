@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,39 +29,70 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateInstances operation.
-    /// <para>Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each call
-    /// succeeds.</para> <para>Terminated instances remain visible after termination (for approximately one hour).</para> <para>By default, Amazon
-    /// EC2 deletes all Amazon EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue
-    /// running.</para> <para>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What
-    /// happens to an instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices
-    /// attached to the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch
-    /// are automatically deleted. For more information about the differences between stopping and terminating instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html" >Troubleshooting Terminating Your
-    /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Shuts down one or more instances. This operation is idempotent; if you terminate an
+    /// instance more than once, each call succeeds.
+    /// 
+    ///  
+    /// <para>
+    /// Terminated instances remain visible after termination (for approximately one hour).
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached when the
+    /// instance launched. Volumes attached after instance launch continue running.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can stop, start, and terminate EBS-backed instances. You can only terminate instance
+    /// store-backed instances. What happens to an instance differs if you stop it or terminate
+    /// it. For example, when you stop an instance, the root device and any other devices
+    /// attached to the instance persist. When you terminate an instance, the root device
+    /// and any other devices attached during the instance launch are automatically deleted.
+    /// For more information about the differences between stopping and terminating instances,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+    /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+    /// Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TerminateInstancesRequest : AmazonEC2Request
     {
-        private List<string> instanceIds = new List<string>();
-
+        private List<string> _instanceIds = new List<string>();
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public TerminateInstancesRequest() { }
+
+        /// <summary>
+        /// Instantiates TerminateInstancesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="instanceIds">One or more instance IDs.</param>
+        public TerminateInstancesRequest(List<string> instanceIds)
+        {
+            _instanceIds = instanceIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
         /// One or more instance IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
 
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -58,7 +62,6 @@ namespace Amazon.Redshift.Model
         private string _vpcId;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
-
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
@@ -78,7 +81,6 @@ namespace Amazon.Redshift.Model
             return this._allowVersionUpgrade.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
@@ -96,7 +98,6 @@ namespace Amazon.Redshift.Model
         {
             return this._automatedSnapshotRetentionPeriod.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -117,7 +118,6 @@ namespace Amazon.Redshift.Model
             return this._availabilityZone != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
@@ -135,7 +135,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterCreateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -155,7 +154,6 @@ namespace Amazon.Redshift.Model
             return this._clusterIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterNodes. 
         /// <para>
@@ -173,7 +171,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterNodes != null && this._clusterNodes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterParameterGroups. 
@@ -194,7 +191,6 @@ namespace Amazon.Redshift.Model
             return this._clusterParameterGroups != null && this._clusterParameterGroups.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterPublicKey. 
         /// <para>
@@ -213,7 +209,6 @@ namespace Amazon.Redshift.Model
             return this._clusterPublicKey != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterRevisionNumber. 
         /// <para>
@@ -231,7 +226,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterRevisionNumber != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
@@ -259,7 +253,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterSnapshotCopyStatus. 
         /// <para>
@@ -278,7 +271,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterSnapshotCopyStatus != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterStatus. 
@@ -300,7 +292,6 @@ namespace Amazon.Redshift.Model
             return this._clusterStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
@@ -320,7 +311,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSubnetGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
@@ -339,7 +329,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterVersion != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DBName. 
@@ -362,7 +351,6 @@ namespace Amazon.Redshift.Model
             return this._dBName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ElasticIpStatus. 
         /// <para>
@@ -380,7 +368,6 @@ namespace Amazon.Redshift.Model
         {
             return this._elasticIpStatus != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Encrypted. 
@@ -400,7 +387,6 @@ namespace Amazon.Redshift.Model
             return this._encrypted.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
@@ -418,7 +404,6 @@ namespace Amazon.Redshift.Model
         {
             return this._endpoint != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmStatus. 
@@ -443,7 +428,6 @@ namespace Amazon.Redshift.Model
             return this._hsmStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
@@ -463,7 +447,6 @@ namespace Amazon.Redshift.Model
             return this._masterUsername != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ModifyStatus. 
         /// <para>
@@ -481,7 +464,6 @@ namespace Amazon.Redshift.Model
         {
             return this._modifyStatus != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NodeType. 
@@ -501,7 +483,6 @@ namespace Amazon.Redshift.Model
             return this._nodeType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
@@ -519,7 +500,6 @@ namespace Amazon.Redshift.Model
         {
             return this._numberOfNodes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
@@ -540,7 +520,6 @@ namespace Amazon.Redshift.Model
             return this._pendingModifiedValues != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
@@ -560,7 +539,6 @@ namespace Amazon.Redshift.Model
             return this._preferredMaintenanceWindow != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
@@ -578,7 +556,6 @@ namespace Amazon.Redshift.Model
         {
             return this._publiclyAccessible.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RestoreStatus. 
@@ -599,7 +576,6 @@ namespace Amazon.Redshift.Model
             return this._restoreStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
@@ -617,7 +593,6 @@ namespace Amazon.Redshift.Model
         {
             return this._vpcId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 

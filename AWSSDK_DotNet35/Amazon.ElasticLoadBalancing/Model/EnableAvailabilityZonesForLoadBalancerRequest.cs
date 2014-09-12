@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -44,6 +48,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> _availabilityZones = new List<string>();
         private string _loadBalancerName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public EnableAvailabilityZonesForLoadBalancerRequest() { }
+
+        /// <summary>
+        /// Instantiates EnableAvailabilityZonesForLoadBalancerRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
+        /// <param name="availabilityZones"> A list of new Availability Zones for the load balancer. Each Availability Zone must be in the same region as the load balancer. </param>
+        public EnableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
+        {
+            _loadBalancerName = loadBalancerName;
+            _availabilityZones = availabilityZones;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -63,7 +82,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 

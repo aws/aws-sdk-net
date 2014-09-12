@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,6 +44,21 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSecurityGroupName;
         private string _description;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateCacheSecurityGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateCacheSecurityGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cacheSecurityGroupName">A name for the cache security group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters. Must not be the word "Default". Example: <code>mysecuritygroup</code></param>
+        /// <param name="description">A description for the cache security group.</param>
+        public CreateCacheSecurityGroupRequest(string cacheSecurityGroupName, string description)
+        {
+            _cacheSecurityGroupName = cacheSecurityGroupName;
+            _description = description;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheSecurityGroupName. 
@@ -67,7 +86,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheSecurityGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 

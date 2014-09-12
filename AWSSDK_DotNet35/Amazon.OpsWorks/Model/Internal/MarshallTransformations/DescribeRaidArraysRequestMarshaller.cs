@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeRaidArrays Request Marshaller
     /// </summary>       
-    public class DescribeRaidArraysRequestMarshaller : IMarshaller<IRequest, DescribeRaidArraysRequest> 
+    public class DescribeRaidArraysRequestMarshaller : IMarshaller<IRequest, DescribeRaidArraysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeRaidArraysRequest)input);
+        }
+
         public IRequest Marshall(DescribeRaidArraysRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,27 +56,28 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetInstanceId())
                 {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(publicRequest.InstanceId);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
                 if(publicRequest.IsSetRaidArrayIds())
                 {
-                    writer.WritePropertyName("RaidArrayIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("RaidArrayIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestRaidArrayIdsListValue in publicRequest.RaidArrayIds)
                     {
-                        writer.Write(publicRequestRaidArrayIdsListValue);
+                            context.Writer.Write(publicRequestRaidArrayIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

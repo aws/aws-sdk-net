@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,566 +12,673 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following actions: </para>
-    /// <ul>
-    /// <li> CreateDBInstance </li>
-    /// <li> DeleteDBInstance </li>
-    /// <li> ModifyDBInstance </li>
+    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    /// </ul>
-    /// <para>This data type is used as a response element in the DescribeDBInstances action.</para>
+    ///  <ul> <li><a>CreateDBInstance</a></li> <li><a>DeleteDBInstance</a></li> <li><a>ModifyDBInstance</a></li>
+    /// </ul> 
+    /// <para>
+    /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
+    /// </para>
     /// </summary>
-    public partial class DBInstance : AmazonWebServiceResponse
+    public partial class DBInstance
     {
-        
-        private string dBInstanceIdentifier;
-        private string dBInstanceClass;
-        private string engine;
-        private string dBInstanceStatus;
-        private string masterUsername;
-        private string dBName;
-        private Endpoint endpoint;
-        private int? allocatedStorage;
-        private DateTime? instanceCreateTime;
-        private string preferredBackupWindow;
-        private int? backupRetentionPeriod;
-        private List<DBSecurityGroupMembership> dBSecurityGroups = new List<DBSecurityGroupMembership>();
-        private List<VpcSecurityGroupMembership> vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
-        private List<DBParameterGroupStatus> dBParameterGroups = new List<DBParameterGroupStatus>();
-        private string availabilityZone;
-        private DBSubnetGroup dBSubnetGroup;
-        private string preferredMaintenanceWindow;
-        private PendingModifiedValues pendingModifiedValues;
-        private DateTime? latestRestorableTime;
-        private bool? multiAZ;
-        private string engineVersion;
-        private bool? autoMinorVersionUpgrade;
-        private string readReplicaSourceDBInstanceIdentifier;
-        private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
-        private string licenseModel;
-        private int? iops;
-        private List<OptionGroupMembership> optionGroupMemberships = new List<OptionGroupMembership>();
-        private string characterSetName;
-        private string secondaryAvailabilityZone;
-        private bool? publiclyAccessible;
-        private List<DBInstanceStatusInfo> statusInfos = new List<DBInstanceStatusInfo>();
-
+        private int? _allocatedStorage;
+        private bool? _autoMinorVersionUpgrade;
+        private string _availabilityZone;
+        private int? _backupRetentionPeriod;
+        private string _characterSetName;
+        private string _dBInstanceClass;
+        private string _dBInstanceIdentifier;
+        private string _dBInstanceStatus;
+        private string _dBName;
+        private List<DBParameterGroupStatus> _dBParameterGroups = new List<DBParameterGroupStatus>();
+        private List<DBSecurityGroupMembership> _dBSecurityGroups = new List<DBSecurityGroupMembership>();
+        private DBSubnetGroup _dBSubnetGroup;
+        private Endpoint _endpoint;
+        private string _engine;
+        private string _engineVersion;
+        private DateTime? _instanceCreateTime;
+        private int? _iops;
+        private DateTime? _latestRestorableTime;
+        private string _licenseModel;
+        private string _masterUsername;
+        private bool? _multiAZ;
+        private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
+        private PendingModifiedValues _pendingModifiedValues;
+        private string _preferredBackupWindow;
+        private string _preferredMaintenanceWindow;
+        private bool? _publiclyAccessible;
+        private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
+        private string _readReplicaSourceDBInstanceIdentifier;
+        private string _secondaryAvailabilityZone;
+        private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
-        /// Contains a user-supplied database identifier. This is the unique key that identifies a DB instance.
-        ///  
-        /// </summary>
-        public string DBInstanceIdentifier
-        {
-            get { return this.dBInstanceIdentifier; }
-            set { this.dBInstanceIdentifier = value; }
-        }
-
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
-        {
-            return this.dBInstanceIdentifier != null;
-        }
-
-        /// <summary>
-        /// Contains the name of the compute and memory capacity class of the DB instance.
-        ///  
-        /// </summary>
-        public string DBInstanceClass
-        {
-            get { return this.dBInstanceClass; }
-            set { this.dBInstanceClass = value; }
-        }
-
-        // Check to see if DBInstanceClass property is set
-        internal bool IsSetDBInstanceClass()
-        {
-            return this.dBInstanceClass != null;
-        }
-
-        /// <summary>
-        /// Provides the name of the database engine to be used for this DB instance.
-        ///  
-        /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
-
-        /// <summary>
-        /// Specifies the current state of this database.
-        ///  
-        /// </summary>
-        public string DBInstanceStatus
-        {
-            get { return this.dBInstanceStatus; }
-            set { this.dBInstanceStatus = value; }
-        }
-
-        // Check to see if DBInstanceStatus property is set
-        internal bool IsSetDBInstanceStatus()
-        {
-            return this.dBInstanceStatus != null;
-        }
-
-        /// <summary>
-        /// Contains the master username for the DB instance.
-        ///  
-        /// </summary>
-        public string MasterUsername
-        {
-            get { return this.masterUsername; }
-            set { this.masterUsername = value; }
-        }
-
-        // Check to see if MasterUsername property is set
-        internal bool IsSetMasterUsername()
-        {
-            return this.masterUsername != null;
-        }
-
-        /// <summary>
-        /// The meaning of this parameter differs according to the database engine you use. For example, this value returns only MySQL information when
-        /// returning values from CreateDBInstanceReadReplica since read replicas are only supported for MySQL. <b>MySQL</b> Contains the name of the
-        /// initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is
-        /// returned for the life of the DB instance. Type: String <b>Oracle</b> Contains the Oracle System ID (SID) of the created DB instance. Not
-        /// shown when the returned parameters do not apply to an Oracle DB instance.
-        ///  
-        /// </summary>
-        public string DBName
-        {
-            get { return this.dBName; }
-            set { this.dBName = value; }
-        }
-
-        // Check to see if DBName property is set
-        internal bool IsSetDBName()
-        {
-            return this.dBName != null;
-        }
-
-        /// <summary>
-        /// Specifies the connection endpoint.
-        ///  
-        /// </summary>
-        public Endpoint Endpoint
-        {
-            get { return this.endpoint; }
-            set { this.endpoint = value; }
-        }
-
-        // Check to see if Endpoint property is set
-        internal bool IsSetEndpoint()
-        {
-            return this.endpoint != null;
-        }
-
-        /// <summary>
-        /// Specifies the allocated storage size specified in gigabytes.
-        ///  
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        ///  Specifies the allocated storage size specified in gigabytes. 
+        /// </para>
         /// </summary>
         public int AllocatedStorage
         {
-            get { return this.allocatedStorage ?? default(int); }
-            set { this.allocatedStorage = value; }
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
         }
 
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;
+            return this._allocatedStorage.HasValue; 
         }
 
         /// <summary>
-        /// Provides the date and time the DB instance was created.
-        ///  
-        /// </summary>
-        public DateTime InstanceCreateTime
-        {
-            get { return this.instanceCreateTime ?? default(DateTime); }
-            set { this.instanceCreateTime = value; }
-        }
-
-        // Check to see if InstanceCreateTime property is set
-        internal bool IsSetInstanceCreateTime()
-        {
-            return this.instanceCreateTime.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the
-        /// <c>BackupRetentionPeriod</c>.
-        ///  
-        /// </summary>
-        public string PreferredBackupWindow
-        {
-            get { return this.preferredBackupWindow; }
-            set { this.preferredBackupWindow = value; }
-        }
-
-        // Check to see if PreferredBackupWindow property is set
-        internal bool IsSetPreferredBackupWindow()
-        {
-            return this.preferredBackupWindow != null;
-        }
-
-        /// <summary>
-        /// Specifies the number of days for which automatic DB snapshots are retained.
-        ///  
-        /// </summary>
-        public int BackupRetentionPeriod
-        {
-            get { return this.backupRetentionPeriod ?? default(int); }
-            set { this.backupRetentionPeriod = value; }
-        }
-
-        // Check to see if BackupRetentionPeriod property is set
-        internal bool IsSetBackupRetentionPeriod()
-        {
-            return this.backupRetentionPeriod.HasValue;
-        }
-
-        /// <summary>
-        /// Provides List of DB security group elements containing only <c>DBSecurityGroup.Name</c> and <c>DBSecurityGroup.Status</c> subelements.
-        ///  
-        /// </summary>
-        public List<DBSecurityGroupMembership> DBSecurityGroups
-        {
-            get { return this.dBSecurityGroups; }
-            set { this.dBSecurityGroups = value; }
-        }
-
-        // Check to see if DBSecurityGroups property is set
-        internal bool IsSetDBSecurityGroups()
-        {
-            return this.dBSecurityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// Provides List of VPC security group elements that the DB instance belongs to.
-        ///  
-        /// </summary>
-        public List<VpcSecurityGroupMembership> VpcSecurityGroups
-        {
-            get { return this.vpcSecurityGroups; }
-            set { this.vpcSecurityGroups = value; }
-        }
-
-        // Check to see if VpcSecurityGroups property is set
-        internal bool IsSetVpcSecurityGroups()
-        {
-            return this.vpcSecurityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// Provides the list of DB parameter groups applied to this DB instance.
-        ///  
-        /// </summary>
-        public List<DBParameterGroupStatus> DBParameterGroups
-        {
-            get { return this.dBParameterGroups; }
-            set { this.dBParameterGroups = value; }
-        }
-
-        // Check to see if DBParameterGroups property is set
-        internal bool IsSetDBParameterGroups()
-        {
-            return this.dBParameterGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// Specifies the name of the Availability Zone the DB instance is located in.
-        ///  
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this.availabilityZone != null;
-        }
-
-        /// <summary>
-        /// Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.
-        ///  
-        /// </summary>
-        public DBSubnetGroup DBSubnetGroup
-        {
-            get { return this.dBSubnetGroup; }
-            set { this.dBSubnetGroup = value; }
-        }
-
-        // Check to see if DBSubnetGroup property is set
-        internal bool IsSetDBSubnetGroup()
-        {
-            return this.dBSubnetGroup != null;
-        }
-
-        /// <summary>
-        /// Specifies the weekly time range (in UTC) during which system maintenance can occur.
-        ///  
-        /// </summary>
-        public string PreferredMaintenanceWindow
-        {
-            get { return this.preferredMaintenanceWindow; }
-            set { this.preferredMaintenanceWindow = value; }
-        }
-
-        // Check to see if PreferredMaintenanceWindow property is set
-        internal bool IsSetPreferredMaintenanceWindow()
-        {
-            return this.preferredMaintenanceWindow != null;
-        }
-
-        /// <summary>
-        /// Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are
-        /// identified by subelements.
-        ///  
-        /// </summary>
-        public PendingModifiedValues PendingModifiedValues
-        {
-            get { return this.pendingModifiedValues; }
-            set { this.pendingModifiedValues = value; }
-        }
-
-        // Check to see if PendingModifiedValues property is set
-        internal bool IsSetPendingModifiedValues()
-        {
-            return this.pendingModifiedValues != null;
-        }
-
-        /// <summary>
-        /// Specifies the latest time to which a database can be restored with point-in-time restore.
-        ///  
-        /// </summary>
-        public DateTime LatestRestorableTime
-        {
-            get { return this.latestRestorableTime ?? default(DateTime); }
-            set { this.latestRestorableTime = value; }
-        }
-
-        // Check to see if LatestRestorableTime property is set
-        internal bool IsSetLatestRestorableTime()
-        {
-            return this.latestRestorableTime.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies if the DB instance is a Multi-AZ deployment.
-        ///  
-        /// </summary>
-        public bool MultiAZ
-        {
-            get { return this.multiAZ ?? default(bool); }
-            set { this.multiAZ = value; }
-        }
-
-        // Check to see if MultiAZ property is set
-        internal bool IsSetMultiAZ()
-        {
-            return this.multiAZ.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates the database engine version.
-        ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// Indicates that minor version patches are applied automatically.
-        ///  
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        ///  Indicates that minor version patches are applied automatically. 
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
-            get { return this.autoMinorVersionUpgrade ?? default(bool); }
-            set { this.autoMinorVersionUpgrade = value; }
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
         }
 
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
-        /// Contains the identifier of the source DB instance if this DB instance is a read replica.
-        ///  
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///  Specifies the name of the Availability Zone the DB instance is located in. 
+        /// </para>
         /// </summary>
-        public string ReadReplicaSourceDBInstanceIdentifier
+        public string AvailabilityZone
         {
-            get { return this.readReplicaSourceDBInstanceIdentifier; }
-            set { this.readReplicaSourceDBInstanceIdentifier = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
-        // Check to see if ReadReplicaSourceDBInstanceIdentifier property is set
-        internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.readReplicaSourceDBInstanceIdentifier != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
-        /// Contains one or more identifiers of the read replicas associated with this DB instance.
-        ///  
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        ///  Specifies the number of days for which automatic DB snapshots are retained. 
+        /// </para>
         /// </summary>
-        public List<string> ReadReplicaDBInstanceIdentifiers
+        public int BackupRetentionPeriod
         {
-            get { return this.readReplicaDBInstanceIdentifiers; }
-            set { this.readReplicaDBInstanceIdentifiers = value; }
+            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            set { this._backupRetentionPeriod = value; }
         }
 
-        // Check to see if ReadReplicaDBInstanceIdentifiers property is set
-        internal bool IsSetReadReplicaDBInstanceIdentifiers()
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
         {
-            return this.readReplicaDBInstanceIdentifiers.Count > 0;
-        }
-
-        /// <summary>
-        /// License model information for this DB instance.
-        ///  
-        /// </summary>
-        public string LicenseModel
-        {
-            get { return this.licenseModel; }
-            set { this.licenseModel = value; }
-        }
-
-        // Check to see if LicenseModel property is set
-        internal bool IsSetLicenseModel()
-        {
-            return this.licenseModel != null;
+            return this._backupRetentionPeriod.HasValue; 
         }
 
         /// <summary>
-        /// Specifies the Provisioned IOPS (I/O operations per second) value.
-        ///  
-        /// </summary>
-        public int Iops
-        {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
-        }
-
-        // Check to see if Iops property is set
-        internal bool IsSetIops()
-        {
-            return this.iops.HasValue;
-        }
-
-        /// <summary>
-        /// Provides the list of option group memberships for this DB instance.
-        ///  
-        /// </summary>
-        public List<OptionGroupMembership> OptionGroupMemberships
-        {
-            get { return this.optionGroupMemberships; }
-            set { this.optionGroupMemberships = value; }
-        }
-
-        // Check to see if OptionGroupMemberships property is set
-        internal bool IsSetOptionGroupMemberships()
-        {
-            return this.optionGroupMemberships.Count > 0;
-        }
-
-        /// <summary>
-        /// If present, specifies the name of the character set that this instance is associated with.
-        ///  
+        /// Gets and sets the property CharacterSetName. 
+        /// <para>
+        ///  If present, specifies the name of the character set that this instance is associated
+        /// with. 
+        /// </para>
         /// </summary>
         public string CharacterSetName
         {
-            get { return this.characterSetName; }
-            set { this.characterSetName = value; }
+            get { return this._characterSetName; }
+            set { this._characterSetName = value; }
         }
 
         // Check to see if CharacterSetName property is set
         internal bool IsSetCharacterSetName()
         {
-            return this.characterSetName != null;
+            return this._characterSetName != null;
         }
 
         /// <summary>
-        /// If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.
-        ///  
+        /// Gets and sets the property DBInstanceClass. 
+        /// <para>
+        ///  Contains the name of the compute and memory capacity class of the DB instance. 
+        /// </para>
         /// </summary>
-        public string SecondaryAvailabilityZone
+        public string DBInstanceClass
         {
-            get { return this.secondaryAvailabilityZone; }
-            set { this.secondaryAvailabilityZone = value; }
+            get { return this._dBInstanceClass; }
+            set { this._dBInstanceClass = value; }
         }
 
-        // Check to see if SecondaryAvailabilityZone property is set
-        internal bool IsSetSecondaryAvailabilityZone()
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
         {
-            return this.secondaryAvailabilityZone != null;
+            return this._dBInstanceClass != null;
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
-        /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
-        /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
-        /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
-        /// part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet
-        /// group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+        /// Gets and sets the property DBInstanceIdentifier. 
+        /// <para>
+        ///  Contains a user-supplied database identifier. This is the unique key that identifies
+        /// a DB instance. 
+        /// </para>
+        /// </summary>
+        public string DBInstanceIdentifier
+        {
+            get { return this._dBInstanceIdentifier; }
+            set { this._dBInstanceIdentifier = value; }
+        }
+
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
+        {
+            return this._dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceStatus. 
+        /// <para>
+        ///  Specifies the current state of this database. 
+        /// </para>
+        /// </summary>
+        public string DBInstanceStatus
+        {
+            get { return this._dBInstanceStatus; }
+            set { this._dBInstanceStatus = value; }
+        }
+
+        // Check to see if DBInstanceStatus property is set
+        internal bool IsSetDBInstanceStatus()
+        {
+            return this._dBInstanceStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBName. 
+        /// <para>
+        /// The meaning of this parameter differs according to the database engine you use. For
+        /// example, this value returns only MySQL information when returning values from CreateDBInstanceReadReplica
+        /// since read replicas are only supported for MySQL.
+        /// </para>
         ///  
+        /// <para>
+        /// <b>MySQL</b>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Contains the name of the initial database of this instance that was provided at create
+        /// time, if one was specified when the DB instance was created. This same name is returned
+        /// for the life of the DB instance. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: String
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Oracle</b>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Contains the Oracle System ID (SID) of the created DB instance. Not shown when the
+        /// returned parameters do not apply to an Oracle DB instance. 
+        /// </para>
+        /// </summary>
+        public string DBName
+        {
+            get { return this._dBName; }
+            set { this._dBName = value; }
+        }
+
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
+        {
+            return this._dBName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBParameterGroups. 
+        /// <para>
+        ///  Provides the list of DB parameter groups applied to this DB instance. 
+        /// </para>
+        /// </summary>
+        public List<DBParameterGroupStatus> DBParameterGroups
+        {
+            get { return this._dBParameterGroups; }
+            set { this._dBParameterGroups = value; }
+        }
+
+        // Check to see if DBParameterGroups property is set
+        internal bool IsSetDBParameterGroups()
+        {
+            return this._dBParameterGroups != null && this._dBParameterGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSecurityGroups. 
+        /// <para>
+        ///  Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code>
+        /// and <code>DBSecurityGroup.Status</code> subelements. 
+        /// </para>
+        /// </summary>
+        public List<DBSecurityGroupMembership> DBSecurityGroups
+        {
+            get { return this._dBSecurityGroups; }
+            set { this._dBSecurityGroups = value; }
+        }
+
+        // Check to see if DBSecurityGroups property is set
+        internal bool IsSetDBSecurityGroups()
+        {
+            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSubnetGroup. 
+        /// <para>
+        ///  Specifies information on the subnet group associated with the DB instance, including
+        /// the name, description, and subnets in the subnet group. 
+        /// </para>
+        /// </summary>
+        public DBSubnetGroup DBSubnetGroup
+        {
+            get { return this._dBSubnetGroup; }
+            set { this._dBSubnetGroup = value; }
+        }
+
+        // Check to see if DBSubnetGroup property is set
+        internal bool IsSetDBSubnetGroup()
+        {
+            return this._dBSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        ///  Specifies the connection endpoint. 
+        /// </para>
+        /// </summary>
+        public Endpoint Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  Provides the name of the database engine to be used for this DB instance. 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        ///  Indicates the database engine version. 
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceCreateTime. 
+        /// <para>
+        ///  Provides the date and time the DB instance was created. 
+        /// </para>
+        /// </summary>
+        public DateTime InstanceCreateTime
+        {
+            get { return this._instanceCreateTime.GetValueOrDefault(); }
+            set { this._instanceCreateTime = value; }
+        }
+
+        // Check to see if InstanceCreateTime property is set
+        internal bool IsSetInstanceCreateTime()
+        {
+            return this._instanceCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        ///  Specifies the Provisioned IOPS (I/O operations per second) value. 
+        /// </para>
+        /// </summary>
+        public int Iops
+        {
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestRestorableTime. 
+        /// <para>
+        ///  Specifies the latest time to which a database can be restored with point-in-time
+        /// restore. 
+        /// </para>
+        /// </summary>
+        public DateTime LatestRestorableTime
+        {
+            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            set { this._latestRestorableTime = value; }
+        }
+
+        // Check to see if LatestRestorableTime property is set
+        internal bool IsSetLatestRestorableTime()
+        {
+            return this._latestRestorableTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        ///  License model information for this DB instance. 
+        /// </para>
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
+        }
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        ///  Contains the master username for the DB instance. 
+        /// </para>
+        /// </summary>
+        public string MasterUsername
+        {
+            get { return this._masterUsername; }
+            set { this._masterUsername = value; }
+        }
+
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
+        {
+            return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the DB instance is a Multi-AZ deployment. 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupMemberships. 
+        /// <para>
+        ///  Provides the list of option group memberships for this DB instance. 
+        /// </para>
+        /// </summary>
+        public List<OptionGroupMembership> OptionGroupMemberships
+        {
+            get { return this._optionGroupMemberships; }
+            set { this._optionGroupMemberships = value; }
+        }
+
+        // Check to see if OptionGroupMemberships property is set
+        internal bool IsSetOptionGroupMemberships()
+        {
+            return this._optionGroupMemberships != null && this._optionGroupMemberships.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingModifiedValues. 
+        /// <para>
+        ///  Specifies that changes to the DB instance are pending. This element is only included
+        /// when changes are pending. Specific changes are identified by subelements. 
+        /// </para>
+        /// </summary>
+        public PendingModifiedValues PendingModifiedValues
+        {
+            get { return this._pendingModifiedValues; }
+            set { this._pendingModifiedValues = value; }
+        }
+
+        // Check to see if PendingModifiedValues property is set
+        internal bool IsSetPendingModifiedValues()
+        {
+            return this._pendingModifiedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        ///  Specifies the daily time range during which automated backups are created if automated
+        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. 
+        /// </para>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredMaintenanceWindow. 
+        /// <para>
+        ///  Specifies the weekly time range (in UTC) during which system maintenance can occur.
+        /// 
+        /// </para>
+        /// </summary>
+        public string PreferredMaintenanceWindow
+        {
+            get { return this._preferredMaintenanceWindow; }
+            set { this._preferredMaintenanceWindow = value; }
+        }
+
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
+        {
+            return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        ///  Specifies the accessibility options for the DB instance. A value of true specifies
+        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
+        /// a public IP address. A value of false specifies an internal instance with a DNS name
+        /// that resolves to a private IP address. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: The default behavior varies depending on whether a VPC has been requested
+        /// or not. The following list shows the default behavior in each case. 
+        /// </para>
+        ///  <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> 
+        /// <para>
+        ///  If no DB subnet group has been specified as part of the request and the PubliclyAccessible
+        /// value has not been set, the DB instance will be publicly accessible. If a specific
+        /// DB subnet group has been specified as part of the request and the PubliclyAccessible
+        /// value has not been set, the DB instance will be private. 
+        /// </para>
         /// </summary>
         public bool PubliclyAccessible
         {
-            get { return this.publiclyAccessible ?? default(bool); }
-            set { this.publiclyAccessible = value; }
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
         }
 
         // Check to see if PubliclyAccessible property is set
         internal bool IsSetPubliclyAccessible()
         {
-            return this.publiclyAccessible.HasValue;
+            return this._publiclyAccessible.HasValue; 
         }
 
         /// <summary>
-        /// The status of a read replica. If the instance is not a read replica, this will be blank.
-        ///  
+        /// Gets and sets the property ReadReplicaDBInstanceIdentifiers. 
+        /// <para>
+        ///  Contains one or more identifiers of the read replicas associated with this DB instance.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<string> ReadReplicaDBInstanceIdentifiers
+        {
+            get { return this._readReplicaDBInstanceIdentifiers; }
+            set { this._readReplicaDBInstanceIdentifiers = value; }
+        }
+
+        // Check to see if ReadReplicaDBInstanceIdentifiers property is set
+        internal bool IsSetReadReplicaDBInstanceIdentifiers()
+        {
+            return this._readReplicaDBInstanceIdentifiers != null && this._readReplicaDBInstanceIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadReplicaSourceDBInstanceIdentifier. 
+        /// <para>
+        ///  Contains the identifier of the source DB instance if this DB instance is a read replica.
+        /// 
+        /// </para>
+        /// </summary>
+        public string ReadReplicaSourceDBInstanceIdentifier
+        {
+            get { return this._readReplicaSourceDBInstanceIdentifier; }
+            set { this._readReplicaSourceDBInstanceIdentifier = value; }
+        }
+
+        // Check to see if ReadReplicaSourceDBInstanceIdentifier property is set
+        internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
+        {
+            return this._readReplicaSourceDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryAvailabilityZone. 
+        /// <para>
+        ///  If present, specifies the name of the secondary Availability Zone for a DB instance
+        /// with multi-AZ support. 
+        /// </para>
+        /// </summary>
+        public string SecondaryAvailabilityZone
+        {
+            get { return this._secondaryAvailabilityZone; }
+            set { this._secondaryAvailabilityZone = value; }
+        }
+
+        // Check to see if SecondaryAvailabilityZone property is set
+        internal bool IsSetSecondaryAvailabilityZone()
+        {
+            return this._secondaryAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusInfos. 
+        /// <para>
+        ///  The status of a read replica. If the instance is not a read replica, this will be
+        /// blank. 
+        /// </para>
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos
         {
-            get { return this.statusInfos; }
-            set { this.statusInfos = value; }
+            get { return this._statusInfos; }
+            set { this._statusInfos = value; }
         }
 
         // Check to see if StatusInfos property is set
         internal bool IsSetStatusInfos()
         {
-            return this.statusInfos.Count > 0;
+            return this._statusInfos != null && this._statusInfos.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroups. 
+        /// <para>
+        ///  Provides List of VPC security group elements that the DB instance belongs to. 
+        /// </para>
+        /// </summary>
+        public List<VpcSecurityGroupMembership> VpcSecurityGroups
+        {
+            get { return this._vpcSecurityGroups; }
+            set { this._vpcSecurityGroups = value; }
+        }
+
+        // Check to see if VpcSecurityGroups property is set
+        internal bool IsSetVpcSecurityGroups()
+        {
+            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+        }
+
     }
 }

@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Head Bucket Request Marshaller
     /// </summary>       
-    internal class HeadBucketRequestMarshaller : IMarshaller<IRequest, HeadBucketRequest>
+    internal class HeadBucketRequestMarshaller : IMarshaller<IRequest, HeadBucketRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
     {
+        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        {
+            return this.Marshall((HeadBucketRequest)input);
+        }
+
         public IRequest Marshall(HeadBucketRequest headBucketRequest)
         {
             IRequest request = new DefaultRequest(headBucketRequest, "AmazonS3");

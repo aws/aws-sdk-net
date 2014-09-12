@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a product code.</para>
+    /// Describes a product code.
     /// </summary>
     public partial class ProductCode
     {
-        
-        private string productCodeId;
-        private ProductCodeValues productCodeType;
-
+        private string _productCodeId;
+        private ProductCodeValues _productCodeType;
 
         /// <summary>
+        /// Gets and sets the property ProductCodeId. 
+        /// <para>
         /// The product code.
-        ///  
+        /// </para>
         /// </summary>
         public string ProductCodeId
         {
-            get { return this.productCodeId; }
-            set { this.productCodeId = value; }
+            get { return this._productCodeId; }
+            set { this._productCodeId = value; }
         }
 
         // Check to see if ProductCodeId property is set
         internal bool IsSetProductCodeId()
         {
-            return this.productCodeId != null;
+            return this._productCodeId != null;
         }
 
         /// <summary>
-        /// The type of product code.
-        ///  
+        /// Gets and sets the property ProductCodeType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>devpay, marketplace</description>
-        ///     </item>
-        /// </list>
+        /// The type of product code.
         /// </para>
         /// </summary>
         public ProductCodeValues ProductCodeType
         {
-            get { return this.productCodeType; }
-            set { this.productCodeType = value; }
+            get { return this._productCodeType; }
+            set { this._productCodeType = value; }
         }
 
         // Check to see if ProductCodeType property is set
         internal bool IsSetProductCodeType()
         {
-            return this.productCodeType != null;
+            return this._productCodeType != null;
         }
+
     }
 }

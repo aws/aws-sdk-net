@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Vpn Connection Route Request Marshaller
+    /// DeleteVpnConnectionRoute Request Marshaller
     /// </summary>       
-    public class DeleteVpnConnectionRouteRequestMarshaller : IMarshaller<IRequest, DeleteVpnConnectionRouteRequest>
+    public class DeleteVpnConnectionRouteRequestMarshaller : IMarshaller<IRequest, DeleteVpnConnectionRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteVpnConnectionRouteRequest, "AmazonEC2");
+            return this.Marshall((DeleteVpnConnectionRouteRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteVpnConnectionRouteRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DeleteVpnConnectionRoute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (deleteVpnConnectionRouteRequest != null && deleteVpnConnectionRouteRequest.IsSetVpnConnectionId())
-            {
-                request.Parameters.Add("VpnConnectionId", StringUtils.FromString(deleteVpnConnectionRouteRequest.VpnConnectionId));
-            }
-            if (deleteVpnConnectionRouteRequest != null && deleteVpnConnectionRouteRequest.IsSetDestinationCidrBlock())
-            {
-                request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(deleteVpnConnectionRouteRequest.DestinationCidrBlock));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDestinationCidrBlock())
+                {
+                    request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
+                }
+                if(publicRequest.IsSetVpnConnectionId())
+                {
+                    request.Parameters.Add("VpnConnectionId", StringUtils.FromString(publicRequest.VpnConnectionId));
+                }
+            }
             return request;
         }
     }

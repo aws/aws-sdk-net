@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteExpression response and response metadata.
+    /// Configuration for accessing Amazon DeleteExpression service
     /// </summary>
     public partial class DeleteExpressionResponse : DeleteExpressionResult
     {
         /// <summary>
         /// Gets and sets the DeleteExpressionResult property.
-        /// The result of a DeleteExpression request. Specifies the expression being deleted.
+        /// Represents the output of a DeleteExpression operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteExpressionResult class are now available on the DeleteExpressionResponse class. You should use the properties on DeleteExpressionResponse instead of accessing them through DeleteExpressionResult.")]
         public DeleteExpressionResult DeleteExpressionResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,57 +29,71 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetSnapshotAttribute operation.
-    /// <para>Resets permission settings for the specified snapshot.</para> <para>For more information on modifying snapshot permissions, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html" >Sharing Snapshots</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i> .</para>
+    /// Resets permission settings for the specified snapshot.
+    /// 
+    ///  
+    /// <para>
+    /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+    /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ResetSnapshotAttributeRequest : AmazonEC2Request
     {
-        private string snapshotId;
-        private SnapshotAttributeName attribute;
-
+        private SnapshotAttributeName _attribute;
+        private string _snapshotId;
 
         /// <summary>
-        /// The ID of the snapshot.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string SnapshotId
-        {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
-        }
+        public ResetSnapshotAttributeRequest() { }
 
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
+        /// <summary>
+        /// Instantiates ResetSnapshotAttributeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="snapshotId">The ID of the snapshot.</param>
+        /// <param name="attribute">The attribute to reset (currently only the attribute for permission to create volumes can be reset).</param>
+        public ResetSnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute)
         {
-            return this.snapshotId != null;
+            _snapshotId = snapshotId;
+            _attribute = attribute;
         }
 
         /// <summary>
-        /// The attribute to reset (currently only the attribute for permission to create volumes can be reset).
-        ///  
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>productCodes, createVolumePermission</description>
-        ///     </item>
-        /// </list>
+        /// The attribute to reset (currently only the attribute for permission to create volumes
+        /// can be reset).
         /// </para>
         /// </summary>
         public SnapshotAttributeName Attribute
         {
-            get { return this.attribute; }
-            set { this.attribute = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
         // Check to see if Attribute property is set
         internal bool IsSetAttribute()
         {
-            return this.attribute != null;
+            return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The ID of the snapshot.
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
         }
 
     }
 }
-    

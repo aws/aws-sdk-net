@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Returns information about the CreateStream response metadata.
-    /// The CreateStream operation has a void result type.
+    /// Configuration for accessing Amazon CreateStream service
     /// </summary>
-    public partial class CreateStreamResponse : AmazonWebServiceResponse
+    public partial class CreateStreamResponse : CreateStreamResult
     {
+        /// <summary>
+        /// Gets and sets the CreateStreamResult property.
+        /// Represents the output of a CreateStream operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the CreateStreamResult class are now available on the CreateStreamResponse class. You should use the properties on CreateStreamResponse instead of accessing them through CreateStreamResult.")]
+        public CreateStreamResult CreateStreamResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

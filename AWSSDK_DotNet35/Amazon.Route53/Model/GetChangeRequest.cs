@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,41 +29,57 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChange operation.
-    /// <para> This action returns the current status of a change batch request. The status is one of the following values:</para> <para>-
-    /// <c>PENDING</c> indicates that the changes in this request have not replicated to all Route 53 DNS servers. This is the initial status of all
-    /// change batch requests.</para> <para>- <c>INSYNC</c> indicates that the changes have replicated to all Amazon Route 53 DNS servers. </para>
+    /// This action returns the current status of a change batch request. The status is one
+    /// of the following values:
+    /// 
+    ///  
+    /// <para>
+    /// - <code>PENDING</code> indicates that the changes in this request have not replicated
+    /// to all Route 53 DNS servers. This is the initial status of all change batch requests.
+    /// </para>
+    ///  
+    /// <para>
+    /// - <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route
+    /// 53 DNS servers. 
+    /// </para>
     /// </summary>
     public partial class GetChangeRequest : AmazonRoute53Request
     {
-        private string id;
-
+        private string _id;
 
         /// <summary>
-        /// The ID of the change batch request. The value that you specify here is the value that <c>ChangeResourceRecordSets</c> returned in the Id
-        /// element when you submitted the request.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetChangeRequest() { }
+
+        /// <summary>
+        /// Instantiates GetChangeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="id"> The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.</param>
+        public GetChangeRequest(string id)
+        {
+            _id = id;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32</description>
-        ///     </item>
-        /// </list>
+        ///  The ID of the change batch request. The value that you specify here is the value
+        /// that <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted
+        /// the request.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
     }
 }
-    

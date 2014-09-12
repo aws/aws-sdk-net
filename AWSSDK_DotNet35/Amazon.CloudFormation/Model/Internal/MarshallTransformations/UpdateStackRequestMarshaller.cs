@@ -12,107 +12,113 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Stack Request Marshaller
+    /// UpdateStack Request Marshaller
     /// </summary>       
-    public class UpdateStackRequestMarshaller : IMarshaller<IRequest, UpdateStackRequest>
+    public class UpdateStackRequestMarshaller : IMarshaller<IRequest, UpdateStackRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UpdateStackRequest updateStackRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(updateStackRequest, "AmazonCloudFormation");
+            return this.Marshall((UpdateStackRequest)input);
+        }
+    
+        public IRequest Marshall(UpdateStackRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "UpdateStack");
             request.Parameters.Add("Version", "2010-05-15");
-            if (updateStackRequest != null && updateStackRequest.IsSetStackName())
-            {
-                request.Parameters.Add("StackName", StringUtils.FromString(updateStackRequest.StackName));
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetTemplateBody())
-            {
-                request.Parameters.Add("TemplateBody", StringUtils.FromString(updateStackRequest.TemplateBody));
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetTemplateURL())
-            {
-                request.Parameters.Add("TemplateURL", StringUtils.FromString(updateStackRequest.TemplateURL));
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetUsePreviousTemplate())
-            {
-                request.Parameters.Add("UsePreviousTemplate", StringUtils.FromBool(updateStackRequest.UsePreviousTemplate));
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyDuringUpdateBody())
-            {
-                request.Parameters.Add("StackPolicyDuringUpdateBody", StringUtils.FromString(updateStackRequest.StackPolicyDuringUpdateBody));
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyDuringUpdateURL())
-            {
-                request.Parameters.Add("StackPolicyDuringUpdateURL", StringUtils.FromString(updateStackRequest.StackPolicyDuringUpdateURL));
-            }
 
-            if (updateStackRequest != null)
+            if(publicRequest != null)
             {
-                List<Parameter> parametersList = updateStackRequest.Parameters;
-                int parametersListIndex = 1;
-                foreach (Parameter parametersListValue in parametersList)
+                if(publicRequest.IsSetCapabilities())
                 {
-                    if (parametersListValue != null && parametersListValue.IsSetParameterKey())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Capabilities)
                     {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterKey", StringUtils.FromString(parametersListValue.ParameterKey));
+                        request.Parameters.Add("Capabilities" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (parametersListValue != null && parametersListValue.IsSetParameterValue())
+                }
+                if(publicRequest.IsSetNotificationARNs())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.NotificationARNs)
                     {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.FromString(parametersListValue.ParameterValue));
+                        request.Parameters.Add("NotificationARNs" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (parametersListValue != null && parametersListValue.IsSetUsePreviousValue())
+                }
+                if(publicRequest.IsSetParameters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Parameters)
                     {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".UsePreviousValue", StringUtils.FromBool(parametersListValue.UsePreviousValue));
+                        if(publicRequestlistValue.IsSetParameterKey())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
+                        }
+                        if(publicRequestlistValue.IsSetParameterValue())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                        }
+                        if(publicRequestlistValue.IsSetUsePreviousValue())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    parametersListIndex++;
+                }
+                if(publicRequest.IsSetStackName())
+                {
+                    request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
+                }
+                if(publicRequest.IsSetStackPolicyBody())
+                {
+                    request.Parameters.Add("StackPolicyBody", StringUtils.FromString(publicRequest.StackPolicyBody));
+                }
+                if(publicRequest.IsSetStackPolicyDuringUpdateBody())
+                {
+                    request.Parameters.Add("StackPolicyDuringUpdateBody", StringUtils.FromString(publicRequest.StackPolicyDuringUpdateBody));
+                }
+                if(publicRequest.IsSetStackPolicyDuringUpdateURL())
+                {
+                    request.Parameters.Add("StackPolicyDuringUpdateURL", StringUtils.FromString(publicRequest.StackPolicyDuringUpdateURL));
+                }
+                if(publicRequest.IsSetStackPolicyURL())
+                {
+                    request.Parameters.Add("StackPolicyURL", StringUtils.FromString(publicRequest.StackPolicyURL));
+                }
+                if(publicRequest.IsSetTemplateBody())
+                {
+                    request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
+                }
+                if(publicRequest.IsSetTemplateURL())
+                {
+                    request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
+                }
+                if(publicRequest.IsSetUsePreviousTemplate())
+                {
+                    request.Parameters.Add("UsePreviousTemplate", StringUtils.FromBool(publicRequest.UsePreviousTemplate));
                 }
             }
-            if (updateStackRequest != null)
-            {
-                List<string> capabilitiesList = updateStackRequest.Capabilities;
-
-                int capabilitiesListIndex = 1;
-                foreach (string capabilitiesListValue in capabilitiesList)
-                { 
-                    request.Parameters.Add("Capabilities.member." + capabilitiesListIndex, StringUtils.FromString(capabilitiesListValue));
-                    capabilitiesListIndex++;
-                }
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyBody())
-            {
-                request.Parameters.Add("StackPolicyBody", StringUtils.FromString(updateStackRequest.StackPolicyBody));
-            }
-            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyURL())
-            {
-                request.Parameters.Add("StackPolicyURL", StringUtils.FromString(updateStackRequest.StackPolicyURL));
-            }
-            if (updateStackRequest != null)
-            {
-                List<string> notificationARNsList = updateStackRequest.NotificationARNs;
-
-                int notificationARNsListIndex = 1;
-                foreach (string notificationARNsListValue in notificationARNsList)
-                { 
-                    request.Parameters.Add("NotificationARNs.member." + notificationARNsListIndex, StringUtils.FromString(notificationARNsListValue));
-                    notificationARNsListIndex++;
-                }
-            }
-
             return request;
         }
     }

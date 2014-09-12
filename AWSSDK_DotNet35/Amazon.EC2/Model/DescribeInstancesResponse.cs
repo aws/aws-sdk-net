@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeInstances response and response metadata.
+    /// Configuration for accessing Amazon DescribeInstances service
     /// </summary>
     public partial class DescribeInstancesResponse : DescribeInstancesResult
     {
         /// <summary>
         /// Gets and sets the DescribeInstancesResult property.
-        /// 
+        /// Represents the output of a DescribeInstances operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeInstancesResult class are now available on the DescribeInstancesResponse class. You should use the properties on DescribeInstancesResponse instead of accessing them through DescribeInstancesResult.")]
         public DescribeInstancesResult DescribeInstancesResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

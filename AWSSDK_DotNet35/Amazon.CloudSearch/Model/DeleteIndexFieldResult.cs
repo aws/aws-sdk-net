@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c> DeleteIndexField </c> request.</para>
+    /// The result of a <code><a>DeleteIndexField</a></code> request.
     /// </summary>
     public partial class DeleteIndexFieldResult : AmazonWebServiceResponse
     {
-        
-        private IndexFieldStatus indexField;
-
+        private IndexFieldStatus _indexField;
 
         /// <summary>
+        /// Gets and sets the property IndexField. 
+        /// <para>
         /// The status of the index field being deleted.
-        ///  
+        /// </para>
         /// </summary>
         public IndexFieldStatus IndexField
         {
-            get { return this.indexField; }
-            set { this.indexField = value; }
+            get { return this._indexField; }
+            set { this._indexField = value; }
         }
 
         // Check to see if IndexField property is set
         internal bool IsSetIndexField()
         {
-            return this.indexField != null;
+            return this._indexField != null;
         }
+
     }
 }

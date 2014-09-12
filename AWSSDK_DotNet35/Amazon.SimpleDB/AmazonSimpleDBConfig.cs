@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.SimpleDB
 {
-
     /// <summary>
     /// Configuration for accessing Amazon SimpleDB service
     /// </summary>
-    public class AmazonSimpleDBConfig : ClientConfig
+    public partial class AmazonSimpleDBConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleDBConfig()
         {
-            
         }
 
         /// <summary>
@@ -39,9 +44,7 @@ namespace Amazon.SimpleDB
         {
             get
             {
-                
                 return "sdb";
-                    
             }
         }
 
@@ -57,5 +60,3 @@ namespace Amazon.SimpleDB
         }
     }
 }
-
-    

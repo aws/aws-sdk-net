@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,68 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>DescribeTapeArchivesOutput</para>
+    /// DescribeTapeArchivesOutput
     /// </summary>
     public partial class DescribeTapeArchivesResult : AmazonWebServiceResponse
     {
-        
-        private List<TapeArchive> tapeArchives = new List<TapeArchive>();
-        private string marker;
-
+        private string _marker;
+        private List<TapeArchive> _tapeArchives = new List<TapeArchive>();
 
         /// <summary>
-        /// An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name(ARN) of the virtual
-        /// tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of
-        /// the description and tape barcode.
-        ///  
-        /// </summary>
-        public List<TapeArchive> TapeArchives
-        {
-            get { return this.tapeArchives; }
-            set { this.tapeArchives = value; }
-        }
-
-        // Check to see if TapeArchives property is set
-        internal bool IsSetTapeArchives()
-        {
-            return this.tapeArchives.Count > 0;
-        }
-
-        /// <summary>
-        /// An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your
-        /// next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this
-        /// field does not appear in the response.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
+        /// An opaque string that indicates the position at which the virtual tapes that were
+        /// fetched for description ended. Use this marker in your next request to fetch the next
+        /// set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual
+        /// tapes to describe, this field does not appear in the response. 
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property TapeArchives. 
+        /// <para>
+        /// An array of virtual tape objects in the virtual tape shelf (VTS). The description
+        /// includes of the Amazon Resource Name(ARN) of the virtual tapes. The information returned
+        /// includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status
+        /// of the tapes, progress of the description and tape barcode.
+        /// </para>
+        /// </summary>
+        public List<TapeArchive> TapeArchives
+        {
+            get { return this._tapeArchives; }
+            set { this._tapeArchives = value; }
+        }
+
+        // Check to see if TapeArchives property is set
+        internal bool IsSetTapeArchives()
+        {
+            return this._tapeArchives != null && this._tapeArchives.Count > 0; 
+        }
+
     }
 }

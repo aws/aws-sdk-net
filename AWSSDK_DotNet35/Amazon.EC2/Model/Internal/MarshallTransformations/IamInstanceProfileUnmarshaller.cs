@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IamInstanceProfile Unmarshaller
-     /// </summary>
-    internal class IamInstanceProfileUnmarshaller : IUnmarshaller<IamInstanceProfile, XmlUnmarshallerContext>, IUnmarshaller<IamInstanceProfile, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IamInstanceProfile Object
+    /// </summary>  
+    public class IamInstanceProfileUnmarshaller : IUnmarshaller<IamInstanceProfile, XmlUnmarshallerContext>, IUnmarshaller<IamInstanceProfile, JsonUnmarshallerContext>
     {
-        public IamInstanceProfile Unmarshall(XmlUnmarshallerContext context) 
+        public IamInstanceProfile Unmarshall(XmlUnmarshallerContext context)
         {
-            IamInstanceProfile iamInstanceProfile = new IamInstanceProfile();
+            IamInstanceProfile unmarshalledObject = new IamInstanceProfile();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("arn", targetDepth))
                     {
-                        iamInstanceProfile.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("id", targetDepth))
                     {
-                        iamInstanceProfile.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return iamInstanceProfile;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return iamInstanceProfile;
+            return unmarshalledObject;
         }
 
-        public IamInstanceProfile Unmarshall(JsonUnmarshallerContext context) 
+        public IamInstanceProfile Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IamInstanceProfileUnmarshaller instance;
 
-        public static IamInstanceProfileUnmarshaller GetInstance() 
+        private static IamInstanceProfileUnmarshaller _instance = new IamInstanceProfileUnmarshaller();        
+
+        public static IamInstanceProfileUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IamInstanceProfileUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

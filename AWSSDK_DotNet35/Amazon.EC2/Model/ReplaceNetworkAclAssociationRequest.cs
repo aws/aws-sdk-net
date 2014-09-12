@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,49 +29,51 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceNetworkAclAssociation operation.
-    /// <para>Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the
-    /// default network ACL. For more information about network ACLs, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html" >Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
-    /// Guide</i> .</para>
+    /// Changes which network ACL a subnet is associated with. By default when you create
+    /// a subnet, it's automatically associated with the default network ACL. For more information
+    /// about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+    /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </summary>
     public partial class ReplaceNetworkAclAssociationRequest : AmazonEC2Request
     {
-        private string associationId;
-        private string networkAclId;
-
+        private string _associationId;
+        private string _networkAclId;
 
         /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
         /// The ID of the current association between the original network ACL and the subnet.
-        ///  
+        /// </para>
         /// </summary>
         public string AssociationId
         {
-            get { return this.associationId; }
-            set { this.associationId = value; }
+            get { return this._associationId; }
+            set { this._associationId = value; }
         }
 
         // Check to see if AssociationId property is set
         internal bool IsSetAssociationId()
         {
-            return this.associationId != null;
+            return this._associationId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkAclId. 
+        /// <para>
         /// The ID of the new ACL to associate with the subnet.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkAclId
         {
-            get { return this.networkAclId; }
-            set { this.networkAclId = value; }
+            get { return this._networkAclId; }
+            set { this._networkAclId = value; }
         }
 
         // Check to see if NetworkAclId property is set
         internal bool IsSetNetworkAclId()
         {
-            return this.networkAclId != null;
+            return this._networkAclId != null;
         }
 
     }
 }
-    

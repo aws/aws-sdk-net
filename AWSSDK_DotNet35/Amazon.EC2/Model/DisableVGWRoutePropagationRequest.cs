@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,46 +29,49 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableVgwRoutePropagation operation.
-    /// <para>Disables a virtual private gateway (VGW) from propagating routes to the routing tables of a VPC.</para>
+    /// Disables a virtual private gateway (VGW) from propagating routes to the routing tables
+    /// of a VPC.
     /// </summary>
     public partial class DisableVgwRoutePropagationRequest : AmazonEC2Request
     {
-        private string routeTableId;
-        private string gatewayId;
-
-
-        /// <summary>
-        /// The ID of the routing table.
-        ///  
-        /// </summary>
-        public string RouteTableId
-        {
-            get { return this.routeTableId; }
-            set { this.routeTableId = value; }
-        }
-
-        // Check to see if RouteTableId property is set
-        internal bool IsSetRouteTableId()
-        {
-            return this.routeTableId != null;
-        }
+        private string _gatewayId;
+        private string _routeTableId;
 
         /// <summary>
+        /// Gets and sets the property GatewayId. 
+        /// <para>
         /// The ID of the virtual private gateway.
-        ///  
+        /// </para>
         /// </summary>
         public string GatewayId
         {
-            get { return this.gatewayId; }
-            set { this.gatewayId = value; }
+            get { return this._gatewayId; }
+            set { this._gatewayId = value; }
         }
 
         // Check to see if GatewayId property is set
         internal bool IsSetGatewayId()
         {
-            return this.gatewayId != null;
+            return this._gatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteTableId. 
+        /// <para>
+        /// The ID of the routing table.
+        /// </para>
+        /// </summary>
+        public string RouteTableId
+        {
+            get { return this._routeTableId; }
+            set { this._routeTableId = value; }
+        }
+
+        // Check to see if RouteTableId property is set
+        internal bool IsSetRouteTableId()
+        {
+            return this._routeTableId != null;
         }
 
     }
 }
-    

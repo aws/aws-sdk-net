@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,75 +29,47 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAnalysisScheme operation.
-    /// <para>Deletes an analysis scheme. For more information, see <a
-    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html.html" >Configuring Analysis Schemes</a>
-    /// in the <i>Amazon CloudSearch Developer Guide</i> . </para>
+    /// Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
+    /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
+    /// Guide</i>.
     /// </summary>
     public partial class DeleteAnalysisSchemeRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private string analysisSchemeName;
-
+        private string _analysisSchemeName;
+        private string _domainName;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-        ///  
+        /// Gets and sets the property AnalysisSchemeName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string DomainName
-        {
-            get { return this.domainName; }
-            set { this.domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this.domainName != null;
-        }
-
-        /// <summary>
         /// The name of the analysis scheme you want to delete.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string AnalysisSchemeName
         {
-            get { return this.analysisSchemeName; }
-            set { this.analysisSchemeName = value; }
+            get { return this._analysisSchemeName; }
+            set { this._analysisSchemeName = value; }
         }
 
         // Check to see if AnalysisSchemeName property is set
         internal bool IsSetAnalysisSchemeName()
         {
-            return this.analysisSchemeName != null;
+            return this._analysisSchemeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
         }
 
     }
 }
-    

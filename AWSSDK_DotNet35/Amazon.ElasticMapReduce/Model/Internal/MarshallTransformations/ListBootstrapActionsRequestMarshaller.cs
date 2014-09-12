@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListBootstrapActions Request Marshaller
     /// </summary>       
-    public class ListBootstrapActionsRequestMarshaller : IMarshaller<IRequest, ListBootstrapActionsRequest> 
+    public class ListBootstrapActionsRequestMarshaller : IMarshaller<IRequest, ListBootstrapActionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListBootstrapActionsRequest)input);
+        }
+
         public IRequest Marshall(ListBootstrapActionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,16 +56,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClusterId())
                 {
-                    writer.WritePropertyName("ClusterId");
-                    writer.Write(publicRequest.ClusterId);
+                    context.Writer.WritePropertyName("ClusterId");
+                    context.Writer.Write(publicRequest.ClusterId);
                 }
 
                 if(publicRequest.IsSetMarker())
                 {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(publicRequest.Marker);
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
                 }
 
         

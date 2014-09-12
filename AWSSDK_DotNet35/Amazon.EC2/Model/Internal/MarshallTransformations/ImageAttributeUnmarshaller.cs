@@ -12,105 +12,118 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ImageAttribute Unmarshaller
-     /// </summary>
-    internal class ImageAttributeUnmarshaller : IUnmarshaller<ImageAttribute, XmlUnmarshallerContext>, IUnmarshaller<ImageAttribute, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ImageAttribute Object
+    /// </summary>  
+    public class ImageAttributeUnmarshaller : IUnmarshaller<ImageAttribute, XmlUnmarshallerContext>, IUnmarshaller<ImageAttribute, JsonUnmarshallerContext>
     {
-        public ImageAttribute Unmarshall(XmlUnmarshallerContext context) 
+        public ImageAttribute Unmarshall(XmlUnmarshallerContext context)
         {
-            ImageAttribute imageAttribute = new ImageAttribute();
+            ImageAttribute unmarshalledObject = new ImageAttribute();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("imageId", targetDepth))
+                    if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
-                        imageAttribute.ImageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("launchPermission/item", targetDepth))
-                    {
-                        imageAttribute.LaunchPermissions.Add(LaunchPermissionUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("productCodes/item", targetDepth))
-                    {
-                        imageAttribute.ProductCodes.Add(ProductCodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("kernel/value", targetDepth))
-                    {
-                        imageAttribute.KernelId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ramdisk/value", targetDepth))
-                    {
-                        imageAttribute.RamdiskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BlockDeviceMappingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
                     if (context.TestExpression("description/value", targetDepth))
                     {
-                        imageAttribute.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("kernel/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KernelId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("launchPermission/item", targetDepth))
+                    {
+                        var unmarshaller = LaunchPermissionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LaunchPermissions.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("productCodes/item", targetDepth))
+                    {
+                        var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProductCodes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ramdisk/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RamdiskId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sriovNetSupport/value", targetDepth))
                     {
-                        imageAttribute.SriovNetSupport = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("blockDeviceMapping/item", targetDepth))
-                    {
-                        imageAttribute.BlockDeviceMappings.Add(BlockDeviceMappingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SriovNetSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return imageAttribute;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return imageAttribute;
+            return unmarshalledObject;
         }
 
-        public ImageAttribute Unmarshall(JsonUnmarshallerContext context) 
+        public ImageAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ImageAttributeUnmarshaller instance;
 
-        public static ImageAttributeUnmarshaller GetInstance() 
+        private static ImageAttributeUnmarshaller _instance = new ImageAttributeUnmarshaller();        
+
+        public static ImageAttributeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ImageAttributeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

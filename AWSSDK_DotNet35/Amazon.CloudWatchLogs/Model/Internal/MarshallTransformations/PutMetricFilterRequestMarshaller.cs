@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// <summary>
     /// PutMetricFilter Request Marshaller
     /// </summary>       
-    public class PutMetricFilterRequestMarshaller : IMarshaller<IRequest, PutMetricFilterRequest> 
+    public class PutMetricFilterRequestMarshaller : IMarshaller<IRequest, PutMetricFilterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((PutMetricFilterRequest)input);
+        }
+
         public IRequest Marshall(PutMetricFilterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
@@ -47,52 +56,39 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetFilterName())
                 {
-                    writer.WritePropertyName("filterName");
-                    writer.Write(publicRequest.FilterName);
+                    context.Writer.WritePropertyName("filterName");
+                    context.Writer.Write(publicRequest.FilterName);
                 }
 
                 if(publicRequest.IsSetFilterPattern())
                 {
-                    writer.WritePropertyName("filterPattern");
-                    writer.Write(publicRequest.FilterPattern);
+                    context.Writer.WritePropertyName("filterPattern");
+                    context.Writer.Write(publicRequest.FilterPattern);
                 }
 
                 if(publicRequest.IsSetLogGroupName())
                 {
-                    writer.WritePropertyName("logGroupName");
-                    writer.Write(publicRequest.LogGroupName);
+                    context.Writer.WritePropertyName("logGroupName");
+                    context.Writer.Write(publicRequest.LogGroupName);
                 }
 
                 if(publicRequest.IsSetMetricTransformations())
                 {
-                    writer.WritePropertyName("metricTransformations");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("metricTransformations");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestMetricTransformationsListValue in publicRequest.MetricTransformations)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestMetricTransformationsListValue.IsSetMetricName())
-                        {
-                            writer.WritePropertyName("metricName");
-                            writer.Write(publicRequestMetricTransformationsListValue.MetricName);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestMetricTransformationsListValue.IsSetMetricNamespace())
-                        {
-                            writer.WritePropertyName("metricNamespace");
-                            writer.Write(publicRequestMetricTransformationsListValue.MetricNamespace);
-                        }
+                        var marshaller = MetricTransformationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMetricTransformationsListValue, context);
 
-                        if(publicRequestMetricTransformationsListValue.IsSetMetricValue())
-                        {
-                            writer.WritePropertyName("metricValue");
-                            writer.Write(publicRequestMetricTransformationsListValue.MetricValue);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

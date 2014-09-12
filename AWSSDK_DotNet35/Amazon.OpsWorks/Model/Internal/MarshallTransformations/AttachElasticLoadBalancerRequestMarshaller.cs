@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// AttachElasticLoadBalancer Request Marshaller
     /// </summary>       
-    public class AttachElasticLoadBalancerRequestMarshaller : IMarshaller<IRequest, AttachElasticLoadBalancerRequest> 
+    public class AttachElasticLoadBalancerRequestMarshaller : IMarshaller<IRequest, AttachElasticLoadBalancerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AttachElasticLoadBalancerRequest)input);
+        }
+
         public IRequest Marshall(AttachElasticLoadBalancerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,16 +56,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetElasticLoadBalancerName())
                 {
-                    writer.WritePropertyName("ElasticLoadBalancerName");
-                    writer.Write(publicRequest.ElasticLoadBalancerName);
+                    context.Writer.WritePropertyName("ElasticLoadBalancerName");
+                    context.Writer.Write(publicRequest.ElasticLoadBalancerName);
                 }
 
                 if(publicRequest.IsSetLayerId())
                 {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(publicRequest.LayerId);
+                    context.Writer.WritePropertyName("LayerId");
+                    context.Writer.Write(publicRequest.LayerId);
                 }
 
         

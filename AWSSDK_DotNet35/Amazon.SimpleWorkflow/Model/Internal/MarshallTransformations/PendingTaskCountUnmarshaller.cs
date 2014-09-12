@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PendingTaskCount Object
+    /// </summary>  
+    public class PendingTaskCountUnmarshaller : IUnmarshaller<PendingTaskCount, XmlUnmarshallerContext>, IUnmarshaller<PendingTaskCount, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// PendingTaskCountUnmarshaller
-      /// </summary>
-      internal class PendingTaskCountUnmarshaller : IUnmarshaller<PendingTaskCount, XmlUnmarshallerContext>, IUnmarshaller<PendingTaskCount, JsonUnmarshallerContext>
-      {
         PendingTaskCount IUnmarshaller<PendingTaskCount, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public PendingTaskCount Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            PendingTaskCount pendingTaskCount = new PendingTaskCount();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            PendingTaskCount unmarshalledObject = new PendingTaskCount();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("count", targetDepth))
-              {
-                pendingTaskCount.Count = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("truncated", targetDepth))
-              {
-                pendingTaskCount.Truncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("count", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("truncated", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Truncated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return pendingTaskCount;
+            return unmarshalledObject;
         }
 
-        private static PendingTaskCountUnmarshaller instance;
-        public static PendingTaskCountUnmarshaller GetInstance()
+
+        private static PendingTaskCountUnmarshaller _instance = new PendingTaskCountUnmarshaller();        
+
+        public static PendingTaskCountUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new PendingTaskCountUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

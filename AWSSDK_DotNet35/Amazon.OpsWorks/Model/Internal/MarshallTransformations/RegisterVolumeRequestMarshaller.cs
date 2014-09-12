@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// RegisterVolume Request Marshaller
     /// </summary>       
-    public class RegisterVolumeRequestMarshaller : IMarshaller<IRequest, RegisterVolumeRequest> 
+    public class RegisterVolumeRequestMarshaller : IMarshaller<IRequest, RegisterVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((RegisterVolumeRequest)input);
+        }
+
         public IRequest Marshall(RegisterVolumeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,16 +56,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEc2VolumeId())
                 {
-                    writer.WritePropertyName("Ec2VolumeId");
-                    writer.Write(publicRequest.Ec2VolumeId);
+                    context.Writer.WritePropertyName("Ec2VolumeId");
+                    context.Writer.Write(publicRequest.Ec2VolumeId);
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

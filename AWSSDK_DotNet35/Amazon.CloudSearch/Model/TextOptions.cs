@@ -12,156 +12,137 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>Options for text field. Present if <c>IndexFieldType</c> specifies the field is of type <c>text</c> . A <c>text</c> field is always
-    /// searchable. All options are enabled by default.</para>
+    /// Options for text field. Present if <code>IndexFieldType</code> specifies the field
+    /// is of type <code>text</code>. A <code>text</code> field is always searchable. All
+    /// options are enabled by default.
     /// </summary>
     public partial class TextOptions
     {
-        
-        private string defaultValue;
-        private string sourceField;
-        private bool? returnEnabled;
-        private bool? sortEnabled;
-        private bool? highlightEnabled;
-        private string analysisScheme;
-
+        private string _analysisScheme;
+        private string _defaultValue;
+        private bool? _highlightEnabled;
+        private bool? _returnEnabled;
+        private bool? _sortEnabled;
+        private string _sourceField;
 
         /// <summary>
-        /// A value to use for the field if the field isn't specified for a document.
-        ///  
+        /// Gets and sets the property AnalysisScheme. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string DefaultValue
-        {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
-        }
-
-        // Check to see if DefaultValue property is set
-        internal bool IsSetDefaultValue()
-        {
-            return this.defaultValue != null;
-        }
-
-        /// <summary>
-        /// A string that represents the name of an index field. Field names begin with a letter and can contain the following characters: a-z
-        /// (lowercase), 0-9, and _ (underscore). The name "score" is reserved and cannot be used as a field name. To reference a document's ID, you can
-        /// use the name <c>_id</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SourceField
-        {
-            get { return this.sourceField; }
-            set { this.sourceField = value; }
-        }
-
-        // Check to see if SourceField property is set
-        internal bool IsSetSourceField()
-        {
-            return this.sourceField != null;
-        }
-
-        /// <summary>
-        /// Whether the contents of the field can be returned in the search results.
-        ///  
-        /// </summary>
-        public bool ReturnEnabled
-        {
-            get { return this.returnEnabled ?? default(bool); }
-            set { this.returnEnabled = value; }
-        }
-
-        // Check to see if ReturnEnabled property is set
-        internal bool IsSetReturnEnabled()
-        {
-            return this.returnEnabled.HasValue;
-        }
-
-        /// <summary>
-        /// Whether the field can be used to sort the search results.
-        ///  
-        /// </summary>
-        public bool SortEnabled
-        {
-            get { return this.sortEnabled ?? default(bool); }
-            set { this.sortEnabled = value; }
-        }
-
-        // Check to see if SortEnabled property is set
-        internal bool IsSetSortEnabled()
-        {
-            return this.sortEnabled.HasValue;
-        }
-
-        /// <summary>
-        /// Whether highlights can be returned for the field.
-        ///  
-        /// </summary>
-        public bool HighlightEnabled
-        {
-            get { return this.highlightEnabled ?? default(bool); }
-            set { this.highlightEnabled = value; }
-        }
-
-        // Check to see if HighlightEnabled property is set
-        internal bool IsSetHighlightEnabled()
-        {
-            return this.highlightEnabled.HasValue;
-        }
-
-        /// <summary>
-        /// The name of an analysis scheme for a <c>text</c> field.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\S]+</description>
-        ///     </item>
-        /// </list>
+        /// The name of an analysis scheme for a <code>text</code> field.
         /// </para>
         /// </summary>
         public string AnalysisScheme
         {
-            get { return this.analysisScheme; }
-            set { this.analysisScheme = value; }
+            get { return this._analysisScheme; }
+            set { this._analysisScheme = value; }
         }
 
         // Check to see if AnalysisScheme property is set
         internal bool IsSetAnalysisScheme()
         {
-            return this.analysisScheme != null;
+            return this._analysisScheme != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue. A value to use for the field if the field
+        /// isn't specified for a document.
+        /// </summary>
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HighlightEnabled. 
+        /// <para>
+        /// Whether highlights can be returned for the field.
+        /// </para>
+        /// </summary>
+        public bool HighlightEnabled
+        {
+            get { return this._highlightEnabled.GetValueOrDefault(); }
+            set { this._highlightEnabled = value; }
+        }
+
+        // Check to see if HighlightEnabled property is set
+        internal bool IsSetHighlightEnabled()
+        {
+            return this._highlightEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnEnabled. 
+        /// <para>
+        /// Whether the contents of the field can be returned in the search results.
+        /// </para>
+        /// </summary>
+        public bool ReturnEnabled
+        {
+            get { return this._returnEnabled.GetValueOrDefault(); }
+            set { this._returnEnabled = value; }
+        }
+
+        // Check to see if ReturnEnabled property is set
+        internal bool IsSetReturnEnabled()
+        {
+            return this._returnEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortEnabled. 
+        /// <para>
+        /// Whether the field can be used to sort the search results.
+        /// </para>
+        /// </summary>
+        public bool SortEnabled
+        {
+            get { return this._sortEnabled.GetValueOrDefault(); }
+            set { this._sortEnabled = value; }
+        }
+
+        // Check to see if SortEnabled property is set
+        internal bool IsSetSortEnabled()
+        {
+            return this._sortEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceField.
+        /// </summary>
+        public string SourceField
+        {
+            get { return this._sourceField; }
+            set { this._sourceField = value; }
+        }
+
+        // Check to see if SourceField property is set
+        internal bool IsSetSourceField()
+        {
+            return this._sourceField != null;
+        }
+
     }
 }

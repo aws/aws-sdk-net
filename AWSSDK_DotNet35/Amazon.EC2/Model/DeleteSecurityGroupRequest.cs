@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,48 +29,69 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSecurityGroup operation.
-    /// <para>Deletes a security group.</para> <para>If you attempt to delete a security group that is associated with an instance, or is referenced
-    /// by another security group, the operation fails with <c>InvalidGroup.InUse</c> in EC2-Classic or <c>DependencyViolation</c> in
-    /// EC2-VPC.</para>
+    /// Deletes a security group.
+    /// 
+    ///  
+    /// <para>
+    /// If you attempt to delete a security group that is associated with an instance, or
+    /// is referenced by another security group, the operation fails with <code>InvalidGroup.InUse</code>
+    /// in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
+    /// </para>
     /// </summary>
     public partial class DeleteSecurityGroupRequest : AmazonEC2Request
     {
-        private string groupName;
-        private string groupId;
-
+        private string _groupId;
+        private string _groupName;
 
         /// <summary>
-        /// [EC2-Classic, default VPC] The name of the security group.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string GroupName
-        {
-            get { return this.groupName; }
-            set { this.groupName = value; }
-        }
+        public DeleteSecurityGroupRequest() { }
 
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
+        /// <summary>
+        /// Instantiates DeleteSecurityGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
+        public DeleteSecurityGroupRequest(string groupName)
         {
-            return this.groupName != null;
+            _groupName = groupName;
         }
 
         /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
         /// The ID of the security group.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupId
         {
-            get { return this.groupId; }
-            set { this.groupId = value; }
+            get { return this._groupId; }
+            set { this._groupId = value; }
         }
 
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this.groupId != null;
+            return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// [EC2-Classic, default VPC] The name of the security group.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
         }
 
     }
 }
-    

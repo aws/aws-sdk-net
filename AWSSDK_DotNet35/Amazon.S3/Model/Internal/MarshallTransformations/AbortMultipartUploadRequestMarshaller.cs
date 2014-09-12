@@ -22,8 +22,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Abort Multipart Upload Request Marshaller
     /// </summary>       
-    public class AbortMultipartUploadRequestMarshaller : IMarshaller<IRequest, AbortMultipartUploadRequest>
-    {
+    public class AbortMultipartUploadRequestMarshaller : IMarshaller<IRequest, AbortMultipartUploadRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((AbortMultipartUploadRequest)input);
+		}
+
         public IRequest Marshall(AbortMultipartUploadRequest abortMultipartUploadRequest)
         {
             IRequest request = new DefaultRequest(abortMultipartUploadRequest, "AmazonS3");

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,10 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private string _status;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public InvalidationSummary() { }
 
         /// <summary>
         /// Gets and sets the property CreateTime.
@@ -48,7 +56,6 @@ namespace Amazon.CloudFront.Model
             return this._createTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. The unique ID for an invalidation request.
         /// </summary>
@@ -63,7 +70,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. The status of an invalidation request.

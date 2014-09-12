@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,41 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an application that has one configuration         template named
-    ///         <code>default</code>         and no application versions.      
+    /// Creates an application that has one configuration template named <code>default</code>
+    /// and no application versions. 
     /// 
-    ///       The         &lt;code&gt;default&lt;/code&gt;         configuration template
-    /// is for a 32-bit version of the         Amazon Linux         operating system running
-    /// the Tomcat 6 application container.
+    ///  <?oxy_delete author="brussard" timestamp="20131024T142047-0700" content="&lt;note&gt;
+    /// The &lt;code&gt;default&lt;/code&gt; configuration template is for a 32-bit version
+    /// of the Amazon Linux operating system running the Tomcat 6 application container. &lt;/note&gt;">
     /// </summary>
     public partial class CreateApplicationRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
         private string _description;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateApplicationRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateApplicationRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName">The name of the application.  Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </param>
+        public CreateApplicationRequest(string applicationName)
+        {
+            _applicationName = applicationName;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
         /// The name of the application.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Constraint: This name must be unique within your account.         If the
-        ///         specified name already exists, the action returns an         <code>InvalidParameterValue</code>
-        ///         error.      
+        ///  Constraint: This name must be unique within your account. If the specified name already
+        /// exists, the action returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -61,7 +77,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._applicationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 

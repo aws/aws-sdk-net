@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PropagatingVgw Unmarshaller
-     /// </summary>
-    internal class PropagatingVgwUnmarshaller : IUnmarshaller<PropagatingVgw, XmlUnmarshallerContext>, IUnmarshaller<PropagatingVgw, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PropagatingVgw Object
+    /// </summary>  
+    public class PropagatingVgwUnmarshaller : IUnmarshaller<PropagatingVgw, XmlUnmarshallerContext>, IUnmarshaller<PropagatingVgw, JsonUnmarshallerContext>
     {
-        public PropagatingVgw Unmarshall(XmlUnmarshallerContext context) 
+        public PropagatingVgw Unmarshall(XmlUnmarshallerContext context)
         {
-            PropagatingVgw propagatingVgw = new PropagatingVgw();
+            PropagatingVgw unmarshalledObject = new PropagatingVgw();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("gatewayId", targetDepth))
                     {
-                        propagatingVgw.GatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return propagatingVgw;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return propagatingVgw;
+            return unmarshalledObject;
         }
 
-        public PropagatingVgw Unmarshall(JsonUnmarshallerContext context) 
+        public PropagatingVgw Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PropagatingVgwUnmarshaller instance;
 
-        public static PropagatingVgwUnmarshaller GetInstance() 
+        private static PropagatingVgwUnmarshaller _instance = new PropagatingVgwUnmarshaller();        
+
+        public static PropagatingVgwUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PropagatingVgwUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

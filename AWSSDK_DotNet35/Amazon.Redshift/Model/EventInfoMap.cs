@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.Redshift.Model
         private string _eventId;
         private string _severity;
 
-
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.Redshift.Model
         {
             return this._eventCategories != null && this._eventCategories.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EventDescription. 
@@ -71,7 +73,6 @@ namespace Amazon.Redshift.Model
             return this._eventDescription != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
@@ -89,7 +90,6 @@ namespace Amazon.Redshift.Model
         {
             return this._eventId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Severity. 

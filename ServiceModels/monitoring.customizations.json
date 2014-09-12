@@ -1,0 +1,7 @@
+{
+  "noArgOverloads": [
+    "DescribeAlarmHistory",
+    "DescribeAlarms",
+    "ListMetrics"
+  ]
+}

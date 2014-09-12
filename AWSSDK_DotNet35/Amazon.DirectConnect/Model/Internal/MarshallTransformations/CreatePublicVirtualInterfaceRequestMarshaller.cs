@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,104 +33,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Public Virtual Interface Request Marshaller
+    /// CreatePublicVirtualInterface Request Marshaller
     /// </summary>       
-    internal class CreatePublicVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, CreatePublicVirtualInterfaceRequest> 
+    public class CreatePublicVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, CreatePublicVirtualInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreatePublicVirtualInterfaceRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createPublicVirtualInterfaceRequest, "AmazonDirectConnect");
+        public IRequest Marshall(CreatePublicVirtualInterfaceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.CreatePublicVirtualInterface";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createPublicVirtualInterfaceRequest != null && createPublicVirtualInterfaceRequest.IsSetConnectionId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectionId())
                 {
-                    writer.WritePropertyName("connectionId");
-                    writer.Write(createPublicVirtualInterfaceRequest.ConnectionId);
+                    context.Writer.WritePropertyName("connectionId");
+                    context.Writer.Write(publicRequest.ConnectionId);
                 }
 
-                if (createPublicVirtualInterfaceRequest != null) 
+                if(publicRequest.IsSetNewPublicVirtualInterface())
                 {
-                    NewPublicVirtualInterface newPublicVirtualInterface = createPublicVirtualInterfaceRequest.NewPublicVirtualInterface;
-                    if (newPublicVirtualInterface != null)
-                    {
-                        writer.WritePropertyName("newPublicVirtualInterface");
-                        writer.WriteObjectStart();
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.IsSetVirtualInterfaceName()) 
-                        {
-                            writer.WritePropertyName("virtualInterfaceName");
-                            writer.Write(newPublicVirtualInterface.VirtualInterfaceName);
-                        }
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.IsSetVlan()) 
-                        {
-                            writer.WritePropertyName("vlan");
-                            writer.Write(newPublicVirtualInterface.Vlan);
-                        }
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.IsSetAsn()) 
-                        {
-                            writer.WritePropertyName("asn");
-                            writer.Write(newPublicVirtualInterface.Asn);
-                        }
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.IsSetAuthKey()) 
-                        {
-                            writer.WritePropertyName("authKey");
-                            writer.Write(newPublicVirtualInterface.AuthKey);
-                        }
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.IsSetAmazonAddress()) 
-                        {
-                            writer.WritePropertyName("amazonAddress");
-                            writer.Write(newPublicVirtualInterface.AmazonAddress);
-                        }
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.IsSetCustomerAddress()) 
-                        {
-                            writer.WritePropertyName("customerAddress");
-                            writer.Write(newPublicVirtualInterface.CustomerAddress);
-                        }
+                    context.Writer.WritePropertyName("newPublicVirtualInterface");
+                    context.Writer.WriteObjectStart();
 
-                        if (newPublicVirtualInterface != null && newPublicVirtualInterface.RouteFilterPrefixes != null && newPublicVirtualInterface.RouteFilterPrefixes.Count > 0)
-                        {
-                            List<RouteFilterPrefix> routeFilterPrefixesList = newPublicVirtualInterface.RouteFilterPrefixes;
-                            writer.WritePropertyName("routeFilterPrefixes");
-                            writer.WriteArrayStart();
+                    var marshaller = NewPublicVirtualInterfaceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NewPublicVirtualInterface, context);
 
-                            foreach (RouteFilterPrefix routeFilterPrefixesListValue in routeFilterPrefixesList) 
-                            {
-                                writer.WriteObjectStart();
-                                if (routeFilterPrefixesListValue != null && routeFilterPrefixesListValue.IsSetCidr()) 
-                                {
-                                    writer.WritePropertyName("cidr");
-                                    writer.Write(routeFilterPrefixesListValue.Cidr);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

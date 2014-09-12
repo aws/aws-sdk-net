@@ -12,89 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a static route for a VPN connection.</para>
+    /// Describes a static route for a VPN connection.
     /// </summary>
     public partial class VpnStaticRoute
     {
-        
-        private string destinationCidrBlock;
-        private VpnStaticRouteSource source;
-        private VpnState state;
-
+        private string _destinationCidrBlock;
+        private VpnStaticRouteSource _source;
+        private VpnState _state;
 
         /// <summary>
+        /// Gets and sets the property DestinationCidrBlock. 
+        /// <para>
         /// The CIDR block associated with the local subnet of the customer data center.
-        ///  
+        /// </para>
         /// </summary>
         public string DestinationCidrBlock
         {
-            get { return this.destinationCidrBlock; }
-            set { this.destinationCidrBlock = value; }
+            get { return this._destinationCidrBlock; }
+            set { this._destinationCidrBlock = value; }
         }
 
         // Check to see if DestinationCidrBlock property is set
         internal bool IsSetDestinationCidrBlock()
         {
-            return this.destinationCidrBlock != null;
+            return this._destinationCidrBlock != null;
         }
 
         /// <summary>
-        /// Indicates how the routes were provided.
-        ///  
+        /// Gets and sets the property Source. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Static</description>
-        ///     </item>
-        /// </list>
+        /// Indicates how the routes were provided.
         /// </para>
         /// </summary>
         public VpnStaticRouteSource Source
         {
-            get { return this.source; }
-            set { this.source = value; }
+            get { return this._source; }
+            set { this._source = value; }
         }
 
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this.source != null;
+            return this._source != null;
         }
 
         /// <summary>
-        /// The current state of the static route.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>pending, available, deleting, deleted</description>
-        ///     </item>
-        /// </list>
+        /// The current state of the static route.
         /// </para>
         /// </summary>
         public VpnState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
+
     }
 }

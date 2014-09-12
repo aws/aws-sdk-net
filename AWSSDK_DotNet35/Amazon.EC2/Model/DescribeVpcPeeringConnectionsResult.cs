@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpcPeeringConnectionsResult : AmazonWebServiceResponse
     {
-        
-        private List<VpcPeeringConnection> vpcPeeringConnections = new List<VpcPeeringConnection>();
-
+        private List<VpcPeeringConnection> _vpcPeeringConnections = new List<VpcPeeringConnection>();
 
         /// <summary>
+        /// Gets and sets the property VpcPeeringConnections. 
+        /// <para>
         /// Information about the VPC peering connections
-        ///  
+        /// </para>
         /// </summary>
         public List<VpcPeeringConnection> VpcPeeringConnections
         {
-            get { return this.vpcPeeringConnections; }
-            set { this.vpcPeeringConnections = value; }
+            get { return this._vpcPeeringConnections; }
+            set { this._vpcPeeringConnections = value; }
         }
 
         // Check to see if VpcPeeringConnections property is set
         internal bool IsSetVpcPeeringConnections()
         {
-            return this.vpcPeeringConnections.Count > 0;
+            return this._vpcPeeringConnections != null && this._vpcPeeringConnections.Count > 0; 
         }
+
     }
 }

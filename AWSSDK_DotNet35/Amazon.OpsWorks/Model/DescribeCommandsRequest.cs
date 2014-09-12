@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.OpsWorks.Model
         private string _deploymentId;
         private string _instanceId;
 
-
         /// <summary>
         /// Gets and sets the property CommandIds. 
         /// <para>
@@ -62,7 +65,6 @@ namespace Amazon.OpsWorks.Model
             return this._commandIds != null && this._commandIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
@@ -81,7 +83,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._deploymentId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceId. 

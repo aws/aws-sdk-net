@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.EC2
 {
     /// <summary>
-    /// Base class for AmazonEC2 operation requests.
+    /// Base class for EC2 operation requests.
     /// </summary>
     public partial class AmazonEC2Request : AmazonWebServiceRequest
     {
     }
 }
-    

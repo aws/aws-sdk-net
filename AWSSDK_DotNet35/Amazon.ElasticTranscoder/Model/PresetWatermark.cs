@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -57,7 +61,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _verticalAlign;
         private string _verticalOffset;
 
-
         /// <summary>
         /// Gets and sets the property HorizontalAlign. 
         /// <para>
@@ -81,7 +84,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._horizontalAlign != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HorizontalOffset. 
@@ -122,7 +124,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._horizontalOffset != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. A unique identifier for the settings for one      
         ///  watermark. The value of <code>Id</code> can be up to 40 characters long.
@@ -138,7 +139,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxHeight. 
@@ -165,7 +165,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._maxHeight != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxWidth. 
         /// <para>
@@ -190,7 +189,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._maxWidth != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Opacity. 
@@ -219,7 +217,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._opacity != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SizingPolicy. 
@@ -250,7 +247,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._sizingPolicy != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Target. 
@@ -284,7 +280,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._target != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VerticalAlign. 
         /// <para>
@@ -307,7 +302,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._verticalAlign != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VerticalOffset. <code>VerticalOffset</code>        

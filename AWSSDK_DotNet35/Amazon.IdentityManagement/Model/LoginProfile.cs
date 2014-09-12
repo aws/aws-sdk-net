@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,6 +42,21 @@ namespace Amazon.IdentityManagement.Model
         private bool? _passwordResetRequired;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public LoginProfile() { }
+
+        /// <summary>
+        /// Instantiates LoginProfile with the parameterized properties
+        /// </summary>
+        /// <param name="userName">The name of the user, which can be used for signing in to the AWS Management Console.</param>
+        /// <param name="createDate">The date when the password for the user was created.</param>
+        public LoginProfile(string userName, DateTime createDate)
+        {
+            _userName = userName;
+            _createDate = createDate;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateDate. 
@@ -57,7 +76,6 @@ namespace Amazon.IdentityManagement.Model
             return this._createDate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property PasswordResetRequired. 
         /// <para>
@@ -75,7 +93,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._passwordResetRequired.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSize;
         private DateTime? _snapshotCreateTime;
 
-
         /// <summary>
         /// Gets and sets the property CacheNodeCreateTime. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheNodeCreateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheNodeId. 
@@ -71,7 +73,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheNodeId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheSize. 
         /// <para>
@@ -89,7 +90,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheSize != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 

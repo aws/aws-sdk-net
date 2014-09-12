@@ -12,54 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Replace Route Request Marshaller
+    /// ReplaceRoute Request Marshaller
     /// </summary>       
-    public class ReplaceRouteRequestMarshaller : IMarshaller<IRequest, ReplaceRouteRequest>
+    public class ReplaceRouteRequestMarshaller : IMarshaller<IRequest, ReplaceRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ReplaceRouteRequest replaceRouteRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(replaceRouteRequest, "AmazonEC2");
+            return this.Marshall((ReplaceRouteRequest)input);
+        }
+    
+        public IRequest Marshall(ReplaceRouteRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ReplaceRoute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (replaceRouteRequest != null && replaceRouteRequest.IsSetRouteTableId())
-            {
-                request.Parameters.Add("RouteTableId", StringUtils.FromString(replaceRouteRequest.RouteTableId));
-            }
-            if (replaceRouteRequest != null && replaceRouteRequest.IsSetDestinationCidrBlock())
-            {
-                request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(replaceRouteRequest.DestinationCidrBlock));
-            }
-            if (replaceRouteRequest != null && replaceRouteRequest.IsSetGatewayId())
-            {
-                request.Parameters.Add("GatewayId", StringUtils.FromString(replaceRouteRequest.GatewayId));
-            }
-            if (replaceRouteRequest != null && replaceRouteRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(replaceRouteRequest.InstanceId));
-            }
-            if (replaceRouteRequest != null && replaceRouteRequest.IsSetNetworkInterfaceId())
-            {
-                request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(replaceRouteRequest.NetworkInterfaceId));
-            }
-            if (replaceRouteRequest != null && replaceRouteRequest.IsSetVpcPeeringConnectionId())
-            {
-                request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(replaceRouteRequest.VpcPeeringConnectionId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDestinationCidrBlock())
+                {
+                    request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
+                }
+                if(publicRequest.IsSetGatewayId())
+                {
+                    request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
+                }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetNetworkInterfaceId())
+                {
+                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
+                }
+                if(publicRequest.IsSetRouteTableId())
+                {
+                    request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
+                }
+                if(publicRequest.IsSetVpcPeeringConnectionId())
+                {
+                    request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(publicRequest.VpcPeeringConnectionId));
+                }
+            }
             return request;
         }
     }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Volumes Request Marshaller
+    /// ListVolumes Request Marshaller
     /// </summary>       
-    internal class ListVolumesRequestMarshaller : IMarshaller<IRequest, ListVolumesRequest> 
+    public class ListVolumesRequestMarshaller : IMarshaller<IRequest, ListVolumesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListVolumesRequest listVolumesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListVolumesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listVolumesRequest, "AmazonStorageGateway");
+        public IRequest Marshall(ListVolumesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.ListVolumes";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listVolumesRequest != null && listVolumesRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGatewayARN())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(listVolumesRequest.GatewayARN);
-                }
-                if (listVolumesRequest != null && listVolumesRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(listVolumesRequest.Marker);
-                }
-                if (listVolumesRequest != null && listVolumesRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(listVolumesRequest.Limit);
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
                 }
 
+                if(publicRequest.IsSetLimit())
+                {
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
+                }
+
+                if(publicRequest.IsSetMarker())
+                {
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

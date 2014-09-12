@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class BundleInstanceResult : AmazonWebServiceResponse
     {
-        
-        private BundleTask bundleTask;
-
+        private BundleTask _bundleTask;
 
         /// <summary>
+        /// Gets and sets the property BundleTask. 
+        /// <para>
         /// Information about the bundle task.
-        ///  
+        /// </para>
         /// </summary>
         public BundleTask BundleTask
         {
-            get { return this.bundleTask; }
-            set { this.bundleTask = value; }
+            get { return this._bundleTask; }
+            set { this._bundleTask = value; }
         }
 
         // Check to see if BundleTask property is set
         internal bool IsSetBundleTask()
         {
-            return this.bundleTask != null;
+            return this._bundleTask != null;
         }
+
     }
 }

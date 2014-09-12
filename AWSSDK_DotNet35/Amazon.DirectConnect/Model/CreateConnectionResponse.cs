@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Returns information about the  CreateConnection response and response metadata.
+    /// Configuration for accessing Amazon CreateConnection service
     /// </summary>
-    public class CreateConnectionResponse : CreateConnectionResult
+    public partial class CreateConnectionResponse : CreateConnectionResult
     {
         /// <summary>
         /// Gets and sets the CreateConnectionResult property.
-        /// A connection represents the physical network connection between the Direct Connect location and the customer.
+        /// Represents the output of a CreateConnection operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateConnectionResult class are now available on the CreateConnectionResponse class. You should use the properties on CreateConnectionResponse instead of accessing them through CreateConnectionResult.")]
         public CreateConnectionResult CreateConnectionResult
@@ -40,4 +40,3 @@ namespace Amazon.DirectConnect.Model
         }
     }
 }
-    

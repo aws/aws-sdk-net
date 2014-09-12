@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _reasonCode;
         private string _state;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public InstanceState() { }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -52,7 +60,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -70,7 +77,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReasonCode. 
@@ -95,7 +101,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._reasonCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property State. 

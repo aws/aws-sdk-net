@@ -12,93 +12,106 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NetworkAcl Unmarshaller
-     /// </summary>
-    internal class NetworkAclUnmarshaller : IUnmarshaller<NetworkAcl, XmlUnmarshallerContext>, IUnmarshaller<NetworkAcl, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NetworkAcl Object
+    /// </summary>  
+    public class NetworkAclUnmarshaller : IUnmarshaller<NetworkAcl, XmlUnmarshallerContext>, IUnmarshaller<NetworkAcl, JsonUnmarshallerContext>
     {
-        public NetworkAcl Unmarshall(XmlUnmarshallerContext context) 
+        public NetworkAcl Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkAcl networkAcl = new NetworkAcl();
+            NetworkAcl unmarshalledObject = new NetworkAcl();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("networkAclId", targetDepth))
+                    if (context.TestExpression("associationSet/item", targetDepth))
                     {
-                        networkAcl.NetworkAclId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        networkAcl.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("default", targetDepth))
-                    {
-                        networkAcl.IsDefault = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = NetworkAclAssociationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Associations.Add(item);
                         continue;
                     }
                     if (context.TestExpression("entrySet/item", targetDepth))
                     {
-                        networkAcl.Entries.Add(NetworkAclEntryUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = NetworkAclEntryUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Entries.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("associationSet/item", targetDepth))
+                    if (context.TestExpression("default", targetDepth))
                     {
-                        networkAcl.Associations.Add(NetworkAclAssociationUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkAclId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkAclId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        networkAcl.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return networkAcl;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return networkAcl;
+            return unmarshalledObject;
         }
 
-        public NetworkAcl Unmarshall(JsonUnmarshallerContext context) 
+        public NetworkAcl Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NetworkAclUnmarshaller instance;
 
-        public static NetworkAclUnmarshaller GetInstance() 
+        private static NetworkAclUnmarshaller _instance = new NetworkAclUnmarshaller();        
+
+        public static NetworkAclUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NetworkAclUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

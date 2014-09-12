@@ -1,0 +1,142 @@
+
+{
+    "simpleMethods" : {
+        "operations" : {
+            "PutItem" : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "Item"
+                    ],
+                    [
+                        "TableName",
+                        "Item",
+                        "ReturnValues"
+                    ]
+                ]
+            },
+            "UpdateItem" : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "Key",
+                        "AttributeUpdates"
+                    ],
+                    [
+                        "TableName",
+                        "Key",
+                        "AttributeUpdates",
+                        "ReturnValues"
+                    ]
+                ]
+            },
+            "DescribeTable" : {
+                "methodForms" : [
+                    [
+                        "TableName"
+                    ]
+                ]
+            },
+            "Scan"          : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "AttributesToGet"
+                    ],
+                    [
+                        "TableName",
+                        "ScanFilter"
+                    ],
+                    [
+                        "TableName",
+                        "AttributesToGet",
+                        "ScanFilter"
+                    ]
+                ]
+            },
+            "DeleteItem"    : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "Key"
+                    ],
+                    [
+                        "TableName",
+                        "Key",
+                        "ReturnValues"
+                    ]
+                ]
+            },
+            "DeleteTable"   : {
+                "methodForms" : [
+                    [
+                        "TableName"
+                    ]
+                ]
+            },
+            "CreateTable"   : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "KeySchema",
+                        "AttributeDefinitions",
+                        "ProvisionedThroughput"
+                    ]
+                ]
+            },
+            "GetItem"       : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "Key"
+                    ],
+                    [
+                        "TableName",
+                        "Key",
+                        "ConsistentRead"
+                    ]
+                ]
+            },
+            "ListTables"    : {
+                "methodForms" : [
+                    [
+                        "ExclusiveStartTableName"
+                    ],
+                    [
+                        "ExclusiveStartTableName",
+                        "Limit"
+                    ],
+                    [
+                        "Limit"
+                    ]
+                ]
+            },
+            "UpdateTable"   : {
+                "methodForms" : [
+                    [
+                        "TableName",
+                        "ProvisionedThroughput"
+                    ]
+                ]
+            },
+            "BatchGetItem"  : {
+                "methodForms" : [
+                    [
+                        "RequestItems",
+                        "ReturnConsumedCapacity"
+                    ],
+                    [
+                        "RequestItems"
+                    ]
+                ]
+            },
+            "BatchWriteItem" : {
+                "methodForms" : [
+                    [
+                        "RequestItems"
+                    ]
+                ]
+            }
+        }
+    }
+}

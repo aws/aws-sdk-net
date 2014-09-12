@@ -18,6 +18,8 @@ using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.IO;
 
 using Amazon.CloudWatchLogs.Model;
 
@@ -71,6 +73,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  CreateLogGroup
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogGroup operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -86,6 +89,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  CreateLogStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogStream operation.
@@ -103,6 +107,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  DeleteLogGroup
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogGroup operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -118,6 +123,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  DeleteLogStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogStream operation.
@@ -135,6 +141,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  DeleteMetricFilter
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMetricFilter operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -150,6 +157,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  DeleteRetentionPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRetentionPolicy operation.
@@ -167,6 +175,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  DescribeLogGroups
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogGroups operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -182,6 +191,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  DescribeLogStreams
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogStreams operation.
@@ -199,6 +209,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  DescribeMetricFilters
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricFilters operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -214,6 +225,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  GetLogEvents
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLogEvents operation.
@@ -231,6 +243,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  PutLogEvents
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutLogEvents operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -246,6 +259,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  PutMetricFilter
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricFilter operation.
@@ -263,6 +277,7 @@ namespace Amazon.CloudWatchLogs
                 
         #region  PutRetentionPolicy
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRetentionPolicy operation.
         /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
@@ -278,6 +293,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
                 
         #region  TestMetricFilter
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TestMetricFilter operation.

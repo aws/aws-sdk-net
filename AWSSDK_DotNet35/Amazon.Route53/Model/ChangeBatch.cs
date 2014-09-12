@@ -12,72 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains an optional comment and the changes that you want to make with a change batch request.</para>
+    /// A complex type that contains an optional comment and the changes that you want to
+    /// make with a change batch request.
     /// </summary>
     public partial class ChangeBatch
     {
-        
-        private string comment;
-        private List<Change> changes = new List<Change>();
-
+        private string _comment;
+        private List<Change> _changes = new List<Change>();
 
         /// <summary>
-        /// <i>Optional:</i> Any comments you want to include about a change batch request.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ChangeBatch() { }
+
+        /// <summary>
+        /// Instantiates ChangeBatch with the parameterized properties
+        /// </summary>
+        /// <param name="changes">A complex type that contains one <code>Change</code> element for each resource record set that you want to create or delete.</param>
+        public ChangeBatch(List<Change> changes)
+        {
+            _changes = changes;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Comment. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
+        /// <i>Optional:</i> Any comments you want to include about a change batch request.
         /// </para>
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
+            return this._comment != null;
         }
 
         /// <summary>
-        /// A complex type that contains one <c>Change</c> element for each resource record set that you want to create or delete.
-        ///  
+        /// Gets and sets the property Changes. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// A complex type that contains one <code>Change</code> element for each resource record
+        /// set that you want to create or delete.
         /// </para>
         /// </summary>
         public List<Change> Changes
         {
-            get { return this.changes; }
-            set { this.changes = value; }
+            get { return this._changes; }
+            set { this._changes = value; }
         }
 
         // Check to see if Changes property is set
         internal bool IsSetChanges()
         {
-            return this.changes.Count > 0;
+            return this._changes != null && this._changes.Count > 0; 
         }
+
     }
 }

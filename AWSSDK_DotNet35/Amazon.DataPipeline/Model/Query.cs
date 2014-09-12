@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,36 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Defines the query to run against an object.</para>
+    /// Defines the query to run against an object.
     /// </summary>
-    public class Query
+    public partial class Query
     {
-        
-        private List<Selector> selectors = new List<Selector>();
+        private List<Selector> _selectors = new List<Selector>();
 
         /// <summary>
-        /// List of selectors that define the query. An object must satisfy all of the selectors to match the query.
-        ///  
+        /// Gets and sets the property Selectors. 
+        /// <para>
+        /// List of selectors that define the query. An object must satisfy all of the selectors
+        /// to match the query.
+        /// </para>
         /// </summary>
         public List<Selector> Selectors
         {
-            get { return this.selectors; }
-            set { this.selectors = value; }
+            get { return this._selectors; }
+            set { this._selectors = value; }
         }
 
         // Check to see if Selectors property is set
         internal bool IsSetSelectors()
         {
-            return this.selectors.Count > 0;
+            return this._selectors != null && this._selectors.Count > 0; 
         }
+
     }
 }

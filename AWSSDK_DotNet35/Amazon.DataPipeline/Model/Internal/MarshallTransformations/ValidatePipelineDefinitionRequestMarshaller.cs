@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,97 +33,62 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Validate Pipeline Definition Request Marshaller
+    /// ValidatePipelineDefinition Request Marshaller
     /// </summary>       
-    internal class ValidatePipelineDefinitionRequestMarshaller : IMarshaller<IRequest, ValidatePipelineDefinitionRequest> 
+    public class ValidatePipelineDefinitionRequestMarshaller : IMarshaller<IRequest, ValidatePipelineDefinitionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ValidatePipelineDefinitionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(validatePipelineDefinitionRequest, "AmazonDataPipeline");
+        public IRequest Marshall(ValidatePipelineDefinitionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.ValidatePipelineDefinition";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (validatePipelineDefinitionRequest != null && validatePipelineDefinitionRequest.IsSetPipelineId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPipelineId())
                 {
-                    writer.WritePropertyName("pipelineId");
-                    writer.Write(validatePipelineDefinitionRequest.PipelineId);
+                    context.Writer.WritePropertyName("pipelineId");
+                    context.Writer.Write(publicRequest.PipelineId);
                 }
 
-                if (validatePipelineDefinitionRequest != null && validatePipelineDefinitionRequest.PipelineObjects != null && validatePipelineDefinitionRequest.PipelineObjects.Count > 0)
+                if(publicRequest.IsSetPipelineObjects())
                 {
-                    List<PipelineObject> pipelineObjectsList = validatePipelineDefinitionRequest.PipelineObjects;
-                    writer.WritePropertyName("pipelineObjects");
-                    writer.WriteArrayStart();
-
-                    foreach (PipelineObject pipelineObjectsListValue in pipelineObjectsList) 
+                    context.Writer.WritePropertyName("pipelineObjects");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPipelineObjectsListValue in publicRequest.PipelineObjects)
                     {
-                        writer.WriteObjectStart();
-                        if (pipelineObjectsListValue != null && pipelineObjectsListValue.IsSetId()) 
-                        {
-                            writer.WritePropertyName("id");
-                            writer.Write(pipelineObjectsListValue.Id);
-                        }
-                        if (pipelineObjectsListValue != null && pipelineObjectsListValue.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(pipelineObjectsListValue.Name);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if (pipelineObjectsListValue != null && pipelineObjectsListValue.Fields != null && pipelineObjectsListValue.Fields.Count > 0)
-                        {
-                            List<Field> fieldsList = pipelineObjectsListValue.Fields;
-                            writer.WritePropertyName("fields");
-                            writer.WriteArrayStart();
+                        var marshaller = PipelineObjectMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPipelineObjectsListValue, context);
 
-                            foreach (Field fieldsListValue in fieldsList) 
-                            {
-                                writer.WriteObjectStart();
-                                if (fieldsListValue != null && fieldsListValue.IsSetKey()) 
-                                {
-                                    writer.WritePropertyName("key");
-                                    writer.Write(fieldsListValue.Key);
-                                }
-                                if (fieldsListValue != null && fieldsListValue.IsSetStringValue()) 
-                                {
-                                    writer.WritePropertyName("stringValue");
-                                    writer.Write(fieldsListValue.StringValue);
-                                }
-                                if (fieldsListValue != null && fieldsListValue.IsSetRefValue()) 
-                                {
-                                    writer.WritePropertyName("refValue");
-                                    writer.Write(fieldsListValue.RefValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

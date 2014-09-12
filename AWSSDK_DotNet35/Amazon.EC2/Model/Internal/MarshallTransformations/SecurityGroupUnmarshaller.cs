@@ -12,105 +12,118 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SecurityGroup Unmarshaller
-     /// </summary>
-    internal class SecurityGroupUnmarshaller : IUnmarshaller<SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SecurityGroup Object
+    /// </summary>  
+    public class SecurityGroupUnmarshaller : IUnmarshaller<SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroup, JsonUnmarshallerContext>
     {
-        public SecurityGroup Unmarshall(XmlUnmarshallerContext context) 
+        public SecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            SecurityGroup securityGroup = new SecurityGroup();
+            SecurityGroup unmarshalledObject = new SecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ownerId", targetDepth))
+                    if (context.TestExpression("groupDescription", targetDepth))
                     {
-                        securityGroup.OwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("groupName", targetDepth))
-                    {
-                        securityGroup.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupId", targetDepth))
                     {
-                        securityGroup.GroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupDescription", targetDepth))
+                    if (context.TestExpression("groupName", targetDepth))
                     {
-                        securityGroup.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipPermissions/item", targetDepth))
                     {
-                        securityGroup.IpPermissions.Add(IpPermissionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = IpPermissionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IpPermissions.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ipPermissionsEgress/item", targetDepth))
                     {
-                        securityGroup.IpPermissionsEgress.Add(IpPermissionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = IpPermissionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IpPermissionsEgress.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("vpcId", targetDepth))
+                    if (context.TestExpression("ownerId", targetDepth))
                     {
-                        securityGroup.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        securityGroup.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return securityGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return securityGroup;
+            return unmarshalledObject;
         }
 
-        public SecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        public SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SecurityGroupUnmarshaller instance;
 
-        public static SecurityGroupUnmarshaller GetInstance() 
+        private static SecurityGroupUnmarshaller _instance = new SecurityGroupUnmarshaller();        
+
+        public static SecurityGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SecurityGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

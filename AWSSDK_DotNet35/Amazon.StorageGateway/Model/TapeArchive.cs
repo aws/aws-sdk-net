@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,164 +12,150 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</para>
+    /// Represents a virtual tape that is archived in the virtual tape shelf (VTS).
     /// </summary>
-    public class TapeArchive
+    public partial class TapeArchive
     {
-        
-        private string tapeARN;
-        private string tapeBarcode;
-        private long? tapeSizeInBytes;
-        private DateTime? completionTime;
-        private string retrievedTo;
-        private string tapeStatus;
-
+        private DateTime? _completionTime;
+        private string _retrievedTo;
+        private string _tapeARN;
+        private string _tapeBarcode;
+        private long? _tapeSizeInBytes;
+        private string _tapeStatus;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of an archived virtual tape.
+        /// Gets and sets the property CompletionTime. 
+        /// <para>
+        /// The time that the archiving of the virtual tape was completed.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
+        /// The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+        /// format.
         /// </para>
-        /// </summary>
-        public string TapeARN
-        {
-            get { return this.tapeARN; }
-            set { this.tapeARN = value; }
-        }
-
-        // Check to see if TapeARN property is set
-        internal bool IsSetTapeARN()
-        {
-            return this.tapeARN != null;
-        }
-
-        /// <summary>
-        /// The barcode that identifies the archived virtual tape.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>8 - 16</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^[A-Z0-9]*$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TapeBarcode
-        {
-            get { return this.tapeBarcode; }
-            set { this.tapeBarcode = value; }
-        }
-
-        // Check to see if TapeBarcode property is set
-        internal bool IsSetTapeBarcode()
-        {
-            return this.tapeBarcode != null;
-        }
-
-        /// <summary>
-        /// The size, in bytes, of the archived virtual tape.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>107374182400 - 2748779069440</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public long TapeSizeInBytes
-        {
-            get { return this.tapeSizeInBytes ?? default(long); }
-            set { this.tapeSizeInBytes = value; }
-        }
-
-        // Check to see if TapeSizeInBytes property is set
-        internal bool IsSetTapeSizeInBytes()
-        {
-            return this.tapeSizeInBytes.HasValue;
-        }
-
-        /// <summary>
-        /// The time that the archiving of the virtual tape was completed. The string format of the completion time is in the ISO8601 extended
-        /// YYYY-MM-DD'T'HH:MM:SS'Z' format.
-        ///  
         /// </summary>
         public DateTime CompletionTime
         {
-            get { return this.completionTime ?? default(DateTime); }
-            set { this.completionTime = value; }
+            get { return this._completionTime.GetValueOrDefault(); }
+            set { this._completionTime = value; }
         }
 
         // Check to see if CompletionTime property is set
         internal bool IsSetCompletionTime()
         {
-            return this.completionTime.HasValue;
+            return this._completionTime.HasValue; 
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to. The virtual tape is retrieved from the
-        /// virtual tape shelf (VTS).
+        /// Gets and sets the property RetrievedTo. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved
+        /// to. 
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
+        /// The virtual tape is retrieved from the virtual tape shelf (VTS).
         /// </para>
         /// </summary>
         public string RetrievedTo
         {
-            get { return this.retrievedTo; }
-            set { this.retrievedTo = value; }
+            get { return this._retrievedTo; }
+            set { this._retrievedTo = value; }
         }
 
         // Check to see if RetrievedTo property is set
         internal bool IsSetRetrievedTo()
         {
-            return this.retrievedTo != null;
+            return this._retrievedTo != null;
         }
 
         /// <summary>
-        /// The current state of the archived virtual tape.
-        ///  
+        /// Gets and sets the property TapeARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an archived virtual tape.
+        /// </para>
+        /// </summary>
+        public string TapeARN
+        {
+            get { return this._tapeARN; }
+            set { this._tapeARN = value; }
+        }
+
+        // Check to see if TapeARN property is set
+        internal bool IsSetTapeARN()
+        {
+            return this._tapeARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TapeBarcode. 
+        /// <para>
+        /// The barcode that identifies the archived virtual tape.
+        /// </para>
+        /// </summary>
+        public string TapeBarcode
+        {
+            get { return this._tapeBarcode; }
+            set { this._tapeBarcode = value; }
+        }
+
+        // Check to see if TapeBarcode property is set
+        internal bool IsSetTapeBarcode()
+        {
+            return this._tapeBarcode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TapeSizeInBytes. 
+        /// <para>
+        /// The size, in bytes, of the archived virtual tape.
+        /// </para>
+        /// </summary>
+        public long TapeSizeInBytes
+        {
+            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            set { this._tapeSizeInBytes = value; }
+        }
+
+        // Check to see if TapeSizeInBytes property is set
+        internal bool IsSetTapeSizeInBytes()
+        {
+            return this._tapeSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TapeStatus. 
+        /// <para>
+        /// The current state of the archived virtual tape. 
+        /// </para>
         /// </summary>
         public string TapeStatus
         {
-            get { return this.tapeStatus; }
-            set { this.tapeStatus = value; }
+            get { return this._tapeStatus; }
+            set { this._tapeStatus = value; }
         }
 
         // Check to see if TapeStatus property is set
         internal bool IsSetTapeStatus()
         {
-            return this.tapeStatus != null;
+            return this._tapeStatus != null;
         }
+
     }
 }

@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetBucketPolicy operation
     /// </summary>
-    internal class GetBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
@@ -51,20 +51,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static GetBucketPolicyResponseUnmarshaller instance;
 
-        public static GetBucketPolicyResponseUnmarshaller GetInstance()
+        private static GetBucketPolicyResponseUnmarshaller _instance;
+
+        public static GetBucketPolicyResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetBucketPolicyResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetBucketPolicyResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
     
     }

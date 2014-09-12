@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,70 +32,63 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DiskImageDetail
     {
-        
-        private DiskImageFormat format;
-        private long? bytes;
-        private string importManifestUrl;
-
+        private long? _bytes;
+        private DiskImageFormat _format;
+        private string _importManifestUrl;
 
         /// <summary>
-        /// The disk image format.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>VMDK, RAW, VHD</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public DiskImageFormat Format
-        {
-            get { return this.format; }
-            set { this.format = value; }
-        }
-
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
-        {
-            return this.format != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Bytes.
         /// </summary>
         public long Bytes
         {
-            get { return this.bytes ?? default(long); }
-            set { this.bytes = value; }
+            get { return this._bytes.GetValueOrDefault(); }
+            set { this._bytes = value; }
         }
 
         // Check to see if Bytes property is set
         internal bool IsSetBytes()
         {
-            return this.bytes.HasValue;
+            return this._bytes.HasValue; 
         }
 
         /// <summary>
-        /// A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for an Amazon S3 object, read
-        /// the "Query String Request Authentication Alternative" section of the <a
-        /// href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple
-        /// Storage Service Developer Guide</i>.
-        ///  
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The disk image format.
+        /// </para>
+        /// </summary>
+        public DiskImageFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportManifestUrl. 
+        /// <para>
+        /// A presigned URL for the import manifest stored in Amazon S3. For information about
+        /// creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication
+        /// Alternative" section of the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+        /// REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         public string ImportManifestUrl
         {
-            get { return this.importManifestUrl; }
-            set { this.importManifestUrl = value; }
+            get { return this._importManifestUrl; }
+            set { this._importManifestUrl = value; }
         }
 
         // Check to see if ImportManifestUrl property is set
         internal bool IsSetImportManifestUrl()
         {
-            return this.importManifestUrl != null;
+            return this._importManifestUrl != null;
         }
+
     }
 }

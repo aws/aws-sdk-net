@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,32 +29,46 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePlacementGroup operation.
-    /// <para>Deletes the specified placement group. You must terminate all instances in the placement group before you can delete the placement
-    /// group. For more information about placement groups and cluster instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html" >Cluster Instances</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Deletes the specified placement group. You must terminate all instances in the placement
+    /// group before you can delete the placement group. For more information about placement
+    /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DeletePlacementGroupRequest : AmazonEC2Request
     {
-        private string groupName;
-
+        private string _groupName;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeletePlacementGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates DeletePlacementGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="groupName">The name of the placement group.</param>
+        public DeletePlacementGroupRequest(string groupName)
+        {
+            _groupName = groupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
         /// The name of the placement group.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
 
     }
 }
-    

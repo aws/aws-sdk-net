@@ -39,20 +39,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
         
-        private static AbortMultipartUploadResponseUnmarshaller instance;
+        private static AbortMultipartUploadResponseUnmarshaller _instance;
 
-        public static AbortMultipartUploadResponseUnmarshaller GetInstance()
+        public static AbortMultipartUploadResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new AbortMultipartUploadResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new AbortMultipartUploadResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
     
     }

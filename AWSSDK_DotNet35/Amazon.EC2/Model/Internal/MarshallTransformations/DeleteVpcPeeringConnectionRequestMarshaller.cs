@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Vpc Peering Connection Request Marshaller
+    /// DeleteVpcPeeringConnection Request Marshaller
     /// </summary>       
-    public class DeleteVpcPeeringConnectionRequestMarshaller : IMarshaller<IRequest, DeleteVpcPeeringConnectionRequest>
+    public class DeleteVpcPeeringConnectionRequestMarshaller : IMarshaller<IRequest, DeleteVpcPeeringConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteVpcPeeringConnectionRequest, "AmazonEC2");
+            return this.Marshall((DeleteVpcPeeringConnectionRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteVpcPeeringConnectionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DeleteVpcPeeringConnection");
             request.Parameters.Add("Version", "2014-06-15");
-            if (deleteVpcPeeringConnectionRequest != null && deleteVpcPeeringConnectionRequest.IsSetVpcPeeringConnectionId())
-            {
-                request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(deleteVpcPeeringConnectionRequest.VpcPeeringConnectionId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetVpcPeeringConnectionId())
+                {
+                    request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(publicRequest.VpcPeeringConnectionId));
+                }
+            }
             return request;
         }
     }

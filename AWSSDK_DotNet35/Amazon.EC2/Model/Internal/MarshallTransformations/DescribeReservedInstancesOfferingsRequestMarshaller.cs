@@ -12,111 +12,117 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Reserved Instances Offerings Request Marshaller
+    /// DescribeReservedInstancesOfferings Request Marshaller
     /// </summary>       
-    public class DescribeReservedInstancesOfferingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedInstancesOfferingsRequest>
+    public class DescribeReservedInstancesOfferingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedInstancesOfferingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeReservedInstancesOfferingsRequest describeReservedInstancesOfferingsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeReservedInstancesOfferingsRequest, "AmazonEC2");
+            return this.Marshall((DescribeReservedInstancesOfferingsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeReservedInstancesOfferingsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeReservedInstancesOfferings");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeReservedInstancesOfferingsRequest != null)
-            {
-                List<string> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.ReservedInstancesOfferingIds;
 
-                int reservedInstancesOfferingIdsListIndex = 1;
-                foreach (string reservedInstancesOfferingIdsListValue in reservedInstancesOfferingIdsList)
-                { 
-                    request.Parameters.Add("ReservedInstancesOfferingId." + reservedInstancesOfferingIdsListIndex, StringUtils.FromString(reservedInstancesOfferingIdsListValue));
-                    reservedInstancesOfferingIdsListIndex++;
-                }
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetInstanceType())
+            if(publicRequest != null)
             {
-                request.Parameters.Add("InstanceType", StringUtils.FromString(describeReservedInstancesOfferingsRequest.InstanceType));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(describeReservedInstancesOfferingsRequest.AvailabilityZone));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetProductDescription())
-            {
-                request.Parameters.Add("ProductDescription", StringUtils.FromString(describeReservedInstancesOfferingsRequest.ProductDescription));
-            }
-
-            if (describeReservedInstancesOfferingsRequest != null)
-            {
-                List<Filter> filtersList = describeReservedInstancesOfferingsRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetAvailabilityZone())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetIncludeMarketplace())
+                {
+                    request.Parameters.Add("IncludeMarketplace", StringUtils.FromBool(publicRequest.IncludeMarketplace));
+                }
+                if(publicRequest.IsSetInstanceTenancy())
+                {
+                    request.Parameters.Add("InstanceTenancy", StringUtils.FromString(publicRequest.InstanceTenancy));
+                }
+                if(publicRequest.IsSetInstanceType())
+                {
+                    request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
+                }
+                if(publicRequest.IsSetMaxDuration())
+                {
+                    request.Parameters.Add("MaxDuration", StringUtils.FromLong(publicRequest.MaxDuration));
+                }
+                if(publicRequest.IsSetMaxInstanceCount())
+                {
+                    request.Parameters.Add("MaxInstanceCount", StringUtils.FromInt(publicRequest.MaxInstanceCount));
+                }
+                if(publicRequest.IsSetMaxResults())
+                {
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                }
+                if(publicRequest.IsSetMinDuration())
+                {
+                    request.Parameters.Add("MinDuration", StringUtils.FromLong(publicRequest.MinDuration));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetOfferingType())
+                {
+                    request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
+                }
+                if(publicRequest.IsSetProductDescription())
+                {
+                    request.Parameters.Add("ProductDescription", StringUtils.FromString(publicRequest.ProductDescription));
+                }
+                if(publicRequest.IsSetReservedInstancesOfferingIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ReservedInstancesOfferingIds)
+                    {
+                        request.Parameters.Add("ReservedInstancesOfferingId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetInstanceTenancy())
-            {
-                request.Parameters.Add("InstanceTenancy", StringUtils.FromString(describeReservedInstancesOfferingsRequest.InstanceTenancy));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetOfferingType())
-            {
-                request.Parameters.Add("OfferingType", StringUtils.FromString(describeReservedInstancesOfferingsRequest.OfferingType));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeReservedInstancesOfferingsRequest.NextToken));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMaxResults())
-            {
-                request.Parameters.Add("MaxResults", StringUtils.FromInt(describeReservedInstancesOfferingsRequest.MaxResults));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetIncludeMarketplace())
-            {
-                request.Parameters.Add("IncludeMarketplace", StringUtils.FromBool(describeReservedInstancesOfferingsRequest.IncludeMarketplace));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMinDuration())
-            {
-                request.Parameters.Add("MinDuration", StringUtils.FromLong(describeReservedInstancesOfferingsRequest.MinDuration));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMaxDuration())
-            {
-                request.Parameters.Add("MaxDuration", StringUtils.FromLong(describeReservedInstancesOfferingsRequest.MaxDuration));
-            }
-            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMaxInstanceCount())
-            {
-                request.Parameters.Add("MaxInstanceCount", StringUtils.FromInt(describeReservedInstancesOfferingsRequest.MaxInstanceCount));
-            }
-
             return request;
         }
     }

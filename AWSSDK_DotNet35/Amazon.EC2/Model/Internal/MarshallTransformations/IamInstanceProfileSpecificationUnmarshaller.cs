@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IamInstanceProfileSpecification Unmarshaller
-     /// </summary>
-    internal class IamInstanceProfileSpecificationUnmarshaller : IUnmarshaller<IamInstanceProfileSpecification, XmlUnmarshallerContext>, IUnmarshaller<IamInstanceProfileSpecification, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IamInstanceProfileSpecification Object
+    /// </summary>  
+    public class IamInstanceProfileSpecificationUnmarshaller : IUnmarshaller<IamInstanceProfileSpecification, XmlUnmarshallerContext>, IUnmarshaller<IamInstanceProfileSpecification, JsonUnmarshallerContext>
     {
-        public IamInstanceProfileSpecification Unmarshall(XmlUnmarshallerContext context) 
+        public IamInstanceProfileSpecification Unmarshall(XmlUnmarshallerContext context)
         {
-            IamInstanceProfileSpecification iamInstanceProfileSpecification = new IamInstanceProfileSpecification();
+            IamInstanceProfileSpecification unmarshalledObject = new IamInstanceProfileSpecification();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("arn", targetDepth))
                     {
-                        iamInstanceProfileSpecification.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("name", targetDepth))
                     {
-                        iamInstanceProfileSpecification.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return iamInstanceProfileSpecification;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return iamInstanceProfileSpecification;
+            return unmarshalledObject;
         }
 
-        public IamInstanceProfileSpecification Unmarshall(JsonUnmarshallerContext context) 
+        public IamInstanceProfileSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IamInstanceProfileSpecificationUnmarshaller instance;
 
-        public static IamInstanceProfileSpecificationUnmarshaller GetInstance() 
+        private static IamInstanceProfileSpecificationUnmarshaller _instance = new IamInstanceProfileSpecificationUnmarshaller();        
+
+        public static IamInstanceProfileSpecificationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IamInstanceProfileSpecificationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,93 +29,74 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTapeRecoveryPoints operation.
-    /// <para>Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.</para> <para>A recovery point is a
-    /// point in time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that
-    /// have recovery points can be recovered to a new gateway.</para>
+    /// Returns a list of virtual tape recovery points that are available for the specified
+    /// gateway-VTL.
+    /// 
+    ///  
+    /// <para>
+    /// A recovery point is a point in time view of a virtual tape at which all the data on
+    /// the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery
+    /// points can be recovered to a new gateway.
+    /// </para>
     /// </summary>
     public partial class DescribeTapeRecoveryPointsRequest : AmazonStorageGatewayRequest
     {
-        private string gatewayARN;
-        private string marker;
-        private int? limit;
-
+        private string _gatewayARN;
+        private int? _limit;
+        private string _marker;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
-        /// region.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
         public string GatewayARN
         {
-            get { return this.gatewayARN; }
-            set { this.gatewayARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;
+            return this._gatewayARN != null;
         }
 
         /// <summary>
-        /// An opaque string that indicates the position at which to begin describing the virtual tape recovery points.
-        ///  
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// Specifies that the number of virtual tape recovery points that are described be limited to the specified number.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// Specifies that the number of virtual tape recovery points that are described be limited
+        /// to the specified number.
         /// </para>
         /// </summary>
         public int Limit
         {
-            get { return this.limit ?? default(int); }
-            set { this.limit = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;
+            return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An opaque string that indicates the position at which to begin describing the virtual
+        /// tape recovery points.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
         }
 
     }
 }
-    

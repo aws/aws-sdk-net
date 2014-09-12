@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CognitoIdentity.Model
         private string _identityPoolId;
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property Identities. An object containing a set of identities and
         /// associated mappings.
@@ -49,7 +52,6 @@ namespace Amazon.CognitoIdentity.Model
             return this._identities != null && this._identities.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
         /// </summary>
@@ -64,7 +66,6 @@ namespace Amazon.CognitoIdentity.Model
         {
             return this._identityPoolId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. A pagination token.

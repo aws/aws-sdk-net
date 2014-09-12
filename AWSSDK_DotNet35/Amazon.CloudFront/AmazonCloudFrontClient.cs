@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CloudFront.Model;
 using Amazon.CloudFront.Model.Internal.MarshallTransformations;
@@ -31,19 +35,8 @@ namespace Amazon.CloudFront
     ///
     /// 
     /// </summary>
-    public partial class AmazonCloudFrontClient : AmazonWebServiceClient, IAmazonCloudFront
+    public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -62,7 +55,7 @@ namespace Amazon.CloudFront
         ///
         /// </summary>
         public AmazonCloudFrontClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
@@ -81,7 +74,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
@@ -100,7 +93,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="config">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Credentials
@@ -128,7 +121,7 @@ namespace Amazon.CloudFront
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -161,7 +154,7 @@ namespace Amazon.CloudFront
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudFrontConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -197,15 +190,33 @@ namespace Amazon.CloudFront
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudFrontConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CreateCloudFrontOriginAccessIdentity
-
 
         /// <summary>
         /// Create a new origin access identity.
@@ -216,7 +227,7 @@ namespace Amazon.CloudFront
         /// <exception cref="CloudFrontOriginAccessIdentityAlreadyExistsException">
         /// If the CallerReference is a value you already sent in a previous request to create
         /// an identity but the content of the CloudFrontOriginAccessIdentityConfig is different
-        /// from the original request,    CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
+        /// from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
         /// error.
         /// </exception>
         /// <exception cref="InconsistentQuantitiesException">
@@ -235,8 +246,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateCloudFrontOriginAccessIdentity(request, null, null, true);
-            return EndCreateCloudFrontOriginAccessIdentity(asyncResult);
+            var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCloudFrontOriginAccessIdentityRequest,CreateCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -253,10 +266,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateCloudFrontOriginAccessIdentity(request, callback, state, false);
+            var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCloudFrontOriginAccessIdentity operation.
@@ -268,21 +283,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  CreateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         public  CreateCloudFrontOriginAccessIdentityResponse EndCreateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
-            return endOperation< CreateCloudFrontOriginAccessIdentityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateDistribution
-
 
         /// <summary>
         /// Create a new distribution.
@@ -314,8 +320,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted    list of cookie names. Either list of cookie names has been
-        /// specified when not allowed or list of cookie names    is missing when expected.
+        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
+        /// when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="InvalidGeoRestrictionParameterException">
         /// 
@@ -333,8 +339,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="InvalidRelativePathException">
-        /// The relative path is too big, is not URL-encoded, or    does not begin with a slash
-        /// (/).
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
         /// <exception cref="InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
@@ -384,8 +389,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDistribution(request, null, null, true);
-            return EndCreateDistribution(asyncResult);
+            var marshaller = new CreateDistributionRequestMarshaller();
+            var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDistributionRequest,CreateDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -402,10 +409,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDistribution(request, callback, state, false);
+            var marshaller = new CreateDistributionRequestMarshaller();
+            var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDistribution operation.
@@ -417,21 +426,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  CreateDistributionResult from CloudFront.</returns>
         public  CreateDistributionResponse EndCreateDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< CreateDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateDistributionRequestMarshaller();
-            var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateDistributionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateInvalidation
-
 
         /// <summary>
         /// Create a new invalidation.
@@ -464,8 +464,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateInvalidation(request, null, null, true);
-            return EndCreateInvalidation(asyncResult);
+            var marshaller = new CreateInvalidationRequestMarshaller();
+            var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInvalidationRequest,CreateInvalidationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -482,10 +484,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateInvalidation(request, callback, state, false);
+            var marshaller = new CreateInvalidationRequestMarshaller();
+            var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateInvalidationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateInvalidation operation.
@@ -497,21 +501,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  CreateInvalidationResult from CloudFront.</returns>
         public  CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult)
         {
-            return endOperation< CreateInvalidationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateInvalidationRequestMarshaller();
-            var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateInvalidationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateStreamingDistribution
-
 
         /// <summary>
         /// Create a new streaming distribution.
@@ -559,8 +554,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateStreamingDistribution(request, null, null, true);
-            return EndCreateStreamingDistribution(asyncResult);
+            var marshaller = new CreateStreamingDistributionRequestMarshaller();
+            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamingDistributionRequest,CreateStreamingDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -577,10 +574,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateStreamingDistribution(request, callback, state, false);
+            var marshaller = new CreateStreamingDistributionRequestMarshaller();
+            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateStreamingDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateStreamingDistribution operation.
@@ -592,15 +591,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  CreateStreamingDistributionResult from CloudFront.</returns>
         public  CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< CreateStreamingDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateStreamingDistributionRequestMarshaller();
-            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateStreamingDistributionResponse>(asyncResult);
         }
 
         #endregion
@@ -655,8 +646,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteCloudFrontOriginAccessIdentity(request, null, null, true);
-            return EndDeleteCloudFrontOriginAccessIdentity(asyncResult);
+            var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCloudFrontOriginAccessIdentityRequest,DeleteCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -673,10 +666,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteCloudFrontOriginAccessIdentity(request, callback, state, false);
+            var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteCloudFrontOriginAccessIdentity operation.
@@ -688,15 +683,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         public  DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteCloudFrontOriginAccessIdentityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
 
         #endregion
@@ -751,8 +738,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDistribution(request, null, null, true);
-            return EndDeleteDistribution(asyncResult);
+            var marshaller = new DeleteDistributionRequestMarshaller();
+            var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDistributionRequest,DeleteDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -769,10 +758,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDistribution(request, callback, state, false);
+            var marshaller = new DeleteDistributionRequestMarshaller();
+            var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDistribution operation.
@@ -784,15 +775,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteDistributionResult from CloudFront.</returns>
         public  DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteDistributionRequestMarshaller();
-            var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteDistributionResponse>(asyncResult);
         }
 
         #endregion
@@ -847,8 +830,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteStreamingDistribution(request, null, null, true);
-            return EndDeleteStreamingDistribution(asyncResult);
+            var marshaller = new DeleteStreamingDistributionRequestMarshaller();
+            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStreamingDistributionRequest,DeleteStreamingDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -865,10 +850,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteStreamingDistribution(request, callback, state, false);
+            var marshaller = new DeleteStreamingDistributionRequestMarshaller();
+            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteStreamingDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteStreamingDistribution operation.
@@ -880,15 +867,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteStreamingDistributionResult from CloudFront.</returns>
         public  DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteStreamingDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteStreamingDistributionRequestMarshaller();
-            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteStreamingDistributionResponse>(asyncResult);
         }
 
         #endregion
@@ -925,8 +904,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
-            IAsyncResult asyncResult = invokeGetCloudFrontOriginAccessIdentity(request, null, null, true);
-            return EndGetCloudFrontOriginAccessIdentity(asyncResult);
+            var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<GetCloudFrontOriginAccessIdentityRequest,GetCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -943,10 +924,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetCloudFrontOriginAccessIdentity(request, callback, state, false);
+            var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetCloudFrontOriginAccessIdentity operation.
@@ -958,15 +941,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         public  GetCloudFrontOriginAccessIdentityResponse EndGetCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
-            return endOperation< GetCloudFrontOriginAccessIdentityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
 
         #endregion
@@ -1003,8 +978,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
-            IAsyncResult asyncResult = invokeGetCloudFrontOriginAccessIdentityConfig(request, null, null, true);
-            return EndGetCloudFrontOriginAccessIdentityConfig(asyncResult);
+            var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
+            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetCloudFrontOriginAccessIdentityConfigRequest,GetCloudFrontOriginAccessIdentityConfigResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1021,10 +998,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetCloudFrontOriginAccessIdentityConfig(request, callback, state, false);
+            var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
+            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetCloudFrontOriginAccessIdentityConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetCloudFrontOriginAccessIdentityConfig operation.
@@ -1036,15 +1015,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityConfigResult from CloudFront.</returns>
         public  GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult)
         {
-            return endOperation< GetCloudFrontOriginAccessIdentityConfigResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
-            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetCloudFrontOriginAccessIdentityConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1081,8 +1052,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeGetDistribution(request, null, null, true);
-            return EndGetDistribution(asyncResult);
+            var marshaller = new GetDistributionRequestMarshaller();
+            var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDistributionRequest,GetDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1099,10 +1072,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetDistribution(request, callback, state, false);
+            var marshaller = new GetDistributionRequestMarshaller();
+            var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDistribution operation.
@@ -1114,15 +1089,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetDistributionResult from CloudFront.</returns>
         public  GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< GetDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetDistributionRequestMarshaller();
-            var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetDistributionResponse>(asyncResult);
         }
 
         #endregion
@@ -1159,8 +1126,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
-            IAsyncResult asyncResult = invokeGetDistributionConfig(request, null, null, true);
-            return EndGetDistributionConfig(asyncResult);
+            var marshaller = new GetDistributionConfigRequestMarshaller();
+            var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetDistributionConfigRequest,GetDistributionConfigResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1177,10 +1146,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetDistributionConfig(request, callback, state, false);
+            var marshaller = new GetDistributionConfigRequestMarshaller();
+            var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDistributionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDistributionConfig operation.
@@ -1192,21 +1163,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetDistributionConfigResult from CloudFront.</returns>
         public  GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult)
         {
-            return endOperation< GetDistributionConfigResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetDistributionConfigRequestMarshaller();
-            var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetDistributionConfigResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetInvalidation
-
 
         /// <summary>
         /// Get the information about an invalidation.
@@ -1225,8 +1187,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
-            IAsyncResult asyncResult = invokeGetInvalidation(request, null, null, true);
-            return EndGetInvalidation(asyncResult);
+            var marshaller = new GetInvalidationRequestMarshaller();
+            var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvalidationRequest,GetInvalidationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1243,10 +1207,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetInvalidation(request, callback, state, false);
+            var marshaller = new GetInvalidationRequestMarshaller();
+            var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetInvalidationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetInvalidation operation.
@@ -1258,15 +1224,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetInvalidationResult from CloudFront.</returns>
         public  GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult)
         {
-            return endOperation< GetInvalidationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetInvalidationRequestMarshaller();
-            var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetInvalidationResponse>(asyncResult);
         }
 
         #endregion
@@ -1303,8 +1261,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeGetStreamingDistribution(request, null, null, true);
-            return EndGetStreamingDistribution(asyncResult);
+            var marshaller = new GetStreamingDistributionRequestMarshaller();
+            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<GetStreamingDistributionRequest,GetStreamingDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1321,10 +1281,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetStreamingDistribution(request, callback, state, false);
+            var marshaller = new GetStreamingDistributionRequestMarshaller();
+            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetStreamingDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetStreamingDistribution operation.
@@ -1336,15 +1298,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetStreamingDistributionResult from CloudFront.</returns>
         public  GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< GetStreamingDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetStreamingDistributionRequestMarshaller();
-            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetStreamingDistributionResponse>(asyncResult);
         }
 
         #endregion
@@ -1381,8 +1335,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
-            IAsyncResult asyncResult = invokeGetStreamingDistributionConfig(request, null, null, true);
-            return EndGetStreamingDistributionConfig(asyncResult);
+            var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
+            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetStreamingDistributionConfigRequest,GetStreamingDistributionConfigResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1399,10 +1355,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetStreamingDistributionConfig(request, callback, state, false);
+            var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
+            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetStreamingDistributionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetStreamingDistributionConfig operation.
@@ -1414,15 +1372,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetStreamingDistributionConfigResult from CloudFront.</returns>
         public  GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult)
         {
-            return endOperation< GetStreamingDistributionConfigResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
-            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetStreamingDistributionConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1453,8 +1403,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
-            IAsyncResult asyncResult = invokeListCloudFrontOriginAccessIdentities(request, null, null, true);
-            return EndListCloudFrontOriginAccessIdentities(asyncResult);
+            var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
+            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCloudFrontOriginAccessIdentitiesRequest,ListCloudFrontOriginAccessIdentitiesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1471,10 +1423,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListCloudFrontOriginAccessIdentities(request, callback, state, false);
+            var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
+            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListCloudFrontOriginAccessIdentitiesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListCloudFrontOriginAccessIdentities operation.
@@ -1486,15 +1440,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListCloudFrontOriginAccessIdentitiesResult from CloudFront.</returns>
         public  ListCloudFrontOriginAccessIdentitiesResponse EndListCloudFrontOriginAccessIdentities(IAsyncResult asyncResult)
         {
-            return endOperation< ListCloudFrontOriginAccessIdentitiesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
-            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListCloudFrontOriginAccessIdentitiesResponse>(asyncResult);
         }
 
         #endregion
@@ -1525,8 +1471,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
-            IAsyncResult asyncResult = invokeListDistributions(request, null, null, true);
-            return EndListDistributions(asyncResult);
+            var marshaller = new ListDistributionsRequestMarshaller();
+            var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsRequest,ListDistributionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1543,10 +1491,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListDistributions(request, callback, state, false);
+            var marshaller = new ListDistributionsRequestMarshaller();
+            var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDistributionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDistributions operation.
@@ -1558,21 +1508,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListDistributionsResult from CloudFront.</returns>
         public  ListDistributionsResponse EndListDistributions(IAsyncResult asyncResult)
         {
-            return endOperation< ListDistributionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListDistributionsRequestMarshaller();
-            var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListDistributionsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListInvalidations
-
 
         /// <summary>
         /// List invalidation batches.
@@ -1591,8 +1532,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
-            IAsyncResult asyncResult = invokeListInvalidations(request, null, null, true);
-            return EndListInvalidations(asyncResult);
+            var marshaller = new ListInvalidationsRequestMarshaller();
+            var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvalidationsRequest,ListInvalidationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1609,10 +1552,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListInvalidations(request, callback, state, false);
+            var marshaller = new ListInvalidationsRequestMarshaller();
+            var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInvalidationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInvalidations operation.
@@ -1624,15 +1569,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListInvalidationsResult from CloudFront.</returns>
         public  ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult)
         {
-            return endOperation< ListInvalidationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListInvalidationsRequestMarshaller();
-            var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListInvalidationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1663,8 +1600,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
-            IAsyncResult asyncResult = invokeListStreamingDistributions(request, null, null, true);
-            return EndListStreamingDistributions(asyncResult);
+            var marshaller = new ListStreamingDistributionsRequestMarshaller();
+            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamingDistributionsRequest,ListStreamingDistributionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1681,10 +1620,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListStreamingDistributions(request, callback, state, false);
+            var marshaller = new ListStreamingDistributionsRequestMarshaller();
+            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListStreamingDistributionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListStreamingDistributions operation.
@@ -1696,21 +1637,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListStreamingDistributionsResult from CloudFront.</returns>
         public  ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult)
         {
-            return endOperation< ListStreamingDistributionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListStreamingDistributionsRequestMarshaller();
-            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListStreamingDistributionsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateCloudFrontOriginAccessIdentity
-
 
         /// <summary>
         /// Update an origin access identity.
@@ -1745,8 +1677,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateCloudFrontOriginAccessIdentity(request, null, null, true);
-            return EndUpdateCloudFrontOriginAccessIdentity(asyncResult);
+            var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudFrontOriginAccessIdentityRequest,UpdateCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1763,10 +1697,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateCloudFrontOriginAccessIdentity(request, callback, state, false);
+            var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
+            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateCloudFrontOriginAccessIdentity operation.
@@ -1778,21 +1714,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  UpdateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         public  UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateCloudFrontOriginAccessIdentityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateDistribution
-
 
         /// <summary>
         /// Update a distribution.
@@ -1823,8 +1750,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted    list of cookie names. Either list of cookie names has been
-        /// specified when not allowed or list of cookie names    is missing when expected.
+        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
+        /// when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="InvalidGeoRestrictionParameterException">
         /// 
@@ -1842,8 +1769,7 @@ namespace Amazon.CloudFront
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
         /// <exception cref="InvalidRelativePathException">
-        /// The relative path is too big, is not URL-encoded, or    does not begin with a slash
-        /// (/).
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
         /// <exception cref="InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
@@ -1895,8 +1821,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateDistribution(request, null, null, true);
-            return EndUpdateDistribution(asyncResult);
+            var marshaller = new UpdateDistributionRequestMarshaller();
+            var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDistributionRequest,UpdateDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1913,10 +1841,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateDistribution(request, callback, state, false);
+            var marshaller = new UpdateDistributionRequestMarshaller();
+            var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateDistribution operation.
@@ -1928,21 +1858,12 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  UpdateDistributionResult from CloudFront.</returns>
         public  UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateDistributionRequestMarshaller();
-            var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateDistributionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateStreamingDistribution
-
 
         /// <summary>
         /// Update a streaming distribution.
@@ -1992,8 +1913,10 @@ namespace Amazon.CloudFront
         /// </exception>
         public UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateStreamingDistribution(request, null, null, true);
-            return EndUpdateStreamingDistribution(asyncResult);
+            var marshaller = new UpdateStreamingDistributionRequestMarshaller();
+            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStreamingDistributionRequest,UpdateStreamingDistributionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2010,10 +1933,12 @@ namespace Amazon.CloudFront
         ///         operation.</returns>
         public IAsyncResult BeginUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateStreamingDistribution(request, callback, state, false);
+            var marshaller = new UpdateStreamingDistributionRequestMarshaller();
+            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateStreamingDistributionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateStreamingDistribution operation.
@@ -2025,15 +1950,7 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  UpdateStreamingDistributionResult from CloudFront.</returns>
         public  UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateStreamingDistributionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateStreamingDistributionRequestMarshaller();
-            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateStreamingDistributionResponse>(asyncResult);
         }
 
         #endregion

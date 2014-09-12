@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,74 +33,82 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Activate Gateway Request Marshaller
+    /// ActivateGateway Request Marshaller
     /// </summary>       
-    internal class ActivateGatewayRequestMarshaller : IMarshaller<IRequest, ActivateGatewayRequest> 
+    public class ActivateGatewayRequestMarshaller : IMarshaller<IRequest, ActivateGatewayRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ActivateGatewayRequest activateGatewayRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ActivateGatewayRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(activateGatewayRequest, "AmazonStorageGateway");
+        public IRequest Marshall(ActivateGatewayRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.ActivateGateway";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetActivationKey()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActivationKey())
                 {
-                    writer.WritePropertyName("ActivationKey");
-                    writer.Write(activateGatewayRequest.ActivationKey);
-                }
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetGatewayName()) 
-                {
-                    writer.WritePropertyName("GatewayName");
-                    writer.Write(activateGatewayRequest.GatewayName);
-                }
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetGatewayTimezone()) 
-                {
-                    writer.WritePropertyName("GatewayTimezone");
-                    writer.Write(activateGatewayRequest.GatewayTimezone);
-                }
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetGatewayRegion()) 
-                {
-                    writer.WritePropertyName("GatewayRegion");
-                    writer.Write(activateGatewayRequest.GatewayRegion);
-                }
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetGatewayType()) 
-                {
-                    writer.WritePropertyName("GatewayType");
-                    writer.Write(activateGatewayRequest.GatewayType);
-                }
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetTapeDriveType()) 
-                {
-                    writer.WritePropertyName("TapeDriveType");
-                    writer.Write(activateGatewayRequest.TapeDriveType);
-                }
-                if (activateGatewayRequest != null && activateGatewayRequest.IsSetMediumChangerType()) 
-                {
-                    writer.WritePropertyName("MediumChangerType");
-                    writer.Write(activateGatewayRequest.MediumChangerType);
+                    context.Writer.WritePropertyName("ActivationKey");
+                    context.Writer.Write(publicRequest.ActivationKey);
                 }
 
+                if(publicRequest.IsSetGatewayName())
+                {
+                    context.Writer.WritePropertyName("GatewayName");
+                    context.Writer.Write(publicRequest.GatewayName);
+                }
+
+                if(publicRequest.IsSetGatewayRegion())
+                {
+                    context.Writer.WritePropertyName("GatewayRegion");
+                    context.Writer.Write(publicRequest.GatewayRegion);
+                }
+
+                if(publicRequest.IsSetGatewayTimezone())
+                {
+                    context.Writer.WritePropertyName("GatewayTimezone");
+                    context.Writer.Write(publicRequest.GatewayTimezone);
+                }
+
+                if(publicRequest.IsSetGatewayType())
+                {
+                    context.Writer.WritePropertyName("GatewayType");
+                    context.Writer.Write(publicRequest.GatewayType);
+                }
+
+                if(publicRequest.IsSetMediumChangerType())
+                {
+                    context.Writer.WritePropertyName("MediumChangerType");
+                    context.Writer.Write(publicRequest.MediumChangerType);
+                }
+
+                if(publicRequest.IsSetTapeDriveType())
+                {
+                    context.Writer.WritePropertyName("TapeDriveType");
+                    context.Writer.Write(publicRequest.TapeDriveType);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

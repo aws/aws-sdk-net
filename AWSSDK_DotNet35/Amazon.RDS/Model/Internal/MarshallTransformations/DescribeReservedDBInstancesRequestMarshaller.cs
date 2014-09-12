@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,92 +12,100 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Reserved D B Instances Request Marshaller
+    /// DescribeReservedDBInstances Request Marshaller
     /// </summary>       
-    public class DescribeReservedDBInstancesRequestMarshaller : IMarshaller<IRequest, DescribeReservedDBInstancesRequest>
+    public class DescribeReservedDBInstancesRequestMarshaller : IMarshaller<IRequest, DescribeReservedDBInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeReservedDBInstancesRequest, "AmazonRDS");
+            return this.Marshall((DescribeReservedDBInstancesRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeReservedDBInstancesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeReservedDBInstances");
             request.Parameters.Add("Version", "2013-09-09");
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetReservedDBInstanceId())
-            {
-                request.Parameters.Add("ReservedDBInstanceId", StringUtils.FromString(describeReservedDBInstancesRequest.ReservedDBInstanceId));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetReservedDBInstancesOfferingId())
-            {
-                request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(describeReservedDBInstancesRequest.ReservedDBInstancesOfferingId));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetDBInstanceClass())
-            {
-                request.Parameters.Add("DBInstanceClass", StringUtils.FromString(describeReservedDBInstancesRequest.DBInstanceClass));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetDuration())
-            {
-                request.Parameters.Add("Duration", StringUtils.FromString(describeReservedDBInstancesRequest.Duration));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetProductDescription())
-            {
-                request.Parameters.Add("ProductDescription", StringUtils.FromString(describeReservedDBInstancesRequest.ProductDescription));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetOfferingType())
-            {
-                request.Parameters.Add("OfferingType", StringUtils.FromString(describeReservedDBInstancesRequest.OfferingType));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetMultiAZ())
-            {
-                request.Parameters.Add("MultiAZ", StringUtils.FromBool(describeReservedDBInstancesRequest.MultiAZ));
-            }
 
-            if (describeReservedDBInstancesRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeReservedDBInstancesRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetDBInstanceClass())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetFilterName())
+                    request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
+                }
+                if(publicRequest.IsSetDuration())
+                {
+                    request.Parameters.Add("Duration", StringUtils.FromString(publicRequest.Duration));
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterName", StringUtils.FromString(filtersListValue.FilterName));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> filterValueList = filtersListValue.FilterValue;
-
-                        int filterValueListIndex = 1;
-                        foreach (string filterValueListValue in filterValueList)
-                        { 
-                            request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterValue.member." + filterValueListIndex, StringUtils.FromString(filterValueListValue));
-                            filterValueListIndex++;
+                        if(publicRequestlistValue.IsSetFilterName())
+                        {
+                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterName", StringUtils.FromString(publicRequestlistValue.FilterName));
                         }
+                        if(publicRequestlistValue.IsSetFilterValue())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.FilterValue)
+                            {
+                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterValue" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
+                if(publicRequest.IsSetOfferingType())
+                {
+                    request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
+                }
+                if(publicRequest.IsSetProductDescription())
+                {
+                    request.Parameters.Add("ProductDescription", StringUtils.FromString(publicRequest.ProductDescription));
+                }
+                if(publicRequest.IsSetReservedDBInstanceId())
+                {
+                    request.Parameters.Add("ReservedDBInstanceId", StringUtils.FromString(publicRequest.ReservedDBInstanceId));
+                }
+                if(publicRequest.IsSetReservedDBInstancesOfferingId())
+                {
+                    request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedDBInstancesOfferingId));
                 }
             }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeReservedDBInstancesRequest.MaxRecords));
-            }
-            if (describeReservedDBInstancesRequest != null && describeReservedDBInstancesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeReservedDBInstancesRequest.Marker));
-            }
-
             return request;
         }
     }

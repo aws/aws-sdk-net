@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,46 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Used to filter the workflow executions in visibility APIs by their <c>workflowId</c> .
-    /// </para>
+    /// Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.
     /// </summary>
-    public class WorkflowExecutionFilter
+    public partial class WorkflowExecutionFilter
     {
-        
-        private string workflowId;
+        private string _workflowId;
 
         /// <summary>
-        /// The workflowId to pass of match the criteria of this filter.
-        ///  
+        /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
+        ///  The workflowId to pass of match the criteria of this filter. 
         /// </para>
         /// </summary>
         public string WorkflowId
         {
-            get { return this.workflowId; }
-            set { this.workflowId = value; }
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
         }
 
         // Check to see if WorkflowId property is set
         internal bool IsSetWorkflowId()
         {
-            return this.workflowId != null;
+            return this._workflowId != null;
         }
+
     }
 }

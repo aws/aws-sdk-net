@@ -12,87 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ImportVolumeTaskDetails Unmarshaller
-     /// </summary>
-    internal class ImportVolumeTaskDetailsUnmarshaller : IUnmarshaller<ImportVolumeTaskDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportVolumeTaskDetails, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ImportVolumeTaskDetails Object
+    /// </summary>  
+    public class ImportVolumeTaskDetailsUnmarshaller : IUnmarshaller<ImportVolumeTaskDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportVolumeTaskDetails, JsonUnmarshallerContext>
     {
-        public ImportVolumeTaskDetails Unmarshall(XmlUnmarshallerContext context) 
+        public ImportVolumeTaskDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            ImportVolumeTaskDetails importVolumeTaskDetails = new ImportVolumeTaskDetails();
+            ImportVolumeTaskDetails unmarshalledObject = new ImportVolumeTaskDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("bytesConverted", targetDepth))
-                    {
-                        importVolumeTaskDetails.BytesConverted = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        importVolumeTaskDetails.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("bytesConverted", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.BytesConverted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("description", targetDepth))
                     {
-                        importVolumeTaskDetails.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("image", targetDepth))
                     {
-                        importVolumeTaskDetails.Image = DiskImageDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DiskImageDescriptionUnmarshaller.Instance;
+                        unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("volume", targetDepth))
                     {
-                        importVolumeTaskDetails.Volume = DiskImageVolumeDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DiskImageVolumeDescriptionUnmarshaller.Instance;
+                        unmarshalledObject.Volume = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return importVolumeTaskDetails;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return importVolumeTaskDetails;
+            return unmarshalledObject;
         }
 
-        public ImportVolumeTaskDetails Unmarshall(JsonUnmarshallerContext context) 
+        public ImportVolumeTaskDetails Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ImportVolumeTaskDetailsUnmarshaller instance;
 
-        public static ImportVolumeTaskDetailsUnmarshaller GetInstance() 
+        private static ImportVolumeTaskDetailsUnmarshaller _instance = new ImportVolumeTaskDetailsUnmarshaller();        
+
+        public static ImportVolumeTaskDetailsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ImportVolumeTaskDetailsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

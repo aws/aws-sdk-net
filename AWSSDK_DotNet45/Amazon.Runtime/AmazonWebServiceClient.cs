@@ -309,7 +309,8 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             else if (request.ContentStream != null)
             {
                 var eventStream = new EventStream(request.ContentStream, true);
-                var tracker = new StreamReadTracker(this, request.OriginalRequest.StreamUploadProgressCallback, request.ContentStream.Length);
+                var tracker = new StreamReadTracker(this, request.OriginalRequest.StreamUploadProgressCallback, 
+                    request.ContentStream.Length, this.Config.ProgressUpdateInterval);
                 eventStream.OnRead += tracker.ReadProgress;
 
                 Stream finalStream;
@@ -367,7 +368,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             UnmarshallerContext context = null;
             try
             {
-                var responseStream = await responseData.OpenResponseAsync()
+                var responseStream = await responseData.ResponseBody.OpenResponseAsync()
                     .ConfigureAwait(continueOnCapturedContext: false);
                 context = state.Unmarshaller.CreateContext(responseData,
                     this.SupportResponseLogging &&
@@ -415,7 +416,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 string redirectedLocation = responseData.GetHeaderValue("location");
                 state.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
 
-                var responseStream = await responseData.OpenResponseAsync()
+                var responseStream = await responseData.ResponseBody.OpenResponseAsync()
                     .ConfigureAwait(continueOnCapturedContext: false);
                 errorContext = state.Unmarshaller.CreateContext(responseData,
                     Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never,

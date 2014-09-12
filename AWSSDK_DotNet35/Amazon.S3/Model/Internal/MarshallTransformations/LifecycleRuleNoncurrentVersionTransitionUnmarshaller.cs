@@ -66,14 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static LifecycleRuleNoncurrentVersionTransitionUnmarshaller instance;
+        private static LifecycleRuleNoncurrentVersionTransitionUnmarshaller _instance;
 
-        public static LifecycleRuleNoncurrentVersionTransitionUnmarshaller GetInstance()
+        public static LifecycleRuleNoncurrentVersionTransitionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new LifecycleRuleNoncurrentVersionTransitionUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new LifecycleRuleNoncurrentVersionTransitionUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

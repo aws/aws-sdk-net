@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,10 @@ namespace Amazon.ElastiCache.Model
         private string _eC2SecurityGroupOwnerId;
         private string _status;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public EC2SecurityGroup() { }
 
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
@@ -51,7 +59,6 @@ namespace Amazon.ElastiCache.Model
             return this._eC2SecurityGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
@@ -69,7 +76,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._eC2SecurityGroupOwnerId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

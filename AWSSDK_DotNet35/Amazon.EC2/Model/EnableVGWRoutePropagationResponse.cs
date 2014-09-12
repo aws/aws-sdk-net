@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the EnableVgwRoutePropagation response metadata.
-    /// The EnableVgwRoutePropagation operation has a void result type.
+    /// Configuration for accessing Amazon EnableVgwRoutePropagation service
     /// </summary>
-    public partial class EnableVgwRoutePropagationResponse : AmazonWebServiceResponse
+    public partial class EnableVgwRoutePropagationResponse : EnableVgwRoutePropagationResult
     {
+        /// <summary>
+        /// Gets and sets the EnableVgwRoutePropagationResult property.
+        /// Represents the output of a EnableVgwRoutePropagation operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the EnableVgwRoutePropagationResult class are now available on the EnableVgwRoutePropagationResponse class. You should use the properties on EnableVgwRoutePropagationResponse instead of accessing them through EnableVgwRoutePropagationResult.")]
+        public EnableVgwRoutePropagationResult EnableVgwRoutePropagationResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

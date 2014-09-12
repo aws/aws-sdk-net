@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowTypeConfiguration Object
+    /// </summary>  
+    public class WorkflowTypeConfigurationUnmarshaller : IUnmarshaller<WorkflowTypeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WorkflowTypeConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowTypeConfigurationUnmarshaller
-      /// </summary>
-      internal class WorkflowTypeConfigurationUnmarshaller : IUnmarshaller<WorkflowTypeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WorkflowTypeConfiguration, JsonUnmarshallerContext>
-      {
         WorkflowTypeConfiguration IUnmarshaller<WorkflowTypeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowTypeConfiguration workflowTypeConfiguration = new WorkflowTypeConfiguration();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowTypeConfiguration unmarshalledObject = new WorkflowTypeConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
-              {
-                workflowTypeConfiguration.DefaultTaskStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultExecutionStartToCloseTimeout", targetDepth))
-              {
-                workflowTypeConfiguration.DefaultExecutionStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultTaskList", targetDepth))
-              {
-                workflowTypeConfiguration.DefaultTaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultChildPolicy", targetDepth))
-              {
-                workflowTypeConfiguration.DefaultChildPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("defaultChildPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultChildPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultExecutionStartToCloseTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultExecutionStartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultTaskList", targetDepth))
+                {
+                    var unmarshaller = TaskListUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskStartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowTypeConfiguration;
+            return unmarshalledObject;
         }
 
-        private static WorkflowTypeConfigurationUnmarshaller instance;
-        public static WorkflowTypeConfigurationUnmarshaller GetInstance()
+
+        private static WorkflowTypeConfigurationUnmarshaller _instance = new WorkflowTypeConfigurationUnmarshaller();        
+
+        public static WorkflowTypeConfigurationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowTypeConfigurationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

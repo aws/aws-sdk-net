@@ -12,103 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for BatchWriteItem operation
+    /// </summary>  
+    public class BatchWriteItemResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for BatchWriteItem operation
-      /// </summary>
-      internal class BatchWriteItemResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchWriteItemResponse response = new BatchWriteItemResponse();       
-          
+            BatchWriteItemResponse response = new BatchWriteItemResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("UnprocessedItems", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,List<WriteRequest>,StringUnmarshaller,ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>>(
-                    StringUnmarshaller.GetInstance(),new ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>(WriteRequestUnmarshaller.GetInstance()));               
-                response.UnprocessedItems = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("ItemCollectionMetrics", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,List<ItemCollectionMetrics>,StringUnmarshaller,ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>>(
-                    StringUnmarshaller.GetInstance(),new ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>(ItemCollectionMetricsUnmarshaller.GetInstance()));               
-                response.ItemCollectionMetrics = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("ConsumedCapacity", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<ConsumedCapacity,ConsumedCapacityUnmarshaller>(
-                    ConsumedCapacityUnmarshaller.GetInstance());                  
-                response.ConsumedCapacity = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("ConsumedCapacity", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConsumedCapacity, ConsumedCapacityUnmarshaller>(ConsumedCapacityUnmarshaller.Instance);
+                    response.ConsumedCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ItemCollectionMetrics", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<ItemCollectionMetrics>, StringUnmarshaller, ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>(ItemCollectionMetricsUnmarshaller.Instance));
+                    response.ItemCollectionMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UnprocessedItems", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<WriteRequest>, StringUnmarshaller, ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>(WriteRequestUnmarshaller.Instance));
+                    response.UnprocessedItems = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ItemCollectionSizeLimitExceededException"))
-          {
-            return new ItemCollectionSizeLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
-          {
-            return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
-          {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonDynamoDBException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static BatchWriteItemResponseUnmarshaller instance;
-        public static BatchWriteItemResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new BatchWriteItemResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
+            {
+                return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ItemCollectionSizeLimitExceededException"))
+            {
+                return new ItemCollectionSizeLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
+            {
+                return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonDynamoDBException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static BatchWriteItemResponseUnmarshaller _instance = new BatchWriteItemResponseUnmarshaller();        
+
+        internal static BatchWriteItemResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static BatchWriteItemResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

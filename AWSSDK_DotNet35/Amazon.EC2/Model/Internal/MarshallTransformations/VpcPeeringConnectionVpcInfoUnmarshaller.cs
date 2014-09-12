@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpcPeeringConnectionVpcInfo Unmarshaller
-     /// </summary>
-    internal class VpcPeeringConnectionVpcInfoUnmarshaller : IUnmarshaller<VpcPeeringConnectionVpcInfo, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnectionVpcInfo, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpcPeeringConnectionVpcInfo Object
+    /// </summary>  
+    public class VpcPeeringConnectionVpcInfoUnmarshaller : IUnmarshaller<VpcPeeringConnectionVpcInfo, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnectionVpcInfo, JsonUnmarshallerContext>
     {
-        public VpcPeeringConnectionVpcInfo Unmarshall(XmlUnmarshallerContext context) 
+        public VpcPeeringConnectionVpcInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcPeeringConnectionVpcInfo vpcPeeringConnectionVpcInfo = new VpcPeeringConnectionVpcInfo();
+            VpcPeeringConnectionVpcInfo unmarshalledObject = new VpcPeeringConnectionVpcInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("cidrBlock", targetDepth))
                     {
-                        vpcPeeringConnectionVpcInfo.CidrBlock = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
-                        vpcPeeringConnectionVpcInfo.OwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("vpcId", targetDepth))
                     {
-                        vpcPeeringConnectionVpcInfo.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpcPeeringConnectionVpcInfo;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpcPeeringConnectionVpcInfo;
+            return unmarshalledObject;
         }
 
-        public VpcPeeringConnectionVpcInfo Unmarshall(JsonUnmarshallerContext context) 
+        public VpcPeeringConnectionVpcInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpcPeeringConnectionVpcInfoUnmarshaller instance;
 
-        public static VpcPeeringConnectionVpcInfoUnmarshaller GetInstance() 
+        private static VpcPeeringConnectionVpcInfoUnmarshaller _instance = new VpcPeeringConnectionVpcInfoUnmarshaller();        
+
+        public static VpcPeeringConnectionVpcInfoUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpcPeeringConnectionVpcInfoUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

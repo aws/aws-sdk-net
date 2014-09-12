@@ -32,7 +32,7 @@ using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 
 namespace Amazon.SimpleNotificationService
 {
-    public partial class AmazonSimpleNotificationServiceClient : AmazonWebServiceClient, IAmazonSimpleNotificationService
+    public partial class AmazonSimpleNotificationServiceClient
     {
 
 #if BCL

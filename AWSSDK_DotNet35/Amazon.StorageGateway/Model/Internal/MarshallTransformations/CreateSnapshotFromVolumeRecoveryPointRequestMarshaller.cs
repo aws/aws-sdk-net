@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Snapshot From Volume Recovery Point Request Marshaller
+    /// CreateSnapshotFromVolumeRecoveryPoint Request Marshaller
     /// </summary>       
-    internal class CreateSnapshotFromVolumeRecoveryPointRequestMarshaller : IMarshaller<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest> 
+    public class CreateSnapshotFromVolumeRecoveryPointRequestMarshaller : IMarshaller<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreateSnapshotFromVolumeRecoveryPointRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createSnapshotFromVolumeRecoveryPointRequest, "AmazonStorageGateway");
+        public IRequest Marshall(CreateSnapshotFromVolumeRecoveryPointRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createSnapshotFromVolumeRecoveryPointRequest != null && createSnapshotFromVolumeRecoveryPointRequest.IsSetVolumeARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSnapshotDescription())
                 {
-                    writer.WritePropertyName("VolumeARN");
-                    writer.Write(createSnapshotFromVolumeRecoveryPointRequest.VolumeARN);
-                }
-                if (createSnapshotFromVolumeRecoveryPointRequest != null && createSnapshotFromVolumeRecoveryPointRequest.IsSetSnapshotDescription()) 
-                {
-                    writer.WritePropertyName("SnapshotDescription");
-                    writer.Write(createSnapshotFromVolumeRecoveryPointRequest.SnapshotDescription);
+                    context.Writer.WritePropertyName("SnapshotDescription");
+                    context.Writer.Write(publicRequest.SnapshotDescription);
                 }
 
+                if(publicRequest.IsSetVolumeARN())
+                {
+                    context.Writer.WritePropertyName("VolumeARN");
+                    context.Writer.Write(publicRequest.VolumeARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

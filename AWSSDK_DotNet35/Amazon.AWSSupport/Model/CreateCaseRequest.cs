@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -75,7 +79,6 @@ namespace Amazon.AWSSupport.Model
         private string _severityCode;
         private string _subject;
 
-
         /// <summary>
         /// Gets and sets the property AttachmentSetId. 
         /// <para>
@@ -93,7 +96,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._attachmentSetId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CategoryCode. 
@@ -113,7 +115,6 @@ namespace Amazon.AWSSupport.Model
             return this._categoryCode != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CcEmailAddresses. 
         /// <para>
@@ -131,7 +132,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._ccEmailAddresses != null && this._ccEmailAddresses.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CommunicationBody. 
@@ -151,7 +151,6 @@ namespace Amazon.AWSSupport.Model
             return this._communicationBody != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property IssueType. 
         /// <para>
@@ -170,7 +169,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._issueType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Language. 
@@ -192,7 +190,6 @@ namespace Amazon.AWSSupport.Model
             return this._language != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
@@ -210,7 +207,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._serviceCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SeverityCode. 
@@ -236,7 +232,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._severityCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Subject. 

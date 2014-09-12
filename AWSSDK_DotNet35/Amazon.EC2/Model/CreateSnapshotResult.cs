@@ -12,38 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Contains the response data from the CreateSnapshot operation.
     /// </summary>
     public partial class CreateSnapshotResult : AmazonWebServiceResponse
     {
-        
-        private Snapshot snapshot;
+        private Snapshot _snapshot;
 
-
-        /// <summary>
-        /// 
-        ///  
-        /// </summary>
+        // Gets and sets the Snapshot member
         public Snapshot Snapshot
         {
-            get { return this.snapshot; }
-            set { this.snapshot = value; }
+            get { return this._snapshot; }
+            set { this._snapshot = value; }
         }
 
         // Check to see if Snapshot property is set
         internal bool IsSetSnapshot()
         {
-            return this.snapshot != null;
+            return this._snapshot != null;
         }
     }
 }

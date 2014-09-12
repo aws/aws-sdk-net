@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,17 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// The results from a request to change the configuration settings of an         environment.
+    /// The results from a request to change the configuration settings of an environment.
     /// </summary>
     public partial class DescribeConfigurationSettingsResult : AmazonWebServiceResponse
     {
         private List<ConfigurationSettingsDescription> _configurationSettings = new List<ConfigurationSettingsDescription>();
 
-
         /// <summary>
         /// Gets and sets the property ConfigurationSettings. 
         /// <para>
-        ///          A list of         <a>ConfigurationSettingsDescription</a>.      
+        ///  A list of <a>ConfigurationSettingsDescription</a>. 
         /// </para>
         /// </summary>
         public List<ConfigurationSettingsDescription> ConfigurationSettings

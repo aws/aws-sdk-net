@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.ElasticTranscoder.Model;
 using Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations;
@@ -34,19 +38,8 @@ namespace Amazon.ElasticTranscoder
     /// The AWS Elastic Transcoder Service.
     /// </para>
     /// </summary>
-    public partial class AmazonElasticTranscoderClient : AmazonWebServiceClient, IAmazonElasticTranscoder
+    public partial class AmazonElasticTranscoderClient : AmazonServiceClient, IAmazonElasticTranscoder
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -65,7 +58,7 @@ namespace Amazon.ElasticTranscoder
         ///
         /// </summary>
         public AmazonElasticTranscoderClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's
@@ -84,7 +77,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticTranscoderClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's
@@ -103,7 +96,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="config">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(AmazonElasticTranscoderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with AWS Credentials
@@ -131,7 +124,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(AWSCredentials credentials, AmazonElasticTranscoderConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -164,7 +157,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticTranscoderConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -200,15 +193,33 @@ namespace Amazon.ElasticTranscoder
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticTranscoderConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CancelJob
-
 
         /// <summary>
         /// The CancelJob operation cancels an unfinished job.
@@ -244,8 +255,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            IAsyncResult asyncResult = invokeCancelJob(request, null, null, true);
-            return EndCancelJob(asyncResult);
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -262,10 +275,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
-            return invokeCancelJob(request, callback, state, false);
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CancelJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CancelJob operation.
@@ -277,21 +292,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  CancelJobResult from ElasticTranscoder.</returns>
         public  CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
-            return endOperation< CancelJobResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCancelJob(CancelJobRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CancelJobRequestMarshaller();
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CancelJobResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateJob
-
 
         /// <summary>
         /// When you create a job, Elastic Transcoder returns JSON data that includes the values
@@ -331,8 +337,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateJob(request, null, null, true);
-            return EndCreateJob(asyncResult);
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -349,10 +357,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateJob(request, callback, state, false);
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateJob operation.
@@ -364,21 +374,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  CreateJobResult from ElasticTranscoder.</returns>
         public  CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
-            return endOperation< CreateJobResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateJob(CreateJobRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateJobRequestMarshaller();
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateJobResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreatePipeline
-
 
         /// <summary>
         /// The CreatePipeline operation creates a pipeline with settings that you specify.
@@ -409,8 +410,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            IAsyncResult asyncResult = invokeCreatePipeline(request, null, null, true);
-            return EndCreatePipeline(asyncResult);
+            var marshaller = new CreatePipelineRequestMarshaller();
+            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -427,10 +430,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreatePipeline(request, callback, state, false);
+            var marshaller = new CreatePipelineRequestMarshaller();
+            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreatePipelineRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreatePipeline operation.
@@ -442,21 +447,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  CreatePipelineResult from ElasticTranscoder.</returns>
         public  CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult)
         {
-            return endOperation< CreatePipelineResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreatePipelineRequestMarshaller();
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreatePipelineResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreatePreset
-
 
         /// <summary>
         /// The CreatePreset operation creates a preset with settings that you specify.
@@ -499,8 +495,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
-            IAsyncResult asyncResult = invokeCreatePreset(request, null, null, true);
-            return EndCreatePreset(asyncResult);
+            var marshaller = new CreatePresetRequestMarshaller();
+            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePresetRequest,CreatePresetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -517,10 +515,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreatePreset(request, callback, state, false);
+            var marshaller = new CreatePresetRequestMarshaller();
+            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreatePresetRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreatePreset operation.
@@ -532,21 +532,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  CreatePresetResult from ElasticTranscoder.</returns>
         public  CreatePresetResponse EndCreatePreset(IAsyncResult asyncResult)
         {
-            return endOperation< CreatePresetResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreatePresetRequestMarshaller();
-            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreatePresetResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeletePipeline
-
 
         /// <summary>
         /// The DeletePipeline operation removes a pipeline.
@@ -584,8 +575,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            IAsyncResult asyncResult = invokeDeletePipeline(request, null, null, true);
-            return EndDeletePipeline(asyncResult);
+            var marshaller = new DeletePipelineRequestMarshaller();
+            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -602,10 +595,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeletePipeline(request, callback, state, false);
+            var marshaller = new DeletePipelineRequestMarshaller();
+            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePipelineRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeletePipeline operation.
@@ -617,21 +612,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  DeletePipelineResult from ElasticTranscoder.</returns>
         public  DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
         {
-            return endOperation< DeletePipelineResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeletePipelineRequestMarshaller();
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeletePipelineResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeletePreset
-
 
         /// <summary>
         /// The DeletePreset operation removes a preset that you've added in an AWS region.
@@ -664,8 +650,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
-            IAsyncResult asyncResult = invokeDeletePreset(request, null, null, true);
-            return EndDeletePreset(asyncResult);
+            var marshaller = new DeletePresetRequestMarshaller();
+            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePresetRequest,DeletePresetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -682,10 +670,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeletePreset(request, callback, state, false);
+            var marshaller = new DeletePresetRequestMarshaller();
+            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePresetRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeletePreset operation.
@@ -697,21 +687,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  DeletePresetResult from ElasticTranscoder.</returns>
         public  DeletePresetResponse EndDeletePreset(IAsyncResult asyncResult)
         {
-            return endOperation< DeletePresetResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeletePresetRequestMarshaller();
-            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeletePresetResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListJobsByPipeline
-
 
         /// <summary>
         /// The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
@@ -745,8 +726,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
-            IAsyncResult asyncResult = invokeListJobsByPipeline(request, null, null, true);
-            return EndListJobsByPipeline(asyncResult);
+            var marshaller = new ListJobsByPipelineRequestMarshaller();
+            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsByPipelineRequest,ListJobsByPipelineResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -763,10 +746,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state)
         {
-            return invokeListJobsByPipeline(request, callback, state, false);
+            var marshaller = new ListJobsByPipelineRequestMarshaller();
+            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListJobsByPipelineRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListJobsByPipeline operation.
@@ -778,21 +763,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ListJobsByPipelineResult from ElasticTranscoder.</returns>
         public  ListJobsByPipelineResponse EndListJobsByPipeline(IAsyncResult asyncResult)
         {
-            return endOperation< ListJobsByPipelineResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListJobsByPipelineRequestMarshaller();
-            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListJobsByPipelineResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListJobsByStatus
-
 
         /// <summary>
         /// The ListJobsByStatus operation gets a list of jobs that have a specified status. The
@@ -821,8 +797,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
-            IAsyncResult asyncResult = invokeListJobsByStatus(request, null, null, true);
-            return EndListJobsByStatus(asyncResult);
+            var marshaller = new ListJobsByStatusRequestMarshaller();
+            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsByStatusRequest,ListJobsByStatusResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -839,10 +817,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state)
         {
-            return invokeListJobsByStatus(request, callback, state, false);
+            var marshaller = new ListJobsByStatusRequestMarshaller();
+            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListJobsByStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListJobsByStatus operation.
@@ -854,15 +834,7 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ListJobsByStatusResult from ElasticTranscoder.</returns>
         public  ListJobsByStatusResponse EndListJobsByStatus(IAsyncResult asyncResult)
         {
-            return endOperation< ListJobsByStatusResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListJobsByStatusRequestMarshaller();
-            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListJobsByStatusResponse>(asyncResult);
         }
 
         #endregion
@@ -915,8 +887,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            IAsyncResult asyncResult = invokeListPipelines(request, null, null, true);
-            return EndListPipelines(asyncResult);
+            var marshaller = new ListPipelinesRequestMarshaller();
+            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -933,10 +907,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListPipelines(request, callback, state, false);
+            var marshaller = new ListPipelinesRequestMarshaller();
+            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListPipelinesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListPipelines operation.
@@ -948,15 +924,7 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ListPipelinesResult from ElasticTranscoder.</returns>
         public  ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult)
         {
-            return endOperation< ListPipelinesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListPipelinesRequestMarshaller();
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListPipelinesResponse>(asyncResult);
         }
 
         #endregion
@@ -1009,8 +977,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
-            IAsyncResult asyncResult = invokeListPresets(request, null, null, true);
-            return EndListPresets(asyncResult);
+            var marshaller = new ListPresetsRequestMarshaller();
+            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPresetsRequest,ListPresetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1027,10 +997,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginListPresets(ListPresetsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListPresets(request, callback, state, false);
+            var marshaller = new ListPresetsRequestMarshaller();
+            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListPresetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListPresets operation.
@@ -1042,21 +1014,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ListPresetsResult from ElasticTranscoder.</returns>
         public  ListPresetsResponse EndListPresets(IAsyncResult asyncResult)
         {
-            return endOperation< ListPresetsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListPresets(ListPresetsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListPresetsRequestMarshaller();
-            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListPresetsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ReadJob
-
 
         /// <summary>
         /// The ReadJob operation returns detailed information about a job.
@@ -1083,8 +1046,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ReadJobResponse ReadJob(ReadJobRequest request)
         {
-            IAsyncResult asyncResult = invokeReadJob(request, null, null, true);
-            return EndReadJob(asyncResult);
+            var marshaller = new ReadJobRequestMarshaller();
+            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
+
+            return Invoke<ReadJobRequest,ReadJobResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1101,10 +1066,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginReadJob(ReadJobRequest request, AsyncCallback callback, object state)
         {
-            return invokeReadJob(request, callback, state, false);
+            var marshaller = new ReadJobRequestMarshaller();
+            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReadJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ReadJob operation.
@@ -1116,21 +1083,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ReadJobResult from ElasticTranscoder.</returns>
         public  ReadJobResponse EndReadJob(IAsyncResult asyncResult)
         {
-            return endOperation< ReadJobResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeReadJob(ReadJobRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ReadJobRequestMarshaller();
-            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ReadJobResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ReadPipeline
-
 
         /// <summary>
         /// The ReadPipeline operation gets detailed information about a pipeline.
@@ -1157,8 +1115,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
-            IAsyncResult asyncResult = invokeReadPipeline(request, null, null, true);
-            return EndReadPipeline(asyncResult);
+            var marshaller = new ReadPipelineRequestMarshaller();
+            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
+
+            return Invoke<ReadPipelineRequest,ReadPipelineResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1175,10 +1135,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state)
         {
-            return invokeReadPipeline(request, callback, state, false);
+            var marshaller = new ReadPipelineRequestMarshaller();
+            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReadPipelineRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ReadPipeline operation.
@@ -1190,21 +1152,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ReadPipelineResult from ElasticTranscoder.</returns>
         public  ReadPipelineResponse EndReadPipeline(IAsyncResult asyncResult)
         {
-            return endOperation< ReadPipelineResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ReadPipelineRequestMarshaller();
-            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ReadPipelineResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ReadPreset
-
 
         /// <summary>
         /// The ReadPreset operation gets detailed information about a preset.
@@ -1231,8 +1184,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
-            IAsyncResult asyncResult = invokeReadPreset(request, null, null, true);
-            return EndReadPreset(asyncResult);
+            var marshaller = new ReadPresetRequestMarshaller();
+            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
+
+            return Invoke<ReadPresetRequest,ReadPresetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1249,10 +1204,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginReadPreset(ReadPresetRequest request, AsyncCallback callback, object state)
         {
-            return invokeReadPreset(request, callback, state, false);
+            var marshaller = new ReadPresetRequestMarshaller();
+            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReadPresetRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ReadPreset operation.
@@ -1264,21 +1221,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  ReadPresetResult from ElasticTranscoder.</returns>
         public  ReadPresetResponse EndReadPreset(IAsyncResult asyncResult)
         {
-            return endOperation< ReadPresetResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeReadPreset(ReadPresetRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ReadPresetRequestMarshaller();
-            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ReadPresetResponse>(asyncResult);
         }
 
         #endregion
         
         #region  TestRole
-
 
         /// <summary>
         /// The TestRole operation tests the IAM role used to create the pipeline.
@@ -1314,8 +1262,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public TestRoleResponse TestRole(TestRoleRequest request)
         {
-            IAsyncResult asyncResult = invokeTestRole(request, null, null, true);
-            return EndTestRole(asyncResult);
+            var marshaller = new TestRoleRequestMarshaller();
+            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
+
+            return Invoke<TestRoleRequest,TestRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1332,10 +1282,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginTestRole(TestRoleRequest request, AsyncCallback callback, object state)
         {
-            return invokeTestRole(request, callback, state, false);
+            var marshaller = new TestRoleRequestMarshaller();
+            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TestRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TestRole operation.
@@ -1347,21 +1299,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  TestRoleResult from ElasticTranscoder.</returns>
         public  TestRoleResponse EndTestRole(IAsyncResult asyncResult)
         {
-            return endOperation< TestRoleResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeTestRole(TestRoleRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new TestRoleRequestMarshaller();
-            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<TestRoleResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdatePipeline
-
 
         /// <summary>
         /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
@@ -1396,8 +1339,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdatePipeline(request, null, null, true);
-            return EndUpdatePipeline(asyncResult);
+            var marshaller = new UpdatePipelineRequestMarshaller();
+            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1414,10 +1359,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdatePipeline(request, callback, state, false);
+            var marshaller = new UpdatePipelineRequestMarshaller();
+            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdatePipelineRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdatePipeline operation.
@@ -1429,21 +1376,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  UpdatePipelineResult from ElasticTranscoder.</returns>
         public  UpdatePipelineResponse EndUpdatePipeline(IAsyncResult asyncResult)
         {
-            return endOperation< UpdatePipelineResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdatePipelineRequestMarshaller();
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdatePipelineResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdatePipelineNotifications
-
 
         /// <summary>
         /// With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification
@@ -1481,8 +1419,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdatePipelineNotifications(request, null, null, true);
-            return EndUpdatePipelineNotifications(asyncResult);
+            var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
+            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePipelineNotificationsRequest,UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1499,10 +1439,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdatePipelineNotifications(request, callback, state, false);
+            var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
+            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdatePipelineNotificationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdatePipelineNotifications operation.
@@ -1514,21 +1456,12 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  UpdatePipelineNotificationsResult from ElasticTranscoder.</returns>
         public  UpdatePipelineNotificationsResponse EndUpdatePipelineNotifications(IAsyncResult asyncResult)
         {
-            return endOperation< UpdatePipelineNotificationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
-            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdatePipelineNotificationsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdatePipelineStatus
-
 
         /// <summary>
         /// The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline
@@ -1569,8 +1502,10 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdatePipelineStatus(request, null, null, true);
-            return EndUpdatePipelineStatus(asyncResult);
+            var marshaller = new UpdatePipelineStatusRequestMarshaller();
+            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePipelineStatusRequest,UpdatePipelineStatusResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1587,10 +1522,12 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public IAsyncResult BeginUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdatePipelineStatus(request, callback, state, false);
+            var marshaller = new UpdatePipelineStatusRequestMarshaller();
+            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdatePipelineStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdatePipelineStatus operation.
@@ -1602,15 +1539,7 @@ namespace Amazon.ElasticTranscoder
         /// <returns>Returns a  UpdatePipelineStatusResult from ElasticTranscoder.</returns>
         public  UpdatePipelineStatusResponse EndUpdatePipelineStatus(IAsyncResult asyncResult)
         {
-            return endOperation< UpdatePipelineStatusResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdatePipelineStatusRequestMarshaller();
-            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdatePipelineStatusResponse>(asyncResult);
         }
 
         #endregion

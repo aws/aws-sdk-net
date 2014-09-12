@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,119 +33,75 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Query Objects Request Marshaller
+    /// QueryObjects Request Marshaller
     /// </summary>       
-    internal class QueryObjectsRequestMarshaller : IMarshaller<IRequest, QueryObjectsRequest> 
+    public class QueryObjectsRequestMarshaller : IMarshaller<IRequest, QueryObjectsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(QueryObjectsRequest queryObjectsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((QueryObjectsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(queryObjectsRequest, "AmazonDataPipeline");
+        public IRequest Marshall(QueryObjectsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.QueryObjects";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (queryObjectsRequest != null && queryObjectsRequest.IsSetPipelineId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLimit())
                 {
-                    writer.WritePropertyName("pipelineId");
-                    writer.Write(queryObjectsRequest.PipelineId);
+                    context.Writer.WritePropertyName("limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
-                if (queryObjectsRequest != null) 
+                if(publicRequest.IsSetMarker())
                 {
-                    Query query = queryObjectsRequest.Query;
-                    if (query != null)
-                    {
-                        writer.WritePropertyName("query");
-                        writer.WriteObjectStart();
-
-                        if (query != null && query.Selectors != null && query.Selectors.Count > 0)
-                        {
-                            List<Selector> selectorsList = query.Selectors;
-                            writer.WritePropertyName("selectors");
-                            writer.WriteArrayStart();
-
-                            foreach (Selector selectorsListValue in selectorsList) 
-                            {
-                                writer.WriteObjectStart();
-                                if (selectorsListValue != null && selectorsListValue.IsSetFieldName()) 
-                                {
-                                    writer.WritePropertyName("fieldName");
-                                    writer.Write(selectorsListValue.FieldName);
-                                }
-
-                                if (selectorsListValue != null) 
-                                {
-                                    Operator operatorValue = selectorsListValue.Operator;
-                                    if (operatorValue != null)
-                                    {
-                                        writer.WritePropertyName("operator");
-                                        writer.WriteObjectStart();
-                                        if (operatorValue != null && operatorValue.IsSetType()) 
-                                        {
-                                            writer.WritePropertyName("type");
-                                            writer.Write(operatorValue.Type);
-                                        }
-
-                                        if (operatorValue != null && operatorValue.Values != null && operatorValue.Values.Count > 0) 
-                                        {
-                                            List<string> valuesList = operatorValue.Values;
-                                            writer.WritePropertyName("values");
-                                            writer.WriteArrayStart();
-
-                                            foreach (string valuesListValue in valuesList) 
-                                            { 
-                                                writer.Write(StringUtils.FromString(valuesListValue));
-                                            }
-
-                                            writer.WriteArrayEnd();
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-                if (queryObjectsRequest != null && queryObjectsRequest.IsSetSphere()) 
-                {
-                    writer.WritePropertyName("sphere");
-                    writer.Write(queryObjectsRequest.Sphere);
-                }
-                if (queryObjectsRequest != null && queryObjectsRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("marker");
-                    writer.Write(queryObjectsRequest.Marker);
-                }
-                if (queryObjectsRequest != null && queryObjectsRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("limit");
-                    writer.Write(queryObjectsRequest.Limit);
+                    context.Writer.WritePropertyName("marker");
+                    context.Writer.Write(publicRequest.Marker);
                 }
 
+                if(publicRequest.IsSetPipelineId())
+                {
+                    context.Writer.WritePropertyName("pipelineId");
+                    context.Writer.Write(publicRequest.PipelineId);
+                }
+
+                if(publicRequest.IsSetQuery())
+                {
+                    context.Writer.WritePropertyName("query");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QueryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Query, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSphere())
+                {
+                    context.Writer.WritePropertyName("sphere");
+                    context.Writer.Write(publicRequest.Sphere);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

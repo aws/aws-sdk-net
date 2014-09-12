@@ -92,14 +92,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static CORSRuleUnmarshaller instance;
+        private static CORSRuleUnmarshaller _instance;
 
-        public static CORSRuleUnmarshaller GetInstance() 
+        public static CORSRuleUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CORSRuleUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new CORSRuleUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

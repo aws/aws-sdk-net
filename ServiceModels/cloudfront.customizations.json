@@ -1,0 +1,16 @@
+{
+  "noArgOverloads": [
+    "ListDistributions",
+    "ListCloudFrontOriginAccessIdentities",
+    "DeleteCloudFrontOriginAccessIdentity",
+    "DeleteDistribution",
+    "DeleteStreamingDistribution",
+    "GetCloudFrontOriginAccessIdentity",
+    "GetCloudFrontOriginAccessIdentityConfig",
+    "GetDistribution",
+    "GetDistributionConfig",
+    "GetStreamingDistribution",
+    "GetStreamingDistributionConfig",
+    "ListStreamingDistributions"
+  ]
+}

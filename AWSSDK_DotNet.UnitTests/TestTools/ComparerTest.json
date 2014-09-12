@@ -1,0 +1,15 @@
+﻿{
+	"Qty":1,
+	"Name":"A",
+	"Id":123,
+	"Price":1212,
+	"LastStocked":9999,
+	"Tags":[
+		{"Id":1,"Name":"X"},
+		{"Id":2,"Name":"Y"}
+	],
+	"TagMap": {
+		"Key0" : {"Id":1,"Name":"X"},
+		"Key1" : {"Id":2,"Name":"Y"}
+	}
+}

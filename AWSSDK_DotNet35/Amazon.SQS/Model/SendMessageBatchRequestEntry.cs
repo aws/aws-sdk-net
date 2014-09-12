@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,21 @@ namespace Amazon.SQS.Model
         private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
         private string _messageBody;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SendMessageBatchRequestEntry() { }
+
+        /// <summary>
+        /// Instantiates SendMessageBatchRequestEntry with the parameterized properties
+        /// </summary>
+        /// <param name="id">An identifier for the message in this batch. This is used to communicate   the result. Note that the <code>Id</code>s of a batch request need to   be unique within the request.</param>
+        /// <param name="messageBody">Body of the message.</param>
+        public SendMessageBatchRequestEntry(string id, string messageBody)
+        {
+            _id = id;
+            _messageBody = messageBody;
+        }
 
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
@@ -51,7 +70,6 @@ namespace Amazon.SQS.Model
         {
             return this._delaySeconds.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -73,7 +91,6 @@ namespace Amazon.SQS.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
@@ -93,7 +110,6 @@ namespace Amazon.SQS.Model
         {
             return this._messageAttributes != null && this._messageAttributes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property MessageBody. 

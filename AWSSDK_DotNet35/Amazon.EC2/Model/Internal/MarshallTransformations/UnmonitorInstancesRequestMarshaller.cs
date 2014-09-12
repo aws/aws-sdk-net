@@ -12,41 +12,52 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Unmonitor Instances Request Marshaller
+    /// UnmonitorInstances Request Marshaller
     /// </summary>       
-    public class UnmonitorInstancesRequestMarshaller : IMarshaller<IRequest, UnmonitorInstancesRequest>
+    public class UnmonitorInstancesRequestMarshaller : IMarshaller<IRequest, UnmonitorInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UnmonitorInstancesRequest unmonitorInstancesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(unmonitorInstancesRequest, "AmazonEC2");
+            return this.Marshall((UnmonitorInstancesRequest)input);
+        }
+    
+        public IRequest Marshall(UnmonitorInstancesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "UnmonitorInstances");
             request.Parameters.Add("Version", "2014-06-15");
-            if (unmonitorInstancesRequest != null)
-            {
-                List<string> instanceIdsList = unmonitorInstancesRequest.InstanceIds;
 
-                int instanceIdsListIndex = 1;
-                foreach (string instanceIdsListValue in instanceIdsList)
-                { 
-                    request.Parameters.Add("InstanceId." + instanceIdsListIndex, StringUtils.FromString(instanceIdsListValue));
-                    instanceIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstanceIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.InstanceIds)
+                    {
+                        request.Parameters.Add("InstanceId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

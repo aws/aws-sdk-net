@@ -12,105 +12,115 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   BundleTask Unmarshaller
-     /// </summary>
-    internal class BundleTaskUnmarshaller : IUnmarshaller<BundleTask, XmlUnmarshallerContext>, IUnmarshaller<BundleTask, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for BundleTask Object
+    /// </summary>  
+    public class BundleTaskUnmarshaller : IUnmarshaller<BundleTask, XmlUnmarshallerContext>, IUnmarshaller<BundleTask, JsonUnmarshallerContext>
     {
-        public BundleTask Unmarshall(XmlUnmarshallerContext context) 
+        public BundleTask Unmarshall(XmlUnmarshallerContext context)
         {
-            BundleTask bundleTask = new BundleTask();
+            BundleTask unmarshalledObject = new BundleTask();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        bundleTask.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("bundleId", targetDepth))
                     {
-                        bundleTask.BundleId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        bundleTask.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("startTime", targetDepth))
-                    {
-                        bundleTask.StartTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("updateTime", targetDepth))
-                    {
-                        bundleTask.UpdateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("storage", targetDepth))
-                    {
-                        bundleTask.Storage = StorageUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("progress", targetDepth))
-                    {
-                        bundleTask.Progress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BundleId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("error", targetDepth))
                     {
-                        bundleTask.BundleTaskError = BundleTaskErrorUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BundleTaskErrorUnmarshaller.Instance;
+                        unmarshalledObject.BundleTaskError = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("progress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("startTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("storage", targetDepth))
+                    {
+                        var unmarshaller = StorageUnmarshaller.Instance;
+                        unmarshalledObject.Storage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("updateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return bundleTask;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return bundleTask;
+            return unmarshalledObject;
         }
 
-        public BundleTask Unmarshall(JsonUnmarshallerContext context) 
+        public BundleTask Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static BundleTaskUnmarshaller instance;
 
-        public static BundleTaskUnmarshaller GetInstance() 
+        private static BundleTaskUnmarshaller _instance = new BundleTaskUnmarshaller();        
+
+        public static BundleTaskUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new BundleTaskUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

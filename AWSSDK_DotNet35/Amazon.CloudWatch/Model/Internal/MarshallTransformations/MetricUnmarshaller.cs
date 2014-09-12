@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudWatch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Metric Unmarshaller
-     /// </summary>
-    internal class MetricUnmarshaller : IUnmarshaller<Metric, XmlUnmarshallerContext>, IUnmarshaller<Metric, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Metric Object
+    /// </summary>  
+    public class MetricUnmarshaller : IUnmarshaller<Metric, XmlUnmarshallerContext>, IUnmarshaller<Metric, JsonUnmarshallerContext>
     {
-        public Metric Unmarshall(XmlUnmarshallerContext context) 
+        public Metric Unmarshall(XmlUnmarshallerContext context)
         {
-            Metric metric = new Metric();
+            Metric unmarshalledObject = new Metric();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Namespace", targetDepth))
+                    if (context.TestExpression("Dimensions/member", targetDepth))
                     {
-                        metric.Namespace = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DimensionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Dimensions.Add(item);
                         continue;
                     }
                     if (context.TestExpression("MetricName", targetDepth))
                     {
-                        metric.MetricName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Dimensions/member", targetDepth))
+                    if (context.TestExpression("Namespace", targetDepth))
                     {
-                        metric.Dimensions.Add(DimensionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return metric;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return metric;
+            return unmarshalledObject;
         }
 
-        public Metric Unmarshall(JsonUnmarshallerContext context) 
+        public Metric Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static MetricUnmarshaller instance;
 
-        public static MetricUnmarshaller GetInstance() 
+        private static MetricUnmarshaller _instance = new MetricUnmarshaller();        
+
+        public static MetricUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new MetricUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

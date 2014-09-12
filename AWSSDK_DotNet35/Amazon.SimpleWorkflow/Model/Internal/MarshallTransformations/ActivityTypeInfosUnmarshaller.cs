@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTypeInfos Object
+    /// </summary>  
+    public class ActivityTypeInfosUnmarshaller : IUnmarshaller<ActivityTypeInfos, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeInfos, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTypeInfosUnmarshaller
-      /// </summary>
-      internal class ActivityTypeInfosUnmarshaller : IUnmarshaller<ActivityTypeInfos, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeInfos, JsonUnmarshallerContext>
-      {
         ActivityTypeInfos IUnmarshaller<ActivityTypeInfos, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTypeInfos Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTypeInfos activityTypeInfos = new ActivityTypeInfos();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTypeInfos unmarshalledObject = new ActivityTypeInfos();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("typeInfos", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<ActivityTypeInfo,ActivityTypeInfoUnmarshaller>(
-                    ActivityTypeInfoUnmarshaller.GetInstance());                  
-                activityTypeInfos.TypeInfos = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("nextPageToken", targetDepth))
-              {
-                activityTypeInfos.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("typeInfos", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ActivityTypeInfo, ActivityTypeInfoUnmarshaller>(ActivityTypeInfoUnmarshaller.Instance);
+                    unmarshalledObject.TypeInfos = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTypeInfos;
+            return unmarshalledObject;
         }
 
-        private static ActivityTypeInfosUnmarshaller instance;
-        public static ActivityTypeInfosUnmarshaller GetInstance()
+
+        private static ActivityTypeInfosUnmarshaller _instance = new ActivityTypeInfosUnmarshaller();        
+
+        public static ActivityTypeInfosUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTypeInfosUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

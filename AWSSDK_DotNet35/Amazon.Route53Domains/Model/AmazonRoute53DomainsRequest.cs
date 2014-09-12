@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.Route53Domains

@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateSubnetResult : AmazonWebServiceResponse
     {
-        
-        private Subnet subnet;
-
+        private Subnet _subnet;
 
         /// <summary>
+        /// Gets and sets the property Subnet. 
+        /// <para>
         /// Information about the subnet.
-        ///  
+        /// </para>
         /// </summary>
         public Subnet Subnet
         {
-            get { return this.subnet; }
-            set { this.subnet = value; }
+            get { return this._subnet; }
+            set { this._subnet = value; }
         }
 
         // Check to see if Subnet property is set
         internal bool IsSetSubnet()
         {
-            return this.subnet != null;
+            return this._subnet != null;
         }
+
     }
 }

@@ -12,62 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Bundle Instance Request Marshaller
+    /// BundleInstance Request Marshaller
     /// </summary>       
-    public class BundleInstanceRequestMarshaller : IMarshaller<IRequest, BundleInstanceRequest>
+    public class BundleInstanceRequestMarshaller : IMarshaller<IRequest, BundleInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(BundleInstanceRequest bundleInstanceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(bundleInstanceRequest, "AmazonEC2");
+            return this.Marshall((BundleInstanceRequest)input);
+        }
+    
+        public IRequest Marshall(BundleInstanceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "BundleInstance");
             request.Parameters.Add("Version", "2014-06-15");
-            if (bundleInstanceRequest != null && bundleInstanceRequest.IsSetInstanceId())
+
+            if(publicRequest != null)
             {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(bundleInstanceRequest.InstanceId));
-            }
-            if (bundleInstanceRequest != null)
-            {
-                Storage storage = bundleInstanceRequest.Storage;
-                if (storage != null)
+                if(publicRequest.IsSetInstanceId())
                 {
-                    S3Storage s3 = storage.S3;
-                    if (s3 != null && s3.IsSetBucket())
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetStorage())
+                {
+                    if(publicRequest.Storage.IsSetS3())
                     {
-                        request.Parameters.Add("Storage.S3.Bucket", StringUtils.FromString(s3.Bucket));
-                    }
-                    if (s3 != null && s3.IsSetPrefix())
-                    {
-                        request.Parameters.Add("Storage.S3.Prefix", StringUtils.FromString(s3.Prefix));
-                    }
-                    if (s3 != null && s3.IsSetAWSAccessKeyId())
-                    {
-                        request.Parameters.Add("Storage.S3.AWSAccessKeyId", StringUtils.FromString(s3.AWSAccessKeyId));
-                    }
-                    if (s3 != null && s3.IsSetUploadPolicy())
-                    {
-                        request.Parameters.Add("Storage.S3.UploadPolicy", StringUtils.FromString(s3.UploadPolicy));
-                    }
-                    if (s3 != null && s3.IsSetUploadPolicySignature())
-                    {
-                        request.Parameters.Add("Storage.S3.UploadPolicySignature", StringUtils.FromString(s3.UploadPolicySignature));
+                        if(publicRequest.Storage.S3.IsSetAWSAccessKeyId())
+                        {
+                            request.Parameters.Add("Storage" + "." + "S3" + "." + "AWSAccessKeyId", StringUtils.FromString(publicRequest.Storage.S3.AWSAccessKeyId));
+                        }
+                        if(publicRequest.Storage.S3.IsSetBucket())
+                        {
+                            request.Parameters.Add("Storage" + "." + "S3" + "." + "Bucket", StringUtils.FromString(publicRequest.Storage.S3.Bucket));
+                        }
+                        if(publicRequest.Storage.S3.IsSetPrefix())
+                        {
+                            request.Parameters.Add("Storage" + "." + "S3" + "." + "Prefix", StringUtils.FromString(publicRequest.Storage.S3.Prefix));
+                        }
+                        if(publicRequest.Storage.S3.IsSetUploadPolicy())
+                        {
+                            request.Parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicy", StringUtils.FromString(publicRequest.Storage.S3.UploadPolicy));
+                        }
+                        if(publicRequest.Storage.S3.IsSetUploadPolicySignature())
+                        {
+                            request.Parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicySignature", StringUtils.FromString(publicRequest.Storage.S3.UploadPolicySignature));
+                        }
                     }
                 }
             }
-
             return request;
         }
     }

@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Logging Request Marshaller
     /// </summary>       
-    public class GetBucketLoggingRequestMarshaller : IMarshaller<IRequest, GetBucketLoggingRequest>
-    {
+    public class GetBucketLoggingRequestMarshaller : IMarshaller<IRequest, GetBucketLoggingRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketLoggingRequest)input);
+		}
+
         public IRequest Marshall(GetBucketLoggingRequest getBucketLoggingRequest)
         {
             IRequest request = new DefaultRequest(getBucketLoggingRequest, "AmazonS3");

@@ -28,8 +28,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Object Acl Request Marshaller
     /// </summary>       
-    public class PutACLRequestMarshaller : IMarshaller<IRequest, PutACLRequest>
-    {
+    public class PutACLRequestMarshaller : IMarshaller<IRequest, PutACLRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((PutACLRequest)input);
+		}
+
         public IRequest Marshall(PutACLRequest putObjectAclRequest)
         {
             IRequest request = new DefaultRequest(putObjectAclRequest, "AmazonS3");

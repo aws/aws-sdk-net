@@ -59,7 +59,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("LoggingEnabled", targetDepth))
                     {
-                        response.BucketLoggingConfig = LoggingEnabledUnmarshaller.GetInstance().Unmarshall(context);
+                        response.BucketLoggingConfig = LoggingEnabledUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -77,22 +77,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static GetBucketLoggingResponseUnmarshaller instance;
 
-        public static GetBucketLoggingResponseUnmarshaller GetInstance()
+        private static GetBucketLoggingResponseUnmarshaller _instance;
+
+        public static GetBucketLoggingResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetBucketLoggingResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetBucketLoggingResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
+
     }
 }
     

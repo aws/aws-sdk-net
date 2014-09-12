@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.ElasticMapReduce.Model
         private HadoopJarStepConfig _hadoopJarStep;
         private string _name;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public StepConfig() { }
+
+        /// <summary>
+        /// Instantiates StepConfig with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the job flow step.</param>
+        /// <param name="hadoopJarStep">The JAR file used for the job flow step.</param>
+        public StepConfig(string name, HadoopJarStepConfig hadoopJarStep)
+        {
+            _name = name;
+            _hadoopJarStep = hadoopJarStep;
+        }
 
         /// <summary>
         /// Gets and sets the property ActionOnFailure. 
@@ -51,7 +70,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._actionOnFailure != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HadoopJarStep. 
         /// <para>
@@ -69,7 +87,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._hadoopJarStep != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 

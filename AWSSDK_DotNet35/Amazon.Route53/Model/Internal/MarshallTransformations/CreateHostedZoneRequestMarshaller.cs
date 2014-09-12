@@ -12,112 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Hosted Zone Request Marshaller
+    /// CreateHostedZone Request Marshaller
     /// </summary>       
-    public class CreateHostedZoneRequestMarshaller : IMarshaller<IRequest, CreateHostedZoneRequest>
+    public class CreateHostedZoneRequestMarshaller : IMarshaller<IRequest, CreateHostedZoneRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-    
-        public IRequest Marshall(CreateHostedZoneRequest createHostedZoneRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createHostedZoneRequest, "AmazonRoute53");
-
-
-
-            request.HttpMethod = "POST";
-            string uriResourcePath = "/2013-04-01/hostedzone"; 
-
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                
-                uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
-                
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                
-                }
-            }
-            
-            request.ResourcePath = uriResourcePath;
-            
-             
-            StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-                using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
-                {
-                       
-            
-            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
-                    if (createHostedZoneRequest.IsSetName()) 
-        {
-            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", createHostedZoneRequest.Name.ToString(CultureInfo.InvariantCulture));
-          }
-        if (createHostedZoneRequest.IsSetCallerReference()) 
-        {
-            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", createHostedZoneRequest.CallerReference.ToString(CultureInfo.InvariantCulture));
-          }
-        if (createHostedZoneRequest != null) 
-        {
-            HostedZoneConfig hostedZoneConfigHostedZoneConfig = createHostedZoneRequest.HostedZoneConfig;
-            if (hostedZoneConfigHostedZoneConfig != null) 
-            {
-                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2013-04-01/");
-                if (hostedZoneConfigHostedZoneConfig.IsSetComment()) 
-                {
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", hostedZoneConfigHostedZoneConfig.Comment.ToString(CultureInfo.InvariantCulture));
-                  }
-                xmlWriter.WriteEndElement();
-            }
+            return this.Marshall((CreateHostedZoneRequest)input);
         }
 
-            xmlWriter.WriteEndElement();
-            
+        public IRequest Marshall(CreateHostedZoneRequest publicRequest)
+        {
+            var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            request.HttpMethod = "POST";
+            string uriResourcePath = "/2013-04-01/hostedzone";
+            request.ResourcePath = uriResourcePath;
+
+            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            {   
+                xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                if(publicRequest.IsSetName())
+                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));                    
+
+                if(publicRequest.IsSetCallerReference())
+                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));                    
+
+                
+                if (publicRequest.HostedZoneConfig != null) 
+                {
+                    xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    if(publicRequest.HostedZoneConfig.IsSetComment())
+                        xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
+    
+                    xmlWriter.WriteEndElement();
+                }
+
+                xmlWriter.WriteEndElement();
             }
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                
-                
             } 
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-        
-            
+
             return request;
         }
-    }
+
+        
+    }    
 }
-    

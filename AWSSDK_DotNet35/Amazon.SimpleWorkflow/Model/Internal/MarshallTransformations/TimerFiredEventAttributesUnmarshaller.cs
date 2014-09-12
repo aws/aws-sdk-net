@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TimerFiredEventAttributes Object
+    /// </summary>  
+    public class TimerFiredEventAttributesUnmarshaller : IUnmarshaller<TimerFiredEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<TimerFiredEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TimerFiredEventAttributesUnmarshaller
-      /// </summary>
-      internal class TimerFiredEventAttributesUnmarshaller : IUnmarshaller<TimerFiredEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<TimerFiredEventAttributes, JsonUnmarshallerContext>
-      {
         TimerFiredEventAttributes IUnmarshaller<TimerFiredEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TimerFiredEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TimerFiredEventAttributes timerFiredEventAttributes = new TimerFiredEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TimerFiredEventAttributes unmarshalledObject = new TimerFiredEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("timerId", targetDepth))
-              {
-                timerFiredEventAttributes.TimerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                timerFiredEventAttributes.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return timerFiredEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static TimerFiredEventAttributesUnmarshaller instance;
-        public static TimerFiredEventAttributesUnmarshaller GetInstance()
+
+        private static TimerFiredEventAttributesUnmarshaller _instance = new TimerFiredEventAttributesUnmarshaller();        
+
+        public static TimerFiredEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TimerFiredEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

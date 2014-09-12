@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Notification Request Marshaller
     /// </summary>       
-    public class GetBucketNotificationRequestMarshaller : IMarshaller<IRequest, GetBucketNotificationRequest>
-    {
+    public class GetBucketNotificationRequestMarshaller : IMarshaller<IRequest, GetBucketNotificationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketNotificationRequest)input);
+		}
+
         public IRequest Marshall(GetBucketNotificationRequest getBucketNotificationRequest)
         {
             IRequest request = new DefaultRequest(getBucketNotificationRequest, "AmazonS3");

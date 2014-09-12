@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,7 +47,6 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private string _version;
 
-
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
         /// <para>
@@ -63,7 +66,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._additionalInfo != null && this._additionalInfo.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Args. 
         /// <para>
@@ -82,7 +84,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._args != null && this._args.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -100,7 +101,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Version. 

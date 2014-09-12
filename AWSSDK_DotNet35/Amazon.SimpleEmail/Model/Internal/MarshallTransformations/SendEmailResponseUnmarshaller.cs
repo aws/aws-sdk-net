@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -94,7 +98,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static SendEmailResponseUnmarshaller _instance = new SendEmailResponseUnmarshaller();        
 
         internal static SendEmailResponseUnmarshaller GetInstance()

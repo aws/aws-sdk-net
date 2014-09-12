@@ -12,50 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Vpn Connection Request Marshaller
+    /// CreateVpnConnection Request Marshaller
     /// </summary>       
-    public class CreateVpnConnectionRequestMarshaller : IMarshaller<IRequest, CreateVpnConnectionRequest>
+    public class CreateVpnConnectionRequestMarshaller : IMarshaller<IRequest, CreateVpnConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateVpnConnectionRequest createVpnConnectionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createVpnConnectionRequest, "AmazonEC2");
+            return this.Marshall((CreateVpnConnectionRequest)input);
+        }
+    
+        public IRequest Marshall(CreateVpnConnectionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateVpnConnection");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createVpnConnectionRequest != null && createVpnConnectionRequest.IsSetType())
+
+            if(publicRequest != null)
             {
-                request.Parameters.Add("Type", StringUtils.FromString(createVpnConnectionRequest.Type));
-            }
-            if (createVpnConnectionRequest != null && createVpnConnectionRequest.IsSetCustomerGatewayId())
-            {
-                request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(createVpnConnectionRequest.CustomerGatewayId));
-            }
-            if (createVpnConnectionRequest != null && createVpnConnectionRequest.IsSetVpnGatewayId())
-            {
-                request.Parameters.Add("VpnGatewayId", StringUtils.FromString(createVpnConnectionRequest.VpnGatewayId));
-            }
-            if (createVpnConnectionRequest != null)
-            {
-                VpnConnectionOptionsSpecification options = createVpnConnectionRequest.Options;
-                if (options != null && options.IsSetStaticRoutesOnly())
+                if(publicRequest.IsSetCustomerGatewayId())
                 {
-                    request.Parameters.Add("Options.StaticRoutesOnly", StringUtils.FromBool(options.StaticRoutesOnly));
+                    request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(publicRequest.CustomerGatewayId));
+                }
+                if(publicRequest.IsSetOptions())
+                {
+                    if(publicRequest.Options.IsSetStaticRoutesOnly())
+                    {
+                        request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));
+                    }
+                }
+                if(publicRequest.IsSetType())
+                {
+                    request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
+                }
+                if(publicRequest.IsSetVpnGatewayId())
+                {
+                    request.Parameters.Add("VpnGatewayId", StringUtils.FromString(publicRequest.VpnGatewayId));
                 }
             }
-
             return request;
         }
     }

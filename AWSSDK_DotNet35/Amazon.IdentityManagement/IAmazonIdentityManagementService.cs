@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.IdentityManagement.Model;
 
 namespace Amazon.IdentityManagement
 {
     /// <summary>
-    /// Implementation for accessing IdentityManagementService
+    /// Interface for accessing IdentityManagementService
     ///
     /// AWS Identity and Access Management 
     /// <para>
@@ -33,11 +38,13 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    ///  Using the IAM Query API, you make direct calls to the IAM web service. IAM supports
-    /// GET and POST requests for all actions. That is, the API does not require you to use
-    /// GET for some actions and POST for others. However, GET requests are subject to the
-    /// limitation size of a URL. Therefore, for operations that require larger sizes, use
-    /// a POST request. 
+    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
+    /// you can also use the IAM Query API to make direct calls to the IAM web service. To
+    /// learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
+    /// for all actions. That is, the API does not require you to use GET for some actions
+    /// and POST for others. However, GET requests are subject to the limitation size of a
+    /// URL. Therefore, for operations that require larger sizes, use a POST request. 
     /// </para>
     ///  
     /// <para>
@@ -96,7 +103,6 @@ namespace Amazon.IdentityManagement
         
         #region  AddRoleToInstanceProfile
 
-
         /// <summary>
         /// Adds the specified role to the specified instance profile. For more information about
         /// roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
@@ -149,7 +155,6 @@ namespace Amazon.IdentityManagement
         
         #region  AddUserToGroup
 
-
         /// <summary>
         /// Adds the specified user to the specified group.
         /// </summary>
@@ -195,7 +200,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ChangePassword
-
 
         /// <summary>
         /// Changes the password of the IAM user calling <code>ChangePassword</code>. The root
@@ -356,7 +360,6 @@ namespace Amazon.IdentityManagement
         
         #region  CreateAccountAlias
 
-
         /// <summary>
         /// This action creates an alias for your AWS account. For information about using an
         /// AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
@@ -403,7 +406,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  CreateGroup
-
 
         /// <summary>
         /// Creates a new group.
@@ -460,7 +462,6 @@ namespace Amazon.IdentityManagement
         
         #region  CreateInstanceProfile
 
-
         /// <summary>
         /// Creates a new instance profile. For information about instance profiles, go to <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
@@ -513,7 +514,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  CreateLoginProfile
-
 
         /// <summary>
         /// Creates a password for the specified user, giving the user the ability to access AWS
@@ -570,7 +570,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  CreateRole
-
 
         /// <summary>
         /// Creates a new role for your AWS account. For more information about roles, go to <a
@@ -631,7 +630,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  CreateSAMLProvider
-
 
         /// <summary>
         /// Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.
@@ -704,7 +702,6 @@ namespace Amazon.IdentityManagement
         
         #region  CreateUser
 
-
         /// <summary>
         /// Creates a new user for your AWS account.
         /// 
@@ -759,7 +756,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  CreateVirtualMFADevice
-
 
         /// <summary>
         /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
@@ -820,7 +816,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeactivateMFADevice
 
-
         /// <summary>
         /// Deactivates the specified MFA device and removes it from association with the user
         /// name for which it was originally enabled.
@@ -873,7 +868,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteAccessKey
-
 
         /// <summary>
         /// Deletes the access key associated with the specified user.
@@ -928,7 +922,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteAccountAlias
-
 
         /// <summary>
         /// Deletes the specified AWS account alias. For information about using an AWS account
@@ -1039,7 +1032,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteGroup
 
-
         /// <summary>
         /// Deletes the specified group. The group must not contain any users or have any attached
         /// policies.
@@ -1091,7 +1083,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteGroupPolicy
 
-
         /// <summary>
         /// Deletes the specified policy that is associated with the specified group.
         /// </summary>
@@ -1137,7 +1128,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteInstanceProfile
-
 
         /// <summary>
         /// Deletes the specified instance profile. The instance profile must not have an associated
@@ -1199,7 +1189,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteLoginProfile
 
-
         /// <summary>
         /// Deletes the password for the specified user, which terminates the user's ability to
         /// access AWS services through the AWS Management Console.
@@ -1259,7 +1248,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteRole
 
-
         /// <summary>
         /// Deletes the specified role. The role must not have any policies attached. For more
         /// information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
@@ -1316,7 +1304,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteRolePolicy
 
-
         /// <summary>
         /// Deletes the specified policy associated with the specified role.
         /// </summary>
@@ -1362,7 +1349,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteSAMLProvider
-
 
         /// <summary>
         /// Deletes a SAML provider.
@@ -1419,7 +1405,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteServerCertificate
-
 
         /// <summary>
         /// Deletes the specified server certificate.
@@ -1480,7 +1465,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteSigningCertificate
 
-
         /// <summary>
         /// Deletes the specified signing certificate associated with the specified user.
         /// 
@@ -1535,7 +1519,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteUser
 
-
         /// <summary>
         /// Deletes the specified user. The user must not belong to any groups, have any keys
         /// or signing certificates, or have any attached policies.
@@ -1587,7 +1570,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteUserPolicy
 
-
         /// <summary>
         /// Deletes the specified policy associated with the specified user.
         /// </summary>
@@ -1633,7 +1615,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteVirtualMFADevice
-
 
         /// <summary>
         /// Deletes a virtual MFA device.
@@ -1684,7 +1665,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  EnableMFADevice
-
 
         /// <summary>
         /// Enables the specified MFA device and associates it with the specified user name. When
@@ -1993,7 +1973,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetGroup
 
-
         /// <summary>
         /// Returns a list of users that are in the specified group. You can paginate the results
         /// using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -2036,7 +2015,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  GetGroupPolicy
-
 
         /// <summary>
         /// Retrieves the specified policy document for the specified group. The returned policy
@@ -2081,7 +2059,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  GetInstanceProfile
-
 
         /// <summary>
         /// Retrieves information about the specified instance profile, including the instance
@@ -2128,7 +2105,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetLoginProfile
 
-
         /// <summary>
         /// Retrieves the user name and password-creation date for the specified user. If the
         /// user has not been assigned a password, the action returns a 404 (<code>NoSuchEntity</code>)
@@ -2172,7 +2148,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  GetRole
-
 
         /// <summary>
         /// Retrieves information about the specified role, including the role's path, GUID, ARN,
@@ -2226,7 +2201,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetRolePolicy
 
-
         /// <summary>
         /// Retrieves the specified policy document for the specified role. For more information
         /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
@@ -2277,7 +2251,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetSAMLProvider
 
-
         /// <summary>
         /// Returns the SAML provider metadocument that was uploaded when the provider was created
         /// or updated.
@@ -2323,7 +2296,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  GetServerCertificate
-
 
         /// <summary>
         /// Retrieves information about the specified server certificate.
@@ -2433,7 +2405,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  GetUserPolicy
-
 
         /// <summary>
         /// Retrieves the specified policy document for the specified user. The returned policy
@@ -2621,7 +2592,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListGroupPolicies
 
-
         /// <summary>
         /// Lists the names of the policies associated with the specified group. If there are
         /// none, the action returns an empty list.
@@ -2727,7 +2697,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ListGroupsForUser
-
 
         /// <summary>
         /// Lists the groups the specified user belongs to.
@@ -2839,7 +2808,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ListInstanceProfilesForRole
-
 
         /// <summary>
         /// Lists the instance profiles that have the specified associated role. If there are
@@ -2962,7 +2930,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ListRolePolicies
-
 
         /// <summary>
         /// Lists the names of the policies associated with the specified role. If there are none,
@@ -3269,7 +3236,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListUserPolicies
 
-
         /// <summary>
         /// Lists the names of the policies associated with the specified user. If there are none,
         /// the action returns an empty list.
@@ -3441,7 +3407,6 @@ namespace Amazon.IdentityManagement
         
         #region  PutGroupPolicy
 
-
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified group. For information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
@@ -3500,7 +3465,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  PutRolePolicy
-
 
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified role. For information
@@ -3561,7 +3525,6 @@ namespace Amazon.IdentityManagement
         
         #region  PutUserPolicy
 
-
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified user. For information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
@@ -3621,7 +3584,6 @@ namespace Amazon.IdentityManagement
         
         #region  RemoveRoleFromInstanceProfile
 
-
         /// <summary>
         /// Removes the specified role from the specified instance profile.
         /// 
@@ -3678,7 +3640,6 @@ namespace Amazon.IdentityManagement
         
         #region  RemoveUserFromGroup
 
-
         /// <summary>
         /// Removes the specified user from the specified group.
         /// </summary>
@@ -3724,7 +3685,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ResyncMFADevice
-
 
         /// <summary>
         /// Synchronizes the specified MFA device with AWS servers.
@@ -3775,7 +3735,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UpdateAccessKey
-
 
         /// <summary>
         /// Changes the status of the specified access key from Active to Inactive, or vice versa.
@@ -3838,9 +3797,13 @@ namespace Amazon.IdentityManagement
         #region  UpdateAccountPasswordPolicy
 
         /// <summary>
-        /// Updates the password policy settings for the account. For more information about using
-        /// a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Updates the password policy settings for the AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
@@ -3859,9 +3822,13 @@ namespace Amazon.IdentityManagement
         UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy();
 
         /// <summary>
-        /// Updates the password policy settings for the account. For more information about using
-        /// a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Updates the password policy settings for the AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service method.</param>
         /// 
@@ -3909,7 +3876,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UpdateAssumeRolePolicy
-
 
         /// <summary>
         /// Updates the policy that grants an entity permission to assume a role. For more information
@@ -3963,7 +3929,6 @@ namespace Amazon.IdentityManagement
         
         #region  UpdateGroup
 
-
         /// <summary>
         /// Updates the name and/or the path of the specified group.
         /// 
@@ -4016,7 +3981,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UpdateLoginProfile
-
 
         /// <summary>
         /// Changes the password for the specified user.
@@ -4074,7 +4038,6 @@ namespace Amazon.IdentityManagement
         
         #region  UpdateSAMLProvider
 
-
         /// <summary>
         /// Updates the metadata document for an existing SAML provider.
         /// </summary>
@@ -4123,7 +4086,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UpdateServerCertificate
-
 
         /// <summary>
         /// Updates the name and/or the path of the specified server certificate.
@@ -4177,7 +4139,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UpdateSigningCertificate
-
 
         /// <summary>
         /// Changes the status of the specified signing certificate from active to disabled, or
@@ -4240,7 +4201,6 @@ namespace Amazon.IdentityManagement
         
         #region  UpdateUser
 
-
         /// <summary>
         /// Updates the name and/or the path of the specified user.
         /// 
@@ -4299,7 +4259,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UploadServerCertificate
-
 
         /// <summary>
         /// Uploads a server certificate entity for the AWS account. The server certificate entity
@@ -4361,7 +4320,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UploadSigningCertificate
-
 
         /// <summary>
         /// Uploads an X.509 signing certificate and associates it with the specified user. Some

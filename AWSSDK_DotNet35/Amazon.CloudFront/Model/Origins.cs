@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.CloudFront.Model
         private List<Origin> _items = new List<Origin>();
         private int? _quantity;
 
-
         /// <summary>
         /// Gets and sets the property Items. A complex type that contains origins for this distribution.
         /// </summary>
@@ -46,7 +49,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._items != null && this._items.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Quantity. The number of origins for this distribution.

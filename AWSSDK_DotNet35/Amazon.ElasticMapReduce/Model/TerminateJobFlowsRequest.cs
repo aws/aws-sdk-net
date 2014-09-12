@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,6 +47,19 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private List<string> _jobFlowIds = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public TerminateJobFlowsRequest() { }
+
+        /// <summary>
+        /// Instantiates TerminateJobFlowsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="jobFlowIds">A list of job flows to be shutdown.</param>
+        public TerminateJobFlowsRequest(List<string> jobFlowIds)
+        {
+            _jobFlowIds = jobFlowIds;
+        }
 
         /// <summary>
         /// Gets and sets the property JobFlowIds. 

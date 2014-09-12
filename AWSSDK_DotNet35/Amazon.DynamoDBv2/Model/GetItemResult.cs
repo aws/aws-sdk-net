@@ -12,59 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>GetItem</i> operation.</para>
+    /// Represents the output of a <i>GetItem</i> operation.
     /// </summary>
     public partial class GetItemResult : AmazonWebServiceResponse
     {
-        
-        private Dictionary<string,AttributeValue> item = new Dictionary<string,AttributeValue>();
-        private ConsumedCapacity consumedCapacity;
-
+        private ConsumedCapacity _consumedCapacity;
+        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
 
         /// <summary>
-        /// A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.
-        ///  
-        /// </summary>
-        public Dictionary<string,AttributeValue> Item
-        {
-            get { return this.item; }
-            set { this.item = value; }
-        }
-
-        // Check to see if Item property is set
-        internal bool IsSetItem()
-        {
-            return this.item != null;
-        }
-
-        /// <summary>
-        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
-        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
-        /// request. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
-        /// Amazon DynamoDB Developer Guide.
-        ///  
+        /// Gets and sets the property ConsumedCapacity.
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
         {
-            get { return this.consumedCapacity; }
-            set { this.consumedCapacity = value; }
+            get { return this._consumedCapacity; }
+            set { this._consumedCapacity = value; }
         }
 
         // Check to see if ConsumedCapacity property is set
         internal bool IsSetConsumedCapacity()
         {
-            return this.consumedCapacity != null;
+            return this._consumedCapacity != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// A map of attribute names to <i>AttributeValue</i> objects, as specified by       
+        /// <i>AttributesToGet</i>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AttributeValue> Item
+        {
+            get { return this._item; }
+            set { this._item = value; }
+        }
+
+        // Check to see if Item property is set
+        internal bool IsSetItem()
+        {
+            return this._item != null && this._item.Count > 0; 
+        }
+
     }
 }

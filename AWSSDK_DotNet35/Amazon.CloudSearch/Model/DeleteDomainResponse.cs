@@ -12,24 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteDomain response and response metadata.
+    /// Configuration for accessing Amazon DeleteDomain service
     /// </summary>
     public partial class DeleteDomainResponse : DeleteDomainResult
     {
         /// <summary>
         /// Gets and sets the DeleteDomainResult property.
-        /// The result of a DeleteDomain request. Contains the status of a newly deleted domain, or no status if the domain has already been completely
-        /// deleted.
+        /// Represents the output of a DeleteDomain operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteDomainResult class are now available on the DeleteDomainResponse class. You should use the properties on DeleteDomainResponse instead of accessing them through DeleteDomainResult.")]
         public DeleteDomainResult DeleteDomainResult
@@ -41,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

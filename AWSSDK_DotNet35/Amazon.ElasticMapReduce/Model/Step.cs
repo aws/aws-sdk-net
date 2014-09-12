@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private StepStatus _status;
 
-
         /// <summary>
         /// Gets and sets the property ActionOnFailure. 
         /// <para>
@@ -54,7 +57,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._actionOnFailure != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
@@ -72,7 +74,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._config != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -92,7 +93,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -110,7 +110,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

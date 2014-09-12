@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudSearch_2011_02_01.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeStopwordOptions operation
-    /// </summary>
-    internal class DescribeStopwordOptionsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeStopwordOptions operation
+    /// </summary>  
+    public class DescribeStopwordOptionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeStopwordOptionsResponse response = new DescribeStopwordOptionsResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeStopwordOptionsResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeStopwordOptionsResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeStopwordOptionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,61 +71,54 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("Stopwords", targetDepth))
                     {
-                        response.Stopwords = StopwordOptionsStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StopwordOptionsStatusUnmarshaller.Instance;
+                        response.Stopwords = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("BaseException"))
             {
                 return new BaseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
             {
                 return new InternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudSearchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeStopwordOptionsResponseUnmarshaller instance;
+        private static DescribeStopwordOptionsResponseUnmarshaller _instance = new DescribeStopwordOptionsResponseUnmarshaller();        
 
-        public static DescribeStopwordOptionsResponseUnmarshaller GetInstance()
+        internal static DescribeStopwordOptionsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeStopwordOptionsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeStopwordOptionsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

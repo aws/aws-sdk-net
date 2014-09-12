@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,81 +12,90 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleDB.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Attributes Request Marshaller
+    /// DeleteAttributes Request Marshaller
     /// </summary>       
-    public class DeleteAttributesRequestMarshaller : IMarshaller<IRequest, DeleteAttributesRequest>
+    public class DeleteAttributesRequestMarshaller : IMarshaller<IRequest, DeleteAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteAttributesRequest deleteAttributesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteAttributesRequest, "AmazonSimpleDB");
+            return this.Marshall((DeleteAttributesRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteAttributesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleDB");
             request.Parameters.Add("Action", "DeleteAttributes");
             request.Parameters.Add("Version", "2009-04-15");
-            if (deleteAttributesRequest != null && deleteAttributesRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(deleteAttributesRequest.DomainName));
-            }
-            if (deleteAttributesRequest != null && deleteAttributesRequest.IsSetItemName())
-            {
-                request.Parameters.Add("ItemName", StringUtils.FromString(deleteAttributesRequest.ItemName));
-            }
 
-            if (deleteAttributesRequest != null)
+            if(publicRequest != null)
             {
-                List<Attribute> attributesList = deleteAttributesRequest.Attributes;
-                int attributesListIndex = 1;
-                foreach (Attribute attributesListValue in attributesList)
+                if(publicRequest.IsSetAttributes())
                 {
-                    if (attributesListValue != null && attributesListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Attributes)
                     {
-                        request.Parameters.Add("Attribute." + attributesListIndex + ".Name", StringUtils.FromString(attributesListValue.Name));
+                        if(publicRequestlistValue.IsSetAlternateNameEncoding())
+                        {
+                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "AlternateNameEncoding", StringUtils.FromString(publicRequestlistValue.AlternateNameEncoding));
+                        }
+                        if(publicRequestlistValue.IsSetAlternateValueEncoding())
+                        {
+                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "AlternateValueEncoding", StringUtils.FromString(publicRequestlistValue.AlternateValueEncoding));
+                        }
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (attributesListValue != null && attributesListValue.IsSetAlternateNameEncoding())
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetExpected())
+                {
+                    if(publicRequest.Expected.IsSetExists())
                     {
-                        request.Parameters.Add("Attribute." + attributesListIndex + ".AlternateNameEncoding", StringUtils.FromString(attributesListValue.AlternateNameEncoding));
+                        request.Parameters.Add("Expected" + "." + "Exists", StringUtils.FromBool(publicRequest.Expected.Exists));
                     }
-                    if (attributesListValue != null && attributesListValue.IsSetValue())
+                    if(publicRequest.Expected.IsSetName())
                     {
-                        request.Parameters.Add("Attribute." + attributesListIndex + ".Value", StringUtils.FromString(attributesListValue.Value));
+                        request.Parameters.Add("Expected" + "." + "Name", StringUtils.FromString(publicRequest.Expected.Name));
                     }
-                    if (attributesListValue != null && attributesListValue.IsSetAlternateValueEncoding())
+                    if(publicRequest.Expected.IsSetValue())
                     {
-                        request.Parameters.Add("Attribute." + attributesListIndex + ".AlternateValueEncoding", StringUtils.FromString(attributesListValue.AlternateValueEncoding));
+                        request.Parameters.Add("Expected" + "." + "Value", StringUtils.FromString(publicRequest.Expected.Value));
                     }
-
-                    attributesListIndex++;
+                }
+                if(publicRequest.IsSetItemName())
+                {
+                    request.Parameters.Add("ItemName", StringUtils.FromString(publicRequest.ItemName));
                 }
             }
-            if (deleteAttributesRequest != null)
-            {
-                UpdateCondition expected = deleteAttributesRequest.Expected;
-                if (expected != null && expected.IsSetName())
-                {
-                    request.Parameters.Add("Expected.Name", StringUtils.FromString(expected.Name));
-                }
-                if (expected != null && expected.IsSetValue())
-                {
-                    request.Parameters.Add("Expected.Value", StringUtils.FromString(expected.Value));
-                }
-                if (expected != null && expected.IsSetExists())
-                {
-                    request.Parameters.Add("Expected.Exists", StringUtils.FromBool(expected.Exists));
-                }
-            }
-
             return request;
         }
     }

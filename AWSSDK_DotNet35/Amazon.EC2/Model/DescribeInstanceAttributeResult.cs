@@ -12,38 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Contains the response data from the DescribeInstanceAttribute operation.
     /// </summary>
     public partial class DescribeInstanceAttributeResult : AmazonWebServiceResponse
     {
-        
-        private InstanceAttribute instanceAttribute;
+        private InstanceAttribute _instanceAttribute;
 
-
-        /// <summary>
-        /// 
-        ///  
-        /// </summary>
+        // Gets and sets the InstanceAttribute member
         public InstanceAttribute InstanceAttribute
         {
-            get { return this.instanceAttribute; }
-            set { this.instanceAttribute = value; }
+            get { return this._instanceAttribute; }
+            set { this._instanceAttribute = value; }
         }
 
         // Check to see if InstanceAttribute property is set
         internal bool IsSetInstanceAttribute()
         {
-            return this.instanceAttribute != null;
+            return this._instanceAttribute != null;
         }
     }
 }

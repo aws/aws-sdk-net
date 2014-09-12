@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  CreateSubnet response and response metadata.
+    /// Configuration for accessing Amazon CreateSubnet service
     /// </summary>
     public partial class CreateSubnetResponse : CreateSubnetResult
     {
         /// <summary>
         /// Gets and sets the CreateSubnetResult property.
-        /// 
+        /// Represents the output of a CreateSubnet operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateSubnetResult class are now available on the CreateSubnetResponse class. You should use the properties on CreateSubnetResponse instead of accessing them through CreateSubnetResult.")]
         public CreateSubnetResult CreateSubnetResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CompleteWorkflowExecutionFailedEventAttributes Object
+    /// </summary>  
+    public class CompleteWorkflowExecutionFailedEventAttributesUnmarshaller : IUnmarshaller<CompleteWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<CompleteWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CompleteWorkflowExecutionFailedEventAttributesUnmarshaller
-      /// </summary>
-      internal class CompleteWorkflowExecutionFailedEventAttributesUnmarshaller : IUnmarshaller<CompleteWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<CompleteWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext>
-      {
         CompleteWorkflowExecutionFailedEventAttributes IUnmarshaller<CompleteWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public CompleteWorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            CompleteWorkflowExecutionFailedEventAttributes completeWorkflowExecutionFailedEventAttributes = new CompleteWorkflowExecutionFailedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            CompleteWorkflowExecutionFailedEventAttributes unmarshalledObject = new CompleteWorkflowExecutionFailedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("cause", targetDepth))
-              {
-                completeWorkflowExecutionFailedEventAttributes.Cause = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
-              {
-                completeWorkflowExecutionFailedEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("cause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return completeWorkflowExecutionFailedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static CompleteWorkflowExecutionFailedEventAttributesUnmarshaller instance;
-        public static CompleteWorkflowExecutionFailedEventAttributesUnmarshaller GetInstance()
+
+        private static CompleteWorkflowExecutionFailedEventAttributesUnmarshaller _instance = new CompleteWorkflowExecutionFailedEventAttributesUnmarshaller();        
+
+        public static CompleteWorkflowExecutionFailedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new CompleteWorkflowExecutionFailedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -1,0 +1,64 @@
+{
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addBefore", "newType":"Amazon.S3.Internal.AmazonS3PreMarshallHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"},
+			{"operation":"addAfter", "newType":"Amazon.S3.Internal.AmazonS3PostMarshallHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"},
+			{"operation":"addBefore", "newType":"Amazon.S3.Internal.AmazonS3ResponseHandler", "targetType":"Amazon.Runtime.Internal.Unmarshaller"},
+			{"operation":"addAfter", "newType":"Amazon.S3.Internal.AmazonS3ExceptionHandler", "targetType":"Amazon.Runtime.Internal.ErrorCallbackHandler"},
+			{"operation":"addAfter", "newType":"Amazon.Runtime.Internal.RedirectHandler", "targetType":"Amazon.Runtime.Internal.ErrorHandler"}
+		]
+	},
+	"noArgOverloads": [
+		"ListBuckets"
+	],
+	"operationModifiers" : {
+		"CreateBucket" : {
+			"name" : "PutBucket"
+		},
+		"CreateMultipartUpload" : {
+			"name" : "InitiateMultipartUpload"
+		},
+		"DeleteBucketCors" : {
+			"name" : "DeleteCORSConfiguration"
+		},
+		"DeleteBucketLifecycle" : {
+			"name" : "DeleteLifecycleConfiguration"
+		},
+		"GetBucketAcl" : {
+			"name" : "GetACL"
+		},
+		"GetBucketCors" : {
+			"name" : "GetCORSConfiguration"
+		},
+		"GetBucketLifecycle" : {
+			"name" : "GetLifecycleConfiguration"
+		},
+		"GetObjectAcl" : {
+			"exclude" : true
+		},
+		"HeadBucket" : {
+			"internal" : true
+		},
+		"HeadObject" : {
+			"name" : "GetObjectMetadata"
+		},
+		"ListObjectVersions" : {
+			"name" : "ListVersions"
+		},
+		"PutBucketAcl" : {
+			"name" : "PutACL",
+		},
+		"PutBucketCors" : {
+			"name" : "PutCORSConfiguration"
+		},
+		"PutBucketLifecycle" : {
+			"name" : "PutLifecycleConfiguration"
+		},
+		"PutObjectAcl" : {
+			"exclude" : true
+		},
+		"UploadPartCopy" : {
+			"name" : "CopyPart"
+		}
+	}
+}

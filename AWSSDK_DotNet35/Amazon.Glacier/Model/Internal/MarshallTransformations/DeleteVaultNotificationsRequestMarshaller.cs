@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,35 +33,29 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Vault Notifications Request Marshaller
+    /// DeleteVaultNotifications Request Marshaller
     /// </summary>       
-    internal class DeleteVaultNotificationsRequestMarshaller : IMarshaller<IRequest, DeleteVaultNotificationsRequest> 
+    public class DeleteVaultNotificationsRequestMarshaller : IMarshaller<IRequest, DeleteVaultNotificationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteVaultNotificationsRequest deleteVaultNotificationsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteVaultNotificationsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteVaultNotificationsRequest, "AmazonGlacier");
-            string target = "Glacier.DeleteVaultNotifications";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(DeleteVaultNotificationsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
-            if(deleteVaultNotificationsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(deleteVaultNotificationsRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(deleteVaultNotificationsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(deleteVaultNotificationsRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

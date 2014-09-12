@@ -24,8 +24,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Upload Part Copy Request Marshaller
     /// </summary>       
-    public class CopyPartRequestMarshaller : IMarshaller<IRequest, CopyPartRequest>
-    {
+    public class CopyPartRequestMarshaller : IMarshaller<IRequest, CopyPartRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((CopyPartRequest)input);
+		}
+
         public IRequest Marshall(CopyPartRequest copyPartRequest)
         {
             IRequest request = new DefaultRequest(copyPartRequest, "AmazonS3");

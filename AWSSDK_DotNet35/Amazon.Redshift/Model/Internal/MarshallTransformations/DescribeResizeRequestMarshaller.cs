@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeResize Request Marshaller
     /// </summary>       
-    public class DescribeResizeRequestMarshaller : IMarshaller<IRequest, DescribeResizeRequest>
+    public class DescribeResizeRequestMarshaller : IMarshaller<IRequest, DescribeResizeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeResizeRequest)input);
+        }
+    
         public IRequest Marshall(DescribeResizeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");

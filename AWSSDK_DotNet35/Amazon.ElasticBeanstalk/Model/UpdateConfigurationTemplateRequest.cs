@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,17 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConfigurationTemplate operation.
-    /// Updates the specified configuration template to have the specified      
-    ///   properties or configuration option values.      
+    /// Updates the specified configuration template to have the specified properties or
+    /// configuration option values. 
     /// 
-    ///       <note>         If a property (for example,         <code>ApplicationName</code>)
-    /// is not provided, its         value remains unchanged. To clear such         properties,
-    /// specify an empty string.      </note>      
+    ///  
     /// <para>
     /// Related Topics
     /// </para>
-    ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
-    ///      </ul>
+    ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
     /// </summary>
     public partial class UpdateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
@@ -45,17 +46,31 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
         private string _templateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateConfigurationTemplateRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateConfigurationTemplateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName">The name of the application associated with the configuration template to update.  If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="templateName">The name of the configuration template to update.  If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </param>
+        public UpdateConfigurationTemplateRequest(string applicationName, string templateName)
+        {
+            _applicationName = applicationName;
+            _templateName = templateName;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of the application associated with the configuration template         to
-        /// update.
+        /// The name of the application associated with the configuration template to update.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no application is found with this name, <code>UpdateConfigurationTemplate</code>
-        /// returns an         <code>InvalidParameterValue</code>         error.      
+        ///  If no application is found with this name, <code>UpdateConfigurationTemplate</code>
+        /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -69,7 +84,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._applicationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -89,12 +103,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///          A list of configuration option settings to update with the new specified
-        ///         option value.        
+        ///  A list of configuration option settings to update with the new specified option value.
+        /// 
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -109,16 +122,14 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionsToRemove. 
         /// <para>
-        ///          A list of configuration options to remove from the configuration set.        
+        ///  A list of configuration options to remove from the configuration set. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Constraint: You can remove only <code>UserDefined</code>         configuration
-        /// options.      
+        ///  Constraint: You can remove only <code>UserDefined</code> configuration options. 
         /// </para>
         /// </summary>
         public List<OptionSpecification> OptionsToRemove
@@ -133,16 +144,15 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
         /// The name of the configuration template to update.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code>
-        /// returns an         <code>InvalidParameterValue</code>         error.      
+        ///  If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code>
+        /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string TemplateName

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,11 +29,10 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationOptions operation.
-    /// Describes the configuration options that are used in a         particular
-    /// configuration template or environment, or that          a specified solution stack
-    /// defines. The description includes the values the         options, their default values,
-    /// and an indication of         the required action on a running environment if an option
-    /// value is changed.
+    /// Describes the configuration options that are used in a particular configuration template
+    /// or environment, or that a specified solution stack defines. The description includes
+    /// the values the options, their default values, and an indication of the required action
+    /// on a running environment if an option value is changed.
     /// </summary>
     public partial class DescribeConfigurationOptionsRequest : AmazonElasticBeanstalkRequest
     {
@@ -39,13 +42,17 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _solutionStackName;
         private string _templateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeConfigurationOptionsRequest() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application associated with the configuration template or
-        ///         environment. Only needed if you want to describe the         configuration
-        /// options associated with either the configuration template or         environment.        
+        ///  The name of the application associated with the configuration template or environment.
+        /// Only needed if you want to describe the configuration options associated with either
+        /// the configuration template or environment. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -60,12 +67,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///          The name of the environment whose configuration options you want to describe.
-        ///      
+        ///  The name of the environment whose configuration options you want to describe. 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -80,11 +85,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        ///          If specified, restricts the descriptions to only the specified options.        
+        ///  If specified, restricts the descriptions to only the specified options. 
         /// </para>
         /// </summary>
         public List<OptionSpecification> Options
@@ -99,12 +103,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._options != null && this._options.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///          The name of the solution stack whose configuration options         you want
-        /// to describe.        
+        ///  The name of the solution stack whose configuration options you want to describe.
+        /// 
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -119,12 +122,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._solutionStackName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///          The name of the configuration template whose configuration options      
-        ///   you want to describe.        
+        ///  The name of the configuration template whose configuration options you want to describe.
+        /// 
         /// </para>
         /// </summary>
         public string TemplateName

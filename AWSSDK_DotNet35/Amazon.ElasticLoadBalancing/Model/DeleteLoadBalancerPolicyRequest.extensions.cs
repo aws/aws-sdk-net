@@ -30,23 +30,23 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class DeleteLoadBalancerPolicyRequest 
     {
-        /// <summary>
-        /// Default constructor for a new DeleteLoadBalancerPolicyRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DeleteLoadBalancerPolicyRequest() { }
+        ///// <summary>
+        ///// Default constructor for a new DeleteLoadBalancerPolicyRequest object.  Callers should use the
+        ///// properties to initialize this object after creating it.
+        ///// </summary>
+        //public DeleteLoadBalancerPolicyRequest() { }
 
-        /// <summary>
-        /// Constructs a new DeleteLoadBalancerPolicyRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
-        /// <param name="policyName"> The mnemonic name for the policy being deleted. </param>
-        public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName)
-        {
-            _loadBalancerName = loadBalancerName;
-            _policyName = policyName;
-        }
+        ///// <summary>
+        ///// Constructs a new DeleteLoadBalancerPolicyRequest object.
+        ///// Callers should use the properties initialize any additional object members.
+        ///// </summary>
+        ///// 
+        ///// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
+        ///// <param name="policyName"> The mnemonic name for the policy being deleted. </param>
+        //public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName)
+        //{
+        //    _loadBalancerName = loadBalancerName;
+        //    _policyName = policyName;
+        //}
     }
 }

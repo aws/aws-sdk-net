@@ -12,279 +12,294 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Instance Unmarshaller
-     /// </summary>
-    internal class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Instance Object
+    /// </summary>  
+    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
     {
-        public Instance Unmarshall(XmlUnmarshallerContext context) 
+        public Instance Unmarshall(XmlUnmarshallerContext context)
         {
-            Instance instance = new Instance();
+            Instance unmarshalledObject = new Instance();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        instance.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("imageId", targetDepth))
-                    {
-                        instance.ImageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceState", targetDepth))
-                    {
-                        instance.State = InstanceStateUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("privateDnsName", targetDepth))
-                    {
-                        instance.PrivateDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("dnsName", targetDepth))
-                    {
-                        instance.PublicDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("reason", targetDepth))
-                    {
-                        instance.StateTransitionReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("keyName", targetDepth))
-                    {
-                        instance.KeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("amiLaunchIndex", targetDepth))
                     {
-                        instance.AmiLaunchIndex = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("productCodes/item", targetDepth))
-                    {
-                        instance.ProductCodes.Add(ProductCodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        instance.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("launchTime", targetDepth))
-                    {
-                        instance.LaunchTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("placement", targetDepth))
-                    {
-                        instance.Placement = PlacementUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("kernelId", targetDepth))
-                    {
-                        instance.KernelId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ramdiskId", targetDepth))
-                    {
-                        instance.RamdiskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("platform", targetDepth))
-                    {
-                        instance.Platform = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("monitoring", targetDepth))
-                    {
-                        instance.Monitoring = MonitoringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("subnetId", targetDepth))
-                    {
-                        instance.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        instance.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("privateIpAddress", targetDepth))
-                    {
-                        instance.PrivateIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ipAddress", targetDepth))
-                    {
-                        instance.PublicIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("stateReason", targetDepth))
-                    {
-                        instance.StateReason = StateReasonUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.AmiLaunchIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("architecture", targetDepth))
                     {
-                        instance.Architecture = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("rootDeviceType", targetDepth))
-                    {
-                        instance.RootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("rootDeviceName", targetDepth))
-                    {
-                        instance.RootDeviceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
-                        instance.BlockDeviceMappings.Add(InstanceBlockDeviceMappingUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("virtualizationType", targetDepth))
-                    {
-                        instance.VirtualizationType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceLifecycle", targetDepth))
-                    {
-                        instance.InstanceLifecycle = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("spotInstanceRequestId", targetDepth))
-                    {
-                        instance.SpotInstanceRequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceBlockDeviceMappingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
                     if (context.TestExpression("clientToken", targetDepth))
                     {
-                        instance.ClientToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        instance.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("groupSet/item", targetDepth))
-                    {
-                        instance.SecurityGroups.Add(GroupIdentifierUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("sourceDestCheck", targetDepth))
-                    {
-                        instance.SourceDestCheck = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("hypervisor", targetDepth))
-                    {
-                        instance.Hypervisor = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("networkInterfaceSet/item", targetDepth))
-                    {
-                        instance.NetworkInterfaces.Add(InstanceNetworkInterfaceUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("iamInstanceProfile", targetDepth))
-                    {
-                        instance.IamInstanceProfile = IamInstanceProfileUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ebsOptimized", targetDepth))
                     {
-                        instance.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("hypervisor", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Hypervisor = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("iamInstanceProfile", targetDepth))
+                    {
+                        var unmarshaller = IamInstanceProfileUnmarshaller.Instance;
+                        unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceLifecycle", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceLifecycle = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("kernelId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KernelId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("keyName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KeyName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("launchTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("monitoring", targetDepth))
+                    {
+                        var unmarshaller = MonitoringUnmarshaller.Instance;
+                        unmarshalledObject.Monitoring = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkInterfaceSet/item", targetDepth))
+                    {
+                        var unmarshaller = InstanceNetworkInterfaceUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NetworkInterfaces.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("placement", targetDepth))
+                    {
+                        var unmarshaller = PlacementUnmarshaller.Instance;
+                        unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("platform", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateDnsName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateIpAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("productCodes/item", targetDepth))
+                    {
+                        var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProductCodes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("dnsName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicIpAddress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ramdiskId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RamdiskId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rootDeviceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootDeviceName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rootDeviceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("groupSet/item", targetDepth))
+                    {
+                        var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecurityGroups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceDestCheck", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("spotInstanceRequestId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SpotInstanceRequestId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sriovNetSupport", targetDepth))
                     {
-                        instance.SriovNetSupport = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SriovNetSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceState", targetDepth))
+                    {
+                        var unmarshaller = InstanceStateUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("stateReason", targetDepth))
+                    {
+                        var unmarshaller = StateReasonUnmarshaller.Instance;
+                        unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("reason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StateTransitionReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("subnetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("virtualizationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VirtualizationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instance;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instance;
+            return unmarshalledObject;
         }
 
-        public Instance Unmarshall(JsonUnmarshallerContext context) 
+        public Instance Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceUnmarshaller instance;
 
-        public static InstanceUnmarshaller GetInstance() 
+        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
+
+        public static InstanceUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

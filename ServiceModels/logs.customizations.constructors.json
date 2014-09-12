@@ -1,0 +1,101 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "CreateLogGroupRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName"
+                    ]
+                ]
+            },
+            "CreateLogStreamRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "LogStreamName"
+                    ]
+                ]
+            },
+            "DeleteLogGroupRequest"  : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName"
+                    ]
+                ]
+            },
+            "DeleteLogStreamRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "LogStreamName"
+                    ]
+                ]
+            },
+            "DeleteMetricFilterRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "FilterName"
+                    ]
+                ]
+            },
+            "DescribeLogStreamsRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName"
+                    ]
+                ]
+            },
+            "DescribeMetricFiltersRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName"
+                    ]
+                ]
+            },
+            "GetLogEventsRequest"          : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "LogStreamName"
+                    ]
+                ]
+            },
+            "PutLogEventsRequest"          : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "LogStreamName",
+                        "LogEvents"
+                    ]
+                ]
+            },
+            "PutMetricFilterRequest"       : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "FilterName",
+                        "FilterPattern",
+                        "MetricTransformations"
+                    ]
+                ]
+            },
+            "PutRetentionPolicyRequest"    : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName",
+                        "RetentionInDays"
+                    ]
+                ]
+            },
+            "DeleteRetentionPolicyRequest" : {
+                "constructorForms" : [
+                    [
+                        "LogGroupName"
+                    ]
+                ]
+            }
+        }
+    }
+}

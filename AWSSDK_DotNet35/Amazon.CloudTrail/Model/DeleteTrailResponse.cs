@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteTrail response and response metadata.
+    /// Configuration for accessing Amazon DeleteTrail service
     /// </summary>
     public partial class DeleteTrailResponse : DeleteTrailResult
     {
         /// <summary>
         /// Gets and sets the DeleteTrailResult property.
-        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+        /// Represents the output of a DeleteTrail operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteTrailResult class are now available on the DeleteTrailResponse class. You should use the properties on DeleteTrailResponse instead of accessing them through DeleteTrailResult.")]
         public DeleteTrailResult DeleteTrailResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudTrail.Model
         }
     }
 }
-    

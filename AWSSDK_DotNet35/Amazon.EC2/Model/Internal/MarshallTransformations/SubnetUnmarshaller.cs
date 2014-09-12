@@ -12,111 +12,122 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Subnet Unmarshaller
-     /// </summary>
-    internal class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext>, IUnmarshaller<Subnet, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Subnet Object
+    /// </summary>  
+    public class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext>, IUnmarshaller<Subnet, JsonUnmarshallerContext>
     {
-        public Subnet Unmarshall(XmlUnmarshallerContext context) 
+        public Subnet Unmarshall(XmlUnmarshallerContext context)
         {
-            Subnet subnet = new Subnet();
+            Subnet unmarshalledObject = new Subnet();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("subnetId", targetDepth))
+                    if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        subnet.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        subnet.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        subnet.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("cidrBlock", targetDepth))
-                    {
-                        subnet.CidrBlock = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("availableIpAddressCount", targetDepth))
                     {
-                        subnet.AvailableIpAddressCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.AvailableIpAddressCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("availabilityZone", targetDepth))
+                    if (context.TestExpression("cidrBlock", targetDepth))
                     {
-                        subnet.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("defaultForAz", targetDepth))
                     {
-                        subnet.DefaultForAz = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DefaultForAz = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("mapPublicIpOnLaunch", targetDepth))
                     {
-                        subnet.MapPublicIpOnLaunch = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MapPublicIpOnLaunch = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("subnetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        subnet.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return subnet;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return subnet;
+            return unmarshalledObject;
         }
 
-        public Subnet Unmarshall(JsonUnmarshallerContext context) 
+        public Subnet Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SubnetUnmarshaller instance;
 
-        public static SubnetUnmarshaller GetInstance() 
+        private static SubnetUnmarshaller _instance = new SubnetUnmarshaller();        
+
+        public static SubnetUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SubnetUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// SetLoadBasedAutoScaling Request Marshaller
     /// </summary>       
-    public class SetLoadBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, SetLoadBasedAutoScalingRequest> 
+    public class SetLoadBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, SetLoadBasedAutoScalingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((SetLoadBasedAutoScalingRequest)input);
+        }
+
         public IRequest Marshall(SetLoadBasedAutoScalingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,102 +56,39 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDownScaling())
                 {
-                    writer.WritePropertyName("DownScaling");
-                    writer.WriteObjectStart();
-                    if(publicRequest.DownScaling.IsSetCpuThreshold())
-                    {
-                        writer.WritePropertyName("CpuThreshold");
-                        writer.Write(publicRequest.DownScaling.CpuThreshold);
-                    }
+                    context.Writer.WritePropertyName("DownScaling");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.DownScaling.IsSetIgnoreMetricsTime())
-                    {
-                        writer.WritePropertyName("IgnoreMetricsTime");
-                        writer.Write(publicRequest.DownScaling.IgnoreMetricsTime);
-                    }
+                    var marshaller = AutoScalingThresholdsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DownScaling, context);
 
-                    if(publicRequest.DownScaling.IsSetInstanceCount())
-                    {
-                        writer.WritePropertyName("InstanceCount");
-                        writer.Write(publicRequest.DownScaling.InstanceCount);
-                    }
-
-                    if(publicRequest.DownScaling.IsSetLoadThreshold())
-                    {
-                        writer.WritePropertyName("LoadThreshold");
-                        writer.Write(publicRequest.DownScaling.LoadThreshold);
-                    }
-
-                    if(publicRequest.DownScaling.IsSetMemoryThreshold())
-                    {
-                        writer.WritePropertyName("MemoryThreshold");
-                        writer.Write(publicRequest.DownScaling.MemoryThreshold);
-                    }
-
-                    if(publicRequest.DownScaling.IsSetThresholdsWaitTime())
-                    {
-                        writer.WritePropertyName("ThresholdsWaitTime");
-                        writer.Write(publicRequest.DownScaling.ThresholdsWaitTime);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetEnable())
                 {
-                    writer.WritePropertyName("Enable");
-                    writer.Write(publicRequest.Enable);
+                    context.Writer.WritePropertyName("Enable");
+                    context.Writer.Write(publicRequest.Enable);
                 }
 
                 if(publicRequest.IsSetLayerId())
                 {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(publicRequest.LayerId);
+                    context.Writer.WritePropertyName("LayerId");
+                    context.Writer.Write(publicRequest.LayerId);
                 }
 
                 if(publicRequest.IsSetUpScaling())
                 {
-                    writer.WritePropertyName("UpScaling");
-                    writer.WriteObjectStart();
-                    if(publicRequest.UpScaling.IsSetCpuThreshold())
-                    {
-                        writer.WritePropertyName("CpuThreshold");
-                        writer.Write(publicRequest.UpScaling.CpuThreshold);
-                    }
+                    context.Writer.WritePropertyName("UpScaling");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.UpScaling.IsSetIgnoreMetricsTime())
-                    {
-                        writer.WritePropertyName("IgnoreMetricsTime");
-                        writer.Write(publicRequest.UpScaling.IgnoreMetricsTime);
-                    }
+                    var marshaller = AutoScalingThresholdsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpScaling, context);
 
-                    if(publicRequest.UpScaling.IsSetInstanceCount())
-                    {
-                        writer.WritePropertyName("InstanceCount");
-                        writer.Write(publicRequest.UpScaling.InstanceCount);
-                    }
-
-                    if(publicRequest.UpScaling.IsSetLoadThreshold())
-                    {
-                        writer.WritePropertyName("LoadThreshold");
-                        writer.Write(publicRequest.UpScaling.LoadThreshold);
-                    }
-
-                    if(publicRequest.UpScaling.IsSetMemoryThreshold())
-                    {
-                        writer.WritePropertyName("MemoryThreshold");
-                        writer.Write(publicRequest.UpScaling.MemoryThreshold);
-                    }
-
-                    if(publicRequest.UpScaling.IsSetThresholdsWaitTime())
-                    {
-                        writer.WritePropertyName("ThresholdsWaitTime");
-                        writer.Write(publicRequest.UpScaling.ThresholdsWaitTime);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
         

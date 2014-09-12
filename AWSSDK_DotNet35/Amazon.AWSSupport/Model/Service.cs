@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.AWSSupport.Model
         private List<Category> _categories = new List<Category>();
         private string _code;
         private string _name;
-
 
         /// <summary>
         /// Gets and sets the property Categories. 
@@ -53,7 +56,6 @@ namespace Amazon.AWSSupport.Model
             return this._categories != null && this._categories.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
@@ -72,7 +74,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._code != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 

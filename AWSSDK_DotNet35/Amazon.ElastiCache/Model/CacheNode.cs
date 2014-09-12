@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,6 +42,10 @@ namespace Amazon.ElastiCache.Model
         private string _parameterGroupStatus;
         private string _sourceCacheNodeId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CacheNode() { }
 
         /// <summary>
         /// Gets and sets the property CacheNodeCreateTime. 
@@ -56,7 +64,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheNodeCreateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheNodeId. 
@@ -78,7 +85,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheNodeId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheNodeStatus. 
         /// <para>
@@ -96,7 +102,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheNodeStatus != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustomerAvailabilityZone. 
@@ -116,7 +121,6 @@ namespace Amazon.ElastiCache.Model
             return this._customerAvailabilityZone != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
@@ -135,7 +139,6 @@ namespace Amazon.ElastiCache.Model
             return this._endpoint != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ParameterGroupStatus. 
         /// <para>
@@ -153,7 +156,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._parameterGroupStatus != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SourceCacheNodeId. 

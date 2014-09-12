@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesResult : AmazonWebServiceResponse
     {
-        
-        private List<ReservedInstances> reservedInstances = new List<ReservedInstances>();
-
+        private List<ReservedInstances> _reservedInstances = new List<ReservedInstances>();
 
         /// <summary>
+        /// Gets and sets the property ReservedInstances. 
+        /// <para>
         /// A list of Reserved Instances.
-        ///  
+        /// </para>
         /// </summary>
         public List<ReservedInstances> ReservedInstances
         {
-            get { return this.reservedInstances; }
-            set { this.reservedInstances = value; }
+            get { return this._reservedInstances; }
+            set { this._reservedInstances = value; }
         }
 
         // Check to see if ReservedInstances property is set
         internal bool IsSetReservedInstances()
         {
-            return this.reservedInstances.Count > 0;
+            return this._reservedInstances != null && this._reservedInstances.Count > 0; 
         }
+
     }
 }

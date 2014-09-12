@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeLifecycleHooks Request Marshaller
     /// </summary>       
-    public class DescribeLifecycleHooksRequestMarshaller : IMarshaller<IRequest, DescribeLifecycleHooksRequest>
+    public class DescribeLifecycleHooksRequestMarshaller : IMarshaller<IRequest, DescribeLifecycleHooksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeLifecycleHooksRequest)input);
+        }
+    
         public IRequest Marshall(DescribeLifecycleHooksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");

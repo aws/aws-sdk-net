@@ -1,0 +1,73 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+
+
+using System;
+
+using Amazon.Runtime;
+
+
+namespace <#=this.Config.Namespace#>
+{
+    /// <summary>
+    /// Configuration for accessing Amazon <#=this.Config.BaseName#> service
+    /// </summary>
+	public partial class Amazon<#=this.Config.BaseName#>Config : ClientConfig
+	{
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Amazon<#=this.Config.BaseName#>Config()
+        {
+<#
+            if(!string.IsNullOrEmpty(this.Config.AuthenticationServiceName))
+            {
+#>
+            this.AuthenticationServiceName = "<#=this.Config.AuthenticationServiceName#>";
+<#
+            }
+            if(this.Config.OverrideMaxRetries.HasValue)
+            {
+#>
+            this.MaxErrorRetry = <#=this.Config.OverrideMaxRetries#>;
+<#
+            }
+            if(!string.IsNullOrEmpty(this.Config.DefaultRegion))
+            {
+#>
+            if (this.RegionEndpoint == null)
+                this.RegionEndpoint = RegionEndpoint.<#=this.Config.DefaultRegion#>;
+<#
+            }
+#>
+        }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "<#=this.Config.RegionLookupName#>";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "<#=this.Config.ServiceModel.APIVersion#>";
+            }
+        }
+    }
+}

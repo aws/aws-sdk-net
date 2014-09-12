@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for RequestCancelActivityTaskFailedEventAttributes Object
+    /// </summary>  
+    public class RequestCancelActivityTaskFailedEventAttributesUnmarshaller : IUnmarshaller<RequestCancelActivityTaskFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<RequestCancelActivityTaskFailedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RequestCancelActivityTaskFailedEventAttributesUnmarshaller
-      /// </summary>
-      internal class RequestCancelActivityTaskFailedEventAttributesUnmarshaller : IUnmarshaller<RequestCancelActivityTaskFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<RequestCancelActivityTaskFailedEventAttributes, JsonUnmarshallerContext>
-      {
         RequestCancelActivityTaskFailedEventAttributes IUnmarshaller<RequestCancelActivityTaskFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public RequestCancelActivityTaskFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            RequestCancelActivityTaskFailedEventAttributes requestCancelActivityTaskFailedEventAttributes = new RequestCancelActivityTaskFailedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            RequestCancelActivityTaskFailedEventAttributes unmarshalledObject = new RequestCancelActivityTaskFailedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("activityId", targetDepth))
-              {
-                requestCancelActivityTaskFailedEventAttributes.ActivityId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("cause", targetDepth))
-              {
-                requestCancelActivityTaskFailedEventAttributes.Cause = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
-              {
-                requestCancelActivityTaskFailedEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("activityId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActivityId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return requestCancelActivityTaskFailedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static RequestCancelActivityTaskFailedEventAttributesUnmarshaller instance;
-        public static RequestCancelActivityTaskFailedEventAttributesUnmarshaller GetInstance()
+
+        private static RequestCancelActivityTaskFailedEventAttributesUnmarshaller _instance = new RequestCancelActivityTaskFailedEventAttributesUnmarshaller();        
+
+        public static RequestCancelActivityTaskFailedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RequestCancelActivityTaskFailedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

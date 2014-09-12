@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
+    /// This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
     /// </summary>
-    public class CharacterSet
+    public partial class CharacterSet
     {
-        
-        private string characterSetName;
-        private string characterSetDescription;
-
+        private string _characterSetDescription;
+        private string _characterSetName;
 
         /// <summary>
-        /// The name of the character set.
-        ///  
-        /// </summary>
-        public string CharacterSetName
-        {
-            get { return this.characterSetName; }
-            set { this.characterSetName = value; }
-        }
-
-        // Check to see if CharacterSetName property is set
-        internal bool IsSetCharacterSetName()
-        {
-            return this.characterSetName != null;
-        }
-
-        /// <summary>
-        /// The description of the character set.
-        ///  
+        /// Gets and sets the property CharacterSetDescription. 
+        /// <para>
+        ///  The description of the character set. 
+        /// </para>
         /// </summary>
         public string CharacterSetDescription
         {
-            get { return this.characterSetDescription; }
-            set { this.characterSetDescription = value; }
+            get { return this._characterSetDescription; }
+            set { this._characterSetDescription = value; }
         }
 
         // Check to see if CharacterSetDescription property is set
         internal bool IsSetCharacterSetDescription()
         {
-            return this.characterSetDescription != null;
+            return this._characterSetDescription != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property CharacterSetName. 
+        /// <para>
+        ///  The name of the character set. 
+        /// </para>
+        /// </summary>
+        public string CharacterSetName
+        {
+            get { return this._characterSetName; }
+            set { this._characterSetName = value; }
+        }
+
+        // Check to see if CharacterSetName property is set
+        internal bool IsSetCharacterSetName()
+        {
+            return this._characterSetName != null;
+        }
+
     }
 }

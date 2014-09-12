@@ -12,17 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeStream response and response metadata.
+    /// Configuration for accessing Amazon DescribeStream service
     /// </summary>
     public partial class DescribeStreamResponse : DescribeStreamResult
     {
@@ -40,4 +40,3 @@ namespace Amazon.Kinesis.Model
         }
     }
 }
-    

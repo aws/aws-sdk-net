@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Gateways Request Marshaller
+    /// ListGateways Request Marshaller
     /// </summary>       
-    internal class ListGatewaysRequestMarshaller : IMarshaller<IRequest, ListGatewaysRequest> 
+    public class ListGatewaysRequestMarshaller : IMarshaller<IRequest, ListGatewaysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListGatewaysRequest listGatewaysRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListGatewaysRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listGatewaysRequest, "AmazonStorageGateway");
+        public IRequest Marshall(ListGatewaysRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.ListGateways";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listGatewaysRequest != null && listGatewaysRequest.IsSetMarker()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLimit())
                 {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(listGatewaysRequest.Marker);
-                }
-                if (listGatewaysRequest != null && listGatewaysRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(listGatewaysRequest.Limit);
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
+                if(publicRequest.IsSetMarker())
+                {
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

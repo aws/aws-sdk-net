@@ -12,99 +12,109 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NetworkInterfaceAttachment Unmarshaller
-     /// </summary>
-    internal class NetworkInterfaceAttachmentUnmarshaller : IUnmarshaller<NetworkInterfaceAttachment, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceAttachment, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NetworkInterfaceAttachment Object
+    /// </summary>  
+    public class NetworkInterfaceAttachmentUnmarshaller : IUnmarshaller<NetworkInterfaceAttachment, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceAttachment, JsonUnmarshallerContext>
     {
-        public NetworkInterfaceAttachment Unmarshall(XmlUnmarshallerContext context) 
+        public NetworkInterfaceAttachment Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkInterfaceAttachment networkInterfaceAttachment = new NetworkInterfaceAttachment();
+            NetworkInterfaceAttachment unmarshalledObject = new NetworkInterfaceAttachment();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("attachmentId", targetDepth))
                     {
-                        networkInterfaceAttachment.AttachmentId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        networkInterfaceAttachment.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceOwnerId", targetDepth))
-                    {
-                        networkInterfaceAttachment.InstanceOwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("deviceIndex", targetDepth))
-                    {
-                        networkInterfaceAttachment.DeviceIndex = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        networkInterfaceAttachment.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("attachTime", targetDepth))
                     {
-                        networkInterfaceAttachment.AttachTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.AttachTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("deleteOnTermination", targetDepth))
                     {
-                        networkInterfaceAttachment.DeleteOnTermination = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("deviceIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DeviceIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceOwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return networkInterfaceAttachment;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return networkInterfaceAttachment;
+            return unmarshalledObject;
         }
 
-        public NetworkInterfaceAttachment Unmarshall(JsonUnmarshallerContext context) 
+        public NetworkInterfaceAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NetworkInterfaceAttachmentUnmarshaller instance;
 
-        public static NetworkInterfaceAttachmentUnmarshaller GetInstance() 
+        private static NetworkInterfaceAttachmentUnmarshaller _instance = new NetworkInterfaceAttachmentUnmarshaller();        
+
+        public static NetworkInterfaceAttachmentUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NetworkInterfaceAttachmentUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

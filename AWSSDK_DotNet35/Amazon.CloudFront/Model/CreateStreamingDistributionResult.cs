@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudFront.Model
         private string _location;
         private StreamingDistribution _streamingDistribution;
 
-
         /// <summary>
         /// Gets and sets the property ETag. The current version of the streaming distribution
         /// created.
@@ -49,10 +52,9 @@ namespace Amazon.CloudFront.Model
             return this._eTag != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Location. The fully qualified URI of the new streaming
-        /// distribution resource just created.    For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+        /// distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
         /// </summary>
         public string Location
         {
@@ -65,7 +67,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._location != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StreamingDistribution. The streaming distribution's information.

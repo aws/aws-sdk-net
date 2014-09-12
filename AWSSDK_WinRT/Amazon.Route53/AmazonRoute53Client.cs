@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,10 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+
+
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.Route53.Model;
 using Amazon.Route53.Model.Internal.MarshallTransformations;
@@ -27,17 +34,13 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Implementation for accessing AmazonRoute53.
-    /// 
+    /// Implementation for accessing Route53
+    ///
     /// 
     /// </summary>
-    /// <summary>
-    /// Interface for accessing AmazonRoute53.
-    /// </summary>
-	public partial class AmazonRoute53Client : AmazonWebServiceClient, Amazon.Route53.IAmazonRoute53
+    public partial class AmazonRoute53Client : AmazonServiceClient, IAmazonRoute53
     {
-
-        AWS3Signer signer = new AWS3Signer();
+        
         #region Constructors
 
         /// <summary>
@@ -55,7 +58,7 @@ namespace Amazon.Route53
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53Client(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonRoute53Config(){RegionEndpoint=region})
+            : this(credentials, new AmazonRoute53Config{RegionEndpoint = region})
         {
         }
 
@@ -66,7 +69,7 @@ namespace Amazon.Route53
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonRoute53Client Configuration Object</param>
         public AmazonRoute53Client(AWSCredentials credentials, AmazonRoute53Config clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -93,13 +96,13 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Constructs AmazonRoute53Client with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonRoute53Client Configuration object.
+        /// AmazonRoute53Client Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonRoute53Client Configuration Object</param>
         public AmazonRoute53Client(string awsAccessKeyId, string awsSecretAccessKey, AmazonRoute53Config clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -122,481 +125,645 @@ namespace Amazon.Route53
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonRoute53Config(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonRoute53Config{RegionEndpoint = region})
         {
         }
 
         /// <summary>
         /// Constructs AmazonRoute53Client with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonRoute53Client Configuration object.
+        /// AmazonRoute53Client Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonRoute53Client Configuration Object</param>
         public AmazonRoute53Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonRoute53Config clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
         #endregion
 
- 
-		internal ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
         {
-            var task = ChangeResourceRecordSetsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return new AWS3Signer();
+        } 
+
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler());
         }
 
-        /// <summary>
-        /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
-        /// <c>2013-04-01/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
-        /// <c>ChangeResourceRecordSetsRequest</c> element.</para> <para>Changes are a list of change items and are considered transactional. For more
-        /// information on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">Creating, Changing, and Deleting Resource
-        /// Record Sets Using the Route 53 API</a> in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of
-        /// transactional changes, you cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the
-        /// same change batch more than once, Route 53 returns an InvalidChangeBatch error.</para> <para>In response to a
-        /// <c>ChangeResourceRecordSets</c> request, your DNS data is changed on all Route 53 DNS servers. Initially, the status of a change is
-        /// <c>PENDING</c> . This means the change has not yet propagated to all the authoritative Route 53 DNS servers. When the change is propagated
-        /// to all hosts, the change returns a status of <c>INSYNC</c> .</para> <para>Note the following limitations on a
-        /// <c>ChangeResourceRecordSets</c> request:</para> <para>- A request cannot contain more than 100 Change elements.</para> <para>- A request
-        /// cannot contain more than 1000 ResourceRecord elements.</para> <para>The sum of the number of characters (including spaces) in all
-        /// <c>Value</c> elements in a request cannot exceed 32,000 characters.</para>
-        /// </summary>
-        /// 
-        /// <param name="changeResourceRecordSetsRequest">Container for the necessary parameters to execute the ChangeResourceRecordSets service method
-        /// on AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the ChangeResourceRecordSets service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.PriorRequestNotCompleteException" />
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidChangeBatchException" />
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-		public Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+        
+        #region  ChangeResourceRecordSets
+
+        internal ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
         {
             var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
-            var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResponse>(changeResourceRecordSetsRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
-        {
-            var task = CreateHealthCheckAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ChangeResourceRecordSetsRequest,ChangeResourceRecordSetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> This action creates a new health check.</para> <para> To create a new health check, send a <c>POST</c> request to the
-        /// <c>2013-04-01/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
-        /// response returns the <c>CreateHealthCheckResponse</c> element that contains metadata about the health check.</para>
+        /// Initiates the asynchronous execution of the ChangeResourceRecordSets operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="createHealthCheckRequest">Container for the necessary parameters to execute the CreateHealthCheck service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the CreateHealthCheck service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.HealthCheckAlreadyExistsException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.TooManyHealthChecksException" />
+        /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest createHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
+            var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ChangeResourceRecordSetsRequest,ChangeResourceRecordSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ChangeTagsForResource
+
+        internal ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request)
+        {
+            var marshaller = new ChangeTagsForResourceRequestMarshaller();
+            var unmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ChangeTagsForResourceRequest,ChangeTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ChangeTagsForResource operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ChangeTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ChangeTagsForResourceResponse> ChangeTagsForResourceAsync(ChangeTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ChangeTagsForResourceRequestMarshaller();
+            var unmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ChangeTagsForResourceRequest,ChangeTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateHealthCheck
+
+        internal CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
         {
             var marshaller = new CreateHealthCheckRequestMarshaller();
-            var unmarshaller = CreateHealthCheckResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateHealthCheckRequest, CreateHealthCheckResponse>(createHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
-        {
-            var task = CreateHostedZoneAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHealthCheckRequest,CreateHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> This action creates a new hosted zone.</para> <para>To create a new hosted zone, send a <c>POST</c> request to the
-        /// <c>2013-04-01/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
-        /// response returns the <c>CreateHostedZoneResponse</c> element that contains metadata about the hosted zone.</para> <para>Route 53
-        /// automatically creates a default SOA record and four NS records for the zone. The NS records in the hosted zone are the name servers you give
-        /// your registrar to delegate your domain to. For more information about SOA and NS records, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route 53 Creates for a Hosted
-        /// Zone</a> in the <i>Amazon Route 53 Developer Guide</i> .</para> <para>When you create a zone, its initial status is <c>PENDING</c> . This
-        /// means that it is not yet available on all DNS servers. The status of the zone changes to <c>INSYNC</c> when the NS and SOA records are
-        /// available on all Route 53 DNS servers. </para>
+        /// Initiates the asynchronous execution of the CreateHealthCheck operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="createHostedZoneRequest">Container for the necessary parameters to execute the CreateHostedZone service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the CreateHostedZone service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.TooManyHostedZonesException" />
-        /// <exception cref="T:Amazon.Route53.Model.DelegationSetNotAvailableException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidDomainNameException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.HostedZoneAlreadyExistsException" />
+        /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheck operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest createHostedZoneRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateHealthCheckRequestMarshaller();
+            var unmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHealthCheckRequest,CreateHealthCheckResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateHostedZone
+
+        internal CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
         {
             var marshaller = new CreateHostedZoneRequestMarshaller();
-            var unmarshaller = CreateHostedZoneResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateHostedZoneRequest, CreateHostedZoneResponse>(createHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
-        {
-            var task = DeleteHealthCheckAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHostedZoneRequest,CreateHostedZoneResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2013-04-01/healthcheck/health
-        /// check ID </c> resource.</para> <para><b>IMPORTANT:</b> You can delete a health check only if there are no resource record sets associated
-        /// with this health check. If resource record sets are associated with this health check, you must disassociate them before you can delete your
-        /// health check. If you try to delete a health check that is associated with resource record sets, Route 53 will deny your request with a
-        /// HealthCheckInUse error. For information about disassociating the records from your health check, see ChangeResourceRecordSets.</para>
+        /// Initiates the asynchronous execution of the CreateHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="deleteHealthCheckRequest">Container for the necessary parameters to execute the DeleteHealthCheck service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the DeleteHealthCheck service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
-        /// <exception cref="T:Amazon.Route53.Model.HealthCheckInUseException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest deleteHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateHostedZoneRequestMarshaller();
+            var unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHostedZoneRequest,CreateHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHealthCheck
+
+        internal DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
         {
             var marshaller = new DeleteHealthCheckRequestMarshaller();
-            var unmarshaller = DeleteHealthCheckResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteHealthCheckRequest, DeleteHealthCheckResponse>(deleteHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
-        {
-            var task = DeleteHostedZoneAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHealthCheckRequest,DeleteHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2013-04-01/hostedzone/hosted zone
-        /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting a Hosted Zone</a> in the <i>Amazon Route 53
-        /// Developer Guide</i> .</para> <para><b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the
-        /// default SOA record and NS resource record sets. If your hosted zone contains other resource record sets, you must delete them before you can
-        /// delete your hosted zone. If you try to delete a hosted zone that contains other resource record sets, Route 53 will deny your request with a
-        /// HostedZoneNotEmpty error. For information about deleting records from your hosted zone, see ChangeResourceRecordSets.</para>
+        /// Initiates the asynchronous execution of the DeleteHealthCheck operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="deleteHostedZoneRequest">Container for the necessary parameters to execute the DeleteHostedZone service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the DeleteHostedZone service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.PriorRequestNotCompleteException" />
-        /// <exception cref="T:Amazon.Route53.Model.HostedZoneNotEmptyException" />
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest deleteHostedZoneRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteHealthCheckRequestMarshaller();
+            var unmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteHealthCheckRequest,DeleteHealthCheckResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHostedZone
+
+        internal DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
         {
             var marshaller = new DeleteHostedZoneRequestMarshaller();
-            var unmarshaller = DeleteHostedZoneResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteHostedZoneRequest, DeleteHostedZoneResponse>(deleteHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal GetChangeResponse GetChange(GetChangeRequest request)
-        {
-            var task = GetChangeAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHostedZoneRequest,DeleteHostedZoneResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> This action returns the current status of a change batch request. The status is one of the following values:</para> <para>-
-        /// <c>PENDING</c> indicates that the changes in this request have not replicated to all Route 53 DNS servers. This is the initial status of all
-        /// change batch requests.</para> <para>- <c>INSYNC</c> indicates that the changes have replicated to all Amazon Route 53 DNS servers. </para>
+        /// Initiates the asynchronous execution of the DeleteHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="getChangeRequest">Container for the necessary parameters to execute the GetChange service method on AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the GetChange service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchChangeException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetChangeResponse> GetChangeAsync(GetChangeRequest getChangeRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteHostedZoneRequestMarshaller();
+            var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteHostedZoneRequest,DeleteHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetChange
+
+        internal GetChangeResponse GetChange(GetChangeRequest request)
         {
             var marshaller = new GetChangeRequestMarshaller();
-            var unmarshaller = GetChangeResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetChangeRequest, GetChangeResponse>(getChangeRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
-        {
-            var task = GetHealthCheckAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = GetChangeResponseUnmarshaller.Instance;
+
+            return Invoke<GetChangeRequest,GetChangeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2013-04-01/healthcheck/health check ID </c> resource. </para>
+        /// Initiates the asynchronous execution of the GetChange operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="getHealthCheckRequest">Container for the necessary parameters to execute the GetHealthCheck service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the GetHealthCheck service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
-        /// <exception cref="T:Amazon.Route53.Model.IncompatibleVersionException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetChange operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest getHealthCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetChangeResponse> GetChangeAsync(GetChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetChangeRequestMarshaller();
+            var unmarshaller = GetChangeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChangeRequest,GetChangeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCheckerIpRanges
+
+        internal GetCheckerIpRangesResponse GetCheckerIpRanges(GetCheckerIpRangesRequest request)
+        {
+            var marshaller = new GetCheckerIpRangesRequestMarshaller();
+            var unmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
+
+            return Invoke<GetCheckerIpRangesRequest,GetCheckerIpRangesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCheckerIpRanges operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCheckerIpRanges operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCheckerIpRangesResponse> GetCheckerIpRangesAsync(GetCheckerIpRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCheckerIpRangesRequestMarshaller();
+            var unmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCheckerIpRangesRequest,GetCheckerIpRangesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGeoLocation
+
+        internal GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request)
+        {
+            var marshaller = new GetGeoLocationRequestMarshaller();
+            var unmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetGeoLocationRequest,GetGeoLocationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGeoLocation operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGeoLocation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetGeoLocationResponse> GetGeoLocationAsync(GetGeoLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetGeoLocationRequestMarshaller();
+            var unmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGeoLocationRequest,GetGeoLocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHealthCheck
+
+        internal GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
         {
             var marshaller = new GetHealthCheckRequestMarshaller();
-            var unmarshaller = GetHealthCheckResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetHealthCheckRequest, GetHealthCheckResponse>(getHealthCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
-        {
-            var task = GetHostedZoneAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckRequest,GetHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2013-04-01/hostedzone/hosted zone ID </c>
-        /// resource. The delegation set is the four Route 53 name servers that were assigned to the hosted zone when you created it.</para>
+        /// Initiates the asynchronous execution of the GetHealthCheck operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="getHostedZoneRequest">Container for the necessary parameters to execute the GetHostedZone service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the GetHostedZone service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheck operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest getHostedZoneRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHealthCheckRequestMarshaller();
+            var unmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckRequest,GetHealthCheckResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHealthCheckCount
+
+        internal GetHealthCheckCountResponse GetHealthCheckCount(GetHealthCheckCountRequest request)
+        {
+            var marshaller = new GetHealthCheckCountRequestMarshaller();
+            var unmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckCountRequest,GetHealthCheckCountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckCount operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHealthCheckCountResponse> GetHealthCheckCountAsync(GetHealthCheckCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHealthCheckCountRequestMarshaller();
+            var unmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckCountRequest,GetHealthCheckCountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHostedZone
+
+        internal GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
         {
             var marshaller = new GetHostedZoneRequestMarshaller();
-            var unmarshaller = GetHostedZoneResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetHostedZoneRequest, GetHostedZoneResponse>(getHostedZoneRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
-        {
-            var task = ListHealthChecksAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneRequest,GetHostedZoneResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2013-04-01/healthcheck</c> resource. The response to
-        /// this request includes a <c>HealthChecks</c> element with zero, one, or multiple <c>HealthCheck</c> child elements. By default, the list of
-        /// health checks is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c>
-        /// parameter. You can use the <c>Marker</c> parameter to control the health check that the list begins with. </para> <para><b>NOTE:</b> Amazon
-        /// Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
+        /// Initiates the asynchronous execution of the GetHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="listHealthChecksRequest">Container for the necessary parameters to execute the ListHealthChecks service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the ListHealthChecks service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.IncompatibleVersionException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZone operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest listHealthChecksRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHostedZoneRequestMarshaller();
+            var unmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHostedZoneRequest,GetHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGeoLocations
+
+        internal ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request)
+        {
+            var marshaller = new ListGeoLocationsRequestMarshaller();
+            var unmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGeoLocationsRequest,ListGeoLocationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGeoLocations operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(ListGeoLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListGeoLocationsRequestMarshaller();
+            var unmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGeoLocationsRequest,ListGeoLocationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHealthChecks
+
+        internal ListHealthChecksResponse ListHealthChecks()
+        {
+            return ListHealthChecks(new ListHealthChecksRequest());
+        }
+        internal ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
         {
             var marshaller = new ListHealthChecksRequestMarshaller();
-            var unmarshaller = ListHealthChecksResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListHealthChecksRequest, ListHealthChecksResponse>(listHealthChecksRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
-        {
-            var task = ListHostedZonesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
+
+            return Invoke<ListHealthChecksRequest,ListHealthChecksResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2013-04-01/hostedzone</c> resource. The response to this
-        /// request includes a <c>HostedZones</c> element with zero, one, or multiple <c>HostedZone</c> child elements. By default, the list of hosted
-        /// zones is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c> parameter. You
-        /// can use the <c>Marker</c> parameter to control the hosted zone that the list begins with. </para> <para><b>NOTE:</b> Amazon Route 53 returns
-        /// a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
+        /// Initiates the asynchronous execution of the ListHealthChecks operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="listHostedZonesRequest">Container for the necessary parameters to execute the ListHostedZones service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the ListHostedZones service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest listHostedZonesRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListHealthChecksRequestMarshaller();
+            var unmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHealthChecksRequest,ListHealthChecksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHostedZones
+
+        internal ListHostedZonesResponse ListHostedZones()
+        {
+            return ListHostedZones(new ListHostedZonesRequest());
+        }
+        internal ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
         {
             var marshaller = new ListHostedZonesRequestMarshaller();
-            var unmarshaller = ListHostedZonesResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListHostedZonesRequest, ListHostedZonesResponse>(listHostedZonesRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
-        {
-            var task = ListResourceRecordSetsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostedZonesRequest,ListHostedZonesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// <para>Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name
-        /// (with the labels reversed, like "com.amazon.www" for example), and secondarily, lexicographically by record type. This operation retrieves
-        /// at most MaxItems resource record sets from this list, in order, starting at a position specified by the Name and Type arguments:</para>
-        /// <ul>
-        /// <li>If both Name and Type are omitted, this means start the results at the first RRSET in the HostedZone.</li>
-        /// <li>If Name is specified but Type is omitted, this means start the results at the first RRSET in the list whose name is greater than or
-        /// equal to Name. </li>
-        /// <li>If both Name and Type are specified, this means start the results at the first RRSET in the list whose name is greater than or equal to
-        /// Name and whose type is greater than or equal to Type.</li>
-        /// <li>It is an error to specify the Type but not the Name.</li>
-        /// 
-        /// </ul>
-        /// <para>Use ListResourceRecordSets to retrieve a single known record set by specifying the record set's name and type, and setting MaxItems =
-        /// 1</para> <para>To retrieve all the records in a HostedZone, first pause any processes making calls to ChangeResourceRecordSets. Initially
-        /// call ListResourceRecordSets without a Name and Type to get the first page of record sets. For subsequent calls, set Name and Type to the
-        /// NextName and NextType values returned by the previous response. </para> <para>In the presence of concurrent ChangeResourceRecordSets calls,
-        /// there is no consistency of results across calls to ListResourceRecordSets. The only way to get a consistent multi-page snapshot of all
-        /// RRSETs in a zone is to stop making changes while pagination is in progress.</para> <para>However, the results from ListResourceRecordSets
-        /// are consistent within a page. If MakeChange calls are taking place concurrently, the result of each one will either be completely visible in
-        /// your results or not at all. You will not see partial changes, or changes that do not ultimately succeed. (This follows from the fact that
-        /// MakeChange is atomic) </para> <para>The results from ListResourceRecordSets are strongly consistent with ChangeResourceRecordSets. To be
-        /// precise, if a single process makes a call to ChangeResourceRecordSets and receives a successful response, the effects of that change will be
-        /// visible in a subsequent call to ListResourceRecordSets by that process.</para>
+        /// Initiates the asynchronous execution of the ListHostedZones operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
-        /// <param name="listResourceRecordSetsRequest">Container for the necessary parameters to execute the ListResourceRecordSets service method on
-        /// AmazonRoute53.</param>
-        /// 
-        /// <returns>The response from the ListResourceRecordSets service method, as returned by AmazonRoute53.</returns>
-        /// 
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZones operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest listResourceRecordSetsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListHostedZonesRequestMarshaller();
+            var unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHostedZonesRequest,ListHostedZonesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceRecordSets
+
+        internal ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
         {
             var marshaller = new ListResourceRecordSetsRequestMarshaller();
-            var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListResourceRecordSetsRequest, ListResourceRecordSetsResponse>(listResourceRecordSetsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceRecordSetsRequest,ListResourceRecordSetsResponse>(request, marshaller, unmarshaller);
         }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceRecordSets operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourceRecordSetsRequestMarshaller();
+            var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceRecordSetsRequest,ListResourceRecordSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResources
+
+        internal ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request)
+        {
+            var marshaller = new ListTagsForResourcesRequestMarshaller();
+            var unmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourcesRequest,ListTagsForResourcesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResources operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResources operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsForResourcesResponse> ListTagsForResourcesAsync(ListTagsForResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForResourcesRequestMarshaller();
+            var unmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourcesRequest,ListTagsForResourcesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateHealthCheck
+
+        internal UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request)
+        {
+            var marshaller = new UpdateHealthCheckRequestMarshaller();
+            var unmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHealthCheckRequest,UpdateHealthCheckResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHealthCheck operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHealthCheck operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateHealthCheckResponse> UpdateHealthCheckAsync(UpdateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateHealthCheckRequestMarshaller();
+            var unmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHealthCheckRequest,UpdateHealthCheckResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

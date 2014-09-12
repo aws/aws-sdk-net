@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,32 +29,50 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVolume operation.
-    /// <para>Deletes the specified Amazon EBS volume. The volume must be in the <c>available</c> state (not attached to an instance).</para>
-    /// <para><b>NOTE:</b> The volume may remain in the deleting state for several minutes. </para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html" >Deleting an Amazon EBS Volume</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i> .</para>
+    /// Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code>
+    /// state (not attached to an instance).
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+    /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteVolumeRequest : AmazonEC2Request
     {
-        private string volumeId;
-
+        private string _volumeId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteVolumeRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteVolumeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="volumeId">The ID of the volume.</param>
+        public DeleteVolumeRequest(string volumeId)
+        {
+            _volumeId = volumeId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
         /// The ID of the volume.
-        ///  
+        /// </para>
         /// </summary>
         public string VolumeId
         {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
         }
 
         // Check to see if VolumeId property is set
         internal bool IsSetVolumeId()
         {
-            return this.volumeId != null;
+            return this._volumeId != null;
         }
 
     }
 }
-    

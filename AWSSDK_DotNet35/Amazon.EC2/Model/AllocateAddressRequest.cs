@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,40 +29,40 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateAddress operation.
-    /// <para>Acquires an Elastic IP address.</para> <para>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more
-    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP Addresses</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Acquires an Elastic IP address.
+    /// 
+    ///  
+    /// <para>
+    /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For
+    /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AllocateAddressRequest : AmazonEC2Request
     {
-        private DomainType domain;
-
+        private DomainType _domain;
 
         /// <summary>
-        /// Set to <c>vpc</c> to allocate the address for use with instances in a VPC. Default: The address is for use with instances in EC2-Classic.
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>vpc, standard</description>
-        ///     </item>
-        /// </list>
+        /// Default: The address is for use with instances in EC2-Classic.
         /// </para>
         /// </summary>
         public DomainType Domain
         {
-            get { return this.domain; }
-            set { this.domain = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
 
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;
+            return this._domain != null;
         }
 
     }
 }
-    

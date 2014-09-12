@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,80 +12,106 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>Describe Snapshot Schedule Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeSnapshotScheduleResult : AmazonWebServiceResponse
     {
-        
-        private string volumeARN;
-        private int? startAt;
-        private int? recurrenceInHours;
-        private string description;
-        private string timezone;
+        private string _description;
+        private int? _recurrenceInHours;
+        private int? _startAt;
+        private string _timezone;
+        private string _volumeARN;
 
-        public string VolumeARN
-        {
-            get { return this.volumeARN; }
-            set { this.volumeARN = value; }
-        }
-
-        // Check to see if VolumeARN property is set
-        internal bool IsSetVolumeARN()
-        {
-            return this.volumeARN != null;
-        }
-        public int StartAt
-        {
-            get { return this.startAt ?? default(int); }
-            set { this.startAt = value; }
-        }
-
-        // Check to see if StartAt property is set
-        internal bool IsSetStartAt()
-        {
-            return this.startAt.HasValue;
-        }
-        public int RecurrenceInHours
-        {
-            get { return this.recurrenceInHours ?? default(int); }
-            set { this.recurrenceInHours = value; }
-        }
-
-        // Check to see if RecurrenceInHours property is set
-        internal bool IsSetRecurrenceInHours()
-        {
-            return this.recurrenceInHours.HasValue;
-        }
+        /// <summary>
+        /// Gets and sets the property Description.
+        /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property RecurrenceInHours.
+        /// </summary>
+        public int RecurrenceInHours
+        {
+            get { return this._recurrenceInHours.GetValueOrDefault(); }
+            set { this._recurrenceInHours = value; }
+        }
+
+        // Check to see if RecurrenceInHours property is set
+        internal bool IsSetRecurrenceInHours()
+        {
+            return this._recurrenceInHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartAt.
+        /// </summary>
+        public int StartAt
+        {
+            get { return this._startAt.GetValueOrDefault(); }
+            set { this._startAt = value; }
+        }
+
+        // Check to see if StartAt property is set
+        internal bool IsSetStartAt()
+        {
+            return this._startAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone.
+        /// </summary>
         public string Timezone
         {
-            get { return this.timezone; }
-            set { this.timezone = value; }
+            get { return this._timezone; }
+            set { this._timezone = value; }
         }
 
         // Check to see if Timezone property is set
         internal bool IsSetTimezone()
         {
-            return this.timezone != null;
+            return this._timezone != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property VolumeARN.
+        /// </summary>
+        public string VolumeARN
+        {
+            get { return this._volumeARN; }
+            set { this._volumeARN = value; }
+        }
+
+        // Check to see if VolumeARN property is set
+        internal bool IsSetVolumeARN()
+        {
+            return this._volumeARN != null;
+        }
+
     }
 }

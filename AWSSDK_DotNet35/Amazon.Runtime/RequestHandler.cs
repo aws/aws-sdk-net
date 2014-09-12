@@ -83,5 +83,5 @@ namespace Amazon.Runtime
         }
     }
 
-    public delegate void RequestEventHandler(object sender, RequestEventArgs args);
+    public delegate void RequestEventHandler(object sender, RequestEventArgs e);
 }

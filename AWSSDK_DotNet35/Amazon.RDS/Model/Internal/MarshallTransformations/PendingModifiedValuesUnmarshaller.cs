@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,111 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PendingModifiedValues Unmarshaller
-     /// </summary>
-    internal class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PendingModifiedValues Object
+    /// </summary>  
+    public class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext>
     {
-        public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context) 
+        public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context)
         {
-            PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
+            PendingModifiedValues unmarshalledObject = new PendingModifiedValues();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DBInstanceClass", targetDepth))
-                    {
-                        pendingModifiedValues.DBInstanceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
-                        pendingModifiedValues.AllocatedStorage = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MasterUserPassword", targetDepth))
-                    {
-                        pendingModifiedValues.MasterUserPassword = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        pendingModifiedValues.Port = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("BackupRetentionPeriod", targetDepth))
                     {
-                        pendingModifiedValues.BackupRetentionPeriod = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MultiAZ", targetDepth))
+                    if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
-                        pendingModifiedValues.MultiAZ = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        pendingModifiedValues.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Iops", targetDepth))
-                    {
-                        pendingModifiedValues.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBInstanceClass = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceIdentifier", targetDepth))
                     {
-                        pendingModifiedValues.DBInstanceIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBInstanceIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MasterUserPassword", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MasterUserPassword = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Port", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return pendingModifiedValues;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return pendingModifiedValues;
+            return unmarshalledObject;
         }
 
-        public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context) 
+        public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PendingModifiedValuesUnmarshaller instance;
 
-        public static PendingModifiedValuesUnmarshaller GetInstance() 
+        private static PendingModifiedValuesUnmarshaller _instance = new PendingModifiedValuesUnmarshaller();        
+
+        public static PendingModifiedValuesUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PendingModifiedValuesUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

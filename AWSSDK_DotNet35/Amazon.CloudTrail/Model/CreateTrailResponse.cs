@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Returns information about the  CreateTrail response and response metadata.
+    /// Configuration for accessing Amazon CreateTrail service
     /// </summary>
     public partial class CreateTrailResponse : CreateTrailResult
     {
         /// <summary>
         /// Gets and sets the CreateTrailResult property.
-        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+        /// Represents the output of a CreateTrail operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateTrailResult class are now available on the CreateTrailResponse class. You should use the properties on CreateTrailResponse instead of accessing them through CreateTrailResult.")]
         public CreateTrailResult CreateTrailResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudTrail.Model
         }
     }
 }
-    

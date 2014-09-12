@@ -188,7 +188,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal static S3ClientCache CreatClientCacheFromContext(DynamoDBContext context)
         {
             var client = ((AmazonDynamoDBClient)context.Client);
-            var cache = new S3ClientCache(client.GetCredentials(), client.CloneConfig<AmazonS3Config>());
+            var cache = new S3ClientCache(client.Credentials, client.CloneConfig<AmazonS3Config>());
 
             lock (S3Link.cacheLock)
             {

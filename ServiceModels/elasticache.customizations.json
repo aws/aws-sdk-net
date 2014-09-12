@@ -1,0 +1,14 @@
+{
+  "noArgOverloads": [
+    "DescribeCacheClusters",
+    "DescribeCacheEngineVersions",
+    "DescribeCacheParameterGroups",
+    "DescribeCacheSecurityGroups",
+    "DescribeCacheSubnetGroups",
+    "DescribeEvents",
+    "DescribeReplicationGroups",
+    "DescribeReservedCacheNodes",
+    "DescribeReservedCacheNodesOfferings",
+    "DescribeSnapshots"
+  ]
+}

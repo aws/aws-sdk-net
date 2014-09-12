@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,67 +29,77 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpcAttribute operation.
-    /// <para>Modifies the specified attribute of the specified VPC.</para>
+    /// Modifies the specified attribute of the specified VPC.
     /// </summary>
     public partial class ModifyVpcAttributeRequest : AmazonEC2Request
     {
-        private string vpcId;
-        private bool? enableDnsSupport;
-        private bool? enableDnsHostnames;
-
-
-        /// <summary>
-        /// The ID of the VPC.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
+        private bool? _enableDnsHostnames;
+        private bool? _enableDnsSupport;
+        private string _vpcId;
 
         /// <summary>
-        /// Indicates whether the DNS resolution is supported for the VPC. If this attribute is <c>false</c>, the Amazon provided DNS service in the VPC
-        /// that resolves public DNS hostnames to IP addresses is not enabled. If this attribute is <c>true</c>, queries to the Amazon provided DNS
-        /// server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" will succeed.
+        /// Gets and sets the property EnableDnsHostnames. 
+        /// <para>
+        /// Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute
+        /// is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+        /// </para>
         ///  
-        /// </summary>
-        public bool EnableDnsSupport
-        {
-            get { return this.enableDnsSupport ?? default(bool); }
-            set { this.enableDnsSupport = value; }
-        }
-
-        // Check to see if EnableDnsSupport property is set
-        internal bool IsSetEnableDnsSupport()
-        {
-            return this.enableDnsSupport.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <c>true</c>, instances in the VPC get DNS
-        /// hostnames; otherwise, they do not. You can only set <c>enableDnsHostnames</c> to <c>true</c> if you also set the <c>EnableDnsSupport</c>
-        /// attribute to <c>true</c>.
-        ///  
+        /// <para>
+        /// You can only set <code>enableDnsHostnames</code> to <code>true</code> if you also
+        /// set the <code>EnableDnsSupport</code> attribute to <code>true</code>.
+        /// </para>
         /// </summary>
         public bool EnableDnsHostnames
         {
-            get { return this.enableDnsHostnames ?? default(bool); }
-            set { this.enableDnsHostnames = value; }
+            get { return this._enableDnsHostnames.GetValueOrDefault(); }
+            set { this._enableDnsHostnames = value; }
         }
 
         // Check to see if EnableDnsHostnames property is set
         internal bool IsSetEnableDnsHostnames()
         {
-            return this.enableDnsHostnames.HasValue;
+            return this._enableDnsHostnames.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableDnsSupport. 
+        /// <para>
+        /// Indicates whether the DNS resolution is supported for the VPC. If this attribute is
+        /// <code>false</code>, the Amazon provided DNS service in the VPC that resolves public
+        /// DNS hostnames to IP addresses is not enabled. If this attribute is <code>true</code>,
+        /// queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the
+        /// reserved IP address at the base of the VPC network range "plus two" will succeed.
+        /// </para>
+        /// </summary>
+        public bool EnableDnsSupport
+        {
+            get { return this._enableDnsSupport.GetValueOrDefault(); }
+            set { this._enableDnsSupport = value; }
+        }
+
+        // Check to see if EnableDnsSupport property is set
+        internal bool IsSetEnableDnsSupport()
+        {
+            return this._enableDnsSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }
 }
-    

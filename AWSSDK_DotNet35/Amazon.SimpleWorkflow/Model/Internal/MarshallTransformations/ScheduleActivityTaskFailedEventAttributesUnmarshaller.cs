@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ScheduleActivityTaskFailedEventAttributes Object
+    /// </summary>  
+    public class ScheduleActivityTaskFailedEventAttributesUnmarshaller : IUnmarshaller<ScheduleActivityTaskFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ScheduleActivityTaskFailedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ScheduleActivityTaskFailedEventAttributesUnmarshaller
-      /// </summary>
-      internal class ScheduleActivityTaskFailedEventAttributesUnmarshaller : IUnmarshaller<ScheduleActivityTaskFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ScheduleActivityTaskFailedEventAttributes, JsonUnmarshallerContext>
-      {
         ScheduleActivityTaskFailedEventAttributes IUnmarshaller<ScheduleActivityTaskFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ScheduleActivityTaskFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ScheduleActivityTaskFailedEventAttributes scheduleActivityTaskFailedEventAttributes = new ScheduleActivityTaskFailedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ScheduleActivityTaskFailedEventAttributes unmarshalledObject = new ScheduleActivityTaskFailedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("activityType", targetDepth))
-              {
-                scheduleActivityTaskFailedEventAttributes.ActivityType = ActivityTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityId", targetDepth))
-              {
-                scheduleActivityTaskFailedEventAttributes.ActivityId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("cause", targetDepth))
-              {
-                scheduleActivityTaskFailedEventAttributes.Cause = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
-              {
-                scheduleActivityTaskFailedEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("activityId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActivityId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityType", targetDepth))
+                {
+                    var unmarshaller = ActivityTypeUnmarshaller.Instance;
+                    unmarshalledObject.ActivityType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return scheduleActivityTaskFailedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static ScheduleActivityTaskFailedEventAttributesUnmarshaller instance;
-        public static ScheduleActivityTaskFailedEventAttributesUnmarshaller GetInstance()
+
+        private static ScheduleActivityTaskFailedEventAttributesUnmarshaller _instance = new ScheduleActivityTaskFailedEventAttributesUnmarshaller();        
+
+        public static ScheduleActivityTaskFailedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ScheduleActivityTaskFailedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

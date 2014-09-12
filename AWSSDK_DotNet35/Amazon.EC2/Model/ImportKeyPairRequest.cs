@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,50 +29,75 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportKeyPair operation.
-    /// <para>Imports the public key from an RSA key pair that you created with a third-party tool. Compare this with CreateKeyPair, in which AWS
-    /// creates the key pair and gives the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create the key pair and give
-    /// AWS just the public key. The private key is never transferred between you and AWS.</para> <para>For more information about key pairs, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i> .</para>
+    /// Imports the public key from an RSA key pair that you created with a third-party tool.
+    /// Compare this with <a>CreateKeyPair</a>, in which AWS creates the key pair and gives
+    /// the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create
+    /// the key pair and give AWS just the public key. The private key is never transferred
+    /// between you and AWS.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ImportKeyPairRequest : AmazonEC2Request
     {
-        private string keyName;
-        private string publicKeyMaterial;
-
+        private string _keyName;
+        private string _publicKeyMaterial;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ImportKeyPairRequest() { }
+
+        /// <summary>
+        /// Instantiates ImportKeyPairRequest with the parameterized properties
+        /// </summary>
+        /// <param name="keyName">A unique name for the key pair.</param>
+        /// <param name="publicKeyMaterial">The public key. You must base64 encode the public key material before sending it to AWS.</param>
+        public ImportKeyPairRequest(string keyName, string publicKeyMaterial)
+        {
+            _keyName = keyName;
+            _publicKeyMaterial = publicKeyMaterial;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
         /// A unique name for the key pair.
-        ///  
+        /// </para>
         /// </summary>
         public string KeyName
         {
-            get { return this.keyName; }
-            set { this.keyName = value; }
+            get { return this._keyName; }
+            set { this._keyName = value; }
         }
 
         // Check to see if KeyName property is set
         internal bool IsSetKeyName()
         {
-            return this.keyName != null;
+            return this._keyName != null;
         }
 
         /// <summary>
-        /// The public key. You must base64 encode the public key material before sending it to AWS.
-        ///  
+        /// Gets and sets the property PublicKeyMaterial. 
+        /// <para>
+        /// The public key. You must base64 encode the public key material before sending it to
+        /// AWS.
+        /// </para>
         /// </summary>
         public string PublicKeyMaterial
         {
-            get { return this.publicKeyMaterial; }
-            set { this.publicKeyMaterial = value; }
+            get { return this._publicKeyMaterial; }
+            set { this._publicKeyMaterial = value; }
         }
 
         // Check to see if PublicKeyMaterial property is set
         internal bool IsSetPublicKeyMaterial()
         {
-            return this.publicKeyMaterial != null;
+            return this._publicKeyMaterial != null;
         }
 
     }
 }
-    

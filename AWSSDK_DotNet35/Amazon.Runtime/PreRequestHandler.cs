@@ -49,5 +49,5 @@ namespace Amazon.Runtime
         #endregion
     }
 
-    public delegate void PreRequestEventHandler(object sender, PreRequestEventArgs args);
+    public delegate void PreRequestEventHandler(object sender, PreRequestEventArgs e);
 }

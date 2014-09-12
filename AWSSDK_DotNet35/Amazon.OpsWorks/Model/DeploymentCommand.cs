@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -30,7 +34,6 @@ namespace Amazon.OpsWorks.Model
     {
         private Dictionary<string, List<string>> _args = new Dictionary<string, List<string>>();
         private DeploymentCommandName _name;
-
 
         /// <summary>
         /// Gets and sets the property Args. 
@@ -54,7 +57,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._args != null && this._args.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 

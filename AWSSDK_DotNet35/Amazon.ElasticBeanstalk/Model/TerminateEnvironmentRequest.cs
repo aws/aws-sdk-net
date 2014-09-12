@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,17 +37,21 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private bool? _terminateResources;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public TerminateEnvironmentRequest() { }
 
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of the environment to terminate.
         /// </para>
-        ///        
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentName, or both. If
-        /// you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -58,17 +66,16 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// The name of the environment to terminate.
         /// </para>
-        ///        
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentId, or both.   
-        ///        If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -83,43 +90,38 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TerminateResources. 
         /// <para>
-        ///          Indicates whether the associated AWS resources should shut down         when
-        /// the environment is terminated:        
+        ///  Indicates whether the associated AWS resources should shut down when the environment
+        /// is terminated: 
         /// </para>
-        ///       <enumValues>         <value name="true">            
+        ///  <enumValues> <value name="true"> 
         /// <para>
-        ///                <code>true</code>: (default) The user AWS resources               (for
-        /// example, the Auto Scaling group, LoadBalancer, etc.) are terminated              
-        /// along with the environment.            
+        ///  <code>true</code>: (default) The user AWS resources (for example, the Auto Scaling
+        /// group, LoadBalancer, etc.) are terminated along with the environment. 
         /// </para>
-        ///          </value>         <value name="false">            
+        ///  </value> <value name="false"> 
         /// <para>
-        ///                <code>false</code>:               The environment is removed from the                    AWS
-        /// Elastic Beanstalk               but the AWS resources continue to operate.       
-        ///     
+        ///  <code>false</code>: The environment is removed from the AWS Elastic Beanstalk but
+        /// the AWS resources continue to operate. 
         /// </para>
-        ///          </value>      </enumValues>      <ul>         <li>            <code>true</code>:
-        /// The specified environment as well as the associated            AWS resources, such
-        /// as Auto Scaling group and LoadBalancer, are terminated.         </li>         <li>
-        ///            <code>false</code>: AWS Elastic Beanstalk            resource management
-        /// is removed from the            environment, but the AWS resources continue to operate.
-        ///         </li>      </ul>      
+        ///  </value> </enumValues> <ul> <li> <code>true</code>: The specified environment as
+        /// well as the associated AWS resources, such as Auto Scaling group and LoadBalancer,
+        /// are terminated. </li> <li> <code>false</code>: AWS Elastic Beanstalk resource management
+        /// is removed from the environment, but the AWS resources continue to operate. </li>
+        /// </ul> 
         /// <para>
-        ///          For more information, see the         <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
-        ///      AWS Elastic Beanstalk            User Guide.         </a>      
+        ///  For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
+        /// AWS Elastic Beanstalk User Guide. </a> 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Default:         <code>true</code>      
+        ///  Default: <code>true</code> 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Valid Values:         <code>true</code>         |         <code>false</code>
-        ///      
+        ///  Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool TerminateResources

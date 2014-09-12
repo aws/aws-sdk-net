@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -61,6 +65,25 @@ namespace Amazon.SQS.Model
         private string _label;
         private string _queueUrl;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AddPermissionRequest() { }
+
+        /// <summary>
+        /// Instantiates AddPermissionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="label">The unique identification of the permission you're setting (e.g.,   <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;   alphanumeric characters, hyphens (-), and underscores (_) are allowed.</param>
+        /// <param name="awsAccountIds">The AWS account number of the <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>   who will be given permission. The principal must have an AWS account, but does   not need to be signed up for Amazon SQS. For information about locating the AWS   account identification, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your  AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="actions">The action the client wants to allow for the specified principal.    The following are valid values: <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>.    For more information about these actions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding   Permissions</a> in the <i>Amazon SQS Developer Guide</i>. Specifying <code>SendMessage</code>,   <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the    <code>ActionName.n</code> also grants   permissions for the corresponding batch versions of those actions:   <code>SendMessageBatch</code>,   <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
+        public AddPermissionRequest(string queueUrl, string label, List<string> awsAccountIds, List<string> actions)
+        {
+            _queueUrl = queueUrl;
+            _label = label;
+            _aWSAccountIds = awsAccountIds;
+            _actions = actions;
+        }
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -91,7 +114,6 @@ namespace Amazon.SQS.Model
             return this._actions != null && this._actions.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AWSAccountIds. 
         /// <para>
@@ -114,7 +136,6 @@ namespace Amazon.SQS.Model
             return this._aWSAccountIds != null && this._aWSAccountIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
@@ -134,7 +155,6 @@ namespace Amazon.SQS.Model
         {
             return this._label != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 

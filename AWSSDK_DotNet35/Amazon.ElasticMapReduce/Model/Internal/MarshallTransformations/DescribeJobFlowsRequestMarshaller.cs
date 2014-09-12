@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeJobFlows Request Marshaller
     /// </summary>       
-    public class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> 
+    public class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeJobFlowsRequest)input);
+        }
+
         public IRequest Marshall(DescribeJobFlowsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,38 +56,39 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCreatedAfter())
                 {
-                    writer.WritePropertyName("CreatedAfter");
-                    writer.Write(publicRequest.CreatedAfter);
+                    context.Writer.WritePropertyName("CreatedAfter");
+                    context.Writer.Write(publicRequest.CreatedAfter);
                 }
 
                 if(publicRequest.IsSetCreatedBefore())
                 {
-                    writer.WritePropertyName("CreatedBefore");
-                    writer.Write(publicRequest.CreatedBefore);
+                    context.Writer.WritePropertyName("CreatedBefore");
+                    context.Writer.Write(publicRequest.CreatedBefore);
                 }
 
                 if(publicRequest.IsSetJobFlowIds())
                 {
-                    writer.WritePropertyName("JobFlowIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("JobFlowIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
                     {
-                        writer.Write(publicRequestJobFlowIdsListValue);
+                            context.Writer.Write(publicRequestJobFlowIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetJobFlowStates())
                 {
-                    writer.WritePropertyName("JobFlowStates");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("JobFlowStates");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestJobFlowStatesListValue in publicRequest.JobFlowStates)
                     {
-                        writer.Write(publicRequestJobFlowStatesListValue);
+                            context.Writer.Write(publicRequestJobFlowStatesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

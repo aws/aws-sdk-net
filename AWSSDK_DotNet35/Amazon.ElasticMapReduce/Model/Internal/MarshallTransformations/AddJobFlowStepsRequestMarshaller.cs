@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// AddJobFlowSteps Request Marshaller
     /// </summary>       
-    public class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest> 
+    public class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AddJobFlowStepsRequest)input);
+        }
+
         public IRequest Marshall(AddJobFlowStepsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,88 +56,27 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetJobFlowId())
                 {
-                    writer.WritePropertyName("JobFlowId");
-                    writer.Write(publicRequest.JobFlowId);
+                    context.Writer.WritePropertyName("JobFlowId");
+                    context.Writer.Write(publicRequest.JobFlowId);
                 }
 
                 if(publicRequest.IsSetSteps())
                 {
-                    writer.WritePropertyName("Steps");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Steps");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestStepsListValue in publicRequest.Steps)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestStepsListValue.IsSetActionOnFailure())
-                        {
-                            writer.WritePropertyName("ActionOnFailure");
-                            writer.Write(publicRequestStepsListValue.ActionOnFailure);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestStepsListValue.IsSetHadoopJarStep())
-                        {
-                            writer.WritePropertyName("HadoopJarStep");
-                            writer.WriteObjectStart();
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetArgs())
-                            {
-                                writer.WritePropertyName("Args");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestStepsListValueHadoopJarStepArgsListValue in publicRequestStepsListValue.HadoopJarStep.Args)
-                                {
-                                    writer.Write(publicRequestStepsListValueHadoopJarStepArgsListValue);
-                                }
-                                writer.WriteArrayEnd();
-                            }
+                        var marshaller = StepConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStepsListValue, context);
 
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetJar())
-                            {
-                                writer.WritePropertyName("Jar");
-                                writer.Write(publicRequestStepsListValue.HadoopJarStep.Jar);
-                            }
-
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetMainClass())
-                            {
-                                writer.WritePropertyName("MainClass");
-                                writer.Write(publicRequestStepsListValue.HadoopJarStep.MainClass);
-                            }
-
-                            if(publicRequestStepsListValue.HadoopJarStep.IsSetProperties())
-                            {
-                                writer.WritePropertyName("Properties");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestStepsListValueHadoopJarStepPropertiesListValue in publicRequestStepsListValue.HadoopJarStep.Properties)
-                                {
-                                    writer.WriteObjectStart();
-                                    if(publicRequestStepsListValueHadoopJarStepPropertiesListValue.IsSetKey())
-                                    {
-                                        writer.WritePropertyName("Key");
-                                        writer.Write(publicRequestStepsListValueHadoopJarStepPropertiesListValue.Key);
-                                    }
-
-                                    if(publicRequestStepsListValueHadoopJarStepPropertiesListValue.IsSetValue())
-                                    {
-                                        writer.WritePropertyName("Value");
-                                        writer.Write(publicRequestStepsListValueHadoopJarStepPropertiesListValue.Value);
-                                    }
-
-                                    writer.WriteObjectEnd();
-                                }
-                                writer.WriteArrayEnd();
-                            }
-
-                            writer.WriteObjectEnd();
-                        }
-
-                        if(publicRequestStepsListValue.IsSetName())
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(publicRequestStepsListValue.Name);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

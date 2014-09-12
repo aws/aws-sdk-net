@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,23 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _protocol;
         private string _sSLCertificateId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Listener() { }
+
+        /// <summary>
+        /// Instantiates Listener with the parameterized properties
+        /// </summary>
+        /// <param name="protocol"> Specifies the load balancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life of the load balancer. </param>
+        /// <param name="loadBalancerPort"> Specifies the external load balancer port number. This property cannot be modified for the life of the load balancer. </param>
+        /// <param name="instancePort"> Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life of the load balancer. </param>
+        public Listener(string protocol, int loadBalancerPort, int instancePort)
+        {
+            _protocol = protocol;
+            _loadBalancerPort = loadBalancerPort;
+            _instancePort = instancePort;
+        }
 
         /// <summary>
         /// Gets and sets the property InstancePort. 
@@ -54,7 +75,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._instancePort.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceProtocol. 
         /// <para>
@@ -73,7 +93,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._instanceProtocol != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadBalancerPort. 
@@ -94,7 +113,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._loadBalancerPort.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
@@ -113,7 +131,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._protocol != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SSLCertificateId. 

@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Cors Request Marshaller
     /// </summary>       
-    public class GetCORSConfigurationRequestMarshaller : IMarshaller<IRequest, GetCORSConfigurationRequest>
-    {
+    public class GetCORSConfigurationRequestMarshaller : IMarshaller<IRequest, GetCORSConfigurationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetCORSConfigurationRequest)input);
+		}
+
         public IRequest Marshall(GetCORSConfigurationRequest getCORSConfigurationRequest)
         {
             IRequest request = new DefaultRequest(getCORSConfigurationRequest, "AmazonS3");

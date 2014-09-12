@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.CognitoSync.Model
         private long? _syncCount;
         private string _value;
 
-
         /// <summary>
         /// Gets and sets the property DeviceLastModifiedDate. The last modified date of the client
         /// device.
@@ -51,7 +54,6 @@ namespace Amazon.CognitoSync.Model
             return this._deviceLastModifiedDate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Key. The key associated with the record patch.
         /// </summary>
@@ -66,7 +68,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._key != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Op. An operation, either replace or remove.
@@ -83,7 +84,6 @@ namespace Amazon.CognitoSync.Model
             return this._op != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SyncCount. Last known server sync count for this record.
         /// Set to 0 if unknown.
@@ -99,7 +99,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._syncCount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Value. The value associated with the record patch.

@@ -12,175 +12,182 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeJob operation
+    /// </summary>  
+    public class DescribeJobResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for DescribeJob operation
-      /// </summary>
-      internal class DescribeJobResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeJobResponse response = new DescribeJobResponse();       
-          
+            DescribeJobResponse response = new DescribeJobResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("JobId", targetDepth))
-              {
-                response.JobId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("JobDescription", targetDepth))
-              {
-                response.JobDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Action", targetDepth))
-              {
-                response.Action = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveId", targetDepth))
-              {
-                response.ArchiveId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VaultARN", targetDepth))
-              {
-                response.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreationDate", targetDepth))
-              {
-                response.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Completed", targetDepth))
-              {
-                response.Completed = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StatusCode", targetDepth))
-              {
-                response.StatusCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StatusMessage", targetDepth))
-              {
-                response.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveSizeInBytes", targetDepth))
-              {
-                response.ArchiveSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InventorySizeInBytes", targetDepth))
-              {
-                response.InventorySizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SNSTopic", targetDepth))
-              {
-                response.SNSTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CompletionDate", targetDepth))
-              {
-                response.CompletionDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SHA256TreeHash", targetDepth))
-              {
-                response.SHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveSHA256TreeHash", targetDepth))
-              {
-                response.ArchiveSHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RetrievalByteRange", targetDepth))
-              {
-                response.RetrievalByteRange = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InventoryRetrievalParameters", targetDepth))
-              {
-                response.InventoryRetrievalParameters = InventoryRetrievalJobDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Action", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Action = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchiveId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ArchiveId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchiveSHA256TreeHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ArchiveSHA256TreeHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchiveSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ArchiveSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Completed", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.Completed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompletionDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    response.CompletionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    response.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InventoryRetrievalParameters", targetDepth))
+                {
+                    var unmarshaller = InventoryRetrievalJobDescriptionUnmarshaller.Instance;
+                    response.InventoryRetrievalParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InventorySizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.InventorySizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetrievalByteRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RetrievalByteRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SHA256TreeHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SHA256TreeHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SNSTopic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SNSTopic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
-          {
-            return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
-          {
-            return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
-          {
-            return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeJobResponseUnmarshaller instance;
-        public static DescribeJobResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new DescribeJobResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
+            {
+                return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+            {
+                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static DescribeJobResponseUnmarshaller _instance = new DescribeJobResponseUnmarshaller();        
+
+        internal static DescribeJobResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static DescribeJobResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

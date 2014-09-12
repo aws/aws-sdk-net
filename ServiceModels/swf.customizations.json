@@ -1,0 +1,101 @@
+{
+	"shapeModifiers": {
+		"DomainInfos": {
+            "modify": [
+                { "domainInfos": { "emitPropertyName": "Infos" } }
+            ]
+        }
+	},
+	"operationModifiers": {
+		"CountClosedWorkflowExecutions":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowExecutionCount",
+            "wrappedResultMember": "WorkflowExecutionCount"
+		},
+		"CountOpenWorkflowExecutions":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowExecutionCount",
+            "wrappedResultMember": "WorkflowExecutionCount"
+		},		
+		"CountPendingActivityTasks":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "PendingTaskCount",
+            "wrappedResultMember": "PendingTaskCount"
+		},
+		"CountPendingDecisionTasks":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "PendingTaskCount",
+            "wrappedResultMember": "PendingTaskCount"
+		},
+		"DescribeActivityType":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "ActivityTypeDetail",
+            "wrappedResultMember": "ActivityTypeDetail"
+		},
+		"DescribeDomain":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "DomainDetail",
+            "wrappedResultMember": "DomainDetail"
+		},
+		"DescribeWorkflowExecution":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowExecutionDetail",
+            "wrappedResultMember": "WorkflowExecutionDetail"
+		},
+		"DescribeWorkflowType":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowTypeDetail",
+            "wrappedResultMember": "WorkflowTypeDetail"
+		},
+		"GetWorkflowExecutionHistory":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "History",
+            "wrappedResultMember": "History"
+		},
+		"ListActivityTypes":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "ActivityTypeInfos",
+            "wrappedResultMember": "ActivityTypeInfos"
+		},
+		"ListClosedWorkflowExecutions":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowExecutionInfos",
+            "wrappedResultMember": "WorkflowExecutionInfos"
+		},
+		"ListDomains":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "DomainInfos",
+            "wrappedResultMember": "DomainInfos"
+		},
+		"ListOpenWorkflowExecutions":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowExecutionInfos",
+            "wrappedResultMember": "WorkflowExecutionInfos"
+		},
+		"ListWorkflowTypes":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "WorkflowTypeInfos",
+            "wrappedResultMember": "WorkflowTypeInfos"
+		},
+		"PollForActivityTask":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "ActivityTask",
+            "wrappedResultMember": "ActivityTask"
+		},
+		"PollForDecisionTask":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "DecisionTask",
+            "wrappedResultMember": "DecisionTask"
+		},
+		"RecordActivityTaskHeartbeat":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "ActivityTaskStatus",
+            "wrappedResultMember": "ActivityTaskStatus"
+		},
+		"StartWorkflowExecution":{
+			"useWrappingResult": true,
+            "wrappedResultShape": "Run",
+            "wrappedResultMember": "Run"
+		},
+	}
+}

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -60,6 +64,19 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _jobFlowIds = new List<string>();
         private List<string> _jobFlowStates = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeJobFlowsRequest() { }
+
+        /// <summary>
+        /// Instantiates DescribeJobFlowsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="jobFlowIds">Return only job flows whose job flow ID is contained in this list. </param>
+        public DescribeJobFlowsRequest(List<string> jobFlowIds)
+        {
+            _jobFlowIds = jobFlowIds;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -79,7 +96,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._createdAfter.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
@@ -98,7 +114,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._createdBefore.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property JobFlowIds. 
         /// <para>
@@ -116,7 +131,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._jobFlowIds != null && this._jobFlowIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property JobFlowStates. 

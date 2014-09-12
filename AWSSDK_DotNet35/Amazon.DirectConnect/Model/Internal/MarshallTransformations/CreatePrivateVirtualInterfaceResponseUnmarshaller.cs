@@ -12,157 +12,162 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DirectConnect.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DirectConnect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CreatePrivateVirtualInterface operation
+    /// </summary>  
+    public class CreatePrivateVirtualInterfaceResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for CreatePrivateVirtualInterface operation
-      /// </summary>
-      internal class CreatePrivateVirtualInterfaceResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePrivateVirtualInterfaceResponse response = new CreatePrivateVirtualInterfaceResponse();       
-          
+            CreatePrivateVirtualInterfaceResponse response = new CreatePrivateVirtualInterfaceResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("ownerAccount", targetDepth))
-              {
-                response.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("virtualInterfaceId", targetDepth))
-              {
-                response.VirtualInterfaceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("location", targetDepth))
-              {
-                response.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("connectionId", targetDepth))
-              {
-                response.ConnectionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("virtualInterfaceType", targetDepth))
-              {
-                response.VirtualInterfaceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("virtualInterfaceName", targetDepth))
-              {
-                response.VirtualInterfaceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("vlan", targetDepth))
-              {
-                response.Vlan = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("asn", targetDepth))
-              {
-                response.Asn = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("authKey", targetDepth))
-              {
-                response.AuthKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("amazonAddress", targetDepth))
-              {
-                response.AmazonAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("customerAddress", targetDepth))
-              {
-                response.CustomerAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("virtualInterfaceState", targetDepth))
-              {
-                response.VirtualInterfaceState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("customerRouterConfig", targetDepth))
-              {
-                response.CustomerRouterConfig = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("virtualGatewayId", targetDepth))
-              {
-                response.VirtualGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("routeFilterPrefixes", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<RouteFilterPrefix,RouteFilterPrefixUnmarshaller>(
-                    RouteFilterPrefixUnmarshaller.GetInstance());                  
-                response.RouteFilterPrefixes = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("amazonAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AmazonAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("asn", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.Asn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("authKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customerAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CustomerAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customerRouterConfig", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CustomerRouterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ownerAccount", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OwnerAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("routeFilterPrefixes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    response.RouteFilterPrefixes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualGatewayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualGatewayId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vlan", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.Vlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
-          {
-            return new DirectConnectServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
-          {
-            return new DirectConnectClientException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonDirectConnectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreatePrivateVirtualInterfaceResponseUnmarshaller instance;
-        public static CreatePrivateVirtualInterfaceResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new CreatePrivateVirtualInterfaceResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
+            {
+                return new DirectConnectClientException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
+            {
+                return new DirectConnectServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonDirectConnectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static CreatePrivateVirtualInterfaceResponseUnmarshaller _instance = new CreatePrivateVirtualInterfaceResponseUnmarshaller();        
+
+        internal static CreatePrivateVirtualInterfaceResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static CreatePrivateVirtualInterfaceResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

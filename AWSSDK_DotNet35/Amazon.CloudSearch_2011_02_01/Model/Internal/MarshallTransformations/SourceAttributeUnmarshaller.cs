@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SourceAttribute Unmarshaller
-     /// </summary>
-    internal class SourceAttributeUnmarshaller : IUnmarshaller<SourceAttribute, XmlUnmarshallerContext>, IUnmarshaller<SourceAttribute, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SourceAttribute Object
+    /// </summary>  
+    public class SourceAttributeUnmarshaller : IUnmarshaller<SourceAttribute, XmlUnmarshallerContext>, IUnmarshaller<SourceAttribute, JsonUnmarshallerContext>
     {
-        public SourceAttribute Unmarshall(XmlUnmarshallerContext context) 
+        public SourceAttribute Unmarshall(XmlUnmarshallerContext context)
         {
-            SourceAttribute sourceAttribute = new SourceAttribute();
+            SourceAttribute unmarshalledObject = new SourceAttribute();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SourceDataFunction", targetDepth))
-                    {
-                        sourceAttribute.SourceDataFunction = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("SourceDataCopy", targetDepth))
                     {
-                        sourceAttribute.SourceDataCopy = SourceDataUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = SourceDataUnmarshaller.Instance;
+                        unmarshalledObject.SourceDataCopy = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SourceDataTrimTitle", targetDepth))
+                    if (context.TestExpression("SourceDataFunction", targetDepth))
                     {
-                        sourceAttribute.SourceDataTrimTitle = SourceDataTrimTitleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceDataFunction = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SourceDataMap", targetDepth))
                     {
-                        sourceAttribute.SourceDataMap = SourceDataMapUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = SourceDataMapUnmarshaller.Instance;
+                        unmarshalledObject.SourceDataMap = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceDataTrimTitle", targetDepth))
+                    {
+                        var unmarshaller = SourceDataTrimTitleUnmarshaller.Instance;
+                        unmarshalledObject.SourceDataTrimTitle = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sourceAttribute;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return sourceAttribute;
+            return unmarshalledObject;
         }
 
-        public SourceAttribute Unmarshall(JsonUnmarshallerContext context) 
+        public SourceAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SourceAttributeUnmarshaller instance;
 
-        public static SourceAttributeUnmarshaller GetInstance() 
+        private static SourceAttributeUnmarshaller _instance = new SourceAttributeUnmarshaller();        
+
+        public static SourceAttributeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SourceAttributeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

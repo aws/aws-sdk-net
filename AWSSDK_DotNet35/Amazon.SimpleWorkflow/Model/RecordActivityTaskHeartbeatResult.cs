@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the RecordActivityTaskHeartbeat action.
+    /// Contains the response data from the RecordActivityTaskHeartbeat operation.
     /// </summary>
     public partial class RecordActivityTaskHeartbeatResult : AmazonWebServiceResponse
     {
-        private ActivityTaskStatus activityTaskStatusValue;
+        private ActivityTaskStatus _activityTaskStatus;
 
-        /// <summary>
-        /// Gets and sets the RecordActivityTaskHeartbeatResult property.
-        /// Contains the result of a successful invocation of the RecordActivityTaskHeartbeat
-        /// action.
-        /// </summary>
+        // Gets and sets the ActivityTaskStatus member
         public ActivityTaskStatus ActivityTaskStatus
         {
-            get { return this.activityTaskStatusValue; }
-            set { this.activityTaskStatusValue = value; }
+            get { return this._activityTaskStatus; }
+            set { this._activityTaskStatus = value; }
+        }
+
+        // Check to see if ActivityTaskStatus property is set
+        internal bool IsSetActivityTaskStatus()
+        {
+            return this._activityTaskStatus != null;
         }
     }
 }
-    

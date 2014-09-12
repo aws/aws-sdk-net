@@ -12,107 +12,126 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the S3 bucket for an instance store-backed AMI.</para>
+    /// Describes the S3 bucket for an instance store-backed AMI.
     /// </summary>
     public partial class S3Storage
     {
-        
-        private string bucket;
-        private string prefix;
-        private string aWSAccessKeyId;
-        private string uploadPolicy;
-        private string uploadPolicySignature;
-
+        private string _aWSAccessKeyId;
+        private string _bucket;
+        private string _prefix;
+        private string _uploadPolicy;
+        private string _uploadPolicySignature;
 
         /// <summary>
-        /// The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf.
-        /// If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
-        ///  
-        /// </summary>
-        public string Bucket
-        {
-            get { return this.bucket; }
-            set { this.bucket = value; }
-        }
-
-        // Check to see if Bucket property is set
-        internal bool IsSetBucket()
-        {
-            return this.bucket != null;
-        }
-
-        /// <summary>
-        /// The beginning of the file name of the AMI.
-        ///  
-        /// </summary>
-        public string Prefix
-        {
-            get { return this.prefix; }
-            set { this.prefix = value; }
-        }
-
-        // Check to see if Prefix property is set
-        internal bool IsSetPrefix()
-        {
-            return this.prefix != null;
-        }
-
-        /// <summary>
-        /// The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for Managing AWS Access Keys</a>.
-        ///  
+        /// Gets and sets the property AWSAccessKeyId. 
+        /// <para>
+        /// The access key ID of the owner of the bucket. Before you specify a value for your
+        /// access key ID, review and follow the guidance in <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+        /// Practices for Managing AWS Access Keys</a>.
+        /// </para>
         /// </summary>
         public string AWSAccessKeyId
         {
-            get { return this.aWSAccessKeyId; }
-            set { this.aWSAccessKeyId = value; }
+            get { return this._aWSAccessKeyId; }
+            set { this._aWSAccessKeyId = value; }
         }
 
         // Check to see if AWSAccessKeyId property is set
         internal bool IsSetAWSAccessKeyId()
         {
-            return this.aWSAccessKeyId != null;
+            return this._aWSAccessKeyId != null;
         }
 
         /// <summary>
-        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
-        ///  
+        /// Gets and sets the property Bucket. 
+        /// <para>
+        /// The bucket in which to store the AMI. You can specify a bucket that you already own
+        /// or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that
+        /// belongs to someone else, Amazon EC2 returns an error.
+        /// </para>
+        /// </summary>
+        public string Bucket
+        {
+            get { return this._bucket; }
+            set { this._bucket = value; }
+        }
+
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
+        {
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// The beginning of the file name of the AMI.
+        /// </para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UploadPolicy. 
+        /// <para>
+        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload
+        /// items into Amazon S3 on your behalf.
+        /// </para>
         /// </summary>
         public string UploadPolicy
         {
-            get { return this.uploadPolicy; }
-            set { this.uploadPolicy = value; }
+            get { return this._uploadPolicy; }
+            set { this._uploadPolicy = value; }
         }
 
         // Check to see if UploadPolicy property is set
         internal bool IsSetUploadPolicy()
         {
-            return this.uploadPolicy != null;
+            return this._uploadPolicy != null;
         }
 
         /// <summary>
+        /// Gets and sets the property UploadPolicySignature. 
+        /// <para>
         /// The signature of the Base64 encoded JSON document.
-        ///  
+        /// </para>
         /// </summary>
         public string UploadPolicySignature
         {
-            get { return this.uploadPolicySignature; }
-            set { this.uploadPolicySignature = value; }
+            get { return this._uploadPolicySignature; }
+            set { this._uploadPolicySignature = value; }
         }
 
         // Check to see if UploadPolicySignature property is set
         internal bool IsSetUploadPolicySignature()
         {
-            return this.uploadPolicySignature != null;
+            return this._uploadPolicySignature != null;
         }
+
     }
 }

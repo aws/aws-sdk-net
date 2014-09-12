@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   HealthCheckConfig Unmarshaller
-     /// </summary>
-    internal class HealthCheckConfigUnmarshaller : IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>, IUnmarshaller<HealthCheckConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for HealthCheckConfig Object
+    /// </summary>  
+    public class HealthCheckConfigUnmarshaller : IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>
     {
-        public HealthCheckConfig Unmarshall(XmlUnmarshallerContext context) 
+        public HealthCheckConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            HealthCheckConfig healthCheckConfig = new HealthCheckConfig();
+            HealthCheckConfig unmarshalledObject = new HealthCheckConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,78 +52,69 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("IPAddress", targetDepth))
                     {
-                        healthCheckConfig.IPAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IPAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        healthCheckConfig.Port = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Type", targetDepth))
                     {
-                        healthCheckConfig.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourcePath", targetDepth))
                     {
-                        healthCheckConfig.ResourcePath = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourcePath = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FullyQualifiedDomainName", targetDepth))
                     {
-                        healthCheckConfig.FullyQualifiedDomainName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.FullyQualifiedDomainName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SearchString", targetDepth))
                     {
-                        healthCheckConfig.SearchString = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SearchString = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequestInterval", targetDepth))
                     {
-                        healthCheckConfig.RequestInterval = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.RequestInterval = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FailureThreshold", targetDepth))
                     {
-                        healthCheckConfig.FailureThreshold = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.FailureThreshold = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return healthCheckConfig;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static HealthCheckConfigUnmarshaller _instance = new HealthCheckConfigUnmarshaller();        
+
+        public static HealthCheckConfigUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return healthCheckConfig;
-        }
-
-        public HealthCheckConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static HealthCheckConfigUnmarshaller instance;
-
-        public static HealthCheckConfigUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new HealthCheckConfigUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

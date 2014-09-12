@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   BundleTaskError Unmarshaller
-     /// </summary>
-    internal class BundleTaskErrorUnmarshaller : IUnmarshaller<BundleTaskError, XmlUnmarshallerContext>, IUnmarshaller<BundleTaskError, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for BundleTaskError Object
+    /// </summary>  
+    public class BundleTaskErrorUnmarshaller : IUnmarshaller<BundleTaskError, XmlUnmarshallerContext>, IUnmarshaller<BundleTaskError, JsonUnmarshallerContext>
     {
-        public BundleTaskError Unmarshall(XmlUnmarshallerContext context) 
+        public BundleTaskError Unmarshall(XmlUnmarshallerContext context)
         {
-            BundleTaskError bundleTaskError = new BundleTaskError();
+            BundleTaskError unmarshalledObject = new BundleTaskError();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("code", targetDepth))
                     {
-                        bundleTaskError.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("message", targetDepth))
                     {
-                        bundleTaskError.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return bundleTaskError;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return bundleTaskError;
+            return unmarshalledObject;
         }
 
-        public BundleTaskError Unmarshall(JsonUnmarshallerContext context) 
+        public BundleTaskError Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static BundleTaskErrorUnmarshaller instance;
 
-        public static BundleTaskErrorUnmarshaller GetInstance() 
+        private static BundleTaskErrorUnmarshaller _instance = new BundleTaskErrorUnmarshaller();        
+
+        public static BundleTaskErrorUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new BundleTaskErrorUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,71 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a security group and AWS account ID pair for EC2-Classic.</para>
+    /// Describes a security group and AWS account ID pair for EC2-Classic.
     /// </summary>
     public partial class UserIdGroupPair
     {
-        
-        private string userId;
-        private string groupName;
-        private string groupId;
-
+        private string _groupId;
+        private string _groupName;
+        private string _userId;
 
         /// <summary>
-        /// The ID of an AWS account.
-        ///  
-        /// </summary>
-        public string UserId
-        {
-            get { return this.userId; }
-            set { this.userId = value; }
-        }
-
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
-        {
-            return this.userId != null;
-        }
-
-        /// <summary>
-        /// The ID of the security group owned by the specified AWS account.
-        ///  
-        /// </summary>
-        public string GroupName
-        {
-            get { return this.groupName; }
-            set { this.groupName = value; }
-        }
-
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
-        {
-            return this.groupName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
         /// The name of the security group in the specified AWS account.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupId
         {
-            get { return this.groupId; }
-            set { this.groupId = value; }
+            get { return this._groupId; }
+            set { this._groupId = value; }
         }
 
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this.groupId != null;
+            return this._groupId != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The ID of the security group owned by the specified AWS account.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The ID of an AWS account.
+        /// </para>
+        /// </summary>
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
+        }
+
     }
 }

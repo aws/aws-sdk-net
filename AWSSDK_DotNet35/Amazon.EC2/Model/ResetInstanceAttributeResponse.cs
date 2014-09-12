@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ResetInstanceAttribute response metadata.
-    /// The ResetInstanceAttribute operation has a void result type.
+    /// Configuration for accessing Amazon ResetInstanceAttribute service
     /// </summary>
-    public partial class ResetInstanceAttributeResponse : AmazonWebServiceResponse
+    public partial class ResetInstanceAttributeResponse : ResetInstanceAttributeResult
     {
+        /// <summary>
+        /// Gets and sets the ResetInstanceAttributeResult property.
+        /// Represents the output of a ResetInstanceAttribute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ResetInstanceAttributeResult class are now available on the ResetInstanceAttributeResponse class. You should use the properties on ResetInstanceAttributeResponse instead of accessing them through ResetInstanceAttributeResult.")]
+        public ResetInstanceAttributeResult ResetInstanceAttributeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

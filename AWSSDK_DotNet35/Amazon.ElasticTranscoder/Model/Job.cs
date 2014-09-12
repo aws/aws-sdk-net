@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -39,7 +43,6 @@ namespace Amazon.ElasticTranscoder.Model
         private List<Playlist> _playlists = new List<Playlist>();
         private string _status;
 
-
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._arn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -78,7 +80,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
@@ -97,7 +98,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._input != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Output. 
@@ -125,7 +125,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._output != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OutputKeyPrefix. 
         /// <para>
@@ -146,7 +145,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._outputKeyPrefix != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Outputs. 
@@ -175,7 +173,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._outputs != null && this._outputs.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
@@ -196,7 +193,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._pipelineId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Playlists. 
@@ -223,7 +219,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._playlists != null && this._playlists.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations;
@@ -29,49 +33,37 @@ namespace Amazon.ElasticBeanstalk
     /// <summary>
     /// Implementation for accessing ElasticBeanstalk
     ///
-    /// AWS Elastic Beanstalk      
+    /// AWS Elastic Beanstalk 
     /// <para>
-    ///          This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
-    /// information          about AWS Elastic Beanstalk actions, data types, parameters,
-    /// and errors.      
+    ///  This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information
+    /// about AWS Elastic Beanstalk actions, data types, parameters, and errors. 
     /// </para>
-    ///       
+    ///  
     /// <para>
-    /// AWS Elastic Beanstalk         is a tool that makes it easy for you to create,    
-    ///     deploy, and manage scalable, fault-tolerant applications running on         Amazon
-    /// Web Services cloud resources.      
+    /// AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and
+    /// manage scalable, fault-tolerant applications running on Amazon Web Services cloud
+    /// resources. 
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///          For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
-    /// Elastic Beanstalk</a> details page.           The location of the latest AWS Elastic
-    /// Beanstalk WSDL is          <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
-    ///      
+    ///  For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
+    /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
+    /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// 
     /// </para>
-    ///        
+    ///  
     /// <para>
     /// <b>Endpoints</b>
     /// </para>
-    ///        
+    ///  
     /// <para>
     /// For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to
     /// <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
     /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
     /// </para>
     /// </summary>
-    public partial class AmazonElasticBeanstalkClient : AmazonWebServiceClient, IAmazonElasticBeanstalk
+    public partial class AmazonElasticBeanstalkClient : AmazonServiceClient, IAmazonElasticBeanstalk
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -90,7 +82,7 @@ namespace Amazon.ElasticBeanstalk
         ///
         /// </summary>
         public AmazonElasticBeanstalkClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's
@@ -109,7 +101,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticBeanstalkClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's
@@ -128,7 +120,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="config">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(AmazonElasticBeanstalkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with AWS Credentials
@@ -156,7 +148,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(AWSCredentials credentials, AmazonElasticBeanstalkConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -189,7 +181,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticBeanstalkConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -225,15 +217,33 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticBeanstalkConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CheckDNSAvailability
-
 
         /// <summary>
         /// Checks if the specified CNAME is available.
@@ -243,8 +253,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the CheckDNSAvailability service method, as returned by ElasticBeanstalk.</returns>
         public CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request)
         {
-            IAsyncResult asyncResult = invokeCheckDNSAvailability(request, null, null, true);
-            return EndCheckDNSAvailability(asyncResult);
+            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
+            var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CheckDNSAvailabilityRequest,CheckDNSAvailabilityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -261,10 +273,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginCheckDNSAvailability(CheckDNSAvailabilityRequest request, AsyncCallback callback, object state)
         {
-            return invokeCheckDNSAvailability(request, callback, state, false);
+            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
+            var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CheckDNSAvailabilityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CheckDNSAvailability operation.
@@ -276,29 +290,20 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  CheckDNSAvailabilityResult from ElasticBeanstalk.</returns>
         public  CheckDNSAvailabilityResponse EndCheckDNSAvailability(IAsyncResult asyncResult)
         {
-            return endOperation< CheckDNSAvailabilityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCheckDNSAvailability(CheckDNSAvailabilityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
-            var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CheckDNSAvailabilityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateApplication
 
-
         /// <summary>
-        /// Creates an application that has one configuration         template named
-        ///         <code>default</code>         and no application versions.      
+        /// Creates an application that has one configuration template named <code>default</code>
+        /// and no application versions. 
         /// 
-        ///       The         &lt;code&gt;default&lt;/code&gt;         configuration template
-        /// is for a 32-bit version of the         Amazon Linux         operating system running
-        /// the Tomcat 6 application container.
+        ///  <?oxy_delete author="brussard" timestamp="20131024T142047-0700" content="&lt;note&gt;
+        /// The &lt;code&gt;default&lt;/code&gt; configuration template is for a 32-bit version
+        /// of the Amazon Linux operating system running the Tomcat 6 application container. &lt;/note&gt;">
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -309,8 +314,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateApplication(request, null, null, true);
-            return EndCreateApplication(asyncResult);
+            var marshaller = new CreateApplicationRequestMarshaller();
+            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -327,10 +334,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateApplication(request, callback, state, false);
+            var marshaller = new CreateApplicationRequestMarshaller();
+            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateApplicationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApplication operation.
@@ -342,29 +351,15 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  CreateApplicationResult from ElasticBeanstalk.</returns>
         public  CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
         {
-            return endOperation< CreateApplicationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateApplicationRequestMarshaller();
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateApplicationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateApplicationVersion
 
-
         /// <summary>
-        /// Creates an application version for the specified         application.
-        /// 
-        ///       <note>Once you create an application version with a specified Amazon S3    
-        ///     bucket         and key location, you cannot change that Amazon S3 location. If
-        /// you change the         Amazon S3 location,         you receive an exception when you
-        /// attempt to launch an environment from the         application version. </note>
+        /// Creates an application version for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
         /// 
@@ -386,8 +381,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateApplicationVersion(request, null, null, true);
-            return EndCreateApplicationVersion(asyncResult);
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationVersionRequest,CreateApplicationVersionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -404,10 +401,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginCreateApplicationVersion(CreateApplicationVersionRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateApplicationVersion(request, callback, state, false);
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateApplicationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApplicationVersion operation.
@@ -419,34 +418,24 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  CreateApplicationVersionResult from ElasticBeanstalk.</returns>
         public  CreateApplicationVersionResponse EndCreateApplicationVersion(IAsyncResult asyncResult)
         {
-            return endOperation< CreateApplicationVersionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateApplicationVersion(CreateApplicationVersionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateApplicationVersionRequestMarshaller();
-            var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateApplicationVersionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateConfigurationTemplate
 
-
         /// <summary>
-        /// Creates a configuration template. Templates are associated with a         specific
-        /// application         and are used to deploy different versions of the         application
-        /// with         the same configuration settings.
+        /// Creates a configuration template. Templates are associated with a specific application
+        /// and are used to deploy different versions of the application with the same configuration
+        /// settings.
         /// 
-        ///       
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
-        ///         <li>            <a>DescribeConfigurationSettings</a>         </li>       
-        ///  <li>            <a>ListAvailableSolutionStacks</a>         </li>      </ul>
+        ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a>
+        /// </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate service method.</param>
         /// 
@@ -461,8 +450,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateConfigurationTemplate(request, null, null, true);
-            return EndCreateConfigurationTemplate(asyncResult);
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConfigurationTemplateRequest,CreateConfigurationTemplateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -479,10 +470,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginCreateConfigurationTemplate(CreateConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateConfigurationTemplate(request, callback, state, false);
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateConfigurationTemplateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateConfigurationTemplate operation.
@@ -494,25 +487,15 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  CreateConfigurationTemplateResult from ElasticBeanstalk.</returns>
         public  CreateConfigurationTemplateResponse EndCreateConfigurationTemplate(IAsyncResult asyncResult)
         {
-            return endOperation< CreateConfigurationTemplateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateConfigurationTemplate(CreateConfigurationTemplateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
-            var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateConfigurationTemplateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateEnvironment
 
-
         /// <summary>
-        /// Launches an environment for the specified application using         the specified
-        /// configuration.
+        /// Launches an environment for the specified application using the specified configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -526,8 +509,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateEnvironment(request, null, null, true);
-            return EndCreateEnvironment(asyncResult);
+            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEnvironmentRequest,CreateEnvironmentResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -544,10 +529,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateEnvironment(request, callback, state, false);
+            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateEnvironmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateEnvironment operation.
@@ -559,15 +546,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  CreateEnvironmentResult from ElasticBeanstalk.</returns>
         public  CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult)
         {
-            return endOperation< CreateEnvironmentResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateEnvironmentRequestMarshaller();
-            var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateEnvironmentResponse>(asyncResult);
         }
 
         #endregion
@@ -575,11 +554,11 @@ namespace Amazon.ElasticBeanstalk
         #region  CreateStorageLocation
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.        
+        /// Creates the Amazon S3 storage location for the account. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          This location is used to store user log files.        
+        ///  This location is used to store user log files. 
         /// </para>
         /// </summary>
         /// 
@@ -601,11 +580,11 @@ namespace Amazon.ElasticBeanstalk
         }
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.        
+        /// Creates the Amazon S3 storage location for the account. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          This location is used to store user log files.        
+        ///  This location is used to store user log files. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
@@ -624,8 +603,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateStorageLocation(request, null, null, true);
-            return EndCreateStorageLocation(asyncResult);
+            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStorageLocationRequest,CreateStorageLocationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -642,10 +623,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginCreateStorageLocation(CreateStorageLocationRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateStorageLocation(request, callback, state, false);
+            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateStorageLocationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateStorageLocation operation.
@@ -657,29 +640,16 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  CreateStorageLocationResult from ElasticBeanstalk.</returns>
         public  CreateStorageLocationResponse EndCreateStorageLocation(IAsyncResult asyncResult)
         {
-            return endOperation< CreateStorageLocationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateStorageLocation(CreateStorageLocationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateStorageLocationRequestMarshaller();
-            var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateStorageLocationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteApplication
 
-
         /// <summary>
-        /// Deletes the specified application along with all         associated versions
-        /// and         configurations. The application versions will not be deleted from your
-        /// Amazon S3 bucket.      
-        /// 
-        ///       <note>You cannot delete an application that has a running environment.     
-        /// </note>
+        /// Deletes the specified application along with all associated versions and configurations.
+        /// The application versions will not be deleted from your Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -690,8 +660,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteApplication(request, null, null, true);
-            return EndDeleteApplication(asyncResult);
+            var marshaller = new DeleteApplicationRequestMarshaller();
+            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -708,10 +680,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteApplication(request, callback, state, false);
+            var marshaller = new DeleteApplicationRequestMarshaller();
+            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteApplicationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApplication operation.
@@ -723,28 +697,15 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DeleteApplicationResult from ElasticBeanstalk.</returns>
         public  DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteApplicationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteApplicationRequestMarshaller();
-            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteApplicationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteApplicationVersion
 
-
         /// <summary>
-        /// Deletes the specified version from the specified         application.   
-        ///   
-        /// 
-        ///       <note>You cannot delete an application version that is associated with a   
-        ///      running environment.</note>
+        /// Deletes the specified version from the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method.</param>
         /// 
@@ -766,8 +727,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteApplicationVersion(request, null, null, true);
-            return EndDeleteApplicationVersion(asyncResult);
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationVersionRequest,DeleteApplicationVersionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -784,10 +747,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDeleteApplicationVersion(DeleteApplicationVersionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteApplicationVersion(request, callback, state, false);
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteApplicationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApplicationVersion operation.
@@ -799,28 +764,15 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DeleteApplicationVersionResult from ElasticBeanstalk.</returns>
         public  DeleteApplicationVersionResponse EndDeleteApplicationVersion(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteApplicationVersionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteApplicationVersion(DeleteApplicationVersionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteApplicationVersionRequestMarshaller();
-            var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteApplicationVersionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteConfigurationTemplate
 
-
         /// <summary>
         /// Deletes the specified configuration template.
-        /// 
-        ///       <note>When you launch an environment using a configuration template, the   
-        ///      environment         gets a copy of the template. You can delete or modify the
-        /// environment's copy of         the template without         affecting the running environment.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service method.</param>
         /// 
@@ -831,8 +783,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteConfigurationTemplate(request, null, null, true);
-            return EndDeleteConfigurationTemplate(asyncResult);
+            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
+            var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationTemplateRequest,DeleteConfigurationTemplateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -849,10 +803,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteConfigurationTemplate(request, callback, state, false);
+            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
+            var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteConfigurationTemplateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteConfigurationTemplate operation.
@@ -864,33 +820,24 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DeleteConfigurationTemplateResult from ElasticBeanstalk.</returns>
         public  DeleteConfigurationTemplateResponse EndDeleteConfigurationTemplate(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteConfigurationTemplateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
-            var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteConfigurationTemplateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteEnvironmentConfiguration
 
-
         /// <summary>
-        /// Deletes the draft configuration associated with the running environment.        
+        /// Deletes the draft configuration associated with the running environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          Updating a running environment with any configuration changes creates a 
-        ///        draft configuration set. You can get the draft configuration using        
-        /// <a>DescribeConfigurationSettings</a> while the update is in progress          or if
-        /// the update fails. The <code>DeploymentStatus</code> for the draft          configuration
-        /// indicates whether the deployment is in process or has failed.         The draft configuration
-        /// remains in existence until it is deleted with this action.      
+        ///  Updating a running environment with any configuration changes creates a draft configuration
+        /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
+        /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
+        /// for the draft configuration indicates whether the deployment is in process or has
+        /// failed. The draft configuration remains in existence until it is deleted with this
+        /// action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
@@ -898,8 +845,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DeleteEnvironmentConfiguration service method, as returned by ElasticBeanstalk.</returns>
         public DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteEnvironmentConfiguration(request, null, null, true);
-            return EndDeleteEnvironmentConfiguration(asyncResult);
+            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
+            var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEnvironmentConfigurationRequest,DeleteEnvironmentConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -916,10 +865,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteEnvironmentConfiguration(request, callback, state, false);
+            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
+            var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteEnvironmentConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteEnvironmentConfiguration operation.
@@ -931,15 +882,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DeleteEnvironmentConfigurationResult from ElasticBeanstalk.</returns>
         public  DeleteEnvironmentConfigurationResponse EndDeleteEnvironmentConfiguration(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteEnvironmentConfigurationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
-            var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteEnvironmentConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -964,8 +907,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
         public DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeApplications(request, null, null, true);
-            return EndDescribeApplications(asyncResult);
+            var marshaller = new DescribeApplicationsRequestMarshaller();
+            var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationsRequest,DescribeApplicationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -982,10 +927,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeApplications(request, callback, state, false);
+            var marshaller = new DescribeApplicationsRequestMarshaller();
+            var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeApplicationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeApplications operation.
@@ -997,15 +944,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeApplicationsResult from ElasticBeanstalk.</returns>
         public  DescribeApplicationsResponse EndDescribeApplications(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeApplicationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeApplicationsRequestMarshaller();
-            var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeApplicationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1030,8 +969,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
         public DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeApplicationVersions(request, null, null, true);
-            return EndDescribeApplicationVersions(asyncResult);
+            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
+            var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationVersionsRequest,DescribeApplicationVersionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1048,10 +989,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeApplicationVersions(DescribeApplicationVersionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeApplicationVersions(request, callback, state, false);
+            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
+            var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeApplicationVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeApplicationVersions operation.
@@ -1063,15 +1006,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeApplicationVersionsResult from ElasticBeanstalk.</returns>
         public  DescribeApplicationVersionsResponse EndDescribeApplicationVersions(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeApplicationVersionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeApplicationVersions(DescribeApplicationVersionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
-            var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeApplicationVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1079,11 +1014,10 @@ namespace Amazon.ElasticBeanstalk
         #region  DescribeConfigurationOptions
 
         /// <summary>
-        /// Describes the configuration options that are used in a         particular
-        /// configuration template or environment, or that          a specified solution stack
-        /// defines. The description includes the values the         options, their default values,
-        /// and an indication of         the required action on a running environment if an option
-        /// value is changed.
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
@@ -1093,19 +1027,20 @@ namespace Amazon.ElasticBeanstalk
         }
 
         /// <summary>
-        /// Describes the configuration options that are used in a         particular
-        /// configuration template or environment, or that          a specified solution stack
-        /// defines. The description includes the values the         options, their default values,
-        /// and an indication of         the required action on a running environment if an option
-        /// value is changed.
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
         public DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeConfigurationOptions(request, null, null, true);
-            return EndDescribeConfigurationOptions(asyncResult);
+            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationOptionsRequest,DescribeConfigurationOptionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1122,10 +1057,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeConfigurationOptions(DescribeConfigurationOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeConfigurationOptions(request, callback, state, false);
+            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConfigurationOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConfigurationOptions operation.
@@ -1137,49 +1074,40 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeConfigurationOptionsResult from ElasticBeanstalk.</returns>
         public  DescribeConfigurationOptionsResponse EndDescribeConfigurationOptions(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeConfigurationOptionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeConfigurationOptions(DescribeConfigurationOptionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
-            var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeConfigurationOptionsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeConfigurationSettings
 
-
         /// <summary>
-        /// Returns a description of the settings for the specified         configuration
-        /// set, that is, either a configuration template or the         configuration set associated
-        /// with a running environment.        
+        /// Returns a description of the settings for the specified configuration set, that is,
+        /// either a configuration template or the configuration set associated with a running
+        /// environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          When describing the settings for the configuration set associated with a
-        ///         running environment, it is possible to receive two sets of setting descriptions.
-        ///         One is the deployed configuration set, and the other is a draft configuration
-        ///         of an environment that is either in the process of deployment or that failed
-        /// to         deploy.         
+        ///  When describing the settings for the configuration set associated with a running
+        /// environment, it is possible to receive two sets of setting descriptions. One is the
+        /// deployed configuration set, and the other is a draft configuration of an environment
+        /// that is either in the process of deployment or that failed to deploy. 
         /// </para>
-        ///       
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>         <li>            <a>DeleteEnvironmentConfiguration</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
         public DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeConfigurationSettings(request, null, null, true);
-            return EndDescribeConfigurationSettings(asyncResult);
+            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationSettingsRequest,DescribeConfigurationSettingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1196,10 +1124,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeConfigurationSettings(DescribeConfigurationSettingsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeConfigurationSettings(request, callback, state, false);
+            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConfigurationSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConfigurationSettings operation.
@@ -1211,21 +1141,12 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeConfigurationSettingsResult from ElasticBeanstalk.</returns>
         public  DescribeConfigurationSettingsResponse EndDescribeConfigurationSettings(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeConfigurationSettingsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeConfigurationSettings(DescribeConfigurationSettingsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
-            var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeConfigurationSettingsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeEnvironmentResources
-
 
         /// <summary>
         /// Returns AWS resources for this environment.
@@ -1239,8 +1160,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEnvironmentResources(request, null, null, true);
-            return EndDescribeEnvironmentResources(asyncResult);
+            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEnvironmentResourcesRequest,DescribeEnvironmentResourcesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1257,10 +1180,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEnvironmentResources(request, callback, state, false);
+            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEnvironmentResourcesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEnvironmentResources operation.
@@ -1272,15 +1197,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeEnvironmentResourcesResult from ElasticBeanstalk.</returns>
         public  DescribeEnvironmentResourcesResponse EndDescribeEnvironmentResources(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeEnvironmentResourcesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
-            var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeEnvironmentResourcesResponse>(asyncResult);
         }
 
         #endregion
@@ -1305,8 +1222,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
         public DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEnvironments(request, null, null, true);
-            return EndDescribeEnvironments(asyncResult);
+            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEnvironmentsRequest,DescribeEnvironmentsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1323,10 +1242,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeEnvironments(DescribeEnvironmentsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEnvironments(request, callback, state, false);
+            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEnvironmentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEnvironments operation.
@@ -1338,15 +1259,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeEnvironmentsResult from ElasticBeanstalk.</returns>
         public  DescribeEnvironmentsResponse EndDescribeEnvironments(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeEnvironmentsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeEnvironments(DescribeEnvironmentsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeEnvironmentsRequestMarshaller();
-            var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeEnvironmentsResponse>(asyncResult);
         }
 
         #endregion
@@ -1355,9 +1268,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
-        /// 
-        ///       <note>         This action returns the most recent 1,000 events from the specified
-        ///         <code>NextToken</code>.      </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
@@ -1368,17 +1278,16 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
-        /// 
-        ///       <note>         This action returns the most recent 1,000 events from the specified
-        ///         <code>NextToken</code>.      </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEvents(request, null, null, true);
-            return EndDescribeEvents(asyncResult);
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1395,10 +1304,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEvents(request, callback, state, false);
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEvents operation.
@@ -1410,15 +1321,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DescribeEventsResult from ElasticBeanstalk.</returns>
         public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeEventsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeEventsRequestMarshaller();
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
 
         #endregion
@@ -1443,8 +1346,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
         public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
         {
-            IAsyncResult asyncResult = invokeListAvailableSolutionStacks(request, null, null, true);
-            return EndListAvailableSolutionStacks(asyncResult);
+            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
+            var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
+
+            return Invoke<ListAvailableSolutionStacksRequest,ListAvailableSolutionStacksResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1461,10 +1366,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request, AsyncCallback callback, object state)
         {
-            return invokeListAvailableSolutionStacks(request, callback, state, false);
+            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
+            var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAvailableSolutionStacksRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAvailableSolutionStacks operation.
@@ -1476,26 +1383,16 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  ListAvailableSolutionStacksResult from ElasticBeanstalk.</returns>
         public  ListAvailableSolutionStacksResponse EndListAvailableSolutionStacks(IAsyncResult asyncResult)
         {
-            return endOperation< ListAvailableSolutionStacksResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
-            var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListAvailableSolutionStacksResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RebuildEnvironment
 
-
         /// <summary>
-        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling
-        /// group, load         balancer, etc.)         for a specified environment and forces
-        /// a restart.
+        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
+        /// load balancer, etc.) for a specified environment and forces a restart.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
         /// 
@@ -1506,8 +1403,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
         {
-            IAsyncResult asyncResult = invokeRebuildEnvironment(request, null, null, true);
-            return EndRebuildEnvironment(asyncResult);
+            var marshaller = new RebuildEnvironmentRequestMarshaller();
+            var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<RebuildEnvironmentRequest,RebuildEnvironmentResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1524,10 +1423,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginRebuildEnvironment(RebuildEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            return invokeRebuildEnvironment(request, callback, state, false);
+            var marshaller = new RebuildEnvironmentRequestMarshaller();
+            var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RebuildEnvironmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RebuildEnvironment operation.
@@ -1539,47 +1440,48 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  RebuildEnvironmentResult from ElasticBeanstalk.</returns>
         public  RebuildEnvironmentResponse EndRebuildEnvironment(IAsyncResult asyncResult)
         {
-            return endOperation< RebuildEnvironmentResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRebuildEnvironment(RebuildEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RebuildEnvironmentRequestMarshaller();
-            var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RebuildEnvironmentResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RequestEnvironmentInfo
 
-
         /// <summary>
-        /// Initiates a request to compile the specified type of         information
-        /// of the deployed environment.      
+        /// Initiates a request to compile the specified type of information of the deployed
+        /// environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          Setting the <code>InfoType</code> to <code>tail</code>         compiles the
-        /// last lines from the application server log files of every         Amazon EC2 instance
-        /// in your environment. Use <a>RetrieveEnvironmentInfo</a>         to access the compiled
-        /// information.      
+        ///  Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
+        /// the application server log files of every Amazon EC2 instance in your environment.
+        /// 
         /// </para>
-        ///        
+        ///  
+        /// <para>
+        ///  Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
+        /// server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
+        /// and .NET containers do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+        /// </para>
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>                <li>            <a>RetrieveEnvironmentInfo</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo service method.</param>
         /// 
         /// <returns>The response from the RequestEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
         public RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
         {
-            IAsyncResult asyncResult = invokeRequestEnvironmentInfo(request, null, null, true);
-            return EndRequestEnvironmentInfo(asyncResult);
+            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
+            var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
+
+            return Invoke<RequestEnvironmentInfoRequest,RequestEnvironmentInfoResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1596,10 +1498,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginRequestEnvironmentInfo(RequestEnvironmentInfoRequest request, AsyncCallback callback, object state)
         {
-            return invokeRequestEnvironmentInfo(request, callback, state, false);
+            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
+            var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RequestEnvironmentInfoRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RequestEnvironmentInfo operation.
@@ -1611,33 +1515,26 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  RequestEnvironmentInfoResult from ElasticBeanstalk.</returns>
         public  RequestEnvironmentInfoResponse EndRequestEnvironmentInfo(IAsyncResult asyncResult)
         {
-            return endOperation< RequestEnvironmentInfoResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRequestEnvironmentInfo(RequestEnvironmentInfoRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
-            var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RequestEnvironmentInfoResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RestartAppServer
 
-
         /// <summary>
-        /// Causes the environment to restart the application         container server
-        /// running on each Amazon EC2 instance.
+        /// Causes the environment to restart the application container server running on each
+        /// Amazon EC2 instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestartAppServer service method.</param>
         /// 
         /// <returns>The response from the RestartAppServer service method, as returned by ElasticBeanstalk.</returns>
         public RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
         {
-            IAsyncResult asyncResult = invokeRestartAppServer(request, null, null, true);
-            return EndRestartAppServer(asyncResult);
+            var marshaller = new RestartAppServerRequestMarshaller();
+            var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
+
+            return Invoke<RestartAppServerRequest,RestartAppServerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1654,10 +1551,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginRestartAppServer(RestartAppServerRequest request, AsyncCallback callback, object state)
         {
-            return invokeRestartAppServer(request, callback, state, false);
+            var marshaller = new RestartAppServerRequestMarshaller();
+            var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RestartAppServerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RestartAppServer operation.
@@ -1669,40 +1568,32 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  RestartAppServerResult from ElasticBeanstalk.</returns>
         public  RestartAppServerResponse EndRestartAppServer(IAsyncResult asyncResult)
         {
-            return endOperation< RestartAppServerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRestartAppServer(RestartAppServerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RestartAppServerRequestMarshaller();
-            var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RestartAppServerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RetrieveEnvironmentInfo
 
-
         /// <summary>
-        /// Retrieves the compiled information from a         <a>RequestEnvironmentInfo</a>
-        ///         request.      
+        /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
         /// 
-        ///        
+        /// 
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>             <li>            <a>RequestEnvironmentInfo</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method.</param>
         /// 
         /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
         public RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
         {
-            IAsyncResult asyncResult = invokeRetrieveEnvironmentInfo(request, null, null, true);
-            return EndRetrieveEnvironmentInfo(asyncResult);
+            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
+            var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
+
+            return Invoke<RetrieveEnvironmentInfoRequest,RetrieveEnvironmentInfoResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1719,10 +1610,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request, AsyncCallback callback, object state)
         {
-            return invokeRetrieveEnvironmentInfo(request, callback, state, false);
+            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
+            var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RetrieveEnvironmentInfoRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RetrieveEnvironmentInfo operation.
@@ -1734,21 +1627,12 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  RetrieveEnvironmentInfoResult from ElasticBeanstalk.</returns>
         public  RetrieveEnvironmentInfoResponse EndRetrieveEnvironmentInfo(IAsyncResult asyncResult)
         {
-            return endOperation< RetrieveEnvironmentInfoResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
-            var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RetrieveEnvironmentInfoResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SwapEnvironmentCNAMEs
-
 
         /// <summary>
         /// Swaps the CNAMEs of two environments.
@@ -1758,8 +1642,10 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the SwapEnvironmentCNAMEs service method, as returned by ElasticBeanstalk.</returns>
         public SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
         {
-            IAsyncResult asyncResult = invokeSwapEnvironmentCNAMEs(request, null, null, true);
-            return EndSwapEnvironmentCNAMEs(asyncResult);
+            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
+            var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
+
+            return Invoke<SwapEnvironmentCNAMEsRequest,SwapEnvironmentCNAMEsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1776,10 +1662,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request, AsyncCallback callback, object state)
         {
-            return invokeSwapEnvironmentCNAMEs(request, callback, state, false);
+            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
+            var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SwapEnvironmentCNAMEsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SwapEnvironmentCNAMEs operation.
@@ -1791,21 +1679,12 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  SwapEnvironmentCNAMEsResult from ElasticBeanstalk.</returns>
         public  SwapEnvironmentCNAMEsResponse EndSwapEnvironmentCNAMEs(IAsyncResult asyncResult)
         {
-            return endOperation< SwapEnvironmentCNAMEsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
-            var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SwapEnvironmentCNAMEsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  TerminateEnvironment
-
 
         /// <summary>
         /// Terminates the specified environment.
@@ -1819,8 +1698,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
         {
-            IAsyncResult asyncResult = invokeTerminateEnvironment(request, null, null, true);
-            return EndTerminateEnvironment(asyncResult);
+            var marshaller = new TerminateEnvironmentRequestMarshaller();
+            var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateEnvironmentRequest,TerminateEnvironmentResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1837,10 +1718,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginTerminateEnvironment(TerminateEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            return invokeTerminateEnvironment(request, callback, state, false);
+            var marshaller = new TerminateEnvironmentRequestMarshaller();
+            var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TerminateEnvironmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TerminateEnvironment operation.
@@ -1852,36 +1735,25 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  TerminateEnvironmentResult from ElasticBeanstalk.</returns>
         public  TerminateEnvironmentResponse EndTerminateEnvironment(IAsyncResult asyncResult)
         {
-            return endOperation< TerminateEnvironmentResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeTerminateEnvironment(TerminateEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new TerminateEnvironmentRequestMarshaller();
-            var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<TerminateEnvironmentResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateApplication
 
-
         /// <summary>
-        /// Updates the specified application to have the specified         properties.      
-        /// 
-        ///       <note>         If a property (for example, <code>description</code>) is not
-        /// provided, the         value         remains unchanged. To clear these properties,
-        /// specify an empty string.      </note>
+        /// Updates the specified application to have the specified properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by ElasticBeanstalk.</returns>
         public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateApplication(request, null, null, true);
-            return EndUpdateApplication(asyncResult);
+            var marshaller = new UpdateApplicationRequestMarshaller();
+            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1898,10 +1770,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateApplication(request, callback, state, false);
+            var marshaller = new UpdateApplicationRequestMarshaller();
+            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateApplicationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApplication operation.
@@ -1913,37 +1787,25 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  UpdateApplicationResult from ElasticBeanstalk.</returns>
         public  UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateApplicationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateApplicationRequestMarshaller();
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateApplicationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateApplicationVersion
 
-
         /// <summary>
-        /// Updates the specified application version to have the specified         properties.
-        ///               
-        /// 
-        ///       <note>         If a property (for example,         <code>description</code>)
-        /// is not provided, the         value remains unchanged. To clear properties,       
-        ///  specify an empty string.      </note>
+        /// Updates the specified application version to have the specified properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method.</param>
         /// 
         /// <returns>The response from the UpdateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         public UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateApplicationVersion(request, null, null, true);
-            return EndUpdateApplicationVersion(asyncResult);
+            var marshaller = new UpdateApplicationVersionRequestMarshaller();
+            var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationVersionRequest,UpdateApplicationVersionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1960,10 +1822,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginUpdateApplicationVersion(UpdateApplicationVersionRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateApplicationVersion(request, callback, state, false);
+            var marshaller = new UpdateApplicationVersionRequestMarshaller();
+            var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateApplicationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApplicationVersion operation.
@@ -1975,34 +1839,22 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  UpdateApplicationVersionResult from ElasticBeanstalk.</returns>
         public  UpdateApplicationVersionResponse EndUpdateApplicationVersion(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateApplicationVersionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateApplicationVersion(UpdateApplicationVersionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateApplicationVersionRequestMarshaller();
-            var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateApplicationVersionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateConfigurationTemplate
 
-
         /// <summary>
-        /// Updates the specified configuration template to have the specified      
-        ///   properties or configuration option values.      
+        /// Updates the specified configuration template to have the specified properties or
+        /// configuration option values. 
         /// 
-        ///       <note>         If a property (for example,         <code>ApplicationName</code>)
-        /// is not provided, its         value remains unchanged. To clear such         properties,
-        /// specify an empty string.      </note>      
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate service method.</param>
         /// 
@@ -2013,8 +1865,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateConfigurationTemplate(request, null, null, true);
-            return EndUpdateConfigurationTemplate(asyncResult);
+            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationTemplateRequest,UpdateConfigurationTemplateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2031,10 +1885,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateConfigurationTemplate(request, callback, state, false);
+            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateConfigurationTemplateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateConfigurationTemplate operation.
@@ -2046,39 +1902,29 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  UpdateConfigurationTemplateResult from ElasticBeanstalk.</returns>
         public  UpdateConfigurationTemplateResponse EndUpdateConfigurationTemplate(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateConfigurationTemplateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
-            var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateConfigurationTemplateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateEnvironment
 
-
         /// <summary>
-        /// Updates the environment description, deploys a new application         version,
-        /// updates the configuration settings to an entirely new configuration         template,
-        /// or updates select configuration option values in the running         environment.        
+        /// Updates the environment description, deploys a new application version, updates the
+        /// configuration settings to an entirely new configuration template, or updates select
+        /// configuration option values in the running environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          Attempting to update both the release and configuration is         not allowed
-        /// and AWS Elastic Beanstalk         returns an         <code>InvalidParameterCombination</code>
-        ///         error.      
+        ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
+        /// Beanstalk returns an <code>InvalidParameterCombination</code> error. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          When updating the configuration settings to a new template or         individual
-        /// settings,         a draft configuration is created and         <a>DescribeConfigurationSettings</a>
-        ///         for this         environment returns two setting descriptions with different
-        ///         <code>DeploymentStatus</code>         values.      
+        ///  When updating the configuration settings to a new template or individual settings,
+        /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
+        /// environment returns two setting descriptions with different <code>DeploymentStatus</code>
+        /// values. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
@@ -2090,8 +1936,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateEnvironment(request, null, null, true);
-            return EndUpdateEnvironment(asyncResult);
+            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEnvironmentRequest,UpdateEnvironmentResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2108,10 +1956,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateEnvironment(request, callback, state, false);
+            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateEnvironmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateEnvironment operation.
@@ -2123,30 +1973,21 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  UpdateEnvironmentResult from ElasticBeanstalk.</returns>
         public  UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateEnvironmentResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateEnvironmentRequestMarshaller();
-            var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateEnvironmentResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ValidateConfigurationSettings
 
-
         /// <summary>
-        /// Takes a set of configuration settings and either a configuration        
-        /// template or environment, and determines whether those values are valid.        
+        /// Takes a set of configuration settings and either a configuration template or environment,
+        /// and determines whether those values are valid. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          This action returns a list of messages indicating any errors or warnings
-        ///         associated         with the selection of option values.        
+        ///  This action returns a list of messages indicating any errors or warnings associated
+        /// with the selection of option values. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings service method.</param>
@@ -2158,8 +1999,10 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         public ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
         {
-            IAsyncResult asyncResult = invokeValidateConfigurationSettings(request, null, null, true);
-            return EndValidateConfigurationSettings(asyncResult);
+            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateConfigurationSettingsRequest,ValidateConfigurationSettingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2176,10 +2019,12 @@ namespace Amazon.ElasticBeanstalk
         ///         operation.</returns>
         public IAsyncResult BeginValidateConfigurationSettings(ValidateConfigurationSettingsRequest request, AsyncCallback callback, object state)
         {
-            return invokeValidateConfigurationSettings(request, callback, state, false);
+            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ValidateConfigurationSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ValidateConfigurationSettings operation.
@@ -2191,15 +2036,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  ValidateConfigurationSettingsResult from ElasticBeanstalk.</returns>
         public  ValidateConfigurationSettingsResponse EndValidateConfigurationSettings(IAsyncResult asyncResult)
         {
-            return endOperation< ValidateConfigurationSettingsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeValidateConfigurationSettings(ValidateConfigurationSettingsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
-            var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ValidateConfigurationSettingsResponse>(asyncResult);
         }
 
         #endregion

@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.CognitoIdentity.Model;
 
 namespace Amazon.CognitoIdentity
 {
     /// <summary>
-    /// Implementation for accessing CognitoIdentity
+    /// Interface for accessing CognitoIdentity
     ///
     /// Amazon Cognito 
     /// <para>
@@ -44,7 +49,6 @@ namespace Amazon.CognitoIdentity
 
         
         #region  CreateIdentityPool
-
 
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
@@ -103,7 +107,6 @@ namespace Amazon.CognitoIdentity
         
         #region  DeleteIdentityPool
 
-
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
@@ -158,7 +161,6 @@ namespace Amazon.CognitoIdentity
         
         #region  DescribeIdentityPool
 
-
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
@@ -212,7 +214,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetId
-
 
         /// <summary>
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
@@ -274,7 +275,6 @@ namespace Amazon.CognitoIdentity
         
         #region  GetOpenIdToken
 
-
         /// <summary>
         /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
         /// from GetId. You can optionally add additional logins for the identity. Supplying multiple
@@ -333,7 +333,6 @@ namespace Amazon.CognitoIdentity
         
         #region  ListIdentities
 
-
         /// <summary>
         /// Lists the identities in a pool.
         /// </summary>
@@ -387,7 +386,6 @@ namespace Amazon.CognitoIdentity
         
         #region  ListIdentityPools
 
-
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
         /// </summary>
@@ -437,7 +435,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UnlinkIdentity
-
 
         /// <summary>
         /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
@@ -496,7 +493,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UpdateIdentityPool
-
 
         /// <summary>
         /// Updates a user pool.

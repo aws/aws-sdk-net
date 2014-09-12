@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,47 +29,50 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetNetworkInterfaceAttribute operation.
-    /// <para>Resets a network interface attribute. You can specify only one attribute at a time.</para>
+    /// Resets a network interface attribute. You can specify only one attribute at a time.
     /// </summary>
     public partial class ResetNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
-        private string networkInterfaceId;
-        private string sourceDestCheck;
-
+        private string _networkInterfaceId;
+        private string _sourceDestCheck;
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
         /// The ID of the network interface.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkInterfaceId
         {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
         }
 
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;
+            return this._networkInterfaceId != null;
         }
 
         /// <summary>
-        /// Indicates whether source/destination checking is enabled. A value of <c>true</c> means checking is enabled, and <c>false</c> means checking
-        /// is disabled. This value must be <c>false</c> for a NAT instance to perform NAT.
-        ///  
+        /// Gets and sets the property SourceDestCheck. 
+        /// <para>
+        /// Indicates whether source/destination checking is enabled. A value of <code>true</code>
+        /// means checking is enabled, and <code>false</code> means checking is disabled. This
+        /// value must be <code>false</code> for a NAT instance to perform NAT.
+        /// </para>
         /// </summary>
         public string SourceDestCheck
         {
-            get { return this.sourceDestCheck; }
-            set { this.sourceDestCheck = value; }
+            get { return this._sourceDestCheck; }
+            set { this._sourceDestCheck = value; }
         }
 
         // Check to see if SourceDestCheck property is set
         internal bool IsSetSourceDestCheck()
         {
-            return this.sourceDestCheck != null;
+            return this._sourceDestCheck != null;
         }
 
     }
 }
-    

@@ -30,6 +30,8 @@ namespace Amazon.Util
     {
         Type BaseType { get; }
 
+        Type Type { get; }
+
         Assembly Assembly { get; }
         bool IsArray { get; }
 
@@ -106,11 +108,6 @@ namespace Amazon.Util
                 this._type = type;
             }
 
-            public Type BaseType
-            {
-                get { return this._type; }
-            }
-
             public Type Type
             {
                 get{return this._type;}
@@ -135,6 +132,7 @@ namespace Amazon.Util
                 return this._type == type;
             }
 
+            public abstract Type BaseType { get; }
             public abstract Assembly Assembly { get; }
             public abstract Type GetInterface(string name);
             public abstract Type[] GetInterfaces();

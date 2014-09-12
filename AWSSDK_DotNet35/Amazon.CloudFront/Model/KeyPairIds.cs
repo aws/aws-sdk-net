@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,18 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that lists the active CloudFront key    pairs, if any, that are associated
-    /// with    AwsAccountNumber.
+    /// A complex type that lists the active CloudFront key pairs, if any, that are associated
+    /// with AwsAccountNumber.
     /// </summary>
     public partial class KeyPairIds
     {
         private List<string> _items = new List<string>();
         private int? _quantity;
 
-
         /// <summary>
         /// Gets and sets the property Items. A complex type that lists the active CloudFront
-        /// key    pairs, if any, that are associated with    AwsAccountNumber.
+        /// key pairs, if any, that are associated with AwsAccountNumber.
         /// </summary>
         public List<string> Items
         {
@@ -49,10 +52,9 @@ namespace Amazon.CloudFront.Model
             return this._items != null && this._items.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Quantity. The number of active CloudFront key pairs for
-        ///    AwsAccountNumber.
+        /// AwsAccountNumber.
         /// </summary>
         public int Quantity
         {

@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.Route53Domains.Model;
 
 namespace Amazon.Route53Domains
 {
     /// <summary>
-    /// Implementation for accessing Route53Domains
+    /// Interface for accessing Route53Domains
     ///
     /// 
     /// </summary>
@@ -30,7 +35,6 @@ namespace Amazon.Route53Domains
 
         
         #region  CheckDomainAvailability
-
 
         /// <summary>
         /// This operation checks the availability of one domain name. You can access this API
@@ -79,7 +83,6 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  DisableDomainTransferLock
-
 
         /// <summary>
         /// This operation removes the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -138,7 +141,6 @@ namespace Amazon.Route53Domains
         
         #region  EnableDomainTransferLock
 
-
         /// <summary>
         /// This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
         /// status) to prevent domain transfers. Successful submission returns an operation ID
@@ -194,7 +196,6 @@ namespace Amazon.Route53Domains
         
         #region  GetDomainDetail
 
-
         /// <summary>
         /// This operation returns detailed information about the domain. The domain's contact
         /// information is also returned as part of the output.
@@ -238,7 +239,6 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  GetOperationDetail
-
 
         /// <summary>
         /// This operation returns the current status of an operation that is not completed.
@@ -395,7 +395,6 @@ namespace Amazon.Route53Domains
         
         #region  RegisterDomain
 
-
         /// <summary>
         /// This operation registers a domain. Domains are registered by the AWS registrar partner,
         /// Gandi. For some top-level domains (TLDs), this operation requires extra parameters.
@@ -473,7 +472,6 @@ namespace Amazon.Route53Domains
         
         #region  RetrieveDomainAuthCode
 
-
         /// <summary>
         /// This operation returns the AuthCode for the domain. To transfer a domain to another
         /// registrar, you provide this value to the new registrar.
@@ -517,7 +515,6 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  TransferDomain
-
 
         /// <summary>
         /// This operation transfers a domain from another registrar to Amazon Route 53. Domains
@@ -610,7 +607,6 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainContact
 
-
         /// <summary>
         /// This operation updates the contact information for a particular domain. Information
         /// for at least one contact (registrant, administrator, or technical) must be supplied
@@ -672,12 +668,11 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainContactPrivacy
 
-
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When the privacy
         /// option is enabled, personal information such as postal or email address is hidden
         /// from the results of a public WHOIS query. The privacy services are provided by the
-        /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;lang=en">Gandi
+        /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
         /// privacy features</a>.
         /// 
         ///  
@@ -737,7 +732,6 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  UpdateDomainNameservers
-
 
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified

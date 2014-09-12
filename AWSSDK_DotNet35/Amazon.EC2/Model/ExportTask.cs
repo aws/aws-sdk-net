@@ -12,131 +12,137 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an export task.</para>
+    /// Describes an export task.
     /// </summary>
     public partial class ExportTask
     {
-        
-        private string exportTaskId;
-        private string description;
-        private ExportTaskState state;
-        private string statusMessage;
-        private InstanceExportDetails instanceExportDetails;
-        private ExportToS3Task exportToS3Task;
-
+        private string _description;
+        private string _exportTaskId;
+        private ExportToS3Task _exportToS3Task;
+        private InstanceExportDetails _instanceExportDetails;
+        private ExportTaskState _state;
+        private string _statusMessage;
 
         /// <summary>
-        /// The ID of the export task.
-        ///  
-        /// </summary>
-        public string ExportTaskId
-        {
-            get { return this.exportTaskId; }
-            set { this.exportTaskId = value; }
-        }
-
-        // Check to see if ExportTaskId property is set
-        internal bool IsSetExportTaskId()
-        {
-            return this.exportTaskId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A description of the resource being exported.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// The state of the conversion task.
-        ///  
+        /// Gets and sets the property ExportTaskId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>active, cancelling, cancelled, completed</description>
-        ///     </item>
-        /// </list>
+        /// The ID of the export task.
         /// </para>
         /// </summary>
-        public ExportTaskState State
+        public string ExportTaskId
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._exportTaskId; }
+            set { this._exportTaskId = value; }
         }
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if ExportTaskId property is set
+        internal bool IsSetExportTaskId()
         {
-            return this.state != null;
-        }
-
-        /// <summary>
-        /// The status message related to the export task.
-        ///  
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this.statusMessage; }
-            set { this.statusMessage = value; }
-        }
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this.statusMessage != null;
+            return this._exportTaskId != null;
         }
 
         /// <summary>
-        /// The instance being exported.
-        ///  
-        /// </summary>
-        public InstanceExportDetails InstanceExportDetails
-        {
-            get { return this.instanceExportDetails; }
-            set { this.instanceExportDetails = value; }
-        }
-
-        // Check to see if InstanceExportDetails property is set
-        internal bool IsSetInstanceExportDetails()
-        {
-            return this.instanceExportDetails != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property ExportToS3Task.
         /// </summary>
         public ExportToS3Task ExportToS3Task
         {
-            get { return this.exportToS3Task; }
-            set { this.exportToS3Task = value; }
+            get { return this._exportToS3Task; }
+            set { this._exportToS3Task = value; }
         }
 
         // Check to see if ExportToS3Task property is set
         internal bool IsSetExportToS3Task()
         {
-            return this.exportToS3Task != null;
+            return this._exportToS3Task != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property InstanceExportDetails. 
+        /// <para>
+        /// The instance being exported.
+        /// </para>
+        /// </summary>
+        public InstanceExportDetails InstanceExportDetails
+        {
+            get { return this._instanceExportDetails; }
+            set { this._instanceExportDetails = value; }
+        }
+
+        // Check to see if InstanceExportDetails property is set
+        internal bool IsSetInstanceExportDetails()
+        {
+            return this._instanceExportDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the conversion task.
+        /// </para>
+        /// </summary>
+        public ExportTaskState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status message related to the export task.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
     }
 }

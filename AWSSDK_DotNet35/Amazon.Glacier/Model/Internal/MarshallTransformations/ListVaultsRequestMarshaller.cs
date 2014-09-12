@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,57 +33,34 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Vaults Request Marshaller
+    /// ListVaults Request Marshaller
     /// </summary>       
-    internal class ListVaultsRequestMarshaller : IMarshaller<IRequest, ListVaultsRequest> 
+    public class ListVaultsRequestMarshaller : IMarshaller<IRequest, ListVaultsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListVaultsRequest listVaultsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListVaultsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listVaultsRequest, "AmazonGlacier");
-            string target = "Glacier.ListVaults";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(ListVaultsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{accountId}/vaults?marker={marker};limit={limit}"; 
-            if(listVaultsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listVaultsRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(listVaultsRequest.IsSetMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listVaultsRequest.Marker) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
-            if(listVaultsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listVaultsRequest.Limit) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
-            int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            string queryString = uriResourcePath.Substring(queryPosition + 1);
-            uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
-        
-            foreach (string s in queryString.Split('&', ';')) 
-            {
-                string[] nameValuePair = s.Split('=');
-                if (nameValuePair.Length == 2) 
-                {
-                    if (nameValuePair[1].Length > 0)
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }
+
+            string uriResourcePath = "/{accountId}/vaults";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             
+            if (publicRequest.IsSetLimit())
+                request.Parameters.Add("limit", Amazon.Runtime.Internal.Util.StringUtils.FromInt(publicRequest.Limit));
+            
+            if (publicRequest.IsSetMarker())
+                request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

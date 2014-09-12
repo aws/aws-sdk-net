@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations;
@@ -74,19 +78,8 @@ namespace Amazon.ElasticLoadBalancing
     /// and Endpoints</a> in the Amazon Web Services General Reference. 
     /// </para>
     /// </summary>
-    public partial class AmazonElasticLoadBalancingClient : AmazonWebServiceClient, IAmazonElasticLoadBalancing
+    public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -105,7 +98,7 @@ namespace Amazon.ElasticLoadBalancing
         ///
         /// </summary>
         public AmazonElasticLoadBalancingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
@@ -124,7 +117,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticLoadBalancingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
@@ -143,7 +136,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="config">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AmazonElasticLoadBalancingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Credentials
@@ -171,7 +164,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AWSCredentials credentials, AmazonElasticLoadBalancingConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -204,7 +197,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticLoadBalancingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -240,15 +233,37 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticLoadBalancingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticLoadBalancing.Internal.ProcessRequestHandler());
+        }    
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AddTags
-
 
         /// <summary>
         /// Adds one or more tags for the specified load balancer. Each load balancer can have
@@ -280,8 +295,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeAddTags(request, null, null, true);
-            return EndAddTags(asyncResult);
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -298,10 +315,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddTags(request, callback, state, false);
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddTags operation.
@@ -313,21 +332,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  AddTagsResult from ElasticLoadBalancing.</returns>
         public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
-            return endOperation< AddTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddTags(AddTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddTagsRequestMarshaller();
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddTagsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ApplySecurityGroupsToLoadBalancer
-
 
         /// <summary>
         /// Associates one or more security groups with your load balancer in Amazon Virtual
@@ -354,8 +364,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeApplySecurityGroupsToLoadBalancer(request, null, null, true);
-            return EndApplySecurityGroupsToLoadBalancer(asyncResult);
+            var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
+            var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<ApplySecurityGroupsToLoadBalancerRequest,ApplySecurityGroupsToLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -372,10 +384,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeApplySecurityGroupsToLoadBalancer(request, callback, state, false);
+            var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
+            var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ApplySecurityGroupsToLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ApplySecurityGroupsToLoadBalancer operation.
@@ -387,21 +401,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  ApplySecurityGroupsToLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  ApplySecurityGroupsToLoadBalancerResponse EndApplySecurityGroupsToLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< ApplySecurityGroupsToLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
-            var unmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ApplySecurityGroupsToLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AttachLoadBalancerToSubnets
-
 
         /// <summary>
         /// Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private
@@ -432,8 +437,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request)
         {
-            IAsyncResult asyncResult = invokeAttachLoadBalancerToSubnets(request, null, null, true);
-            return EndAttachLoadBalancerToSubnets(asyncResult);
+            var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
+            var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.Instance;
+
+            return Invoke<AttachLoadBalancerToSubnetsRequest,AttachLoadBalancerToSubnetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -450,10 +457,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginAttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request, AsyncCallback callback, object state)
         {
-            return invokeAttachLoadBalancerToSubnets(request, callback, state, false);
+            var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
+            var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachLoadBalancerToSubnetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AttachLoadBalancerToSubnets operation.
@@ -465,21 +474,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  AttachLoadBalancerToSubnetsResult from ElasticLoadBalancing.</returns>
         public  AttachLoadBalancerToSubnetsResponse EndAttachLoadBalancerToSubnets(IAsyncResult asyncResult)
         {
-            return endOperation< AttachLoadBalancerToSubnetsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
-            var unmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AttachLoadBalancerToSubnetsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ConfigureHealthCheck
-
 
         /// <summary>
         /// Specifies the health check settings to use for evaluating the health state of your
@@ -499,8 +499,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request)
         {
-            IAsyncResult asyncResult = invokeConfigureHealthCheck(request, null, null, true);
-            return EndConfigureHealthCheck(asyncResult);
+            var marshaller = new ConfigureHealthCheckRequestMarshaller();
+            var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<ConfigureHealthCheckRequest,ConfigureHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -517,10 +519,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginConfigureHealthCheck(ConfigureHealthCheckRequest request, AsyncCallback callback, object state)
         {
-            return invokeConfigureHealthCheck(request, callback, state, false);
+            var marshaller = new ConfigureHealthCheckRequestMarshaller();
+            var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ConfigureHealthCheckRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ConfigureHealthCheck operation.
@@ -532,21 +536,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  ConfigureHealthCheckResult from ElasticLoadBalancing.</returns>
         public  ConfigureHealthCheckResponse EndConfigureHealthCheck(IAsyncResult asyncResult)
         {
-            return endOperation< ConfigureHealthCheckResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeConfigureHealthCheck(ConfigureHealthCheckRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ConfigureHealthCheckRequestMarshaller();
-            var unmarshaller = ConfigureHealthCheckResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ConfigureHealthCheckResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateAppCookieStickinessPolicy
-
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes that follow that of an
@@ -590,8 +585,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateAppCookieStickinessPolicy(request, null, null, true);
-            return EndCreateAppCookieStickinessPolicy(asyncResult);
+            var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppCookieStickinessPolicyRequest,CreateAppCookieStickinessPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -608,10 +605,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateAppCookieStickinessPolicy(request, callback, state, false);
+            var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAppCookieStickinessPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAppCookieStickinessPolicy operation.
@@ -623,21 +622,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  CreateAppCookieStickinessPolicyResult from ElasticLoadBalancing.</returns>
         public  CreateAppCookieStickinessPolicyResponse EndCreateAppCookieStickinessPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< CreateAppCookieStickinessPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
-            var unmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateAppCookieStickinessPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLBCookieStickinessPolicy
-
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
@@ -682,8 +672,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLBCookieStickinessPolicy(request, null, null, true);
-            return EndCreateLBCookieStickinessPolicy(asyncResult);
+            var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLBCookieStickinessPolicyRequest,CreateLBCookieStickinessPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -700,10 +692,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginCreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLBCookieStickinessPolicy(request, callback, state, false);
+            var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
+            var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLBCookieStickinessPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLBCookieStickinessPolicy operation.
@@ -715,21 +709,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  CreateLBCookieStickinessPolicyResult from ElasticLoadBalancing.</returns>
         public  CreateLBCookieStickinessPolicyResponse EndCreateLBCookieStickinessPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLBCookieStickinessPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
-            var unmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLBCookieStickinessPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLoadBalancer
-
 
         /// <summary>
         /// Creates a new load balancer. 
@@ -808,8 +793,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLoadBalancer(request, null, null, true);
-            return EndCreateLoadBalancer(asyncResult);
+            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLoadBalancerRequest,CreateLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -826,10 +813,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginCreateLoadBalancer(CreateLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLoadBalancer(request, callback, state, false);
+            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoadBalancer operation.
@@ -841,21 +830,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  CreateLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  CreateLoadBalancerResponse EndCreateLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLoadBalancer(CreateLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLoadBalancerRequestMarshaller();
-            var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLoadBalancerListeners
-
 
         /// <summary>
         /// Creates one or more listeners on a load balancer for the specified port. If a listener
@@ -888,8 +868,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLoadBalancerListeners(request, null, null, true);
-            return EndCreateLoadBalancerListeners(asyncResult);
+            var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLoadBalancerListenersRequest,CreateLoadBalancerListenersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -906,10 +888,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginCreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLoadBalancerListeners(request, callback, state, false);
+            var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLoadBalancerListenersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoadBalancerListeners operation.
@@ -921,21 +905,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  CreateLoadBalancerListenersResult from ElasticLoadBalancing.</returns>
         public  CreateLoadBalancerListenersResponse EndCreateLoadBalancerListeners(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLoadBalancerListenersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
-            var unmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLoadBalancerListenersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLoadBalancerPolicy
-
 
         /// <summary>
         /// Creates a new policy that contains the necessary attributes depending on the policy
@@ -963,8 +938,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLoadBalancerPolicy(request, null, null, true);
-            return EndCreateLoadBalancerPolicy(asyncResult);
+            var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLoadBalancerPolicyRequest,CreateLoadBalancerPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -981,10 +958,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginCreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLoadBalancerPolicy(request, callback, state, false);
+            var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLoadBalancerPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoadBalancerPolicy operation.
@@ -996,21 +975,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  CreateLoadBalancerPolicyResult from ElasticLoadBalancing.</returns>
         public  CreateLoadBalancerPolicyResponse EndCreateLoadBalancerPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLoadBalancerPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
-            var unmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLoadBalancerPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLoadBalancer
-
 
         /// <summary>
         /// Deletes the specified load balancer. 
@@ -1034,8 +1004,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>The response from the DeleteLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLoadBalancer(request, null, null, true);
-            return EndDeleteLoadBalancer(asyncResult);
+            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoadBalancerRequest,DeleteLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1052,10 +1024,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLoadBalancer(request, callback, state, false);
+            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoadBalancer operation.
@@ -1067,21 +1041,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DeleteLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  DeleteLoadBalancerResponse EndDeleteLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLoadBalancer(DeleteLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLoadBalancerRequestMarshaller();
-            var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLoadBalancerListeners
-
 
         /// <summary>
         /// Deletes listeners from the load balancer for the specified port.
@@ -1094,8 +1059,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLoadBalancerListeners(request, null, null, true);
-            return EndDeleteLoadBalancerListeners(asyncResult);
+            var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoadBalancerListenersRequest,DeleteLoadBalancerListenersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1112,10 +1079,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLoadBalancerListeners(request, callback, state, false);
+            var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLoadBalancerListenersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoadBalancerListeners operation.
@@ -1127,21 +1096,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DeleteLoadBalancerListenersResult from ElasticLoadBalancing.</returns>
         public  DeleteLoadBalancerListenersResponse EndDeleteLoadBalancerListeners(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLoadBalancerListenersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
-            var unmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLoadBalancerListenersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLoadBalancerPolicy
-
 
         /// <summary>
         /// Deletes a policy from the load balancer. The specified policy must not be enabled
@@ -1158,8 +1118,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLoadBalancerPolicy(request, null, null, true);
-            return EndDeleteLoadBalancerPolicy(asyncResult);
+            var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoadBalancerPolicyRequest,DeleteLoadBalancerPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1176,10 +1138,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLoadBalancerPolicy(request, callback, state, false);
+            var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
+            var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLoadBalancerPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoadBalancerPolicy operation.
@@ -1191,21 +1155,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DeleteLoadBalancerPolicyResult from ElasticLoadBalancing.</returns>
         public  DeleteLoadBalancerPolicyResponse EndDeleteLoadBalancerPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLoadBalancerPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
-            var unmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLoadBalancerPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeregisterInstancesFromLoadBalancer
-
 
         /// <summary>
         /// Deregisters instances from the load balancer. Once the instance is deregistered,
@@ -1238,8 +1193,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeDeregisterInstancesFromLoadBalancer(request, null, null, true);
-            return EndDeregisterInstancesFromLoadBalancer(asyncResult);
+            var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
+            var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterInstancesFromLoadBalancerRequest,DeregisterInstancesFromLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1256,10 +1213,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeregisterInstancesFromLoadBalancer(request, callback, state, false);
+            var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
+            var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterInstancesFromLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterInstancesFromLoadBalancer operation.
@@ -1271,21 +1230,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DeregisterInstancesFromLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  DeregisterInstancesFromLoadBalancerResponse EndDeregisterInstancesFromLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< DeregisterInstancesFromLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
-            var unmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeregisterInstancesFromLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeInstanceHealth
-
 
         /// <summary>
         /// Returns the current state of the specified instances registered with the specified
@@ -1303,8 +1253,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeInstanceHealth(request, null, null, true);
-            return EndDescribeInstanceHealth(asyncResult);
+            var marshaller = new DescribeInstanceHealthRequestMarshaller();
+            var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceHealthRequest,DescribeInstanceHealthResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1321,10 +1273,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDescribeInstanceHealth(DescribeInstanceHealthRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeInstanceHealth(request, callback, state, false);
+            var marshaller = new DescribeInstanceHealthRequestMarshaller();
+            var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInstanceHealthRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeInstanceHealth operation.
@@ -1336,21 +1290,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DescribeInstanceHealthResult from ElasticLoadBalancing.</returns>
         public  DescribeInstanceHealthResponse EndDescribeInstanceHealth(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeInstanceHealthResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeInstanceHealth(DescribeInstanceHealthRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeInstanceHealthRequestMarshaller();
-            var unmarshaller = DescribeInstanceHealthResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeInstanceHealthResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeLoadBalancerAttributes
-
 
         /// <summary>
         /// Returns detailed information about all of the attributes associated with the specified
@@ -1367,8 +1312,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLoadBalancerAttributes(request, null, null, true);
-            return EndDescribeLoadBalancerAttributes(asyncResult);
+            var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancerAttributesRequest,DescribeLoadBalancerAttributesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1385,10 +1332,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLoadBalancerAttributes(request, callback, state, false);
+            var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLoadBalancerAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancerAttributes operation.
@@ -1400,15 +1349,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DescribeLoadBalancerAttributesResult from ElasticLoadBalancing.</returns>
         public  DescribeLoadBalancerAttributesResponse EndDescribeLoadBalancerAttributes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLoadBalancerAttributesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
-            var unmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLoadBalancerAttributesResponse>(asyncResult);
         }
 
         #endregion
@@ -1457,8 +1398,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLoadBalancerPolicies(request, null, null, true);
-            return EndDescribeLoadBalancerPolicies(asyncResult);
+            var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancerPoliciesRequest,DescribeLoadBalancerPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1475,10 +1418,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLoadBalancerPolicies(request, callback, state, false);
+            var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLoadBalancerPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancerPolicies operation.
@@ -1490,15 +1435,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DescribeLoadBalancerPoliciesResult from ElasticLoadBalancing.</returns>
         public  DescribeLoadBalancerPoliciesResponse EndDescribeLoadBalancerPolicies(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLoadBalancerPoliciesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
-            var unmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLoadBalancerPoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -1535,8 +1472,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLoadBalancerPolicyTypes(request, null, null, true);
-            return EndDescribeLoadBalancerPolicyTypes(asyncResult);
+            var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancerPolicyTypesRequest,DescribeLoadBalancerPolicyTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1553,10 +1492,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLoadBalancerPolicyTypes(request, callback, state, false);
+            var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLoadBalancerPolicyTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancerPolicyTypes operation.
@@ -1568,15 +1509,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DescribeLoadBalancerPolicyTypesResult from ElasticLoadBalancing.</returns>
         public  DescribeLoadBalancerPolicyTypesResponse EndDescribeLoadBalancerPolicyTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLoadBalancerPolicyTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
-            var unmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLoadBalancerPolicyTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -1611,8 +1544,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLoadBalancers(request, null, null, true);
-            return EndDescribeLoadBalancers(asyncResult);
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1629,10 +1564,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLoadBalancers(request, callback, state, false);
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLoadBalancersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancers operation.
@@ -1644,21 +1581,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DescribeLoadBalancersResult from ElasticLoadBalancing.</returns>
         public  DescribeLoadBalancersResponse EndDescribeLoadBalancers(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLoadBalancersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLoadBalancersRequestMarshaller();
-            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLoadBalancersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeTags
-
 
         /// <summary>
         /// Describes the tags associated with one or more load balancers.
@@ -1671,8 +1599,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTags(request, null, null, true);
-            return EndDescribeTags(asyncResult);
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1689,10 +1619,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTags(request, callback, state, false);
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTags operation.
@@ -1704,21 +1636,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DescribeTagsResult from ElasticLoadBalancing.</returns>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTagsRequestMarshaller();
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTagsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DetachLoadBalancerFromSubnets
-
 
         /// <summary>
         /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
@@ -1743,8 +1666,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request)
         {
-            IAsyncResult asyncResult = invokeDetachLoadBalancerFromSubnets(request, null, null, true);
-            return EndDetachLoadBalancerFromSubnets(asyncResult);
+            var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
+            var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.Instance;
+
+            return Invoke<DetachLoadBalancerFromSubnetsRequest,DetachLoadBalancerFromSubnetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1761,10 +1686,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDetachLoadBalancerFromSubnets(request, callback, state, false);
+            var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
+            var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachLoadBalancerFromSubnetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DetachLoadBalancerFromSubnets operation.
@@ -1776,21 +1703,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DetachLoadBalancerFromSubnetsResult from ElasticLoadBalancing.</returns>
         public  DetachLoadBalancerFromSubnetsResponse EndDetachLoadBalancerFromSubnets(IAsyncResult asyncResult)
         {
-            return endOperation< DetachLoadBalancerFromSubnetsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
-            var unmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DetachLoadBalancerFromSubnetsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DisableAvailabilityZonesForLoadBalancer
-
 
         /// <summary>
         /// Removes the specified EC2 Availability Zones from the set of configured Availability
@@ -1823,8 +1741,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeDisableAvailabilityZonesForLoadBalancer(request, null, null, true);
-            return EndDisableAvailabilityZonesForLoadBalancer(asyncResult);
+            var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAvailabilityZonesForLoadBalancerRequest,DisableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1841,10 +1761,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginDisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeDisableAvailabilityZonesForLoadBalancer(request, callback, state, false);
+            var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableAvailabilityZonesForLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableAvailabilityZonesForLoadBalancer operation.
@@ -1856,21 +1778,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  DisableAvailabilityZonesForLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  DisableAvailabilityZonesForLoadBalancerResponse EndDisableAvailabilityZonesForLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< DisableAvailabilityZonesForLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
-            var unmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DisableAvailabilityZonesForLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  EnableAvailabilityZonesForLoadBalancer
-
 
         /// <summary>
         /// Adds one or more EC2 Availability Zones to the load balancer. 
@@ -1895,8 +1808,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeEnableAvailabilityZonesForLoadBalancer(request, null, null, true);
-            return EndEnableAvailabilityZonesForLoadBalancer(asyncResult);
+            var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAvailabilityZonesForLoadBalancerRequest,EnableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1913,10 +1828,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginEnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeEnableAvailabilityZonesForLoadBalancer(request, callback, state, false);
+            var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
+            var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableAvailabilityZonesForLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableAvailabilityZonesForLoadBalancer operation.
@@ -1928,21 +1845,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  EnableAvailabilityZonesForLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  EnableAvailabilityZonesForLoadBalancerResponse EndEnableAvailabilityZonesForLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< EnableAvailabilityZonesForLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeEnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
-            var unmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<EnableAvailabilityZonesForLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ModifyLoadBalancerAttributes
-
 
         /// <summary>
         /// Modifies the attributes of a specified load balancer.
@@ -1978,8 +1886,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyLoadBalancerAttributes(request, null, null, true);
-            return EndModifyLoadBalancerAttributes(asyncResult);
+            var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
+            var unmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyLoadBalancerAttributesRequest,ModifyLoadBalancerAttributesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1996,10 +1906,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyLoadBalancerAttributes(request, callback, state, false);
+            var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
+            var unmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyLoadBalancerAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyLoadBalancerAttributes operation.
@@ -2011,21 +1923,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  ModifyLoadBalancerAttributesResult from ElasticLoadBalancing.</returns>
         public  ModifyLoadBalancerAttributesResponse EndModifyLoadBalancerAttributes(IAsyncResult asyncResult)
         {
-            return endOperation< ModifyLoadBalancerAttributesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
-            var unmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ModifyLoadBalancerAttributesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RegisterInstancesWithLoadBalancer
-
 
         /// <summary>
         /// Adds new instances to the load balancer. 
@@ -2070,8 +1973,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
         {
-            IAsyncResult asyncResult = invokeRegisterInstancesWithLoadBalancer(request, null, null, true);
-            return EndRegisterInstancesWithLoadBalancer(asyncResult);
+            var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
+            var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterInstancesWithLoadBalancerRequest,RegisterInstancesWithLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2088,10 +1993,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginRegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            return invokeRegisterInstancesWithLoadBalancer(request, callback, state, false);
+            var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
+            var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterInstancesWithLoadBalancerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterInstancesWithLoadBalancer operation.
@@ -2103,21 +2010,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  RegisterInstancesWithLoadBalancerResult from ElasticLoadBalancing.</returns>
         public  RegisterInstancesWithLoadBalancerResponse EndRegisterInstancesWithLoadBalancer(IAsyncResult asyncResult)
         {
-            return endOperation< RegisterInstancesWithLoadBalancerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
-            var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RegisterInstancesWithLoadBalancerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RemoveTags
-
 
         /// <summary>
         /// Removes one or more tags from the specified load balancer.
@@ -2130,8 +2028,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeRemoveTags(request, null, null, true);
-            return EndRemoveTags(asyncResult);
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2148,10 +2048,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeRemoveTags(request, callback, state, false);
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveTags operation.
@@ -2163,21 +2065,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  RemoveTagsResult from ElasticLoadBalancing.</returns>
         public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
-            return endOperation< RemoveTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RemoveTagsRequestMarshaller();
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RemoveTagsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetLoadBalancerListenerSSLCertificate
-
 
         /// <summary>
         /// Sets the certificate that terminates the specified listener's SSL connections. The
@@ -2209,8 +2102,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeSetLoadBalancerListenerSSLCertificate(request, null, null, true);
-            return EndSetLoadBalancerListenerSSLCertificate(asyncResult);
+            var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
+            var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<SetLoadBalancerListenerSSLCertificateRequest,SetLoadBalancerListenerSSLCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2227,10 +2122,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginSetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetLoadBalancerListenerSSLCertificate(request, callback, state, false);
+            var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
+            var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetLoadBalancerListenerSSLCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBalancerListenerSSLCertificate operation.
@@ -2242,21 +2139,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  SetLoadBalancerListenerSSLCertificateResult from ElasticLoadBalancing.</returns>
         public  SetLoadBalancerListenerSSLCertificateResponse EndSetLoadBalancerListenerSSLCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< SetLoadBalancerListenerSSLCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
-            var unmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetLoadBalancerListenerSSLCertificateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetLoadBalancerPoliciesForBackendServer
-
 
         /// <summary>
         /// Replaces the current set of policies associated with a port on which the back-end
@@ -2285,8 +2173,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request)
         {
-            IAsyncResult asyncResult = invokeSetLoadBalancerPoliciesForBackendServer(request, null, null, true);
-            return EndSetLoadBalancerPoliciesForBackendServer(asyncResult);
+            var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.Instance;
+
+            return Invoke<SetLoadBalancerPoliciesForBackendServerRequest,SetLoadBalancerPoliciesForBackendServerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2303,10 +2193,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginSetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetLoadBalancerPoliciesForBackendServer(request, callback, state, false);
+            var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetLoadBalancerPoliciesForBackendServerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBalancerPoliciesForBackendServer operation.
@@ -2318,21 +2210,12 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  SetLoadBalancerPoliciesForBackendServerResult from ElasticLoadBalancing.</returns>
         public  SetLoadBalancerPoliciesForBackendServerResponse EndSetLoadBalancerPoliciesForBackendServer(IAsyncResult asyncResult)
         {
-            return endOperation< SetLoadBalancerPoliciesForBackendServerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
-            var unmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetLoadBalancerPoliciesForBackendServerResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetLoadBalancerPoliciesOfListener
-
 
         /// <summary>
         /// Associates, updates, or disables a policy with a listener on the load balancer. You
@@ -2355,8 +2238,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
         {
-            IAsyncResult asyncResult = invokeSetLoadBalancerPoliciesOfListener(request, null, null, true);
-            return EndSetLoadBalancerPoliciesOfListener(asyncResult);
+            var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.Instance;
+
+            return Invoke<SetLoadBalancerPoliciesOfListenerRequest,SetLoadBalancerPoliciesOfListenerResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2373,10 +2258,12 @@ namespace Amazon.ElasticLoadBalancing
         ///         operation.</returns>
         public IAsyncResult BeginSetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetLoadBalancerPoliciesOfListener(request, callback, state, false);
+            var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
+            var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetLoadBalancerPoliciesOfListenerRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBalancerPoliciesOfListener operation.
@@ -2388,15 +2275,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>Returns a  SetLoadBalancerPoliciesOfListenerResult from ElasticLoadBalancing.</returns>
         public  SetLoadBalancerPoliciesOfListenerResponse EndSetLoadBalancerPoliciesOfListener(IAsyncResult asyncResult)
         {
-            return endOperation< SetLoadBalancerPoliciesOfListenerResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
-            var unmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetLoadBalancerPoliciesOfListenerResponse>(asyncResult);
         }
 
         #endregion

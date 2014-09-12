@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,13 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that identifies ways in which you want to restrict distribution   
-    ///     of your content.
+    /// A complex type that identifies ways in which you want to restrict distribution of
+    /// your content.
     /// </summary>
     public partial class Restrictions
     {
         private GeoRestriction _geoRestriction;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Restrictions() { }
+
+        /// <summary>
+        /// Instantiates Restrictions with the parameterized properties
+        /// </summary>
+        /// <param name="geoRestriction">Sets the Restrictions GeoRestriction property</param>
+        public Restrictions(GeoRestriction geoRestriction)
+        {
+            _geoRestriction = geoRestriction;
+        }
 
         /// <summary>
         /// Gets and sets the property GeoRestriction.

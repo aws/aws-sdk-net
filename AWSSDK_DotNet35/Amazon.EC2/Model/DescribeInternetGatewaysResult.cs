@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInternetGatewaysResult : AmazonWebServiceResponse
     {
-        
-        private List<InternetGateway> internetGateways = new List<InternetGateway>();
-
+        private List<InternetGateway> _internetGateways = new List<InternetGateway>();
 
         /// <summary>
+        /// Gets and sets the property InternetGateways. 
+        /// <para>
         /// Information about one or more Internet gateways.
-        ///  
+        /// </para>
         /// </summary>
         public List<InternetGateway> InternetGateways
         {
-            get { return this.internetGateways; }
-            set { this.internetGateways = value; }
+            get { return this._internetGateways; }
+            set { this._internetGateways = value; }
         }
 
         // Check to see if InternetGateways property is set
         internal bool IsSetInternetGateways()
         {
-            return this.internetGateways.Count > 0;
+            return this._internetGateways != null && this._internetGateways.Count > 0; 
         }
+
     }
 }

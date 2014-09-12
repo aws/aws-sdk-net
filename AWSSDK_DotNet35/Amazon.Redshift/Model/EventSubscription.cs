@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -39,7 +43,6 @@ namespace Amazon.Redshift.Model
         private string _status;
         private DateTime? _subscriptionCreationTime;
 
-
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.Redshift.Model
         {
             return this._customerAwsId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustSubscriptionId. 
@@ -77,7 +79,6 @@ namespace Amazon.Redshift.Model
             return this._custSubscriptionId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
@@ -96,7 +97,6 @@ namespace Amazon.Redshift.Model
         {
             return this._enabled.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EventCategoriesList. 
@@ -120,7 +120,6 @@ namespace Amazon.Redshift.Model
             return this._eventCategoriesList != null && this._eventCategoriesList.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
@@ -143,7 +142,6 @@ namespace Amazon.Redshift.Model
             return this._severity != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
@@ -162,7 +160,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snsTopicArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SourceIdsList. 
@@ -183,7 +180,6 @@ namespace Amazon.Redshift.Model
             return this._sourceIdsList != null && this._sourceIdsList.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
@@ -202,7 +198,6 @@ namespace Amazon.Redshift.Model
         {
             return this._sourceType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -230,7 +225,6 @@ namespace Amazon.Redshift.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SubscriptionCreationTime. 

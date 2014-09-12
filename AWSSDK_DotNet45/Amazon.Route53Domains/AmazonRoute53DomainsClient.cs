@@ -13,11 +13,16 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
+
 
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.Route53Domains.Model;
 using Amazon.Route53Domains.Model.Internal.MarshallTransformations;
@@ -33,19 +38,8 @@ namespace Amazon.Route53Domains
     ///
     /// 
     /// </summary>
-    public partial class AmazonRoute53DomainsClient : AmazonWebServiceClient, IAmazonRoute53Domains
+    public partial class AmazonRoute53DomainsClient : AmazonServiceClient, IAmazonRoute53Domains
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -64,7 +58,7 @@ namespace Amazon.Route53Domains
         ///
         /// </summary>
         public AmazonRoute53DomainsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with the credentials loaded from the application's
@@ -83,7 +77,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53DomainsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with the credentials loaded from the application's
@@ -102,7 +96,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// <param name="config">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(AmazonRoute53DomainsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with AWS Credentials
@@ -130,7 +124,7 @@ namespace Amazon.Route53Domains
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(AWSCredentials credentials, AmazonRoute53DomainsConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -163,7 +157,7 @@ namespace Amazon.Route53Domains
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRoute53DomainsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -199,15 +193,33 @@ namespace Amazon.Route53Domains
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonRoute53DomainsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }    
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CheckDomainAvailability
-
 
         /// <summary>
         /// This operation checks the availability of one domain name. You can access this API
@@ -227,16 +239,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
         {
-            var task = CheckDomainAvailabilityAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CheckDomainAvailabilityRequestMarshaller();
+            var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CheckDomainAvailabilityRequest,CheckDomainAvailabilityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -249,17 +255,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CheckDomainAvailabilityResponse> CheckDomainAvailabilityAsync(CheckDomainAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CheckDomainAvailabilityResponse> CheckDomainAvailabilityAsync(CheckDomainAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CheckDomainAvailabilityRequestMarshaller();
             var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CheckDomainAvailabilityRequest, CheckDomainAvailabilityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CheckDomainAvailabilityRequest,CheckDomainAvailabilityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  DisableDomainTransferLock
-
 
         /// <summary>
         /// This operation removes the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -288,16 +295,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
         {
-            var task = DisableDomainTransferLockAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DisableDomainTransferLockRequestMarshaller();
+            var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
+
+            return Invoke<DisableDomainTransferLockRequest,DisableDomainTransferLockResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -310,17 +311,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableDomainTransferLockRequestMarshaller();
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DisableDomainTransferLockRequest, DisableDomainTransferLockResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DisableDomainTransferLockRequest,DisableDomainTransferLockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  EnableDomainTransferLock
-
 
         /// <summary>
         /// This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -347,16 +349,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
         {
-            var task = EnableDomainTransferLockAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new EnableDomainTransferLockRequestMarshaller();
+            var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
+
+            return Invoke<EnableDomainTransferLockRequest,EnableDomainTransferLockResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -369,17 +365,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<EnableDomainTransferLockResponse> EnableDomainTransferLockAsync(EnableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<EnableDomainTransferLockResponse> EnableDomainTransferLockAsync(EnableDomainTransferLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableDomainTransferLockRequestMarshaller();
             var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
-            return Invoke<IRequest, EnableDomainTransferLockRequest, EnableDomainTransferLockResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<EnableDomainTransferLockRequest,EnableDomainTransferLockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  GetDomainDetail
-
 
         /// <summary>
         /// This operation returns detailed information about the domain. The domain's contact
@@ -395,16 +392,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
         {
-            var task = GetDomainDetailAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetDomainDetailRequestMarshaller();
+            var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainDetailRequest,GetDomainDetailResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -417,17 +408,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDomainDetailResponse> GetDomainDetailAsync(GetDomainDetailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetDomainDetailResponse> GetDomainDetailAsync(GetDomainDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainDetailRequestMarshaller();
             var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetDomainDetailRequest, GetDomainDetailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetDomainDetailRequest,GetDomainDetailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  GetOperationDetail
-
 
         /// <summary>
         /// This operation returns the current status of an operation that is not completed.
@@ -442,16 +434,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
         {
-            var task = GetOperationDetailAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetOperationDetailRequestMarshaller();
+            var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
+
+            return Invoke<GetOperationDetailRequest,GetOperationDetailResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -464,11 +450,13 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetOperationDetailResponse> GetOperationDetailAsync(GetOperationDetailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetOperationDetailResponse> GetOperationDetailAsync(GetOperationDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOperationDetailRequestMarshaller();
             var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetOperationDetailRequest, GetOperationDetailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetOperationDetailRequest,GetOperationDetailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -505,16 +493,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var task = ListDomainsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListDomainsRequestMarshaller();
+            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -527,11 +509,13 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListDomainsRequest,ListDomainsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -566,16 +550,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
-            var task = ListOperationsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListOperationsRequestMarshaller();
+            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOperationsRequest,ListOperationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -588,17 +566,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOperationsRequestMarshaller();
             var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListOperationsRequest, ListOperationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListOperationsRequest,ListOperationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  RegisterDomain
-
 
         /// <summary>
         /// This operation registers a domain. Domains are registered by the AWS registrar partner,
@@ -647,16 +626,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
-            var task = RegisterDomainAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RegisterDomainRequestMarshaller();
+            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -669,17 +642,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RegisterDomainRequest, RegisterDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  RetrieveDomainAuthCode
-
 
         /// <summary>
         /// This operation returns the AuthCode for the domain. To transfer a domain to another
@@ -695,16 +669,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
         {
-            var task = RetrieveDomainAuthCodeAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
+            var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
+
+            return Invoke<RetrieveDomainAuthCodeRequest,RetrieveDomainAuthCodeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -717,17 +685,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RetrieveDomainAuthCodeResponse> RetrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RetrieveDomainAuthCodeResponse> RetrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
             var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
-            return Invoke<IRequest, RetrieveDomainAuthCodeRequest, RetrieveDomainAuthCodeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<RetrieveDomainAuthCodeRequest,RetrieveDomainAuthCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  TransferDomain
-
 
         /// <summary>
         /// This operation transfers a domain from another registrar to Amazon Route 53. Domains
@@ -790,16 +759,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public TransferDomainResponse TransferDomain(TransferDomainRequest request)
         {
-            var task = TransferDomainAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new TransferDomainRequestMarshaller();
+            var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
+
+            return Invoke<TransferDomainRequest,TransferDomainResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -812,17 +775,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TransferDomainResponse> TransferDomainAsync(TransferDomainRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<TransferDomainResponse> TransferDomainAsync(TransferDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TransferDomainRequestMarshaller();
             var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
-            return Invoke<IRequest, TransferDomainRequest, TransferDomainResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<TransferDomainRequest,TransferDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  UpdateDomainContact
-
 
         /// <summary>
         /// This operation updates the contact information for a particular domain. Information
@@ -855,16 +819,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
         {
-            var task = UpdateDomainContactAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new UpdateDomainContactRequestMarshaller();
+            var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainContactRequest,UpdateDomainContactResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -877,23 +835,24 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDomainContactResponse> UpdateDomainContactAsync(UpdateDomainContactRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UpdateDomainContactResponse> UpdateDomainContactAsync(UpdateDomainContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainContactRequestMarshaller();
             var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
-            return Invoke<IRequest, UpdateDomainContactRequest, UpdateDomainContactResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<UpdateDomainContactRequest,UpdateDomainContactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  UpdateDomainContactPrivacy
 
-
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When the privacy
         /// option is enabled, personal information such as postal or email address is hidden
         /// from the results of a public WHOIS query. The privacy services are provided by the
-        /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;lang=en">Gandi
+        /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
         /// privacy features</a>.
         /// 
         ///  
@@ -924,16 +883,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
         {
-            var task = UpdateDomainContactPrivacyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
+            var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainContactPrivacyRequest,UpdateDomainContactPrivacyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -946,17 +899,18 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDomainContactPrivacyResponse> UpdateDomainContactPrivacyAsync(UpdateDomainContactPrivacyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UpdateDomainContactPrivacyResponse> UpdateDomainContactPrivacyAsync(UpdateDomainContactPrivacyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
             var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
-            return Invoke<IRequest, UpdateDomainContactPrivacyRequest, UpdateDomainContactPrivacyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<UpdateDomainContactPrivacyRequest,UpdateDomainContactPrivacyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  UpdateDomainNameservers
-
 
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified
@@ -989,16 +943,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
         {
-            var task = UpdateDomainNameserversAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new UpdateDomainNameserversRequestMarshaller();
+            var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainNameserversRequest,UpdateDomainNameserversResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1011,11 +959,13 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDomainNameserversResponse> UpdateDomainNameserversAsync(UpdateDomainNameserversRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UpdateDomainNameserversResponse> UpdateDomainNameserversAsync(UpdateDomainNameserversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainNameserversRequestMarshaller();
             var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
-            return Invoke<IRequest, UpdateDomainNameserversRequest, UpdateDomainNameserversResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<UpdateDomainNameserversRequest,UpdateDomainNameserversResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

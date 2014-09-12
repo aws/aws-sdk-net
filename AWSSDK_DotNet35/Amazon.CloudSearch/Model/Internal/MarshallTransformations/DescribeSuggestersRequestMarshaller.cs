@@ -12,49 +12,60 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Suggesters Request Marshaller
+    /// DescribeSuggesters Request Marshaller
     /// </summary>       
-    public class DescribeSuggestersRequestMarshaller : IMarshaller<IRequest, DescribeSuggestersRequest>
+    public class DescribeSuggestersRequestMarshaller : IMarshaller<IRequest, DescribeSuggestersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeSuggestersRequest describeSuggestersRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeSuggestersRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeSuggestersRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeSuggestersRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DescribeSuggesters");
             request.Parameters.Add("Version", "2013-01-01");
-            if (describeSuggestersRequest != null && describeSuggestersRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeSuggestersRequest.DomainName));
-            }
-            if (describeSuggestersRequest != null)
-            {
-                List<string> suggesterNamesList = describeSuggestersRequest.SuggesterNames;
 
-                int suggesterNamesListIndex = 1;
-                foreach (string suggesterNamesListValue in suggesterNamesList)
-                { 
-                    request.Parameters.Add("SuggesterNames.member." + suggesterNamesListIndex, StringUtils.FromString(suggesterNamesListValue));
-                    suggesterNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDeployed())
+                {
+                    request.Parameters.Add("Deployed", StringUtils.FromBool(publicRequest.Deployed));
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetSuggesterNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SuggesterNames)
+                    {
+                        request.Parameters.Add("SuggesterNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describeSuggestersRequest != null && describeSuggestersRequest.IsSetDeployed())
-            {
-                request.Parameters.Add("Deployed", StringUtils.FromBool(describeSuggestersRequest.Deployed));
-            }
-
             return request;
         }
     }

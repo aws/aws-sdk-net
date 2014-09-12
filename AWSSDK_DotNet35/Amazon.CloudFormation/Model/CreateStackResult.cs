@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for a CreateStack action.</para>
+    /// The output for a <a>CreateStack</a> action.
     /// </summary>
     public partial class CreateStackResult : AmazonWebServiceResponse
     {
-        
-        private string stackId;
-
+        private string _stackId;
 
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// Unique identifier of the stack.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
+
     }
 }

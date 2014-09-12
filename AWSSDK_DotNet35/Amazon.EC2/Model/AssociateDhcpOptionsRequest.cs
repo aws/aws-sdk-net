@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,51 +29,78 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDhcpOptions operation.
-    /// <para>Associates a set of DHCP options (that you've previously created) with the specified VPC, or associates no DHCP options with the
-    /// VPC.</para> <para>After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use
-    /// the options. You don't need to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on
-    /// how frequently the instance renews its DHCP lease. You can explicitly renew the lease using the operating system on the instance.</para>
-    /// <para>For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" >DHCP Options Sets</a>
-    /// in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
+    /// Associates a set of DHCP options (that you've previously created) with the specified
+    /// VPC, or associates no DHCP options with the VPC.
+    /// 
+    ///  
+    /// <para>
+    /// After you associate the options with the VPC, any existing instances and all new instances
+    /// that you launch in that VPC use the options. You don't need to restart or relaunch
+    /// the instances. They automatically pick up the changes within a few hours, depending
+    /// on how frequently the instance renews its DHCP lease. You can explicitly renew the
+    /// lease using the operating system on the instance.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+    /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AssociateDhcpOptionsRequest : AmazonEC2Request
     {
-        private string dhcpOptionsId;
-        private string vpcId;
-
+        private string _dhcpOptionsId;
+        private string _vpcId;
 
         /// <summary>
-        /// The ID of the DHCP options set, or <c>default</c> to associate no DHCP options with the VPC.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AssociateDhcpOptionsRequest() { }
+
+        /// <summary>
+        /// Instantiates AssociateDhcpOptionsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="vpcId">The ID of the VPC.</param>
+        public AssociateDhcpOptionsRequest(string vpcId)
+        {
+            _vpcId = vpcId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DhcpOptionsId. 
+        /// <para>
+        /// The ID of the DHCP options set, or <code>default</code> to associate no DHCP options
+        /// with the VPC.
+        /// </para>
         /// </summary>
         public string DhcpOptionsId
         {
-            get { return this.dhcpOptionsId; }
-            set { this.dhcpOptionsId = value; }
+            get { return this._dhcpOptionsId; }
+            set { this._dhcpOptionsId = value; }
         }
 
         // Check to see if DhcpOptionsId property is set
         internal bool IsSetDhcpOptionsId()
         {
-            return this.dhcpOptionsId != null;
+            return this._dhcpOptionsId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
         /// The ID of the VPC.
-        ///  
+        /// </para>
         /// </summary>
         public string VpcId
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;
+            return this._vpcId != null;
         }
 
     }
 }
-    

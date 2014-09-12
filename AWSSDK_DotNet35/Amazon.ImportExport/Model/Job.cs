@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,96 +12,90 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
-    /// <para> Representation of a job returned by the ListJobs operation. </para>
+    /// Representation of a job returned by the ListJobs operation.
     /// </summary>
-    public class Job
+    public partial class Job
     {
-        
-        private string jobId;
-        private DateTime? creationDate;
-        private bool? isCanceled;
-        private JobType jobType;
+        private DateTime? _creationDate;
+        private bool? _isCanceled;
+        private string _jobId;
+        private JobType _jobType;
 
         /// <summary>
-        /// A unique identifier which refers to a particular job.
-        ///  
-        /// </summary>
-        public string JobId
-        {
-            get { return this.jobId; }
-            set { this.jobId = value; }
-        }
-
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
-        {
-            return this.jobId != null;
-        }
-
-        /// <summary>
-        /// Timestamp of the CreateJob request in ISO8601 date format. For example "2010-03-28T20:27:35Z".
-        ///  
+        /// Gets and sets the property CreationDate.
         /// </summary>
         public DateTime CreationDate
         {
-            get { return this.creationDate ?? default(DateTime); }
-            set { this.creationDate = value; }
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
         }
 
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;
+            return this._creationDate.HasValue; 
         }
 
         /// <summary>
-        /// Indicates whether the job was canceled.
-        ///  
+        /// Gets and sets the property IsCanceled.
         /// </summary>
         public bool IsCanceled
         {
-            get { return this.isCanceled ?? default(bool); }
-            set { this.isCanceled = value; }
+            get { return this._isCanceled.GetValueOrDefault(); }
+            set { this._isCanceled = value; }
         }
 
         // Check to see if IsCanceled property is set
         internal bool IsSetIsCanceled()
         {
-            return this.isCanceled.HasValue;
+            return this._isCanceled.HasValue; 
         }
 
         /// <summary>
-        /// Specifies whether the job to initiate is an import or export job.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Import, Export</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property JobId.
+        /// </summary>
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType.
         /// </summary>
         public JobType JobType
         {
-            get { return this.jobType; }
-            set { this.jobType = value; }
+            get { return this._jobType; }
+            set { this._jobType = value; }
         }
 
         // Check to see if JobType property is set
         internal bool IsSetJobType()
         {
-            return this.jobType != null;
+            return this._jobType != null;
         }
+
     }
 }

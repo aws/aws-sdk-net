@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstancePrivateIpAddress Unmarshaller
-     /// </summary>
-    internal class InstancePrivateIpAddressUnmarshaller : IUnmarshaller<InstancePrivateIpAddress, XmlUnmarshallerContext>, IUnmarshaller<InstancePrivateIpAddress, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstancePrivateIpAddress Object
+    /// </summary>  
+    public class InstancePrivateIpAddressUnmarshaller : IUnmarshaller<InstancePrivateIpAddress, XmlUnmarshallerContext>, IUnmarshaller<InstancePrivateIpAddress, JsonUnmarshallerContext>
     {
-        public InstancePrivateIpAddress Unmarshall(XmlUnmarshallerContext context) 
+        public InstancePrivateIpAddress Unmarshall(XmlUnmarshallerContext context)
         {
-            InstancePrivateIpAddress instancePrivateIpAddress = new InstancePrivateIpAddress();
+            InstancePrivateIpAddress unmarshalledObject = new InstancePrivateIpAddress();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("privateIpAddress", targetDepth))
+                    if (context.TestExpression("association", targetDepth))
                     {
-                        instancePrivateIpAddress.PrivateIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("privateDnsName", targetDepth))
-                    {
-                        instancePrivateIpAddress.PrivateDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceNetworkInterfaceAssociationUnmarshaller.Instance;
+                        unmarshalledObject.Association = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("primary", targetDepth))
                     {
-                        instancePrivateIpAddress.Primary = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Primary = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("association", targetDepth))
+                    if (context.TestExpression("privateDnsName", targetDepth))
                     {
-                        instancePrivateIpAddress.Association = InstanceNetworkInterfaceAssociationUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateIpAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instancePrivateIpAddress;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instancePrivateIpAddress;
+            return unmarshalledObject;
         }
 
-        public InstancePrivateIpAddress Unmarshall(JsonUnmarshallerContext context) 
+        public InstancePrivateIpAddress Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstancePrivateIpAddressUnmarshaller instance;
 
-        public static InstancePrivateIpAddressUnmarshaller GetInstance() 
+        private static InstancePrivateIpAddressUnmarshaller _instance = new InstancePrivateIpAddressUnmarshaller();        
+
+        public static InstancePrivateIpAddressUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstancePrivateIpAddressUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

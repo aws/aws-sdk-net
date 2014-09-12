@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdatePipelineNotifications Request Marshaller
     /// </summary>       
-    public class UpdatePipelineNotificationsRequestMarshaller : IMarshaller<IRequest, UpdatePipelineNotificationsRequest> 
+    public class UpdatePipelineNotificationsRequestMarshaller : IMarshaller<IRequest, UpdatePipelineNotificationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdatePipelineNotificationsRequest)input);
+        }
+
         public IRequest Marshall(UpdatePipelineNotificationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
@@ -46,35 +55,16 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetNotifications())
                 {
-                    writer.WritePropertyName("Notifications");
-                    writer.WriteObjectStart();
-                    if(publicRequest.Notifications.IsSetCompleted())
-                    {
-                        writer.WritePropertyName("Completed");
-                        writer.Write(publicRequest.Notifications.Completed);
-                    }
+                    context.Writer.WritePropertyName("Notifications");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.Notifications.IsSetError())
-                    {
-                        writer.WritePropertyName("Error");
-                        writer.Write(publicRequest.Notifications.Error);
-                    }
+                    var marshaller = NotificationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Notifications, context);
 
-                    if(publicRequest.Notifications.IsSetProgressing())
-                    {
-                        writer.WritePropertyName("Progressing");
-                        writer.Write(publicRequest.Notifications.Progressing);
-                    }
-
-                    if(publicRequest.Notifications.IsSetWarning())
-                    {
-                        writer.WritePropertyName("Warning");
-                        writer.Write(publicRequest.Notifications.Warning);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
         

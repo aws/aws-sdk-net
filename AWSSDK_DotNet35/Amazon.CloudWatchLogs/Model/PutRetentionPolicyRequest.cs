@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,21 @@ namespace Amazon.CloudWatchLogs.Model
         private string _logGroupName;
         private int? _retentionInDays;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public PutRetentionPolicyRequest() { }
+
+        /// <summary>
+        /// Instantiates PutRetentionPolicyRequest with the parameterized properties
+        /// </summary>
+        /// <param name="logGroupName">Sets the PutRetentionPolicyRequest LogGroupName property</param>
+        /// <param name="retentionInDays">Sets the PutRetentionPolicyRequest RetentionInDays property</param>
+        public PutRetentionPolicyRequest(string logGroupName, int retentionInDays)
+        {
+            _logGroupName = logGroupName;
+            _retentionInDays = retentionInDays;
+        }
 
         /// <summary>
         /// Gets and sets the property LogGroupName.
@@ -48,7 +67,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._logGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RetentionInDays.

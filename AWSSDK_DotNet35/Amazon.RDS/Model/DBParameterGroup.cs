@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,73 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the CreateDBParameterGroup action. </para> <para> This data type is used as a
-    /// request parameter in the DeleteDBParameterGroup action, and as a response element in the DescribeDBParameterGroups action. </para>
+    /// Contains the result of a successful invocation of the <a>CreateDBParameterGroup</a>
+    /// action. 
+    /// 
+    ///  
+    /// <para>
+    ///  This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a>
+    /// action, and as a response element in the <a>DescribeDBParameterGroups</a> action.
+    /// 
+    /// </para>
     /// </summary>
-    public partial class DBParameterGroup : AmazonWebServiceResponse
+    public partial class DBParameterGroup
     {
-        
-        private string dBParameterGroupName;
-        private string dBParameterGroupFamily;
-        private string description;
-
+        private string _dBParameterGroupFamily;
+        private string _dBParameterGroupName;
+        private string _description;
 
         /// <summary>
-        /// Provides the name of the DB parameter group.
-        ///  
-        /// </summary>
-        public string DBParameterGroupName
-        {
-            get { return this.dBParameterGroupName; }
-            set { this.dBParameterGroupName = value; }
-        }
-
-        // Check to see if DBParameterGroupName property is set
-        internal bool IsSetDBParameterGroupName()
-        {
-            return this.dBParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// Provides the name of the DB parameter group family that this DB parameter group is compatible with.
-        ///  
+        /// Gets and sets the property DBParameterGroupFamily. 
+        /// <para>
+        ///  Provides the name of the DB parameter group family that this DB parameter group is
+        /// compatible with. 
+        /// </para>
         /// </summary>
         public string DBParameterGroupFamily
         {
-            get { return this.dBParameterGroupFamily; }
-            set { this.dBParameterGroupFamily = value; }
+            get { return this._dBParameterGroupFamily; }
+            set { this._dBParameterGroupFamily = value; }
         }
 
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;
+            return this._dBParameterGroupFamily != null;
         }
 
         /// <summary>
-        /// Provides the customer-specified description for this DB parameter group.
-        ///  
+        /// Gets and sets the property DBParameterGroupName. 
+        /// <para>
+        ///  Provides the name of the DB parameter group. 
+        /// </para>
+        /// </summary>
+        public string DBParameterGroupName
+        {
+            get { return this._dBParameterGroupName; }
+            set { this._dBParameterGroupName = value; }
+        }
+
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
+        {
+            return this._dBParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  Provides the customer-specified description for this DB parameter group. 
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
     }
 }

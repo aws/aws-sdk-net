@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,12 +23,10 @@ using Amazon.Runtime;
 namespace Amazon.SimpleDB.Model
 {
     ///<summary>
-    /// AmazonSimpleDB exception
+    /// SimpleDB exception
     /// </summary>
     public class InvalidNumberPredicatesException : AmazonSimpleDBException 
     {
-        private float boxUsage;
-    
         /// <summary>
         /// Constructs a new InvalidNumberPredicatesException with the specified error
         /// message.
@@ -47,11 +49,7 @@ namespace Amazon.SimpleDB.Model
         public InvalidNumberPredicatesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
-        public float BoxUsage
-        {
-            get { return boxUsage; }
-            set { boxUsage = value; }
-        }
+        public float BoxUsage { get; set; }
+
     }
 }

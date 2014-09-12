@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Stream Request Marshaller
+    /// DeleteStream Request Marshaller
     /// </summary>       
-    internal class DeleteStreamRequestMarshaller : IMarshaller<IRequest, DeleteStreamRequest> 
+    public class DeleteStreamRequestMarshaller : IMarshaller<IRequest, DeleteStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteStreamRequest deleteStreamRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteStreamRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteStreamRequest, "AmazonKinesis");
+        public IRequest Marshall(DeleteStreamRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.DeleteStream";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteStreamRequest != null && deleteStreamRequest.IsSetStreamName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetStreamName())
                 {
-                    writer.WritePropertyName("StreamName");
-                    writer.Write(deleteStreamRequest.StreamName);
+                    context.Writer.WritePropertyName("StreamName");
+                    context.Writer.Write(publicRequest.StreamName);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

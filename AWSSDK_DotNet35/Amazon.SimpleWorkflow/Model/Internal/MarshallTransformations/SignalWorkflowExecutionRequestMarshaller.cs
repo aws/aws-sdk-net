@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,64 +33,70 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Signal Workflow Execution Request Marshaller
+    /// SignalWorkflowExecution Request Marshaller
     /// </summary>       
-    internal class SignalWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, SignalWorkflowExecutionRequest> 
+    public class SignalWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, SignalWorkflowExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((SignalWorkflowExecutionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(signalWorkflowExecutionRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(SignalWorkflowExecutionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.SignalWorkflowExecution";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (signalWorkflowExecutionRequest != null && signalWorkflowExecutionRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(signalWorkflowExecutionRequest.Domain);
-                }
-                if (signalWorkflowExecutionRequest != null && signalWorkflowExecutionRequest.IsSetWorkflowId()) 
-                {
-                    writer.WritePropertyName("workflowId");
-                    writer.Write(signalWorkflowExecutionRequest.WorkflowId);
-                }
-                if (signalWorkflowExecutionRequest != null && signalWorkflowExecutionRequest.IsSetRunId()) 
-                {
-                    writer.WritePropertyName("runId");
-                    writer.Write(signalWorkflowExecutionRequest.RunId);
-                }
-                if (signalWorkflowExecutionRequest != null && signalWorkflowExecutionRequest.IsSetSignalName()) 
-                {
-                    writer.WritePropertyName("signalName");
-                    writer.Write(signalWorkflowExecutionRequest.SignalName);
-                }
-                if (signalWorkflowExecutionRequest != null && signalWorkflowExecutionRequest.IsSetInput()) 
-                {
-                    writer.WritePropertyName("input");
-                    writer.Write(signalWorkflowExecutionRequest.Input);
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
+                if(publicRequest.IsSetInput())
+                {
+                    context.Writer.WritePropertyName("input");
+                    context.Writer.Write(publicRequest.Input);
+                }
+
+                if(publicRequest.IsSetRunId())
+                {
+                    context.Writer.WritePropertyName("runId");
+                    context.Writer.Write(publicRequest.RunId);
+                }
+
+                if(publicRequest.IsSetSignalName())
+                {
+                    context.Writer.WritePropertyName("signalName");
+                    context.Writer.Write(publicRequest.SignalName);
+                }
+
+                if(publicRequest.IsSetWorkflowId())
+                {
+                    context.Writer.WritePropertyName("workflowId");
+                    context.Writer.Write(publicRequest.WorkflowId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

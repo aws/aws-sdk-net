@@ -12,56 +12,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The status and configuration of an <c>AnalysisScheme</c> .</para>
+    /// The status and configuration of an <code>AnalysisScheme</code>.
     /// </summary>
     public partial class AnalysisSchemeStatus
     {
-        
-        private AnalysisScheme options;
-        private OptionStatus status;
-
+        private AnalysisScheme _options;
+        private OptionStatus _status;
 
         /// <summary>
-        /// Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be
-        /// processed. The following options can be configured for an analysis scheme: <c>Synonyms</c>, <c>Stopwords</c>, <c>StemmingDictionary</c>, and
-        /// <c>AlgorithmicStemming</c>.
-        ///  
+        /// Gets and sets the property Options.
         /// </summary>
         public AnalysisScheme Options
         {
-            get { return this.options; }
-            set { this.options = value; }
+            get { return this._options; }
+            set { this._options = value; }
         }
 
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;
+            return this._options != null;
         }
 
         /// <summary>
-        /// The status of domain configuration option.
-        ///  
+        /// Gets and sets the property Status.
         /// </summary>
         public OptionStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

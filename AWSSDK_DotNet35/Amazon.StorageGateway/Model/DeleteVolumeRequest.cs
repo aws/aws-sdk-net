@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,45 +29,48 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVolume operation.
-    /// <para>This operation delete the specified gateway volume that you previously created using the CreateStorediSCSIVolume API. For
-    /// gateway-stored volumes, the local disk that was configured as the storage volume is not deleted. You can reuse the local disk to create
-    /// another storage volume. </para> <para>Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are
-    /// deleting. You should also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
-    /// snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html" >DescribeSnapshots</a> in the
-    /// <i>Amazon Elastic Compute Cloud API Reference</i> .</para> <para>In the request, you must provide the Amazon Resource Name (ARN) of the
-    /// storage volume you want to delete.</para>
+    /// This operation delete the specified gateway volume that you previously created using
+    /// the <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk
+    /// that was configured as the storage volume is not deleted. You can reuse the local
+    /// disk to create another storage volume. 
+    /// 
+    ///  
+    /// <para>
+    /// Before you delete a gateway volume, make sure there are no iSCSI connections to the
+    /// volume you are deleting. You should also make sure there is no snapshot in progress.
+    /// You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query snapshots on
+    /// the volume you are deleting and check the snapshot status. For more information, go
+    /// to <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+    /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// In the request, you must provide the Amazon Resource Name (ARN) of the storage volume
+    /// you want to delete.
+    /// </para>
     /// </summary>
     public partial class DeleteVolumeRequest : AmazonStorageGatewayRequest
     {
-        private string volumeARN;
-
+        private string _volumeARN;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway volumes.
-        ///  
+        /// Gets and sets the property VolumeARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation
+        /// to return a list of gateway volumes.
         /// </para>
         /// </summary>
         public string VolumeARN
         {
-            get { return this.volumeARN; }
-            set { this.volumeARN = value; }
+            get { return this._volumeARN; }
+            set { this._volumeARN = value; }
         }
 
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;
+            return this._volumeARN != null;
         }
 
     }
 }
-    

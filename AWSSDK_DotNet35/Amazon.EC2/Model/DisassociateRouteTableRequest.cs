@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,32 +29,38 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateRouteTable operation.
-    /// <para>Disassociates a subnet from a route table.</para> <para>After you perform this action, the subnet no longer uses the routes in the
-    /// route table. Instead, it uses the routes in the VPC's main route table. For more information about route tables, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the <i>Amazon Virtual Private Cloud
-    /// User Guide</i> .</para>
+    /// Disassociates a subnet from a route table.
+    /// 
+    ///  
+    /// <para>
+    /// After you perform this action, the subnet no longer uses the routes in the route table.
+    /// Instead, it uses the routes in the VPC's main route table. For more information about
+    /// route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+    /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DisassociateRouteTableRequest : AmazonEC2Request
     {
-        private string associationId;
-
+        private string _associationId;
 
         /// <summary>
-        /// The association ID representing the current association between the route table and subnet.
-        ///  
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// The association ID representing the current association between the route table and
+        /// subnet.
+        /// </para>
         /// </summary>
         public string AssociationId
         {
-            get { return this.associationId; }
-            set { this.associationId = value; }
+            get { return this._associationId; }
+            set { this._associationId = value; }
         }
 
         // Check to see if AssociationId property is set
         internal bool IsSetAssociationId()
         {
-            return this.associationId != null;
+            return this._associationId != null;
         }
 
     }
 }
-    

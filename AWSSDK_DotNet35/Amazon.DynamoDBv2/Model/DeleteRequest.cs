@@ -12,38 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents a request to perform a <i>DeleteItem</i> operation on an item.</para>
+    /// Represents a request to perform a <i>DeleteItem</i> operation on an item.
     /// </summary>
     public partial class DeleteRequest
     {
-        
-        private Dictionary<string,AttributeValue> key = new Dictionary<string,AttributeValue>();
-
+        private Dictionary<string, AttributeValue> _key = new Dictionary<string, AttributeValue>();
 
         /// <summary>
-        /// A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes
-        /// must be specified, and their data types must match those of the table's key schema.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public Dictionary<string,AttributeValue> Key
+        public DeleteRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteRequest with the parameterized properties
+        /// </summary>
+        /// <param name="key">A map of attribute name to attribute values, representing the primary key of the item to   delete. All of the table's primary key attributes must be specified, and their data types must   match those of the table's key schema.</param>
+        public DeleteRequest(Dictionary<string, AttributeValue> key)
         {
-            get { return this.key; }
-            set { this.key = value; }
+            _key = key;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// A map of attribute name to attribute values, representing the primary key of the item
+        /// to      delete. All of the table's primary key attributes must be specified, and their
+        /// data types must      match those of the table's key schema.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AttributeValue> Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null && this._key.Count > 0; 
         }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,108 +33,43 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Initiate Job Request Marshaller
+    /// InitiateJob Request Marshaller
     /// </summary>       
-    internal class InitiateJobRequestMarshaller : IMarshaller<IRequest, InitiateJobRequest> 
+    public class InitiateJobRequestMarshaller : IMarshaller<IRequest, InitiateJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(InitiateJobRequest initiateJobRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((InitiateJobRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(initiateJobRequest, "AmazonGlacier");
-            string target = "Glacier.InitiateJob";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+        public IRequest Marshall(InitiateJobRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs"; 
-            if(initiateJobRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(initiateJobRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(initiateJobRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(initiateJobRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetFormat()) 
-                {
-                    writer.WritePropertyName("Format");
-                    writer.Write(initiateJobRequest.JobParameters.Format);
-                }
-                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetType()) 
-                {
-                    writer.WritePropertyName("Type");
-                    writer.Write(initiateJobRequest.JobParameters.Type);
-                }
-                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetArchiveId()) 
-                {
-                    writer.WritePropertyName("ArchiveId");
-                    writer.Write(initiateJobRequest.JobParameters.ArchiveId);
-                }
-                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetDescription()) 
-                {
-                    writer.WritePropertyName("Description");
-                    writer.Write(initiateJobRequest.JobParameters.Description);
-                }
-                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetSNSTopic()) 
-                {
-                    writer.WritePropertyName("SNSTopic");
-                    writer.Write(initiateJobRequest.JobParameters.SNSTopic);
-                }
-                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetRetrievalByteRange()) 
-                {
-                    writer.WritePropertyName("RetrievalByteRange");
-                    writer.Write(initiateJobRequest.JobParameters.RetrievalByteRange);
-                }
+                var context = new JsonMarshallerContext(request, writer);
 
-                if (initiateJobRequest.JobParameters != null) 
-                {
-                    InventoryRetrievalJobInput inventoryRetrievalParameters = initiateJobRequest.JobParameters.InventoryRetrievalParameters;
-                    if (inventoryRetrievalParameters != null)
-                    {
-                        writer.WritePropertyName("InventoryRetrievalParameters");
-                        writer.WriteObjectStart();
-                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetStartDate()) 
-                        {
-                            writer.WritePropertyName("StartDate");
-                            writer.Write(inventoryRetrievalParameters.StartDate);
-                        }
-                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetEndDate()) 
-                        {
-                            writer.WritePropertyName("EndDate");
-                            writer.Write(inventoryRetrievalParameters.EndDate);
-                        }
-                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetLimit()) 
-                        {
-                            writer.WritePropertyName("Limit");
-                            writer.Write(inventoryRetrievalParameters.Limit);
-                        }
-                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetMarker()) 
-                        {
-                            writer.WritePropertyName("Marker");
-                            writer.Write(inventoryRetrievalParameters.Marker);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-
+                var marshaller = JobParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobParameters, context);
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

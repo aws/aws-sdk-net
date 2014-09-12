@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.Kinesis.Model
 {
     ///<summary>
-    /// AmazonKinesis exception
+    /// Kinesis exception
     /// </summary>
     public class ProvisionedThroughputExceededException : AmazonKinesisException 
     {
@@ -45,6 +49,5 @@ namespace Amazon.Kinesis.Model
         public ProvisionedThroughputExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

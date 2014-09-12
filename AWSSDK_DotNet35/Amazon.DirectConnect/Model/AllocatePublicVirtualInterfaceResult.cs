@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,289 +12,270 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para>A virtual interface (VLAN) transmits the traffic between the Direct Connect location and the customer.</para>
+    /// A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location
+    /// and the customer.
     /// </summary>
     public partial class AllocatePublicVirtualInterfaceResult : AmazonWebServiceResponse
     {
-        
-        private string ownerAccount;
-        private string virtualInterfaceId;
-        private string location;
-        private string connectionId;
-        private string virtualInterfaceType;
-        private string virtualInterfaceName;
-        private int? vlan;
-        private int? asn;
-        private string authKey;
-        private string amazonAddress;
-        private string customerAddress;
-        private VirtualInterfaceState virtualInterfaceState;
-        private string customerRouterConfig;
-        private string virtualGatewayId;
-        private List<RouteFilterPrefix> routeFilterPrefixes = new List<RouteFilterPrefix>();
-
-        public string OwnerAccount
-        {
-            get { return this.ownerAccount; }
-            set { this.ownerAccount = value; }
-        }
-
-        // Check to see if OwnerAccount property is set
-        internal bool IsSetOwnerAccount()
-        {
-            return this.ownerAccount != null;
-        }
+        private string _amazonAddress;
+        private int? _asn;
+        private string _authKey;
+        private string _connectionId;
+        private string _customerAddress;
+        private string _customerRouterConfig;
+        private string _location;
+        private string _ownerAccount;
+        private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
+        private string _virtualGatewayId;
+        private string _virtualInterfaceId;
+        private string _virtualInterfaceName;
+        private VirtualInterfaceState _virtualInterfaceState;
+        private string _virtualInterfaceType;
+        private int? _vlan;
 
         /// <summary>
-        /// ID of the virtual interface. Example: dxvif-123dfg56 Default: None
-        ///  
-        /// </summary>
-        public string VirtualInterfaceId
-        {
-            get { return this.virtualInterfaceId; }
-            set { this.virtualInterfaceId = value; }
-        }
-
-        // Check to see if VirtualInterfaceId property is set
-        internal bool IsSetVirtualInterfaceId()
-        {
-            return this.virtualInterfaceId != null;
-        }
-
-        /// <summary>
-        /// Where the connection is located. Example: EqSV5 Default: None
-        ///  
-        /// </summary>
-        public string Location
-        {
-            get { return this.location; }
-            set { this.location = value; }
-        }
-
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
-        {
-            return this.location != null;
-        }
-
-        /// <summary>
-        /// ID of the connection. Example: dxcon-fg5678gh Default: None
-        ///  
-        /// </summary>
-        public string ConnectionId
-        {
-            get { return this.connectionId; }
-            set { this.connectionId = value; }
-        }
-
-        // Check to see if ConnectionId property is set
-        internal bool IsSetConnectionId()
-        {
-            return this.connectionId != null;
-        }
-
-        /// <summary>
-        /// The type of virtual interface Example: private (Amazon VPC) or public (Amazon S3, Amazon DynamoDB, etc.)
-        ///  
-        /// </summary>
-        public string VirtualInterfaceType
-        {
-            get { return this.virtualInterfaceType; }
-            set { this.virtualInterfaceType = value; }
-        }
-
-        // Check to see if VirtualInterfaceType property is set
-        internal bool IsSetVirtualInterfaceType()
-        {
-            return this.virtualInterfaceType != null;
-        }
-
-        /// <summary>
-        /// The name of the virtual interface assigned by the customer Example: "My VPC"
-        ///  
-        /// </summary>
-        public string VirtualInterfaceName
-        {
-            get { return this.virtualInterfaceName; }
-            set { this.virtualInterfaceName = value; }
-        }
-
-        // Check to see if VirtualInterfaceName property is set
-        internal bool IsSetVirtualInterfaceName()
-        {
-            return this.virtualInterfaceName != null;
-        }
-
-        /// <summary>
-        /// VLAN ID Example: 101
-        ///  
-        /// </summary>
-        public int Vlan
-        {
-            get { return this.vlan ?? default(int); }
-            set { this.vlan = value; }
-        }
-
-        // Check to see if Vlan property is set
-        internal bool IsSetVlan()
-        {
-            return this.vlan.HasValue;
-        }
-
-        /// <summary>
-        /// Autonomous system (AS) number for Border Gateway Protocol (BGP) configuration Example: 65000
-        ///  
-        /// </summary>
-        public int Asn
-        {
-            get { return this.asn ?? default(int); }
-            set { this.asn = value; }
-        }
-
-        // Check to see if Asn property is set
-        internal bool IsSetAsn()
-        {
-            return this.asn.HasValue;
-        }
-
-        /// <summary>
-        /// Authentication key for BGP configuration Example: asdf34example
-        ///  
-        /// </summary>
-        public string AuthKey
-        {
-            get { return this.authKey; }
-            set { this.authKey = value; }
-        }
-
-        // Check to see if AuthKey property is set
-        internal bool IsSetAuthKey()
-        {
-            return this.authKey != null;
-        }
-
-        /// <summary>
-        /// IP address assigned to the Amazon interface. Example: 192.168.1.1/30
-        ///  
+        /// Gets and sets the property AmazonAddress.
         /// </summary>
         public string AmazonAddress
         {
-            get { return this.amazonAddress; }
-            set { this.amazonAddress = value; }
+            get { return this._amazonAddress; }
+            set { this._amazonAddress = value; }
         }
 
         // Check to see if AmazonAddress property is set
         internal bool IsSetAmazonAddress()
         {
-            return this.amazonAddress != null;
+            return this._amazonAddress != null;
         }
 
         /// <summary>
-        /// IP address assigned to the customer interface. Example: 192.168.1.2/30
-        ///  
+        /// Gets and sets the property Asn.
+        /// </summary>
+        public int Asn
+        {
+            get { return this._asn.GetValueOrDefault(); }
+            set { this._asn = value; }
+        }
+
+        // Check to see if Asn property is set
+        internal bool IsSetAsn()
+        {
+            return this._asn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthKey.
+        /// </summary>
+        public string AuthKey
+        {
+            get { return this._authKey; }
+            set { this._authKey = value; }
+        }
+
+        // Check to see if AuthKey property is set
+        internal bool IsSetAuthKey()
+        {
+            return this._authKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionId.
+        /// </summary>
+        public string ConnectionId
+        {
+            get { return this._connectionId; }
+            set { this._connectionId = value; }
+        }
+
+        // Check to see if ConnectionId property is set
+        internal bool IsSetConnectionId()
+        {
+            return this._connectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerAddress.
         /// </summary>
         public string CustomerAddress
         {
-            get { return this.customerAddress; }
-            set { this.customerAddress = value; }
+            get { return this._customerAddress; }
+            set { this._customerAddress = value; }
         }
 
         // Check to see if CustomerAddress property is set
         internal bool IsSetCustomerAddress()
         {
-            return this.customerAddress != null;
+            return this._customerAddress != null;
         }
 
         /// <summary>
-        /// State of the virtual interface. <ul> <li><b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual
-        /// interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the
-        /// virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li><b>Verifying</b>: This state only
-        /// applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li>
-        /// <li><b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward
-        /// traffic.</li> <li><b>Available</b>: A virtual interface that is able to forward traffic.</li> <li><b>Deleting</b>: A virtual interface is in
-        /// this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li><b>Deleted</b>: A
-        /// virtual interface that cannot forward traffic.</li> <li><b>Rejected</b>: The virtual interface owner has declined creation of the virtual
-        /// interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the
-        /// 'Rejected' state.</li> </ul>
-        ///  
+        /// Gets and sets the property CustomerRouterConfig. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>confirming, verifying, pending, available, deleting, deleted, rejected</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public VirtualInterfaceState VirtualInterfaceState
-        {
-            get { return this.virtualInterfaceState; }
-            set { this.virtualInterfaceState = value; }
-        }
-
-        // Check to see if VirtualInterfaceState property is set
-        internal bool IsSetVirtualInterfaceState()
-        {
-            return this.virtualInterfaceState != null;
-        }
-
-        /// <summary>
         /// Information for generating the customer router configuration.
-        ///  
+        /// </para>
         /// </summary>
         public string CustomerRouterConfig
         {
-            get { return this.customerRouterConfig; }
-            set { this.customerRouterConfig = value; }
+            get { return this._customerRouterConfig; }
+            set { this._customerRouterConfig = value; }
         }
 
         // Check to see if CustomerRouterConfig property is set
         internal bool IsSetCustomerRouterConfig()
         {
-            return this.customerRouterConfig != null;
+            return this._customerRouterConfig != null;
         }
 
         /// <summary>
-        /// The ID of the virtual private gateway to a VPC. Only applies to private virtual interfaces. Example: vgw-123er56
-        ///  
+        /// Gets and sets the property Location.
         /// </summary>
-        public string VirtualGatewayId
+        public string Location
         {
-            get { return this.virtualGatewayId; }
-            set { this.virtualGatewayId = value; }
+            get { return this._location; }
+            set { this._location = value; }
         }
 
-        // Check to see if VirtualGatewayId property is set
-        internal bool IsSetVirtualGatewayId()
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
         {
-            return this.virtualGatewayId != null;
+            return this._location != null;
         }
 
         /// <summary>
-        /// A list of routes to be advertised to the AWS network in this region (public virtual interface) or your VPC (private virtual interface).
-        ///  
+        /// Gets and sets the property OwnerAccount.
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteFilterPrefixes.
         /// </summary>
         public List<RouteFilterPrefix> RouteFilterPrefixes
         {
-            get { return this.routeFilterPrefixes; }
-            set { this.routeFilterPrefixes = value; }
+            get { return this._routeFilterPrefixes; }
+            set { this._routeFilterPrefixes = value; }
         }
 
         // Check to see if RouteFilterPrefixes property is set
         internal bool IsSetRouteFilterPrefixes()
         {
-            return this.routeFilterPrefixes.Count > 0;
+            return this._routeFilterPrefixes != null && this._routeFilterPrefixes.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property VirtualGatewayId.
+        /// </summary>
+        public string VirtualGatewayId
+        {
+            get { return this._virtualGatewayId; }
+            set { this._virtualGatewayId = value; }
+        }
+
+        // Check to see if VirtualGatewayId property is set
+        internal bool IsSetVirtualGatewayId()
+        {
+            return this._virtualGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualInterfaceId.
+        /// </summary>
+        public string VirtualInterfaceId
+        {
+            get { return this._virtualInterfaceId; }
+            set { this._virtualInterfaceId = value; }
+        }
+
+        // Check to see if VirtualInterfaceId property is set
+        internal bool IsSetVirtualInterfaceId()
+        {
+            return this._virtualInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualInterfaceName.
+        /// </summary>
+        public string VirtualInterfaceName
+        {
+            get { return this._virtualInterfaceName; }
+            set { this._virtualInterfaceName = value; }
+        }
+
+        // Check to see if VirtualInterfaceName property is set
+        internal bool IsSetVirtualInterfaceName()
+        {
+            return this._virtualInterfaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualInterfaceState.
+        /// </summary>
+        public VirtualInterfaceState VirtualInterfaceState
+        {
+            get { return this._virtualInterfaceState; }
+            set { this._virtualInterfaceState = value; }
+        }
+
+        // Check to see if VirtualInterfaceState property is set
+        internal bool IsSetVirtualInterfaceState()
+        {
+            return this._virtualInterfaceState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualInterfaceType.
+        /// </summary>
+        public string VirtualInterfaceType
+        {
+            get { return this._virtualInterfaceType; }
+            set { this._virtualInterfaceType = value; }
+        }
+
+        // Check to see if VirtualInterfaceType property is set
+        internal bool IsSetVirtualInterfaceType()
+        {
+            return this._virtualInterfaceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vlan.
+        /// </summary>
+        public int Vlan
+        {
+            get { return this._vlan.GetValueOrDefault(); }
+            set { this._vlan = value; }
+        }
+
+        // Check to see if Vlan property is set
+        internal bool IsSetVlan()
+        {
+            return this._vlan.HasValue; 
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,64 +33,70 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Tapes Request Marshaller
+    /// CreateTapes Request Marshaller
     /// </summary>       
-    internal class CreateTapesRequestMarshaller : IMarshaller<IRequest, CreateTapesRequest> 
+    public class CreateTapesRequestMarshaller : IMarshaller<IRequest, CreateTapesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreateTapesRequest createTapesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreateTapesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createTapesRequest, "AmazonStorageGateway");
+        public IRequest Marshall(CreateTapesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.CreateTapes";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createTapesRequest != null && createTapesRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(createTapesRequest.GatewayARN);
-                }
-                if (createTapesRequest != null && createTapesRequest.IsSetTapeSizeInBytes()) 
-                {
-                    writer.WritePropertyName("TapeSizeInBytes");
-                    writer.Write(createTapesRequest.TapeSizeInBytes);
-                }
-                if (createTapesRequest != null && createTapesRequest.IsSetClientToken()) 
-                {
-                    writer.WritePropertyName("ClientToken");
-                    writer.Write(createTapesRequest.ClientToken);
-                }
-                if (createTapesRequest != null && createTapesRequest.IsSetNumTapesToCreate()) 
-                {
-                    writer.WritePropertyName("NumTapesToCreate");
-                    writer.Write(createTapesRequest.NumTapesToCreate);
-                }
-                if (createTapesRequest != null && createTapesRequest.IsSetTapeBarcodePrefix()) 
-                {
-                    writer.WritePropertyName("TapeBarcodePrefix");
-                    writer.Write(createTapesRequest.TapeBarcodePrefix);
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                if(publicRequest.IsSetGatewayARN())
+                {
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
+                }
+
+                if(publicRequest.IsSetNumTapesToCreate())
+                {
+                    context.Writer.WritePropertyName("NumTapesToCreate");
+                    context.Writer.Write(publicRequest.NumTapesToCreate);
+                }
+
+                if(publicRequest.IsSetTapeBarcodePrefix())
+                {
+                    context.Writer.WritePropertyName("TapeBarcodePrefix");
+                    context.Writer.Write(publicRequest.TapeBarcodePrefix);
+                }
+
+                if(publicRequest.IsSetTapeSizeInBytes())
+                {
+                    context.Writer.WritePropertyName("TapeSizeInBytes");
+                    context.Writer.Write(publicRequest.TapeSizeInBytes);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

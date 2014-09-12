@@ -12,114 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes telemetry for a VPN tunnel.</para>
+    /// Describes telemetry for a VPN tunnel.
     /// </summary>
     public partial class VgwTelemetry
     {
-        
-        private string outsideIpAddress;
-        private TelemetryStatus status;
-        private DateTime? lastStatusChange;
-        private string statusMessage;
-        private int? acceptedRouteCount;
-
+        private int? _acceptedRouteCount;
+        private DateTime? _lastStatusChange;
+        private string _outsideIpAddress;
+        private TelemetryStatus _status;
+        private string _statusMessage;
 
         /// <summary>
-        /// The Internet-routable IP address of the virtual private gateway's outside interface.
-        ///  
-        /// </summary>
-        public string OutsideIpAddress
-        {
-            get { return this.outsideIpAddress; }
-            set { this.outsideIpAddress = value; }
-        }
-
-        // Check to see if OutsideIpAddress property is set
-        internal bool IsSetOutsideIpAddress()
-        {
-            return this.outsideIpAddress != null;
-        }
-
-        /// <summary>
-        /// The status of the VPN tunnel.
-        ///  
+        /// Gets and sets the property AcceptedRouteCount. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>UP, DOWN</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public TelemetryStatus Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The date and time of the last change in status.
-        ///  
-        /// </summary>
-        public DateTime LastStatusChange
-        {
-            get { return this.lastStatusChange ?? default(DateTime); }
-            set { this.lastStatusChange = value; }
-        }
-
-        // Check to see if LastStatusChange property is set
-        internal bool IsSetLastStatusChange()
-        {
-            return this.lastStatusChange.HasValue;
-        }
-
-        /// <summary>
-        /// If an error occurs, a description of the error.
-        ///  
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this.statusMessage; }
-            set { this.statusMessage = value; }
-        }
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this.statusMessage != null;
-        }
-
-        /// <summary>
         /// The number of accepted routes.
-        ///  
+        /// </para>
         /// </summary>
         public int AcceptedRouteCount
         {
-            get { return this.acceptedRouteCount ?? default(int); }
-            set { this.acceptedRouteCount = value; }
+            get { return this._acceptedRouteCount.GetValueOrDefault(); }
+            set { this._acceptedRouteCount = value; }
         }
 
         // Check to see if AcceptedRouteCount property is set
         internal bool IsSetAcceptedRouteCount()
         {
-            return this.acceptedRouteCount.HasValue;
+            return this._acceptedRouteCount.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property LastStatusChange. 
+        /// <para>
+        /// The date and time of the last change in status.
+        /// </para>
+        /// </summary>
+        public DateTime LastStatusChange
+        {
+            get { return this._lastStatusChange.GetValueOrDefault(); }
+            set { this._lastStatusChange = value; }
+        }
+
+        // Check to see if LastStatusChange property is set
+        internal bool IsSetLastStatusChange()
+        {
+            return this._lastStatusChange.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutsideIpAddress. 
+        /// <para>
+        /// The Internet-routable IP address of the virtual private gateway's outside interface.
+        /// </para>
+        /// </summary>
+        public string OutsideIpAddress
+        {
+            get { return this._outsideIpAddress; }
+            set { this._outsideIpAddress = value; }
+        }
+
+        // Check to see if OutsideIpAddress property is set
+        internal bool IsSetOutsideIpAddress()
+        {
+            return this._outsideIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the VPN tunnel.
+        /// </para>
+        /// </summary>
+        public TelemetryStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// If an error occurs, a description of the error.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
     }
 }

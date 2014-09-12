@@ -12,72 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Reserved Instances Request Marshaller
+    /// ModifyReservedInstances Request Marshaller
     /// </summary>       
-    public class ModifyReservedInstancesRequestMarshaller : IMarshaller<IRequest, ModifyReservedInstancesRequest>
+    public class ModifyReservedInstancesRequestMarshaller : IMarshaller<IRequest, ModifyReservedInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ModifyReservedInstancesRequest modifyReservedInstancesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(modifyReservedInstancesRequest, "AmazonEC2");
+            return this.Marshall((ModifyReservedInstancesRequest)input);
+        }
+    
+        public IRequest Marshall(ModifyReservedInstancesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ModifyReservedInstances");
             request.Parameters.Add("Version", "2014-06-15");
-            if (modifyReservedInstancesRequest != null && modifyReservedInstancesRequest.IsSetClientToken())
-            {
-                request.Parameters.Add("ClientToken", StringUtils.FromString(modifyReservedInstancesRequest.ClientToken));
-            }
-            if (modifyReservedInstancesRequest != null)
-            {
-                List<string> reservedInstancesIdsList = modifyReservedInstancesRequest.ReservedInstancesIds;
 
-                int reservedInstancesIdsListIndex = 1;
-                foreach (string reservedInstancesIdsListValue in reservedInstancesIdsList)
-                { 
-                    request.Parameters.Add("ReservedInstancesId." + reservedInstancesIdsListIndex, StringUtils.FromString(reservedInstancesIdsListValue));
-                    reservedInstancesIdsListIndex++;
-                }
-            }
-
-            if (modifyReservedInstancesRequest != null)
+            if(publicRequest != null)
             {
-                List<ReservedInstancesConfiguration> targetConfigurationsList = modifyReservedInstancesRequest.TargetConfigurations;
-                int targetConfigurationsListIndex = 1;
-                foreach (ReservedInstancesConfiguration targetConfigurationsListValue in targetConfigurationsList)
+                if(publicRequest.IsSetClientToken())
                 {
-                    if (targetConfigurationsListValue != null && targetConfigurationsListValue.IsSetAvailabilityZone())
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                if(publicRequest.IsSetReservedInstancesIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ReservedInstancesIds)
                     {
-                        request.Parameters.Add("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".AvailabilityZone", StringUtils.FromString(targetConfigurationsListValue.AvailabilityZone));
+                        request.Parameters.Add("ReservedInstancesId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (targetConfigurationsListValue != null && targetConfigurationsListValue.IsSetPlatform())
+                }
+                if(publicRequest.IsSetTargetConfigurations())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TargetConfigurations)
                     {
-                        request.Parameters.Add("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".Platform", StringUtils.FromString(targetConfigurationsListValue.Platform));
+                        if(publicRequestlistValue.IsSetAvailabilityZone())
+                        {
+                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
+                        }
+                        if(publicRequestlistValue.IsSetInstanceCount())
+                        {
+                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
+                        }
+                        if(publicRequestlistValue.IsSetInstanceType())
+                        {
+                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValue.InstanceType));
+                        }
+                        if(publicRequestlistValue.IsSetPlatform())
+                        {
+                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Platform", StringUtils.FromString(publicRequestlistValue.Platform));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (targetConfigurationsListValue != null && targetConfigurationsListValue.IsSetInstanceCount())
-                    {
-                        request.Parameters.Add("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceCount", StringUtils.FromInt(targetConfigurationsListValue.InstanceCount));
-                    }
-                    if (targetConfigurationsListValue != null && targetConfigurationsListValue.IsSetInstanceType())
-                    {
-                        request.Parameters.Add("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceType", StringUtils.FromString(targetConfigurationsListValue.InstanceType));
-                    }
-
-                    targetConfigurationsListIndex++;
                 }
             }
-
             return request;
         }
     }

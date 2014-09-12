@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeStacks Request Marshaller
     /// </summary>       
-    public class DescribeStacksRequestMarshaller : IMarshaller<IRequest, DescribeStacksRequest> 
+    public class DescribeStacksRequestMarshaller : IMarshaller<IRequest, DescribeStacksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeStacksRequest)input);
+        }
+
         public IRequest Marshall(DescribeStacksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,15 +56,16 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetStackIds())
                 {
-                    writer.WritePropertyName("StackIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("StackIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestStackIdsListValue in publicRequest.StackIds)
                     {
-                        writer.Write(publicRequestStackIdsListValue);
+                            context.Writer.Write(publicRequestStackIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

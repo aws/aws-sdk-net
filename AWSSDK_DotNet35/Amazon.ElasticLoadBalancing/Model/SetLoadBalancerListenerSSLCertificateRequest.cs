@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,6 +46,23 @@ namespace Amazon.ElasticLoadBalancing.Model
         private int? _loadBalancerPort;
         private string _sSLCertificateId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SetLoadBalancerListenerSSLCertificateRequest() { }
+
+        /// <summary>
+        /// Instantiates SetLoadBalancerListenerSSLCertificateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        /// <param name="loadBalancerPort"> The port that uses the specified SSL certificate. </param>
+        /// <param name="sslCertificateId"> The Amazon Resource Number (ARN) of the SSL certificate chain to use. For more information on SSL certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates</a> in the <i>AWS Identity and Access Management User Guide</i>.</param>
+        public SetLoadBalancerListenerSSLCertificateRequest(string loadBalancerName, int loadBalancerPort, string sslCertificateId)
+        {
+            _loadBalancerName = loadBalancerName;
+            _loadBalancerPort = loadBalancerPort;
+            _sSLCertificateId = sslCertificateId;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
@@ -61,7 +82,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._loadBalancerName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LoadBalancerPort. 
         /// <para>
@@ -79,7 +99,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerPort.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SSLCertificateId. 

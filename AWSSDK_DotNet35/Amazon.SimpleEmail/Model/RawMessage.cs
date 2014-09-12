@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -30,6 +34,19 @@ namespace Amazon.SimpleEmail.Model
     {
         private MemoryStream _data;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RawMessage() { }
+
+        /// <summary>
+        /// Instantiates RawMessage with the parameterized properties
+        /// </summary>
+        /// <param name="data">The raw data of the message. The client must ensure that the message format complies with Internet email   standards regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary).    The To:, CC:, and BCC: headers in the raw message can contain a group list.    For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.  </param>
+        public RawMessage(MemoryStream data)
+        {
+            _data = data;
+        }
 
         /// <summary>
         /// Gets and sets the property Data. 

@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Vpc Attribute Request Marshaller
+    /// DescribeVpcAttribute Request Marshaller
     /// </summary>       
-    public class DescribeVpcAttributeRequestMarshaller : IMarshaller<IRequest, DescribeVpcAttributeRequest>
+    public class DescribeVpcAttributeRequestMarshaller : IMarshaller<IRequest, DescribeVpcAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeVpcAttributeRequest describeVpcAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeVpcAttributeRequest, "AmazonEC2");
+            return this.Marshall((DescribeVpcAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeVpcAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeVpcAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeVpcAttributeRequest != null && describeVpcAttributeRequest.IsSetVpcId())
-            {
-                request.Parameters.Add("VpcId", StringUtils.FromString(describeVpcAttributeRequest.VpcId));
-            }
-            if (describeVpcAttributeRequest != null && describeVpcAttributeRequest.IsSetAttribute())
-            {
-                request.Parameters.Add("Attribute", StringUtils.FromString(describeVpcAttributeRequest.Attribute));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttribute())
+                {
+                    request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
+                }
+            }
             return request;
         }
     }

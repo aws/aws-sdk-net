@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,40 +12,49 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains the output from the PollForTask action.</para>
+    /// Contains the output from the PollForTask action.
     /// </summary>
     public partial class PollForTaskResult : AmazonWebServiceResponse
     {
-        
-        private TaskObject taskObject;
+        private TaskObject _taskObject;
 
         /// <summary>
-        /// An instance of <a>PollForTaskResult</a>, which contains an instance of <a>TaskObject</a>. The returned object contains all the information
-        /// needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is taskId, which contains
-        /// an identifier for the task being assigned. The calling task runner uses taskId in subsequent calls to <a>ReportTaskProgress</a> and
-        /// <a>SetTaskStatus</a>.
-        ///  
+        /// Gets and sets the property TaskObject. 
+        /// <para>
+        /// An instance of <a>PollForTaskResult</a>, which contains an instance of <a>TaskObject</a>.
+        /// The returned object contains all the information needed to complete the task that
+        /// is being assigned to the task runner. One of the fields returned in this object is
+        /// taskId, which contains an identifier for the task being assigned. The calling task
+        /// runner uses taskId in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+        /// </para>
         /// </summary>
         public TaskObject TaskObject
         {
-            get { return this.taskObject; }
-            set { this.taskObject = value; }
+            get { return this._taskObject; }
+            set { this._taskObject = value; }
         }
 
         // Check to see if TaskObject property is set
         internal bool IsSetTaskObject()
         {
-            return this.taskObject != null;
+            return this._taskObject != null;
         }
+
     }
 }

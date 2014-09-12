@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -63,6 +67,30 @@ namespace Amazon.ElasticMapReduce.Model
         private string _jobFlowId;
         private List<StepConfig> _steps = new List<StepConfig>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AddJobFlowStepsRequest() { }
+
+        /// <summary>
+        /// Instantiates AddJobFlowStepsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="jobFlowId">A string that uniquely identifies the job flow. This identifier is returned by   <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </param>
+        public AddJobFlowStepsRequest(string jobFlowId)
+        {
+            _jobFlowId = jobFlowId;
+        }
+
+        /// <summary>
+        /// Instantiates AddJobFlowStepsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="jobFlowId">A string that uniquely identifies the job flow. This identifier is returned by   <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </param>
+        /// <param name="steps"> A list of <a>StepConfig</a> to be executed by the job flow. </param>
+        public AddJobFlowStepsRequest(string jobFlowId, List<StepConfig> steps)
+        {
+            _jobFlowId = jobFlowId;
+            _steps = steps;
+        }
 
         /// <summary>
         /// Gets and sets the property JobFlowId. 
@@ -82,7 +110,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._jobFlowId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Steps. 

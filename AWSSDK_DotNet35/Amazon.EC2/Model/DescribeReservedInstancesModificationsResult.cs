@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesModificationsResult : AmazonWebServiceResponse
     {
-        
-        private List<ReservedInstancesModification> reservedInstancesModifications = new List<ReservedInstancesModification>();
-        private string nextToken;
-
+        private string _nextToken;
+        private List<ReservedInstancesModification> _reservedInstancesModifications = new List<ReservedInstancesModification>();
 
         /// <summary>
-        /// The Reserved Instance modification information.
-        ///  
-        /// </summary>
-        public List<ReservedInstancesModification> ReservedInstancesModifications
-        {
-            get { return this.reservedInstancesModifications; }
-            set { this.reservedInstancesModifications = value; }
-        }
-
-        // Check to see if ReservedInstancesModifications property is set
-        internal bool IsSetReservedInstancesModifications()
-        {
-            return this.reservedInstancesModifications.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
         /// The token for the next page of data.
-        ///  
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesModifications. 
+        /// <para>
+        /// The Reserved Instance modification information.
+        /// </para>
+        /// </summary>
+        public List<ReservedInstancesModification> ReservedInstancesModifications
+        {
+            get { return this._reservedInstancesModifications; }
+            set { this._reservedInstancesModifications = value; }
+        }
+
+        // Check to see if ReservedInstancesModifications property is set
+        internal bool IsSetReservedInstancesModifications()
+        {
+            return this._reservedInstancesModifications != null && this._reservedInstancesModifications.Count > 0; 
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.AWSSupport.Model
         private string _resourceId;
         private string _status;
 
-
         /// <summary>
         /// Gets and sets the property IsSuppressed. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._isSuppressed.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -77,7 +79,6 @@ namespace Amazon.AWSSupport.Model
             return this._metadata != null && this._metadata.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
@@ -96,7 +97,6 @@ namespace Amazon.AWSSupport.Model
             return this._region != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
@@ -114,7 +114,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._resourceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -29,8 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class AdjustmentType
     {
-        private string _adjustmentType;
-
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property Type. 
@@ -41,14 +44,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public string Type
         {
-            get { return this._adjustmentType; }
-            set { this._adjustmentType = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._adjustmentType != null;
+            return this._type != null;
         }
 
     }

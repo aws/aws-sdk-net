@@ -12,286 +12,278 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains information about the current resource record set.</para>
+    /// A complex type that contains information about the current resource record set.
     /// </summary>
     public partial class ResourceRecordSet
     {
-        
-        private string name;
-        private RRType type;
-        private string setIdentifier;
-        private long? weight;
-        private ResourceRecordSetRegion region;
-        private ResourceRecordSetFailover failover;
-        private long? tTL;
-        private List<ResourceRecord> resourceRecords = new List<ResourceRecord>();
-        private AliasTarget aliasTarget;
-        private string healthCheckId;
-
+        private string _name;
+        private RRType _type;
+        private string _setIdentifier;
+        private long? _weight;
+        private ResourceRecordSetRegion _region;
+        private GeoLocation _geoLocation;
+        private ResourceRecordSetFailover _failover;
+        private long? _tTL;
+        private List<ResourceRecord> _resourceRecords = new List<ResourceRecord>();
+        private AliasTarget _aliasTarget;
+        private string _healthCheckId;
 
         /// <summary>
-        /// The domain name of the current resource record set.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ResourceRecordSet() { }
+
+        /// <summary>
+        /// Instantiates ResourceRecordSet with the parameterized properties
+        /// </summary>
+        /// <param name="name">The domain name of the current resource record set.</param>
+        /// <param name="type">The type of the current resource record set.</param>
+        public ResourceRecordSet(string name, RRType type)
+        {
+            _name = name;
+            _type = type;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// The domain name of the current resource record set.
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// The type of the current resource record set.
-        ///  
+        /// Gets and sets the property Type. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA</description>
-        ///     </item>
-        /// </list>
+        /// The type of the current resource record set.
         /// </para>
         /// </summary>
         public RRType Type
         {
-            get { return this.type; }
-            set { this.type = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this.type != null;
+            return this._type != null;
         }
 
         /// <summary>
-        /// <i>Weighted, Regional, and Failover resource record sets only:</i> An identifier that differentiates among multiple resource record sets
-        /// that have the same combination of DNS name and type.
-        ///  
+        /// Gets and sets the property SetIdentifier. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        /// </list>
+        /// <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier
+        /// that differentiates among multiple resource record sets that have the same combination
+        /// of DNS name and type.
         /// </para>
         /// </summary>
         public string SetIdentifier
         {
-            get { return this.setIdentifier; }
-            set { this.setIdentifier = value; }
+            get { return this._setIdentifier; }
+            set { this._setIdentifier = value; }
         }
 
         // Check to see if SetIdentifier property is set
         internal bool IsSetSetIdentifier()
         {
-            return this.setIdentifier != null;
+            return this._setIdentifier != null;
         }
 
         /// <summary>
-        /// <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that
-        /// determines what portion of traffic for the current resource record set is routed to the associated location.
-        ///  
+        /// Gets and sets the property Weight. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - 255</description>
-        ///     </item>
-        /// </list>
+        /// <i>Weighted resource record sets only:</i> Among resource record sets that have the
+        /// same combination of DNS name and type, a value that determines what portion of traffic
+        /// for the current resource record set is routed to the associated location.
         /// </para>
         /// </summary>
         public long Weight
         {
-            get { return this.weight ?? default(long); }
-            set { this.weight = value; }
+            get { return this._weight.GetValueOrDefault(); }
+            set { this._weight = value; }
         }
 
         // Check to see if Weight property is set
         internal bool IsSetWeight()
         {
-            return this.weight.HasValue;
+            return this._weight.HasValue; 
         }
 
         /// <summary>
-        /// <i>Regional resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that
-        /// specifies the AWS region for the current resource record set.
-        ///  
+        /// Gets and sets the property Region. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1</description>
-        ///     </item>
-        /// </list>
+        /// <i>Latency-based resource record sets only:</i> Among resource record sets that have
+        /// the same combination of DNS name and type, a value that specifies the AWS region for
+        /// the current resource record set.
         /// </para>
         /// </summary>
         public ResourceRecordSetRegion Region
         {
-            get { return this.region; }
-            set { this.region = value; }
+            get { return this._region; }
+            set { this._region = value; }
         }
 
         // Check to see if Region property is set
         internal bool IsSetRegion()
         {
-            return this.region != null;
+            return this._region != null;
         }
 
         /// <summary>
-        /// <i>Failover resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that
-        /// indicates whether the current resource record set is a primary or secondary resource record set. A failover set may contain at most one
-        /// resource record set marked as primary and one resource record set marked as secondary. A resource record set marked as primary will be
-        /// returned if any of the following are true: (1) an associated health check is passing, (2) if the resource record set is an alias with the
-        /// evaluate target health and at least one target resource record set is healthy, (3) both the primary and secondary resource record set are
-        /// failing health checks or (4) there is no secondary resource record set. A secondary resource record set will be returned if: (1) the primary
-        /// is failing a health check and either the secondary is passing a health check or has no associated health check, or (2) there is no primary
-        /// resource record set. Valid values: <c>PRIMARY</c> | <c>SECONDARY</c>
+        /// Gets and sets the property GeoLocation. 
+        /// <para>
+        /// <i>Geo location resource record sets only:</i> Among resource record sets that have
+        /// the same combination of DNS name and type, a value that specifies the geo location
+        /// for the current resource record set.
+        /// </para>
+        /// </summary>
+        public GeoLocation GeoLocation
+        {
+            get { return this._geoLocation; }
+            set { this._geoLocation = value; }
+        }
+
+        // Check to see if GeoLocation property is set
+        internal bool IsSetGeoLocation()
+        {
+            return this._geoLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Failover. 
+        /// <para>
+        /// <i>Failover resource record sets only:</i> Among resource record sets that have the
+        /// same combination of DNS name and type, a value that indicates whether the current
+        /// resource record set is a primary or secondary resource record set. A failover set
+        /// may contain at most one resource record set marked as primary and one resource record
+        /// set marked as secondary. A resource record set marked as primary will be returned
+        /// if any of the following are true: (1) an associated health check is passing, (2) if
+        /// the resource record set is an alias with the evaluate target health and at least one
+        /// target resource record set is healthy, (3) both the primary and secondary resource
+        /// record set are failing health checks or (4) there is no secondary resource record
+        /// set. A secondary resource record set will be returned if: (1) the primary is failing
+        /// a health check and either the secondary is passing a health check or has no associated
+        /// health check, or (2) there is no primary resource record set. 
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>PRIMARY, SECONDARY</description>
-        ///     </item>
-        /// </list>
+        /// Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
         /// </para>
         /// </summary>
         public ResourceRecordSetFailover Failover
         {
-            get { return this.failover; }
-            set { this.failover = value; }
+            get { return this._failover; }
+            set { this._failover = value; }
         }
 
         // Check to see if Failover property is set
         internal bool IsSetFailover()
         {
-            return this.failover != null;
+            return this._failover != null;
         }
 
         /// <summary>
-        /// The cache time to live for the current resource record set.
-        ///  
+        /// Gets and sets the property TTL. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - 2147483647</description>
-        ///     </item>
-        /// </list>
+        /// The cache time to live for the current resource record set.
         /// </para>
         /// </summary>
         public long TTL
         {
-            get { return this.tTL ?? default(long); }
-            set { this.tTL = value; }
+            get { return this._tTL.GetValueOrDefault(); }
+            set { this._tTL = value; }
         }
 
         // Check to see if TTL property is set
         internal bool IsSetTTL()
         {
-            return this.tTL.HasValue;
+            return this._tTL.HasValue; 
         }
 
         /// <summary>
-        /// A complex type that contains the resource records for the current resource record set.
-        ///  
+        /// Gets and sets the property ResourceRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// A complex type that contains the resource records for the current resource record
+        /// set.
         /// </para>
         /// </summary>
         public List<ResourceRecord> ResourceRecords
         {
-            get { return this.resourceRecords; }
-            set { this.resourceRecords = value; }
+            get { return this._resourceRecords; }
+            set { this._resourceRecords = value; }
         }
 
         // Check to see if ResourceRecords property is set
         internal bool IsSetResourceRecords()
         {
-            return this.resourceRecords.Count > 0;
+            return this._resourceRecords != null && this._resourceRecords.Count > 0; 
         }
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> Information about the AWS resource to which you are redirecting traffic.
-        ///  
+        /// Gets and sets the property AliasTarget. 
+        /// <para>
+        /// <i>Alias resource record sets only:</i> Information about the AWS resource to which
+        /// you are redirecting traffic.
+        /// </para>
         /// </summary>
         public AliasTarget AliasTarget
         {
-            get { return this.aliasTarget; }
-            set { this.aliasTarget = value; }
+            get { return this._aliasTarget; }
+            set { this._aliasTarget = value; }
         }
 
         // Check to see if AliasTarget property is set
         internal bool IsSetAliasTarget()
         {
-            return this.aliasTarget != null;
+            return this._aliasTarget != null;
         }
 
         /// <summary>
-        /// <i>Health Check resource record sets only, not required for alias resource record sets:</i> An identifier that is used to identify health
-        /// check associated with the resource record set.
-        ///  
+        /// Gets and sets the property HealthCheckId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 64</description>
-        ///     </item>
-        /// </list>
+        /// <i>Health Check resource record sets only, not required for alias resource record
+        /// sets:</i> An identifier that is used to identify health check associated with the
+        /// resource record set.
         /// </para>
         /// </summary>
         public string HealthCheckId
         {
-            get { return this.healthCheckId; }
-            set { this.healthCheckId = value; }
+            get { return this._healthCheckId; }
+            set { this._healthCheckId = value; }
         }
 
         // Check to see if HealthCheckId property is set
         internal bool IsSetHealthCheckId()
         {
-            return this.healthCheckId != null;
+            return this._healthCheckId != null;
         }
+
     }
 }

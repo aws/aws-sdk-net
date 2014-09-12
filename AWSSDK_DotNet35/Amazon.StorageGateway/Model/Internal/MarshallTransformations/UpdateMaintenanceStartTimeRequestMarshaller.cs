@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,59 +33,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Maintenance Start Time Request Marshaller
+    /// UpdateMaintenanceStartTime Request Marshaller
     /// </summary>       
-    internal class UpdateMaintenanceStartTimeRequestMarshaller : IMarshaller<IRequest, UpdateMaintenanceStartTimeRequest> 
+    public class UpdateMaintenanceStartTimeRequestMarshaller : IMarshaller<IRequest, UpdateMaintenanceStartTimeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UpdateMaintenanceStartTimeRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(updateMaintenanceStartTimeRequest, "AmazonStorageGateway");
+        public IRequest Marshall(UpdateMaintenanceStartTimeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.UpdateMaintenanceStartTime";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateMaintenanceStartTimeRequest != null && updateMaintenanceStartTimeRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDayOfWeek())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(updateMaintenanceStartTimeRequest.GatewayARN);
-                }
-                if (updateMaintenanceStartTimeRequest != null && updateMaintenanceStartTimeRequest.IsSetHourOfDay()) 
-                {
-                    writer.WritePropertyName("HourOfDay");
-                    writer.Write(updateMaintenanceStartTimeRequest.HourOfDay);
-                }
-                if (updateMaintenanceStartTimeRequest != null && updateMaintenanceStartTimeRequest.IsSetMinuteOfHour()) 
-                {
-                    writer.WritePropertyName("MinuteOfHour");
-                    writer.Write(updateMaintenanceStartTimeRequest.MinuteOfHour);
-                }
-                if (updateMaintenanceStartTimeRequest != null && updateMaintenanceStartTimeRequest.IsSetDayOfWeek()) 
-                {
-                    writer.WritePropertyName("DayOfWeek");
-                    writer.Write(updateMaintenanceStartTimeRequest.DayOfWeek);
+                    context.Writer.WritePropertyName("DayOfWeek");
+                    context.Writer.Write(publicRequest.DayOfWeek);
                 }
 
+                if(publicRequest.IsSetGatewayARN())
+                {
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
+                }
+
+                if(publicRequest.IsSetHourOfDay())
+                {
+                    context.Writer.WritePropertyName("HourOfDay");
+                    context.Writer.Write(publicRequest.HourOfDay);
+                }
+
+                if(publicRequest.IsSetMinuteOfHour())
+                {
+                    context.Writer.WritePropertyName("MinuteOfHour");
+                    context.Writer.Write(publicRequest.MinuteOfHour);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

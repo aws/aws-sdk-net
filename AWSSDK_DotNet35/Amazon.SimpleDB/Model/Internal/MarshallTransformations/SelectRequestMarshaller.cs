@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleDB.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Select Request Marshaller
     /// </summary>       
-    public class SelectRequestMarshaller : IMarshaller<IRequest, SelectRequest>
+    public class SelectRequestMarshaller : IMarshaller<IRequest, SelectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(SelectRequest selectRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(selectRequest, "AmazonSimpleDB");
+            return this.Marshall((SelectRequest)input);
+        }
+    
+        public IRequest Marshall(SelectRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleDB");
             request.Parameters.Add("Action", "Select");
             request.Parameters.Add("Version", "2009-04-15");
-            if (selectRequest != null && selectRequest.IsSetSelectExpression())
-            {
-                request.Parameters.Add("SelectExpression", StringUtils.FromString(selectRequest.SelectExpression));
-            }
-            if (selectRequest != null && selectRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(selectRequest.NextToken));
-            }
-            if (selectRequest != null && selectRequest.IsSetConsistentRead())
-            {
-                request.Parameters.Add("ConsistentRead", StringUtils.FromBool(selectRequest.ConsistentRead));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetConsistentRead())
+                {
+                    request.Parameters.Add("ConsistentRead", StringUtils.FromBool(publicRequest.ConsistentRead));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetSelectExpression())
+                {
+                    request.Parameters.Add("SelectExpression", StringUtils.FromString(publicRequest.SelectExpression));
+                }
+            }
             return request;
         }
     }

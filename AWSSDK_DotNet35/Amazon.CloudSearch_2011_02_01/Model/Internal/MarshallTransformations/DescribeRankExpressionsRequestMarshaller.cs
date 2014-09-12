@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,45 +12,56 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Rank Expressions Request Marshaller
+    /// DescribeRankExpressions Request Marshaller
     /// </summary>       
-    public class DescribeRankExpressionsRequestMarshaller : IMarshaller<IRequest, DescribeRankExpressionsRequest>
+    public class DescribeRankExpressionsRequestMarshaller : IMarshaller<IRequest, DescribeRankExpressionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeRankExpressionsRequest describeRankExpressionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeRankExpressionsRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeRankExpressionsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeRankExpressionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch_2011_02_01");
             request.Parameters.Add("Action", "DescribeRankExpressions");
             request.Parameters.Add("Version", "2011-02-01");
-            if (describeRankExpressionsRequest != null && describeRankExpressionsRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeRankExpressionsRequest.DomainName));
-            }
-            if (describeRankExpressionsRequest != null)
-            {
-                List<string> rankNamesList = describeRankExpressionsRequest.RankNames;
 
-                int rankNamesListIndex = 1;
-                foreach (string rankNamesListValue in rankNamesList)
-                { 
-                    request.Parameters.Add("RankNames.member." + rankNamesListIndex, StringUtils.FromString(rankNamesListValue));
-                    rankNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetRankNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RankNames)
+                    {
+                        request.Parameters.Add("RankNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

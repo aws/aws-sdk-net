@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ReplaceNetworkAclEntry response metadata.
-    /// The ReplaceNetworkAclEntry operation has a void result type.
+    /// Configuration for accessing Amazon ReplaceNetworkAclEntry service
     /// </summary>
-    public partial class ReplaceNetworkAclEntryResponse : AmazonWebServiceResponse
+    public partial class ReplaceNetworkAclEntryResponse : ReplaceNetworkAclEntryResult
     {
+        /// <summary>
+        /// Gets and sets the ReplaceNetworkAclEntryResult property.
+        /// Represents the output of a ReplaceNetworkAclEntry operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ReplaceNetworkAclEntryResult class are now available on the ReplaceNetworkAclEntryResponse class. You should use the properties on ReplaceNetworkAclEntryResponse instead of accessing them through ReplaceNetworkAclEntryResult.")]
+        public ReplaceNetworkAclEntryResult ReplaceNetworkAclEntryResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

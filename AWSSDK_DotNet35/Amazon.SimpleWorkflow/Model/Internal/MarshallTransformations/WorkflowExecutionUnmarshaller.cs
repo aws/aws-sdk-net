@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowExecution Object
+    /// </summary>  
+    public class WorkflowExecutionUnmarshaller : IUnmarshaller<WorkflowExecution, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecution, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowExecutionUnmarshaller
-      /// </summary>
-      internal class WorkflowExecutionUnmarshaller : IUnmarshaller<WorkflowExecution, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecution, JsonUnmarshallerContext>
-      {
         WorkflowExecution IUnmarshaller<WorkflowExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowExecution Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowExecution workflowExecution = new WorkflowExecution();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowExecution unmarshalledObject = new WorkflowExecution();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("workflowId", targetDepth))
-              {
-                workflowExecution.WorkflowId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("runId", targetDepth))
-              {
-                workflowExecution.RunId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("runId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowExecution;
+            return unmarshalledObject;
         }
 
-        private static WorkflowExecutionUnmarshaller instance;
-        public static WorkflowExecutionUnmarshaller GetInstance()
+
+        private static WorkflowExecutionUnmarshaller _instance = new WorkflowExecutionUnmarshaller();        
+
+        public static WorkflowExecutionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowExecutionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAddresses response and response metadata.
+    /// Configuration for accessing Amazon DescribeAddresses service
     /// </summary>
     public partial class DescribeAddressesResponse : DescribeAddressesResult
     {
         /// <summary>
         /// Gets and sets the DescribeAddressesResult property.
-        /// 
+        /// Represents the output of a DescribeAddresses operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAddressesResult class are now available on the DescribeAddressesResponse class. You should use the properties on DescribeAddressesResponse instead of accessing them through DescribeAddressesResult.")]
         public DescribeAddressesResult DescribeAddressesResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

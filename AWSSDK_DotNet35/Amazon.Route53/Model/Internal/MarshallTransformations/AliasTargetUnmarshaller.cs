@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AliasTarget Unmarshaller
-     /// </summary>
-    internal class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, XmlUnmarshallerContext>, IUnmarshaller<AliasTarget, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AliasTarget Object
+    /// </summary>  
+    public class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, XmlUnmarshallerContext>
     {
-        public AliasTarget Unmarshall(XmlUnmarshallerContext context) 
+        public AliasTarget Unmarshall(XmlUnmarshallerContext context)
         {
-            AliasTarget aliasTarget = new AliasTarget();
+            AliasTarget unmarshalledObject = new AliasTarget();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,48 +52,39 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HostedZoneId", targetDepth))
                     {
-                        aliasTarget.HostedZoneId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DNSName", targetDepth))
                     {
-                        aliasTarget.DNSName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DNSName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EvaluateTargetHealth", targetDepth))
                     {
-                        aliasTarget.EvaluateTargetHealth = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EvaluateTargetHealth = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return aliasTarget;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static AliasTargetUnmarshaller _instance = new AliasTargetUnmarshaller();        
+
+        public static AliasTargetUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return aliasTarget;
-        }
-
-        public AliasTarget Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static AliasTargetUnmarshaller instance;
-
-        public static AliasTargetUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new AliasTargetUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

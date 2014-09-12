@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Suggester Request Marshaller
+    /// DeleteSuggester Request Marshaller
     /// </summary>       
-    public class DeleteSuggesterRequestMarshaller : IMarshaller<IRequest, DeleteSuggesterRequest>
+    public class DeleteSuggesterRequestMarshaller : IMarshaller<IRequest, DeleteSuggesterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteSuggesterRequest deleteSuggesterRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteSuggesterRequest, "AmazonCloudSearch");
+            return this.Marshall((DeleteSuggesterRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteSuggesterRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DeleteSuggester");
             request.Parameters.Add("Version", "2013-01-01");
-            if (deleteSuggesterRequest != null && deleteSuggesterRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(deleteSuggesterRequest.DomainName));
-            }
-            if (deleteSuggesterRequest != null && deleteSuggesterRequest.IsSetSuggesterName())
-            {
-                request.Parameters.Add("SuggesterName", StringUtils.FromString(deleteSuggesterRequest.SuggesterName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetSuggesterName())
+                {
+                    request.Parameters.Add("SuggesterName", StringUtils.FromString(publicRequest.SuggesterName));
+                }
+            }
             return request;
         }
     }

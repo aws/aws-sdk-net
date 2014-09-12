@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   TextOptions Unmarshaller
-     /// </summary>
-    internal class TextOptionsUnmarshaller : IUnmarshaller<TextOptions, XmlUnmarshallerContext>, IUnmarshaller<TextOptions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for TextOptions Object
+    /// </summary>  
+    public class TextOptionsUnmarshaller : IUnmarshaller<TextOptions, XmlUnmarshallerContext>, IUnmarshaller<TextOptions, JsonUnmarshallerContext>
     {
-        public TextOptions Unmarshall(XmlUnmarshallerContext context) 
+        public TextOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            TextOptions textOptions = new TextOptions();
+            TextOptions unmarshalledObject = new TextOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        textOptions.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FacetEnabled", targetDepth))
                     {
-                        textOptions.FacetEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.FacetEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResultEnabled", targetDepth))
                     {
-                        textOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ResultEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TextProcessor", targetDepth))
                     {
-                        textOptions.TextProcessor = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TextProcessor = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return textOptions;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return textOptions;
+            return unmarshalledObject;
         }
 
-        public TextOptions Unmarshall(JsonUnmarshallerContext context) 
+        public TextOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static TextOptionsUnmarshaller instance;
 
-        public static TextOptionsUnmarshaller GetInstance() 
+        private static TextOptionsUnmarshaller _instance = new TextOptionsUnmarshaller();        
+
+        public static TextOptionsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TextOptionsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

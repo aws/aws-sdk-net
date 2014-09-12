@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetMetricStatistics operation
-    /// </summary>
-    internal class GetMetricStatisticsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetMetricStatistics operation
+    /// </summary>  
+    public class GetMetricStatisticsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetMetricStatisticsResponse response = new GetMetricStatisticsResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("GetMetricStatisticsResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetMetricStatisticsResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetMetricStatisticsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,72 +71,65 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Label", targetDepth))
-                    {
-                        response.Label = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("Datapoints/member", targetDepth))
                     {
-                        response.Datapoints.Add(DatapointUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = DatapointUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Datapoints.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("Label", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Label = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
-            {
-                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
             {
                 return new InternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
             {
                 return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameter"))
             {
                 return new MissingRequiredParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetMetricStatisticsResponseUnmarshaller instance;
+        private static GetMetricStatisticsResponseUnmarshaller _instance = new GetMetricStatisticsResponseUnmarshaller();        
 
-        public static GetMetricStatisticsResponseUnmarshaller GetInstance()
+        internal static GetMetricStatisticsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetMetricStatisticsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetMetricStatisticsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

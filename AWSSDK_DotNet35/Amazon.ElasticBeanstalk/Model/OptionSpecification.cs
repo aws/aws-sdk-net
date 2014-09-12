@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,11 +35,15 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _namespace;
         private string _optionName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public OptionSpecification() { }
 
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///          A unique namespace identifying the option's associated AWS resource.        
+        ///  A unique namespace identifying the option's associated AWS resource. 
         /// </para>
         /// </summary>
         public string Namespace
@@ -50,11 +58,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._namespace != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionName. 
         /// <para>
-        ///          The name of the configuration option.         
+        ///  The name of the configuration option. 
         /// </para>
         /// </summary>
         public string OptionName

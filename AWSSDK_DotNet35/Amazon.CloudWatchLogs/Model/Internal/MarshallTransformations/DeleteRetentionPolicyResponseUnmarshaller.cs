@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -38,7 +42,6 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         {
             DeleteRetentionPolicyResponse response = new DeleteRetentionPolicyResponse();
 
- 
 
             return response;
         }

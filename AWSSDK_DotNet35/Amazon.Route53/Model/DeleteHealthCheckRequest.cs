@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,42 +29,37 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHealthCheck operation.
-    /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2013-04-01/healthcheck/health
-    /// check ID </c> resource.</para> <para><b>IMPORTANT:</b> You can delete a health check only if there are no resource record sets associated
-    /// with this health check. If resource record sets are associated with this health check, you must disassociate them before you can delete your
-    /// health check. If you try to delete a health check that is associated with resource record sets, Route 53 will deny your request with a
-    /// HealthCheckInUse error. For information about disassociating the records from your health check, see ChangeResourceRecordSets.</para>
+    /// This action deletes a health check. To delete a health check, send a <code>DELETE</code>
+    /// request to the <code>2013-04-01/healthcheck/<i>health check ID</i></code> resource.
+    /// 
+    ///  <important> You can delete a health check only if there are no resource record sets
+    /// associated with this health check. If resource record sets are associated with this
+    /// health check, you must disassociate them before you can delete your health check.
+    /// If you try to delete a health check that is associated with resource record sets,
+    /// Route 53 will deny your request with a <code>HealthCheckInUse</code> error. For information
+    /// about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
     /// </summary>
     public partial class DeleteHealthCheckRequest : AmazonRoute53Request
     {
-        private string healthCheckId;
-
+        private string _healthCheckId;
 
         /// <summary>
-        /// The ID of the health check to delete.
-        ///  
+        /// Gets and sets the property HealthCheckId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 64</description>
-        ///     </item>
-        /// </list>
+        /// The ID of the health check to delete.
         /// </para>
         /// </summary>
         public string HealthCheckId
         {
-            get { return this.healthCheckId; }
-            set { this.healthCheckId = value; }
+            get { return this._healthCheckId; }
+            set { this._healthCheckId = value; }
         }
 
         // Check to see if HealthCheckId property is set
         internal bool IsSetHealthCheckId()
         {
-            return this.healthCheckId != null;
+            return this._healthCheckId != null;
         }
 
     }
 }
-    

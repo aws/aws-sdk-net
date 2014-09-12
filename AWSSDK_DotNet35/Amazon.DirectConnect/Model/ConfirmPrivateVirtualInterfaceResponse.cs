@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Returns information about the  ConfirmPrivateVirtualInterface response and response metadata.
+    /// Configuration for accessing Amazon ConfirmPrivateVirtualInterface service
     /// </summary>
-    public class ConfirmPrivateVirtualInterfaceResponse : ConfirmPrivateVirtualInterfaceResult
+    public partial class ConfirmPrivateVirtualInterfaceResponse : ConfirmPrivateVirtualInterfaceResult
     {
         /// <summary>
         /// Gets and sets the ConfirmPrivateVirtualInterfaceResult property.
-        /// The response received when ConfirmPrivateVirtualInterface is called.
+        /// Represents the output of a ConfirmPrivateVirtualInterface operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ConfirmPrivateVirtualInterfaceResult class are now available on the ConfirmPrivateVirtualInterfaceResponse class. You should use the properties on ConfirmPrivateVirtualInterfaceResponse instead of accessing them through ConfirmPrivateVirtualInterfaceResult.")]
         public ConfirmPrivateVirtualInterfaceResult ConfirmPrivateVirtualInterfaceResult
@@ -40,4 +40,3 @@ namespace Amazon.DirectConnect.Model
         }
     }
 }
-    

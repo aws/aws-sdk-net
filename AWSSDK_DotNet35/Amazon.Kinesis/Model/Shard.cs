@@ -12,144 +12,122 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <para>A uniquely identified group of data records in an Amazon Kinesis stream.</para>
+    /// A uniquely identified group of data records in an Amazon Kinesis stream.
     /// </summary>
     public partial class Shard
     {
-        
-        private string shardId;
-        private string parentShardId;
-        private string adjacentParentShardId;
-        private HashKeyRange hashKeyRange;
-        private SequenceNumberRange sequenceNumberRange;
-
+        private string _adjacentParentShardId;
+        private HashKeyRange _hashKeyRange;
+        private string _parentShardId;
+        private SequenceNumberRange _sequenceNumberRange;
+        private string _shardId;
 
         /// <summary>
-        /// The unique identifier of the shard within the Amazon Kinesis stream.
-        ///  
+        /// Gets and sets the property AdjacentParentShardId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ShardId
-        {
-            get { return this.shardId; }
-            set { this.shardId = value; }
-        }
-
-        // Check to see if ShardId property is set
-        internal bool IsSetShardId()
-        {
-            return this.shardId != null;
-        }
-
-        /// <summary>
-        /// The shard Id of the shard's parent.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ParentShardId
-        {
-            get { return this.parentShardId; }
-            set { this.parentShardId = value; }
-        }
-
-        // Check to see if ParentShardId property is set
-        internal bool IsSetParentShardId()
-        {
-            return this.parentShardId != null;
-        }
-
-        /// <summary>
         /// The shard Id of the shard adjacent to the shard's parent.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string AdjacentParentShardId
         {
-            get { return this.adjacentParentShardId; }
-            set { this.adjacentParentShardId = value; }
+            get { return this._adjacentParentShardId; }
+            set { this._adjacentParentShardId = value; }
         }
 
         // Check to see if AdjacentParentShardId property is set
         internal bool IsSetAdjacentParentShardId()
         {
-            return this.adjacentParentShardId != null;
+            return this._adjacentParentShardId != null;
         }
 
         /// <summary>
-        /// The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
-        ///  
+        /// Gets and sets the property HashKeyRange. 
+        /// <para>
+        /// The range of possible hash key values for the shard, which is a set of ordered contiguous
+        /// positive integers.
+        /// </para>
         /// </summary>
         public HashKeyRange HashKeyRange
         {
-            get { return this.hashKeyRange; }
-            set { this.hashKeyRange = value; }
+            get { return this._hashKeyRange; }
+            set { this._hashKeyRange = value; }
         }
 
         // Check to see if HashKeyRange property is set
         internal bool IsSetHashKeyRange()
         {
-            return this.hashKeyRange != null;
+            return this._hashKeyRange != null;
         }
 
         /// <summary>
+        /// Gets and sets the property ParentShardId. 
+        /// <para>
+        /// The shard Id of the shard's parent.
+        /// </para>
+        /// </summary>
+        public string ParentShardId
+        {
+            get { return this._parentShardId; }
+            set { this._parentShardId = value; }
+        }
+
+        // Check to see if ParentShardId property is set
+        internal bool IsSetParentShardId()
+        {
+            return this._parentShardId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SequenceNumberRange. 
+        /// <para>
         /// The range of possible sequence numbers for the shard.
-        ///  
+        /// </para>
         /// </summary>
         public SequenceNumberRange SequenceNumberRange
         {
-            get { return this.sequenceNumberRange; }
-            set { this.sequenceNumberRange = value; }
+            get { return this._sequenceNumberRange; }
+            set { this._sequenceNumberRange = value; }
         }
 
         // Check to see if SequenceNumberRange property is set
         internal bool IsSetSequenceNumberRange()
         {
-            return this.sequenceNumberRange != null;
+            return this._sequenceNumberRange != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property ShardId. 
+        /// <para>
+        /// The unique identifier of the shard within the Amazon Kinesis stream.
+        /// </para>
+        /// </summary>
+        public string ShardId
+        {
+            get { return this._shardId; }
+            set { this._shardId = value; }
+        }
+
+        // Check to see if ShardId property is set
+        internal bool IsSetShardId()
+        {
+            return this._shardId != null;
+        }
+
     }
 }

@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DataPipeline.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DataPipeline.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ValidationError Object
+    /// </summary>  
+    public class ValidationErrorUnmarshaller : IUnmarshaller<ValidationError, XmlUnmarshallerContext>, IUnmarshaller<ValidationError, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ValidationErrorUnmarshaller
-      /// </summary>
-      internal class ValidationErrorUnmarshaller : IUnmarshaller<ValidationError, XmlUnmarshallerContext>, IUnmarshaller<ValidationError, JsonUnmarshallerContext>
-      {
         ValidationError IUnmarshaller<ValidationError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ValidationError Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ValidationError validationError = new ValidationError();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ValidationError unmarshalledObject = new ValidationError();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("id", targetDepth))
-              {
-                validationError.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("errors", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                validationError.Errors = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("errors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return validationError;
+            return unmarshalledObject;
         }
 
-        private static ValidationErrorUnmarshaller instance;
-        public static ValidationErrorUnmarshaller GetInstance()
+
+        private static ValidationErrorUnmarshaller _instance = new ValidationErrorUnmarshaller();        
+
+        public static ValidationErrorUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ValidationErrorUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

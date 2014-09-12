@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -65,6 +69,23 @@ namespace Amazon.SQS.Model
         private string _receiptHandle;
         private int? _visibilityTimeout;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ChangeMessageVisibilityRequest() { }
+
+        /// <summary>
+        /// Instantiates ChangeMessageVisibilityRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout   should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</param>
+        /// <param name="visibilityTimeout">The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</param>
+        public ChangeMessageVisibilityRequest(string queueUrl, string receiptHandle, int visibilityTimeout)
+        {
+            _queueUrl = queueUrl;
+            _receiptHandle = receiptHandle;
+            _visibilityTimeout = visibilityTimeout;
+        }
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 
@@ -84,7 +105,6 @@ namespace Amazon.SQS.Model
             return this._queueUrl != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReceiptHandle. 
         /// <para>
@@ -103,7 +123,6 @@ namespace Amazon.SQS.Model
         {
             return this._receiptHandle != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VisibilityTimeout. 

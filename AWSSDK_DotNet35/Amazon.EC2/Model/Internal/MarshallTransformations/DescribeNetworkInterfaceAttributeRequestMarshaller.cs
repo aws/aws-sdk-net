@@ -12,50 +12,63 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Network Interface Attribute Request Marshaller
+    /// DescribeNetworkInterfaceAttribute Request Marshaller
     /// </summary>       
-    public class DescribeNetworkInterfaceAttributeRequestMarshaller : IMarshaller<IRequest, DescribeNetworkInterfaceAttributeRequest>
+    public class DescribeNetworkInterfaceAttributeRequestMarshaller : IMarshaller<IRequest, DescribeNetworkInterfaceAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeNetworkInterfaceAttributeRequest describeNetworkInterfaceAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeNetworkInterfaceAttributeRequest, "AmazonEC2");
+            return this.Marshall((DescribeNetworkInterfaceAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeNetworkInterfaceAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeNetworkInterfaceAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetNetworkInterfaceId())
-            {
-                request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(describeNetworkInterfaceAttributeRequest.NetworkInterfaceId));
-            }
-            if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(describeNetworkInterfaceAttributeRequest.Description));
-            }
-            if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetSourceDestCheck())
-            {
-                request.Parameters.Add("SourceDestCheck", StringUtils.FromString(describeNetworkInterfaceAttributeRequest.SourceDestCheck));
-            }
-            if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetGroups())
-            {
-                request.Parameters.Add("GroupSet", StringUtils.FromString(describeNetworkInterfaceAttributeRequest.Groups));
-            }
-            if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetAttachment())
-            {
-                request.Parameters.Add("Attachment", StringUtils.FromString(describeNetworkInterfaceAttributeRequest.Attachment));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttachment())
+                {
+                    request.Parameters.Add("Attachment", StringUtils.FromString(publicRequest.Attachment));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetGroups())
+                {
+                    request.Parameters.Add("GroupSet", StringUtils.FromString(publicRequest.Groups));
+                }
+                if(publicRequest.IsSetNetworkInterfaceId())
+                {
+                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
+                }
+                if(publicRequest.IsSetSourceDestCheck())
+                {
+                    request.Parameters.Add("SourceDestCheck", StringUtils.FromString(publicRequest.SourceDestCheck));
+                }
+            }
             return request;
         }
     }

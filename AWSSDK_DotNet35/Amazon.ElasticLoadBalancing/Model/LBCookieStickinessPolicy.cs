@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private long? _cookieExpirationPeriod;
         private string _policyName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public LBCookieStickinessPolicy() { }
+
+        /// <summary>
+        /// Instantiates LBCookieStickinessPolicy with the parameterized properties
+        /// </summary>
+        /// <param name="policyName">The name for the policy being created. The name must be unique within the set of policies for this load balancer. </param>
+        /// <param name="cookieExpirationPeriod">The time period in seconds after which the cookie should be considered stale. Not specifying this parameter indicates that the stickiness session will last for the duration of the browser session. </param>
+        public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod)
+        {
+            _policyName = policyName;
+            _cookieExpirationPeriod = cookieExpirationPeriod;
+        }
 
         /// <summary>
         /// Gets and sets the property CookieExpirationPeriod. 
@@ -51,7 +70,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._cookieExpirationPeriod.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PolicyName. 

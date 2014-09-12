@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,60 +29,56 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHealthChecks operation.
-    /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2013-04-01/healthcheck</c> resource. The response to
-    /// this request includes a <c>HealthChecks</c> element with zero, one, or multiple <c>HealthCheck</c> child elements. By default, the list of
-    /// health checks is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c>
-    /// parameter. You can use the <c>Marker</c> parameter to control the health check that the list begins with. </para> <para><b>NOTE:</b> Amazon
-    /// Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
+    /// To retrieve a list of your health checks, send a <code>GET</code> request to the
+    /// <code>2013-04-01/healthcheck</code> resource. The response to this request includes
+    /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
+    /// child elements. By default, the list of health checks is displayed on a single page.
+    /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+    /// parameter. You can use the <code>Marker</code> parameter to control the health check
+    /// that the list begins with.
     /// </summary>
     public partial class ListHealthChecksRequest : AmazonRoute53Request
     {
-        private string marker;
-        private string maxItems;
-
+        private string _marker;
+        private string _maxItems;
 
         /// <summary>
-        /// If the request returned more than one page of results, submit another request and specify the value of <c>NextMarker</c> from the last
-        /// response in the <c>marker</c> parameter to get the next page of results.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 64</description>
-        ///     </item>
-        /// </list>
+        /// If the request returned more than one page of results, submit another request and
+        /// specify the value of <code>NextMarker</code> from the last response in the <code>marker</code>
+        /// parameter to get the next page of results.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
         /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
         /// Specify the maximum number of health checks to return per page of results.
-        ///  
+        /// </para>
         /// </summary>
         public string MaxItems
         {
-            get { return this.maxItems; }
-            set { this.maxItems = value; }
+            get { return this._maxItems; }
+            set { this._maxItems = value; }
         }
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;
+            return this._maxItems != null;
         }
 
     }
 }
-    

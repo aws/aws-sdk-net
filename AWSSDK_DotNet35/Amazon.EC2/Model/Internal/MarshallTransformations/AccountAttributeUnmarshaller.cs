@@ -12,69 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AccountAttribute Unmarshaller
-     /// </summary>
-    internal class AccountAttributeUnmarshaller : IUnmarshaller<AccountAttribute, XmlUnmarshallerContext>, IUnmarshaller<AccountAttribute, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AccountAttribute Object
+    /// </summary>  
+    public class AccountAttributeUnmarshaller : IUnmarshaller<AccountAttribute, XmlUnmarshallerContext>, IUnmarshaller<AccountAttribute, JsonUnmarshallerContext>
     {
-        public AccountAttribute Unmarshall(XmlUnmarshallerContext context) 
+        public AccountAttribute Unmarshall(XmlUnmarshallerContext context)
         {
-            AccountAttribute accountAttribute = new AccountAttribute();
+            AccountAttribute unmarshalledObject = new AccountAttribute();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("attributeName", targetDepth))
                     {
-                        accountAttribute.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttributeName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("attributeValueSet/item", targetDepth))
                     {
-                        accountAttribute.AttributeValues.Add(AccountAttributeValueUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AccountAttributeValueUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AttributeValues.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return accountAttribute;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return accountAttribute;
+            return unmarshalledObject;
         }
 
-        public AccountAttribute Unmarshall(JsonUnmarshallerContext context) 
+        public AccountAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static AccountAttributeUnmarshaller instance;
 
-        public static AccountAttributeUnmarshaller GetInstance() 
+        private static AccountAttributeUnmarshaller _instance = new AccountAttributeUnmarshaller();        
+
+        public static AccountAttributeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new AccountAttributeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

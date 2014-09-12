@@ -12,117 +12,130 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedInstancesListing Unmarshaller
-     /// </summary>
-    internal class ReservedInstancesListingUnmarshaller : IUnmarshaller<ReservedInstancesListing, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesListing, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedInstancesListing Object
+    /// </summary>  
+    public class ReservedInstancesListingUnmarshaller : IUnmarshaller<ReservedInstancesListing, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesListing, JsonUnmarshallerContext>
     {
-        public ReservedInstancesListing Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedInstancesListing Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedInstancesListing reservedInstancesListing = new ReservedInstancesListing();
+            ReservedInstancesListing unmarshalledObject = new ReservedInstancesListing();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("reservedInstancesListingId", targetDepth))
+                    if (context.TestExpression("clientToken", targetDepth))
                     {
-                        reservedInstancesListing.ReservedInstancesListingId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("reservedInstancesId", targetDepth))
-                    {
-                        reservedInstancesListing.ReservedInstancesId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("createDate", targetDepth))
                     {
-                        reservedInstancesListing.CreateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("updateDate", targetDepth))
-                    {
-                        reservedInstancesListing.UpdateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        reservedInstancesListing.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("statusMessage", targetDepth))
-                    {
-                        reservedInstancesListing.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceCounts/item", targetDepth))
                     {
-                        reservedInstancesListing.InstanceCounts.Add(InstanceCountUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InstanceCountUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InstanceCounts.Add(item);
                         continue;
                     }
                     if (context.TestExpression("priceSchedules/item", targetDepth))
                     {
-                        reservedInstancesListing.PriceSchedules.Add(PriceScheduleUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = PriceScheduleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PriceSchedules.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("reservedInstancesId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedInstancesId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("reservedInstancesListingId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedInstancesListingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("statusMessage", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        reservedInstancesListing.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("clientToken", targetDepth))
+                    if (context.TestExpression("updateDate", targetDepth))
                     {
-                        reservedInstancesListing.ClientToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.UpdateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedInstancesListing;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedInstancesListing;
+            return unmarshalledObject;
         }
 
-        public ReservedInstancesListing Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedInstancesListing Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedInstancesListingUnmarshaller instance;
 
-        public static ReservedInstancesListingUnmarshaller GetInstance() 
+        private static ReservedInstancesListingUnmarshaller _instance = new ReservedInstancesListingUnmarshaller();        
+
+        public static ReservedInstancesListingUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedInstancesListingUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

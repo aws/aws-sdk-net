@@ -78,14 +78,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static PartDetailUnmarshaller instance;
+        private static PartDetailUnmarshaller _instance;
 
-        public static PartDetailUnmarshaller GetInstance() 
+        public static PartDetailUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PartDetailUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PartDetailUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

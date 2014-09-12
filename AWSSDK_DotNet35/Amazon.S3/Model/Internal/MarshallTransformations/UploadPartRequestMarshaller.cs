@@ -27,8 +27,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Upload Part Request Marshaller
     /// </summary>       
-    public class UploadPartRequestMarshaller : IMarshaller<IRequest, UploadPartRequest>
-    {
+    public class UploadPartRequestMarshaller : IMarshaller<IRequest, UploadPartRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((UploadPartRequest)input);
+		}
+
         public IRequest Marshall(UploadPartRequest uploadPartRequest)
         {
             IRequest request = new DefaultRequest(uploadPartRequest, "AmazonS3");

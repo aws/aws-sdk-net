@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotName;
         private string _snapshotSource;
 
-
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheClusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -78,7 +80,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxRecords. 
@@ -108,7 +109,6 @@ namespace Amazon.ElastiCache.Model
             return this._maxRecords.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
@@ -127,7 +127,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._snapshotName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotSource. 

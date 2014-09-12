@@ -1,0 +1,59 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "Body" : {
+                "constructorForms" : [
+                    [
+                        "Text"
+                    ]
+                ]
+            },
+            "SendEmailRequest" : {
+                "constructorForms" : [
+                    [
+                        "Source",
+                        "Destination",
+                        "Message"
+                    ]
+                ]
+            },
+            "SendRawEmailRequest" : {
+                "constructorForms" : [
+                    [
+                        "RawMessage"
+                    ]
+                ]
+            },
+            "Message"             : {
+                "constructorForms" : [
+                    [
+                        "Subject",
+                        "Body"
+                    ]
+                ]
+            },
+            "Destination"         : {
+                "constructorForms" : [
+                    [
+                        "ToAddresses"
+                    ]
+                ]
+            },
+            "Content"             : {
+                "constructorForms" : [
+                    [
+                        "Data"
+                    ]
+                ]
+            },
+            "RawMessage"          : {
+                "constructorForms" : [
+                    [
+                        "Data"
+                    ]
+                ]
+            }
+        }
+    }
+}

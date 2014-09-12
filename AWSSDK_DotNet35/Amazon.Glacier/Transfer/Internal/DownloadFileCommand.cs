@@ -82,7 +82,7 @@ namespace Amazon.Glacier.Transfer.Internal
             this.filePath = filePath;
             this.options = options;
 
-            var credentials = ((AmazonGlacierClient)this.manager.GlacierClient).GetCredentials();
+            var credentials = ((AmazonGlacierClient)this.manager.GlacierClient).Credentials;
             var glacierClient = this.manager.GlacierClient as AmazonGlacierClient;
             if (glacierClient == null)
                 throw new InvalidOperationException("This can only be called using an AmazonGlacierClient");

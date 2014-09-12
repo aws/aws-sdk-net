@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.IdentityManagement.Model
         private string _marker;
         private int? _maxItems;
 
-
         /// <summary>
         /// Gets and sets the property AssignmentStatus. 
         /// <para>
@@ -63,7 +66,6 @@ namespace Amazon.IdentityManagement.Model
             return this._assignmentStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
@@ -83,7 +85,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxItems. 

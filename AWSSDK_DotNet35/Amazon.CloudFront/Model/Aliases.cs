@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudFront.Model
         private List<string> _items = new List<string>();
         private int? _quantity;
 
-
         /// <summary>
         /// Gets and sets the property Items. Optional: A complex type that contains CNAME elements,
         /// if any, for this distribution. If Quantity is 0, you can omit Items.
@@ -48,7 +51,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._items != null && this._items.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Quantity. The number of CNAMEs, if any, for this distribution.

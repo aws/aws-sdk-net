@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextBackwardToken;
         private string _nextForwardToken;
 
-
         /// <summary>
         /// Gets and sets the property Events.
         /// </summary>
@@ -48,7 +51,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._events != null && this._events.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NextBackwardToken.
         /// </summary>
@@ -63,7 +65,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._nextBackwardToken != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NextForwardToken.

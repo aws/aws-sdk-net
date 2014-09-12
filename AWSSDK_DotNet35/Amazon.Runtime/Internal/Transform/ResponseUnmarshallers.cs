@@ -57,16 +57,22 @@ namespace Amazon.Runtime.Internal.Transform
 
         #endregion
 
+        public AmazonWebServiceResponse UnmarshallResponse(UnmarshallerContext context)
+        {
+            var response = this.Unmarshall(context);
+            response.ContentLength = context.ResponseData.ContentLength;
+            response.HttpStatusCode = context.ResponseData.StatusCode;
+            return response;
+        }
+
         #region IUnmarshaller<AmazonWebServiceResponse,UnmarshallerContext> Members
 
-        public virtual AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract AmazonWebServiceResponse Unmarshall(UnmarshallerContext input);
 
         #endregion
 
-        protected abstract UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response);
+        protected abstract UnmarshallerContext ConstructUnmarshallerContext(
+            Stream responseStream, bool maintainResponseBody, IWebResponseData response);
         
         protected virtual bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
@@ -77,7 +83,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// <summary>
     /// Class for unmarshalling XML service responses.
     /// </summary>
-    public class XmlResponseUnmarshaller : ResponseUnmarshaller
+    public abstract class XmlResponseUnmarshaller : ResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
@@ -87,13 +93,15 @@ namespace Amazon.Runtime.Internal.Transform
 
             AmazonWebServiceResponse response = this.Unmarshall(context);
 
-            if (!string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader)))
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.RequestIdHeader) &&
+                !string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader)))
             {
-                if(response.ResponseMetadata == null)
+                if (response.ResponseMetadata == null)
                     response.ResponseMetadata = new ResponseMetadata();
                 response.ResponseMetadata.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
             }
-            else if (!string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader)))
+            else if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzRequestIdHeader) &&
+                !string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader)))
             {
                 if (response.ResponseMetadata == null)
                     response.ResponseMetadata = new ResponseMetadata();
@@ -111,14 +119,9 @@ namespace Amazon.Runtime.Internal.Transform
             return this.UnmarshallException(context, innerException, statusCode);
         }
 
-        public virtual AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext input)
-        {
-            throw new NotImplementedException();
-        }
-        public virtual AmazonServiceException UnmarshallException(XmlUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext input);
+
+        public abstract AmazonServiceException UnmarshallException(XmlUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode);
 
         protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
         {
@@ -129,7 +132,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// <summary>
     /// Class for unmarshalling EC2 service responses.
     /// </summary>
-    public class EC2ResponseUnmarshaller : XmlResponseUnmarshaller
+    public abstract class EC2ResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
@@ -159,7 +162,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// <summary>
     /// Class for unmarshalling S3 service responses
     /// </summary>
-    public class S3ReponseUnmarshaller : XmlResponseUnmarshaller
+    public abstract class S3ReponseUnmarshaller : XmlResponseUnmarshaller
     {
         private static string AMZ_ID_2 = "x-amz-id-2";
 
@@ -188,7 +191,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// <summary>
     /// Class for unmarshalling JSON service responses.
     /// </summary>
-    public class JsonResponseUnmarshaller : ResponseUnmarshaller
+    public abstract class JsonResponseUnmarshaller : ResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
@@ -220,14 +223,9 @@ namespace Amazon.Runtime.Internal.Transform
             return responseException;
         }
 
-        public virtual AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext input)
-        {
-            throw new NotImplementedException();
-        }
-        public virtual AmazonServiceException UnmarshallException(JsonUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext input);
+        
+        public abstract AmazonServiceException UnmarshallException(JsonUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode);
 
         protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
         {

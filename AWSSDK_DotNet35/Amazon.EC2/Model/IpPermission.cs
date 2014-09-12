@@ -12,108 +12,130 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a security group rule.</para>
+    /// Describes a security group rule.
     /// </summary>
     public partial class IpPermission
     {
-        
-        private string ipProtocol;
-        private int? fromPort;
-        private int? toPort;
-        private List<UserIdGroupPair> userIdGroupPairs = new List<UserIdGroupPair>();
-        private List<string> ipRanges = new List<string>();
-
+        private int? _fromPort;
+        private string _ipProtocol;
+        private List<string> _ipRanges = new List<string>();
+        private int? _toPort;
+        private List<UserIdGroupPair> _userIdGroupPairs = new List<UserIdGroupPair>();
 
         /// <summary>
-        /// The protocol. When you call <a>DescribeSecurityGroups</a>, the protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-        /// value returned is the name (for example, <c>tcp</c>, <c>udp</c>, or <c>icmp</c>). For a list of protocol numbers, see <a
-        /// href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.
-        ///  
-        /// </summary>
-        public string IpProtocol
-        {
-            get { return this.ipProtocol; }
-            set { this.ipProtocol = value; }
-        }
-
-        // Check to see if IpProtocol property is set
-        internal bool IsSetIpProtocol()
-        {
-            return this.ipProtocol != null;
-        }
-
-        /// <summary>
-        /// The start of port range for the TCP and UDP protocols, or an ICMP type number. A value of <c>-1</c> indicates all ICMP types.
-        ///  
+        /// Gets and sets the property FromPort. 
+        /// <para>
+        /// The start of port range for the TCP and UDP protocols, or an ICMP type number. A value
+        /// of <code>-1</code> indicates all ICMP types.
+        /// </para>
         /// </summary>
         public int FromPort
         {
-            get { return this.fromPort ?? default(int); }
-            set { this.fromPort = value; }
+            get { return this._fromPort.GetValueOrDefault(); }
+            set { this._fromPort = value; }
         }
 
         // Check to see if FromPort property is set
         internal bool IsSetFromPort()
         {
-            return this.fromPort.HasValue;
+            return this._fromPort.HasValue; 
         }
 
         /// <summary>
-        /// The end of port range for the TCP and UDP protocols, or an ICMP code. A value of <c>-1</c> indicates all ICMP codes for the specified ICMP
-        /// type.
+        /// Gets and sets the property IpProtocol. 
+        /// <para>
+        /// The protocol.
+        /// </para>
         ///  
+        /// <para>
+        /// When you call <a>DescribeSecurityGroups</a>, the protocol value returned is the number.
+        /// Exception: For TCP, UDP, and ICMP, the value returned is the name (for example, <code>tcp</code>,
+        /// <code>udp</code>, or <code>icmp</code>). For a list of protocol numbers, see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// Numbers</a>.
+        /// </para>
         /// </summary>
-        public int ToPort
+        public string IpProtocol
         {
-            get { return this.toPort ?? default(int); }
-            set { this.toPort = value; }
+            get { return this._ipProtocol; }
+            set { this._ipProtocol = value; }
         }
 
-        // Check to see if ToPort property is set
-        internal bool IsSetToPort()
+        // Check to see if IpProtocol property is set
+        internal bool IsSetIpProtocol()
         {
-            return this.toPort.HasValue;
+            return this._ipProtocol != null;
         }
 
         /// <summary>
-        /// One or more security group and AWS account ID pairs.
-        ///  
-        /// </summary>
-        public List<UserIdGroupPair> UserIdGroupPairs
-        {
-            get { return this.userIdGroupPairs; }
-            set { this.userIdGroupPairs = value; }
-        }
-
-        // Check to see if UserIdGroupPairs property is set
-        internal bool IsSetUserIdGroupPairs()
-        {
-            return this.userIdGroupPairs.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property IpRanges. 
+        /// <para>
         /// One or more IP ranges.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> IpRanges
         {
-            get { return this.ipRanges; }
-            set { this.ipRanges = value; }
+            get { return this._ipRanges; }
+            set { this._ipRanges = value; }
         }
 
         // Check to see if IpRanges property is set
         internal bool IsSetIpRanges()
         {
-            return this.ipRanges.Count > 0;
+            return this._ipRanges != null && this._ipRanges.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property ToPort. 
+        /// <para>
+        /// The end of port range for the TCP and UDP protocols, or an ICMP code. A value of <code>-1</code>
+        /// indicates all ICMP codes for the specified ICMP type.
+        /// </para>
+        /// </summary>
+        public int ToPort
+        {
+            get { return this._toPort.GetValueOrDefault(); }
+            set { this._toPort = value; }
+        }
+
+        // Check to see if ToPort property is set
+        internal bool IsSetToPort()
+        {
+            return this._toPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserIdGroupPairs. 
+        /// <para>
+        /// One or more security group and AWS account ID pairs.
+        /// </para>
+        /// </summary>
+        public List<UserIdGroupPair> UserIdGroupPairs
+        {
+            get { return this._userIdGroupPairs; }
+            set { this._userIdGroupPairs = value; }
+        }
+
+        // Check to see if UserIdGroupPairs property is set
+        internal bool IsSetUserIdGroupPairs()
+        {
+            return this._userIdGroupPairs != null && this._userIdGroupPairs.Count > 0; 
+        }
+
     }
 }

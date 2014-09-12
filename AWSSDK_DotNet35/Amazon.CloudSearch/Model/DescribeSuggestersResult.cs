@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DescribeSuggesters</c> request.</para>
+    /// The result of a <code>DescribeSuggesters</code> request.
     /// </summary>
     public partial class DescribeSuggestersResult : AmazonWebServiceResponse
     {
-        
-        private List<SuggesterStatus> suggesters = new List<SuggesterStatus>();
-
+        private List<SuggesterStatus> _suggesters = new List<SuggesterStatus>();
 
         /// <summary>
+        /// Gets and sets the property Suggesters. 
+        /// <para>
         /// The suggesters configured for the domain specified in the request.
-        ///  
+        /// </para>
         /// </summary>
         public List<SuggesterStatus> Suggesters
         {
-            get { return this.suggesters; }
-            set { this.suggesters = value; }
+            get { return this._suggesters; }
+            set { this._suggesters = value; }
         }
 
         // Check to see if Suggesters property is set
         internal bool IsSetSuggesters()
         {
-            return this.suggesters.Count > 0;
+            return this._suggesters != null && this._suggesters.Count > 0; 
         }
+
     }
 }

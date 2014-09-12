@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ModifyInstanceAttribute response metadata.
-    /// The ModifyInstanceAttribute operation has a void result type.
+    /// Configuration for accessing Amazon ModifyInstanceAttribute service
     /// </summary>
-    public partial class ModifyInstanceAttributeResponse : AmazonWebServiceResponse
+    public partial class ModifyInstanceAttributeResponse : ModifyInstanceAttributeResult
     {
+        /// <summary>
+        /// Gets and sets the ModifyInstanceAttributeResult property.
+        /// Represents the output of a ModifyInstanceAttribute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ModifyInstanceAttributeResult class are now available on the ModifyInstanceAttributeResponse class. You should use the properties on ModifyInstanceAttributeResponse instead of accessing them through ModifyInstanceAttributeResult.")]
+        public ModifyInstanceAttributeResult ModifyInstanceAttributeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

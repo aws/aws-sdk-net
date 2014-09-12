@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,65 +29,46 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelArchival operation.
-    /// <para>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated. </para>
+    /// Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving
+    /// process is initiated.
     /// </summary>
     public partial class CancelArchivalRequest : AmazonStorageGatewayRequest
     {
-        private string gatewayARN;
-        private string tapeARN;
-
+        private string _gatewayARN;
+        private string _tapeARN;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
-        /// region.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
         public string GatewayARN
         {
-            get { return this.gatewayARN; }
-            set { this.gatewayARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;
+            return this._gatewayARN != null;
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.
-        ///  
+        /// Gets and sets the property TapeARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.
         /// </para>
         /// </summary>
         public string TapeARN
         {
-            get { return this.tapeARN; }
-            set { this.tapeARN = value; }
+            get { return this._tapeARN; }
+            set { this._tapeARN = value; }
         }
 
         // Check to see if TapeARN property is set
         internal bool IsSetTapeARN()
         {
-            return this.tapeARN != null;
+            return this._tapeARN != null;
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,39 +33,30 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Archive Request Marshaller
+    /// DeleteArchive Request Marshaller
     /// </summary>       
-    internal class DeleteArchiveRequestMarshaller : IMarshaller<IRequest, DeleteArchiveRequest> 
+    public class DeleteArchiveRequestMarshaller : IMarshaller<IRequest, DeleteArchiveRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteArchiveRequest deleteArchiveRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteArchiveRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteArchiveRequest, "AmazonGlacier");
-            string target = "Glacier.DeleteArchive";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(DeleteArchiveRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}"; 
-            if(deleteArchiveRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(deleteArchiveRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(deleteArchiveRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(deleteArchiveRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(deleteArchiveRequest.IsSetArchiveId())
-                uriResourcePath = uriResourcePath.Replace("{archiveId}", StringUtils.FromString(deleteArchiveRequest.ArchiveId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{archiveId}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{archiveId}", publicRequest.IsSetArchiveId() ? StringUtils.FromString(publicRequest.ArchiveId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

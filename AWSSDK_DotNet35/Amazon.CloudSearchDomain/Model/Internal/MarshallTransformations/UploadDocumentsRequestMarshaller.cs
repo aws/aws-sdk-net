@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
     /// <summary>
     /// UploadDocuments Request Marshaller
     /// </summary>       
-    public class UploadDocumentsRequestMarshaller : IMarshaller<IRequest, UploadDocumentsRequest> 
+    public class UploadDocumentsRequestMarshaller : IMarshaller<IRequest, UploadDocumentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UploadDocumentsRequest)input);
+        }
+
         public IRequest Marshall(UploadDocumentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
@@ -42,9 +51,11 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2013-01-01/documents/batch";
             request.AddSubResource("format", "sdk");
             request.ContentStream =  publicRequest.Documents;
-            request.Headers["Content-Type"] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+                publicRequest.Documents.Length.ToString(CultureInfo.InvariantCulture);
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
         
-            if(publicRequest.IsSetContentType())     
+            if(publicRequest.IsSetContentType())
                 request.Headers["Content-Type"] = publicRequest.ContentType;
             request.ResourcePath = uriResourcePath;
 

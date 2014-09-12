@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateApp Request Marshaller
     /// </summary>       
-    public class CreateAppRequestMarshaller : IMarshaller<IRequest, CreateAppRequest> 
+    public class CreateAppRequestMarshaller : IMarshaller<IRequest, CreateAppRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateAppRequest)input);
+        }
+
         public IRequest Marshall(CreateAppRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,193 +56,120 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAppSource())
                 {
-                    writer.WritePropertyName("AppSource");
-                    writer.WriteObjectStart();
-                    if(publicRequest.AppSource.IsSetPassword())
-                    {
-                        writer.WritePropertyName("Password");
-                        writer.Write(publicRequest.AppSource.Password);
-                    }
+                    context.Writer.WritePropertyName("AppSource");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.AppSource.IsSetRevision())
-                    {
-                        writer.WritePropertyName("Revision");
-                        writer.Write(publicRequest.AppSource.Revision);
-                    }
+                    var marshaller = SourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AppSource, context);
 
-                    if(publicRequest.AppSource.IsSetSshKey())
-                    {
-                        writer.WritePropertyName("SshKey");
-                        writer.Write(publicRequest.AppSource.SshKey);
-                    }
-
-                    if(publicRequest.AppSource.IsSetType())
-                    {
-                        writer.WritePropertyName("Type");
-                        writer.Write(publicRequest.AppSource.Type);
-                    }
-
-                    if(publicRequest.AppSource.IsSetUrl())
-                    {
-                        writer.WritePropertyName("Url");
-                        writer.Write(publicRequest.AppSource.Url);
-                    }
-
-                    if(publicRequest.AppSource.IsSetUsername())
-                    {
-                        writer.WritePropertyName("Username");
-                        writer.Write(publicRequest.AppSource.Username);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetAttributes())
                 {
-                    writer.WritePropertyName("Attributes");
-                    writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("Attributes");
+                    context.Writer.WriteObjectStart();
                     foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                     {
-                        writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
                         var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                        writer.Write(publicRequestAttributesValue);
+                            context.Writer.Write(publicRequestAttributesValue);
                     }
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetDataSources())
                 {
-                    writer.WritePropertyName("DataSources");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("DataSources");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestDataSourcesListValue.IsSetArn())
-                        {
-                            writer.WritePropertyName("Arn");
-                            writer.Write(publicRequestDataSourcesListValue.Arn);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestDataSourcesListValue.IsSetDatabaseName())
-                        {
-                            writer.WritePropertyName("DatabaseName");
-                            writer.Write(publicRequestDataSourcesListValue.DatabaseName);
-                        }
+                        var marshaller = DataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDataSourcesListValue, context);
 
-                        if(publicRequestDataSourcesListValue.IsSetType())
-                        {
-                            writer.WritePropertyName("Type");
-                            writer.Write(publicRequestDataSourcesListValue.Type);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetDescription())
                 {
-                    writer.WritePropertyName("Description");
-                    writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
                 if(publicRequest.IsSetDomains())
                 {
-                    writer.WritePropertyName("Domains");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Domains");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestDomainsListValue in publicRequest.Domains)
                     {
-                        writer.Write(publicRequestDomainsListValue);
+                            context.Writer.Write(publicRequestDomainsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetEnableSsl())
                 {
-                    writer.WritePropertyName("EnableSsl");
-                    writer.Write(publicRequest.EnableSsl);
+                    context.Writer.WritePropertyName("EnableSsl");
+                    context.Writer.Write(publicRequest.EnableSsl);
                 }
 
                 if(publicRequest.IsSetEnvironment())
                 {
-                    writer.WritePropertyName("Environment");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Environment");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestEnvironmentListValue in publicRequest.Environment)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestEnvironmentListValue.IsSetKey())
-                        {
-                            writer.WritePropertyName("Key");
-                            writer.Write(publicRequestEnvironmentListValue.Key);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestEnvironmentListValue.IsSetSecure())
-                        {
-                            writer.WritePropertyName("Secure");
-                            writer.Write(publicRequestEnvironmentListValue.Secure);
-                        }
+                        var marshaller = EnvironmentVariableMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEnvironmentListValue, context);
 
-                        if(publicRequestEnvironmentListValue.IsSetValue())
-                        {
-                            writer.WritePropertyName("Value");
-                            writer.Write(publicRequestEnvironmentListValue.Value);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetShortname())
                 {
-                    writer.WritePropertyName("Shortname");
-                    writer.Write(publicRequest.Shortname);
+                    context.Writer.WritePropertyName("Shortname");
+                    context.Writer.Write(publicRequest.Shortname);
                 }
 
                 if(publicRequest.IsSetSslConfiguration())
                 {
-                    writer.WritePropertyName("SslConfiguration");
-                    writer.WriteObjectStart();
-                    if(publicRequest.SslConfiguration.IsSetCertificate())
-                    {
-                        writer.WritePropertyName("Certificate");
-                        writer.Write(publicRequest.SslConfiguration.Certificate);
-                    }
+                    context.Writer.WritePropertyName("SslConfiguration");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.SslConfiguration.IsSetChain())
-                    {
-                        writer.WritePropertyName("Chain");
-                        writer.Write(publicRequest.SslConfiguration.Chain);
-                    }
+                    var marshaller = SslConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SslConfiguration, context);
 
-                    if(publicRequest.SslConfiguration.IsSetPrivateKey())
-                    {
-                        writer.WritePropertyName("PrivateKey");
-                        writer.Write(publicRequest.SslConfiguration.PrivateKey);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
                 if(publicRequest.IsSetType())
                 {
-                    writer.WritePropertyName("Type");
-                    writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
                 }
 
         

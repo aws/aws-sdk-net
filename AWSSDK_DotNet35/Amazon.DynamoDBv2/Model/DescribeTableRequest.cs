@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,43 +29,44 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTable operation.
-    /// <para>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any
-    /// indexes on the table.</para>
+    /// Returns information about the table, including the current status of the table, when
+    /// it was      created, the primary key schema, and any indexes on the table.
     /// </summary>
-    public partial class DescribeTableRequest : AmazonDynamoDBv2Request
+    public partial class DescribeTableRequest : AmazonDynamoDBRequest
     {
-        private string tableName;
-
+        private string _tableName;
 
         /// <summary>
-        /// The name of the table to describe.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeTableRequest() { }
+
+        /// <summary>
+        /// Instantiates DescribeTableRequest with the parameterized properties
+        /// </summary>
+        /// <param name="tableName"> The name of the table to describe.</param>
+        public DescribeTableRequest(string tableName)
+        {
+            _tableName = tableName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the table to describe.
         /// </para>
         /// </summary>
         public string TableName
         {
-            get { return this.tableName; }
-            set { this.tableName = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
         // Check to see if TableName property is set
         internal bool IsSetTableName()
         {
-            return this.tableName != null;
+            return this._tableName != null;
         }
 
     }
 }
-    

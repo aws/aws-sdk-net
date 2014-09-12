@@ -12,122 +12,140 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a customer gateway.</para>
+    /// Describes a customer gateway.
     /// </summary>
     public partial class CustomerGateway
     {
-        
-        private string customerGatewayId;
-        private string state;
-        private string type;
-        private string ipAddress;
-        private string bgpAsn;
-        private List<Tag> tags = new List<Tag>();
-
+        private string _bgpAsn;
+        private string _customerGatewayId;
+        private string _ipAddress;
+        private string _state;
+        private List<Tag> _tags = new List<Tag>();
+        private string _type;
 
         /// <summary>
-        /// The ID of the customer gateway.
-        ///  
-        /// </summary>
-        public string CustomerGatewayId
-        {
-            get { return this.customerGatewayId; }
-            set { this.customerGatewayId = value; }
-        }
-
-        // Check to see if CustomerGatewayId property is set
-        internal bool IsSetCustomerGatewayId()
-        {
-            return this.customerGatewayId != null;
-        }
-
-        /// <summary>
-        /// The current state of the customer gateway.
-        ///  
-        /// </summary>
-        public string State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
-        /// The type of VPN connection the customer gateway supports.
-        ///  
-        /// </summary>
-        public string Type
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this.type != null;
-        }
-
-        /// <summary>
-        /// The Internet-routable IP address of the customer gateway's outside interface.
-        ///  
-        /// </summary>
-        public string IpAddress
-        {
-            get { return this.ipAddress; }
-            set { this.ipAddress = value; }
-        }
-
-        // Check to see if IpAddress property is set
-        internal bool IsSetIpAddress()
-        {
-            return this.ipAddress != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property BgpAsn. 
+        /// <para>
         /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
-        ///  
+        /// </para>
         /// </summary>
         public string BgpAsn
         {
-            get { return this.bgpAsn; }
-            set { this.bgpAsn = value; }
+            get { return this._bgpAsn; }
+            set { this._bgpAsn = value; }
         }
 
         // Check to see if BgpAsn property is set
         internal bool IsSetBgpAsn()
         {
-            return this.bgpAsn != null;
+            return this._bgpAsn != null;
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerGatewayId. 
+        /// <para>
+        /// The ID of the customer gateway.
+        /// </para>
+        /// </summary>
+        public string CustomerGatewayId
+        {
+            get { return this._customerGatewayId; }
+            set { this._customerGatewayId = value; }
+        }
+
+        // Check to see if CustomerGatewayId property is set
+        internal bool IsSetCustomerGatewayId()
+        {
+            return this._customerGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The Internet-routable IP address of the customer gateway's outside interface.
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The current state of the customer gateway.
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
         /// Any tags assigned to the customer gateway.
-        ///  
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of VPN connection the customer gateway supports.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

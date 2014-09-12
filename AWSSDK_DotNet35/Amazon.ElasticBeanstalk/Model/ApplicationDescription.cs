@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _description;
         private List<string> _versions = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ApplicationDescription() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -54,12 +62,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ConfigurationTemplates. 
         /// <para>
-        ///          The names of the configuration templates associated with this         application.    
-        ///  
+        ///  The names of the configuration templates associated with this application. 
         /// </para>
         /// </summary>
         public List<string> ConfigurationTemplates
@@ -73,7 +79,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._configurationTemplates != null && this._configurationTemplates.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DateCreated. 
@@ -93,7 +98,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._dateCreated.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DateUpdated. 
         /// <para>
@@ -112,7 +116,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._dateUpdated.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -130,7 +133,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Versions. 

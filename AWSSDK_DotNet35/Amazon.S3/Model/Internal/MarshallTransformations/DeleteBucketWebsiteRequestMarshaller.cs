@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Bucket Website Request Marshaller
     /// </summary>       
-    public class DeleteBucketWebsiteRequestMarshaller : IMarshaller<IRequest, DeleteBucketWebsiteRequest>
-    {
+    public class DeleteBucketWebsiteRequestMarshaller : IMarshaller<IRequest, DeleteBucketWebsiteRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((DeleteBucketWebsiteRequest)input);
+		}
+
         public IRequest Marshall(DeleteBucketWebsiteRequest deleteBucketWebsiteRequest)
         {
             IRequest request = new DefaultRequest(deleteBucketWebsiteRequest, "AmazonS3");

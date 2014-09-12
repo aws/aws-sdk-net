@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ModifySnapshotAttribute response metadata.
-    /// The ModifySnapshotAttribute operation has a void result type.
+    /// Configuration for accessing Amazon ModifySnapshotAttribute service
     /// </summary>
-    public partial class ModifySnapshotAttributeResponse : AmazonWebServiceResponse
+    public partial class ModifySnapshotAttributeResponse : ModifySnapshotAttributeResult
     {
+        /// <summary>
+        /// Gets and sets the ModifySnapshotAttributeResult property.
+        /// Represents the output of a ModifySnapshotAttribute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ModifySnapshotAttributeResult class are now available on the ModifySnapshotAttributeResponse class. You should use the properties on ModifySnapshotAttributeResponse instead of accessing them through ModifySnapshotAttributeResult.")]
+        public ModifySnapshotAttributeResult ModifySnapshotAttributeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

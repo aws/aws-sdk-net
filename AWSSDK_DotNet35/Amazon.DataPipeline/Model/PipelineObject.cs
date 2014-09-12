@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,97 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set
-    /// of components of a pipeline defines the pipeline.</para>
+    /// Contains information about a pipeline object. This can be a logical, physical, or
+    /// physical attempt pipeline object. The complete set of components of a pipeline defines
+    /// the pipeline.
     /// </summary>
-    public class PipelineObject
+    public partial class PipelineObject
     {
-        
-        private string id;
-        private string name;
-        private List<Field> fields = new List<Field>();
+        private List<Field> _fields = new List<Field>();
+        private string _id;
+        private string _name;
 
         /// <summary>
-        /// Identifier of the object.
-        ///  
+        /// Gets and sets the property Fields. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// Name of the object.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
         /// Key-value pairs that define the properties of the object.
-        ///  
+        /// </para>
         /// </summary>
         public List<Field> Fields
         {
-            get { return this.fields; }
-            set { this.fields = value; }
+            get { return this._fields; }
+            set { this._fields = value; }
         }
 
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this.fields.Count > 0;
+            return this._fields != null && this._fields.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// Identifier of the object.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of the object.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
     }
 }

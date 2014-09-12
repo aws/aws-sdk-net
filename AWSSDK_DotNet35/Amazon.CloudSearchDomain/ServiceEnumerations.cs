@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;

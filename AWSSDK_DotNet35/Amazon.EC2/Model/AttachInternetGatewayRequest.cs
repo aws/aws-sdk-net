@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,48 +29,51 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachInternetGateway operation.
-    /// <para>Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For more information about your VPC and
-    /// Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/" >Amazon Virtual Private Cloud User Guide</a>
-    /// .</para>
+    /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
+    /// and the VPC. For more information about your VPC and Internet gateway, see the <a
+    /// href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
+    /// Cloud User Guide</a>.
     /// </summary>
     public partial class AttachInternetGatewayRequest : AmazonEC2Request
     {
-        private string internetGatewayId;
-        private string vpcId;
-
+        private string _internetGatewayId;
+        private string _vpcId;
 
         /// <summary>
+        /// Gets and sets the property InternetGatewayId. 
+        /// <para>
         /// The ID of the Internet gateway.
-        ///  
+        /// </para>
         /// </summary>
         public string InternetGatewayId
         {
-            get { return this.internetGatewayId; }
-            set { this.internetGatewayId = value; }
+            get { return this._internetGatewayId; }
+            set { this._internetGatewayId = value; }
         }
 
         // Check to see if InternetGatewayId property is set
         internal bool IsSetInternetGatewayId()
         {
-            return this.internetGatewayId != null;
+            return this._internetGatewayId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
         /// The ID of the VPC.
-        ///  
+        /// </para>
         /// </summary>
         public string VpcId
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
         // Check to see if VpcId property is set
         internal bool IsSetVpcId()
         {
-            return this.vpcId != null;
+            return this._vpcId != null;
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,23 @@ namespace Amazon.SimpleNotificationService.Model
         private string _attributeValue;
         private string _subscriptionArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SetSubscriptionAttributesRequest() { }
+
+        /// <summary>
+        /// Instantiates SetSubscriptionAttributesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
+        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></param>
+        /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
+        public SetSubscriptionAttributesRequest(string subscriptionArn, string attributeName, string attributeValue)
+        {
+            _subscriptionArn = subscriptionArn;
+            _attributeName = attributeName;
+            _attributeValue = attributeValue;
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -57,7 +78,6 @@ namespace Amazon.SimpleNotificationService.Model
             return this._attributeName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
@@ -75,7 +95,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._attributeValue != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 

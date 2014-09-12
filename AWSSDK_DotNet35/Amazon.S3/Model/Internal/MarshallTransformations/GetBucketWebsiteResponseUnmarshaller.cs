@@ -60,25 +60,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("RedirectAllRequestsTo", targetDepth))
                     {
-                        response.WebsiteConfiguration.RedirectAllRequestsTo = RoutingRuleRedirectUnmarshaller.GetInstance().Unmarshall(context);
+                        response.WebsiteConfiguration.RedirectAllRequestsTo = RoutingRuleRedirectUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
                     if (context.TestExpression("IndexDocument/Suffix", targetDepth))
                     {
-                        response.WebsiteConfiguration.IndexDocumentSuffix = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        response.WebsiteConfiguration.IndexDocumentSuffix = StringUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
                     if (context.TestExpression("ErrorDocument/Key", targetDepth))
                     {
-                        response.WebsiteConfiguration.ErrorDocument = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        response.WebsiteConfiguration.ErrorDocument = StringUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
                     if (context.TestExpression("RoutingRule", targetDepth + 1))
                     {
-                        response.WebsiteConfiguration.RoutingRules.Add(RoutingRuleUnmarshaller.GetInstance().Unmarshall(context));
+                        response.WebsiteConfiguration.RoutingRules.Add(RoutingRuleUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -96,20 +96,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static GetBucketWebsiteResponseUnmarshaller instance;
 
-        public static GetBucketWebsiteResponseUnmarshaller GetInstance()
+        private static GetBucketWebsiteResponseUnmarshaller _instance;
+
+        public static GetBucketWebsiteResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetBucketWebsiteResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetBucketWebsiteResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
     
     }

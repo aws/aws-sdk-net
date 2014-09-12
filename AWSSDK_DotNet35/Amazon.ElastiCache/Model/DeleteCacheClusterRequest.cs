@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,6 +40,19 @@ namespace Amazon.ElastiCache.Model
         private string _cacheClusterId;
         private string _finalSnapshotIdentifier;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteCacheClusterRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteCacheClusterRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cacheClusterId">The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</param>
+        public DeleteCacheClusterRequest(string cacheClusterId)
+        {
+            _cacheClusterId = cacheClusterId;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
@@ -55,7 +72,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheClusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property FinalSnapshotIdentifier. 

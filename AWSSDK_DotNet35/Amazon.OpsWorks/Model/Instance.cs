@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -59,7 +63,6 @@ namespace Amazon.OpsWorks.Model
         private string _subnetId;
         private VirtualizationType _virtualizationType;
 
-
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
@@ -80,7 +83,6 @@ namespace Amazon.OpsWorks.Model
             return this._amiId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
@@ -98,7 +100,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._architecture != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AutoScalingType. 
@@ -123,7 +124,6 @@ namespace Amazon.OpsWorks.Model
             return this._autoScalingType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
@@ -143,7 +143,6 @@ namespace Amazon.OpsWorks.Model
             return this._availabilityZone != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
@@ -161,7 +160,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._createdAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
@@ -181,7 +179,6 @@ namespace Amazon.OpsWorks.Model
             return this._ebsOptimized.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
         /// <para>
@@ -199,7 +196,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._ec2InstanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ElasticIp. 
@@ -220,7 +216,6 @@ namespace Amazon.OpsWorks.Model
             return this._elasticIp != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
@@ -238,7 +233,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._hostname != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstallUpdatesOnBoot. 
@@ -262,7 +256,6 @@ namespace Amazon.OpsWorks.Model
             return this._installUpdatesOnBoot.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -280,7 +273,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceProfileArn. 
@@ -301,7 +293,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceProfileArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -324,7 +315,6 @@ namespace Amazon.OpsWorks.Model
             return this._instanceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LastServiceErrorId. 
         /// <para>
@@ -342,7 +332,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._lastServiceErrorId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LayerIds. 
@@ -362,7 +351,6 @@ namespace Amazon.OpsWorks.Model
             return this._layerIds != null && this._layerIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Os. 
         /// <para>
@@ -380,7 +368,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._os != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PrivateDns. 
@@ -400,7 +387,6 @@ namespace Amazon.OpsWorks.Model
             return this._privateDns != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PrivateIp. 
         /// <para>
@@ -418,7 +404,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._privateIp != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PublicDns. 
@@ -438,7 +423,6 @@ namespace Amazon.OpsWorks.Model
             return this._publicDns != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
@@ -456,7 +440,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._publicIp != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RootDeviceType. 
@@ -477,7 +460,6 @@ namespace Amazon.OpsWorks.Model
             return this._rootDeviceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RootDeviceVolumeId. 
         /// <para>
@@ -495,7 +477,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._rootDeviceVolumeId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -515,7 +496,6 @@ namespace Amazon.OpsWorks.Model
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SshHostDsaKeyFingerprint. 
         /// <para>
@@ -533,7 +513,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._sshHostDsaKeyFingerprint != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SshHostRsaKeyFingerprint. 
@@ -553,7 +532,6 @@ namespace Amazon.OpsWorks.Model
             return this._sshHostRsaKeyFingerprint != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SshKeyName. 
         /// <para>
@@ -572,7 +550,6 @@ namespace Amazon.OpsWorks.Model
             return this._sshKeyName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -590,7 +567,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -614,7 +590,6 @@ namespace Amazon.OpsWorks.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
@@ -632,7 +607,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._subnetId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VirtualizationType. 

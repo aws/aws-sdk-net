@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,25 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.CognitoIdentity.Model;
 
 namespace Amazon.CognitoIdentity
 {
     /// <summary>
-    /// Implementation for accessing CognitoIdentity
-    /// 
-    /// Amazon Cognito
+    /// Interface for accessing CognitoIdentity
+    ///
+    /// Amazon Cognito 
     /// <para>
     /// Amazon Cognito is a web service that facilitates the delivery of scoped, temporary
     /// credentials to mobile devices or other untrusted environments. Amazon Cognito uniquely
     /// identifies a device or user and supplies the user with a consistent identity throughout
     /// the lifetime of an application.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// Amazon Cognito lets users authenticate with third-party identity providers (Facebook,
     /// Google, or Login with Amazon). As a developer, you decide which identity providers
@@ -39,9 +46,11 @@ namespace Amazon.CognitoIdentity
     /// any information provided about third-party logins.
     /// </para>
     /// </summary>
-	public partial interface IAmazonCognitoIdentity : IDisposable
+    public partial interface IAmazonCognitoIdentity : IDisposable
     {
- 
+
+        
+        #region  CreateIdentityPool
 
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
@@ -50,29 +59,29 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
         /// <returns>The response from the CreateIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// Thrown when the total number of user pools has exceeded a preset limit.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// <exception cref="ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request);
+        CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.CreateIdentityPool"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool operation.</param>
@@ -80,8 +89,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteIdentityPool
 
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
@@ -90,26 +102,26 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool service method.</param>
         /// 
         /// <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request);
+        DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentityPool"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool operation.</param>
@@ -117,8 +129,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeIdentityPool
 
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
@@ -127,26 +142,26 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request);
+        DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityPool"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool operation.</param>
@@ -154,8 +169,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetId
 
         /// <summary>
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
@@ -164,32 +182,32 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the GetId service method.</param>
         /// 
         /// <returns>The response from the GetId service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// Thrown when the total number of user pools has exceeded a preset limit.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// <exception cref="ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		GetIdResponse GetId(GetIdRequest request);
+        GetIdResponse GetId(GetIdRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetId operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetId"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetId operation.</param>
@@ -197,8 +215,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetIdResponse> GetIdAsync(GetIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetIdResponse> GetIdAsync(GetIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetOpenIdToken
 
         /// <summary>
         /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
@@ -208,29 +229,29 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken service method.</param>
         /// 
         /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// <exception cref="ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request);
+        GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOpenIdToken operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdToken"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken operation.</param>
@@ -238,8 +259,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIdentities
 
         /// <summary>
         /// Lists the identities in a pool.
@@ -247,26 +271,26 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request);
+        ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.ListIdentities"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities operation.</param>
@@ -274,8 +298,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIdentityPools
 
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
@@ -283,23 +310,23 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools service method.</param>
         /// 
         /// <returns>The response from the ListIdentityPools service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request);
+        ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPools operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.ListIdentityPools"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools operation.</param>
@@ -307,8 +334,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UnlinkIdentity
 
         /// <summary>
         /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
@@ -318,29 +348,29 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity service method.</param>
         /// 
         /// <returns>The response from the UnlinkIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// <exception cref="ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request);
+        UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnlinkIdentity operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.UnlinkIdentity"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity operation.</param>
@@ -348,8 +378,11 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateIdentityPool
 
         /// <summary>
         /// Updates a user pool.
@@ -357,29 +390,29 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool service method.</param>
         /// 
         /// <returns>The response from the UpdateIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// <exception cref="ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-		UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request);
+        UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity.UpdateIdentityPool"/>
+        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool operation.</param>
@@ -387,6 +420,9 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Table Request Marshaller
+    /// DeleteTable Request Marshaller
     /// </summary>       
-    internal class DeleteTableRequestMarshaller : IMarshaller<IRequest, DeleteTableRequest> 
+    public class DeleteTableRequestMarshaller : IMarshaller<IRequest, DeleteTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteTableRequest deleteTableRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteTableRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteTableRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(DeleteTableRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.DeleteTable";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteTableRequest != null && deleteTableRequest.IsSetTableName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetTableName())
                 {
-                    writer.WritePropertyName("TableName");
-                    writer.Write(deleteTableRequest.TableName);
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -18,6 +18,8 @@ using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.IO;
 
 using Amazon.CloudWatchLogs.Model;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
@@ -71,19 +73,9 @@ namespace Amazon.CloudWatchLogs
     /// Ruby Developer Center</a></li> <li><a href="http://aws.amazon.com/net/">AWS Windows
     /// and .NET Developer Center</a></li> </ul>
     /// </summary>
-    public partial class AmazonCloudWatchLogsClient : AmazonWebServiceClient, IAmazonCloudWatchLogs
+    public partial class AmazonCloudWatchLogsClient : AmazonServiceClient, IAmazonCloudWatchLogs
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
+        
         #region Constructors
 
         /// <summary>
@@ -112,7 +104,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(AWSCredentials credentials, AmazonCloudWatchLogsConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -145,7 +137,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudWatchLogsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -181,8 +173,27 @@ namespace Amazon.CloudWatchLogs
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudWatchLogsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        } 
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
@@ -192,16 +203,10 @@ namespace Amazon.CloudWatchLogs
 
         internal CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
         {
-            var task = CreateLogGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateLogGroupRequestMarshaller();
+            var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogGroupRequest,CreateLogGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -214,11 +219,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateLogGroupResponse> CreateLogGroupAsync(CreateLogGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateLogGroupResponse> CreateLogGroupAsync(CreateLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
             var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateLogGroupRequest, CreateLogGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateLogGroupRequest,CreateLogGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -227,16 +234,10 @@ namespace Amazon.CloudWatchLogs
 
         internal CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
         {
-            var task = CreateLogStreamAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateLogStreamRequestMarshaller();
+            var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogStreamRequest,CreateLogStreamResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -249,11 +250,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
             var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateLogStreamRequest, CreateLogStreamResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<CreateLogStreamRequest,CreateLogStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -262,16 +265,10 @@ namespace Amazon.CloudWatchLogs
 
         internal DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
         {
-            var task = DeleteLogGroupAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteLogGroupRequestMarshaller();
+            var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogGroupRequest,DeleteLogGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -284,11 +281,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
             var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteLogGroupRequest, DeleteLogGroupResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteLogGroupRequest,DeleteLogGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -297,16 +296,10 @@ namespace Amazon.CloudWatchLogs
 
         internal DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
         {
-            var task = DeleteLogStreamAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteLogStreamRequestMarshaller();
+            var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogStreamRequest,DeleteLogStreamResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -319,11 +312,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
             var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteLogStreamRequest, DeleteLogStreamResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteLogStreamRequest,DeleteLogStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -332,16 +327,10 @@ namespace Amazon.CloudWatchLogs
 
         internal DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
         {
-            var task = DeleteMetricFilterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteMetricFilterRequestMarshaller();
+            var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricFilterRequest,DeleteMetricFilterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -354,11 +343,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteMetricFilterResponse> DeleteMetricFilterAsync(DeleteMetricFilterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteMetricFilterResponse> DeleteMetricFilterAsync(DeleteMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
             var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteMetricFilterRequest, DeleteMetricFilterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteMetricFilterRequest,DeleteMetricFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -367,16 +358,10 @@ namespace Amazon.CloudWatchLogs
 
         internal DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
         {
-            var task = DeleteRetentionPolicyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteRetentionPolicyRequestMarshaller();
+            var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRetentionPolicyRequest,DeleteRetentionPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -389,11 +374,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
             var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteRetentionPolicyRequest, DeleteRetentionPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteRetentionPolicyRequest,DeleteRetentionPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -406,16 +393,10 @@ namespace Amazon.CloudWatchLogs
         }
         internal DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
         {
-            var task = DescribeLogGroupsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeLogGroupsRequestMarshaller();
+            var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLogGroupsRequest,DescribeLogGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -428,11 +409,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(DescribeLogGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(DescribeLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
             var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeLogGroupsRequest, DescribeLogGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeLogGroupsRequest,DescribeLogGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -441,16 +424,10 @@ namespace Amazon.CloudWatchLogs
 
         internal DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
         {
-            var task = DescribeLogStreamsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeLogStreamsRequestMarshaller();
+            var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLogStreamsRequest,DescribeLogStreamsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -463,11 +440,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeLogStreamsResponse> DescribeLogStreamsAsync(DescribeLogStreamsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeLogStreamsResponse> DescribeLogStreamsAsync(DescribeLogStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
             var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeLogStreamsRequest, DescribeLogStreamsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeLogStreamsRequest,DescribeLogStreamsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -476,16 +455,10 @@ namespace Amazon.CloudWatchLogs
 
         internal DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
         {
-            var task = DescribeMetricFiltersAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DescribeMetricFiltersRequestMarshaller();
+            var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricFiltersRequest,DescribeMetricFiltersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -498,11 +471,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeMetricFiltersResponse> DescribeMetricFiltersAsync(DescribeMetricFiltersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeMetricFiltersResponse> DescribeMetricFiltersAsync(DescribeMetricFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
             var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeMetricFiltersRequest, DescribeMetricFiltersResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DescribeMetricFiltersRequest,DescribeMetricFiltersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -511,16 +486,10 @@ namespace Amazon.CloudWatchLogs
 
         internal GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
         {
-            var task = GetLogEventsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetLogEventsRequestMarshaller();
+            var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogEventsRequest,GetLogEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -533,11 +502,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetLogEventsResponse> GetLogEventsAsync(GetLogEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetLogEventsResponse> GetLogEventsAsync(GetLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLogEventsRequestMarshaller();
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetLogEventsRequest, GetLogEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetLogEventsRequest,GetLogEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -546,16 +517,10 @@ namespace Amazon.CloudWatchLogs
 
         internal PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
         {
-            var task = PutLogEventsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutLogEventsRequestMarshaller();
+            var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
+
+            return Invoke<PutLogEventsRequest,PutLogEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -568,11 +533,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLogEventsRequestMarshaller();
             var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, PutLogEventsRequest, PutLogEventsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<PutLogEventsRequest,PutLogEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -581,16 +548,10 @@ namespace Amazon.CloudWatchLogs
 
         internal PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
         {
-            var task = PutMetricFilterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutMetricFilterRequestMarshaller();
+            var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
+
+            return Invoke<PutMetricFilterRequest,PutMetricFilterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -603,11 +564,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutMetricFilterResponse> PutMetricFilterAsync(PutMetricFilterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutMetricFilterResponse> PutMetricFilterAsync(PutMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
             var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, PutMetricFilterRequest, PutMetricFilterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<PutMetricFilterRequest,PutMetricFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -616,16 +579,10 @@ namespace Amazon.CloudWatchLogs
 
         internal PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
         {
-            var task = PutRetentionPolicyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutRetentionPolicyRequestMarshaller();
+            var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutRetentionPolicyRequest,PutRetentionPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -638,11 +595,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
             var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
-            return Invoke<IRequest, PutRetentionPolicyRequest, PutRetentionPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<PutRetentionPolicyRequest,PutRetentionPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -651,16 +610,10 @@ namespace Amazon.CloudWatchLogs
 
         internal TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
         {
-            var task = TestMetricFilterAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new TestMetricFilterRequestMarshaller();
+            var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
+
+            return Invoke<TestMetricFilterRequest,TestMetricFilterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -673,11 +626,13 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TestMetricFilterResponse> TestMetricFilterAsync(TestMetricFilterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<TestMetricFilterResponse> TestMetricFilterAsync(TestMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
             var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
-            return Invoke<IRequest, TestMetricFilterRequest, TestMetricFilterResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<TestMetricFilterRequest,TestMetricFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

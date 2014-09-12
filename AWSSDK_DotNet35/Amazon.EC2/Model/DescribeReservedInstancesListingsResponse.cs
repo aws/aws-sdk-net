@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeReservedInstancesListings response and response metadata.
+    /// Configuration for accessing Amazon DescribeReservedInstancesListings service
     /// </summary>
     public partial class DescribeReservedInstancesListingsResponse : DescribeReservedInstancesListingsResult
     {
         /// <summary>
         /// Gets and sets the DescribeReservedInstancesListingsResult property.
-        /// 
+        /// Represents the output of a DescribeReservedInstancesListings operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeReservedInstancesListingsResult class are now available on the DescribeReservedInstancesListingsResponse class. You should use the properties on DescribeReservedInstancesListingsResponse instead of accessing them through DescribeReservedInstancesListingsResult.")]
         public DescribeReservedInstancesListingsResult DescribeReservedInstancesListingsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

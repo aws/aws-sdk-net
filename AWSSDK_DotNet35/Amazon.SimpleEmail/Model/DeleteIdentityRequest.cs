@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.SimpleEmail.Model
     public partial class DeleteIdentityRequest : AmazonSimpleEmailServiceRequest
     {
         private string _identity;
-
 
         /// <summary>
         /// Gets and sets the property Identity. 

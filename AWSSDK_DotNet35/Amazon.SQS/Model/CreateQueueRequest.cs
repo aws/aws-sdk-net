@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -70,6 +74,19 @@ namespace Amazon.SQS.Model
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _queueName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateQueueRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateQueueRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueName">The name for the queue to be created.</param>
+        public CreateQueueRequest(string queueName)
+        {
+            _queueName = queueName;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -116,7 +133,6 @@ namespace Amazon.SQS.Model
         {
             return this._attributes != null && this._attributes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueName. 

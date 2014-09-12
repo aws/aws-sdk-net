@@ -12,87 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NetworkInterfaceAssociation Unmarshaller
-     /// </summary>
-    internal class NetworkInterfaceAssociationUnmarshaller : IUnmarshaller<NetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceAssociation, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NetworkInterfaceAssociation Object
+    /// </summary>  
+    public class NetworkInterfaceAssociationUnmarshaller : IUnmarshaller<NetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceAssociation, JsonUnmarshallerContext>
     {
-        public NetworkInterfaceAssociation Unmarshall(XmlUnmarshallerContext context) 
+        public NetworkInterfaceAssociation Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkInterfaceAssociation networkInterfaceAssociation = new NetworkInterfaceAssociation();
+            NetworkInterfaceAssociation unmarshalledObject = new NetworkInterfaceAssociation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("publicIp", targetDepth))
-                    {
-                        networkInterfaceAssociation.PublicIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("publicDnsName", targetDepth))
-                    {
-                        networkInterfaceAssociation.PublicDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ipOwnerId", targetDepth))
-                    {
-                        networkInterfaceAssociation.IpOwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("allocationId", targetDepth))
                     {
-                        networkInterfaceAssociation.AllocationId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("associationId", targetDepth))
                     {
-                        networkInterfaceAssociation.AssociationId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpOwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("publicDnsName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("publicIp", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return networkInterfaceAssociation;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return networkInterfaceAssociation;
+            return unmarshalledObject;
         }
 
-        public NetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context) 
+        public NetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NetworkInterfaceAssociationUnmarshaller instance;
 
-        public static NetworkInterfaceAssociationUnmarshaller GetInstance() 
+        private static NetworkInterfaceAssociationUnmarshaller _instance = new NetworkInterfaceAssociationUnmarshaller();        
+
+        public static NetworkInterfaceAssociationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NetworkInterfaceAssociationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,33 +29,42 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTemplate operation.
-    /// <para>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</para> <para>For deleted
-    /// stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</para> <para><b>NOTE:</b> If the template does
-    /// not exist, a ValidationError is returned. </para>
+    /// Returns the template body for a specified stack. You can get the template for running
+    /// or deleted stacks.
+    /// 
+    ///  
+    /// <para>
+    /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
+    /// has been deleted.
+    /// </para>
     /// </summary>
     public partial class GetTemplateRequest : AmazonCloudFormationRequest
     {
-        private string stackName;
-
+        private string _stackName;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack, which are not always interchangeable: <ul> <li>Running stacks: You can specify
-        /// either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> Default: There is
-        /// no default value.
-        ///  
+        /// Gets and sets the property StackName. 
+        /// <para>
+        /// The name or the unique identifier associated with the stack, which are not always
+        /// interchangeable:
+        /// </para>
+        ///  <ul> <li>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> 
+        /// <para>
+        /// Default: There is no default value.
+        /// </para>
         /// </summary>
         public string StackName
         {
-            get { return this.stackName; }
-            set { this.stackName = value; }
+            get { return this._stackName; }
+            set { this._stackName = value; }
         }
 
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;
+            return this._stackName != null;
         }
 
     }
 }
-    

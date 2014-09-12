@@ -12,39 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DescribeIndexFields</c> request. Contains the index fields configured for the domain specified in the
-    /// request.</para>
+    /// The result of a <code>DescribeIndexFields</code> request. Contains the index fields
+    /// configured for the domain specified in the request.
     /// </summary>
     public partial class DescribeIndexFieldsResult : AmazonWebServiceResponse
     {
-        
-        private List<IndexFieldStatus> indexFields = new List<IndexFieldStatus>();
-
+        private List<IndexFieldStatus> _indexFields = new List<IndexFieldStatus>();
 
         /// <summary>
+        /// Gets and sets the property IndexFields. 
+        /// <para>
         /// The index fields configured for the domain.
-        ///  
+        /// </para>
         /// </summary>
         public List<IndexFieldStatus> IndexFields
         {
-            get { return this.indexFields; }
-            set { this.indexFields = value; }
+            get { return this._indexFields; }
+            set { this._indexFields = value; }
         }
 
         // Check to see if IndexFields property is set
         internal bool IsSetIndexFields()
         {
-            return this.indexFields.Count > 0;
+            return this._indexFields != null && this._indexFields.Count > 0; 
         }
+
     }
 }

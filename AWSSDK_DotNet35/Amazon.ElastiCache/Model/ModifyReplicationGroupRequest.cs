@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -46,7 +50,6 @@ namespace Amazon.ElastiCache.Model
         private string _snapshottingClusterId;
         private string _snapshotWindow;
 
-
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
@@ -80,7 +83,6 @@ namespace Amazon.ElastiCache.Model
             return this._applyImmediately.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
@@ -101,7 +103,6 @@ namespace Amazon.ElastiCache.Model
             return this._autoMinorVersionUpgrade.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
@@ -121,7 +122,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheParameterGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheSecurityGroupNames. 
@@ -151,7 +151,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheSecurityGroupNames != null && this._cacheSecurityGroupNames.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
@@ -171,12 +170,10 @@ namespace Amazon.ElastiCache.Model
             return this._engineVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NotificationTopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-        /// be sent.
+        /// The Amazon Resource Name (ARN) of the SNS topic to which notifications will be sent.
         /// </para>
         /// </summary>
         public string NotificationTopicArn
@@ -190,7 +187,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._notificationTopicArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NotificationTopicStatus. 
@@ -215,7 +211,6 @@ namespace Amazon.ElastiCache.Model
             return this._notificationTopicStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
@@ -238,7 +233,6 @@ namespace Amazon.ElastiCache.Model
             return this._preferredMaintenanceWindow != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
@@ -259,7 +253,6 @@ namespace Amazon.ElastiCache.Model
             return this._primaryClusterId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReplicationGroupDescription. 
         /// <para>
@@ -278,7 +271,6 @@ namespace Amazon.ElastiCache.Model
             return this._replicationGroupDescription != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
@@ -296,7 +288,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._replicationGroupId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -321,7 +312,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
@@ -348,7 +338,6 @@ namespace Amazon.ElastiCache.Model
             return this._snapshotRetentionLimit.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshottingClusterId. 
         /// <para>
@@ -367,7 +356,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._snapshottingClusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotWindow. 

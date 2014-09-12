@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.AutoScaling.Model
         private List<string> _scheduledActionNames = new List<string>();
         private DateTime? _startTime;
 
-
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
@@ -55,7 +58,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._autoScalingGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -76,7 +78,6 @@ namespace Amazon.AutoScaling.Model
             return this._endTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
@@ -95,7 +96,6 @@ namespace Amazon.AutoScaling.Model
             return this._maxRecords.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
@@ -113,7 +113,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._nextToken != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ScheduledActionNames. 
@@ -136,7 +135,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._scheduledActionNames != null && this._scheduledActionNames.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property StartTime. 

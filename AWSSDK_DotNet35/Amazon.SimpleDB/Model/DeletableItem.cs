@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,42 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleDB.Model
 {
-    /// <summary>Deletable Item
+    /// <summary>
+    /// 
     /// </summary>
-    public class DeletableItem
+    public partial class DeletableItem
     {
-        
-        private string name;
-        private List<Attribute> attributes = new List<Attribute>();
-        public string Name
+        private List<Attribute> _attributes = new List<Attribute>();
+        private string _name;
+
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeletableItem() { }
+
+        /// <summary>
+        /// Instantiates DeletableItem with the parameterized properties
+        /// </summary>
+        /// <param name="name">Sets the DeletableItem Name property</param>
+        /// <param name="attributes">Sets the DeletableItem Attributes property</param>
+        public DeletableItem(string name, List<Attribute> attributes)
         {
-            get { return this.name; }
-            set { this.name = value; }
+            _name = name;
+            _attributes = attributes;
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
+        /// <summary>
+        /// Gets and sets the property Attributes.
+        /// </summary>
         public List<Attribute> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes.Count > 0;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Name.
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
     }
 }

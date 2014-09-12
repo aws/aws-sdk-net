@@ -12,303 +12,334 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the launch specification of a Spot Instance.</para>
+    /// Describes the launch specification of a Spot Instance.
     /// </summary>
     public partial class LaunchSpecification
     {
-        
-        private string imageId;
-        private string keyName;
-        private List<GroupIdentifier> allSecurityGroups = new List<GroupIdentifier>();
-        private List<string> securityGroups = new List<string>();
-        private string userData;
-        private string addressingType;
-        private InstanceType instanceType;
-        private SpotPlacement placement;
-        private string kernelId;
-        private string ramdiskId;
-        private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
-        private bool? monitoringEnabled;
-        private string subnetId;
-        private List<InstanceNetworkInterfaceSpecification> networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
-        private IamInstanceProfileSpecification iamInstanceProfile;
-        private bool? ebsOptimized;
-
+        private string _addressingType;
+        private List<GroupIdentifier> _allSecurityGroups = new List<GroupIdentifier>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private bool? _ebsOptimized;
+        private IamInstanceProfileSpecification _iamInstanceProfile;
+        private string _imageId;
+        private InstanceType _instanceType;
+        private string _kernelId;
+        private string _keyName;
+        private bool? _monitoringEnabled;
+        private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
+        private SpotPlacement _placement;
+        private string _ramdiskId;
+        private List<string> _securityGroups = new List<string>();
+        private string _subnetId;
+        private string _userData;
 
         /// <summary>
-        /// The ID of the AMI.
-        ///  
-        /// </summary>
-        public string ImageId
-        {
-            get { return this.imageId; }
-            set { this.imageId = value; }
-        }
-
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
-        {
-            return this.imageId != null;
-        }
-
-        /// <summary>
-        /// The name of the key pair.
-        ///  
-        /// </summary>
-        public string KeyName
-        {
-            get { return this.keyName; }
-            set { this.keyName = value; }
-        }
-
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
-        {
-            return this.keyName != null;
-        }
-
-        /// <summary>
-        /// One or more security groups.
-        ///  
-        /// </summary>
-        public List<GroupIdentifier> AllSecurityGroups
-        {
-            get { return this.allSecurityGroups; }
-            set { this.allSecurityGroups = value; }
-        }
-
-        // Check to see if AllSecurityGroups property is set
-        internal bool IsSetAllSecurityGroups()
-        {
-            return this.allSecurityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// One or more security groups.
-        ///  
-        /// </summary>
-        public List<string> SecurityGroups
-        {
-            get { return this.securityGroups; }
-            set { this.securityGroups = value; }
-        }
-
-        // Check to see if SecurityGroups property is set
-        internal bool IsSetSecurityGroups()
-        {
-            return this.securityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// The Base64-encoded MIME user data to make available to the instances.
-        ///  
-        /// </summary>
-        public string UserData
-        {
-            get { return this.userData; }
-            set { this.userData = value; }
-        }
-
-        // Check to see if UserData property is set
-        internal bool IsSetUserData()
-        {
-            return this.userData != null;
-        }
-
-        /// <summary>
-        /// <p/>
-        ///  
+        /// Gets and sets the property AddressingType. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         public string AddressingType
         {
-            get { return this.addressingType; }
-            set { this.addressingType = value; }
+            get { return this._addressingType; }
+            set { this._addressingType = value; }
         }
 
         // Check to see if AddressingType property is set
         internal bool IsSetAddressingType()
         {
-            return this.addressingType != null;
+            return this._addressingType != null;
         }
 
         /// <summary>
-        /// The instance type.
-        ///  
+        /// Gets and sets the property AllSecurityGroups. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge</description>
-        ///     </item>
-        /// </list>
+        /// One or more security groups.
         /// </para>
         /// </summary>
-        public InstanceType InstanceType
+        public List<GroupIdentifier> AllSecurityGroups
         {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
+            get { return this._allSecurityGroups; }
+            set { this._allSecurityGroups = value; }
         }
 
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
+        // Check to see if AllSecurityGroups property is set
+        internal bool IsSetAllSecurityGroups()
         {
-            return this.instanceType != null;
-        }
-
-        /// <summary>
-        /// The placement information for the instance.
-        ///  
-        /// </summary>
-        public SpotPlacement Placement
-        {
-            get { return this.placement; }
-            set { this.placement = value; }
-        }
-
-        // Check to see if Placement property is set
-        internal bool IsSetPlacement()
-        {
-            return this.placement != null;
+            return this._allSecurityGroups != null && this._allSecurityGroups.Count > 0; 
         }
 
         /// <summary>
-        /// The ID of the kernel.
-        ///  
-        /// </summary>
-        public string KernelId
-        {
-            get { return this.kernelId; }
-            set { this.kernelId = value; }
-        }
-
-        // Check to see if KernelId property is set
-        internal bool IsSetKernelId()
-        {
-            return this.kernelId != null;
-        }
-
-        /// <summary>
-        /// The ID of the RAM disk.
-        ///  
-        /// </summary>
-        public string RamdiskId
-        {
-            get { return this.ramdiskId; }
-            set { this.ramdiskId = value; }
-        }
-
-        // Check to see if RamdiskId property is set
-        internal bool IsSetRamdiskId()
-        {
-            return this.ramdiskId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
         /// One or more block device mapping entries.
-        ///  
+        /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
         {
-            get { return this.blockDeviceMappings; }
-            set { this.blockDeviceMappings = value; }
+            get { return this._blockDeviceMappings; }
+            set { this._blockDeviceMappings = value; }
         }
 
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this.blockDeviceMappings.Count > 0;
+            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
         }
 
         /// <summary>
-        /// Enables monitoring for the instance. Default: Disabled
+        /// Gets and sets the property EbsOptimized. 
+        /// <para>
+        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides
+        /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
+        /// optimal EBS I/O performance. This optimization isn't available with all instance types.
+        /// Additional usage charges apply when using an EBS Optimized instance.
+        /// </para>
         ///  
-        /// </summary>
-        public bool MonitoringEnabled
-        {
-            get { return this.monitoringEnabled ?? default(bool); }
-            set { this.monitoringEnabled = value; }
-        }
-
-        // Check to see if MonitoringEnabled property is set
-        internal bool IsSetMonitoringEnabled()
-        {
-            return this.monitoringEnabled.HasValue;
-        }
-
-        /// <summary>
-        /// The ID of the subnet in which to launch the Spot Instance.
-        ///  
-        /// </summary>
-        public string SubnetId
-        {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
-        }
-
-        // Check to see if SubnetId property is set
-        internal bool IsSetSubnetId()
-        {
-            return this.subnetId != null;
-        }
-
-        /// <summary>
-        /// One or more network interfaces.
-        ///  
-        /// </summary>
-        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
-        {
-            get { return this.networkInterfaces; }
-            set { this.networkInterfaces = value; }
-        }
-
-        // Check to see if NetworkInterfaces property is set
-        internal bool IsSetNetworkInterfaces()
-        {
-            return this.networkInterfaces.Count > 0;
-        }
-
-        /// <summary>
-        /// The IAM instance profile.
-        ///  
-        /// </summary>
-        public IamInstanceProfileSpecification IamInstanceProfile
-        {
-            get { return this.iamInstanceProfile; }
-            set { this.iamInstanceProfile = value; }
-        }
-
-        // Check to see if IamInstanceProfile property is set
-        internal bool IsSetIamInstanceProfile()
-        {
-            return this.iamInstanceProfile != null;
-        }
-
-        /// <summary>
-        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized
-        /// configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage
-        /// charges apply when using an EBS Optimized instance. Default: <c>false</c>
-        ///  
+        /// <para>
+        /// Default: <code>false</code>
+        /// </para>
         /// </summary>
         public bool EbsOptimized
         {
-            get { return this.ebsOptimized ?? default(bool); }
-            set { this.ebsOptimized = value; }
+            get { return this._ebsOptimized.GetValueOrDefault(); }
+            set { this._ebsOptimized = value; }
         }
 
         // Check to see if EbsOptimized property is set
         internal bool IsSetEbsOptimized()
         {
-            return this.ebsOptimized.HasValue;
+            return this._ebsOptimized.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// The IAM instance profile.
+        /// </para>
+        /// </summary>
+        public IamInstanceProfileSpecification IamInstanceProfile
+        {
+            get { return this._iamInstanceProfile; }
+            set { this._iamInstanceProfile = value; }
+        }
+
+        // Check to see if IamInstanceProfile property is set
+        internal bool IsSetIamInstanceProfile()
+        {
+            return this._iamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type.
+        /// </para>
+        /// </summary>
+        public InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KernelId. 
+        /// <para>
+        /// The ID of the kernel.
+        /// </para>
+        /// </summary>
+        public string KernelId
+        {
+            get { return this._kernelId; }
+            set { this._kernelId = value; }
+        }
+
+        // Check to see if KernelId property is set
+        internal bool IsSetKernelId()
+        {
+            return this._kernelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
+        /// The name of the key pair.
+        /// </para>
+        /// </summary>
+        public string KeyName
+        {
+            get { return this._keyName; }
+            set { this._keyName = value; }
+        }
+
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
+        {
+            return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringEnabled.
+        /// </summary>
+        public bool MonitoringEnabled
+        {
+            get { return this._monitoringEnabled.GetValueOrDefault(); }
+            set { this._monitoringEnabled = value; }
+        }
+
+        // Check to see if MonitoringEnabled property is set
+        internal bool IsSetMonitoringEnabled()
+        {
+            return this._monitoringEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// One or more network interfaces.
+        /// </para>
+        /// </summary>
+        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The placement information for the instance.
+        /// </para>
+        /// </summary>
+        public SpotPlacement Placement
+        {
+            get { return this._placement; }
+            set { this._placement = value; }
+        }
+
+        // Check to see if Placement property is set
+        internal bool IsSetPlacement()
+        {
+            return this._placement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RamdiskId. 
+        /// <para>
+        /// The ID of the RAM disk.
+        /// </para>
+        /// </summary>
+        public string RamdiskId
+        {
+            get { return this._ramdiskId; }
+            set { this._ramdiskId = value; }
+        }
+
+        // Check to see if RamdiskId property is set
+        internal bool IsSetRamdiskId()
+        {
+            return this._ramdiskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        /// One or more security group names.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet in which to launch the Spot Instance.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserData. 
+        /// <para>
+        /// The Base64-encoded MIME user data to make available to the instances.
+        /// </para>
+        /// </summary>
+        public string UserData
+        {
+            get { return this._userData; }
+            set { this._userData = value; }
+        }
+
+        // Check to see if UserData property is set
+        internal bool IsSetUserData()
+        {
+            return this._userData != null;
+        }
+
     }
 }

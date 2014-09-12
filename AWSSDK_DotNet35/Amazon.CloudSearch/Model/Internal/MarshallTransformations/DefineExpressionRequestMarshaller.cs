@@ -12,46 +12,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Define Expression Request Marshaller
+    /// DefineExpression Request Marshaller
     /// </summary>       
-    public class DefineExpressionRequestMarshaller : IMarshaller<IRequest, DefineExpressionRequest>
+    public class DefineExpressionRequestMarshaller : IMarshaller<IRequest, DefineExpressionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DefineExpressionRequest defineExpressionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(defineExpressionRequest, "AmazonCloudSearch");
+            return this.Marshall((DefineExpressionRequest)input);
+        }
+    
+        public IRequest Marshall(DefineExpressionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DefineExpression");
             request.Parameters.Add("Version", "2013-01-01");
-            if (defineExpressionRequest != null && defineExpressionRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(defineExpressionRequest.DomainName));
-            }
-            if (defineExpressionRequest != null)
-            {
-                Expression expression = defineExpressionRequest.Expression;
-                if (expression != null && expression.IsSetExpressionName())
-                {
-                    request.Parameters.Add("Expression.ExpressionName", StringUtils.FromString(expression.ExpressionName));
-                }
-                if (expression != null && expression.IsSetExpressionValue())
-                {
-                    request.Parameters.Add("Expression.ExpressionValue", StringUtils.FromString(expression.ExpressionValue));
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetExpression())
+                {
+                    if(publicRequest.Expression.IsSetExpressionName())
+                    {
+                        request.Parameters.Add("Expression" + "." + "ExpressionName", StringUtils.FromString(publicRequest.Expression.ExpressionName));
+                    }
+                    if(publicRequest.Expression.IsSetExpressionValue())
+                    {
+                        request.Parameters.Add("Expression" + "." + "ExpressionValue", StringUtils.FromString(publicRequest.Expression.ExpressionValue));
+                    }
+                }
+            }
             return request;
         }
     }

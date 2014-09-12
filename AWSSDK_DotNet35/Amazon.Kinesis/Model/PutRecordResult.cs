@@ -12,78 +12,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <c>PutRecord</c> operation.</para>
+    /// Represents the output for <code>PutRecord</code>.
     /// </summary>
     public partial class PutRecordResult : AmazonWebServiceResponse
     {
-        
-        private string shardId;
-        private string sequenceNumber;
-
+        private string _sequenceNumber;
+        private string _shardId;
 
         /// <summary>
-        /// The shard ID of the shard where the data record was placed.
-        ///  
+        /// Gets and sets the property SequenceNumber. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ShardId
-        {
-            get { return this.shardId; }
-            set { this.shardId = value; }
-        }
-
-        // Check to see if ShardId property is set
-        internal bool IsSetShardId()
-        {
-            return this.shardId != null;
-        }
-
-        /// <summary>
-        /// The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in
-        /// the stream. A sequence number is the identifier associated with every record put into the stream.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>0|([1-9]\d{0,128})</description>
-        ///     </item>
-        /// </list>
+        /// The sequence number identifier that was assigned to the put data record. The sequence
+        /// number for the record is unique across all records in the stream. A sequence number
+        /// is the identifier associated with every record put into the stream.
         /// </para>
         /// </summary>
         public string SequenceNumber
         {
-            get { return this.sequenceNumber; }
-            set { this.sequenceNumber = value; }
+            get { return this._sequenceNumber; }
+            set { this._sequenceNumber = value; }
         }
 
         // Check to see if SequenceNumber property is set
         internal bool IsSetSequenceNumber()
         {
-            return this.sequenceNumber != null;
+            return this._sequenceNumber != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property ShardId. 
+        /// <para>
+        /// The shard ID of the shard where the data record was placed.
+        /// </para>
+        /// </summary>
+        public string ShardId
+        {
+            get { return this._shardId; }
+            set { this._shardId = value; }
+        }
+
+        // Check to see if ShardId property is set
+        internal bool IsSetShardId()
+        {
+            return this._shardId != null;
+        }
+
     }
 }

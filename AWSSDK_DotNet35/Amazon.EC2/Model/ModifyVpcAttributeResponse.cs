@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ModifyVpcAttribute response metadata.
-    /// The ModifyVpcAttribute operation has a void result type.
+    /// Configuration for accessing Amazon ModifyVpcAttribute service
     /// </summary>
-    public partial class ModifyVpcAttributeResponse : AmazonWebServiceResponse
+    public partial class ModifyVpcAttributeResponse : ModifyVpcAttributeResult
     {
+        /// <summary>
+        /// Gets and sets the ModifyVpcAttributeResult property.
+        /// Represents the output of a ModifyVpcAttribute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ModifyVpcAttributeResult class are now available on the ModifyVpcAttributeResponse class. You should use the properties on ModifyVpcAttributeResponse instead of accessing them through ModifyVpcAttributeResult.")]
+        public ModifyVpcAttributeResult ModifyVpcAttributeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

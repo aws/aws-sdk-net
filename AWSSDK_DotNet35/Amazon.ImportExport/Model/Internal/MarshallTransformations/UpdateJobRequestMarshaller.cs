@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,46 +12,59 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ImportExport.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Job Request Marshaller
+    /// UpdateJob Request Marshaller
     /// </summary>       
-    public class UpdateJobRequestMarshaller : IMarshaller<IRequest, UpdateJobRequest>
+    public class UpdateJobRequestMarshaller : IMarshaller<IRequest, UpdateJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UpdateJobRequest updateJobRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(updateJobRequest, "AmazonImportExport");
+            return this.Marshall((UpdateJobRequest)input);
+        }
+    
+        public IRequest Marshall(UpdateJobRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ImportExport");
             request.Parameters.Add("Action", "UpdateJob");
             request.Parameters.Add("Version", "2010-06-01");
-            if (updateJobRequest != null && updateJobRequest.IsSetJobId())
-            {
-                request.Parameters.Add("JobId", StringUtils.FromString(updateJobRequest.JobId));
-            }
-            if (updateJobRequest != null && updateJobRequest.IsSetManifest())
-            {
-                request.Parameters.Add("Manifest", StringUtils.FromString(updateJobRequest.Manifest));
-            }
-            if (updateJobRequest != null && updateJobRequest.IsSetJobType())
-            {
-                request.Parameters.Add("JobType", StringUtils.FromString(updateJobRequest.JobType));
-            }
-            if (updateJobRequest != null && updateJobRequest.IsSetValidateOnly())
-            {
-                request.Parameters.Add("ValidateOnly", StringUtils.FromBool(updateJobRequest.ValidateOnly));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetJobId())
+                {
+                    request.Parameters.Add("JobId", StringUtils.FromString(publicRequest.JobId));
+                }
+                if(publicRequest.IsSetJobType())
+                {
+                    request.Parameters.Add("JobType", StringUtils.FromString(publicRequest.JobType));
+                }
+                if(publicRequest.IsSetManifest())
+                {
+                    request.Parameters.Add("Manifest", StringUtils.FromString(publicRequest.Manifest));
+                }
+                if(publicRequest.IsSetValidateOnly())
+                {
+                    request.Parameters.Add("ValidateOnly", StringUtils.FromBool(publicRequest.ValidateOnly));
+                }
+            }
             return request;
         }
     }

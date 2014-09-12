@@ -12,84 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DirectConnect.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DirectConnect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Interconnect Object
+    /// </summary>  
+    public class InterconnectUnmarshaller : IUnmarshaller<Interconnect, XmlUnmarshallerContext>, IUnmarshaller<Interconnect, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InterconnectUnmarshaller
-      /// </summary>
-      internal class InterconnectUnmarshaller : IUnmarshaller<Interconnect, XmlUnmarshallerContext>, IUnmarshaller<Interconnect, JsonUnmarshallerContext>
-      {
         Interconnect IUnmarshaller<Interconnect, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Interconnect Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Interconnect interconnect = new Interconnect();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Interconnect unmarshalledObject = new Interconnect();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("interconnectId", targetDepth))
-              {
-                interconnect.InterconnectId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("interconnectName", targetDepth))
-              {
-                interconnect.InterconnectName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("interconnectState", targetDepth))
-              {
-                interconnect.InterconnectState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("region", targetDepth))
-              {
-                interconnect.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("location", targetDepth))
-              {
-                interconnect.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("bandwidth", targetDepth))
-              {
-                interconnect.Bandwidth = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("bandwidth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bandwidth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("interconnectId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InterconnectId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("interconnectName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InterconnectName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("interconnectState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InterconnectState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return interconnect;
+            return unmarshalledObject;
         }
 
-        private static InterconnectUnmarshaller instance;
-        public static InterconnectUnmarshaller GetInstance()
+
+        private static InterconnectUnmarshaller _instance = new InterconnectUnmarshaller();        
+
+        public static InterconnectUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new InterconnectUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

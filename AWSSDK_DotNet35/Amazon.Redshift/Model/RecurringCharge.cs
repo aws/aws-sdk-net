@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.Redshift.Model
         private double? _recurringChargeAmount;
         private string _recurringChargeFrequency;
 
-
         /// <summary>
         /// Gets and sets the property RecurringChargeAmount. 
         /// <para>
@@ -50,7 +53,6 @@ namespace Amazon.Redshift.Model
         {
             return this._recurringChargeAmount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RecurringChargeFrequency. 

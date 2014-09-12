@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GatewayInfo Object
+    /// </summary>  
+    public class GatewayInfoUnmarshaller : IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>, IUnmarshaller<GatewayInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// GatewayInfoUnmarshaller
-      /// </summary>
-      internal class GatewayInfoUnmarshaller : IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>, IUnmarshaller<GatewayInfo, JsonUnmarshallerContext>
-      {
         GatewayInfo IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public GatewayInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            GatewayInfo gatewayInfo = new GatewayInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            GatewayInfo unmarshalledObject = new GatewayInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("GatewayARN", targetDepth))
-              {
-                gatewayInfo.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("GatewayType", targetDepth))
-              {
-                gatewayInfo.GatewayType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("GatewayOperationalState", targetDepth))
-              {
-                gatewayInfo.GatewayOperationalState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("GatewayARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GatewayOperationalState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GatewayOperationalState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GatewayType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return gatewayInfo;
+            return unmarshalledObject;
         }
 
-        private static GatewayInfoUnmarshaller instance;
-        public static GatewayInfoUnmarshaller GetInstance()
+
+        private static GatewayInfoUnmarshaller _instance = new GatewayInfoUnmarshaller();        
+
+        public static GatewayInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new GatewayInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

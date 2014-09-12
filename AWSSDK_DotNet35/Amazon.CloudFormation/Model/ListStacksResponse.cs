@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the  ListStacks response and response metadata.
+    /// Configuration for accessing Amazon ListStacks service
     /// </summary>
     public partial class ListStacksResponse : ListStacksResult
     {
         /// <summary>
         /// Gets and sets the ListStacksResult property.
-        /// The output for ListStacks action.
+        /// Represents the output of a ListStacks operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListStacksResult class are now available on the ListStacksResponse class. You should use the properties on ListStacksResponse instead of accessing them through ListStacksResult.")]
         public ListStacksResult ListStacksResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudFormation.Model
         }
     }
 }
-    

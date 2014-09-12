@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,65 +29,90 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSecurityGroup operation.
-    /// <para> Creates a new DB security group. DB security groups control access to a DB instance. </para>
+    /// Creates a new DB security group. DB security groups control access to a DB instance.
     /// </summary>
     public partial class CreateDBSecurityGroupRequest : AmazonRDSRequest
     {
-        private string dBSecurityGroupName;
-        private string dBSecurityGroupDescription;
-        private List<Tag> tags = new List<Tag>();
-
+        private string _dBSecurityGroupDescription;
+        private string _dBSecurityGroupName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// The name for the DB security group. This value is stored as a lowercase string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
-        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not
-        /// be "Default"</li> <li>May not contain spaces</li> </ul> Example: <c>mysecuritygroup</c>
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string DBSecurityGroupName
-        {
-            get { return this.dBSecurityGroupName; }
-            set { this.dBSecurityGroupName = value; }
-        }
+        public CreateDBSecurityGroupRequest() { }
 
-        // Check to see if DBSecurityGroupName property is set
-        internal bool IsSetDBSecurityGroupName()
+        /// <summary>
+        /// Instantiates CreateDBSecurityGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="dbSecurityGroupName"> The name for the DB security group. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> Example: <code>mysecuritygroup</code></param>
+        /// <param name="dbSecurityGroupDescription"> The description for the DB security group. </param>
+        public CreateDBSecurityGroupRequest(string dbSecurityGroupName, string dbSecurityGroupDescription)
         {
-            return this.dBSecurityGroupName != null;
+            _dBSecurityGroupName = dbSecurityGroupName;
+            _dBSecurityGroupDescription = dbSecurityGroupDescription;
         }
 
         /// <summary>
-        /// The description for the DB security group.
-        ///  
+        /// Gets and sets the property DBSecurityGroupDescription. 
+        /// <para>
+        ///  The description for the DB security group. 
+        /// </para>
         /// </summary>
         public string DBSecurityGroupDescription
         {
-            get { return this.dBSecurityGroupDescription; }
-            set { this.dBSecurityGroupDescription = value; }
+            get { return this._dBSecurityGroupDescription; }
+            set { this._dBSecurityGroupDescription = value; }
         }
 
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.dBSecurityGroupDescription != null;
+            return this._dBSecurityGroupDescription != null;
         }
 
         /// <summary>
-        /// A list of tags.
+        /// Gets and sets the property DBSecurityGroupName. 
+        /// <para>
+        ///  The name for the DB security group. This value is stored as a lowercase string. 
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
+        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> 
+        /// <para>
+        /// Example: <code>mysecuritygroup</code>
+        /// </para>
+        /// </summary>
+        public string DBSecurityGroupName
+        {
+            get { return this._dBSecurityGroupName; }
+            set { this._dBSecurityGroupName = value; }
+        }
+
+        // Check to see if DBSecurityGroupName property is set
+        internal bool IsSetDBSecurityGroupName()
+        {
+            return this._dBSecurityGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
 }
-    

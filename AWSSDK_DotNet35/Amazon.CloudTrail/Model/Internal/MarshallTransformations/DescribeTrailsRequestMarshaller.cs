@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,53 +33,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Trails Request Marshaller
+    /// DescribeTrails Request Marshaller
     /// </summary>       
-    internal class DescribeTrailsRequestMarshaller : IMarshaller<IRequest, DescribeTrailsRequest> 
+    public class DescribeTrailsRequestMarshaller : IMarshaller<IRequest, DescribeTrailsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeTrailsRequest describeTrailsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeTrailsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeTrailsRequest, "AmazonCloudTrail");
-            string target = "CloudTrail_20131101.DescribeTrails";
+        public IRequest Marshall(DescribeTrailsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
+            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeTrails";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeTrailsRequest != null && describeTrailsRequest.TrailNameList != null && describeTrailsRequest.TrailNameList.Count > 0) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetTrailNameList())
                 {
-                    List<string> trailNameListList = describeTrailsRequest.TrailNameList;
-                    writer.WritePropertyName("trailNameList");
-                    writer.WriteArrayStart();
-
-                    foreach (string trailNameListListValue in trailNameListList) 
-                    { 
-                        writer.Write(StringUtils.FromString(trailNameListListValue));
+                    context.Writer.WritePropertyName("trailNameList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTrailNameListListValue in publicRequest.TrailNameList)
+                    {
+                            context.Writer.Write(publicRequestTrailNameListListValue);
                     }
-
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAnalysisSchemes response and response metadata.
+    /// Configuration for accessing Amazon DescribeAnalysisSchemes service
     /// </summary>
     public partial class DescribeAnalysisSchemesResponse : DescribeAnalysisSchemesResult
     {
         /// <summary>
         /// Gets and sets the DescribeAnalysisSchemesResult property.
-        /// The result of a DescribeAnalysisSchemes request. Contains the analysis schemes configured for the domain specified in the request.
+        /// Represents the output of a DescribeAnalysisSchemes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAnalysisSchemesResult class are now available on the DescribeAnalysisSchemesResponse class. You should use the properties on DescribeAnalysisSchemesResponse instead of accessing them through DescribeAnalysisSchemesResult.")]
         public DescribeAnalysisSchemesResult DescribeAnalysisSchemesResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

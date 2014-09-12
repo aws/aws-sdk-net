@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Snapshot Schedule Request Marshaller
+    /// DeleteSnapshotSchedule Request Marshaller
     /// </summary>       
-    internal class DeleteSnapshotScheduleRequestMarshaller : IMarshaller<IRequest, DeleteSnapshotScheduleRequest> 
+    public class DeleteSnapshotScheduleRequestMarshaller : IMarshaller<IRequest, DeleteSnapshotScheduleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteSnapshotScheduleRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteSnapshotScheduleRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DeleteSnapshotScheduleRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DeleteSnapshotSchedule";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteSnapshotScheduleRequest != null && deleteSnapshotScheduleRequest.IsSetVolumeARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetVolumeARN())
                 {
-                    writer.WritePropertyName("VolumeARN");
-                    writer.Write(deleteSnapshotScheduleRequest.VolumeARN);
+                    context.Writer.WritePropertyName("VolumeARN");
+                    context.Writer.Write(publicRequest.VolumeARN);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

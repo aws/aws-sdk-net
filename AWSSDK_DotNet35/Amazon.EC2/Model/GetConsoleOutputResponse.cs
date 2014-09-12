@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  GetConsoleOutput response and response metadata.
+    /// Configuration for accessing Amazon GetConsoleOutput service
     /// </summary>
     public partial class GetConsoleOutputResponse : GetConsoleOutputResult
     {
         /// <summary>
         /// Gets and sets the GetConsoleOutputResult property.
-        /// 
+        /// Represents the output of a GetConsoleOutput operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetConsoleOutputResult class are now available on the GetConsoleOutputResponse class. You should use the properties on GetConsoleOutputResponse instead of accessing them through GetConsoleOutputResult.")]
         public GetConsoleOutputResult GetConsoleOutputResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

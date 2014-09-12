@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for InventoryRetrievalJobDescription Object
+    /// </summary>  
+    public class InventoryRetrievalJobDescriptionUnmarshaller : IUnmarshaller<InventoryRetrievalJobDescription, XmlUnmarshallerContext>, IUnmarshaller<InventoryRetrievalJobDescription, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InventoryRetrievalJobDescriptionUnmarshaller
-      /// </summary>
-      internal class InventoryRetrievalJobDescriptionUnmarshaller : IUnmarshaller<InventoryRetrievalJobDescription, XmlUnmarshallerContext>, IUnmarshaller<InventoryRetrievalJobDescription, JsonUnmarshallerContext>
-      {
         InventoryRetrievalJobDescription IUnmarshaller<InventoryRetrievalJobDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public InventoryRetrievalJobDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            InventoryRetrievalJobDescription inventoryRetrievalJobDescription = new InventoryRetrievalJobDescription();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            InventoryRetrievalJobDescription unmarshalledObject = new InventoryRetrievalJobDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Format", targetDepth))
-              {
-                inventoryRetrievalJobDescription.Format = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StartDate", targetDepth))
-              {
-                inventoryRetrievalJobDescription.StartDate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EndDate", targetDepth))
-              {
-                inventoryRetrievalJobDescription.EndDate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Limit", targetDepth))
-              {
-                inventoryRetrievalJobDescription.Limit = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Marker", targetDepth))
-              {
-                inventoryRetrievalJobDescription.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("EndDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Limit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Marker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Marker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return inventoryRetrievalJobDescription;
+            return unmarshalledObject;
         }
 
-        private static InventoryRetrievalJobDescriptionUnmarshaller instance;
-        public static InventoryRetrievalJobDescriptionUnmarshaller GetInstance()
+
+        private static InventoryRetrievalJobDescriptionUnmarshaller _instance = new InventoryRetrievalJobDescriptionUnmarshaller();        
+
+        public static InventoryRetrievalJobDescriptionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new InventoryRetrievalJobDescriptionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

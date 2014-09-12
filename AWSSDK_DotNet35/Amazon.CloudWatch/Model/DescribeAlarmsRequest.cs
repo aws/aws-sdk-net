@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,159 +29,128 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarms operation.
-    /// <para> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by
-    /// using only a prefix for the alarm name, the alarm state, or a prefix for any action. </para>
+    /// Retrieves alarms with the specified names. If no name is specified, all alarms for
+    /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
+    /// name, the alarm state, or a prefix for any action.
     /// </summary>
-    public partial class DescribeAlarmsRequest : AmazonWebServiceRequest
+    public partial class DescribeAlarmsRequest : AmazonCloudWatchRequest
     {
-        private List<string> alarmNames = new List<string>();
-        private string alarmNamePrefix;
-        private StateValue stateValue;
-        private string actionPrefix;
-        private int? maxRecords;
-        private string nextToken;
+        private string _actionPrefix;
+        private string _alarmNamePrefix;
+        private List<string> _alarmNames = new List<string>();
+        private int? _maxRecords;
+        private string _nextToken;
+        private StateValue _stateValue;
 
         /// <summary>
-        /// A list of alarm names to retrieve information for.
-        ///  
+        /// Gets and sets the property ActionPrefix. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public List<string> AlarmNames
-        {
-            get { return this.alarmNames; }
-            set { this.alarmNames = value; }
-        }
-
-        // Check to see if AlarmNames property is set
-        internal bool IsSetAlarmNames()
-        {
-            return this.alarmNames.Count > 0;
-        }
-
-        /// <summary>
-        /// The alarm name prefix. <c>AlarmNames</c> cannot be specified if this parameter is specified.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string AlarmNamePrefix
-        {
-            get { return this.alarmNamePrefix; }
-            set { this.alarmNamePrefix = value; }
-        }
-
-        // Check to see if AlarmNamePrefix property is set
-        internal bool IsSetAlarmNamePrefix()
-        {
-            return this.alarmNamePrefix != null;
-        }
-
-        /// <summary>
-        /// The state value to be used in matching alarms.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>OK, ALARM, INSUFFICIENT_DATA</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public StateValue StateValue
-        {
-            get { return this.stateValue; }
-            set { this.stateValue = value; }
-        }
-
-        // Check to see if StateValue property is set
-        internal bool IsSetStateValue()
-        {
-            return this.stateValue != null;
-        }
-
-        /// <summary>
-        /// The action name prefix.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
+        ///  The action name prefix. 
         /// </para>
         /// </summary>
         public string ActionPrefix
         {
-            get { return this.actionPrefix; }
-            set { this.actionPrefix = value; }
+            get { return this._actionPrefix; }
+            set { this._actionPrefix = value; }
         }
 
         // Check to see if ActionPrefix property is set
         internal bool IsSetActionPrefix()
         {
-            return this.actionPrefix != null;
+            return this._actionPrefix != null;
         }
 
         /// <summary>
-        /// The maximum number of alarm descriptions to retrieve.
-        ///  
+        /// Gets and sets the property AlarmNamePrefix. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///  The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter
+        /// is specified. 
+        /// </para>
+        /// </summary>
+        public string AlarmNamePrefix
+        {
+            get { return this._alarmNamePrefix; }
+            set { this._alarmNamePrefix = value; }
+        }
+
+        // Check to see if AlarmNamePrefix property is set
+        internal bool IsSetAlarmNamePrefix()
+        {
+            return this._alarmNamePrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmNames. 
+        /// <para>
+        ///  A list of alarm names to retrieve information for. 
+        /// </para>
+        /// </summary>
+        public List<string> AlarmNames
+        {
+            get { return this._alarmNames; }
+            set { this._alarmNames = value; }
+        }
+
+        // Check to see if AlarmNames property is set
+        internal bool IsSetAlarmNames()
+        {
+            return this._alarmNames != null && this._alarmNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///  The maximum number of alarm descriptions to retrieve. 
         /// </para>
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
         }
 
         /// <summary>
-        /// The token returned by a previous call to indicate that there is more data available.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  The token returned by a previous call to indicate that there is more data available.
+        /// 
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateValue. 
+        /// <para>
+        ///  The state value to be used in matching alarms. 
+        /// </para>
+        /// </summary>
+        public StateValue StateValue
+        {
+            get { return this._stateValue; }
+            set { this._stateValue = value; }
+        }
+
+        // Check to see if StateValue property is set
+        internal bool IsSetStateValue()
+        {
+            return this._stateValue != null;
         }
 
     }
 }
-    

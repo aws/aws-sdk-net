@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,6 +47,19 @@ namespace Amazon.CloudWatchLogs.Model
         private string _logStreamNamePrefix;
         private string _nextToken;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeLogStreamsRequest() { }
+
+        /// <summary>
+        /// Instantiates DescribeLogStreamsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="logGroupName">Sets the DescribeLogStreamsRequest LogGroupName property</param>
+        public DescribeLogStreamsRequest(string logGroupName)
+        {
+            _logGroupName = logGroupName;
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -63,7 +80,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._limit.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LogGroupName.
         /// </summary>
@@ -79,7 +95,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._logGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LogStreamNamePrefix.
         /// </summary>
@@ -94,7 +109,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._logStreamNamePrefix != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. 

@@ -12,76 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DataPipeline.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DataPipeline.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TaskObject Object
+    /// </summary>  
+    public class TaskObjectUnmarshaller : IUnmarshaller<TaskObject, XmlUnmarshallerContext>, IUnmarshaller<TaskObject, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TaskObjectUnmarshaller
-      /// </summary>
-      internal class TaskObjectUnmarshaller : IUnmarshaller<TaskObject, XmlUnmarshallerContext>, IUnmarshaller<TaskObject, JsonUnmarshallerContext>
-      {
         TaskObject IUnmarshaller<TaskObject, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TaskObject Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TaskObject taskObject = new TaskObject();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TaskObject unmarshalledObject = new TaskObject();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("taskId", targetDepth))
-              {
-                taskObject.TaskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("pipelineId", targetDepth))
-              {
-                taskObject.PipelineId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("attemptId", targetDepth))
-              {
-                taskObject.AttemptId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("objects", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,PipelineObject,StringUnmarshaller,PipelineObjectUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),PipelineObjectUnmarshaller.GetInstance());               
-                taskObject.Objects = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("attemptId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttemptId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("objects", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, PipelineObject, StringUnmarshaller, PipelineObjectUnmarshaller>(StringUnmarshaller.Instance, PipelineObjectUnmarshaller.Instance);
+                    unmarshalledObject.Objects = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipelineId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return taskObject;
+            return unmarshalledObject;
         }
 
-        private static TaskObjectUnmarshaller instance;
-        public static TaskObjectUnmarshaller GetInstance()
+
+        private static TaskObjectUnmarshaller _instance = new TaskObjectUnmarshaller();        
+
+        public static TaskObjectUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TaskObjectUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

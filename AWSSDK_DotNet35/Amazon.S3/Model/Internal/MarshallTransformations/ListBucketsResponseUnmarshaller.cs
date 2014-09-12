@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListBuckets operation
     /// </summary>
-    internal class ListBucketsResponseUnmarshaller : S3ReponseUnmarshaller
+    public class ListBucketsResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
@@ -59,13 +59,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Bucket", targetDepth + 1))
                     {
-                        response.Buckets.Add(BucketUnmarshaller.GetInstance().Unmarshall(context));
+                        response.Buckets.Add(BucketUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
                     if (context.TestExpression("Owner", targetDepth))
                     {
-                        response.Owner = OwnerUnmarshaller.GetInstance().Unmarshall(context);
+                        response.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -83,20 +83,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static ListBucketsResponseUnmarshaller instance;
 
-        public static ListBucketsResponseUnmarshaller GetInstance()
+        private static ListBucketsResponseUnmarshaller _instance = new ListBucketsResponseUnmarshaller();
+
+        public static ListBucketsResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new ListBucketsResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new ListBucketsResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
     
     }

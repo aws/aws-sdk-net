@@ -1,0 +1,148 @@
+﻿<#@ template language="C#" inherits="BaseResponseUnmarshaller"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
+    {
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
+            <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.IsStartElement)
+                {                    
+                    if(context.TestExpression("<#=this.UnmarshallerBaseName #>Result", 2))
+                    {
+                        UnmarshallResult(context, response);                        
+                        continue;
+                    }
+                    
+                    if (context.TestExpression("ResponseMetadata", 2))
+                    {
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
+                    }
+                }
+            }
+
+            return response;
+        }
+
+<#
+	if (this.Structure == null || this.Structure.Members.Count == 0)
+	{
+#>
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+<#
+	}
+#>
+        private static void UnmarshallResult(XmlUnmarshallerContext context, <#=this.UnmarshallerBaseName #>Response response)
+        {
+            
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
+            while (context.ReadAtDepth(originalDepth))
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+
+<#
+    if(this.Structure != null)
+    {
+        if(this.IsWrapped)
+        {
+#>
+                    if ( context.TestExpression("<#=this.Structure.MarshallName#>", targetDepth))
+                    {
+                        response.<#=MemberAccessorFor(this.Structure.Name)#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context);
+                        continue;
+                    }
+<# 
+        }
+        else
+        {
+            foreach (var member in this.Structure.Members)
+            {
+                var testExpression= GeneratorHelpers.DetermineAWSQueryTestExpression(member);
+#>
+                    if (context.TestExpression("<#=testExpression#>", targetDepth))
+                    {
+                        var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+<#
+                if (member.IsMap || member.IsList)
+                {
+#>
+                        var item = unmarshaller.Unmarshall(context);
+                        response.<#=MemberAccessorFor(member.PropertyName)#>.Add(item);
+<#
+                }
+                else
+                {
+#>
+                        response.<#=MemberAccessorFor(member.PropertyName)#> = unmarshaller.Unmarshall(context);
+<#
+                }
+#>
+                        continue;
+                    }
+<#
+            }
+        }
+    }
+#>
+                } 
+           }
+
+            return;
+        }
+
+
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+<#
+    foreach (var exception in this.Operation.Exceptions)
+    {
+#>
+            if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.Code #>"))
+            {
+                return new <#=exception.Name #>(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+<#
+    }
+#>
+            return new Amazon<#=this.Config.BaseName#>Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+<#
+	    this.AddResponseSingletonMethod();
+#>
+    }
+}
+<#+
+// if the result fields have been wrapped in a subordinate structure, wire the accessor
+// to use it when addressing a member
+string MemberAccessorFor(string memberName)
+{
+	if (string.IsNullOrEmpty(WrappedResultMember))
+		return memberName;
+
+	return string.Concat(WrappedResultMember, ".", memberName);
+}	
+#>

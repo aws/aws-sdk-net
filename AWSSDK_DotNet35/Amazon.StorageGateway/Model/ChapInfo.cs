@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,129 +12,110 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI
-    /// initiators.</para>
+    /// Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports
+    /// authentication between your gateway and iSCSI initiators.
     /// </summary>
-    public class ChapInfo
+    public partial class ChapInfo
     {
-        
-        private string targetARN;
-        private string secretToAuthenticateInitiator;
-        private string initiatorName;
-        private string secretToAuthenticateTarget;
-
+        private string _initiatorName;
+        private string _secretToAuthenticateInitiator;
+        private string _secretToAuthenticateTarget;
+        private string _targetARN;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume. <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
-        ///  
+        /// Gets and sets the property InitiatorName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 800</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TargetARN
-        {
-            get { return this.targetARN; }
-            set { this.targetARN = value; }
-        }
-
-        // Check to see if TargetARN property is set
-        internal bool IsSetTargetARN()
-        {
-            return this.targetARN != null;
-        }
-
-        /// <summary>
-        /// The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP with the target.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>12 - 16</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SecretToAuthenticateInitiator
-        {
-            get { return this.secretToAuthenticateInitiator; }
-            set { this.secretToAuthenticateInitiator = value; }
-        }
-
-        // Check to see if SecretToAuthenticateInitiator property is set
-        internal bool IsSetSecretToAuthenticateInitiator()
-        {
-            return this.secretToAuthenticateInitiator != null;
-        }
-
-        /// <summary>
         /// The iSCSI initiator that connects to the target.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[0-9a-z:.-]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string InitiatorName
         {
-            get { return this.initiatorName; }
-            set { this.initiatorName = value; }
+            get { return this._initiatorName; }
+            set { this._initiatorName = value; }
         }
 
         // Check to see if InitiatorName property is set
         internal bool IsSetInitiatorName()
         {
-            return this.initiatorName != null;
+            return this._initiatorName != null;
         }
 
         /// <summary>
-        /// The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).
-        ///  
+        /// Gets and sets the property SecretToAuthenticateInitiator. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>12 - 16</description>
-        ///     </item>
-        /// </list>
+        /// The secret key that the initiator (e.g. Windows client) must provide to participate
+        /// in mutual CHAP with the target.
+        /// </para>
+        /// </summary>
+        public string SecretToAuthenticateInitiator
+        {
+            get { return this._secretToAuthenticateInitiator; }
+            set { this._secretToAuthenticateInitiator = value; }
+        }
+
+        // Check to see if SecretToAuthenticateInitiator property is set
+        internal bool IsSetSecretToAuthenticateInitiator()
+        {
+            return this._secretToAuthenticateInitiator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretToAuthenticateTarget. 
+        /// <para>
+        /// The secret key that the target must provide to participate in mutual CHAP with the
+        /// initiator (e.g. Windows client).
         /// </para>
         /// </summary>
         public string SecretToAuthenticateTarget
         {
-            get { return this.secretToAuthenticateTarget; }
-            set { this.secretToAuthenticateTarget = value; }
+            get { return this._secretToAuthenticateTarget; }
+            set { this._secretToAuthenticateTarget = value; }
         }
 
         // Check to see if SecretToAuthenticateTarget property is set
         internal bool IsSetSecretToAuthenticateTarget()
         {
-            return this.secretToAuthenticateTarget != null;
+            return this._secretToAuthenticateTarget != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property TargetARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and hyphens
+        /// (-).
+        /// </para>
+        /// </summary>
+        public string TargetARN
+        {
+            get { return this._targetARN; }
+            set { this._targetARN = value; }
+        }
+
+        // Check to see if TargetARN property is set
+        internal bool IsSetTargetARN()
+        {
+            return this._targetARN != null;
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudFront.Model
         private int? _hTTPSPort;
         private OriginProtocolPolicy _originProtocolPolicy;
 
-
         /// <summary>
         /// Gets and sets the property HTTPPort. The HTTP port the custom origin listens on.
         /// </summary>
@@ -48,7 +51,6 @@ namespace Amazon.CloudFront.Model
             return this._hTTPPort.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property HTTPSPort. The HTTPS port the custom origin listens on.
         /// </summary>
@@ -63,7 +65,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._hTTPSPort.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property OriginProtocolPolicy. The origin protocol policy to apply

@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PlacementGroup Unmarshaller
-     /// </summary>
-    internal class PlacementGroupUnmarshaller : IUnmarshaller<PlacementGroup, XmlUnmarshallerContext>, IUnmarshaller<PlacementGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PlacementGroup Object
+    /// </summary>  
+    public class PlacementGroupUnmarshaller : IUnmarshaller<PlacementGroup, XmlUnmarshallerContext>, IUnmarshaller<PlacementGroup, JsonUnmarshallerContext>
     {
-        public PlacementGroup Unmarshall(XmlUnmarshallerContext context) 
+        public PlacementGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            PlacementGroup placementGroup = new PlacementGroup();
+            PlacementGroup unmarshalledObject = new PlacementGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("groupName", targetDepth))
                     {
-                        placementGroup.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("strategy", targetDepth))
-                    {
-                        placementGroup.Strategy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))
                     {
-                        placementGroup.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("strategy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Strategy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return placementGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return placementGroup;
+            return unmarshalledObject;
         }
 
-        public PlacementGroup Unmarshall(JsonUnmarshallerContext context) 
+        public PlacementGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PlacementGroupUnmarshaller instance;
 
-        public static PlacementGroupUnmarshaller GetInstance() 
+        private static PlacementGroupUnmarshaller _instance = new PlacementGroupUnmarshaller();        
+
+        public static PlacementGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PlacementGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

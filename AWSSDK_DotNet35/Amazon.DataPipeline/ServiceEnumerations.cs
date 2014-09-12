@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,45 +12,44 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.DataPipeline
 {
 
-
-    /// <summary>Operator Type
+    /// <summary>
+    /// Constants used for properties of type OperatorType.
     /// </summary>
     public class OperatorType : ConstantClass
     {
 
-
-       /// <summary>Constant BETWEEN for OperatorType
-       /// </summary>
+        /// <summary>
+        /// Constant BETWEEN for OperatorType
+        /// </summary>
         public static readonly OperatorType BETWEEN = new OperatorType("BETWEEN");
-    
-
-       /// <summary>Constant EQ for OperatorType
-       /// </summary>
+        /// <summary>
+        /// Constant EQ for OperatorType
+        /// </summary>
         public static readonly OperatorType EQ = new OperatorType("EQ");
-    
-
-       /// <summary>Constant GE for OperatorType
-       /// </summary>
+        /// <summary>
+        /// Constant GE for OperatorType
+        /// </summary>
         public static readonly OperatorType GE = new OperatorType("GE");
-    
-
-       /// <summary>Constant LE for OperatorType
-       /// </summary>
+        /// <summary>
+        /// Constant LE for OperatorType
+        /// </summary>
         public static readonly OperatorType LE = new OperatorType("LE");
-    
-
-       /// <summary>Constant REF_EQ for OperatorType
-       /// </summary>
+        /// <summary>
+        /// Constant REF_EQ for OperatorType
+        /// </summary>
         public static readonly OperatorType REF_EQ = new OperatorType("REF_EQ");
-    
 
         /// <summary>
         /// Default Constructor
@@ -75,28 +74,26 @@ namespace Amazon.DataPipeline
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Task Status
+
+    /// <summary>
+    /// Constants used for properties of type TaskStatus.
     /// </summary>
     public class TaskStatus : ConstantClass
     {
 
-
-       /// <summary>Constant FAILED for TaskStatus
-       /// </summary>
+        /// <summary>
+        /// Constant FAILED for TaskStatus
+        /// </summary>
         public static readonly TaskStatus FAILED = new TaskStatus("FAILED");
-    
-
-       /// <summary>Constant FALSE for TaskStatus
-       /// </summary>
+        /// <summary>
+        /// Constant FALSE for TaskStatus
+        /// </summary>
         public static readonly TaskStatus FALSE = new TaskStatus("FALSE");
-    
-
-       /// <summary>Constant FINISHED for TaskStatus
-       /// </summary>
+        /// <summary>
+        /// Constant FINISHED for TaskStatus
+        /// </summary>
         public static readonly TaskStatus FINISHED = new TaskStatus("FINISHED");
-    
 
         /// <summary>
         /// Default Constructor
@@ -121,7 +118,5 @@ namespace Amazon.DataPipeline
             return FindValue(value);
         }
     }
-    
 
 }
-        

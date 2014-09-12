@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,97 +29,105 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNetworkInterfaceAttribute operation.
-    /// <para>Describes a network interface attribute. You can specify only one attribute at a time.</para>
+    /// Describes a network interface attribute. You can specify only one attribute at a time.
     /// </summary>
     public partial class DescribeNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
-        private string networkInterfaceId;
-        private string description;
-        private string sourceDestCheck;
-        private string groups;
-        private string attachment;
-
-
-        /// <summary>
-        /// The ID of the network interface.
-        ///  
-        /// </summary>
-        public string NetworkInterfaceId
-        {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
-        }
-
-        // Check to see if NetworkInterfaceId property is set
-        internal bool IsSetNetworkInterfaceId()
-        {
-            return this.networkInterfaceId != null;
-        }
+        private string _attachment;
+        private string _description;
+        private string _groups;
+        private string _networkInterfaceId;
+        private string _sourceDestCheck;
 
         /// <summary>
-        /// The <c>description</c> attribute.
-        ///  
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The <c>sourceDestCheck</c> attribute.
-        ///  
-        /// </summary>
-        public string SourceDestCheck
-        {
-            get { return this.sourceDestCheck; }
-            set { this.sourceDestCheck = value; }
-        }
-
-        // Check to see if SourceDestCheck property is set
-        internal bool IsSetSourceDestCheck()
-        {
-            return this.sourceDestCheck != null;
-        }
-
-        /// <summary>
-        /// The <c>groupSet</c> attribute.
-        ///  
-        /// </summary>
-        public string Groups
-        {
-            get { return this.groups; }
-            set { this.groups = value; }
-        }
-
-        // Check to see if Groups property is set
-        internal bool IsSetGroups()
-        {
-            return this.groups != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Attachment. 
+        /// <para>
         /// The <c>attachment</c> attribute.
-        ///  
+        /// </para>
         /// </summary>
         public string Attachment
         {
-            get { return this.attachment; }
-            set { this.attachment = value; }
+            get { return this._attachment; }
+            set { this._attachment = value; }
         }
 
         // Check to see if Attachment property is set
         internal bool IsSetAttachment()
         {
-            return this.attachment != null;
+            return this._attachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The <c>description</c> attribute.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// The <c>groupSet</c> attribute.
+        /// </para>
+        /// </summary>
+        public string Groups
+        {
+            get { return this._groups; }
+            set { this._groups = value; }
+        }
+
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this._groups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDestCheck. 
+        /// <para>
+        /// The <c>sourceDestCheck</c> attribute.
+        /// </para>
+        /// </summary>
+        public string SourceDestCheck
+        {
+            get { return this._sourceDestCheck; }
+            set { this._sourceDestCheck = value; }
+        }
+
+        // Check to see if SourceDestCheck property is set
+        internal bool IsSetSourceDestCheck()
+        {
+            return this._sourceDestCheck != null;
         }
 
     }
 }
-    

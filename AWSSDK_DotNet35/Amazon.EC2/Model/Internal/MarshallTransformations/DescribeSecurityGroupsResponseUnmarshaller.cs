@@ -12,62 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeSecurityGroups operation
-    /// </summary>
-    internal class DescribeSecurityGroupsResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for DescribeSecurityGroups operation
+    /// </summary>  
+    public class DescribeSecurityGroupsResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeSecurityGroupsResponse response = new DescribeSecurityGroupsResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("securityGroupInfo/item", targetDepth))
                     {
-                        response.SecurityGroups.Add(SecurityGroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = SecurityGroupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.SecurityGroups.Add(item);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeSecurityGroupsResponseUnmarshaller instance;
+        private static DescribeSecurityGroupsResponseUnmarshaller _instance = new DescribeSecurityGroupsResponseUnmarshaller();        
 
-        public static DescribeSecurityGroupsResponseUnmarshaller GetInstance()
+        internal static DescribeSecurityGroupsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeSecurityGroupsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeSecurityGroupsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

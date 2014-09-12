@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -60,7 +64,6 @@ namespace Amazon.Redshift.Model
         private string _preferredMaintenanceWindow;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
@@ -83,7 +86,6 @@ namespace Amazon.Redshift.Model
         {
             return this._allowVersionUpgrade.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
@@ -120,7 +122,6 @@ namespace Amazon.Redshift.Model
             return this._automatedSnapshotRetentionPeriod.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
@@ -142,7 +143,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterParameterGroupName. 
@@ -172,7 +172,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterParameterGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
@@ -205,7 +204,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
@@ -236,7 +234,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
@@ -269,7 +266,6 @@ namespace Amazon.Redshift.Model
             return this._clusterVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HsmClientCertificateIdentifier. 
         /// <para>
@@ -289,7 +285,6 @@ namespace Amazon.Redshift.Model
             return this._hsmClientCertificateIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HsmConfigurationIdentifier. 
         /// <para>
@@ -308,7 +303,6 @@ namespace Amazon.Redshift.Model
         {
             return this._hsmConfigurationIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
@@ -347,7 +341,6 @@ namespace Amazon.Redshift.Model
             return this._masterUserPassword != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NewClusterIdentifier. 
         /// <para>
@@ -376,7 +369,6 @@ namespace Amazon.Redshift.Model
         {
             return this._newClusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NodeType. 
@@ -413,7 +405,6 @@ namespace Amazon.Redshift.Model
             return this._nodeType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
@@ -447,7 +438,6 @@ namespace Amazon.Redshift.Model
         {
             return this._numberOfNodes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
@@ -491,7 +481,6 @@ namespace Amazon.Redshift.Model
         {
             return this._preferredMaintenanceWindow != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 

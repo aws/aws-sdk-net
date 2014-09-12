@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,306 +33,108 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Item Request Marshaller
+    /// PutItem Request Marshaller
     /// </summary>       
-    internal class PutItemRequestMarshaller : IMarshaller<IRequest, PutItemRequest> 
+    public class PutItemRequestMarshaller : IMarshaller<IRequest, PutItemRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(PutItemRequest putItemRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((PutItemRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(putItemRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(PutItemRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.PutItem";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (putItemRequest != null && putItemRequest.IsSetTableName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConditionalOperator())
                 {
-                    writer.WritePropertyName("TableName");
-                    writer.Write(putItemRequest.TableName);
+                    context.Writer.WritePropertyName("ConditionalOperator");
+                    context.Writer.Write(publicRequest.ConditionalOperator);
                 }
-                if (putItemRequest != null) 
+
+                if(publicRequest.IsSetExpected())
                 {
-                    if (putItemRequest.Item != null && putItemRequest.Item.Count > 0)
+                    context.Writer.WritePropertyName("Expected");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExpectedKvp in publicRequest.Expected)
                     {
-                        writer.WritePropertyName("Item");
-                        writer.WriteObjectStart();
-                        foreach (string putItemRequestItemKey in putItemRequest.Item.Keys)
-                        {
-                            AttributeValue itemListValue;
-                            bool itemListValueHasValue = putItemRequest.Item.TryGetValue(putItemRequestItemKey, out itemListValue);
-                            writer.WritePropertyName(putItemRequestItemKey);
+                        context.Writer.WritePropertyName(publicRequestExpectedKvp.Key);
+                        var publicRequestExpectedValue = publicRequestExpectedKvp.Value;
 
-                            writer.WriteObjectStart();
-                            if (itemListValue != null && itemListValue.IsSetS()) 
-                            {
-                                writer.WritePropertyName("S");
-                                writer.Write(itemListValue.S);
-                            }
-                            if (itemListValue != null && itemListValue.IsSetN()) 
-                            {
-                                writer.WritePropertyName("N");
-                                writer.Write(itemListValue.N);
-                            }
-                            if (itemListValue != null && itemListValue.IsSetB()) 
-                            {
-                                writer.WritePropertyName("B");
-                                writer.Write(StringUtils.FromMemoryStream(itemListValue.B));
-                            }
+                        context.Writer.WriteObjectStart();
 
-                            if (itemListValue != null && itemListValue.SS != null && itemListValue.SS.Count > 0) 
-                            {
-                                List<string> sSList = itemListValue.SS;
-                                writer.WritePropertyName("SS");
-                                writer.WriteArrayStart();
+                        var marshaller = ExpectedAttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExpectedValue, context);
 
-                                foreach (string sSListValue in sSList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(sSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (itemListValue != null && itemListValue.NS != null && itemListValue.NS.Count > 0) 
-                            {
-                                List<string> nSList = itemListValue.NS;
-                                writer.WritePropertyName("NS");
-                                writer.WriteArrayStart();
-
-                                foreach (string nSListValue in nSList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(nSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (itemListValue != null && itemListValue.BS != null && itemListValue.BS.Count > 0) 
-                            {
-                                List<MemoryStream> bSList = itemListValue.BS;
-                                writer.WritePropertyName("BS");
-                                writer.WriteArrayStart();
-
-                                foreach (MemoryStream bSListValue in bSList) 
-                                { 
-                                    writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteObjectEnd();
                 }
-                if (putItemRequest != null) 
+
+                if(publicRequest.IsSetItem())
                 {
-                    if (putItemRequest.Expected != null && putItemRequest.Expected.Count > 0)
+                    context.Writer.WritePropertyName("Item");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestItemKvp in publicRequest.Item)
                     {
-                        writer.WritePropertyName("Expected");
-                        writer.WriteObjectStart();
-                        foreach (string putItemRequestExpectedKey in putItemRequest.Expected.Keys)
-                        {
-                            ExpectedAttributeValue expectedListValue;
-                            bool expectedListValueHasValue = putItemRequest.Expected.TryGetValue(putItemRequestExpectedKey, out expectedListValue);
-                            writer.WritePropertyName(putItemRequestExpectedKey);
+                        context.Writer.WritePropertyName(publicRequestItemKvp.Key);
+                        var publicRequestItemValue = publicRequestItemKvp.Value;
 
-                            writer.WriteObjectStart();
+                        context.Writer.WriteObjectStart();
 
-                            if (expectedListValue != null) 
-                            {
-                                AttributeValue value = expectedListValue.Value;
-                                if (value != null)
-                                {
-                                    writer.WritePropertyName("Value");
-                                    writer.WriteObjectStart();
-                                    if (value != null && value.IsSetS()) 
-                                    {
-                                        writer.WritePropertyName("S");
-                                        writer.Write(value.S);
-                                    }
-                                    if (value != null && value.IsSetN()) 
-                                    {
-                                        writer.WritePropertyName("N");
-                                        writer.Write(value.N);
-                                    }
-                                    if (value != null && value.IsSetB()) 
-                                    {
-                                        writer.WritePropertyName("B");
-                                        writer.Write(StringUtils.FromMemoryStream(value.B));
-                                    }
+                        var marshaller = AttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestItemValue, context);
 
-                                    if (value != null && value.SS != null && value.SS.Count > 0) 
-                                    {
-                                        List<string> sSList = value.SS;
-                                        writer.WritePropertyName("SS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (string sSListValue in sSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromString(sSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-
-                                    if (value != null && value.NS != null && value.NS.Count > 0) 
-                                    {
-                                        List<string> nSList = value.NS;
-                                        writer.WritePropertyName("NS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (string nSListValue in nSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromString(nSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-
-                                    if (value != null && value.BS != null && value.BS.Count > 0) 
-                                    {
-                                        List<MemoryStream> bSList = value.BS;
-                                        writer.WritePropertyName("BS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (MemoryStream bSListValue in bSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-                                    writer.WriteObjectEnd();
-                                }
-                            }
-                            if (expectedListValue != null && expectedListValue.IsSetExists()) 
-                            {
-                                writer.WritePropertyName("Exists");
-                                writer.Write(expectedListValue.Exists);
-                            }
-                            if (expectedListValue != null && expectedListValue.IsSetComparisonOperator()) 
-                            {
-                                writer.WritePropertyName("ComparisonOperator");
-                                writer.Write(expectedListValue.ComparisonOperator);
-                            }
-
-                            if (expectedListValue != null && expectedListValue.AttributeValueList != null && expectedListValue.AttributeValueList.Count > 0)
-                            {
-                                List<AttributeValue> attributeValueListList = expectedListValue.AttributeValueList;
-                                writer.WritePropertyName("AttributeValueList");
-                                writer.WriteArrayStart();
-
-                                foreach (AttributeValue attributeValueListListValue in attributeValueListList) 
-                                {
-                                    writer.WriteObjectStart();
-                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetS()) 
-                                    {
-                                        writer.WritePropertyName("S");
-                                        writer.Write(attributeValueListListValue.S);
-                                    }
-                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetN()) 
-                                    {
-                                        writer.WritePropertyName("N");
-                                        writer.Write(attributeValueListListValue.N);
-                                    }
-                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetB()) 
-                                    {
-                                        writer.WritePropertyName("B");
-                                        writer.Write(StringUtils.FromMemoryStream(attributeValueListListValue.B));
-                                    }
-
-                                    if (attributeValueListListValue != null && attributeValueListListValue.SS != null && attributeValueListListValue.SS.Count > 0) 
-                                    {
-                                        List<string> sSList = attributeValueListListValue.SS;
-                                        writer.WritePropertyName("SS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (string sSListValue in sSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromString(sSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-
-                                    if (attributeValueListListValue != null && attributeValueListListValue.NS != null && attributeValueListListValue.NS.Count > 0) 
-                                    {
-                                        List<string> nSList = attributeValueListListValue.NS;
-                                        writer.WritePropertyName("NS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (string nSListValue in nSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromString(nSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-
-                                    if (attributeValueListListValue != null && attributeValueListListValue.BS != null && attributeValueListListValue.BS.Count > 0) 
-                                    {
-                                        List<MemoryStream> bSList = attributeValueListListValue.BS;
-                                        writer.WritePropertyName("BS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (MemoryStream bSListValue in bSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-                                    writer.WriteObjectEnd();
-                                }
-                                writer.WriteArrayEnd();
-                            }
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                }
-                if (putItemRequest != null && putItemRequest.IsSetReturnValues()) 
-                {
-                    writer.WritePropertyName("ReturnValues");
-                    writer.Write(putItemRequest.ReturnValues);
-                }
-                if (putItemRequest != null && putItemRequest.IsSetReturnConsumedCapacity()) 
-                {
-                    writer.WritePropertyName("ReturnConsumedCapacity");
-                    writer.Write(putItemRequest.ReturnConsumedCapacity);
-                }
-                if (putItemRequest != null && putItemRequest.IsSetReturnItemCollectionMetrics()) 
-                {
-                    writer.WritePropertyName("ReturnItemCollectionMetrics");
-                    writer.Write(putItemRequest.ReturnItemCollectionMetrics);
-                }
-                if (putItemRequest != null && putItemRequest.IsSetConditionalOperator()) 
-                {
-                    writer.WritePropertyName("ConditionalOperator");
-                    writer.Write(putItemRequest.ConditionalOperator);
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReturnConsumedCapacity())
+                {
+                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
+                }
+
+                if(publicRequest.IsSetReturnItemCollectionMetrics())
+                {
+                    context.Writer.WritePropertyName("ReturnItemCollectionMetrics");
+                    context.Writer.Write(publicRequest.ReturnItemCollectionMetrics);
+                }
+
+                if(publicRequest.IsSetReturnValues())
+                {
+                    context.Writer.WritePropertyName("ReturnValues");
+                    context.Writer.Write(publicRequest.ReturnValues);
+                }
+
+                if(publicRequest.IsSetTableName())
+                {
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

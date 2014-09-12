@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Snapshot Attribute Request Marshaller
+    /// DescribeSnapshotAttribute Request Marshaller
     /// </summary>       
-    public class DescribeSnapshotAttributeRequestMarshaller : IMarshaller<IRequest, DescribeSnapshotAttributeRequest>
+    public class DescribeSnapshotAttributeRequestMarshaller : IMarshaller<IRequest, DescribeSnapshotAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeSnapshotAttributeRequest, "AmazonEC2");
+            return this.Marshall((DescribeSnapshotAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeSnapshotAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeSnapshotAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeSnapshotAttributeRequest != null && describeSnapshotAttributeRequest.IsSetSnapshotId())
-            {
-                request.Parameters.Add("SnapshotId", StringUtils.FromString(describeSnapshotAttributeRequest.SnapshotId));
-            }
-            if (describeSnapshotAttributeRequest != null && describeSnapshotAttributeRequest.IsSetAttribute())
-            {
-                request.Parameters.Add("Attribute", StringUtils.FromString(describeSnapshotAttributeRequest.Attribute));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttribute())
+                {
+                    request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
+                }
+                if(publicRequest.IsSetSnapshotId())
+                {
+                    request.Parameters.Add("SnapshotId", StringUtils.FromString(publicRequest.SnapshotId));
+                }
+            }
             return request;
         }
     }

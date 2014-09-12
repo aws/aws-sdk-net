@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,134 +29,159 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
-    /// <para> Returns a list of orderable DB instance options for the specified engine. </para>
+    /// Returns a list of orderable DB instance options for the specified engine.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonRDSRequest
     {
-        private string engine;
-        private string engineVersion;
-        private string dBInstanceClass;
-        private string licenseModel;
-        private bool? vpc;
-        private int? maxRecords;
-        private string marker;
-
-
-        /// <summary>
-        /// The name of the engine to retrieve DB instance options for.
-        ///  
-        /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
+        private string _dBInstanceClass;
+        private string _engine;
+        private string _engineVersion;
+        private string _licenseModel;
+        private string _marker;
+        private int? _maxRecords;
+        private bool? _vpc;
 
         /// <summary>
-        /// The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.
-        ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.
-        ///  
+        /// Gets and sets the property DBInstanceClass. 
+        /// <para>
+        ///  The DB instance class filter value. Specify this parameter to show only the available
+        /// offerings matching the specified DB instance class. 
+        /// </para>
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this.dBInstanceClass; }
-            set { this.dBInstanceClass = value; }
+            get { return this._dBInstanceClass; }
+            set { this._dBInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;
+            return this._dBInstanceClass != null;
         }
 
         /// <summary>
-        /// The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.
-        ///  
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  The name of the engine to retrieve DB instance options for. 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        ///  The engine version filter value. Specify this parameter to show only the available
+        /// offerings matching the specified engine version. 
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        ///  The license model filter value. Specify this parameter to show only the available
+        /// offerings matching the specified license model. 
+        /// </para>
         /// </summary>
         public string LicenseModel
         {
-            get { return this.licenseModel; }
-            set { this.licenseModel = value; }
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
         }
 
         // Check to see if LicenseModel property is set
         internal bool IsSetLicenseModel()
         {
-            return this.licenseModel != null;
+            return this._licenseModel != null;
         }
 
         /// <summary>
-        /// The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
-        ///  
-        /// </summary>
-        public bool Vpc
-        {
-            get { return this.vpc ?? default(bool); }
-            set { this.vpc = value; }
-        }
-
-        // Check to see if Vpc property is set
-        internal bool IsSetVpc()
-        {
-            return this.vpc.HasValue;
-        }
-
-        /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a pagination
-        /// token called a marker is included in the response so that the remaining results can be retrieved. Default: 100 Constraints: minimum 20,
-        /// maximum 100
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c> .
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///  An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
+        /// request. If this parameter is specified, the response includes only records beyond
+        /// the marker, up to the value specified by <code>MaxRecords</code> . 
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///  The maximum number of records to include in the response. If more records exist than
+        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
+        /// included in the response so that the remaining results can be retrieved. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20, maximum 100
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vpc. 
+        /// <para>
+        ///  The VPC filter value. Specify this parameter to show only the available VPC or non-VPC
+        /// offerings. 
+        /// </para>
+        /// </summary>
+        public bool Vpc
+        {
+            get { return this._vpc.GetValueOrDefault(); }
+            set { this._vpc = value; }
+        }
+
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
+        {
+            return this._vpc.HasValue; 
         }
 
     }
 }
-    

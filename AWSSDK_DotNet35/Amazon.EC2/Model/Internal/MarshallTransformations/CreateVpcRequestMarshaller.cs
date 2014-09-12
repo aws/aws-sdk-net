@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Vpc Request Marshaller
+    /// CreateVpc Request Marshaller
     /// </summary>       
-    public class CreateVpcRequestMarshaller : IMarshaller<IRequest, CreateVpcRequest>
+    public class CreateVpcRequestMarshaller : IMarshaller<IRequest, CreateVpcRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateVpcRequest createVpcRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createVpcRequest, "AmazonEC2");
+            return this.Marshall((CreateVpcRequest)input);
+        }
+    
+        public IRequest Marshall(CreateVpcRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateVpc");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createVpcRequest != null && createVpcRequest.IsSetCidrBlock())
-            {
-                request.Parameters.Add("CidrBlock", StringUtils.FromString(createVpcRequest.CidrBlock));
-            }
-            if (createVpcRequest != null && createVpcRequest.IsSetInstanceTenancy())
-            {
-                request.Parameters.Add("InstanceTenancy", StringUtils.FromString(createVpcRequest.InstanceTenancy));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCidrBlock())
+                {
+                    request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
+                }
+                if(publicRequest.IsSetInstanceTenancy())
+                {
+                    request.Parameters.Add("InstanceTenancy", StringUtils.FromString(publicRequest.InstanceTenancy));
+                }
+            }
             return request;
         }
     }

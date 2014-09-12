@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the  EstimateTemplateCost response and response metadata.
+    /// Configuration for accessing Amazon EstimateTemplateCost service
     /// </summary>
     public partial class EstimateTemplateCostResponse : EstimateTemplateCostResult
     {
         /// <summary>
         /// Gets and sets the EstimateTemplateCostResult property.
-        /// The output for a EstimateTemplateCost action.
+        /// Represents the output of a EstimateTemplateCost operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the EstimateTemplateCostResult class are now available on the EstimateTemplateCostResponse class. You should use the properties on EstimateTemplateCostResponse instead of accessing them through EstimateTemplateCostResult.")]
         public EstimateTemplateCostResult EstimateTemplateCostResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudFormation.Model
         }
     }
 }
-    

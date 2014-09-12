@@ -12,87 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SpotPrice Unmarshaller
-     /// </summary>
-    internal class SpotPriceUnmarshaller : IUnmarshaller<SpotPrice, XmlUnmarshallerContext>, IUnmarshaller<SpotPrice, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SpotPrice Object
+    /// </summary>  
+    public class SpotPriceUnmarshaller : IUnmarshaller<SpotPrice, XmlUnmarshallerContext>, IUnmarshaller<SpotPrice, JsonUnmarshallerContext>
     {
-        public SpotPrice Unmarshall(XmlUnmarshallerContext context) 
+        public SpotPrice Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotPrice spotPrice = new SpotPrice();
+            SpotPrice unmarshalledObject = new SpotPrice();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceType", targetDepth))
+                    if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        spotPrice.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("productDescription", targetDepth))
+                    if (context.TestExpression("instanceType", targetDepth))
                     {
-                        spotPrice.ProductDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("spotPrice", targetDepth))
                     {
-                        spotPrice.Price = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Price = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("productDescription", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ProductDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("timestamp", targetDepth))
                     {
-                        spotPrice.Timestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("availabilityZone", targetDepth))
-                    {
-                        spotPrice.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return spotPrice;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return spotPrice;
+            return unmarshalledObject;
         }
 
-        public SpotPrice Unmarshall(JsonUnmarshallerContext context) 
+        public SpotPrice Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SpotPriceUnmarshaller instance;
 
-        public static SpotPriceUnmarshaller GetInstance() 
+        private static SpotPriceUnmarshaller _instance = new SpotPriceUnmarshaller();        
+
+        public static SpotPriceUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SpotPriceUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

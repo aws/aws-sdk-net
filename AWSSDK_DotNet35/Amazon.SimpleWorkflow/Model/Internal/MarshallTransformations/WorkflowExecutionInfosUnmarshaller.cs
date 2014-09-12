@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowExecutionInfos Object
+    /// </summary>  
+    public class WorkflowExecutionInfosUnmarshaller : IUnmarshaller<WorkflowExecutionInfos, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowExecutionInfosUnmarshaller
-      /// </summary>
-      internal class WorkflowExecutionInfosUnmarshaller : IUnmarshaller<WorkflowExecutionInfos, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext>
-      {
         WorkflowExecutionInfos IUnmarshaller<WorkflowExecutionInfos, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowExecutionInfos Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowExecutionInfos workflowExecutionInfos = new WorkflowExecutionInfos();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowExecutionInfos unmarshalledObject = new WorkflowExecutionInfos();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("executionInfos", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<WorkflowExecutionInfo,WorkflowExecutionInfoUnmarshaller>(
-                    WorkflowExecutionInfoUnmarshaller.GetInstance());                  
-                workflowExecutionInfos.ExecutionInfos = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("nextPageToken", targetDepth))
-              {
-                workflowExecutionInfos.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("executionInfos", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<WorkflowExecutionInfo, WorkflowExecutionInfoUnmarshaller>(WorkflowExecutionInfoUnmarshaller.Instance);
+                    unmarshalledObject.ExecutionInfos = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowExecutionInfos;
+            return unmarshalledObject;
         }
 
-        private static WorkflowExecutionInfosUnmarshaller instance;
-        public static WorkflowExecutionInfosUnmarshaller GetInstance()
+
+        private static WorkflowExecutionInfosUnmarshaller _instance = new WorkflowExecutionInfosUnmarshaller();        
+
+        public static WorkflowExecutionInfosUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowExecutionInfosUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

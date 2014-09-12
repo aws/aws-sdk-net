@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -47,7 +51,6 @@ namespace Amazon.SimpleEmail.Model
         private NotificationType _notificationType;
         private string _snsTopic;
 
-
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
@@ -67,7 +70,6 @@ namespace Amazon.SimpleEmail.Model
             return this._identity != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
@@ -85,7 +87,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._notificationType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnsTopic. 

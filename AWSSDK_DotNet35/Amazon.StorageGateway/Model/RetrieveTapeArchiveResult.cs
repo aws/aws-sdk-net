@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>RetrieveTapeArchiveOutput</para>
+    /// RetrieveTapeArchiveOutput
     /// </summary>
     public partial class RetrieveTapeArchiveResult : AmazonWebServiceResponse
     {
-        
-        private string tapeARN;
-
+        private string _tapeARN;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the retrieved virtual tape.
-        ///  
+        /// Gets and sets the property TapeARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the retrieved virtual tape.
         /// </para>
         /// </summary>
         public string TapeARN
         {
-            get { return this.tapeARN; }
-            set { this.tapeARN = value; }
+            get { return this._tapeARN; }
+            set { this._tapeARN = value; }
         }
 
         // Check to see if TapeARN property is set
         internal bool IsSetTapeARN()
         {
-            return this.tapeARN != null;
+            return this._tapeARN != null;
         }
+
     }
 }

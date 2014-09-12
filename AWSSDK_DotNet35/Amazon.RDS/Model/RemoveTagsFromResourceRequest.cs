@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,49 +29,56 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// <para> Removes metadata tags from an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
-    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
+    /// Removes metadata tags from an Amazon RDS resource.
+    /// 
+    ///  
+    /// <para>
+    /// For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
+    /// Amazon RDS Resources</a>.
+    /// </para>
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonRDSRequest
     {
-        private string resourceName;
-        private List<string> tagKeys = new List<string>();
-
+        private string _resourceName;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource
-        /// Name (ARN)</a>.
-        ///  
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource
+        /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+        /// Constructing an RDS Amazon Resource Name (ARN)</a>.
+        /// </para>
         /// </summary>
         public string ResourceName
         {
-            get { return this.resourceName; }
-            set { this.resourceName = value; }
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
         }
 
         // Check to see if ResourceName property is set
         internal bool IsSetResourceName()
         {
-            return this.resourceName != null;
+            return this._resourceName != null;
         }
 
         /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
         /// The tag key (name) of the tag to be removed.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> TagKeys
         {
-            get { return this.tagKeys; }
-            set { this.tagKeys = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this.tagKeys.Count > 0;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }
 }
-    

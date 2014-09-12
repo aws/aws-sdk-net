@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,49 +29,45 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// <para> This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based
-    /// on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return
-    /// Test2 followed by Test1. </para>
+    /// This operation returns the jobs associated with the requester. AWS Import/Export lists
+    /// the jobs in reverse chronological order based on the date of creation. For example
+    /// if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
+    /// would return Test2 followed by Test1.
     /// </summary>
-    public partial class ListJobsRequest : AmazonWebServiceRequest
+    public partial class ListJobsRequest : AmazonImportExportRequest
     {
-        private int? maxJobs;
-        private string marker;
+        private string _marker;
+        private int? _maxJobs;
 
         /// <summary>
-        /// Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded,
-        /// the response contains <IsTruncated>true</IsTruncated>. To return the additional jobs, see Marker.
-        ///  
-        /// </summary>
-        public int MaxJobs
-        {
-            get { return this.maxJobs ?? default(int); }
-            set { this.maxJobs = value; }
-        }
-
-        // Check to see if MaxJobs property is set
-        internal bool IsSetMaxJobs()
-        {
-            return this.maxJobs.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse
-        /// chronological order. See MaxJobs.
-        ///  
+        /// Gets and sets the property Marker.
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxJobs.
+        /// </summary>
+        public int MaxJobs
+        {
+            get { return this._maxJobs.GetValueOrDefault(); }
+            set { this._maxJobs = value; }
+        }
+
+        // Check to see if MaxJobs property is set
+        internal bool IsSetMaxJobs()
+        {
+            return this._maxJobs.HasValue; 
         }
 
     }
 }
-    

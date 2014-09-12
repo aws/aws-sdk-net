@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,21 @@ namespace Amazon.IdentityManagement.Model
         private string _serialNumber;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeactivateMFADeviceRequest() { }
+
+        /// <summary>
+        /// Instantiates DeactivateMFADeviceRequest with the parameterized properties
+        /// </summary>
+        /// <param name="userName">Name of the user whose MFA device you want to deactivate.</param>
+        /// <param name="serialNumber">The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</param>
+        public DeactivateMFADeviceRequest(string userName, string serialNumber)
+        {
+            _userName = userName;
+            _serialNumber = serialNumber;
+        }
 
         /// <summary>
         /// Gets and sets the property SerialNumber. 
@@ -52,7 +71,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._serialNumber != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

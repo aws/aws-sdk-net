@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,18 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Result message wrapping a single description of an application         version.
+    /// Result message wrapping a single description of an application version.
     /// </summary>
     public partial class CreateApplicationVersionResult : AmazonWebServiceResponse
     {
         private ApplicationVersionDescription _applicationVersion;
 
-
         /// <summary>
         /// Gets and sets the property ApplicationVersion. 
         /// <para>
-        ///          The         <a>ApplicationVersionDescription</a>         of the application
-        /// version.      
+        ///  The <a>ApplicationVersionDescription</a> of the application version. 
         /// </para>
         /// </summary>
         public ApplicationVersionDescription ApplicationVersion

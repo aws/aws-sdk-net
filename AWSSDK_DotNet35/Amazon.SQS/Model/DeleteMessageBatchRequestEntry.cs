@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.SQS.Model
         private string _id;
         private string _receiptHandle;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteMessageBatchRequestEntry() { }
+
+        /// <summary>
+        /// Instantiates DeleteMessageBatchRequestEntry with the parameterized properties
+        /// </summary>
+        /// <param name="id">An identifier for this particular receipt handle. This is used to   communicate the result. Note that the <code>Id</code>s of a batch request   need to be unique within the request.</param>
+        /// <param name="receiptHandle">A receipt handle.</param>
+        public DeleteMessageBatchRequestEntry(string id, string receiptHandle)
+        {
+            _id = id;
+            _receiptHandle = receiptHandle;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -51,7 +70,6 @@ namespace Amazon.SQS.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReceiptHandle. 

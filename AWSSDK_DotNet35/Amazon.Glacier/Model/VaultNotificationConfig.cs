@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,53 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// <para>Represents a vault's notification configuration.</para>
+    /// Represents a vault's notification configuration.
     /// </summary>
-    public class VaultNotificationConfig
+    public partial class VaultNotificationConfig
     {
-        
-        private string sNSTopic;
-        private List<string> events = new List<string>();
+        private List<string> _events = new List<string>();
+        private string _sNSTopic;
 
         /// <summary>
-        /// The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string SNSTopic
-        {
-            get { return this.sNSTopic; }
-            set { this.sNSTopic = value; }
-        }
+        public VaultNotificationConfig() { }
 
-        // Check to see if SNSTopic property is set
-        internal bool IsSetSNSTopic()
+        /// <summary>
+        /// Instantiates VaultNotificationConfig with the parameterized properties
+        /// </summary>
+        /// <param name="snsTopic">The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</param>
+        /// <param name="events">A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</param>
+        public VaultNotificationConfig(string snsTopic, List<string> events)
         {
-            return this.sNSTopic != null;
+            _sNSTopic = snsTopic;
+            _events = events;
         }
 
         /// <summary>
-        /// A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
-        ///  
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// A list of one or more events for which Amazon Glacier will send a notification to
+        /// the specified Amazon SNS topic.
+        /// </para>
         /// </summary>
         public List<string> Events
         {
-            get { return this.events; }
-            set { this.events = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;
+            return this._events != null && this._events.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SNSTopic. 
+        /// <para>
+        /// The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        public string SNSTopic
+        {
+            get { return this._sNSTopic; }
+            set { this._sNSTopic = value; }
+        }
+
+        // Check to see if SNSTopic property is set
+        internal bool IsSetSNSTopic()
+        {
+            return this._sNSTopic != null;
+        }
+
     }
 }

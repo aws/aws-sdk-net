@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LiteralOptions Unmarshaller
-     /// </summary>
-    internal class LiteralOptionsUnmarshaller : IUnmarshaller<LiteralOptions, XmlUnmarshallerContext>, IUnmarshaller<LiteralOptions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LiteralOptions Object
+    /// </summary>  
+    public class LiteralOptionsUnmarshaller : IUnmarshaller<LiteralOptions, XmlUnmarshallerContext>, IUnmarshaller<LiteralOptions, JsonUnmarshallerContext>
     {
-        public LiteralOptions Unmarshall(XmlUnmarshallerContext context) 
+        public LiteralOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            LiteralOptions literalOptions = new LiteralOptions();
+            LiteralOptions unmarshalledObject = new LiteralOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        literalOptions.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SearchEnabled", targetDepth))
-                    {
-                        literalOptions.SearchEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FacetEnabled", targetDepth))
                     {
-                        literalOptions.FacetEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.FacetEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResultEnabled", targetDepth))
                     {
-                        literalOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ResultEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SearchEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SearchEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return literalOptions;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return literalOptions;
+            return unmarshalledObject;
         }
 
-        public LiteralOptions Unmarshall(JsonUnmarshallerContext context) 
+        public LiteralOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static LiteralOptionsUnmarshaller instance;
 
-        public static LiteralOptionsUnmarshaller GetInstance() 
+        private static LiteralOptionsUnmarshaller _instance = new LiteralOptionsUnmarshaller();        
+
+        public static LiteralOptionsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new LiteralOptionsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

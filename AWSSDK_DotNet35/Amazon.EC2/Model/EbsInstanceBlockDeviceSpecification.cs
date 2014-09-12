@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EbsInstanceBlockDeviceSpecification
     {
-        
-        private string volumeId;
-        private bool? deleteOnTermination;
-
+        private bool? _deleteOnTermination;
+        private string _volumeId;
 
         /// <summary>
-        /// The ID of the Amazon EBS volume.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
         /// Indicates whether the volume is deleted on instance termination.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the Amazon EBS volume.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
     }
 }

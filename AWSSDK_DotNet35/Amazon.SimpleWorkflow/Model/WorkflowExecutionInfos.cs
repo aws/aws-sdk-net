@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,64 +12,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Contains a paginated list of information about workflow executions. </para>
+    /// Contains a paginated list of information about workflow executions.
     /// </summary>
-    public partial class WorkflowExecutionInfos : AmazonWebServiceResponse
+    public partial class WorkflowExecutionInfos
     {
-        
-        private List<WorkflowExecutionInfo> executionInfos = new List<WorkflowExecutionInfo>();
-        private string nextPageToken;
+        private List<WorkflowExecutionInfo> _executionInfos = new List<WorkflowExecutionInfo>();
+        private string _nextPageToken;
 
         /// <summary>
-        /// The list of workflow information structures.
-        ///  
+        /// Gets and sets the property ExecutionInfos. 
+        /// <para>
+        ///  The list of workflow information structures. 
+        /// </para>
         /// </summary>
         public List<WorkflowExecutionInfo> ExecutionInfos
         {
-            get { return this.executionInfos; }
-            set { this.executionInfos = value; }
+            get { return this._executionInfos; }
+            set { this._executionInfos = value; }
         }
 
         // Check to see if ExecutionInfos property is set
         internal bool IsSetExecutionInfos()
         {
-            return this.executionInfos.Count > 0;
+            return this._executionInfos != null && this._executionInfos.Count > 0; 
         }
 
         /// <summary>
-        /// The token of the next page in the result. If set, the results have more than one page. The next page can be retrieved by repeating the
-        /// request with this token and all other arguments unchanged.
-        ///  
+        /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 2048</description>
-        ///     </item>
-        /// </list>
+        ///  The token of the next page in the result. If set, the results have more than one
+        /// page. The next page can be retrieved by repeating the request with this token and
+        /// all other arguments unchanged. 
         /// </para>
         /// </summary>
         public string NextPageToken
         {
-            get { return this.nextPageToken; }
-            set { this.nextPageToken = value; }
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
         }
 
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;
+            return this._nextPageToken != null;
         }
+
     }
 }

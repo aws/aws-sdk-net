@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,56 +12,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> List of option groups. </para>
+    /// List of option groups.
     /// </summary>
     public partial class DescribeOptionGroupsResult : AmazonWebServiceResponse
     {
-        
-        private List<OptionGroup> optionGroupsList = new List<OptionGroup>();
-        private string marker;
-
+        private string _marker;
+        private List<OptionGroup> _optionGroupsList = new List<OptionGroup>();
 
         /// <summary>
-        /// List of option groups.
-        ///  
-        /// </summary>
-        public List<OptionGroup> OptionGroupsList
-        {
-            get { return this.optionGroupsList; }
-            set { this.optionGroupsList = value; }
-        }
-
-        // Check to see if OptionGroupsList property is set
-        internal bool IsSetOptionGroupsList()
-        {
-            return this.optionGroupsList.Count > 0;
-        }
-
-        /// <summary>
-        /// An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the
-        /// marker, up to the value specified by <c>MaxRecords</c>.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. 
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupsList. 
+        /// <para>
+        ///  List of option groups. 
+        /// </para>
+        /// </summary>
+        public List<OptionGroup> OptionGroupsList
+        {
+            get { return this._optionGroupsList; }
+            set { this._optionGroupsList = value; }
+        }
+
+        // Check to see if OptionGroupsList property is set
+        internal bool IsSetOptionGroupsList()
+        {
+            return this._optionGroupsList != null && this._optionGroupsList.Count > 0; 
+        }
+
     }
 }

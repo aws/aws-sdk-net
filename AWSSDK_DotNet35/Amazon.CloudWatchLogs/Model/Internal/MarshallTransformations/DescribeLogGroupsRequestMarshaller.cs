@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeLogGroups Request Marshaller
     /// </summary>       
-    public class DescribeLogGroupsRequestMarshaller : IMarshaller<IRequest, DescribeLogGroupsRequest> 
+    public class DescribeLogGroupsRequestMarshaller : IMarshaller<IRequest, DescribeLogGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeLogGroupsRequest)input);
+        }
+
         public IRequest Marshall(DescribeLogGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
@@ -47,22 +56,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetLimit())
                 {
-                    writer.WritePropertyName("limit");
-                    writer.Write(publicRequest.Limit);
+                    context.Writer.WritePropertyName("limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
                 if(publicRequest.IsSetLogGroupNamePrefix())
                 {
-                    writer.WritePropertyName("logGroupNamePrefix");
-                    writer.Write(publicRequest.LogGroupNamePrefix);
+                    context.Writer.WritePropertyName("logGroupNamePrefix");
+                    context.Writer.Write(publicRequest.LogGroupNamePrefix);
                 }
 
                 if(publicRequest.IsSetNextToken())
                 {
-                    writer.WritePropertyName("nextToken");
-                    writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

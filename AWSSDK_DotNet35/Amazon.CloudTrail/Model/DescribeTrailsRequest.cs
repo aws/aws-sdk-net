@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,29 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrails operation.
-    /// <para>Retrieves the settings for some or all trails associated with an account. </para>
+    /// Retrieves the settings for some or all trails associated with an account.
     /// </summary>
     public partial class DescribeTrailsRequest : AmazonCloudTrailRequest
     {
-        private List<string> trailNameList = new List<string>();
-
+        private List<string> _trailNameList = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property TrailNameList. 
+        /// <para>
         /// The list of trails.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> TrailNameList
         {
-            get { return this.trailNameList; }
-            set { this.trailNameList = value; }
+            get { return this._trailNameList; }
+            set { this._trailNameList = value; }
         }
 
         // Check to see if TrailNameList property is set
         internal bool IsSetTrailNameList()
         {
-            return this.trailNameList.Count > 0;
+            return this._trailNameList != null && this._trailNameList.Count > 0; 
         }
 
     }
 }
-    

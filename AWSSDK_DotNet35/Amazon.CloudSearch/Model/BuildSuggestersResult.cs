@@ -12,38 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>BuildSuggester</c> request. Contains a list of the fields used for suggestions.</para>
+    /// The result of a <code>BuildSuggester</code> request. Contains a list of the fields
+    /// used for suggestions.
     /// </summary>
     public partial class BuildSuggestersResult : AmazonWebServiceResponse
     {
-        
-        private List<string> fieldNames = new List<string>();
-
+        private List<string> _fieldNames = new List<string>();
 
         /// <summary>
-        /// A list of field names.
-        ///  
+        /// Gets and sets the property FieldNames.
         /// </summary>
         public List<string> FieldNames
         {
-            get { return this.fieldNames; }
-            set { this.fieldNames = value; }
+            get { return this._fieldNames; }
+            set { this._fieldNames = value; }
         }
 
         // Check to see if FieldNames property is set
         internal bool IsSetFieldNames()
         {
-            return this.fieldNames.Count > 0;
+            return this._fieldNames != null && this._fieldNames.Count > 0; 
         }
+
     }
 }

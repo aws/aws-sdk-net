@@ -12,85 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Route53.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ListResourceRecordSets operation
-    /// </summary>
-    internal class ListResourceRecordSetsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ListResourceRecordSets operation
+    /// </summary>  
+    public class ListResourceRecordSetsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            ListResourceRecordSetsResponse response = new ListResourceRecordSetsResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context,response);
-                    break;
-                }
-            }
-                 
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ListResourceRecordSetsResponse response)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
+            ListResourceRecordSetsResponse response = new ListResourceRecordSetsResponse();
+            UnmarshallResult(context,response);
             
+            return response;
+        }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListResourceRecordSetsResponse response)
+        {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+                   targetDepth += 1;
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("ResourceRecordSets/ResourceRecordSet", targetDepth))
                     {
-                        response.ResourceRecordSets.Add(ResourceRecordSetUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ResourceRecordSetUnmarshaller.Instance;
+                        response.ResourceRecordSets.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        response.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NextRecordName", targetDepth))
                     {
-                        response.NextRecordName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextRecordName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NextRecordType", targetDepth))
                     {
-                        response.NextRecordType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextRecordType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NextRecordIdentifier", targetDepth))
                     {
-                        response.NextRecordIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextRecordIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxItems", targetDepth))
                     {
-                        response.MaxItems = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.MaxItems = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,40 +98,38 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-                            
-
-
+          
             return;
         }
-        
+  
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
-            {
-                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
+            {
+                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ListResourceRecordSetsResponseUnmarshaller instance;
 
-        public static ListResourceRecordSetsResponseUnmarshaller GetInstance()
+        private static ListResourceRecordSetsResponseUnmarshaller _instance = new ListResourceRecordSetsResponseUnmarshaller();        
+
+        internal static ListResourceRecordSetsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new ListResourceRecordSetsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static ListResourceRecordSetsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

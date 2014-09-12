@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.Glacier
 {
-
     /// <summary>
-    /// Configuration for accessing AmazonGlacier service
+    /// Configuration for accessing Amazon Glacier service
     /// </summary>
     public partial class AmazonGlacierConfig : ClientConfig
     {
@@ -29,9 +35,9 @@ namespace Amazon.Glacier
         /// </summary>
         public AmazonGlacierConfig()
         {
-            this.AuthenticationServiceName = "glacier";            
+            this.AuthenticationServiceName = "glacier";
         }
-                
+
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
@@ -39,9 +45,7 @@ namespace Amazon.Glacier
         {
             get
             {
-                
                 return "glacier";
-                    
             }
         }
 
@@ -57,5 +61,3 @@ namespace Amazon.Glacier
         }
     }
 }
-
-    

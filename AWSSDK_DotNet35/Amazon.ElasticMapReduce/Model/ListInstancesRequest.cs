@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _instanceGroupTypes = new List<string>();
         private string _marker;
 
-
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
@@ -55,7 +58,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._clusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceGroupId. 
@@ -75,7 +77,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceGroupId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceGroupTypes. 
         /// <para>
@@ -93,7 +94,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceGroupTypes != null && this._instanceGroupTypes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Marker. 

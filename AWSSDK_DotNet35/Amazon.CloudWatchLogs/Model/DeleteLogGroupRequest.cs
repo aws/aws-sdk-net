@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,19 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _logGroupName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteLogGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteLogGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="logGroupName">Sets the DeleteLogGroupRequest LogGroupName property</param>
+        public DeleteLogGroupRequest(string logGroupName)
+        {
+            _logGroupName = logGroupName;
+        }
 
         /// <summary>
         /// Gets and sets the property LogGroupName.

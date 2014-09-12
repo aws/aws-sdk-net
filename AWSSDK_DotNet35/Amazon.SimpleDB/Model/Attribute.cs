@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,87 +12,112 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class Attribute
+    public partial class Attribute
     {
-        
-        private string name;
-        private string alternateNameEncoding;
-        private string value;
-        private string alternateValueEncoding;
+        private string _alternateNameEncoding;
+        private string _alternateValueEncoding;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// The name of the attribute.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
+        public Attribute() { }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        /// <summary>
+        /// Instantiates Attribute with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the attribute.</param>
+        /// <param name="value">The value of the attribute.</param>
+        public Attribute(string name, string value)
         {
-            return this.name != null;
+            _name = name;
+            _value = value;
         }
 
         /// <summary>
+        /// Gets and sets the property AlternateNameEncoding. 
+        /// <para>
         /// 
-        ///  
+        /// </para>
         /// </summary>
         public string AlternateNameEncoding
         {
-            get { return this.alternateNameEncoding; }
-            set { this.alternateNameEncoding = value; }
+            get { return this._alternateNameEncoding; }
+            set { this._alternateNameEncoding = value; }
         }
 
         // Check to see if AlternateNameEncoding property is set
         internal bool IsSetAlternateNameEncoding()
         {
-            return this.alternateNameEncoding != null;
+            return this._alternateNameEncoding != null;
         }
 
         /// <summary>
-        /// The value of the attribute.
-        ///  
-        /// </summary>
-        public string Value
-        {
-            get { return this.value; }
-            set { this.value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this.value != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property AlternateValueEncoding. 
+        /// <para>
         /// 
-        ///  
+        /// </para>
         /// </summary>
         public string AlternateValueEncoding
         {
-            get { return this.alternateValueEncoding; }
-            set { this.alternateValueEncoding = value; }
+            get { return this._alternateValueEncoding; }
+            set { this._alternateValueEncoding = value; }
         }
 
         // Check to see if AlternateValueEncoding property is set
         internal bool IsSetAlternateValueEncoding()
         {
-            return this.alternateValueEncoding != null;
+            return this._alternateValueEncoding != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Name. The name of the attribute.
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. The value of the attribute.
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,53 +29,76 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAvailabilityZones operation.
-    /// <para>Describes one or more of the Availability Zones that are available to you. The results include zones only for the region you're
-    /// currently using. If there is an event impacting an Availability Zone, you can use this request to view the state and any provided message
-    /// for that Availability Zone.</para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html" >Regions and Availability Zones</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Describes one or more of the Availability Zones that are available to you. The results
+    /// include zones only for the region you're currently using. If there is an event impacting
+    /// an Availability Zone, you can use this request to view the state and any provided
+    /// message for that Availability Zone.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+    /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request
     {
-        private List<string> zoneNames = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// The names of one or more Availability Zones.
-        ///  
-        /// </summary>
-        public List<string> ZoneNames
-        {
-            get { return this.zoneNames; }
-            set { this.zoneNames = value; }
-        }
-
-        // Check to see if ZoneNames property is set
-        internal bool IsSetZoneNames()
-        {
-            return this.zoneNames.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _zoneNames = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>message</c> - Information about the Availability Zone. </li> <li> <c>region-name</c> - The name of the
-        /// region for the Availability Zone (for example, <c>us-east-1</c>). </li> <li> <c>state</c> - The state of the Availability Zone
-        /// (<c>available</c> | <c>impaired</c> | <c>unavailable</c>). </li> <li> <c>zone-name</c> - The name of the Availability Zone (for example,
-        /// <c>us-east-1a</c>). </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>message</code> - Information about the Availability Zone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>region-name</code> - The name of the region for the Availability Zone (for example,
+        /// <code>us-east-1</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>state</code> - The state of the Availability Zone (<code>available</code> |
+        /// <code>impaired</code> | <code>unavailable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneNames. 
+        /// <para>
+        /// The names of one or more Availability Zones.
+        /// </para>
+        /// </summary>
+        public List<string> ZoneNames
+        {
+            get { return this._zoneNames; }
+            set { this._zoneNames = value; }
+        }
+
+        // Check to see if ZoneNames property is set
+        internal bool IsSetZoneNames()
+        {
+            return this._zoneNames != null && this._zoneNames.Count > 0; 
         }
 
     }
 }
-    

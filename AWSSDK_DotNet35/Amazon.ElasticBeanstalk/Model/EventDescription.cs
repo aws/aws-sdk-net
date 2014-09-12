@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,6 +41,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _templateName;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public EventDescription() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -56,7 +64,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
@@ -74,7 +81,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._environmentName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property EventDate. 
@@ -94,7 +100,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._eventDate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
@@ -112,7 +117,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._message != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RequestId. 
@@ -132,7 +136,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._requestId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
@@ -150,7 +153,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._severity != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TemplateName. 
@@ -170,11 +172,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._templateName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        /// The release label for the application version associated with this         event.
+        /// The release label for the application version associated with this event.
         /// </para>
         /// </summary>
         public string VersionLabel

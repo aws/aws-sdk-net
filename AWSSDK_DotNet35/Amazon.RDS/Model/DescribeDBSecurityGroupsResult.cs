@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,56 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the DescribeDBSecurityGroups action. </para>
+    /// Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a>
+    /// action.
     /// </summary>
     public partial class DescribeDBSecurityGroupsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<DBSecurityGroup> dBSecurityGroups = new List<DBSecurityGroup>();
-
+        private List<DBSecurityGroup> _dBSecurityGroups = new List<DBSecurityGroup>();
+        private string _marker;
 
         /// <summary>
-        /// An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the
-        /// marker, up to the value specified by <c>MaxRecords</c>.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// A list of <a>DBSecurityGroup</a> instances.
-        ///  
+        /// Gets and sets the property DBSecurityGroups. 
+        /// <para>
+        ///  A list of <a>DBSecurityGroup</a> instances. 
+        /// </para>
         /// </summary>
         public List<DBSecurityGroup> DBSecurityGroups
         {
-            get { return this.dBSecurityGroups; }
-            set { this.dBSecurityGroups = value; }
+            get { return this._dBSecurityGroups; }
+            set { this._dBSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this.dBSecurityGroups.Count > 0;
+            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///  An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. 
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

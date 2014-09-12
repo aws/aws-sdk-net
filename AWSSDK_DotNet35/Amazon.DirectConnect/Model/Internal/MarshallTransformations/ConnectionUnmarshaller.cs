@@ -12,102 +12,116 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DirectConnect.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DirectConnect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Connection Object
+    /// </summary>  
+    public class ConnectionUnmarshaller : IUnmarshaller<Connection, XmlUnmarshallerContext>, IUnmarshaller<Connection, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ConnectionUnmarshaller
-      /// </summary>
-      internal class ConnectionUnmarshaller : IUnmarshaller<Connection, XmlUnmarshallerContext>, IUnmarshaller<Connection, JsonUnmarshallerContext>
-      {
         Connection IUnmarshaller<Connection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Connection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Connection connection = new Connection();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Connection unmarshalledObject = new Connection();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("ownerAccount", targetDepth))
-              {
-                connection.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("connectionId", targetDepth))
-              {
-                connection.ConnectionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("connectionName", targetDepth))
-              {
-                connection.ConnectionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("connectionState", targetDepth))
-              {
-                connection.ConnectionState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("region", targetDepth))
-              {
-                connection.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("location", targetDepth))
-              {
-                connection.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("bandwidth", targetDepth))
-              {
-                connection.Bandwidth = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("vlan", targetDepth))
-              {
-                connection.Vlan = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("partnerName", targetDepth))
-              {
-                connection.PartnerName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("bandwidth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bandwidth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectionState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ownerAccount", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("partnerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PartnerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vlan", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Vlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return connection;
+            return unmarshalledObject;
         }
 
-        private static ConnectionUnmarshaller instance;
-        public static ConnectionUnmarshaller GetInstance()
+
+        private static ConnectionUnmarshaller _instance = new ConnectionUnmarshaller();        
+
+        public static ConnectionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ConnectionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

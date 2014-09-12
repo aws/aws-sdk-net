@@ -12,63 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.CloudTrail.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.CloudTrail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeTrails operation
+    /// </summary>  
+    public class DescribeTrailsResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for DescribeTrails operation
-      /// </summary>
-      internal class DescribeTrailsResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeTrailsResponse response = new DescribeTrailsResponse();       
-          
+            DescribeTrailsResponse response = new DescribeTrailsResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("trailList", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Trail,TrailUnmarshaller>(
-                    TrailUnmarshaller.GetInstance());                  
-                response.TrailList = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("trailList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Trail, TrailUnmarshaller>(TrailUnmarshaller.Instance);
+                    response.TrailList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeTrailsResponseUnmarshaller instance;
-        public static DescribeTrailsResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new DescribeTrailsResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static DescribeTrailsResponseUnmarshaller _instance = new DescribeTrailsResponseUnmarshaller();        
+
+        internal static DescribeTrailsResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static DescribeTrailsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.CloudWatchLogs.Model
         private string _filterPattern;
         private List<MetricTransformation> _metricTransformations = new List<MetricTransformation>();
 
-
         /// <summary>
         /// Gets and sets the property CreationTime.
         /// </summary>
@@ -50,7 +53,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._creationTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property FilterName.
@@ -67,7 +69,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._filterName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property FilterPattern.
         /// </summary>
@@ -82,7 +83,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._filterPattern != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MetricTransformations.

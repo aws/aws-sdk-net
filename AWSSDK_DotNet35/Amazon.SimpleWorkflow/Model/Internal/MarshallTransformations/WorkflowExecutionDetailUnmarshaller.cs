@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowExecutionDetail Object
+    /// </summary>  
+    public class WorkflowExecutionDetailUnmarshaller : IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowExecutionDetailUnmarshaller
-      /// </summary>
-      internal class WorkflowExecutionDetailUnmarshaller : IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext>
-      {
         WorkflowExecutionDetail IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowExecutionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowExecutionDetail workflowExecutionDetail = new WorkflowExecutionDetail();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowExecutionDetail unmarshalledObject = new WorkflowExecutionDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("executionInfo", targetDepth))
-              {
-                workflowExecutionDetail.ExecutionInfo = WorkflowExecutionInfoUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("executionConfiguration", targetDepth))
-              {
-                workflowExecutionDetail.ExecutionConfiguration = WorkflowExecutionConfigurationUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("openCounts", targetDepth))
-              {
-                workflowExecutionDetail.OpenCounts = WorkflowExecutionOpenCountsUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("latestActivityTaskTimestamp", targetDepth))
-              {
-                workflowExecutionDetail.LatestActivityTaskTimestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("latestExecutionContext", targetDepth))
-              {
-                workflowExecutionDetail.LatestExecutionContext = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("executionConfiguration", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("executionInfo", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionInfoUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestActivityTaskTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LatestActivityTaskTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestExecutionContext", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestExecutionContext = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("openCounts", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionOpenCountsUnmarshaller.Instance;
+                    unmarshalledObject.OpenCounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowExecutionDetail;
+            return unmarshalledObject;
         }
 
-        private static WorkflowExecutionDetailUnmarshaller instance;
-        public static WorkflowExecutionDetailUnmarshaller GetInstance()
+
+        private static WorkflowExecutionDetailUnmarshaller _instance = new WorkflowExecutionDetailUnmarshaller();        
+
+        public static WorkflowExecutionDetailUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowExecutionDetailUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

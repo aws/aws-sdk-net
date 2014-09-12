@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,58 +29,107 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpnGateways operation.
-    /// <para>Describes one or more of your virtual private gateways.</para> <para>For more information about virtual private gateways, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon
-    /// Virtual Private Cloud User Guide</i> .</para>
+    /// Describes one or more of your virtual private gateways.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
+    /// an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeVpnGatewaysRequest : AmazonEC2Request
     {
-        private List<string> vpnGatewayIds = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// One or more virtual private gateway IDs. Default: Describes all your virtual private gateways.
-        ///  
-        /// </summary>
-        public List<string> VpnGatewayIds
-        {
-            get { return this.vpnGatewayIds; }
-            set { this.vpnGatewayIds = value; }
-        }
-
-        // Check to see if VpnGatewayIds property is set
-        internal bool IsSetVpnGatewayIds()
-        {
-            return this.vpnGatewayIds.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _vpnGatewayIds = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>attachment.state</c> - The current state of the attachment between the gateway and the VPC
-        /// (<c>attaching</c> | <c>attached</c> | <c>detaching</c> | <c>detached</c>). </li> <li> <c>attachment.vpc-id</c> - The ID of an attached VPC.
-        /// </li> <li> <c>availability-zone</c> - The Availability Zone for the virtual private gateway. </li> <li> <c>state</c> - The state of the
-        /// virtual private gateway (<c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c>). </li> <li>
-        /// <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a
-        /// tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
-        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
-        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
-        /// independent of the <c>tag-key</c> filter. </li> <li> <c>type</c> - The type of virtual private gateway. Currently the only supported type is
-        /// <c>ipsec.1</c>. </li> <li> <c>vpn-gateway-id</c> - The ID of the virtual private gateway. </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>attachment.state</code> - The current state of the attachment between the gateway
+        /// and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
+        /// | <code>detached</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.vpc-id</code> - The ID of an attached VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>availability-zone</code> - The Availability Zone for the virtual private gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>state</code> - The state of the virtual private gateway (<code>pending</code>
+        /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        /// to the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
+        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
+        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
+        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
+        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
+        /// filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        /// is independent of the <code>tag-key</code> filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>type</code> - The type of virtual private gateway. Currently the only supported
+        /// type is <code>ipsec.1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpn-gateway-id</code> - The ID of the virtual private gateway.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnGatewayIds. 
+        /// <para>
+        /// One or more virtual private gateway IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Describes all your virtual private gateways.
+        /// </para>
+        /// </summary>
+        public List<string> VpnGatewayIds
+        {
+            get { return this._vpnGatewayIds; }
+            set { this._vpnGatewayIds = value; }
+        }
+
+        // Check to see if VpnGatewayIds property is set
+        internal bool IsSetVpnGatewayIds()
+        {
+            return this._vpnGatewayIds != null && this._vpnGatewayIds.Count > 0; 
         }
 
     }
 }
-    

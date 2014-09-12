@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.CognitoSync.Model
         private List<RecordPatch> _recordPatches = new List<RecordPatch>();
         private string _syncSessionToken;
 
-
         /// <summary>
         /// Gets and sets the property ClientContext.
         /// </summary>
@@ -51,7 +54,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._clientContext != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DatasetName. A string of up to 128 characters. Allowed
@@ -69,7 +71,6 @@ namespace Amazon.CognitoSync.Model
             return this._datasetName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property IdentityId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
         /// created by Amazon Cognito. GUID generation is unique within a region.
@@ -85,7 +86,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._identityId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property IdentityPoolId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -103,7 +103,6 @@ namespace Amazon.CognitoSync.Model
             return this._identityPoolId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RecordPatches.
         /// </summary>
@@ -118,7 +117,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._recordPatches != null && this._recordPatches.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SyncSessionToken. The SyncSessionToken returned by a previous

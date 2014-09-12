@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,14 +29,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSpotDatafeedSubscription operation.
-    /// <para>Deletes the datafeed for Spot Instances. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the <i>Amazon Elastic Compute
-    /// Cloud User Guide</i> .</para>
+    /// Deletes the datafeed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DeleteSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {
 
-
     }
 }
-    

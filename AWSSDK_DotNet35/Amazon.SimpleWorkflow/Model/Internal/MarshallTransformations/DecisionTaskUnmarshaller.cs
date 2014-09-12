@@ -12,94 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DecisionTask Object
+    /// </summary>  
+    public class DecisionTaskUnmarshaller : IUnmarshaller<DecisionTask, XmlUnmarshallerContext>, IUnmarshaller<DecisionTask, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DecisionTaskUnmarshaller
-      /// </summary>
-      internal class DecisionTaskUnmarshaller : IUnmarshaller<DecisionTask, XmlUnmarshallerContext>, IUnmarshaller<DecisionTask, JsonUnmarshallerContext>
-      {
         DecisionTask IUnmarshaller<DecisionTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DecisionTask Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DecisionTask decisionTask = new DecisionTask();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DecisionTask unmarshalledObject = new DecisionTask();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("taskToken", targetDepth))
-              {
-                decisionTask.TaskToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                decisionTask.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecution", targetDepth))
-              {
-                decisionTask.WorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowType", targetDepth))
-              {
-                decisionTask.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("events", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<HistoryEvent,HistoryEventUnmarshaller>(
-                    HistoryEventUnmarshaller.GetInstance());                  
-                decisionTask.Events = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("nextPageToken", targetDepth))
-              {
-                decisionTask.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("previousStartedEventId", targetDepth))
-              {
-                decisionTask.PreviousStartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("events", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HistoryEvent, HistoryEventUnmarshaller>(HistoryEventUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("previousStartedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.PreviousStartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecution", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowType", targetDepth))
+                {
+                    var unmarshaller = WorkflowTypeUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return decisionTask;
+            return unmarshalledObject;
         }
 
-        private static DecisionTaskUnmarshaller instance;
-        public static DecisionTaskUnmarshaller GetInstance()
+
+        private static DecisionTaskUnmarshaller _instance = new DecisionTaskUnmarshaller();        
+
+        public static DecisionTaskUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DecisionTaskUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

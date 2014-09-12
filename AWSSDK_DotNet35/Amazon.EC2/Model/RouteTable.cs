@@ -12,122 +12,140 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a route table.</para>
+    /// Describes a route table.
     /// </summary>
     public partial class RouteTable
     {
-        
-        private string routeTableId;
-        private string vpcId;
-        private List<Route> routes = new List<Route>();
-        private List<RouteTableAssociation> associations = new List<RouteTableAssociation>();
-        private List<Tag> tags = new List<Tag>();
-        private List<PropagatingVgw> propagatingVgws = new List<PropagatingVgw>();
-
+        private List<RouteTableAssociation> _associations = new List<RouteTableAssociation>();
+        private List<PropagatingVgw> _propagatingVgws = new List<PropagatingVgw>();
+        private List<Route> _routes = new List<Route>();
+        private string _routeTableId;
+        private List<Tag> _tags = new List<Tag>();
+        private string _vpcId;
 
         /// <summary>
-        /// The ID of the route table.
-        ///  
-        /// </summary>
-        public string RouteTableId
-        {
-            get { return this.routeTableId; }
-            set { this.routeTableId = value; }
-        }
-
-        // Check to see if RouteTableId property is set
-        internal bool IsSetRouteTableId()
-        {
-            return this.routeTableId != null;
-        }
-
-        /// <summary>
-        /// The ID of the VPC.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// The routes in the route table.
-        ///  
-        /// </summary>
-        public List<Route> Routes
-        {
-            get { return this.routes; }
-            set { this.routes = value; }
-        }
-
-        // Check to see if Routes property is set
-        internal bool IsSetRoutes()
-        {
-            return this.routes.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Associations. 
+        /// <para>
         /// The associations between the route table and one or more subnets.
-        ///  
+        /// </para>
         /// </summary>
         public List<RouteTableAssociation> Associations
         {
-            get { return this.associations; }
-            set { this.associations = value; }
+            get { return this._associations; }
+            set { this._associations = value; }
         }
 
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this.associations.Count > 0;
+            return this._associations != null && this._associations.Count > 0; 
         }
 
         /// <summary>
-        /// Any tags assigned to the route table.
-        ///  
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this.tags; }
-            set { this.tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this.tags.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property PropagatingVgws. 
+        /// <para>
         /// Any virtual private gateway (VGW) propagating routes.
-        ///  
+        /// </para>
         /// </summary>
         public List<PropagatingVgw> PropagatingVgws
         {
-            get { return this.propagatingVgws; }
-            set { this.propagatingVgws = value; }
+            get { return this._propagatingVgws; }
+            set { this._propagatingVgws = value; }
         }
 
         // Check to see if PropagatingVgws property is set
         internal bool IsSetPropagatingVgws()
         {
-            return this.propagatingVgws.Count > 0;
+            return this._propagatingVgws != null && this._propagatingVgws.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Routes. 
+        /// <para>
+        /// The routes in the route table.
+        /// </para>
+        /// </summary>
+        public List<Route> Routes
+        {
+            get { return this._routes; }
+            set { this._routes = value; }
+        }
+
+        // Check to see if Routes property is set
+        internal bool IsSetRoutes()
+        {
+            return this._routes != null && this._routes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteTableId. 
+        /// <para>
+        /// The ID of the route table.
+        /// </para>
+        /// </summary>
+        public string RouteTableId
+        {
+            get { return this._routeTableId; }
+            set { this._routeTableId = value; }
+        }
+
+        // Check to see if RouteTableId property is set
+        internal bool IsSetRouteTableId()
+        {
+            return this._routeTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the route table.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

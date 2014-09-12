@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,171 +12,171 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Define Index Field Request Marshaller
+    /// DefineIndexField Request Marshaller
     /// </summary>       
-    public class DefineIndexFieldRequestMarshaller : IMarshaller<IRequest, DefineIndexFieldRequest>
+    public class DefineIndexFieldRequestMarshaller : IMarshaller<IRequest, DefineIndexFieldRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DefineIndexFieldRequest defineIndexFieldRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(defineIndexFieldRequest, "AmazonCloudSearch");
+            return this.Marshall((DefineIndexFieldRequest)input);
+        }
+    
+        public IRequest Marshall(DefineIndexFieldRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch_2011_02_01");
             request.Parameters.Add("Action", "DefineIndexField");
             request.Parameters.Add("Version", "2011-02-01");
-            if (defineIndexFieldRequest != null && defineIndexFieldRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(defineIndexFieldRequest.DomainName));
-            }
-            if (defineIndexFieldRequest != null)
-            {
-                IndexField indexField = defineIndexFieldRequest.IndexField;
-                if (indexField != null && indexField.IsSetIndexFieldName())
-                {
-                    request.Parameters.Add("IndexField.IndexFieldName", StringUtils.FromString(indexField.IndexFieldName));
-                }
-                if (indexField != null && indexField.IsSetIndexFieldType())
-                {
-                    request.Parameters.Add("IndexField.IndexFieldType", StringUtils.FromString(indexField.IndexFieldType));
-                }
-                if (indexField != null)
-                {
-                    UIntOptions uIntOptions = indexField.UIntOptions;
-                    if (uIntOptions != null && uIntOptions.IsSetDefaultValue())
-                    {
-                        request.Parameters.Add("IndexField.UIntOptions.DefaultValue", StringUtils.FromInt(uIntOptions.DefaultValue));
-                    }
-                }
-                if (indexField != null)
-                {
-                    LiteralOptions literalOptions = indexField.LiteralOptions;
-                    if (literalOptions != null && literalOptions.IsSetDefaultValue())
-                    {
-                        request.Parameters.Add("IndexField.LiteralOptions.DefaultValue", StringUtils.FromString(literalOptions.DefaultValue));
-                    }
-                    if (literalOptions != null && literalOptions.IsSetSearchEnabled())
-                    {
-                        request.Parameters.Add("IndexField.LiteralOptions.SearchEnabled", StringUtils.FromBool(literalOptions.SearchEnabled));
-                    }
-                    if (literalOptions != null && literalOptions.IsSetFacetEnabled())
-                    {
-                        request.Parameters.Add("IndexField.LiteralOptions.FacetEnabled", StringUtils.FromBool(literalOptions.FacetEnabled));
-                    }
-                    if (literalOptions != null && literalOptions.IsSetResultEnabled())
-                    {
-                        request.Parameters.Add("IndexField.LiteralOptions.ResultEnabled", StringUtils.FromBool(literalOptions.ResultEnabled));
-                    }
-                }
-                if (indexField != null)
-                {
-                    TextOptions textOptions = indexField.TextOptions;
-                    if (textOptions != null && textOptions.IsSetDefaultValue())
-                    {
-                        request.Parameters.Add("IndexField.TextOptions.DefaultValue", StringUtils.FromString(textOptions.DefaultValue));
-                    }
-                    if (textOptions != null && textOptions.IsSetFacetEnabled())
-                    {
-                        request.Parameters.Add("IndexField.TextOptions.FacetEnabled", StringUtils.FromBool(textOptions.FacetEnabled));
-                    }
-                    if (textOptions != null && textOptions.IsSetResultEnabled())
-                    {
-                        request.Parameters.Add("IndexField.TextOptions.ResultEnabled", StringUtils.FromBool(textOptions.ResultEnabled));
-                    }
-                    if (textOptions != null && textOptions.IsSetTextProcessor())
-                    {
-                        request.Parameters.Add("IndexField.TextOptions.TextProcessor", StringUtils.FromString(textOptions.TextProcessor));
-                    }
-                }
 
-                if (indexField != null)
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
                 {
-                    List<SourceAttribute> sourceAttributesList = indexField.SourceAttributes;
-                    int sourceAttributesListIndex = 1;
-                    foreach (SourceAttribute sourceAttributesListValue in sourceAttributesList)
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetIndexField())
+                {
+                    if(publicRequest.IndexField.IsSetIndexFieldName())
                     {
-                        if (sourceAttributesListValue != null && sourceAttributesListValue.IsSetSourceDataFunction())
+                        request.Parameters.Add("IndexField" + "." + "IndexFieldName", StringUtils.FromString(publicRequest.IndexField.IndexFieldName));
+                    }
+                    if(publicRequest.IndexField.IsSetIndexFieldType())
+                    {
+                        request.Parameters.Add("IndexField" + "." + "IndexFieldType", StringUtils.FromString(publicRequest.IndexField.IndexFieldType));
+                    }
+                    if(publicRequest.IndexField.IsSetLiteralOptions())
+                    {
+                        if(publicRequest.IndexField.LiteralOptions.IsSetDefaultValue())
                         {
-                            request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataFunction", StringUtils.FromString(sourceAttributesListValue.SourceDataFunction));
+                            request.Parameters.Add("IndexField" + "." + "LiteralOptions" + "." + "DefaultValue", StringUtils.FromString(publicRequest.IndexField.LiteralOptions.DefaultValue));
                         }
-                        if (sourceAttributesListValue != null)
+                        if(publicRequest.IndexField.LiteralOptions.IsSetFacetEnabled())
                         {
-                            SourceData sourceDataCopy = sourceAttributesListValue.SourceDataCopy;
-                            if (sourceDataCopy != null && sourceDataCopy.IsSetSourceName())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataCopy.SourceName", StringUtils.FromString(sourceDataCopy.SourceName));
-                            }
-                            if (sourceDataCopy != null && sourceDataCopy.IsSetDefaultValue())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataCopy.DefaultValue", StringUtils.FromString(sourceDataCopy.DefaultValue));
-                            }
+                            request.Parameters.Add("IndexField" + "." + "LiteralOptions" + "." + "FacetEnabled", StringUtils.FromBool(publicRequest.IndexField.LiteralOptions.FacetEnabled));
                         }
-                        if (sourceAttributesListValue != null)
+                        if(publicRequest.IndexField.LiteralOptions.IsSetResultEnabled())
                         {
-                            SourceDataTrimTitle sourceDataTrimTitle = sourceAttributesListValue.SourceDataTrimTitle;
-                            if (sourceDataTrimTitle != null && sourceDataTrimTitle.IsSetSourceName())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataTrimTitle.SourceName", StringUtils.FromString(sourceDataTrimTitle.SourceName));
-                            }
-                            if (sourceDataTrimTitle != null && sourceDataTrimTitle.IsSetDefaultValue())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataTrimTitle.DefaultValue", StringUtils.FromString(sourceDataTrimTitle.DefaultValue));
-                            }
-                            if (sourceDataTrimTitle != null && sourceDataTrimTitle.IsSetSeparator())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataTrimTitle.Separator", StringUtils.FromString(sourceDataTrimTitle.Separator));
-                            }
-                            if (sourceDataTrimTitle != null && sourceDataTrimTitle.IsSetLanguage())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataTrimTitle.Language", StringUtils.FromString(sourceDataTrimTitle.Language));
-                            }
+                            request.Parameters.Add("IndexField" + "." + "LiteralOptions" + "." + "ResultEnabled", StringUtils.FromBool(publicRequest.IndexField.LiteralOptions.ResultEnabled));
                         }
-                        if (sourceAttributesListValue != null)
+                        if(publicRequest.IndexField.LiteralOptions.IsSetSearchEnabled())
                         {
-                            SourceDataMap sourceDataMap = sourceAttributesListValue.SourceDataMap;
-                            if (sourceDataMap != null && sourceDataMap.IsSetSourceName())
+                            request.Parameters.Add("IndexField" + "." + "LiteralOptions" + "." + "SearchEnabled", StringUtils.FromBool(publicRequest.IndexField.LiteralOptions.SearchEnabled));
+                        }
+                    }
+                    if(publicRequest.IndexField.IsSetSourceAttributes())
+                    {
+                        int publicRequestIndexFieldlistValueIndex = 1;
+                        foreach(var publicRequestIndexFieldlistValue in publicRequest.IndexField.SourceAttributes)
+                        {
+                            if(publicRequestIndexFieldlistValue.IsSetSourceDataCopy())
                             {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataMap.SourceName", StringUtils.FromString(sourceDataMap.SourceName));
-                            }
-                            if (sourceDataMap != null && sourceDataMap.IsSetDefaultValue())
-                            {
-                                request.Parameters.Add("IndexField.SourceAttributes.member." + sourceAttributesListIndex + ".SourceDataMap.DefaultValue", StringUtils.FromString(sourceDataMap.DefaultValue));
-                            }
-                            if (sourceDataMap != null)
-                            {
-                                if (sourceDataMap.Cases != null)
+                                if(publicRequestIndexFieldlistValue.SourceDataCopy.IsSetDefaultValue())
                                 {
-                                    int casesListIndex = 1;
-                                    foreach (string key in sourceDataMap.Cases.Keys)
-                                    {
-                                        string value;
-                                        bool hasValue = sourceDataMap.Cases.TryGetValue(key, out value);
-                                                                    request.Parameters.Add("Cases.entry." + casesListIndex + ".key", StringUtils.FromString(key));
-                                        if (hasValue) 
-                                        {
-                                            request.Parameters.Add("Cases.entry." + casesListIndex + ".value", StringUtils.FromString(value));
-                                        }
-                                            ++casesListIndex;
-                                    }
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataCopy" + "." + "DefaultValue", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataCopy.DefaultValue));
+                                }
+                                if(publicRequestIndexFieldlistValue.SourceDataCopy.IsSetSourceName())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataCopy" + "." + "SourceName", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataCopy.SourceName));
                                 }
                             }
+                            if(publicRequestIndexFieldlistValue.IsSetSourceDataFunction())
+                            {
+                                request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataFunction", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataFunction));
+                            }
+                            if(publicRequestIndexFieldlistValue.IsSetSourceDataMap())
+                            {
+                                if(publicRequestIndexFieldlistValue.SourceDataMap.IsSetCases())
+                                {
+                                    int mapIndex = 1;
+                                    foreach(var key in publicRequestIndexFieldlistValue.SourceDataMap.Cases.Keys)
+                                    {
+                                        String value;
+                                        bool hasValue = publicRequestIndexFieldlistValue.SourceDataMap.Cases.TryGetValue(key, out value);
+                                        request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataMap" + "." + "Cases" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                                        if (hasValue)
+                                        {
+                                            request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataMap" + "." + "Cases" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                        }
+                                        mapIndex++;
+                                    }
+                                }
+                                if(publicRequestIndexFieldlistValue.SourceDataMap.IsSetDefaultValue())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataMap" + "." + "DefaultValue", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataMap.DefaultValue));
+                                }
+                                if(publicRequestIndexFieldlistValue.SourceDataMap.IsSetSourceName())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataMap" + "." + "SourceName", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataMap.SourceName));
+                                }
+                            }
+                            if(publicRequestIndexFieldlistValue.IsSetSourceDataTrimTitle())
+                            {
+                                if(publicRequestIndexFieldlistValue.SourceDataTrimTitle.IsSetDefaultValue())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataTrimTitle" + "." + "DefaultValue", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataTrimTitle.DefaultValue));
+                                }
+                                if(publicRequestIndexFieldlistValue.SourceDataTrimTitle.IsSetLanguage())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataTrimTitle" + "." + "Language", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataTrimTitle.Language));
+                                }
+                                if(publicRequestIndexFieldlistValue.SourceDataTrimTitle.IsSetSeparator())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataTrimTitle" + "." + "Separator", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataTrimTitle.Separator));
+                                }
+                                if(publicRequestIndexFieldlistValue.SourceDataTrimTitle.IsSetSourceName())
+                                {
+                                    request.Parameters.Add("IndexField" + "." + "SourceAttributes" + "." + "member" + "." + publicRequestIndexFieldlistValueIndex + "." + "SourceDataTrimTitle" + "." + "SourceName", StringUtils.FromString(publicRequestIndexFieldlistValue.SourceDataTrimTitle.SourceName));
+                                }
+                            }
+                            publicRequestIndexFieldlistValueIndex++;
                         }
-
-                        sourceAttributesListIndex++;
+                    }
+                    if(publicRequest.IndexField.IsSetTextOptions())
+                    {
+                        if(publicRequest.IndexField.TextOptions.IsSetDefaultValue())
+                        {
+                            request.Parameters.Add("IndexField" + "." + "TextOptions" + "." + "DefaultValue", StringUtils.FromString(publicRequest.IndexField.TextOptions.DefaultValue));
+                        }
+                        if(publicRequest.IndexField.TextOptions.IsSetFacetEnabled())
+                        {
+                            request.Parameters.Add("IndexField" + "." + "TextOptions" + "." + "FacetEnabled", StringUtils.FromBool(publicRequest.IndexField.TextOptions.FacetEnabled));
+                        }
+                        if(publicRequest.IndexField.TextOptions.IsSetResultEnabled())
+                        {
+                            request.Parameters.Add("IndexField" + "." + "TextOptions" + "." + "ResultEnabled", StringUtils.FromBool(publicRequest.IndexField.TextOptions.ResultEnabled));
+                        }
+                        if(publicRequest.IndexField.TextOptions.IsSetTextProcessor())
+                        {
+                            request.Parameters.Add("IndexField" + "." + "TextOptions" + "." + "TextProcessor", StringUtils.FromString(publicRequest.IndexField.TextOptions.TextProcessor));
+                        }
+                    }
+                    if(publicRequest.IndexField.IsSetUIntOptions())
+                    {
+                        if(publicRequest.IndexField.UIntOptions.IsSetDefaultValue())
+                        {
+                            request.Parameters.Add("IndexField" + "." + "UIntOptions" + "." + "DefaultValue", StringUtils.FromInt(publicRequest.IndexField.UIntOptions.DefaultValue));
+                        }
                     }
                 }
             }
-
             return request;
         }
     }

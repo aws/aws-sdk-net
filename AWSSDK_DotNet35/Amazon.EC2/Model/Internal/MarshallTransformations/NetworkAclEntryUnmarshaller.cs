@@ -12,99 +12,109 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NetworkAclEntry Unmarshaller
-     /// </summary>
-    internal class NetworkAclEntryUnmarshaller : IUnmarshaller<NetworkAclEntry, XmlUnmarshallerContext>, IUnmarshaller<NetworkAclEntry, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NetworkAclEntry Object
+    /// </summary>  
+    public class NetworkAclEntryUnmarshaller : IUnmarshaller<NetworkAclEntry, XmlUnmarshallerContext>, IUnmarshaller<NetworkAclEntry, JsonUnmarshallerContext>
     {
-        public NetworkAclEntry Unmarshall(XmlUnmarshallerContext context) 
+        public NetworkAclEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkAclEntry networkAclEntry = new NetworkAclEntry();
+            NetworkAclEntry unmarshalledObject = new NetworkAclEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ruleNumber", targetDepth))
+                    if (context.TestExpression("cidrBlock", targetDepth))
                     {
-                        networkAclEntry.RuleNumber = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("protocol", targetDepth))
-                    {
-                        networkAclEntry.Protocol = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ruleAction", targetDepth))
-                    {
-                        networkAclEntry.RuleAction = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("egress", targetDepth))
                     {
-                        networkAclEntry.Egress = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("cidrBlock", targetDepth))
-                    {
-                        networkAclEntry.CidrBlock = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Egress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("icmpTypeCode", targetDepth))
                     {
-                        networkAclEntry.IcmpTypeCode = IcmpTypeCodeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IcmpTypeCodeUnmarshaller.Instance;
+                        unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("portRange", targetDepth))
                     {
-                        networkAclEntry.PortRange = PortRangeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = PortRangeUnmarshaller.Instance;
+                        unmarshalledObject.PortRange = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("protocol", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ruleAction", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ruleNumber", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.RuleNumber = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return networkAclEntry;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return networkAclEntry;
+            return unmarshalledObject;
         }
 
-        public NetworkAclEntry Unmarshall(JsonUnmarshallerContext context) 
+        public NetworkAclEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NetworkAclEntryUnmarshaller instance;
 
-        public static NetworkAclEntryUnmarshaller GetInstance() 
+        private static NetworkAclEntryUnmarshaller _instance = new NetworkAclEntryUnmarshaller();        
+
+        public static NetworkAclEntryUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NetworkAclEntryUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

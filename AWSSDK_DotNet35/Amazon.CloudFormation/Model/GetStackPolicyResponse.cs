@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the  GetStackPolicy response and response metadata.
+    /// Configuration for accessing Amazon GetStackPolicy service
     /// </summary>
     public partial class GetStackPolicyResponse : GetStackPolicyResult
     {
         /// <summary>
         /// Gets and sets the GetStackPolicyResult property.
-        /// The output for the GetStackPolicy action.
+        /// Represents the output of a GetStackPolicy operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetStackPolicyResult class are now available on the GetStackPolicyResponse class. You should use the properties on GetStackPolicyResponse instead of accessing them through GetStackPolicyResult.")]
         public GetStackPolicyResult GetStackPolicyResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudFormation.Model
         }
     }
 }
-    

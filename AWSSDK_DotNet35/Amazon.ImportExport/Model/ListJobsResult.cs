@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,54 +12,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
-    /// <para> Output structure for the ListJobs operation. </para>
+    /// Output structure for the ListJobs operation.
     /// </summary>
     public partial class ListJobsResult : AmazonWebServiceResponse
     {
-        
-        private List<Job> jobs = new List<Job>();
-        private bool? isTruncated;
+        private bool? _isTruncated;
+        private List<Job> _jobs = new List<Job>();
 
         /// <summary>
-        /// A list container for Jobs returned by the ListJobs operation.
-        ///  
-        /// </summary>
-        public List<Job> Jobs
-        {
-            get { return this.jobs; }
-            set { this.jobs = value; }
-        }
-
-        // Check to see if Jobs property is set
-        internal bool IsSetJobs()
-        {
-            return this.jobs.Count > 0;
-        }
-
-        /// <summary>
-        /// Indicates whether the list of jobs was truncated. If true, then call ListJobs again using the last JobId element as the marker.
-        ///  
+        /// Gets and sets the property IsTruncated.
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Jobs.
+        /// </summary>
+        public List<Job> Jobs
+        {
+            get { return this._jobs; }
+            set { this._jobs = value; }
+        }
+
+        // Check to see if Jobs property is set
+        internal bool IsSetJobs()
+        {
+            return this._jobs != null && this._jobs.Count > 0; 
+        }
+
     }
 }

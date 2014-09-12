@@ -12,39 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DescribeDomains</c> request. Contains the status of the domains specified in the request or all domains owned by
-    /// the account.</para>
+    /// The result of a <code>DescribeDomains</code> request. Contains the status of the domains
+    /// specified in the request or all domains owned by the account.
     /// </summary>
     public partial class DescribeDomainsResult : AmazonWebServiceResponse
     {
-        
-        private List<DomainStatus> domainStatusList = new List<DomainStatus>();
-
+        private List<DomainStatus> _domainStatusList = new List<DomainStatus>();
 
         /// <summary>
-        /// A list that contains the status of each requested domain.
-        ///  
+        /// Gets and sets the property DomainStatusList.
         /// </summary>
         public List<DomainStatus> DomainStatusList
         {
-            get { return this.domainStatusList; }
-            set { this.domainStatusList = value; }
+            get { return this._domainStatusList; }
+            set { this._domainStatusList = value; }
         }
 
         // Check to see if DomainStatusList property is set
         internal bool IsSetDomainStatusList()
         {
-            return this.domainStatusList.Count > 0;
+            return this._domainStatusList != null && this._domainStatusList.Count > 0; 
         }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,123 +12,135 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   OptionGroupOption Unmarshaller
-     /// </summary>
-    internal class OptionGroupOptionUnmarshaller : IUnmarshaller<OptionGroupOption, XmlUnmarshallerContext>, IUnmarshaller<OptionGroupOption, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for OptionGroupOption Object
+    /// </summary>  
+    public class OptionGroupOptionUnmarshaller : IUnmarshaller<OptionGroupOption, XmlUnmarshallerContext>, IUnmarshaller<OptionGroupOption, JsonUnmarshallerContext>
     {
-        public OptionGroupOption Unmarshall(XmlUnmarshallerContext context) 
+        public OptionGroupOption Unmarshall(XmlUnmarshallerContext context)
         {
-            OptionGroupOption optionGroupOption = new OptionGroupOption();
+            OptionGroupOption unmarshalledObject = new OptionGroupOption();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Name", targetDepth))
+                    if (context.TestExpression("DefaultPort", targetDepth))
                     {
-                        optionGroupOption.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DefaultPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        optionGroupOption.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EngineName", targetDepth))
                     {
-                        optionGroupOption.EngineName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MajorEngineVersion", targetDepth))
                     {
-                        optionGroupOption.MajorEngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MajorEngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinimumRequiredMinorEngineVersion", targetDepth))
                     {
-                        optionGroupOption.MinimumRequiredMinorEngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MinimumRequiredMinorEngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PortRequired", targetDepth))
+                    if (context.TestExpression("Name", targetDepth))
                     {
-                        optionGroupOption.PortRequired = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DefaultPort", targetDepth))
-                    {
-                        optionGroupOption.DefaultPort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("OptionsDependedOn/OptionName", targetDepth))
-                    {
-                        optionGroupOption.OptionsDependedOn.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Persistent", targetDepth))
-                    {
-                        optionGroupOption.Persistent = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Permanent", targetDepth))
-                    {
-                        optionGroupOption.Permanent = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OptionGroupOptionSettings/OptionGroupOptionSetting", targetDepth))
                     {
-                        optionGroupOption.OptionGroupOptionSettings.Add(OptionGroupOptionSettingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = OptionGroupOptionSettingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OptionGroupOptionSettings.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("OptionsDependedOn/OptionName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OptionsDependedOn.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Permanent", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Permanent = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Persistent", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Persistent = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PortRequired", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PortRequired = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return optionGroupOption;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return optionGroupOption;
+            return unmarshalledObject;
         }
 
-        public OptionGroupOption Unmarshall(JsonUnmarshallerContext context) 
+        public OptionGroupOption Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static OptionGroupOptionUnmarshaller instance;
 
-        public static OptionGroupOptionUnmarshaller GetInstance() 
+        private static OptionGroupOptionUnmarshaller _instance = new OptionGroupOptionUnmarshaller();        
+
+        public static OptionGroupOptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new OptionGroupOptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

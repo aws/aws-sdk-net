@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,6 +44,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<Listener> _listeners = new List<Listener>();
         private string _loadBalancerName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateLoadBalancerListenersRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateLoadBalancerListenersRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        /// <param name="listeners"> A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>, <code>Protocol</code>, <code>InstanceProtocol</code>, and <code>SSLCertificateId</code> items. </param>
+        public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners)
+        {
+            _loadBalancerName = loadBalancerName;
+            _listeners = listeners;
+        }
 
         /// <summary>
         /// Gets and sets the property Listeners. 
@@ -59,7 +78,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._listeners != null && this._listeners.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 

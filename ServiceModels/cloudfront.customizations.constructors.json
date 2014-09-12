@@ -1,0 +1,294 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "ListCloudFrontOriginAccessIdentitiesRequest" : {
+                "constructorForms" : [
+                ]
+            },
+            "Restrictions"                                : {
+                "constructorForms" : [
+                    [
+                        "GeoRestriction"
+                    ]
+                ]
+            },
+            "GeoRestriction"                              : {
+                "constructorForms" : [
+                    [
+                        "RestrictionType"
+                    ]
+                ]
+            },
+            "GetDistributionConfigRequest"                : {
+                "constructorForms" : [
+                    [
+                        "Id"
+                    ]
+                ]
+            },
+            "ListDistributionsRequest"                    : {
+                "constructorForms" : [
+                ]
+            },
+            "InvalidationBatch"                           : {
+                "constructorForms" : [
+                    [
+                        "Paths",
+                        "CallerReference"
+                    ],
+                    [
+                        "CallerReference"
+                    ]
+                ]
+            },
+            "ActiveTrustedSigners"                        : {
+                "constructorForms" : [
+                    [
+                        "Items"
+                    ]
+                ]
+            },
+            "GetCloudFrontOriginAccessIdentityConfigRequest" : {
+                "constructorForms" : [
+                    [
+                        "Id"
+                    ]
+                ]
+            },
+            "ListInvalidationsRequest"                       : {
+                "constructorForms" : [
+                    [
+                        "DistributionId"
+                    ]
+                ]
+            },
+            "Distribution"                                   : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "Status",
+                        "DomainName"
+                    ]
+                ]
+            },
+            "GetInvalidationRequest"                         : {
+                "constructorForms" : [
+                    [
+                        "DistributionId",
+                        "Id"
+                    ]
+                ]
+            },
+            "CreateStreamingDistributionRequest"             : {
+                "constructorForms" : [
+                    [
+                        "StreamingDistributionConfig"
+                    ]
+                ]
+            },
+            "CustomOrigin"                                   : {
+                "constructorForms" : [
+                    [
+                        "DNSName",
+                        "OriginProtocolPolicy"
+                    ]
+                ]
+            },
+            "CreateDistributionRequest"                      : {
+                "constructorForms" : [
+                    [
+                        "DistributionConfig"
+                    ]
+                ]
+            },
+            "TrustedSigners"                                 : {
+                "constructorForms" : [
+                    [
+                        "Items"
+                    ]
+                ]
+            },
+            "GetCloudFrontOriginAccessIdentityRequest"       : {
+                "constructorForms" : [
+                    [
+                        "Id"
+                    ]
+                ]
+            },
+            "UpdateCloudFrontOriginAccessIdentityRequest"    : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "IfMatch",
+                        "CloudFrontOriginAccessIdentityConfig"
+                    ]
+                ]
+            },
+            "UpdateDistributionRequest"                      : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "IfMatch",
+                        "DistributionConfig"
+                    ]
+                ]
+            },
+            "Invalidation"                                   : {
+                "constructorForms" : [
+                ]
+            },
+            "StreamingDistribution"                          : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteCloudFrontOriginAccessIdentityRequest"    : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "IfMatch"
+                    ]
+                ]
+            },
+            "GetDistributionRequest"                         : {
+                "constructorForms" : [
+                    [
+                        "Id"
+                    ]
+                ]
+            },
+            "CloudFrontOriginAccessIdentitySummary"          : {
+                "constructorForms" : [
+                ]
+            },
+            "LoggingConfig"                                  : {
+                "constructorForms" : [
+                    [
+                        "Bucket",
+                        "Prefix"
+                    ]
+                ]
+            },
+            "InvalidationSummary"                            : {
+                "constructorForms" : [
+                ]
+            },
+            "S3Origin"                                       : {
+                "constructorForms" : [
+                    [
+                        "DomainName"
+                    ],
+                    [
+                        "DomainName",
+                        "OriginAccessIdentity"
+                    ]
+                ]
+            },
+            "InvalidationList"                               : {
+                "constructorForms" : [
+                ]
+            },
+            "GetStreamingDistributionConfigRequest"          : {
+                "constructorForms" : [
+                    [
+                        "Id"
+                    ]
+                ]
+            },
+            "DeleteDistributionRequest"                      : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "IfMatch"
+                    ]
+                ]
+            },
+            "DistributionConfig"                             : {
+                "constructorForms" : [
+                    [
+                        "CallerReference",
+                        "Enabled"
+                    ]
+                ]
+            },
+            "CloudFrontOriginAccessIdentityList"             : {
+                "constructorForms" : [
+                ]
+            },
+            "Signer"                                         : {
+                "constructorForms" : [
+                ]
+            },
+            "ListStreamingDistributionsRequest"              : {
+                "constructorForms" : [
+                ]
+            },
+            "UpdateStreamingDistributionRequest"             : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "IfMatch",
+                        "StreamingDistributionConfig"
+                    ]
+                ]
+            },
+            "StreamingDistributionList"                      : {
+                "constructorForms" : [
+                ]
+            },
+            "RequiredProtocols"                              : {
+                "constructorForms" : [
+                ]
+            },
+            "StreamingDistributionSummary"                   : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateCloudFrontOriginAccessIdentityRequest"    : {
+                "constructorForms" : [
+                    [
+                        "CloudFrontOriginAccessIdentityConfig"
+                    ]
+                ]
+            },
+            "DistributionList"                               : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateInvalidationRequest"                      : {
+                "constructorForms" : [
+                    [
+                        "DistributionId",
+                        "InvalidationBatch"
+                    ]
+                ]
+            },
+            "GetStreamingDistributionRequest"                : {
+                "constructorForms" : [
+                    [
+                        "Id"
+                    ]
+                ]
+            },
+            "CloudFrontOriginAccessIdentityConfig"           : {
+                "constructorForms" : [
+                    [
+                        "CallerReference"
+                    ]
+                ]
+            },
+            "DeleteStreamingDistributionRequest"             : {
+                "constructorForms" : [
+                    [
+                        "Id",
+                        "IfMatch"
+                    ]
+                ]
+            },
+            "DistributionSummary"                            : {
+                "constructorForms" : [
+                ]
+            }
+        }
+    }
+}

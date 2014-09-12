@@ -12,64 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Reserved Instances Listings Request Marshaller
+    /// DescribeReservedInstancesListings Request Marshaller
     /// </summary>       
-    public class DescribeReservedInstancesListingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedInstancesListingsRequest>
+    public class DescribeReservedInstancesListingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedInstancesListingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeReservedInstancesListingsRequest, "AmazonEC2");
+            return this.Marshall((DescribeReservedInstancesListingsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeReservedInstancesListingsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeReservedInstancesListings");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeReservedInstancesListingsRequest != null && describeReservedInstancesListingsRequest.IsSetReservedInstancesId())
-            {
-                request.Parameters.Add("ReservedInstancesId", StringUtils.FromString(describeReservedInstancesListingsRequest.ReservedInstancesId));
-            }
-            if (describeReservedInstancesListingsRequest != null && describeReservedInstancesListingsRequest.IsSetReservedInstancesListingId())
-            {
-                request.Parameters.Add("ReservedInstancesListingId", StringUtils.FromString(describeReservedInstancesListingsRequest.ReservedInstancesListingId));
-            }
 
-            if (describeReservedInstancesListingsRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeReservedInstancesListingsRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetFilters())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filters." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filters." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filters" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filters" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetReservedInstancesId())
+                {
+                    request.Parameters.Add("ReservedInstancesId", StringUtils.FromString(publicRequest.ReservedInstancesId));
+                }
+                if(publicRequest.IsSetReservedInstancesListingId())
+                {
+                    request.Parameters.Add("ReservedInstancesListingId", StringUtils.FromString(publicRequest.ReservedInstancesListingId));
                 }
             }
-
             return request;
         }
     }

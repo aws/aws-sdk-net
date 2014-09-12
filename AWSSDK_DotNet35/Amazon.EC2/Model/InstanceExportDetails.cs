@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an instance export task.</para>
+    /// Describes an instance export task.
     /// </summary>
     public partial class InstanceExportDetails
     {
-        
-        private string instanceId;
-        private ExportEnvironment targetEnvironment;
-
+        private string _instanceId;
+        private ExportEnvironment _targetEnvironment;
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The ID of the resource being exported.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
         /// <summary>
-        /// The target virtualization environment.
-        ///  
+        /// Gets and sets the property TargetEnvironment. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>citrix, vmware, microsoft</description>
-        ///     </item>
-        /// </list>
+        /// The target virtualization environment.
         /// </para>
         /// </summary>
         public ExportEnvironment TargetEnvironment
         {
-            get { return this.targetEnvironment; }
-            set { this.targetEnvironment = value; }
+            get { return this._targetEnvironment; }
+            set { this._targetEnvironment = value; }
         }
 
         // Check to see if TargetEnvironment property is set
         internal bool IsSetTargetEnvironment()
         {
-            return this.targetEnvironment != null;
+            return this._targetEnvironment != null;
         }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,48 +29,47 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConversionTasks operation.
-    /// <para>Describes one or more of your conversion tasks. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html" >Using the Command Line Tools to Import Your
-    /// Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
+    /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DescribeConversionTasksRequest : AmazonEC2Request
     {
-        private List<Filter> filters = new List<Filter>();
-        private List<string> conversionTaskIds = new List<string>();
-
-
-        /// <summary>
-        /// 
-        ///  
-        /// </summary>
-        public List<Filter> Filters
-        {
-            get { return this.filters; }
-            set { this.filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this.filters.Count > 0;
-        }
+        private List<string> _conversionTaskIds = new List<string>();
+        private List<Filter> _filters = new List<Filter>();
 
         /// <summary>
+        /// Gets and sets the property ConversionTaskIds. 
+        /// <para>
         /// One or more conversion task IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> ConversionTaskIds
         {
-            get { return this.conversionTaskIds; }
-            set { this.conversionTaskIds = value; }
+            get { return this._conversionTaskIds; }
+            set { this._conversionTaskIds = value; }
         }
 
         // Check to see if ConversionTaskIds property is set
         internal bool IsSetConversionTaskIds()
         {
-            return this.conversionTaskIds.Count > 0;
+            return this._conversionTaskIds != null && this._conversionTaskIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters.
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
         }
 
     }
 }
-    

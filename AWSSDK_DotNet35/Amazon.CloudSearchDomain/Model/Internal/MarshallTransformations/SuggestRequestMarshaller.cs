@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
     /// <summary>
     /// Suggest Request Marshaller
     /// </summary>       
-    public class SuggestRequestMarshaller : IMarshaller<IRequest, SuggestRequest> 
+    public class SuggestRequestMarshaller : IMarshaller<IRequest, SuggestRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((SuggestRequest)input);
+        }
+
         public IRequest Marshall(SuggestRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");

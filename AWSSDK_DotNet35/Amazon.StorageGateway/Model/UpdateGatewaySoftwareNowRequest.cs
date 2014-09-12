@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,44 +29,34 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewaySoftwareNow operation.
-    /// <para>This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update. </para>
-    /// <para><b>NOTE:</b>When you make this request, you get a 200 OK success response immediately. However, it might take some time for the update
-    /// to complete. You can call DescribeGatewayInformation to verify the gateway is in the STATE_RUNNING state.</para> <para><b>IMPORTANT:</b>A
-    /// software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing
-    /// your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see Customizing Your
-    /// Windows iSCSI Settings and Customizing Your Linux iSCSI Settings, respectively.</para>
+    /// This operation updates the gateway virtual machine (VM) software. The request immediately
+    /// triggers the software update. 
+    /// 
+    ///  <important>A software update forces a system restart of your gateway. You can minimize
+    /// the chance of any disruption to your applications by increasing your iSCSI Initiators'
+    /// timeouts. For more information about increasing iSCSI Initiator timeouts for Windows
+    /// and Linux, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
+    /// Your Windows iSCSI Settings</a> and <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
+    /// Your Linux iSCSI Settings</a>, respectively.</important>
     /// </summary>
     public partial class UpdateGatewaySoftwareNowRequest : AmazonStorageGatewayRequest
     {
-        private string gatewayARN;
-
+        private string _gatewayARN;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
-        /// region.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
         public string GatewayARN
         {
-            get { return this.gatewayARN; }
-            set { this.gatewayARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;
+            return this._gatewayARN != null;
         }
 
     }
 }
-    

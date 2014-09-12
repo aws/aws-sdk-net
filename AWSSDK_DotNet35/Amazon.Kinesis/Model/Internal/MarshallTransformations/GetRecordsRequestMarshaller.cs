@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Records Request Marshaller
+    /// GetRecords Request Marshaller
     /// </summary>       
-    internal class GetRecordsRequestMarshaller : IMarshaller<IRequest, GetRecordsRequest> 
+    public class GetRecordsRequestMarshaller : IMarshaller<IRequest, GetRecordsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(GetRecordsRequest getRecordsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((GetRecordsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(getRecordsRequest, "AmazonKinesis");
+        public IRequest Marshall(GetRecordsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.GetRecords";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (getRecordsRequest != null && getRecordsRequest.IsSetShardIterator()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLimit())
                 {
-                    writer.WritePropertyName("ShardIterator");
-                    writer.Write(getRecordsRequest.ShardIterator);
-                }
-                if (getRecordsRequest != null && getRecordsRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(getRecordsRequest.Limit);
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
+                if(publicRequest.IsSetShardIterator())
+                {
+                    context.Writer.WritePropertyName("ShardIterator");
+                    context.Writer.Write(publicRequest.ShardIterator);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

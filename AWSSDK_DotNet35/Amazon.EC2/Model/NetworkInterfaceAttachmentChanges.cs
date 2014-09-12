@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an attachment change.</para>
+    /// Describes an attachment change.
     /// </summary>
     public partial class NetworkInterfaceAttachmentChanges
     {
-        
-        private string attachmentId;
-        private bool? deleteOnTermination;
-
+        private string _attachmentId;
+        private bool? _deleteOnTermination;
 
         /// <summary>
+        /// Gets and sets the property AttachmentId. 
+        /// <para>
         /// The ID of the network interface attachment.
-        ///  
+        /// </para>
         /// </summary>
         public string AttachmentId
         {
-            get { return this.attachmentId; }
-            set { this.attachmentId = value; }
+            get { return this._attachmentId; }
+            set { this._attachmentId = value; }
         }
 
         // Check to see if AttachmentId property is set
         internal bool IsSetAttachmentId()
         {
-            return this.attachmentId != null;
+            return this._attachmentId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
         /// Indicates whether the network interface is deleted when the instance is terminated.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
+
     }
 }

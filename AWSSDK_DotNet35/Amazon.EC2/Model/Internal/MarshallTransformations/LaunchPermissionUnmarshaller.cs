@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LaunchPermission Unmarshaller
-     /// </summary>
-    internal class LaunchPermissionUnmarshaller : IUnmarshaller<LaunchPermission, XmlUnmarshallerContext>, IUnmarshaller<LaunchPermission, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LaunchPermission Object
+    /// </summary>  
+    public class LaunchPermissionUnmarshaller : IUnmarshaller<LaunchPermission, XmlUnmarshallerContext>, IUnmarshaller<LaunchPermission, JsonUnmarshallerContext>
     {
-        public LaunchPermission Unmarshall(XmlUnmarshallerContext context) 
+        public LaunchPermission Unmarshall(XmlUnmarshallerContext context)
         {
-            LaunchPermission launchPermission = new LaunchPermission();
+            LaunchPermission unmarshalledObject = new LaunchPermission();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("userId", targetDepth))
-                    {
-                        launchPermission.UserId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("group", targetDepth))
                     {
-                        launchPermission.Group = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Group = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("userId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return launchPermission;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return launchPermission;
+            return unmarshalledObject;
         }
 
-        public LaunchPermission Unmarshall(JsonUnmarshallerContext context) 
+        public LaunchPermission Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static LaunchPermissionUnmarshaller instance;
 
-        public static LaunchPermissionUnmarshaller GetInstance() 
+        private static LaunchPermissionUnmarshaller _instance = new LaunchPermissionUnmarshaller();        
+
+        public static LaunchPermissionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new LaunchPermissionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

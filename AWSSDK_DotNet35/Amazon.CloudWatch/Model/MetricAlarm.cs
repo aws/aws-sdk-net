@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,546 +12,445 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The MetricAlarm data type represents an alarm. You can use PutMetricAlarm to create or update an alarm. </para>
+    /// The <a>MetricAlarm</a> data type represents an alarm. You can use <a>PutMetricAlarm</a>
+    /// to create or update an alarm.
     /// </summary>
-    public class MetricAlarm
+    public partial class MetricAlarm
     {
-        
-        private string alarmName;
-        private string alarmArn;
-        private string alarmDescription;
-        private DateTime? alarmConfigurationUpdatedTimestamp;
-        private bool? actionsEnabled;
-        private List<string> oKActions = new List<string>();
-        private List<string> alarmActions = new List<string>();
-        private List<string> insufficientDataActions = new List<string>();
-        private StateValue stateValue;
-        private string stateReason;
-        private string stateReasonData;
-        private DateTime? stateUpdatedTimestamp;
-        private string metricName;
-        private string namespaceValue;
-        private Statistic statistic;
-        private List<Dimension> dimensions = new List<Dimension>();
-        private int? period;
-        private StandardUnit unit;
-        private int? evaluationPeriods;
-        private double? threshold;
-        private ComparisonOperator comparisonOperator;
+        private bool? _actionsEnabled;
+        private List<string> _alarmActions = new List<string>();
+        private string _alarmArn;
+        private DateTime? _alarmConfigurationUpdatedTimestamp;
+        private string _alarmDescription;
+        private string _alarmName;
+        private ComparisonOperator _comparisonOperator;
+        private List<Dimension> _dimensions = new List<Dimension>();
+        private int? _evaluationPeriods;
+        private List<string> _insufficientDataActions = new List<string>();
+        private string _metricName;
+        private string _namespace;
+        private List<string> _oKActions = new List<string>();
+        private int? _period;
+        private string _stateReason;
+        private string _stateReasonData;
+        private DateTime? _stateUpdatedTimestamp;
+        private StateValue _stateValue;
+        private Statistic _statistic;
+        private double? _threshold;
+        private StandardUnit _unit;
 
         /// <summary>
-        /// The name of the alarm.
-        ///  
+        /// Gets and sets the property ActionsEnabled. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        ///  Indicates whether actions should be executed during any changes to the alarm's state.
+        /// 
         /// </para>
-        /// </summary>
-        public string AlarmName
-        {
-            get { return this.alarmName; }
-            set { this.alarmName = value; }
-        }
-
-        // Check to see if AlarmName property is set
-        internal bool IsSetAlarmName()
-        {
-            return this.alarmName != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the alarm.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string AlarmArn
-        {
-            get { return this.alarmArn; }
-            set { this.alarmArn = value; }
-        }
-
-        // Check to see if AlarmArn property is set
-        internal bool IsSetAlarmArn()
-        {
-            return this.alarmArn != null;
-        }
-
-        /// <summary>
-        /// The description for the alarm.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string AlarmDescription
-        {
-            get { return this.alarmDescription; }
-            set { this.alarmDescription = value; }
-        }
-
-        // Check to see if AlarmDescription property is set
-        internal bool IsSetAlarmDescription()
-        {
-            return this.alarmDescription != null;
-        }
-
-        /// <summary>
-        /// The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time
-        /// stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the
-        /// <i>Amazon CloudWatch Developer Guide</i>.
-        ///  
-        /// </summary>
-        public DateTime AlarmConfigurationUpdatedTimestamp
-        {
-            get { return this.alarmConfigurationUpdatedTimestamp ?? default(DateTime); }
-            set { this.alarmConfigurationUpdatedTimestamp = value; }
-        }
-
-        // Check to see if AlarmConfigurationUpdatedTimestamp property is set
-        internal bool IsSetAlarmConfigurationUpdatedTimestamp()
-        {
-            return this.alarmConfigurationUpdatedTimestamp.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates whether actions should be executed during any changes to the alarm's state.
-        ///  
         /// </summary>
         public bool ActionsEnabled
         {
-            get { return this.actionsEnabled ?? default(bool); }
-            set { this.actionsEnabled = value; }
+            get { return this._actionsEnabled.GetValueOrDefault(); }
+            set { this._actionsEnabled = value; }
         }
 
         // Check to see if ActionsEnabled property is set
         internal bool IsSetActionsEnabled()
         {
-            return this.actionsEnabled.HasValue;
+            return this._actionsEnabled.HasValue; 
         }
 
         /// <summary>
-        /// The list of actions to execute when this alarm transitions into an <c>OK</c> state from any other state. Each action is specified as an
-        /// Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic and triggering an Auto Scaling
-        /// policy.
-        ///  
+        /// Gets and sets the property AlarmActions. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 5</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public List<string> OKActions
-        {
-            get { return this.oKActions; }
-            set { this.oKActions = value; }
-        }
-
-        // Check to see if OKActions property is set
-        internal bool IsSetOKActions()
-        {
-            return this.oKActions.Count > 0;
-        }
-
-        /// <summary>
-        /// The list of actions to execute when this alarm transitions into an <c>ALARM</c> state from any other state. Each action is specified as an
-        /// Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic and triggering an Auto Scaling
-        /// policy.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 5</description>
-        ///     </item>
-        /// </list>
+        ///  The list of actions to execute when this alarm transitions into an <code>ALARM</code>
+        /// state from any other state. Each action is specified as an Amazon Resource Number
+        /// (ARN). Currently the only actions supported are publishing to an Amazon SNS topic
+        /// and triggering an Auto Scaling policy. 
         /// </para>
         /// </summary>
         public List<string> AlarmActions
         {
-            get { return this.alarmActions; }
-            set { this.alarmActions = value; }
+            get { return this._alarmActions; }
+            set { this._alarmActions = value; }
         }
 
         // Check to see if AlarmActions property is set
         internal bool IsSetAlarmActions()
         {
-            return this.alarmActions.Count > 0;
+            return this._alarmActions != null && this._alarmActions.Count > 0; 
         }
 
         /// <summary>
-        /// The list of actions to execute when this alarm transitions into an <c>INSUFFICIENT_DATA</c> state from any other state. Each action is
-        /// specified as an Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic or triggering an
-        /// Auto Scaling policy. <important>The current WSDL lists this attribute as <c>UnknownActions</c>.</important>
-        ///  
+        /// Gets and sets the property AlarmArn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 5</description>
-        ///     </item>
-        /// </list>
+        ///  The Amazon Resource Name (ARN) of the alarm. 
         /// </para>
         /// </summary>
-        public List<string> InsufficientDataActions
+        public string AlarmArn
         {
-            get { return this.insufficientDataActions; }
-            set { this.insufficientDataActions = value; }
+            get { return this._alarmArn; }
+            set { this._alarmArn = value; }
         }
 
-        // Check to see if InsufficientDataActions property is set
-        internal bool IsSetInsufficientDataActions()
+        // Check to see if AlarmArn property is set
+        internal bool IsSetAlarmArn()
         {
-            return this.insufficientDataActions.Count > 0;
+            return this._alarmArn != null;
         }
 
         /// <summary>
-        /// The state value for the alarm.
-        ///  
+        /// Gets and sets the property AlarmConfigurationUpdatedTimestamp. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>OK, ALARM, INSUFFICIENT_DATA</description>
-        ///     </item>
-        /// </list>
+        ///  The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses
+        /// Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate
+        /// seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
+        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
         /// </para>
         /// </summary>
-        public StateValue StateValue
+        public DateTime AlarmConfigurationUpdatedTimestamp
         {
-            get { return this.stateValue; }
-            set { this.stateValue = value; }
+            get { return this._alarmConfigurationUpdatedTimestamp.GetValueOrDefault(); }
+            set { this._alarmConfigurationUpdatedTimestamp = value; }
         }
 
-        // Check to see if StateValue property is set
-        internal bool IsSetStateValue()
+        // Check to see if AlarmConfigurationUpdatedTimestamp property is set
+        internal bool IsSetAlarmConfigurationUpdatedTimestamp()
         {
-            return this.stateValue != null;
+            return this._alarmConfigurationUpdatedTimestamp.HasValue; 
         }
 
         /// <summary>
-        /// A human-readable explanation for the alarm's state.
-        ///  
+        /// Gets and sets the property AlarmDescription. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1023</description>
-        ///     </item>
-        /// </list>
+        ///  The description for the alarm. 
         /// </para>
         /// </summary>
-        public string StateReason
+        public string AlarmDescription
         {
-            get { return this.stateReason; }
-            set { this.stateReason = value; }
+            get { return this._alarmDescription; }
+            set { this._alarmDescription = value; }
         }
 
-        // Check to see if StateReason property is set
-        internal bool IsSetStateReason()
+        // Check to see if AlarmDescription property is set
+        internal bool IsSetAlarmDescription()
         {
-            return this.stateReason != null;
+            return this._alarmDescription != null;
         }
 
         /// <summary>
-        /// An explanation for the alarm's state in machine-readable JSON format
-        ///  
+        /// Gets and sets the property AlarmName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 4000</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the alarm. 
         /// </para>
         /// </summary>
-        public string StateReasonData
+        public string AlarmName
         {
-            get { return this.stateReasonData; }
-            set { this.stateReasonData = value; }
+            get { return this._alarmName; }
+            set { this._alarmName = value; }
         }
 
-        // Check to see if StateReasonData property is set
-        internal bool IsSetStateReasonData()
+        // Check to see if AlarmName property is set
+        internal bool IsSetAlarmName()
         {
-            return this.stateReasonData != null;
-        }
-
-        /// <summary>
-        /// The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-        /// which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the
-        /// <i>Amazon CloudWatch Developer Guide</i>.
-        ///  
-        /// </summary>
-        public DateTime StateUpdatedTimestamp
-        {
-            get { return this.stateUpdatedTimestamp ?? default(DateTime); }
-            set { this.stateUpdatedTimestamp = value; }
-        }
-
-        // Check to see if StateUpdatedTimestamp property is set
-        internal bool IsSetStateUpdatedTimestamp()
-        {
-            return this.stateUpdatedTimestamp.HasValue;
+            return this._alarmName != null;
         }
 
         /// <summary>
-        /// The name of the alarm's metric.
-        ///  
+        /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string MetricName
-        {
-            get { return this.metricName; }
-            set { this.metricName = value; }
-        }
-
-        // Check to see if MetricName property is set
-        internal bool IsSetMetricName()
-        {
-            return this.metricName != null;
-        }
-
-        /// <summary>
-        /// The namespace of alarm's associated metric.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[^:].*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Namespace
-        {
-            get { return this.namespaceValue; }
-            set { this.namespaceValue = value; }
-        }
-
-        // Check to see if Namespace property is set
-        internal bool IsSetNamespace()
-        {
-            return this.namespaceValue != null;
-        }
-
-        /// <summary>
-        /// The statistic to apply to the alarm's associated metric.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>SampleCount, Average, Sum, Minimum, Maximum</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public Statistic Statistic
-        {
-            get { return this.statistic; }
-            set { this.statistic = value; }
-        }
-
-        // Check to see if Statistic property is set
-        internal bool IsSetStatistic()
-        {
-            return this.statistic != null;
-        }
-
-        /// <summary>
-        /// The list of dimensions associated with the alarm's associated metric.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public List<Dimension> Dimensions
-        {
-            get { return this.dimensions; }
-            set { this.dimensions = value; }
-        }
-
-        // Check to see if Dimensions property is set
-        internal bool IsSetDimensions()
-        {
-            return this.dimensions.Count > 0;
-        }
-
-        /// <summary>
-        /// The period in seconds over which the statistic is applied.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>60 - </description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int Period
-        {
-            get { return this.period ?? default(int); }
-            set { this.period = value; }
-        }
-
-        // Check to see if Period property is set
-        internal bool IsSetPeriod()
-        {
-            return this.period.HasValue;
-        }
-
-        /// <summary>
-        /// The unit of the alarm's associated metric.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public StandardUnit Unit
-        {
-            get { return this.unit; }
-            set { this.unit = value; }
-        }
-
-        // Check to see if Unit property is set
-        internal bool IsSetUnit()
-        {
-            return this.unit != null;
-        }
-
-        /// <summary>
-        /// The number of periods over which data is compared to the specified threshold.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int EvaluationPeriods
-        {
-            get { return this.evaluationPeriods ?? default(int); }
-            set { this.evaluationPeriods = value; }
-        }
-
-        // Check to see if EvaluationPeriods property is set
-        internal bool IsSetEvaluationPeriods()
-        {
-            return this.evaluationPeriods.HasValue;
-        }
-
-        /// <summary>
-        /// The value against which the specified statistic is compared.
-        ///  
-        /// </summary>
-        public double Threshold
-        {
-            get { return this.threshold ?? default(double); }
-            set { this.threshold = value; }
-        }
-
-        // Check to see if Threshold property is set
-        internal bool IsSetThreshold()
-        {
-            return this.threshold.HasValue;
-        }
-
-        /// <summary>
-        /// The arithmetic operation to use when comparing the specified <c>Statistic</c> and <c>Threshold</c>. The specified <c>Statistic</c> value is
-        /// used as the first operand.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold</description>
-        ///     </item>
-        /// </list>
+        ///  The arithmetic operation to use when comparing the specified <code>Statistic</code>
+        /// and <code>Threshold</code>. The specified <code>Statistic</code> value is used as
+        /// the first operand. 
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
         {
-            get { return this.comparisonOperator; }
-            set { this.comparisonOperator = value; }
+            get { return this._comparisonOperator; }
+            set { this._comparisonOperator = value; }
         }
 
         // Check to see if ComparisonOperator property is set
         internal bool IsSetComparisonOperator()
         {
-            return this.comparisonOperator != null;
+            return this._comparisonOperator != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        ///  The list of dimensions associated with the alarm's associated metric. 
+        /// </para>
+        /// </summary>
+        public List<Dimension> Dimensions
+        {
+            get { return this._dimensions; }
+            set { this._dimensions = value; }
+        }
+
+        // Check to see if Dimensions property is set
+        internal bool IsSetDimensions()
+        {
+            return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationPeriods. 
+        /// <para>
+        ///  The number of periods over which data is compared to the specified threshold. 
+        /// </para>
+        /// </summary>
+        public int EvaluationPeriods
+        {
+            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            set { this._evaluationPeriods = value; }
+        }
+
+        // Check to see if EvaluationPeriods property is set
+        internal bool IsSetEvaluationPeriods()
+        {
+            return this._evaluationPeriods.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsufficientDataActions. 
+        /// <para>
+        ///  The list of actions to execute when this alarm transitions into an <code>INSUFFICIENT_DATA</code>
+        /// state from any other state. Each action is specified as an Amazon Resource Number
+        /// (ARN). Currently the only actions supported are publishing to an Amazon SNS topic
+        /// or triggering an Auto Scaling policy. 
+        /// </para>
+        ///  <important>The current WSDL lists this attribute as <code>UnknownActions</code>.</important>
+        /// </summary>
+        public List<string> InsufficientDataActions
+        {
+            get { return this._insufficientDataActions; }
+            set { this._insufficientDataActions = value; }
+        }
+
+        // Check to see if InsufficientDataActions property is set
+        internal bool IsSetInsufficientDataActions()
+        {
+            return this._insufficientDataActions != null && this._insufficientDataActions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        ///  The name of the alarm's metric. 
+        /// </para>
+        /// </summary>
+        public string MetricName
+        {
+            get { return this._metricName; }
+            set { this._metricName = value; }
+        }
+
+        // Check to see if MetricName property is set
+        internal bool IsSetMetricName()
+        {
+            return this._metricName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        ///  The namespace of alarm's associated metric. 
+        /// </para>
+        /// </summary>
+        public string Namespace
+        {
+            get { return this._namespace; }
+            set { this._namespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._namespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OKActions. 
+        /// <para>
+        ///  The list of actions to execute when this alarm transitions into an <code>OK</code>
+        /// state from any other state. Each action is specified as an Amazon Resource Number
+        /// (ARN). Currently the only actions supported are publishing to an Amazon SNS topic
+        /// and triggering an Auto Scaling policy. 
+        /// </para>
+        /// </summary>
+        public List<string> OKActions
+        {
+            get { return this._oKActions; }
+            set { this._oKActions = value; }
+        }
+
+        // Check to see if OKActions property is set
+        internal bool IsSetOKActions()
+        {
+            return this._oKActions != null && this._oKActions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Period. 
+        /// <para>
+        ///  The period in seconds over which the statistic is applied. 
+        /// </para>
+        /// </summary>
+        public int Period
+        {
+            get { return this._period.GetValueOrDefault(); }
+            set { this._period = value; }
+        }
+
+        // Check to see if Period property is set
+        internal bool IsSetPeriod()
+        {
+            return this._period.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        ///  A human-readable explanation for the alarm's state. 
+        /// </para>
+        /// </summary>
+        public string StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReasonData. 
+        /// <para>
+        ///  An explanation for the alarm's state in machine-readable JSON format 
+        /// </para>
+        /// </summary>
+        public string StateReasonData
+        {
+            get { return this._stateReasonData; }
+            set { this._stateReasonData = value; }
+        }
+
+        // Check to see if StateReasonData property is set
+        internal bool IsSetStateReasonData()
+        {
+            return this._stateReasonData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateUpdatedTimestamp. 
+        /// <para>
+        ///  The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated
+        /// Universal Time (UTC) when returning time stamps, which do not accommodate seasonal
+        /// adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
+        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        public DateTime StateUpdatedTimestamp
+        {
+            get { return this._stateUpdatedTimestamp.GetValueOrDefault(); }
+            set { this._stateUpdatedTimestamp = value; }
+        }
+
+        // Check to see if StateUpdatedTimestamp property is set
+        internal bool IsSetStateUpdatedTimestamp()
+        {
+            return this._stateUpdatedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateValue. 
+        /// <para>
+        ///  The state value for the alarm. 
+        /// </para>
+        /// </summary>
+        public StateValue StateValue
+        {
+            get { return this._stateValue; }
+            set { this._stateValue = value; }
+        }
+
+        // Check to see if StateValue property is set
+        internal bool IsSetStateValue()
+        {
+            return this._stateValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statistic. 
+        /// <para>
+        ///  The statistic to apply to the alarm's associated metric. 
+        /// </para>
+        /// </summary>
+        public Statistic Statistic
+        {
+            get { return this._statistic; }
+            set { this._statistic = value; }
+        }
+
+        // Check to see if Statistic property is set
+        internal bool IsSetStatistic()
+        {
+            return this._statistic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Threshold. 
+        /// <para>
+        ///  The value against which the specified statistic is compared. 
+        /// </para>
+        /// </summary>
+        public double Threshold
+        {
+            get { return this._threshold.GetValueOrDefault(); }
+            set { this._threshold = value; }
+        }
+
+        // Check to see if Threshold property is set
+        internal bool IsSetThreshold()
+        {
+            return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unit. 
+        /// <para>
+        ///  The unit of the alarm's associated metric. 
+        /// </para>
+        /// </summary>
+        public StandardUnit Unit
+        {
+            get { return this._unit; }
+            set { this._unit = value; }
+        }
+
+        // Check to see if Unit property is set
+        internal bool IsSetUnit()
+        {
+            return this._unit != null;
+        }
+
     }
 }

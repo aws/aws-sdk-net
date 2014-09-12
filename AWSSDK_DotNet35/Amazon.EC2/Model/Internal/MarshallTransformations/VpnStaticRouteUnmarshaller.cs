@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpnStaticRoute Unmarshaller
-     /// </summary>
-    internal class VpnStaticRouteUnmarshaller : IUnmarshaller<VpnStaticRoute, XmlUnmarshallerContext>, IUnmarshaller<VpnStaticRoute, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpnStaticRoute Object
+    /// </summary>  
+    public class VpnStaticRouteUnmarshaller : IUnmarshaller<VpnStaticRoute, XmlUnmarshallerContext>, IUnmarshaller<VpnStaticRoute, JsonUnmarshallerContext>
     {
-        public VpnStaticRoute Unmarshall(XmlUnmarshallerContext context) 
+        public VpnStaticRoute Unmarshall(XmlUnmarshallerContext context)
         {
-            VpnStaticRoute vpnStaticRoute = new VpnStaticRoute();
+            VpnStaticRoute unmarshalledObject = new VpnStaticRoute();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("destinationCidrBlock", targetDepth))
                     {
-                        vpnStaticRoute.DestinationCidrBlock = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("source", targetDepth))
                     {
-                        vpnStaticRoute.Source = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))
                     {
-                        vpnStaticRoute.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpnStaticRoute;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpnStaticRoute;
+            return unmarshalledObject;
         }
 
-        public VpnStaticRoute Unmarshall(JsonUnmarshallerContext context) 
+        public VpnStaticRoute Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpnStaticRouteUnmarshaller instance;
 
-        public static VpnStaticRouteUnmarshaller GetInstance() 
+        private static VpnStaticRouteUnmarshaller _instance = new VpnStaticRouteUnmarshaller();        
+
+        public static VpnStaticRouteUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpnStaticRouteUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

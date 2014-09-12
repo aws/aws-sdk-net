@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,11 +35,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<EventDescription> _events = new List<EventDescription>();
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        ///          A list of         <a>EventDescription</a>.      
+        ///  A list of <a>EventDescription</a>. 
         /// </para>
         /// </summary>
         public List<EventDescription> Events
@@ -50,13 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._events != null && this._events.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///          If returned, this indicates that there are more results to obtain.      
-        ///   Use this token in the next         <a>DescribeEvents</a>         call to       
-        ///  get the next batch of events.      
+        ///  If returned, this indicates that there are more results to obtain. Use this token
+        /// in the next <a>DescribeEvents</a> call to get the next batch of events. 
         /// </para>
         /// </summary>
         public string NextToken

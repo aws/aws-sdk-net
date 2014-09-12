@@ -1,0 +1,125 @@
+
+{
+    "simpleMethods" : {
+        "operations" : {
+            "GetQueueUrl" : {
+                "methodForms" : [
+                    [
+                        "QueueName"
+                    ]
+                ]
+            },
+            "DeleteMessageBatch" : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "Entries"
+                    ]
+                ]
+            },
+            "SendMessageBatch"   : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "Entries"
+                    ]
+                ]
+            },
+            "ChangeMessageVisibilityBatch" : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "Entries"
+                    ]
+                ]
+            },
+            "AddPermission"                : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "Label",
+                        "AWSAccountIds",
+                        "Actions"
+                    ]
+                ]
+            },
+            "ListQueues"                   : {
+                "methodForms" : [
+                    [
+                        "QueueNamePrefix"
+                    ]
+                ]
+            },
+            "DeleteQueue"                  : {
+                "methodForms" : [
+                    [
+                        "QueueUrl"
+                    ]
+                ]
+            },
+            "DeleteMessage"                : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "ReceiptHandle"
+                    ]
+                ]
+            },
+            "ReceiveMessage"               : {
+                "methodForms" : [
+                    [
+                        "QueueUrl"
+                    ]
+                ]
+            },
+            "RemovePermission"             : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "Label"
+                    ]
+                ]
+            },
+            "SetQueueAttributes"           : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "Attributes"
+                    ]
+                ]
+            },
+            "ChangeMessageVisibility"      : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "ReceiptHandle",
+                        "VisibilityTimeout"
+                    ]
+                ]
+            },
+            "GetQueueAttributes"           : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "AttributeNames"
+                    ]
+                ]
+            },
+            "SendMessage"                  : {
+                "methodForms" : [
+                    [
+                        "QueueUrl",
+                        "MessageBody"
+                    ]
+                ]
+            },
+            "CreateQueue"                  : {
+                "methodForms" : [
+                    [
+                        "QueueName"
+                    ]
+                ]
+            }
+        }
+    }
+}

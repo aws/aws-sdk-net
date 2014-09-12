@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,255 +12,224 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>ActivityTaskScheduled</c> event. </para>
+    /// Provides details of the <code>ActivityTaskScheduled</code> event.
     /// </summary>
-    public class ActivityTaskScheduledEventAttributes
+    public partial class ActivityTaskScheduledEventAttributes
     {
-        
-        private ActivityType activityType;
-        private string activityId;
-        private string input;
-        private string control;
-        private string scheduleToStartTimeout;
-        private string scheduleToCloseTimeout;
-        private string startToCloseTimeout;
-        private TaskList taskList;
-        private long? decisionTaskCompletedEventId;
-        private string heartbeatTimeout;
+        private string _activityId;
+        private ActivityType _activityType;
+        private string _control;
+        private long? _decisionTaskCompletedEventId;
+        private string _heartbeatTimeout;
+        private string _input;
+        private string _scheduleToCloseTimeout;
+        private string _scheduleToStartTimeout;
+        private string _startToCloseTimeout;
+        private TaskList _taskList;
 
         /// <summary>
-        /// The type of the activity task.
-        ///  
-        /// </summary>
-        public ActivityType ActivityType
-        {
-            get { return this.activityType; }
-            set { this.activityType = value; }
-        }
-
-        // Check to see if ActivityType property is set
-        internal bool IsSetActivityType()
-        {
-            return this.activityType != null;
-        }
-
-        /// <summary>
-        /// The unique id of the activity task.
-        ///  
+        /// Gets and sets the property ActivityId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
+        ///  The unique id of the activity task. 
         /// </para>
         /// </summary>
         public string ActivityId
         {
-            get { return this.activityId; }
-            set { this.activityId = value; }
+            get { return this._activityId; }
+            set { this._activityId = value; }
         }
 
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;
+            return this._activityId != null;
         }
 
         /// <summary>
-        /// The input provided to the activity task.
-        ///  
+        /// Gets and sets the property ActivityType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32768</description>
-        ///     </item>
-        /// </list>
+        ///  The type of the activity task. 
         /// </para>
         /// </summary>
-        public string Input
+        public ActivityType ActivityType
         {
-            get { return this.input; }
-            set { this.input = value; }
+            get { return this._activityType; }
+            set { this._activityType = value; }
         }
 
-        // Check to see if Input property is set
-        internal bool IsSetInput()
+        // Check to see if ActivityType property is set
+        internal bool IsSetActivityType()
         {
-            return this.input != null;
+            return this._activityType != null;
         }
 
         /// <summary>
-        /// Optional data attached to the event that can be used by the decider in subsequent workflow tasks. This data is not sent to the activity.
-        ///  
+        /// Gets and sets the property Control. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32768</description>
-        ///     </item>
-        /// </list>
+        ///  Optional data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks. This data is not sent to the activity. 
         /// </para>
         /// </summary>
         public string Control
         {
-            get { return this.control; }
-            set { this.control = value; }
+            get { return this._control; }
+            set { this._control = value; }
         }
 
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;
+            return this._control != null;
         }
 
         /// <summary>
-        /// The maximum amount of time the activity task can wait to be assigned to a worker.
-        ///  
+        /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 8</description>
-        ///     </item>
-        /// </list>
+        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// that resulted in the scheduling of this activity task. This information can be useful
+        /// for diagnosing problems by tracing back the chain of events leading up to this event.
+        /// 
         /// </para>
-        /// </summary>
-        public string ScheduleToStartTimeout
-        {
-            get { return this.scheduleToStartTimeout; }
-            set { this.scheduleToStartTimeout = value; }
-        }
-
-        // Check to see if ScheduleToStartTimeout property is set
-        internal bool IsSetScheduleToStartTimeout()
-        {
-            return this.scheduleToStartTimeout != null;
-        }
-
-        /// <summary>
-        /// The maximum amount of time for this activity task.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 8</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ScheduleToCloseTimeout
-        {
-            get { return this.scheduleToCloseTimeout; }
-            set { this.scheduleToCloseTimeout = value; }
-        }
-
-        // Check to see if ScheduleToCloseTimeout property is set
-        internal bool IsSetScheduleToCloseTimeout()
-        {
-            return this.scheduleToCloseTimeout != null;
-        }
-
-        /// <summary>
-        /// The maximum amount of time a worker may take to process the activity task.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 8</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string StartToCloseTimeout
-        {
-            get { return this.startToCloseTimeout; }
-            set { this.startToCloseTimeout = value; }
-        }
-
-        // Check to see if StartToCloseTimeout property is set
-        internal bool IsSetStartToCloseTimeout()
-        {
-            return this.startToCloseTimeout != null;
-        }
-
-        /// <summary>
-        /// The task list in which the activity task has been scheduled.
-        ///  
-        /// </summary>
-        public TaskList TaskList
-        {
-            get { return this.taskList; }
-            set { this.taskList = value; }
-        }
-
-        // Check to see if TaskList property is set
-        internal bool IsSetTaskList()
-        {
-            return this.taskList != null;
-        }
-
-        /// <summary>
-        /// The id of the <c>DecisionTaskCompleted</c> event corresponding to the decision that resulted in the scheduling of this activity task. This
-        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
-        ///  
         /// </summary>
         public long DecisionTaskCompletedEventId
         {
-            get { return this.decisionTaskCompletedEventId ?? default(long); }
-            set { this.decisionTaskCompletedEventId = value; }
+            get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
+            set { this._decisionTaskCompletedEventId = value; }
         }
 
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;
+            return this._decisionTaskCompletedEventId.HasValue; 
         }
 
         /// <summary>
-        /// The maximum time before which the worker processing this task must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If the
-        /// timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a
-        /// result, it will be ignored.
-        ///  
+        /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 8</description>
-        ///     </item>
-        /// </list>
+        ///  The maximum time before which the worker processing this task must report progress
+        /// by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
+        /// task is automatically timed out. If the worker subsequently attempts to record a heartbeat
+        /// or return a result, it will be ignored. 
         /// </para>
         /// </summary>
         public string HeartbeatTimeout
         {
-            get { return this.heartbeatTimeout; }
-            set { this.heartbeatTimeout = value; }
+            get { return this._heartbeatTimeout; }
+            set { this._heartbeatTimeout = value; }
         }
 
         // Check to see if HeartbeatTimeout property is set
         internal bool IsSetHeartbeatTimeout()
         {
-            return this.heartbeatTimeout != null;
+            return this._heartbeatTimeout != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Input. 
+        /// <para>
+        ///  The input provided to the activity task. 
+        /// </para>
+        /// </summary>
+        public string Input
+        {
+            get { return this._input; }
+            set { this._input = value; }
+        }
+
+        // Check to see if Input property is set
+        internal bool IsSetInput()
+        {
+            return this._input != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleToCloseTimeout. 
+        /// <para>
+        ///  The maximum amount of time for this activity task. 
+        /// </para>
+        /// </summary>
+        public string ScheduleToCloseTimeout
+        {
+            get { return this._scheduleToCloseTimeout; }
+            set { this._scheduleToCloseTimeout = value; }
+        }
+
+        // Check to see if ScheduleToCloseTimeout property is set
+        internal bool IsSetScheduleToCloseTimeout()
+        {
+            return this._scheduleToCloseTimeout != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleToStartTimeout. 
+        /// <para>
+        ///  The maximum amount of time the activity task can wait to be assigned to a worker.
+        /// 
+        /// </para>
+        /// </summary>
+        public string ScheduleToStartTimeout
+        {
+            get { return this._scheduleToStartTimeout; }
+            set { this._scheduleToStartTimeout = value; }
+        }
+
+        // Check to see if ScheduleToStartTimeout property is set
+        internal bool IsSetScheduleToStartTimeout()
+        {
+            return this._scheduleToStartTimeout != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartToCloseTimeout. 
+        /// <para>
+        ///  The maximum amount of time a worker may take to process the activity task. 
+        /// </para>
+        /// </summary>
+        public string StartToCloseTimeout
+        {
+            get { return this._startToCloseTimeout; }
+            set { this._startToCloseTimeout = value; }
+        }
+
+        // Check to see if StartToCloseTimeout property is set
+        internal bool IsSetStartToCloseTimeout()
+        {
+            return this._startToCloseTimeout != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskList. 
+        /// <para>
+        ///  The task list in which the activity task has been scheduled. 
+        /// </para>
+        /// </summary>
+        public TaskList TaskList
+        {
+            get { return this._taskList; }
+            set { this._taskList = value; }
+        }
+
+        // Check to see if TaskList property is set
+        internal bool IsSetTaskList()
+        {
+            return this._taskList != null;
+        }
+
     }
 }

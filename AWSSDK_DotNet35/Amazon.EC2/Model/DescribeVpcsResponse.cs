@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeVpcs response and response metadata.
+    /// Configuration for accessing Amazon DescribeVpcs service
     /// </summary>
     public partial class DescribeVpcsResponse : DescribeVpcsResult
     {
         /// <summary>
         /// Gets and sets the DescribeVpcsResult property.
-        /// 
+        /// Represents the output of a DescribeVpcs operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeVpcsResult class are now available on the DescribeVpcsResponse class. You should use the properties on DescribeVpcsResponse instead of accessing them through DescribeVpcsResult.")]
         public DescribeVpcsResult DescribeVpcsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Customer Gateway Request Marshaller
+    /// DeleteCustomerGateway Request Marshaller
     /// </summary>       
-    public class DeleteCustomerGatewayRequestMarshaller : IMarshaller<IRequest, DeleteCustomerGatewayRequest>
+    public class DeleteCustomerGatewayRequestMarshaller : IMarshaller<IRequest, DeleteCustomerGatewayRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteCustomerGatewayRequest deleteCustomerGatewayRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteCustomerGatewayRequest, "AmazonEC2");
+            return this.Marshall((DeleteCustomerGatewayRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteCustomerGatewayRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DeleteCustomerGateway");
             request.Parameters.Add("Version", "2014-06-15");
-            if (deleteCustomerGatewayRequest != null && deleteCustomerGatewayRequest.IsSetCustomerGatewayId())
-            {
-                request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(deleteCustomerGatewayRequest.CustomerGatewayId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCustomerGatewayId())
+                {
+                    request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(publicRequest.CustomerGatewayId));
+                }
+            }
             return request;
         }
     }

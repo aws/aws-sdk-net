@@ -1,0 +1,128 @@
+﻿<#@ template language="C#" inherits="BaseResponseUnmarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
+    {
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
+            <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
+<#
+    if( this.Operation.ResponseHasBodyMembers )
+    {
+#>
+            UnmarshallResult(context,response);
+<#    
+	}
+	UnmarshallHeaders();
+	ProcessStatusCode();
+	ProcessResponseStream();
+#>            
+            return response;
+		}		
+<#
+    if( this.Operation.ResponseHasBodyMembers )
+    {
+#>
+
+<#
+	if (this.Operation.ResponseBodyMembers.Count == 0)
+	{
+#>
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+<#
+	}
+#>
+		private static void UnmarshallResult(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response)
+        {
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+<#
+	if (this.Operation.ResponseStructure.Payload == null)
+	{
+#>
+			if (context.IsStartOfDocument) 
+				   targetDepth += 1;
+<#
+	}
+#>
+
+            while (context.Read())
+            {
+				if (context.IsStartElement || context.IsAttribute)
+                {
+<#    
+        foreach (var member in this.Operation.ResponseBodyMembers)
+        {
+			if(member.Shape.IsList)
+			{
+				var listMarshallName = member.Shape.ListMarshallName ?? "member";
+#>
+					if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+						continue;
+					}
+<#
+			}
+			else
+			{
+#>
+					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#
+			}
+        }
+#>
+				}
+				else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return;
+                }
+            }
+          
+            return;
+        }
+<#
+    }
+#>  
+
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+<#
+    foreach (var exception in this.Operation.Exceptions)
+    {
+#>
+            if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.Code #>"))
+            {
+                return new <#=exception.Name #>(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+<#
+    }
+#>
+            return new Amazon<#=this.Config.BaseName#>Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+
+<#
+    this.AddResponseSingletonMethod();
+#>
+    }
+}

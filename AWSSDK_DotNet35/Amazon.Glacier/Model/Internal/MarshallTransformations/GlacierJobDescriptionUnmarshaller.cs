@@ -12,150 +12,164 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GlacierJobDescription Object
+    /// </summary>  
+    public class GlacierJobDescriptionUnmarshaller : IUnmarshaller<GlacierJobDescription, XmlUnmarshallerContext>, IUnmarshaller<GlacierJobDescription, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// GlacierJobDescriptionUnmarshaller
-      /// </summary>
-      internal class GlacierJobDescriptionUnmarshaller : IUnmarshaller<GlacierJobDescription, XmlUnmarshallerContext>, IUnmarshaller<GlacierJobDescription, JsonUnmarshallerContext>
-      {
         GlacierJobDescription IUnmarshaller<GlacierJobDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public GlacierJobDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            GlacierJobDescription glacierJobDescription = new GlacierJobDescription();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            GlacierJobDescription unmarshalledObject = new GlacierJobDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("JobId", targetDepth))
-              {
-                glacierJobDescription.JobId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("JobDescription", targetDepth))
-              {
-                glacierJobDescription.JobDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Action", targetDepth))
-              {
-                glacierJobDescription.Action = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveId", targetDepth))
-              {
-                glacierJobDescription.ArchiveId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VaultARN", targetDepth))
-              {
-                glacierJobDescription.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreationDate", targetDepth))
-              {
-                glacierJobDescription.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Completed", targetDepth))
-              {
-                glacierJobDescription.Completed = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StatusCode", targetDepth))
-              {
-                glacierJobDescription.StatusCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StatusMessage", targetDepth))
-              {
-                glacierJobDescription.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveSizeInBytes", targetDepth))
-              {
-                glacierJobDescription.ArchiveSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InventorySizeInBytes", targetDepth))
-              {
-                glacierJobDescription.InventorySizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SNSTopic", targetDepth))
-              {
-                glacierJobDescription.SNSTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CompletionDate", targetDepth))
-              {
-                glacierJobDescription.CompletionDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SHA256TreeHash", targetDepth))
-              {
-                glacierJobDescription.SHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveSHA256TreeHash", targetDepth))
-              {
-                glacierJobDescription.ArchiveSHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RetrievalByteRange", targetDepth))
-              {
-                glacierJobDescription.RetrievalByteRange = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InventoryRetrievalParameters", targetDepth))
-              {
-                glacierJobDescription.InventoryRetrievalParameters = InventoryRetrievalJobDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Action", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchiveId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ArchiveId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchiveSHA256TreeHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ArchiveSHA256TreeHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchiveSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ArchiveSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Completed", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Completed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompletionDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CompletionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InventoryRetrievalParameters", targetDepth))
+                {
+                    var unmarshaller = InventoryRetrievalJobDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.InventoryRetrievalParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InventorySizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.InventorySizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetrievalByteRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RetrievalByteRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SHA256TreeHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SHA256TreeHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SNSTopic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SNSTopic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VaultARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return glacierJobDescription;
+            return unmarshalledObject;
         }
 
-        private static GlacierJobDescriptionUnmarshaller instance;
-        public static GlacierJobDescriptionUnmarshaller GetInstance()
+
+        private static GlacierJobDescriptionUnmarshaller _instance = new GlacierJobDescriptionUnmarshaller();        
+
+        public static GlacierJobDescriptionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new GlacierJobDescriptionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

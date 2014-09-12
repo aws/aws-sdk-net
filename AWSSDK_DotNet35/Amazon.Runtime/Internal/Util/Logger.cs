@@ -51,7 +51,7 @@ namespace Amazon.Runtime.Internal.Util
     /// This is a dynamic wrapper around log4net so we can avoid log4net being required
     /// to be distributed with the SDK.
     /// </summary>
-    internal class Logger
+    public class Logger : ILogger
     {
         private static IDictionary<Type, Logger> cachedLoggers = new Dictionary<Type, Logger>();
         private List<InternalLogger> loggers;

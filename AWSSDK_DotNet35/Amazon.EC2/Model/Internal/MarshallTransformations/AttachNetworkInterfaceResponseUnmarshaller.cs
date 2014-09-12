@@ -12,62 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for AttachNetworkInterface operation
-    /// </summary>
-    internal class AttachNetworkInterfaceResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for AttachNetworkInterface operation
+    /// </summary>  
+    public class AttachNetworkInterfaceResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             AttachNetworkInterfaceResponse response = new AttachNetworkInterfaceResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("attachmentId", targetDepth))
                     {
-                        response.AttachmentId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static AttachNetworkInterfaceResponseUnmarshaller instance;
+        private static AttachNetworkInterfaceResponseUnmarshaller _instance = new AttachNetworkInterfaceResponseUnmarshaller();        
 
-        public static AttachNetworkInterfaceResponseUnmarshaller GetInstance()
+        internal static AttachNetworkInterfaceResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new AttachNetworkInterfaceResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static AttachNetworkInterfaceResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

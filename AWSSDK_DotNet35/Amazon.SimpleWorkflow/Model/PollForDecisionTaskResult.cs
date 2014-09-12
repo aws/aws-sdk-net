@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the PollForDecisionTask action.
+    /// Contains the response data from the PollForDecisionTask operation.
     /// </summary>
     public partial class PollForDecisionTaskResult : AmazonWebServiceResponse
     {
-        private DecisionTask decisionTaskValue;
+        private DecisionTask _decisionTask;
 
-        /// <summary>
-        /// Gets and sets the PollForDecisionTaskResult property.
-        /// Contains the result of a successful invocation of the PollForDecisionTask
-        /// action.
-        /// </summary>
+        // Gets and sets the DecisionTask member
         public DecisionTask DecisionTask
         {
-            get { return this.decisionTaskValue; }
-            set { this.decisionTaskValue = value; }
+            get { return this._decisionTask; }
+            set { this._decisionTask = value; }
+        }
+
+        // Check to see if DecisionTask property is set
+        internal bool IsSetDecisionTask()
+        {
+            return this._decisionTask != null;
         }
     }
 }
-    

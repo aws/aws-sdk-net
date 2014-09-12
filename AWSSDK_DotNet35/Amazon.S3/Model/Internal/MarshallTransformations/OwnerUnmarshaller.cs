@@ -66,14 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static OwnerUnmarshaller instance;
+        private static OwnerUnmarshaller _instance;
 
-        public static OwnerUnmarshaller GetInstance() 
+        public static OwnerUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new OwnerUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new OwnerUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

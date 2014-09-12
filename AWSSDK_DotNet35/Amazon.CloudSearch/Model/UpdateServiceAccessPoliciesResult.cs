@@ -12,38 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of an <c>UpdateServiceAccessPolicies</c> request. Contains the new access policies.</para>
+    /// The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new
+    /// access policies.
     /// </summary>
     public partial class UpdateServiceAccessPoliciesResult : AmazonWebServiceResponse
     {
-        
-        private AccessPoliciesStatus accessPolicies;
-
+        private AccessPoliciesStatus _accessPolicies;
 
         /// <summary>
+        /// Gets and sets the property AccessPolicies. 
+        /// <para>
         /// The access rules configured for the domain.
-        ///  
+        /// </para>
         /// </summary>
         public AccessPoliciesStatus AccessPolicies
         {
-            get { return this.accessPolicies; }
-            set { this.accessPolicies = value; }
+            get { return this._accessPolicies; }
+            set { this._accessPolicies = value; }
         }
 
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this.accessPolicies != null;
+            return this._accessPolicies != null;
         }
+
     }
 }

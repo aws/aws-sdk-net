@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Returns information about the  ListParts response and response metadata.
+    /// Configuration for accessing Amazon ListParts service
     /// </summary>
-    public class ListPartsResponse : ListPartsResult
+    public partial class ListPartsResponse : ListPartsResult
     {
         /// <summary>
         /// Gets and sets the ListPartsResult property.
-        /// Contains the Amazon Glacier response to your request.
+        /// Represents the output of a ListParts operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListPartsResult class are now available on the ListPartsResponse class. You should use the properties on ListPartsResponse instead of accessing them through ListPartsResult.")]
         public ListPartsResult ListPartsResult
@@ -40,4 +40,3 @@ namespace Amazon.Glacier.Model
         }
     }
 }
-    

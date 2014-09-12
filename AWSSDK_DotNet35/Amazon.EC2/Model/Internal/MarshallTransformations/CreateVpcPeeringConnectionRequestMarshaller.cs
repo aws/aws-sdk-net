@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Vpc Peering Connection Request Marshaller
+    /// CreateVpcPeeringConnection Request Marshaller
     /// </summary>       
-    public class CreateVpcPeeringConnectionRequestMarshaller : IMarshaller<IRequest, CreateVpcPeeringConnectionRequest>
+    public class CreateVpcPeeringConnectionRequestMarshaller : IMarshaller<IRequest, CreateVpcPeeringConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createVpcPeeringConnectionRequest, "AmazonEC2");
+            return this.Marshall((CreateVpcPeeringConnectionRequest)input);
+        }
+    
+        public IRequest Marshall(CreateVpcPeeringConnectionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateVpcPeeringConnection");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createVpcPeeringConnectionRequest != null && createVpcPeeringConnectionRequest.IsSetVpcId())
-            {
-                request.Parameters.Add("VpcId", StringUtils.FromString(createVpcPeeringConnectionRequest.VpcId));
-            }
-            if (createVpcPeeringConnectionRequest != null && createVpcPeeringConnectionRequest.IsSetPeerVpcId())
-            {
-                request.Parameters.Add("PeerVpcId", StringUtils.FromString(createVpcPeeringConnectionRequest.PeerVpcId));
-            }
-            if (createVpcPeeringConnectionRequest != null && createVpcPeeringConnectionRequest.IsSetPeerOwnerId())
-            {
-                request.Parameters.Add("PeerOwnerId", StringUtils.FromString(createVpcPeeringConnectionRequest.PeerOwnerId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetPeerOwnerId())
+                {
+                    request.Parameters.Add("PeerOwnerId", StringUtils.FromString(publicRequest.PeerOwnerId));
+                }
+                if(publicRequest.IsSetPeerVpcId())
+                {
+                    request.Parameters.Add("PeerVpcId", StringUtils.FromString(publicRequest.PeerVpcId));
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
+                }
+            }
             return request;
         }
     }

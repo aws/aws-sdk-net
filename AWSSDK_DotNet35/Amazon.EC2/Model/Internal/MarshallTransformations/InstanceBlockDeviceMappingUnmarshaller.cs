@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceBlockDeviceMapping Unmarshaller
-     /// </summary>
-    internal class InstanceBlockDeviceMappingUnmarshaller : IUnmarshaller<InstanceBlockDeviceMapping, XmlUnmarshallerContext>, IUnmarshaller<InstanceBlockDeviceMapping, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceBlockDeviceMapping Object
+    /// </summary>  
+    public class InstanceBlockDeviceMappingUnmarshaller : IUnmarshaller<InstanceBlockDeviceMapping, XmlUnmarshallerContext>, IUnmarshaller<InstanceBlockDeviceMapping, JsonUnmarshallerContext>
     {
-        public InstanceBlockDeviceMapping Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceBlockDeviceMapping Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceBlockDeviceMapping instanceBlockDeviceMapping = new InstanceBlockDeviceMapping();
+            InstanceBlockDeviceMapping unmarshalledObject = new InstanceBlockDeviceMapping();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("deviceName", targetDepth))
                     {
-                        instanceBlockDeviceMapping.DeviceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ebs", targetDepth))
                     {
-                        instanceBlockDeviceMapping.Ebs = EbsInstanceBlockDeviceUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = EbsInstanceBlockDeviceUnmarshaller.Instance;
+                        unmarshalledObject.Ebs = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceBlockDeviceMapping;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceBlockDeviceMapping;
+            return unmarshalledObject;
         }
 
-        public InstanceBlockDeviceMapping Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceBlockDeviceMapping Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceBlockDeviceMappingUnmarshaller instance;
 
-        public static InstanceBlockDeviceMappingUnmarshaller GetInstance() 
+        private static InstanceBlockDeviceMappingUnmarshaller _instance = new InstanceBlockDeviceMappingUnmarshaller();        
+
+        public static InstanceBlockDeviceMappingUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceBlockDeviceMappingUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

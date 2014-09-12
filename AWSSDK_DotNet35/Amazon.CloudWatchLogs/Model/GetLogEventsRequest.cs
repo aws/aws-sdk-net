@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,6 +53,21 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _startFromHead;
         private DateTime? _startTime;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetLogEventsRequest() { }
+
+        /// <summary>
+        /// Instantiates GetLogEventsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="logGroupName">Sets the GetLogEventsRequest LogGroupName property</param>
+        /// <param name="logStreamName">Sets the GetLogEventsRequest LogStreamName property</param>
+        public GetLogEventsRequest(string logGroupName, string logStreamName)
+        {
+            _logGroupName = logGroupName;
+            _logStreamName = logStreamName;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime.
@@ -64,7 +83,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._endTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -86,7 +104,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._limit.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LogGroupName.
         /// </summary>
@@ -102,7 +119,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._logGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LogStreamName.
         /// </summary>
@@ -117,7 +133,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._logStreamName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -140,7 +155,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._nextToken != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StartFromHead. If set to true, the earliest log events
         /// would be returned first. The default is false (the latest log events are returned
@@ -157,7 +171,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._startFromHead.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property StartTime.

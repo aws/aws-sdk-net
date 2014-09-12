@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -50,7 +54,6 @@ namespace Amazon.OpsWorks.Model
         private bool? _useOpsworksSecurityGroups;
         private string _vpcId;
 
-
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
@@ -69,7 +72,6 @@ namespace Amazon.OpsWorks.Model
             return this._arn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
@@ -87,7 +89,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._attributes != null && this._attributes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ChefConfiguration. 
@@ -109,7 +110,6 @@ namespace Amazon.OpsWorks.Model
             return this._chefConfiguration != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ConfigurationManager. 
         /// <para>
@@ -127,7 +127,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._configurationManager != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -147,7 +146,6 @@ namespace Amazon.OpsWorks.Model
             return this._createdAt != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CustomCookbooksSource.
         /// </summary>
@@ -162,7 +160,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._customCookbooksSource != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustomJson. 
@@ -193,7 +190,6 @@ namespace Amazon.OpsWorks.Model
             return this._customJson != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultAvailabilityZone. 
         /// <para>
@@ -212,7 +208,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._defaultAvailabilityZone != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DefaultInstanceProfileArn. 
@@ -234,7 +229,6 @@ namespace Amazon.OpsWorks.Model
             return this._defaultInstanceProfileArn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultOs. 
         /// <para>
@@ -254,7 +248,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._defaultOs != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DefaultRootDeviceType. 
@@ -277,7 +270,6 @@ namespace Amazon.OpsWorks.Model
             return this._defaultRootDeviceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultSshKeyName. 
         /// <para>
@@ -297,7 +289,6 @@ namespace Amazon.OpsWorks.Model
             return this._defaultSshKeyName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultSubnetId. 
         /// <para>
@@ -315,7 +306,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._defaultSubnetId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HostnameTheme. 
@@ -335,7 +325,6 @@ namespace Amazon.OpsWorks.Model
             return this._hostnameTheme != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -353,7 +342,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Region. 
@@ -375,7 +363,6 @@ namespace Amazon.OpsWorks.Model
             return this._region != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
@@ -393,7 +380,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._serviceRoleArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StackId. 
@@ -413,7 +399,6 @@ namespace Amazon.OpsWorks.Model
             return this._stackId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property UseCustomCookbooks. 
         /// <para>
@@ -431,7 +416,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._useCustomCookbooks.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property UseOpsworksSecurityGroups. 
@@ -451,7 +435,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._useOpsworksSecurityGroups.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcId. 

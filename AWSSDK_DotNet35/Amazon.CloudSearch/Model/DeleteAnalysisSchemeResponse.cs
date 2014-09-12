@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteAnalysisScheme response and response metadata.
+    /// Configuration for accessing Amazon DeleteAnalysisScheme service
     /// </summary>
     public partial class DeleteAnalysisSchemeResponse : DeleteAnalysisSchemeResult
     {
         /// <summary>
         /// Gets and sets the DeleteAnalysisSchemeResult property.
-        /// The result of a DeleteAnalysisScheme request. Contains the status of the deleted analysis scheme.
+        /// Represents the output of a DeleteAnalysisScheme operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteAnalysisSchemeResult class are now available on the DeleteAnalysisSchemeResponse class. You should use the properties on DeleteAnalysisSchemeResponse instead of accessing them through DeleteAnalysisSchemeResult.")]
         public DeleteAnalysisSchemeResult DeleteAnalysisSchemeResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

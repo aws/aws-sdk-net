@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Start Logging Request Marshaller
+    /// StartLogging Request Marshaller
     /// </summary>       
-    internal class StartLoggingRequestMarshaller : IMarshaller<IRequest, StartLoggingRequest> 
+    public class StartLoggingRequestMarshaller : IMarshaller<IRequest, StartLoggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(StartLoggingRequest startLoggingRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((StartLoggingRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(startLoggingRequest, "AmazonCloudTrail");
-            string target = "CloudTrail_20131101.StartLogging";
+        public IRequest Marshall(StartLoggingRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
+            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartLogging";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (startLoggingRequest != null && startLoggingRequest.IsSetName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(startLoggingRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

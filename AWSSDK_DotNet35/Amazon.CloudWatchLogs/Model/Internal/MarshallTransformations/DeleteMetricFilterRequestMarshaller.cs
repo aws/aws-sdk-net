@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteMetricFilter Request Marshaller
     /// </summary>       
-    public class DeleteMetricFilterRequestMarshaller : IMarshaller<IRequest, DeleteMetricFilterRequest> 
+    public class DeleteMetricFilterRequestMarshaller : IMarshaller<IRequest, DeleteMetricFilterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeleteMetricFilterRequest)input);
+        }
+
         public IRequest Marshall(DeleteMetricFilterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
@@ -47,16 +56,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetFilterName())
                 {
-                    writer.WritePropertyName("filterName");
-                    writer.Write(publicRequest.FilterName);
+                    context.Writer.WritePropertyName("filterName");
+                    context.Writer.Write(publicRequest.FilterName);
                 }
 
                 if(publicRequest.IsSetLogGroupName())
                 {
-                    writer.WritePropertyName("logGroupName");
-                    writer.Write(publicRequest.LogGroupName);
+                    context.Writer.WritePropertyName("logGroupName");
+                    context.Writer.Write(publicRequest.LogGroupName);
                 }
 
         

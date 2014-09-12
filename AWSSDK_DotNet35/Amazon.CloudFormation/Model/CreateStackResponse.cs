@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the  CreateStack response and response metadata.
+    /// Configuration for accessing Amazon CreateStack service
     /// </summary>
     public partial class CreateStackResponse : CreateStackResult
     {
         /// <summary>
         /// Gets and sets the CreateStackResult property.
-        /// The output for a CreateStack action.
+        /// Represents the output of a CreateStack operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateStackResult class are now available on the CreateStackResponse class. You should use the properties on CreateStackResponse instead of accessing them through CreateStackResult.")]
         public CreateStackResult CreateStackResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudFormation.Model
         }
     }
 }
-    

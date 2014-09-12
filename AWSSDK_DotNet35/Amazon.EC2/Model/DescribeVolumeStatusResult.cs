@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVolumeStatusResult : AmazonWebServiceResponse
     {
-        
-        private List<VolumeStatusItem> volumeStatuses = new List<VolumeStatusItem>();
-        private string nextToken;
-
+        private string _nextToken;
+        private List<VolumeStatusItem> _volumeStatuses = new List<VolumeStatusItem>();
 
         /// <summary>
-        /// A list of volumes.
-        ///  
-        /// </summary>
-        public List<VolumeStatusItem> VolumeStatuses
-        {
-            get { return this.volumeStatuses; }
-            set { this.volumeStatuses = value; }
-        }
-
-        // Check to see if VolumeStatuses property is set
-        internal bool IsSetVolumeStatuses()
-        {
-            return this.volumeStatuses.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
         /// The next paginated set of results to return.
-        ///  
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property VolumeStatuses. 
+        /// <para>
+        /// A list of volumes.
+        /// </para>
+        /// </summary>
+        public List<VolumeStatusItem> VolumeStatuses
+        {
+            get { return this._volumeStatuses; }
+            set { this._volumeStatuses = value; }
+        }
+
+        // Check to see if VolumeStatuses property is set
+        internal bool IsSetVolumeStatuses()
+        {
+            return this._volumeStatuses != null && this._volumeStatuses.Count > 0; 
+        }
+
     }
 }

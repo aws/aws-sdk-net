@@ -1,0 +1,66 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+
+using System;
+
+using Amazon.Runtime;
+
+namespace <#=this.Config.Namespace#>
+{
+<#
+foreach(var enumeration in this.Config.ServiceModel.Enumerations)
+{
+#>
+
+    /// <summary>
+    /// Constants used for properties of type <#=enumeration.Name#>.
+    /// </summary>
+    public class <#=enumeration.Name#> : ConstantClass
+    {
+
+<#
+    foreach(var enumValue in enumeration.EnumerationValues)
+    {
+#>
+        /// <summary>
+        /// Constant <#=enumValue.PropertyName#> for <#=enumeration.Name#>
+        /// </summary>
+        public static readonly <#=enumeration.Name#> <#=enumValue.PropertyName#> = new <#=enumeration.Name#>("<#=enumValue.MarshallName#>");
+<#
+    }
+#>
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public <#=enumeration.Name#>(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static <#=enumeration.Name#> FindValue(string value)
+        {
+            return FindValue<<#=enumeration.Name#>>(value);
+        }
+
+        public static implicit operator <#=enumeration.Name#>(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+<#
+}
+#>
+}

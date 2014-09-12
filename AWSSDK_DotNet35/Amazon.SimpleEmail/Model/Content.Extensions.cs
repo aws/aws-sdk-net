@@ -36,22 +36,22 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class Content
     {
-        /// <summary>
-        /// Default constructor for a new Content object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Content() { }
+        ///// <summary>
+        ///// Default constructor for a new Content object.  Callers should use the
+        ///// properties to initialize this object after creating it.
+        ///// </summary>
+        //public Content() { }
 
-        /// <summary>
-        /// Constructs a new Content object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="data"> The textual data of the content. </param>
-        public Content(string data)
-        {
-            this.Data = data;
-        }
+        ///// <summary>
+        ///// Constructs a new Content object.
+        ///// Callers should use the properties initialize any additional object members.
+        ///// </summary>
+        ///// 
+        ///// <param name="data"> The textual data of the content. </param>
+        //public Content(string data)
+        //{
+        //    this.Data = data;
+        //}
 
     }
 }

@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,58 +32,63 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetConsoleOutputResult : AmazonWebServiceResponse
     {
-        
-        private string instanceId;
-        private DateTime? timestamp;
-        private string output;
-
+        private string _instanceId;
+        private string _output;
+        private DateTime? _timestamp;
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The ID of the instance.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
         /// <summary>
-        /// The time the output was last updated.
-        ///  
-        /// </summary>
-        public DateTime Timestamp
-        {
-            get { return this.timestamp ?? default(DateTime); }
-            set { this.timestamp = value; }
-        }
-
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
-        {
-            return this.timestamp.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Output. 
+        /// <para>
         /// The console output, Base64 encoded.
-        ///  
+        /// </para>
         /// </summary>
         public string Output
         {
-            get { return this.output; }
-            set { this.output = value; }
+            get { return this._output; }
+            set { this._output = value; }
         }
 
         // Check to see if Output property is set
         internal bool IsSetOutput()
         {
-            return this.output != null;
+            return this._output != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The time the output was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime Timestamp
+        {
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp.HasValue; 
+        }
+
     }
 }

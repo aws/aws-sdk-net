@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A response message that contains the status of an updated <c>RankExpression</c> .</para>
+    /// A response message that contains the status of an updated <code>RankExpression</code>.
     /// </summary>
     public partial class DefineRankExpressionResult : AmazonWebServiceResponse
     {
-        
-        private RankExpressionStatus rankExpression;
-
+        private RankExpressionStatus _rankExpression;
 
         /// <summary>
-        /// The value of a <c>RankExpression</c> and its current status.
-        ///  
+        /// Gets and sets the property RankExpression.
         /// </summary>
         public RankExpressionStatus RankExpression
         {
-            get { return this.rankExpression; }
-            set { this.rankExpression = value; }
+            get { return this._rankExpression; }
+            set { this._rankExpression = value; }
         }
 
         // Check to see if RankExpression property is set
         internal bool IsSetRankExpression()
         {
-            return this.rankExpression != null;
+            return this._rankExpression != null;
         }
+
     }
 }

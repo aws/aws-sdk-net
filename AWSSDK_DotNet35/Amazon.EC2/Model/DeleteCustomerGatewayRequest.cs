@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,44 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomerGateway operation.
-    /// <para>Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.</para>
+    /// Deletes the specified customer gateway. You must delete the VPN connection before
+    /// you can delete the customer gateway.
     /// </summary>
     public partial class DeleteCustomerGatewayRequest : AmazonEC2Request
     {
-        private string customerGatewayId;
-
+        private string _customerGatewayId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteCustomerGatewayRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteCustomerGatewayRequest with the parameterized properties
+        /// </summary>
+        /// <param name="customerGatewayId">The ID of the customer gateway.</param>
+        public DeleteCustomerGatewayRequest(string customerGatewayId)
+        {
+            _customerGatewayId = customerGatewayId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerGatewayId. 
+        /// <para>
         /// The ID of the customer gateway.
-        ///  
+        /// </para>
         /// </summary>
         public string CustomerGatewayId
         {
-            get { return this.customerGatewayId; }
-            set { this.customerGatewayId = value; }
+            get { return this._customerGatewayId; }
+            set { this._customerGatewayId = value; }
         }
 
         // Check to see if CustomerGatewayId property is set
         internal bool IsSetCustomerGatewayId()
         {
-            return this.customerGatewayId != null;
+            return this._customerGatewayId != null;
         }
 
     }
 }
-    

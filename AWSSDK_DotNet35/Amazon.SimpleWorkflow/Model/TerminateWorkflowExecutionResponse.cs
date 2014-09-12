@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Returns information about the TerminateWorkflowExecution response metadata.
-    /// The TerminateWorkflowExecution operation has a void result type.
+    /// Configuration for accessing Amazon TerminateWorkflowExecution service
     /// </summary>
-    public partial class TerminateWorkflowExecutionResponse : AmazonWebServiceResponse
+    public partial class TerminateWorkflowExecutionResponse : TerminateWorkflowExecutionResult
     {
+        /// <summary>
+        /// Gets and sets the TerminateWorkflowExecutionResult property.
+        /// Represents the output of a TerminateWorkflowExecution operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the TerminateWorkflowExecutionResult class are now available on the TerminateWorkflowExecutionResponse class. You should use the properties on TerminateWorkflowExecutionResponse instead of accessing them through TerminateWorkflowExecutionResult.")]
+        public TerminateWorkflowExecutionResult TerminateWorkflowExecutionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

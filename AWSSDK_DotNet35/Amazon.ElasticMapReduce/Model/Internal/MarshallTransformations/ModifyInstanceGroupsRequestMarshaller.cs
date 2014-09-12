@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// ModifyInstanceGroups Request Marshaller
     /// </summary>       
-    public class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> 
+    public class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ModifyInstanceGroupsRequest)input);
+        }
+
         public IRequest Marshall(ModifyInstanceGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,39 +56,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetInstanceGroups())
                 {
-                    writer.WritePropertyName("InstanceGroups");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("InstanceGroups");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestInstanceGroupsListValue.IsSetEC2InstanceIdsToTerminate())
-                        {
-                            writer.WritePropertyName("EC2InstanceIdsToTerminate");
-                            writer.WriteArrayStart();
-                            foreach(var publicRequestInstanceGroupsListValueEC2InstanceIdsToTerminateListValue in publicRequestInstanceGroupsListValue.EC2InstanceIdsToTerminate)
-                            {
-                                writer.Write(publicRequestInstanceGroupsListValueEC2InstanceIdsToTerminateListValue);
-                            }
-                            writer.WriteArrayEnd();
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestInstanceGroupsListValue.IsSetInstanceCount())
-                        {
-                            writer.WritePropertyName("InstanceCount");
-                            writer.Write(publicRequestInstanceGroupsListValue.InstanceCount);
-                        }
+                        var marshaller = InstanceGroupModifyConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
 
-                        if(publicRequestInstanceGroupsListValue.IsSetInstanceGroupId())
-                        {
-                            writer.WritePropertyName("InstanceGroupId");
-                            writer.Write(publicRequestInstanceGroupsListValue.InstanceGroupId);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

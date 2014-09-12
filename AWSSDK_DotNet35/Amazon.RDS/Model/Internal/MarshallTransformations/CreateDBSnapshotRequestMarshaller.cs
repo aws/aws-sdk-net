@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,57 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create D B Snapshot Request Marshaller
+    /// CreateDBSnapshot Request Marshaller
     /// </summary>       
-    public class CreateDBSnapshotRequestMarshaller : IMarshaller<IRequest, CreateDBSnapshotRequest>
+    public class CreateDBSnapshotRequestMarshaller : IMarshaller<IRequest, CreateDBSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateDBSnapshotRequest createDBSnapshotRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createDBSnapshotRequest, "AmazonRDS");
+            return this.Marshall((CreateDBSnapshotRequest)input);
+        }
+    
+        public IRequest Marshall(CreateDBSnapshotRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "CreateDBSnapshot");
             request.Parameters.Add("Version", "2013-09-09");
-            if (createDBSnapshotRequest != null && createDBSnapshotRequest.IsSetDBSnapshotIdentifier())
-            {
-                request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(createDBSnapshotRequest.DBSnapshotIdentifier));
-            }
-            if (createDBSnapshotRequest != null && createDBSnapshotRequest.IsSetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(createDBSnapshotRequest.DBInstanceIdentifier));
-            }
 
-            if (createDBSnapshotRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = createDBSnapshotRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetDBInstanceIdentifier())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetDBSnapshotIdentifier())
+                {
+                    request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-
-                    tagsListIndex++;
                 }
             }
-
             return request;
         }
     }

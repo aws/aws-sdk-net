@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateLayer Request Marshaller
     /// </summary>       
-    public class UpdateLayerRequestMarshaller : IMarshaller<IRequest, UpdateLayerRequest> 
+    public class UpdateLayerRequestMarshaller : IMarshaller<IRequest, UpdateLayerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateLayerRequest)input);
+        }
+
         public IRequest Marshall(UpdateLayerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,204 +56,122 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributes())
                 {
-                    writer.WritePropertyName("Attributes");
-                    writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("Attributes");
+                    context.Writer.WriteObjectStart();
                     foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                     {
-                        writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
                         var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                        writer.Write(publicRequestAttributesValue);
+                            context.Writer.Write(publicRequestAttributesValue);
                     }
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetAutoAssignElasticIps())
                 {
-                    writer.WritePropertyName("AutoAssignElasticIps");
-                    writer.Write(publicRequest.AutoAssignElasticIps);
+                    context.Writer.WritePropertyName("AutoAssignElasticIps");
+                    context.Writer.Write(publicRequest.AutoAssignElasticIps);
                 }
 
                 if(publicRequest.IsSetAutoAssignPublicIps())
                 {
-                    writer.WritePropertyName("AutoAssignPublicIps");
-                    writer.Write(publicRequest.AutoAssignPublicIps);
+                    context.Writer.WritePropertyName("AutoAssignPublicIps");
+                    context.Writer.Write(publicRequest.AutoAssignPublicIps);
                 }
 
                 if(publicRequest.IsSetCustomInstanceProfileArn())
                 {
-                    writer.WritePropertyName("CustomInstanceProfileArn");
-                    writer.Write(publicRequest.CustomInstanceProfileArn);
+                    context.Writer.WritePropertyName("CustomInstanceProfileArn");
+                    context.Writer.Write(publicRequest.CustomInstanceProfileArn);
                 }
 
                 if(publicRequest.IsSetCustomRecipes())
                 {
-                    writer.WritePropertyName("CustomRecipes");
-                    writer.WriteObjectStart();
-                    if(publicRequest.CustomRecipes.IsSetConfigure())
-                    {
-                        writer.WritePropertyName("Configure");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestCustomRecipesConfigureListValue in publicRequest.CustomRecipes.Configure)
-                        {
-                            writer.Write(publicRequestCustomRecipesConfigureListValue);
-                        }
-                        writer.WriteArrayEnd();
-                    }
+                    context.Writer.WritePropertyName("CustomRecipes");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.CustomRecipes.IsSetDeploy())
-                    {
-                        writer.WritePropertyName("Deploy");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestCustomRecipesDeployListValue in publicRequest.CustomRecipes.Deploy)
-                        {
-                            writer.Write(publicRequestCustomRecipesDeployListValue);
-                        }
-                        writer.WriteArrayEnd();
-                    }
+                    var marshaller = RecipesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomRecipes, context);
 
-                    if(publicRequest.CustomRecipes.IsSetSetup())
-                    {
-                        writer.WritePropertyName("Setup");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestCustomRecipesSetupListValue in publicRequest.CustomRecipes.Setup)
-                        {
-                            writer.Write(publicRequestCustomRecipesSetupListValue);
-                        }
-                        writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.CustomRecipes.IsSetShutdown())
-                    {
-                        writer.WritePropertyName("Shutdown");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestCustomRecipesShutdownListValue in publicRequest.CustomRecipes.Shutdown)
-                        {
-                            writer.Write(publicRequestCustomRecipesShutdownListValue);
-                        }
-                        writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.CustomRecipes.IsSetUndeploy())
-                    {
-                        writer.WritePropertyName("Undeploy");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestCustomRecipesUndeployListValue in publicRequest.CustomRecipes.Undeploy)
-                        {
-                            writer.Write(publicRequestCustomRecipesUndeployListValue);
-                        }
-                        writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetCustomSecurityGroupIds())
                 {
-                    writer.WritePropertyName("CustomSecurityGroupIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("CustomSecurityGroupIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestCustomSecurityGroupIdsListValue in publicRequest.CustomSecurityGroupIds)
                     {
-                        writer.Write(publicRequestCustomSecurityGroupIdsListValue);
+                            context.Writer.Write(publicRequestCustomSecurityGroupIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetEnableAutoHealing())
                 {
-                    writer.WritePropertyName("EnableAutoHealing");
-                    writer.Write(publicRequest.EnableAutoHealing);
+                    context.Writer.WritePropertyName("EnableAutoHealing");
+                    context.Writer.Write(publicRequest.EnableAutoHealing);
                 }
 
                 if(publicRequest.IsSetInstallUpdatesOnBoot())
                 {
-                    writer.WritePropertyName("InstallUpdatesOnBoot");
-                    writer.Write(publicRequest.InstallUpdatesOnBoot);
+                    context.Writer.WritePropertyName("InstallUpdatesOnBoot");
+                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot);
                 }
 
                 if(publicRequest.IsSetLayerId())
                 {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(publicRequest.LayerId);
+                    context.Writer.WritePropertyName("LayerId");
+                    context.Writer.Write(publicRequest.LayerId);
                 }
 
                 if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetPackages())
                 {
-                    writer.WritePropertyName("Packages");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Packages");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestPackagesListValue in publicRequest.Packages)
                     {
-                        writer.Write(publicRequestPackagesListValue);
+                            context.Writer.Write(publicRequestPackagesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetShortname())
                 {
-                    writer.WritePropertyName("Shortname");
-                    writer.Write(publicRequest.Shortname);
+                    context.Writer.WritePropertyName("Shortname");
+                    context.Writer.Write(publicRequest.Shortname);
                 }
 
                 if(publicRequest.IsSetUseEbsOptimizedInstances())
                 {
-                    writer.WritePropertyName("UseEbsOptimizedInstances");
-                    writer.Write(publicRequest.UseEbsOptimizedInstances);
+                    context.Writer.WritePropertyName("UseEbsOptimizedInstances");
+                    context.Writer.Write(publicRequest.UseEbsOptimizedInstances);
                 }
 
                 if(publicRequest.IsSetVolumeConfigurations())
                 {
-                    writer.WritePropertyName("VolumeConfigurations");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("VolumeConfigurations");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestVolumeConfigurationsListValue in publicRequest.VolumeConfigurations)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestVolumeConfigurationsListValue.IsSetIops())
-                        {
-                            writer.WritePropertyName("Iops");
-                            writer.Write(publicRequestVolumeConfigurationsListValue.Iops);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestVolumeConfigurationsListValue.IsSetMountPoint())
-                        {
-                            writer.WritePropertyName("MountPoint");
-                            writer.Write(publicRequestVolumeConfigurationsListValue.MountPoint);
-                        }
+                        var marshaller = VolumeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVolumeConfigurationsListValue, context);
 
-                        if(publicRequestVolumeConfigurationsListValue.IsSetNumberOfDisks())
-                        {
-                            writer.WritePropertyName("NumberOfDisks");
-                            writer.Write(publicRequestVolumeConfigurationsListValue.NumberOfDisks);
-                        }
-
-                        if(publicRequestVolumeConfigurationsListValue.IsSetRaidLevel())
-                        {
-                            writer.WritePropertyName("RaidLevel");
-                            writer.Write(publicRequestVolumeConfigurationsListValue.RaidLevel);
-                        }
-
-                        if(publicRequestVolumeConfigurationsListValue.IsSetSize())
-                        {
-                            writer.WritePropertyName("Size");
-                            writer.Write(publicRequestVolumeConfigurationsListValue.Size);
-                        }
-
-                        if(publicRequestVolumeConfigurationsListValue.IsSetVolumeType())
-                        {
-                            writer.WritePropertyName("VolumeType");
-                            writer.Write(publicRequestVolumeConfigurationsListValue.VolumeType);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

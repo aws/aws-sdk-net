@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Returns information about the DeleteArchive response metadata.
-    /// The DeleteArchive operation has a void result type.
+    /// Configuration for accessing Amazon DeleteArchive service
     /// </summary>
-    public partial class DeleteArchiveResponse : AmazonWebServiceResponse
+    public partial class DeleteArchiveResponse : DeleteArchiveResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteArchiveResult property.
+        /// Represents the output of a DeleteArchive operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteArchiveResult class are now available on the DeleteArchiveResponse class. You should use the properties on DeleteArchiveResponse instead of accessing them through DeleteArchiveResult.")]
+        public DeleteArchiveResult DeleteArchiveResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

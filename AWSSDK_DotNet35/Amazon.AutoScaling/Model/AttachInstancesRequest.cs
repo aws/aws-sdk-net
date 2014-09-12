@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,7 +44,6 @@ namespace Amazon.AutoScaling.Model
         private string _autoScalingGroupName;
         private List<string> _instanceIds = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
@@ -59,7 +62,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._autoScalingGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceIds. 

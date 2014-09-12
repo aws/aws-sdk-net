@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,8 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _clusterParameterGroupFamily;
         private string _description;
-        private string _clusterVersion;
-
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property ClusterParameterGroupFamily. 
@@ -52,7 +55,6 @@ namespace Amazon.Redshift.Model
             return this._clusterParameterGroupFamily != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -71,7 +73,6 @@ namespace Amazon.Redshift.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
@@ -80,14 +81,14 @@ namespace Amazon.Redshift.Model
         /// </summary>
         public string Version
         {
-            get { return this._clusterVersion; }
-            set { this._clusterVersion = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
         // Check to see if Version property is set
         internal bool IsSetVersion()
         {
-            return this._clusterVersion != null;
+            return this._version != null;
         }
 
     }

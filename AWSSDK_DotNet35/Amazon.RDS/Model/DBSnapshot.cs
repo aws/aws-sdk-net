@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,333 +12,377 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following actions: </para>
-    /// <ul>
-    /// <li> CreateDBSnapshot </li>
-    /// <li> DeleteDBSnapshot </li>
+    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    /// </ul>
-    /// <para>This data type is used as a response element in the DescribeDBSnapshots action.</para>
+    ///  <ul> <li><a>CreateDBSnapshot</a></li> <li><a>DeleteDBSnapshot</a></li> </ul> 
+    /// <para>
+    /// This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
+    /// </para>
     /// </summary>
-    public partial class DBSnapshot : AmazonWebServiceResponse
+    public partial class DBSnapshot
     {
-        
-        private string dBSnapshotIdentifier;
-        private string dBInstanceIdentifier;
-        private DateTime? snapshotCreateTime;
-        private string engine;
-        private int? allocatedStorage;
-        private string status;
-        private int? port;
-        private string availabilityZone;
-        private string vpcId;
-        private DateTime? instanceCreateTime;
-        private string masterUsername;
-        private string engineVersion;
-        private string licenseModel;
-        private string snapshotType;
-        private int? iops;
-        private string optionGroupName;
-        private int? percentProgress;
-        private string sourceRegion;
-
+        private int? _allocatedStorage;
+        private string _availabilityZone;
+        private string _dBInstanceIdentifier;
+        private string _dBSnapshotIdentifier;
+        private string _engine;
+        private string _engineVersion;
+        private DateTime? _instanceCreateTime;
+        private int? _iops;
+        private string _licenseModel;
+        private string _masterUsername;
+        private string _optionGroupName;
+        private int? _percentProgress;
+        private int? _port;
+        private DateTime? _snapshotCreateTime;
+        private string _snapshotType;
+        private string _sourceRegion;
+        private string _status;
+        private string _vpcId;
 
         /// <summary>
-        /// Specifies the identifier for the DB snapshot.
-        ///  
-        /// </summary>
-        public string DBSnapshotIdentifier
-        {
-            get { return this.dBSnapshotIdentifier; }
-            set { this.dBSnapshotIdentifier = value; }
-        }
-
-        // Check to see if DBSnapshotIdentifier property is set
-        internal bool IsSetDBSnapshotIdentifier()
-        {
-            return this.dBSnapshotIdentifier != null;
-        }
-
-        /// <summary>
-        /// Specifies the DB instance identifier of the DB instance this DB snapshot was created from.
-        ///  
-        /// </summary>
-        public string DBInstanceIdentifier
-        {
-            get { return this.dBInstanceIdentifier; }
-            set { this.dBInstanceIdentifier = value; }
-        }
-
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
-        {
-            return this.dBInstanceIdentifier != null;
-        }
-
-        /// <summary>
-        /// Provides the time (UTC) when the snapshot was taken.
-        ///  
-        /// </summary>
-        public DateTime SnapshotCreateTime
-        {
-            get { return this.snapshotCreateTime ?? default(DateTime); }
-            set { this.snapshotCreateTime = value; }
-        }
-
-        // Check to see if SnapshotCreateTime property is set
-        internal bool IsSetSnapshotCreateTime()
-        {
-            return this.snapshotCreateTime.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the name of the database engine.
-        ///  
-        /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
-
-        /// <summary>
-        /// Specifies the allocated storage size in gigabytes (GB).
-        ///  
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        ///  Specifies the allocated storage size in gigabytes (GB). 
+        /// </para>
         /// </summary>
         public int AllocatedStorage
         {
-            get { return this.allocatedStorage ?? default(int); }
-            set { this.allocatedStorage = value; }
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
         }
 
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;
+            return this._allocatedStorage.HasValue; 
         }
 
         /// <summary>
-        /// Specifies the status of this DB snapshot.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// Specifies the port that the database engine was listening on at the time of the snapshot.
-        ///  
-        /// </summary>
-        public int Port
-        {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
-        }
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this.port.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.
-        ///  
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///  Specifies the name of the Availability Zone the DB instance was located in at the
+        /// time of the DB snapshot. 
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
-        /// Provides the Vpc Id associated with the DB snapshot.
-        ///  
+        /// Gets and sets the property DBInstanceIdentifier. 
+        /// <para>
+        ///  Specifies the DB instance identifier of the DB instance this DB snapshot was created
+        /// from. 
+        /// </para>
         /// </summary>
-        public string VpcId
+        public string DBInstanceIdentifier
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._dBInstanceIdentifier; }
+            set { this._dBInstanceIdentifier = value; }
         }
 
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.vpcId != null;
+            return this._dBInstanceIdentifier != null;
         }
 
         /// <summary>
-        /// Specifies the time (UTC) when the snapshot was taken.
-        ///  
+        /// Gets and sets the property DBSnapshotIdentifier. 
+        /// <para>
+        ///  Specifies the identifier for the DB snapshot. 
+        /// </para>
         /// </summary>
-        public DateTime InstanceCreateTime
+        public string DBSnapshotIdentifier
         {
-            get { return this.instanceCreateTime ?? default(DateTime); }
-            set { this.instanceCreateTime = value; }
+            get { return this._dBSnapshotIdentifier; }
+            set { this._dBSnapshotIdentifier = value; }
         }
 
-        // Check to see if InstanceCreateTime property is set
-        internal bool IsSetInstanceCreateTime()
+        // Check to see if DBSnapshotIdentifier property is set
+        internal bool IsSetDBSnapshotIdentifier()
         {
-            return this.instanceCreateTime.HasValue;
+            return this._dBSnapshotIdentifier != null;
         }
 
         /// <summary>
-        /// Provides the master username for the DB snapshot.
-        ///  
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  Specifies the name of the database engine. 
+        /// </para>
         /// </summary>
-        public string MasterUsername
+        public string Engine
         {
-            get { return this.masterUsername; }
-            set { this.masterUsername = value; }
+            get { return this._engine; }
+            set { this._engine = value; }
         }
 
-        // Check to see if MasterUsername property is set
-        internal bool IsSetMasterUsername()
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
         {
-            return this.masterUsername != null;
+            return this._engine != null;
         }
 
         /// <summary>
-        /// Specifies the version of the database engine.
-        ///  
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        ///  Specifies the version of the database engine. 
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
         }
 
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;
+            return this._engineVersion != null;
         }
 
         /// <summary>
-        /// License model information for the restored DB instance.
-        ///  
+        /// Gets and sets the property InstanceCreateTime. 
+        /// <para>
+        ///  Specifies the time (UTC) when the snapshot was taken. 
+        /// </para>
         /// </summary>
-        public string LicenseModel
+        public DateTime InstanceCreateTime
         {
-            get { return this.licenseModel; }
-            set { this.licenseModel = value; }
+            get { return this._instanceCreateTime.GetValueOrDefault(); }
+            set { this._instanceCreateTime = value; }
         }
 
-        // Check to see if LicenseModel property is set
-        internal bool IsSetLicenseModel()
+        // Check to see if InstanceCreateTime property is set
+        internal bool IsSetInstanceCreateTime()
         {
-            return this.licenseModel != null;
-        }
-
-        /// <summary>
-        /// Provides the type of the DB snapshot.
-        ///  
-        /// </summary>
-        public string SnapshotType
-        {
-            get { return this.snapshotType; }
-            set { this.snapshotType = value; }
-        }
-
-        // Check to see if SnapshotType property is set
-        internal bool IsSetSnapshotType()
-        {
-            return this.snapshotType != null;
+            return this._instanceCreateTime.HasValue; 
         }
 
         /// <summary>
-        /// Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
-        ///  
+        /// Gets and sets the property Iops. 
+        /// <para>
+        ///  Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance
+        /// at the time of the snapshot. 
+        /// </para>
         /// </summary>
         public int Iops
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
         }
 
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;
+            return this._iops.HasValue; 
         }
 
         /// <summary>
-        /// Provides the option group name for the DB snapshot.
-        ///  
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        ///  License model information for the restored DB instance. 
+        /// </para>
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
+        }
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        ///  Provides the master username for the DB snapshot. 
+        /// </para>
+        /// </summary>
+        public string MasterUsername
+        {
+            get { return this._masterUsername; }
+            set { this._masterUsername = value; }
+        }
+
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
+        {
+            return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        ///  Provides the option group name for the DB snapshot. 
+        /// </para>
         /// </summary>
         public string OptionGroupName
         {
-            get { return this.optionGroupName; }
-            set { this.optionGroupName = value; }
+            get { return this._optionGroupName; }
+            set { this._optionGroupName = value; }
         }
 
         // Check to see if OptionGroupName property is set
         internal bool IsSetOptionGroupName()
         {
-            return this.optionGroupName != null;
+            return this._optionGroupName != null;
         }
 
         /// <summary>
-        /// The percentage of the estimated data that has been transferred.
-        ///  
+        /// Gets and sets the property PercentProgress. 
+        /// <para>
+        ///  The percentage of the estimated data that has been transferred. 
+        /// </para>
         /// </summary>
         public int PercentProgress
         {
-            get { return this.percentProgress ?? default(int); }
-            set { this.percentProgress = value; }
+            get { return this._percentProgress.GetValueOrDefault(); }
+            set { this._percentProgress = value; }
         }
 
         // Check to see if PercentProgress property is set
         internal bool IsSetPercentProgress()
         {
-            return this.percentProgress.HasValue;
+            return this._percentProgress.HasValue; 
         }
 
         /// <summary>
-        /// The region that the DB snapshot was created in or copied from.
-        ///  
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  Specifies the port that the database engine was listening on at the time of the snapshot.
+        /// 
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotCreateTime. 
+        /// <para>
+        ///  Provides the time (UTC) when the snapshot was taken. 
+        /// </para>
+        /// </summary>
+        public DateTime SnapshotCreateTime
+        {
+            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            set { this._snapshotCreateTime = value; }
+        }
+
+        // Check to see if SnapshotCreateTime property is set
+        internal bool IsSetSnapshotCreateTime()
+        {
+            return this._snapshotCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotType. 
+        /// <para>
+        ///  Provides the type of the DB snapshot. 
+        /// </para>
+        /// </summary>
+        public string SnapshotType
+        {
+            get { return this._snapshotType; }
+            set { this._snapshotType = value; }
+        }
+
+        // Check to see if SnapshotType property is set
+        internal bool IsSetSnapshotType()
+        {
+            return this._snapshotType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        ///  The region that the DB snapshot was created in or copied from. 
+        /// </para>
         /// </summary>
         public string SourceRegion
         {
-            get { return this.sourceRegion; }
-            set { this.sourceRegion = value; }
+            get { return this._sourceRegion; }
+            set { this._sourceRegion = value; }
         }
 
         // Check to see if SourceRegion property is set
         internal bool IsSetSourceRegion()
         {
-            return this.sourceRegion != null;
+            return this._sourceRegion != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  Specifies the status of this DB snapshot. 
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        ///  Provides the Vpc Id associated with the DB snapshot. 
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

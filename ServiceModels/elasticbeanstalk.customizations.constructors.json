@@ -1,0 +1,237 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "ValidationMessage" : {
+                "constructorForms" : [
+                ]
+            },
+            "UpdateConfigurationTemplateRequest" : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "TemplateName"
+                    ]
+                ]
+            },
+            "DescribeConfigurationOptionsRequest" : {
+                "constructorForms" : [
+                ]
+            },
+            "SourceConfiguration"                 : {
+                "constructorForms" : [
+                ]
+            },
+            "OptionSpecification"                 : {
+                "constructorForms" : [
+                ]
+            },
+            "RestartAppServerRequest"             : {
+                "constructorForms" : [
+                ]
+            },
+            "Trigger"                             : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeEnvironmentsRequest"         : {
+                "constructorForms" : [
+                ]
+            },
+            "LaunchConfiguration"                 : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteApplicationRequest"            : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName"
+                    ]
+                ]
+            },
+            "DescribeEnvironmentResourcesRequest" : {
+                "constructorForms" : [
+                ]
+            },
+            "RebuildEnvironmentRequest"           : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateApplicationVersionRequest"     : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "VersionLabel"
+                    ]
+                ]
+            },
+            "UpdateApplicationRequest"            : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName"
+                    ]
+                ]
+            },
+            "CreateConfigurationTemplateRequest"  : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "TemplateName"
+                    ]
+                ]
+            },
+            "DescribeConfigurationSettingsRequest" : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName"
+                    ]
+                ]
+            },
+            "Instance"                             : {
+                "constructorForms" : [
+                ]
+            },
+            "RetrieveEnvironmentInfoRequest"       : {
+                "constructorForms" : [
+                    [
+                        "InfoType"
+                    ]
+                ]
+            },
+            "UpdateApplicationVersionRequest"      : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "VersionLabel"
+                    ]
+                ]
+            },
+            "UpdateEnvironmentRequest"             : {
+                "constructorForms" : [
+                ]
+            },
+            "RequestEnvironmentInfoRequest"        : {
+                "constructorForms" : [
+                    [
+                        "InfoType"
+                    ]
+                ]
+            },
+            "EventDescription"                     : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeApplicationVersionsRequest"   : {
+                "constructorForms" : [
+                ]
+            },
+            "EnvironmentResourceDescription"       : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateApplicationRequest"             : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName"
+                    ]
+                ]
+            },
+            "CheckDNSAvailabilityRequest"          : {
+                "constructorForms" : [
+                    [
+                        "CNAMEPrefix"
+                    ]
+                ]
+            },
+            "AutoScalingGroup"                     : {
+                "constructorForms" : [
+                ]
+            },
+            "EnvironmentInfoDescription"           : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteApplicationVersionRequest"      : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "VersionLabel"
+                    ]
+                ]
+            },
+            "DescribeApplicationsRequest"          : {
+                "constructorForms" : [
+                ]
+            },
+            "TerminateEnvironmentRequest"          : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeEventsRequest"                : {
+                "constructorForms" : [
+                ]
+            },
+            "ApplicationDescription"               : {
+                "constructorForms" : [
+                ]
+            },
+            "ValidateConfigurationSettingsRequest" : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "OptionSettings"
+                    ]
+                ]
+            },
+            "ConfigurationOptionSetting"           : {
+                "constructorForms" : [
+                    [
+                        "Namespace",
+                        "OptionName",
+                        "Value"
+                    ]
+                ]
+            },
+            "OptionRestrictionRegex"               : {
+                "constructorForms" : [
+                ]
+            },
+            "ConfigurationOptionDescription"       : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateEnvironmentRequest"             : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "EnvironmentName"
+                    ]
+                ]
+            },
+            "DeleteEnvironmentConfigurationRequest" : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "EnvironmentName"
+                    ]
+                ]
+            },
+            "LoadBalancer"                          : {
+                "constructorForms" : [
+                ]
+            },
+            "ApplicationVersionDescription"         : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteConfigurationTemplateRequest"    : {
+                "constructorForms" : [
+                    [
+                        "ApplicationName",
+                        "TemplateName"
+                    ]
+                ]
+            }
+        }
+    }
+}

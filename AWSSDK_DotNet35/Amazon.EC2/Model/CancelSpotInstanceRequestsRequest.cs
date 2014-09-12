@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,34 +29,55 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelSpotInstanceRequests operation.
-    /// <para>Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price
-    /// that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and
-    /// current Spot Instance requests. For more information about Spot Instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the <i>Amazon Elastic Compute
-    /// Cloud User Guide</i> .</para> <para><b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate running Spot Instances associated
-    /// with the request. </para>
+    /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
+    /// EC2 starts on your behalf when the maximum price that you specify exceeds the current
+    /// Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance
+    /// capacity and current Spot Instance requests. For more information about Spot Instances,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Canceling a Spot Instance request does not terminate running Spot Instances associated
+    /// with the request.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CancelSpotInstanceRequestsRequest : AmazonEC2Request
     {
-        private List<string> spotInstanceRequestIds = new List<string>();
-
+        private List<string> _spotInstanceRequestIds = new List<string>();
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CancelSpotInstanceRequestsRequest() { }
+
+        /// <summary>
+        /// Instantiates CancelSpotInstanceRequestsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="spotInstanceRequestIds">One or more Spot Instance request IDs.</param>
+        public CancelSpotInstanceRequestsRequest(List<string> spotInstanceRequestIds)
+        {
+            _spotInstanceRequestIds = spotInstanceRequestIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpotInstanceRequestIds. 
+        /// <para>
         /// One or more Spot Instance request IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> SpotInstanceRequestIds
         {
-            get { return this.spotInstanceRequestIds; }
-            set { this.spotInstanceRequestIds = value; }
+            get { return this._spotInstanceRequestIds; }
+            set { this._spotInstanceRequestIds = value; }
         }
 
         // Check to see if SpotInstanceRequestIds property is set
         internal bool IsSetSpotInstanceRequestIds()
         {
-            return this.spotInstanceRequestIds.Count > 0;
+            return this._spotInstanceRequestIds != null && this._spotInstanceRequestIds.Count > 0; 
         }
 
     }
 }
-    

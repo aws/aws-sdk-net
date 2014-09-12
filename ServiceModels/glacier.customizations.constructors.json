@@ -1,0 +1,283 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "InitiateJobRequest" : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "JobParameters"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "JobParameters"
+                    ]
+                ]
+            },
+            "ListMultipartUploadsRequest" : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "ListJobsRequest"             : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "GetJobOutputRequest"         : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "JobId",
+                        "Range"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "JobId",
+                        "Range"
+                    ]
+                ]
+            },
+            "VaultNotificationConfig"     : {
+                "constructorForms" : [
+                    [
+                        "SNSTopic",
+                        "Events"
+                    ]
+                ]
+            },
+            "DeleteVaultRequest"          : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "ListVaultsRequest"           : {
+                "constructorForms" : [
+                    [
+                        "AccountId"
+                    ],
+                    [
+                        "AccountId",
+                        "Marker",
+                        "Limit"
+                    ]
+                ]
+            },
+            "PartListElement"             : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteVaultNotificationsRequest" : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "DescribeVaultRequest"            : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "DescribeJobRequest"              : {
+                "constructorForms" : [
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "JobId"
+                    ],
+                    [
+                        "VaultName",
+                        "JobId"
+                    ]
+                ]
+            },
+            "DeleteArchiveRequest"            : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "ArchiveId"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "ArchiveId"
+                    ]
+                ]
+            },
+            "SetVaultNotificationsRequest"    : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "VaultNotificationConfig"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "VaultNotificationConfig"
+                    ]
+                ]
+            },
+            "AbortMultipartUploadRequest"     : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "UploadId"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "UploadId"
+                    ]
+                ]
+            },
+            "UploadArchiveRequest"            : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "ArchiveDescription",
+                        "Checksum",
+                        "Body"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "ArchiveDescription",
+                        "Checksum",
+                        "Body"
+                    ]
+                ]
+            },
+            "UploadMultipartPartRequest"      : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "UploadId",
+                        "Checksum",
+                        "Range",
+                        "Body"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "UploadId",
+                        "Checksum",
+                        "Range",
+                        "Body"
+                    ]
+                ]
+            },
+            "ListPartsRequest"                : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "UploadId"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "UploadId"
+                    ]
+                ]
+            },
+            "JobParameters"                   : {
+                "constructorForms" : [
+                    [
+                        "Format",
+                        "Type",
+                        "ArchiveId",
+                        "Description"
+                    ]
+                ]
+            },
+            "CreateVaultRequest"              : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "GetVaultNotificationsRequest"    : {
+                "constructorForms" : [
+                    [
+                        "VaultName"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName"
+                    ]
+                ]
+            },
+            "CompleteMultipartUploadRequest"  : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "UploadId",
+                        "ArchiveSize",
+                        "Checksum"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "UploadId",
+                        "ArchiveSize",
+                        "Checksum"
+                    ]
+                ]
+            },
+            "UploadListElement"               : {
+                "constructorForms" : [
+                ]
+            },
+            "InitiateMultipartUploadRequest"  : {
+                "constructorForms" : [
+                    [
+                        "VaultName",
+                        "ArchiveDescription",
+                        "PartSize"
+                    ],
+                    [
+                        "AccountId",
+                        "VaultName",
+                        "ArchiveDescription",
+                        "PartSize"
+                    ]
+                ]
+            }
+        }
+    }
+}

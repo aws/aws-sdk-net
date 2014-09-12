@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _loadBalancerName;
         private string _policyName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteLoadBalancerPolicyRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteLoadBalancerPolicyRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
+        /// <param name="policyName"> The mnemonic name for the policy being deleted. </param>
+        public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName)
+        {
+            _loadBalancerName = loadBalancerName;
+            _policyName = policyName;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
@@ -51,7 +70,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PolicyName. 

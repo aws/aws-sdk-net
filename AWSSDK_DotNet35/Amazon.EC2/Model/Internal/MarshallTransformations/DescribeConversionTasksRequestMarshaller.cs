@@ -12,67 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Conversion Tasks Request Marshaller
+    /// DescribeConversionTasks Request Marshaller
     /// </summary>       
-    public class DescribeConversionTasksRequestMarshaller : IMarshaller<IRequest, DescribeConversionTasksRequest>
+    public class DescribeConversionTasksRequestMarshaller : IMarshaller<IRequest, DescribeConversionTasksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeConversionTasksRequest describeConversionTasksRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeConversionTasksRequest, "AmazonEC2");
+            return this.Marshall((DescribeConversionTasksRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeConversionTasksRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeConversionTasks");
             request.Parameters.Add("Version", "2014-06-15");
 
-            if (describeConversionTasksRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeConversionTasksRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetConversionTaskIds())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ConversionTaskIds)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
+                        request.Parameters.Add("ConversionTaskId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (filtersListValue != null)
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
                 }
             }
-            if (describeConversionTasksRequest != null)
-            {
-                List<string> conversionTaskIdsList = describeConversionTasksRequest.ConversionTaskIds;
-
-                int conversionTaskIdsListIndex = 1;
-                foreach (string conversionTaskIdsListValue in conversionTaskIdsList)
-                { 
-                    request.Parameters.Add("ConversionTaskId." + conversionTaskIdsListIndex, StringUtils.FromString(conversionTaskIdsListValue));
-                    conversionTaskIdsListIndex++;
-                }
-            }
-
             return request;
         }
     }

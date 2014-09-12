@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Conversion Task Request Marshaller
+    /// CancelConversionTask Request Marshaller
     /// </summary>       
-    public class CancelConversionTaskRequestMarshaller : IMarshaller<IRequest, CancelConversionTaskRequest>
+    public class CancelConversionTaskRequestMarshaller : IMarshaller<IRequest, CancelConversionTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CancelConversionTaskRequest cancelConversionTaskRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(cancelConversionTaskRequest, "AmazonEC2");
+            return this.Marshall((CancelConversionTaskRequest)input);
+        }
+    
+        public IRequest Marshall(CancelConversionTaskRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CancelConversionTask");
             request.Parameters.Add("Version", "2014-06-15");
-            if (cancelConversionTaskRequest != null && cancelConversionTaskRequest.IsSetConversionTaskId())
-            {
-                request.Parameters.Add("ConversionTaskId", StringUtils.FromString(cancelConversionTaskRequest.ConversionTaskId));
-            }
-            if (cancelConversionTaskRequest != null && cancelConversionTaskRequest.IsSetReasonMessage())
-            {
-                request.Parameters.Add("ReasonMessage", StringUtils.FromString(cancelConversionTaskRequest.ReasonMessage));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetConversionTaskId())
+                {
+                    request.Parameters.Add("ConversionTaskId", StringUtils.FromString(publicRequest.ConversionTaskId));
+                }
+                if(publicRequest.IsSetReasonMessage())
+                {
+                    request.Parameters.Add("ReasonMessage", StringUtils.FromString(publicRequest.ReasonMessage));
+                }
+            }
             return request;
         }
     }

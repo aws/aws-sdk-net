@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Customer Gateway Request Marshaller
+    /// CreateCustomerGateway Request Marshaller
     /// </summary>       
-    public class CreateCustomerGatewayRequestMarshaller : IMarshaller<IRequest, CreateCustomerGatewayRequest>
+    public class CreateCustomerGatewayRequestMarshaller : IMarshaller<IRequest, CreateCustomerGatewayRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateCustomerGatewayRequest createCustomerGatewayRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createCustomerGatewayRequest, "AmazonEC2");
+            return this.Marshall((CreateCustomerGatewayRequest)input);
+        }
+    
+        public IRequest Marshall(CreateCustomerGatewayRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateCustomerGateway");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createCustomerGatewayRequest != null && createCustomerGatewayRequest.IsSetType())
-            {
-                request.Parameters.Add("Type", StringUtils.FromString(createCustomerGatewayRequest.Type));
-            }
-            if (createCustomerGatewayRequest != null && createCustomerGatewayRequest.IsSetPublicIp())
-            {
-                request.Parameters.Add("IpAddress", StringUtils.FromString(createCustomerGatewayRequest.PublicIp));
-            }
-            if (createCustomerGatewayRequest != null && createCustomerGatewayRequest.IsSetBgpAsn())
-            {
-                request.Parameters.Add("BgpAsn", StringUtils.FromInt(createCustomerGatewayRequest.BgpAsn));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetBgpAsn())
+                {
+                    request.Parameters.Add("BgpAsn", StringUtils.FromInt(publicRequest.BgpAsn));
+                }
+                if(publicRequest.IsSetPublicIp())
+                {
+                    request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.PublicIp));
+                }
+                if(publicRequest.IsSetType())
+                {
+                    request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
+                }
+            }
             return request;
         }
     }

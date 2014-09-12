@@ -12,84 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Disk Object
+    /// </summary>  
+    public class DiskUnmarshaller : IUnmarshaller<Disk, XmlUnmarshallerContext>, IUnmarshaller<Disk, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DiskUnmarshaller
-      /// </summary>
-      internal class DiskUnmarshaller : IUnmarshaller<Disk, XmlUnmarshallerContext>, IUnmarshaller<Disk, JsonUnmarshallerContext>
-      {
         Disk IUnmarshaller<Disk, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Disk Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Disk disk = new Disk();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Disk unmarshalledObject = new Disk();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("DiskId", targetDepth))
-              {
-                disk.DiskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DiskPath", targetDepth))
-              {
-                disk.DiskPath = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DiskNode", targetDepth))
-              {
-                disk.DiskNode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DiskSizeInBytes", targetDepth))
-              {
-                disk.DiskSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DiskAllocationType", targetDepth))
-              {
-                disk.DiskAllocationType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DiskAllocationResource", targetDepth))
-              {
-                disk.DiskAllocationResource = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("DiskAllocationResource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskAllocationResource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DiskAllocationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskAllocationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DiskId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DiskNode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskNode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DiskPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DiskSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DiskSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return disk;
+            return unmarshalledObject;
         }
 
-        private static DiskUnmarshaller instance;
-        public static DiskUnmarshaller GetInstance()
+
+        private static DiskUnmarshaller _instance = new DiskUnmarshaller();        
+
+        public static DiskUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DiskUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

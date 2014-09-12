@@ -12,38 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DeleteSuggester</c> request. Contains the status of the deleted suggester.</para>
+    /// The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted
+    /// suggester.
     /// </summary>
     public partial class DeleteSuggesterResult : AmazonWebServiceResponse
     {
-        
-        private SuggesterStatus suggester;
-
+        private SuggesterStatus _suggester;
 
         /// <summary>
+        /// Gets and sets the property Suggester. 
+        /// <para>
         /// The status of the suggester being deleted.
-        ///  
+        /// </para>
         /// </summary>
         public SuggesterStatus Suggester
         {
-            get { return this.suggester; }
-            set { this.suggester = value; }
+            get { return this._suggester; }
+            set { this._suggester = value; }
         }
 
         // Check to see if Suggester property is set
         internal bool IsSetSuggester()
         {
-            return this.suggester != null;
+            return this._suggester != null;
         }
+
     }
 }

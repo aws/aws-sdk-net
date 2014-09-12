@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,45 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDhcpOptions operation.
-    /// <para>Deletes the specified set of DHCP options. You must disassociate the set of DHCP options before you can delete it. You can
-    /// disassociate the set of DHCP options by associating either a new set of options or the default set of options with the VPC.</para>
+    /// Deletes the specified set of DHCP options. You must disassociate the set of DHCP options
+    /// before you can delete it. You can disassociate the set of DHCP options by associating
+    /// either a new set of options or the default set of options with the VPC.
     /// </summary>
     public partial class DeleteDhcpOptionsRequest : AmazonEC2Request
     {
-        private string dhcpOptionsId;
-
+        private string _dhcpOptionsId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteDhcpOptionsRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteDhcpOptionsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="dhcpOptionsId">The ID of the DHCP options set.</param>
+        public DeleteDhcpOptionsRequest(string dhcpOptionsId)
+        {
+            _dhcpOptionsId = dhcpOptionsId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DhcpOptionsId. 
+        /// <para>
         /// The ID of the DHCP options set.
-        ///  
+        /// </para>
         /// </summary>
         public string DhcpOptionsId
         {
-            get { return this.dhcpOptionsId; }
-            set { this.dhcpOptionsId = value; }
+            get { return this._dhcpOptionsId; }
+            set { this._dhcpOptionsId = value; }
         }
 
         // Check to see if DhcpOptionsId property is set
         internal bool IsSetDhcpOptionsId()
         {
-            return this.dhcpOptionsId != null;
+            return this._dhcpOptionsId != null;
         }
 
     }
 }
-    

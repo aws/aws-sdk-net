@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
-    /// Returns information about the CreateDomain response metadata.
-    /// The CreateDomain operation has a void result type.
+    /// Configuration for accessing Amazon CreateDomain service
     /// </summary>
-    public partial class CreateDomainResponse : AmazonWebServiceResponse
+    public partial class CreateDomainResponse : CreateDomainResult
     {
+        /// <summary>
+        /// Gets and sets the CreateDomainResult property.
+        /// Represents the output of a CreateDomain operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the CreateDomainResult class are now available on the CreateDomainResponse class. You should use the properties on CreateDomainResponse instead of accessing them through CreateDomainResult.")]
+        public CreateDomainResult CreateDomainResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

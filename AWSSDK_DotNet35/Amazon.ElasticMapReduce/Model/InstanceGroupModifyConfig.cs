@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _instanceCount;
         private string _instanceGroupId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public InstanceGroupModifyConfig() { }
+
+        /// <summary>
+        /// Instantiates InstanceGroupModifyConfig with the parameterized properties
+        /// </summary>
+        /// <param name="instanceGroupId">Unique ID of the instance group to expand or shrink.</param>
+        /// <param name="instanceCount">Target size for the instance group.</param>
+        public InstanceGroupModifyConfig(string instanceGroupId, int instanceCount)
+        {
+            _instanceGroupId = instanceGroupId;
+            _instanceCount = instanceCount;
+        }
 
         /// <summary>
         /// Gets and sets the property EC2InstanceIdsToTerminate. 
@@ -54,7 +73,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._eC2InstanceIdsToTerminate != null && this._eC2InstanceIdsToTerminate.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
@@ -72,7 +90,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceCount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceGroupId. 

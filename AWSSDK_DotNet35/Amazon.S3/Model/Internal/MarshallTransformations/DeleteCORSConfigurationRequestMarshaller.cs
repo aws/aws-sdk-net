@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Bucket Cors Request Marshaller
     /// </summary>       
-    public class DeleteCORSConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteCORSConfigurationRequest>
-    {
+    public class DeleteCORSConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteCORSConfigurationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((DeleteCORSConfigurationRequest)input);
+		}
+
         public IRequest Marshall(DeleteCORSConfigurationRequest deleteCORSConfigurationRequest)
         {
             IRequest request = new DefaultRequest(deleteCORSConfigurationRequest, "AmazonS3");

@@ -1,0 +1,214 @@
+﻿<#@ template language="C#" inherits="BaseRequestMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+	
+	AddCommonUsingStatements();
+#>
+using System.Xml;
+
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+	/// <summary>
+	/// <#=this.Operation.Name #> Request Marshaller
+	/// </summary>       
+	public class <#=this.Operation.Name#>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name#>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((<#=this.Operation.Name#>Request)input);
+        }
+
+		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
+		{
+			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
+<#
+	// Assign HttpMethod if present or default to POST
+	if(!string.IsNullOrWhiteSpace(this.Operation.HttpMethod)){		
+#>
+			request.HttpMethod = "<#=this.Operation.HttpMethod#>";
+<#
+	}
+	var requestStructure = this.Operation.RequestStructure;
+
+    // This block adds members of the request object to the actual request
+	ProcessRequestUri(this.Operation);
+	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
+	ProcessUriMembers("publicRequest", this.Operation);
+	ProcessQueryStringMembers("publicRequest", this.Operation);
+	ProcessStreamingMember("publicRequest",this.Operation.RequestStreamingMember);
+#>
+			request.ResourcePath = uriResourcePath;
+
+<#   
+	// Process any members which are marshalled as part of the request body
+	if(this.Operation.RequestHasBodyMembers)
+	{
+		ProcessRequestBodyMembers("publicRequest", this.Operation);		
+	}
+#>
+
+<#
+	// If there aren't any members that are marshalled as part of the body or streamed	
+	if(this.Operation.UseQueryString)
+	{
+#>
+			request.UseQueryString = true;
+<#	}	
+#>
+			return request;
+		}
+
+		
+	}	
+}
+
+<#+
+
+	void ProcessRequestBodyMembers(string variableName, Operation operation)
+	{
+#>
+			var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+			{   
+<#+
+		if(operation.RequestPayloadMember==null)
+		{
+#>
+				xmlWriter.WriteStartElement("<#=operation.Input.LocationName#>", "<#=operation.XmlNamespace#>");	
+<#+
+		}
+		else
+		{
+#>
+				xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.MarshallName#>", "<#=operation.XmlNamespace#>");								
+<#+
+		}
+		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
+		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
+		foreach(var member in childmembers)
+		{
+			if(member.IsStructure)
+			{
+				ProcessStructure(variableName, member, operation.XmlNamespace);				
+			}
+			else if(member.IsList)
+			{
+				ProcessList(variableName, member, operation.XmlNamespace);
+			}
+			else if(member.IsMap)
+			{
+				throw new NotImplementedException();
+			}
+			else
+			{
+#>
+				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));					
+
+<#+
+			}
+			
+		}  
+#>
+
+				xmlWriter.WriteEndElement();
+			}
+			try 
+			{
+				string content = stringWriter.ToString();
+				request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+				request.Headers["Content-Type"] = "application/xml";
+			} 
+			catch (EncoderFallbackException e) 
+			{
+				throw new AmazonServiceException("Unable to marshall request to XML", e);
+			}
+<#+				       
+	}
+
+	void ProcessMembers(string variableName, IEnumerable<Member> members, string xmlNamespace)
+	{
+		foreach(var member in members)
+		{
+			if(member.IsStructure)
+			{
+				ProcessStructure(variableName, member, xmlNamespace);				
+			}
+			else if(member.IsList)
+			{
+				ProcessList(variableName, member, xmlNamespace);	
+			}
+			else if(member.IsMap)
+			{
+				throw new NotImplementedException();
+			}
+			else
+			{
+#>
+				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));				 
+
+<#+
+			}
+		}
+	}
+
+	void ProcessStructure(string variableName, Member member, string xmlNamespace)
+	{
+			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
+			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
+
+			// Use shape's ListMarshallName if the structure is a list.
+			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName : member.MarshallName;
+#>				
+				if (<#=variableName#> != null) 
+				{
+					xmlWriter.WriteStartElement("<#=marshallName#>", "<#=xmlNamespace#>");			
+<#+
+			PushIndent("	");
+			ProcessMembers(variableName, shape.Members, xmlNamespace);
+			PopIndent();
+#>
+					xmlWriter.WriteEndElement();
+				}
+<#+		
+	}
+
+	void ProcessList(string variableName, Member member, string xmlNamespace)
+	{
+				var listVariable = (variableName + member.PropertyName).Replace(".",string.Empty);
+				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
+#>
+				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
+				if (<#=listVariable#> != null && <#=listVariable#>.Count > 0) 
+				{						
+					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
+					foreach (var <#=listItemVariable#> in <#=listVariable#>) 
+					{
+<#+
+			PushIndent("	");			
+			if(member.Shape.ListShape.IsStructure)
+			{
+					ProcessStructure(listItemVariable, member, xmlNamespace);	
+			}
+			else
+			{
+					// Use shape's ListMarshallName as it's a list structure.
+#>
+					xmlWriter.WriteStartElement("<#=member.Shape.ListMarshallName#>", "<#=xmlNamespace#>");
+                    xmlWriter.WriteValue(<#=listItemVariable#>);
+                    xmlWriter.WriteEndElement();
+<#+				
+			}
+			PopIndent();			
+#>
+					}			
+					xmlWriter.WriteEndElement();			
+				}
+<#+				
+	}
+#>

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CognitoSync.Model
         private List<Dataset> _datasets = new List<Dataset>();
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property Count. Number of datasets returned.
         /// </summary>
@@ -48,7 +51,6 @@ namespace Amazon.CognitoSync.Model
             return this._count.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Datasets. A set of datasets.
         /// </summary>
@@ -63,7 +65,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._datasets != null && this._datasets.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. A pagination token for obtaining the next page

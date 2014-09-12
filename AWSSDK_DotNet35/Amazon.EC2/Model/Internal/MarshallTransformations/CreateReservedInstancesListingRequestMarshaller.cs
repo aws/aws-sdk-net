@@ -12,65 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Reserved Instances Listing Request Marshaller
+    /// CreateReservedInstancesListing Request Marshaller
     /// </summary>       
-    public class CreateReservedInstancesListingRequestMarshaller : IMarshaller<IRequest, CreateReservedInstancesListingRequest>
+    public class CreateReservedInstancesListingRequestMarshaller : IMarshaller<IRequest, CreateReservedInstancesListingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateReservedInstancesListingRequest createReservedInstancesListingRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createReservedInstancesListingRequest, "AmazonEC2");
+            return this.Marshall((CreateReservedInstancesListingRequest)input);
+        }
+    
+        public IRequest Marshall(CreateReservedInstancesListingRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateReservedInstancesListing");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createReservedInstancesListingRequest != null && createReservedInstancesListingRequest.IsSetReservedInstancesId())
-            {
-                request.Parameters.Add("ReservedInstancesId", StringUtils.FromString(createReservedInstancesListingRequest.ReservedInstancesId));
-            }
-            if (createReservedInstancesListingRequest != null && createReservedInstancesListingRequest.IsSetInstanceCount())
-            {
-                request.Parameters.Add("InstanceCount", StringUtils.FromInt(createReservedInstancesListingRequest.InstanceCount));
-            }
 
-            if (createReservedInstancesListingRequest != null)
+            if(publicRequest != null)
             {
-                List<PriceScheduleSpecification> priceSchedulesList = createReservedInstancesListingRequest.PriceSchedules;
-                int priceSchedulesListIndex = 1;
-                foreach (PriceScheduleSpecification priceSchedulesListValue in priceSchedulesList)
+                if(publicRequest.IsSetClientToken())
                 {
-                    if (priceSchedulesListValue != null && priceSchedulesListValue.IsSetTerm())
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                if(publicRequest.IsSetInstanceCount())
+                {
+                    request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
+                }
+                if(publicRequest.IsSetPriceSchedules())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PriceSchedules)
                     {
-                        request.Parameters.Add("PriceSchedules." + priceSchedulesListIndex + ".Term", StringUtils.FromLong(priceSchedulesListValue.Term));
+                        if(publicRequestlistValue.IsSetCurrencyCode())
+                        {
+                            request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "CurrencyCode", StringUtils.FromString(publicRequestlistValue.CurrencyCode));
+                        }
+                        if(publicRequestlistValue.IsSetPrice())
+                        {
+                            request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Price", StringUtils.FromDouble(publicRequestlistValue.Price));
+                        }
+                        if(publicRequestlistValue.IsSetTerm())
+                        {
+                            request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Term", StringUtils.FromLong(publicRequestlistValue.Term));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (priceSchedulesListValue != null && priceSchedulesListValue.IsSetPrice())
-                    {
-                        request.Parameters.Add("PriceSchedules." + priceSchedulesListIndex + ".Price", StringUtils.FromDouble(priceSchedulesListValue.Price));
-                    }
-                    if (priceSchedulesListValue != null && priceSchedulesListValue.IsSetCurrencyCode())
-                    {
-                        request.Parameters.Add("PriceSchedules." + priceSchedulesListIndex + ".CurrencyCode", StringUtils.FromString(priceSchedulesListValue.CurrencyCode));
-                    }
-
-                    priceSchedulesListIndex++;
+                }
+                if(publicRequest.IsSetReservedInstancesId())
+                {
+                    request.Parameters.Add("ReservedInstancesId", StringUtils.FromString(publicRequest.ReservedInstancesId));
                 }
             }
-            if (createReservedInstancesListingRequest != null && createReservedInstancesListingRequest.IsSetClientToken())
-            {
-                request.Parameters.Add("ClientToken", StringUtils.FromString(createReservedInstancesListingRequest.ClientToken));
-            }
-
             return request;
         }
     }

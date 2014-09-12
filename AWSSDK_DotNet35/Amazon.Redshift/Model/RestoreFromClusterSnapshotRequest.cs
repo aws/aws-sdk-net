@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -64,7 +68,6 @@ namespace Amazon.Redshift.Model
         private string _snapshotIdentifier;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
@@ -87,7 +90,6 @@ namespace Amazon.Redshift.Model
         {
             return this._allowVersionUpgrade.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
@@ -119,7 +121,6 @@ namespace Amazon.Redshift.Model
             return this._automatedSnapshotRetentionPeriod.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
@@ -145,7 +146,6 @@ namespace Amazon.Redshift.Model
         {
             return this._availabilityZone != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -176,7 +176,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterParameterGroupName. 
@@ -210,7 +209,6 @@ namespace Amazon.Redshift.Model
             return this._clusterParameterGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
         /// <para>
@@ -239,7 +237,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
@@ -265,7 +262,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSubnetGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ElasticIp. 
         /// <para>
@@ -283,7 +279,6 @@ namespace Amazon.Redshift.Model
         {
             return this._elasticIp != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmClientCertificateIdentifier. 
@@ -304,7 +299,6 @@ namespace Amazon.Redshift.Model
             return this._hsmClientCertificateIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HsmConfigurationIdentifier. 
         /// <para>
@@ -323,7 +317,6 @@ namespace Amazon.Redshift.Model
         {
             return this._hsmConfigurationIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
@@ -344,7 +337,6 @@ namespace Amazon.Redshift.Model
         {
             return this._ownerAccount != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Port. 
@@ -371,7 +363,6 @@ namespace Amazon.Redshift.Model
         {
             return this._port.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
@@ -415,7 +406,6 @@ namespace Amazon.Redshift.Model
             return this._preferredMaintenanceWindow != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
@@ -434,7 +424,6 @@ namespace Amazon.Redshift.Model
         {
             return this._publiclyAccessible.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
@@ -455,7 +444,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snapshotClusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
@@ -479,7 +467,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snapshotIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 

@@ -83,22 +83,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static GetBucketVersioningResponseUnmarshaller instance;
 
-        public static GetBucketVersioningResponseUnmarshaller GetInstance()
+        private static GetBucketVersioningResponseUnmarshaller _instance;
+
+        public static GetBucketVersioningResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetBucketVersioningResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetBucketVersioningResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

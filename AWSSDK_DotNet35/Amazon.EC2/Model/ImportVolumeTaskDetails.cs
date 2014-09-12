@@ -12,105 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an import volume task.</para>
+    /// Describes an import volume task.
     /// </summary>
     public partial class ImportVolumeTaskDetails
     {
-        
-        private long? bytesConverted;
-        private string availabilityZone;
-        private string description;
-        private DiskImageDescription image;
-        private DiskImageVolumeDescription volume;
-
+        private string _availabilityZone;
+        private long? _bytesConverted;
+        private string _description;
+        private DiskImageDescription _image;
+        private DiskImageVolumeDescription _volume;
 
         /// <summary>
-        /// The number of bytes converted so far.
-        ///  
-        /// </summary>
-        public long BytesConverted
-        {
-            get { return this.bytesConverted ?? default(long); }
-            set { this.bytesConverted = value; }
-        }
-
-        // Check to see if BytesConverted property is set
-        internal bool IsSetBytesConverted()
-        {
-            return this.bytesConverted.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
         /// The Availability Zone where the resulting volume will reside.
-        ///  
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
+        /// Gets and sets the property BytesConverted. 
+        /// <para>
+        /// The number of bytes converted so far.
+        /// </para>
+        /// </summary>
+        public long BytesConverted
+        {
+            get { return this._bytesConverted.GetValueOrDefault(); }
+            set { this._bytesConverted = value; }
+        }
+
+        // Check to see if BytesConverted property is set
+        internal bool IsSetBytesConverted()
+        {
+            return this._bytesConverted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// The description you provided when starting the import volume task.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
         /// The image.
-        ///  
+        /// </para>
         /// </summary>
         public DiskImageDescription Image
         {
-            get { return this.image; }
-            set { this.image = value; }
+            get { return this._image; }
+            set { this._image = value; }
         }
 
         // Check to see if Image property is set
         internal bool IsSetImage()
         {
-            return this.image != null;
+            return this._image != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Volume. 
+        /// <para>
         /// The volume.
-        ///  
+        /// </para>
         /// </summary>
         public DiskImageVolumeDescription Volume
         {
-            get { return this.volume; }
-            set { this.volume = value; }
+            get { return this._volume; }
+            set { this._volume = value; }
         }
 
         // Check to see if Volume property is set
         internal bool IsSetVolume()
         {
-            return this.volume != null;
+            return this._volume != null;
         }
+
     }
 }

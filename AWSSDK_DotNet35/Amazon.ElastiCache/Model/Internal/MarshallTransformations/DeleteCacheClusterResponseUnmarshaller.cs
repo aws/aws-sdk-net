@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -117,7 +121,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static DeleteCacheClusterResponseUnmarshaller _instance = new DeleteCacheClusterResponseUnmarshaller();        
 
         internal static DeleteCacheClusterResponseUnmarshaller GetInstance()

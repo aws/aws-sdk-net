@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,42 +32,46 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ReservedInstancesModificationResult
     {
-        
-        private string reservedInstancesId;
-        private ReservedInstancesConfiguration targetConfiguration;
-
+        private string _reservedInstancesId;
+        private ReservedInstancesConfiguration _targetConfiguration;
 
         /// <summary>
-        /// The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification
-        /// is fulfilled.
-        ///  
+        /// Gets and sets the property ReservedInstancesId. 
+        /// <para>
+        /// The ID for the Reserved Instances that were created as part of the modification request.
+        /// This field is only available when the modification is fulfilled.
+        /// </para>
         /// </summary>
         public string ReservedInstancesId
         {
-            get { return this.reservedInstancesId; }
-            set { this.reservedInstancesId = value; }
+            get { return this._reservedInstancesId; }
+            set { this._reservedInstancesId = value; }
         }
 
         // Check to see if ReservedInstancesId property is set
         internal bool IsSetReservedInstancesId()
         {
-            return this.reservedInstancesId != null;
+            return this._reservedInstancesId != null;
         }
 
         /// <summary>
-        /// The target Reserved Instances configurations supplied as part of the modification request.
-        ///  
+        /// Gets and sets the property TargetConfiguration. 
+        /// <para>
+        /// The target Reserved Instances configurations supplied as part of the modification
+        /// request.
+        /// </para>
         /// </summary>
         public ReservedInstancesConfiguration TargetConfiguration
         {
-            get { return this.targetConfiguration; }
-            set { this.targetConfiguration = value; }
+            get { return this._targetConfiguration; }
+            set { this._targetConfiguration = value; }
         }
 
         // Check to see if TargetConfiguration property is set
         internal bool IsSetTargetConfiguration()
         {
-            return this.targetConfiguration != null;
+            return this._targetConfiguration != null;
         }
+
     }
 }

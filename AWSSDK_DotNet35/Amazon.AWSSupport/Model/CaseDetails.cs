@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -63,7 +67,6 @@ namespace Amazon.AWSSupport.Model
         private string _submittedBy;
         private string _timeCreated;
 
-
         /// <summary>
         /// Gets and sets the property CaseId. 
         /// <para>
@@ -83,7 +86,6 @@ namespace Amazon.AWSSupport.Model
             return this._caseId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CategoryCode. 
         /// <para>
@@ -101,7 +103,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._categoryCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CcEmailAddresses. 
@@ -121,7 +122,6 @@ namespace Amazon.AWSSupport.Model
             return this._ccEmailAddresses != null && this._ccEmailAddresses.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DisplayId. 
         /// <para>
@@ -140,7 +140,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._displayId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Language. 
@@ -162,7 +161,6 @@ namespace Amazon.AWSSupport.Model
             return this._language != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RecentCommunications. 
         /// <para>
@@ -183,7 +181,6 @@ namespace Amazon.AWSSupport.Model
             return this._recentCommunications != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
@@ -201,7 +198,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._serviceCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SeverityCode. 
@@ -221,7 +217,6 @@ namespace Amazon.AWSSupport.Model
             return this._severityCode != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
@@ -239,7 +234,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Subject. 
@@ -259,7 +253,6 @@ namespace Amazon.AWSSupport.Model
             return this._subject != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SubmittedBy. 
         /// <para>
@@ -277,7 +270,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._submittedBy != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TimeCreated. 

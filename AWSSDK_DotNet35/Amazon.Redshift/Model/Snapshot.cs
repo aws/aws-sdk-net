@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -54,7 +58,6 @@ namespace Amazon.Redshift.Model
         private double? _totalBackupSizeInMegaBytes;
         private string _vpcId;
 
-
         /// <summary>
         /// Gets and sets the property AccountsWithRestoreAccess. 
         /// <para>
@@ -75,7 +78,6 @@ namespace Amazon.Redshift.Model
             return this._accountsWithRestoreAccess != null && this._accountsWithRestoreAccess.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ActualIncrementalBackupSizeInMegaBytes. 
         /// <para>
@@ -94,7 +96,6 @@ namespace Amazon.Redshift.Model
             return this._actualIncrementalBackupSizeInMegaBytes.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
@@ -112,7 +113,6 @@ namespace Amazon.Redshift.Model
         {
             return this._availabilityZone != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property BackupProgressInMegaBytes. 
@@ -133,7 +133,6 @@ namespace Amazon.Redshift.Model
             return this._backupProgressInMegaBytes.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
@@ -152,7 +151,6 @@ namespace Amazon.Redshift.Model
             return this._clusterCreateTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
@@ -170,7 +168,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
@@ -191,7 +188,6 @@ namespace Amazon.Redshift.Model
             return this._clusterVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CurrentBackupRateInMegaBytesPerSecond. 
         /// <para>
@@ -211,7 +207,6 @@ namespace Amazon.Redshift.Model
             return this._currentBackupRateInMegaBytesPerSecond.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
@@ -229,7 +224,6 @@ namespace Amazon.Redshift.Model
         {
             return this._dBName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ElapsedTimeInSeconds. 
@@ -250,7 +244,6 @@ namespace Amazon.Redshift.Model
             return this._elapsedTimeInSeconds.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
@@ -268,7 +261,6 @@ namespace Amazon.Redshift.Model
         {
             return this._encrypted.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EncryptedWithHSM. 
@@ -290,7 +282,6 @@ namespace Amazon.Redshift.Model
             return this._encryptedWithHSM.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EstimatedSecondsToCompletion. 
         /// <para>
@@ -310,7 +301,6 @@ namespace Amazon.Redshift.Model
             return this._estimatedSecondsToCompletion.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
@@ -328,7 +318,6 @@ namespace Amazon.Redshift.Model
         {
             return this._masterUsername != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NodeType. 
@@ -348,7 +337,6 @@ namespace Amazon.Redshift.Model
             return this._nodeType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
@@ -366,7 +354,6 @@ namespace Amazon.Redshift.Model
         {
             return this._numberOfNodes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
@@ -388,7 +375,6 @@ namespace Amazon.Redshift.Model
             return this._ownerAccount != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
@@ -406,7 +392,6 @@ namespace Amazon.Redshift.Model
         {
             return this._port.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
@@ -427,7 +412,6 @@ namespace Amazon.Redshift.Model
             return this._snapshotCreateTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
@@ -445,7 +429,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snapshotIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotType. 
@@ -466,7 +449,6 @@ namespace Amazon.Redshift.Model
             return this._snapshotType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
@@ -484,7 +466,6 @@ namespace Amazon.Redshift.Model
         {
             return this._sourceRegion != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -509,7 +490,6 @@ namespace Amazon.Redshift.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TotalBackupSizeInMegaBytes. 
         /// <para>
@@ -528,7 +508,6 @@ namespace Amazon.Redshift.Model
         {
             return this._totalBackupSizeInMegaBytes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcId. 

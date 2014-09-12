@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,63 +29,67 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachNetworkInterface operation.
-    /// <para>Attaches a network interface to an instance.</para>
+    /// Attaches a network interface to an instance.
     /// </summary>
     public partial class AttachNetworkInterfaceRequest : AmazonEC2Request
     {
-        private string networkInterfaceId;
-        private string instanceId;
-        private int? deviceIndex;
-
-
-        /// <summary>
-        /// The ID of the network interface.
-        ///  
-        /// </summary>
-        public string NetworkInterfaceId
-        {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
-        }
-
-        // Check to see if NetworkInterfaceId property is set
-        internal bool IsSetNetworkInterfaceId()
-        {
-            return this.networkInterfaceId != null;
-        }
+        private int? _deviceIndex;
+        private string _instanceId;
+        private string _networkInterfaceId;
 
         /// <summary>
-        /// The ID of the instance.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DeviceIndex. 
+        /// <para>
         /// The index of the device for the network interface attachment.
-        ///  
+        /// </para>
         /// </summary>
         public int DeviceIndex
         {
-            get { return this.deviceIndex ?? default(int); }
-            set { this.deviceIndex = value; }
+            get { return this._deviceIndex.GetValueOrDefault(); }
+            set { this._deviceIndex = value; }
         }
 
         // Check to see if DeviceIndex property is set
         internal bool IsSetDeviceIndex()
         {
-            return this.deviceIndex.HasValue;
+            return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
         }
 
     }
 }
-    

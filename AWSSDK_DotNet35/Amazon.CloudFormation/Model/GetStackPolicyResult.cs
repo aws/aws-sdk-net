@@ -12,49 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for the GetStackPolicy action.</para>
+    /// The output for the <a>GetStackPolicy</a> action.
     /// </summary>
     public partial class GetStackPolicyResult : AmazonWebServiceResponse
     {
-        
-        private string stackPolicyBody;
-
+        private string _stackPolicyBody;
 
         /// <summary>
-        /// Structure containing the stack policy body. (For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in
-        /// the AWS CloudFormation User Guide.)
-        ///  
+        /// Gets and sets the property StackPolicyBody. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16384</description>
-        ///     </item>
-        /// </list>
+        /// Structure containing the stack policy body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+        /// Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
         /// </para>
         /// </summary>
         public string StackPolicyBody
         {
-            get { return this.stackPolicyBody; }
-            set { this.stackPolicyBody = value; }
+            get { return this._stackPolicyBody; }
+            set { this._stackPolicyBody = value; }
         }
 
         // Check to see if StackPolicyBody property is set
         internal bool IsSetStackPolicyBody()
         {
-            return this.stackPolicyBody != null;
+            return this._stackPolicyBody != null;
         }
+
     }
 }

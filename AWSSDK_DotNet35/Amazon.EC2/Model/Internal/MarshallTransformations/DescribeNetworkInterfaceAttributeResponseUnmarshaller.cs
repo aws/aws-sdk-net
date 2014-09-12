@@ -12,86 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeNetworkInterfaceAttribute operation
-    /// </summary>
-    internal class DescribeNetworkInterfaceAttributeResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for DescribeNetworkInterfaceAttribute operation
+    /// </summary>  
+    public class DescribeNetworkInterfaceAttributeResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeNetworkInterfaceAttributeResponse response = new DescribeNetworkInterfaceAttributeResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
-                    if (context.TestExpression("networkInterfaceId", targetDepth))
+
+                    if (context.TestExpression("attachment", targetDepth))
                     {
-                        response.NetworkInterfaceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = NetworkInterfaceAttachmentUnmarshaller.Instance;
+                        response.Attachment = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("description/value", targetDepth))
                     {
-                        response.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("sourceDestCheck/value", targetDepth))
-                    {
-                        response.SourceDestCheck = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
-                        response.Groups.Add(GroupIdentifierUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Groups.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("attachment", targetDepth))
+                    if (context.TestExpression("networkInterfaceId", targetDepth))
                     {
-                        response.Attachment = NetworkInterfaceAttachmentUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NetworkInterfaceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("sourceDestCheck/value", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.SourceDestCheck = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeNetworkInterfaceAttributeResponseUnmarshaller instance;
+        private static DescribeNetworkInterfaceAttributeResponseUnmarshaller _instance = new DescribeNetworkInterfaceAttributeResponseUnmarshaller();        
 
-        public static DescribeNetworkInterfaceAttributeResponseUnmarshaller GetInstance()
+        internal static DescribeNetworkInterfaceAttributeResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeNetworkInterfaceAttributeResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeNetworkInterfaceAttributeResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

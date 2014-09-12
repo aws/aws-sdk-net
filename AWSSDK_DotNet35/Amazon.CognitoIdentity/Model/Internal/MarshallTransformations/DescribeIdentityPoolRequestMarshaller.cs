@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeIdentityPool Request Marshaller
     /// </summary>       
-    public class DescribeIdentityPoolRequestMarshaller : IMarshaller<IRequest, DescribeIdentityPoolRequest> 
+    public class DescribeIdentityPoolRequestMarshaller : IMarshaller<IRequest, DescribeIdentityPoolRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeIdentityPoolRequest)input);
+        }
+
         public IRequest Marshall(DescribeIdentityPoolRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoIdentity");
@@ -47,10 +56,11 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetIdentityPoolId())
                 {
-                    writer.WritePropertyName("IdentityPoolId");
-                    writer.Write(publicRequest.IdentityPoolId);
+                    context.Writer.WritePropertyName("IdentityPoolId");
+                    context.Writer.Write(publicRequest.IdentityPoolId);
                 }
 
         

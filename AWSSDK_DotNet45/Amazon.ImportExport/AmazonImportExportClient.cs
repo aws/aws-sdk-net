@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,10 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
+
+
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.ImportExport.Model;
 using Amazon.ImportExport.Model.Internal.MarshallTransformations;
@@ -27,27 +34,17 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ImportExport
 {
     /// <summary>
-    /// Implementation for accessing AmazonImportExport.
-    /// 
-    /// AWS Import/Export Service <para> AWS Import/Export accelerates transferring large amounts of data between the AWS cloud and portable storage
-    /// devices that you mail to us. AWS Import/Export transfers data directly onto and off of your storage devices using Amazon's high-speed
-    /// internal network and bypassing the Internet. For large data sets, AWS Import/Export is often faster than Internet transfer and more cost
-    /// effective than upgrading your connectivity. </para>
+    /// Implementation for accessing ImportExport
+    ///
+    /// AWS Import/Export Service AWS Import/Export accelerates transferring large amounts
+    /// of data between the AWS cloud and portable storage devices that you mail to us. AWS
+    /// Import/Export transfers data directly onto and off of your storage devices using Amazon's
+    /// high-speed internal network and bypassing the Internet. For large data sets, AWS Import/Export
+    /// is often faster than Internet transfer and more cost effective than upgrading your
+    /// connectivity.
     /// </summary>
-	public partial class AmazonImportExportClient : AmazonWebServiceClient, Amazon.ImportExport.IAmazonImportExport
+    public partial class AmazonImportExportClient : AmazonServiceClient, IAmazonImportExport
     {
-
-        QueryStringSigner signer = new QueryStringSigner();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -66,7 +63,7 @@ namespace Amazon.ImportExport
         ///
         /// </summary>
         public AmazonImportExportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig()) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -85,7 +82,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -102,9 +99,9 @@ namespace Amazon.ImportExport
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonImportExport Configuration Object</param>
+        /// <param name="config">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Credentials
@@ -121,7 +118,7 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonImportExportConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonImportExportConfig{RegionEndpoint = region})
         {
         }
 
@@ -132,7 +129,7 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AWSCredentials credentials, AmazonImportExportConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -159,13 +156,13 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonImportExportClient Configuration object.
+        /// AmazonImportExportClient Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonImportExportConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -188,57 +185,82 @@ namespace Amazon.ImportExport
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonImportExportConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonImportExportConfig{RegionEndpoint = region})
         {
         }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonImportExportClient Configuration object.
+        /// AmazonImportExportClient Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonImportExportConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
         #endregion
 
- 
-        /// <summary>
-        /// <para> This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is
-        /// complete. </para>
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method on AmazonImportExport.</param>
-        /// 
-        /// <returns>The response from the CancelJob service method, as returned by AmazonImportExport.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ImportExport.Model.CanceledJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.ExpiredJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAccessKeyIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.UnableToCancelJobIdException" />
-		public CancelJobResponse CancelJob(CancelJobRequest request)
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
         {
-            var task = CancelJobAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return new QueryStringSigner();
+        }    
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
-          
+
+        #endregion
+
+        
+        #region  CancelJob
+
+        /// <summary>
+        /// This operation cancels a specified job. Only the job owner can cancel it. The operation
+        /// fails if the job has already started or is complete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelJob service method, as returned by ImportExport.</returns>
+        /// <exception cref="CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="UnableToCancelJobIdException">
+        /// AWS Import/Export cannot cancel the job
+        /// </exception>
+        public CancelJobResponse CancelJob(CancelJobRequest request)
+        {
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport.CancelJob"/>
+        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelJob operation.</param>
@@ -246,53 +268,88 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
-            var unmarshaller = CancelJobResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CancelJobRequest, CancelJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelJobRequest,CancelJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  CreateJob
+
         /// <summary>
-        /// <para> This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that
-        /// describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature
-        /// that you use to identify your storage device, and the address where you should ship your storage device. </para>
+        /// This operation initiates the process of scheduling an upload or download of your data.
+        /// You include in the request a manifest that describes the data transfer specifics.
+        /// The response to the request includes a job ID, which you can use in other operations,
+        /// a signature that you use to identify your storage device, and the address where you
+        /// should ship your storage device.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method on AmazonImportExport.</param>
-        /// 
-        /// <returns>The response from the CreateJob service method, as returned by AmazonImportExport.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ImportExport.Model.MalformedManifestException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAddressException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.BucketPermissionException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidParameterException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MultipleRegionsException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MissingParameterException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidFileSystemException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MissingCustomsException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.NoSuchBucketException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAccessKeyIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidManifestFieldException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidCustomsException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MissingManifestFieldException" />
-		public CreateJobResponse CreateJob(CreateJobRequest request)
+        /// <returns>The response from the CreateJob service method, as returned by ImportExport.</returns>
+        /// <exception cref="BucketPermissionException">
+        /// The account specified does not have the appropriate bucket permissions.
+        /// </exception>
+        /// <exception cref="InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="InvalidAddressException">
+        /// The address specified in the manifest is invalid.
+        /// </exception>
+        /// <exception cref="InvalidCustomsException">
+        /// One or more customs parameters was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="InvalidFileSystemException">
+        /// File system specified in export manifest is invalid.
+        /// </exception>
+        /// <exception cref="InvalidManifestFieldException">
+        /// One or more manifest fields was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="MalformedManifestException">
+        /// Your manifest is not well-formed.
+        /// </exception>
+        /// <exception cref="MissingCustomsException">
+        /// One or more required customs parameters was missing from the manifest.
+        /// </exception>
+        /// <exception cref="MissingManifestFieldException">
+        /// One or more required fields were missing from the manifest file. Please correct and
+        /// resubmit.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// One or more required parameters was missing from the request.
+        /// </exception>
+        /// <exception cref="MultipleRegionsException">
+        /// Your manifest file contained buckets from multiple regions. A job is restricted to
+        /// buckets from one region. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="NoSuchBucketException">
+        /// The specified bucket does not exist. Create the specified bucket or change the manifest's
+        /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
+        /// by the manifest's Access Key ID, has write permissions to.
+        /// </exception>
+        public CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var task = CreateJobAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport.CreateJob"/>
+        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
@@ -300,43 +357,52 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobRequestMarshaller();
-            var unmarshaller = CreateJobResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateJobRequest, CreateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateJobRequest,CreateJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetStatus
+
         /// <summary>
-        /// <para> This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and
-        /// the signature value associated with the job. You can only return information about jobs you own. </para>
+        /// This operation returns information about a job, including where the job is in the
+        /// processing pipeline, the status of the results, and the signature value associated
+        /// with the job. You can only return information about jobs you own.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatus service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStatus service method on AmazonImportExport.</param>
-        /// 
-        /// <returns>The response from the GetStatus service method, as returned by AmazonImportExport.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ImportExport.Model.CanceledJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.ExpiredJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAccessKeyIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidJobIdException" />
-		public GetStatusResponse GetStatus(GetStatusRequest request)
+        /// <returns>The response from the GetStatus service method, as returned by ImportExport.</returns>
+        /// <exception cref="CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        public GetStatusResponse GetStatus(GetStatusRequest request)
         {
-            var task = GetStatusAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetStatusRequestMarshaller();
+            var unmarshaller = GetStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatusRequest,GetStatusResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetStatus operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport.GetStatus"/>
+        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStatus operation.</param>
@@ -344,42 +410,68 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStatusRequestMarshaller();
-            var unmarshaller = GetStatusResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetStatusRequest, GetStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStatusRequest,GetStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  ListJobs
+
         /// <summary>
-        /// <para> This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based
-        /// on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return
-        /// Test2 followed by Test1. </para>
+        /// This operation returns the jobs associated with the requester. AWS Import/Export lists
+        /// the jobs in reverse chronological order based on the date of creation. For example
+        /// if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
+        /// would return Test2 followed by Test1.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
-        /// 
-        /// <returns>The response from the ListJobs service method, as returned by AmazonImportExport.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidParameterException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAccessKeyIdException" />
-		public ListJobsResponse ListJobs(ListJobsRequest request)
+        /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
+        /// <exception cref="InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        public ListJobsResponse ListJobs()
         {
-            var task = ListJobsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return ListJobs(new ListJobsRequest());
         }
-          
+
+        /// <summary>
+        /// This operation returns the jobs associated with the requester. AWS Import/Export lists
+        /// the jobs in reverse chronological order based on the date of creation. For example
+        /// if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
+        /// would return Test2 followed by Test1.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
+        /// <exception cref="InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        public ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var marshaller = new ListJobsRequestMarshaller();
+            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport.ListJobs"/>
+        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
@@ -387,72 +479,93 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
-            var unmarshaller = ListJobsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListJobsRequest, ListJobsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  UpdateJob
+
         /// <summary>
-        /// <para> This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based
-        /// on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return
-        /// Test2 followed by Test1. </para>
+        /// You use this operation to change the parameters specified in the original manifest
+        /// file by supplying a new manifest file. The manifest file attached to this request
+        /// replaces the original manifest file. You can only use the operation after a CreateJob
+        /// request but before the data transfer starts and you can only use it on jobs you own.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// 
-        /// 
-        /// <returns>The response from the ListJobs service method, as returned by AmazonImportExport.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidParameterException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAccessKeyIdException" />
-		public ListJobsResponse ListJobs()
+        /// <returns>The response from the UpdateJob service method, as returned by ImportExport.</returns>
+        /// <exception cref="BucketPermissionException">
+        /// The account specified does not have the appropriate bucket permissions.
+        /// </exception>
+        /// <exception cref="CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="InvalidAddressException">
+        /// The address specified in the manifest is invalid.
+        /// </exception>
+        /// <exception cref="InvalidCustomsException">
+        /// One or more customs parameters was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="InvalidFileSystemException">
+        /// File system specified in export manifest is invalid.
+        /// </exception>
+        /// <exception cref="InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="InvalidManifestFieldException">
+        /// One or more manifest fields was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="MalformedManifestException">
+        /// Your manifest is not well-formed.
+        /// </exception>
+        /// <exception cref="MissingCustomsException">
+        /// One or more required customs parameters was missing from the manifest.
+        /// </exception>
+        /// <exception cref="MissingManifestFieldException">
+        /// One or more required fields were missing from the manifest file. Please correct and
+        /// resubmit.
+        /// </exception>
+        /// <exception cref="MissingParameterException">
+        /// One or more required parameters was missing from the request.
+        /// </exception>
+        /// <exception cref="MultipleRegionsException">
+        /// Your manifest file contained buckets from multiple regions. A job is restricted to
+        /// buckets from one region. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="NoSuchBucketException">
+        /// The specified bucket does not exist. Create the specified bucket or change the manifest's
+        /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
+        /// by the manifest's Access Key ID, has write permissions to.
+        /// </exception>
+        public UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            return this.ListJobs(new ListJobsRequest());
+            var marshaller = new UpdateJobRequestMarshaller();
+            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
         }
- 
-        /// <summary>
-        /// <para> You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The
-        /// manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but
-        /// before the data transfer starts and you can only use it on jobs you own. </para>
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method on AmazonImportExport.</param>
-        /// 
-        /// <returns>The response from the UpdateJob service method, as returned by AmazonImportExport.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ImportExport.Model.MalformedManifestException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.BucketPermissionException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAddressException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidParameterException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MultipleRegionsException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MissingParameterException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidFileSystemException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.CanceledJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MissingCustomsException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.NoSuchBucketException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.ExpiredJobIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidAccessKeyIdException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidCustomsException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidManifestFieldException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.MissingManifestFieldException" />
-        /// <exception cref="T:Amazon.ImportExport.Model.InvalidJobIdException" />
-		public UpdateJobResponse UpdateJob(UpdateJobRequest request)
-        {
-            var task = UpdateJobAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport.UpdateJob"/>
+        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob operation.</param>
@@ -460,11 +573,16 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateJobRequestMarshaller();
-            var unmarshaller = UpdateJobResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateJobRequest, UpdateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateJobRequest,UpdateJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
+
+        #endregion
+        
     }
 }

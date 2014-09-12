@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DirectConnect.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DirectConnect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Location Object
+    /// </summary>  
+    public class LocationUnmarshaller : IUnmarshaller<Location, XmlUnmarshallerContext>, IUnmarshaller<Location, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// LocationUnmarshaller
-      /// </summary>
-      internal class LocationUnmarshaller : IUnmarshaller<Location, XmlUnmarshallerContext>, IUnmarshaller<Location, JsonUnmarshallerContext>
-      {
         Location IUnmarshaller<Location, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Location Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Location location = new Location();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Location unmarshalledObject = new Location();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("locationCode", targetDepth))
-              {
-                location.LocationCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("locationName", targetDepth))
-              {
-                location.LocationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("locationCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LocationCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("locationName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LocationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return location;
+            return unmarshalledObject;
         }
 
-        private static LocationUnmarshaller instance;
-        public static LocationUnmarshaller GetInstance()
+
+        private static LocationUnmarshaller _instance = new LocationUnmarshaller();        
+
+        public static LocationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new LocationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

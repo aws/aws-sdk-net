@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -47,6 +51,21 @@ namespace Amazon.IdentityManagement.Model
         private StatusType _status;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateAccessKeyRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateAccessKeyRequest with the parameterized properties
+        /// </summary>
+        /// <param name="accessKeyId">The access key ID of the secret access key you want to update.</param>
+        /// <param name="status">The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used.</param>
+        public UpdateAccessKeyRequest(string accessKeyId, StatusType status)
+        {
+            _accessKeyId = accessKeyId;
+            _status = status;
+        }
 
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
@@ -65,7 +84,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._accessKeyId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -86,7 +104,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

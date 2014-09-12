@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,26 +29,29 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RebuildEnvironment operation.
-    /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling
-    /// group, load         balancer, etc.)         for a specified environment and forces
-    /// a restart.
+    /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
+    /// load balancer, etc.) for a specified environment and forces a restart.
     /// </summary>
     public partial class RebuildEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
         private string _environmentId;
         private string _environmentName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RebuildEnvironmentRequest() { }
 
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///          The ID of the environment to rebuild.      
+        ///  The ID of the environment to rebuild. 
         /// </para>
-        ///        
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentName, or both. 
-        ///          If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -59,17 +66,16 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///          The name of the environment to rebuild.        
+        ///  The name of the environment to rebuild. 
         /// </para>
-        ///          
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentId, or both.   
-        ///        If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentName

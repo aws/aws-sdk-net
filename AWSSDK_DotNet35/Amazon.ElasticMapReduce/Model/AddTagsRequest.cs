@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,30 @@ namespace Amazon.ElasticMapReduce.Model
         private string _resourceId;
         private List<Tag> _tags = new List<Tag>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AddTagsRequest() { }
+
+        /// <summary>
+        /// Instantiates AddTagsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="resourceId">The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</param>
+        public AddTagsRequest(string resourceId)
+        {
+            _resourceId = resourceId;
+        }
+
+        /// <summary>
+        /// Instantiates AddTagsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="resourceId">The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</param>
+        /// <param name="tags">A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</param>
+        public AddTagsRequest(string resourceId, List<Tag> tags)
+        {
+            _resourceId = resourceId;
+            _tags = tags;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
@@ -54,7 +82,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._resourceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Tags. 

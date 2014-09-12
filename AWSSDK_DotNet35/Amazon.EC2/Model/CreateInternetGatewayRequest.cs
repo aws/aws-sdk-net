@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,14 +29,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInternetGateway operation.
-    /// <para>Creates an Internet gateway for use with a VPC. After creating the Internet gateway, you attach it to a VPC using
-    /// AttachInternetGateway.</para> <para>For more information about your VPC and Internet gateway, see the <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/" >Amazon Virtual Private Cloud User Guide</a> .</para>
+    /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
+    /// you attach it to a VPC using <a>AttachInternetGateway</a>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about your VPC and Internet gateway, see the <a href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon
+    /// Virtual Private Cloud User Guide</a>.
+    /// </para>
     /// </summary>
     public partial class CreateInternetGatewayRequest : AmazonEC2Request
     {
 
-
     }
 }
-    

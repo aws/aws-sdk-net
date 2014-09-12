@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,69 +33,76 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Workflow Types Request Marshaller
+    /// ListWorkflowTypes Request Marshaller
     /// </summary>       
-    internal class ListWorkflowTypesRequestMarshaller : IMarshaller<IRequest, ListWorkflowTypesRequest> 
+    public class ListWorkflowTypesRequestMarshaller : IMarshaller<IRequest, ListWorkflowTypesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListWorkflowTypesRequest listWorkflowTypesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListWorkflowTypesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listWorkflowTypesRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(ListWorkflowTypesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.ListWorkflowTypes";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listWorkflowTypesRequest != null && listWorkflowTypesRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(listWorkflowTypesRequest.Domain);
-                }
-                if (listWorkflowTypesRequest != null && listWorkflowTypesRequest.IsSetName()) 
-                {
-                    writer.WritePropertyName("name");
-                    writer.Write(listWorkflowTypesRequest.Name);
-                }
-                if (listWorkflowTypesRequest != null && listWorkflowTypesRequest.IsSetRegistrationStatus()) 
-                {
-                    writer.WritePropertyName("registrationStatus");
-                    writer.Write(listWorkflowTypesRequest.RegistrationStatus);
-                }
-                if (listWorkflowTypesRequest != null && listWorkflowTypesRequest.IsSetNextPageToken()) 
-                {
-                    writer.WritePropertyName("nextPageToken");
-                    writer.Write(listWorkflowTypesRequest.NextPageToken);
-                }
-                if (listWorkflowTypesRequest != null && listWorkflowTypesRequest.IsSetMaximumPageSize()) 
-                {
-                    writer.WritePropertyName("maximumPageSize");
-                    writer.Write(listWorkflowTypesRequest.MaximumPageSize);
-                }
-                if (listWorkflowTypesRequest != null && listWorkflowTypesRequest.IsSetReverseOrder()) 
-                {
-                    writer.WritePropertyName("reverseOrder");
-                    writer.Write(listWorkflowTypesRequest.ReverseOrder);
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
+                if(publicRequest.IsSetMaximumPageSize())
+                {
+                    context.Writer.WritePropertyName("maximumPageSize");
+                    context.Writer.Write(publicRequest.MaximumPageSize);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetNextPageToken())
+                {
+                    context.Writer.WritePropertyName("nextPageToken");
+                    context.Writer.Write(publicRequest.NextPageToken);
+                }
+
+                if(publicRequest.IsSetRegistrationStatus())
+                {
+                    context.Writer.WritePropertyName("registrationStatus");
+                    context.Writer.Write(publicRequest.RegistrationStatus);
+                }
+
+                if(publicRequest.IsSetReverseOrder())
+                {
+                    context.Writer.WritePropertyName("reverseOrder");
+                    context.Writer.Write(publicRequest.ReverseOrder);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -1,0 +1,17 @@
+{
+  "noArgOverloads": [
+	"DescribeElasticLoadBalancers",	
+    "DescribeMyUserProfile",
+	"DescribeUserProfiles",	
+	"DescribeServiceErrors",	
+	"DescribeStacks",
+	"UpdateMyUserProfile"
+  ],
+	"dataTypeSwap" : {
+		"CreateInstanceRequest" : {
+		  "VirtualizationType" : {
+			"Type" : "VirtualizationType",
+		  }
+		}
+	}
+}

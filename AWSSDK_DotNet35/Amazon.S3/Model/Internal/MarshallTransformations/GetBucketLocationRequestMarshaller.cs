@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Location Request Marshaller
     /// </summary>       
-    public class GetBucketLocationRequestMarshaller : IMarshaller<IRequest, GetBucketLocationRequest>
-    {
+    public class GetBucketLocationRequestMarshaller : IMarshaller<IRequest, GetBucketLocationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketLocationRequest)input);
+		}
+
         public IRequest Marshall(GetBucketLocationRequest getBucketLocationRequest)
         {
             IRequest request = new DefaultRequest(getBucketLocationRequest, "AmazonS3");

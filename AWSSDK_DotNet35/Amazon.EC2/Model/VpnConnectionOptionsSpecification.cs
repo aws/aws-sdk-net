@@ -12,37 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes VPN connection options.</para>
+    /// Describes VPN connection options.
     /// </summary>
     public partial class VpnConnectionOptionsSpecification
     {
-        
-        private bool? staticRoutesOnly;
-
+        private bool? _staticRoutesOnly;
 
         /// <summary>
-        /// Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.
-        ///  
+        /// Gets and sets the property StaticRoutesOnly. 
+        /// <para>
+        /// Indicates whether the VPN connection uses static routes only. Static routes must be
+        /// used for devices that don't support BGP.
+        /// </para>
         /// </summary>
         public bool StaticRoutesOnly
         {
-            get { return this.staticRoutesOnly ?? default(bool); }
-            set { this.staticRoutesOnly = value; }
+            get { return this._staticRoutesOnly.GetValueOrDefault(); }
+            set { this._staticRoutesOnly = value; }
         }
 
         // Check to see if StaticRoutesOnly property is set
         internal bool IsSetStaticRoutesOnly()
         {
-            return this.staticRoutesOnly.HasValue;
+            return this._staticRoutesOnly.HasValue; 
         }
+
     }
 }

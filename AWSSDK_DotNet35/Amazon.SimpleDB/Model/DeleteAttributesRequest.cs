@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,85 +29,137 @@ namespace Amazon.SimpleDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAttributes operation.
-    /// <para> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </para>
-    /// <para><b>NOTE:</b> If DeleteAttributes is called without being passed any attributes or values specified, all the attributes for the item
-    /// are deleted. </para> <para> <c>DeleteAttributes</c> is an idempotent operation; running it multiple times on the same item or attribute does
-    /// not result in an error response. </para> <para> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency
-    /// update model, performing a GetAttributes or Select operation (read) immediately after a <c>DeleteAttributes</c> or PutAttributes operation
-    /// (write) might not return updated item data. </para>
+    /// Deletes one or more attributes associated with an item. If all attributes of the
+    /// item are deleted, the item is deleted. 
+    /// 
+    ///  
+    /// <para>
+    ///  <code>DeleteAttributes</code> is an idempotent operation; running it multiple times
+    /// on the same item or attribute does not result in an error response. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency
+    /// update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read)
+    /// immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation
+    /// (write) might not return updated item data. 
+    /// </para>
     /// </summary>
-    public partial class DeleteAttributesRequest : AmazonWebServiceRequest
+    public partial class DeleteAttributesRequest : AmazonSimpleDBRequest
     {
-        private string domainName;
-        private string itemName;
-        private List<Attribute> attributes = new List<Attribute>();
-        private UpdateCondition expected;
+        private List<Attribute> _attributes = new List<Attribute>();
+        private string _domainName;
+        private UpdateCondition _expected;
+        private string _itemName;
 
         /// <summary>
-        /// The name of the domain in which to perform the operation.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string DomainName
-        {
-            get { return this.domainName; }
-            set { this.domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this.domainName != null;
-        }
+        public DeleteAttributesRequest() { }
 
         /// <summary>
-        /// The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.
-        ///  
+        /// Instantiates DeleteAttributesRequest with the parameterized properties
         /// </summary>
-        public string ItemName
+        /// <param name="domainName">The name of the domain in which to perform the operation.</param>
+        /// <param name="itemName">The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.</param>
+        public DeleteAttributesRequest(string domainName, string itemName)
         {
-            get { return this.itemName; }
-            set { this.itemName = value; }
-        }
-
-        // Check to see if ItemName property is set
-        internal bool IsSetItemName()
-        {
-            return this.itemName != null;
+            _domainName = domainName;
+            _itemName = itemName;
         }
 
         /// <summary>
-        /// A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.
-        ///  
+        /// Instantiates DeleteAttributesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="domainName">The name of the domain in which to perform the operation.</param>
+        /// <param name="itemName">The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.</param>
+        /// <param name="attributes">A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.</param>
+        public DeleteAttributesRequest(string domainName, string itemName, List<Attribute> attributes)
+        {
+            _domainName = domainName;
+            _itemName = itemName;
+            _attributes = attributes;
+        }
+
+        /// <summary>
+        /// Instantiates DeleteAttributesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="domainName">The name of the domain in which to perform the operation.</param>
+        /// <param name="itemName">The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.</param>
+        /// <param name="attributes">A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.</param>
+        /// <param name="expected">The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.</param>
+        public DeleteAttributesRequest(string domainName, string itemName, List<Attribute> attributes, UpdateCondition expected)
+        {
+            _domainName = domainName;
+            _itemName = itemName;
+            _attributes = attributes;
+            _expected = expected;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attributes. A list of Attributes. Similar to columns on
+        /// a spreadsheet, attributes represent categories of data that can be assigned to items.
         /// </summary>
         public List<Attribute> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes.Count > 0;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
 
         /// <summary>
-        /// The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be
-        /// satisfied in order for this request to be processed and the attributes to be deleted.
-        ///  
+        /// Gets and sets the property DomainName. The name of the domain in which to perform
+        /// the operation.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Expected. The update condition which, if specified, determines
+        /// whether the specified attributes will be deleted or not. The update condition must
+        /// be satisfied in order for this request to be processed and the attributes to be deleted.
         /// </summary>
         public UpdateCondition Expected
         {
-            get { return this.expected; }
-            set { this.expected = value; }
+            get { return this._expected; }
+            set { this._expected = value; }
         }
 
         // Check to see if Expected property is set
         internal bool IsSetExpected()
         {
-            return this.expected != null;
+            return this._expected != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ItemName. The name of the item. Similar to rows on a spreadsheet,
+        /// items represent individual objects that contain one or more value-attribute pairs.
+        /// </summary>
+        public string ItemName
+        {
+            get { return this._itemName; }
+            set { this._itemName = value; }
+        }
+
+        // Check to see if ItemName property is set
+        internal bool IsSetItemName()
+        {
+            return this._itemName != null;
         }
 
     }
 }
-    

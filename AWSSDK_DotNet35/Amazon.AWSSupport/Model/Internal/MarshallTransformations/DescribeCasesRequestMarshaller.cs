@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeCases Request Marshaller
     /// </summary>       
-    public class DescribeCasesRequestMarshaller : IMarshaller<IRequest, DescribeCasesRequest> 
+    public class DescribeCasesRequestMarshaller : IMarshaller<IRequest, DescribeCasesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeCasesRequest)input);
+        }
+
         public IRequest Marshall(DescribeCasesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,63 +56,64 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAfterTime())
                 {
-                    writer.WritePropertyName("afterTime");
-                    writer.Write(publicRequest.AfterTime);
+                    context.Writer.WritePropertyName("afterTime");
+                    context.Writer.Write(publicRequest.AfterTime);
                 }
 
                 if(publicRequest.IsSetBeforeTime())
                 {
-                    writer.WritePropertyName("beforeTime");
-                    writer.Write(publicRequest.BeforeTime);
+                    context.Writer.WritePropertyName("beforeTime");
+                    context.Writer.Write(publicRequest.BeforeTime);
                 }
 
                 if(publicRequest.IsSetCaseIdList())
                 {
-                    writer.WritePropertyName("caseIdList");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("caseIdList");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestCaseIdListListValue in publicRequest.CaseIdList)
                     {
-                        writer.Write(publicRequestCaseIdListListValue);
+                            context.Writer.Write(publicRequestCaseIdListListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetDisplayId())
                 {
-                    writer.WritePropertyName("displayId");
-                    writer.Write(publicRequest.DisplayId);
+                    context.Writer.WritePropertyName("displayId");
+                    context.Writer.Write(publicRequest.DisplayId);
                 }
 
                 if(publicRequest.IsSetIncludeCommunications())
                 {
-                    writer.WritePropertyName("includeCommunications");
-                    writer.Write(publicRequest.IncludeCommunications);
+                    context.Writer.WritePropertyName("includeCommunications");
+                    context.Writer.Write(publicRequest.IncludeCommunications);
                 }
 
                 if(publicRequest.IsSetIncludeResolvedCases())
                 {
-                    writer.WritePropertyName("includeResolvedCases");
-                    writer.Write(publicRequest.IncludeResolvedCases);
+                    context.Writer.WritePropertyName("includeResolvedCases");
+                    context.Writer.Write(publicRequest.IncludeResolvedCases);
                 }
 
                 if(publicRequest.IsSetLanguage())
                 {
-                    writer.WritePropertyName("language");
-                    writer.Write(publicRequest.Language);
+                    context.Writer.WritePropertyName("language");
+                    context.Writer.Write(publicRequest.Language);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
-                    writer.WritePropertyName("maxResults");
-                    writer.Write(publicRequest.MaxResults);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
                 if(publicRequest.IsSetNextToken())
                 {
-                    writer.WritePropertyName("nextToken");
-                    writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

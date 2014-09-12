@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// Returns information about the  CreateHostedZone response and response metadata.
+    /// Configuration for accessing Amazon CreateHostedZone service
     /// </summary>
     public partial class CreateHostedZoneResponse : CreateHostedZoneResult
     {
         /// <summary>
         /// Gets and sets the CreateHostedZoneResult property.
-        /// A complex type containing the response information for the new hosted zone.
+        /// Represents the output of a CreateHostedZone operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateHostedZoneResult class are now available on the CreateHostedZoneResponse class. You should use the properties on CreateHostedZoneResponse instead of accessing them through CreateHostedZoneResult.")]
         public CreateHostedZoneResult CreateHostedZoneResult
@@ -40,4 +40,3 @@ namespace Amazon.Route53.Model
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -45,7 +49,6 @@ namespace Amazon.IdentityManagement.Model
         private bool? _requireSymbols;
         private bool? _requireUppercaseCharacters;
 
-
         /// <summary>
         /// Gets and sets the property AllowUsersToChangePassword. 
         /// <para>
@@ -63,7 +66,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._allowUsersToChangePassword.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ExpirePasswords. 
@@ -84,7 +86,6 @@ namespace Amazon.IdentityManagement.Model
             return this._expirePasswords.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property HardExpiry. 
         /// <para>
@@ -104,7 +105,6 @@ namespace Amazon.IdentityManagement.Model
             return this._hardExpiry.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxPasswordAge. 
         /// <para>
@@ -122,7 +122,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._maxPasswordAge.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property MinimumPasswordLength. 
@@ -142,7 +141,6 @@ namespace Amazon.IdentityManagement.Model
             return this._minimumPasswordLength.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property PasswordReusePrevention. 
         /// <para>
@@ -160,7 +158,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._passwordReusePrevention.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RequireLowercaseCharacters. 
@@ -180,7 +177,6 @@ namespace Amazon.IdentityManagement.Model
             return this._requireLowercaseCharacters.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property RequireNumbers. 
         /// <para>
@@ -199,7 +195,6 @@ namespace Amazon.IdentityManagement.Model
             return this._requireNumbers.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property RequireSymbols. 
         /// <para>
@@ -217,7 +212,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._requireSymbols.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RequireUppercaseCharacters. 

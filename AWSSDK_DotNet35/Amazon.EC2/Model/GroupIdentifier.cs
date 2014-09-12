@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a security group.</para>
+    /// Describes a security group.
     /// </summary>
     public partial class GroupIdentifier
     {
-        
-        private string groupName;
-        private string groupId;
-
+        private string _groupId;
+        private string _groupName;
 
         /// <summary>
-        /// The name of the security group.
-        ///  
-        /// </summary>
-        public string GroupName
-        {
-            get { return this.groupName; }
-            set { this.groupName = value; }
-        }
-
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
-        {
-            return this.groupName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
         /// The ID of the security group.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupId
         {
-            get { return this.groupId; }
-            set { this.groupId = value; }
+            get { return this._groupId; }
+            set { this._groupId = value; }
         }
 
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this.groupId != null;
+            return this._groupId != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of the security group.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
     }
 }

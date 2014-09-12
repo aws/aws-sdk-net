@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,31 +29,45 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the MonitorInstances operation.
-    /// <para>Enables monitoring for a running instance. For more information about monitoring instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html" >Monitoring Your Instances and Volumes</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i> .</para>
+    /// Enables monitoring for a running instance. For more information about monitoring instances,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+    /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class MonitorInstancesRequest : AmazonEC2Request
     {
-        private List<string> instanceIds = new List<string>();
-
+        private List<string> _instanceIds = new List<string>();
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public MonitorInstancesRequest() { }
+
+        /// <summary>
+        /// Instantiates MonitorInstancesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="instanceIds">One or more instance IDs.</param>
+        public MonitorInstancesRequest(List<string> instanceIds)
+        {
+            _instanceIds = instanceIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
         /// One or more instance IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
 
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
 
     }
 }
-    

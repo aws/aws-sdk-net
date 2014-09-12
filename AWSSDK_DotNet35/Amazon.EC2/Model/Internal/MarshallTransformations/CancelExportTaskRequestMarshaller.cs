@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Export Task Request Marshaller
+    /// CancelExportTask Request Marshaller
     /// </summary>       
-    public class CancelExportTaskRequestMarshaller : IMarshaller<IRequest, CancelExportTaskRequest>
+    public class CancelExportTaskRequestMarshaller : IMarshaller<IRequest, CancelExportTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CancelExportTaskRequest cancelExportTaskRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(cancelExportTaskRequest, "AmazonEC2");
+            return this.Marshall((CancelExportTaskRequest)input);
+        }
+    
+        public IRequest Marshall(CancelExportTaskRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CancelExportTask");
             request.Parameters.Add("Version", "2014-06-15");
-            if (cancelExportTaskRequest != null && cancelExportTaskRequest.IsSetExportTaskId())
-            {
-                request.Parameters.Add("ExportTaskId", StringUtils.FromString(cancelExportTaskRequest.ExportTaskId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetExportTaskId())
+                {
+                    request.Parameters.Add("ExportTaskId", StringUtils.FromString(publicRequest.ExportTaskId));
+                }
+            }
             return request;
         }
     }

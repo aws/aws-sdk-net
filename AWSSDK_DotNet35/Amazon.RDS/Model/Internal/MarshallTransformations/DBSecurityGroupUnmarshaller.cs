@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,96 +12,105 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DBSecurityGroup Unmarshaller
-     /// </summary>
-    internal class DBSecurityGroupUnmarshaller : IUnmarshaller<DBSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<DBSecurityGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DBSecurityGroup Object
+    /// </summary>  
+    public class DBSecurityGroupUnmarshaller : IUnmarshaller<DBSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<DBSecurityGroup, JsonUnmarshallerContext>
     {
-        public DBSecurityGroup Unmarshall(XmlUnmarshallerContext context) 
+        public DBSecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            DBSecurityGroup dBSecurityGroup = new DBSecurityGroup();
+            DBSecurityGroup unmarshalledObject = new DBSecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("OwnerId", targetDepth))
+                    if (context.TestExpression("DBSecurityGroupDescription", targetDepth))
                     {
-                        dBSecurityGroup.OwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSecurityGroupDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBSecurityGroupName", targetDepth))
                     {
-                        dBSecurityGroup.DBSecurityGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DBSecurityGroupDescription", targetDepth))
-                    {
-                        dBSecurityGroup.DBSecurityGroupDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("VpcId", targetDepth))
-                    {
-                        dBSecurityGroup.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSecurityGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth))
                     {
-                        dBSecurityGroup.EC2SecurityGroups.Add(EC2SecurityGroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EC2SecurityGroupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EC2SecurityGroups.Add(item);
                         continue;
                     }
                     if (context.TestExpression("IPRanges/IPRange", targetDepth))
                     {
-                        dBSecurityGroup.IPRanges.Add(IPRangeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = IPRangeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IPRanges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("OwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return dBSecurityGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return dBSecurityGroup;
+            return unmarshalledObject;
         }
 
-        public DBSecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        public DBSecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DBSecurityGroupUnmarshaller instance;
 
-        public static DBSecurityGroupUnmarshaller GetInstance() 
+        private static DBSecurityGroupUnmarshaller _instance = new DBSecurityGroupUnmarshaller();        
+
+        public static DBSecurityGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DBSecurityGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

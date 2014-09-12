@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,72 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>DimensionFilter</c> data type is used to filter ListMetrics results. </para>
+    /// The <code>DimensionFilter</code> data type is used to filter <a>ListMetrics</a> results.
     /// </summary>
-    public class DimensionFilter
+    public partial class DimensionFilter
     {
-        
-        private string name;
-        private string value;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// The dimension name to be matched.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        ///  The dimension name to be matched. 
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// The value of the dimension to be matched. <note> Specifying a <c>Name</c> without specifying a <c>Value</c> returns all values associated
-        /// with that <c>Name</c>. </note>
-        ///  
+        /// Gets and sets the property Value. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        ///  The value of the dimension to be matched. 
         /// </para>
         /// </summary>
         public string Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;
+            return this._value != null;
         }
+
     }
 }

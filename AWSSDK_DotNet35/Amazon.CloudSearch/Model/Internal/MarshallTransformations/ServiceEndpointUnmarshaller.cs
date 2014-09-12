@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ServiceEndpoint Unmarshaller
-     /// </summary>
-    internal class ServiceEndpointUnmarshaller : IUnmarshaller<ServiceEndpoint, XmlUnmarshallerContext>, IUnmarshaller<ServiceEndpoint, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ServiceEndpoint Object
+    /// </summary>  
+    public class ServiceEndpointUnmarshaller : IUnmarshaller<ServiceEndpoint, XmlUnmarshallerContext>, IUnmarshaller<ServiceEndpoint, JsonUnmarshallerContext>
     {
-        public ServiceEndpoint Unmarshall(XmlUnmarshallerContext context) 
+        public ServiceEndpoint Unmarshall(XmlUnmarshallerContext context)
         {
-            ServiceEndpoint serviceEndpoint = new ServiceEndpoint();
+            ServiceEndpoint unmarshalledObject = new ServiceEndpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Endpoint", targetDepth))
                     {
-                        serviceEndpoint.Endpoint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return serviceEndpoint;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return serviceEndpoint;
+            return unmarshalledObject;
         }
 
-        public ServiceEndpoint Unmarshall(JsonUnmarshallerContext context) 
+        public ServiceEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ServiceEndpointUnmarshaller instance;
 
-        public static ServiceEndpointUnmarshaller GetInstance() 
+        private static ServiceEndpointUnmarshaller _instance = new ServiceEndpointUnmarshaller();        
+
+        public static ServiceEndpointUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ServiceEndpointUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

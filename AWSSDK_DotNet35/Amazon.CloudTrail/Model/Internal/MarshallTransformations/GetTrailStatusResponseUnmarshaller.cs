@@ -12,105 +12,114 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.CloudTrail.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.CloudTrail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GetTrailStatus operation
+    /// </summary>  
+    public class GetTrailStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for GetTrailStatus operation
-      /// </summary>
-      internal class GetTrailStatusResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTrailStatusResponse response = new GetTrailStatusResponse();       
-          
+            GetTrailStatusResponse response = new GetTrailStatusResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("IsLogging", targetDepth))
-              {
-                response.IsLogging = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestDeliveryError", targetDepth))
-              {
-                response.LatestDeliveryError = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestNotificationError", targetDepth))
-              {
-                response.LatestNotificationError = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestDeliveryTime", targetDepth))
-              {
-                response.LatestDeliveryTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestNotificationTime", targetDepth))
-              {
-                response.LatestNotificationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StartLoggingTime", targetDepth))
-              {
-                response.StartLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StopLoggingTime", targetDepth))
-              {
-                response.StopLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("IsLogging", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsLogging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDeliveryError", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestDeliveryError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDeliveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestNotificationError", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestNotificationError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestNotificationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestNotificationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartLoggingTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.StartLoggingTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StopLoggingTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.StopLoggingTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
-          {
-            return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFoundException"))
-          {
-            return new TrailNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetTrailStatusResponseUnmarshaller instance;
-        public static GetTrailStatusResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new GetTrailStatusResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailName"))
+            {
+                return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFound"))
+            {
+                return new TrailNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static GetTrailStatusResponseUnmarshaller _instance = new GetTrailStatusResponseUnmarshaller();        
+
+        internal static GetTrailStatusResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static GetTrailStatusResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

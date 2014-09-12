@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,29 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTrail operation.
-    /// <para>Deletes a trail.</para>
+    /// Deletes a trail.
     /// </summary>
     public partial class DeleteTrailRequest : AmazonCloudTrailRequest
     {
-        private string name;
-
+        private string _name;
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
         /// The name of a trail to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
     }
 }
-    

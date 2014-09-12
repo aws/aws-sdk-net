@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Returns information about the  PutPipelineDefinition response and response metadata.
+    /// Configuration for accessing Amazon PutPipelineDefinition service
     /// </summary>
-    public class PutPipelineDefinitionResponse : PutPipelineDefinitionResult
+    public partial class PutPipelineDefinitionResponse : PutPipelineDefinitionResult
     {
         /// <summary>
         /// Gets and sets the PutPipelineDefinitionResult property.
-        /// Contains the output of the PutPipelineDefinition action.
+        /// Represents the output of a PutPipelineDefinition operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the PutPipelineDefinitionResult class are now available on the PutPipelineDefinitionResponse class. You should use the properties on PutPipelineDefinitionResponse instead of accessing them through PutPipelineDefinitionResult.")]
         public PutPipelineDefinitionResult PutPipelineDefinitionResult
@@ -40,4 +40,3 @@ namespace Amazon.DataPipeline.Model
         }
     }
 }
-    

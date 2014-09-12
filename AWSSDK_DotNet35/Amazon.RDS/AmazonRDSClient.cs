@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,8 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+
+
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.RDS.Model;
 using Amazon.RDS.Model.Internal.MarshallTransformations;
@@ -22,40 +28,44 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
-
 namespace Amazon.RDS
 {
     /// <summary>
-    /// Implementation for accessing AmazonRDS.
+    /// Implementation for accessing RDS
+    ///
+    /// Amazon Relational Database Service 
+    /// <para>
+    ///  Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
+    /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
+    /// resizable capacity for an industry-standard relational database and manages common
+    /// database administration tasks, freeing up developers to focus on what makes their
+    /// applications and businesses unique. 
+    /// </para>
     ///  
-    /// Amazon Relational Database Service <para> Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up,
-    /// operate, and scale a relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational
-    /// database and manages common database administration tasks, freeing up developers to focus on what makes their applications and businesses
-    /// unique. </para> <para> Amazon RDS gives you access to the capabilities of a familiar MySQL or Oracle database server. This means the code,
-    /// applications, and tools you already use today with your existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon
-    /// RDS automatically backs up your database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can
-    /// scale your database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services,
-    /// there are no up-front investments, and you pay only for the resources you use. </para> <para> This is an interface reference for Amazon RDS.
-    /// It contains documentation for a programming or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is
-    /// asynchronous, which means that some interfaces may require techniques such as polling or callback functions to determine when a command has
-    /// been applied. In this reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot,
-    /// or during the maintenance window. For a summary of the Amazon RDS interfaces, go to <a
-    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces" >Available RDS Interfaces</a> .
+    /// <para>
+    ///  Amazon RDS gives you access to the capabilities of a familiar MySQL or Oracle database
+    /// server. This means the code, applications, and tools you already use today with your
+    /// existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon
+    /// RDS automatically backs up your database and maintains the database software that
+    /// powers your DB instance. Amazon RDS is flexible: you can scale your database instance's
+    /// compute resources and storage capacity to meet your application's demand. As with
+    /// all Amazon Web Services, there are no up-front investments, and you pay only for the
+    /// resources you use. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  This is an interface reference for Amazon RDS. It contains documentation for a programming
+    /// or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is
+    /// asynchronous, which means that some interfaces may require techniques such as polling
+    /// or callback functions to determine when a command has been applied. In this reference,
+    /// the parameter descriptions indicate whether a command is applied immediately, on the
+    /// next instance reboot, or during the maintenance window. For a summary of the Amazon
+    /// RDS interfaces, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
+    /// RDS Interfaces</a>. 
     /// </para>
     /// </summary>
-    public partial class AmazonRDSClient : AmazonWebServiceClient, IAmazonRDS
+    public partial class AmazonRDSClient : AmazonServiceClient, IAmazonRDS
     {
-    AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -74,7 +84,7 @@ namespace Amazon.RDS
         ///
         /// </summary>
         public AmazonRDSClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's
@@ -93,7 +103,7 @@ namespace Amazon.RDS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRDSClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's
@@ -110,9 +120,9 @@ namespace Amazon.RDS
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonRDS Configuration Object</param>
+        /// <param name="config">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(AmazonRDSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with AWS Credentials
@@ -140,7 +150,7 @@ namespace Amazon.RDS
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(AWSCredentials credentials, AmazonRDSConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -173,7 +183,7 @@ namespace Amazon.RDS
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRDSConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -209,3742 +219,3596 @@ namespace Amazon.RDS
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonRDSConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
         #endregion
 
+        #region Overrides
 
-        #region AddSourceIdentifierToSubscription
-
-        /// <summary>
-        /// <para>Adds a source identifier to an existing RDS event notification subscription.</para>
-        /// </summary>
-        /// 
-        /// <param name="addSourceIdentifierToSubscriptionRequest">Container for the necessary parameters to execute the
-        ///          AddSourceIdentifierToSubscription service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="SourceNotFoundException"/>
-        /// <exception cref="SubscriptionNotFoundException"/>
-        public AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest)
+        protected override AbstractAWSSigner CreateSigner()
         {
-            IAsyncResult asyncResult = invokeAddSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest, null, null, true);
-            return EndAddSourceIdentifierToSubscription(asyncResult);
+            return new AWS4Signer();
         }
 
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         
+        #region  AddSourceIdentifierToSubscription
+
+        /// <summary>
+        /// Adds a source identifier to an existing RDS event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription service method.</param>
+        /// 
+        /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by RDS.</returns>
+        /// <exception cref="SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
+        {
+            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<AddSourceIdentifierToSubscriptionRequest,AddSourceIdentifierToSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddSourceIdentifierToSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.AddSourceIdentifierToSubscription"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="addSourceIdentifierToSubscriptionRequest">Container for the necessary parameters to execute the
-        ///          AddSourceIdentifierToSubscription operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndAddSourceIdentifierToSubscription operation.</returns>
-        public IAsyncResult BeginAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddSourceIdentifierToSubscription
+        ///         operation.</returns>
+        public IAsyncResult BeginAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest, callback, state, false);
+            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddSourceIdentifierToSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the AddSourceIdentifierToSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.AddSourceIdentifierToSubscription"/>
+        /// Finishes the asynchronous execution of the  AddSourceIdentifierToSubscription operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddSourceIdentifierToSubscription.</param>
         /// 
-        /// <returns>Returns a EventSubscription from AmazonRDS.</returns>
-        public AddSourceIdentifierToSubscriptionResponse EndAddSourceIdentifierToSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  AddSourceIdentifierToSubscriptionResult from RDS.</returns>
+        public  AddSourceIdentifierToSubscriptionResponse EndAddSourceIdentifierToSubscription(IAsyncResult asyncResult)
         {
-            return endOperation<AddSourceIdentifierToSubscriptionResponse>(asyncResult);
+            return EndInvoke<AddSourceIdentifierToSubscriptionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new AddSourceIdentifierToSubscriptionRequestMarshaller().Marshall(addSourceIdentifierToSubscriptionRequest);
-            var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region AddTagsToResource
+        
+        #region  AddTagsToResource
 
         /// <summary>
-        /// <para> Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated
-        /// with Amazon RDS resources, or used in Condition statement in IAM policy for Amazon RDS.</para> <para>For an overview on tagging Amazon RDS
-        /// resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a>
-        /// .</para>
+        /// Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost
+        /// allocation reporting to track cost associated with Amazon RDS resources, or used in
+        /// Condition statement in IAM policy for Amazon RDS.
+        /// 
+        ///  
+        /// <para>
+        /// For an overview on tagging Amazon RDS resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
+        /// Amazon RDS Resources</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
-        /// <param name="addTagsToResourceRequest">Container for the necessary parameters to execute the AddTagsToResource service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest)
+        /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            IAsyncResult asyncResult = invokeAddTagsToResource(addTagsToResourceRequest, null, null, true);
-            return EndAddTagsToResource(asyncResult);
-        }
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.AddTagsToResource"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="addTagsToResourceRequest">Container for the necessary parameters to execute the AddTagsToResource operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
+        ///         operation.</returns>
+        public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddTagsToResource(addTagsToResourceRequest, callback, state, false);
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddTagsToResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the AddTagsToResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.AddTagsToResource"/>
+        /// Finishes the asynchronous execution of the  AddTagsToResource operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
-        public AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  AddTagsToResourceResult from RDS.</returns>
+        public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
         {
-            return endOperation<AddTagsToResourceResponse>(asyncResult);
+            return EndInvoke<AddTagsToResourceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new AddTagsToResourceRequestMarshaller().Marshall(addTagsToResourceRequest);
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region AuthorizeDBSecurityGroupIngress
+        
+        #region  AuthorizeDBSecurityGroupIngress
 
         /// <summary>
-        /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the
-        /// DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application
-        /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or
-        /// (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </para> <para><b>NOTE:</b> You cannot authorize
-        /// ingress from an EC2 security group in one Region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
-        /// group in one VPC to an Amazon RDS DB instance in another. </para> <para>For an overview of CIDR ranges, go to the <a
-        /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
+        /// Enables ingress to a DBSecurityGroup using one of two forms of authorization. First,
+        /// EC2 or VPC security groups can be added to the DBSecurityGroup if the application
+        /// using the database is running on EC2 or VPC instances. Second, IP ranges are available
+        /// if the application accessing your database is running on the Internet. Required parameters
+        /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
+        /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
+        /// 
+        ///  
+        /// <para>
+        /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+        /// Tutorial</a>. 
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
         /// 
-        /// <param name="authorizeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress
-        ///          service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the AuthorizeDBSecurityGroupIngress service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        /// <exception cref="InvalidDBSecurityGroupStateException"/>
-        /// <exception cref="AuthorizationAlreadyExistsException"/>
-        /// <exception cref="AuthorizationQuotaExceededException"/>
-        public AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest)
+        /// <returns>The response from the AuthorizeDBSecurityGroupIngress service method, as returned by RDS.</returns>
+        /// <exception cref="AuthorizationAlreadyExistsException">
+        /// The specified CIDRIP or EC2 security group is already authorized for the specified
+        /// DB security group.
+        /// </exception>
+        /// <exception cref="AuthorizationQuotaExceededException">
+        /// DB security group authorization quota has been reached.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// The state of the DB security group does not allow deletion.
+        /// </exception>
+        public AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
         {
-            IAsyncResult asyncResult = invokeAuthorizeDBSecurityGroupIngress(authorizeDBSecurityGroupIngressRequest, null, null, true);
-            return EndAuthorizeDBSecurityGroupIngress(asyncResult);
-        }
+            var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
-        
+            return Invoke<AuthorizeDBSecurityGroupIngressRequest,AuthorizeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.AuthorizeDBSecurityGroupIngress"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="authorizeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress
-        ///          operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndAuthorizeDBSecurityGroupIngress operation.</returns>
-        public IAsyncResult BeginAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeDBSecurityGroupIngress
+        ///         operation.</returns>
+        public IAsyncResult BeginAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            return invokeAuthorizeDBSecurityGroupIngress(authorizeDBSecurityGroupIngressRequest, callback, state, false);
+            var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AuthorizeDBSecurityGroupIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.AuthorizeDBSecurityGroupIngress"/>
+        /// Finishes the asynchronous execution of the  AuthorizeDBSecurityGroupIngress operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeDBSecurityGroupIngress.</param>
         /// 
-        /// <returns>Returns a DBSecurityGroup from AmazonRDS.</returns>
-        public AuthorizeDBSecurityGroupIngressResponse EndAuthorizeDBSecurityGroupIngress(IAsyncResult asyncResult)
+        /// <returns>Returns a  AuthorizeDBSecurityGroupIngressResult from RDS.</returns>
+        public  AuthorizeDBSecurityGroupIngressResponse EndAuthorizeDBSecurityGroupIngress(IAsyncResult asyncResult)
         {
-            return endOperation<AuthorizeDBSecurityGroupIngressResponse>(asyncResult);
+            return EndInvoke<AuthorizeDBSecurityGroupIngressResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new AuthorizeDBSecurityGroupIngressRequestMarshaller().Marshall(authorizeDBSecurityGroupIngressRequest);
-            var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CopyDBSnapshot
+        
+        #region  CopyDBSnapshot
 
         /// <summary>
-        /// <para> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </para>
+        /// Copies the specified DBSnapshot. The source DBSnapshot must be in the "available"
+        /// state.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
         /// 
-        /// <param name="copyDBSnapshotRequest">Container for the necessary parameters to execute the CopyDBSnapshot service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CopyDBSnapshot service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="InvalidDBSnapshotStateException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        /// <exception cref="DBSnapshotAlreadyExistsException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest)
+        /// <returns>The response from the CopyDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="DBSnapshotAlreadyExistsException">
+        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
+        /// </exception>
+        public CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeCopyDBSnapshot(copyDBSnapshotRequest, null, null, true);
-            return EndCopyDBSnapshot(asyncResult);
-        }
+            var marshaller = new CopyDBSnapshotRequestMarshaller();
+            var unmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CopyDBSnapshotRequest,CopyDBSnapshotResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CopyDBSnapshot"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="copyDBSnapshotRequest">Container for the necessary parameters to execute the CopyDBSnapshot operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyDBSnapshot
         ///         operation.</returns>
-        public IAsyncResult BeginCopyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginCopyDBSnapshot(CopyDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeCopyDBSnapshot(copyDBSnapshotRequest, callback, state, false);
+            var marshaller = new CopyDBSnapshotRequestMarshaller();
+            var unmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CopyDBSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CopyDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CopyDBSnapshot"/>
+        /// Finishes the asynchronous execution of the  CopyDBSnapshot operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyDBSnapshot.</param>
         /// 
-        /// <returns>Returns a DBSnapshot from AmazonRDS.</returns>
-        public CopyDBSnapshotResponse EndCopyDBSnapshot(IAsyncResult asyncResult)
+        /// <returns>Returns a  CopyDBSnapshotResult from RDS.</returns>
+        public  CopyDBSnapshotResponse EndCopyDBSnapshot(IAsyncResult asyncResult)
         {
-            return endOperation<CopyDBSnapshotResponse>(asyncResult);
+            return EndInvoke<CopyDBSnapshotResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCopyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CopyDBSnapshotRequestMarshaller().Marshall(copyDBSnapshotRequest);
-            var unmarshaller = CopyDBSnapshotResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateDBInstance
+        
+        #region  CreateDBInstance
 
         /// <summary>
-        /// <para> Creates a new DB instance. </para>
+        /// Creates a new DB instance.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance service method.</param>
         /// 
-        /// <param name="createDBInstanceRequest">Container for the necessary parameters to execute the CreateDBInstance service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateDBInstance service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        /// <exception cref="InstanceQuotaExceededException"/>
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="DBInstanceAlreadyExistsException"/>
-        /// <exception cref="StorageQuotaExceededException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
-        public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest)
+        /// <returns>The response from the CreateDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
+        /// there is only 1 availablility zone.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="InstanceQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// Provisioned IOPS not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDBInstance(createDBInstanceRequest, null, null, true);
-            return EndCreateDBInstance(asyncResult);
-        }
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var unmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateDBInstanceRequest,CreateDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBInstance"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createDBInstanceRequest">Container for the necessary parameters to execute the CreateDBInstance operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBInstance
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginCreateDBInstance(CreateDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDBInstance(createDBInstanceRequest, callback, state, false);
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var unmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDBInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBInstance"/>
+        /// Finishes the asynchronous execution of the  CreateDBInstance operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBInstance.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public CreateDBInstanceResponse EndCreateDBInstance(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDBInstanceResult from RDS.</returns>
+        public  CreateDBInstanceResponse EndCreateDBInstance(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDBInstanceResponse>(asyncResult);
+            return EndInvoke<CreateDBInstanceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDBInstanceRequestMarshaller().Marshall(createDBInstanceRequest);
-            var unmarshaller = CreateDBInstanceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateDBInstanceReadReplica
+        
+        #region  CreateDBInstanceReadReplica
 
         /// <summary>
-        /// <para> Creates a DB instance that acts as a read replica of a source DB instance. </para> <para> All read replica DB instances are created
-        /// as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are
-        /// inherited from the source DB instance, except as specified below. </para> <para><b>IMPORTANT:</b> The source DB instance must have backup
-        /// retention enabled. </para>
+        /// Creates a DB instance that acts as a read replica of a source DB instance. 
+        /// 
+        ///  
+        /// <para>
+        ///  All read replica DB instances are created as Single-AZ deployments with backups disabled.
+        /// All other DB instance attributes (including DB security groups and DB parameter groups)
+        /// are inherited from the source DB instance, except as specified below. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  The source DB instance must have backup retention enabled. 
+        /// </para>
+        ///  </important>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
-        /// <param name="createDBInstanceReadReplicaRequest">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service
-        ///          method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="DBInstanceAlreadyExistsException"/>
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="InvalidDBSubnetGroupException"/>
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="InstanceQuotaExceededException"/>
-        /// <exception cref="DBSubnetGroupNotAllowedException"/>
-        /// <exception cref="StorageQuotaExceededException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
-        /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
-        public CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest)
+        /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
+        /// there is only 1 availablility zone.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupNotAllowedException">
+        /// Indicates that the DBSubnetGroup should not be specified while creating read replicas
+        /// that lie in the same region as the source instance.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="InstanceQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidDBSubnetGroupException">
+        /// Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing
+        /// cross region read replica of the same source instance.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// Provisioned IOPS not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest, null, null, true);
-            return EndCreateDBInstanceReadReplica(asyncResult);
-        }
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateDBInstanceReadReplicaRequest,CreateDBInstanceReadReplicaResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstanceReadReplica operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBInstanceReadReplica"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createDBInstanceReadReplicaRequest">Container for the necessary parameters to execute the CreateDBInstanceReadReplica operation
-        ///          on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateDBInstanceReadReplica operation.</returns>
-        public IAsyncResult BeginCreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBInstanceReadReplica
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest, callback, state, false);
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDBInstanceReadReplicaRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDBInstanceReadReplica operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBInstanceReadReplica"/>
+        /// Finishes the asynchronous execution of the  CreateDBInstanceReadReplica operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBInstanceReadReplica.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public CreateDBInstanceReadReplicaResponse EndCreateDBInstanceReadReplica(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDBInstanceReadReplicaResult from RDS.</returns>
+        public  CreateDBInstanceReadReplicaResponse EndCreateDBInstanceReadReplica(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDBInstanceReadReplicaResponse>(asyncResult);
+            return EndInvoke<CreateDBInstanceReadReplicaResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDBInstanceReadReplicaRequestMarshaller().Marshall(createDBInstanceReadReplicaRequest);
-            var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateDBParameterGroup
+        
+        #region  CreateDBParameterGroup
 
         /// <summary>
-        /// <para> Creates a new DB parameter group. </para> <para> A DB parameter group is initially created with the default parameters for the
-        /// database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it
-        /// using <i>ModifyDBParameterGroup</i> . Once you've created a DB parameter group, you need to associate it with your DB instance using
-        /// <i>ModifyDBInstance</i> . When you associate a new DB parameter group with a running DB instance, you need to reboot the DB Instance for the
-        /// new DB parameter group and associated settings to take effect. </para>
+        /// Creates a new DB parameter group. 
+        /// 
+        ///  
+        /// <para>
+        ///  A DB parameter group is initially created with the default parameters for the database
+        /// engine used by the DB instance. To provide custom values for any of the parameters,
+        /// you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once
+        /// you've created a DB parameter group, you need to associate it with your DB instance
+        /// using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a
+        /// running DB instance, you need to reboot the DB Instance for the new DB parameter group
+        /// and associated settings to take effect. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// 
-        /// <param name="createDBParameterGroupRequest">Container for the necessary parameters to execute the CreateDBParameterGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateDBParameterGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupQuotaExceededException"/>
-        /// <exception cref="DBParameterGroupAlreadyExistsException"/>
-        public CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest)
+        /// <returns>The response from the CreateDBParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupAlreadyExistsException">
+        /// A DB parameter group with the same name exists.
+        /// </exception>
+        /// <exception cref="DBParameterGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB parameter groups.
+        /// </exception>
+        public CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDBParameterGroup(createDBParameterGroupRequest, null, null, true);
-            return EndCreateDBParameterGroup(asyncResult);
-        }
+            var marshaller = new CreateDBParameterGroupRequestMarshaller();
+            var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateDBParameterGroupRequest,CreateDBParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBParameterGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createDBParameterGroupRequest">Container for the necessary parameters to execute the CreateDBParameterGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateDBParameterGroup operation.</returns>
-        public IAsyncResult BeginCreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBParameterGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateDBParameterGroup(CreateDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDBParameterGroup(createDBParameterGroupRequest, callback, state, false);
+            var marshaller = new CreateDBParameterGroupRequestMarshaller();
+            var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDBParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBParameterGroup"/>
+        /// Finishes the asynchronous execution of the  CreateDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBParameterGroup.</param>
         /// 
-        /// <returns>Returns a DBParameterGroup from AmazonRDS.</returns>
-        public CreateDBParameterGroupResponse EndCreateDBParameterGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDBParameterGroupResult from RDS.</returns>
+        public  CreateDBParameterGroupResponse EndCreateDBParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDBParameterGroupResponse>(asyncResult);
+            return EndInvoke<CreateDBParameterGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDBParameterGroupRequestMarshaller().Marshall(createDBParameterGroupRequest);
-            var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateDBSecurityGroup
+        
+        #region  CreateDBSecurityGroup
 
         /// <summary>
-        /// <para> Creates a new DB security group. DB security groups control access to a DB instance. </para>
+        /// Creates a new DB security group. DB security groups control access to a DB instance.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBSecurityGroup service method.</param>
         /// 
-        /// <param name="createDBSecurityGroupRequest">Container for the necessary parameters to execute the CreateDBSecurityGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateDBSecurityGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSecurityGroupQuotaExceededException"/>
-        /// <exception cref="DBSecurityGroupNotSupportedException"/>
-        /// <exception cref="DBSecurityGroupAlreadyExistsException"/>
-        public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest)
+        /// <returns>The response from the CreateDBSecurityGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBSecurityGroupAlreadyExistsException">
+        /// A DB security group with the name specified in <i>DBSecurityGroupName</i> already
+        /// exists.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupNotSupportedException">
+        /// A DB security group is not allowed for this action.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB security groups.
+        /// </exception>
+        public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDBSecurityGroup(createDBSecurityGroupRequest, null, null, true);
-            return EndCreateDBSecurityGroup(asyncResult);
-        }
+            var marshaller = new CreateDBSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateDBSecurityGroupRequest,CreateDBSecurityGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSecurityGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBSecurityGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createDBSecurityGroupRequest">Container for the necessary parameters to execute the CreateDBSecurityGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBSecurityGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateDBSecurityGroup operation.</returns>
-        public IAsyncResult BeginCreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBSecurityGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateDBSecurityGroup(CreateDBSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDBSecurityGroup(createDBSecurityGroupRequest, callback, state, false);
+            var marshaller = new CreateDBSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDBSecurityGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDBSecurityGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBSecurityGroup"/>
+        /// Finishes the asynchronous execution of the  CreateDBSecurityGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBSecurityGroup.</param>
         /// 
-        /// <returns>Returns a DBSecurityGroup from AmazonRDS.</returns>
-        public CreateDBSecurityGroupResponse EndCreateDBSecurityGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDBSecurityGroupResult from RDS.</returns>
+        public  CreateDBSecurityGroupResponse EndCreateDBSecurityGroup(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDBSecurityGroupResponse>(asyncResult);
+            return EndInvoke<CreateDBSecurityGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDBSecurityGroupRequestMarshaller().Marshall(createDBSecurityGroupRequest);
-            var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateDBSnapshot
+        
+        #region  CreateDBSnapshot
 
         /// <summary>
-        /// <para> Creates a DBSnapshot. The source DBInstance must be in "available" state. </para>
+        /// Creates a DBSnapshot. The source DBInstance must be in "available" state.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBSnapshot service method.</param>
         /// 
-        /// <param name="createDBSnapshotRequest">Container for the necessary parameters to execute the CreateDBSnapshot service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateDBSnapshot service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        /// <exception cref="DBSnapshotAlreadyExistsException"/>
-        public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest)
+        /// <returns>The response from the CreateDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBSnapshotAlreadyExistsException">
+        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
+        /// </exception>
+        public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDBSnapshot(createDBSnapshotRequest, null, null, true);
-            return EndCreateDBSnapshot(asyncResult);
-        }
+            var marshaller = new CreateDBSnapshotRequestMarshaller();
+            var unmarshaller = CreateDBSnapshotResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateDBSnapshotRequest,CreateDBSnapshotResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBSnapshot"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createDBSnapshotRequest">Container for the necessary parameters to execute the CreateDBSnapshot operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBSnapshot operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBSnapshot
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginCreateDBSnapshot(CreateDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDBSnapshot(createDBSnapshotRequest, callback, state, false);
+            var marshaller = new CreateDBSnapshotRequestMarshaller();
+            var unmarshaller = CreateDBSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDBSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBSnapshot"/>
+        /// Finishes the asynchronous execution of the  CreateDBSnapshot operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBSnapshot.</param>
         /// 
-        /// <returns>Returns a DBSnapshot from AmazonRDS.</returns>
-        public CreateDBSnapshotResponse EndCreateDBSnapshot(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDBSnapshotResult from RDS.</returns>
+        public  CreateDBSnapshotResponse EndCreateDBSnapshot(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDBSnapshotResponse>(asyncResult);
+            return EndInvoke<CreateDBSnapshotResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDBSnapshotRequestMarshaller().Marshall(createDBSnapshotRequest);
-            var unmarshaller = CreateDBSnapshotResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateDBSubnetGroup
+        
+        #region  CreateDBSubnetGroup
 
         /// <summary>
-        /// <para> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </para>
+        /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet
+        /// in at least two AZs in the region.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// 
-        /// <param name="createDBSubnetGroupRequest">Container for the necessary parameters to execute the CreateDBSubnetGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateDBSubnetGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSubnetQuotaExceededException"/>
-        /// <exception cref="DBSubnetGroupAlreadyExistsException"/>
-        /// <exception cref="DBSubnetGroupQuotaExceededException"/>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        public CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest)
+        /// <returns>The response from the CreateDBSubnetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBSubnetGroupAlreadyExistsException">
+        /// <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
+        /// there is only 1 availablility zone.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB subnet groups.
+        /// </exception>
+        /// <exception cref="DBSubnetQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of subnets in a DB subnet
+        /// groups.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        public CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateDBSubnetGroup(createDBSubnetGroupRequest, null, null, true);
-            return EndCreateDBSubnetGroup(asyncResult);
-        }
+            var marshaller = new CreateDBSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateDBSubnetGroupRequest,CreateDBSubnetGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBSubnetGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createDBSubnetGroupRequest">Container for the necessary parameters to execute the CreateDBSubnetGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateDBSubnetGroup operation.</returns>
-        public IAsyncResult BeginCreateDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBSubnetGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateDBSubnetGroup(CreateDBSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDBSubnetGroup(createDBSubnetGroupRequest, callback, state, false);
+            var marshaller = new CreateDBSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDBSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateDBSubnetGroup"/>
+        /// Finishes the asynchronous execution of the  CreateDBSubnetGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBSubnetGroup.</param>
         /// 
-        /// <returns>Returns a DBSubnetGroup from AmazonRDS.</returns>
-        public CreateDBSubnetGroupResponse EndCreateDBSubnetGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDBSubnetGroupResult from RDS.</returns>
+        public  CreateDBSubnetGroupResponse EndCreateDBSubnetGroup(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDBSubnetGroupResponse>(asyncResult);
+            return EndInvoke<CreateDBSubnetGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDBSubnetGroupRequestMarshaller().Marshall(createDBSubnetGroupRequest);
-            var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateEventSubscription
+        
+        #region  CreateEventSubscription
 
         /// <summary>
-        /// <para>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS
-        /// console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The
-        /// ARN is displayed in the SNS console.</para> <para>You can specify the type of source (SourceType) you want to be notified of, provide a list
-        /// of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be
-        /// notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories =
-        /// Availability, Backup.</para> <para>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
-        /// myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a
-        /// SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the
-        /// SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer
-        /// account.</para>
+        /// Creates an RDS event notification subscription. This action requires a topic ARN (Amazon
+        /// Resource Name) created by either the RDS console, the SNS console, or the SNS API.
+        /// To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to
+        /// the topic. The ARN is displayed in the SNS console.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the type of source (SourceType) you want to be notified of, provide
+        /// a list of RDS sources (SourceIds) that triggers the events, and provide a list of
+        /// event categories (EventCategories) for events you want to be notified of. For example,
+        /// you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2
+        /// and EventCategories = Availability, Backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both the SourceType and SourceIds, such as SourceType = db-instance
+        /// and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
+        /// events for the specified source. If you specify a SourceType but do not specify a
+        /// SourceIdentifier, you will receive notice of the events for that source type for all
+        /// your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier,
+        /// you will be notified of events generated from all RDS sources belonging to your customer
+        /// account.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
-        /// <param name="createEventSubscriptionRequest">Container for the necessary parameters to execute the CreateEventSubscription service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateEventSubscription service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="SourceNotFoundException"/>
-        /// <exception cref="SNSTopicArnNotFoundException"/>
-        /// <exception cref="SNSInvalidTopicException"/>
-        /// <exception cref="SubscriptionCategoryNotFoundException"/>
-        /// <exception cref="SNSNoAuthorizationException"/>
-        /// <exception cref="EventSubscriptionQuotaExceededException"/>
-        /// <exception cref="SubscriptionAlreadyExistException"/>
-        public CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest)
+        /// <returns>The response from the CreateEventSubscription service method, as returned by RDS.</returns>
+        /// <exception cref="EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="SNSInvalidTopicException">
+        /// SNS has responded that there is a problem with the SND topic specified.
+        /// </exception>
+        /// <exception cref="SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic ARN.
+        /// </exception>
+        /// <exception cref="SNSTopicArnNotFoundException">
+        /// The SNS topic ARN does not exist.
+        /// </exception>
+        /// <exception cref="SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="SubscriptionAlreadyExistException">
+        /// The supplied subscription name already exists.
+        /// </exception>
+        /// <exception cref="SubscriptionCategoryNotFoundException">
+        /// The supplied category does not exist.
+        /// </exception>
+        public CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateEventSubscription(createEventSubscriptionRequest, null, null, true);
-            return EndCreateEventSubscription(asyncResult);
-        }
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateEventSubscription"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createEventSubscriptionRequest">Container for the necessary parameters to execute the CreateEventSubscription operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateEventSubscription operation.</returns>
-        public IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSubscription
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateEventSubscription(createEventSubscriptionRequest, callback, state, false);
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateEventSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateEventSubscription"/>
+        /// Finishes the asynchronous execution of the  CreateEventSubscription operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSubscription.</param>
         /// 
-        /// <returns>Returns a EventSubscription from AmazonRDS.</returns>
-        public CreateEventSubscriptionResponse EndCreateEventSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateEventSubscriptionResult from RDS.</returns>
+        public  CreateEventSubscriptionResponse EndCreateEventSubscription(IAsyncResult asyncResult)
         {
-            return endOperation<CreateEventSubscriptionResponse>(asyncResult);
+            return EndInvoke<CreateEventSubscriptionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateEventSubscriptionRequestMarshaller().Marshall(createEventSubscriptionRequest);
-            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region CreateOptionGroup
+        
+        #region  CreateOptionGroup
 
         /// <summary>
-        /// <para> Creates a new option group. You can create up to 20 option groups. </para>
+        /// Creates a new option group. You can create up to 20 option groups.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptionGroup service method.</param>
         /// 
-        /// <param name="createOptionGroupRequest">Container for the necessary parameters to execute the CreateOptionGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the CreateOptionGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="OptionGroupAlreadyExistsException"/>
-        /// <exception cref="OptionGroupQuotaExceededException"/>
-        public CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest createOptionGroupRequest)
+        /// <returns>The response from the CreateOptionGroup service method, as returned by RDS.</returns>
+        /// <exception cref="OptionGroupAlreadyExistsException">
+        /// The option group you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="OptionGroupQuotaExceededException">
+        /// The quota of 20 option groups was exceeded for this AWS account.
+        /// </exception>
+        public CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateOptionGroup(createOptionGroupRequest, null, null, true);
-            return EndCreateOptionGroup(asyncResult);
-        }
+            var marshaller = new CreateOptionGroupRequestMarshaller();
+            var unmarshaller = CreateOptionGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<CreateOptionGroupRequest,CreateOptionGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateOptionGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="createOptionGroupRequest">Container for the necessary parameters to execute the CreateOptionGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptionGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOptionGroup
         ///         operation.</returns>
-        public IAsyncResult BeginCreateOptionGroup(CreateOptionGroupRequest createOptionGroupRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginCreateOptionGroup(CreateOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateOptionGroup(createOptionGroupRequest, callback, state, false);
+            var marshaller = new CreateOptionGroupRequestMarshaller();
+            var unmarshaller = CreateOptionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateOptionGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.CreateOptionGroup"/>
+        /// Finishes the asynchronous execution of the  CreateOptionGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOptionGroup.</param>
         /// 
-        /// <returns>Returns a OptionGroup from AmazonRDS.</returns>
-        public CreateOptionGroupResponse EndCreateOptionGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateOptionGroupResult from RDS.</returns>
+        public  CreateOptionGroupResponse EndCreateOptionGroup(IAsyncResult asyncResult)
         {
-            return endOperation<CreateOptionGroupResponse>(asyncResult);
+            return EndInvoke<CreateOptionGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateOptionGroup(CreateOptionGroupRequest createOptionGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateOptionGroupRequestMarshaller().Marshall(createOptionGroupRequest);
-            var unmarshaller = CreateOptionGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteDBInstance
+        
+        #region  DeleteDBInstance
 
         /// <summary>
-        /// <para> The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the
-        /// request was received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered.
-        /// Manual DB snapshots of the DB instance to be deleted are not deleted. </para> <para> If a final DB snapshot is requested the status of the
-        /// RDS instance will be "deleting" until the DB snapshot is created. The API action <c>DescribeDBInstance</c> is used to monitor the status of
-        /// this operation. The action cannot be canceled or reverted once submitted. </para>
+        /// The DeleteDBInstance action deletes a previously provisioned DB instance. A successful
+        /// response from the web service indicates the request was received correctly. When you
+        /// delete a DB instance, all automated backups for that instance are deleted and cannot
+        /// be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  If a final DB snapshot is requested the status of the RDS instance will be "deleting"
+        /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
+        /// used to monitor the status of this operation. The action cannot be canceled or reverted
+        /// once submitted. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// 
-        /// <param name="deleteDBInstanceRequest">Container for the necessary parameters to execute the DeleteDBInstance service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DeleteDBInstance service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        /// <exception cref="DBSnapshotAlreadyExistsException"/>
-        public DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest)
+        /// <returns>The response from the DeleteDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBSnapshotAlreadyExistsException">
+        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
+        /// </exception>
+        public DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDBInstance(deleteDBInstanceRequest, null, null, true);
-            return EndDeleteDBInstance(asyncResult);
-        }
+            var marshaller = new DeleteDBInstanceRequestMarshaller();
+            var unmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteDBInstanceRequest,DeleteDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBInstance"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteDBInstanceRequest">Container for the necessary parameters to execute the DeleteDBInstance operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBInstance
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDeleteDBInstance(DeleteDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDBInstance(deleteDBInstanceRequest, callback, state, false);
+            var marshaller = new DeleteDBInstanceRequestMarshaller();
+            var unmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDBInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBInstance"/>
+        /// Finishes the asynchronous execution of the  DeleteDBInstance operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBInstance.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public DeleteDBInstanceResponse EndDeleteDBInstance(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteDBInstanceResult from RDS.</returns>
+        public  DeleteDBInstanceResponse EndDeleteDBInstance(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteDBInstanceResponse>(asyncResult);
+            return EndInvoke<DeleteDBInstanceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteDBInstanceRequestMarshaller().Marshall(deleteDBInstanceRequest);
-            var unmarshaller = DeleteDBInstanceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteDBParameterGroup
+        
+        #region  DeleteDBParameterGroup
 
         /// <summary>
-        /// <para> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </para>
-        /// <para><b>NOTE:</b> The specified DB parameter group cannot be associated with any DB instances. </para>
+        /// Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with
+        /// any RDS instances to be deleted.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
         /// 
-        /// <param name="deleteDBParameterGroupRequest">Container for the necessary parameters to execute the DeleteDBParameterGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        /// <exception cref="InvalidDBParameterGroupStateException"/>
-        public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest)
+        /// <returns>The response from the DeleteDBParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="InvalidDBParameterGroupStateException">
+        /// The DB parameter group cannot be deleted because it is in use.
+        /// </exception>
+        public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDBParameterGroup(deleteDBParameterGroupRequest, null, null, true);
-            return EndDeleteDBParameterGroup(asyncResult);
-        }
+            var marshaller = new DeleteDBParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteDBParameterGroupRequest,DeleteDBParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBParameterGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteDBParameterGroupRequest">Container for the necessary parameters to execute the DeleteDBParameterGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginDeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBParameterGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteDBParameterGroup(DeleteDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDBParameterGroup(deleteDBParameterGroupRequest, callback, state, false);
+            var marshaller = new DeleteDBParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDBParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBParameterGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBParameterGroup.</param>
-        public DeleteDBParameterGroupResponse EndDeleteDBParameterGroup(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  DeleteDBParameterGroupResult from RDS.</returns>
+        public  DeleteDBParameterGroupResponse EndDeleteDBParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteDBParameterGroupResponse>(asyncResult);
+            return EndInvoke<DeleteDBParameterGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteDBParameterGroupRequestMarshaller().Marshall(deleteDBParameterGroupRequest);
-            var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteDBSecurityGroup
+        
+        #region  DeleteDBSecurityGroup
 
         /// <summary>
-        /// <para> Deletes a DB security group. </para> <para><b>NOTE:</b>The specified DB security group must not be associated with any DB
-        /// instances.</para>
+        /// Deletes a DB security group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method.</param>
         /// 
-        /// <param name="deleteDBSecurityGroupRequest">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        /// <exception cref="InvalidDBSecurityGroupStateException"/>
-        public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest)
+        /// <returns>The response from the DeleteDBSecurityGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// The state of the DB security group does not allow deletion.
+        /// </exception>
+        public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDBSecurityGroup(deleteDBSecurityGroupRequest, null, null, true);
-            return EndDeleteDBSecurityGroup(asyncResult);
-        }
+            var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteDBSecurityGroupRequest,DeleteDBSecurityGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSecurityGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBSecurityGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteDBSecurityGroupRequest">Container for the necessary parameters to execute the DeleteDBSecurityGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBSecurityGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBSecurityGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDBSecurityGroup(deleteDBSecurityGroupRequest, callback, state, false);
+            var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDBSecurityGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDBSecurityGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBSecurityGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteDBSecurityGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBSecurityGroup.</param>
-        public DeleteDBSecurityGroupResponse EndDeleteDBSecurityGroup(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  DeleteDBSecurityGroupResult from RDS.</returns>
+        public  DeleteDBSecurityGroupResponse EndDeleteDBSecurityGroup(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteDBSecurityGroupResponse>(asyncResult);
+            return EndInvoke<DeleteDBSecurityGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteDBSecurityGroupRequestMarshaller().Marshall(deleteDBSecurityGroupRequest);
-            var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteDBSnapshot
+        
+        #region  DeleteDBSnapshot
 
         /// <summary>
-        /// <para> Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated. </para> <para><b>NOTE:</b>The DBSnapshot
-        /// must be in the available state to be deleted.</para>
+        /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBSnapshot service method.</param>
         /// 
-        /// <param name="deleteDBSnapshotRequest">Container for the necessary parameters to execute the DeleteDBSnapshot service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DeleteDBSnapshot service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="InvalidDBSnapshotStateException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest)
+        /// <returns>The response from the DeleteDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDBSnapshot(deleteDBSnapshotRequest, null, null, true);
-            return EndDeleteDBSnapshot(asyncResult);
-        }
+            var marshaller = new DeleteDBSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteDBSnapshotRequest,DeleteDBSnapshotResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBSnapshot"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteDBSnapshotRequest">Container for the necessary parameters to execute the DeleteDBSnapshot operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBSnapshot operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBSnapshot
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDeleteDBSnapshot(DeleteDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDBSnapshot(deleteDBSnapshotRequest, callback, state, false);
+            var marshaller = new DeleteDBSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDBSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBSnapshot"/>
+        /// Finishes the asynchronous execution of the  DeleteDBSnapshot operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBSnapshot.</param>
         /// 
-        /// <returns>Returns a DBSnapshot from AmazonRDS.</returns>
-        public DeleteDBSnapshotResponse EndDeleteDBSnapshot(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteDBSnapshotResult from RDS.</returns>
+        public  DeleteDBSnapshotResponse EndDeleteDBSnapshot(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteDBSnapshotResponse>(asyncResult);
+            return EndInvoke<DeleteDBSnapshotResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteDBSnapshotRequestMarshaller().Marshall(deleteDBSnapshotRequest);
-            var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteDBSubnetGroup
+        
+        #region  DeleteDBSubnetGroup
 
         /// <summary>
-        /// <para> Deletes a DB subnet group. </para> <para><b>NOTE:</b>The specified database subnet group must not be associated with any DB
-        /// instances.</para>
+        /// Deletes a DB subnet group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBSubnetGroup service method.</param>
         /// 
-        /// <param name="deleteDBSubnetGroupRequest">Container for the necessary parameters to execute the DeleteDBSubnetGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="InvalidDBSubnetGroupStateException"/>
-        /// <exception cref="InvalidDBSubnetStateException"/>
-        public DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest)
+        /// <returns>The response from the DeleteDBSubnetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="InvalidDBSubnetStateException">
+        /// The DB subnet is not in the <i>available</i> state.
+        /// </exception>
+        public DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDBSubnetGroup(deleteDBSubnetGroupRequest, null, null, true);
-            return EndDeleteDBSubnetGroup(asyncResult);
-        }
+            var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteDBSubnetGroupRequest,DeleteDBSubnetGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBSubnetGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteDBSubnetGroupRequest">Container for the necessary parameters to execute the DeleteDBSubnetGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBSubnetGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginDeleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBSubnetGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDBSubnetGroup(deleteDBSubnetGroupRequest, callback, state, false);
+            var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDBSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteDBSubnetGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteDBSubnetGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBSubnetGroup.</param>
-        public DeleteDBSubnetGroupResponse EndDeleteDBSubnetGroup(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  DeleteDBSubnetGroupResult from RDS.</returns>
+        public  DeleteDBSubnetGroupResponse EndDeleteDBSubnetGroup(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteDBSubnetGroupResponse>(asyncResult);
+            return EndInvoke<DeleteDBSubnetGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteDBSubnetGroupRequestMarshaller().Marshall(deleteDBSubnetGroupRequest);
-            var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteEventSubscription
+        
+        #region  DeleteEventSubscription
 
         /// <summary>
-        /// <para>Deletes an RDS event notification subscription.</para>
+        /// Deletes an RDS event notification subscription.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
         /// 
-        /// <param name="deleteEventSubscriptionRequest">Container for the necessary parameters to execute the DeleteEventSubscription service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DeleteEventSubscription service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="SubscriptionNotFoundException"/>
-        /// <exception cref="InvalidEventSubscriptionStateException"/>
-        public DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest)
+        /// <returns>The response from the DeleteEventSubscription service method, as returned by RDS.</returns>
+        /// <exception cref="InvalidEventSubscriptionStateException">
+        /// This error can occur if someone else is modifying a subscription. You should retry
+        /// the action.
+        /// </exception>
+        /// <exception cref="SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteEventSubscription(deleteEventSubscriptionRequest, null, null, true);
-            return EndDeleteEventSubscription(asyncResult);
-        }
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteEventSubscription"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteEventSubscriptionRequest">Container for the necessary parameters to execute the DeleteEventSubscription operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteEventSubscription operation.</returns>
-        public IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSubscription
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteEventSubscription(deleteEventSubscriptionRequest, callback, state, false);
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteEventSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteEventSubscription"/>
+        /// Finishes the asynchronous execution of the  DeleteEventSubscription operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSubscription.</param>
         /// 
-        /// <returns>Returns a EventSubscription from AmazonRDS.</returns>
-        public DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteEventSubscriptionResult from RDS.</returns>
+        public  DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteEventSubscriptionResponse>(asyncResult);
+            return EndInvoke<DeleteEventSubscriptionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteEventSubscriptionRequestMarshaller().Marshall(deleteEventSubscriptionRequest);
-            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteOptionGroup
+        
+        #region  DeleteOptionGroup
 
         /// <summary>
-        /// <para> Deletes an existing option group. </para>
+        /// Deletes an existing option group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptionGroup service method.</param>
         /// 
-        /// <param name="deleteOptionGroupRequest">Container for the necessary parameters to execute the DeleteOptionGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <exception cref="InvalidOptionGroupStateException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        public DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest)
+        /// <returns>The response from the DeleteOptionGroup service method, as returned by RDS.</returns>
+        /// <exception cref="InvalidOptionGroupStateException">
+        /// The option group is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        public DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteOptionGroup(deleteOptionGroupRequest, null, null, true);
-            return EndDeleteOptionGroup(asyncResult);
-        }
+            var marshaller = new DeleteOptionGroupRequestMarshaller();
+            var unmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteOptionGroupRequest,DeleteOptionGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteOptionGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="deleteOptionGroupRequest">Container for the necessary parameters to execute the DeleteOptionGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptionGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginDeleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOptionGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteOptionGroup(DeleteOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteOptionGroup(deleteOptionGroupRequest, callback, state, false);
+            var marshaller = new DeleteOptionGroupRequestMarshaller();
+            var unmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteOptionGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DeleteOptionGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteOptionGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOptionGroup.</param>
-        public DeleteOptionGroupResponse EndDeleteOptionGroup(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  DeleteOptionGroupResult from RDS.</returns>
+        public  DeleteOptionGroupResponse EndDeleteOptionGroup(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteOptionGroupResponse>(asyncResult);
+            return EndInvoke<DeleteOptionGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteOptionGroupRequestMarshaller().Marshall(deleteOptionGroupRequest);
-            var unmarshaller = DeleteOptionGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeDBEngineVersions
+        
+        #region  DescribeDBEngineVersions
 
         /// <summary>
-        /// <para> Returns a list of the available DB engines. </para>
+        /// Returns a list of the available DB engines.
         /// </summary>
         /// 
-        /// <param name="describeDBEngineVersionsRequest">Container for the necessary parameters to execute the DescribeDBEngineVersions service method
-        ///          on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeDBEngineVersions(describeDBEngineVersionsRequest, null, null, true);
-            return EndDescribeDBEngineVersions(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBEngineVersions"/>
-        /// </summary>
-        /// 
-        /// <param name="describeDBEngineVersionsRequest">Container for the necessary parameters to execute the DescribeDBEngineVersions operation on
-        ///          AmazonRDS.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBEngineVersions operation.</returns>
-        public IAsyncResult BeginDescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeDBEngineVersions(describeDBEngineVersionsRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBEngineVersions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBEngineVersions"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBEngineVersions.</param>
-        /// 
-        /// <returns>Returns a DescribeDBEngineVersionsResult from AmazonRDS.</returns>
-        public DescribeDBEngineVersionsResponse EndDescribeDBEngineVersions(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeDBEngineVersionsResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBEngineVersionsRequestMarshaller().Marshall(describeDBEngineVersionsRequest);
-            var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para> Returns a list of the available DB engines. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
-        /// 
+        /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
         public DescribeDBEngineVersionsResponse DescribeDBEngineVersions()
         {
             return DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeDBInstances
 
         /// <summary>
-        /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
+        /// Returns a list of the available DB engines.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions service method.</param>
         /// 
-        /// <param name="describeDBInstancesRequest">Container for the necessary parameters to execute the DescribeDBInstances service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBInstances service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        public DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest)
+        /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
+        public DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDBInstances(describeDBInstancesRequest, null, null, true);
-            return EndDescribeDBInstances(asyncResult);
+            var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBEngineVersionsRequest,DescribeDBEngineVersionsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBInstances operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBInstances"/>
+        /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeDBInstancesRequest">Container for the necessary parameters to execute the DescribeDBInstances operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBInstances operation.</returns>
-        public IAsyncResult BeginDescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBEngineVersions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBEngineVersions(DescribeDBEngineVersionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDBInstances(describeDBInstancesRequest, callback, state, false);
-        }
+            var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
-        
+            return BeginInvoke<DescribeDBEngineVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBInstances operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBInstances"/>
+        /// Finishes the asynchronous execution of the  DescribeDBEngineVersions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBInstances.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBEngineVersions.</param>
         /// 
-        /// <returns>Returns a DescribeDBInstancesResult from AmazonRDS.</returns>
-        public DescribeDBInstancesResponse EndDescribeDBInstances(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDBEngineVersionsResult from RDS.</returns>
+        public  DescribeDBEngineVersionsResponse EndDescribeDBEngineVersions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDBInstancesResponse>(asyncResult);
+            return EndInvoke<DescribeDBEngineVersionsResponse>(asyncResult);
         }
+
+        #endregion
         
-        IAsyncResult invokeDescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBInstancesRequestMarshaller().Marshall(describeDBInstancesRequest);
-            var unmarshaller = DescribeDBInstancesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
+        #region  DescribeDBInstances
 
         /// <summary>
-        /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
+        /// Returns information about provisioned RDS instances. This API supports pagination.
         /// </summary>
         /// 
-        /// <returns>The response from the DescribeDBInstances service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
+        /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
         public DescribeDBInstancesResponse DescribeDBInstances()
         {
             return DescribeDBInstances(new DescribeDBInstancesRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeDBLogFiles
 
         /// <summary>
-        /// <para> Returns a list of DB log files for the DB instance. </para>
+        /// Returns information about provisioned RDS instances. This API supports pagination.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances service method.</param>
         /// 
-        /// <param name="describeDBLogFilesRequest">Container for the necessary parameters to execute the DescribeDBLogFiles service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBLogFiles service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        public DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest)
+        /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        public DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDBLogFiles(describeDBLogFilesRequest, null, null, true);
-            return EndDescribeDBLogFiles(asyncResult);
+            var marshaller = new DescribeDBInstancesRequestMarshaller();
+            var unmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBInstancesRequest,DescribeDBInstancesResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBLogFiles operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBLogFiles"/>
+        /// Initiates the asynchronous execution of the DescribeDBInstances operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeDBLogFilesRequest">Container for the necessary parameters to execute the DescribeDBLogFiles operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBLogFiles operation.</returns>
-        public IAsyncResult BeginDescribeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBInstances
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBInstances(DescribeDBInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDBLogFiles(describeDBLogFilesRequest, callback, state, false);
+            var marshaller = new DescribeDBInstancesRequestMarshaller();
+            var unmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBInstances operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBInstancesResult from RDS.</returns>
+        public  DescribeDBInstancesResponse EndDescribeDBInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBInstancesResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DescribeDBLogFiles
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBLogFiles operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBLogFiles"/>
+        /// Returns a list of DB log files for the DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBLogFiles service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBLogFiles service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        public DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
+        {
+            var marshaller = new DescribeDBLogFilesRequestMarshaller();
+            var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBLogFilesRequest,DescribeDBLogFilesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBLogFiles operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBLogFiles operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBLogFiles
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBLogFiles(DescribeDBLogFilesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeDBLogFilesRequestMarshaller();
+            var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBLogFilesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBLogFiles operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBLogFiles.</param>
         /// 
-        /// <returns>Returns a DescribeDBLogFilesResult from AmazonRDS.</returns>
-        public DescribeDBLogFilesResponse EndDescribeDBLogFiles(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDBLogFilesResult from RDS.</returns>
+        public  DescribeDBLogFilesResponse EndDescribeDBLogFiles(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDBLogFilesResponse>(asyncResult);
+            return EndInvoke<DescribeDBLogFilesResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBLogFilesRequestMarshaller().Marshall(describeDBLogFilesRequest);
-            var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeDBParameterGroups
+        
+        #region  DescribeDBParameterGroups
 
         /// <summary>
-        /// <para> Returns a list of <c>DBParameterGroup</c> descriptions. If a <c>DBParameterGroupName</c> is specified, the list will contain only the
-        /// description of the specified DB parameter group. </para>
+        /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
+        /// is specified, the list will contain only the description of the specified DB parameter
+        /// group.
         /// </summary>
         /// 
-        /// <param name="describeDBParameterGroupsRequest">Container for the necessary parameters to execute the DescribeDBParameterGroups service
-        ///          method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBParameterGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeDBParameterGroups(describeDBParameterGroupsRequest, null, null, true);
-            return EndDescribeDBParameterGroups(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBParameterGroups"/>
-        /// </summary>
-        /// 
-        /// <param name="describeDBParameterGroupsRequest">Container for the necessary parameters to execute the DescribeDBParameterGroups operation on
-        ///          AmazonRDS.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBParameterGroups operation.</returns>
-        public IAsyncResult BeginDescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeDBParameterGroups(describeDBParameterGroupsRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBParameterGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBParameterGroups"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBParameterGroups.</param>
-        /// 
-        /// <returns>Returns a DescribeDBParameterGroupsResult from AmazonRDS.</returns>
-        public DescribeDBParameterGroupsResponse EndDescribeDBParameterGroups(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeDBParameterGroupsResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBParameterGroupsRequestMarshaller().Marshall(describeDBParameterGroupsRequest);
-            var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para> Returns a list of <c>DBParameterGroup</c> descriptions. If a <c>DBParameterGroupName</c> is specified, the list will contain only the
-        /// description of the specified DB parameter group. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeDBParameterGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
+        /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
         public DescribeDBParameterGroupsResponse DescribeDBParameterGroups()
         {
             return DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeDBParameters
 
         /// <summary>
-        /// <para> Returns the detailed parameter list for a particular DB parameter group. </para>
+        /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
+        /// is specified, the list will contain only the description of the specified DB parameter
+        /// group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameterGroups service method.</param>
         /// 
-        /// <param name="describeDBParametersRequest">Container for the necessary parameters to execute the DescribeDBParameters service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBParameters service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        public DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest)
+        /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDBParameters(describeDBParametersRequest, null, null, true);
-            return EndDescribeDBParameters(asyncResult);
+            var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBParameterGroupsRequest,DescribeDBParameterGroupsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBParameters operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBParameters"/>
+        /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeDBParametersRequest">Container for the necessary parameters to execute the DescribeDBParameters operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameterGroups operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBParameters operation.</returns>
-        public IAsyncResult BeginDescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBParameterGroups
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBParameterGroups(DescribeDBParameterGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDBParameters(describeDBParametersRequest, callback, state, false);
+            var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBParameterGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBParameterGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBParameterGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBParameterGroupsResult from RDS.</returns>
+        public  DescribeDBParameterGroupsResponse EndDescribeDBParameterGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBParameterGroupsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DescribeDBParameters
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBParameters operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBParameters"/>
+        /// Returns the detailed parameter list for a particular DB parameter group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBParameters service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        public DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
+        {
+            var marshaller = new DescribeDBParametersRequestMarshaller();
+            var unmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBParametersRequest,DescribeDBParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBParameters operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameters operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBParameters
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBParameters(DescribeDBParametersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeDBParametersRequestMarshaller();
+            var unmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBParameters operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBParameters.</param>
         /// 
-        /// <returns>Returns a DescribeDBParametersResult from AmazonRDS.</returns>
-        public DescribeDBParametersResponse EndDescribeDBParameters(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDBParametersResult from RDS.</returns>
+        public  DescribeDBParametersResponse EndDescribeDBParameters(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDBParametersResponse>(asyncResult);
+            return EndInvoke<DescribeDBParametersResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBParametersRequestMarshaller().Marshall(describeDBParametersRequest);
-            var unmarshaller = DescribeDBParametersResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeDBSecurityGroups
+        
+        #region  DescribeDBSecurityGroups
 
         /// <summary>
-        /// <para> Returns a list of <c>DBSecurityGroup</c> descriptions. If a <c>DBSecurityGroupName</c> is specified, the list will contain only the
-        /// descriptions of the specified DB security group. </para>
+        /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
+        /// is specified, the list will contain only the descriptions of the specified DB security
+        /// group.
         /// </summary>
         /// 
-        /// <param name="describeDBSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeDBSecurityGroups service method
-        ///          on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeDBSecurityGroups(describeDBSecurityGroupsRequest, null, null, true);
-            return EndDescribeDBSecurityGroups(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBSecurityGroups"/>
-        /// </summary>
-        /// 
-        /// <param name="describeDBSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeDBSecurityGroups operation on
-        ///          AmazonRDS.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBSecurityGroups operation.</returns>
-        public IAsyncResult BeginDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeDBSecurityGroups(describeDBSecurityGroupsRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBSecurityGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBSecurityGroups"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSecurityGroups.</param>
-        /// 
-        /// <returns>Returns a DescribeDBSecurityGroupsResult from AmazonRDS.</returns>
-        public DescribeDBSecurityGroupsResponse EndDescribeDBSecurityGroups(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeDBSecurityGroupsResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBSecurityGroupsRequestMarshaller().Marshall(describeDBSecurityGroupsRequest);
-            var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para> Returns a list of <c>DBSecurityGroup</c> descriptions. If a <c>DBSecurityGroupName</c> is specified, the list will contain only the
-        /// descriptions of the specified DB security group. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
+        /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
         public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups()
         {
             return DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeDBSnapshots
 
         /// <summary>
-        /// <para> Returns information about DB snapshots. This API supports pagination. </para>
+        /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
+        /// is specified, the list will contain only the descriptions of the specified DB security
+        /// group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups service method.</param>
         /// 
-        /// <param name="describeDBSnapshotsRequest">Container for the necessary parameters to execute the DescribeDBSnapshots service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBSnapshots service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest)
+        /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDBSnapshots(describeDBSnapshotsRequest, null, null, true);
-            return EndDescribeDBSnapshots(asyncResult);
+            var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBSecurityGroupsRequest,DescribeDBSecurityGroupsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBSnapshots"/>
+        /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeDBSnapshotsRequest">Container for the necessary parameters to execute the DescribeDBSnapshots operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBSnapshots operation.</returns>
-        public IAsyncResult BeginDescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBSecurityGroups
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDBSnapshots(describeDBSnapshotsRequest, callback, state, false);
-        }
+            var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.Instance;
 
-        
+            return BeginInvoke<DescribeDBSecurityGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBSnapshots operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBSnapshots"/>
+        /// Finishes the asynchronous execution of the  DescribeDBSecurityGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSnapshots.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSecurityGroups.</param>
         /// 
-        /// <returns>Returns a DescribeDBSnapshotsResult from AmazonRDS.</returns>
-        public DescribeDBSnapshotsResponse EndDescribeDBSnapshots(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDBSecurityGroupsResult from RDS.</returns>
+        public  DescribeDBSecurityGroupsResponse EndDescribeDBSecurityGroups(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDBSnapshotsResponse>(asyncResult);
+            return EndInvoke<DescribeDBSecurityGroupsResponse>(asyncResult);
         }
+
+        #endregion
         
-        IAsyncResult invokeDescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBSnapshotsRequestMarshaller().Marshall(describeDBSnapshotsRequest);
-            var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
+        #region  DescribeDBSnapshots
 
         /// <summary>
-        /// <para> Returns information about DB snapshots. This API supports pagination. </para>
+        /// Returns information about DB snapshots. This API supports pagination.
         /// </summary>
         /// 
-        /// <returns>The response from the DescribeDBSnapshots service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSnapshotNotFoundException"/>
+        /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
         public DescribeDBSnapshotsResponse DescribeDBSnapshots()
         {
             return DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeDBSubnetGroups
 
         /// <summary>
-        /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
-        /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the <a
-        /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
-        /// </para>
+        /// Returns information about DB snapshots. This API supports pagination.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshots service method.</param>
         /// 
-        /// <param name="describeDBSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest)
+        /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDBSubnetGroups(describeDBSubnetGroupsRequest, null, null, true);
-            return EndDescribeDBSubnetGroups(asyncResult);
+            var marshaller = new DescribeDBSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBSnapshotsRequest,DescribeDBSnapshotsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBSubnetGroups"/>
+        /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeDBSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeDBSubnetGroups operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshots operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDBSubnetGroups operation.</returns>
-        public IAsyncResult BeginDescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBSnapshots
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBSnapshots(DescribeDBSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDBSubnetGroups(describeDBSubnetGroupsRequest, callback, state, false);
+            var marshaller = new DescribeDBSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBSnapshotsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDBSubnetGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeDBSubnetGroups"/>
+        /// Finishes the asynchronous execution of the  DescribeDBSnapshots operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSubnetGroups.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSnapshots.</param>
         /// 
-        /// <returns>Returns a DescribeDBSubnetGroupsResult from AmazonRDS.</returns>
-        public DescribeDBSubnetGroupsResponse EndDescribeDBSubnetGroups(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDBSnapshotsResult from RDS.</returns>
+        public  DescribeDBSnapshotsResponse EndDescribeDBSnapshots(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDBSubnetGroupsResponse>(asyncResult);
+            return EndInvoke<DescribeDBSnapshotsResponse>(asyncResult);
         }
+
+        #endregion
         
-        IAsyncResult invokeDescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDBSubnetGroupsRequestMarshaller().Marshall(describeDBSubnetGroupsRequest);
-            var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
+        #region  DescribeDBSubnetGroups
 
         /// <summary>
-        /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
-        /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the <a
-        /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
+        /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
+        /// the list will contain only the descriptions of the specified DBSubnetGroup. 
+        /// 
+        ///  
+        /// <para>
+        /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+        /// Tutorial</a>. 
         /// </para>
         /// </summary>
         /// 
-        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
+        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
         public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups()
         {
             return DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeEngineDefaultParameters
 
         /// <summary>
-        /// <para> Returns the default engine and system parameter information for the specified database engine. </para>
+        /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
+        /// the list will contain only the descriptions of the specified DBSubnetGroup. 
+        /// 
+        ///  
+        /// <para>
+        /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+        /// Tutorial</a>. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method.</param>
         /// 
-        /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
-        ///          service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest)
+        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEngineDefaultParameters(describeEngineDefaultParametersRequest, null, null, true);
-            return EndDescribeEngineDefaultParameters(asyncResult);
+            var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBSubnetGroupsRequest,DescribeDBSubnetGroupsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEngineDefaultParameters"/>
+        /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
-        ///          operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeEngineDefaultParameters operation.</returns>
-        public IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBSubnetGroups
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEngineDefaultParameters(describeEngineDefaultParametersRequest, callback, state, false);
+            var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBSubnetGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBSubnetGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSubnetGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBSubnetGroupsResult from RDS.</returns>
+        public  DescribeDBSubnetGroupsResponse EndDescribeDBSubnetGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBSubnetGroupsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DescribeEngineDefaultParameters
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeEngineDefaultParameters operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEngineDefaultParameters"/>
+        /// Returns the default engine and system parameter information for the specified database
+        /// engine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by RDS.</returns>
+        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
+        {
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEngineDefaultParametersRequest,DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEngineDefaultParameters
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEngineDefaultParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEngineDefaultParameters operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEngineDefaultParameters.</param>
         /// 
-        /// <returns>Returns a EngineDefaults from AmazonRDS.</returns>
-        public DescribeEngineDefaultParametersResponse EndDescribeEngineDefaultParameters(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeEngineDefaultParametersResult from RDS.</returns>
+        public  DescribeEngineDefaultParametersResponse EndDescribeEngineDefaultParameters(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeEngineDefaultParametersResponse>(asyncResult);
+            return EndInvoke<DescribeEngineDefaultParametersResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeEngineDefaultParametersRequestMarshaller().Marshall(describeEngineDefaultParametersRequest);
-            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeEventCategories
+        
+        #region  DescribeEventCategories
 
         /// <summary>
-        /// <para>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the
-        /// event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" > Events</a> topic
-        /// in the Amazon RDS User Guide.</para>
+        /// Displays a list of categories for all event source types, or, if specified, for a
+        /// specified source type. You can see a list of the event categories and source types
+        /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+        /// Events</a> topic in the Amazon RDS User Guide.
         /// </summary>
         /// 
-        /// <param name="describeEventCategoriesRequest">Container for the necessary parameters to execute the DescribeEventCategories service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeEventCategories(describeEventCategoriesRequest, null, null, true);
-            return EndDescribeEventCategories(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEventCategories operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEventCategories"/>
-        /// </summary>
-        /// 
-        /// <param name="describeEventCategoriesRequest">Container for the necessary parameters to execute the DescribeEventCategories operation on
-        ///          AmazonRDS.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeEventCategories operation.</returns>
-        public IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeEventCategories(describeEventCategoriesRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeEventCategories operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEventCategories"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventCategories.</param>
-        /// 
-        /// <returns>Returns a DescribeEventCategoriesResult from AmazonRDS.</returns>
-        public DescribeEventCategoriesResponse EndDescribeEventCategories(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeEventCategoriesResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeEventCategoriesRequestMarshaller().Marshall(describeEventCategoriesRequest);
-            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the
-        /// event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" > Events</a> topic
-        /// in the Amazon RDS User Guide.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRDS.</returns>
-        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
         public DescribeEventCategoriesResponse DescribeEventCategories()
         {
             return DescribeEventCategories(new DescribeEventCategoriesRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeEventSubscriptions
 
         /// <summary>
-        /// <para>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName,
-        /// SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </para> <para>If you specify a SubscriptionName, lists the
-        /// description for that subscription.</para>
+        /// Displays a list of categories for all event source types, or, if specified, for a
+        /// specified source type. You can see a list of the event categories and source types
+        /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+        /// Events</a> topic in the Amazon RDS User Guide.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
-        /// <param name="describeEventSubscriptionsRequest">Container for the necessary parameters to execute the DescribeEventSubscriptions service
-        ///          method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="SubscriptionNotFoundException"/>
-        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest)
+        /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
+        public DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEventSubscriptions(describeEventSubscriptionsRequest, null, null, true);
-            return EndDescribeEventSubscriptions(asyncResult);
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEventSubscriptions"/>
+        /// Initiates the asynchronous execution of the DescribeEventCategories operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeEventSubscriptionsRequest">Container for the necessary parameters to execute the DescribeEventSubscriptions operation
-        ///          on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeEventSubscriptions operation.</returns>
-        public IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventCategories
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEventSubscriptions(describeEventSubscriptionsRequest, callback, state, false);
-        }
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeEventSubscriptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEventSubscriptions"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
-        /// 
-        /// <returns>Returns a DescribeEventSubscriptionsResult from AmazonRDS.</returns>
-        public DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeEventSubscriptionsResponse>(asyncResult);
+            return BeginInvoke<DescribeEventCategoriesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-        
-        IAsyncResult invokeDescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeEventSubscriptionsRequestMarshaller().Marshall(describeEventSubscriptionsRequest);
-            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         /// <summary>
-        /// <para>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName,
-        /// SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </para> <para>If you specify a SubscriptionName, lists the
-        /// description for that subscription.</para>
+        /// Finishes the asynchronous execution of the  DescribeEventCategories operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by AmazonRDS.</returns>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventCategories.</param>
         /// 
-        /// <exception cref="SubscriptionNotFoundException"/>
-        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions()
+        /// <returns>Returns a  DescribeEventCategoriesResult from RDS.</returns>
+        public  DescribeEventCategoriesResponse EndDescribeEventCategories(IAsyncResult asyncResult)
         {
-            return DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
+            return EndInvoke<DescribeEventCategoriesResponse>(asyncResult);
         }
-        
 
         #endregion
-    
-        #region DescribeEvents
+        
+        #region  DescribeEvents
 
         /// <summary>
-        /// <para> Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events
-        /// specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a
-        /// parameter. By default, the past hour of events are returned. </para>
+        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
+        /// parameter groups for the past 14 days. Events specific to a particular DB instance,
+        /// DB security group, database snapshot, or DB parameter group can be obtained by providing
+        /// the name as a parameter. By default, the past hour of events are returned.
         /// </summary>
         /// 
-        /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest describeEventsRequest)
+        /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
+        public DescribeEventsResponse DescribeEvents()
         {
-            IAsyncResult asyncResult = invokeDescribeEvents(describeEventsRequest, null, null, true);
-            return EndDescribeEvents(asyncResult);
+            return DescribeEvents(new DescribeEventsRequest());
         }
 
-        
+        /// <summary>
+        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
+        /// parameter groups for the past 14 days. Events specific to a particular DB instance,
+        /// DB security group, database snapshot, or DB parameter group can be obtained by providing
+        /// the name as a parameter. By default, the past hour of events are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
+        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEvents"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest describeEventsRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEvents(describeEventsRequest, callback, state, false);
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeEvents"/>
+        /// Finishes the asynchronous execution of the  DescribeEvents operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
         /// 
-        /// <returns>Returns a DescribeEventsResult from AmazonRDS.</returns>
-        public DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeEventsResult from RDS.</returns>
+        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeEventsResponse>(asyncResult);
+            return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeEvents(DescribeEventsRequest describeEventsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeEventsRequestMarshaller().Marshall(describeEventsRequest);
-            var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para> Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events
-        /// specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a
-        /// parameter. By default, the past hour of events are returned. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeEventsResponse DescribeEvents()
-        {
-            return DescribeEvents(new DescribeEventsRequest());
-        }
-        
 
         #endregion
-    
-        #region DescribeOptionGroupOptions
+        
+        #region  DescribeEventSubscriptions
 
         /// <summary>
-        /// <para> Describes all available options. </para>
+        /// Lists all the subscription descriptions for a customer account. The description for
+        /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
+        /// CreationTime, and Status. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a SubscriptionName, lists the description for that subscription.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="describeOptionGroupOptionsRequest">Container for the necessary parameters to execute the DescribeOptionGroupOptions service
-        ///          method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeOptionGroupOptions service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest)
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by RDS.</returns>
+        /// <exception cref="SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions()
         {
-            IAsyncResult asyncResult = invokeDescribeOptionGroupOptions(describeOptionGroupOptionsRequest, null, null, true);
-            return EndDescribeOptionGroupOptions(asyncResult);
+            return DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
         }
 
-        
+        /// <summary>
+        /// Lists all the subscription descriptions for a customer account. The description for
+        /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
+        /// CreationTime, and Status. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a SubscriptionName, lists the description for that subscription.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by RDS.</returns>
+        /// <exception cref="SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
+        {
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeOptionGroupOptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeOptionGroupOptions"/>
+        /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeOptionGroupOptionsRequest">Container for the necessary parameters to execute the DescribeOptionGroupOptions operation
-        ///          on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeOptionGroupOptions operation.</returns>
-        public IAsyncResult BeginDescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventSubscriptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeOptionGroupOptions(describeOptionGroupOptionsRequest, callback, state, false);
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventSubscriptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEventSubscriptions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventSubscriptionsResult from RDS.</returns>
+        public  DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEventSubscriptionsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DescribeOptionGroupOptions
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeOptionGroupOptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeOptionGroupOptions"/>
+        /// Describes all available options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroupOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOptionGroupOptions service method, as returned by RDS.</returns>
+        public DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request)
+        {
+            var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
+            var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOptionGroupOptionsRequest,DescribeOptionGroupOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOptionGroupOptions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroupOptions operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOptionGroupOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
+            var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeOptionGroupOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOptionGroupOptions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOptionGroupOptions.</param>
         /// 
-        /// <returns>Returns a DescribeOptionGroupOptionsResult from AmazonRDS.</returns>
-        public DescribeOptionGroupOptionsResponse EndDescribeOptionGroupOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeOptionGroupOptionsResult from RDS.</returns>
+        public  DescribeOptionGroupOptionsResponse EndDescribeOptionGroupOptions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeOptionGroupOptionsResponse>(asyncResult);
+            return EndInvoke<DescribeOptionGroupOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeOptionGroupOptionsRequestMarshaller().Marshall(describeOptionGroupOptionsRequest);
-            var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeOptionGroups
+        
+        #region  DescribeOptionGroups
 
         /// <summary>
-        /// <para> Describes the available option groups. </para>
+        /// Describes the available option groups.
         /// </summary>
         /// 
-        /// <param name="describeOptionGroupsRequest">Container for the necessary parameters to execute the DescribeOptionGroups service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeOptionGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="OptionGroupNotFoundException"/>
-        public DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeOptionGroups(describeOptionGroupsRequest, null, null, true);
-            return EndDescribeOptionGroups(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeOptionGroups"/>
-        /// </summary>
-        /// 
-        /// <param name="describeOptionGroupsRequest">Container for the necessary parameters to execute the DescribeOptionGroups operation on
-        ///          AmazonRDS.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeOptionGroups operation.</returns>
-        public IAsyncResult BeginDescribeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeOptionGroups(describeOptionGroupsRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeOptionGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeOptionGroups"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOptionGroups.</param>
-        /// 
-        /// <returns>Returns a DescribeOptionGroupsResult from AmazonRDS.</returns>
-        public DescribeOptionGroupsResponse EndDescribeOptionGroups(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeOptionGroupsResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeOptionGroupsRequestMarshaller().Marshall(describeOptionGroupsRequest);
-            var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para> Describes the available option groups. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeOptionGroups service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="OptionGroupNotFoundException"/>
+        /// <returns>The response from the DescribeOptionGroups service method, as returned by RDS.</returns>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
         public DescribeOptionGroupsResponse DescribeOptionGroups()
         {
             return DescribeOptionGroups(new DescribeOptionGroupsRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeOrderableDBInstanceOptions
 
         /// <summary>
-        /// <para> Returns a list of orderable DB instance options for the specified engine. </para>
+        /// Describes the available option groups.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroups service method.</param>
         /// 
-        /// <param name="describeOrderableDBInstanceOptionsRequest">Container for the necessary parameters to execute the
-        ///          DescribeOrderableDBInstanceOptions service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeOrderableDBInstanceOptions service method, as returned by AmazonRDS.</returns>
-        /// 
-        public DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest)
+        /// <returns>The response from the DescribeOptionGroups service method, as returned by RDS.</returns>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        public DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest, null, null, true);
-            return EndDescribeOrderableDBInstanceOptions(asyncResult);
+            var marshaller = new DescribeOptionGroupsRequestMarshaller();
+            var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOptionGroupsRequest,DescribeOptionGroupsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeOrderableDBInstanceOptions"/>
+        /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeOrderableDBInstanceOptionsRequest">Container for the necessary parameters to execute the
-        ///          DescribeOrderableDBInstanceOptions operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroups operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeOrderableDBInstanceOptions operation.</returns>
-        public IAsyncResult BeginDescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOptionGroups
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeOptionGroups(DescribeOptionGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest, callback, state, false);
+            var marshaller = new DescribeOptionGroupsRequestMarshaller();
+            var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeOptionGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOptionGroups operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOptionGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeOptionGroupsResult from RDS.</returns>
+        public  DescribeOptionGroupsResponse EndDescribeOptionGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeOptionGroupsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DescribeOrderableDBInstanceOptions
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeOrderableDBInstanceOptions"/>
+        /// Returns a list of orderable DB instance options for the specified engine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOrderableDBInstanceOptions service method, as returned by RDS.</returns>
+        public DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
+        {
+            var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
+            var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrderableDBInstanceOptionsRequest,DescribeOrderableDBInstanceOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrderableDBInstanceOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
+            var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeOrderableDBInstanceOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOrderableDBInstanceOptions operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrderableDBInstanceOptions.</param>
         /// 
-        /// <returns>Returns a DescribeOrderableDBInstanceOptionsResult from AmazonRDS.</returns>
-        public DescribeOrderableDBInstanceOptionsResponse EndDescribeOrderableDBInstanceOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeOrderableDBInstanceOptionsResult from RDS.</returns>
+        public  DescribeOrderableDBInstanceOptionsResponse EndDescribeOrderableDBInstanceOptions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeOrderableDBInstanceOptionsResponse>(asyncResult);
+            return EndInvoke<DescribeOrderableDBInstanceOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeOrderableDBInstanceOptionsRequestMarshaller().Marshall(describeOrderableDBInstanceOptionsRequest);
-            var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeReservedDBInstances
+        
+        #region  DescribeReservedDBInstances
 
         /// <summary>
-        /// <para> Returns information about reserved DB instances for this account, or about a specified reserved DB instance. </para>
+        /// Returns information about reserved DB instances for this account, or about a specified
+        /// reserved DB instance.
         /// </summary>
         /// 
-        /// <param name="describeReservedDBInstancesRequest">Container for the necessary parameters to execute the DescribeReservedDBInstances service
-        ///          method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeReservedDBInstances service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="ReservedDBInstanceNotFoundException"/>
-        public DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeReservedDBInstances(describeReservedDBInstancesRequest, null, null, true);
-            return EndDescribeReservedDBInstances(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeReservedDBInstances"/>
-        /// </summary>
-        /// 
-        /// <param name="describeReservedDBInstancesRequest">Container for the necessary parameters to execute the DescribeReservedDBInstances operation
-        ///          on AmazonRDS.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeReservedDBInstances operation.</returns>
-        public IAsyncResult BeginDescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeReservedDBInstances(describeReservedDBInstancesRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeReservedDBInstances operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeReservedDBInstances"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedDBInstances.</param>
-        /// 
-        /// <returns>Returns a DescribeReservedDBInstancesResult from AmazonRDS.</returns>
-        public DescribeReservedDBInstancesResponse EndDescribeReservedDBInstances(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeReservedDBInstancesResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeReservedDBInstancesRequestMarshaller().Marshall(describeReservedDBInstancesRequest);
-            var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para> Returns information about reserved DB instances for this account, or about a specified reserved DB instance. </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeReservedDBInstances service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="ReservedDBInstanceNotFoundException"/>
+        /// <returns>The response from the DescribeReservedDBInstances service method, as returned by RDS.</returns>
+        /// <exception cref="ReservedDBInstanceNotFoundException">
+        /// The specified reserved DB Instance not found.
+        /// </exception>
         public DescribeReservedDBInstancesResponse DescribeReservedDBInstances()
         {
             return DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
         }
-        
-
-        #endregion
-    
-        #region DescribeReservedDBInstancesOfferings
 
         /// <summary>
-        /// <para> Lists available reserved DB instance offerings. </para>
+        /// Returns information about reserved DB instances for this account, or about a specified
+        /// reserved DB instance.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstances service method.</param>
         /// 
-        /// <param name="describeReservedDBInstancesOfferingsRequest">Container for the necessary parameters to execute the
-        ///          DescribeReservedDBInstancesOfferings service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
-        public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest)
+        /// <returns>The response from the DescribeReservedDBInstances service method, as returned by RDS.</returns>
+        /// <exception cref="ReservedDBInstanceNotFoundException">
+        /// The specified reserved DB Instance not found.
+        /// </exception>
+        public DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest, null, null, true);
-            return EndDescribeReservedDBInstancesOfferings(asyncResult);
+            var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
+            var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedDBInstancesRequest,DescribeReservedDBInstancesResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeReservedDBInstancesOfferings"/>
+        /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="describeReservedDBInstancesOfferingsRequest">Container for the necessary parameters to execute the
-        ///          DescribeReservedDBInstancesOfferings operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstances operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeReservedDBInstancesOfferings operation.</returns>
-        public IAsyncResult BeginDescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedDBInstances
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeReservedDBInstances(DescribeReservedDBInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest, callback, state, false);
-        }
+            var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
+            var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.Instance;
 
-        
+            return BeginInvoke<DescribeReservedDBInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DescribeReservedDBInstancesOfferings"/>
+        /// Finishes the asynchronous execution of the  DescribeReservedDBInstances operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedDBInstancesOfferings.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedDBInstances.</param>
         /// 
-        /// <returns>Returns a DescribeReservedDBInstancesOfferingsResult from AmazonRDS.</returns>
-        public DescribeReservedDBInstancesOfferingsResponse EndDescribeReservedDBInstancesOfferings(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeReservedDBInstancesResult from RDS.</returns>
+        public  DescribeReservedDBInstancesResponse EndDescribeReservedDBInstances(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeReservedDBInstancesOfferingsResponse>(asyncResult);
+            return EndInvoke<DescribeReservedDBInstancesResponse>(asyncResult);
         }
+
+        #endregion
         
-        IAsyncResult invokeDescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeReservedDBInstancesOfferingsRequestMarshaller().Marshall(describeReservedDBInstancesOfferingsRequest);
-            var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
+        #region  DescribeReservedDBInstancesOfferings
 
         /// <summary>
-        /// <para> Lists available reserved DB instance offerings. </para>
+        /// Lists available reserved DB instance offerings.
         /// </summary>
         /// 
-        /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
+        /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by RDS.</returns>
+        /// <exception cref="ReservedDBInstancesOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
         public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings()
         {
             return DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
         }
-        
-
-        #endregion
-    
-        #region DownloadDBLogFilePortion
 
         /// <summary>
-        /// <para> Downloads the last line of the specified log file. </para>
+        /// Lists available reserved DB instance offerings.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstancesOfferings service method.</param>
         /// 
-        /// <param name="downloadDBLogFilePortionRequest">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method
-        ///          on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the DownloadDBLogFilePortion service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        public DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest)
+        /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by RDS.</returns>
+        /// <exception cref="ReservedDBInstancesOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
+        public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request)
         {
-            IAsyncResult asyncResult = invokeDownloadDBLogFilePortion(downloadDBLogFilePortionRequest, null, null, true);
-            return EndDownloadDBLogFilePortion(asyncResult);
+            var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedDBInstancesOfferingsRequest,DescribeReservedDBInstancesOfferingsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DownloadDBLogFilePortion operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DownloadDBLogFilePortion"/>
+        /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="downloadDBLogFilePortionRequest">Container for the necessary parameters to execute the DownloadDBLogFilePortion operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstancesOfferings operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDownloadDBLogFilePortion operation.</returns>
-        public IAsyncResult BeginDownloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedDBInstancesOfferings
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDownloadDBLogFilePortion(downloadDBLogFilePortionRequest, callback, state, false);
+            var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeReservedDBInstancesOfferingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReservedDBInstancesOfferings operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedDBInstancesOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeReservedDBInstancesOfferingsResult from RDS.</returns>
+        public  DescribeReservedDBInstancesOfferingsResponse EndDescribeReservedDBInstancesOfferings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReservedDBInstancesOfferingsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DownloadDBLogFilePortion
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DownloadDBLogFilePortion operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.DownloadDBLogFilePortion"/>
+        /// Downloads the last line of the specified log file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method.</param>
+        /// 
+        /// <returns>The response from the DownloadDBLogFilePortion service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        public DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
+        {
+            var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
+            var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
+
+            return Invoke<DownloadDBLogFilePortionRequest,DownloadDBLogFilePortionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DownloadDBLogFilePortion operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDownloadDBLogFilePortion
+        ///         operation.</returns>
+        public IAsyncResult BeginDownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
+            var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DownloadDBLogFilePortionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DownloadDBLogFilePortion operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDownloadDBLogFilePortion.</param>
         /// 
-        /// <returns>Returns a DownloadDBLogFilePortionResult from AmazonRDS.</returns>
-        public DownloadDBLogFilePortionResponse EndDownloadDBLogFilePortion(IAsyncResult asyncResult)
+        /// <returns>Returns a  DownloadDBLogFilePortionResult from RDS.</returns>
+        public  DownloadDBLogFilePortionResponse EndDownloadDBLogFilePortion(IAsyncResult asyncResult)
         {
-            return endOperation<DownloadDBLogFilePortionResponse>(asyncResult);
+            return EndInvoke<DownloadDBLogFilePortionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDownloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DownloadDBLogFilePortionRequestMarshaller().Marshall(downloadDBLogFilePortionRequest);
-            var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ListTagsForResource
+        
+        #region  ListTagsForResource
 
         /// <summary>
-        /// <para> Lists all tags on an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
+        /// Lists all tags on an Amazon RDS resource.
+        /// 
+        ///  
+        /// <para>
+        /// For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
+        /// Amazon RDS Resources</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
-        /// <param name="listTagsForResourceRequest">Container for the necessary parameters to execute the ListTagsForResource service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ListTagsForResource service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest)
+        /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            IAsyncResult asyncResult = invokeListTagsForResource(listTagsForResourceRequest, null, null, true);
-            return EndListTagsForResource(asyncResult);
-        }
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ListTagsForResource"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="listTagsForResourceRequest">Container for the necessary parameters to execute the ListTagsForResource operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndListTagsForResource operation.</returns>
-        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            return invokeListTagsForResource(listTagsForResourceRequest, callback, state, false);
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ListTagsForResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ListTagsForResource"/>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
-        /// <returns>Returns a ListTagsForResourceResult from AmazonRDS.</returns>
-        public ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        /// <returns>Returns a  ListTagsForResourceResult from RDS.</returns>
+        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
-            return endOperation<ListTagsForResourceResponse>(asyncResult);
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ListTagsForResourceRequestMarshaller().Marshall(listTagsForResourceRequest);
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ModifyDBInstance
+        
+        #region  ModifyDBInstance
 
         /// <summary>
-        /// <para> Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and
-        /// the new values in the request. </para>
+        /// Modify settings for a DB instance. You can change one or more database configuration
+        /// parameters by specifying these parameters and the new values in the request.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
         /// 
-        /// <param name="modifyDBInstanceRequest">Container for the necessary parameters to execute the ModifyDBInstance service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ModifyDBInstance service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        /// <exception cref="DBInstanceAlreadyExistsException"/>
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="StorageQuotaExceededException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        /// <exception cref="InvalidDBSecurityGroupStateException"/>
-        /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        /// <exception cref="DBUpgradeDependencyFailureException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
-        public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest)
+        /// <returns>The response from the ModifyDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="DBUpgradeDependencyFailureException">
+        /// The DB upgrade failed because a resource the DB depends on could not be modified.
+        /// </exception>
+        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// The state of the DB security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// Provisioned IOPS not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyDBInstance(modifyDBInstanceRequest, null, null, true);
-            return EndModifyDBInstance(asyncResult);
-        }
+            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var unmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ModifyDBInstanceRequest,ModifyDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyDBInstance"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="modifyDBInstanceRequest">Container for the necessary parameters to execute the ModifyDBInstance operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBInstance
         ///         operation.</returns>
-        public IAsyncResult BeginModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginModifyDBInstance(ModifyDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyDBInstance(modifyDBInstanceRequest, callback, state, false);
+            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var unmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyDBInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyDBInstance"/>
+        /// Finishes the asynchronous execution of the  ModifyDBInstance operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBInstance.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public ModifyDBInstanceResponse EndModifyDBInstance(IAsyncResult asyncResult)
+        /// <returns>Returns a  ModifyDBInstanceResult from RDS.</returns>
+        public  ModifyDBInstanceResponse EndModifyDBInstance(IAsyncResult asyncResult)
         {
-            return endOperation<ModifyDBInstanceResponse>(asyncResult);
+            return EndInvoke<ModifyDBInstanceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ModifyDBInstanceRequestMarshaller().Marshall(modifyDBInstanceRequest);
-            var unmarshaller = ModifyDBInstanceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ModifyDBParameterGroup
+        
+        #region  ModifyDBParameterGroup
 
         /// <summary>
-        /// <para> Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following:
-        /// <c>ParameterName</c> ,
-        /// <c>ParameterValue</c> , and <c>ApplyMethod</c> . A maximum of 20 parameters can be modified in a single request. </para>
-        /// <para><b>NOTE:</b> The apply-immediate method can be used only for dynamic parameters; the pending-reboot method can be used with MySQL and
-        /// Oracle DB instances for either dynamic or static parameters. For Microsoft SQL Server DB instances, the pending-reboot method can be used
-        /// only for static parameters. </para>
+        /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
+        /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+        /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+        /// request.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBParameterGroup service method.</param>
         /// 
-        /// <param name="modifyDBParameterGroupRequest">Container for the necessary parameters to execute the ModifyDBParameterGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ModifyDBParameterGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        /// <exception cref="InvalidDBParameterGroupStateException"/>
-        public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest)
+        /// <returns>The response from the ModifyDBParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="InvalidDBParameterGroupStateException">
+        /// The DB parameter group cannot be deleted because it is in use.
+        /// </exception>
+        public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyDBParameterGroup(modifyDBParameterGroupRequest, null, null, true);
-            return EndModifyDBParameterGroup(asyncResult);
-        }
+            var marshaller = new ModifyDBParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ModifyDBParameterGroupRequest,ModifyDBParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyDBParameterGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="modifyDBParameterGroupRequest">Container for the necessary parameters to execute the ModifyDBParameterGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBParameterGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyDBParameterGroup operation.</returns>
-        public IAsyncResult BeginModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBParameterGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginModifyDBParameterGroup(ModifyDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyDBParameterGroup(modifyDBParameterGroupRequest, callback, state, false);
+            var marshaller = new ModifyDBParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyDBParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyDBParameterGroup"/>
+        /// Finishes the asynchronous execution of the  ModifyDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBParameterGroup.</param>
         /// 
-        /// <returns>Returns a ModifyDBParameterGroupResult from AmazonRDS.</returns>
-        public ModifyDBParameterGroupResponse EndModifyDBParameterGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  ModifyDBParameterGroupResult from RDS.</returns>
+        public  ModifyDBParameterGroupResponse EndModifyDBParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation<ModifyDBParameterGroupResponse>(asyncResult);
+            return EndInvoke<ModifyDBParameterGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ModifyDBParameterGroupRequestMarshaller().Marshall(modifyDBParameterGroupRequest);
-            var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ModifyDBSubnetGroup
+        
+        #region  ModifyDBSubnetGroup
 
         /// <summary>
-        /// <para> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </para>
+        /// Modifies an existing DB subnet group. DB subnet groups must contain at least one
+        /// subnet in at least two AZs in the region.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// 
-        /// <param name="modifyDBSubnetGroupRequest">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ModifyDBSubnetGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="DBSubnetQuotaExceededException"/>
-        /// <exception cref="SubnetAlreadyInUseException"/>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        public ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest)
+        /// <returns>The response from the ModifyDBSubnetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
+        /// there is only 1 availablility zone.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="DBSubnetQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of subnets in a DB subnet
+        /// groups.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="SubnetAlreadyInUseException">
+        /// The DB subnet is already in use in the Availability Zone.
+        /// </exception>
+        public ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyDBSubnetGroup(modifyDBSubnetGroupRequest, null, null, true);
-            return EndModifyDBSubnetGroup(asyncResult);
-        }
+            var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ModifyDBSubnetGroupRequest,ModifyDBSubnetGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyDBSubnetGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="modifyDBSubnetGroupRequest">Container for the necessary parameters to execute the ModifyDBSubnetGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyDBSubnetGroup operation.</returns>
-        public IAsyncResult BeginModifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBSubnetGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyDBSubnetGroup(modifyDBSubnetGroupRequest, callback, state, false);
+            var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyDBSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyDBSubnetGroup"/>
+        /// Finishes the asynchronous execution of the  ModifyDBSubnetGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBSubnetGroup.</param>
         /// 
-        /// <returns>Returns a DBSubnetGroup from AmazonRDS.</returns>
-        public ModifyDBSubnetGroupResponse EndModifyDBSubnetGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  ModifyDBSubnetGroupResult from RDS.</returns>
+        public  ModifyDBSubnetGroupResponse EndModifyDBSubnetGroup(IAsyncResult asyncResult)
         {
-            return endOperation<ModifyDBSubnetGroupResponse>(asyncResult);
+            return EndInvoke<ModifyDBSubnetGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeModifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ModifyDBSubnetGroupRequestMarshaller().Marshall(modifyDBSubnetGroupRequest);
-            var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ModifyEventSubscription
+        
+        #region  ModifyEventSubscription
 
         /// <summary>
-        /// <para>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to
-        /// change source identifiers for a subscription, use the AddSourceIdentifierToSubscription and RemoveSourceIdentifierFromSubscription
-        /// calls.</para> <para>You can see a list of the event categories for a given SourceType in the <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" >Events</a> topic in the Amazon RDS User Guide or by using the
-        /// <b>DescribeEventCategories</b> action.</para>
+        /// Modifies an existing RDS event notification subscription. Note that you cannot modify
+        /// the source identifiers using this call; to change source identifiers for a subscription,
+        /// use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a>
+        /// calls.
+        /// 
+        ///  
+        /// <para>
+        /// You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+        /// topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b>
+        /// action.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
         /// 
-        /// <param name="modifyEventSubscriptionRequest">Container for the necessary parameters to execute the ModifyEventSubscription service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ModifyEventSubscription service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="SNSTopicArnNotFoundException"/>
-        /// <exception cref="SNSInvalidTopicException"/>
-        /// <exception cref="SubscriptionCategoryNotFoundException"/>
-        /// <exception cref="SubscriptionNotFoundException"/>
-        /// <exception cref="SNSNoAuthorizationException"/>
-        /// <exception cref="EventSubscriptionQuotaExceededException"/>
-        public ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest)
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by RDS.</returns>
+        /// <exception cref="EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="SNSInvalidTopicException">
+        /// SNS has responded that there is a problem with the SND topic specified.
+        /// </exception>
+        /// <exception cref="SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic ARN.
+        /// </exception>
+        /// <exception cref="SNSTopicArnNotFoundException">
+        /// The SNS topic ARN does not exist.
+        /// </exception>
+        /// <exception cref="SubscriptionCategoryNotFoundException">
+        /// The supplied category does not exist.
+        /// </exception>
+        /// <exception cref="SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyEventSubscription(modifyEventSubscriptionRequest, null, null, true);
-            return EndModifyEventSubscription(asyncResult);
-        }
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyEventSubscription"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="modifyEventSubscriptionRequest">Container for the necessary parameters to execute the ModifyEventSubscription operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyEventSubscription operation.</returns>
-        public IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEventSubscription
+        ///         operation.</returns>
+        public IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyEventSubscription(modifyEventSubscriptionRequest, callback, state, false);
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyEventSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyEventSubscription"/>
+        /// Finishes the asynchronous execution of the  ModifyEventSubscription operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEventSubscription.</param>
         /// 
-        /// <returns>Returns a EventSubscription from AmazonRDS.</returns>
-        public ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  ModifyEventSubscriptionResult from RDS.</returns>
+        public  ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult)
         {
-            return endOperation<ModifyEventSubscriptionResponse>(asyncResult);
+            return EndInvoke<ModifyEventSubscriptionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ModifyEventSubscriptionRequestMarshaller().Marshall(modifyEventSubscriptionRequest);
-            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ModifyOptionGroup
+        
+        #region  ModifyOptionGroup
 
         /// <summary>
-        /// <para> Modifies an existing option group. </para>
+        /// Modifies an existing option group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyOptionGroup service method.</param>
         /// 
-        /// <param name="modifyOptionGroupRequest">Container for the necessary parameters to execute the ModifyOptionGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ModifyOptionGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="InvalidOptionGroupStateException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        public ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest)
+        /// <returns>The response from the ModifyOptionGroup service method, as returned by RDS.</returns>
+        /// <exception cref="InvalidOptionGroupStateException">
+        /// The option group is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        public ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyOptionGroup(modifyOptionGroupRequest, null, null, true);
-            return EndModifyOptionGroup(asyncResult);
-        }
+            var marshaller = new ModifyOptionGroupRequestMarshaller();
+            var unmarshaller = ModifyOptionGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ModifyOptionGroupRequest,ModifyOptionGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyOptionGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="modifyOptionGroupRequest">Container for the necessary parameters to execute the ModifyOptionGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyOptionGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyOptionGroup
         ///         operation.</returns>
-        public IAsyncResult BeginModifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginModifyOptionGroup(ModifyOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyOptionGroup(modifyOptionGroupRequest, callback, state, false);
+            var marshaller = new ModifyOptionGroupRequestMarshaller();
+            var unmarshaller = ModifyOptionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyOptionGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ModifyOptionGroup"/>
+        /// Finishes the asynchronous execution of the  ModifyOptionGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyOptionGroup.</param>
         /// 
-        /// <returns>Returns a OptionGroup from AmazonRDS.</returns>
-        public ModifyOptionGroupResponse EndModifyOptionGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  ModifyOptionGroupResult from RDS.</returns>
+        public  ModifyOptionGroupResponse EndModifyOptionGroup(IAsyncResult asyncResult)
         {
-            return endOperation<ModifyOptionGroupResponse>(asyncResult);
+            return EndInvoke<ModifyOptionGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeModifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ModifyOptionGroupRequestMarshaller().Marshall(modifyOptionGroupRequest);
-            var unmarshaller = ModifyOptionGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region PromoteReadReplica
+        
+        #region  PromoteReadReplica
 
         /// <summary>
-        /// <para> Promotes a read replica DB instance to a standalone DB instance. </para>
+        /// Promotes a read replica DB instance to a standalone DB instance.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplica service method.</param>
         /// 
-        /// <param name="promoteReadReplicaRequest">Container for the necessary parameters to execute the PromoteReadReplica service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the PromoteReadReplica service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        public PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest)
+        /// <returns>The response from the PromoteReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        public PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
         {
-            IAsyncResult asyncResult = invokePromoteReadReplica(promoteReadReplicaRequest, null, null, true);
-            return EndPromoteReadReplica(asyncResult);
-        }
+            var marshaller = new PromoteReadReplicaRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaResponseUnmarshaller.Instance;
 
-        
+            return Invoke<PromoteReadReplicaRequest,PromoteReadReplicaResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the PromoteReadReplica operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.PromoteReadReplica"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="promoteReadReplicaRequest">Container for the necessary parameters to execute the PromoteReadReplica operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplica operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndPromoteReadReplica operation.</returns>
-        public IAsyncResult BeginPromoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPromoteReadReplica
+        ///         operation.</returns>
+        public IAsyncResult BeginPromoteReadReplica(PromoteReadReplicaRequest request, AsyncCallback callback, object state)
         {
-            return invokePromoteReadReplica(promoteReadReplicaRequest, callback, state, false);
+            var marshaller = new PromoteReadReplicaRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PromoteReadReplicaRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the PromoteReadReplica operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.PromoteReadReplica"/>
+        /// Finishes the asynchronous execution of the  PromoteReadReplica operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPromoteReadReplica.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public PromoteReadReplicaResponse EndPromoteReadReplica(IAsyncResult asyncResult)
+        /// <returns>Returns a  PromoteReadReplicaResult from RDS.</returns>
+        public  PromoteReadReplicaResponse EndPromoteReadReplica(IAsyncResult asyncResult)
         {
-            return endOperation<PromoteReadReplicaResponse>(asyncResult);
+            return EndInvoke<PromoteReadReplicaResponse>(asyncResult);
         }
-        
-        IAsyncResult invokePromoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new PromoteReadReplicaRequestMarshaller().Marshall(promoteReadReplicaRequest);
-            var unmarshaller = PromoteReadReplicaResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region PurchaseReservedDBInstancesOffering
+        
+        #region  PurchaseReservedDBInstancesOffering
 
         /// <summary>
-        /// <para> Purchases a reserved DB instance offering. </para>
+        /// Purchases a reserved DB instance offering.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedDBInstancesOffering service method.</param>
         /// 
-        /// <param name="purchaseReservedDBInstancesOfferingRequest">Container for the necessary parameters to execute the
-        ///          PurchaseReservedDBInstancesOffering service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the PurchaseReservedDBInstancesOffering service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
-        /// <exception cref="ReservedDBInstanceQuotaExceededException"/>
-        /// <exception cref="ReservedDBInstanceAlreadyExistsException"/>
-        public PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest)
+        /// <returns>The response from the PurchaseReservedDBInstancesOffering service method, as returned by RDS.</returns>
+        /// <exception cref="ReservedDBInstanceAlreadyExistsException">
+        /// User already has a reservation with the given identifier.
+        /// </exception>
+        /// <exception cref="ReservedDBInstanceQuotaExceededException">
+        /// Request would exceed the user's DB Instance quota.
+        /// </exception>
+        /// <exception cref="ReservedDBInstancesOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
+        public PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)
         {
-            IAsyncResult asyncResult = invokePurchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest, null, null, true);
-            return EndPurchaseReservedDBInstancesOffering(asyncResult);
-        }
+            var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.Instance;
 
-        
+            return Invoke<PurchaseReservedDBInstancesOfferingRequest,PurchaseReservedDBInstancesOfferingResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.PurchaseReservedDBInstancesOffering"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="purchaseReservedDBInstancesOfferingRequest">Container for the necessary parameters to execute the
-        ///          PurchaseReservedDBInstancesOffering operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedDBInstancesOffering operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndPurchaseReservedDBInstancesOffering operation.</returns>
-        public IAsyncResult BeginPurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedDBInstancesOffering
+        ///         operation.</returns>
+        public IAsyncResult BeginPurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request, AsyncCallback callback, object state)
         {
-            return invokePurchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest, callback, state, false);
+            var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PurchaseReservedDBInstancesOfferingRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.PurchaseReservedDBInstancesOffering"/>
+        /// Finishes the asynchronous execution of the  PurchaseReservedDBInstancesOffering operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedDBInstancesOffering.</param>
         /// 
-        /// <returns>Returns a ReservedDBInstance from AmazonRDS.</returns>
-        public PurchaseReservedDBInstancesOfferingResponse EndPurchaseReservedDBInstancesOffering(IAsyncResult asyncResult)
+        /// <returns>Returns a  PurchaseReservedDBInstancesOfferingResult from RDS.</returns>
+        public  PurchaseReservedDBInstancesOfferingResponse EndPurchaseReservedDBInstancesOffering(IAsyncResult asyncResult)
         {
-            return endOperation<PurchaseReservedDBInstancesOfferingResponse>(asyncResult);
+            return EndInvoke<PurchaseReservedDBInstancesOfferingResponse>(asyncResult);
         }
-        
-        IAsyncResult invokePurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new PurchaseReservedDBInstancesOfferingRequestMarshaller().Marshall(purchaseReservedDBInstancesOfferingRequest);
-            var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region RebootDBInstance
+        
+        #region  RebootDBInstance
 
         /// <summary>
-        /// <para> Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the
-        /// associated DB parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB
-        /// instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through
-        /// a failover. An Amazon RDS event is created when the reboot is completed. </para> <para> If your DB instance is deployed in multiple
-        /// Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force a failover to test the availability
-        /// of your DB instance deployment or to restore operations to the original AZ after a failover occurs. </para> <para> The time required to
-        /// reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce
-        /// database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions. </para>
+        /// Rebooting a DB instance restarts the database engine service. A reboot also applies
+        /// to the DB instance any modifications to the associated DB parameter group that were
+        /// pending. Rebooting a DB instance results in a momentary outage of the instance, during
+        /// which the DB instance status is set to rebooting. If the RDS instance is configured
+        /// for MultiAZ, it is possible that the reboot will be conducted through a failover.
+        /// An Amazon RDS event is created when the reboot is completed. 
+        /// 
+        ///  
+        /// <para>
+        ///  If your DB instance is deployed in multiple Availability Zones, you can force a failover
+        /// from one AZ to the other during the reboot. You might force a failover to test the
+        /// availability of your DB instance deployment or to restore operations to the original
+        /// AZ after a failover occurs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The time required to reboot is a function of the specific database engine's crash
+        /// recovery process. To improve the reboot time, we recommend that you reduce database
+        /// activities as much as possible during the reboot process to reduce rollback activity
+        /// for in-transit transactions. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
         /// 
-        /// <param name="rebootDBInstanceRequest">Container for the necessary parameters to execute the RebootDBInstance service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the RebootDBInstance service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest)
+        /// <returns>The response from the RebootDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
         {
-            IAsyncResult asyncResult = invokeRebootDBInstance(rebootDBInstanceRequest, null, null, true);
-            return EndRebootDBInstance(asyncResult);
-        }
+            var marshaller = new RebootDBInstanceRequestMarshaller();
+            var unmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<RebootDBInstanceRequest,RebootDBInstanceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RebootDBInstance"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="rebootDBInstanceRequest">Container for the necessary parameters to execute the RebootDBInstance operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootDBInstance
         ///         operation.</returns>
-        public IAsyncResult BeginRebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginRebootDBInstance(RebootDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            return invokeRebootDBInstance(rebootDBInstanceRequest, callback, state, false);
+            var marshaller = new RebootDBInstanceRequestMarshaller();
+            var unmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RebootDBInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the RebootDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RebootDBInstance"/>
+        /// Finishes the asynchronous execution of the  RebootDBInstance operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootDBInstance.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public RebootDBInstanceResponse EndRebootDBInstance(IAsyncResult asyncResult)
+        /// <returns>Returns a  RebootDBInstanceResult from RDS.</returns>
+        public  RebootDBInstanceResponse EndRebootDBInstance(IAsyncResult asyncResult)
         {
-            return endOperation<RebootDBInstanceResponse>(asyncResult);
+            return EndInvoke<RebootDBInstanceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeRebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new RebootDBInstanceRequestMarshaller().Marshall(rebootDBInstanceRequest);
-            var unmarshaller = RebootDBInstanceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region RemoveSourceIdentifierFromSubscription
+        
+        #region  RemoveSourceIdentifierFromSubscription
 
         /// <summary>
-        /// <para>Removes a source identifier from an existing RDS event notification subscription.</para>
+        /// Removes a source identifier from an existing RDS event notification subscription.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription service method.</param>
         /// 
-        /// <param name="removeSourceIdentifierFromSubscriptionRequest">Container for the necessary parameters to execute the
-        ///          RemoveSourceIdentifierFromSubscription service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="SourceNotFoundException"/>
-        /// <exception cref="SubscriptionNotFoundException"/>
-        public RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest)
+        /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by RDS.</returns>
+        /// <exception cref="SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
         {
-            IAsyncResult asyncResult = invokeRemoveSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest, null, null, true);
-            return EndRemoveSourceIdentifierFromSubscription(asyncResult);
-        }
+            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
-        
+            return Invoke<RemoveSourceIdentifierFromSubscriptionRequest,RemoveSourceIdentifierFromSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveSourceIdentifierFromSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RemoveSourceIdentifierFromSubscription"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="removeSourceIdentifierFromSubscriptionRequest">Container for the necessary parameters to execute the
-        ///          RemoveSourceIdentifierFromSubscription operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRemoveSourceIdentifierFromSubscription operation.</returns>
-        public IAsyncResult BeginRemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveSourceIdentifierFromSubscription
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            return invokeRemoveSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest, callback, state, false);
+            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveSourceIdentifierFromSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the RemoveSourceIdentifierFromSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RemoveSourceIdentifierFromSubscription"/>
+        /// Finishes the asynchronous execution of the  RemoveSourceIdentifierFromSubscription operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveSourceIdentifierFromSubscription.</param>
         /// 
-        /// <returns>Returns a EventSubscription from AmazonRDS.</returns>
-        public RemoveSourceIdentifierFromSubscriptionResponse EndRemoveSourceIdentifierFromSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  RemoveSourceIdentifierFromSubscriptionResult from RDS.</returns>
+        public  RemoveSourceIdentifierFromSubscriptionResponse EndRemoveSourceIdentifierFromSubscription(IAsyncResult asyncResult)
         {
-            return endOperation<RemoveSourceIdentifierFromSubscriptionResponse>(asyncResult);
+            return EndInvoke<RemoveSourceIdentifierFromSubscriptionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeRemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller().Marshall(removeSourceIdentifierFromSubscriptionRequest);
-            var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region RemoveTagsFromResource
+        
+        #region  RemoveTagsFromResource
 
         /// <summary>
-        /// <para> Removes metadata tags from an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
+        /// Removes metadata tags from an Amazon RDS resource.
+        /// 
+        ///  
+        /// <para>
+        /// For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
+        /// Amazon RDS Resources</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
-        /// <param name="removeTagsFromResourceRequest">Container for the necessary parameters to execute the RemoveTagsFromResource service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest)
+        /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            IAsyncResult asyncResult = invokeRemoveTagsFromResource(removeTagsFromResourceRequest, null, null, true);
-            return EndRemoveTagsFromResource(asyncResult);
-        }
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-        
+            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RemoveTagsFromResource"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="removeTagsFromResourceRequest">Container for the necessary parameters to execute the RemoveTagsFromResource operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest, AsyncCallback callback, object state)
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            return invokeRemoveTagsFromResource(removeTagsFromResourceRequest, callback, state, false);
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveTagsFromResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the RemoveTagsFromResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RemoveTagsFromResource"/>
+        /// Finishes the asynchronous execution of the  RemoveTagsFromResource operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
-        public RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
+        /// 
+        /// <returns>Returns a  RemoveTagsFromResourceResult from RDS.</returns>
+        public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
-            return endOperation<RemoveTagsFromResourceResponse>(asyncResult);
+            return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new RemoveTagsFromResourceRequestMarshaller().Marshall(removeTagsFromResourceRequest);
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region ResetDBParameterGroup
+        
+        #region  ResetDBParameterGroup
 
         /// <summary>
-        /// <para> Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the
-        /// following: <c>ParameterName</c> and <c>ApplyMethod</c> . To reset the entire DB parameter group, specify the <c>DBParameterGroup</c> name
-        /// and <c>ResetAllParameters</c> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters
-        /// are set to <c>pending-reboot</c> to take effect on the next DB instance restart or <c>RebootDBInstance</c> request. </para>
+        /// Modifies the parameters of a DB parameter group to the engine/system default value.
+        /// To reset specific parameters submit a list of the following: <code>ParameterName</code>
+        /// and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the
+        /// <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
+        /// When resetting the entire group, dynamic parameters are updated immediately and static
+        /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
+        /// restart or <code>RebootDBInstance</code> request.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetDBParameterGroup service method.</param>
         /// 
-        /// <param name="resetDBParameterGroupRequest">Container for the necessary parameters to execute the ResetDBParameterGroup service method on
-        ///          AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the ResetDBParameterGroup service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBParameterGroupNotFoundException"/>
-        /// <exception cref="InvalidDBParameterGroupStateException"/>
-        public ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest)
+        /// <returns>The response from the ResetDBParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="InvalidDBParameterGroupStateException">
+        /// The DB parameter group cannot be deleted because it is in use.
+        /// </exception>
+        public ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeResetDBParameterGroup(resetDBParameterGroupRequest, null, null, true);
-            return EndResetDBParameterGroup(asyncResult);
-        }
+            var marshaller = new ResetDBParameterGroupRequestMarshaller();
+            var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
-        
+            return Invoke<ResetDBParameterGroupRequest,ResetDBParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ResetDBParameterGroup"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="resetDBParameterGroupRequest">Container for the necessary parameters to execute the ResetDBParameterGroup operation on
-        ///          AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ResetDBParameterGroup operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndResetDBParameterGroup operation.</returns>
-        public IAsyncResult BeginResetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetDBParameterGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginResetDBParameterGroup(ResetDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeResetDBParameterGroup(resetDBParameterGroupRequest, callback, state, false);
+            var marshaller = new ResetDBParameterGroupRequestMarshaller();
+            var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResetDBParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the ResetDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.ResetDBParameterGroup"/>
+        /// Finishes the asynchronous execution of the  ResetDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetDBParameterGroup.</param>
         /// 
-        /// <returns>Returns a ResetDBParameterGroupResult from AmazonRDS.</returns>
-        public ResetDBParameterGroupResponse EndResetDBParameterGroup(IAsyncResult asyncResult)
+        /// <returns>Returns a  ResetDBParameterGroupResult from RDS.</returns>
+        public  ResetDBParameterGroupResponse EndResetDBParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation<ResetDBParameterGroupResponse>(asyncResult);
+            return EndInvoke<ResetDBParameterGroupResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeResetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ResetDBParameterGroupRequestMarshaller().Marshall(resetDBParameterGroupRequest);
-            var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region RestoreDBInstanceFromDBSnapshot
+        
+        #region  RestoreDBInstanceFromDBSnapshot
 
         /// <summary>
-        /// <para> Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same
-        /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
+        /// Creates a new DB instance from a DB snapshot. The target database is created from
+        /// the source database restore point with the same configuration as the original source
+        /// database, except that the new RDS instance is created with the default security group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot service method.</param>
         /// 
-        /// <param name="restoreDBInstanceFromDBSnapshotRequest">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot
-        ///          service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="InvalidRestoreException"/>
-        /// <exception cref="InstanceQuotaExceededException"/>
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="DBInstanceAlreadyExistsException"/>
-        /// <exception cref="StorageQuotaExceededException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="InvalidDBSnapshotStateException"/>
-        /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
-        public RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest)
+        /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
+        /// there is only 1 availablility zone.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="InstanceQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidRestoreException">
+        /// Cannot restore from vpc backup to non-vpc DB instance.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// Provisioned IOPS not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeRestoreDBInstanceFromDBSnapshot(restoreDBInstanceFromDBSnapshotRequest, null, null, true);
-            return EndRestoreDBInstanceFromDBSnapshot(asyncResult);
-        }
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance;
 
-        
+            return Invoke<RestoreDBInstanceFromDBSnapshotRequest,RestoreDBInstanceFromDBSnapshotResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RestoreDBInstanceFromDBSnapshot"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="restoreDBInstanceFromDBSnapshotRequest">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot
-        ///          operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRestoreDBInstanceFromDBSnapshot operation.</returns>
-        public IAsyncResult BeginRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreDBInstanceFromDBSnapshot
+        ///         operation.</returns>
+        public IAsyncResult BeginRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeRestoreDBInstanceFromDBSnapshot(restoreDBInstanceFromDBSnapshotRequest, callback, state, false);
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RestoreDBInstanceFromDBSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RestoreDBInstanceFromDBSnapshot"/>
+        /// Finishes the asynchronous execution of the  RestoreDBInstanceFromDBSnapshot operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreDBInstanceFromDBSnapshot.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public RestoreDBInstanceFromDBSnapshotResponse EndRestoreDBInstanceFromDBSnapshot(IAsyncResult asyncResult)
+        /// <returns>Returns a  RestoreDBInstanceFromDBSnapshotResult from RDS.</returns>
+        public  RestoreDBInstanceFromDBSnapshotResponse EndRestoreDBInstanceFromDBSnapshot(IAsyncResult asyncResult)
         {
-            return endOperation<RestoreDBInstanceFromDBSnapshotResponse>(asyncResult);
+            return EndInvoke<RestoreDBInstanceFromDBSnapshotResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().Marshall(restoreDBInstanceFromDBSnapshotRequest);
-            var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region RestoreDBInstanceToPointInTime
+        
+        #region  RestoreDBInstanceToPointInTime
 
         /// <summary>
-        /// <para> Restores a DB instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
-        /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
-        /// except that the DB instance is created with the default DB security group. </para>
+        /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
+        /// in time before the latestRestorableTime for up to backupRetentionPeriod days. The
+        /// target database is created from the source database with the same configuration as
+        /// the original database except that the DB instance is created with the default DB security
+        /// group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime service method.</param>
         /// 
-        /// <param name="restoreDBInstanceToPointInTimeRequest">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime
-        ///          service method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="PointInTimeRestoreNotEnabledException"/>
-        /// <exception cref="InvalidRestoreException"/>
-        /// <exception cref="InstanceQuotaExceededException"/>
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="DBInstanceAlreadyExistsException"/>
-        /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="StorageQuotaExceededException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="InvalidDBInstanceStateException"/>
-        /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="OptionGroupNotFoundException"/>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
-        public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest)
+        /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by RDS.</returns>
+        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
+        /// there is only 1 availablility zone.
+        /// </exception>
+        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="InstanceQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidRestoreException">
+        /// Cannot restore from vpc backup to non-vpc DB instance.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="PointInTimeRestoreNotEnabledException">
+        /// <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i>
+        /// equal to 0.
+        /// </exception>
+        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// Provisioned IOPS not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
-            IAsyncResult asyncResult = invokeRestoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest, null, null, true);
-            return EndRestoreDBInstanceToPointInTime(asyncResult);
-        }
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance;
 
-        
+            return Invoke<RestoreDBInstanceToPointInTimeRequest,RestoreDBInstanceToPointInTimeResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RestoreDBInstanceToPointInTime"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="restoreDBInstanceToPointInTimeRequest">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime
-        ///          operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRestoreDBInstanceToPointInTime operation.</returns>
-        public IAsyncResult BeginRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreDBInstanceToPointInTime
+        ///         operation.</returns>
+        public IAsyncResult BeginRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request, AsyncCallback callback, object state)
         {
-            return invokeRestoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest, callback, state, false);
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RestoreDBInstanceToPointInTimeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RestoreDBInstanceToPointInTime"/>
+        /// Finishes the asynchronous execution of the  RestoreDBInstanceToPointInTime operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreDBInstanceToPointInTime.</param>
         /// 
-        /// <returns>Returns a DBInstance from AmazonRDS.</returns>
-        public RestoreDBInstanceToPointInTimeResponse EndRestoreDBInstanceToPointInTime(IAsyncResult asyncResult)
+        /// <returns>Returns a  RestoreDBInstanceToPointInTimeResult from RDS.</returns>
+        public  RestoreDBInstanceToPointInTimeResponse EndRestoreDBInstanceToPointInTime(IAsyncResult asyncResult)
         {
-            return endOperation<RestoreDBInstanceToPointInTimeResponse>(asyncResult);
+            return EndInvoke<RestoreDBInstanceToPointInTimeResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new RestoreDBInstanceToPointInTimeRequestMarshaller().Marshall(restoreDBInstanceToPointInTimeRequest);
-            var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region RevokeDBSecurityGroupIngress
+        
+        #region  RevokeDBSecurityGroupIngress
 
         /// <summary>
-        /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for
-        /// this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
-        /// </para>
+        /// Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2
+        /// or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId
+        /// for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service method.</param>
         /// 
-        /// <param name="revokeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service
-        ///          method on AmazonRDS.</param>
-        /// 
-        /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.</returns>
-        /// 
-        /// <exception cref="DBSecurityGroupNotFoundException"/>
-        /// <exception cref="InvalidDBSecurityGroupStateException"/>
-        /// <exception cref="AuthorizationNotFoundException"/>
-        public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest)
+        /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by RDS.</returns>
+        /// <exception cref="AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group.
+        /// </exception>
+        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// The state of the DB security group does not allow deletion.
+        /// </exception>
+        public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
         {
-            IAsyncResult asyncResult = invokeRevokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest, null, null, true);
-            return EndRevokeDBSecurityGroupIngress(asyncResult);
-        }
+            var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
-        
+            return Invoke<RevokeDBSecurityGroupIngressRequest,RevokeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeDBSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RevokeDBSecurityGroupIngress"/>
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
-        /// <param name="revokeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress
-        ///          operation on AmazonRDS.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRevokeDBSecurityGroupIngress operation.</returns>
-        public IAsyncResult BeginRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeDBSecurityGroupIngress
+        ///         operation.</returns>
+        public IAsyncResult BeginRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            return invokeRevokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest, callback, state, false);
+            var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RevokeDBSecurityGroupIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the RevokeDBSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS.RevokeDBSecurityGroupIngress"/>
+        /// Finishes the asynchronous execution of the  RevokeDBSecurityGroupIngress operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeDBSecurityGroupIngress.</param>
         /// 
-        /// <returns>Returns a DBSecurityGroup from AmazonRDS.</returns>
-        public RevokeDBSecurityGroupIngressResponse EndRevokeDBSecurityGroupIngress(IAsyncResult asyncResult)
+        /// <returns>Returns a  RevokeDBSecurityGroupIngressResult from RDS.</returns>
+        public  RevokeDBSecurityGroupIngressResponse EndRevokeDBSecurityGroupIngress(IAsyncResult asyncResult)
         {
-            return endOperation<RevokeDBSecurityGroupIngressResponse>(asyncResult);
+            return EndInvoke<RevokeDBSecurityGroupIngressResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new RevokeDBSecurityGroupIngressRequestMarshaller().Marshall(revokeDBSecurityGroupIngressRequest);
-            var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
+        
     }
 }

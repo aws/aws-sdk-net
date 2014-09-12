@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,59 +33,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Domains Request Marshaller
+    /// ListDomains Request Marshaller
     /// </summary>       
-    internal class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> 
+    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListDomainsRequest listDomainsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListDomainsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listDomainsRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(ListDomainsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.ListDomains";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listDomainsRequest != null && listDomainsRequest.IsSetNextPageToken()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaximumPageSize())
                 {
-                    writer.WritePropertyName("nextPageToken");
-                    writer.Write(listDomainsRequest.NextPageToken);
-                }
-                if (listDomainsRequest != null && listDomainsRequest.IsSetRegistrationStatus()) 
-                {
-                    writer.WritePropertyName("registrationStatus");
-                    writer.Write(listDomainsRequest.RegistrationStatus);
-                }
-                if (listDomainsRequest != null && listDomainsRequest.IsSetMaximumPageSize()) 
-                {
-                    writer.WritePropertyName("maximumPageSize");
-                    writer.Write(listDomainsRequest.MaximumPageSize);
-                }
-                if (listDomainsRequest != null && listDomainsRequest.IsSetReverseOrder()) 
-                {
-                    writer.WritePropertyName("reverseOrder");
-                    writer.Write(listDomainsRequest.ReverseOrder);
+                    context.Writer.WritePropertyName("maximumPageSize");
+                    context.Writer.Write(publicRequest.MaximumPageSize);
                 }
 
+                if(publicRequest.IsSetNextPageToken())
+                {
+                    context.Writer.WritePropertyName("nextPageToken");
+                    context.Writer.Write(publicRequest.NextPageToken);
+                }
+
+                if(publicRequest.IsSetRegistrationStatus())
+                {
+                    context.Writer.WritePropertyName("registrationStatus");
+                    context.Writer.Write(publicRequest.RegistrationStatus);
+                }
+
+                if(publicRequest.IsSetReverseOrder())
+                {
+                    context.Writer.WritePropertyName("reverseOrder");
+                    context.Writer.Write(publicRequest.ReverseOrder);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

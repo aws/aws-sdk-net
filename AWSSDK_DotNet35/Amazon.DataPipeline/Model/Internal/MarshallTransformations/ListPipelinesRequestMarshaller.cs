@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Pipelines Request Marshaller
+    /// ListPipelines Request Marshaller
     /// </summary>       
-    internal class ListPipelinesRequestMarshaller : IMarshaller<IRequest, ListPipelinesRequest> 
+    public class ListPipelinesRequestMarshaller : IMarshaller<IRequest, ListPipelinesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListPipelinesRequest listPipelinesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListPipelinesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listPipelinesRequest, "AmazonDataPipeline");
+        public IRequest Marshall(ListPipelinesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.ListPipelines";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listPipelinesRequest != null && listPipelinesRequest.IsSetMarker()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMarker())
                 {
-                    writer.WritePropertyName("marker");
-                    writer.Write(listPipelinesRequest.Marker);
+                    context.Writer.WritePropertyName("marker");
+                    context.Writer.Write(publicRequest.Marker);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

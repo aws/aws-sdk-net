@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.Kinesis
 {
     /// <summary>
-    /// Base class for AmazonKinesis operation requests.
+    /// Base class for Kinesis operation requests.
     /// </summary>
     public partial class AmazonKinesisRequest : AmazonWebServiceRequest
     {
     }
 }
-    

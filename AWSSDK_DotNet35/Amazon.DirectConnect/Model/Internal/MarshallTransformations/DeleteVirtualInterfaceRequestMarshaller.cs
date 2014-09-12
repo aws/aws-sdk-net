@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Virtual Interface Request Marshaller
+    /// DeleteVirtualInterface Request Marshaller
     /// </summary>       
-    internal class DeleteVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, DeleteVirtualInterfaceRequest> 
+    public class DeleteVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, DeleteVirtualInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteVirtualInterfaceRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteVirtualInterfaceRequest, "AmazonDirectConnect");
+        public IRequest Marshall(DeleteVirtualInterfaceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.DeleteVirtualInterface";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteVirtualInterfaceRequest != null && deleteVirtualInterfaceRequest.IsSetVirtualInterfaceId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetVirtualInterfaceId())
                 {
-                    writer.WritePropertyName("virtualInterfaceId");
-                    writer.Write(deleteVirtualInterfaceRequest.VirtualInterfaceId);
+                    context.Writer.WritePropertyName("virtualInterfaceId");
+                    context.Writer.Write(publicRequest.VirtualInterfaceId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

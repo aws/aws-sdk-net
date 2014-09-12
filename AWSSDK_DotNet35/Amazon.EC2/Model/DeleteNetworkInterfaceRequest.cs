@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNetworkInterface operation.
-    /// <para>Deletes the specified network interface. You must detach the network interface before you can delete it.</para>
+    /// Deletes the specified network interface. You must detach the network interface before
+    /// you can delete it.
     /// </summary>
     public partial class DeleteNetworkInterfaceRequest : AmazonEC2Request
     {
-        private string networkInterfaceId;
-
+        private string _networkInterfaceId;
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
         /// The ID of the network interface.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkInterfaceId
         {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
         }
 
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;
+            return this._networkInterfaceId != null;
         }
 
     }
 }
-    

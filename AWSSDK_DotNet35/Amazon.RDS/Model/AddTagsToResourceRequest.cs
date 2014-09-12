@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,51 +29,58 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToResource operation.
-    /// <para> Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated
-    /// with Amazon RDS resources, or used in Condition statement in IAM policy for Amazon RDS.</para> <para>For an overview on tagging Amazon RDS
-    /// resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a>
-    /// .</para>
+    /// Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost
+    /// allocation reporting to track cost associated with Amazon RDS resources, or used in
+    /// Condition statement in IAM policy for Amazon RDS.
+    /// 
+    ///  
+    /// <para>
+    /// For an overview on tagging Amazon RDS resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
+    /// Amazon RDS Resources</a>.
+    /// </para>
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonRDSRequest
     {
-        private string resourceName;
-        private List<Tag> tags = new List<Tag>();
-
+        private string _resourceName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
-        /// (ARN)</a>.
-        ///  
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The Amazon RDS resource the tags will be added to. This value is an Amazon Resource
+        /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+        /// Constructing an RDS Amazon Resource Name (ARN)</a>.
+        /// </para>
         /// </summary>
         public string ResourceName
         {
-            get { return this.resourceName; }
-            set { this.resourceName = value; }
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
         }
 
         // Check to see if ResourceName property is set
         internal bool IsSetResourceName()
         {
-            return this.resourceName != null;
+            return this._resourceName != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
         /// The tags to be assigned to the Amazon RDS resource.
-        ///  
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
 }
-    

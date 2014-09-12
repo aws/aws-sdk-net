@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,90 +33,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Allocate Private Virtual Interface Request Marshaller
+    /// AllocatePrivateVirtualInterface Request Marshaller
     /// </summary>       
-    internal class AllocatePrivateVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, AllocatePrivateVirtualInterfaceRequest> 
+    public class AllocatePrivateVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, AllocatePrivateVirtualInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((AllocatePrivateVirtualInterfaceRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(allocatePrivateVirtualInterfaceRequest, "AmazonDirectConnect");
+        public IRequest Marshall(AllocatePrivateVirtualInterfaceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.AllocatePrivateVirtualInterface";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (allocatePrivateVirtualInterfaceRequest != null && allocatePrivateVirtualInterfaceRequest.IsSetConnectionId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectionId())
                 {
-                    writer.WritePropertyName("connectionId");
-                    writer.Write(allocatePrivateVirtualInterfaceRequest.ConnectionId);
-                }
-                if (allocatePrivateVirtualInterfaceRequest != null && allocatePrivateVirtualInterfaceRequest.IsSetOwnerAccount()) 
-                {
-                    writer.WritePropertyName("ownerAccount");
-                    writer.Write(allocatePrivateVirtualInterfaceRequest.OwnerAccount);
+                    context.Writer.WritePropertyName("connectionId");
+                    context.Writer.Write(publicRequest.ConnectionId);
                 }
 
-                if (allocatePrivateVirtualInterfaceRequest != null) 
+                if(publicRequest.IsSetNewPrivateVirtualInterfaceAllocation())
                 {
-                    NewPrivateVirtualInterfaceAllocation newPrivateVirtualInterfaceAllocation = allocatePrivateVirtualInterfaceRequest.NewPrivateVirtualInterfaceAllocation;
-                    if (newPrivateVirtualInterfaceAllocation != null)
-                    {
-                        writer.WritePropertyName("newPrivateVirtualInterfaceAllocation");
-                        writer.WriteObjectStart();
-                        if (newPrivateVirtualInterfaceAllocation != null && newPrivateVirtualInterfaceAllocation.IsSetVirtualInterfaceName()) 
-                        {
-                            writer.WritePropertyName("virtualInterfaceName");
-                            writer.Write(newPrivateVirtualInterfaceAllocation.VirtualInterfaceName);
-                        }
-                        if (newPrivateVirtualInterfaceAllocation != null && newPrivateVirtualInterfaceAllocation.IsSetVlan()) 
-                        {
-                            writer.WritePropertyName("vlan");
-                            writer.Write(newPrivateVirtualInterfaceAllocation.Vlan);
-                        }
-                        if (newPrivateVirtualInterfaceAllocation != null && newPrivateVirtualInterfaceAllocation.IsSetAsn()) 
-                        {
-                            writer.WritePropertyName("asn");
-                            writer.Write(newPrivateVirtualInterfaceAllocation.Asn);
-                        }
-                        if (newPrivateVirtualInterfaceAllocation != null && newPrivateVirtualInterfaceAllocation.IsSetAuthKey()) 
-                        {
-                            writer.WritePropertyName("authKey");
-                            writer.Write(newPrivateVirtualInterfaceAllocation.AuthKey);
-                        }
-                        if (newPrivateVirtualInterfaceAllocation != null && newPrivateVirtualInterfaceAllocation.IsSetAmazonAddress()) 
-                        {
-                            writer.WritePropertyName("amazonAddress");
-                            writer.Write(newPrivateVirtualInterfaceAllocation.AmazonAddress);
-                        }
-                        if (newPrivateVirtualInterfaceAllocation != null && newPrivateVirtualInterfaceAllocation.IsSetCustomerAddress()) 
-                        {
-                            writer.WritePropertyName("customerAddress");
-                            writer.Write(newPrivateVirtualInterfaceAllocation.CustomerAddress);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("newPrivateVirtualInterfaceAllocation");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NewPrivateVirtualInterfaceAllocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NewPrivateVirtualInterfaceAllocation, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("ownerAccount");
+                    context.Writer.Write(publicRequest.OwnerAccount);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

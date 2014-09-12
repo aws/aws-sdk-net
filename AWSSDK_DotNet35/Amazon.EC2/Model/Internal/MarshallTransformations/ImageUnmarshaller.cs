@@ -12,189 +12,202 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Image Unmarshaller
-     /// </summary>
-    internal class ImageUnmarshaller : IUnmarshaller<Image, XmlUnmarshallerContext>, IUnmarshaller<Image, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Image Object
+    /// </summary>  
+    public class ImageUnmarshaller : IUnmarshaller<Image, XmlUnmarshallerContext>, IUnmarshaller<Image, JsonUnmarshallerContext>
     {
-        public Image Unmarshall(XmlUnmarshallerContext context) 
+        public Image Unmarshall(XmlUnmarshallerContext context)
         {
-            Image image = new Image();
+            Image unmarshalledObject = new Image();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("imageId", targetDepth))
-                    {
-                        image.ImageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("imageLocation", targetDepth))
-                    {
-                        image.ImageLocation = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("imageState", targetDepth))
-                    {
-                        image.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("imageOwnerId", targetDepth))
-                    {
-                        image.OwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("isPublic", targetDepth))
-                    {
-                        image.Public = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("productCodes/item", targetDepth))
-                    {
-                        image.ProductCodes.Add(ProductCodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
                     if (context.TestExpression("architecture", targetDepth))
                     {
-                        image.Architecture = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("imageType", targetDepth))
-                    {
-                        image.ImageType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("kernelId", targetDepth))
-                    {
-                        image.KernelId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ramdiskId", targetDepth))
-                    {
-                        image.RamdiskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("platform", targetDepth))
-                    {
-                        image.Platform = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("sriovNetSupport", targetDepth))
-                    {
-                        image.SriovNetSupport = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("stateReason", targetDepth))
-                    {
-                        image.StateReason = StateReasonUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("imageOwnerAlias", targetDepth))
-                    {
-                        image.ImageOwnerAlias = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("name", targetDepth))
-                    {
-                        image.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("description", targetDepth))
-                    {
-                        image.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("rootDeviceType", targetDepth))
-                    {
-                        image.RootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("rootDeviceName", targetDepth))
-                    {
-                        image.RootDeviceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
-                        image.BlockDeviceMappings.Add(BlockDeviceMappingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = BlockDeviceMappingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("virtualizationType", targetDepth))
+                    if (context.TestExpression("description", targetDepth))
                     {
-                        image.VirtualizationType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        image.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("hypervisor", targetDepth))
                     {
-                        image.Hypervisor = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Hypervisor = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageLocation", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageLocation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageOwnerAlias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageOwnerAlias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("kernelId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KernelId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("name", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("platform", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("productCodes/item", targetDepth))
+                    {
+                        var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProductCodes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("isPublic", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Public = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ramdiskId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RamdiskId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rootDeviceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootDeviceName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rootDeviceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sriovNetSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SriovNetSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("stateReason", targetDepth))
+                    {
+                        var unmarshaller = StateReasonUnmarshaller.Instance;
+                        unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("virtualizationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VirtualizationType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return image;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return image;
+            return unmarshalledObject;
         }
 
-        public Image Unmarshall(JsonUnmarshallerContext context) 
+        public Image Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ImageUnmarshaller instance;
 
-        public static ImageUnmarshaller GetInstance() 
+        private static ImageUnmarshaller _instance = new ImageUnmarshaller();        
+
+        public static ImageUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ImageUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

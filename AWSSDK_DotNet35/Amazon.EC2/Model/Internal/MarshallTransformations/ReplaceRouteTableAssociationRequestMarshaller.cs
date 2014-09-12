@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Replace Route Table Association Request Marshaller
+    /// ReplaceRouteTableAssociation Request Marshaller
     /// </summary>       
-    public class ReplaceRouteTableAssociationRequestMarshaller : IMarshaller<IRequest, ReplaceRouteTableAssociationRequest>
+    public class ReplaceRouteTableAssociationRequestMarshaller : IMarshaller<IRequest, ReplaceRouteTableAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ReplaceRouteTableAssociationRequest replaceRouteTableAssociationRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(replaceRouteTableAssociationRequest, "AmazonEC2");
+            return this.Marshall((ReplaceRouteTableAssociationRequest)input);
+        }
+    
+        public IRequest Marshall(ReplaceRouteTableAssociationRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ReplaceRouteTableAssociation");
             request.Parameters.Add("Version", "2014-06-15");
-            if (replaceRouteTableAssociationRequest != null && replaceRouteTableAssociationRequest.IsSetAssociationId())
-            {
-                request.Parameters.Add("AssociationId", StringUtils.FromString(replaceRouteTableAssociationRequest.AssociationId));
-            }
-            if (replaceRouteTableAssociationRequest != null && replaceRouteTableAssociationRequest.IsSetRouteTableId())
-            {
-                request.Parameters.Add("RouteTableId", StringUtils.FromString(replaceRouteTableAssociationRequest.RouteTableId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAssociationId())
+                {
+                    request.Parameters.Add("AssociationId", StringUtils.FromString(publicRequest.AssociationId));
+                }
+                if(publicRequest.IsSetRouteTableId())
+                {
+                    request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
+                }
+            }
             return request;
         }
     }

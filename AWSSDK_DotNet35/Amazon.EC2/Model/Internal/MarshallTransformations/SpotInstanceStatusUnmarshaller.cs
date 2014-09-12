@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SpotInstanceStatus Unmarshaller
-     /// </summary>
-    internal class SpotInstanceStatusUnmarshaller : IUnmarshaller<SpotInstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SpotInstanceStatus Object
+    /// </summary>  
+    public class SpotInstanceStatusUnmarshaller : IUnmarshaller<SpotInstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceStatus, JsonUnmarshallerContext>
     {
-        public SpotInstanceStatus Unmarshall(XmlUnmarshallerContext context) 
+        public SpotInstanceStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotInstanceStatus spotInstanceStatus = new SpotInstanceStatus();
+            SpotInstanceStatus unmarshalledObject = new SpotInstanceStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("code", targetDepth))
                     {
-                        spotInstanceStatus.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("updateTime", targetDepth))
-                    {
-                        spotInstanceStatus.UpdateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("message", targetDepth))
                     {
-                        spotInstanceStatus.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("updateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return spotInstanceStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return spotInstanceStatus;
+            return unmarshalledObject;
         }
 
-        public SpotInstanceStatus Unmarshall(JsonUnmarshallerContext context) 
+        public SpotInstanceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SpotInstanceStatusUnmarshaller instance;
 
-        public static SpotInstanceStatusUnmarshaller GetInstance() 
+        private static SpotInstanceStatusUnmarshaller _instance = new SpotInstanceStatusUnmarshaller();        
+
+        public static SpotInstanceStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SpotInstanceStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

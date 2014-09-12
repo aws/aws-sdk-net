@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _args = new List<string>();
         private string _path;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ScriptBootstrapActionConfig() { }
+
+        /// <summary>
+        /// Instantiates ScriptBootstrapActionConfig with the parameterized properties
+        /// </summary>
+        /// <param name="path">Location of the script to run during a bootstrap action. Can be either a location in Amazon   S3 or on a local file system.</param>
+        /// <param name="args">A list of command line arguments to pass to the bootstrap action script.</param>
+        public ScriptBootstrapActionConfig(string path, List<string> args)
+        {
+            _path = path;
+            _args = args;
+        }
 
         /// <summary>
         /// Gets and sets the property Args. 
@@ -49,7 +68,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._args != null && this._args.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Path. 

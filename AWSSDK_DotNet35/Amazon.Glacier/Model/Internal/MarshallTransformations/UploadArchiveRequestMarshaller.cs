@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,46 +33,39 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Upload Archive Request Marshaller
+    /// UploadArchive Request Marshaller
     /// </summary>       
-    internal class UploadArchiveRequestMarshaller : IMarshaller<IRequest, UploadArchiveRequest> 
+    public class UploadArchiveRequestMarshaller : IMarshaller<IRequest, UploadArchiveRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UploadArchiveRequest uploadArchiveRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UploadArchiveRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(uploadArchiveRequest, "AmazonGlacier");
-            string target = "Glacier.UploadArchive";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+        public IRequest Marshall(UploadArchiveRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            if(uploadArchiveRequest.IsSetArchiveDescription())
-                request.Headers.Add("x-amz-archive-description", StringUtils.FromString(uploadArchiveRequest.ArchiveDescription));
 
-            
-            if(uploadArchiveRequest.IsSetChecksum())
-                request.Headers.Add("x-amz-sha256-tree-hash", StringUtils.FromString(uploadArchiveRequest.Checksum));
-
-            
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
-            if(uploadArchiveRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(uploadArchiveRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(uploadArchiveRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(uploadArchiveRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            request.ContentStream =  publicRequest.Body;
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+                publicRequest.Body.Length.ToString(CultureInfo.InvariantCulture);
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+        
+            if(publicRequest.IsSetArchiveDescription())
+                request.Headers["x-amz-archive-description"] = publicRequest.ArchiveDescription;
+        
+            if(publicRequest.IsSetChecksum())
+                request.Headers["x-amz-sha256-tree-hash"] = publicRequest.Checksum;
             request.ResourcePath = uriResourcePath;
-            
-        
-            request.ContentStream = uploadArchiveRequest.Body;
-            request.Headers["Content-Type"] = "binary/octet-stream";
-        
 
             return request;
         }
+
+
     }
 }

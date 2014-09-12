@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   KeyPair Unmarshaller
-     /// </summary>
-    internal class KeyPairUnmarshaller : IUnmarshaller<KeyPair, XmlUnmarshallerContext>, IUnmarshaller<KeyPair, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for KeyPair Object
+    /// </summary>  
+    public class KeyPairUnmarshaller : IUnmarshaller<KeyPair, XmlUnmarshallerContext>, IUnmarshaller<KeyPair, JsonUnmarshallerContext>
     {
-        public KeyPair Unmarshall(XmlUnmarshallerContext context) 
+        public KeyPair Unmarshall(XmlUnmarshallerContext context)
         {
-            KeyPair keyPair = new KeyPair();
+            KeyPair unmarshalledObject = new KeyPair();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("keyName", targetDepth))
-                    {
-                        keyPair.KeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("keyFingerprint", targetDepth))
                     {
-                        keyPair.KeyFingerprint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KeyFingerprint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("keyMaterial", targetDepth))
                     {
-                        keyPair.KeyMaterial = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KeyMaterial = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("keyName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KeyName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return keyPair;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return keyPair;
+            return unmarshalledObject;
         }
 
-        public KeyPair Unmarshall(JsonUnmarshallerContext context) 
+        public KeyPair Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static KeyPairUnmarshaller instance;
 
-        public static KeyPairUnmarshaller GetInstance() 
+        private static KeyPairUnmarshaller _instance = new KeyPairUnmarshaller();        
+
+        public static KeyPairUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new KeyPairUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,53 +33,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Storedi S C S I Volumes Request Marshaller
+    /// DescribeStorediSCSIVolumes Request Marshaller
     /// </summary>       
-    internal class DescribeStorediSCSIVolumesRequestMarshaller : IMarshaller<IRequest, DescribeStorediSCSIVolumesRequest> 
+    public class DescribeStorediSCSIVolumesRequestMarshaller : IMarshaller<IRequest, DescribeStorediSCSIVolumesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeStorediSCSIVolumesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeStorediSCSIVolumesRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DescribeStorediSCSIVolumesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DescribeStorediSCSIVolumes";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeStorediSCSIVolumesRequest != null && describeStorediSCSIVolumesRequest.VolumeARNs != null && describeStorediSCSIVolumesRequest.VolumeARNs.Count > 0) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetVolumeARNs())
                 {
-                    List<string> volumeARNsList = describeStorediSCSIVolumesRequest.VolumeARNs;
-                    writer.WritePropertyName("VolumeARNs");
-                    writer.WriteArrayStart();
-
-                    foreach (string volumeARNsListValue in volumeARNsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(volumeARNsListValue));
+                    context.Writer.WritePropertyName("VolumeARNs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVolumeARNsListValue in publicRequest.VolumeARNs)
+                    {
+                            context.Writer.Write(publicRequestVolumeARNsListValue);
                     }
-
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

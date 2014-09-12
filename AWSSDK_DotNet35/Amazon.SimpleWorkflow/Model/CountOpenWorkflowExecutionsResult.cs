@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the CountOpenWorkflowExecutions action.
+    /// Contains the response data from the CountOpenWorkflowExecutions operation.
     /// </summary>
     public partial class CountOpenWorkflowExecutionsResult : AmazonWebServiceResponse
     {
-        private WorkflowExecutionCount workflowExecutionCountValue;
+        private WorkflowExecutionCount _workflowExecutionCount;
 
-        /// <summary>
-        /// Gets and sets the CountOpenWorkflowExecutionsResult property.
-        /// Contains the result of a successful invocation of the CountOpenWorkflowExecutions
-        /// action.
-        /// </summary>
+        // Gets and sets the WorkflowExecutionCount member
         public WorkflowExecutionCount WorkflowExecutionCount
         {
-            get { return this.workflowExecutionCountValue; }
-            set { this.workflowExecutionCountValue = value; }
+            get { return this._workflowExecutionCount; }
+            set { this._workflowExecutionCount = value; }
+        }
+
+        // Check to see if WorkflowExecutionCount property is set
+        internal bool IsSetWorkflowExecutionCount()
+        {
+            return this._workflowExecutionCount != null;
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,92 +29,91 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceExportTask operation.
-    /// <para>Exports a running or stopped instance to an Amazon S3 bucket.</para> <para>For information about the supported operating systems,
-    /// image formats, and known limitations for the types of instances you can export, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html" >Exporting EC2 Instances</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Exports a running or stopped instance to an Amazon S3 bucket.
+    /// 
+    ///  
+    /// <para>
+    /// For information about the supported operating systems, image formats, and known limitations
+    /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
+    /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateInstanceExportTaskRequest : AmazonEC2Request
     {
-        private string description;
-        private string instanceId;
-        private ExportEnvironment targetEnvironment;
-        private ExportToS3TaskSpecification exportToS3Task;
-
+        private string _description;
+        private ExportToS3TaskSpecification _exportToS3Task;
+        private string _instanceId;
+        private ExportEnvironment _targetEnvironment;
 
         /// <summary>
-        /// A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the conversion task or the resource being exported. The maximum
+        /// length is 255 bytes.
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// The ID of the instance.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// The target virtualization environment.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>citrix, vmware, microsoft</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public ExportEnvironment TargetEnvironment
-        {
-            get { return this.targetEnvironment; }
-            set { this.targetEnvironment = value; }
-        }
-
-        // Check to see if TargetEnvironment property is set
-        internal bool IsSetTargetEnvironment()
-        {
-            return this.targetEnvironment != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property ExportToS3Task.
         /// </summary>
         public ExportToS3TaskSpecification ExportToS3Task
         {
-            get { return this.exportToS3Task; }
-            set { this.exportToS3Task = value; }
+            get { return this._exportToS3Task; }
+            set { this._exportToS3Task = value; }
         }
 
         // Check to see if ExportToS3Task property is set
         internal bool IsSetExportToS3Task()
         {
-            return this.exportToS3Task != null;
+            return this._exportToS3Task != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetEnvironment. 
+        /// <para>
+        /// The target virtualization environment.
+        /// </para>
+        /// </summary>
+        public ExportEnvironment TargetEnvironment
+        {
+            get { return this._targetEnvironment; }
+            set { this._targetEnvironment = value; }
+        }
+
+        // Check to see if TargetEnvironment property is set
+        internal bool IsSetTargetEnvironment()
+        {
+            return this._targetEnvironment != null;
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,59 +33,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Chap Credentials Request Marshaller
+    /// UpdateChapCredentials Request Marshaller
     /// </summary>       
-    internal class UpdateChapCredentialsRequestMarshaller : IMarshaller<IRequest, UpdateChapCredentialsRequest> 
+    public class UpdateChapCredentialsRequestMarshaller : IMarshaller<IRequest, UpdateChapCredentialsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UpdateChapCredentialsRequest updateChapCredentialsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UpdateChapCredentialsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(updateChapCredentialsRequest, "AmazonStorageGateway");
+        public IRequest Marshall(UpdateChapCredentialsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.UpdateChapCredentials";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateChapCredentialsRequest != null && updateChapCredentialsRequest.IsSetTargetARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInitiatorName())
                 {
-                    writer.WritePropertyName("TargetARN");
-                    writer.Write(updateChapCredentialsRequest.TargetARN);
-                }
-                if (updateChapCredentialsRequest != null && updateChapCredentialsRequest.IsSetSecretToAuthenticateInitiator()) 
-                {
-                    writer.WritePropertyName("SecretToAuthenticateInitiator");
-                    writer.Write(updateChapCredentialsRequest.SecretToAuthenticateInitiator);
-                }
-                if (updateChapCredentialsRequest != null && updateChapCredentialsRequest.IsSetInitiatorName()) 
-                {
-                    writer.WritePropertyName("InitiatorName");
-                    writer.Write(updateChapCredentialsRequest.InitiatorName);
-                }
-                if (updateChapCredentialsRequest != null && updateChapCredentialsRequest.IsSetSecretToAuthenticateTarget()) 
-                {
-                    writer.WritePropertyName("SecretToAuthenticateTarget");
-                    writer.Write(updateChapCredentialsRequest.SecretToAuthenticateTarget);
+                    context.Writer.WritePropertyName("InitiatorName");
+                    context.Writer.Write(publicRequest.InitiatorName);
                 }
 
+                if(publicRequest.IsSetSecretToAuthenticateInitiator())
+                {
+                    context.Writer.WritePropertyName("SecretToAuthenticateInitiator");
+                    context.Writer.Write(publicRequest.SecretToAuthenticateInitiator);
+                }
+
+                if(publicRequest.IsSetSecretToAuthenticateTarget())
+                {
+                    context.Writer.WritePropertyName("SecretToAuthenticateTarget");
+                    context.Writer.Write(publicRequest.SecretToAuthenticateTarget);
+                }
+
+                if(publicRequest.IsSetTargetARN())
+                {
+                    context.Writer.WritePropertyName("TargetARN");
+                    context.Writer.Write(publicRequest.TargetARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

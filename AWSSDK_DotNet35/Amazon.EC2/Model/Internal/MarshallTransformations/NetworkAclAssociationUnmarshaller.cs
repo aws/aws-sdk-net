@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NetworkAclAssociation Unmarshaller
-     /// </summary>
-    internal class NetworkAclAssociationUnmarshaller : IUnmarshaller<NetworkAclAssociation, XmlUnmarshallerContext>, IUnmarshaller<NetworkAclAssociation, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NetworkAclAssociation Object
+    /// </summary>  
+    public class NetworkAclAssociationUnmarshaller : IUnmarshaller<NetworkAclAssociation, XmlUnmarshallerContext>, IUnmarshaller<NetworkAclAssociation, JsonUnmarshallerContext>
     {
-        public NetworkAclAssociation Unmarshall(XmlUnmarshallerContext context) 
+        public NetworkAclAssociation Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkAclAssociation networkAclAssociation = new NetworkAclAssociation();
+            NetworkAclAssociation unmarshalledObject = new NetworkAclAssociation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("networkAclAssociationId", targetDepth))
                     {
-                        networkAclAssociation.NetworkAclAssociationId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkAclAssociationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("networkAclId", targetDepth))
                     {
-                        networkAclAssociation.NetworkAclId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkAclId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("subnetId", targetDepth))
                     {
-                        networkAclAssociation.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return networkAclAssociation;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return networkAclAssociation;
+            return unmarshalledObject;
         }
 
-        public NetworkAclAssociation Unmarshall(JsonUnmarshallerContext context) 
+        public NetworkAclAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NetworkAclAssociationUnmarshaller instance;
 
-        public static NetworkAclAssociationUnmarshaller GetInstance() 
+        private static NetworkAclAssociationUnmarshaller _instance = new NetworkAclAssociationUnmarshaller();        
+
+        public static NetworkAclAssociationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NetworkAclAssociationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

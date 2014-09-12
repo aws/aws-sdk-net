@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudFront.Model
         private string _eTag;
         private string _location;
 
-
         /// <summary>
         /// Gets and sets the property Distribution. The distribution's information.
         /// </summary>
@@ -48,7 +51,6 @@ namespace Amazon.CloudFront.Model
             return this._distribution != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ETag. The current version of the distribution created.
         /// </summary>
@@ -63,7 +65,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._eTag != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Location. The fully qualified URI of the new distribution

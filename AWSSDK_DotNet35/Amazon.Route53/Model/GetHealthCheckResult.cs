@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type containing information about the specified health check.</para>
+    /// A complex type containing information about the specified health check.
     /// </summary>
     public partial class GetHealthCheckResult : AmazonWebServiceResponse
     {
-        
-        private HealthCheck healthCheck;
-
+        private HealthCheck _healthCheck;
 
         /// <summary>
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
         /// A complex type that contains the information about the specified health check.
-        ///  
+        /// </para>
         /// </summary>
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheck; }
-            set { this.healthCheck = value; }
+            get { return this._healthCheck; }
+            set { this._healthCheck = value; }
         }
 
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;
+            return this._healthCheck != null;
         }
+
     }
 }

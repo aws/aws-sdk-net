@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Interconnect Request Marshaller
+    /// DeleteInterconnect Request Marshaller
     /// </summary>       
-    internal class DeleteInterconnectRequestMarshaller : IMarshaller<IRequest, DeleteInterconnectRequest> 
+    public class DeleteInterconnectRequestMarshaller : IMarshaller<IRequest, DeleteInterconnectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteInterconnectRequest deleteInterconnectRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteInterconnectRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteInterconnectRequest, "AmazonDirectConnect");
+        public IRequest Marshall(DeleteInterconnectRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.DeleteInterconnect";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteInterconnectRequest != null && deleteInterconnectRequest.IsSetInterconnectId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInterconnectId())
                 {
-                    writer.WritePropertyName("interconnectId");
-                    writer.Write(deleteInterconnectRequest.InterconnectId);
+                    context.Writer.WritePropertyName("interconnectId");
+                    context.Writer.Write(publicRequest.InterconnectId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

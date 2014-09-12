@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.ElasticLoadBalancing.Model;
 
 namespace Amazon.ElasticLoadBalancing
 {
     /// <summary>
-    /// Implementation for accessing ElasticLoadBalancing
-    /// 
-    /// Elastic Load Balancing
+    /// Interface for accessing ElasticLoadBalancing
+    ///
+    /// Elastic Load Balancing 
     /// <para>
     /// Elastic Load Balancing is a way to automatically distribute incoming web traffic across
     /// applications that run on multiple Amazon Elastic Compute Cloud (Amazon EC2) instances.
     /// 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// You can create, access, and manage Elastic Load Balancing using the AWS Management
     /// Console or the Elastic Load Balancing API. For more information about Elastic Load
     /// Balancing interfaces, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html">Accessing
     /// Elastic Load Balancing</a>.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// This reference guide contains documentation for the Query API and the AWS command
-    /// line interface commands, to manage Elastic Load Balancing.
+    /// line interface commands, to manage Elastic Load Balancing. 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// For detailed information about Elastic Load Balancing features and their associated
     /// actions or commands, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
     /// Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// This reference guide is based on the current WSDL, which is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"></a>.
     /// 
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// <b>Endpoints</b>
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// The examples in this guide assume that your load balancers are created in the US East
     /// (Northern Virginia) region and use us-east-1 as the endpoint.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// You can create your load balancers in other AWS regions. For information about regions
     /// and endpoints supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
-    /// and Endpoints</a> in the Amazon Web Services General Reference.
+    /// and Endpoints</a> in the Amazon Web Services General Reference. 
     /// </para>
     /// </summary>
-	public partial interface IAmazonElasticLoadBalancing : IDisposable
+    public partial interface IAmazonElasticLoadBalancing : IDisposable
     {
- 
+
+        
+        #region  AddTags
 
         /// <summary>
         /// Adds one or more tags for the specified load balancer. Each load balancer can have
         /// a maximum of 10 tags. Each tag consists of a key and an optional value.
         /// 
-        /// 
+        ///  
         /// <para>
         /// Tag keys must be unique for each load balancer. If a tag with the same key is already
         /// associated with the load balancer, this action will update the value of the key.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>
         /// in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -90,21 +99,21 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
         /// <returns>The response from the AddTags service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
+        /// <exception cref="DuplicateTagKeysException">
         /// The same tag key specified multiple times.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
+        /// <exception cref="TooManyTagsException">
         /// The quota for the number of tags that can be assigned to a load balancer has been
         /// reached.
         /// </exception>
-		AddTagsResponse AddTags(AddTagsRequest request);
+        AddTagsResponse AddTags(AddTagsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.AddTags"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
@@ -112,15 +121,18 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ApplySecurityGroupsToLoadBalancer
 
         /// <summary>
         /// Associates one or more security groups with your load balancer in Amazon Virtual
         /// Private Cloud (Amazon VPC). The provided security group IDs will override any currently
-        /// applied security groups.
+        /// applied security groups. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">Manage
         /// Security Groups in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -129,20 +141,20 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the ApplySecurityGroupsToLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
+        /// <exception cref="InvalidSecurityGroupException">
         /// One or more specified security groups do not exist.
         /// </exception>
-		ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request);
+        ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer operation.</param>
@@ -150,41 +162,44 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ApplySecurityGroupsToLoadBalancerResponse> ApplySecurityGroupsToLoadBalancerAsync(ApplySecurityGroupsToLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ApplySecurityGroupsToLoadBalancerResponse> ApplySecurityGroupsToLoadBalancerAsync(ApplySecurityGroupsToLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AttachLoadBalancerToSubnets
 
         /// <summary>
         /// Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private
-        /// Cloud (Amazon VPC) for the load balancer.
+        /// Cloud (Amazon VPC) for the load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// The load balancers evenly distribute requests across all of the registered subnets.
+        ///  The load balancers evenly distribute requests across all of the registered subnets.
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Deploy
         /// Elastic Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>.
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets service method.</param>
         /// 
         /// <returns>The response from the AttachLoadBalancerToSubnets service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
+        /// <exception cref="InvalidSubnetException">
         /// The VPC has no Internet gateway.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
+        /// <exception cref="SubnetNotFoundException">
         /// One or more subnets were not found.
         /// </exception>
-		AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request);
+        AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancerToSubnets operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.AttachLoadBalancerToSubnets"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets operation.</param>
@@ -192,14 +207,17 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<AttachLoadBalancerToSubnetsResponse> AttachLoadBalancerToSubnetsAsync(AttachLoadBalancerToSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<AttachLoadBalancerToSubnetsResponse> AttachLoadBalancerToSubnetsAsync(AttachLoadBalancerToSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ConfigureHealthCheck
 
         /// <summary>
         /// Specifies the health check settings to use for evaluating the health state of your
-        /// back-end instances.
+        /// back-end instances. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">Health
         /// Check</a> in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -208,14 +226,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
         /// 
         /// <returns>The response from the ConfigureHealthCheck service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request);
+        ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfigureHealthCheck operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ConfigureHealthCheck"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck operation.</param>
@@ -223,28 +241,31 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ConfigureHealthCheckResponse> ConfigureHealthCheckAsync(ConfigureHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ConfigureHealthCheckResponse> ConfigureHealthCheckAsync(ConfigureHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAppCookieStickinessPolicy
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes that follow that of an
         /// application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.
         /// 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
+        ///  This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
         /// except that the lifetime of the special Elastic Load Balancing cookie follows the
         /// lifetime of the application-generated cookie specified in the policy configuration.
         /// The load balancer only inserts a new stickiness cookie when the application response
-        /// includes a new application cookie.
+        /// includes a new application cookie. 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// If the application cookie is explicitly removed or expires, the session stops being
-        /// sticky until a new application cookie is issued.
+        ///  If the application cookie is explicitly removed or expires, the session stops being
+        /// sticky until a new application cookie is issued. 
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">Enabling
         /// Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer
@@ -254,23 +275,23 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateAppCookieStickinessPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
+        /// <exception cref="DuplicatePolicyNameException">
         /// Policy with the same name exists for this load balancer. Please choose another name.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
+        /// <exception cref="TooManyPoliciesException">
         /// Quota for number of policies for this load balancer has already been reached.
         /// </exception>
-		CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request);
+        CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy operation.</param>
@@ -278,30 +299,33 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateAppCookieStickinessPolicyResponse> CreateAppCookieStickinessPolicyAsync(CreateAppCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateAppCookieStickinessPolicyResponse> CreateAppCookieStickinessPolicyAsync(CreateAppCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLBCookieStickinessPolicy
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
         /// of the browser (user-agent) or a specified expiration period. This policy can be associated
-        /// only with HTTP/HTTPS listeners.
+        /// only with HTTP/HTTPS listeners. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// When a load balancer implements this policy, the load balancer uses a special cookie
+        ///  When a load balancer implements this policy, the load balancer uses a special cookie
         /// to track the backend server instance for each request. When the load balancer receives
         /// a request, it first checks to see if this cookie is present in the request. If so,
         /// the load balancer sends the request to the application server specified in the cookie.
         /// If not, the load balancer sends the request to a server that is chosen based on the
-        /// existing load balancing algorithm.
+        /// existing load balancing algorithm. 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// A cookie is inserted into the response for binding subsequent requests from the same
+        ///  A cookie is inserted into the response for binding subsequent requests from the same
         /// user to that server. The validity of the cookie is based on the cookie expiration
-        /// time, which is specified in the policy configuration.
+        /// time, which is specified in the policy configuration. 
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">Enabling
         /// Duration-Based Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -310,23 +334,23 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateLBCookieStickinessPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
+        /// <exception cref="DuplicatePolicyNameException">
         /// Policy with the same name exists for this load balancer. Please choose another name.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
+        /// <exception cref="TooManyPoliciesException">
         /// Quota for number of policies for this load balancer has already been reached.
         /// </exception>
-		CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request);
+        CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLBCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLBCookieStickinessPolicy"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy operation.</param>
@@ -334,87 +358,92 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateLBCookieStickinessPolicyResponse> CreateLBCookieStickinessPolicyAsync(CreateLBCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateLBCookieStickinessPolicyResponse> CreateLBCookieStickinessPolicyAsync(CreateLBCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLoadBalancer
 
         /// <summary>
-        /// Creates a new load balancer.
+        /// Creates a new load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// After the call has completed successfully, a new load balancer is created with a
+        ///  After the call has completed successfully, a new load balancer is created with a
         /// unique Domain Name Service (DNS) name. The DNS name includes the name of the AWS region
         /// in which the load balance was created. For example, if your load balancer was created
         /// in the United States, the DNS name might end with either of the following:
         /// </para>
-        /// <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia region) </li>
+        ///  <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia region) </li>
         /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California region) </li>
-        /// </ul>
+        /// </ul> 
         /// <para>
-        /// For information about the AWS regions supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
+        /// For information about the AWS regions supported by Elastic Load Balancing, see <a
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
         /// and Endpoints</a>.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// You can create up to 20 load balancers per region per account.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// Elastic Load Balancing supports load balancing your Amazon EC2 instances launched
         /// within any one of the following platforms:
         /// </para>
-        /// <ul> <li> <i>EC2-Classic</i>
+        ///  <ul> <li> <i>EC2-Classic</i> 
         /// <para>
-        /// For information on creating and managing your load balancers in EC2-Classic, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">Deploy
+        /// For information on creating and managing your load balancers in EC2-Classic, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">Deploy
         /// Elastic Load Balancing in Amazon EC2-Classic</a>.
         /// </para>
-        /// </li> <li> <i>EC2-VPC</i>
+        ///  </li> <li> <i>EC2-VPC</i> 
         /// <para>
         /// For information on creating and managing your load balancers in EC2-VPC, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Deploy
         /// Elastic Load Balancing in Amazon VPC</a>.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
+        /// <exception cref="CertificateNotFoundException">
         /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
         /// and Access Management Service.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateAccessPointNameException">
+        /// <exception cref="DuplicateAccessPointNameException">
         /// The load balancer name already exists for this account. Please choose another name.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
+        /// <exception cref="DuplicateTagKeysException">
         /// The same tag key specified multiple times.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidSchemeException">
+        /// <exception cref="InvalidSchemeException">
         /// Invalid value for scheme. Scheme can only be specified for load balancers in VPC.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
+        /// <exception cref="InvalidSecurityGroupException">
         /// One or more specified security groups do not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
+        /// <exception cref="InvalidSubnetException">
         /// The VPC has no Internet gateway.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
+        /// <exception cref="SubnetNotFoundException">
         /// One or more subnets were not found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyAccessPointsException">
+        /// <exception cref="TooManyAccessPointsException">
         /// The quota for the number of load balancers has already been reached.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
+        /// <exception cref="TooManyTagsException">
         /// The quota for the number of tags that can be assigned to a load balancer has been
         /// reached.
         /// </exception>
-		CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
+        CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer operation.</param>
@@ -422,15 +451,18 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLoadBalancerListeners
 
         /// <summary>
         /// Creates one or more listeners on a load balancer for the specified port. If a listener
         /// with the given port does not already exist, it will be created; otherwise, the properties
-        /// of the new listener must match the properties of the existing listener.
+        /// of the new listener must match the properties of the existing listener. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html">Add
         /// a Listener to Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -439,26 +471,26 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancerListeners service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
+        /// <exception cref="CertificateNotFoundException">
         /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
         /// and Access Management Service.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateListenerException">
+        /// <exception cref="DuplicateListenerException">
         /// A <code>Listener</code> already exists for the given <code>LoadBalancerName</code>
         /// and <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>,
         /// <code>Protocol</code>, or <code>SSLCertificateId</code>.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-		CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request);
+        CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners operation.</param>
@@ -466,8 +498,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateLoadBalancerListenersResponse> CreateLoadBalancerListenersAsync(CreateLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateLoadBalancerListenersResponse> CreateLoadBalancerListenersAsync(CreateLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLoadBalancerPolicy
 
         /// <summary>
         /// Creates a new policy that contains the necessary attributes depending on the policy
@@ -478,26 +513,26 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancerPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
+        /// <exception cref="DuplicatePolicyNameException">
         /// Policy with the same name exists for this load balancer. Please choose another name.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
+        /// <exception cref="PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
+        /// <exception cref="TooManyPoliciesException">
         /// Quota for number of policies for this load balancer has already been reached.
         /// </exception>
-		CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request);
+        CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerPolicy"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerPolicy operation.</param>
@@ -505,34 +540,37 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateLoadBalancerPolicyResponse> CreateLoadBalancerPolicyAsync(CreateLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateLoadBalancerPolicyResponse> CreateLoadBalancerPolicyAsync(CreateLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLoadBalancer
 
         /// <summary>
-        /// Deletes the specified load balancer.
+        /// Deletes the specified load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// If attempting to recreate the load balancer, you must reconfigure all the settings.
+        ///  If attempting to recreate the load balancer, you must reconfigure all the settings.
         /// The DNS name associated with a deleted load balancer will no longer be usable. Once
         /// deleted, the name and associated DNS record of the load balancer no longer exist and
         /// traffic sent to any of its IP addresses will no longer be delivered to back-end instances.
         /// 
         /// </para>
-        /// 
+        ///  
         /// <para>
-        /// To successfully call this API, you must provide the same account credentials as were
-        /// used to create the load balancer.
+        ///  To successfully call this API, you must provide the same account credentials as were
+        /// used to create the load balancer. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-		DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
+        DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeleteLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer operation.</param>
@@ -540,8 +578,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLoadBalancerListeners
 
         /// <summary>
         /// Deletes listeners from the load balancer for the specified port.
@@ -549,14 +590,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerListeners service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancerListeners service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request);
+        DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerListeners operation.</param>
@@ -564,8 +605,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersAsync(DeleteLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersAsync(DeleteLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLoadBalancerPolicy
 
         /// <summary>
         /// Deletes a policy from the load balancer. The specified policy must not be enabled
@@ -574,17 +618,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancerPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-		DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request);
+        DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeleteLoadBalancerPolicy"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerPolicy operation.</param>
@@ -592,24 +636,27 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteLoadBalancerPolicyResponse> DeleteLoadBalancerPolicyAsync(DeleteLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteLoadBalancerPolicyResponse> DeleteLoadBalancerPolicyAsync(DeleteLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeregisterInstancesFromLoadBalancer
 
         /// <summary>
         /// Deregisters instances from the load balancer. Once the instance is deregistered,
-        /// it will stop receiving traffic from the load balancer.
+        /// it will stop receiving traffic from the load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// In order to successfully call this API, the same account credentials as those used
-        /// to create the load balancer must be provided.
+        ///  In order to successfully call this API, the same account credentials as those used
+        /// to create the load balancer must be provided. 
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
         /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// You can use <a>DescribeLoadBalancers</a> to verify if the instance is deregistered
         /// from the load balancer.
@@ -618,17 +665,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DeregisterInstancesFromLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
+        /// <exception cref="InvalidEndPointException">
         /// The specified EndPoint is not valid.
         /// </exception>
-		DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request);
+        DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstancesFromLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeregisterInstancesFromLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer operation.</param>
@@ -636,8 +683,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeregisterInstancesFromLoadBalancerResponse> DeregisterInstancesFromLoadBalancerAsync(DeregisterInstancesFromLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeregisterInstancesFromLoadBalancerResponse> DeregisterInstancesFromLoadBalancerAsync(DeregisterInstancesFromLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInstanceHealth
 
         /// <summary>
         /// Returns the current state of the specified instances registered with the specified
@@ -647,17 +697,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceHealth service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
+        /// <exception cref="InvalidEndPointException">
         /// The specified EndPoint is not valid.
         /// </exception>
-		DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request);
+        DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceHealth operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeInstanceHealth"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth operation.</param>
@@ -665,8 +715,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeInstanceHealthResponse> DescribeInstanceHealthAsync(DescribeInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeInstanceHealthResponse> DescribeInstanceHealthAsync(DescribeInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLoadBalancerAttributes
 
         /// <summary>
         /// Returns detailed information about all of the attributes associated with the specified
@@ -675,17 +728,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerAttributes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
+        /// <exception cref="LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute could not be found.
         /// </exception>
-		DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request);
+        DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerAttributes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancerAttributes"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes operation.</param>
@@ -693,8 +746,12 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLoadBalancerAttributesResponse> DescribeLoadBalancerAttributesAsync(DescribeLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLoadBalancerAttributesResponse> DescribeLoadBalancerAttributesAsync(DescribeLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLoadBalancerPolicies
+
         /// <summary>
         /// Returns detailed descriptions of the policies. If you specify a load balancer name,
         /// the action returns the descriptions of all the policies created for the load balancer.
@@ -706,14 +763,13 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
+        /// <exception cref="PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
-		DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies();
- 
+        DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies();
 
         /// <summary>
         /// Returns detailed descriptions of the policies. If you specify a load balancer name,
@@ -727,17 +783,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
+        /// <exception cref="PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
-		DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request);
+        DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicies operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancerPolicies"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies operation.</param>
@@ -745,8 +801,12 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLoadBalancerPolicyTypes
+
         /// <summary>
         /// Returns meta-information on the specified load balancer policies defined by the Elastic
         /// Load Balancing service. The policy types that are returned from this action can be
@@ -755,11 +815,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
+        /// <exception cref="PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
-		DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes();
- 
+        DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes();
 
         /// <summary>
         /// Returns meta-information on the specified load balancer policies defined by the Elastic
@@ -770,14 +829,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicyTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
+        /// <exception cref="PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
-		DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request);
+        DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicyTypes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancerPolicyTypes"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicyTypes operation.</param>
@@ -785,8 +844,12 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLoadBalancers
+
         /// <summary>
         /// Returns detailed configuration information for all the load balancers created for
         /// the account. If you specify load balancer names, the action returns configuration
@@ -794,11 +857,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		DescribeLoadBalancersResponse DescribeLoadBalancers();
- 
+        DescribeLoadBalancersResponse DescribeLoadBalancers();
 
         /// <summary>
         /// Returns detailed configuration information for all the load balancers created for
@@ -808,14 +870,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
+        DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancers"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers operation.</param>
@@ -823,8 +885,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTags
 
         /// <summary>
         /// Describes the tags associated with one or more load balancers.
@@ -832,14 +897,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeTags"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
@@ -847,35 +912,38 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DetachLoadBalancerFromSubnets
 
         /// <summary>
         /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
-        /// Cloud (Amazon VPC) for the load balancer.
+        /// Cloud (Amazon VPC) for the load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// After a subnet is removed all of the EC2 instances registered with the load balancer
+        ///  After a subnet is removed all of the EC2 instances registered with the load balancer
         /// that are in the removed subnet will go into the <i>OutOfService</i> state. When a
         /// subnet is removed, the load balancer will balance the traffic among the remaining
-        /// routable subnets for the load balancer.
+        /// routable subnets for the load balancer. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerFromSubnets service method.</param>
         /// 
         /// <returns>The response from the DetachLoadBalancerFromSubnets service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-		DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request);
+        DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancerFromSubnets operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DetachLoadBalancerFromSubnets"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerFromSubnets operation.</param>
@@ -883,23 +951,26 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DetachLoadBalancerFromSubnetsResponse> DetachLoadBalancerFromSubnetsAsync(DetachLoadBalancerFromSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DetachLoadBalancerFromSubnetsResponse> DetachLoadBalancerFromSubnetsAsync(DetachLoadBalancerFromSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisableAvailabilityZonesForLoadBalancer
 
         /// <summary>
         /// Removes the specified EC2 Availability Zones from the set of configured Availability
-        /// Zones for the load balancer.
+        /// Zones for the load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// There must be at least one Availability Zone registered with a load balancer at all
+        ///  There must be at least one Availability Zone registered with a load balancer at all
         /// times. Once an Availability Zone is removed, all the instances registered with the
         /// load balancer that are in the removed Availability Zone go into the <i>OutOfService</i>
         /// state. Upon Availability Zone removal, the load balancer attempts to equally balance
         /// the traffic among its remaining usable Availability Zones. Trying to remove an Availability
-        /// Zone that was not associated with the load balancer does nothing.
+        /// Zone that was not associated with the load balancer does nothing. 
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html">Disable
         /// an Availability Zone from a Load-Balanced Application</a> in the <i>Elastic Load Balancing
@@ -909,17 +980,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DisableAvailabilityZonesForLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-		DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request);
+        DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAvailabilityZonesForLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DisableAvailabilityZonesForLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer operation.</param>
@@ -927,18 +998,21 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DisableAvailabilityZonesForLoadBalancerResponse> DisableAvailabilityZonesForLoadBalancerAsync(DisableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DisableAvailabilityZonesForLoadBalancerResponse> DisableAvailabilityZonesForLoadBalancerAsync(DisableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableAvailabilityZonesForLoadBalancer
 
         /// <summary>
-        /// Adds one or more EC2 Availability Zones to the load balancer.
+        /// Adds one or more EC2 Availability Zones to the load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// The load balancer evenly distributes requests across all its registered Availability
-        /// Zones that contain instances.
+        ///  The load balancer evenly distributes requests across all its registered Availability
+        /// Zones that contain instances. 
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Expand
         /// a Load Balanced Application to an Additional Availability Zone</a> in the <i>Elastic
@@ -948,14 +1022,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the EnableAvailabilityZonesForLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request);
+        EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAvailabilityZonesForLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.EnableAvailabilityZonesForLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer operation.</param>
@@ -963,24 +1037,27 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<EnableAvailabilityZonesForLoadBalancerResponse> EnableAvailabilityZonesForLoadBalancerAsync(EnableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<EnableAvailabilityZonesForLoadBalancerResponse> EnableAvailabilityZonesForLoadBalancerAsync(EnableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyLoadBalancerAttributes
 
         /// <summary>
         /// Modifies the attributes of a specified load balancer.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>,
         /// and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or,
         /// you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying
         /// an idle connection timeout value for your load balancer.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see the following:
         /// </para>
-        /// <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing">Cross-Zone
+        ///  <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing">Cross-Zone
         /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
         /// Draining</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Access
         /// Logs</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout">Idle
@@ -989,20 +1066,20 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes service method.</param>
         /// 
         /// <returns>The response from the ModifyLoadBalancerAttributes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
+        /// <exception cref="LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute could not be found.
         /// </exception>
-		ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request);
+        ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyLoadBalancerAttributes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ModifyLoadBalancerAttributes"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes operation.</param>
@@ -1010,21 +1087,24 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterInstancesWithLoadBalancer
 
         /// <summary>
-        /// Adds new instances to the load balancer.
+        /// Adds new instances to the load balancer. 
         /// 
-        /// 
+        ///  
         /// <para>
-        /// Once the instance is registered, it starts receiving traffic and requests from the
+        ///  Once the instance is registered, it starts receiving traffic and requests from the
         /// load balancer. Any instance that is not in any of the Availability Zones registered
         /// for the load balancer will be moved to the <i>OutOfService</i> state. It will move
         /// to the <i>InService</i> state when the Availability Zone is added to the load balancer.
         /// 
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// When an instance registered with a load balancer is stopped and then restarted, the
         /// IP addresses associated with the instance changes. Elastic Load Balancing cannot recognize
@@ -1034,12 +1114,12 @@ namespace Amazon.ElasticLoadBalancing
         /// restarted. To de-register your instances from load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>
         /// action.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
         /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a> action to
         /// check the state of the newly registered instances.
@@ -1048,17 +1128,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the RegisterInstancesWithLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
+        /// <exception cref="InvalidEndPointException">
         /// The specified EndPoint is not valid.
         /// </exception>
-		RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request);
+        RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstancesWithLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.RegisterInstancesWithLoadBalancer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer operation.</param>
@@ -1066,8 +1146,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<RegisterInstancesWithLoadBalancerResponse> RegisterInstancesWithLoadBalancerAsync(RegisterInstancesWithLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<RegisterInstancesWithLoadBalancerResponse> RegisterInstancesWithLoadBalancerAsync(RegisterInstancesWithLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveTags
 
         /// <summary>
         /// Removes one or more tags from the specified load balancer.
@@ -1075,14 +1158,14 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-		RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
+        RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.RemoveTags"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
@@ -1090,15 +1173,18 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetLoadBalancerListenerSSLCertificate
 
         /// <summary>
         /// Sets the certificate that terminates the specified listener's SSL connections. The
         /// specified certificate replaces any prior certificate that was used on the same load
-        /// balancer and port.
+        /// balancer and port. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// For more information on updating your SSL certificate, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">Updating
         /// an SSL Certificate for a Load Balancer</a> in the <i>Elastic Load Balancing Developer
@@ -1108,24 +1194,24 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerListenerSSLCertificate service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
+        /// <exception cref="CertificateNotFoundException">
         /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
         /// and Access Management Service.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException">
+        /// <exception cref="ListenerNotFoundException">
         /// Load balancer does not have a listener configured at the given port.
         /// </exception>
-		SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request);
+        SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerListenerSSLCertificate operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.SetLoadBalancerListenerSSLCertificate"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate operation.</param>
@@ -1133,17 +1219,20 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SetLoadBalancerListenerSSLCertificateResponse> SetLoadBalancerListenerSSLCertificateAsync(SetLoadBalancerListenerSSLCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<SetLoadBalancerListenerSSLCertificateResponse> SetLoadBalancerListenerSSLCertificateAsync(SetLoadBalancerListenerSSLCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetLoadBalancerPoliciesForBackendServer
 
         /// <summary>
         /// Replaces the current set of policies associated with a port on which the back-end
         /// server is listening with a new set of policies. After the policies have been created
         /// using <a>CreateLoadBalancerPolicy</a>, they can be applied here as a list. At this
         /// time, only the back-end server authentication policy type can be applied to the back-end
-        /// ports; this policy type is composed of multiple public key policies.
+        /// ports; this policy type is composed of multiple public key policies. 
         /// 
-        /// 
+        ///  
         /// <para>
         /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> action
         /// to verify that the policy has been associated with the back-end server.
@@ -1152,20 +1241,20 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerPoliciesForBackendServer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
+        /// <exception cref="PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
-		SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request);
+        SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesForBackendServer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.SetLoadBalancerPoliciesForBackendServer"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer operation.</param>
@@ -1173,8 +1262,11 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SetLoadBalancerPoliciesForBackendServerResponse> SetLoadBalancerPoliciesForBackendServerAsync(SetLoadBalancerPoliciesForBackendServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<SetLoadBalancerPoliciesForBackendServerResponse> SetLoadBalancerPoliciesForBackendServerAsync(SetLoadBalancerPoliciesForBackendServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetLoadBalancerPoliciesOfListener
 
         /// <summary>
         /// Associates, updates, or disables a policy with a listener on the load balancer. You
@@ -1183,23 +1275,23 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerPoliciesOfListener service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// <exception cref="AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
+        /// <exception cref="InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException">
+        /// <exception cref="ListenerNotFoundException">
         /// Load balancer does not have a listener configured at the given port.
         /// </exception>
-        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
+        /// <exception cref="PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
-		SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request);
+        SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesOfListener operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.SetLoadBalancerPoliciesOfListener"/>
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener operation.</param>
@@ -1207,6 +1299,9 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

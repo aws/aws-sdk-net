@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeSpotPriceHistory response and response metadata.
+    /// Configuration for accessing Amazon DescribeSpotPriceHistory service
     /// </summary>
     public partial class DescribeSpotPriceHistoryResponse : DescribeSpotPriceHistoryResult
     {
         /// <summary>
         /// Gets and sets the DescribeSpotPriceHistoryResult property.
-        /// 
+        /// Represents the output of a DescribeSpotPriceHistory operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeSpotPriceHistoryResult class are now available on the DescribeSpotPriceHistoryResponse class. You should use the properties on DescribeSpotPriceHistoryResponse instead of accessing them through DescribeSpotPriceHistoryResult.")]
         public DescribeSpotPriceHistoryResult DescribeSpotPriceHistoryResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

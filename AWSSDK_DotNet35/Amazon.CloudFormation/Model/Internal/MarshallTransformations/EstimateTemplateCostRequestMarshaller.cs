@@ -12,61 +12,71 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Estimate Template Cost Request Marshaller
+    /// EstimateTemplateCost Request Marshaller
     /// </summary>       
-    public class EstimateTemplateCostRequestMarshaller : IMarshaller<IRequest, EstimateTemplateCostRequest>
+    public class EstimateTemplateCostRequestMarshaller : IMarshaller<IRequest, EstimateTemplateCostRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(EstimateTemplateCostRequest estimateTemplateCostRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(estimateTemplateCostRequest, "AmazonCloudFormation");
+            return this.Marshall((EstimateTemplateCostRequest)input);
+        }
+    
+        public IRequest Marshall(EstimateTemplateCostRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "EstimateTemplateCost");
             request.Parameters.Add("Version", "2010-05-15");
-            if (estimateTemplateCostRequest != null && estimateTemplateCostRequest.IsSetTemplateBody())
-            {
-                request.Parameters.Add("TemplateBody", StringUtils.FromString(estimateTemplateCostRequest.TemplateBody));
-            }
-            if (estimateTemplateCostRequest != null && estimateTemplateCostRequest.IsSetTemplateURL())
-            {
-                request.Parameters.Add("TemplateURL", StringUtils.FromString(estimateTemplateCostRequest.TemplateURL));
-            }
 
-            if (estimateTemplateCostRequest != null)
+            if(publicRequest != null)
             {
-                List<Parameter> parametersList = estimateTemplateCostRequest.Parameters;
-                int parametersListIndex = 1;
-                foreach (Parameter parametersListValue in parametersList)
+                if(publicRequest.IsSetParameters())
                 {
-                    if (parametersListValue != null && parametersListValue.IsSetParameterKey())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Parameters)
                     {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterKey", StringUtils.FromString(parametersListValue.ParameterKey));
+                        if(publicRequestlistValue.IsSetParameterKey())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
+                        }
+                        if(publicRequestlistValue.IsSetParameterValue())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                        }
+                        if(publicRequestlistValue.IsSetUsePreviousValue())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (parametersListValue != null && parametersListValue.IsSetParameterValue())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.FromString(parametersListValue.ParameterValue));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetUsePreviousValue())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".UsePreviousValue", StringUtils.FromBool(parametersListValue.UsePreviousValue));
-                    }
-
-                    parametersListIndex++;
+                }
+                if(publicRequest.IsSetTemplateBody())
+                {
+                    request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
+                }
+                if(publicRequest.IsSetTemplateURL())
+                {
+                    request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
                 }
             }
-
             return request;
         }
     }

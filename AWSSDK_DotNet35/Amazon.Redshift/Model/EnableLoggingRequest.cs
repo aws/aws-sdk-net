@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.Redshift.Model
         private string _bucketName;
         private string _clusterIdentifier;
         private string _s3KeyPrefix;
-
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -60,7 +63,6 @@ namespace Amazon.Redshift.Model
             return this._bucketName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
@@ -83,7 +85,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 

@@ -12,63 +12,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the limit price of a Reserved Instance offering.</para>
+    /// Describes the limit price of a Reserved Instance offering.
     /// </summary>
     public partial class ReservedInstanceLimitPrice
     {
-        
-        private double? amount;
-        private CurrencyCodeValues currencyCode;
-
+        private double? _amount;
+        private CurrencyCodeValues _currencyCode;
 
         /// <summary>
-        /// Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).
-        ///  
+        /// Gets and sets the property Amount. 
+        /// <para>
+        /// Used for Reserved Instance Marketplace offerings. Specifies the limit price on the
+        /// total order (instanceCount * price).
+        /// </para>
         /// </summary>
         public double Amount
         {
-            get { return this.amount ?? default(double); }
-            set { this.amount = value; }
+            get { return this._amount.GetValueOrDefault(); }
+            set { this._amount = value; }
         }
 
         // Check to see if Amount property is set
         internal bool IsSetAmount()
         {
-            return this.amount.HasValue;
+            return this._amount.HasValue; 
         }
 
         /// <summary>
-        /// The currency in which the <c>limitPrice</c> amount is specified. At this time, the only supported currency is <c>USD</c>.
-        ///  
+        /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>USD</description>
-        ///     </item>
-        /// </list>
+        /// The currency in which the <code>limitPrice</code> amount is specified. At this time,
+        /// the only supported currency is <code>USD</code>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
-            get { return this.currencyCode; }
-            set { this.currencyCode = value; }
+            get { return this._currencyCode; }
+            set { this._currencyCode = value; }
         }
 
         // Check to see if CurrencyCode property is set
         internal bool IsSetCurrencyCode()
         {
-            return this.currencyCode != null;
+            return this._currencyCode != null;
         }
+
     }
 }

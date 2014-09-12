@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,41 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ImportKeyPairResult : AmazonWebServiceResponse
     {
-        
-        private string keyName;
-        private string keyFingerprint;
-
+        private string _keyFingerprint;
+        private string _keyName;
 
         /// <summary>
-        /// The key pair name you provided.
-        ///  
-        /// </summary>
-        public string KeyName
-        {
-            get { return this.keyName; }
-            set { this.keyName = value; }
-        }
-
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
-        {
-            return this.keyName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property KeyFingerprint. 
+        /// <para>
         /// The MD5 public key fingerprint as specified in section 4 of RFC 4716.
-        ///  
+        /// </para>
         /// </summary>
         public string KeyFingerprint
         {
-            get { return this.keyFingerprint; }
-            set { this.keyFingerprint = value; }
+            get { return this._keyFingerprint; }
+            set { this._keyFingerprint = value; }
         }
 
         // Check to see if KeyFingerprint property is set
         internal bool IsSetKeyFingerprint()
         {
-            return this.keyFingerprint != null;
+            return this._keyFingerprint != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
+        /// The key pair name you provided.
+        /// </para>
+        /// </summary>
+        public string KeyName
+        {
+            get { return this._keyName; }
+            set { this._keyName = value; }
+        }
+
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
+        {
+            return this._keyName != null;
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Reboot D B Instance Request Marshaller
+    /// RebootDBInstance Request Marshaller
     /// </summary>       
-    public class RebootDBInstanceRequestMarshaller : IMarshaller<IRequest, RebootDBInstanceRequest>
+    public class RebootDBInstanceRequestMarshaller : IMarshaller<IRequest, RebootDBInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(RebootDBInstanceRequest rebootDBInstanceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(rebootDBInstanceRequest, "AmazonRDS");
+            return this.Marshall((RebootDBInstanceRequest)input);
+        }
+    
+        public IRequest Marshall(RebootDBInstanceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "RebootDBInstance");
             request.Parameters.Add("Version", "2013-09-09");
-            if (rebootDBInstanceRequest != null && rebootDBInstanceRequest.IsSetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(rebootDBInstanceRequest.DBInstanceIdentifier));
-            }
-            if (rebootDBInstanceRequest != null && rebootDBInstanceRequest.IsSetForceFailover())
-            {
-                request.Parameters.Add("ForceFailover", StringUtils.FromBool(rebootDBInstanceRequest.ForceFailover));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetForceFailover())
+                {
+                    request.Parameters.Add("ForceFailover", StringUtils.FromBool(publicRequest.ForceFailover));
+                }
+            }
             return request;
         }
     }

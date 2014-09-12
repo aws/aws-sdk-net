@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,31 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStack operation.
-    /// <para>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the
-    /// DescribeStacks API if the deletion has been completed successfully.</para>
+    /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
+    /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
+    /// been completed successfully.
     /// </summary>
     public partial class DeleteStackRequest : AmazonCloudFormationRequest
     {
-        private string stackName;
-
+        private string _stackName;
 
         /// <summary>
+        /// Gets and sets the property StackName. 
+        /// <para>
         /// The name or the unique identifier associated with the stack.
-        ///  
+        /// </para>
         /// </summary>
         public string StackName
         {
-            get { return this.stackName; }
-            set { this.stackName = value; }
+            get { return this._stackName; }
+            set { this._stackName = value; }
         }
 
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;
+            return this._stackName != null;
         }
 
     }
 }
-    

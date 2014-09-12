@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// AssumeRoleWithSAML Request Marshaller
     /// </summary>       
-    public class AssumeRoleWithSAMLRequestMarshaller : IMarshaller<IRequest, AssumeRoleWithSAMLRequest>
+    public class AssumeRoleWithSAMLRequestMarshaller : IMarshaller<IRequest, AssumeRoleWithSAMLRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AssumeRoleWithSAMLRequest)input);
+        }
+    
         public IRequest Marshall(AssumeRoleWithSAMLRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");

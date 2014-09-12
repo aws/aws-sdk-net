@@ -183,7 +183,7 @@ namespace Amazon.Runtime
                                 if(callback != null)
                                 {
                                     var eventStream = new EventStream(originalStream, true);
-                                    var tracker = new StreamReadTracker(this, callback, originalStream.Length);
+                                    var tracker = new StreamReadTracker(this, callback, originalStream.Length, this.Config.ProgressUpdateInterval);
                                     eventStream.OnRead += tracker.ReadProgress;
                                     originalStream = eventStream;
                                 }
@@ -289,7 +289,7 @@ namespace Amazon.Runtime
                             context = unmarshaller.CreateContext(httpResponseData, 
                                 this.SupportResponseLogging && 
                                 (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never),
-                                httpResponseData.OpenResponse(),
+                                httpResponseData.ResponseBody.OpenResponse(),
                                 asyncResult.Metrics);
                             
                             using (asyncResult.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
@@ -329,7 +329,7 @@ namespace Amazon.Runtime
                         UnmarshallerContext errorContext = unmarshaller.CreateContext(
                             httpResponseData, 
                             Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never, 
-                            httpResponseData.OpenResponse(),
+                            httpResponseData.ResponseBody.OpenResponse(),
                             asyncResult.Metrics);
 
                         try
@@ -500,7 +500,7 @@ namespace Amazon.Runtime
                     var httpResponseData = new HttpWebRequestResponseData(httpErrorResponse);
                     UnmarshallerContext errorContext = unmarshaller.CreateContext(httpResponseData,
                         Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never,
-                        httpResponseData.OpenResponse(),
+                        httpResponseData.ResponseBody.OpenResponse(),
                         asyncResult.Metrics);
 
                     errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);

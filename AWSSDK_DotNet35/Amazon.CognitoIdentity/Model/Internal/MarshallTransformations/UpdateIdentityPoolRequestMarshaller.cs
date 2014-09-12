@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateIdentityPool Request Marshaller
     /// </summary>       
-    public class UpdateIdentityPoolRequestMarshaller : IMarshaller<IRequest, UpdateIdentityPoolRequest> 
+    public class UpdateIdentityPoolRequestMarshaller : IMarshaller<IRequest, UpdateIdentityPoolRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateIdentityPoolRequest)input);
+        }
+
         public IRequest Marshall(UpdateIdentityPoolRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoIdentity");
@@ -47,36 +56,37 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAllowUnauthenticatedIdentities())
                 {
-                    writer.WritePropertyName("AllowUnauthenticatedIdentities");
-                    writer.Write(publicRequest.AllowUnauthenticatedIdentities);
+                    context.Writer.WritePropertyName("AllowUnauthenticatedIdentities");
+                    context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities);
                 }
 
                 if(publicRequest.IsSetIdentityPoolId())
                 {
-                    writer.WritePropertyName("IdentityPoolId");
-                    writer.Write(publicRequest.IdentityPoolId);
+                    context.Writer.WritePropertyName("IdentityPoolId");
+                    context.Writer.Write(publicRequest.IdentityPoolId);
                 }
 
                 if(publicRequest.IsSetIdentityPoolName())
                 {
-                    writer.WritePropertyName("IdentityPoolName");
-                    writer.Write(publicRequest.IdentityPoolName);
+                    context.Writer.WritePropertyName("IdentityPoolName");
+                    context.Writer.Write(publicRequest.IdentityPoolName);
                 }
 
                 if(publicRequest.IsSetSupportedLoginProviders())
                 {
-                    writer.WritePropertyName("SupportedLoginProviders");
-                    writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("SupportedLoginProviders");
+                    context.Writer.WriteObjectStart();
                     foreach (var publicRequestSupportedLoginProvidersKvp in publicRequest.SupportedLoginProviders)
                     {
-                        writer.WritePropertyName(publicRequestSupportedLoginProvidersKvp.Key);
+                        context.Writer.WritePropertyName(publicRequestSupportedLoginProvidersKvp.Key);
                         var publicRequestSupportedLoginProvidersValue = publicRequestSupportedLoginProvidersKvp.Value;
 
-                        writer.Write(publicRequestSupportedLoginProvidersValue);
+                            context.Writer.Write(publicRequestSupportedLoginProvidersValue);
                     }
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
         

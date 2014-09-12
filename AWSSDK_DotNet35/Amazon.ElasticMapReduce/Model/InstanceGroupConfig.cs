@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,23 @@ namespace Amazon.ElasticMapReduce.Model
         private MarketType _market;
         private string _name;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public InstanceGroupConfig() { }
+
+        /// <summary>
+        /// Instantiates InstanceGroupConfig with the parameterized properties
+        /// </summary>
+        /// <param name="instanceRole">The role of the instance group in the cluster.</param>
+        /// <param name="instanceType">The Amazon EC2 instance type for all instances in the instance group. </param>
+        /// <param name="instanceCount">Target number of instances for the instance group. </param>
+        public InstanceGroupConfig(InstanceRoleType instanceRole, string instanceType, int instanceCount)
+        {
+            _instanceRole = instanceRole;
+            _instanceType = instanceType;
+            _instanceCount = instanceCount;
+        }
 
         /// <summary>
         /// Gets and sets the property BidPrice. 
@@ -55,7 +76,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._bidPrice != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
@@ -73,7 +93,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceCount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceRole. 
@@ -93,7 +112,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceRole != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
@@ -112,7 +130,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Market. 
         /// <para>
@@ -130,7 +147,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._market != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 

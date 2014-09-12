@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,109 +29,93 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeObjects operation.
-    /// <para> Returns the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields
-    /// that define the properties of the object. </para>
+    /// Returns the object definitions for a set of objects associated with the pipeline.
+    /// Object definitions are composed of a set of fields that define the properties of the
+    /// object.
     /// </summary>
-    public partial class DescribeObjectsRequest : AmazonWebServiceRequest
+    public partial class DescribeObjectsRequest : AmazonDataPipelineRequest
     {
-        private string pipelineId;
-        private List<string> objectIds = new List<string>();
-        private bool? evaluateExpressions;
-        private string marker;
+        private bool? _evaluateExpressions;
+        private string _marker;
+        private List<string> _objectIds = new List<string>();
+        private string _pipelineId;
 
         /// <summary>
-        /// Identifier of the pipeline that contains the object definitions.
-        ///  
+        /// Gets and sets the property EvaluateExpressions. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Indicates whether any expressions in the object should be evaluated when the object
+        /// descriptions are returned.
         /// </para>
-        /// </summary>
-        public string PipelineId
-        {
-            get { return this.pipelineId; }
-            set { this.pipelineId = value; }
-        }
-
-        // Check to see if PipelineId property is set
-        internal bool IsSetPipelineId()
-        {
-            return this.pipelineId != null;
-        }
-
-        /// <summary>
-        /// Identifiers of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to
-        /// DescribeObjects.
-        ///  
-        /// </summary>
-        public List<string> ObjectIds
-        {
-            get { return this.objectIds; }
-            set { this.objectIds = value; }
-        }
-
-        // Check to see if ObjectIds property is set
-        internal bool IsSetObjectIds()
-        {
-            return this.objectIds.Count > 0;
-        }
-
-        /// <summary>
-        /// Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.
-        ///  
         /// </summary>
         public bool EvaluateExpressions
         {
-            get { return this.evaluateExpressions ?? default(bool); }
-            set { this.evaluateExpressions = value; }
+            get { return this._evaluateExpressions.GetValueOrDefault(); }
+            set { this._evaluateExpressions = value; }
         }
 
         // Check to see if EvaluateExpressions property is set
         internal bool IsSetEvaluateExpressions()
         {
-            return this.evaluateExpressions.HasValue;
+            return this._evaluateExpressions.HasValue; 
         }
 
         /// <summary>
-        /// The starting point for the results to be returned. The first time you call <a>DescribeObjects</a>, this value should be empty. As long as
-        /// the action returns <c>HasMoreResults</c> as <c>True</c>, you can call <a>DescribeObjects</a> again and pass the marker value from the
-        /// response to retrieve the next set of results.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The starting point for the results to be returned. The first time you call <a>DescribeObjects</a>,
+        /// this value should be empty. As long as the action returns <code>HasMoreResults</code>
+        /// as <code>True</code>, you can call <a>DescribeObjects</a> again and pass the marker
+        /// value from the response to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectIds. 
+        /// <para>
+        /// Identifiers of the pipeline objects that contain the definitions to be described.
+        /// You can pass as many as 25 identifiers in a single call to DescribeObjects.
+        /// </para>
+        /// </summary>
+        public List<string> ObjectIds
+        {
+            get { return this._objectIds; }
+            set { this._objectIds = value; }
+        }
+
+        // Check to see if ObjectIds property is set
+        internal bool IsSetObjectIds()
+        {
+            return this._objectIds != null && this._objectIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineId. 
+        /// <para>
+        /// Identifier of the pipeline that contains the object definitions.
+        /// </para>
+        /// </summary>
+        public string PipelineId
+        {
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
+        }
+
+        // Check to see if PipelineId property is set
+        internal bool IsSetPipelineId()
+        {
+            return this._pipelineId != null;
         }
 
     }
 }
-    

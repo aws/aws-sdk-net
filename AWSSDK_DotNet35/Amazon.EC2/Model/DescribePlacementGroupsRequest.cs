@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,50 +29,68 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlacementGroups operation.
-    /// <para>Describes one or more of your placement groups. For more information about placement groups and cluster instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html" >Cluster Instances</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Describes one or more of your placement groups. For more information about placement
+    /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DescribePlacementGroupsRequest : AmazonEC2Request
     {
-        private List<string> groupNames = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// One or more placement group names. Default: Describes all your placement groups, or only those otherwise specified.
-        ///  
-        /// </summary>
-        public List<string> GroupNames
-        {
-            get { return this.groupNames; }
-            set { this.groupNames = value; }
-        }
-
-        // Check to see if GroupNames property is set
-        internal bool IsSetGroupNames()
-        {
-            return this.groupNames.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _groupNames = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>group-name</c> - The name of the placement group. </li> <li> <c>state</c> - The state of the placement
-        /// group (<c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c>). </li> <li> <c>strategy</c> - The strategy of the placement
-        /// group (<c>cluster</c>). </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>group-name</code> - The name of the placement group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code>
+        /// | <code>deleting</code> | <code>deleted</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupNames. 
+        /// <para>
+        /// One or more placement group names.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Describes all your placement groups, or only those otherwise specified.
+        /// </para>
+        /// </summary>
+        public List<string> GroupNames
+        {
+            get { return this._groupNames; }
+            set { this._groupNames = value; }
+        }
+
+        // Check to see if GroupNames property is set
+        internal bool IsSetGroupNames()
+        {
+            return this._groupNames != null && this._groupNames.Count > 0; 
         }
 
     }
 }
-    

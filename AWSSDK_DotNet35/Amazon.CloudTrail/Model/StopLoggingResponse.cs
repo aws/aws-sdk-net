@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Returns information about the  StopLogging response and response metadata.
+    /// Configuration for accessing Amazon StopLogging service
     /// </summary>
     public partial class StopLoggingResponse : StopLoggingResult
     {
         /// <summary>
         /// Gets and sets the StopLoggingResult property.
-        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+        /// Represents the output of a StopLogging operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the StopLoggingResult class are now available on the StopLoggingResponse class. You should use the properties on StopLoggingResponse instead of accessing them through StopLoggingResult.")]
         public StopLoggingResult StopLoggingResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudTrail.Model
         }
     }
 }
-    

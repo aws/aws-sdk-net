@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListClusters Request Marshaller
     /// </summary>       
-    public class ListClustersRequestMarshaller : IMarshaller<IRequest, ListClustersRequest> 
+    public class ListClustersRequestMarshaller : IMarshaller<IRequest, ListClustersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListClustersRequest)input);
+        }
+
         public IRequest Marshall(ListClustersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,33 +56,34 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClusterStates())
                 {
-                    writer.WritePropertyName("ClusterStates");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("ClusterStates");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestClusterStatesListValue in publicRequest.ClusterStates)
                     {
-                        writer.Write(publicRequestClusterStatesListValue);
+                            context.Writer.Write(publicRequestClusterStatesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetCreatedAfter())
                 {
-                    writer.WritePropertyName("CreatedAfter");
-                    writer.Write(publicRequest.CreatedAfter);
+                    context.Writer.WritePropertyName("CreatedAfter");
+                    context.Writer.Write(publicRequest.CreatedAfter);
                 }
 
                 if(publicRequest.IsSetCreatedBefore())
                 {
-                    writer.WritePropertyName("CreatedBefore");
-                    writer.Write(publicRequest.CreatedBefore);
+                    context.Writer.WritePropertyName("CreatedBefore");
+                    context.Writer.Write(publicRequest.CreatedBefore);
                 }
 
                 if(publicRequest.IsSetMarker())
                 {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(publicRequest.Marker);
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
                 }
 
         

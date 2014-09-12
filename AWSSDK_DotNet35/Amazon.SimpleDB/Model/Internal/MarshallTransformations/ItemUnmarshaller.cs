@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleDB.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Item Unmarshaller
-     /// </summary>
-    internal class ItemUnmarshaller : IUnmarshaller<Item, XmlUnmarshallerContext>, IUnmarshaller<Item, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Item Object
+    /// </summary>  
+    public class ItemUnmarshaller : IUnmarshaller<Item, XmlUnmarshallerContext>, IUnmarshaller<Item, JsonUnmarshallerContext>
     {
-        public Item Unmarshall(XmlUnmarshallerContext context) 
+        public Item Unmarshall(XmlUnmarshallerContext context)
         {
-            Item item = new Item();
+            Item unmarshalledObject = new Item();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Name", targetDepth))
+                    if (context.TestExpression("AlternateNameEncoding", targetDepth))
                     {
-                        item.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Name/@encoding", targetDepth))
-                    {
-                        item.AlternateNameEncoding = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AlternateNameEncoding = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Attribute", targetDepth))
                     {
-                        item.Attributes.Add(AttributeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AttributeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Attributes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return item;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return item;
+            return unmarshalledObject;
         }
 
-        public Item Unmarshall(JsonUnmarshallerContext context) 
+        public Item Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ItemUnmarshaller instance;
 
-        public static ItemUnmarshaller GetInstance() 
+        private static ItemUnmarshaller _instance = new ItemUnmarshaller();        
+
+        public static ItemUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ItemUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

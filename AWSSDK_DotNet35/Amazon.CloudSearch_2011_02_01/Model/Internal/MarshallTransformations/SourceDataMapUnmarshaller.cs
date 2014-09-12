@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SourceDataMap Unmarshaller
-     /// </summary>
-    internal class SourceDataMapUnmarshaller : IUnmarshaller<SourceDataMap, XmlUnmarshallerContext>, IUnmarshaller<SourceDataMap, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SourceDataMap Object
+    /// </summary>  
+    public class SourceDataMapUnmarshaller : IUnmarshaller<SourceDataMap, XmlUnmarshallerContext>, IUnmarshaller<SourceDataMap, JsonUnmarshallerContext>
     {
-        public SourceDataMap Unmarshall(XmlUnmarshallerContext context) 
+        public SourceDataMap Unmarshall(XmlUnmarshallerContext context)
         {
-            SourceDataMap sourceDataMap = new SourceDataMap();
+            SourceDataMap unmarshalledObject = new SourceDataMap();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SourceName", targetDepth))
+                    if (context.TestExpression("Cases/entry", targetDepth))
                     {
-                        sourceDataMap.SourceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Cases.Add(item);
                         continue;
                     }
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        sourceDataMap.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Cases/entry", targetDepth))
+                    if (context.TestExpression("SourceName", targetDepth))
                     {
-                        KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                        KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                        sourceDataMap.Cases.Add(kvp.Key, kvp.Value);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sourceDataMap;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return sourceDataMap;
+            return unmarshalledObject;
         }
 
-        public SourceDataMap Unmarshall(JsonUnmarshallerContext context) 
+        public SourceDataMap Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SourceDataMapUnmarshaller instance;
 
-        public static SourceDataMapUnmarshaller GetInstance() 
+        private static SourceDataMapUnmarshaller _instance = new SourceDataMapUnmarshaller();        
+
+        public static SourceDataMapUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SourceDataMapUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

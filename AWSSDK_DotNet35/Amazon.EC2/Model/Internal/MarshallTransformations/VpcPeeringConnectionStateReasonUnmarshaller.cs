@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpcPeeringConnectionStateReason Unmarshaller
-     /// </summary>
-    internal class VpcPeeringConnectionStateReasonUnmarshaller : IUnmarshaller<VpcPeeringConnectionStateReason, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnectionStateReason, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpcPeeringConnectionStateReason Object
+    /// </summary>  
+    public class VpcPeeringConnectionStateReasonUnmarshaller : IUnmarshaller<VpcPeeringConnectionStateReason, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnectionStateReason, JsonUnmarshallerContext>
     {
-        public VpcPeeringConnectionStateReason Unmarshall(XmlUnmarshallerContext context) 
+        public VpcPeeringConnectionStateReason Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcPeeringConnectionStateReason vpcPeeringConnectionStateReason = new VpcPeeringConnectionStateReason();
+            VpcPeeringConnectionStateReason unmarshalledObject = new VpcPeeringConnectionStateReason();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("code", targetDepth))
                     {
-                        vpcPeeringConnectionStateReason.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("message", targetDepth))
                     {
-                        vpcPeeringConnectionStateReason.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpcPeeringConnectionStateReason;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpcPeeringConnectionStateReason;
+            return unmarshalledObject;
         }
 
-        public VpcPeeringConnectionStateReason Unmarshall(JsonUnmarshallerContext context) 
+        public VpcPeeringConnectionStateReason Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpcPeeringConnectionStateReasonUnmarshaller instance;
 
-        public static VpcPeeringConnectionStateReasonUnmarshaller GetInstance() 
+        private static VpcPeeringConnectionStateReasonUnmarshaller _instance = new VpcPeeringConnectionStateReasonUnmarshaller();        
+
+        public static VpcPeeringConnectionStateReasonUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpcPeeringConnectionStateReasonUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

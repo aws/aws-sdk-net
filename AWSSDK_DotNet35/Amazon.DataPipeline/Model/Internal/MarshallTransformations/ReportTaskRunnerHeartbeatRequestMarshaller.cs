@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Report Task Runner Heartbeat Request Marshaller
+    /// ReportTaskRunnerHeartbeat Request Marshaller
     /// </summary>       
-    internal class ReportTaskRunnerHeartbeatRequestMarshaller : IMarshaller<IRequest, ReportTaskRunnerHeartbeatRequest> 
+    public class ReportTaskRunnerHeartbeatRequestMarshaller : IMarshaller<IRequest, ReportTaskRunnerHeartbeatRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ReportTaskRunnerHeartbeatRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(reportTaskRunnerHeartbeatRequest, "AmazonDataPipeline");
+        public IRequest Marshall(ReportTaskRunnerHeartbeatRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.ReportTaskRunnerHeartbeat";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (reportTaskRunnerHeartbeatRequest != null && reportTaskRunnerHeartbeatRequest.IsSetTaskrunnerId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetHostname())
                 {
-                    writer.WritePropertyName("taskrunnerId");
-                    writer.Write(reportTaskRunnerHeartbeatRequest.TaskrunnerId);
-                }
-                if (reportTaskRunnerHeartbeatRequest != null && reportTaskRunnerHeartbeatRequest.IsSetWorkerGroup()) 
-                {
-                    writer.WritePropertyName("workerGroup");
-                    writer.Write(reportTaskRunnerHeartbeatRequest.WorkerGroup);
-                }
-                if (reportTaskRunnerHeartbeatRequest != null && reportTaskRunnerHeartbeatRequest.IsSetHostname()) 
-                {
-                    writer.WritePropertyName("hostname");
-                    writer.Write(reportTaskRunnerHeartbeatRequest.Hostname);
+                    context.Writer.WritePropertyName("hostname");
+                    context.Writer.Write(publicRequest.Hostname);
                 }
 
+                if(publicRequest.IsSetTaskrunnerId())
+                {
+                    context.Writer.WritePropertyName("taskrunnerId");
+                    context.Writer.Write(publicRequest.TaskrunnerId);
+                }
+
+                if(publicRequest.IsSetWorkerGroup())
+                {
+                    context.Writer.WritePropertyName("workerGroup");
+                    context.Writer.Write(publicRequest.WorkerGroup);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

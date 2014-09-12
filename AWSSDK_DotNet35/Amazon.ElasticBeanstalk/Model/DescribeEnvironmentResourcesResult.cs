@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,17 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Result message containing a list of environment resource         descriptions.
+    /// Result message containing a list of environment resource descriptions.
     /// </summary>
     public partial class DescribeEnvironmentResourcesResult : AmazonWebServiceResponse
     {
         private EnvironmentResourceDescription _environmentResources;
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentResources. 
         /// <para>
-        ///          A list of         <a>EnvironmentResourceDescription</a>.      
+        ///  A list of <a>EnvironmentResourceDescription</a>. 
         /// </para>
         /// </summary>
         public EnvironmentResourceDescription EnvironmentResources

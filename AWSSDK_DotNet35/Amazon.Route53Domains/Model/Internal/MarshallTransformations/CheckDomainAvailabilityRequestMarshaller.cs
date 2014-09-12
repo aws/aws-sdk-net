@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// CheckDomainAvailability Request Marshaller
     /// </summary>       
-    public class CheckDomainAvailabilityRequestMarshaller : IMarshaller<IRequest, CheckDomainAvailabilityRequest> 
+    public class CheckDomainAvailabilityRequestMarshaller : IMarshaller<IRequest, CheckDomainAvailabilityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CheckDomainAvailabilityRequest)input);
+        }
+
         public IRequest Marshall(CheckDomainAvailabilityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
@@ -47,16 +56,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDomainName())
                 {
-                    writer.WritePropertyName("DomainName");
-                    writer.Write(publicRequest.DomainName);
+                    context.Writer.WritePropertyName("DomainName");
+                    context.Writer.Write(publicRequest.DomainName);
                 }
 
                 if(publicRequest.IsSetIdnLangCode())
                 {
-                    writer.WritePropertyName("IdnLangCode");
-                    writer.Write(publicRequest.IdnLangCode);
+                    context.Writer.WritePropertyName("IdnLangCode");
+                    context.Writer.Write(publicRequest.IdnLangCode);
                 }
 
         

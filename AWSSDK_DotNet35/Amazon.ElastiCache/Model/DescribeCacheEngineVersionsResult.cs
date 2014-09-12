@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.ElastiCache.Model
         private List<CacheEngineVersion> _cacheEngineVersions = new List<CacheEngineVersion>();
         private string _marker;
 
-
         /// <summary>
         /// Gets and sets the property CacheEngineVersions. 
         /// <para>
@@ -50,7 +53,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheEngineVersions != null && this._cacheEngineVersions.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Marker. 

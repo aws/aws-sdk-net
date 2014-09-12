@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkAclsResult : AmazonWebServiceResponse
     {
-        
-        private List<NetworkAcl> networkAcls = new List<NetworkAcl>();
-
+        private List<NetworkAcl> _networkAcls = new List<NetworkAcl>();
 
         /// <summary>
+        /// Gets and sets the property NetworkAcls. 
+        /// <para>
         /// Information about one or more network ACLs.
-        ///  
+        /// </para>
         /// </summary>
         public List<NetworkAcl> NetworkAcls
         {
-            get { return this.networkAcls; }
-            set { this.networkAcls = value; }
+            get { return this._networkAcls; }
+            set { this._networkAcls = value; }
         }
 
         // Check to see if NetworkAcls property is set
         internal bool IsSetNetworkAcls()
         {
-            return this.networkAcls.Count > 0;
+            return this._networkAcls != null && this._networkAcls.Count > 0; 
         }
+
     }
 }

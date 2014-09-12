@@ -1,0 +1,76 @@
+﻿<#@ template language="C#" inherits="BaseResponseUnmarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
+    {
+        public <#=this.UnmarshallerBaseName #> Unmarshall(XmlUnmarshallerContext context)
+        {
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
+			int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
+            while (context.Read())
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+<#
+    if(this.Structure != null)
+    {
+        // For every member, generate code to add the unmarshalled member to the response object
+        foreach (var member in this.Structure.Members)
+        {
+			if(member.Shape.IsList)
+			{
+#>
+					if (context.TestExpression("<#=member.MarshallName#>/<#=member.Shape.ListMarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						unmarshalledObject.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+						continue;
+					}
+<#
+			}
+			else
+			{
+#>
+					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#
+			}
+        }
+    }
+#>
+				}
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
+            }          
+            return unmarshalledObject;
+        }
+
+<#
+    this.AddStructureSingletonMethod();
+#>
+    }
+}

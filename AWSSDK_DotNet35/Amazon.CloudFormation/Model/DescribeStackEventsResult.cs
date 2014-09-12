@@ -12,64 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for a DescribeStackEvents action.</para>
+    /// The output for a <a>DescribeStackEvents</a> action.
     /// </summary>
     public partial class DescribeStackEventsResult : AmazonWebServiceResponse
     {
-        
-        private List<StackEvent> stackEvents = new List<StackEvent>();
-        private string nextToken;
-
+        private string _nextToken;
+        private List<StackEvent> _stackEvents = new List<StackEvent>();
 
         /// <summary>
-        /// A list of <c>StackEvents</c> structures.
-        ///  
-        /// </summary>
-        public List<StackEvent> StackEvents
-        {
-            get { return this.stackEvents; }
-            set { this.stackEvents = value; }
-        }
-
-        // Check to see if StackEvents property is set
-        internal bool IsSetStackEvents()
-        {
-            return this.stackEvents.Count > 0;
-        }
-
-        /// <summary>
-        /// String that identifies the start of the next list of events, if there is one.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// String that identifies the start of the next list of events, if there is one.
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property StackEvents. 
+        /// <para>
+        /// A list of <code>StackEvents</code> structures.
+        /// </para>
+        /// </summary>
+        public List<StackEvent> StackEvents
+        {
+            get { return this._stackEvents; }
+            set { this._stackEvents = value; }
+        }
+
+        // Check to see if StackEvents property is set
+        internal bool IsSetStackEvents()
+        {
+            return this._stackEvents != null && this._stackEvents.Count > 0; 
+        }
+
     }
 }

@@ -12,72 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The desired instance type and desired number of replicas of each index partition.</para>
+    /// The desired instance type and desired number of replicas of each index partition.
     /// </summary>
     public partial class ScalingParameters
     {
-        
-        private PartitionInstanceType desiredInstanceType;
-        private int? desiredReplicationCount;
-
+        private PartitionInstanceType _desiredInstanceType;
+        private int? _desiredPartitionCount;
+        private int? _desiredReplicationCount;
 
         /// <summary>
-        /// The instance type that you want to preconfigure for your domain. For example, <c>search.m1.small</c>.
-        ///  
+        /// Gets and sets the property DesiredInstanceType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>search.m1.small, search.m1.large, search.m2.xlarge, search.m2.2xlarge</description>
-        ///     </item>
-        /// </list>
+        /// The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
         /// </para>
         /// </summary>
         public PartitionInstanceType DesiredInstanceType
         {
-            get { return this.desiredInstanceType; }
-            set { this.desiredInstanceType = value; }
+            get { return this._desiredInstanceType; }
+            set { this._desiredInstanceType = value; }
         }
 
         // Check to see if DesiredInstanceType property is set
         internal bool IsSetDesiredInstanceType()
         {
-            return this.desiredInstanceType != null;
+            return this._desiredInstanceType != null;
         }
 
         /// <summary>
-        /// The number of replicas you want to preconfigure for each index partition.
-        ///  
+        /// Gets and sets the property DesiredPartitionCount. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - </description>
-        ///     </item>
-        /// </list>
+        /// The number of partitions you want to preconfigure for your domain. Only valid when
+        /// you select <code>m2.2xlarge</code> as the desired instance type.
+        /// </para>
+        /// </summary>
+        public int DesiredPartitionCount
+        {
+            get { return this._desiredPartitionCount.GetValueOrDefault(); }
+            set { this._desiredPartitionCount = value; }
+        }
+
+        // Check to see if DesiredPartitionCount property is set
+        internal bool IsSetDesiredPartitionCount()
+        {
+            return this._desiredPartitionCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredReplicationCount. 
+        /// <para>
+        /// The number of replicas you want to preconfigure for each index partition.
         /// </para>
         /// </summary>
         public int DesiredReplicationCount
         {
-            get { return this.desiredReplicationCount ?? default(int); }
-            set { this.desiredReplicationCount = value; }
+            get { return this._desiredReplicationCount.GetValueOrDefault(); }
+            set { this._desiredReplicationCount = value; }
         }
 
         // Check to see if DesiredReplicationCount property is set
         internal bool IsSetDesiredReplicationCount()
         {
-            return this.desiredReplicationCount.HasValue;
+            return this._desiredReplicationCount.HasValue; 
         }
+
     }
 }

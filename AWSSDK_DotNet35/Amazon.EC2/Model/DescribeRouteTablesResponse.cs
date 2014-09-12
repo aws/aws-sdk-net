@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeRouteTables response and response metadata.
+    /// Configuration for accessing Amazon DescribeRouteTables service
     /// </summary>
     public partial class DescribeRouteTablesResponse : DescribeRouteTablesResult
     {
         /// <summary>
         /// Gets and sets the DescribeRouteTablesResult property.
-        /// 
+        /// Represents the output of a DescribeRouteTables operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeRouteTablesResult class are now available on the DescribeRouteTablesResponse class. You should use the properties on DescribeRouteTablesResponse instead of accessing them through DescribeRouteTablesResult.")]
         public DescribeRouteTablesResult DescribeRouteTablesResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

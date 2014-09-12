@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DomainInfos Object
+    /// </summary>  
+    public class DomainInfosUnmarshaller : IUnmarshaller<DomainInfos, XmlUnmarshallerContext>, IUnmarshaller<DomainInfos, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DomainInfosUnmarshaller
-      /// </summary>
-      internal class DomainInfosUnmarshaller : IUnmarshaller<DomainInfos, XmlUnmarshallerContext>, IUnmarshaller<DomainInfos, JsonUnmarshallerContext>
-      {
         DomainInfos IUnmarshaller<DomainInfos, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DomainInfos Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DomainInfos domainInfos = new DomainInfos();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DomainInfos unmarshalledObject = new DomainInfos();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("domainInfos", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<DomainInfo,DomainInfoUnmarshaller>(
-                    DomainInfoUnmarshaller.GetInstance());                  
-                domainInfos.Infos = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("nextPageToken", targetDepth))
-              {
-                domainInfos.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("domainInfos", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DomainInfo, DomainInfoUnmarshaller>(DomainInfoUnmarshaller.Instance);
+                    unmarshalledObject.Infos = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return domainInfos;
+            return unmarshalledObject;
         }
 
-        private static DomainInfosUnmarshaller instance;
-        public static DomainInfosUnmarshaller GetInstance()
+
+        private static DomainInfosUnmarshaller _instance = new DomainInfosUnmarshaller();        
+
+        public static DomainInfosUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DomainInfosUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

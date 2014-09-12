@@ -12,39 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DescribeAvailabilityOptions</c> request. Indicates whether or not the Multi-AZ option is enabled for the domain
-    /// specified in the request. </para>
+    /// The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether
+    /// or not the Multi-AZ option is enabled for the domain specified in the request.
     /// </summary>
     public partial class DescribeAvailabilityOptionsResult : AmazonWebServiceResponse
     {
-        
-        private AvailabilityOptionsStatus availabilityOptions;
-
+        private AvailabilityOptionsStatus _availabilityOptions;
 
         /// <summary>
-        /// The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain.
-        ///  
+        /// Gets and sets the property AvailabilityOptions. 
+        /// <para>
+        /// The availability options configured for the domain. Indicates whether Multi-AZ is
+        /// enabled for the domain. 
+        /// </para>
         /// </summary>
         public AvailabilityOptionsStatus AvailabilityOptions
         {
-            get { return this.availabilityOptions; }
-            set { this.availabilityOptions = value; }
+            get { return this._availabilityOptions; }
+            set { this._availabilityOptions = value; }
         }
 
         // Check to see if AvailabilityOptions property is set
         internal bool IsSetAvailabilityOptions()
         {
-            return this.availabilityOptions != null;
+            return this._availabilityOptions != null;
         }
+
     }
 }

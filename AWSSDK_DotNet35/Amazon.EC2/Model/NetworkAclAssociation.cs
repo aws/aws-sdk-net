@@ -12,71 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an association between a network ACL and a subnet.</para>
+    /// Describes an association between a network ACL and a subnet.
     /// </summary>
     public partial class NetworkAclAssociation
     {
-        
-        private string networkAclAssociationId;
-        private string networkAclId;
-        private string subnetId;
-
+        private string _networkAclAssociationId;
+        private string _networkAclId;
+        private string _subnetId;
 
         /// <summary>
+        /// Gets and sets the property NetworkAclAssociationId. 
+        /// <para>
         /// The ID of the association between a network ACL and a subnet.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkAclAssociationId
         {
-            get { return this.networkAclAssociationId; }
-            set { this.networkAclAssociationId = value; }
+            get { return this._networkAclAssociationId; }
+            set { this._networkAclAssociationId = value; }
         }
 
         // Check to see if NetworkAclAssociationId property is set
         internal bool IsSetNetworkAclAssociationId()
         {
-            return this.networkAclAssociationId != null;
+            return this._networkAclAssociationId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkAclId. 
+        /// <para>
         /// The ID of the network ACL.
-        ///  
+        /// </para>
         /// </summary>
         public string NetworkAclId
         {
-            get { return this.networkAclId; }
-            set { this.networkAclId = value; }
+            get { return this._networkAclId; }
+            set { this._networkAclId = value; }
         }
 
         // Check to see if NetworkAclId property is set
         internal bool IsSetNetworkAclId()
         {
-            return this.networkAclId != null;
+            return this._networkAclId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
         /// The ID of the subnet.
-        ///  
+        /// </para>
         /// </summary>
         public string SubnetId
         {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
         }
 
         // Check to see if SubnetId property is set
         internal bool IsSetSubnetId()
         {
-            return this.subnetId != null;
+            return this._subnetId != null;
         }
+
     }
 }

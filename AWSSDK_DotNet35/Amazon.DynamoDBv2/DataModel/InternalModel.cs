@@ -722,7 +722,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static void PopulateConfigFromMappings(ItemStorageConfig config, Dictionary<Type, TypeMapping> typeMappings)
         {
-            var baseType = config.TargetTypeInfo.BaseType;
+            var baseType = config.TargetTypeInfo.Type;
             TypeMapping typeMapping;
             if (typeMappings.TryGetValue(baseType, out typeMapping))
             {

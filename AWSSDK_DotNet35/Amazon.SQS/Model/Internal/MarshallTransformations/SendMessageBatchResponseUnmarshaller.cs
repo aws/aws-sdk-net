@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -122,7 +126,6 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             }
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static SendMessageBatchResponseUnmarshaller _instance = new SendMessageBatchResponseUnmarshaller();        
 
         internal static SendMessageBatchResponseUnmarshaller GetInstance()

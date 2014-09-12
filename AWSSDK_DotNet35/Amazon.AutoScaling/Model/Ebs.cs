@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.AutoScaling.Model
         private int? _volumeSize;
         private string _volumeType;
 
-
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
@@ -56,7 +59,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._deleteOnTermination.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Iops. 
@@ -88,7 +90,6 @@ namespace Amazon.AutoScaling.Model
             return this._iops.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
@@ -106,7 +107,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._snapshotId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VolumeSize. 
@@ -139,7 +139,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._volumeSize.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VolumeType. 

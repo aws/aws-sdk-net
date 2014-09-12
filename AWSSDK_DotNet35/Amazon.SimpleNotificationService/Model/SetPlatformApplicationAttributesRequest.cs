@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _platformApplicationArn;
-
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -66,7 +69,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._attributes != null && this._attributes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PlatformApplicationArn. 

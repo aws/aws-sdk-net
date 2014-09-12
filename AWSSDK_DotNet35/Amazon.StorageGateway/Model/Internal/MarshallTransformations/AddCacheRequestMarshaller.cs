@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,58 +33,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Cache Request Marshaller
+    /// AddCache Request Marshaller
     /// </summary>       
-    internal class AddCacheRequestMarshaller : IMarshaller<IRequest, AddCacheRequest> 
+    public class AddCacheRequestMarshaller : IMarshaller<IRequest, AddCacheRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(AddCacheRequest addCacheRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((AddCacheRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(addCacheRequest, "AmazonStorageGateway");
+        public IRequest Marshall(AddCacheRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.AddCache";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (addCacheRequest != null && addCacheRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDiskIds())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(addCacheRequest.GatewayARN);
-                }
-
-                if (addCacheRequest != null && addCacheRequest.DiskIds != null && addCacheRequest.DiskIds.Count > 0) 
-                {
-                    List<string> diskIdsList = addCacheRequest.DiskIds;
-                    writer.WritePropertyName("DiskIds");
-                    writer.WriteArrayStart();
-
-                    foreach (string diskIdsListValue in diskIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(diskIdsListValue));
+                    context.Writer.WritePropertyName("DiskIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDiskIdsListValue in publicRequest.DiskIds)
+                    {
+                            context.Writer.Write(publicRequestDiskIdsListValue);
                     }
-
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGatewayARN())
+                {
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

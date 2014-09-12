@@ -1,0 +1,11 @@
+{
+  "noArgOverloads": [
+    "CreateStorageLocation",
+    "DescribeApplicationVersions",
+    "DescribeApplications",
+    "DescribeConfigurationOptions",
+    "DescribeEnvironments",
+    "DescribeEvents",
+    "ListAvailableSolutionStacks"
+  ]
+}

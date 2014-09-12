@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,7 +47,6 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private AppType _type;
 
-
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
@@ -61,7 +64,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._appId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AppSource. 
@@ -81,7 +83,6 @@ namespace Amazon.OpsWorks.Model
             return this._appSource != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
@@ -99,7 +100,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._attributes != null && this._attributes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -119,7 +119,6 @@ namespace Amazon.OpsWorks.Model
             return this._createdAt != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
@@ -138,7 +137,6 @@ namespace Amazon.OpsWorks.Model
             return this._dataSources != null && this._dataSources.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -156,7 +154,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Domains. 
@@ -177,7 +174,6 @@ namespace Amazon.OpsWorks.Model
             return this._domains != null && this._domains.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EnableSsl. 
         /// <para>
@@ -195,7 +191,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._enableSsl.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Environment. 
@@ -217,7 +212,6 @@ namespace Amazon.OpsWorks.Model
             return this._environment != null && this._environment.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -235,7 +229,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Shortname. 
@@ -255,7 +248,6 @@ namespace Amazon.OpsWorks.Model
             return this._shortname != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SslConfiguration. 
         /// <para>
@@ -274,7 +266,6 @@ namespace Amazon.OpsWorks.Model
             return this._sslConfiguration != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -292,7 +283,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Type. 

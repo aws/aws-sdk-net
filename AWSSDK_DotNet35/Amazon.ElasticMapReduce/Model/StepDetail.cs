@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.ElasticMapReduce.Model
         private StepExecutionStatusDetail _executionStatusDetail;
         private StepConfig _stepConfig;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public StepDetail() { }
+
+        /// <summary>
+        /// Instantiates StepDetail with the parameterized properties
+        /// </summary>
+        /// <param name="stepConfig">The step configuration.</param>
+        /// <param name="executionStatusDetail">The description of the step status.</param>
+        public StepDetail(StepConfig stepConfig, StepExecutionStatusDetail executionStatusDetail)
+        {
+            _stepConfig = stepConfig;
+            _executionStatusDetail = executionStatusDetail;
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionStatusDetail. 
@@ -49,7 +68,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._executionStatusDetail != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StepConfig. 

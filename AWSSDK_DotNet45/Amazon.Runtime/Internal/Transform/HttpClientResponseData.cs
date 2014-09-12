@@ -32,25 +32,24 @@ namespace Amazon.Runtime.Internal.Transform
         internal HttpClientResponseData(HttpResponseMessage response)
         {
             this._response = response;
-        }
 
-        public HttpStatusCode StatusCode
-        {
-            get { return this._response.StatusCode; }
-        }
+            this.StatusCode = _response.StatusCode;
+            this.IsSuccessStatusCode = _response.IsSuccessStatusCode;
+            this.ContentLength = _response.Content.Headers.ContentLength ?? 0;
 
-        public Task<Stream> OpenResponseAsync()
-        {
-            return this._response.Content.ReadAsStreamAsync();
-        }
-
-        public string ContentType
-        {
-            get
+            if (_response.Content.Headers.ContentType != null)
             {
-                return GetHeaderValue("Content-Type");
+                this.ContentType = _response.Content.Headers.ContentType.MediaType;            
             }
         }
+
+        public HttpStatusCode StatusCode { get; private set; }
+
+        public bool IsSuccessStatusCode { get; private set; }
+
+        public string ContentType { get; private set; }        
+
+        public long ContentLength { get; private set; }
 
         public string GetHeaderValue(string headerName)
         {
@@ -98,5 +97,59 @@ namespace Amazon.Runtime.Internal.Transform
             _headerNames = headerNames.ToArray();
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
         }
+
+        public IHttpResponseBody ResponseBody
+        {
+            get { return new HttpResponseMessageBody(_response); }
+        }
+    }
+
+    public class HttpResponseMessageBody : IHttpResponseBody
+    {
+        HttpResponseMessage _response;
+        bool _disposed = false;
+
+        public HttpResponseMessageBody(HttpResponseMessage response)
+        {
+            _response = response;
+        }
+
+        public Stream OpenResponse()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException("HttpWebResponseBody");
+
+            return _response.Content.ReadAsStreamAsync().Result;
+        }
+
+        public Task<Stream> OpenResponseAsync()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException("HttpWebResponseBody");
+
+            return _response.Content.ReadAsStreamAsync();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                if (_response != null)
+                    _response.Dispose();
+
+                _disposed = true;
+            }
+        }
+
+        
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,15 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveEnvironmentInfo operation.
-    /// Retrieves the compiled information from a         <a>RequestEnvironmentInfo</a>
-    ///         request.      
+    /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
     /// 
-    ///        
+    /// 
+    ///  
     /// <para>
     /// Related Topics
     /// </para>
-    ///       <ul>             <li>            <a>RequestEnvironmentInfo</a>         </li>
-    ///      </ul>
+    ///  <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
     /// </summary>
     public partial class RetrieveEnvironmentInfoRequest : AmazonElasticBeanstalkRequest
     {
@@ -41,22 +44,35 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private EnvironmentInfoType _infoType;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RetrieveEnvironmentInfoRequest() { }
+
+        /// <summary>
+        /// Instantiates RetrieveEnvironmentInfoRequest with the parameterized properties
+        /// </summary>
+        /// <param name="infoType"> The type of information to retrieve. </param>
+        public RetrieveEnvironmentInfoRequest(EnvironmentInfoType infoType)
+        {
+            _infoType = infoType;
+        }
 
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of the data's environment.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no such environment is found, returns an         <code>InvalidParameterValue</code>
-        ///         error.      
+        ///  If no such environment is found, returns an <code>InvalidParameterValue</code> error.
+        /// 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentName, or both. 
-        ///          If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -71,22 +87,21 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// The name of the data's environment.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no such environment is found, returns an         <code>InvalidParameterValue</code>
-        ///         error.      
+        ///  If no such environment is found, returns an <code>InvalidParameterValue</code> error.
+        /// 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentId, or both.   
-        ///        If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -101,11 +116,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InfoType. 
         /// <para>
-        ///          The type of information to retrieve.       
+        ///  The type of information to retrieve. 
         /// </para>
         /// </summary>
         public EnvironmentInfoType InfoType

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,72 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeDBSubnetGroups action. </para>
+    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+    /// action.
     /// </summary>
-    public class Subnet
+    public partial class Subnet
     {
-        
-        private string subnetIdentifier;
-        private AvailabilityZone subnetAvailabilityZone;
-        private string subnetStatus;
-
+        private AvailabilityZone _subnetAvailabilityZone;
+        private string _subnetIdentifier;
+        private string _subnetStatus;
 
         /// <summary>
-        /// Specifies the identifier of the subnet.
-        ///  
-        /// </summary>
-        public string SubnetIdentifier
-        {
-            get { return this.subnetIdentifier; }
-            set { this.subnetIdentifier = value; }
-        }
-
-        // Check to see if SubnetIdentifier property is set
-        internal bool IsSetSubnetIdentifier()
-        {
-            return this.subnetIdentifier != null;
-        }
-
-        /// <summary>
-        /// Contains Availability Zone information. This data type is used as an element in the following data type: <ul>
-        /// <li><a>OrderableDBInstanceOption</a></li> </ul>
-        ///  
+        /// Gets and sets the property SubnetAvailabilityZone.
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
         {
-            get { return this.subnetAvailabilityZone; }
-            set { this.subnetAvailabilityZone = value; }
+            get { return this._subnetAvailabilityZone; }
+            set { this._subnetAvailabilityZone = value; }
         }
 
         // Check to see if SubnetAvailabilityZone property is set
         internal bool IsSetSubnetAvailabilityZone()
         {
-            return this.subnetAvailabilityZone != null;
+            return this._subnetAvailabilityZone != null;
         }
 
         /// <summary>
-        /// Specifies the status of the subnet.
-        ///  
+        /// Gets and sets the property SubnetIdentifier. 
+        /// <para>
+        ///  Specifies the identifier of the subnet. 
+        /// </para>
+        /// </summary>
+        public string SubnetIdentifier
+        {
+            get { return this._subnetIdentifier; }
+            set { this._subnetIdentifier = value; }
+        }
+
+        // Check to see if SubnetIdentifier property is set
+        internal bool IsSetSubnetIdentifier()
+        {
+            return this._subnetIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetStatus. 
+        /// <para>
+        ///  Specifies the status of the subnet. 
+        /// </para>
         /// </summary>
         public string SubnetStatus
         {
-            get { return this.subnetStatus; }
-            set { this.subnetStatus = value; }
+            get { return this._subnetStatus; }
+            set { this._subnetStatus = value; }
         }
 
         // Check to see if SubnetStatus property is set
         internal bool IsSetSubnetStatus()
         {
-            return this.subnetStatus != null;
+            return this._subnetStatus != null;
         }
+
     }
 }

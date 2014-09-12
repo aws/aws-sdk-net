@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,19 @@ namespace Amazon.IdentityManagement.Model
         private string _marker;
         private int? _maxItems;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates GetGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="groupName">Name of the group.</param>
+        public GetGroupRequest(string groupName)
+        {
+            _groupName = groupName;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupName. 
@@ -52,7 +69,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._groupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -73,7 +89,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxItems. 

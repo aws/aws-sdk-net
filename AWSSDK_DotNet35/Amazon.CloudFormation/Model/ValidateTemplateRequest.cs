@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,69 +29,63 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateTemplate operation.
-    /// <para>Validates a specified template.</para>
+    /// Validates a specified template.
     /// </summary>
     public partial class ValidateTemplateRequest : AmazonCloudFormationRequest
     {
-        private string templateBody;
-        private string templateURL;
-
+        private string _templateBody;
+        private string _templateURL;
 
         /// <summary>
-        /// String containing the template body. (For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation
-        /// User Guide.) Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
+        /// Gets and sets the property TemplateBody. 
+        /// <para>
+        /// Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// length of 51,200 bytes. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>.
+        /// If both are passed, only <code>TemplateBody</code> is used.
         /// </para>
         /// </summary>
         public string TemplateBody
         {
-            get { return this.templateBody; }
-            set { this.templateBody = value; }
+            get { return this._templateBody; }
+            set { this._templateBody = value; }
         }
 
         // Check to see if TemplateBody property is set
         internal bool IsSetTemplateBody()
         {
-            return this.templateBody != null;
+            return this._templateBody != null;
         }
 
         /// <summary>
-        /// Location of file containing the template body. The URL must point to a template (max size: 307,200 bytes) located in an S3 bucket in the
-        /// same region as the stack. For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation
-        /// User Guide. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
+        /// Gets and sets the property TemplateURL. 
+        /// <para>
+        /// Location of file containing the template body. The URL must point to a template (max
+        /// size: 307,200 bytes) located in an S3 bucket in the same region as the stack. For
+        /// more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// Anatomy</a> in the AWS CloudFormation User Guide.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>.
+        /// If both are passed, only <code>TemplateBody</code> is used.
         /// </para>
         /// </summary>
         public string TemplateURL
         {
-            get { return this.templateURL; }
-            set { this.templateURL = value; }
+            get { return this._templateURL; }
+            set { this._templateURL = value; }
         }
 
         // Check to see if TemplateURL property is set
         internal bool IsSetTemplateURL()
         {
-            return this.templateURL != null;
+            return this._templateURL != null;
         }
 
     }
 }
-    

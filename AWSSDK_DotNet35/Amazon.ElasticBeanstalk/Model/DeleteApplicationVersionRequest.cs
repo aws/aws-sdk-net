@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,11 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationVersion operation.
-    /// Deletes the specified version from the specified         application.   
-    ///   
-    /// 
-    ///       <note>You cannot delete an application version that is associated with a   
-    ///      running environment.</note>
+    /// Deletes the specified version from the specified application.
     /// </summary>
     public partial class DeleteApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
@@ -37,6 +37,21 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? _deleteSourceBundle;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteApplicationVersionRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteApplicationVersionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName">The name of the application to delete releases from.</param>
+        /// <param name="versionLabel"> The label of the version to delete. </param>
+        public DeleteApplicationVersionRequest(string applicationName, string versionLabel)
+        {
+            _applicationName = applicationName;
+            _versionLabel = versionLabel;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -56,19 +71,17 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DeleteSourceBundle. 
         /// <para>
-        /// Indicates whether to delete the associated source bundle from Amazon S3:      
+        /// Indicates whether to delete the associated source bundle from Amazon S3: 
         /// </para>
-        ///       <ul>         <li>            <code>true</code>: An attempt is made to delete
-        /// the            associated Amazon S3 source bundle specified at time of creation. 
-        ///        </li>         <li>            <code>false</code>: No action is taken on the
-        /// Amazon S3 source bundle specified at            time of creation.         </li>  
-        ///    </ul>      
+        ///  <ul> <li> <code>true</code>: An attempt is made to delete the associated Amazon S3
+        /// source bundle specified at time of creation. </li> <li> <code>false</code>: No action
+        /// is taken on the Amazon S3 source bundle specified at time of creation. </li> </ul>
+        /// 
         /// <para>
-        ///          Valid Values: <code>true</code> | <code>false</code>      
+        ///  Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool DeleteSourceBundle
@@ -83,11 +96,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._deleteSourceBundle.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///          The label of the version to delete.      
+        ///  The label of the version to delete. 
         /// </para>
         /// </summary>
         public string VersionLabel

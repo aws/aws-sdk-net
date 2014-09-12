@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.Redshift.Model
         private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
         private List<IPRange> _iPRanges = new List<IPRange>();
 
-
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.Redshift.Model
             return this._clusterSecurityGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -71,7 +73,6 @@ namespace Amazon.Redshift.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property EC2SecurityGroups. 
@@ -91,7 +92,6 @@ namespace Amazon.Redshift.Model
         {
             return this._eC2SecurityGroups != null && this._eC2SecurityGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property IPRanges. 

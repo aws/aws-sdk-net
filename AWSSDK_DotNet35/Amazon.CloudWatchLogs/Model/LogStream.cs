@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _storedBytes;
         private string _uploadSequenceToken;
 
-
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
@@ -52,7 +55,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._arn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CreationTime.
@@ -69,7 +71,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._creationTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property FirstEventTimestamp.
         /// </summary>
@@ -84,7 +85,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._firstEventTimestamp.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LastEventTimestamp.
@@ -101,7 +101,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._lastEventTimestamp.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LastIngestionTime.
         /// </summary>
@@ -116,7 +115,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._lastIngestionTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LogStreamName.
@@ -133,7 +131,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._logStreamName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StoredBytes.
         /// </summary>
@@ -148,7 +145,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._storedBytes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property UploadSequenceToken.

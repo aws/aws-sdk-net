@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,122 +12,122 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Contains information about a workflow type. </para>
+    /// Contains information about a workflow type.
     /// </summary>
-    public class WorkflowTypeInfo
+    public partial class WorkflowTypeInfo
     {
-        
-        private WorkflowType workflowType;
-        private RegistrationStatus status;
-        private string description;
-        private DateTime? creationDate;
-        private DateTime? deprecationDate;
+        private DateTime? _creationDate;
+        private DateTime? _deprecationDate;
+        private string _description;
+        private RegistrationStatus _status;
+        private WorkflowType _workflowType;
 
         /// <summary>
-        /// The workflow type this information is about.
-        ///  
-        /// </summary>
-        public WorkflowType WorkflowType
-        {
-            get { return this.workflowType; }
-            set { this.workflowType = value; }
-        }
-
-        // Check to see if WorkflowType property is set
-        internal bool IsSetWorkflowType()
-        {
-            return this.workflowType != null;
-        }
-
-        /// <summary>
-        /// The current status of the workflow type.
-        ///  
+        /// Gets and sets the property CreationDate. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>REGISTERED, DEPRECATED</description>
-        ///     </item>
-        /// </list>
+        ///  The date when this type was registered. 
         /// </para>
-        /// </summary>
-        public RegistrationStatus Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The description of the type registered through <a>RegisterWorkflowType</a>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The date when this type was registered.
-        ///  
         /// </summary>
         public DateTime CreationDate
         {
-            get { return this.creationDate ?? default(DateTime); }
-            set { this.creationDate = value; }
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
         }
 
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;
+            return this._creationDate.HasValue; 
         }
 
         /// <summary>
-        /// If the type is in deprecated state, then it is set to the date when the type was deprecated.
-        ///  
+        /// Gets and sets the property DeprecationDate. 
+        /// <para>
+        ///  If the type is in deprecated state, then it is set to the date when the type was
+        /// deprecated. 
+        /// </para>
         /// </summary>
         public DateTime DeprecationDate
         {
-            get { return this.deprecationDate ?? default(DateTime); }
-            set { this.deprecationDate = value; }
+            get { return this._deprecationDate.GetValueOrDefault(); }
+            set { this._deprecationDate = value; }
         }
 
         // Check to see if DeprecationDate property is set
         internal bool IsSetDeprecationDate()
         {
-            return this.deprecationDate.HasValue;
+            return this._deprecationDate.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  The description of the type registered through <a>RegisterWorkflowType</a>. 
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The current status of the workflow type. 
+        /// </para>
+        /// </summary>
+        public RegistrationStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowType. 
+        /// <para>
+        ///  The workflow type this information is about. 
+        /// </para>
+        /// </summary>
+        public WorkflowType WorkflowType
+        {
+            get { return this._workflowType; }
+            set { this._workflowType = value; }
+        }
+
+        // Check to see if WorkflowType property is set
+        internal bool IsSetWorkflowType()
+        {
+            return this._workflowType != null;
+        }
+
     }
 }

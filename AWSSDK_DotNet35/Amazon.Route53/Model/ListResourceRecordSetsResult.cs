@@ -12,156 +12,153 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains information about the resource record sets that are returned by the request and information about the
-    /// response.</para>
+    /// A complex type that contains information about the resource record sets that are returned
+    /// by the request and information about the response.
     /// </summary>
     public partial class ListResourceRecordSetsResult : AmazonWebServiceResponse
     {
-        
-        private List<ResourceRecordSet> resourceRecordSets = new List<ResourceRecordSet>();
-        private bool? isTruncated;
-        private string nextRecordName;
-        private RRType nextRecordType;
-        private string nextRecordIdentifier;
-        private string maxItems;
-
+        private List<ResourceRecordSet> _resourceRecordSets = new List<ResourceRecordSet>();
+        private bool? _isTruncated;
+        private string _nextRecordName;
+        private RRType _nextRecordType;
+        private string _nextRecordIdentifier;
+        private string _maxItems;
 
         /// <summary>
-        /// A complex type that contains information about the resource record sets that are returned by the request.
-        ///  
+        /// Gets and sets the property ResourceRecordSets. 
+        /// <para>
+        /// A complex type that contains information about the resource record sets that are returned
+        /// by the request.
+        /// </para>
         /// </summary>
         public List<ResourceRecordSet> ResourceRecordSets
         {
-            get { return this.resourceRecordSets; }
-            set { this.resourceRecordSets = value; }
+            get { return this._resourceRecordSets; }
+            set { this._resourceRecordSets = value; }
         }
 
         // Check to see if ResourceRecordSets property is set
         internal bool IsSetResourceRecordSets()
         {
-            return this.resourceRecordSets.Count > 0;
+            return this._resourceRecordSets != null && this._resourceRecordSets.Count > 0; 
         }
 
         /// <summary>
-        /// A flag that indicates whether there are more resource record sets to be listed. If your results were truncated, you can make a follow-up
-        /// request for the next page of results by using the <a>ListResourceRecordSetsResponse$NextRecordName</a> element. Valid Values: <c>true</c> |
-        /// <c>false</c>
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        ///  A flag that indicates whether there are more resource record sets to be listed. If
+        /// your results were truncated, you can make a follow-up request for the next page of
+        /// results by using the <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+        /// </para>
         ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code>
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
 
         /// <summary>
-        /// If the results were truncated, the name of the next record in the list. This element is present only if
-        /// <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
-        ///  
+        /// Gets and sets the property NextRecordName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// If the results were truncated, the name of the next record in the list. This element
+        /// is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is true. 
         /// </para>
         /// </summary>
         public string NextRecordName
         {
-            get { return this.nextRecordName; }
-            set { this.nextRecordName = value; }
+            get { return this._nextRecordName; }
+            set { this._nextRecordName = value; }
         }
 
         // Check to see if NextRecordName property is set
         internal bool IsSetNextRecordName()
         {
-            return this.nextRecordName != null;
+            return this._nextRecordName != null;
         }
 
         /// <summary>
-        /// If the results were truncated, the type of the next record in the list. This element is present only if
-        /// <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
-        ///  
+        /// Gets and sets the property NextRecordType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA</description>
-        ///     </item>
-        /// </list>
+        /// If the results were truncated, the type of the next record in the list. This element
+        /// is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is true. 
         /// </para>
         /// </summary>
         public RRType NextRecordType
         {
-            get { return this.nextRecordType; }
-            set { this.nextRecordType = value; }
+            get { return this._nextRecordType; }
+            set { this._nextRecordType = value; }
         }
 
         // Check to see if NextRecordType property is set
         internal bool IsSetNextRecordType()
         {
-            return this.nextRecordType != null;
+            return this._nextRecordType != null;
         }
 
         /// <summary>
-        /// <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type, the value of <c>SetIdentifier</c> for
-        /// the next resource record set that has the current DNS name and type.
-        ///  
+        /// Gets and sets the property NextRecordIdentifier. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        /// </list>
+        /// <i>Weighted resource record sets only:</i> If results were truncated for a given DNS
+        /// name and type, the value of <code>SetIdentifier</code> for the next resource record
+        /// set that has the current DNS name and type.
         /// </para>
         /// </summary>
         public string NextRecordIdentifier
         {
-            get { return this.nextRecordIdentifier; }
-            set { this.nextRecordIdentifier = value; }
+            get { return this._nextRecordIdentifier; }
+            set { this._nextRecordIdentifier = value; }
         }
 
         // Check to see if NextRecordIdentifier property is set
         internal bool IsSetNextRecordIdentifier()
         {
-            return this.nextRecordIdentifier != null;
+            return this._nextRecordIdentifier != null;
         }
 
         /// <summary>
-        /// The maximum number of records you requested. The maximum value of <c>MaxItems</c> is 100.
-        ///  
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of records you requested. The maximum value of <code>MaxItems</code>
+        /// is 100.
+        /// </para>
         /// </summary>
         public string MaxItems
         {
-            get { return this.maxItems; }
-            set { this.maxItems = value; }
+            get { return this._maxItems; }
+            set { this._maxItems = value; }
         }
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;
+            return this._maxItems != null;
         }
+
     }
 }

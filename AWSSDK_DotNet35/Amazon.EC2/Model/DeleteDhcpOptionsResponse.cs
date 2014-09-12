@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteDhcpOptions response metadata.
-    /// The DeleteDhcpOptions operation has a void result type.
+    /// Configuration for accessing Amazon DeleteDhcpOptions service
     /// </summary>
-    public partial class DeleteDhcpOptionsResponse : AmazonWebServiceResponse
+    public partial class DeleteDhcpOptionsResponse : DeleteDhcpOptionsResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteDhcpOptionsResult property.
+        /// Represents the output of a DeleteDhcpOptions operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteDhcpOptionsResult class are now available on the DeleteDhcpOptionsResponse class. You should use the properties on DeleteDhcpOptionsResponse instead of accessing them through DeleteDhcpOptionsResult.")]
+        public DeleteDhcpOptionsResult DeleteDhcpOptionsResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

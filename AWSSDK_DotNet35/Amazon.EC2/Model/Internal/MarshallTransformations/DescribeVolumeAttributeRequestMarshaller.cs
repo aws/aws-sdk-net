@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Volume Attribute Request Marshaller
+    /// DescribeVolumeAttribute Request Marshaller
     /// </summary>       
-    public class DescribeVolumeAttributeRequestMarshaller : IMarshaller<IRequest, DescribeVolumeAttributeRequest>
+    public class DescribeVolumeAttributeRequestMarshaller : IMarshaller<IRequest, DescribeVolumeAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeVolumeAttributeRequest describeVolumeAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeVolumeAttributeRequest, "AmazonEC2");
+            return this.Marshall((DescribeVolumeAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeVolumeAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeVolumeAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeVolumeAttributeRequest != null && describeVolumeAttributeRequest.IsSetVolumeId())
-            {
-                request.Parameters.Add("VolumeId", StringUtils.FromString(describeVolumeAttributeRequest.VolumeId));
-            }
-            if (describeVolumeAttributeRequest != null && describeVolumeAttributeRequest.IsSetAttribute())
-            {
-                request.Parameters.Add("Attribute", StringUtils.FromString(describeVolumeAttributeRequest.Attribute));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttribute())
+                {
+                    request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
+                }
+                if(publicRequest.IsSetVolumeId())
+                {
+                    request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
+                }
+            }
             return request;
         }
     }

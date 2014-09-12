@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   StopwordOptionsStatus Unmarshaller
-     /// </summary>
-    internal class StopwordOptionsStatusUnmarshaller : IUnmarshaller<StopwordOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<StopwordOptionsStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for StopwordOptionsStatus Object
+    /// </summary>  
+    public class StopwordOptionsStatusUnmarshaller : IUnmarshaller<StopwordOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<StopwordOptionsStatus, JsonUnmarshallerContext>
     {
-        public StopwordOptionsStatus Unmarshall(XmlUnmarshallerContext context) 
+        public StopwordOptionsStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            StopwordOptionsStatus stopwordOptionsStatus = new StopwordOptionsStatus();
+            StopwordOptionsStatus unmarshalledObject = new StopwordOptionsStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Options", targetDepth))
                     {
-                        stopwordOptionsStatus.Options = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        stopwordOptionsStatus.Status = OptionStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = OptionStatusUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return stopwordOptionsStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return stopwordOptionsStatus;
+            return unmarshalledObject;
         }
 
-        public StopwordOptionsStatus Unmarshall(JsonUnmarshallerContext context) 
+        public StopwordOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static StopwordOptionsStatusUnmarshaller instance;
 
-        public static StopwordOptionsStatusUnmarshaller GetInstance() 
+        private static StopwordOptionsStatusUnmarshaller _instance = new StopwordOptionsStatusUnmarshaller();        
+
+        public static StopwordOptionsStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new StopwordOptionsStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

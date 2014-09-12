@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,61 +12,71 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Purchase Reserved D B Instances Offering Request Marshaller
+    /// PurchaseReservedDBInstancesOffering Request Marshaller
     /// </summary>       
-    public class PurchaseReservedDBInstancesOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedDBInstancesOfferingRequest>
+    public class PurchaseReservedDBInstancesOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedDBInstancesOfferingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(purchaseReservedDBInstancesOfferingRequest, "AmazonRDS");
+            return this.Marshall((PurchaseReservedDBInstancesOfferingRequest)input);
+        }
+    
+        public IRequest Marshall(PurchaseReservedDBInstancesOfferingRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "PurchaseReservedDBInstancesOffering");
             request.Parameters.Add("Version", "2013-09-09");
-            if (purchaseReservedDBInstancesOfferingRequest != null && purchaseReservedDBInstancesOfferingRequest.IsSetReservedDBInstancesOfferingId())
-            {
-                request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(purchaseReservedDBInstancesOfferingRequest.ReservedDBInstancesOfferingId));
-            }
-            if (purchaseReservedDBInstancesOfferingRequest != null && purchaseReservedDBInstancesOfferingRequest.IsSetReservedDBInstanceId())
-            {
-                request.Parameters.Add("ReservedDBInstanceId", StringUtils.FromString(purchaseReservedDBInstancesOfferingRequest.ReservedDBInstanceId));
-            }
-            if (purchaseReservedDBInstancesOfferingRequest != null && purchaseReservedDBInstancesOfferingRequest.IsSetDBInstanceCount())
-            {
-                request.Parameters.Add("DBInstanceCount", StringUtils.FromInt(purchaseReservedDBInstancesOfferingRequest.DBInstanceCount));
-            }
 
-            if (purchaseReservedDBInstancesOfferingRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = purchaseReservedDBInstancesOfferingRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetDBInstanceCount())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("DBInstanceCount", StringUtils.FromInt(publicRequest.DBInstanceCount));
+                }
+                if(publicRequest.IsSetReservedDBInstanceId())
+                {
+                    request.Parameters.Add("ReservedDBInstanceId", StringUtils.FromString(publicRequest.ReservedDBInstanceId));
+                }
+                if(publicRequest.IsSetReservedDBInstancesOfferingId())
+                {
+                    request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedDBInstancesOfferingId));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-
-                    tagsListIndex++;
                 }
             }
-
             return request;
         }
     }

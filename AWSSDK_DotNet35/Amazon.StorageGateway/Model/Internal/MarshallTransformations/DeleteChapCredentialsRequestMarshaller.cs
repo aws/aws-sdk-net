@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Chap Credentials Request Marshaller
+    /// DeleteChapCredentials Request Marshaller
     /// </summary>       
-    internal class DeleteChapCredentialsRequestMarshaller : IMarshaller<IRequest, DeleteChapCredentialsRequest> 
+    public class DeleteChapCredentialsRequestMarshaller : IMarshaller<IRequest, DeleteChapCredentialsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteChapCredentialsRequest deleteChapCredentialsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteChapCredentialsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteChapCredentialsRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DeleteChapCredentialsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DeleteChapCredentials";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteChapCredentialsRequest != null && deleteChapCredentialsRequest.IsSetTargetARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInitiatorName())
                 {
-                    writer.WritePropertyName("TargetARN");
-                    writer.Write(deleteChapCredentialsRequest.TargetARN);
-                }
-                if (deleteChapCredentialsRequest != null && deleteChapCredentialsRequest.IsSetInitiatorName()) 
-                {
-                    writer.WritePropertyName("InitiatorName");
-                    writer.Write(deleteChapCredentialsRequest.InitiatorName);
+                    context.Writer.WritePropertyName("InitiatorName");
+                    context.Writer.Write(publicRequest.InitiatorName);
                 }
 
+                if(publicRequest.IsSetTargetARN())
+                {
+                    context.Writer.WritePropertyName("TargetARN");
+                    context.Writer.Write(publicRequest.TargetARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

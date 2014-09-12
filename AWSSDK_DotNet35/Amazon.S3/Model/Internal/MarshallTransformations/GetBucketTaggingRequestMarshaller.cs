@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Tagging Request Marshaller
     /// </summary>       
-    public class GetBucketTaggingRequestMarshaller : IMarshaller<IRequest, GetBucketTaggingRequest>
-    {
+    public class GetBucketTaggingRequestMarshaller : IMarshaller<IRequest, GetBucketTaggingRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketTaggingRequest)input);
+		}
+
         public IRequest Marshall(GetBucketTaggingRequest getBucketTaggingRequest)
         {
             IRequest request = new DefaultRequest(getBucketTaggingRequest, "AmazonS3");

@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DecisionTaskCompletedEventAttributes Object
+    /// </summary>  
+    public class DecisionTaskCompletedEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskCompletedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<DecisionTaskCompletedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DecisionTaskCompletedEventAttributesUnmarshaller
-      /// </summary>
-      internal class DecisionTaskCompletedEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskCompletedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<DecisionTaskCompletedEventAttributes, JsonUnmarshallerContext>
-      {
         DecisionTaskCompletedEventAttributes IUnmarshaller<DecisionTaskCompletedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DecisionTaskCompletedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DecisionTaskCompletedEventAttributes decisionTaskCompletedEventAttributes = new DecisionTaskCompletedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DecisionTaskCompletedEventAttributes unmarshalledObject = new DecisionTaskCompletedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("executionContext", targetDepth))
-              {
-                decisionTaskCompletedEventAttributes.ExecutionContext = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("scheduledEventId", targetDepth))
-              {
-                decisionTaskCompletedEventAttributes.ScheduledEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                decisionTaskCompletedEventAttributes.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("executionContext", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionContext = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scheduledEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return decisionTaskCompletedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static DecisionTaskCompletedEventAttributesUnmarshaller instance;
-        public static DecisionTaskCompletedEventAttributesUnmarshaller GetInstance()
+
+        private static DecisionTaskCompletedEventAttributesUnmarshaller _instance = new DecisionTaskCompletedEventAttributesUnmarshaller();        
+
+        public static DecisionTaskCompletedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DecisionTaskCompletedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the storage location for an instance store-backed AMI.</para>
+    /// Describes the storage location for an instance store-backed AMI.
     /// </summary>
     public partial class Storage
     {
-        
-        private S3Storage s3;
-
+        private S3Storage _s3;
 
         /// <summary>
+        /// Gets and sets the property S3. 
+        /// <para>
         /// An Amazon S3 storage location.
-        ///  
+        /// </para>
         /// </summary>
         public S3Storage S3
         {
-            get { return this.s3; }
-            set { this.s3 = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
         // Check to see if S3 property is set
         internal bool IsSetS3()
         {
-            return this.s3 != null;
+            return this._s3 != null;
         }
+
     }
 }

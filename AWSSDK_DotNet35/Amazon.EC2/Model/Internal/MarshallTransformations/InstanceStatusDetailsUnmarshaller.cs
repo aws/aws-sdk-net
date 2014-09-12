@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceStatusDetails Unmarshaller
-     /// </summary>
-    internal class InstanceStatusDetailsUnmarshaller : IUnmarshaller<InstanceStatusDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceStatusDetails, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceStatusDetails Object
+    /// </summary>  
+    public class InstanceStatusDetailsUnmarshaller : IUnmarshaller<InstanceStatusDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceStatusDetails, JsonUnmarshallerContext>
     {
-        public InstanceStatusDetails Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceStatusDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceStatusDetails instanceStatusDetails = new InstanceStatusDetails();
+            InstanceStatusDetails unmarshalledObject = new InstanceStatusDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("impairedSince", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ImpairedSince = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("name", targetDepth))
                     {
-                        instanceStatusDetails.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("status", targetDepth))
                     {
-                        instanceStatusDetails.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("impairedSince", targetDepth))
-                    {
-                        instanceStatusDetails.ImpairedSince = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceStatusDetails;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceStatusDetails;
+            return unmarshalledObject;
         }
 
-        public InstanceStatusDetails Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceStatusDetails Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceStatusDetailsUnmarshaller instance;
 
-        public static InstanceStatusDetailsUnmarshaller GetInstance() 
+        private static InstanceStatusDetailsUnmarshaller _instance = new InstanceStatusDetailsUnmarshaller();        
+
+        public static InstanceStatusDetailsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceStatusDetailsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

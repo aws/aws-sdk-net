@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,49 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterImage operation.
-    /// <para>Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch new instances.</para> <para>This command does
-    /// not delete the AMI.</para>
+    /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
+    /// new instances.
+    /// 
+    ///  
+    /// <para>
+    /// This command does not delete the AMI.
+    /// </para>
     /// </summary>
     public partial class DeregisterImageRequest : AmazonEC2Request
     {
-        private string imageId;
-
+        private string _imageId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeregisterImageRequest() { }
+
+        /// <summary>
+        /// Instantiates DeregisterImageRequest with the parameterized properties
+        /// </summary>
+        /// <param name="imageId">The ID of the AMI.</param>
+        public DeregisterImageRequest(string imageId)
+        {
+            _imageId = imageId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
         /// The ID of the AMI.
-        ///  
+        /// </para>
         /// </summary>
         public string ImageId
         {
-            get { return this.imageId; }
-            set { this.imageId = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
         // Check to see if ImageId property is set
         internal bool IsSetImageId()
         {
-            return this.imageId != null;
+            return this._imageId != null;
         }
 
     }
 }
-    

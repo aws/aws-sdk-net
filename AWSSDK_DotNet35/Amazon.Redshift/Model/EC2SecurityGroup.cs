@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.Redshift.Model
         private string _eC2SecurityGroupOwnerId;
         private string _status;
 
-
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
@@ -50,7 +53,6 @@ namespace Amazon.Redshift.Model
         {
             return this._eC2SecurityGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
@@ -70,7 +72,6 @@ namespace Amazon.Redshift.Model
         {
             return this._eC2SecurityGroupOwnerId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

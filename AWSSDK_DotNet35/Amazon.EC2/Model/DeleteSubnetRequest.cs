@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,44 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubnet operation.
-    /// <para>Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.</para>
+    /// Deletes the specified subnet. You must terminate all running instances in the subnet
+    /// before you can delete the subnet.
     /// </summary>
     public partial class DeleteSubnetRequest : AmazonEC2Request
     {
-        private string subnetId;
-
+        private string _subnetId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteSubnetRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteSubnetRequest with the parameterized properties
+        /// </summary>
+        /// <param name="subnetId">The ID of the subnet.</param>
+        public DeleteSubnetRequest(string subnetId)
+        {
+            _subnetId = subnetId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
         /// The ID of the subnet.
-        ///  
+        /// </para>
         /// </summary>
         public string SubnetId
         {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
         }
 
         // Check to see if SubnetId property is set
         internal bool IsSetSubnetId()
         {
-            return this.subnetId != null;
+            return this._subnetId != null;
         }
 
     }
 }
-    

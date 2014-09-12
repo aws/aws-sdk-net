@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a request to cancel a Spot Instance.</para>
+    /// Describes a request to cancel a Spot Instance.
     /// </summary>
     public partial class CancelledSpotInstanceRequest
     {
-        
-        private string spotInstanceRequestId;
-        private CancelSpotInstanceRequestState state;
-
+        private string _spotInstanceRequestId;
+        private CancelSpotInstanceRequestState _state;
 
         /// <summary>
+        /// Gets and sets the property SpotInstanceRequestId. 
+        /// <para>
         /// The ID of the Spot Instance request.
-        ///  
+        /// </para>
         /// </summary>
         public string SpotInstanceRequestId
         {
-            get { return this.spotInstanceRequestId; }
-            set { this.spotInstanceRequestId = value; }
+            get { return this._spotInstanceRequestId; }
+            set { this._spotInstanceRequestId = value; }
         }
 
         // Check to see if SpotInstanceRequestId property is set
         internal bool IsSetSpotInstanceRequestId()
         {
-            return this.spotInstanceRequestId != null;
+            return this._spotInstanceRequestId != null;
         }
 
         /// <summary>
-        /// The state of the Spot Instance request.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>active, open, closed, cancelled, completed</description>
-        ///     </item>
-        /// </list>
+        /// The state of the Spot Instance request.
         /// </para>
         /// </summary>
         public CancelSpotInstanceRequestState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
+
     }
 }

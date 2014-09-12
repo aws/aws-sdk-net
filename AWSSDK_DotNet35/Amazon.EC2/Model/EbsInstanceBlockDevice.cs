@@ -12,97 +12,102 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a parameter used to set up an Amazon EBS volume in a block device mapping.</para>
+    /// Describes a parameter used to set up an Amazon EBS volume in a block device mapping.
     /// </summary>
     public partial class EbsInstanceBlockDevice
     {
-        
-        private string volumeId;
-        private AttachmentStatus status;
-        private DateTime? attachTime;
-        private bool? deleteOnTermination;
-
+        private DateTime? _attachTime;
+        private bool? _deleteOnTermination;
+        private AttachmentStatus _status;
+        private string _volumeId;
 
         /// <summary>
-        /// The ID of the Amazon EBS volume.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
-
-        /// <summary>
-        /// The attachment state.
-        ///  
+        /// Gets and sets the property AttachTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>attaching, attached, detaching, detached</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public AttachmentStatus Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
         /// The time stamp when the attachment initiated.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime AttachTime
         {
-            get { return this.attachTime ?? default(DateTime); }
-            set { this.attachTime = value; }
+            get { return this._attachTime.GetValueOrDefault(); }
+            set { this._attachTime = value; }
         }
 
         // Check to see if AttachTime property is set
         internal bool IsSetAttachTime()
         {
-            return this.attachTime.HasValue;
+            return this._attachTime.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
         /// Indicates whether the volume is deleted on instance termination.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The attachment state.
+        /// </para>
+        /// </summary>
+        public AttachmentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the Amazon EBS volume.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
     }
 }

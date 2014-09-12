@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,80 +33,81 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Poll For Decision Task Request Marshaller
+    /// PollForDecisionTask Request Marshaller
     /// </summary>       
-    internal class PollForDecisionTaskRequestMarshaller : IMarshaller<IRequest, PollForDecisionTaskRequest> 
+    public class PollForDecisionTaskRequestMarshaller : IMarshaller<IRequest, PollForDecisionTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(PollForDecisionTaskRequest pollForDecisionTaskRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((PollForDecisionTaskRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(pollForDecisionTaskRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(PollForDecisionTaskRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.PollForDecisionTask";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (pollForDecisionTaskRequest != null && pollForDecisionTaskRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(pollForDecisionTaskRequest.Domain);
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
-                if (pollForDecisionTaskRequest != null) 
+                if(publicRequest.IsSetIdentity())
                 {
-                    TaskList taskList = pollForDecisionTaskRequest.TaskList;
-                    if (taskList != null)
-                    {
-                        writer.WritePropertyName("taskList");
-                        writer.WriteObjectStart();
-                        if (taskList != null && taskList.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(taskList.Name);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-                if (pollForDecisionTaskRequest != null && pollForDecisionTaskRequest.IsSetIdentity()) 
-                {
-                    writer.WritePropertyName("identity");
-                    writer.Write(pollForDecisionTaskRequest.Identity);
-                }
-                if (pollForDecisionTaskRequest != null && pollForDecisionTaskRequest.IsSetNextPageToken()) 
-                {
-                    writer.WritePropertyName("nextPageToken");
-                    writer.Write(pollForDecisionTaskRequest.NextPageToken);
-                }
-                if (pollForDecisionTaskRequest != null && pollForDecisionTaskRequest.IsSetMaximumPageSize()) 
-                {
-                    writer.WritePropertyName("maximumPageSize");
-                    writer.Write(pollForDecisionTaskRequest.MaximumPageSize);
-                }
-                if (pollForDecisionTaskRequest != null && pollForDecisionTaskRequest.IsSetReverseOrder()) 
-                {
-                    writer.WritePropertyName("reverseOrder");
-                    writer.Write(pollForDecisionTaskRequest.ReverseOrder);
+                    context.Writer.WritePropertyName("identity");
+                    context.Writer.Write(publicRequest.Identity);
                 }
 
+                if(publicRequest.IsSetMaximumPageSize())
+                {
+                    context.Writer.WritePropertyName("maximumPageSize");
+                    context.Writer.Write(publicRequest.MaximumPageSize);
+                }
+
+                if(publicRequest.IsSetNextPageToken())
+                {
+                    context.Writer.WritePropertyName("nextPageToken");
+                    context.Writer.Write(publicRequest.NextPageToken);
+                }
+
+                if(publicRequest.IsSetReverseOrder())
+                {
+                    context.Writer.WritePropertyName("reverseOrder");
+                    context.Writer.Write(publicRequest.ReverseOrder);
+                }
+
+                if(publicRequest.IsSetTaskList())
+                {
+                    context.Writer.WritePropertyName("taskList");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskListMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskList, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

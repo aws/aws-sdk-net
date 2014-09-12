@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Streams Request Marshaller
+    /// ListStreams Request Marshaller
     /// </summary>       
-    internal class ListStreamsRequestMarshaller : IMarshaller<IRequest, ListStreamsRequest> 
+    public class ListStreamsRequestMarshaller : IMarshaller<IRequest, ListStreamsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListStreamsRequest listStreamsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListStreamsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listStreamsRequest, "AmazonKinesis");
+        public IRequest Marshall(ListStreamsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.ListStreams";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listStreamsRequest != null && listStreamsRequest.IsSetLimit()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExclusiveStartStreamName())
                 {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(listStreamsRequest.Limit);
-                }
-                if (listStreamsRequest != null && listStreamsRequest.IsSetExclusiveStartStreamName()) 
-                {
-                    writer.WritePropertyName("ExclusiveStartStreamName");
-                    writer.Write(listStreamsRequest.ExclusiveStartStreamName);
+                    context.Writer.WritePropertyName("ExclusiveStartStreamName");
+                    context.Writer.Write(publicRequest.ExclusiveStartStreamName);
                 }
 
+                if(publicRequest.IsSetLimit())
+                {
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

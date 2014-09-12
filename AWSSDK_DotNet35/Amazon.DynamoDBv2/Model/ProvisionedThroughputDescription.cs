@@ -12,137 +12,128 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
-    /// increases and decreases.</para>
+    /// Represents the provisioned throughput settings for the table, consisting of read and
+    /// write      capacity units, along with data about increases and decreases.
     /// </summary>
     public partial class ProvisionedThroughputDescription
     {
-        
-        private DateTime? lastIncreaseDateTime;
-        private DateTime? lastDecreaseDateTime;
-        private long? numberOfDecreasesToday;
-        private long? readCapacityUnits;
-        private long? writeCapacityUnits;
-
+        private DateTime? _lastDecreaseDateTime;
+        private DateTime? _lastIncreaseDateTime;
+        private long? _numberOfDecreasesToday;
+        private long? _readCapacityUnits;
+        private long? _writeCapacityUnits;
 
         /// <summary>
-        /// The date and time of the last provisioned throughput increase for this table.
-        ///  
-        /// </summary>
-        public DateTime LastIncreaseDateTime
-        {
-            get { return this.lastIncreaseDateTime ?? default(DateTime); }
-            set { this.lastIncreaseDateTime = value; }
-        }
-
-        // Check to see if LastIncreaseDateTime property is set
-        internal bool IsSetLastIncreaseDateTime()
-        {
-            return this.lastIncreaseDateTime.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property LastDecreaseDateTime. 
+        /// <para>
         /// The date and time of the last provisioned throughput decrease for this table.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime LastDecreaseDateTime
         {
-            get { return this.lastDecreaseDateTime ?? default(DateTime); }
-            set { this.lastDecreaseDateTime = value; }
+            get { return this._lastDecreaseDateTime.GetValueOrDefault(); }
+            set { this._lastDecreaseDateTime = value; }
         }
 
         // Check to see if LastDecreaseDateTime property is set
         internal bool IsSetLastDecreaseDateTime()
         {
-            return this.lastDecreaseDateTime.HasValue;
+            return this._lastDecreaseDateTime.HasValue; 
         }
 
         /// <summary>
-        /// The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput
-        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB
-        /// Developer Guide.
-        ///  
+        /// Gets and sets the property LastIncreaseDateTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// The date and time of the last provisioned throughput increase for this table.
+        /// </para>
+        /// </summary>
+        public DateTime LastIncreaseDateTime
+        {
+            get { return this._lastIncreaseDateTime.GetValueOrDefault(); }
+            set { this._lastIncreaseDateTime = value; }
+        }
+
+        // Check to see if LastIncreaseDateTime property is set
+        internal bool IsSetLastIncreaseDateTime()
+        {
+            return this._lastIncreaseDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfDecreasesToday. 
+        /// <para>
+        /// The number of provisioned throughput decreases for this table during this UTC calendar
+        /// day.      For current maximums on provisioned throughput decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// in the Amazon DynamoDB Developer Guide.
         /// </para>
         /// </summary>
         public long NumberOfDecreasesToday
         {
-            get { return this.numberOfDecreasesToday ?? default(long); }
-            set { this.numberOfDecreasesToday = value; }
+            get { return this._numberOfDecreasesToday.GetValueOrDefault(); }
+            set { this._numberOfDecreasesToday = value; }
         }
 
         // Check to see if NumberOfDecreasesToday property is set
         internal bool IsSetNumberOfDecreasesToday()
         {
-            return this.numberOfDecreasesToday.HasValue;
+            return this._numberOfDecreasesToday.HasValue; 
         }
 
         /// <summary>
-        /// The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. Eventually
-        /// consistent reads require less effort than strongly consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100
-        /// eventually consistent <i>ReadCapacityUnits</i> per second.
-        ///  
+        /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// The maximum number of strongly consistent reads consumed per second before DynamoDB
+        /// returns a        <i>ThrottlingException</i>. Eventually consistent reads require less
+        /// effort than strongly      consistent reads, so a setting of 50 <i>ReadCapacityUnits</i>
+        /// per second provides 100      eventually consistent <i>ReadCapacityUnits</i> per second.
         /// </para>
         /// </summary>
         public long ReadCapacityUnits
         {
-            get { return this.readCapacityUnits ?? default(long); }
-            set { this.readCapacityUnits = value; }
+            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            set { this._readCapacityUnits = value; }
         }
 
         // Check to see if ReadCapacityUnits property is set
         internal bool IsSetReadCapacityUnits()
         {
-            return this.readCapacityUnits.HasValue;
+            return this._readCapacityUnits.HasValue; 
         }
 
         /// <summary>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
-        ///  
+        /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// The maximum number of writes consumed per second before DynamoDB returns a       
+        /// <i>ThrottlingException</i>.
         /// </para>
         /// </summary>
         public long WriteCapacityUnits
         {
-            get { return this.writeCapacityUnits ?? default(long); }
-            set { this.writeCapacityUnits = value; }
+            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            set { this._writeCapacityUnits = value; }
         }
 
         // Check to see if WriteCapacityUnits property is set
         internal bool IsSetWriteCapacityUnits()
         {
-            return this.writeCapacityUnits.HasValue;
+            return this._writeCapacityUnits.HasValue; 
         }
+
     }
 }

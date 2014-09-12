@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -26,9 +30,6 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
     /// Returns list of event descriptions matching criteria up to the last 6 weeks.
-    /// 
-    ///       <note>         This action returns the most recent 1,000 events from the specified
-    ///         <code>NextToken</code>.      </note>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonElasticBeanstalkRequest
     {
@@ -44,12 +45,16 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _templateName;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeEventsRequest() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         include only those associated         with this application.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+        /// only those associated with this application. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -64,13 +69,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         those that occur up to, but not including, the         <code>EndTime</code>.
-        ///      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+        /// that occur up to, but not including, the <code>EndTime</code>. 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -85,12 +88,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._endTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         those associated with this         environment.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+        /// associated with this environment. 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -105,12 +107,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         those associated with this         environment.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+        /// associated with this environment. 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -125,12 +126,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///          Specifies the maximum number of events that can be returned, beginning with
-        /// the most recent event.        
+        ///  Specifies the maximum number of events that can be returned, beginning with the most
+        /// recent event. 
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -145,11 +145,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._maxRecords.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///          Pagination token. If specified, the events return the next batch of results.        
+        ///  Pagination token. If specified, the events return the next batch of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -164,12 +163,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._nextToken != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the described events
-        /// to include only those         associated with this request ID.      
+        ///  If specified, AWS Elastic Beanstalk restricts the described events to include only
+        /// those associated with this request ID. 
         /// </para>
         /// </summary>
         public string RequestId
@@ -184,12 +182,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._requestId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        ///          If specified, limits the events returned from this call to include only those
-        ///         with the         specified severity or higher.        
+        ///  If specified, limits the events returned from this call to include only those with
+        /// the specified severity or higher. 
         /// </para>
         /// </summary>
         public EventSeverity Severity
@@ -204,12 +201,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._severity != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         those that occur on or after this         time.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+        /// that occur on or after this time. 
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -224,13 +220,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._startTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         those that are associated with         this environment         configuration.
-        ///      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+        /// that are associated with this environment configuration. 
         /// </para>
         /// </summary>
         public string TemplateName
@@ -245,12 +239,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._templateName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         those associated with this         application version.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+        /// associated with this application version. 
         /// </para>
         /// </summary>
         public string VersionLabel

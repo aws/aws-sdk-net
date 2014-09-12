@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,14 +23,10 @@ using Amazon.Runtime;
 namespace Amazon.Glacier.Model
 {
     ///<summary>
-    /// AmazonGlacier exception
+    /// Glacier exception
     /// </summary>
     public class RequestTimeoutException : AmazonGlacierException 
     {
-        private string type;
-    
-        private string code;
-    
         /// <summary>
         /// Constructs a new RequestTimeoutException with the specified error
         /// message.
@@ -49,16 +49,9 @@ namespace Amazon.Glacier.Model
         public RequestTimeoutException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
-        public string Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
-        public string Code
-        {
-            get { return code; }
-            set { code = value; }
-        }
+        public string Code { get; set; }
+
+        public string Type { get; set; }
+
     }
 }

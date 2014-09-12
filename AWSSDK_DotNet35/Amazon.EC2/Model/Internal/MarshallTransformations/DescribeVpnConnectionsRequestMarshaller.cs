@@ -12,67 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Vpn Connections Request Marshaller
+    /// DescribeVpnConnections Request Marshaller
     /// </summary>       
-    public class DescribeVpnConnectionsRequestMarshaller : IMarshaller<IRequest, DescribeVpnConnectionsRequest>
+    public class DescribeVpnConnectionsRequestMarshaller : IMarshaller<IRequest, DescribeVpnConnectionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeVpnConnectionsRequest describeVpnConnectionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeVpnConnectionsRequest, "AmazonEC2");
+            return this.Marshall((DescribeVpnConnectionsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeVpnConnectionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeVpnConnections");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeVpnConnectionsRequest != null)
-            {
-                List<string> vpnConnectionIdsList = describeVpnConnectionsRequest.VpnConnectionIds;
 
-                int vpnConnectionIdsListIndex = 1;
-                foreach (string vpnConnectionIdsListValue in vpnConnectionIdsList)
-                { 
-                    request.Parameters.Add("VpnConnectionId." + vpnConnectionIdsListIndex, StringUtils.FromString(vpnConnectionIdsListValue));
-                    vpnConnectionIdsListIndex++;
-                }
-            }
-
-            if (describeVpnConnectionsRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeVpnConnectionsRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetFilters())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetVpnConnectionIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.VpnConnectionIds)
+                    {
+                        request.Parameters.Add("VpnConnectionId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

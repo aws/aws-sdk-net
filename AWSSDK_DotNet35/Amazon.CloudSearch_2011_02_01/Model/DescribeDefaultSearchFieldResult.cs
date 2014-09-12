@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A response message that contains the default search field for a search domain.</para>
+    /// A response message that contains the default search field for a search domain.
     /// </summary>
     public partial class DescribeDefaultSearchFieldResult : AmazonWebServiceResponse
     {
-        
-        private DefaultSearchFieldStatus defaultSearchField;
-
+        private DefaultSearchFieldStatus _defaultSearchField;
 
         /// <summary>
-        /// The name of the <c>IndexField</c> to use for search requests issued with the <c>q</c> parameter. The default is the empty string, which
-        /// automatically searches all text fields.
-        ///  
+        /// Gets and sets the property DefaultSearchField. 
+        /// <para>
+        /// The name of the <code>IndexField</code> to use for search requests issued with the
+        /// <code>q</code> parameter. The default is the empty string, which automatically searches
+        /// all text fields.
+        /// </para>
         /// </summary>
         public DefaultSearchFieldStatus DefaultSearchField
         {
-            get { return this.defaultSearchField; }
-            set { this.defaultSearchField = value; }
+            get { return this._defaultSearchField; }
+            set { this._defaultSearchField = value; }
         }
 
         // Check to see if DefaultSearchField property is set
         internal bool IsSetDefaultSearchField()
         {
-            return this.defaultSearchField != null;
+            return this._defaultSearchField != null;
         }
+
     }
 }

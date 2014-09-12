@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,90 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DBSubnetGroup Unmarshaller
-     /// </summary>
-    internal class DBSubnetGroupUnmarshaller : IUnmarshaller<DBSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<DBSubnetGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DBSubnetGroup Object
+    /// </summary>  
+    public class DBSubnetGroupUnmarshaller : IUnmarshaller<DBSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<DBSubnetGroup, JsonUnmarshallerContext>
     {
-        public DBSubnetGroup Unmarshall(XmlUnmarshallerContext context) 
+        public DBSubnetGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            DBSubnetGroup dBSubnetGroup = new DBSubnetGroup();
+            DBSubnetGroup unmarshalledObject = new DBSubnetGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DBSubnetGroupName", targetDepth))
-                    {
-                        dBSubnetGroup.DBSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("DBSubnetGroupDescription", targetDepth))
                     {
-                        dBSubnetGroup.DBSubnetGroupDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSubnetGroupDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("VpcId", targetDepth))
+                    if (context.TestExpression("DBSubnetGroupName", targetDepth))
                     {
-                        dBSubnetGroup.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSubnetGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SubnetGroupStatus", targetDepth))
                     {
-                        dBSubnetGroup.SubnetGroupStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetGroupStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Subnets/Subnet", targetDepth))
                     {
-                        dBSubnetGroup.Subnets.Add(SubnetUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = SubnetUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Subnets.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return dBSubnetGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return dBSubnetGroup;
+            return unmarshalledObject;
         }
 
-        public DBSubnetGroup Unmarshall(JsonUnmarshallerContext context) 
+        public DBSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DBSubnetGroupUnmarshaller instance;
 
-        public static DBSubnetGroupUnmarshaller GetInstance() 
+        private static DBSubnetGroupUnmarshaller _instance = new DBSubnetGroupUnmarshaller();        
+
+        public static DBSubnetGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DBSubnetGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

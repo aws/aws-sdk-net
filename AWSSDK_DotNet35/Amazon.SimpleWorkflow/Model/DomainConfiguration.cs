@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,45 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Contains the configuration settings of a domain. </para>
+    /// Contains the configuration settings of a domain.
     /// </summary>
-    public class DomainConfiguration
+    public partial class DomainConfiguration
     {
-        
-        private string workflowExecutionRetentionPeriodInDays;
+        private string _workflowExecutionRetentionPeriodInDays;
 
         /// <summary>
-        /// The retention period for workflow executions in this domain.
-        ///  
+        /// Gets and sets the property WorkflowExecutionRetentionPeriodInDays. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 8</description>
-        ///     </item>
-        /// </list>
+        ///  The retention period for workflow executions in this domain. 
         /// </para>
         /// </summary>
         public string WorkflowExecutionRetentionPeriodInDays
         {
-            get { return this.workflowExecutionRetentionPeriodInDays; }
-            set { this.workflowExecutionRetentionPeriodInDays = value; }
+            get { return this._workflowExecutionRetentionPeriodInDays; }
+            set { this._workflowExecutionRetentionPeriodInDays = value; }
         }
 
         // Check to see if WorkflowExecutionRetentionPeriodInDays property is set
         internal bool IsSetWorkflowExecutionRetentionPeriodInDays()
         {
-            return this.workflowExecutionRetentionPeriodInDays != null;
+            return this._workflowExecutionRetentionPeriodInDays != null;
         }
+
     }
 }

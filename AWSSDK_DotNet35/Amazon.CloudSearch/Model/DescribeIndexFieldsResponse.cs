@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeIndexFields response and response metadata.
+    /// Configuration for accessing Amazon DescribeIndexFields service
     /// </summary>
     public partial class DescribeIndexFieldsResponse : DescribeIndexFieldsResult
     {
         /// <summary>
         /// Gets and sets the DescribeIndexFieldsResult property.
-        /// The result of a DescribeIndexFields request. Contains the index fields configured for the domain specified in the request.
+        /// Represents the output of a DescribeIndexFields operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeIndexFieldsResult class are now available on the DescribeIndexFieldsResponse class. You should use the properties on DescribeIndexFieldsResponse instead of accessing them through DescribeIndexFieldsResult.")]
         public DescribeIndexFieldsResult DescribeIndexFieldsResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

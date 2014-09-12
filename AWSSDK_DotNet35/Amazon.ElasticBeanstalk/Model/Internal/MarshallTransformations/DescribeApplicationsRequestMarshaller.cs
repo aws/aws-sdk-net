@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeApplications Request Marshaller
     /// </summary>       
-    public class DescribeApplicationsRequestMarshaller : IMarshaller<IRequest, DescribeApplicationsRequest>
+    public class DescribeApplicationsRequestMarshaller : IMarshaller<IRequest, DescribeApplicationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeApplicationsRequest)input);
+        }
+    
         public IRequest Marshall(DescribeApplicationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");

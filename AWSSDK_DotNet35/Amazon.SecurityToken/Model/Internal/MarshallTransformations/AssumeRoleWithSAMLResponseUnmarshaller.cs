@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -152,7 +156,6 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             }
             return new AmazonSecurityTokenServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static AssumeRoleWithSAMLResponseUnmarshaller _instance = new AssumeRoleWithSAMLResponseUnmarshaller();        
 
         internal static AssumeRoleWithSAMLResponseUnmarshaller GetInstance()

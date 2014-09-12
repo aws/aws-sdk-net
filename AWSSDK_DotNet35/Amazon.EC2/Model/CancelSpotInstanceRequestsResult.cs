@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelSpotInstanceRequestsResult : AmazonWebServiceResponse
     {
-        
-        private List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
-
+        private List<CancelledSpotInstanceRequest> _cancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
 
         /// <summary>
+        /// Gets and sets the property CancelledSpotInstanceRequests. 
+        /// <para>
         /// One or more Spot Instance requests.
-        ///  
+        /// </para>
         /// </summary>
         public List<CancelledSpotInstanceRequest> CancelledSpotInstanceRequests
         {
-            get { return this.cancelledSpotInstanceRequests; }
-            set { this.cancelledSpotInstanceRequests = value; }
+            get { return this._cancelledSpotInstanceRequests; }
+            set { this._cancelledSpotInstanceRequests = value; }
         }
 
         // Check to see if CancelledSpotInstanceRequests property is set
         internal bool IsSetCancelledSpotInstanceRequests()
         {
-            return this.cancelledSpotInstanceRequests.Count > 0;
+            return this._cancelledSpotInstanceRequests != null && this._cancelledSpotInstanceRequests.Count > 0; 
         }
+
     }
 }

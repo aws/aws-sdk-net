@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// AddInstanceGroups Request Marshaller
     /// </summary>       
-    public class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest> 
+    public class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AddInstanceGroupsRequest)input);
+        }
+
         public IRequest Marshall(AddInstanceGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,58 +56,27 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetInstanceGroups())
                 {
-                    writer.WritePropertyName("InstanceGroups");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("InstanceGroups");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestInstanceGroupsListValue.IsSetBidPrice())
-                        {
-                            writer.WritePropertyName("BidPrice");
-                            writer.Write(publicRequestInstanceGroupsListValue.BidPrice);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestInstanceGroupsListValue.IsSetInstanceCount())
-                        {
-                            writer.WritePropertyName("InstanceCount");
-                            writer.Write(publicRequestInstanceGroupsListValue.InstanceCount);
-                        }
+                        var marshaller = InstanceGroupConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
 
-                        if(publicRequestInstanceGroupsListValue.IsSetInstanceRole())
-                        {
-                            writer.WritePropertyName("InstanceRole");
-                            writer.Write(publicRequestInstanceGroupsListValue.InstanceRole);
-                        }
-
-                        if(publicRequestInstanceGroupsListValue.IsSetInstanceType())
-                        {
-                            writer.WritePropertyName("InstanceType");
-                            writer.Write(publicRequestInstanceGroupsListValue.InstanceType);
-                        }
-
-                        if(publicRequestInstanceGroupsListValue.IsSetMarket())
-                        {
-                            writer.WritePropertyName("Market");
-                            writer.Write(publicRequestInstanceGroupsListValue.Market);
-                        }
-
-                        if(publicRequestInstanceGroupsListValue.IsSetName())
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(publicRequestInstanceGroupsListValue.Name);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetJobFlowId())
                 {
-                    writer.WritePropertyName("JobFlowId");
-                    writer.Write(publicRequest.JobFlowId);
+                    context.Writer.WritePropertyName("JobFlowId");
+                    context.Writer.Write(publicRequest.JobFlowId);
                 }
 
         

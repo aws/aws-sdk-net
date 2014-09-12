@@ -12,84 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Tape Object
+    /// </summary>  
+    public class TapeUnmarshaller : IUnmarshaller<Tape, XmlUnmarshallerContext>, IUnmarshaller<Tape, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TapeUnmarshaller
-      /// </summary>
-      internal class TapeUnmarshaller : IUnmarshaller<Tape, XmlUnmarshallerContext>, IUnmarshaller<Tape, JsonUnmarshallerContext>
-      {
         Tape IUnmarshaller<Tape, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Tape Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Tape tape = new Tape();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Tape unmarshalledObject = new Tape();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TapeARN", targetDepth))
-              {
-                tape.TapeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TapeBarcode", targetDepth))
-              {
-                tape.TapeBarcode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TapeSizeInBytes", targetDepth))
-              {
-                tape.TapeSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TapeStatus", targetDepth))
-              {
-                tape.TapeStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VTLDevice", targetDepth))
-              {
-                tape.VTLDevice = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Progress", targetDepth))
-              {
-                tape.Progress = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Progress", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TapeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeBarcode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TapeBarcode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TapeStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VTLDevice", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VTLDevice = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return tape;
+            return unmarshalledObject;
         }
 
-        private static TapeUnmarshaller instance;
-        public static TapeUnmarshaller GetInstance()
+
+        private static TapeUnmarshaller _instance = new TapeUnmarshaller();        
+
+        public static TapeUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TapeUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

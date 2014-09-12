@@ -12,38 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Contains the response data from the CreateVolume operation.
     /// </summary>
     public partial class CreateVolumeResult : AmazonWebServiceResponse
     {
-        
-        private Volume volume;
+        private Volume _volume;
 
-
-        /// <summary>
-        /// 
-        ///  
-        /// </summary>
+        // Gets and sets the Volume member
         public Volume Volume
         {
-            get { return this.volume; }
-            set { this.volume = value; }
+            get { return this._volume; }
+            set { this._volume = value; }
         }
 
         // Check to see if Volume property is set
         internal bool IsSetVolume()
         {
-            return this.volume != null;
+            return this._volume != null;
         }
     }
 }

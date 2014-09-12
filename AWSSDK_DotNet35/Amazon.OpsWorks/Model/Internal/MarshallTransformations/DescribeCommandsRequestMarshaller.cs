@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeCommands Request Marshaller
     /// </summary>       
-    public class DescribeCommandsRequestMarshaller : IMarshaller<IRequest, DescribeCommandsRequest> 
+    public class DescribeCommandsRequestMarshaller : IMarshaller<IRequest, DescribeCommandsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeCommandsRequest)input);
+        }
+
         public IRequest Marshall(DescribeCommandsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,27 +56,28 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCommandIds())
                 {
-                    writer.WritePropertyName("CommandIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("CommandIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestCommandIdsListValue in publicRequest.CommandIds)
                     {
-                        writer.Write(publicRequestCommandIdsListValue);
+                            context.Writer.Write(publicRequestCommandIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetDeploymentId())
                 {
-                    writer.WritePropertyName("DeploymentId");
-                    writer.Write(publicRequest.DeploymentId);
+                    context.Writer.WritePropertyName("DeploymentId");
+                    context.Writer.Write(publicRequest.DeploymentId);
                 }
 
                 if(publicRequest.IsSetInstanceId())
                 {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(publicRequest.InstanceId);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
         

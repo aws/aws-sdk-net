@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,108 +29,138 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeDBSecurityGroupIngress operation.
-    /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the
-    /// DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application
-    /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or
-    /// (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </para> <para><b>NOTE:</b> You cannot authorize
-    /// ingress from an EC2 security group in one Region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
-    /// group in one VPC to an Amazon RDS DB instance in another. </para> <para>For an overview of CIDR ranges, go to the <a
-    /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
+    /// Enables ingress to a DBSecurityGroup using one of two forms of authorization. First,
+    /// EC2 or VPC security groups can be added to the DBSecurityGroup if the application
+    /// using the database is running on EC2 or VPC instances. Second, IP ranges are available
+    /// if the application accessing your database is running on the Internet. Required parameters
+    /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
+    /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
+    /// 
+    ///  
+    /// <para>
+    /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+    /// Tutorial</a>. 
     /// </para>
     /// </summary>
     public partial class AuthorizeDBSecurityGroupIngressRequest : AmazonRDSRequest
     {
-        private string dBSecurityGroupName;
-        private string cIDRIP;
-        private string eC2SecurityGroupName;
-        private string eC2SecurityGroupId;
-        private string eC2SecurityGroupOwnerId;
-
+        private string _cIDRIP;
+        private string _dBSecurityGroupName;
+        private string _eC2SecurityGroupId;
+        private string _eC2SecurityGroupName;
+        private string _eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the DB security group to add authorization to.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string DBSecurityGroupName
-        {
-            get { return this.dBSecurityGroupName; }
-            set { this.dBSecurityGroupName = value; }
-        }
+        public AuthorizeDBSecurityGroupIngressRequest() { }
 
-        // Check to see if DBSecurityGroupName property is set
-        internal bool IsSetDBSecurityGroupName()
+        /// <summary>
+        /// Instantiates AuthorizeDBSecurityGroupIngressRequest with the parameterized properties
+        /// </summary>
+        /// <param name="dbSecurityGroupName"> The name of the DB security group to add authorization to. </param>
+        public AuthorizeDBSecurityGroupIngressRequest(string dbSecurityGroupName)
         {
-            return this.dBSecurityGroupName != null;
+            _dBSecurityGroupName = dbSecurityGroupName;
         }
 
         /// <summary>
-        /// The IP range to authorize.
-        ///  
+        /// Gets and sets the property CIDRIP. 
+        /// <para>
+        ///  The IP range to authorize. 
+        /// </para>
         /// </summary>
         public string CIDRIP
         {
-            get { return this.cIDRIP; }
-            set { this.cIDRIP = value; }
+            get { return this._cIDRIP; }
+            set { this._cIDRIP = value; }
         }
 
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;
+            return this._cIDRIP != null;
         }
 
         /// <summary>
-        /// Name of the EC2 security group to authorize. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
-        /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
-        ///  
+        /// Gets and sets the property DBSecurityGroupName. 
+        /// <para>
+        ///  The name of the DB security group to add authorization to. 
+        /// </para>
         /// </summary>
-        public string EC2SecurityGroupName
+        public string DBSecurityGroupName
         {
-            get { return this.eC2SecurityGroupName; }
-            set { this.eC2SecurityGroupName = value; }
+            get { return this._dBSecurityGroupName; }
+            set { this._dBSecurityGroupName = value; }
         }
 
-        // Check to see if EC2SecurityGroupName property is set
-        internal bool IsSetEC2SecurityGroupName()
+        // Check to see if DBSecurityGroupName property is set
+        internal bool IsSetDBSecurityGroupName()
         {
-            return this.eC2SecurityGroupName != null;
+            return this._dBSecurityGroupName != null;
         }
 
         /// <summary>
-        /// Id of the EC2 security group to authorize. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
-        /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
-        ///  
+        /// Gets and sets the property EC2SecurityGroupId. 
+        /// <para>
+        ///  Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+        /// must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+        /// or <code>EC2SecurityGroupId</code> must be provided. 
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupId
         {
-            get { return this.eC2SecurityGroupId; }
-            set { this.eC2SecurityGroupId = value; }
+            get { return this._eC2SecurityGroupId; }
+            set { this._eC2SecurityGroupId = value; }
         }
 
         // Check to see if EC2SecurityGroupId property is set
         internal bool IsSetEC2SecurityGroupId()
         {
-            return this.eC2SecurityGroupId != null;
+            return this._eC2SecurityGroupId != null;
         }
 
         /// <summary>
-        /// AWS Account Number of the owner of the EC2 security group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-        /// acceptable value. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-        /// <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
-        ///  
+        /// Gets and sets the property EC2SecurityGroupName. 
+        /// <para>
+        ///  Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+        /// must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+        /// or <code>EC2SecurityGroupId</code> must be provided. 
+        /// </para>
+        /// </summary>
+        public string EC2SecurityGroupName
+        {
+            get { return this._eC2SecurityGroupName; }
+            set { this._eC2SecurityGroupName = value; }
+        }
+
+        // Check to see if EC2SecurityGroupName property is set
+        internal bool IsSetEC2SecurityGroupName()
+        {
+            return this._eC2SecurityGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EC2SecurityGroupOwnerId. 
+        /// <para>
+        ///  AWS Account Number of the owner of the EC2 security group specified in the EC2SecurityGroupName
+        /// parameter. The AWS Access Key ID is not an acceptable value. For VPC DB security groups,
+        /// <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId
+        /// and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must
+        /// be provided. 
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId
         {
-            get { return this.eC2SecurityGroupOwnerId; }
-            set { this.eC2SecurityGroupOwnerId = value; }
+            get { return this._eC2SecurityGroupOwnerId; }
+            set { this._eC2SecurityGroupOwnerId = value; }
         }
 
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;
+            return this._eC2SecurityGroupOwnerId != null;
         }
 
     }
 }
-    

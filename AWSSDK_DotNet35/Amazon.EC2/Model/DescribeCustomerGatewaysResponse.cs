@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeCustomerGateways response and response metadata.
+    /// Configuration for accessing Amazon DescribeCustomerGateways service
     /// </summary>
     public partial class DescribeCustomerGatewaysResponse : DescribeCustomerGatewaysResult
     {
         /// <summary>
         /// Gets and sets the DescribeCustomerGatewaysResult property.
-        /// 
+        /// Represents the output of a DescribeCustomerGateways operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCustomerGatewaysResult class are now available on the DescribeCustomerGatewaysResponse class. You should use the properties on DescribeCustomerGatewaysResponse instead of accessing them through DescribeCustomerGatewaysResult.")]
         public DescribeCustomerGatewaysResult DescribeCustomerGatewaysResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

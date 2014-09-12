@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DiskImageVolumeDescription Unmarshaller
-     /// </summary>
-    internal class DiskImageVolumeDescriptionUnmarshaller : IUnmarshaller<DiskImageVolumeDescription, XmlUnmarshallerContext>, IUnmarshaller<DiskImageVolumeDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DiskImageVolumeDescription Object
+    /// </summary>  
+    public class DiskImageVolumeDescriptionUnmarshaller : IUnmarshaller<DiskImageVolumeDescription, XmlUnmarshallerContext>, IUnmarshaller<DiskImageVolumeDescription, JsonUnmarshallerContext>
     {
-        public DiskImageVolumeDescription Unmarshall(XmlUnmarshallerContext context) 
+        public DiskImageVolumeDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            DiskImageVolumeDescription diskImageVolumeDescription = new DiskImageVolumeDescription();
+            DiskImageVolumeDescription unmarshalledObject = new DiskImageVolumeDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("size", targetDepth))
-                    {
-                        diskImageVolumeDescription.Size = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("id", targetDepth))
                     {
-                        diskImageVolumeDescription.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("size", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return diskImageVolumeDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return diskImageVolumeDescription;
+            return unmarshalledObject;
         }
 
-        public DiskImageVolumeDescription Unmarshall(JsonUnmarshallerContext context) 
+        public DiskImageVolumeDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DiskImageVolumeDescriptionUnmarshaller instance;
 
-        public static DiskImageVolumeDescriptionUnmarshaller GetInstance() 
+        private static DiskImageVolumeDescriptionUnmarshaller _instance = new DiskImageVolumeDescriptionUnmarshaller();        
+
+        public static DiskImageVolumeDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DiskImageVolumeDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

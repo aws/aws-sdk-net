@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,159 +29,168 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceNetworkAclEntry operation.
-    /// <para>Replaces an entry (rule) in a network ACL. For more information about network ACLs, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html" >Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
-    /// Guide</i> .</para>
+    /// Replaces an entry (rule) in a network ACL. For more information about network ACLs,
+    /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+    /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </summary>
     public partial class ReplaceNetworkAclEntryRequest : AmazonEC2Request
     {
-        private string networkAclId;
-        private int? ruleNumber;
-        private string protocol;
-        private RuleAction ruleAction;
-        private bool? egress;
-        private string cidrBlock;
-        private IcmpTypeCode icmpTypeCode;
-        private PortRange portRange;
-
-
-        /// <summary>
-        /// The ID of the ACL.
-        ///  
-        /// </summary>
-        public string NetworkAclId
-        {
-            get { return this.networkAclId; }
-            set { this.networkAclId = value; }
-        }
-
-        // Check to see if NetworkAclId property is set
-        internal bool IsSetNetworkAclId()
-        {
-            return this.networkAclId != null;
-        }
+        private string _cidrBlock;
+        private bool? _egress;
+        private IcmpTypeCode _icmpTypeCode;
+        private string _networkAclId;
+        private PortRange _portRange;
+        private string _protocol;
+        private RuleAction _ruleAction;
+        private int? _ruleNumber;
 
         /// <summary>
-        /// The rule number of the entry to replace.
-        ///  
-        /// </summary>
-        public int RuleNumber
-        {
-            get { return this.ruleNumber ?? default(int); }
-            set { this.ruleNumber = value; }
-        }
-
-        // Check to see if RuleNumber property is set
-        internal bool IsSetRuleNumber()
-        {
-            return this.ruleNumber.HasValue;
-        }
-
-        /// <summary>
-        /// The IP protocol. You can specify <c>all</c> or <c>-1</c> to mean all protocols.
-        ///  
-        /// </summary>
-        public string Protocol
-        {
-            get { return this.protocol; }
-            set { this.protocol = value; }
-        }
-
-        // Check to see if Protocol property is set
-        internal bool IsSetProtocol()
-        {
-            return this.protocol != null;
-        }
-
-        /// <summary>
-        /// Indicates whether to allow or deny the traffic that matches the rule.
-        ///  
+        /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>allow, deny</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public RuleAction RuleAction
-        {
-            get { return this.ruleAction; }
-            set { this.ruleAction = value; }
-        }
-
-        // Check to see if RuleAction property is set
-        internal bool IsSetRuleAction()
-        {
-            return this.ruleAction != null;
-        }
-
-        /// <summary>
-        /// Indicates whether to replace the egress rule. Default: If no value is specified, we replace the ingress rule.
-        ///  
-        /// </summary>
-        public bool Egress
-        {
-            get { return this.egress ?? default(bool); }
-            set { this.egress = value; }
-        }
-
-        // Check to see if Egress property is set
-        internal bool IsSetEgress()
-        {
-            return this.egress.HasValue;
-        }
-
-        /// <summary>
         /// The network range to allow or deny, in CIDR notation.
-        ///  
+        /// </para>
         /// </summary>
         public string CidrBlock
         {
-            get { return this.cidrBlock; }
-            set { this.cidrBlock = value; }
+            get { return this._cidrBlock; }
+            set { this._cidrBlock = value; }
         }
 
         // Check to see if CidrBlock property is set
         internal bool IsSetCidrBlock()
         {
-            return this.cidrBlock != null;
+            return this._cidrBlock != null;
         }
 
         /// <summary>
-        /// ICMP protocol: The ICMP type and code.
+        /// Gets and sets the property Egress. 
+        /// <para>
+        /// Indicates whether to replace the egress rule.
+        /// </para>
         ///  
+        /// <para>
+        /// Default: If no value is specified, we replace the ingress rule.
+        /// </para>
+        /// </summary>
+        public bool Egress
+        {
+            get { return this._egress.GetValueOrDefault(); }
+            set { this._egress = value; }
+        }
+
+        // Check to see if Egress property is set
+        internal bool IsSetEgress()
+        {
+            return this._egress.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IcmpTypeCode. 
+        /// <para>
+        /// ICMP protocol: The ICMP type and code.
+        /// </para>
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
         {
-            get { return this.icmpTypeCode; }
-            set { this.icmpTypeCode = value; }
+            get { return this._icmpTypeCode; }
+            set { this._icmpTypeCode = value; }
         }
 
         // Check to see if IcmpTypeCode property is set
         internal bool IsSetIcmpTypeCode()
         {
-            return this.icmpTypeCode != null;
+            return this._icmpTypeCode != null;
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkAclId. 
+        /// <para>
+        /// The ID of the ACL.
+        /// </para>
+        /// </summary>
+        public string NetworkAclId
+        {
+            get { return this._networkAclId; }
+            set { this._networkAclId = value; }
+        }
+
+        // Check to see if NetworkAclId property is set
+        internal bool IsSetNetworkAclId()
+        {
+            return this._networkAclId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortRange. 
+        /// <para>
         /// TCP or UDP protocols: The range of ports the rule applies to.
-        ///  
+        /// </para>
         /// </summary>
         public PortRange PortRange
         {
-            get { return this.portRange; }
-            set { this.portRange = value; }
+            get { return this._portRange; }
+            set { this._portRange = value; }
         }
 
         // Check to see if PortRange property is set
         internal bool IsSetPortRange()
         {
-            return this.portRange != null;
+            return this._portRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+        /// </para>
+        /// </summary>
+        public string Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleAction. 
+        /// <para>
+        /// Indicates whether to allow or deny the traffic that matches the rule.
+        /// </para>
+        /// </summary>
+        public RuleAction RuleAction
+        {
+            get { return this._ruleAction; }
+            set { this._ruleAction = value; }
+        }
+
+        // Check to see if RuleAction property is set
+        internal bool IsSetRuleAction()
+        {
+            return this._ruleAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleNumber. 
+        /// <para>
+        /// The rule number of the entry to replace.
+        /// </para>
+        /// </summary>
+        public int RuleNumber
+        {
+            get { return this._ruleNumber.GetValueOrDefault(); }
+            set { this._ruleNumber = value; }
+        }
+
+        // Check to see if RuleNumber property is set
+        internal bool IsSetRuleNumber()
+        {
+            return this._ruleNumber.HasValue; 
         }
 
     }
 }
-    

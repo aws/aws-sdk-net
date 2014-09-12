@@ -12,135 +12,145 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IndexField Unmarshaller
-     /// </summary>
-    internal class IndexFieldUnmarshaller : IUnmarshaller<IndexField, XmlUnmarshallerContext>, IUnmarshaller<IndexField, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IndexField Object
+    /// </summary>  
+    public class IndexFieldUnmarshaller : IUnmarshaller<IndexField, XmlUnmarshallerContext>, IUnmarshaller<IndexField, JsonUnmarshallerContext>
     {
-        public IndexField Unmarshall(XmlUnmarshallerContext context) 
+        public IndexField Unmarshall(XmlUnmarshallerContext context)
         {
-            IndexField indexField = new IndexField();
+            IndexField unmarshalledObject = new IndexField();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("IndexFieldName", targetDepth))
+                    if (context.TestExpression("DateArrayOptions", targetDepth))
                     {
-                        indexField.IndexFieldName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("IndexFieldType", targetDepth))
-                    {
-                        indexField.IndexFieldType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("IntOptions", targetDepth))
-                    {
-                        indexField.IntOptions = IntOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DoubleOptions", targetDepth))
-                    {
-                        indexField.DoubleOptions = DoubleOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LiteralOptions", targetDepth))
-                    {
-                        indexField.LiteralOptions = LiteralOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("TextOptions", targetDepth))
-                    {
-                        indexField.TextOptions = TextOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateArrayOptionsUnmarshaller.Instance;
+                        unmarshalledObject.DateArrayOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateOptions", targetDepth))
                     {
-                        indexField.DateOptions = DateOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LatLonOptions", targetDepth))
-                    {
-                        indexField.LatLonOptions = LatLonOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("IntArrayOptions", targetDepth))
-                    {
-                        indexField.IntArrayOptions = IntArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateOptionsUnmarshaller.Instance;
+                        unmarshalledObject.DateOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DoubleArrayOptions", targetDepth))
                     {
-                        indexField.DoubleArrayOptions = DoubleArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleArrayOptionsUnmarshaller.Instance;
+                        unmarshalledObject.DoubleArrayOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DoubleOptions", targetDepth))
+                    {
+                        var unmarshaller = DoubleOptionsUnmarshaller.Instance;
+                        unmarshalledObject.DoubleOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IndexFieldName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IndexFieldName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IndexFieldType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IndexFieldType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IntArrayOptions", targetDepth))
+                    {
+                        var unmarshaller = IntArrayOptionsUnmarshaller.Instance;
+                        unmarshalledObject.IntArrayOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IntOptions", targetDepth))
+                    {
+                        var unmarshaller = IntOptionsUnmarshaller.Instance;
+                        unmarshalledObject.IntOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LatLonOptions", targetDepth))
+                    {
+                        var unmarshaller = LatLonOptionsUnmarshaller.Instance;
+                        unmarshalledObject.LatLonOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LiteralArrayOptions", targetDepth))
                     {
-                        indexField.LiteralArrayOptions = LiteralArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LiteralArrayOptionsUnmarshaller.Instance;
+                        unmarshalledObject.LiteralArrayOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LiteralOptions", targetDepth))
+                    {
+                        var unmarshaller = LiteralOptionsUnmarshaller.Instance;
+                        unmarshalledObject.LiteralOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TextArrayOptions", targetDepth))
                     {
-                        indexField.TextArrayOptions = TextArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = TextArrayOptionsUnmarshaller.Instance;
+                        unmarshalledObject.TextArrayOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("DateArrayOptions", targetDepth))
+                    if (context.TestExpression("TextOptions", targetDepth))
                     {
-                        indexField.DateArrayOptions = DateArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = TextOptionsUnmarshaller.Instance;
+                        unmarshalledObject.TextOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return indexField;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return indexField;
+            return unmarshalledObject;
         }
 
-        public IndexField Unmarshall(JsonUnmarshallerContext context) 
+        public IndexField Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IndexFieldUnmarshaller instance;
 
-        public static IndexFieldUnmarshaller GetInstance() 
+        private static IndexFieldUnmarshaller _instance = new IndexFieldUnmarshaller();        
+
+        public static IndexFieldUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IndexFieldUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

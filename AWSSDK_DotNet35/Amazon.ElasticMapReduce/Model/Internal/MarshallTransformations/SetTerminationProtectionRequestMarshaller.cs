@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// SetTerminationProtection Request Marshaller
     /// </summary>       
-    public class SetTerminationProtectionRequestMarshaller : IMarshaller<IRequest, SetTerminationProtectionRequest> 
+    public class SetTerminationProtectionRequestMarshaller : IMarshaller<IRequest, SetTerminationProtectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((SetTerminationProtectionRequest)input);
+        }
+
         public IRequest Marshall(SetTerminationProtectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,21 +56,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetJobFlowIds())
                 {
-                    writer.WritePropertyName("JobFlowIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("JobFlowIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
                     {
-                        writer.Write(publicRequestJobFlowIdsListValue);
+                            context.Writer.Write(publicRequestJobFlowIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTerminationProtected())
                 {
-                    writer.WritePropertyName("TerminationProtected");
-                    writer.Write(publicRequest.TerminationProtected);
+                    context.Writer.WritePropertyName("TerminationProtected");
+                    context.Writer.Write(publicRequest.TerminationProtected);
                 }
 
         

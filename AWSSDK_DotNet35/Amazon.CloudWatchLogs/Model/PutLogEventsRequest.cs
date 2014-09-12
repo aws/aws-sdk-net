@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -51,6 +55,23 @@ namespace Amazon.CloudWatchLogs.Model
         private string _logStreamName;
         private string _sequenceToken;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public PutLogEventsRequest() { }
+
+        /// <summary>
+        /// Instantiates PutLogEventsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="logGroupName">Sets the PutLogEventsRequest LogGroupName property</param>
+        /// <param name="logStreamName">Sets the PutLogEventsRequest LogStreamName property</param>
+        /// <param name="logEvents">Sets the PutLogEventsRequest LogEvents property</param>
+        public PutLogEventsRequest(string logGroupName, string logStreamName, List<InputLogEvent> logEvents)
+        {
+            _logGroupName = logGroupName;
+            _logStreamName = logStreamName;
+            _logEvents = logEvents;
+        }
 
         /// <summary>
         /// Gets and sets the property LogEvents.
@@ -67,7 +88,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._logEvents != null && this._logEvents.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LogGroupName.
         /// </summary>
@@ -83,7 +103,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._logGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LogStreamName.
         /// </summary>
@@ -98,7 +117,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._logStreamName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SequenceToken. 

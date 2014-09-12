@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -48,7 +52,6 @@ namespace Amazon.ElasticTranscoder.Model
         private List<JobWatermark> _watermarks = new List<JobWatermark>();
         private int? _width;
 
-
         /// <summary>
         /// Gets and sets the property AlbumArt. 
         /// <para>
@@ -66,7 +69,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._albumArt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Captions. 
@@ -154,7 +156,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._captions != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Composition. 
         /// <para>
@@ -177,7 +178,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._composition != null && this._composition.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
@@ -196,7 +196,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._duration.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Height. 
         /// <para>
@@ -214,7 +213,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._height.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -235,7 +233,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
@@ -255,7 +252,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._key != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PresetId. 
@@ -279,7 +275,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._presetId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Rotate. 
@@ -309,7 +304,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._rotate != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SegmentDuration. 
         /// <para>
@@ -335,7 +329,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._segmentDuration != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -373,7 +366,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StatusDetail. 
         /// <para>
@@ -391,7 +383,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._statusDetail != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ThumbnailPattern. 
@@ -455,7 +446,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._thumbnailPattern != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Watermarks. 
         /// <para>
@@ -486,7 +476,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._watermarks != null && this._watermarks.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Width. 

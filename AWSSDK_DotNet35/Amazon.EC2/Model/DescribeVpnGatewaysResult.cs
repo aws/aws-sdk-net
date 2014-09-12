@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpnGatewaysResult : AmazonWebServiceResponse
     {
-        
-        private List<VpnGateway> vpnGateways = new List<VpnGateway>();
-
+        private List<VpnGateway> _vpnGateways = new List<VpnGateway>();
 
         /// <summary>
+        /// Gets and sets the property VpnGateways. 
+        /// <para>
         /// Information about one or more virtual private gateways.
-        ///  
+        /// </para>
         /// </summary>
         public List<VpnGateway> VpnGateways
         {
-            get { return this.vpnGateways; }
-            set { this.vpnGateways = value; }
+            get { return this._vpnGateways; }
+            set { this._vpnGateways = value; }
         }
 
         // Check to see if VpnGateways property is set
         internal bool IsSetVpnGateways()
         {
-            return this.vpnGateways.Count > 0;
+            return this._vpnGateways != null && this._vpnGateways.Count > 0; 
         }
+
     }
 }

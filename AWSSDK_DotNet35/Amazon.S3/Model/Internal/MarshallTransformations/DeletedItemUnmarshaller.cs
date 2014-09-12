@@ -78,15 +78,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static DeletedObjectUnmarshaller instance;
+        private static DeletedObjectUnmarshaller _instance;
 
-        public static DeletedObjectUnmarshaller GetInstance() 
+        public static DeletedObjectUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DeletedObjectUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new DeletedObjectUnmarshaller();
+                }
+                return _instance;
+            }
         }
+
     }
 }
     

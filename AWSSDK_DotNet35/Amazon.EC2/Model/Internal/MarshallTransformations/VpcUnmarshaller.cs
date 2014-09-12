@@ -12,99 +12,110 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Vpc Unmarshaller
-     /// </summary>
-    internal class VpcUnmarshaller : IUnmarshaller<Vpc, XmlUnmarshallerContext>, IUnmarshaller<Vpc, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Vpc Object
+    /// </summary>  
+    public class VpcUnmarshaller : IUnmarshaller<Vpc, XmlUnmarshallerContext>, IUnmarshaller<Vpc, JsonUnmarshallerContext>
     {
-        public Vpc Unmarshall(XmlUnmarshallerContext context) 
+        public Vpc Unmarshall(XmlUnmarshallerContext context)
         {
-            Vpc vpc = new Vpc();
+            Vpc unmarshalledObject = new Vpc();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        vpc.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        vpc.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("cidrBlock", targetDepth))
                     {
-                        vpc.CidrBlock = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("dhcpOptionsId", targetDepth))
                     {
-                        vpc.DhcpOptionsId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        vpc.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceTenancy", targetDepth))
                     {
-                        vpc.InstanceTenancy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceTenancy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("isDefault", targetDepth))
                     {
-                        vpc.IsDefault = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpc;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpc;
+            return unmarshalledObject;
         }
 
-        public Vpc Unmarshall(JsonUnmarshallerContext context) 
+        public Vpc Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpcUnmarshaller instance;
 
-        public static VpcUnmarshaller GetInstance() 
+        private static VpcUnmarshaller _instance = new VpcUnmarshaller();        
+
+        public static VpcUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpcUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,7 +47,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _resolution;
         private string _sizingPolicy;
         private List<PresetWatermark> _watermarks = new List<PresetWatermark>();
-
 
         /// <summary>
         /// Gets and sets the property AspectRatio. <important>            
@@ -89,7 +92,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._aspectRatio != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property BitRate. 
         /// <para>
@@ -125,7 +127,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._bitRate != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Codec. 
         /// <para>
@@ -145,7 +146,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._codec != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CodecOptions. 
@@ -242,7 +242,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._codecOptions != null && this._codecOptions.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DisplayAspectRatio. 
         /// <para>
@@ -260,7 +259,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._displayAspectRatio != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property FixedGOP. 
@@ -284,7 +282,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._fixedGOP != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property FrameRate. 
@@ -339,7 +336,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._frameRate != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property KeyframesMaxDist. 
         /// <para>
@@ -362,7 +358,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._keyframesMaxDist != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxFrameRate. 
@@ -388,7 +383,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._maxFrameRate != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxHeight. 
         /// <para>
@@ -408,7 +402,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._maxHeight != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxWidth. 
@@ -430,7 +423,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._maxWidth != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PaddingPolicy. 
         /// <para>
@@ -451,7 +443,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._paddingPolicy != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Resolution. <important>            
@@ -504,7 +495,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._resolution != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SizingPolicy. 
         /// <para>
@@ -551,7 +541,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._sizingPolicy != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Watermarks. 

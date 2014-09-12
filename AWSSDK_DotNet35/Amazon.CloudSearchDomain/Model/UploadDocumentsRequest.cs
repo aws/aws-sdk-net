@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -56,7 +60,6 @@ namespace Amazon.CloudSearchDomain.Model
         private ContentType _contentType;
         private Stream _documents;
 
-
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
@@ -76,7 +79,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._contentType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Documents. 

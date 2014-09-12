@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,7 +53,6 @@ namespace Amazon.AutoScaling.Model
         private string _spotPrice;
         private string _userData;
 
-
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
@@ -79,7 +82,6 @@ namespace Amazon.AutoScaling.Model
             return this._associatePublicIpAddress.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
@@ -101,7 +103,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
@@ -126,7 +127,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._ebsOptimized.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
@@ -155,7 +155,6 @@ namespace Amazon.AutoScaling.Model
             return this._iamInstanceProfile != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
@@ -175,7 +174,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._imageId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -216,7 +214,6 @@ namespace Amazon.AutoScaling.Model
             return this._instanceId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
@@ -245,7 +242,6 @@ namespace Amazon.AutoScaling.Model
             return this._instanceMonitoring != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
@@ -267,7 +263,6 @@ namespace Amazon.AutoScaling.Model
             return this._instanceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
@@ -285,7 +280,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._kernelId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property KeyName. 
@@ -306,7 +300,6 @@ namespace Amazon.AutoScaling.Model
             return this._keyName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
@@ -324,7 +317,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._launchConfigurationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PlacementTenancy. 
@@ -367,7 +359,6 @@ namespace Amazon.AutoScaling.Model
             return this._placementTenancy != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
@@ -385,7 +376,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._ramdiskId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
@@ -418,7 +408,6 @@ namespace Amazon.AutoScaling.Model
             return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
@@ -440,7 +429,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._spotPrice != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserData. 

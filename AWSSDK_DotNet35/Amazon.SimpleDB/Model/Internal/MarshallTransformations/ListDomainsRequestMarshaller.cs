@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleDB.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Domains Request Marshaller
+    /// ListDomains Request Marshaller
     /// </summary>       
-    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest>
+    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ListDomainsRequest listDomainsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(listDomainsRequest, "AmazonSimpleDB");
+            return this.Marshall((ListDomainsRequest)input);
+        }
+    
+        public IRequest Marshall(ListDomainsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleDB");
             request.Parameters.Add("Action", "ListDomains");
             request.Parameters.Add("Version", "2009-04-15");
-            if (listDomainsRequest != null && listDomainsRequest.IsSetMaxNumberOfDomains())
-            {
-                request.Parameters.Add("MaxNumberOfDomains", StringUtils.FromInt(listDomainsRequest.MaxNumberOfDomains));
-            }
-            if (listDomainsRequest != null && listDomainsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(listDomainsRequest.NextToken));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMaxNumberOfDomains())
+                {
+                    request.Parameters.Add("MaxNumberOfDomains", StringUtils.FromInt(publicRequest.MaxNumberOfDomains));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+            }
             return request;
         }
     }

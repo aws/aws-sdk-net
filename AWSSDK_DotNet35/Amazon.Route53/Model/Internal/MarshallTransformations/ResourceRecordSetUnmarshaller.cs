@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ResourceRecordSet Unmarshaller
-     /// </summary>
-    internal class ResourceRecordSetUnmarshaller : IUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>, IUnmarshaller<ResourceRecordSet, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ResourceRecordSet Object
+    /// </summary>  
+    public class ResourceRecordSetUnmarshaller : IUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>
     {
-        public ResourceRecordSet Unmarshall(XmlUnmarshallerContext context) 
+        public ResourceRecordSet Unmarshall(XmlUnmarshallerContext context)
         {
-            ResourceRecordSet resourceRecordSet = new ResourceRecordSet();
+            ResourceRecordSet unmarshalledObject = new ResourceRecordSet();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,90 +52,87 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Name", targetDepth))
                     {
-                        resourceRecordSet.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Type", targetDepth))
                     {
-                        resourceRecordSet.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SetIdentifier", targetDepth))
                     {
-                        resourceRecordSet.SetIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SetIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Weight", targetDepth))
                     {
-                        resourceRecordSet.Weight = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Region", targetDepth))
                     {
-                        resourceRecordSet.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("GeoLocation", targetDepth))
+                    {
+                        var unmarshaller = GeoLocationUnmarshaller.Instance;
+                        unmarshalledObject.GeoLocation = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Failover", targetDepth))
                     {
-                        resourceRecordSet.Failover = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Failover = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TTL", targetDepth))
                     {
-                        resourceRecordSet.TTL = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.TTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourceRecords/ResourceRecord", targetDepth))
                     {
-                        resourceRecordSet.ResourceRecords.Add(ResourceRecordUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ResourceRecordUnmarshaller.Instance;
+                        unmarshalledObject.ResourceRecords.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("AliasTarget", targetDepth))
                     {
-                        resourceRecordSet.AliasTarget = AliasTargetUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AliasTargetUnmarshaller.Instance;
+                        unmarshalledObject.AliasTarget = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HealthCheckId", targetDepth))
                     {
-                        resourceRecordSet.HealthCheckId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HealthCheckId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return resourceRecordSet;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static ResourceRecordSetUnmarshaller _instance = new ResourceRecordSetUnmarshaller();        
+
+        public static ResourceRecordSetUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return resourceRecordSet;
-        }
-
-        public ResourceRecordSet Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static ResourceRecordSetUnmarshaller instance;
-
-        public static ResourceRecordSetUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new ResourceRecordSetUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

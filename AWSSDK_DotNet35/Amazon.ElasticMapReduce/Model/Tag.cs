@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,6 +40,21 @@ namespace Amazon.ElasticMapReduce.Model
         private string _key;
         private string _value;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Tag() { }
+
+        /// <summary>
+        /// Instantiates Tag with the parameterized properties
+        /// </summary>
+        /// <param name="key">A user-defined key, which is the minimum required information for a valid tag.                             For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>.          </param>
+        /// <param name="value">A user-defined value, which is optional in a tag.                                     For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>.          </param>
+        public Tag(string key, string value)
+        {
+            _key = key;
+            _value = value;
+        }
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -57,7 +76,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._key != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Value. 

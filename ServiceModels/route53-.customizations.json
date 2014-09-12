@@ -1,0 +1,12 @@
+{	
+	"runtimePipelineOverride":{
+		"overrides":[			
+			{"operation":"addAfter", "newType":"Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}			
+		]
+	},
+	"noArgOverloads": [
+		"ListHealthChecks",
+		"ListHostedZones"
+	],
+	"retainOriginalMemberOrdering" : true
+}

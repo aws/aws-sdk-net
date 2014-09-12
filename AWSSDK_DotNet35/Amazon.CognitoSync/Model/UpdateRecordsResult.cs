@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -29,7 +33,6 @@ namespace Amazon.CognitoSync.Model
     public partial class UpdateRecordsResult : AmazonWebServiceResponse
     {
         private List<Record> _records = new List<Record>();
-
 
         /// <summary>
         /// Gets and sets the property Records. A list of records that have been updated.

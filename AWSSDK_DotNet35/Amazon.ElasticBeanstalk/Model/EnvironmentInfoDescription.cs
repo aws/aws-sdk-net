@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _message;
         private DateTime? _sampleTimestamp;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public EnvironmentInfoDescription() { }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
@@ -52,7 +60,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._ec2InstanceId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InfoType. 
         /// <para>
@@ -71,7 +78,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._infoType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
@@ -89,7 +95,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._message != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SampleTimestamp. 

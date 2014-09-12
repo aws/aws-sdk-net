@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.CloudSearch
 {
-
     /// <summary>
-    /// Configuration for accessing Amazon CloudSearch Configuration Service service
+    /// Configuration for accessing Amazon CloudSearch service
     /// </summary>
     public partial class AmazonCloudSearchConfig : ClientConfig
     {
@@ -39,9 +45,7 @@ namespace Amazon.CloudSearch
         {
             get
             {
-                
                 return "cloudsearch";
-                    
             }
         }
 
@@ -57,5 +61,3 @@ namespace Amazon.CloudSearch
         }
     }
 }
-
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,45 +29,33 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// <para>Creates a new search domain. For more information, see <a
-    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" >Creating a Search Domain</a> in the <i>Amazon
-    /// CloudSearch Developer Guide</i> .</para>
+    /// Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
+    /// target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer
+    /// Guide</i>.
     /// </summary>
     public partial class CreateDomainRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-
+        private string _domainName;
 
         /// <summary>
-        /// A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a
-        /// letter or number and be at least 3 and no more than 28 characters long.
-        ///  
+        /// Gets and sets the property DomainName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
+        /// A name for the domain you are creating. Allowed characters are a-z (lower-case letters),
+        /// 0-9, and hyphen (-). Domain names must start with a letter or number and be at least
+        /// 3 and no more than 28 characters long.
         /// </para>
         /// </summary>
         public string DomainName
         {
-            get { return this.domainName; }
-            set { this.domainName = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;
+            return this._domainName != null;
         }
 
     }
 }
-    

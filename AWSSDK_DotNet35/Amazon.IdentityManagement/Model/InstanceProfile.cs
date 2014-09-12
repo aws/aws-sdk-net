@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -57,7 +61,6 @@ namespace Amazon.IdentityManagement.Model
         private string _path;
         private List<Role> _roles = new List<Role>();
 
-
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
@@ -78,7 +81,6 @@ namespace Amazon.IdentityManagement.Model
             return this._arn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
@@ -96,7 +98,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._createDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceProfileId. 
@@ -118,7 +119,6 @@ namespace Amazon.IdentityManagement.Model
             return this._instanceProfileId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
@@ -136,7 +136,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._instanceProfileName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -156,7 +155,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._path != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Roles. 

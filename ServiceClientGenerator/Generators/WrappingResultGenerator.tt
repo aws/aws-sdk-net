@@ -1,0 +1,59 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace <#=this.Config.Namespace#>.Model
+{
+    /// <summary>
+    /// Contains the response data from the <#=this.Operation.Name#> operation.
+    /// </summary>
+	public partial class <#=this.ClassName#> : <#=this.BaseClass#>
+	{
+        private <#=this.Structure.Name#> <#=this.VariableName#>;
+
+		// Gets and sets the <#=this.PropertyName#> member
+        public <#=this.Structure.Name#> <#=this.PropertyName#>
+        {
+            get { return this.<#=this.VariableName#>; }
+            set { this.<#=this.VariableName#> = value; }
+        }
+
+        // Check to see if <#=this.PropertyName#> property is set
+        internal bool IsSet<#=this.PropertyName#>()
+        {
+            return this.<#=this.VariableName#> != null;
+        }
+    }
+}
+
+
+<#+
+	public Operation Operation { get; set; }
+    public string ClassName { get; set; }
+    public string BaseClass { get; set; }
+    public Shape Structure { get; set; }
+	public string VariableName
+	{
+		get
+		{
+            string txt = "_" + this.Structure.Name[0].ToString().ToLower();
+            if (this.Structure.Name.Length > 1)
+                txt += this.Structure.Name.Substring(1);
+            return txt;
+		}
+	}
+	public string PropertyName { get; set; }
+#>

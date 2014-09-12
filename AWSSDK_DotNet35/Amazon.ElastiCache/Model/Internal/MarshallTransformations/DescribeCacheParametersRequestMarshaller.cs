@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeCacheParameters Request Marshaller
     /// </summary>       
-    public class DescribeCacheParametersRequestMarshaller : IMarshaller<IRequest, DescribeCacheParametersRequest>
+    public class DescribeCacheParametersRequestMarshaller : IMarshaller<IRequest, DescribeCacheParametersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeCacheParametersRequest)input);
+        }
+    
         public IRequest Marshall(DescribeCacheParametersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");

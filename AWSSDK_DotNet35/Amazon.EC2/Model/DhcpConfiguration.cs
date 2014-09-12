@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a DHCP configuration option.</para>
+    /// Describes a DHCP configuration option.
     /// </summary>
     public partial class DhcpConfiguration
     {
-        
-        private string key;
-        private List<string> values = new List<string>();
-
+        private string _key;
+        private List<string> _values = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
         /// The name of a DHCP option.
-        ///  
+        /// </para>
         /// </summary>
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
         /// One or more values for the DHCP option.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Values
         {
-            get { return this.values; }
-            set { this.values = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this.values.Count > 0;
+            return this._values != null && this._values.Count > 0; 
         }
+
     }
 }

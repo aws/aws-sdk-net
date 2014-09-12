@@ -12,62 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeAddresses operation
-    /// </summary>
-    internal class DescribeAddressesResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for DescribeAddresses operation
+    /// </summary>  
+    public class DescribeAddressesResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeAddressesResponse response = new DescribeAddressesResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("addressesSet/item", targetDepth))
                     {
-                        response.Addresses.Add(AddressUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AddressUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Addresses.Add(item);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeAddressesResponseUnmarshaller instance;
+        private static DescribeAddressesResponseUnmarshaller _instance = new DescribeAddressesResponseUnmarshaller();        
 
-        public static DescribeAddressesResponseUnmarshaller GetInstance()
+        internal static DescribeAddressesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeAddressesResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeAddressesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

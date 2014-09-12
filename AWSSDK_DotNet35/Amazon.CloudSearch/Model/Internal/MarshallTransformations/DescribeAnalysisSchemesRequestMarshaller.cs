@@ -12,49 +12,60 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Analysis Schemes Request Marshaller
+    /// DescribeAnalysisSchemes Request Marshaller
     /// </summary>       
-    public class DescribeAnalysisSchemesRequestMarshaller : IMarshaller<IRequest, DescribeAnalysisSchemesRequest>
+    public class DescribeAnalysisSchemesRequestMarshaller : IMarshaller<IRequest, DescribeAnalysisSchemesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeAnalysisSchemesRequest describeAnalysisSchemesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeAnalysisSchemesRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeAnalysisSchemesRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeAnalysisSchemesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DescribeAnalysisSchemes");
             request.Parameters.Add("Version", "2013-01-01");
-            if (describeAnalysisSchemesRequest != null && describeAnalysisSchemesRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeAnalysisSchemesRequest.DomainName));
-            }
-            if (describeAnalysisSchemesRequest != null)
-            {
-                List<string> analysisSchemeNamesList = describeAnalysisSchemesRequest.AnalysisSchemeNames;
 
-                int analysisSchemeNamesListIndex = 1;
-                foreach (string analysisSchemeNamesListValue in analysisSchemeNamesList)
-                { 
-                    request.Parameters.Add("AnalysisSchemeNames.member." + analysisSchemeNamesListIndex, StringUtils.FromString(analysisSchemeNamesListValue));
-                    analysisSchemeNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAnalysisSchemeNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AnalysisSchemeNames)
+                    {
+                        request.Parameters.Add("AnalysisSchemeNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetDeployed())
+                {
+                    request.Parameters.Add("Deployed", StringUtils.FromBool(publicRequest.Deployed));
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
             }
-            if (describeAnalysisSchemesRequest != null && describeAnalysisSchemesRequest.IsSetDeployed())
-            {
-                request.Parameters.Add("Deployed", StringUtils.FromBool(describeAnalysisSchemesRequest.Deployed));
-            }
-
             return request;
         }
     }

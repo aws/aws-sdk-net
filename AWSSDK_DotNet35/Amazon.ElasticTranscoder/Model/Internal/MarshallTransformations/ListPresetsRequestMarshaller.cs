@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListPresets Request Marshaller
     /// </summary>       
-    public class ListPresetsRequestMarshaller : IMarshaller<IRequest, ListPresetsRequest> 
+    public class ListPresetsRequestMarshaller : IMarshaller<IRequest, ListPresetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListPresetsRequest)input);
+        }
+
         public IRequest Marshall(ListPresetsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");

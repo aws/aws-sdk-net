@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetLogEvents Request Marshaller
     /// </summary>       
-    public class GetLogEventsRequestMarshaller : IMarshaller<IRequest, GetLogEventsRequest> 
+    public class GetLogEventsRequestMarshaller : IMarshaller<IRequest, GetLogEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((GetLogEventsRequest)input);
+        }
+
         public IRequest Marshall(GetLogEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
@@ -47,46 +56,47 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEndTime())
                 {
-                    writer.WritePropertyName("endTime");
-                    writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime));
+                    context.Writer.WritePropertyName("endTime");
+                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime));
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
-                    writer.WritePropertyName("limit");
-                    writer.Write(publicRequest.Limit);
+                    context.Writer.WritePropertyName("limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
                 if(publicRequest.IsSetLogGroupName())
                 {
-                    writer.WritePropertyName("logGroupName");
-                    writer.Write(publicRequest.LogGroupName);
+                    context.Writer.WritePropertyName("logGroupName");
+                    context.Writer.Write(publicRequest.LogGroupName);
                 }
 
                 if(publicRequest.IsSetLogStreamName())
                 {
-                    writer.WritePropertyName("logStreamName");
-                    writer.Write(publicRequest.LogStreamName);
+                    context.Writer.WritePropertyName("logStreamName");
+                    context.Writer.Write(publicRequest.LogStreamName);
                 }
 
                 if(publicRequest.IsSetNextToken())
                 {
-                    writer.WritePropertyName("nextToken");
-                    writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 if(publicRequest.IsSetStartFromHead())
                 {
-                    writer.WritePropertyName("startFromHead");
-                    writer.Write(publicRequest.StartFromHead);
+                    context.Writer.WritePropertyName("startFromHead");
+                    context.Writer.Write(publicRequest.StartFromHead);
                 }
 
                 if(publicRequest.IsSetStartTime())
                 {
-                    writer.WritePropertyName("startTime");
-                    writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime));
+                    context.Writer.WritePropertyName("startTime");
+                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime));
                 }
 
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Returns information about the RegisterActivityType response metadata.
-    /// The RegisterActivityType operation has a void result type.
+    /// Configuration for accessing Amazon RegisterActivityType service
     /// </summary>
-    public partial class RegisterActivityTypeResponse : AmazonWebServiceResponse
+    public partial class RegisterActivityTypeResponse : RegisterActivityTypeResult
     {
+        /// <summary>
+        /// Gets and sets the RegisterActivityTypeResult property.
+        /// Represents the output of a RegisterActivityType operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the RegisterActivityTypeResult class are now available on the RegisterActivityTypeResponse class. You should use the properties on RegisterActivityTypeResponse instead of accessing them through RegisterActivityTypeResult.")]
+        public RegisterActivityTypeResult RegisterActivityTypeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

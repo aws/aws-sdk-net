@@ -1,0 +1,16 @@
+﻿HTTP/1.1 404 Not Found
+x-amz-request-id: 749945D6E23AFF48
+x-amz-id-2: xN4fcAA90mhYmTC8o/SX2jBBunBSrD45cMwLYwAu0LZhcn9HIU/KXwtieQO05beD
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Date: Mon, 16 Jun 2014 17:34:56 GMT
+Server: AmazonS3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+	<Code>NoSuchBucket</Code>
+	<Message>The specified bucket does not exist</Message>
+	<BucketName>nonexistentbucket</BucketName>
+	<RequestId>749945D6E23AFF48</RequestId>
+	<HostId>xN4fcAA90mhYmTC8o/SX2jBBunBSrD45cMwLYwAu0LZhcn9HIU/KXwtieQO05beD</HostId>
+</Error>

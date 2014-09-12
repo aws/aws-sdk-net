@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,6 +46,23 @@ namespace Amazon.ElasticMapReduce.Model
         private string _slaveInstanceType;
         private bool? _terminationProtected;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public JobFlowInstancesDetail() { }
+
+        /// <summary>
+        /// Instantiates JobFlowInstancesDetail with the parameterized properties
+        /// </summary>
+        /// <param name="masterInstanceType">The Amazon EC2 master node instance type.</param>
+        /// <param name="slaveInstanceType">The Amazon EC2 slave node instance type.</param>
+        /// <param name="instanceCount">The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance   serves as both the master and slave node. If the value is greater than 1, one instance is   the master node and all others are slave nodes.</param>
+        public JobFlowInstancesDetail(string masterInstanceType, string slaveInstanceType, int instanceCount)
+        {
+            _masterInstanceType = masterInstanceType;
+            _slaveInstanceType = slaveInstanceType;
+            _instanceCount = instanceCount;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2KeyName. 
@@ -62,7 +83,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._ec2KeyName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Ec2SubnetId. 
         /// <para>
@@ -82,7 +102,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._ec2SubnetId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HadoopVersion. 
         /// <para>
@@ -100,7 +119,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._hadoopVersion != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceCount. 
@@ -122,7 +140,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceGroups. 
         /// <para>
@@ -140,7 +157,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceGroups != null && this._instanceGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property KeepJobFlowAliveWhenNoSteps. 
@@ -160,7 +176,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._keepJobFlowAliveWhenNoSteps.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MasterInstanceId. 
         /// <para>
@@ -178,7 +193,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._masterInstanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MasterInstanceType. 
@@ -198,7 +212,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._masterInstanceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MasterPublicDnsName. 
         /// <para>
@@ -216,7 +229,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._masterPublicDnsName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NormalizedInstanceHours. 
@@ -241,7 +253,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._normalizedInstanceHours.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
@@ -260,7 +271,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._placement != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SlaveInstanceType. 
         /// <para>
@@ -278,7 +288,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._slaveInstanceType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TerminationProtected. 

@@ -13,43 +13,46 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.ElasticBeanstalk.Model;
 
 namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
-    /// Implementation for accessing ElasticBeanstalk
+    /// Interface for accessing ElasticBeanstalk
     ///
-    /// AWS Elastic Beanstalk      
+    /// AWS Elastic Beanstalk 
     /// <para>
-    ///          This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
-    /// information          about AWS Elastic Beanstalk actions, data types, parameters,
-    /// and errors.      
+    ///  This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information
+    /// about AWS Elastic Beanstalk actions, data types, parameters, and errors. 
     /// </para>
-    ///       
+    ///  
     /// <para>
-    /// AWS Elastic Beanstalk         is a tool that makes it easy for you to create,    
-    ///     deploy, and manage scalable, fault-tolerant applications running on         Amazon
-    /// Web Services cloud resources.      
+    /// AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and
+    /// manage scalable, fault-tolerant applications running on Amazon Web Services cloud
+    /// resources. 
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///          For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
-    /// Elastic Beanstalk</a> details page.           The location of the latest AWS Elastic
-    /// Beanstalk WSDL is          <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
-    ///      
+    ///  For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
+    /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
+    /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// 
     /// </para>
-    ///        
+    ///  
     /// <para>
     /// <b>Endpoints</b>
     /// </para>
-    ///        
+    ///  
     /// <para>
     /// For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to
     /// <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
@@ -61,7 +64,6 @@ namespace Amazon.ElasticBeanstalk
 
         
         #region  CheckDNSAvailability
-
 
         /// <summary>
         /// Checks if the specified CNAME is available.
@@ -87,14 +89,13 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateApplication
 
-
         /// <summary>
-        /// Creates an application that has one configuration         template named
-        ///         <code>default</code>         and no application versions.      
+        /// Creates an application that has one configuration template named <code>default</code>
+        /// and no application versions. 
         /// 
-        ///       The         &lt;code&gt;default&lt;/code&gt;         configuration template
-        /// is for a 32-bit version of the         Amazon Linux         operating system running
-        /// the Tomcat 6 application container.
+        ///  <?oxy_delete author="brussard" timestamp="20131024T142047-0700" content="&lt;note&gt;
+        /// The &lt;code&gt;default&lt;/code&gt; configuration template is for a 32-bit version
+        /// of the Amazon Linux operating system running the Tomcat 6 application container. &lt;/note&gt;">
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -121,14 +122,8 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateApplicationVersion
 
-
         /// <summary>
-        /// Creates an application version for the specified         application.
-        /// 
-        ///       <note>Once you create an application version with a specified Amazon S3    
-        ///     bucket         and key location, you cannot change that Amazon S3 location. If
-        /// you change the         Amazon S3 location,         you receive an exception when you
-        /// attempt to launch an environment from the         application version. </note>
+        /// Creates an application version for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
         /// 
@@ -166,19 +161,17 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateConfigurationTemplate
 
-
         /// <summary>
-        /// Creates a configuration template. Templates are associated with a         specific
-        /// application         and are used to deploy different versions of the         application
-        /// with         the same configuration settings.
+        /// Creates a configuration template. Templates are associated with a specific application
+        /// and are used to deploy different versions of the application with the same configuration
+        /// settings.
         /// 
-        ///       
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
-        ///         <li>            <a>DescribeConfigurationSettings</a>         </li>       
-        ///  <li>            <a>ListAvailableSolutionStacks</a>         </li>      </ul>
+        ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a>
+        /// </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate service method.</param>
         /// 
@@ -209,10 +202,8 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateEnvironment
 
-
         /// <summary>
-        /// Launches an environment for the specified application using         the specified
-        /// configuration.
+        /// Launches an environment for the specified application using the specified configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -243,11 +234,11 @@ namespace Amazon.ElasticBeanstalk
         #region  CreateStorageLocation
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.        
+        /// Creates the Amazon S3 storage location for the account. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          This location is used to store user log files.        
+        ///  This location is used to store user log files. 
         /// </para>
         /// </summary>
         /// 
@@ -266,11 +257,11 @@ namespace Amazon.ElasticBeanstalk
         CreateStorageLocationResponse CreateStorageLocation();
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.        
+        /// Creates the Amazon S3 storage location for the account. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          This location is used to store user log files.        
+        ///  This location is used to store user log files. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
@@ -305,14 +296,9 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteApplication
 
-
         /// <summary>
-        /// Deletes the specified application along with all         associated versions
-        /// and         configurations. The application versions will not be deleted from your
-        /// Amazon S3 bucket.      
-        /// 
-        ///       <note>You cannot delete an application that has a running environment.     
-        /// </note>
+        /// Deletes the specified application along with all associated versions and configurations.
+        /// The application versions will not be deleted from your Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -339,13 +325,8 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteApplicationVersion
 
-
         /// <summary>
-        /// Deletes the specified version from the specified         application.   
-        ///   
-        /// 
-        ///       <note>You cannot delete an application version that is associated with a   
-        ///      running environment.</note>
+        /// Deletes the specified version from the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method.</param>
         /// 
@@ -383,13 +364,8 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteConfigurationTemplate
 
-
         /// <summary>
         /// Deletes the specified configuration template.
-        /// 
-        ///       <note>When you launch an environment using a configuration template, the   
-        ///      environment         gets a copy of the template. You can delete or modify the
-        /// environment's copy of         the template without         affecting the running environment.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service method.</param>
         /// 
@@ -416,18 +392,17 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteEnvironmentConfiguration
 
-
         /// <summary>
-        /// Deletes the draft configuration associated with the running environment.        
+        /// Deletes the draft configuration associated with the running environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          Updating a running environment with any configuration changes creates a 
-        ///        draft configuration set. You can get the draft configuration using        
-        /// <a>DescribeConfigurationSettings</a> while the update is in progress          or if
-        /// the update fails. The <code>DeploymentStatus</code> for the draft          configuration
-        /// indicates whether the deployment is in process or has failed.         The draft configuration
-        /// remains in existence until it is deleted with this action.      
+        ///  Updating a running environment with any configuration changes creates a draft configuration
+        /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
+        /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
+        /// for the draft configuration indicates whether the deployment is in process or has
+        /// failed. The draft configuration remains in existence until it is deleted with this
+        /// action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
@@ -514,22 +489,20 @@ namespace Amazon.ElasticBeanstalk
         #region  DescribeConfigurationOptions
 
         /// <summary>
-        /// Describes the configuration options that are used in a         particular
-        /// configuration template or environment, or that          a specified solution stack
-        /// defines. The description includes the values the         options, their default values,
-        /// and an indication of         the required action on a running environment if an option
-        /// value is changed.
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
         DescribeConfigurationOptionsResponse DescribeConfigurationOptions();
 
         /// <summary>
-        /// Describes the configuration options that are used in a         particular
-        /// configuration template or environment, or that          a specified solution stack
-        /// defines. The description includes the values the         options, their default values,
-        /// and an indication of         the required action on a running environment if an option
-        /// value is changed.
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// 
@@ -552,26 +525,23 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeConfigurationSettings
 
-
         /// <summary>
-        /// Returns a description of the settings for the specified         configuration
-        /// set, that is, either a configuration template or the         configuration set associated
-        /// with a running environment.        
+        /// Returns a description of the settings for the specified configuration set, that is,
+        /// either a configuration template or the configuration set associated with a running
+        /// environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          When describing the settings for the configuration set associated with a
-        ///         running environment, it is possible to receive two sets of setting descriptions.
-        ///         One is the deployed configuration set, and the other is a draft configuration
-        ///         of an environment that is either in the process of deployment or that failed
-        /// to         deploy.         
+        ///  When describing the settings for the configuration set associated with a running
+        /// environment, it is possible to receive two sets of setting descriptions. One is the
+        /// deployed configuration set, and the other is a draft configuration of an environment
+        /// that is either in the process of deployment or that failed to deploy. 
         /// </para>
-        ///       
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>         <li>            <a>DeleteEnvironmentConfiguration</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
         /// 
@@ -593,7 +563,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DescribeEnvironmentResources
-
 
         /// <summary>
         /// Returns AWS resources for this environment.
@@ -656,9 +625,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
-        /// 
-        ///       <note>         This action returns the most recent 1,000 events from the specified
-        ///         <code>NextToken</code>.      </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
@@ -666,9 +632,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
-        /// 
-        ///       <note>         This action returns the most recent 1,000 events from the specified
-        ///         <code>NextToken</code>.      </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
@@ -722,11 +685,9 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RebuildEnvironment
 
-
         /// <summary>
-        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling
-        /// group, load         balancer, etc.)         for a specified environment and forces
-        /// a restart.
+        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
+        /// load balancer, etc.) for a specified environment and forces a restart.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
         /// 
@@ -753,24 +714,31 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RequestEnvironmentInfo
 
-
         /// <summary>
-        /// Initiates a request to compile the specified type of         information
-        /// of the deployed environment.      
+        /// Initiates a request to compile the specified type of information of the deployed
+        /// environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          Setting the <code>InfoType</code> to <code>tail</code>         compiles the
-        /// last lines from the application server log files of every         Amazon EC2 instance
-        /// in your environment. Use <a>RetrieveEnvironmentInfo</a>         to access the compiled
-        /// information.      
+        ///  Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
+        /// the application server log files of every Amazon EC2 instance in your environment.
+        /// 
         /// </para>
-        ///        
+        ///  
+        /// <para>
+        ///  Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
+        /// server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
+        /// and .NET containers do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+        /// </para>
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>                <li>            <a>RetrieveEnvironmentInfo</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo service method.</param>
         /// 
@@ -793,10 +761,9 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RestartAppServer
 
-
         /// <summary>
-        /// Causes the environment to restart the application         container server
-        /// running on each Amazon EC2 instance.
+        /// Causes the environment to restart the application container server running on each
+        /// Amazon EC2 instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestartAppServer service method.</param>
         /// 
@@ -819,17 +786,15 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RetrieveEnvironmentInfo
 
-
         /// <summary>
-        /// Retrieves the compiled information from a         <a>RequestEnvironmentInfo</a>
-        ///         request.      
+        /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
         /// 
-        ///        
+        /// 
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>             <li>            <a>RequestEnvironmentInfo</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method.</param>
         /// 
@@ -851,7 +816,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  SwapEnvironmentCNAMEs
-
 
         /// <summary>
         /// Swaps the CNAMEs of two environments.
@@ -876,7 +840,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  TerminateEnvironment
-
 
         /// <summary>
         /// Terminates the specified environment.
@@ -906,13 +869,8 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateApplication
 
-
         /// <summary>
-        /// Updates the specified application to have the specified         properties.      
-        /// 
-        ///       <note>         If a property (for example, <code>description</code>) is not
-        /// provided, the         value         remains unchanged. To clear these properties,
-        /// specify an empty string.      </note>
+        /// Updates the specified application to have the specified properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
@@ -935,14 +893,8 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateApplicationVersion
 
-
         /// <summary>
-        /// Updates the specified application version to have the specified         properties.
-        ///               
-        /// 
-        ///       <note>         If a property (for example,         <code>description</code>)
-        /// is not provided, the         value remains unchanged. To clear properties,       
-        ///  specify an empty string.      </note>
+        /// Updates the specified application version to have the specified properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method.</param>
         /// 
@@ -965,19 +917,15 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateConfigurationTemplate
 
-
         /// <summary>
-        /// Updates the specified configuration template to have the specified      
-        ///   properties or configuration option values.      
+        /// Updates the specified configuration template to have the specified properties or
+        /// configuration option values. 
         /// 
-        ///       <note>         If a property (for example,         <code>ApplicationName</code>)
-        /// is not provided, its         value remains unchanged. To clear such         properties,
-        /// specify an empty string.      </note>      
+        ///  
         /// <para>
         /// Related Topics
         /// </para>
-        ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
-        ///      </ul>
+        ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate service method.</param>
         /// 
@@ -1004,24 +952,22 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateEnvironment
 
-
         /// <summary>
-        /// Updates the environment description, deploys a new application         version,
-        /// updates the configuration settings to an entirely new configuration         template,
-        /// or updates select configuration option values in the running         environment.        
+        /// Updates the environment description, deploys a new application version, updates the
+        /// configuration settings to an entirely new configuration template, or updates select
+        /// configuration option values in the running environment. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          Attempting to update both the release and configuration is         not allowed
-        /// and AWS Elastic Beanstalk         returns an         <code>InvalidParameterCombination</code>
-        ///         error.      
+        ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
+        /// Beanstalk returns an <code>InvalidParameterCombination</code> error. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          When updating the configuration settings to a new template or         individual
-        /// settings,         a draft configuration is created and         <a>DescribeConfigurationSettings</a>
-        ///         for this         environment returns two setting descriptions with different
-        ///         <code>DeploymentStatus</code>         values.      
+        ///  When updating the configuration settings to a new template or individual settings,
+        /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
+        /// environment returns two setting descriptions with different <code>DeploymentStatus</code>
+        /// values. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
@@ -1049,15 +995,14 @@ namespace Amazon.ElasticBeanstalk
         
         #region  ValidateConfigurationSettings
 
-
         /// <summary>
-        /// Takes a set of configuration settings and either a configuration        
-        /// template or environment, and determines whether those values are valid.        
+        /// Takes a set of configuration settings and either a configuration template or environment,
+        /// and determines whether those values are valid. 
         /// 
-        ///       
+        ///  
         /// <para>
-        ///          This action returns a list of messages indicating any errors or warnings
-        ///         associated         with the selection of option values.        
+        ///  This action returns a list of messages indicating any errors or warnings associated
+        /// with the selection of option values. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings service method.</param>

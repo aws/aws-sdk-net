@@ -13,18 +13,22 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.CloudFront.Model;
 
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Implementation for accessing CloudFront
+    /// Interface for accessing CloudFront
     ///
     /// 
     /// </summary>
@@ -33,7 +37,6 @@ namespace Amazon.CloudFront
 
         
         #region  CreateCloudFrontOriginAccessIdentity
-
 
         /// <summary>
         /// Create a new origin access identity.
@@ -44,7 +47,7 @@ namespace Amazon.CloudFront
         /// <exception cref="CloudFrontOriginAccessIdentityAlreadyExistsException">
         /// If the CallerReference is a value you already sent in a previous request to create
         /// an identity but the content of the CloudFrontOriginAccessIdentityConfig is different
-        /// from the original request,    CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
+        /// from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
         /// error.
         /// </exception>
         /// <exception cref="InconsistentQuantitiesException">
@@ -79,7 +82,6 @@ namespace Amazon.CloudFront
         
         #region  CreateDistribution
 
-
         /// <summary>
         /// Create a new distribution.
         /// </summary>
@@ -110,8 +112,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted    list of cookie names. Either list of cookie names has been
-        /// specified when not allowed or list of cookie names    is missing when expected.
+        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
+        /// when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="InvalidGeoRestrictionParameterException">
         /// 
@@ -129,8 +131,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="InvalidRelativePathException">
-        /// The relative path is too big, is not URL-encoded, or    does not begin with a slash
-        /// (/).
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
         /// <exception cref="InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
@@ -196,7 +197,6 @@ namespace Amazon.CloudFront
         
         #region  CreateInvalidation
 
-
         /// <summary>
         /// Create a new invalidation.
         /// </summary>
@@ -243,7 +243,6 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  CreateStreamingDistribution
-
 
         /// <summary>
         /// Create a new streaming distribution.
@@ -662,7 +661,6 @@ namespace Amazon.CloudFront
         
         #region  GetInvalidation
 
-
         /// <summary>
         /// Get the information about an invalidation.
         /// </summary>
@@ -856,7 +854,6 @@ namespace Amazon.CloudFront
         
         #region  ListInvalidations
 
-
         /// <summary>
         /// List invalidation batches.
         /// </summary>
@@ -927,7 +924,6 @@ namespace Amazon.CloudFront
         
         #region  UpdateCloudFrontOriginAccessIdentity
 
-
         /// <summary>
         /// Update an origin access identity.
         /// </summary>
@@ -977,7 +973,6 @@ namespace Amazon.CloudFront
         
         #region  UpdateDistribution
 
-
         /// <summary>
         /// Update a distribution.
         /// </summary>
@@ -1007,8 +1002,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted    list of cookie names. Either list of cookie names has been
-        /// specified when not allowed or list of cookie names    is missing when expected.
+        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
+        /// when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="InvalidGeoRestrictionParameterException">
         /// 
@@ -1026,8 +1021,7 @@ namespace Amazon.CloudFront
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
         /// <exception cref="InvalidRelativePathException">
-        /// The relative path is too big, is not URL-encoded, or    does not begin with a slash
-        /// (/).
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
         /// <exception cref="InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
@@ -1094,7 +1088,6 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateStreamingDistribution
-
 
         /// <summary>
         /// Update a streaming distribution.

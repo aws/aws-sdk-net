@@ -12,49 +12,60 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Expressions Request Marshaller
+    /// DescribeExpressions Request Marshaller
     /// </summary>       
-    public class DescribeExpressionsRequestMarshaller : IMarshaller<IRequest, DescribeExpressionsRequest>
+    public class DescribeExpressionsRequestMarshaller : IMarshaller<IRequest, DescribeExpressionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeExpressionsRequest describeExpressionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeExpressionsRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeExpressionsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeExpressionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DescribeExpressions");
             request.Parameters.Add("Version", "2013-01-01");
-            if (describeExpressionsRequest != null && describeExpressionsRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeExpressionsRequest.DomainName));
-            }
-            if (describeExpressionsRequest != null)
-            {
-                List<string> expressionNamesList = describeExpressionsRequest.ExpressionNames;
 
-                int expressionNamesListIndex = 1;
-                foreach (string expressionNamesListValue in expressionNamesList)
-                { 
-                    request.Parameters.Add("ExpressionNames.member." + expressionNamesListIndex, StringUtils.FromString(expressionNamesListValue));
-                    expressionNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDeployed())
+                {
+                    request.Parameters.Add("Deployed", StringUtils.FromBool(publicRequest.Deployed));
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetExpressionNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ExpressionNames)
+                    {
+                        request.Parameters.Add("ExpressionNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describeExpressionsRequest != null && describeExpressionsRequest.IsSetDeployed())
-            {
-                request.Parameters.Add("Deployed", StringUtils.FromBool(describeExpressionsRequest.Deployed));
-            }
-
             return request;
         }
     }

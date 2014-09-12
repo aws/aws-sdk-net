@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTrails response and response metadata.
+    /// Configuration for accessing Amazon DescribeTrails service
     /// </summary>
     public partial class DescribeTrailsResponse : DescribeTrailsResult
     {
         /// <summary>
         /// Gets and sets the DescribeTrailsResult property.
-        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+        /// Represents the output of a DescribeTrails operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeTrailsResult class are now available on the DescribeTrailsResponse class. You should use the properties on DescribeTrailsResponse instead of accessing them through DescribeTrailsResult.")]
         public DescribeTrailsResult DescribeTrailsResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudTrail.Model
         }
     }
 }
-    

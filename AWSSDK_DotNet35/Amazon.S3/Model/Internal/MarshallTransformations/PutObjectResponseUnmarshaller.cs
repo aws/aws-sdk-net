@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutObject operation
     /// </summary>
-    internal class PutObjectResponseUnmarshaller : S3ReponseUnmarshaller
+    public class PutObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
@@ -57,22 +57,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static PutObjectResponseUnmarshaller instance;
 
-        public static PutObjectResponseUnmarshaller GetInstance()
+        private static PutObjectResponseUnmarshaller _instance;
+
+        public static PutObjectResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new PutObjectResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new PutObjectResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

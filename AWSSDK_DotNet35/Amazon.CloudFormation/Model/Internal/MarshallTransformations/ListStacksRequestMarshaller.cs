@@ -12,45 +12,56 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Stacks Request Marshaller
+    /// ListStacks Request Marshaller
     /// </summary>       
-    public class ListStacksRequestMarshaller : IMarshaller<IRequest, ListStacksRequest>
+    public class ListStacksRequestMarshaller : IMarshaller<IRequest, ListStacksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ListStacksRequest listStacksRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(listStacksRequest, "AmazonCloudFormation");
+            return this.Marshall((ListStacksRequest)input);
+        }
+    
+        public IRequest Marshall(ListStacksRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "ListStacks");
             request.Parameters.Add("Version", "2010-05-15");
-            if (listStacksRequest != null && listStacksRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(listStacksRequest.NextToken));
-            }
-            if (listStacksRequest != null)
-            {
-                List<string> stackStatusFilterList = listStacksRequest.StackStatusFilter;
 
-                int stackStatusFilterListIndex = 1;
-                foreach (string stackStatusFilterListValue in stackStatusFilterList)
-                { 
-                    request.Parameters.Add("StackStatusFilter.member." + stackStatusFilterListIndex, StringUtils.FromString(stackStatusFilterListValue));
-                    stackStatusFilterListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetStackStatusFilter())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.StackStatusFilter)
+                    {
+                        request.Parameters.Add("StackStatusFilter" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

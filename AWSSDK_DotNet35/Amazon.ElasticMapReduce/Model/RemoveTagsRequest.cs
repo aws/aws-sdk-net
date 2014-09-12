@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,6 +44,30 @@ namespace Amazon.ElasticMapReduce.Model
         private string _resourceId;
         private List<string> _tagKeys = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RemoveTagsRequest() { }
+
+        /// <summary>
+        /// Instantiates RemoveTagsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="resourceId">The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</param>
+        public RemoveTagsRequest(string resourceId)
+        {
+            _resourceId = resourceId;
+        }
+
+        /// <summary>
+        /// Instantiates RemoveTagsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="resourceId">The Amazon EMR resource identifier from which tags will be removed. This value must be a cluster identifier.</param>
+        /// <param name="tagKeys">A list of tag keys to remove from a resource.</param>
+        public RemoveTagsRequest(string resourceId, List<string> tagKeys)
+        {
+            _resourceId = resourceId;
+            _tagKeys = tagKeys;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
@@ -59,7 +87,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._resourceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TagKeys. 

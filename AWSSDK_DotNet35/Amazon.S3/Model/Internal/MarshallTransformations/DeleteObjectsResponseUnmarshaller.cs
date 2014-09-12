@@ -59,13 +59,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Deleted", targetDepth))
                     {
-                        response.DeletedObjects.Add(DeletedObjectUnmarshaller.GetInstance().Unmarshall(context));
+                        response.DeletedObjects.Add(DeletedObjectUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
                     if (context.TestExpression("Error", targetDepth))
                     {
-                        response.DeleteErrors.Add(ErrorsItemUnmarshaller.GetInstance().Unmarshall(context));
+                        response.DeleteErrors.Add(ErrorsItemUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -83,22 +83,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
         
-        private static DeleteObjectsResponseUnmarshaller instance;
+        private static DeleteObjectsResponseUnmarshaller _instance;
 
-        public static DeleteObjectsResponseUnmarshaller GetInstance()
+        public static DeleteObjectsResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new DeleteObjectsResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new DeleteObjectsResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,6 +41,34 @@ namespace Amazon.SimpleNotificationService.Model
         private string _token;
         private string _topicArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ConfirmSubscriptionRequest() { }
+
+        /// <summary>
+        /// Instantiates ConfirmSubscriptionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
+        /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
+        public ConfirmSubscriptionRequest(string topicArn, string token)
+        {
+            _topicArn = topicArn;
+            _token = token;
+        }
+
+        /// <summary>
+        /// Instantiates ConfirmSubscriptionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
+        /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
+        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription.  If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint.  The unsubscribe action requires AWS authentication. </param>
+        public ConfirmSubscriptionRequest(string topicArn, string token, string authenticateOnUnsubscribe)
+        {
+            _topicArn = topicArn;
+            _token = token;
+            _authenticateOnUnsubscribe = authenticateOnUnsubscribe;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticateOnUnsubscribe. 
@@ -59,7 +91,6 @@ namespace Amazon.SimpleNotificationService.Model
             return this._authenticateOnUnsubscribe != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
@@ -77,7 +108,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._token != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TopicArn. 

@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the status of an instance.</para>
+    /// Describes the status of an instance.
     /// </summary>
     public partial class InstanceStatusSummary
     {
-        
-        private SummaryStatus status;
-        private List<InstanceStatusDetails> details = new List<InstanceStatusDetails>();
-
+        private List<InstanceStatusDetails> _details = new List<InstanceStatusDetails>();
+        private SummaryStatus _status;
 
         /// <summary>
-        /// The status.
-        ///  
+        /// Gets and sets the property Details. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ok, impaired, insufficient-data, not-applicable</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public SummaryStatus Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
         /// The system instance health or application instance health.
-        ///  
+        /// </para>
         /// </summary>
         public List<InstanceStatusDetails> Details
         {
-            get { return this.details; }
-            set { this.details = value; }
+            get { return this._details; }
+            set { this._details = value; }
         }
 
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details.Count > 0;
+            return this._details != null && this._details.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status.
+        /// </para>
+        /// </summary>
+        public SummaryStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

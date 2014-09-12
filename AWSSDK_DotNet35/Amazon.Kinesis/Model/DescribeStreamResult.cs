@@ -12,39 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <c>DescribeStream</c> operation.</para>
+    /// Represents the output for <code>DescribeStream</code>.
     /// </summary>
     public partial class DescribeStreamResult : AmazonWebServiceResponse
     {
-        
-        private StreamDescription streamDescription;
-
+        private StreamDescription _streamDescription;
 
         /// <summary>
-        /// Contains the current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are
-        /// more shards available.
-        ///  
+        /// Gets and sets the property StreamDescription. 
+        /// <para>
+        /// The current status of the stream, the stream ARN, an array of shard objects that comprise
+        /// the stream, and states whether there are more shards available.
+        /// </para>
         /// </summary>
         public StreamDescription StreamDescription
         {
-            get { return this.streamDescription; }
-            set { this.streamDescription = value; }
+            get { return this._streamDescription; }
+            set { this._streamDescription = value; }
         }
 
         // Check to see if StreamDescription property is set
         internal bool IsSetStreamDescription()
         {
-            return this.streamDescription != null;
+            return this._streamDescription != null;
         }
+
     }
 }

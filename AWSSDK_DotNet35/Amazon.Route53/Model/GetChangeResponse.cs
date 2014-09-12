@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// Returns information about the  GetChange response and response metadata.
+    /// Configuration for accessing Amazon GetChange service
     /// </summary>
     public partial class GetChangeResponse : GetChangeResult
     {
         /// <summary>
         /// Gets and sets the GetChangeResult property.
-        /// A complex type that contains the ChangeInfo element.
+        /// Represents the output of a GetChange operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetChangeResult class are now available on the GetChangeResponse class. You should use the properties on GetChangeResponse instead of accessing them through GetChangeResult.")]
         public GetChangeResult GetChangeResult
@@ -40,4 +40,3 @@ namespace Amazon.Route53.Model
         }
     }
 }
-    

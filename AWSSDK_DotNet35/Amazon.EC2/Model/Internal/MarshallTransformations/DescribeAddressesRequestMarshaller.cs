@@ -12,78 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Addresses Request Marshaller
+    /// DescribeAddresses Request Marshaller
     /// </summary>       
-    public class DescribeAddressesRequestMarshaller : IMarshaller<IRequest, DescribeAddressesRequest>
+    public class DescribeAddressesRequestMarshaller : IMarshaller<IRequest, DescribeAddressesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeAddressesRequest describeAddressesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeAddressesRequest, "AmazonEC2");
+            return this.Marshall((DescribeAddressesRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeAddressesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeAddresses");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeAddressesRequest != null)
-            {
-                List<string> publicIpsList = describeAddressesRequest.PublicIps;
 
-                int publicIpsListIndex = 1;
-                foreach (string publicIpsListValue in publicIpsList)
-                { 
-                    request.Parameters.Add("PublicIp." + publicIpsListIndex, StringUtils.FromString(publicIpsListValue));
-                    publicIpsListIndex++;
-                }
-            }
-
-            if (describeAddressesRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeAddressesRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetAllocationIds())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AllocationIds)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
+                        request.Parameters.Add("AllocationId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (filtersListValue != null)
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetPublicIps())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PublicIps)
+                    {
+                        request.Parameters.Add("PublicIp" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describeAddressesRequest != null)
-            {
-                List<string> allocationIdsList = describeAddressesRequest.AllocationIds;
-
-                int allocationIdsListIndex = 1;
-                foreach (string allocationIdsListValue in allocationIdsList)
-                { 
-                    request.Parameters.Add("AllocationId." + allocationIdsListIndex, StringUtils.FromString(allocationIdsListValue));
-                    allocationIdsListIndex++;
-                }
-            }
-
             return request;
         }
     }

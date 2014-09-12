@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,23 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private string _description;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateCacheParameterGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateCacheParameterGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cacheParameterGroupName">A user-specified name for the cache parameter group.</param>
+        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family the cache parameter group can be used with. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code></param>
+        /// <param name="description">A user-specified description for the cache parameter group.</param>
+        public CreateCacheParameterGroupRequest(string cacheParameterGroupName, string cacheParameterGroupFamily, string description)
+        {
+            _cacheParameterGroupName = cacheParameterGroupName;
+            _cacheParameterGroupFamily = cacheParameterGroupFamily;
+            _description = description;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheParameterGroupFamily. 
@@ -59,7 +80,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheParameterGroupFamily != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
@@ -77,7 +97,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheParameterGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 

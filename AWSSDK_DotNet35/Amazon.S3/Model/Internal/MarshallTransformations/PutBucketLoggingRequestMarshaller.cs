@@ -27,8 +27,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Enable Bucket Logging Request Marshaller
     /// </summary>       
-    public class PutBucketLoggingRequestMarshaller : IMarshaller<IRequest, PutBucketLoggingRequest>
-    {
+    public class PutBucketLoggingRequestMarshaller : IMarshaller<IRequest, PutBucketLoggingRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((PutBucketLoggingRequest)input);
+		}
+
         public IRequest Marshall(PutBucketLoggingRequest putBucketLoggingRequest)
         {
             IRequest request = new DefaultRequest(putBucketLoggingRequest, "AmazonS3");

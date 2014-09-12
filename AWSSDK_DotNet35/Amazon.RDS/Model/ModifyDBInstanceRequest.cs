@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,393 +29,652 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
-    /// <para> Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and
-    /// the new values in the request. </para>
+    /// Modify settings for a DB instance. You can change one or more database configuration
+    /// parameters by specifying these parameters and the new values in the request.
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest
     {
-        private string dBInstanceIdentifier;
-        private int? allocatedStorage;
-        private string dBInstanceClass;
-        private List<string> dBSecurityGroups = new List<string>();
-        private List<string> vpcSecurityGroupIds = new List<string>();
-        private bool? applyImmediately;
-        private string masterUserPassword;
-        private string dBParameterGroupName;
-        private int? backupRetentionPeriod;
-        private string preferredBackupWindow;
-        private string preferredMaintenanceWindow;
-        private bool? multiAZ;
-        private string engineVersion;
-        private bool? allowMajorVersionUpgrade;
-        private bool? autoMinorVersionUpgrade;
-        private int? iops;
-        private string optionGroupName;
-        private string newDBInstanceIdentifier;
-
+        private int? _allocatedStorage;
+        private bool? _allowMajorVersionUpgrade;
+        private bool? _applyImmediately;
+        private bool? _autoMinorVersionUpgrade;
+        private int? _backupRetentionPeriod;
+        private string _dBInstanceClass;
+        private string _dBInstanceIdentifier;
+        private string _dBParameterGroupName;
+        private List<string> _dBSecurityGroups = new List<string>();
+        private string _engineVersion;
+        private int? _iops;
+        private string _masterUserPassword;
+        private bool? _multiAZ;
+        private string _newDBInstanceIdentifier;
+        private string _optionGroupName;
+        private string _preferredBackupWindow;
+        private string _preferredMaintenanceWindow;
+        private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
-        /// The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
-        /// instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul>
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string DBInstanceIdentifier
-        {
-            get { return this.dBInstanceIdentifier; }
-            set { this.dBInstanceIdentifier = value; }
-        }
+        public ModifyDBInstanceRequest() { }
 
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
+        /// <summary>
+        /// Instantiates ModifyDBInstanceRequest with the parameterized properties
+        /// </summary>
+        /// <param name="dbInstanceIdentifier"> The DB instance identifier. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be the identifier for an existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
-            return this.dBInstanceIdentifier != null;
+            _dBInstanceIdentifier = dbInstanceIdentifier;
         }
 
         /// <summary>
-        /// The new storage capacity of the RDS instance. Changing this parameter does not result in an outage and the change is applied during the next
-        /// maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. <b>MySQL</b> Default: Uses existing
-        /// setting Valid Values: 5-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least
-        /// 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <b>Oracle</b> Default:
-        /// Uses existing setting Valid Values: 10-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are
-        /// not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. <b>SQL Server</b>
-        /// Cannot be modified. If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
-        /// Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as
-        /// database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale
-        /// storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the
-        /// migration, the DB instance will be available for use, but may experience performance degradation. While the migration takes place, nightly
-        /// backups for the instance will be suspended. No other Amazon RDS operations can take place for the instance, including modifying the
-        /// instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the
-        /// instance.
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        ///  The new storage capacity of the RDS instance. Changing this parameter does not result
+        /// in an outage and the change is applied during the next maintenance window unless the
+        /// <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.
+        /// 
+        /// </para>
         ///  
+        /// <para>
+        /// <b>MySQL</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 5-1024
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Value supplied must be at least 10% greater than the current value. Values
+        /// that are not at least 10% greater than the existing value are rounded up so that they
+        /// are 10% greater than the current value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Integer
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Oracle</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 10-1024
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Value supplied must be at least 10% greater than the current value. Values
+        /// that are not at least 10% greater than the existing value are rounded up so that they
+        /// are 10% greater than the current value.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>SQL Server</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Cannot be modified.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you choose to migrate your DB instance from using standard storage to using Provisioned
+        /// IOPS, or from using Provisioned IOPS to using standard storage, the process can take
+        /// time. The duration of the migration depends on several factors such as database load,
+        /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
+        /// (if any), and the number of prior scale storage operations. Typical migration times
+        /// are under 24 hours, but the process can take up to several days in some cases. During
+        /// the migration, the DB instance will be available for use, but may experience performance
+        /// degradation. While the migration takes place, nightly backups for the instance will
+        /// be suspended. No other Amazon RDS operations can take place for the instance, including
+        /// modifying the instance, rebooting the instance, deleting the instance, creating a
+        /// read replica for the instance, and creating a DB snapshot of the instance. 
+        /// </para>
         /// </summary>
         public int AllocatedStorage
         {
-            get { return this.allocatedStorage ?? default(int); }
-            set { this.allocatedStorage = value; }
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
         }
 
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;
+            return this._allocatedStorage.HasValue; 
         }
 
         /// <summary>
-        /// The new compute and memory capacity of the DB instance. To determine the instance classes that are available for a particular DB engine, use
-        /// the <a>DescribeOrderableDBInstanceOptions</a> action. Passing a value for this parameter causes an outage during the change and is applied
-        /// during the next maintenance window, unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. Default: Uses
-        /// existing setting Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge |
-        /// db.m2.4xlarge</c>
+        /// Gets and sets the property AllowMajorVersionUpgrade. 
+        /// <para>
+        ///  Indicates that major version upgrades are allowed. Changing this parameter does not
+        /// result in an outage and the change is asynchronously applied as soon as possible.
+        /// 
+        /// </para>
         ///  
-        /// </summary>
-        public string DBInstanceClass
-        {
-            get { return this.dBInstanceClass; }
-            set { this.dBInstanceClass = value; }
-        }
-
-        // Check to see if DBInstanceClass property is set
-        internal bool IsSetDBInstanceClass()
-        {
-            return this.dBInstanceClass != null;
-        }
-
-        /// <summary>
-        /// A list of DB security groups to authorize on this DB instance. Changing this parameter does not result in an outage and the change is
-        /// asynchronously applied as soon as possible. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-        ///  
-        /// </summary>
-        public List<string> DBSecurityGroups
-        {
-            get { return this.dBSecurityGroups; }
-            set { this.dBSecurityGroups = value; }
-        }
-
-        // Check to see if DBSecurityGroups property is set
-        internal bool IsSetDBSecurityGroups()
-        {
-            return this.dBSecurityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible. Constraints:
-        /// <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
-        /// consecutive hyphens</li> </ul>
-        ///  
-        /// </summary>
-        public List<string> VpcSecurityGroupIds
-        {
-            get { return this.vpcSecurityGroupIds; }
-            set { this.vpcSecurityGroupIds = value; }
-        }
-
-        // Check to see if VpcSecurityGroupIds property is set
-        internal bool IsSetVpcSecurityGroupIds()
-        {
-            return this.vpcSecurityGroupIds.Count > 0;
-        }
-
-        /// <summary>
-        /// Specifies whether or not the modifications in this request and any pending modifications are asynchronously applied as soon as possible,
-        /// regardless of the <c>PreferredMaintenanceWindow</c> setting for the DB instance. If this parameter is passed as <c>false</c>, changes to the
-        /// DB instance are applied on the next call to <a>RebootDBInstance</a>, the next maintenance reboot, or the next failure reboot, whichever
-        /// occurs first. See each parameter to determine when a change is applied. Default: <c>false</c>
-        ///  
-        /// </summary>
-        public bool ApplyImmediately
-        {
-            get { return this.applyImmediately ?? default(bool); }
-            set { this.applyImmediately = value; }
-        }
-
-        // Check to see if ApplyImmediately property is set
-        internal bool IsSetApplyImmediately()
-        {
-            return this.applyImmediately.HasValue;
-        }
-
-        /// <summary>
-        /// The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@". Changing this parameter does
-        /// not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of
-        /// the request, the <c>MasterUserPassword</c> element exists in the <c>PendingModifiedValues</c> element of the operation response. Default:
-        /// Uses existing setting Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
-        /// alphanumeric characters (SQL Server). <note> Amazon RDS API actions never return the password, so this action provides a way to regain
-        /// access to a master instance user if the password is lost. </note>
-        ///  
-        /// </summary>
-        public string MasterUserPassword
-        {
-            get { return this.masterUserPassword; }
-            set { this.masterUserPassword = value; }
-        }
-
-        // Check to see if MasterUserPassword property is set
-        internal bool IsSetMasterUserPassword()
-        {
-            return this.masterUserPassword != null;
-        }
-
-        /// <summary>
-        /// The name of the DB parameter group to apply to this DB instance. Changing this parameter does not result in an outage and the change is
-        /// applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. Default:
-        /// Uses existing setting Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.
-        ///  
-        /// </summary>
-        public string DBParameterGroupName
-        {
-            get { return this.dBParameterGroupName; }
-            set { this.dBParameterGroupName = value; }
-        }
-
-        // Check to see if DBParameterGroupName property is set
-        internal bool IsSetDBParameterGroupName()
-        {
-            return this.dBParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0
-        /// disables automated backups. Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a non-zero
-        /// value to 0. These changes are applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c>
-        /// for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as
-        /// soon as possible. Default: Uses existing setting Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Can be specified for a read
-        /// replica only if the source is running MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source to read replicas</li> </ul>
-        ///  
-        /// </summary>
-        public int BackupRetentionPeriod
-        {
-            get { return this.backupRetentionPeriod ?? default(int); }
-            set { this.backupRetentionPeriod = value; }
-        }
-
-        // Check to see if BackupRetentionPeriod property is set
-        internal bool IsSetBackupRetentionPeriod()
-        {
-            return this.backupRetentionPeriod.HasValue;
-        }
-
-        /// <summary>
-        /// The daily time range during which automated backups are created if automated backups are enabled, as determined by the
-        /// <c>BackupRetentionPeriod</c>. Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
-        /// possible. Constraints: <ul> <li>Must be in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated (UTC)</li>
-        /// <li>Must not conflict with the preferred maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
-        ///  
-        /// </summary>
-        public string PreferredBackupWindow
-        {
-            get { return this.preferredBackupWindow; }
-            set { this.preferredBackupWindow = value; }
-        }
-
-        // Check to see if PreferredBackupWindow property is set
-        internal bool IsSetPreferredBackupWindow()
-        {
-            return this.preferredBackupWindow != null;
-        }
-
-        /// <summary>
-        /// The weekly time range (in UTC) during which system maintenance can occur, which may result in an outage. Changing this parameter does not
-        /// result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending
-        /// actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a
-        /// reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of
-        /// the window to ensure pending changes are applied. Default: Uses existing setting Format: ddd:hh24:mi-ddd:hh24:mi Valid Days: Mon | Tue | Wed
-        /// | Thu | Fri | Sat | Sun Constraints: Must be at least 30 minutes
-        ///  
-        /// </summary>
-        public string PreferredMaintenanceWindow
-        {
-            get { return this.preferredMaintenanceWindow; }
-            set { this.preferredMaintenanceWindow = value; }
-        }
-
-        // Check to see if PreferredMaintenanceWindow property is set
-        internal bool IsSetPreferredMaintenanceWindow()
-        {
-            return this.preferredMaintenanceWindow != null;
-        }
-
-        /// <summary>
-        /// Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter does not result in an outage and the change is applied during
-        /// the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. Constraints: Cannot be
-        /// specified if the DB instance is a read replica.
-        ///  
-        /// </summary>
-        public bool MultiAZ
-        {
-            get { return this.multiAZ ?? default(bool); }
-            set { this.multiAZ = value; }
-        }
-
-        // Check to see if MultiAZ property is set
-        internal bool IsSetMultiAZ()
-        {
-            return this.multiAZ.HasValue;
-        }
-
-        /// <summary>
-        /// The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the
-        /// next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. For major version upgrades, if
-        /// a non-default DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version
-        /// must be specified. The new DB parameter group can be the default for that DB parameter group family. Example: <c>5.1.42</c>
-        ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the change is asynchronously
-        /// applied as soon as possible. Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is
-        /// a different major version than the DB instance's current version.
-        ///  
+        /// <para>
+        /// Constraints: This parameter must be set to true when specifying a value for the EngineVersion
+        /// parameter that is a different major version than the DB instance's current version.
+        /// </para>
         /// </summary>
         public bool AllowMajorVersionUpgrade
         {
-            get { return this.allowMajorVersionUpgrade ?? default(bool); }
-            set { this.allowMajorVersionUpgrade = value; }
+            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            set { this._allowMajorVersionUpgrade = value; }
         }
 
         // Check to see if AllowMajorVersionUpgrade property is set
         internal bool IsSetAllowMajorVersionUpgrade()
         {
-            return this.allowMajorVersionUpgrade.HasValue;
+            return this._allowMajorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
-        /// Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window. Changing this
-        /// parameter does not result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage
-        /// will result if this parameter is set to <c>true</c> during the maintenance window, and a newer minor version is available, and RDS has
-        /// enabled auto patching for that engine version.
+        /// Gets and sets the property ApplyImmediately. 
+        /// <para>
+        ///  Specifies whether or not the modifications in this request and any pending modifications
+        /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+        /// setting for the DB instance. 
+        /// </para>
         ///  
+        /// <para>
+        ///  If this parameter is passed as <code>false</code>, changes to the DB instance are
+        /// applied on the next call to <a>RebootDBInstance</a>, the next maintenance reboot,
+        /// or the next failure reboot, whichever occurs first. See each parameter to determine
+        /// when a change is applied. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code>
+        /// </para>
+        /// </summary>
+        public bool ApplyImmediately
+        {
+            get { return this._applyImmediately.GetValueOrDefault(); }
+            set { this._applyImmediately = value; }
+        }
+
+        // Check to see if ApplyImmediately property is set
+        internal bool IsSetApplyImmediately()
+        {
+            return this._applyImmediately.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        ///  Indicates that minor version upgrades will be applied automatically to the DB instance
+        /// during the maintenance window. Changing this parameter does not result in an outage
+        /// except in the following case and the change is asynchronously applied as soon as possible.
+        /// An outage will result if this parameter is set to <code>true</code> during the maintenance
+        /// window, and a newer minor version is available, and RDS has enabled auto patching
+        /// for that engine version. 
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
-            get { return this.autoMinorVersionUpgrade ?? default(bool); }
-            set { this.autoMinorVersionUpgrade = value; }
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
         }
 
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
-        /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance. Changing this parameter does not result in an outage and
-        /// the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this
-        /// request. Default: Uses existing setting Constraints: Value supplied must be at least 10% greater than the current value. Values that are not
-        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer If you choose
-        /// to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage,
-        /// the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type
-        /// (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration
-        /// times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance will be available
-        /// for use, but may experience performance degradation. While the migration takes place, nightly backups for the instance will be suspended. No
-        /// other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the
-        /// instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        ///  The number of days to retain automated backups. Setting this parameter to a positive
+        /// number enables backups. Setting this parameter to 0 disables automated backups. 
+        /// </para>
         ///  
+        /// <para>
+        /// Changing this parameter can result in an outage if you change from 0 to a non-zero
+        /// value or from a non-zero value to 0. These changes are applied during the next maintenance
+        /// window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
+        /// for this request. If you change the parameter from one non-zero value to another non-zero
+        /// value, the change is asynchronously applied as soon as possible.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be a value from 0 to 35</li> <li>Can be specified for a read replica
+        /// only if the source is running MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance
+        /// is a source to read replicas</li> </ul>
+        /// </summary>
+        public int BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceClass. 
+        /// <para>
+        ///  The new compute and memory capacity of the DB instance. To determine the instance
+        /// classes that are available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a>
+        /// action. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Passing a value for this parameter causes an outage during the change and is applied
+        /// during the next maintenance window, unless the <code>ApplyImmediately</code> parameter
+        /// is specified as <code>true</code> for this request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
+        /// | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+        /// </para>
+        /// </summary>
+        public string DBInstanceClass
+        {
+            get { return this._dBInstanceClass; }
+            set { this._dBInstanceClass = value; }
+        }
+
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
+        {
+            return this._dBInstanceClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceIdentifier. 
+        /// <para>
+        ///  The DB instance identifier. This value is stored as a lowercase string. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be the identifier for an existing DB instance</li> <li>Must contain
+        /// from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a
+        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// </summary>
+        public string DBInstanceIdentifier
+        {
+            get { return this._dBInstanceIdentifier; }
+            set { this._dBInstanceIdentifier = value; }
+        }
+
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
+        {
+            return this._dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBParameterGroupName. 
+        /// <para>
+        ///  The name of the DB parameter group to apply to this DB instance. Changing this parameter
+        /// does not result in an outage and the change is applied during the next maintenance
+        /// window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
+        /// for this request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: The DB parameter group must be in the same DB parameter group family
+        /// as this DB instance.
+        /// </para>
+        /// </summary>
+        public string DBParameterGroupName
+        {
+            get { return this._dBParameterGroupName; }
+            set { this._dBParameterGroupName = value; }
+        }
+
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
+        {
+            return this._dBParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSecurityGroups. 
+        /// <para>
+        ///  A list of DB security groups to authorize on this DB instance. Changing this parameter
+        /// does not result in an outage and the change is asynchronously applied as soon as possible.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
+        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// </ul>
+        /// </summary>
+        public List<string> DBSecurityGroups
+        {
+            get { return this._dBSecurityGroups; }
+            set { this._dBSecurityGroups = value; }
+        }
+
+        // Check to see if DBSecurityGroups property is set
+        internal bool IsSetDBSecurityGroups()
+        {
+            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        ///  The version number of the database engine to upgrade to. Changing this parameter
+        /// results in an outage and the change is applied during the next maintenance window
+        /// unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for
+        /// this request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For major version upgrades, if a non-default DB parameter group is currently in use,
+        /// a new DB parameter group in the DB parameter group family for the new engine version
+        /// must be specified. The new DB parameter group can be the default for that DB parameter
+        /// group family. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>5.1.42</code>
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        ///  The new Provisioned IOPS (I/O operations per second) value for the RDS instance.
+        /// Changing this parameter does not result in an outage and the change is applied during
+        /// the next maintenance window unless the <code>ApplyImmediately</code> parameter is
+        /// set to <code>true</code> for this request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Value supplied must be at least 10% greater than the current value. Values
+        /// that are not at least 10% greater than the existing value are rounded up so that they
+        /// are 10% greater than the current value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Integer
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you choose to migrate your DB instance from using standard storage to using Provisioned
+        /// IOPS, or from using Provisioned IOPS to using standard storage, the process can take
+        /// time. The duration of the migration depends on several factors such as database load,
+        /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
+        /// (if any), and the number of prior scale storage operations. Typical migration times
+        /// are under 24 hours, but the process can take up to several days in some cases. During
+        /// the migration, the DB instance will be available for use, but may experience performance
+        /// degradation. While the migration takes place, nightly backups for the instance will
+        /// be suspended. No other Amazon RDS operations can take place for the instance, including
+        /// modifying the instance, rebooting the instance, deleting the instance, creating a
+        /// read replica for the instance, and creating a DB snapshot of the instance. 
+        /// </para>
         /// </summary>
         public int Iops
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
         }
 
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;
+            return this._iops.HasValue; 
         }
 
         /// <summary>
-        /// Indicates that the DB instance should be associated with the specified option group. Changing this parameter does not result in an outage
-        /// except in the following case and the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is
-        /// set to <c>true</c> for this request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-        /// (sub-second) period during which new connections are rejected but existing connections are not interrupted. <!-- Note that persistent
-        /// options, such as the TDE_SQLServer option for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated
-        /// with the option group. --> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-        /// group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+        /// Gets and sets the property MasterUserPassword. 
+        /// <para>
+        ///  The new password for the DB instance master user. Can be any printable ASCII character
+        /// except "/", """, or "@".
+        /// </para>
         ///  
+        /// <para>
+        ///  Changing this parameter does not result in an outage and the change is asynchronously
+        /// applied as soon as possible. Between the time of the request and the completion of
+        /// the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
+        /// element of the operation response. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
+        /// characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+        /// </para>
         /// </summary>
-        public string OptionGroupName
+        public string MasterUserPassword
         {
-            get { return this.optionGroupName; }
-            set { this.optionGroupName = value; }
+            get { return this._masterUserPassword; }
+            set { this._masterUserPassword = value; }
         }
 
-        // Check to see if OptionGroupName property is set
-        internal bool IsSetOptionGroupName()
+        // Check to see if MasterUserPassword property is set
+        internal bool IsSetMasterUserPassword()
         {
-            return this.optionGroupName != null;
+            return this._masterUserPassword != null;
         }
 
         /// <summary>
-        /// The new DB instance identifier for the DB instance when renaming a DB Instance. This value is stored as a lowercase string. Constraints:
-        /// <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-        /// hyphen or contain two consecutive hyphens</li> </ul>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter does
+        /// not result in an outage and the change is applied during the next maintenance window
+        /// unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for
+        /// this request. 
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints: Cannot be specified if the DB instance is a read replica.
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewDBInstanceIdentifier. 
+        /// <para>
+        ///  The new DB instance identifier for the DB instance when renaming a DB Instance. This
+        /// value is stored as a lowercase string. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
+        /// hyphens</li> </ul>
         /// </summary>
         public string NewDBInstanceIdentifier
         {
-            get { return this.newDBInstanceIdentifier; }
-            set { this.newDBInstanceIdentifier = value; }
+            get { return this._newDBInstanceIdentifier; }
+            set { this._newDBInstanceIdentifier = value; }
         }
 
         // Check to see if NewDBInstanceIdentifier property is set
         internal bool IsSetNewDBInstanceIdentifier()
         {
-            return this.newDBInstanceIdentifier != null;
+            return this._newDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        ///  Indicates that the DB instance should be associated with the specified option group.
+        /// Changing this parameter does not result in an outage except in the following case
+        /// and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// parameter is set to <code>true</code> for this request. If the parameter change results
+        /// in an option group that enables OEM, this change can cause a brief (sub-second) period
+        /// during which new connections are rejected but existing connections are not interrupted.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
+        /// be removed from an option group, and that option group cannot be removed from a DB
+        /// instance once it is associated with a DB instance 
+        /// </para>
+        /// </summary>
+        public string OptionGroupName
+        {
+            get { return this._optionGroupName; }
+            set { this._optionGroupName = value; }
+        }
+
+        // Check to see if OptionGroupName property is set
+        internal bool IsSetOptionGroupName()
+        {
+            return this._optionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        ///  The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <code>BackupRetentionPeriod</code>. Changing this
+        /// parameter does not result in an outage and the change is asynchronously applied as
+        /// soon as possible. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be in the format hh24:mi-hh24:mi</li> <li>Times should be Universal
+        /// Time Coordinated (UTC)</li> <li>Must not conflict with the preferred maintenance window</li>
+        /// <li>Must be at least 30 minutes</li> </ul>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredMaintenanceWindow. 
+        /// <para>
+        ///  The weekly time range (in UTC) during which system maintenance can occur, which may
+        /// result in an outage. Changing this parameter does not result in an outage, except
+        /// in the following situation, and the change is asynchronously applied as soon as possible.
+        /// If there are pending actions that cause a reboot, and the maintenance window is changed
+        /// to include the current time, then changing this parameter will cause a reboot of the
+        /// DB instance. If moving this window to the current time, there must be at least 30
+        /// minutes between the current time and end of the window to ensure pending changes are
+        /// applied. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: ddd:hh24:mi-ddd:hh24:mi
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must be at least 30 minutes
+        /// </para>
+        /// </summary>
+        public string PreferredMaintenanceWindow
+        {
+            get { return this._preferredMaintenanceWindow; }
+            set { this._preferredMaintenanceWindow = value; }
+        }
+
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
+        {
+            return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupIds. 
+        /// <para>
+        ///  A list of EC2 VPC security groups to authorize on this DB instance. This change is
+        /// asynchronously applied as soon as possible. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
+        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// </ul>
+        /// </summary>
+        public List<string> VpcSecurityGroupIds
+        {
+            get { return this._vpcSecurityGroupIds; }
+            set { this._vpcSecurityGroupIds = value; }
+        }
+
+        // Check to see if VpcSecurityGroupIds property is set
+        internal bool IsSetVpcSecurityGroupIds()
+        {
+            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
         }
 
     }
 }
-    

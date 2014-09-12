@@ -12,105 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a volume status event.</para>
+    /// Describes a volume status event.
     /// </summary>
     public partial class VolumeStatusEvent
     {
-        
-        private string eventType;
-        private string description;
-        private DateTime? notBefore;
-        private DateTime? notAfter;
-        private string eventId;
-
+        private string _description;
+        private string _eventId;
+        private string _eventType;
+        private DateTime? _notAfter;
+        private DateTime? _notBefore;
 
         /// <summary>
-        /// The type of this event.
-        ///  
-        /// </summary>
-        public string EventType
-        {
-            get { return this.eventType; }
-            set { this.eventType = value; }
-        }
-
-        // Check to see if EventType property is set
-        internal bool IsSetEventType()
-        {
-            return this.eventType != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A description of the event.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// The earliest start time of the event.
-        ///  
-        /// </summary>
-        public DateTime NotBefore
-        {
-            get { return this.notBefore ?? default(DateTime); }
-            set { this.notBefore = value; }
-        }
-
-        // Check to see if NotBefore property is set
-        internal bool IsSetNotBefore()
-        {
-            return this.notBefore.HasValue;
-        }
-
-        /// <summary>
-        /// The latest end time of the event.
-        ///  
-        /// </summary>
-        public DateTime NotAfter
-        {
-            get { return this.notAfter ?? default(DateTime); }
-            set { this.notAfter = value; }
-        }
-
-        // Check to see if NotAfter property is set
-        internal bool IsSetNotAfter()
-        {
-            return this.notAfter.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EventId. 
+        /// <para>
         /// The ID of this event.
-        ///  
+        /// </para>
         /// </summary>
         public string EventId
         {
-            get { return this.eventId; }
-            set { this.eventId = value; }
+            get { return this._eventId; }
+            set { this._eventId = value; }
         }
 
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this.eventId != null;
+            return this._eventId != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property EventType. 
+        /// <para>
+        /// The type of this event.
+        /// </para>
+        /// </summary>
+        public string EventType
+        {
+            get { return this._eventType; }
+            set { this._eventType = value; }
+        }
+
+        // Check to see if EventType property is set
+        internal bool IsSetEventType()
+        {
+            return this._eventType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotAfter. 
+        /// <para>
+        /// The latest end time of the event.
+        /// </para>
+        /// </summary>
+        public DateTime NotAfter
+        {
+            get { return this._notAfter.GetValueOrDefault(); }
+            set { this._notAfter = value; }
+        }
+
+        // Check to see if NotAfter property is set
+        internal bool IsSetNotAfter()
+        {
+            return this._notAfter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotBefore. 
+        /// <para>
+        /// The earliest start time of the event.
+        /// </para>
+        /// </summary>
+        public DateTime NotBefore
+        {
+            get { return this._notBefore.GetValueOrDefault(); }
+            set { this._notBefore = value; }
+        }
+
+        // Check to see if NotBefore property is set
+        internal bool IsSetNotBefore()
+        {
+            return this._notBefore.HasValue; 
+        }
+
     }
 }

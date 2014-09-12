@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,30 @@ namespace Amazon.SimpleNotificationService.Model
         private string _nextToken;
         private string _topicArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ListSubscriptionsByTopicRequest() { }
+
+        /// <summary>
+        /// Instantiates ListSubscriptionsByTopicRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
+        public ListSubscriptionsByTopicRequest(string topicArn)
+        {
+            _topicArn = topicArn;
+        }
+
+        /// <summary>
+        /// Instantiates ListSubscriptionsByTopicRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
+        /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
+        public ListSubscriptionsByTopicRequest(string topicArn, string nextToken)
+        {
+            _topicArn = topicArn;
+            _nextToken = nextToken;
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -53,7 +81,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._nextToken != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TopicArn. 

@@ -12,123 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the Spot Price.</para>
+    /// Describes the Spot Price.
     /// </summary>
     public partial class SpotPrice
     {
-        
-        private InstanceType instanceType;
-        private RIProductDescription productDescription;
-        private string price;
-        private DateTime? timestamp;
-        private string availabilityZone;
-
+        private string _availabilityZone;
+        private InstanceType _instanceType;
+        private string _price;
+        private RIProductDescription _productDescription;
+        private DateTime? _timestamp;
 
         /// <summary>
-        /// The instance type.
-        ///  
+        /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public InstanceType InstanceType
-        {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
-        }
-
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
-        {
-            return this.instanceType != null;
-        }
-
-        /// <summary>
-        /// A general description of the AMI.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public RIProductDescription ProductDescription
-        {
-            get { return this.productDescription; }
-            set { this.productDescription = value; }
-        }
-
-        // Check to see if ProductDescription property is set
-        internal bool IsSetProductDescription()
-        {
-            return this.productDescription != null;
-        }
-
-        /// <summary>
-        /// The maximum price you will pay to launch one or more Spot Instances.
-        ///  
-        /// </summary>
-        public string Price
-        {
-            get { return this.price; }
-            set { this.price = value; }
-        }
-
-        // Check to see if Price property is set
-        internal bool IsSetPrice()
-        {
-            return this.price != null;
-        }
-
-        /// <summary>
-        /// The date and time the request was created.
-        ///  
-        /// </summary>
-        public DateTime Timestamp
-        {
-            get { return this.timestamp ?? default(DateTime); }
-            set { this.timestamp = value; }
-        }
-
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
-        {
-            return this.timestamp.HasValue;
-        }
-
-        /// <summary>
         /// The Availability Zone.
-        ///  
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type.
+        /// </para>
+        /// </summary>
+        public InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Price. 
+        /// <para>
+        /// The maximum price you will pay to launch one or more Spot Instances.
+        /// </para>
+        /// </summary>
+        public string Price
+        {
+            get { return this._price; }
+            set { this._price = value; }
+        }
+
+        // Check to see if Price property is set
+        internal bool IsSetPrice()
+        {
+            return this._price != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductDescription. 
+        /// <para>
+        /// A general description of the AMI.
+        /// </para>
+        /// </summary>
+        public RIProductDescription ProductDescription
+        {
+            get { return this._productDescription; }
+            set { this._productDescription = value; }
+        }
+
+        // Check to see if ProductDescription property is set
+        internal bool IsSetProductDescription()
+        {
+            return this._productDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The date and time the request was created.
+        /// </para>
+        /// </summary>
+        public DateTime Timestamp
+        {
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp.HasValue; 
+        }
+
     }
 }

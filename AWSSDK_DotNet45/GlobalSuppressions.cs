@@ -50,3 +50,7 @@ using System.Diagnostics.CodeAnalysis;
 // Unused private fields
 [module: SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields", Scope = "member", Target = "Amazon.S3.Transfer.Internal.SimpleUploadCommand.#_config")]
 [module: SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields", Scope = "member", Target = "Amazon.S3.Transfer.Internal.UploadDirectoryCommand.#_config")]
+
+// Suppression for methods on IHttpRequest
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetRequestContentAsync()")]
+

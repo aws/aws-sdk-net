@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,25 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Returns information about the  ActivateGateway response and response metadata.
+    /// Configuration for accessing Amazon ActivateGateway service
     /// </summary>
-    public class ActivateGatewayResponse : ActivateGatewayResult
+    public partial class ActivateGatewayResponse : ActivateGatewayResult
     {
         /// <summary>
         /// Gets and sets the ActivateGatewayResult property.
-        /// AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your
-        /// account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based
-        /// authorization.
+        /// Represents the output of a ActivateGateway operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ActivateGatewayResult class are now available on the ActivateGatewayResponse class. You should use the properties on ActivateGatewayResponse instead of accessing them through ActivateGatewayResult.")]
         public ActivateGatewayResult ActivateGatewayResult
@@ -42,4 +40,3 @@ namespace Amazon.StorageGateway.Model
         }
     }
 }
-    

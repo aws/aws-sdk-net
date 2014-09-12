@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   UserIdGroupPair Unmarshaller
-     /// </summary>
-    internal class UserIdGroupPairUnmarshaller : IUnmarshaller<UserIdGroupPair, XmlUnmarshallerContext>, IUnmarshaller<UserIdGroupPair, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for UserIdGroupPair Object
+    /// </summary>  
+    public class UserIdGroupPairUnmarshaller : IUnmarshaller<UserIdGroupPair, XmlUnmarshallerContext>, IUnmarshaller<UserIdGroupPair, JsonUnmarshallerContext>
     {
-        public UserIdGroupPair Unmarshall(XmlUnmarshallerContext context) 
+        public UserIdGroupPair Unmarshall(XmlUnmarshallerContext context)
         {
-            UserIdGroupPair userIdGroupPair = new UserIdGroupPair();
+            UserIdGroupPair unmarshalledObject = new UserIdGroupPair();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("userId", targetDepth))
+                    if (context.TestExpression("groupId", targetDepth))
                     {
-                        userIdGroupPair.UserId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupName", targetDepth))
                     {
-                        userIdGroupPair.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupId", targetDepth))
+                    if (context.TestExpression("userId", targetDepth))
                     {
-                        userIdGroupPair.GroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return userIdGroupPair;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return userIdGroupPair;
+            return unmarshalledObject;
         }
 
-        public UserIdGroupPair Unmarshall(JsonUnmarshallerContext context) 
+        public UserIdGroupPair Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static UserIdGroupPairUnmarshaller instance;
 
-        public static UserIdGroupPairUnmarshaller GetInstance() 
+        private static UserIdGroupPairUnmarshaller _instance = new UserIdGroupPairUnmarshaller();        
+
+        public static UserIdGroupPairUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new UserIdGroupPairUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

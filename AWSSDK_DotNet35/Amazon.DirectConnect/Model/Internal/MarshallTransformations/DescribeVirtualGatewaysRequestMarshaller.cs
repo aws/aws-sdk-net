@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,29 +33,29 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Virtual Gateways Request Marshaller
+    /// DescribeVirtualGateways Request Marshaller
     /// </summary>       
-    internal class DescribeVirtualGatewaysRequestMarshaller : IMarshaller<IRequest, DescribeVirtualGatewaysRequest> 
+    public class DescribeVirtualGatewaysRequestMarshaller : IMarshaller<IRequest, DescribeVirtualGatewaysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeVirtualGatewaysRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeVirtualGatewaysRequest, "AmazonDirectConnect");
+        public IRequest Marshall(DescribeVirtualGatewaysRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.DescribeVirtualGateways";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-        
-            request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

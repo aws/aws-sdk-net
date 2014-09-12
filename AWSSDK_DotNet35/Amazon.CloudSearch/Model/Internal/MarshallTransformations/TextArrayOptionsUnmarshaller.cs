@@ -12,87 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   TextArrayOptions Unmarshaller
-     /// </summary>
-    internal class TextArrayOptionsUnmarshaller : IUnmarshaller<TextArrayOptions, XmlUnmarshallerContext>, IUnmarshaller<TextArrayOptions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for TextArrayOptions Object
+    /// </summary>  
+    public class TextArrayOptionsUnmarshaller : IUnmarshaller<TextArrayOptions, XmlUnmarshallerContext>, IUnmarshaller<TextArrayOptions, JsonUnmarshallerContext>
     {
-        public TextArrayOptions Unmarshall(XmlUnmarshallerContext context) 
+        public TextArrayOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            TextArrayOptions textArrayOptions = new TextArrayOptions();
+            TextArrayOptions unmarshalledObject = new TextArrayOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AnalysisScheme", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AnalysisScheme = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        textArrayOptions.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SourceFields", targetDepth))
-                    {
-                        textArrayOptions.SourceFields = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ReturnEnabled", targetDepth))
-                    {
-                        textArrayOptions.ReturnEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HighlightEnabled", targetDepth))
                     {
-                        textArrayOptions.HighlightEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.HighlightEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AnalysisScheme", targetDepth))
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
                     {
-                        textArrayOptions.AnalysisScheme = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ReturnEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceFields", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceFields = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return textArrayOptions;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return textArrayOptions;
+            return unmarshalledObject;
         }
 
-        public TextArrayOptions Unmarshall(JsonUnmarshallerContext context) 
+        public TextArrayOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static TextArrayOptionsUnmarshaller instance;
 
-        public static TextArrayOptionsUnmarshaller GetInstance() 
+        private static TextArrayOptionsUnmarshaller _instance = new TextArrayOptionsUnmarshaller();        
+
+        public static TextArrayOptionsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TextArrayOptionsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

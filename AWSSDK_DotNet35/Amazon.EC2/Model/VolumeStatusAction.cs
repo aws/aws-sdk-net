@@ -12,88 +12,102 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a volume status operation code.</para>
+    /// Describes a volume status operation code.
     /// </summary>
     public partial class VolumeStatusAction
     {
-        
-        private string code;
-        private string description;
-        private string eventType;
-        private string eventId;
-
+        private string _code;
+        private string _description;
+        private string _eventId;
+        private string _eventType;
 
         /// <summary>
-        /// The code identifying the operation, for example, <c>enable-volume-io</c>.
-        ///  
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The code identifying the operation, for example, <code>enable-volume-io</code>.
+        /// </para>
         /// </summary>
         public string Code
         {
-            get { return this.code; }
-            set { this.code = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
         // Check to see if Code property is set
         internal bool IsSetCode()
         {
-            return this.code != null;
+            return this._code != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A description of the operation.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// The event type associated with this operation.
-        ///  
-        /// </summary>
-        public string EventType
-        {
-            get { return this.eventType; }
-            set { this.eventType = value; }
-        }
-
-        // Check to see if EventType property is set
-        internal bool IsSetEventType()
-        {
-            return this.eventType != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EventId. 
+        /// <para>
         /// The ID of the event associated with this operation.
-        ///  
+        /// </para>
         /// </summary>
         public string EventId
         {
-            get { return this.eventId; }
-            set { this.eventId = value; }
+            get { return this._eventId; }
+            set { this._eventId = value; }
         }
 
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this.eventId != null;
+            return this._eventId != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property EventType. 
+        /// <para>
+        /// The event type associated with this operation.
+        /// </para>
+        /// </summary>
+        public string EventType
+        {
+            get { return this._eventType; }
+            set { this._eventType = value; }
+        }
+
+        // Check to see if EventType property is set
+        internal bool IsSetEventType()
+        {
+            return this._eventType != null;
+        }
+
     }
 }

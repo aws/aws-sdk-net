@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,41 +32,45 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeTagsResult : AmazonWebServiceResponse
     {
-        
-        private List<TagDescription> tags = new List<TagDescription>();
-        private string nextToken;
-
+        private string _nextToken;
+        private List<TagDescription> _tags = new List<TagDescription>();
 
         /// <summary>
-        /// A list of tags.
-        ///  
-        /// </summary>
-        public List<TagDescription> Tags
-        {
-            get { return this.tags; }
-            set { this.tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this.tags.Count > 0;
-        }
-
-        /// <summary>
-        /// The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags.
+        /// </para>
+        /// </summary>
+        public List<TagDescription> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
     }
 }

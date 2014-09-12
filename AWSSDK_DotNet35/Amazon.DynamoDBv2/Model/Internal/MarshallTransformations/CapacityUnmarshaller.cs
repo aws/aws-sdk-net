@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Capacity Object
+    /// </summary>  
+    public class CapacityUnmarshaller : IUnmarshaller<Capacity, XmlUnmarshallerContext>, IUnmarshaller<Capacity, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CapacityUnmarshaller
-      /// </summary>
-      internal class CapacityUnmarshaller : IUnmarshaller<Capacity, XmlUnmarshallerContext>, IUnmarshaller<Capacity, JsonUnmarshallerContext>
-      {
         Capacity IUnmarshaller<Capacity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Capacity Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Capacity capacity = new Capacity();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Capacity unmarshalledObject = new Capacity();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("CapacityUnits", targetDepth))
-              {
-                capacity.CapacityUnits = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CapacityUnits", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.CapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return capacity;
+            return unmarshalledObject;
         }
 
-        private static CapacityUnmarshaller instance;
-        public static CapacityUnmarshaller GetInstance()
+
+        private static CapacityUnmarshaller _instance = new CapacityUnmarshaller();        
+
+        public static CapacityUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new CapacityUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -50,7 +54,6 @@ namespace Amazon.Route53Domains.Model
         private DateTime? _updatedDate;
         private string _whoIsServer;
 
-
         /// <summary>
         /// Gets and sets the property AbuseContactEmail. 
         /// <para>
@@ -75,7 +78,6 @@ namespace Amazon.Route53Domains.Model
             return this._abuseContactEmail != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AbuseContactPhone. 
         /// <para>
@@ -97,7 +99,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._abuseContactPhone != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AdminContact. 
@@ -129,7 +130,6 @@ namespace Amazon.Route53Domains.Model
             return this._adminContact != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AdminPrivacy. 
         /// <para>
@@ -155,7 +155,6 @@ namespace Amazon.Route53Domains.Model
             return this._adminPrivacy.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AutoRenew. 
         /// <para>
@@ -178,7 +177,6 @@ namespace Amazon.Route53Domains.Model
             return this._autoRenew.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
@@ -198,7 +196,6 @@ namespace Amazon.Route53Domains.Model
             return this._creationDate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DnsSec. 
         /// <para>
@@ -216,7 +213,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._dnsSec != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -240,7 +236,6 @@ namespace Amazon.Route53Domains.Model
             return this._domainName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
@@ -259,7 +254,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._expirationDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Nameservers. 
@@ -282,7 +276,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._nameservers != null && this._nameservers.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RegistrantContact. 
@@ -314,7 +307,6 @@ namespace Amazon.Route53Domains.Model
             return this._registrantContact != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RegistrantPrivacy. 
         /// <para>
@@ -340,7 +332,6 @@ namespace Amazon.Route53Domains.Model
             return this._registrantPrivacy.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property RegistrarName. 
         /// <para>
@@ -365,7 +356,6 @@ namespace Amazon.Route53Domains.Model
             return this._registrarName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RegistrarUrl. 
         /// <para>
@@ -388,7 +378,6 @@ namespace Amazon.Route53Domains.Model
             return this._registrarUrl != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RegistryDomainId. 
         /// <para>
@@ -406,7 +395,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._registryDomainId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Reseller. 
@@ -430,7 +418,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._reseller != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StatusList. 
@@ -470,7 +457,6 @@ namespace Amazon.Route53Domains.Model
             return this._statusList != null && this._statusList.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property TechContact. 
         /// <para>
@@ -501,7 +487,6 @@ namespace Amazon.Route53Domains.Model
             return this._techContact != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TechPrivacy. 
         /// <para>
@@ -527,7 +512,6 @@ namespace Amazon.Route53Domains.Model
             return this._techPrivacy.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property UpdatedDate. 
         /// <para>
@@ -546,7 +530,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._updatedDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property WhoIsServer. 

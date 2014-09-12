@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,49 +29,67 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeKeyPairs operation.
-    /// <para>Describes one or more of your key pairs.</para> <para>For more information about key pairs, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i> .</para>
+    /// Describes one or more of your key pairs.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeKeyPairsRequest : AmazonEC2Request
     {
-        private List<string> keyNames = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// One or more key pair names. Default: Describes all your key pairs.
-        ///  
-        /// </summary>
-        public List<string> KeyNames
-        {
-            get { return this.keyNames; }
-            set { this.keyNames = value; }
-        }
-
-        // Check to see if KeyNames property is set
-        internal bool IsSetKeyNames()
-        {
-            return this.keyNames.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _keyNames = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>fingerprint</c> - The fingerprint of the key pair. </li> <li> <c>key-name</c> - The name of the key pair.
-        /// </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>fingerprint</code> - The fingerprint of the key pair.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>key-name</code> - The name of the key pair.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyNames. 
+        /// <para>
+        /// One or more key pair names.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Describes all your key pairs.
+        /// </para>
+        /// </summary>
+        public List<string> KeyNames
+        {
+            get { return this._keyNames; }
+            set { this._keyNames = value; }
+        }
+
+        // Check to see if KeyNames property is set
+        internal bool IsSetKeyNames()
+        {
+            return this._keyNames != null && this._keyNames.Count > 0; 
         }
 
     }
 }
-    

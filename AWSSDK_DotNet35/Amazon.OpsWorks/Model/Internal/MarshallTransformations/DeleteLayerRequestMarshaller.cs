@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteLayer Request Marshaller
     /// </summary>       
-    public class DeleteLayerRequestMarshaller : IMarshaller<IRequest, DeleteLayerRequest> 
+    public class DeleteLayerRequestMarshaller : IMarshaller<IRequest, DeleteLayerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeleteLayerRequest)input);
+        }
+
         public IRequest Marshall(DeleteLayerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,10 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetLayerId())
                 {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(publicRequest.LayerId);
+                    context.Writer.WritePropertyName("LayerId");
+                    context.Writer.Write(publicRequest.LayerId);
                 }
 
         

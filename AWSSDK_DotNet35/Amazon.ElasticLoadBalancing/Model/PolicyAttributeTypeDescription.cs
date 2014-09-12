@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _defaultValue;
         private string _description;
 
-
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
@@ -54,7 +57,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._attributeName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AttributeType. 
         /// <para>
@@ -72,7 +74,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._attributeType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Cardinality. 
@@ -95,7 +96,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._cardinality != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
@@ -113,7 +113,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._defaultValue != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 

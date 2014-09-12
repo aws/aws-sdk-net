@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,35 +33,29 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Vault Request Marshaller
+    /// DescribeVault Request Marshaller
     /// </summary>       
-    internal class DescribeVaultRequestMarshaller : IMarshaller<IRequest, DescribeVaultRequest> 
+    public class DescribeVaultRequestMarshaller : IMarshaller<IRequest, DescribeVaultRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeVaultRequest describeVaultRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeVaultRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeVaultRequest, "AmazonGlacier");
-            string target = "Glacier.DescribeVault";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(DescribeVaultRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
-            if(describeVaultRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(describeVaultRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(describeVaultRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(describeVaultRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

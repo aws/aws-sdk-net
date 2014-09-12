@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,6 +41,19 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private string _subscriptionArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UnsubscribeRequest() { }
+
+        /// <summary>
+        /// Instantiates UnsubscribeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="subscriptionArn">The ARN of the subscription to be deleted.</param>
+        public UnsubscribeRequest(string subscriptionArn)
+        {
+            _subscriptionArn = subscriptionArn;
+        }
 
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 

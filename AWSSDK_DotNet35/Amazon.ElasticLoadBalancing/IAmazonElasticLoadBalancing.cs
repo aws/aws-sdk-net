@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.ElasticLoadBalancing.Model;
 
 namespace Amazon.ElasticLoadBalancing
 {
     /// <summary>
-    /// Implementation for accessing ElasticLoadBalancing
+    /// Interface for accessing ElasticLoadBalancing
     ///
     /// Elastic Load Balancing 
     /// <para>
@@ -73,7 +78,6 @@ namespace Amazon.ElasticLoadBalancing
 
         
         #region  AddTags
-
 
         /// <summary>
         /// Adds one or more tags for the specified load balancer. Each load balancer can have
@@ -135,7 +139,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  ApplySecurityGroupsToLoadBalancer
 
-
         /// <summary>
         /// Associates one or more security groups with your load balancer in Amazon Virtual
         /// Private Cloud (Amazon VPC). The provided security group IDs will override any currently
@@ -190,7 +193,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  AttachLoadBalancerToSubnets
-
 
         /// <summary>
         /// Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private
@@ -251,7 +253,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  ConfigureHealthCheck
 
-
         /// <summary>
         /// Specifies the health check settings to use for evaluating the health state of your
         /// back-end instances. 
@@ -299,7 +300,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateAppCookieStickinessPolicy
-
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes that follow that of an
@@ -373,7 +373,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  CreateLBCookieStickinessPolicy
 
-
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
         /// of the browser (user-agent) or a specified expiration period. This policy can be associated
@@ -446,7 +445,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLoadBalancer
-
 
         /// <summary>
         /// Creates a new load balancer. 
@@ -555,7 +553,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  CreateLoadBalancerListeners
 
-
         /// <summary>
         /// Creates one or more listeners on a load balancer for the specified port. If a listener
         /// with the given port does not already exist, it will be created; otherwise, the properties
@@ -617,7 +614,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  CreateLoadBalancerPolicy
 
-
         /// <summary>
         /// Creates a new policy that contains the necessary attributes depending on the policy
         /// type. Policies are settings that are saved for your load balancer and that can be
@@ -674,7 +670,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DeleteLoadBalancer
 
-
         /// <summary>
         /// Deletes the specified load balancer. 
         /// 
@@ -727,7 +722,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DeleteLoadBalancerListeners
 
-
         /// <summary>
         /// Deletes listeners from the load balancer for the specified port.
         /// </summary>
@@ -768,7 +762,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DeleteLoadBalancerPolicy
-
 
         /// <summary>
         /// Deletes a policy from the load balancer. The specified policy must not be enabled
@@ -814,7 +807,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DeregisterInstancesFromLoadBalancer
-
 
         /// <summary>
         /// Deregisters instances from the load balancer. Once the instance is deregistered,
@@ -877,7 +869,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeInstanceHealth
 
-
         /// <summary>
         /// Returns the current state of the specified instances registered with the specified
         /// load balancer. If no instances are specified, the state of all the instances registered
@@ -923,7 +914,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DescribeLoadBalancerAttributes
-
 
         /// <summary>
         /// Returns detailed information about all of the attributes associated with the specified
@@ -1151,7 +1141,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeTags
 
-
         /// <summary>
         /// Describes the tags associated with one or more load balancers.
         /// </summary>
@@ -1192,7 +1181,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DetachLoadBalancerFromSubnets
-
 
         /// <summary>
         /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
@@ -1246,7 +1234,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DisableAvailabilityZonesForLoadBalancer
-
 
         /// <summary>
         /// Removes the specified EC2 Availability Zones from the set of configured Availability
@@ -1309,7 +1296,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  EnableAvailabilityZonesForLoadBalancer
 
-
         /// <summary>
         /// Adds one or more EC2 Availability Zones to the load balancer. 
         /// 
@@ -1362,7 +1348,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  ModifyLoadBalancerAttributes
-
 
         /// <summary>
         /// Modifies the attributes of a specified load balancer.
@@ -1427,7 +1412,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  RegisterInstancesWithLoadBalancer
-
 
         /// <summary>
         /// Adds new instances to the load balancer. 
@@ -1502,7 +1486,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  RemoveTags
 
-
         /// <summary>
         /// Removes one or more tags from the specified load balancer.
         /// </summary>
@@ -1543,7 +1526,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerListenerSSLCertificate
-
 
         /// <summary>
         /// Sets the certificate that terminates the specified listener's SSL connections. The
@@ -1605,7 +1587,6 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  SetLoadBalancerPoliciesForBackendServer
 
-
         /// <summary>
         /// Replaces the current set of policies associated with a port on which the back-end
         /// server is listening with a new set of policies. After the policies have been created
@@ -1662,7 +1643,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerPoliciesOfListener
-
 
         /// <summary>
         /// Associates, updates, or disables a policy with a listener on the load balancer. You

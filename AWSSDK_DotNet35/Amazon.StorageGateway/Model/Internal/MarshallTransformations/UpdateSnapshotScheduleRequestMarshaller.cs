@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,59 +33,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Snapshot Schedule Request Marshaller
+    /// UpdateSnapshotSchedule Request Marshaller
     /// </summary>       
-    internal class UpdateSnapshotScheduleRequestMarshaller : IMarshaller<IRequest, UpdateSnapshotScheduleRequest> 
+    public class UpdateSnapshotScheduleRequestMarshaller : IMarshaller<IRequest, UpdateSnapshotScheduleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UpdateSnapshotScheduleRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(updateSnapshotScheduleRequest, "AmazonStorageGateway");
+        public IRequest Marshall(UpdateSnapshotScheduleRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.UpdateSnapshotSchedule";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateSnapshotScheduleRequest != null && updateSnapshotScheduleRequest.IsSetVolumeARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
                 {
-                    writer.WritePropertyName("VolumeARN");
-                    writer.Write(updateSnapshotScheduleRequest.VolumeARN);
-                }
-                if (updateSnapshotScheduleRequest != null && updateSnapshotScheduleRequest.IsSetStartAt()) 
-                {
-                    writer.WritePropertyName("StartAt");
-                    writer.Write(updateSnapshotScheduleRequest.StartAt);
-                }
-                if (updateSnapshotScheduleRequest != null && updateSnapshotScheduleRequest.IsSetRecurrenceInHours()) 
-                {
-                    writer.WritePropertyName("RecurrenceInHours");
-                    writer.Write(updateSnapshotScheduleRequest.RecurrenceInHours);
-                }
-                if (updateSnapshotScheduleRequest != null && updateSnapshotScheduleRequest.IsSetDescription()) 
-                {
-                    writer.WritePropertyName("Description");
-                    writer.Write(updateSnapshotScheduleRequest.Description);
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetRecurrenceInHours())
+                {
+                    context.Writer.WritePropertyName("RecurrenceInHours");
+                    context.Writer.Write(publicRequest.RecurrenceInHours);
+                }
+
+                if(publicRequest.IsSetStartAt())
+                {
+                    context.Writer.WritePropertyName("StartAt");
+                    context.Writer.Write(publicRequest.StartAt);
+                }
+
+                if(publicRequest.IsSetVolumeARN())
+                {
+                    context.Writer.WritePropertyName("VolumeARN");
+                    context.Writer.Write(publicRequest.VolumeARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

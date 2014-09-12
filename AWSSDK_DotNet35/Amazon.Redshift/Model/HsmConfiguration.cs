@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.Redshift.Model
         private string _hsmIpAddress;
         private string _hsmPartitionName;
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.Redshift.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmConfigurationIdentifier. 
@@ -73,7 +75,6 @@ namespace Amazon.Redshift.Model
             return this._hsmConfigurationIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HsmIpAddress. 
         /// <para>
@@ -91,7 +92,6 @@ namespace Amazon.Redshift.Model
         {
             return this._hsmIpAddress != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmPartitionName. 

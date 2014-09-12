@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Request Cancel Workflow Execution Request Marshaller
+    /// RequestCancelWorkflowExecution Request Marshaller
     /// </summary>       
-    internal class RequestCancelWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, RequestCancelWorkflowExecutionRequest> 
+    public class RequestCancelWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, RequestCancelWorkflowExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((RequestCancelWorkflowExecutionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(requestCancelWorkflowExecutionRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(RequestCancelWorkflowExecutionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.RequestCancelWorkflowExecution";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (requestCancelWorkflowExecutionRequest != null && requestCancelWorkflowExecutionRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(requestCancelWorkflowExecutionRequest.Domain);
-                }
-                if (requestCancelWorkflowExecutionRequest != null && requestCancelWorkflowExecutionRequest.IsSetWorkflowId()) 
-                {
-                    writer.WritePropertyName("workflowId");
-                    writer.Write(requestCancelWorkflowExecutionRequest.WorkflowId);
-                }
-                if (requestCancelWorkflowExecutionRequest != null && requestCancelWorkflowExecutionRequest.IsSetRunId()) 
-                {
-                    writer.WritePropertyName("runId");
-                    writer.Write(requestCancelWorkflowExecutionRequest.RunId);
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
+                if(publicRequest.IsSetRunId())
+                {
+                    context.Writer.WritePropertyName("runId");
+                    context.Writer.Write(publicRequest.RunId);
+                }
+
+                if(publicRequest.IsSetWorkflowId())
+                {
+                    context.Writer.WritePropertyName("workflowId");
+                    context.Writer.Write(publicRequest.WorkflowId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

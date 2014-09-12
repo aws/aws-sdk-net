@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,255 +35,129 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Scan Request Marshaller
     /// </summary>       
-    internal class ScanRequestMarshaller : IMarshaller<IRequest, ScanRequest> 
+    public class ScanRequestMarshaller : IMarshaller<IRequest, ScanRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ScanRequest scanRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ScanRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(scanRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(ScanRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.Scan";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (scanRequest != null && scanRequest.IsSetTableName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributesToGet())
                 {
-                    writer.WritePropertyName("TableName");
-                    writer.Write(scanRequest.TableName);
-                }
-
-                if (scanRequest != null && scanRequest.AttributesToGet != null && scanRequest.AttributesToGet.Count > 0) 
-                {
-                    List<string> attributesToGetList = scanRequest.AttributesToGet;
-                    writer.WritePropertyName("AttributesToGet");
-                    writer.WriteArrayStart();
-
-                    foreach (string attributesToGetListValue in attributesToGetList) 
-                    { 
-                        writer.Write(StringUtils.FromString(attributesToGetListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-                if (scanRequest != null && scanRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(scanRequest.Limit);
-                }
-                if (scanRequest != null && scanRequest.IsSetSelect()) 
-                {
-                    writer.WritePropertyName("Select");
-                    writer.Write(scanRequest.Select);
-                }
-                if (scanRequest != null) 
-                {
-                    if (scanRequest.ScanFilter != null && scanRequest.ScanFilter.Count > 0)
+                    context.Writer.WritePropertyName("AttributesToGet");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributesToGetListValue in publicRequest.AttributesToGet)
                     {
-                        writer.WritePropertyName("ScanFilter");
-                        writer.WriteObjectStart();
-                        foreach (string scanRequestScanFilterKey in scanRequest.ScanFilter.Keys)
-                        {
-                            Condition scanFilterListValue;
-                            bool scanFilterListValueHasValue = scanRequest.ScanFilter.TryGetValue(scanRequestScanFilterKey, out scanFilterListValue);
-                            writer.WritePropertyName(scanRequestScanFilterKey);
-
-                            writer.WriteObjectStart();
-
-                            if (scanFilterListValue != null && scanFilterListValue.AttributeValueList != null && scanFilterListValue.AttributeValueList.Count > 0)
-                            {
-                                List<AttributeValue> attributeValueListList = scanFilterListValue.AttributeValueList;
-                                writer.WritePropertyName("AttributeValueList");
-                                writer.WriteArrayStart();
-
-                                foreach (AttributeValue attributeValueListListValue in attributeValueListList) 
-                                {
-                                    writer.WriteObjectStart();
-                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetS()) 
-                                    {
-                                        writer.WritePropertyName("S");
-                                        writer.Write(attributeValueListListValue.S);
-                                    }
-                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetN()) 
-                                    {
-                                        writer.WritePropertyName("N");
-                                        writer.Write(attributeValueListListValue.N);
-                                    }
-                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetB()) 
-                                    {
-                                        writer.WritePropertyName("B");
-                                        writer.Write(StringUtils.FromMemoryStream(attributeValueListListValue.B));
-                                    }
-
-                                    if (attributeValueListListValue != null && attributeValueListListValue.SS != null && attributeValueListListValue.SS.Count > 0) 
-                                    {
-                                        List<string> sSList = attributeValueListListValue.SS;
-                                        writer.WritePropertyName("SS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (string sSListValue in sSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromString(sSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-
-                                    if (attributeValueListListValue != null && attributeValueListListValue.NS != null && attributeValueListListValue.NS.Count > 0) 
-                                    {
-                                        List<string> nSList = attributeValueListListValue.NS;
-                                        writer.WritePropertyName("NS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (string nSListValue in nSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromString(nSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-
-                                    if (attributeValueListListValue != null && attributeValueListListValue.BS != null && attributeValueListListValue.BS.Count > 0) 
-                                    {
-                                        List<MemoryStream> bSList = attributeValueListListValue.BS;
-                                        writer.WritePropertyName("BS");
-                                        writer.WriteArrayStart();
-
-                                        foreach (MemoryStream bSListValue in bSList) 
-                                        { 
-                                            writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                        }
-
-                                        writer.WriteArrayEnd();
-                                    }
-                                    writer.WriteObjectEnd();
-                                }
-                                writer.WriteArrayEnd();
-                            }
-                            if (scanFilterListValue != null && scanFilterListValue.IsSetComparisonOperator()) 
-                            {
-                                writer.WritePropertyName("ComparisonOperator");
-                                writer.Write(scanFilterListValue.ComparisonOperator);
-                            }
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestAttributesToGetListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
-                if (scanRequest != null && scanRequest.IsSetConditionalOperator()) 
+
+                if(publicRequest.IsSetConditionalOperator())
                 {
-                    writer.WritePropertyName("ConditionalOperator");
-                    writer.Write(scanRequest.ConditionalOperator);
+                    context.Writer.WritePropertyName("ConditionalOperator");
+                    context.Writer.Write(publicRequest.ConditionalOperator);
                 }
-                if (scanRequest != null) 
+
+                if(publicRequest.IsSetExclusiveStartKey())
                 {
-                    if (scanRequest.ExclusiveStartKey != null && scanRequest.ExclusiveStartKey.Count > 0)
+                    context.Writer.WritePropertyName("ExclusiveStartKey");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExclusiveStartKeyKvp in publicRequest.ExclusiveStartKey)
                     {
-                        writer.WritePropertyName("ExclusiveStartKey");
-                        writer.WriteObjectStart();
-                        foreach (string scanRequestExclusiveStartKeyKey in scanRequest.ExclusiveStartKey.Keys)
-                        {
-                            AttributeValue exclusiveStartKeyListValue;
-                            bool exclusiveStartKeyListValueHasValue = scanRequest.ExclusiveStartKey.TryGetValue(scanRequestExclusiveStartKeyKey, out exclusiveStartKeyListValue);
-                            writer.WritePropertyName(scanRequestExclusiveStartKeyKey);
+                        context.Writer.WritePropertyName(publicRequestExclusiveStartKeyKvp.Key);
+                        var publicRequestExclusiveStartKeyValue = publicRequestExclusiveStartKeyKvp.Value;
 
-                            writer.WriteObjectStart();
-                            if (exclusiveStartKeyListValue != null && exclusiveStartKeyListValue.IsSetS()) 
-                            {
-                                writer.WritePropertyName("S");
-                                writer.Write(exclusiveStartKeyListValue.S);
-                            }
-                            if (exclusiveStartKeyListValue != null && exclusiveStartKeyListValue.IsSetN()) 
-                            {
-                                writer.WritePropertyName("N");
-                                writer.Write(exclusiveStartKeyListValue.N);
-                            }
-                            if (exclusiveStartKeyListValue != null && exclusiveStartKeyListValue.IsSetB()) 
-                            {
-                                writer.WritePropertyName("B");
-                                writer.Write(StringUtils.FromMemoryStream(exclusiveStartKeyListValue.B));
-                            }
+                        context.Writer.WriteObjectStart();
 
-                            if (exclusiveStartKeyListValue != null && exclusiveStartKeyListValue.SS != null && exclusiveStartKeyListValue.SS.Count > 0) 
-                            {
-                                List<string> sSList = exclusiveStartKeyListValue.SS;
-                                writer.WritePropertyName("SS");
-                                writer.WriteArrayStart();
+                        var marshaller = AttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExclusiveStartKeyValue, context);
 
-                                foreach (string sSListValue in sSList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(sSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (exclusiveStartKeyListValue != null && exclusiveStartKeyListValue.NS != null && exclusiveStartKeyListValue.NS.Count > 0) 
-                            {
-                                List<string> nSList = exclusiveStartKeyListValue.NS;
-                                writer.WritePropertyName("NS");
-                                writer.WriteArrayStart();
-
-                                foreach (string nSListValue in nSList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(nSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (exclusiveStartKeyListValue != null && exclusiveStartKeyListValue.BS != null && exclusiveStartKeyListValue.BS.Count > 0) 
-                            {
-                                List<MemoryStream> bSList = exclusiveStartKeyListValue.BS;
-                                writer.WritePropertyName("BS");
-                                writer.WriteArrayStart();
-
-                                foreach (MemoryStream bSListValue in bSList) 
-                                { 
-                                    writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                }
-                if (scanRequest != null && scanRequest.IsSetReturnConsumedCapacity()) 
-                {
-                    writer.WritePropertyName("ReturnConsumedCapacity");
-                    writer.Write(scanRequest.ReturnConsumedCapacity);
-                }
-                if (scanRequest != null && scanRequest.IsSetTotalSegments()) 
-                {
-                    writer.WritePropertyName("TotalSegments");
-                    writer.Write(scanRequest.TotalSegments);
-                }
-                if (scanRequest != null && scanRequest.IsSetSegment()) 
-                {
-                    writer.WritePropertyName("Segment");
-                    writer.Write(scanRequest.Segment);
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLimit())
+                {
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
+                }
+
+                if(publicRequest.IsSetReturnConsumedCapacity())
+                {
+                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
+                }
+
+                if(publicRequest.IsSetScanFilter())
+                {
+                    context.Writer.WritePropertyName("ScanFilter");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestScanFilterKvp in publicRequest.ScanFilter)
+                    {
+                        context.Writer.WritePropertyName(publicRequestScanFilterKvp.Key);
+                        var publicRequestScanFilterValue = publicRequestScanFilterKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestScanFilterValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSegment())
+                {
+                    context.Writer.WritePropertyName("Segment");
+                    context.Writer.Write(publicRequest.Segment);
+                }
+
+                if(publicRequest.IsSetSelect())
+                {
+                    context.Writer.WritePropertyName("Select");
+                    context.Writer.Write(publicRequest.Select);
+                }
+
+                if(publicRequest.IsSetTableName())
+                {
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
+                }
+
+                if(publicRequest.IsSetTotalSegments())
+                {
+                    context.Writer.WritePropertyName("TotalSegments");
+                    context.Writer.Write(publicRequest.TotalSegments);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

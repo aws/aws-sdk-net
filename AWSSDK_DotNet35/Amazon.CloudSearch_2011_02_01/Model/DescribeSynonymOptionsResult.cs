@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A response message that contains the synonym options for a search domain.</para>
+    /// A response message that contains the synonym options for a search domain.
     /// </summary>
     public partial class DescribeSynonymOptionsResult : AmazonWebServiceResponse
     {
-        
-        private SynonymOptionsStatus synonyms;
-
+        private SynonymOptionsStatus _synonyms;
 
         /// <summary>
-        /// The synonym options configured for this search domain and the current status of those options.
-        ///  
+        /// Gets and sets the property Synonyms.
         /// </summary>
         public SynonymOptionsStatus Synonyms
         {
-            get { return this.synonyms; }
-            set { this.synonyms = value; }
+            get { return this._synonyms; }
+            set { this._synonyms = value; }
         }
 
         // Check to see if Synonyms property is set
         internal bool IsSetSynonyms()
         {
-            return this.synonyms != null;
+            return this._synonyms != null;
         }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRouteTable operation.
-    /// <para>Deletes the specified route table. You must disassociate the route table from any subnets before you can delete it. You can't delete
-    /// the main route table.</para>
+    /// Deletes the specified route table. You must disassociate the route table from any
+    /// subnets before you can delete it. You can't delete the main route table.
     /// </summary>
     public partial class DeleteRouteTableRequest : AmazonEC2Request
     {
-        private string routeTableId;
-
+        private string _routeTableId;
 
         /// <summary>
+        /// Gets and sets the property RouteTableId. 
+        /// <para>
         /// The ID of the route table.
-        ///  
+        /// </para>
         /// </summary>
         public string RouteTableId
         {
-            get { return this.routeTableId; }
-            set { this.routeTableId = value; }
+            get { return this._routeTableId; }
+            set { this._routeTableId = value; }
         }
 
         // Check to see if RouteTableId property is set
         internal bool IsSetRouteTableId()
         {
-            return this.routeTableId != null;
+            return this._routeTableId != null;
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreatePipeline Request Marshaller
     /// </summary>       
-    public class CreatePipelineRequestMarshaller : IMarshaller<IRequest, CreatePipelineRequest> 
+    public class CreatePipelineRequestMarshaller : IMarshaller<IRequest, CreatePipelineRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreatePipelineRequest)input);
+        }
+
         public IRequest Marshall(CreatePipelineRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
@@ -45,167 +54,62 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetContentConfig())
                 {
-                    writer.WritePropertyName("ContentConfig");
-                    writer.WriteObjectStart();
-                    if(publicRequest.ContentConfig.IsSetBucket())
-                    {
-                        writer.WritePropertyName("Bucket");
-                        writer.Write(publicRequest.ContentConfig.Bucket);
-                    }
+                    context.Writer.WritePropertyName("ContentConfig");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.ContentConfig.IsSetPermissions())
-                    {
-                        writer.WritePropertyName("Permissions");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestContentConfigPermissionsListValue in publicRequest.ContentConfig.Permissions)
-                        {
-                            writer.WriteObjectStart();
-                            if(publicRequestContentConfigPermissionsListValue.IsSetAccess())
-                            {
-                                writer.WritePropertyName("Access");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestContentConfigPermissionsListValueAccessListValue in publicRequestContentConfigPermissionsListValue.Access)
-                                {
-                                    writer.Write(publicRequestContentConfigPermissionsListValueAccessListValue);
-                                }
-                                writer.WriteArrayEnd();
-                            }
+                    var marshaller = PipelineOutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContentConfig, context);
 
-                            if(publicRequestContentConfigPermissionsListValue.IsSetGrantee())
-                            {
-                                writer.WritePropertyName("Grantee");
-                                writer.Write(publicRequestContentConfigPermissionsListValue.Grantee);
-                            }
-
-                            if(publicRequestContentConfigPermissionsListValue.IsSetGranteeType())
-                            {
-                                writer.WritePropertyName("GranteeType");
-                                writer.Write(publicRequestContentConfigPermissionsListValue.GranteeType);
-                            }
-
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.ContentConfig.IsSetStorageClass())
-                    {
-                        writer.WritePropertyName("StorageClass");
-                        writer.Write(publicRequest.ContentConfig.StorageClass);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetInputBucket())
                 {
-                    writer.WritePropertyName("InputBucket");
-                    writer.Write(publicRequest.InputBucket);
+                    context.Writer.WritePropertyName("InputBucket");
+                    context.Writer.Write(publicRequest.InputBucket);
                 }
 
                 if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetNotifications())
                 {
-                    writer.WritePropertyName("Notifications");
-                    writer.WriteObjectStart();
-                    if(publicRequest.Notifications.IsSetCompleted())
-                    {
-                        writer.WritePropertyName("Completed");
-                        writer.Write(publicRequest.Notifications.Completed);
-                    }
+                    context.Writer.WritePropertyName("Notifications");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.Notifications.IsSetError())
-                    {
-                        writer.WritePropertyName("Error");
-                        writer.Write(publicRequest.Notifications.Error);
-                    }
+                    var marshaller = NotificationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Notifications, context);
 
-                    if(publicRequest.Notifications.IsSetProgressing())
-                    {
-                        writer.WritePropertyName("Progressing");
-                        writer.Write(publicRequest.Notifications.Progressing);
-                    }
-
-                    if(publicRequest.Notifications.IsSetWarning())
-                    {
-                        writer.WritePropertyName("Warning");
-                        writer.Write(publicRequest.Notifications.Warning);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetOutputBucket())
                 {
-                    writer.WritePropertyName("OutputBucket");
-                    writer.Write(publicRequest.OutputBucket);
+                    context.Writer.WritePropertyName("OutputBucket");
+                    context.Writer.Write(publicRequest.OutputBucket);
                 }
 
                 if(publicRequest.IsSetRole())
                 {
-                    writer.WritePropertyName("Role");
-                    writer.Write(publicRequest.Role);
+                    context.Writer.WritePropertyName("Role");
+                    context.Writer.Write(publicRequest.Role);
                 }
 
                 if(publicRequest.IsSetThumbnailConfig())
                 {
-                    writer.WritePropertyName("ThumbnailConfig");
-                    writer.WriteObjectStart();
-                    if(publicRequest.ThumbnailConfig.IsSetBucket())
-                    {
-                        writer.WritePropertyName("Bucket");
-                        writer.Write(publicRequest.ThumbnailConfig.Bucket);
-                    }
+                    context.Writer.WritePropertyName("ThumbnailConfig");
+                    context.Writer.WriteObjectStart();
 
-                    if(publicRequest.ThumbnailConfig.IsSetPermissions())
-                    {
-                        writer.WritePropertyName("Permissions");
-                        writer.WriteArrayStart();
-                        foreach(var publicRequestThumbnailConfigPermissionsListValue in publicRequest.ThumbnailConfig.Permissions)
-                        {
-                            writer.WriteObjectStart();
-                            if(publicRequestThumbnailConfigPermissionsListValue.IsSetAccess())
-                            {
-                                writer.WritePropertyName("Access");
-                                writer.WriteArrayStart();
-                                foreach(var publicRequestThumbnailConfigPermissionsListValueAccessListValue in publicRequestThumbnailConfigPermissionsListValue.Access)
-                                {
-                                    writer.Write(publicRequestThumbnailConfigPermissionsListValueAccessListValue);
-                                }
-                                writer.WriteArrayEnd();
-                            }
+                    var marshaller = PipelineOutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThumbnailConfig, context);
 
-                            if(publicRequestThumbnailConfigPermissionsListValue.IsSetGrantee())
-                            {
-                                writer.WritePropertyName("Grantee");
-                                writer.Write(publicRequestThumbnailConfigPermissionsListValue.Grantee);
-                            }
-
-                            if(publicRequestThumbnailConfigPermissionsListValue.IsSetGranteeType())
-                            {
-                                writer.WritePropertyName("GranteeType");
-                                writer.Write(publicRequestThumbnailConfigPermissionsListValue.GranteeType);
-                            }
-
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.ThumbnailConfig.IsSetStorageClass())
-                    {
-                        writer.WritePropertyName("StorageClass");
-                        writer.Write(publicRequest.ThumbnailConfig.StorageClass);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
         

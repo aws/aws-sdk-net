@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the SetStackPolicy response metadata.
-    /// The SetStackPolicy operation has a void result type.
+    /// Configuration for accessing Amazon SetStackPolicy service
     /// </summary>
-    public partial class SetStackPolicyResponse : AmazonWebServiceResponse
+    public partial class SetStackPolicyResponse : SetStackPolicyResult
     {
+        /// <summary>
+        /// Gets and sets the SetStackPolicyResult property.
+        /// Represents the output of a SetStackPolicy operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SetStackPolicyResult class are now available on the SetStackPolicyResponse class. You should use the properties on SetStackPolicyResponse instead of accessing them through SetStackPolicyResult.")]
+        public SetStackPolicyResult SetStackPolicyResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

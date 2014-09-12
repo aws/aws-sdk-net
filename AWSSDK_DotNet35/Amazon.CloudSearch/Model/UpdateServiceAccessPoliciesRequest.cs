@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,62 +29,47 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceAccessPolicies operation.
-    /// <para>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a
-    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" > Configuring Access for an Amazon CloudSearch
-    /// Domain</a> .</para>
+    /// Configures the access rules that control access to the domain's document and search
+    /// endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
+    /// target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.
     /// </summary>
     public partial class UpdateServiceAccessPoliciesRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private string accessPolicies;
-
+        private string _accessPolicies;
+        private string _domainName;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-        ///  
+        /// Gets and sets the property AccessPolicies. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
+        /// The access rules you want to configure. These rules replace any existing rules. 
         /// </para>
-        /// </summary>
-        public string DomainName
-        {
-            get { return this.domainName; }
-            set { this.domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this.domainName != null;
-        }
-
-        /// <summary>
-        /// The access rules you want to configure. These rules replace any existing rules.
-        ///  
         /// </summary>
         public string AccessPolicies
         {
-            get { return this.accessPolicies; }
-            set { this.accessPolicies = value; }
+            get { return this._accessPolicies; }
+            set { this._accessPolicies = value; }
         }
 
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this.accessPolicies != null;
+            return this._accessPolicies != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
         }
 
     }
 }
-    

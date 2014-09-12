@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,37 +29,29 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlarms operation.
-    /// <para> Deletes all specified alarms. In the event of an error, no alarms are deleted. </para>
+    /// Deletes all specified alarms. In the event of an error, no alarms are deleted.
     /// </summary>
-    public partial class DeleteAlarmsRequest : AmazonWebServiceRequest
+    public partial class DeleteAlarmsRequest : AmazonCloudWatchRequest
     {
-        private List<string> alarmNames = new List<string>();
+        private List<string> _alarmNames = new List<string>();
 
         /// <summary>
-        /// A list of alarms to be deleted.
-        ///  
+        /// Gets and sets the property AlarmNames. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
+        ///  A list of alarms to be deleted. 
         /// </para>
         /// </summary>
         public List<string> AlarmNames
         {
-            get { return this.alarmNames; }
-            set { this.alarmNames = value; }
+            get { return this._alarmNames; }
+            set { this._alarmNames = value; }
         }
 
         // Check to see if AlarmNames property is set
         internal bool IsSetAlarmNames()
         {
-            return this.alarmNames.Count > 0;
+            return this._alarmNames != null && this._alarmNames.Count > 0; 
         }
 
     }
 }
-    

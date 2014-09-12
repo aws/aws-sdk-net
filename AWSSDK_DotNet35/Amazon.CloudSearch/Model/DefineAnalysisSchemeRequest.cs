@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,64 +29,46 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DefineAnalysisScheme operation.
-    /// <para>Configures an analysis scheme for a domain. An analysis scheme defines language-specific text processing options for a <c>text</c>
-    /// field. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
-    /// >Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
+    /// Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code>
+    /// field to define language-specific text processing options. For more information, see
+    /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
+    /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
+    /// Guide</i>.
     /// </summary>
     public partial class DefineAnalysisSchemeRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private AnalysisScheme analysisScheme;
-
-
-        /// <summary>
-        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string DomainName
-        {
-            get { return this.domainName; }
-            set { this.domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this.domainName != null;
-        }
+        private AnalysisScheme _analysisScheme;
+        private string _domainName;
 
         /// <summary>
-        /// Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be
-        /// processed. The following options can be configured for an analysis scheme: <c>Synonyms</c>, <c>Stopwords</c>, <c>StemmingDictionary</c>, and
-        /// <c>AlgorithmicStemming</c>.
-        ///  
+        /// Gets and sets the property AnalysisScheme.
         /// </summary>
         public AnalysisScheme AnalysisScheme
         {
-            get { return this.analysisScheme; }
-            set { this.analysisScheme = value; }
+            get { return this._analysisScheme; }
+            set { this._analysisScheme = value; }
         }
 
         // Check to see if AnalysisScheme property is set
         internal bool IsSetAnalysisScheme()
         {
-            return this.analysisScheme != null;
+            return this._analysisScheme != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
         }
 
     }
 }
-    

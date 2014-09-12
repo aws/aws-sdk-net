@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,50 +29,60 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AddSourceIdentifierToSubscription operation.
-    /// <para>Adds a source identifier to an existing RDS event notification subscription.</para>
+    /// Adds a source identifier to an existing RDS event notification subscription.
     /// </summary>
     public partial class AddSourceIdentifierToSubscriptionRequest : AmazonRDSRequest
     {
-        private string subscriptionName;
-        private string sourceIdentifier;
-
-
-        /// <summary>
-        /// The name of the RDS event notification subscription you want to add a source identifier to.
-        ///  
-        /// </summary>
-        public string SubscriptionName
-        {
-            get { return this.subscriptionName; }
-            set { this.subscriptionName = value; }
-        }
-
-        // Check to see if SubscriptionName property is set
-        internal bool IsSetSubscriptionName()
-        {
-            return this.subscriptionName != null;
-        }
+        private string _sourceIdentifier;
+        private string _subscriptionName;
 
         /// <summary>
-        /// The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and
-        /// hyphens; it cannot end with a hyphen or contain two consecutive hyphens. Constraints: <ul> <li>If the source type is a DB instance, then a
-        /// <c>DBInstanceIdentifier</c> must be supplied.</li> <li>If the source type is a DB security group, a <c>DBSecurityGroupName</c> must be
-        /// supplied.</li> <li>If the source type is a DB parameter group, a <c>DBParameterGroupName</c> must be supplied.</li> <li>If the source type
-        /// is a DB snapshot, a <c>DBSnapshotIdentifier</c> must be supplied.</li> </ul>
+        /// Gets and sets the property SourceIdentifier. 
+        /// <para>
+        ///  The identifier of the event source to be added. An identifier must begin with a letter
+        /// and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen
+        /// or contain two consecutive hyphens. 
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code>
+        /// must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code>
+        /// must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+        /// must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+        /// must be supplied.</li> </ul>
         /// </summary>
         public string SourceIdentifier
         {
-            get { return this.sourceIdentifier; }
-            set { this.sourceIdentifier = value; }
+            get { return this._sourceIdentifier; }
+            set { this._sourceIdentifier = value; }
         }
 
         // Check to see if SourceIdentifier property is set
         internal bool IsSetSourceIdentifier()
         {
-            return this.sourceIdentifier != null;
+            return this._sourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionName. 
+        /// <para>
+        /// The name of the RDS event notification subscription you want to add a source identifier
+        /// to.
+        /// </para>
+        /// </summary>
+        public string SubscriptionName
+        {
+            get { return this._subscriptionName; }
+            set { this._subscriptionName = value; }
+        }
+
+        // Check to see if SubscriptionName property is set
+        internal bool IsSetSubscriptionName()
+        {
+            return this._subscriptionName != null;
         }
 
     }
 }
-    

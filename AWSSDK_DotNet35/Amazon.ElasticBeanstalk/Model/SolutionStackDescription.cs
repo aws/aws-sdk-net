@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,11 +35,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<string> _permittedFileTypes = new List<string>();
         private string _solutionStackName;
 
-
         /// <summary>
         /// Gets and sets the property PermittedFileTypes. 
         /// <para>
-        ///          The permitted file types allowed for a solution stack.      
+        ///  The permitted file types allowed for a solution stack. 
         /// </para>
         /// </summary>
         public List<string> PermittedFileTypes
@@ -50,11 +53,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._permittedFileTypes != null && this._permittedFileTypes.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///          The name of the solution stack.      
+        ///  The name of the solution stack. 
         /// </para>
         /// </summary>
         public string SolutionStackName

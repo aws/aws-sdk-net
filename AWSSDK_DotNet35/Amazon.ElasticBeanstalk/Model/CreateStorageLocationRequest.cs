@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,11 +29,11 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStorageLocation operation.
-    /// Creates the Amazon S3 storage location for the account.        
+    /// Creates the Amazon S3 storage location for the account. 
     /// 
-    ///       
+    ///  
     /// <para>
-    ///          This location is used to store user log files.        
+    ///  This location is used to store user log files. 
     /// </para>
     /// </summary>
     public partial class CreateStorageLocationRequest : AmazonElasticBeanstalkRequest

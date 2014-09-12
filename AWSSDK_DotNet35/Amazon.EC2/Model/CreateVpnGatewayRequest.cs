@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,58 +29,71 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpnGateway operation.
-    /// <para>Creates a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a
-    /// virtual private gateway before creating the VPC itself.</para> <para>For more information about virtual private gateways, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual Private Gateway to Your VPC</a> in the
-    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
+    /// Creates a virtual private gateway. A virtual private gateway is the endpoint on the
+    /// VPC side of your VPN connection. You can create a virtual private gateway before creating
+    /// the VPC itself.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
+    /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
+    /// Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateVpnGatewayRequest : AmazonEC2Request
     {
-        private GatewayType type;
-        private string availabilityZone;
-
+        private string _availabilityZone;
+        private GatewayType _type;
 
         /// <summary>
-        /// The type of VPN connection this virtual private gateway supports.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ipsec.1</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public GatewayType Type
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
+        public CreateVpnGatewayRequest() { }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        /// <summary>
+        /// Instantiates CreateVpnGatewayRequest with the parameterized properties
+        /// </summary>
+        /// <param name="type">The type of VPN connection this virtual private gateway supports.</param>
+        public CreateVpnGatewayRequest(GatewayType type)
         {
-            return this.type != null;
+            _type = type;
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
         /// The Availability Zone for the virtual private gateway.
-        ///  
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of VPN connection this virtual private gateway supports.
+        /// </para>
+        /// </summary>
+        public GatewayType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
 }
-    

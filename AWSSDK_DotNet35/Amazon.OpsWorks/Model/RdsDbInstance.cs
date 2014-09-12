@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.OpsWorks.Model
         private string _region;
         private string _stackId;
 
-
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
@@ -56,7 +59,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._address != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DbInstanceIdentifier. 
@@ -76,7 +78,6 @@ namespace Amazon.OpsWorks.Model
             return this._dbInstanceIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DbPassword. 
         /// <para>
@@ -94,7 +95,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._dbPassword != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DbUser. 
@@ -114,7 +114,6 @@ namespace Amazon.OpsWorks.Model
             return this._dbUser != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
@@ -132,7 +131,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._engine != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MissingOnRds. 
@@ -154,7 +152,6 @@ namespace Amazon.OpsWorks.Model
             return this._missingOnRds.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property RdsDbInstanceArn. 
         /// <para>
@@ -173,7 +170,6 @@ namespace Amazon.OpsWorks.Model
             return this._rdsDbInstanceArn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
@@ -191,7 +187,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._region != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StackId. 

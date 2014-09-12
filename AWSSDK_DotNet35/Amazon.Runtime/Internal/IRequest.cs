@@ -222,5 +222,24 @@ namespace Amazon.Runtime.Internal
             get; 
             set;
         }
+
+        /// <summary>
+        /// Checks if the request stream can be rewinded.
+        /// </summary>
+        /// <returns>Returns true if the request stream can be rewinded ,
+        /// else false.</returns>
+        bool IsRequestStreamRewindable();
+
+        /// <summary>
+        /// Returns true if the request can contain a request body, else false.
+        /// </summary>
+        /// <returns>Returns true if the currect request can contain a request body, else false.</returns>
+        bool MayContainRequestBody();
+
+        /// <summary>
+        /// Returns true if the request has a body, else false.
+        /// </summary>
+        /// <returns>Returns true if the request has a body, else false.</returns>
+        bool HasRequestBody();
     }
 }

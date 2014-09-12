@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A response message that contains the access policies for a domain.</para>
+    /// A response message that contains the access policies for a domain.
     /// </summary>
     public partial class DescribeServiceAccessPoliciesResult : AmazonWebServiceResponse
     {
-        
-        private AccessPoliciesStatus accessPolicies;
-
+        private AccessPoliciesStatus _accessPolicies;
 
         /// <summary>
-        /// A <c>PolicyDocument</c> that specifies access policies for the search domain's services, and the current status of those policies.
-        ///  
+        /// Gets and sets the property AccessPolicies.
         /// </summary>
         public AccessPoliciesStatus AccessPolicies
         {
-            get { return this.accessPolicies; }
-            set { this.accessPolicies = value; }
+            get { return this._accessPolicies; }
+            set { this._accessPolicies = value; }
         }
 
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this.accessPolicies != null;
+            return this._accessPolicies != null;
         }
+
     }
 }

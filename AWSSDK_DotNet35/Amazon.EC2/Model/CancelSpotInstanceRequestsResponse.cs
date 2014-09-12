@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  CancelSpotInstanceRequests response and response metadata.
+    /// Configuration for accessing Amazon CancelSpotInstanceRequests service
     /// </summary>
     public partial class CancelSpotInstanceRequestsResponse : CancelSpotInstanceRequestsResult
     {
         /// <summary>
         /// Gets and sets the CancelSpotInstanceRequestsResult property.
-        /// 
+        /// Represents the output of a CancelSpotInstanceRequests operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CancelSpotInstanceRequestsResult class are now available on the CancelSpotInstanceRequestsResponse class. You should use the properties on CancelSpotInstanceRequestsResponse instead of accessing them through CancelSpotInstanceRequestsResult.")]
         public CancelSpotInstanceRequestsResult CancelSpotInstanceRequestsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

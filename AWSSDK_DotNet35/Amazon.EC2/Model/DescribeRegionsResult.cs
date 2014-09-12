@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeRegionsResult : AmazonWebServiceResponse
     {
-        
-        private List<Region> regions = new List<Region>();
-
+        private List<Region> _regions = new List<Region>();
 
         /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
         /// Information about one or more regions.
-        ///  
+        /// </para>
         /// </summary>
         public List<Region> Regions
         {
-            get { return this.regions; }
-            set { this.regions = value; }
+            get { return this._regions; }
+            set { this._regions = value; }
         }
 
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this.regions.Count > 0;
+            return this._regions != null && this._regions.Count > 0; 
         }
+
     }
 }

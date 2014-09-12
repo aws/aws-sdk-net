@@ -12,81 +12,59 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>A named expression that can be evaluated at search time. Can be used for sorting and filtering search results and constructing other
-    /// expressions. </para>
+    /// A named expression that can be evaluated at search time. Can be used to sort the search
+    /// results, define other expressions, or return computed information in the search results.
     /// </summary>
     public partial class Expression
     {
-        
-        private string expressionName;
-        private string expressionValue;
-
+        private string _expressionName;
+        private string _expressionValue;
 
         /// <summary>
-        /// A string that represents the name of an index field. Field names begin with a letter and can contain the following characters: a-z
-        /// (lowercase), 0-9, and _ (underscore). The name "score" is reserved and cannot be used as a field name. To reference a document's ID, you can
-        /// use the name <c>_id</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property ExpressionName.
         /// </summary>
         public string ExpressionName
         {
-            get { return this.expressionName; }
-            set { this.expressionName = value; }
+            get { return this._expressionName; }
+            set { this._expressionName = value; }
         }
 
         // Check to see if ExpressionName property is set
         internal bool IsSetExpressionName()
         {
-            return this.expressionName != null;
+            return this._expressionName != null;
         }
 
         /// <summary>
-        /// The expression to evaluate for sorting while processing a search request. The <c>Expression</c> syntax is based on JavaScript expressions.
-        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
-        /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 10240</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property ExpressionValue.
         /// </summary>
         public string ExpressionValue
         {
-            get { return this.expressionValue; }
-            set { this.expressionValue = value; }
+            get { return this._expressionValue; }
+            set { this._expressionValue = value; }
         }
 
         // Check to see if ExpressionValue property is set
         internal bool IsSetExpressionValue()
         {
-            return this.expressionValue != null;
+            return this._expressionValue != null;
         }
+
     }
 }

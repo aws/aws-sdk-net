@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,17 +29,16 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConfigurationTemplate operation.
-    /// Creates a configuration template. Templates are associated with a         specific
-    /// application         and are used to deploy different versions of the         application
-    /// with         the same configuration settings.
+    /// Creates a configuration template. Templates are associated with a specific application
+    /// and are used to deploy different versions of the application with the same configuration
+    /// settings.
     /// 
-    ///       
+    ///  
     /// <para>
     /// Related Topics
     /// </para>
-    ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
-    ///         <li>            <a>DescribeConfigurationSettings</a>         </li>       
-    ///  <li>            <a>ListAvailableSolutionStacks</a>         </li>      </ul>
+    ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a>
+    /// </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
     /// </summary>
     public partial class CreateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
@@ -47,13 +50,28 @@ namespace Amazon.ElasticBeanstalk.Model
         private SourceConfiguration _sourceConfiguration;
         private string _templateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateConfigurationTemplateRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateConfigurationTemplateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName"> The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="templateName">The name of the configuration template. Constraint: This name must be unique per application.  Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
+        public CreateConfigurationTemplateRequest(string applicationName, string templateName)
+        {
+            _applicationName = applicationName;
+            _templateName = templateName;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application to associate with this         configuration
-        ///         template. If no application is found with this name, AWS Elastic Beanstalk
-        /// returns an         <code>InvalidParameterValue</code>         error.      
+        ///  The name of the application to associate with this configuration template. If no
+        /// application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -67,7 +85,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._applicationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -87,11 +104,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///          The ID of the environment used with this configuration template.      
+        ///  The ID of the environment used with this configuration template. 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -106,13 +122,12 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         sets the specified configuration
-        /// option to the requested value.         The new value overrides the value obtained
-        /// from the solution stack         or the source configuration template.      
+        ///  If specified, AWS Elastic Beanstalk sets the specified configuration option to the
+        /// requested value. The new value overrides the value obtained from the solution stack
+        /// or the source configuration template. 
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -127,31 +142,29 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        /// The name of the solution stack used by this configuration. The solution         stack
-        /// specifies the operating system, architecture, and         application         server
-        /// for a configuration template. It determines the set         of         configuration
-        /// options as well as the possible and default values.      
+        /// The name of the solution stack used by this configuration. The solution stack specifies
+        /// the operating system, architecture, and application server for a configuration template.
+        /// It determines the set of configuration options as well as the possible and default
+        /// values. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Use         <a>ListAvailableSolutionStacks</a>         to obtain a list of
-        /// available solution stacks.      
+        ///  Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+        /// 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///                  A solution stack name or a source configuration parameter must be specified,
-        /// otherwise AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
-        ///       
+        ///  A solution stack name or a source configuration parameter must be specified, otherwise
+        /// AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///                  If a solution stack name is not specified and the source configuration parameter
+        ///  If a solution stack name is not specified and the source configuration parameter
         /// is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration
-        /// template.      
+        /// template. 
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -166,32 +179,28 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._solutionStackName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         uses the configuration values
-        /// from the         specified configuration template         to create a new configuration.
-        ///      
+        ///  If specified, AWS Elastic Beanstalk uses the configuration values from the specified
+        /// configuration template to create a new configuration. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Values specified in the         <code>OptionSettings</code>         parameter
-        /// of this call overrides any values obtained         from the         <code>SourceConfiguration</code>.
-        ///      
+        ///  Values specified in the <code>OptionSettings</code> parameter of this call overrides
+        /// any values obtained from the <code>SourceConfiguration</code>. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no configuration template is found, returns an         <code>InvalidParameterValue</code>
-        ///         error.      
+        ///  If no configuration template is found, returns an <code>InvalidParameterValue</code>
+        /// error. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Constraint: If both the solution stack name parameter and the source    
-        ///     configuration parameters are specified,         the solution stack of the source
-        ///         configuration template must match the         specified solution stack name
-        /// or         else AWS Elastic Beanstalk         returns an         <code>InvalidParameterCombination</code>
-        ///         error.      
+        ///  Constraint: If both the solution stack name parameter and the source configuration
+        /// parameters are specified, the solution stack of the source configuration template
+        /// must match the specified solution stack name or else AWS Elastic Beanstalk returns
+        /// an <code>InvalidParameterCombination</code> error. 
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration
@@ -206,21 +215,19 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._sourceConfiguration != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
         /// The name of the configuration template.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        /// Constraint: This name must be unique per         application. 
+        /// Constraint: This name must be unique per application. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        /// Default:         If a configuration template         already exists with this name,
-        /// AWS Elastic Beanstalk         returns an         <code>InvalidParameterValue</code>
-        ///         error.      
+        /// Default: If a configuration template already exists with this name, AWS Elastic Beanstalk
+        /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string TemplateName

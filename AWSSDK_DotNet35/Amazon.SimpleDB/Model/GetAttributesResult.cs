@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,36 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleDB.Model
 {
-    /// <summary>Get Attributes Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class GetAttributesResult : AmazonWebServiceResponse
     {
-        
-        private List<Attribute> attributes = new List<Attribute>();
+        private List<Attribute> _attributes = new List<Attribute>();
 
         /// <summary>
-        /// The list of attributes returned by the operation.
-        ///  
+        /// Gets and sets the property Attributes. The list of attributes returned by the operation.
         /// </summary>
         public List<Attribute> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes.Count > 0;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
     }
 }

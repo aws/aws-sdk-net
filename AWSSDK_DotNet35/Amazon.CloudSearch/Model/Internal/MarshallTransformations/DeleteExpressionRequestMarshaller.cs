@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Expression Request Marshaller
+    /// DeleteExpression Request Marshaller
     /// </summary>       
-    public class DeleteExpressionRequestMarshaller : IMarshaller<IRequest, DeleteExpressionRequest>
+    public class DeleteExpressionRequestMarshaller : IMarshaller<IRequest, DeleteExpressionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteExpressionRequest deleteExpressionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteExpressionRequest, "AmazonCloudSearch");
+            return this.Marshall((DeleteExpressionRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteExpressionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DeleteExpression");
             request.Parameters.Add("Version", "2013-01-01");
-            if (deleteExpressionRequest != null && deleteExpressionRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(deleteExpressionRequest.DomainName));
-            }
-            if (deleteExpressionRequest != null && deleteExpressionRequest.IsSetExpressionName())
-            {
-                request.Parameters.Add("ExpressionName", StringUtils.FromString(deleteExpressionRequest.ExpressionName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetExpressionName())
+                {
+                    request.Parameters.Add("ExpressionName", StringUtils.FromString(publicRequest.ExpressionName));
+                }
+            }
             return request;
         }
     }

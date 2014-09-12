@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.Redshift.Model
         private int? _targetNumberOfNodes;
         private long? _totalResizeDataInMegaBytes;
 
-
         /// <summary>
         /// Gets and sets the property AvgResizeRateInMegaBytesPerSecond. 
         /// <para>
@@ -61,7 +64,6 @@ namespace Amazon.Redshift.Model
         {
             return this._avgResizeRateInMegaBytesPerSecond.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ElapsedTimeInSeconds. 
@@ -83,7 +85,6 @@ namespace Amazon.Redshift.Model
             return this._elapsedTimeInSeconds.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EstimatedTimeToCompletionInSeconds. 
         /// <para>
@@ -104,7 +105,6 @@ namespace Amazon.Redshift.Model
         {
             return this._estimatedTimeToCompletionInSeconds.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ImportTablesCompleted. 
@@ -128,7 +128,6 @@ namespace Amazon.Redshift.Model
             return this._importTablesCompleted != null && this._importTablesCompleted.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ImportTablesInProgress. 
         /// <para>
@@ -150,7 +149,6 @@ namespace Amazon.Redshift.Model
         {
             return this._importTablesInProgress != null && this._importTablesInProgress.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ImportTablesNotStarted. 
@@ -174,7 +172,6 @@ namespace Amazon.Redshift.Model
             return this._importTablesNotStarted != null && this._importTablesNotStarted.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ProgressInMegaBytes. 
         /// <para>
@@ -196,7 +193,6 @@ namespace Amazon.Redshift.Model
         {
             return this._progressInMegaBytes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -221,7 +217,6 @@ namespace Amazon.Redshift.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TargetClusterType. 
         /// <para>
@@ -244,7 +239,6 @@ namespace Amazon.Redshift.Model
             return this._targetClusterType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TargetNodeType. 
         /// <para>
@@ -263,7 +257,6 @@ namespace Amazon.Redshift.Model
             return this._targetNodeType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TargetNumberOfNodes. 
         /// <para>
@@ -281,7 +274,6 @@ namespace Amazon.Redshift.Model
         {
             return this._targetNumberOfNodes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property TotalResizeDataInMegaBytes. 

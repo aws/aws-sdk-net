@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,63 +29,147 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// <para>Describes the specified Amazon EBS volumes.</para> <para>For more information about Amazon EBS volumes, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html" >Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i> .</para>
+    /// Describes the specified Amazon EBS volumes.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about Amazon EBS volumes, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+    /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeVolumesRequest : AmazonEC2Request
     {
-        private List<string> volumeIds = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-
+        private List<Filter> _filters = new List<Filter>();
+        private List<string> _volumeIds = new List<string>();
 
         /// <summary>
-        /// One or more volume IDs.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public List<string> VolumeIds
-        {
-            get { return this.volumeIds; }
-            set { this.volumeIds = value; }
-        }
+        public DescribeVolumesRequest() { }
 
-        // Check to see if VolumeIds property is set
-        internal bool IsSetVolumeIds()
+        /// <summary>
+        /// Instantiates DescribeVolumesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="volumeIds">One or more volume IDs.</param>
+        public DescribeVolumesRequest(List<string> volumeIds)
         {
-            return this.volumeIds.Count > 0;
+            _volumeIds = volumeIds;
         }
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>attachment.attach-time</c> - The time stamp when the attachment initiated. </li> <li>
-        /// <c>attachment.delete-on-termination</c> - Whether the volume is deleted on instance termination. </li> <li> <c>attachment.device</c> - The
-        /// device name that is exposed to the instance (for example, <c>/dev/sda1</c>). </li> <li> <c>attachment.instance-id</c> - The ID of the
-        /// instance the volume is attached to. </li> <li> <c>attachment.status</c> - The attachment state (<c>attaching</c> | <c>attached</c> |
-        /// <c>detaching</c> | <c>detached</c>). </li> <li> <c>availability-zone</c> - The Availability Zone in which the volume was created. </li> <li>
-        /// <c>create-time</c> - The time stamp when the volume was created. </li> <li> <c>encrypted</c> - The encryption status of the volume. </li>
-        /// <li> <c>size</c> - The size of the volume, in GiB. </li> <li> <c>snapshot-id</c> - The snapshot from which the volume was created. </li>
-        /// <li> <c>status</c> - The status of the volume (<c>creating</c> | <c>available</c> | <c>in-use</c> | <c>deleting</c> | <c>deleted</c> |
-        /// <c>error</c>). </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li>
-        /// <c>tag-key</c> - The key of a tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you
-        /// use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of
-        /// what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-        /// see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
-        /// independent of the <c>tag-key</c> filter. </li> <li> <c>volume-id</c> - The volume ID. </li> <li> <c>volume-type</c> - The Amazon EBS volume
-        /// type. This can be <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, or <c>standard</c> for
-        /// Magnetic volumes. </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>attachment.attach-time</code> - The time stamp when the attachment initiated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.delete-on-termination</code> - Whether the volume is deleted on instance
+        /// termination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.device</code> - The device name that is exposed to the instance (for
+        /// example, <code>/dev/sda1</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.instance-id</code> - The ID of the instance the volume is attached
+        /// to.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code>
+        /// | <code>detaching</code> | <code>detached</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>availability-zone</code> - The Availability Zone in which the volume was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>create-time</code> - The time stamp when the volume was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>encrypted</code> - The encryption status of the volume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>size</code> - The size of the volume, in GiB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>snapshot-id</code> - The snapshot from which the volume was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code>
+        /// | <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        /// to the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
+        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
+        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
+        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
+        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
+        /// filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        /// is independent of the <code>tag-key</code> filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>volume-id</code> - The volume ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code>
+        /// for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes,
+        /// or <code>standard</code> for Magnetic volumes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeIds. 
+        /// <para>
+        /// One or more volume IDs.
+        /// </para>
+        /// </summary>
+        public List<string> VolumeIds
+        {
+            get { return this._volumeIds; }
+            set { this._volumeIds = value; }
+        }
+
+        // Check to see if VolumeIds property is set
+        internal bool IsSetVolumeIds()
+        {
+            return this._volumeIds != null && this._volumeIds.Count > 0; 
         }
 
     }
 }
-    

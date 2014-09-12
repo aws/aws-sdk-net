@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -85,7 +89,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonElasticLoadBalancingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static DeleteLoadBalancerResponseUnmarshaller _instance = new DeleteLoadBalancerResponseUnmarshaller();        
 
         internal static DeleteLoadBalancerResponseUnmarshaller GetInstance()

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,12 +35,11 @@ namespace Amazon.CloudFront.Model
         private ItemSelection _forward;
         private CookieNames _whitelistedNames;
 
-
         /// <summary>
         /// Gets and sets the property Forward. Use this element to specify whether you want CloudFront
-        /// to forward cookies to the origin that is    associated with this cache behavior. You
-        /// can specify all, none or whitelist. If you choose All,    CloudFront forwards all
-        /// cookies regardless of how many your application uses.
+        /// to forward cookies to the origin that is associated with this cache behavior. You
+        /// can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
+        /// regardless of how many your application uses.
         /// </summary>
         public ItemSelection Forward
         {
@@ -50,10 +53,9 @@ namespace Amazon.CloudFront.Model
             return this._forward != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property WhitelistedNames. A complex type that specifies the whitelisted
-        /// cookies, if any, that you want CloudFront to forward to your    origin that is associated
+        /// cookies, if any, that you want CloudFront to forward to your origin that is associated
         /// with this cache behavior.
         /// </summary>
         public CookieNames WhitelistedNames

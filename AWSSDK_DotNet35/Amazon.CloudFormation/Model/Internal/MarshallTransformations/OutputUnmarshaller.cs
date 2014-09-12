@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Output Unmarshaller
-     /// </summary>
-    internal class OutputUnmarshaller : IUnmarshaller<Output, XmlUnmarshallerContext>, IUnmarshaller<Output, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Output Object
+    /// </summary>  
+    public class OutputUnmarshaller : IUnmarshaller<Output, XmlUnmarshallerContext>, IUnmarshaller<Output, JsonUnmarshallerContext>
     {
-        public Output Unmarshall(XmlUnmarshallerContext context) 
+        public Output Unmarshall(XmlUnmarshallerContext context)
         {
-            Output output = new Output();
+            Output unmarshalledObject = new Output();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OutputKey", targetDepth))
                     {
-                        output.OutputKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutputKey = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OutputValue", targetDepth))
                     {
-                        output.OutputValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        output.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutputValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return output;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return output;
+            return unmarshalledObject;
         }
 
-        public Output Unmarshall(JsonUnmarshallerContext context) 
+        public Output Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static OutputUnmarshaller instance;
 
-        public static OutputUnmarshaller GetInstance() 
+        private static OutputUnmarshaller _instance = new OutputUnmarshaller();        
+
+        public static OutputUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new OutputUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Stack Resource Request Marshaller
+    /// DescribeStackResource Request Marshaller
     /// </summary>       
-    public class DescribeStackResourceRequestMarshaller : IMarshaller<IRequest, DescribeStackResourceRequest>
+    public class DescribeStackResourceRequestMarshaller : IMarshaller<IRequest, DescribeStackResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeStackResourceRequest describeStackResourceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeStackResourceRequest, "AmazonCloudFormation");
+            return this.Marshall((DescribeStackResourceRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeStackResourceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "DescribeStackResource");
             request.Parameters.Add("Version", "2010-05-15");
-            if (describeStackResourceRequest != null && describeStackResourceRequest.IsSetStackName())
-            {
-                request.Parameters.Add("StackName", StringUtils.FromString(describeStackResourceRequest.StackName));
-            }
-            if (describeStackResourceRequest != null && describeStackResourceRequest.IsSetLogicalResourceId())
-            {
-                request.Parameters.Add("LogicalResourceId", StringUtils.FromString(describeStackResourceRequest.LogicalResourceId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLogicalResourceId())
+                {
+                    request.Parameters.Add("LogicalResourceId", StringUtils.FromString(publicRequest.LogicalResourceId));
+                }
+                if(publicRequest.IsSetStackName())
+                {
+                    request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
+                }
+            }
             return request;
         }
     }

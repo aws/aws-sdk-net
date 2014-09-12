@@ -57,7 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Owner", targetDepth))
                     {
-                        contentsItem.Owner = OwnerUnmarshaller.GetInstance().Unmarshall(context);
+                        contentsItem.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -90,14 +90,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static ContentsItemUnmarshaller instance;
+        private static ContentsItemUnmarshaller _instance;
 
-        public static ContentsItemUnmarshaller GetInstance() 
+        public static ContentsItemUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ContentsItemUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ContentsItemUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

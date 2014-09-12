@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,105 +12,118 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Option Unmarshaller
-     /// </summary>
-    internal class OptionUnmarshaller : IUnmarshaller<Option, XmlUnmarshallerContext>, IUnmarshaller<Option, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Option Object
+    /// </summary>  
+    public class OptionUnmarshaller : IUnmarshaller<Option, XmlUnmarshallerContext>, IUnmarshaller<Option, JsonUnmarshallerContext>
     {
-        public Option Unmarshall(XmlUnmarshallerContext context) 
+        public Option Unmarshall(XmlUnmarshallerContext context)
         {
-            Option option = new Option();
+            Option unmarshalledObject = new Option();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("OptionName", targetDepth))
+                    if (context.TestExpression("DBSecurityGroupMemberships/DBSecurityGroup", targetDepth))
                     {
-                        option.OptionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DBSecurityGroupMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBSecurityGroupMemberships.Add(item);
                         continue;
                     }
                     if (context.TestExpression("OptionDescription", targetDepth))
                     {
-                        option.OptionDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OptionDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Persistent", targetDepth))
+                    if (context.TestExpression("OptionName", targetDepth))
                     {
-                        option.Persistent = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Permanent", targetDepth))
-                    {
-                        option.Permanent = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        option.Port = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OptionName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OptionSettings/OptionSetting", targetDepth))
                     {
-                        option.OptionSettings.Add(OptionSettingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = OptionSettingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OptionSettings.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("DBSecurityGroupMemberships/DBSecurityGroup", targetDepth))
+                    if (context.TestExpression("Permanent", targetDepth))
                     {
-                        option.DBSecurityGroupMemberships.Add(DBSecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Permanent = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Persistent", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Persistent = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Port", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroupMemberships/VpcSecurityGroupMembership", targetDepth))
                     {
-                        option.VpcSecurityGroupMemberships.Add(VpcSecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.VpcSecurityGroupMemberships.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return option;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return option;
+            return unmarshalledObject;
         }
 
-        public Option Unmarshall(JsonUnmarshallerContext context) 
+        public Option Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static OptionUnmarshaller instance;
 
-        public static OptionUnmarshaller GetInstance() 
+        private static OptionUnmarshaller _instance = new OptionUnmarshaller();        
+
+        public static OptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new OptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

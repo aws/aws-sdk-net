@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.IdentityManagement.Model
         private string _serialNumber;
         private string _userName;
 
-
         /// <summary>
         /// Gets and sets the property AuthenticationCode1. 
         /// <para>
@@ -52,7 +55,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._authenticationCode1 != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AuthenticationCode2. 
@@ -72,7 +74,6 @@ namespace Amazon.IdentityManagement.Model
             return this._authenticationCode2 != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
@@ -90,7 +91,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._serialNumber != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

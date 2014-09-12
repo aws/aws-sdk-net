@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.SQS.Model
         private string _mD5OfMessageAttributes;
         private string _mD5OfMessageBody;
         private string _messageId;
-
 
         /// <summary>
         /// Gets and sets the property MD5OfMessageAttributes. 
@@ -53,7 +56,6 @@ namespace Amazon.SQS.Model
             return this._mD5OfMessageAttributes != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MD5OfMessageBody. 
         /// <para>
@@ -74,7 +76,6 @@ namespace Amazon.SQS.Model
         {
             return this._mD5OfMessageBody != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MessageId. 

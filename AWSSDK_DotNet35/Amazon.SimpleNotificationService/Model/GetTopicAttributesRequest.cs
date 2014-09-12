@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,19 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private string _topicArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetTopicAttributesRequest() { }
+
+        /// <summary>
+        /// Instantiates GetTopicAttributesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic whose properties you want to get.</param>
+        public GetTopicAttributesRequest(string topicArn)
+        {
+            _topicArn = topicArn;
+        }
 
         /// <summary>
         /// Gets and sets the property TopicArn. 

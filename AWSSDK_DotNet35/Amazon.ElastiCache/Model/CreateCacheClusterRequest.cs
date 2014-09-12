@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -53,6 +57,27 @@ namespace Amazon.ElastiCache.Model
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateCacheClusterRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateCacheClusterRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cacheClusterId">The cache cluster identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul></param>
+        /// <param name="numCacheNodes">The initial number of cache nodes that the cache cluster will have. For a Memcached cluster, valid values are between 1 and 20. If you need to exceed this limit, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a> . For Redis, only single-node cache clusters are supported at this time, so the value for this parameter must be 1.</param>
+        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the cache cluster. <b>Valid cache types</b> <ul> <li>Micro<code>cache.t1.micro | cache.m1.small</code></li> <li>General Purpose <ul> <li>Current Generation<code>cache.m3.medium | cache.m3.large | cache.m3.xlarge | cache.m3.2xlarge</code></li> <li>Previous Generation<code>cache.m1.medium | cache.m1.large | cache.m1.xlarge</code></li> </ul></li> <li>Compute Optimized<code>cache.c1.xlarge</code></li> <li>Memory Optimized <ul> <li>Current Generation<code>cache.r3.large | cache.r3.xlarge | cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li> <li>Previous Generation<code>cache.m2.xlarge | cache.m2.2xlarge | cache.m2.4xlarge</code></li> </ul></li> </ul> For a complete listing of cache node types and specifications, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> and <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>.</param>
+        /// <param name="engine">The name of the cache engine to be used for this cache cluster. Valid values for this parameter are: <code>memcached</code> | <code>redis</code></param>
+        /// <param name="cacheSecurityGroupNames">A list of cache security group names to associate with this cache cluster. Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (VPC).</param>
+        public CreateCacheClusterRequest(string cacheClusterId, int numCacheNodes, string cacheNodeType, string engine, List<string> cacheSecurityGroupNames)
+        {
+            _cacheClusterId = cacheClusterId;
+            _numCacheNodes = numCacheNodes;
+            _cacheNodeType = cacheNodeType;
+            _engine = engine;
+            _cacheSecurityGroupNames = cacheSecurityGroupNames;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
@@ -78,7 +103,6 @@ namespace Amazon.ElastiCache.Model
             return this._autoMinorVersionUpgrade.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AZMode. 
         /// <para>
@@ -101,7 +125,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._aZMode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
@@ -127,7 +150,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheClusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
@@ -182,7 +204,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheNodeType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
@@ -202,7 +223,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheParameterGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheSecurityGroupNames. 
@@ -227,7 +247,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheSecurityGroupNames != null && this._cacheSecurityGroupNames.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheSubnetGroupName. 
         /// <para>
@@ -250,7 +269,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheSubnetGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Engine. 
@@ -278,7 +296,6 @@ namespace Amazon.ElastiCache.Model
             return this._engine != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
@@ -298,7 +315,6 @@ namespace Amazon.ElastiCache.Model
             return this._engineVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NotificationTopicArn. 
         /// <para>
@@ -317,7 +333,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._notificationTopicArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
@@ -348,7 +363,6 @@ namespace Amazon.ElastiCache.Model
             return this._numCacheNodes.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
@@ -366,7 +380,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._port.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
@@ -396,7 +409,6 @@ namespace Amazon.ElastiCache.Model
             return this._preferredAvailabilityZone != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZones. 
         /// <para>
@@ -405,24 +417,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This option is only supported on Memcached clusters.
+        /// <b>Example:</b>
         /// </para>
         ///  
         /// <para>
-        /// If you want all your cache nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code>
-        /// instead or repeat the Availability Zone multiple times in the list.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: System chosen Availability Zones.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: One Memcached node in each of three Availability Zones: <code>PreferredAvailabilityZones.member.1=us-east-1a&amp;PreferredAvailabilityZones.member.2=us-east-1b&amp;PreferredAvailabilityZones.member.3=us-east-1d</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-east-1a&amp;PreferredAvailabilityZones.member.2=us-east-1a&amp;PreferredAvailabilityZones.member.3=us-east-1a</code>
+        /// <code>PreferredAvailabilityZones.member.1=us-east-1a</code>
         /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones
@@ -436,7 +435,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._preferredAvailabilityZones != null && this._preferredAvailabilityZones.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
@@ -460,7 +458,6 @@ namespace Amazon.ElastiCache.Model
             return this._preferredMaintenanceWindow != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
@@ -481,7 +478,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._replicationGroupId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -505,7 +501,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotArns. 
@@ -537,7 +532,6 @@ namespace Amazon.ElastiCache.Model
             return this._snapshotArns != null && this._snapshotArns.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
@@ -558,19 +552,17 @@ namespace Amazon.ElastiCache.Model
             return this._snapshotName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The number of days for which ElastiCache will retain automatic cache cluster snapshots
-        /// before deleting them. For example, if you set <code>SnapshotRetentionLimit</code>
-        /// to 5, then a snapshot that was taken today will be retained for 5 days before being
-        /// deleted.
+        /// before deleting them. For example, if you set <i>SnapshotRetentionLimit</i> to 5,
+        /// then a snapshot that was taken today will be retained for 5 days before being deleted.
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify this parameter, then <code>SnapshotRetentionLimit</code> will
-        /// be set to 0 (i.e., automatic backups will be disabled for this cache cluster).
+        /// If you do not specify this parameter, then <i>SnapshotRetentionLimit</i> will be set
+        /// to 0 (i.e., automatic backups will be disabled for this cache cluster).
         /// </para>
         /// </summary>
         public int SnapshotRetentionLimit
@@ -584,7 +576,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._snapshotRetentionLimit.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotWindow. 

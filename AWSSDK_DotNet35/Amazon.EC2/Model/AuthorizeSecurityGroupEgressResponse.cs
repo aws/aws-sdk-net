@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the AuthorizeSecurityGroupEgress response metadata.
-    /// The AuthorizeSecurityGroupEgress operation has a void result type.
+    /// Configuration for accessing Amazon AuthorizeSecurityGroupEgress service
     /// </summary>
-    public partial class AuthorizeSecurityGroupEgressResponse : AmazonWebServiceResponse
+    public partial class AuthorizeSecurityGroupEgressResponse : AuthorizeSecurityGroupEgressResult
     {
+        /// <summary>
+        /// Gets and sets the AuthorizeSecurityGroupEgressResult property.
+        /// Represents the output of a AuthorizeSecurityGroupEgress operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AuthorizeSecurityGroupEgressResult class are now available on the AuthorizeSecurityGroupEgressResponse class. You should use the properties on AuthorizeSecurityGroupEgressResponse instead of accessing them through AuthorizeSecurityGroupEgressResult.")]
+        public AuthorizeSecurityGroupEgressResult AuthorizeSecurityGroupEgressResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

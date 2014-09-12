@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,24 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+
+using System;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Returns information about the PurchaseReservedDBInstancesOffering response and response metadata.
+    /// Configuration for accessing Amazon PurchaseReservedDBInstancesOffering service
     /// </summary>
-    public class PurchaseReservedDBInstancesOfferingResponse : PurchaseReservedDBInstancesOfferingResult
+    public partial class PurchaseReservedDBInstancesOfferingResponse : PurchaseReservedDBInstancesOfferingResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the PurchaseReservedDBInstancesOfferingResult property.
-        /// Contains the result of a successful invocation of the PurchaseReservedDBInstancesOffering
-        /// action.
-        /// 
+        /// Represents the output of a PurchaseReservedDBInstancesOffering operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the PurchaseReservedDBInstancesOfferingResult class are now available on the PurchaseReservedDBInstancesOfferingResponse class. You should use the properties on PurchaseReservedDBInstancesOfferingResponse instead of accessing them through PurchaseReservedDBInstancesOfferingResult.")]
         public PurchaseReservedDBInstancesOfferingResult PurchaseReservedDBInstancesOfferingResult
         {
@@ -40,4 +40,3 @@ namespace Amazon.RDS.Model
         }
     }
 }
-    

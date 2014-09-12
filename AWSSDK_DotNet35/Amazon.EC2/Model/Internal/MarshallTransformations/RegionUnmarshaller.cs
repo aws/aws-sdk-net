@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Region Unmarshaller
-     /// </summary>
-    internal class RegionUnmarshaller : IUnmarshaller<Region, XmlUnmarshallerContext>, IUnmarshaller<Region, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Region Object
+    /// </summary>  
+    public class RegionUnmarshaller : IUnmarshaller<Region, XmlUnmarshallerContext>, IUnmarshaller<Region, JsonUnmarshallerContext>
     {
-        public Region Unmarshall(XmlUnmarshallerContext context) 
+        public Region Unmarshall(XmlUnmarshallerContext context)
         {
-            Region region = new Region();
+            Region unmarshalledObject = new Region();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("regionName", targetDepth))
-                    {
-                        region.RegionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("regionEndpoint", targetDepth))
                     {
-                        region.Endpoint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("regionName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return region;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return region;
+            return unmarshalledObject;
         }
 
-        public Region Unmarshall(JsonUnmarshallerContext context) 
+        public Region Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static RegionUnmarshaller instance;
 
-        public static RegionUnmarshaller GetInstance() 
+        private static RegionUnmarshaller _instance = new RegionUnmarshaller();        
+
+        public static RegionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new RegionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

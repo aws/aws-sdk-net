@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A response message that contains the index fields for a search domain.</para>
+    /// A response message that contains the index fields for a search domain.
     /// </summary>
     public partial class DescribeIndexFieldsResult : AmazonWebServiceResponse
     {
-        
-        private List<IndexFieldStatus> indexFields = new List<IndexFieldStatus>();
-
+        private List<IndexFieldStatus> _indexFields = new List<IndexFieldStatus>();
 
         /// <summary>
+        /// Gets and sets the property IndexFields. 
+        /// <para>
         /// The index fields configured for the domain.
-        ///  
+        /// </para>
         /// </summary>
         public List<IndexFieldStatus> IndexFields
         {
-            get { return this.indexFields; }
-            set { this.indexFields = value; }
+            get { return this._indexFields; }
+            set { this._indexFields = value; }
         }
 
         // Check to see if IndexFields property is set
         internal bool IsSetIndexFields()
         {
-            return this.indexFields.Count > 0;
+            return this._indexFields != null && this._indexFields.Count > 0; 
         }
+
     }
 }

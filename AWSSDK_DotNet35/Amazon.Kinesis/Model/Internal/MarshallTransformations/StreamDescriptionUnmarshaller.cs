@@ -12,82 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Kinesis.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Kinesis.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StreamDescription Object
+    /// </summary>  
+    public class StreamDescriptionUnmarshaller : IUnmarshaller<StreamDescription, XmlUnmarshallerContext>, IUnmarshaller<StreamDescription, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StreamDescriptionUnmarshaller
-      /// </summary>
-      internal class StreamDescriptionUnmarshaller : IUnmarshaller<StreamDescription, XmlUnmarshallerContext>, IUnmarshaller<StreamDescription, JsonUnmarshallerContext>
-      {
         StreamDescription IUnmarshaller<StreamDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StreamDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StreamDescription streamDescription = new StreamDescription();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StreamDescription unmarshalledObject = new StreamDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("StreamName", targetDepth))
-              {
-                streamDescription.StreamName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StreamARN", targetDepth))
-              {
-                streamDescription.StreamARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StreamStatus", targetDepth))
-              {
-                streamDescription.StreamStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Shards", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Shard,ShardUnmarshaller>(
-                    ShardUnmarshaller.GetInstance());                  
-                streamDescription.Shards = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("HasMoreShards", targetDepth))
-              {
-                streamDescription.HasMoreShards = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("HasMoreShards", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasMoreShards = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Shards", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Shard, ShardUnmarshaller>(ShardUnmarshaller.Instance);
+                    unmarshalledObject.Shards = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return streamDescription;
+            return unmarshalledObject;
         }
 
-        private static StreamDescriptionUnmarshaller instance;
-        public static StreamDescriptionUnmarshaller GetInstance()
+
+        private static StreamDescriptionUnmarshaller _instance = new StreamDescriptionUnmarshaller();        
+
+        public static StreamDescriptionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StreamDescriptionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

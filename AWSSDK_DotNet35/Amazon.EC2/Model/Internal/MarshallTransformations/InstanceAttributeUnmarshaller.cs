@@ -12,135 +12,147 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceAttribute Unmarshaller
-     /// </summary>
-    internal class InstanceAttributeUnmarshaller : IUnmarshaller<InstanceAttribute, XmlUnmarshallerContext>, IUnmarshaller<InstanceAttribute, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceAttribute Object
+    /// </summary>  
+    public class InstanceAttributeUnmarshaller : IUnmarshaller<InstanceAttribute, XmlUnmarshallerContext>, IUnmarshaller<InstanceAttribute, JsonUnmarshallerContext>
     {
-        public InstanceAttribute Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceAttribute Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceAttribute instanceAttribute = new InstanceAttribute();
+            InstanceAttribute unmarshalledObject = new InstanceAttribute();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceId", targetDepth))
+                    if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
-                        instanceAttribute.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType/value", targetDepth))
-                    {
-                        instanceAttribute.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("kernel/value", targetDepth))
-                    {
-                        instanceAttribute.KernelId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ramdisk/value", targetDepth))
-                    {
-                        instanceAttribute.RamdiskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("userData/value", targetDepth))
-                    {
-                        instanceAttribute.UserData = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceBlockDeviceMappingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
                     if (context.TestExpression("disableApiTermination/value", targetDepth))
                     {
-                        instanceAttribute.DisableApiTermination = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceInitiatedShutdownBehavior/value", targetDepth))
-                    {
-                        instanceAttribute.InstanceInitiatedShutdownBehavior = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("rootDeviceName/value", targetDepth))
-                    {
-                        instanceAttribute.RootDeviceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("blockDeviceMapping/item", targetDepth))
-                    {
-                        instanceAttribute.BlockDeviceMappings.Add(InstanceBlockDeviceMappingUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("productCodes/item", targetDepth))
-                    {
-                        instanceAttribute.ProductCodes.Add(ProductCodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DisableApiTermination = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ebsOptimized/value", targetDepth))
                     {
-                        instanceAttribute.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("sriovNetSupport/value", targetDepth))
+                    if (context.TestExpression("instanceId", targetDepth))
                     {
-                        instanceAttribute.SriovNetSupport = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceInitiatedShutdownBehavior/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceInitiatedShutdownBehavior = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceType/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("kernel/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KernelId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("productCodes/item", targetDepth))
+                    {
+                        var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProductCodes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ramdisk/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RamdiskId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rootDeviceName/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootDeviceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sourceDestCheck/value", targetDepth))
                     {
-                        instanceAttribute.SourceDestCheck = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sriovNetSupport/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SriovNetSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("userData/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UserData = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceAttribute;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceAttribute;
+            return unmarshalledObject;
         }
 
-        public InstanceAttribute Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceAttributeUnmarshaller instance;
 
-        public static InstanceAttributeUnmarshaller GetInstance() 
+        private static InstanceAttributeUnmarshaller _instance = new InstanceAttributeUnmarshaller();        
+
+        public static InstanceAttributeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceAttributeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

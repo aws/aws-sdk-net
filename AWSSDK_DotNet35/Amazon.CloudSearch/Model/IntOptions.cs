@@ -12,137 +12,140 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>Options for a 64-bit signed integer field. Present if <c>IndexFieldType</c> specifies the field is of type <c>int</c> . All options
-    /// are enabled by default.</para>
+    /// Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code>
+    /// specifies the field is of type <code>int</code>. All options are enabled by default.
     /// </summary>
     public partial class IntOptions
     {
-        
-        private long? defaultValue;
-        private string sourceField;
-        private bool? facetEnabled;
-        private bool? searchEnabled;
-        private bool? returnEnabled;
-        private bool? sortEnabled;
-
+        private long? _defaultValue;
+        private bool? _facetEnabled;
+        private bool? _returnEnabled;
+        private bool? _searchEnabled;
+        private bool? _sortEnabled;
+        private string _sourceField;
 
         /// <summary>
-        /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression
-        /// and that field is not present in every document.
-        ///  
+        /// Gets and sets the property DefaultValue. A value to use for the field if the field
+        /// isn't specified for a document. This can be important if you are using the field in
+        /// an expression and that field is not present in every document.
         /// </summary>
         public long DefaultValue
         {
-            get { return this.defaultValue ?? default(long); }
-            set { this.defaultValue = value; }
+            get { return this._defaultValue.GetValueOrDefault(); }
+            set { this._defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue.HasValue;
+            return this._defaultValue.HasValue; 
         }
 
         /// <summary>
-        /// The name of the source field to map to the field.
-        ///  
+        /// Gets and sets the property FacetEnabled. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SourceField
-        {
-            get { return this.sourceField; }
-            set { this.sourceField = value; }
-        }
-
-        // Check to see if SourceField property is set
-        internal bool IsSetSourceField()
-        {
-            return this.sourceField != null;
-        }
-
-        /// <summary>
         /// Whether facet information can be returned for the field.
-        ///  
+        /// </para>
         /// </summary>
         public bool FacetEnabled
         {
-            get { return this.facetEnabled ?? default(bool); }
-            set { this.facetEnabled = value; }
+            get { return this._facetEnabled.GetValueOrDefault(); }
+            set { this._facetEnabled = value; }
         }
 
         // Check to see if FacetEnabled property is set
         internal bool IsSetFacetEnabled()
         {
-            return this.facetEnabled.HasValue;
+            return this._facetEnabled.HasValue; 
         }
 
         /// <summary>
-        /// Whether the contents of the field are searchable.
-        ///  
-        /// </summary>
-        public bool SearchEnabled
-        {
-            get { return this.searchEnabled ?? default(bool); }
-            set { this.searchEnabled = value; }
-        }
-
-        // Check to see if SearchEnabled property is set
-        internal bool IsSetSearchEnabled()
-        {
-            return this.searchEnabled.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property ReturnEnabled. 
+        /// <para>
         /// Whether the contents of the field can be returned in the search results.
-        ///  
+        /// </para>
         /// </summary>
         public bool ReturnEnabled
         {
-            get { return this.returnEnabled ?? default(bool); }
-            set { this.returnEnabled = value; }
+            get { return this._returnEnabled.GetValueOrDefault(); }
+            set { this._returnEnabled = value; }
         }
 
         // Check to see if ReturnEnabled property is set
         internal bool IsSetReturnEnabled()
         {
-            return this.returnEnabled.HasValue;
+            return this._returnEnabled.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property SearchEnabled. 
+        /// <para>
+        /// Whether the contents of the field are searchable.
+        /// </para>
+        /// </summary>
+        public bool SearchEnabled
+        {
+            get { return this._searchEnabled.GetValueOrDefault(); }
+            set { this._searchEnabled = value; }
+        }
+
+        // Check to see if SearchEnabled property is set
+        internal bool IsSetSearchEnabled()
+        {
+            return this._searchEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortEnabled. 
+        /// <para>
         /// Whether the field can be used to sort the search results.
-        ///  
+        /// </para>
         /// </summary>
         public bool SortEnabled
         {
-            get { return this.sortEnabled ?? default(bool); }
-            set { this.sortEnabled = value; }
+            get { return this._sortEnabled.GetValueOrDefault(); }
+            set { this._sortEnabled = value; }
         }
 
         // Check to see if SortEnabled property is set
         internal bool IsSetSortEnabled()
         {
-            return this.sortEnabled.HasValue;
+            return this._sortEnabled.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SourceField. 
+        /// <para>
+        /// The name of the source field to map to the field. 
+        /// </para>
+        /// </summary>
+        public string SourceField
+        {
+            get { return this._sourceField; }
+            set { this._sourceField = value; }
+        }
+
+        // Check to see if SourceField property is set
+        internal bool IsSetSourceField()
+        {
+            return this._sourceField != null;
+        }
+
     }
 }

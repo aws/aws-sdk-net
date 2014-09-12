@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowTypeInfo Object
+    /// </summary>  
+    public class WorkflowTypeInfoUnmarshaller : IUnmarshaller<WorkflowTypeInfo, XmlUnmarshallerContext>, IUnmarshaller<WorkflowTypeInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowTypeInfoUnmarshaller
-      /// </summary>
-      internal class WorkflowTypeInfoUnmarshaller : IUnmarshaller<WorkflowTypeInfo, XmlUnmarshallerContext>, IUnmarshaller<WorkflowTypeInfo, JsonUnmarshallerContext>
-      {
         WorkflowTypeInfo IUnmarshaller<WorkflowTypeInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowTypeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowTypeInfo workflowTypeInfo = new WorkflowTypeInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowTypeInfo unmarshalledObject = new WorkflowTypeInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("workflowType", targetDepth))
-              {
-                workflowTypeInfo.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("status", targetDepth))
-              {
-                workflowTypeInfo.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("description", targetDepth))
-              {
-                workflowTypeInfo.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("creationDate", targetDepth))
-              {
-                workflowTypeInfo.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("deprecationDate", targetDepth))
-              {
-                workflowTypeInfo.DeprecationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("creationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deprecationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeprecationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowType", targetDepth))
+                {
+                    var unmarshaller = WorkflowTypeUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowTypeInfo;
+            return unmarshalledObject;
         }
 
-        private static WorkflowTypeInfoUnmarshaller instance;
-        public static WorkflowTypeInfoUnmarshaller GetInstance()
+
+        private static WorkflowTypeInfoUnmarshaller _instance = new WorkflowTypeInfoUnmarshaller();        
+
+        public static WorkflowTypeInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowTypeInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

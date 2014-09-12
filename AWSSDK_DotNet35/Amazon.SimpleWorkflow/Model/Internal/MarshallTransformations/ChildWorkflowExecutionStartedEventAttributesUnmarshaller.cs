@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ChildWorkflowExecutionStartedEventAttributes Object
+    /// </summary>  
+    public class ChildWorkflowExecutionStartedEventAttributesUnmarshaller : IUnmarshaller<ChildWorkflowExecutionStartedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ChildWorkflowExecutionStartedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ChildWorkflowExecutionStartedEventAttributesUnmarshaller
-      /// </summary>
-      internal class ChildWorkflowExecutionStartedEventAttributesUnmarshaller : IUnmarshaller<ChildWorkflowExecutionStartedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ChildWorkflowExecutionStartedEventAttributes, JsonUnmarshallerContext>
-      {
         ChildWorkflowExecutionStartedEventAttributes IUnmarshaller<ChildWorkflowExecutionStartedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ChildWorkflowExecutionStartedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ChildWorkflowExecutionStartedEventAttributes childWorkflowExecutionStartedEventAttributes = new ChildWorkflowExecutionStartedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ChildWorkflowExecutionStartedEventAttributes unmarshalledObject = new ChildWorkflowExecutionStartedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("workflowExecution", targetDepth))
-              {
-                childWorkflowExecutionStartedEventAttributes.WorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowType", targetDepth))
-              {
-                childWorkflowExecutionStartedEventAttributes.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("initiatedEventId", targetDepth))
-              {
-                childWorkflowExecutionStartedEventAttributes.InitiatedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("initiatedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.InitiatedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecution", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowType", targetDepth))
+                {
+                    var unmarshaller = WorkflowTypeUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return childWorkflowExecutionStartedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static ChildWorkflowExecutionStartedEventAttributesUnmarshaller instance;
-        public static ChildWorkflowExecutionStartedEventAttributesUnmarshaller GetInstance()
+
+        private static ChildWorkflowExecutionStartedEventAttributesUnmarshaller _instance = new ChildWorkflowExecutionStartedEventAttributesUnmarshaller();        
+
+        public static ChildWorkflowExecutionStartedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ChildWorkflowExecutionStartedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

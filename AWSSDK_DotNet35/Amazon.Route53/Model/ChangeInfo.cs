@@ -12,120 +12,142 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that describes change information about changes made to your hosted zone.</para> <para>This element contains an ID that
-    /// you use when performing a GetChange action to get detailed information about the change.</para>
+    /// A complex type that describes change information about changes made to your hosted
+    /// zone.
+    /// 
+    ///  
+    /// <para>
+    /// This element contains an ID that you use when performing a <a>GetChange</a> action
+    /// to get detailed information about the change.
+    /// </para>
     /// </summary>
     public partial class ChangeInfo
     {
-        
-        private string id;
-        private ChangeStatus status;
-        private DateTime? submittedAt;
-        private string comment;
-
+        private string _id;
+        private ChangeStatus _status;
+        private DateTime? _submittedAt;
+        private string _comment;
 
         /// <summary>
-        /// The ID of the request. Use this ID to track when the change has completed across all Amazon Route 53 DNS servers.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ChangeInfo() { }
+
+        /// <summary>
+        /// Instantiates ChangeInfo with the parameterized properties
+        /// </summary>
+        /// <param name="id">The ID of the request. Use this ID to track when the change has completed across all Amazon Route 53 DNS servers.</param>
+        /// <param name="status">The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers. Valid Values: <code>PENDING</code> | <code>INSYNC</code></param>
+        /// <param name="submittedAt">The date and time the change was submitted, in the format <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that the time is listed in Coordinated Universal Time (UTC), which is synonymous with Greenwich Mean Time in this context.</param>
+        public ChangeInfo(string id, ChangeStatus status, DateTime submittedAt)
+        {
+            _id = id;
+            _status = status;
+            _submittedAt = submittedAt;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32</description>
-        ///     </item>
-        /// </list>
+        /// The ID of the request. Use this ID to track when the change has completed across all
+        /// Amazon Route 53 DNS servers.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
         /// <summary>
-        /// The current state of the request. <c>PENDING</c> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.
-        /// Valid Values: <c>PENDING</c> | <c>INSYNC</c>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current state of the request. <code>PENDING</code> indicates that this request
+        /// has not yet been applied to all Amazon Route 53 DNS servers.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>PENDING, INSYNC</description>
-        ///     </item>
-        /// </list>
+        /// Valid Values: <code>PENDING</code> | <code>INSYNC</code>
         /// </para>
         /// </summary>
         public ChangeStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
 
         /// <summary>
-        /// The date and time the change was submitted, in the format <c>YYYY-MM-DDThh:mm:ssZ</c>, as specified in the ISO 8601 standard (for example,
-        /// 2009-11-19T19:37:58Z). The <c>Z</c> after the time indicates that the time is listed in Coordinated Universal Time (UTC), which is
-        /// synonymous with Greenwich Mean Time in this context.
-        ///  
+        /// Gets and sets the property SubmittedAt. 
+        /// <para>
+        /// The date and time the change was submitted, in the format <code>YYYY-MM-DDThh:mm:ssZ</code>,
+        /// as specified in the ISO 8601 standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code>
+        /// after the time indicates that the time is listed in Coordinated Universal Time (UTC),
+        /// which is synonymous with Greenwich Mean Time in this context.
+        /// </para>
         /// </summary>
         public DateTime SubmittedAt
         {
-            get { return this.submittedAt ?? default(DateTime); }
-            set { this.submittedAt = value; }
+            get { return this._submittedAt.GetValueOrDefault(); }
+            set { this._submittedAt = value; }
         }
 
         // Check to see if SubmittedAt property is set
         internal bool IsSetSubmittedAt()
         {
-            return this.submittedAt.HasValue;
+            return this._submittedAt.HasValue; 
         }
 
         /// <summary>
-        /// A complex type that describes change information about changes made to your hosted zone. This element contains an ID that you use when
-        /// performing a <a>GetChange</a> action to get detailed information about the change.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// A complex type that describes change information about changes made to your hosted
+        /// zone.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
+        /// This element contains an ID that you use when performing a <a>GetChange</a> action
+        /// to get detailed information about the change.
         /// </para>
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
+            return this._comment != null;
         }
+
     }
 }

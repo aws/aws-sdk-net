@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,16 +39,20 @@ namespace Amazon.CloudFront.Model
         private string _status;
         private StreamingDistributionConfig _streamingDistributionConfig;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public StreamingDistribution() { }
 
         /// <summary>
         /// Gets and sets the property ActiveTrustedSigners. CloudFront automatically adds this
         /// element to the response only if you've set up the distribution to serve private content
-        /// with signed URLs.    The element lists the key pair IDs that CloudFront is aware of
-        /// for each trusted signer.    The Signer child element lists the AWS account number
-        /// of the trusted signer (or an empty Self element if the signer is you).    The Signer
-        /// element also includes the IDs of any active key pairs associated with the trusted
-        /// signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't
-        /// create working signed URLs.
+        /// with signed URLs. The element lists the key pair IDs that CloudFront is aware of for
+        /// each trusted signer. The Signer child element lists the AWS account number of the
+        /// trusted signer (or an empty Self element if the signer is you). The Signer element
+        /// also includes the IDs of any active key pairs associated with the trusted signer's
+        /// AWS account. If no KeyPairId element appears for a Signer, that signer can't create
+        /// working signed URLs.
         /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
         {
@@ -57,7 +65,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._activeTrustedSigners != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DomainName. The domain name corresponding to the streaming
@@ -75,7 +82,6 @@ namespace Amazon.CloudFront.Model
             return this._domainName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. The identifier for the streaming distribution. For
         /// example: EGTXBD79H29TRA8.
@@ -91,7 +97,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LastModifiedTime. The date and time the distribution was
@@ -109,7 +114,6 @@ namespace Amazon.CloudFront.Model
             return this._lastModifiedTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. The current status of the streaming distribution.
         /// When the status is Deployed, the distribution's information is fully propagated throughout
@@ -126,7 +130,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StreamingDistributionConfig. The current configuration

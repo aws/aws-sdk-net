@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.CloudSearchDomain.Model
         private string _status;
         private List<DocumentServiceWarning> _warnings = new List<DocumentServiceWarning>();
 
-
         /// <summary>
         /// Gets and sets the property Adds. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._adds.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Deletes. 
@@ -71,7 +73,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._deletes.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
@@ -89,7 +90,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Warnings. 

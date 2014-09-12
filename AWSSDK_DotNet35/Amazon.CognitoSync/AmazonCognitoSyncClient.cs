@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CognitoSync.Model;
 using Amazon.CognitoSync.Model.Internal.MarshallTransformations;
@@ -41,19 +45,8 @@ namespace Amazon.CognitoSync
     /// identity.
     /// </para>
     /// </summary>
-    public partial class AmazonCognitoSyncClient : AmazonWebServiceClient, IAmazonCognitoSync
+    public partial class AmazonCognitoSyncClient : AmazonServiceClient, IAmazonCognitoSync
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -72,7 +65,7 @@ namespace Amazon.CognitoSync
         ///
         /// </summary>
         public AmazonCognitoSyncClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoSyncConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoSyncConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with the credentials loaded from the application's
@@ -91,7 +84,7 @@ namespace Amazon.CognitoSync
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoSyncClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoSyncConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoSyncConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with the credentials loaded from the application's
@@ -110,7 +103,7 @@ namespace Amazon.CognitoSync
         /// </summary>
         /// <param name="config">The AmazonCognitoSyncClient Configuration Object</param>
         public AmazonCognitoSyncClient(AmazonCognitoSyncConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with AWS Credentials
@@ -138,7 +131,7 @@ namespace Amazon.CognitoSync
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCognitoSyncClient Configuration Object</param>
         public AmazonCognitoSyncClient(AWSCredentials credentials, AmazonCognitoSyncConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -171,7 +164,7 @@ namespace Amazon.CognitoSync
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCognitoSyncClient Configuration Object</param>
         public AmazonCognitoSyncClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCognitoSyncConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -207,15 +200,33 @@ namespace Amazon.CognitoSync
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCognitoSyncClient Configuration Object</param>
         public AmazonCognitoSyncClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCognitoSyncConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  DeleteDataset
-
 
         /// <summary>
         /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
@@ -239,8 +250,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDataset(request, null, null, true);
-            return EndDeleteDataset(asyncResult);
+            var marshaller = new DeleteDatasetRequestMarshaller();
+            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -257,10 +270,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDataset(request, callback, state, false);
+            var marshaller = new DeleteDatasetRequestMarshaller();
+            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDatasetRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDataset operation.
@@ -272,21 +287,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  DeleteDatasetResult from CognitoSync.</returns>
         public  DeleteDatasetResponse EndDeleteDataset(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteDatasetResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteDatasetRequestMarshaller();
-            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteDatasetResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeDataset
-
 
         /// <summary>
         /// Gets metadata about a dataset by identity and dataset name.
@@ -308,8 +314,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDataset(request, null, null, true);
-            return EndDescribeDataset(asyncResult);
+            var marshaller = new DescribeDatasetRequestMarshaller();
+            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -326,10 +334,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDataset(request, callback, state, false);
+            var marshaller = new DescribeDatasetRequestMarshaller();
+            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDatasetRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDataset operation.
@@ -341,21 +351,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  DescribeDatasetResult from CognitoSync.</returns>
         public  DescribeDatasetResponse EndDescribeDataset(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeDatasetResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeDatasetRequestMarshaller();
-            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeDatasetResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeIdentityPoolUsage
-
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
@@ -377,8 +378,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeIdentityPoolUsage(request, null, null, true);
-            return EndDescribeIdentityPoolUsage(asyncResult);
+            var marshaller = new DescribeIdentityPoolUsageRequestMarshaller();
+            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityPoolUsageRequest,DescribeIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -395,10 +398,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginDescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeIdentityPoolUsage(request, callback, state, false);
+            var marshaller = new DescribeIdentityPoolUsageRequestMarshaller();
+            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIdentityPoolUsageRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeIdentityPoolUsage operation.
@@ -410,21 +415,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  DescribeIdentityPoolUsageResult from CognitoSync.</returns>
         public  DescribeIdentityPoolUsageResponse EndDescribeIdentityPoolUsage(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeIdentityPoolUsageResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeIdentityPoolUsageRequestMarshaller();
-            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeIdentityPoolUsageResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeIdentityUsage
-
 
         /// <summary>
         /// Gets usage information for an identity, including number of datasets and data usage.
@@ -446,8 +442,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeIdentityUsage(request, null, null, true);
-            return EndDescribeIdentityUsage(asyncResult);
+            var marshaller = new DescribeIdentityUsageRequestMarshaller();
+            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityUsageRequest,DescribeIdentityUsageResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -464,10 +462,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginDescribeIdentityUsage(DescribeIdentityUsageRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeIdentityUsage(request, callback, state, false);
+            var marshaller = new DescribeIdentityUsageRequestMarshaller();
+            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIdentityUsageRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeIdentityUsage operation.
@@ -479,21 +479,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  DescribeIdentityUsageResult from CognitoSync.</returns>
         public  DescribeIdentityUsageResponse EndDescribeIdentityUsage(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeIdentityUsageResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeIdentityUsage(DescribeIdentityUsageRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeIdentityUsageRequestMarshaller();
-            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeIdentityUsageResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListDatasets
-
 
         /// <summary>
         /// Lists datasets for an identity.
@@ -512,8 +503,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            IAsyncResult asyncResult = invokeListDatasets(request, null, null, true);
-            return EndListDatasets(asyncResult);
+            var marshaller = new ListDatasetsRequestMarshaller();
+            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -530,10 +523,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListDatasets(request, callback, state, false);
+            var marshaller = new ListDatasetsRequestMarshaller();
+            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDatasetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDatasets operation.
@@ -545,21 +540,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  ListDatasetsResult from CognitoSync.</returns>
         public  ListDatasetsResponse EndListDatasets(IAsyncResult asyncResult)
         {
-            return endOperation< ListDatasetsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListDatasetsRequestMarshaller();
-            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListDatasetsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListIdentityPoolUsage
-
 
         /// <summary>
         /// Gets a list of identity pools registered with Cognito.
@@ -578,8 +564,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request)
         {
-            IAsyncResult asyncResult = invokeListIdentityPoolUsage(request, null, null, true);
-            return EndListIdentityPoolUsage(asyncResult);
+            var marshaller = new ListIdentityPoolUsageRequestMarshaller();
+            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityPoolUsageRequest,ListIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -596,10 +584,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginListIdentityPoolUsage(ListIdentityPoolUsageRequest request, AsyncCallback callback, object state)
         {
-            return invokeListIdentityPoolUsage(request, callback, state, false);
+            var marshaller = new ListIdentityPoolUsageRequestMarshaller();
+            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListIdentityPoolUsageRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListIdentityPoolUsage operation.
@@ -611,21 +601,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  ListIdentityPoolUsageResult from CognitoSync.</returns>
         public  ListIdentityPoolUsageResponse EndListIdentityPoolUsage(IAsyncResult asyncResult)
         {
-            return endOperation< ListIdentityPoolUsageResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListIdentityPoolUsage(ListIdentityPoolUsageRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListIdentityPoolUsageRequestMarshaller();
-            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListIdentityPoolUsageResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListRecords
-
 
         /// <summary>
         /// Gets paginated records, optionally changed after a particular sync count for a dataset
@@ -648,8 +629,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public ListRecordsResponse ListRecords(ListRecordsRequest request)
         {
-            IAsyncResult asyncResult = invokeListRecords(request, null, null, true);
-            return EndListRecords(asyncResult);
+            var marshaller = new ListRecordsRequestMarshaller();
+            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecordsRequest,ListRecordsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -666,10 +649,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginListRecords(ListRecordsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListRecords(request, callback, state, false);
+            var marshaller = new ListRecordsRequestMarshaller();
+            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListRecordsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListRecords operation.
@@ -681,21 +666,12 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  ListRecordsResult from CognitoSync.</returns>
         public  ListRecordsResponse EndListRecords(IAsyncResult asyncResult)
         {
-            return endOperation< ListRecordsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListRecords(ListRecordsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListRecordsRequestMarshaller();
-            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListRecordsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateRecords
-
 
         /// <summary>
         /// Posts updates to records and add and delete records for a dataset and user.
@@ -727,8 +703,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         public UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateRecords(request, null, null, true);
-            return EndUpdateRecords(asyncResult);
+            var marshaller = new UpdateRecordsRequestMarshaller();
+            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecordsRequest,UpdateRecordsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -745,10 +723,12 @@ namespace Amazon.CognitoSync
         ///         operation.</returns>
         public IAsyncResult BeginUpdateRecords(UpdateRecordsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateRecords(request, callback, state, false);
+            var marshaller = new UpdateRecordsRequestMarshaller();
+            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateRecordsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateRecords operation.
@@ -760,15 +740,7 @@ namespace Amazon.CognitoSync
         /// <returns>Returns a  UpdateRecordsResult from CognitoSync.</returns>
         public  UpdateRecordsResponse EndUpdateRecords(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateRecordsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateRecords(UpdateRecordsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateRecordsRequestMarshaller();
-            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateRecordsResponse>(asyncResult);
         }
 
         #endregion

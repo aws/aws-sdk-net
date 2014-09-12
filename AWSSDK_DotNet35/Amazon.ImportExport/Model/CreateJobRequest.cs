@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,90 +29,78 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// <para> This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that
-    /// describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature
-    /// that you use to identify your storage device, and the address where you should ship your storage device. </para>
+    /// This operation initiates the process of scheduling an upload or download of your data.
+    /// You include in the request a manifest that describes the data transfer specifics.
+    /// The response to the request includes a job ID, which you can use in other operations,
+    /// a signature that you use to identify your storage device, and the address where you
+    /// should ship your storage device.
     /// </summary>
-    public partial class CreateJobRequest : AmazonWebServiceRequest
+    public partial class CreateJobRequest : AmazonImportExportRequest
     {
-        private JobType jobType;
-        private string manifest;
-        private string manifestAddendum;
-        private bool? validateOnly;
+        private JobType _jobType;
+        private string _manifest;
+        private string _manifestAddendum;
+        private bool? _validateOnly;
 
         /// <summary>
-        /// Specifies whether the job to initiate is an import or export job.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Import, Export</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property JobType.
         /// </summary>
         public JobType JobType
         {
-            get { return this.jobType; }
-            set { this.jobType = value; }
+            get { return this._jobType; }
+            set { this._jobType = value; }
         }
 
         // Check to see if JobType property is set
         internal bool IsSetJobType()
         {
-            return this.jobType != null;
+            return this._jobType != null;
         }
 
         /// <summary>
-        /// The UTF-8 encoded text of the manifest file.
-        ///  
+        /// Gets and sets the property Manifest.
         /// </summary>
         public string Manifest
         {
-            get { return this.manifest; }
-            set { this.manifest = value; }
+            get { return this._manifest; }
+            set { this._manifest = value; }
         }
 
         // Check to see if Manifest property is set
         internal bool IsSetManifest()
         {
-            return this.manifest != null;
+            return this._manifest != null;
         }
 
         /// <summary>
-        /// For internal use only.
-        ///  
+        /// Gets and sets the property ManifestAddendum.
         /// </summary>
         public string ManifestAddendum
         {
-            get { return this.manifestAddendum; }
-            set { this.manifestAddendum = value; }
+            get { return this._manifestAddendum; }
+            set { this._manifestAddendum = value; }
         }
 
         // Check to see if ManifestAddendum property is set
         internal bool IsSetManifestAddendum()
         {
-            return this.manifestAddendum != null;
+            return this._manifestAddendum != null;
         }
 
         /// <summary>
-        /// Validate the manifest and parameter values in the request but do not actually create a job.
-        ///  
+        /// Gets and sets the property ValidateOnly.
         /// </summary>
         public bool ValidateOnly
         {
-            get { return this.validateOnly ?? default(bool); }
-            set { this.validateOnly = value; }
+            get { return this._validateOnly.GetValueOrDefault(); }
+            set { this._validateOnly = value; }
         }
 
         // Check to see if ValidateOnly property is set
         internal bool IsSetValidateOnly()
         {
-            return this.validateOnly.HasValue;
+            return this._validateOnly.HasValue; 
         }
 
     }
 }
-    

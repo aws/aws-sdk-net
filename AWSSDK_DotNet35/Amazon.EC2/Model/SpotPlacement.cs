@@ -12,54 +12,78 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes Spot Instance placement.</para>
+    /// Describes Spot Instance placement.
     /// </summary>
     public partial class SpotPlacement
     {
-        
-        private string availabilityZone;
-        private string groupName;
-
+        private string _availabilityZone;
+        private string _groupName;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SpotPlacement() { }
+
+        /// <summary>
+        /// Instantiates SpotPlacement with the parameterized properties
+        /// </summary>
+        /// <param name="availabilityZone">The Availability Zone.</param>
+        public SpotPlacement(string availabilityZone)
+        {
+            _availabilityZone = availabilityZone;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
         /// The Availability Zone.
-        ///  
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
         /// The Availability Zone group name.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
+
     }
 }

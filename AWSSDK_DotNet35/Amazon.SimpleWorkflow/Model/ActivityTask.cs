@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,151 +12,142 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Unit of work sent to an activity worker. </para>
+    /// Unit of work sent to an activity worker.
     /// </summary>
-    public partial class ActivityTask : AmazonWebServiceResponse
+    public partial class ActivityTask
     {
-        
-        private string taskToken;
-        private string activityId;
-        private long? startedEventId;
-        private WorkflowExecution workflowExecution;
-        private ActivityType activityType;
-        private string input;
+        private string _activityId;
+        private ActivityType _activityType;
+        private string _input;
+        private long? _startedEventId;
+        private string _taskToken;
+        private WorkflowExecution _workflowExecution;
 
         /// <summary>
-        /// The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the
-        /// system about the task.
-        ///  
+        /// Gets and sets the property ActivityId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TaskToken
-        {
-            get { return this.taskToken; }
-            set { this.taskToken = value; }
-        }
-
-        // Check to see if TaskToken property is set
-        internal bool IsSetTaskToken()
-        {
-            return this.taskToken != null;
-        }
-
-        /// <summary>
-        /// The unique ID of the task.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
+        ///  The unique ID of the task. 
         /// </para>
         /// </summary>
         public string ActivityId
         {
-            get { return this.activityId; }
-            set { this.activityId = value; }
+            get { return this._activityId; }
+            set { this._activityId = value; }
         }
 
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;
+            return this._activityId != null;
         }
 
         /// <summary>
-        /// The id of the <c>ActivityTaskStarted</c> event recorded in the history.
-        ///  
-        /// </summary>
-        public long StartedEventId
-        {
-            get { return this.startedEventId ?? default(long); }
-            set { this.startedEventId = value; }
-        }
-
-        // Check to see if StartedEventId property is set
-        internal bool IsSetStartedEventId()
-        {
-            return this.startedEventId.HasValue;
-        }
-
-        /// <summary>
-        /// The workflow execution that started this activity task.
-        ///  
-        /// </summary>
-        public WorkflowExecution WorkflowExecution
-        {
-            get { return this.workflowExecution; }
-            set { this.workflowExecution = value; }
-        }
-
-        // Check to see if WorkflowExecution property is set
-        internal bool IsSetWorkflowExecution()
-        {
-            return this.workflowExecution != null;
-        }
-
-        /// <summary>
-        /// The type of this activity task.
-        ///  
+        /// Gets and sets the property ActivityType. 
+        /// <para>
+        ///  The type of this activity task. 
+        /// </para>
         /// </summary>
         public ActivityType ActivityType
         {
-            get { return this.activityType; }
-            set { this.activityType = value; }
+            get { return this._activityType; }
+            set { this._activityType = value; }
         }
 
         // Check to see if ActivityType property is set
         internal bool IsSetActivityType()
         {
-            return this.activityType != null;
+            return this._activityType != null;
         }
 
         /// <summary>
-        /// The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity
-        /// implementation.
-        ///  
+        /// Gets and sets the property Input. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32768</description>
-        ///     </item>
-        /// </list>
+        ///  The inputs provided when the activity task was scheduled. The form of the input is
+        /// user defined and should be meaningful to the activity implementation. 
         /// </para>
         /// </summary>
         public string Input
         {
-            get { return this.input; }
-            set { this.input = value; }
+            get { return this._input; }
+            set { this._input = value; }
         }
 
         // Check to see if Input property is set
         internal bool IsSetInput()
         {
-            return this.input != null;
+            return this._input != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property StartedEventId. 
+        /// <para>
+        ///  The id of the <code>ActivityTaskStarted</code> event recorded in the history. 
+        /// </para>
+        /// </summary>
+        public long StartedEventId
+        {
+            get { return this._startedEventId.GetValueOrDefault(); }
+            set { this._startedEventId = value; }
+        }
+
+        // Check to see if StartedEventId property is set
+        internal bool IsSetStartedEventId()
+        {
+            return this._startedEventId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskToken. 
+        /// <para>
+        ///  The opaque string used as a handle on the task. This token is used by workers to
+        /// communicate progress and response information back to the system about the task. 
+        /// </para>
+        /// </summary>
+        public string TaskToken
+        {
+            get { return this._taskToken; }
+            set { this._taskToken = value; }
+        }
+
+        // Check to see if TaskToken property is set
+        internal bool IsSetTaskToken()
+        {
+            return this._taskToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowExecution. 
+        /// <para>
+        ///  The workflow execution that started this activity task. 
+        /// </para>
+        /// </summary>
+        public WorkflowExecution WorkflowExecution
+        {
+            get { return this._workflowExecution; }
+            set { this._workflowExecution = value; }
+        }
+
+        // Check to see if WorkflowExecution property is set
+        internal bool IsSetWorkflowExecution()
+        {
+            return this._workflowExecution != null;
+        }
+
     }
 }

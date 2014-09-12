@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeDomains response and response metadata.
+    /// Configuration for accessing Amazon DescribeDomains service
     /// </summary>
     public partial class DescribeDomainsResponse : DescribeDomainsResult
     {
         /// <summary>
         /// Gets and sets the DescribeDomainsResult property.
-        /// The result of a DescribeDomains request. Contains the status of the domains specified in the request or all domains owned by the account.
+        /// Represents the output of a DescribeDomains operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeDomainsResult class are now available on the DescribeDomainsResponse class. You should use the properties on DescribeDomainsResponse instead of accessing them through DescribeDomainsResult.")]
         public DescribeDomainsResult DescribeDomainsResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

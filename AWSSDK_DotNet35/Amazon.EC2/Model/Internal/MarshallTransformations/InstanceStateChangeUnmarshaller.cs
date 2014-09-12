@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceStateChange Unmarshaller
-     /// </summary>
-    internal class InstanceStateChangeUnmarshaller : IUnmarshaller<InstanceStateChange, XmlUnmarshallerContext>, IUnmarshaller<InstanceStateChange, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceStateChange Object
+    /// </summary>  
+    public class InstanceStateChangeUnmarshaller : IUnmarshaller<InstanceStateChange, XmlUnmarshallerContext>, IUnmarshaller<InstanceStateChange, JsonUnmarshallerContext>
     {
-        public InstanceStateChange Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceStateChange Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceStateChange instanceStateChange = new InstanceStateChange();
+            InstanceStateChange unmarshalledObject = new InstanceStateChange();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        instanceStateChange.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("currentState", targetDepth))
                     {
-                        instanceStateChange.CurrentState = InstanceStateUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceStateUnmarshaller.Instance;
+                        unmarshalledObject.CurrentState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("previousState", targetDepth))
                     {
-                        instanceStateChange.PreviousState = InstanceStateUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceStateUnmarshaller.Instance;
+                        unmarshalledObject.PreviousState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceStateChange;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceStateChange;
+            return unmarshalledObject;
         }
 
-        public InstanceStateChange Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceStateChange Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceStateChangeUnmarshaller instance;
 
-        public static InstanceStateChangeUnmarshaller GetInstance() 
+        private static InstanceStateChangeUnmarshaller _instance = new InstanceStateChangeUnmarshaller();        
+
+        public static InstanceStateChangeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceStateChangeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

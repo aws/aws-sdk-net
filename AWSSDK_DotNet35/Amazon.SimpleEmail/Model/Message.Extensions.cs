@@ -28,23 +28,23 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class Message
     {
-        /// <summary>
-        /// Default constructor for a new Message object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Message() { }
+        ///// <summary>
+        ///// Default constructor for a new Message object.  Callers should use the
+        ///// properties to initialize this object after creating it.
+        ///// </summary>
+        //public Message() { }
 
-        /// <summary>
-        /// Constructs a new Message object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="subject"> The subject of the message: A short summary of the content, which will appear in the recipient's inbox. </param>
-        /// <param name="body"> The message body. </param>
-        public Message(Content subject, Body body)
-        {
-            this.Subject = subject;
-            this.Body = body;
-        }
+        ///// <summary>
+        ///// Constructs a new Message object.
+        ///// Callers should use the properties initialize any additional object members.
+        ///// </summary>
+        ///// 
+        ///// <param name="subject"> The subject of the message: A short summary of the content, which will appear in the recipient's inbox. </param>
+        ///// <param name="body"> The message body. </param>
+        //public Message(Content subject, Body body)
+        //{
+        //    this.Subject = subject;
+        //    this.Body = body;
+        //}
     }
 }

@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Parameter Unmarshaller
-     /// </summary>
-    internal class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext>, IUnmarshaller<Parameter, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Parameter Object
+    /// </summary>  
+    public class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext>, IUnmarshaller<Parameter, JsonUnmarshallerContext>
     {
-        public Parameter Unmarshall(XmlUnmarshallerContext context) 
+        public Parameter Unmarshall(XmlUnmarshallerContext context)
         {
-            Parameter parameter = new Parameter();
+            Parameter unmarshalledObject = new Parameter();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("ParameterKey", targetDepth))
                     {
-                        parameter.ParameterKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterKey = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ParameterValue", targetDepth))
                     {
-                        parameter.ParameterValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UsePreviousValue", targetDepth))
                     {
-                        parameter.UsePreviousValue = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.UsePreviousValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return parameter;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return parameter;
+            return unmarshalledObject;
         }
 
-        public Parameter Unmarshall(JsonUnmarshallerContext context) 
+        public Parameter Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ParameterUnmarshaller instance;
 
-        public static ParameterUnmarshaller GetInstance() 
+        private static ParameterUnmarshaller _instance = new ParameterUnmarshaller();        
+
+        public static ParameterUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ParameterUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

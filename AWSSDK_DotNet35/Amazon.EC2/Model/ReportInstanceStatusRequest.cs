@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,131 +29,168 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReportInstanceStatus operation.
-    /// <para>Submits feedback about the status of an instance. The instance must be in the <c>running</c> state. If your experience with the
-    /// instance differs from the instance status returned by DescribeInstanceStatus, use ReportInstanceStatus to report your experience with the
-    /// instance. Amazon EC2 collects this information to improve the accuracy of status checks.</para>
+    /// Submits feedback about the status of an instance. The instance must be in the <code>running</code>
+    /// state. If your experience with the instance differs from the instance status returned
+    /// by <a>DescribeInstanceStatus</a>, use <a>ReportInstanceStatus</a> to report your experience
+    /// with the instance. Amazon EC2 collects this information to improve the accuracy of
+    /// status checks.
     /// </summary>
     public partial class ReportInstanceStatusRequest : AmazonEC2Request
     {
-        private List<string> instances = new List<string>();
-        private ReportStatusType status;
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private List<string> reasonCodes = new List<string>();
-        private string description;
-
-
-        /// <summary>
-        /// One or more instances.
-        ///  
-        /// </summary>
-        public List<string> Instances
-        {
-            get { return this.instances; }
-            set { this.instances = value; }
-        }
-
-        // Check to see if Instances property is set
-        internal bool IsSetInstances()
-        {
-            return this.instances.Count > 0;
-        }
+        private string _description;
+        private DateTime? _endTime;
+        private List<string> _instances = new List<string>();
+        private List<string> _reasonCodes = new List<string>();
+        private DateTime? _startTime;
+        private ReportStatusType _status;
 
         /// <summary>
-        /// The status of all instances listed.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ok, impaired</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public ReportStatusType Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The time at which the reported instance health state began.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The time at which the reported instance health state ended.
-        ///  
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
-        }
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this.endTime.HasValue;
-        }
-
-        /// <summary>
-        /// One or more reason codes that describes the health state of your instance. <ul> <li><c>instance-stuck-in-state</c>: My instance is stuck in
-        /// a state.</li> <li><c>unresponsive</c>: My instance is unresponsive.</li> <li><c>not-accepting-credentials</c>: My instance is not accepting
-        /// my credentials.</li> <li><c>password-not-available</c>: A password is not available for my instance.</li> <li><c>performance-network</c>: My
-        /// instance is experiencing performance problems which I believe are network related.</li> <li><c>performance-instance-store</c>: My instance
-        /// is experiencing performance problems which I believe are related to the instance stores.</li> <li><c>performance-ebs-volume</c>: My instance
-        /// is experiencing performance problems which I believe are related to an EBS volume.</li> <li><c>performance-other</c>: My instance is
-        /// experiencing performance problems.</li> <li><c>other</c>: [explain using the description parameter]</li> </ul>
-        ///  
-        /// </summary>
-        public List<string> ReasonCodes
-        {
-            get { return this.reasonCodes; }
-            set { this.reasonCodes = value; }
-        }
-
-        // Check to see if ReasonCodes property is set
-        internal bool IsSetReasonCodes()
-        {
-            return this.reasonCodes.Count > 0;
-        }
-
-        /// <summary>
         /// Descriptive text about the health state of your instance.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The time at which the reported instance health state ended.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// One or more instances.
+        /// </para>
+        /// </summary>
+        public List<string> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReasonCodes. 
+        /// <para>
+        /// One or more reason codes that describes the health state of your instance.
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>instance-stuck-in-state</code>: My instance is stuck in a state.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>unresponsive</code>: My instance is unresponsive.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>password-not-available</code>: A password is not available for my instance.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>performance-network</code>: My instance is experiencing performance problems
+        /// which I believe are network related.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>performance-instance-store</code>: My instance is experiencing performance problems
+        /// which I believe are related to the instance stores.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>performance-ebs-volume</code>: My instance is experiencing performance problems
+        /// which I believe are related to an EBS volume.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>performance-other</code>: My instance is experiencing performance problems.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>other</code>: [explain using the description parameter]
+        /// </para>
+        /// </li> </ul>
+        /// </summary>
+        public List<string> ReasonCodes
+        {
+            get { return this._reasonCodes; }
+            set { this._reasonCodes = value; }
+        }
+
+        // Check to see if ReasonCodes property is set
+        internal bool IsSetReasonCodes()
+        {
+            return this._reasonCodes != null && this._reasonCodes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The time at which the reported instance health state began.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of all instances listed.
+        /// </para>
+        /// </summary>
+        public ReportStatusType Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }
 }
-    

@@ -116,18 +116,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static S3ErrorResponseUnmarshaller instance;
 
-        /// <summary>
-        /// Return an instance of and ErrorResponseUnmarshaller.
-        /// </summary>
-        /// <returns></returns>
-        public static S3ErrorResponseUnmarshaller GetInstance()
+        private static S3ErrorResponseUnmarshaller _instance;
+
+        public static S3ErrorResponseUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new S3ErrorResponseUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new S3ErrorResponseUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 

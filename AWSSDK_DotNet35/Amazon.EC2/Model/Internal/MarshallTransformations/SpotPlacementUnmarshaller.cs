@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SpotPlacement Unmarshaller
-     /// </summary>
-    internal class SpotPlacementUnmarshaller : IUnmarshaller<SpotPlacement, XmlUnmarshallerContext>, IUnmarshaller<SpotPlacement, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SpotPlacement Object
+    /// </summary>  
+    public class SpotPlacementUnmarshaller : IUnmarshaller<SpotPlacement, XmlUnmarshallerContext>, IUnmarshaller<SpotPlacement, JsonUnmarshallerContext>
     {
-        public SpotPlacement Unmarshall(XmlUnmarshallerContext context) 
+        public SpotPlacement Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotPlacement spotPlacement = new SpotPlacement();
+            SpotPlacement unmarshalledObject = new SpotPlacement();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        spotPlacement.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupName", targetDepth))
                     {
-                        spotPlacement.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return spotPlacement;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return spotPlacement;
+            return unmarshalledObject;
         }
 
-        public SpotPlacement Unmarshall(JsonUnmarshallerContext context) 
+        public SpotPlacement Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SpotPlacementUnmarshaller instance;
 
-        public static SpotPlacementUnmarshaller GetInstance() 
+        private static SpotPlacementUnmarshaller _instance = new SpotPlacementUnmarshaller();        
+
+        public static SpotPlacementUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SpotPlacementUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

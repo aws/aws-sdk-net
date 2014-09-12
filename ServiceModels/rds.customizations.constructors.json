@@ -1,0 +1,232 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "EC2SecurityGroup" : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeEngineDefaultParametersRequest" : {
+                "constructorForms" : [
+                    [
+                        "DBParameterGroupFamily"
+                    ]
+                ]
+            },
+            "DescribeReservedDBInstancesOfferingsRequest" : {
+                "constructorForms" : [
+                ]
+            },
+            "RebootDBInstanceRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "DBInstanceIdentifier"
+                    ]
+                ]
+            },
+            "CreateDBSnapshotRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "DBSnapshotIdentifier",
+                        "DBInstanceIdentifier"
+                    ]
+                ]
+            },
+            "DescribeDBSecurityGroupsRequest"             : {
+                "constructorForms" : [
+                ]
+            },
+            "IPRange"                                     : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateDBInstanceRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "DBInstanceIdentifier",
+                        "AllocatedStorage",
+                        "DBInstanceClass",
+                        "Engine",
+                        "MasterUsername",
+                        "MasterUserPassword"
+                    ]
+                ]
+            },
+            "Endpoint"                                    : {
+                "constructorForms" : [
+                ]
+            },
+            "DBParameterGroupStatus"                      : {
+                "constructorForms" : [
+                ]
+            },
+            "ModifyDBInstanceRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "DBInstanceIdentifier"
+                    ]
+                ]
+            },
+            "PendingModifiedValues"                       : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteDBSnapshotRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "DBSnapshotIdentifier"
+                    ]
+                ]
+            },
+            "DescribeDBParametersRequest"                 : {
+                "constructorForms" : [
+                    [
+                        "DBParameterGroupName"
+                    ]
+                ]
+            },
+            "ResetDBParameterGroupRequest"                : {
+                "constructorForms" : [
+                    [
+                        "DBParameterGroupName"
+                    ]
+                ]
+            },
+            "DeleteDBInstanceRequest"                     : {
+                "constructorForms" : [
+                    [
+                        "DBInstanceIdentifier"
+                    ]
+                ]
+            },
+            "PurchaseReservedDBInstancesOfferingRequest"  : {
+                "constructorForms" : [
+                    [
+                        "ReservedDBInstancesOfferingId"
+                    ]
+                ]
+            },
+            "DBSecurityGroupMembership"                   : {
+                "constructorForms" : [
+                ]
+            },
+            "DBEngineVersion"                             : {
+                "constructorForms" : [
+                ]
+            },
+            "Parameter"                                   : {
+                "constructorForms" : [
+                ]
+            },
+            "ReservedDBInstancesOffering"                 : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeDBParameterGroupsRequest"            : {
+                "constructorForms" : [
+                ]
+            },
+            "AuthorizeDBSecurityGroupIngressRequest"      : {
+                "constructorForms" : [
+                    [
+                        "DBSecurityGroupName"
+                    ]
+                ]
+            },
+            "DescribeEventsRequest"                       : {
+                "constructorForms" : [
+                ]
+            },
+            "Event"                                       : {
+                "constructorForms" : [
+                ]
+            },
+            "ModifyDBParameterGroupRequest"               : {
+                "constructorForms" : [
+                    [
+                        "DBParameterGroupName",
+                        "Parameters"
+                    ]
+                ]
+            },
+            "RestoreDBInstanceFromDBSnapshotRequest"      : {
+                "constructorForms" : [
+                    [
+                        "DBInstanceIdentifier",
+                        "DBSnapshotIdentifier"
+                    ]
+                ]
+            },
+            "DeleteDBParameterGroupRequest"               : {
+                "constructorForms" : [
+                    [
+                        "DBParameterGroupName"
+                    ]
+                ]
+            },
+            "DescribeDBEngineVersionsRequest"             : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeReservedDBInstancesRequest"          : {
+                "constructorForms" : [
+                ]
+            },
+            "DescribeDBInstancesRequest"                  : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteDBSecurityGroupRequest"                : {
+                "constructorForms" : [
+                    [
+                        "DBSecurityGroupName"
+                    ]
+                ]
+            },
+            "CreateDBParameterGroupRequest"               : {
+                "constructorForms" : [
+                    [
+                        "DBParameterGroupName",
+                        "DBParameterGroupFamily",
+                        "Description"
+                    ]
+                ]
+            },
+            "RestoreDBInstanceToPointInTimeRequest"       : {
+                "constructorForms" : [
+                    [
+                        "SourceDBInstanceIdentifier",
+                        "TargetDBInstanceIdentifier"
+                    ]
+                ]
+            },
+            "CreateDBSecurityGroupRequest"                : {
+                "constructorForms" : [
+                    [
+                        "DBSecurityGroupName",
+                        "DBSecurityGroupDescription"
+                    ]
+                ]
+            },
+            "RevokeDBSecurityGroupIngressRequest"         : {
+                "constructorForms" : [
+                    [
+                        "DBSecurityGroupName"
+                    ]
+                ]
+            },
+            "DescribeDBSnapshotsRequest"                  : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateDBInstanceReadReplicaRequest"          : {
+                "constructorForms" : [
+                    [
+                        "DBInstanceIdentifier",
+                        "SourceDBInstanceIdentifier"
+                    ]
+                ]
+            }
+        }
+    }
+}

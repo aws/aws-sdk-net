@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,280 +33,121 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Table Request Marshaller
+    /// CreateTable Request Marshaller
     /// </summary>       
-    internal class CreateTableRequestMarshaller : IMarshaller<IRequest, CreateTableRequest> 
+    public class CreateTableRequestMarshaller : IMarshaller<IRequest, CreateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreateTableRequest createTableRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreateTableRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createTableRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(CreateTableRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.CreateTable";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (createTableRequest != null && createTableRequest.AttributeDefinitions != null && createTableRequest.AttributeDefinitions.Count > 0)
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeDefinitions())
                 {
-                    List<AttributeDefinition> attributeDefinitionsList = createTableRequest.AttributeDefinitions;
-                    writer.WritePropertyName("AttributeDefinitions");
-                    writer.WriteArrayStart();
-
-                    foreach (AttributeDefinition attributeDefinitionsListValue in attributeDefinitionsList) 
+                    context.Writer.WritePropertyName("AttributeDefinitions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributeDefinitionsListValue in publicRequest.AttributeDefinitions)
                     {
-                        writer.WriteObjectStart();
-                        if (attributeDefinitionsListValue != null && attributeDefinitionsListValue.IsSetAttributeName()) 
-                        {
-                            writer.WritePropertyName("AttributeName");
-                            writer.Write(attributeDefinitionsListValue.AttributeName);
-                        }
-                        if (attributeDefinitionsListValue != null && attributeDefinitionsListValue.IsSetAttributeType()) 
-                        {
-                            writer.WritePropertyName("AttributeType");
-                            writer.Write(attributeDefinitionsListValue.AttributeType);
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AttributeDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAttributeDefinitionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
-                }
-                if (createTableRequest != null && createTableRequest.IsSetTableName()) 
-                {
-                    writer.WritePropertyName("TableName");
-                    writer.Write(createTableRequest.TableName);
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (createTableRequest != null && createTableRequest.KeySchema != null && createTableRequest.KeySchema.Count > 0)
+                if(publicRequest.IsSetGlobalSecondaryIndexes())
                 {
-                    List<KeySchemaElement> keySchemaList = createTableRequest.KeySchema;
-                    writer.WritePropertyName("KeySchema");
-                    writer.WriteArrayStart();
-
-                    foreach (KeySchemaElement keySchemaListValue in keySchemaList) 
+                    context.Writer.WritePropertyName("GlobalSecondaryIndexes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlobalSecondaryIndexesListValue in publicRequest.GlobalSecondaryIndexes)
                     {
-                        writer.WriteObjectStart();
-                        if (keySchemaListValue != null && keySchemaListValue.IsSetAttributeName()) 
-                        {
-                            writer.WritePropertyName("AttributeName");
-                            writer.Write(keySchemaListValue.AttributeName);
-                        }
-                        if (keySchemaListValue != null && keySchemaListValue.IsSetKeyType()) 
-                        {
-                            writer.WritePropertyName("KeyType");
-                            writer.Write(keySchemaListValue.KeyType);
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GlobalSecondaryIndexMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGlobalSecondaryIndexesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (createTableRequest != null && createTableRequest.LocalSecondaryIndexes != null && createTableRequest.LocalSecondaryIndexes.Count > 0)
+                if(publicRequest.IsSetKeySchema())
                 {
-                    List<LocalSecondaryIndex> localSecondaryIndexesList = createTableRequest.LocalSecondaryIndexes;
-                    writer.WritePropertyName("LocalSecondaryIndexes");
-                    writer.WriteArrayStart();
-
-                    foreach (LocalSecondaryIndex localSecondaryIndexesListValue in localSecondaryIndexesList) 
+                    context.Writer.WritePropertyName("KeySchema");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestKeySchemaListValue in publicRequest.KeySchema)
                     {
-                        writer.WriteObjectStart();
-                        if (localSecondaryIndexesListValue != null && localSecondaryIndexesListValue.IsSetIndexName()) 
-                        {
-                            writer.WritePropertyName("IndexName");
-                            writer.Write(localSecondaryIndexesListValue.IndexName);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if (localSecondaryIndexesListValue != null && localSecondaryIndexesListValue.KeySchema != null && localSecondaryIndexesListValue.KeySchema.Count > 0)
-                        {
-                            List<KeySchemaElement> keySchemaList = localSecondaryIndexesListValue.KeySchema;
-                            writer.WritePropertyName("KeySchema");
-                            writer.WriteArrayStart();
+                        var marshaller = KeySchemaElementMarshaller.Instance;
+                        marshaller.Marshall(publicRequestKeySchemaListValue, context);
 
-                            foreach (KeySchemaElement keySchemaListValue in keySchemaList) 
-                            {
-                                writer.WriteObjectStart();
-                                if (keySchemaListValue != null && keySchemaListValue.IsSetAttributeName()) 
-                                {
-                                    writer.WritePropertyName("AttributeName");
-                                    writer.Write(keySchemaListValue.AttributeName);
-                                }
-                                if (keySchemaListValue != null && keySchemaListValue.IsSetKeyType()) 
-                                {
-                                    writer.WritePropertyName("KeyType");
-                                    writer.Write(keySchemaListValue.KeyType);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
-                        }
-
-                        if (localSecondaryIndexesListValue != null) 
-                        {
-                            Projection projection = localSecondaryIndexesListValue.Projection;
-                            if (projection != null)
-                            {
-                                writer.WritePropertyName("Projection");
-                                writer.WriteObjectStart();
-                                if (projection != null && projection.IsSetProjectionType()) 
-                                {
-                                    writer.WritePropertyName("ProjectionType");
-                                    writer.Write(projection.ProjectionType);
-                                }
-
-                                if (projection != null && projection.NonKeyAttributes != null && projection.NonKeyAttributes.Count > 0) 
-                                {
-                                    List<string> nonKeyAttributesList = projection.NonKeyAttributes;
-                                    writer.WritePropertyName("NonKeyAttributes");
-                                    writer.WriteArrayStart();
-
-                                    foreach (string nonKeyAttributesListValue in nonKeyAttributesList) 
-                                    { 
-                                        writer.Write(StringUtils.FromString(nonKeyAttributesListValue));
-                                    }
-
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (createTableRequest != null && createTableRequest.GlobalSecondaryIndexes != null && createTableRequest.GlobalSecondaryIndexes.Count > 0)
+                if(publicRequest.IsSetLocalSecondaryIndexes())
                 {
-                    List<GlobalSecondaryIndex> globalSecondaryIndexesList = createTableRequest.GlobalSecondaryIndexes;
-                    writer.WritePropertyName("GlobalSecondaryIndexes");
-                    writer.WriteArrayStart();
-
-                    foreach (GlobalSecondaryIndex globalSecondaryIndexesListValue in globalSecondaryIndexesList) 
+                    context.Writer.WritePropertyName("LocalSecondaryIndexes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLocalSecondaryIndexesListValue in publicRequest.LocalSecondaryIndexes)
                     {
-                        writer.WriteObjectStart();
-                        if (globalSecondaryIndexesListValue != null && globalSecondaryIndexesListValue.IsSetIndexName()) 
-                        {
-                            writer.WritePropertyName("IndexName");
-                            writer.Write(globalSecondaryIndexesListValue.IndexName);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if (globalSecondaryIndexesListValue != null && globalSecondaryIndexesListValue.KeySchema != null && globalSecondaryIndexesListValue.KeySchema.Count > 0)
-                        {
-                            List<KeySchemaElement> keySchemaList = globalSecondaryIndexesListValue.KeySchema;
-                            writer.WritePropertyName("KeySchema");
-                            writer.WriteArrayStart();
+                        var marshaller = LocalSecondaryIndexMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLocalSecondaryIndexesListValue, context);
 
-                            foreach (KeySchemaElement keySchemaListValue in keySchemaList) 
-                            {
-                                writer.WriteObjectStart();
-                                if (keySchemaListValue != null && keySchemaListValue.IsSetAttributeName()) 
-                                {
-                                    writer.WritePropertyName("AttributeName");
-                                    writer.Write(keySchemaListValue.AttributeName);
-                                }
-                                if (keySchemaListValue != null && keySchemaListValue.IsSetKeyType()) 
-                                {
-                                    writer.WritePropertyName("KeyType");
-                                    writer.Write(keySchemaListValue.KeyType);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
-                        }
-
-                        if (globalSecondaryIndexesListValue != null) 
-                        {
-                            Projection projection = globalSecondaryIndexesListValue.Projection;
-                            if (projection != null)
-                            {
-                                writer.WritePropertyName("Projection");
-                                writer.WriteObjectStart();
-                                if (projection != null && projection.IsSetProjectionType()) 
-                                {
-                                    writer.WritePropertyName("ProjectionType");
-                                    writer.Write(projection.ProjectionType);
-                                }
-
-                                if (projection != null && projection.NonKeyAttributes != null && projection.NonKeyAttributes.Count > 0) 
-                                {
-                                    List<string> nonKeyAttributesList = projection.NonKeyAttributes;
-                                    writer.WritePropertyName("NonKeyAttributes");
-                                    writer.WriteArrayStart();
-
-                                    foreach (string nonKeyAttributesListValue in nonKeyAttributesList) 
-                                    { 
-                                        writer.Write(StringUtils.FromString(nonKeyAttributesListValue));
-                                    }
-
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-
-                        if (globalSecondaryIndexesListValue != null) 
-                        {
-                            ProvisionedThroughput provisionedThroughput = globalSecondaryIndexesListValue.ProvisionedThroughput;
-                            if (provisionedThroughput != null)
-                            {
-                                writer.WritePropertyName("ProvisionedThroughput");
-                                writer.WriteObjectStart();
-                                if (provisionedThroughput != null && provisionedThroughput.IsSetReadCapacityUnits()) 
-                                {
-                                    writer.WritePropertyName("ReadCapacityUnits");
-                                    writer.Write(provisionedThroughput.ReadCapacityUnits);
-                                }
-                                if (provisionedThroughput != null && provisionedThroughput.IsSetWriteCapacityUnits()) 
-                                {
-                                    writer.WritePropertyName("WriteCapacityUnits");
-                                    writer.Write(provisionedThroughput.WriteCapacityUnits);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (createTableRequest != null) 
+                if(publicRequest.IsSetProvisionedThroughput())
                 {
-                    ProvisionedThroughput provisionedThroughput = createTableRequest.ProvisionedThroughput;
-                    if (provisionedThroughput != null)
-                    {
-                        writer.WritePropertyName("ProvisionedThroughput");
-                        writer.WriteObjectStart();
-                        if (provisionedThroughput != null && provisionedThroughput.IsSetReadCapacityUnits()) 
-                        {
-                            writer.WritePropertyName("ReadCapacityUnits");
-                            writer.Write(provisionedThroughput.ReadCapacityUnits);
-                        }
-                        if (provisionedThroughput != null && provisionedThroughput.IsSetWriteCapacityUnits()) 
-                        {
-                            writer.WritePropertyName("WriteCapacityUnits");
-                            writer.Write(provisionedThroughput.WriteCapacityUnits);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("ProvisionedThroughput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProvisionedThroughputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTableName())
+                {
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

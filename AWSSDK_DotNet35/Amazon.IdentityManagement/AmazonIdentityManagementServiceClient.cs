@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.IdentityManagement.Model.Internal.MarshallTransformations;
@@ -39,11 +43,13 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    ///  Using the IAM Query API, you make direct calls to the IAM web service. IAM supports
-    /// GET and POST requests for all actions. That is, the API does not require you to use
-    /// GET for some actions and POST for others. However, GET requests are subject to the
-    /// limitation size of a URL. Therefore, for operations that require larger sizes, use
-    /// a POST request. 
+    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
+    /// you can also use the IAM Query API to make direct calls to the IAM web service. To
+    /// learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
+    /// for all actions. That is, the API does not require you to use GET for some actions
+    /// and POST for others. However, GET requests are subject to the limitation size of a
+    /// URL. Therefore, for operations that require larger sizes, use a POST request. 
     /// </para>
     ///  
     /// <para>
@@ -96,19 +102,8 @@ namespace Amazon.IdentityManagement
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
     /// request using an access key ID and secret access key.</li> </ul>
     /// </summary>
-    public partial class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, IAmazonIdentityManagementService
+    public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -127,7 +122,7 @@ namespace Amazon.IdentityManagement
         ///
         /// </summary>
         public AmazonIdentityManagementServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
@@ -146,7 +141,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIdentityManagementServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
@@ -165,7 +160,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="config">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AmazonIdentityManagementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with AWS Credentials
@@ -193,7 +188,7 @@ namespace Amazon.IdentityManagement
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AWSCredentials credentials, AmazonIdentityManagementServiceConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -226,7 +221,7 @@ namespace Amazon.IdentityManagement
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonIdentityManagementServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -262,15 +257,33 @@ namespace Amazon.IdentityManagement
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonIdentityManagementServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AddRoleToInstanceProfile
-
 
         /// <summary>
         /// Adds the specified role to the specified instance profile. For more information about
@@ -294,8 +307,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeAddRoleToInstanceProfile(request, null, null, true);
-            return EndAddRoleToInstanceProfile(asyncResult);
+            var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
+            var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<AddRoleToInstanceProfileRequest,AddRoleToInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -312,10 +327,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginAddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddRoleToInstanceProfile(request, callback, state, false);
+            var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
+            var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddRoleToInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddRoleToInstanceProfile operation.
@@ -327,21 +344,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  AddRoleToInstanceProfileResult from IdentityManagementService.</returns>
         public  AddRoleToInstanceProfileResponse EndAddRoleToInstanceProfile(IAsyncResult asyncResult)
         {
-            return endOperation< AddRoleToInstanceProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
-            var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddRoleToInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AddUserToGroup
-
 
         /// <summary>
         /// Adds the specified user to the specified group.
@@ -359,8 +367,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeAddUserToGroup(request, null, null, true);
-            return EndAddUserToGroup(asyncResult);
+            var marshaller = new AddUserToGroupRequestMarshaller();
+            var unmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AddUserToGroupRequest,AddUserToGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -377,10 +387,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginAddUserToGroup(AddUserToGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddUserToGroup(request, callback, state, false);
+            var marshaller = new AddUserToGroupRequestMarshaller();
+            var unmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddUserToGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddUserToGroup operation.
@@ -392,21 +404,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  AddUserToGroupResult from IdentityManagementService.</returns>
         public  AddUserToGroupResponse EndAddUserToGroup(IAsyncResult asyncResult)
         {
-            return endOperation< AddUserToGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddUserToGroup(AddUserToGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddUserToGroupRequestMarshaller();
-            var unmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddUserToGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ChangePassword
-
 
         /// <summary>
         /// Changes the password of the IAM user calling <code>ChangePassword</code>. The root
@@ -440,8 +443,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
         {
-            IAsyncResult asyncResult = invokeChangePassword(request, null, null, true);
-            return EndChangePassword(asyncResult);
+            var marshaller = new ChangePasswordRequestMarshaller();
+            var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
+
+            return Invoke<ChangePasswordRequest,ChangePasswordResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -458,10 +463,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginChangePassword(ChangePasswordRequest request, AsyncCallback callback, object state)
         {
-            return invokeChangePassword(request, callback, state, false);
+            var marshaller = new ChangePasswordRequestMarshaller();
+            var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ChangePasswordRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ChangePassword operation.
@@ -473,15 +480,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ChangePasswordResult from IdentityManagementService.</returns>
         public  ChangePasswordResponse EndChangePassword(IAsyncResult asyncResult)
         {
-            return endOperation< ChangePasswordResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeChangePassword(ChangePasswordRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ChangePasswordRequestMarshaller();
-            var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ChangePasswordResponse>(asyncResult);
         }
 
         #endregion
@@ -558,8 +557,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateAccessKey(request, null, null, true);
-            return EndCreateAccessKey(asyncResult);
+            var marshaller = new CreateAccessKeyRequestMarshaller();
+            var unmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessKeyRequest,CreateAccessKeyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -576,10 +577,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateAccessKey(CreateAccessKeyRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateAccessKey(request, callback, state, false);
+            var marshaller = new CreateAccessKeyRequestMarshaller();
+            var unmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAccessKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAccessKey operation.
@@ -591,21 +594,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateAccessKeyResult from IdentityManagementService.</returns>
         public  CreateAccessKeyResponse EndCreateAccessKey(IAsyncResult asyncResult)
         {
-            return endOperation< CreateAccessKeyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateAccessKey(CreateAccessKeyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateAccessKeyRequestMarshaller();
-            var unmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateAccessKeyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateAccountAlias
-
 
         /// <summary>
         /// This action creates an alias for your AWS account. For information about using an
@@ -624,8 +618,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateAccountAlias(request, null, null, true);
-            return EndCreateAccountAlias(asyncResult);
+            var marshaller = new CreateAccountAliasRequestMarshaller();
+            var unmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccountAliasRequest,CreateAccountAliasResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -642,10 +638,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateAccountAlias(CreateAccountAliasRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateAccountAlias(request, callback, state, false);
+            var marshaller = new CreateAccountAliasRequestMarshaller();
+            var unmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAccountAliasRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAccountAlias operation.
@@ -657,21 +655,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateAccountAliasResult from IdentityManagementService.</returns>
         public  CreateAccountAliasResponse EndCreateAccountAlias(IAsyncResult asyncResult)
         {
-            return endOperation< CreateAccountAliasResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateAccountAlias(CreateAccountAliasRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateAccountAliasRequestMarshaller();
-            var unmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateAccountAliasResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateGroup
-
 
         /// <summary>
         /// Creates a new group.
@@ -698,8 +687,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateGroup(request, null, null, true);
-            return EndCreateGroup(asyncResult);
+            var marshaller = new CreateGroupRequestMarshaller();
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -716,10 +707,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateGroup(request, callback, state, false);
+            var marshaller = new CreateGroupRequestMarshaller();
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateGroup operation.
@@ -731,21 +724,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateGroupResult from IdentityManagementService.</returns>
         public  CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateGroupRequestMarshaller();
-            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateInstanceProfile
-
 
         /// <summary>
         /// Creates a new instance profile. For information about instance profiles, go to <a
@@ -770,8 +754,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateInstanceProfile(request, null, null, true);
-            return EndCreateInstanceProfile(asyncResult);
+            var marshaller = new CreateInstanceProfileRequestMarshaller();
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -788,10 +774,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateInstanceProfile(CreateInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateInstanceProfile(request, callback, state, false);
+            var marshaller = new CreateInstanceProfileRequestMarshaller();
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateInstanceProfile operation.
@@ -803,21 +791,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateInstanceProfileResult from IdentityManagementService.</returns>
         public  CreateInstanceProfileResponse EndCreateInstanceProfile(IAsyncResult asyncResult)
         {
-            return endOperation< CreateInstanceProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateInstanceProfile(CreateInstanceProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateInstanceProfileRequestMarshaller();
-            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLoginProfile
-
 
         /// <summary>
         /// Creates a password for the specified user, giving the user the ability to access AWS
@@ -845,8 +824,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLoginProfile(request, null, null, true);
-            return EndCreateLoginProfile(asyncResult);
+            var marshaller = new CreateLoginProfileRequestMarshaller();
+            var unmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLoginProfileRequest,CreateLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -863,10 +844,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateLoginProfile(CreateLoginProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLoginProfile(request, callback, state, false);
+            var marshaller = new CreateLoginProfileRequestMarshaller();
+            var unmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLoginProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoginProfile operation.
@@ -878,21 +861,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateLoginProfileResult from IdentityManagementService.</returns>
         public  CreateLoginProfileResponse EndCreateLoginProfile(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLoginProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLoginProfile(CreateLoginProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLoginProfileRequestMarshaller();
-            var unmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLoginProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateRole
-
 
         /// <summary>
         /// Creates a new role for your AWS account. For more information about roles, go to <a
@@ -924,8 +898,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateRoleResponse CreateRole(CreateRoleRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateRole(request, null, null, true);
-            return EndCreateRole(asyncResult);
+            var marshaller = new CreateRoleRequestMarshaller();
+            var unmarshaller = CreateRoleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoleRequest,CreateRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -942,10 +918,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateRole(CreateRoleRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateRole(request, callback, state, false);
+            var marshaller = new CreateRoleRequestMarshaller();
+            var unmarshaller = CreateRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateRole operation.
@@ -957,21 +935,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateRoleResult from IdentityManagementService.</returns>
         public  CreateRoleResponse EndCreateRole(IAsyncResult asyncResult)
         {
-            return endOperation< CreateRoleResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateRole(CreateRoleRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateRoleRequestMarshaller();
-            var unmarshaller = CreateRoleResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateRoleResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateSAMLProvider
-
 
         /// <summary>
         /// Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.
@@ -1014,8 +983,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateSAMLProviderResponse CreateSAMLProvider(CreateSAMLProviderRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateSAMLProvider(request, null, null, true);
-            return EndCreateSAMLProvider(asyncResult);
+            var marshaller = new CreateSAMLProviderRequestMarshaller();
+            var unmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSAMLProviderRequest,CreateSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1032,10 +1003,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateSAMLProvider(CreateSAMLProviderRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateSAMLProvider(request, callback, state, false);
+            var marshaller = new CreateSAMLProviderRequestMarshaller();
+            var unmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateSAMLProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateSAMLProvider operation.
@@ -1047,21 +1020,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateSAMLProviderResult from IdentityManagementService.</returns>
         public  CreateSAMLProviderResponse EndCreateSAMLProvider(IAsyncResult asyncResult)
         {
-            return endOperation< CreateSAMLProviderResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateSAMLProvider(CreateSAMLProviderRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateSAMLProviderRequestMarshaller();
-            var unmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateSAMLProviderResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateUser
-
 
         /// <summary>
         /// Creates a new user for your AWS account.
@@ -1088,8 +1052,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateUser(request, null, null, true);
-            return EndCreateUser(asyncResult);
+            var marshaller = new CreateUserRequestMarshaller();
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1106,10 +1072,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateUser(request, callback, state, false);
+            var marshaller = new CreateUserRequestMarshaller();
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateUser operation.
@@ -1121,21 +1089,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateUserResult from IdentityManagementService.</returns>
         public  CreateUserResponse EndCreateUser(IAsyncResult asyncResult)
         {
-            return endOperation< CreateUserResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateUser(CreateUserRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateUserRequestMarshaller();
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateUserResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateVirtualMFADevice
-
 
         /// <summary>
         /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
@@ -1166,8 +1125,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateVirtualMFADevice(request, null, null, true);
-            return EndCreateVirtualMFADevice(asyncResult);
+            var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
+            var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVirtualMFADeviceRequest,CreateVirtualMFADeviceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1184,10 +1145,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginCreateVirtualMFADevice(CreateVirtualMFADeviceRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateVirtualMFADevice(request, callback, state, false);
+            var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
+            var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateVirtualMFADeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateVirtualMFADevice operation.
@@ -1199,21 +1162,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  CreateVirtualMFADeviceResult from IdentityManagementService.</returns>
         public  CreateVirtualMFADeviceResponse EndCreateVirtualMFADevice(IAsyncResult asyncResult)
         {
-            return endOperation< CreateVirtualMFADeviceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateVirtualMFADevice(CreateVirtualMFADeviceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
-            var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateVirtualMFADeviceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeactivateMFADevice
-
 
         /// <summary>
         /// Deactivates the specified MFA device and removes it from association with the user
@@ -1238,8 +1192,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request)
         {
-            IAsyncResult asyncResult = invokeDeactivateMFADevice(request, null, null, true);
-            return EndDeactivateMFADevice(asyncResult);
+            var marshaller = new DeactivateMFADeviceRequestMarshaller();
+            var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivateMFADeviceRequest,DeactivateMFADeviceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1256,10 +1212,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeactivateMFADevice(DeactivateMFADeviceRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeactivateMFADevice(request, callback, state, false);
+            var marshaller = new DeactivateMFADeviceRequestMarshaller();
+            var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeactivateMFADeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeactivateMFADevice operation.
@@ -1271,21 +1229,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeactivateMFADeviceResult from IdentityManagementService.</returns>
         public  DeactivateMFADeviceResponse EndDeactivateMFADevice(IAsyncResult asyncResult)
         {
-            return endOperation< DeactivateMFADeviceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeactivateMFADevice(DeactivateMFADeviceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeactivateMFADeviceRequestMarshaller();
-            var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeactivateMFADeviceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteAccessKey
-
 
         /// <summary>
         /// Deletes the access key associated with the specified user.
@@ -1311,8 +1260,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteAccessKey(request, null, null, true);
-            return EndDeleteAccessKey(asyncResult);
+            var marshaller = new DeleteAccessKeyRequestMarshaller();
+            var unmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessKeyRequest,DeleteAccessKeyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1329,10 +1280,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteAccessKey(DeleteAccessKeyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteAccessKey(request, callback, state, false);
+            var marshaller = new DeleteAccessKeyRequestMarshaller();
+            var unmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAccessKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAccessKey operation.
@@ -1344,21 +1297,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteAccessKeyResult from IdentityManagementService.</returns>
         public  DeleteAccessKeyResponse EndDeleteAccessKey(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteAccessKeyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteAccessKey(DeleteAccessKeyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteAccessKeyRequestMarshaller();
-            var unmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteAccessKeyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteAccountAlias
-
 
         /// <summary>
         /// Deletes the specified AWS account alias. For information about using an AWS account
@@ -1378,8 +1322,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteAccountAlias(request, null, null, true);
-            return EndDeleteAccountAlias(asyncResult);
+            var marshaller = new DeleteAccountAliasRequestMarshaller();
+            var unmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountAliasRequest,DeleteAccountAliasResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1396,10 +1342,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteAccountAlias(DeleteAccountAliasRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteAccountAlias(request, callback, state, false);
+            var marshaller = new DeleteAccountAliasRequestMarshaller();
+            var unmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAccountAliasRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAccountAlias operation.
@@ -1411,15 +1359,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteAccountAliasResult from IdentityManagementService.</returns>
         public  DeleteAccountAliasResponse EndDeleteAccountAlias(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteAccountAliasResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteAccountAlias(DeleteAccountAliasRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteAccountAliasRequestMarshaller();
-            var unmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteAccountAliasResponse>(asyncResult);
         }
 
         #endregion
@@ -1460,8 +1400,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteAccountPasswordPolicy(request, null, null, true);
-            return EndDeleteAccountPasswordPolicy(asyncResult);
+            var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountPasswordPolicyRequest,DeleteAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1478,10 +1420,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteAccountPasswordPolicy(request, callback, state, false);
+            var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAccountPasswordPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAccountPasswordPolicy operation.
@@ -1493,21 +1437,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteAccountPasswordPolicyResult from IdentityManagementService.</returns>
         public  DeleteAccountPasswordPolicyResponse EndDeleteAccountPasswordPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteAccountPasswordPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
-            var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteAccountPasswordPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteGroup
-
 
         /// <summary>
         /// Deletes the specified group. The group must not contain any users or have any attached
@@ -1530,8 +1465,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteGroup(request, null, null, true);
-            return EndDeleteGroup(asyncResult);
+            var marshaller = new DeleteGroupRequestMarshaller();
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1548,10 +1485,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteGroup(request, callback, state, false);
+            var marshaller = new DeleteGroupRequestMarshaller();
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteGroup operation.
@@ -1563,21 +1502,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteGroupResult from IdentityManagementService.</returns>
         public  DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteGroupRequestMarshaller();
-            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteGroupPolicy
-
 
         /// <summary>
         /// Deletes the specified policy that is associated with the specified group.
@@ -1595,8 +1525,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteGroupPolicy(request, null, null, true);
-            return EndDeleteGroupPolicy(asyncResult);
+            var marshaller = new DeleteGroupPolicyRequestMarshaller();
+            var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupPolicyRequest,DeleteGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1613,10 +1545,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteGroupPolicy(DeleteGroupPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteGroupPolicy(request, callback, state, false);
+            var marshaller = new DeleteGroupPolicyRequestMarshaller();
+            var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteGroupPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteGroupPolicy operation.
@@ -1628,21 +1562,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteGroupPolicyResult from IdentityManagementService.</returns>
         public  DeleteGroupPolicyResponse EndDeleteGroupPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteGroupPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteGroupPolicy(DeleteGroupPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteGroupPolicyRequestMarshaller();
-            var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteGroupPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteInstanceProfile
-
 
         /// <summary>
         /// Deletes the specified instance profile. The instance profile must not have an associated
@@ -1674,8 +1599,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteInstanceProfile(request, null, null, true);
-            return EndDeleteInstanceProfile(asyncResult);
+            var marshaller = new DeleteInstanceProfileRequestMarshaller();
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1692,10 +1619,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteInstanceProfile(DeleteInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteInstanceProfile(request, callback, state, false);
+            var marshaller = new DeleteInstanceProfileRequestMarshaller();
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteInstanceProfile operation.
@@ -1707,21 +1636,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteInstanceProfileResult from IdentityManagementService.</returns>
         public  DeleteInstanceProfileResponse EndDeleteInstanceProfile(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteInstanceProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteInstanceProfile(DeleteInstanceProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteInstanceProfileRequestMarshaller();
-            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLoginProfile
-
 
         /// <summary>
         /// Deletes the password for the specified user, which terminates the user's ability to
@@ -1752,8 +1672,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLoginProfile(request, null, null, true);
-            return EndDeleteLoginProfile(asyncResult);
+            var marshaller = new DeleteLoginProfileRequestMarshaller();
+            var unmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoginProfileRequest,DeleteLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1770,10 +1692,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLoginProfile(DeleteLoginProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLoginProfile(request, callback, state, false);
+            var marshaller = new DeleteLoginProfileRequestMarshaller();
+            var unmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLoginProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoginProfile operation.
@@ -1785,21 +1709,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteLoginProfileResult from IdentityManagementService.</returns>
         public  DeleteLoginProfileResponse EndDeleteLoginProfile(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLoginProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLoginProfile(DeleteLoginProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLoginProfileRequestMarshaller();
-            var unmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLoginProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteRole
-
 
         /// <summary>
         /// Deletes the specified role. The role must not have any policies attached. For more
@@ -1827,8 +1742,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteRole(request, null, null, true);
-            return EndDeleteRole(asyncResult);
+            var marshaller = new DeleteRoleRequestMarshaller();
+            var unmarshaller = DeleteRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoleRequest,DeleteRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1845,10 +1762,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteRole(DeleteRoleRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteRole(request, callback, state, false);
+            var marshaller = new DeleteRoleRequestMarshaller();
+            var unmarshaller = DeleteRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteRole operation.
@@ -1860,21 +1779,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteRoleResult from IdentityManagementService.</returns>
         public  DeleteRoleResponse EndDeleteRole(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteRoleResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteRole(DeleteRoleRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteRoleRequestMarshaller();
-            var unmarshaller = DeleteRoleResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteRoleResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteRolePolicy
-
 
         /// <summary>
         /// Deletes the specified policy associated with the specified role.
@@ -1892,8 +1802,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteRolePolicy(request, null, null, true);
-            return EndDeleteRolePolicy(asyncResult);
+            var marshaller = new DeleteRolePolicyRequestMarshaller();
+            var unmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRolePolicyRequest,DeleteRolePolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1910,10 +1822,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteRolePolicy(DeleteRolePolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteRolePolicy(request, callback, state, false);
+            var marshaller = new DeleteRolePolicyRequestMarshaller();
+            var unmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteRolePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteRolePolicy operation.
@@ -1925,21 +1839,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteRolePolicyResult from IdentityManagementService.</returns>
         public  DeleteRolePolicyResponse EndDeleteRolePolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteRolePolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteRolePolicy(DeleteRolePolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteRolePolicyRequestMarshaller();
-            var unmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteRolePolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteSAMLProvider
-
 
         /// <summary>
         /// Deletes a SAML provider.
@@ -1967,8 +1872,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteSAMLProviderResponse DeleteSAMLProvider(DeleteSAMLProviderRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteSAMLProvider(request, null, null, true);
-            return EndDeleteSAMLProvider(asyncResult);
+            var marshaller = new DeleteSAMLProviderRequestMarshaller();
+            var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSAMLProviderRequest,DeleteSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1985,10 +1892,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteSAMLProvider(DeleteSAMLProviderRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteSAMLProvider(request, callback, state, false);
+            var marshaller = new DeleteSAMLProviderRequestMarshaller();
+            var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSAMLProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteSAMLProvider operation.
@@ -2000,21 +1909,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteSAMLProviderResult from IdentityManagementService.</returns>
         public  DeleteSAMLProviderResponse EndDeleteSAMLProvider(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteSAMLProviderResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteSAMLProvider(DeleteSAMLProviderRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteSAMLProviderRequestMarshaller();
-            var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteSAMLProviderResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteServerCertificate
-
 
         /// <summary>
         /// Deletes the specified server certificate.
@@ -2045,8 +1945,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteServerCertificate(request, null, null, true);
-            return EndDeleteServerCertificate(asyncResult);
+            var marshaller = new DeleteServerCertificateRequestMarshaller();
+            var unmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServerCertificateRequest,DeleteServerCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2063,10 +1965,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteServerCertificate(DeleteServerCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteServerCertificate(request, callback, state, false);
+            var marshaller = new DeleteServerCertificateRequestMarshaller();
+            var unmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteServerCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteServerCertificate operation.
@@ -2078,21 +1982,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteServerCertificateResult from IdentityManagementService.</returns>
         public  DeleteServerCertificateResponse EndDeleteServerCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteServerCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteServerCertificate(DeleteServerCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteServerCertificateRequestMarshaller();
-            var unmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteServerCertificateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteSigningCertificate
-
 
         /// <summary>
         /// Deletes the specified signing certificate associated with the specified user.
@@ -2118,8 +2013,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteSigningCertificate(request, null, null, true);
-            return EndDeleteSigningCertificate(asyncResult);
+            var marshaller = new DeleteSigningCertificateRequestMarshaller();
+            var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSigningCertificateRequest,DeleteSigningCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2136,10 +2033,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteSigningCertificate(DeleteSigningCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteSigningCertificate(request, callback, state, false);
+            var marshaller = new DeleteSigningCertificateRequestMarshaller();
+            var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSigningCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteSigningCertificate operation.
@@ -2151,21 +2050,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteSigningCertificateResult from IdentityManagementService.</returns>
         public  DeleteSigningCertificateResponse EndDeleteSigningCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteSigningCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteSigningCertificate(DeleteSigningCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteSigningCertificateRequestMarshaller();
-            var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteSigningCertificateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteUser
-
 
         /// <summary>
         /// Deletes the specified user. The user must not belong to any groups, have any keys
@@ -2188,8 +2078,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteUser(request, null, null, true);
-            return EndDeleteUser(asyncResult);
+            var marshaller = new DeleteUserRequestMarshaller();
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2206,10 +2098,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteUser(request, callback, state, false);
+            var marshaller = new DeleteUserRequestMarshaller();
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteUser operation.
@@ -2221,21 +2115,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteUserResult from IdentityManagementService.</returns>
         public  DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteUserResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteUserRequestMarshaller();
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteUserResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteUserPolicy
-
 
         /// <summary>
         /// Deletes the specified policy associated with the specified user.
@@ -2253,8 +2138,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteUserPolicy(request, null, null, true);
-            return EndDeleteUserPolicy(asyncResult);
+            var marshaller = new DeleteUserPolicyRequestMarshaller();
+            var unmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserPolicyRequest,DeleteUserPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2271,10 +2158,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteUserPolicy(DeleteUserPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteUserPolicy(request, callback, state, false);
+            var marshaller = new DeleteUserPolicyRequestMarshaller();
+            var unmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUserPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteUserPolicy operation.
@@ -2286,21 +2175,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteUserPolicyResult from IdentityManagementService.</returns>
         public  DeleteUserPolicyResponse EndDeleteUserPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteUserPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteUserPolicy(DeleteUserPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteUserPolicyRequestMarshaller();
-            var unmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteUserPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteVirtualMFADevice
-
 
         /// <summary>
         /// Deletes a virtual MFA device.
@@ -2322,8 +2202,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteVirtualMFADevice(request, null, null, true);
-            return EndDeleteVirtualMFADevice(asyncResult);
+            var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
+            var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVirtualMFADeviceRequest,DeleteVirtualMFADeviceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2340,10 +2222,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginDeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteVirtualMFADevice(request, callback, state, false);
+            var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
+            var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteVirtualMFADeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteVirtualMFADevice operation.
@@ -2355,21 +2239,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteVirtualMFADeviceResult from IdentityManagementService.</returns>
         public  DeleteVirtualMFADeviceResponse EndDeleteVirtualMFADevice(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteVirtualMFADeviceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
-            var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteVirtualMFADeviceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  EnableMFADevice
-
 
         /// <summary>
         /// Enables the specified MFA device and associates it with the specified user name. When
@@ -2402,8 +2277,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
         {
-            IAsyncResult asyncResult = invokeEnableMFADevice(request, null, null, true);
-            return EndEnableMFADevice(asyncResult);
+            var marshaller = new EnableMFADeviceRequestMarshaller();
+            var unmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
+
+            return Invoke<EnableMFADeviceRequest,EnableMFADeviceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2420,10 +2297,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginEnableMFADevice(EnableMFADeviceRequest request, AsyncCallback callback, object state)
         {
-            return invokeEnableMFADevice(request, callback, state, false);
+            var marshaller = new EnableMFADeviceRequestMarshaller();
+            var unmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableMFADeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableMFADevice operation.
@@ -2435,15 +2314,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  EnableMFADeviceResult from IdentityManagementService.</returns>
         public  EnableMFADeviceResponse EndEnableMFADevice(IAsyncResult asyncResult)
         {
-            return endOperation< EnableMFADeviceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeEnableMFADevice(EnableMFADeviceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new EnableMFADeviceRequestMarshaller();
-            var unmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<EnableMFADeviceResponse>(asyncResult);
         }
 
         #endregion
@@ -2480,8 +2351,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GenerateCredentialReportResponse GenerateCredentialReport(GenerateCredentialReportRequest request)
         {
-            IAsyncResult asyncResult = invokeGenerateCredentialReport(request, null, null, true);
-            return EndGenerateCredentialReport(asyncResult);
+            var marshaller = new GenerateCredentialReportRequestMarshaller();
+            var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateCredentialReportRequest,GenerateCredentialReportResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2498,10 +2371,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGenerateCredentialReport(GenerateCredentialReportRequest request, AsyncCallback callback, object state)
         {
-            return invokeGenerateCredentialReport(request, callback, state, false);
+            var marshaller = new GenerateCredentialReportRequestMarshaller();
+            var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GenerateCredentialReportRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GenerateCredentialReport operation.
@@ -2513,15 +2388,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GenerateCredentialReportResult from IdentityManagementService.</returns>
         public  GenerateCredentialReportResponse EndGenerateCredentialReport(IAsyncResult asyncResult)
         {
-            return endOperation< GenerateCredentialReportResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGenerateCredentialReport(GenerateCredentialReportRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GenerateCredentialReportRequestMarshaller();
-            var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GenerateCredentialReportResponse>(asyncResult);
         }
 
         #endregion
@@ -2558,8 +2425,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeGetAccountPasswordPolicy(request, null, null, true);
-            return EndGetAccountPasswordPolicy(asyncResult);
+            var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountPasswordPolicyRequest,GetAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2576,10 +2445,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetAccountPasswordPolicy(request, callback, state, false);
+            var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountPasswordPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetAccountPasswordPolicy operation.
@@ -2591,15 +2462,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetAccountPasswordPolicyResult from IdentityManagementService.</returns>
         public  GetAccountPasswordPolicyResponse EndGetAccountPasswordPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< GetAccountPasswordPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
-            var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetAccountPasswordPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -2636,8 +2499,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GetAccountSummary service method, as returned by IdentityManagementService.</returns>
         public GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
         {
-            IAsyncResult asyncResult = invokeGetAccountSummary(request, null, null, true);
-            return EndGetAccountSummary(asyncResult);
+            var marshaller = new GetAccountSummaryRequestMarshaller();
+            var unmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSummaryRequest,GetAccountSummaryResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2654,10 +2519,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetAccountSummary(GetAccountSummaryRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetAccountSummary(request, callback, state, false);
+            var marshaller = new GetAccountSummaryRequestMarshaller();
+            var unmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountSummaryRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetAccountSummary operation.
@@ -2669,15 +2536,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetAccountSummaryResult from IdentityManagementService.</returns>
         public  GetAccountSummaryResponse EndGetAccountSummary(IAsyncResult asyncResult)
         {
-            return endOperation< GetAccountSummaryResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetAccountSummary(GetAccountSummaryRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetAccountSummaryRequestMarshaller();
-            var unmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetAccountSummaryResponse>(asyncResult);
         }
 
         #endregion
@@ -2732,8 +2591,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request)
         {
-            IAsyncResult asyncResult = invokeGetCredentialReport(request, null, null, true);
-            return EndGetCredentialReport(asyncResult);
+            var marshaller = new GetCredentialReportRequestMarshaller();
+            var unmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetCredentialReportRequest,GetCredentialReportResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2750,10 +2611,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetCredentialReport(GetCredentialReportRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetCredentialReport(request, callback, state, false);
+            var marshaller = new GetCredentialReportRequestMarshaller();
+            var unmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetCredentialReportRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetCredentialReport operation.
@@ -2765,21 +2628,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetCredentialReportResult from IdentityManagementService.</returns>
         public  GetCredentialReportResponse EndGetCredentialReport(IAsyncResult asyncResult)
         {
-            return endOperation< GetCredentialReportResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetCredentialReport(GetCredentialReportRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetCredentialReportRequestMarshaller();
-            var unmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetCredentialReportResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetGroup
-
 
         /// <summary>
         /// Returns a list of users that are in the specified group. You can paginate the results
@@ -2794,8 +2648,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeGetGroup(request, null, null, true);
-            return EndGetGroup(asyncResult);
+            var marshaller = new GetGroupRequestMarshaller();
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2812,10 +2668,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetGroup(request, callback, state, false);
+            var marshaller = new GetGroupRequestMarshaller();
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetGroup operation.
@@ -2827,21 +2685,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetGroupResult from IdentityManagementService.</returns>
         public  GetGroupResponse EndGetGroup(IAsyncResult asyncResult)
         {
-            return endOperation< GetGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetGroup(GetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetGroupRequestMarshaller();
-            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetGroupPolicy
-
 
         /// <summary>
         /// Retrieves the specified policy document for the specified group. The returned policy
@@ -2857,8 +2706,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeGetGroupPolicy(request, null, null, true);
-            return EndGetGroupPolicy(asyncResult);
+            var marshaller = new GetGroupPolicyRequestMarshaller();
+            var unmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupPolicyRequest,GetGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2875,10 +2726,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetGroupPolicy(GetGroupPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetGroupPolicy(request, callback, state, false);
+            var marshaller = new GetGroupPolicyRequestMarshaller();
+            var unmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetGroupPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetGroupPolicy operation.
@@ -2890,21 +2743,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetGroupPolicyResult from IdentityManagementService.</returns>
         public  GetGroupPolicyResponse EndGetGroupPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< GetGroupPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetGroupPolicy(GetGroupPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetGroupPolicyRequestMarshaller();
-            var unmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetGroupPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetInstanceProfile
-
 
         /// <summary>
         /// Retrieves information about the specified instance profile, including the instance
@@ -2921,8 +2765,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeGetInstanceProfile(request, null, null, true);
-            return EndGetInstanceProfile(asyncResult);
+            var marshaller = new GetInstanceProfileRequestMarshaller();
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2939,10 +2785,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetInstanceProfile(GetInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetInstanceProfile(request, callback, state, false);
+            var marshaller = new GetInstanceProfileRequestMarshaller();
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetInstanceProfile operation.
@@ -2954,21 +2802,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetInstanceProfileResult from IdentityManagementService.</returns>
         public  GetInstanceProfileResponse EndGetInstanceProfile(IAsyncResult asyncResult)
         {
-            return endOperation< GetInstanceProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetInstanceProfile(GetInstanceProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetInstanceProfileRequestMarshaller();
-            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetLoginProfile
-
 
         /// <summary>
         /// Retrieves the user name and password-creation date for the specified user. If the
@@ -2984,8 +2823,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeGetLoginProfile(request, null, null, true);
-            return EndGetLoginProfile(asyncResult);
+            var marshaller = new GetLoginProfileRequestMarshaller();
+            var unmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetLoginProfileRequest,GetLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3002,10 +2843,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetLoginProfile(GetLoginProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetLoginProfile(request, callback, state, false);
+            var marshaller = new GetLoginProfileRequestMarshaller();
+            var unmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetLoginProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetLoginProfile operation.
@@ -3017,21 +2860,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetLoginProfileResult from IdentityManagementService.</returns>
         public  GetLoginProfileResponse EndGetLoginProfile(IAsyncResult asyncResult)
         {
-            return endOperation< GetLoginProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetLoginProfile(GetLoginProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetLoginProfileRequestMarshaller();
-            var unmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetLoginProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetRole
-
 
         /// <summary>
         /// Retrieves information about the specified role, including the role's path, GUID, ARN,
@@ -3055,8 +2889,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetRoleResponse GetRole(GetRoleRequest request)
         {
-            IAsyncResult asyncResult = invokeGetRole(request, null, null, true);
-            return EndGetRole(asyncResult);
+            var marshaller = new GetRoleRequestMarshaller();
+            var unmarshaller = GetRoleResponseUnmarshaller.Instance;
+
+            return Invoke<GetRoleRequest,GetRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3073,10 +2909,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetRole(GetRoleRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetRole(request, callback, state, false);
+            var marshaller = new GetRoleRequestMarshaller();
+            var unmarshaller = GetRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetRole operation.
@@ -3088,21 +2926,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetRoleResult from IdentityManagementService.</returns>
         public  GetRoleResponse EndGetRole(IAsyncResult asyncResult)
         {
-            return endOperation< GetRoleResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetRole(GetRoleRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetRoleRequestMarshaller();
-            var unmarshaller = GetRoleResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetRoleResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetRolePolicy
-
 
         /// <summary>
         /// Retrieves the specified policy document for the specified role. For more information
@@ -3124,8 +2953,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeGetRolePolicy(request, null, null, true);
-            return EndGetRolePolicy(asyncResult);
+            var marshaller = new GetRolePolicyRequestMarshaller();
+            var unmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetRolePolicyRequest,GetRolePolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3142,10 +2973,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetRolePolicy(GetRolePolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetRolePolicy(request, callback, state, false);
+            var marshaller = new GetRolePolicyRequestMarshaller();
+            var unmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetRolePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetRolePolicy operation.
@@ -3157,21 +2990,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetRolePolicyResult from IdentityManagementService.</returns>
         public  GetRolePolicyResponse EndGetRolePolicy(IAsyncResult asyncResult)
         {
-            return endOperation< GetRolePolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetRolePolicy(GetRolePolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetRolePolicyRequestMarshaller();
-            var unmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetRolePolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetSAMLProvider
-
 
         /// <summary>
         /// Returns the SAML provider metadocument that was uploaded when the provider was created
@@ -3189,8 +3013,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetSAMLProviderResponse GetSAMLProvider(GetSAMLProviderRequest request)
         {
-            IAsyncResult asyncResult = invokeGetSAMLProvider(request, null, null, true);
-            return EndGetSAMLProvider(asyncResult);
+            var marshaller = new GetSAMLProviderRequestMarshaller();
+            var unmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetSAMLProviderRequest,GetSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3207,10 +3033,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetSAMLProvider(GetSAMLProviderRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetSAMLProvider(request, callback, state, false);
+            var marshaller = new GetSAMLProviderRequestMarshaller();
+            var unmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetSAMLProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSAMLProvider operation.
@@ -3222,21 +3050,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetSAMLProviderResult from IdentityManagementService.</returns>
         public  GetSAMLProviderResponse EndGetSAMLProvider(IAsyncResult asyncResult)
         {
-            return endOperation< GetSAMLProviderResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetSAMLProvider(GetSAMLProviderRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetSAMLProviderRequestMarshaller();
-            var unmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetSAMLProviderResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetServerCertificate
-
 
         /// <summary>
         /// Retrieves information about the specified server certificate.
@@ -3250,8 +3069,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeGetServerCertificate(request, null, null, true);
-            return EndGetServerCertificate(asyncResult);
+            var marshaller = new GetServerCertificateRequestMarshaller();
+            var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3268,10 +3089,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetServerCertificate(GetServerCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetServerCertificate(request, callback, state, false);
+            var marshaller = new GetServerCertificateRequestMarshaller();
+            var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetServerCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetServerCertificate operation.
@@ -3283,15 +3106,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetServerCertificateResult from IdentityManagementService.</returns>
         public  GetServerCertificateResponse EndGetServerCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< GetServerCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetServerCertificate(GetServerCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetServerCertificateRequestMarshaller();
-            var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetServerCertificateResponse>(asyncResult);
         }
 
         #endregion
@@ -3338,8 +3153,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetUserResponse GetUser(GetUserRequest request)
         {
-            IAsyncResult asyncResult = invokeGetUser(request, null, null, true);
-            return EndGetUser(asyncResult);
+            var marshaller = new GetUserRequestMarshaller();
+            var unmarshaller = GetUserResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserRequest,GetUserResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3356,10 +3173,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetUser(GetUserRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetUser(request, callback, state, false);
+            var marshaller = new GetUserRequestMarshaller();
+            var unmarshaller = GetUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetUser operation.
@@ -3371,21 +3190,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetUserResult from IdentityManagementService.</returns>
         public  GetUserResponse EndGetUser(IAsyncResult asyncResult)
         {
-            return endOperation< GetUserResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetUser(GetUserRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetUserRequestMarshaller();
-            var unmarshaller = GetUserResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetUserResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetUserPolicy
-
 
         /// <summary>
         /// Retrieves the specified policy document for the specified user. The returned policy
@@ -3401,8 +3211,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeGetUserPolicy(request, null, null, true);
-            return EndGetUserPolicy(asyncResult);
+            var marshaller = new GetUserPolicyRequestMarshaller();
+            var unmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPolicyRequest,GetUserPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3419,10 +3231,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginGetUserPolicy(GetUserPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetUserPolicy(request, callback, state, false);
+            var marshaller = new GetUserPolicyRequestMarshaller();
+            var unmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUserPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetUserPolicy operation.
@@ -3434,15 +3248,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetUserPolicyResult from IdentityManagementService.</returns>
         public  GetUserPolicyResponse EndGetUserPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< GetUserPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetUserPolicy(GetUserPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetUserPolicyRequestMarshaller();
-            var unmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetUserPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -3503,8 +3309,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
         {
-            IAsyncResult asyncResult = invokeListAccessKeys(request, null, null, true);
-            return EndListAccessKeys(asyncResult);
+            var marshaller = new ListAccessKeysRequestMarshaller();
+            var unmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessKeysRequest,ListAccessKeysResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3521,10 +3329,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListAccessKeys(ListAccessKeysRequest request, AsyncCallback callback, object state)
         {
-            return invokeListAccessKeys(request, callback, state, false);
+            var marshaller = new ListAccessKeysRequestMarshaller();
+            var unmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAccessKeysRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAccessKeys operation.
@@ -3536,15 +3346,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListAccessKeysResult from IdentityManagementService.</returns>
         public  ListAccessKeysResponse EndListAccessKeys(IAsyncResult asyncResult)
         {
-            return endOperation< ListAccessKeysResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListAccessKeys(ListAccessKeysRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListAccessKeysRequestMarshaller();
-            var unmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListAccessKeysResponse>(asyncResult);
         }
 
         #endregion
@@ -3585,8 +3387,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
         public ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
         {
-            IAsyncResult asyncResult = invokeListAccountAliases(request, null, null, true);
-            return EndListAccountAliases(asyncResult);
+            var marshaller = new ListAccountAliasesRequestMarshaller();
+            var unmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountAliasesRequest,ListAccountAliasesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3603,10 +3407,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListAccountAliases(ListAccountAliasesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListAccountAliases(request, callback, state, false);
+            var marshaller = new ListAccountAliasesRequestMarshaller();
+            var unmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAccountAliasesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAccountAliases operation.
@@ -3618,21 +3424,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListAccountAliasesResult from IdentityManagementService.</returns>
         public  ListAccountAliasesResponse EndListAccountAliases(IAsyncResult asyncResult)
         {
-            return endOperation< ListAccountAliasesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListAccountAliases(ListAccountAliasesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListAccountAliasesRequestMarshaller();
-            var unmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListAccountAliasesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListGroupPolicies
-
 
         /// <summary>
         /// Lists the names of the policies associated with the specified group. If there are
@@ -3653,8 +3450,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeListGroupPolicies(request, null, null, true);
-            return EndListGroupPolicies(asyncResult);
+            var marshaller = new ListGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupPoliciesRequest,ListGroupPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3671,10 +3470,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListGroupPolicies(ListGroupPoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListGroupPolicies(request, callback, state, false);
+            var marshaller = new ListGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListGroupPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGroupPolicies operation.
@@ -3686,15 +3487,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListGroupPoliciesResult from IdentityManagementService.</returns>
         public  ListGroupPoliciesResponse EndListGroupPolicies(IAsyncResult asyncResult)
         {
-            return endOperation< ListGroupPoliciesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListGroupPolicies(ListGroupPoliciesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListGroupPoliciesRequestMarshaller();
-            var unmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListGroupPoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -3731,8 +3524,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListGroups service method, as returned by IdentityManagementService.</returns>
         public ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeListGroups(request, null, null, true);
-            return EndListGroups(asyncResult);
+            var marshaller = new ListGroupsRequestMarshaller();
+            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3749,10 +3544,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListGroups(request, callback, state, false);
+            var marshaller = new ListGroupsRequestMarshaller();
+            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGroups operation.
@@ -3764,21 +3561,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListGroupsResult from IdentityManagementService.</returns>
         public  ListGroupsResponse EndListGroups(IAsyncResult asyncResult)
         {
-            return endOperation< ListGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListGroups(ListGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListGroupsRequestMarshaller();
-            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListGroupsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListGroupsForUser
-
 
         /// <summary>
         /// Lists the groups the specified user belongs to.
@@ -3798,8 +3586,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request)
         {
-            IAsyncResult asyncResult = invokeListGroupsForUser(request, null, null, true);
-            return EndListGroupsForUser(asyncResult);
+            var marshaller = new ListGroupsForUserRequestMarshaller();
+            var unmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupsForUserRequest,ListGroupsForUserResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3816,10 +3606,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListGroupsForUser(ListGroupsForUserRequest request, AsyncCallback callback, object state)
         {
-            return invokeListGroupsForUser(request, callback, state, false);
+            var marshaller = new ListGroupsForUserRequestMarshaller();
+            var unmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListGroupsForUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGroupsForUser operation.
@@ -3831,15 +3623,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListGroupsForUserResult from IdentityManagementService.</returns>
         public  ListGroupsForUserResponse EndListGroupsForUser(IAsyncResult asyncResult)
         {
-            return endOperation< ListGroupsForUserResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListGroupsForUser(ListGroupsForUserRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListGroupsForUserRequestMarshaller();
-            var unmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListGroupsForUserResponse>(asyncResult);
         }
 
         #endregion
@@ -3882,8 +3666,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListInstanceProfiles service method, as returned by IdentityManagementService.</returns>
         public ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
         {
-            IAsyncResult asyncResult = invokeListInstanceProfiles(request, null, null, true);
-            return EndListInstanceProfiles(asyncResult);
+            var marshaller = new ListInstanceProfilesRequestMarshaller();
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3900,10 +3686,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListInstanceProfiles(ListInstanceProfilesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListInstanceProfiles(request, callback, state, false);
+            var marshaller = new ListInstanceProfilesRequestMarshaller();
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInstanceProfilesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstanceProfiles operation.
@@ -3915,21 +3703,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListInstanceProfilesResult from IdentityManagementService.</returns>
         public  ListInstanceProfilesResponse EndListInstanceProfiles(IAsyncResult asyncResult)
         {
-            return endOperation< ListInstanceProfilesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListInstanceProfiles(ListInstanceProfilesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListInstanceProfilesRequestMarshaller();
-            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListInstanceProfilesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListInstanceProfilesForRole
-
 
         /// <summary>
         /// Lists the instance profiles that have the specified associated role. If there are
@@ -3952,8 +3731,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request)
         {
-            IAsyncResult asyncResult = invokeListInstanceProfilesForRole(request, null, null, true);
-            return EndListInstanceProfilesForRole(asyncResult);
+            var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
+            var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceProfilesForRoleRequest,ListInstanceProfilesForRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3970,10 +3751,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request, AsyncCallback callback, object state)
         {
-            return invokeListInstanceProfilesForRole(request, callback, state, false);
+            var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
+            var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInstanceProfilesForRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstanceProfilesForRole operation.
@@ -3985,15 +3768,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListInstanceProfilesForRoleResult from IdentityManagementService.</returns>
         public  ListInstanceProfilesForRoleResponse EndListInstanceProfilesForRole(IAsyncResult asyncResult)
         {
-            return endOperation< ListInstanceProfilesForRoleResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
-            var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListInstanceProfilesForRoleResponse>(asyncResult);
         }
 
         #endregion
@@ -4044,8 +3819,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
         {
-            IAsyncResult asyncResult = invokeListMFADevices(request, null, null, true);
-            return EndListMFADevices(asyncResult);
+            var marshaller = new ListMFADevicesRequestMarshaller();
+            var unmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMFADevicesRequest,ListMFADevicesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4062,10 +3839,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListMFADevices(ListMFADevicesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListMFADevices(request, callback, state, false);
+            var marshaller = new ListMFADevicesRequestMarshaller();
+            var unmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListMFADevicesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListMFADevices operation.
@@ -4077,21 +3856,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListMFADevicesResult from IdentityManagementService.</returns>
         public  ListMFADevicesResponse EndListMFADevices(IAsyncResult asyncResult)
         {
-            return endOperation< ListMFADevicesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListMFADevices(ListMFADevicesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListMFADevicesRequestMarshaller();
-            var unmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListMFADevicesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListRolePolicies
-
 
         /// <summary>
         /// Lists the names of the policies associated with the specified role. If there are none,
@@ -4112,8 +3882,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeListRolePolicies(request, null, null, true);
-            return EndListRolePolicies(asyncResult);
+            var marshaller = new ListRolePoliciesRequestMarshaller();
+            var unmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRolePoliciesRequest,ListRolePoliciesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4130,10 +3902,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListRolePolicies(ListRolePoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListRolePolicies(request, callback, state, false);
+            var marshaller = new ListRolePoliciesRequestMarshaller();
+            var unmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListRolePoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListRolePolicies operation.
@@ -4145,15 +3919,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListRolePoliciesResult from IdentityManagementService.</returns>
         public  ListRolePoliciesResponse EndListRolePolicies(IAsyncResult asyncResult)
         {
-            return endOperation< ListRolePoliciesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListRolePolicies(ListRolePoliciesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListRolePoliciesRequestMarshaller();
-            var unmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListRolePoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -4204,8 +3970,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
         public ListRolesResponse ListRoles(ListRolesRequest request)
         {
-            IAsyncResult asyncResult = invokeListRoles(request, null, null, true);
-            return EndListRoles(asyncResult);
+            var marshaller = new ListRolesRequestMarshaller();
+            var unmarshaller = ListRolesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRolesRequest,ListRolesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4222,10 +3990,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListRoles(ListRolesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListRoles(request, callback, state, false);
+            var marshaller = new ListRolesRequestMarshaller();
+            var unmarshaller = ListRolesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListRolesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListRoles operation.
@@ -4237,15 +4007,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListRolesResult from IdentityManagementService.</returns>
         public  ListRolesResponse EndListRoles(IAsyncResult asyncResult)
         {
-            return endOperation< ListRolesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListRoles(ListRolesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListRolesRequestMarshaller();
-            var unmarshaller = ListRolesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListRolesResponse>(asyncResult);
         }
 
         #endregion
@@ -4270,8 +4032,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
         public ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request)
         {
-            IAsyncResult asyncResult = invokeListSAMLProviders(request, null, null, true);
-            return EndListSAMLProviders(asyncResult);
+            var marshaller = new ListSAMLProvidersRequestMarshaller();
+            var unmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListSAMLProvidersRequest,ListSAMLProvidersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4288,10 +4052,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListSAMLProviders(ListSAMLProvidersRequest request, AsyncCallback callback, object state)
         {
-            return invokeListSAMLProviders(request, callback, state, false);
+            var marshaller = new ListSAMLProvidersRequestMarshaller();
+            var unmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSAMLProvidersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSAMLProviders operation.
@@ -4303,15 +4069,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListSAMLProvidersResult from IdentityManagementService.</returns>
         public  ListSAMLProvidersResponse EndListSAMLProviders(IAsyncResult asyncResult)
         {
-            return endOperation< ListSAMLProvidersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListSAMLProviders(ListSAMLProvidersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListSAMLProvidersRequestMarshaller();
-            var unmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListSAMLProvidersResponse>(asyncResult);
         }
 
         #endregion
@@ -4350,8 +4108,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
         public ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
         {
-            IAsyncResult asyncResult = invokeListServerCertificates(request, null, null, true);
-            return EndListServerCertificates(asyncResult);
+            var marshaller = new ListServerCertificatesRequestMarshaller();
+            var unmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListServerCertificatesRequest,ListServerCertificatesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4368,10 +4128,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListServerCertificates(ListServerCertificatesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListServerCertificates(request, callback, state, false);
+            var marshaller = new ListServerCertificatesRequestMarshaller();
+            var unmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListServerCertificatesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListServerCertificates operation.
@@ -4383,15 +4145,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListServerCertificatesResult from IdentityManagementService.</returns>
         public  ListServerCertificatesResponse EndListServerCertificates(IAsyncResult asyncResult)
         {
-            return endOperation< ListServerCertificatesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListServerCertificates(ListServerCertificatesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListServerCertificatesRequestMarshaller();
-            var unmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListServerCertificatesResponse>(asyncResult);
         }
 
         #endregion
@@ -4452,8 +4206,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
         {
-            IAsyncResult asyncResult = invokeListSigningCertificates(request, null, null, true);
-            return EndListSigningCertificates(asyncResult);
+            var marshaller = new ListSigningCertificatesRequestMarshaller();
+            var unmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSigningCertificatesRequest,ListSigningCertificatesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4470,10 +4226,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListSigningCertificates(ListSigningCertificatesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListSigningCertificates(request, callback, state, false);
+            var marshaller = new ListSigningCertificatesRequestMarshaller();
+            var unmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSigningCertificatesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSigningCertificates operation.
@@ -4485,21 +4243,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListSigningCertificatesResult from IdentityManagementService.</returns>
         public  ListSigningCertificatesResponse EndListSigningCertificates(IAsyncResult asyncResult)
         {
-            return endOperation< ListSigningCertificatesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListSigningCertificates(ListSigningCertificatesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListSigningCertificatesRequestMarshaller();
-            var unmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListSigningCertificatesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ListUserPolicies
-
 
         /// <summary>
         /// Lists the names of the policies associated with the specified user. If there are none,
@@ -4520,8 +4269,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeListUserPolicies(request, null, null, true);
-            return EndListUserPolicies(asyncResult);
+            var marshaller = new ListUserPoliciesRequestMarshaller();
+            var unmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserPoliciesRequest,ListUserPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4538,10 +4289,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListUserPolicies(ListUserPoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListUserPolicies(request, callback, state, false);
+            var marshaller = new ListUserPoliciesRequestMarshaller();
+            var unmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListUserPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListUserPolicies operation.
@@ -4553,15 +4306,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListUserPoliciesResult from IdentityManagementService.</returns>
         public  ListUserPoliciesResponse EndListUserPolicies(IAsyncResult asyncResult)
         {
-            return endOperation< ListUserPoliciesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListUserPolicies(ListUserPoliciesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListUserPoliciesRequestMarshaller();
-            var unmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListUserPoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -4600,8 +4345,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListUsers service method, as returned by IdentityManagementService.</returns>
         public ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            IAsyncResult asyncResult = invokeListUsers(request, null, null, true);
-            return EndListUsers(asyncResult);
+            var marshaller = new ListUsersRequestMarshaller();
+            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4618,10 +4365,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            return invokeListUsers(request, callback, state, false);
+            var marshaller = new ListUsersRequestMarshaller();
+            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListUsersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListUsers operation.
@@ -4633,15 +4382,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListUsersResult from IdentityManagementService.</returns>
         public  ListUsersResponse EndListUsers(IAsyncResult asyncResult)
         {
-            return endOperation< ListUsersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListUsers(ListUsersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListUsersRequestMarshaller();
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListUsersResponse>(asyncResult);
         }
 
         #endregion
@@ -4684,8 +4425,10 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
         public ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request)
         {
-            IAsyncResult asyncResult = invokeListVirtualMFADevices(request, null, null, true);
-            return EndListVirtualMFADevices(asyncResult);
+            var marshaller = new ListVirtualMFADevicesRequestMarshaller();
+            var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVirtualMFADevicesRequest,ListVirtualMFADevicesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4702,10 +4445,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginListVirtualMFADevices(ListVirtualMFADevicesRequest request, AsyncCallback callback, object state)
         {
-            return invokeListVirtualMFADevices(request, callback, state, false);
+            var marshaller = new ListVirtualMFADevicesRequestMarshaller();
+            var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListVirtualMFADevicesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListVirtualMFADevices operation.
@@ -4717,21 +4462,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ListVirtualMFADevicesResult from IdentityManagementService.</returns>
         public  ListVirtualMFADevicesResponse EndListVirtualMFADevices(IAsyncResult asyncResult)
         {
-            return endOperation< ListVirtualMFADevicesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListVirtualMFADevices(ListVirtualMFADevicesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListVirtualMFADevicesRequestMarshaller();
-            var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListVirtualMFADevicesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutGroupPolicy
-
 
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified group. For information
@@ -4762,8 +4498,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokePutGroupPolicy(request, null, null, true);
-            return EndPutGroupPolicy(asyncResult);
+            var marshaller = new PutGroupPolicyRequestMarshaller();
+            var unmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutGroupPolicyRequest,PutGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4780,10 +4518,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginPutGroupPolicy(PutGroupPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokePutGroupPolicy(request, callback, state, false);
+            var marshaller = new PutGroupPolicyRequestMarshaller();
+            var unmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutGroupPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutGroupPolicy operation.
@@ -4795,21 +4535,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  PutGroupPolicyResult from IdentityManagementService.</returns>
         public  PutGroupPolicyResponse EndPutGroupPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< PutGroupPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutGroupPolicy(PutGroupPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutGroupPolicyRequestMarshaller();
-            var unmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutGroupPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutRolePolicy
-
 
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified role. For information
@@ -4840,8 +4571,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
         {
-            IAsyncResult asyncResult = invokePutRolePolicy(request, null, null, true);
-            return EndPutRolePolicy(asyncResult);
+            var marshaller = new PutRolePolicyRequestMarshaller();
+            var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutRolePolicyRequest,PutRolePolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4858,10 +4591,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginPutRolePolicy(PutRolePolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokePutRolePolicy(request, callback, state, false);
+            var marshaller = new PutRolePolicyRequestMarshaller();
+            var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutRolePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutRolePolicy operation.
@@ -4873,21 +4608,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  PutRolePolicyResult from IdentityManagementService.</returns>
         public  PutRolePolicyResponse EndPutRolePolicy(IAsyncResult asyncResult)
         {
-            return endOperation< PutRolePolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutRolePolicy(PutRolePolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutRolePolicyRequestMarshaller();
-            var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutRolePolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutUserPolicy
-
 
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified user. For information
@@ -4918,8 +4644,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokePutUserPolicy(request, null, null, true);
-            return EndPutUserPolicy(asyncResult);
+            var marshaller = new PutUserPolicyRequestMarshaller();
+            var unmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutUserPolicyRequest,PutUserPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -4936,10 +4664,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginPutUserPolicy(PutUserPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokePutUserPolicy(request, callback, state, false);
+            var marshaller = new PutUserPolicyRequestMarshaller();
+            var unmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutUserPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutUserPolicy operation.
@@ -4951,21 +4681,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  PutUserPolicyResult from IdentityManagementService.</returns>
         public  PutUserPolicyResponse EndPutUserPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< PutUserPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutUserPolicy(PutUserPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutUserPolicyRequestMarshaller();
-            var unmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutUserPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RemoveRoleFromInstanceProfile
-
 
         /// <summary>
         /// Removes the specified role from the specified instance profile.
@@ -4993,8 +4714,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeRemoveRoleFromInstanceProfile(request, null, null, true);
-            return EndRemoveRoleFromInstanceProfile(asyncResult);
+            var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
+            var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRoleFromInstanceProfileRequest,RemoveRoleFromInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5011,10 +4734,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginRemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeRemoveRoleFromInstanceProfile(request, callback, state, false);
+            var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
+            var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveRoleFromInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveRoleFromInstanceProfile operation.
@@ -5026,21 +4751,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  RemoveRoleFromInstanceProfileResult from IdentityManagementService.</returns>
         public  RemoveRoleFromInstanceProfileResponse EndRemoveRoleFromInstanceProfile(IAsyncResult asyncResult)
         {
-            return endOperation< RemoveRoleFromInstanceProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
-            var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RemoveRoleFromInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RemoveUserFromGroup
-
 
         /// <summary>
         /// Removes the specified user from the specified group.
@@ -5058,8 +4774,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeRemoveUserFromGroup(request, null, null, true);
-            return EndRemoveUserFromGroup(asyncResult);
+            var marshaller = new RemoveUserFromGroupRequestMarshaller();
+            var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveUserFromGroupRequest,RemoveUserFromGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5076,10 +4794,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginRemoveUserFromGroup(RemoveUserFromGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeRemoveUserFromGroup(request, callback, state, false);
+            var marshaller = new RemoveUserFromGroupRequestMarshaller();
+            var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveUserFromGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveUserFromGroup operation.
@@ -5091,21 +4811,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  RemoveUserFromGroupResult from IdentityManagementService.</returns>
         public  RemoveUserFromGroupResponse EndRemoveUserFromGroup(IAsyncResult asyncResult)
         {
-            return endOperation< RemoveUserFromGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRemoveUserFromGroup(RemoveUserFromGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RemoveUserFromGroupRequestMarshaller();
-            var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RemoveUserFromGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ResyncMFADevice
-
 
         /// <summary>
         /// Synchronizes the specified MFA device with AWS servers.
@@ -5127,8 +4838,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
         {
-            IAsyncResult asyncResult = invokeResyncMFADevice(request, null, null, true);
-            return EndResyncMFADevice(asyncResult);
+            var marshaller = new ResyncMFADeviceRequestMarshaller();
+            var unmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
+
+            return Invoke<ResyncMFADeviceRequest,ResyncMFADeviceResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5145,10 +4858,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginResyncMFADevice(ResyncMFADeviceRequest request, AsyncCallback callback, object state)
         {
-            return invokeResyncMFADevice(request, callback, state, false);
+            var marshaller = new ResyncMFADeviceRequestMarshaller();
+            var unmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResyncMFADeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ResyncMFADevice operation.
@@ -5160,21 +4875,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  ResyncMFADeviceResult from IdentityManagementService.</returns>
         public  ResyncMFADeviceResponse EndResyncMFADevice(IAsyncResult asyncResult)
         {
-            return endOperation< ResyncMFADeviceResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeResyncMFADevice(ResyncMFADeviceRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ResyncMFADeviceRequestMarshaller();
-            var unmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ResyncMFADeviceResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateAccessKey
-
 
         /// <summary>
         /// Changes the status of the specified access key from Active to Inactive, or vice versa.
@@ -5206,8 +4912,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateAccessKey(request, null, null, true);
-            return EndUpdateAccessKey(asyncResult);
+            var marshaller = new UpdateAccessKeyRequestMarshaller();
+            var unmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccessKeyRequest,UpdateAccessKeyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5224,10 +4932,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateAccessKey(UpdateAccessKeyRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateAccessKey(request, callback, state, false);
+            var marshaller = new UpdateAccessKeyRequestMarshaller();
+            var unmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAccessKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAccessKey operation.
@@ -5239,15 +4949,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateAccessKeyResult from IdentityManagementService.</returns>
         public  UpdateAccessKeyResponse EndUpdateAccessKey(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateAccessKeyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateAccessKey(UpdateAccessKeyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateAccessKeyRequestMarshaller();
-            var unmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateAccessKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -5255,9 +4957,13 @@ namespace Amazon.IdentityManagement
         #region  UpdateAccountPasswordPolicy
 
         /// <summary>
-        /// Updates the password policy settings for the account. For more information about using
-        /// a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Updates the password policy settings for the AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
@@ -5279,9 +4985,13 @@ namespace Amazon.IdentityManagement
         }
 
         /// <summary>
-        /// Updates the password policy settings for the account. For more information about using
-        /// a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Updates the password policy settings for the AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service method.</param>
         /// 
@@ -5300,8 +5010,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateAccountPasswordPolicy(request, null, null, true);
-            return EndUpdateAccountPasswordPolicy(asyncResult);
+            var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountPasswordPolicyRequest,UpdateAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5318,10 +5030,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateAccountPasswordPolicy(request, callback, state, false);
+            var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
+            var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAccountPasswordPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAccountPasswordPolicy operation.
@@ -5333,21 +5047,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateAccountPasswordPolicyResult from IdentityManagementService.</returns>
         public  UpdateAccountPasswordPolicyResponse EndUpdateAccountPasswordPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateAccountPasswordPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
-            var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateAccountPasswordPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateAssumeRolePolicy
-
 
         /// <summary>
         /// Updates the policy that grants an entity permission to assume a role. For more information
@@ -5371,8 +5076,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateAssumeRolePolicy(request, null, null, true);
-            return EndUpdateAssumeRolePolicy(asyncResult);
+            var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
+            var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssumeRolePolicyRequest,UpdateAssumeRolePolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5389,10 +5096,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateAssumeRolePolicy(request, callback, state, false);
+            var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
+            var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAssumeRolePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAssumeRolePolicy operation.
@@ -5404,21 +5113,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateAssumeRolePolicyResult from IdentityManagementService.</returns>
         public  UpdateAssumeRolePolicyResponse EndUpdateAssumeRolePolicy(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateAssumeRolePolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
-            var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateAssumeRolePolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateGroup
-
 
         /// <summary>
         /// Updates the name and/or the path of the specified group.
@@ -5443,8 +5143,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateGroup(request, null, null, true);
-            return EndUpdateGroup(asyncResult);
+            var marshaller = new UpdateGroupRequestMarshaller();
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5461,10 +5163,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateGroup(request, callback, state, false);
+            var marshaller = new UpdateGroupRequestMarshaller();
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateGroup operation.
@@ -5476,21 +5180,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateGroupResult from IdentityManagementService.</returns>
         public  UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateGroupRequestMarshaller();
-            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateLoginProfile
-
 
         /// <summary>
         /// Changes the password for the specified user.
@@ -5518,8 +5213,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateLoginProfile(request, null, null, true);
-            return EndUpdateLoginProfile(asyncResult);
+            var marshaller = new UpdateLoginProfileRequestMarshaller();
+            var unmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLoginProfileRequest,UpdateLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5536,10 +5233,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateLoginProfile(UpdateLoginProfileRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateLoginProfile(request, callback, state, false);
+            var marshaller = new UpdateLoginProfileRequestMarshaller();
+            var unmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateLoginProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateLoginProfile operation.
@@ -5551,21 +5250,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateLoginProfileResult from IdentityManagementService.</returns>
         public  UpdateLoginProfileResponse EndUpdateLoginProfile(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateLoginProfileResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateLoginProfile(UpdateLoginProfileRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateLoginProfileRequestMarshaller();
-            var unmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateLoginProfileResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateSAMLProvider
-
 
         /// <summary>
         /// Updates the metadata document for an existing SAML provider.
@@ -5586,8 +5276,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateSAMLProviderResponse UpdateSAMLProvider(UpdateSAMLProviderRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateSAMLProvider(request, null, null, true);
-            return EndUpdateSAMLProvider(asyncResult);
+            var marshaller = new UpdateSAMLProviderRequestMarshaller();
+            var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSAMLProviderRequest,UpdateSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5604,10 +5296,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateSAMLProvider(UpdateSAMLProviderRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateSAMLProvider(request, callback, state, false);
+            var marshaller = new UpdateSAMLProviderRequestMarshaller();
+            var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSAMLProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateSAMLProvider operation.
@@ -5619,21 +5313,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateSAMLProviderResult from IdentityManagementService.</returns>
         public  UpdateSAMLProviderResponse EndUpdateSAMLProvider(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateSAMLProviderResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateSAMLProvider(UpdateSAMLProviderRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateSAMLProviderRequestMarshaller();
-            var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateSAMLProviderResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateServerCertificate
-
 
         /// <summary>
         /// Updates the name and/or the path of the specified server certificate.
@@ -5658,8 +5343,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateServerCertificate(request, null, null, true);
-            return EndUpdateServerCertificate(asyncResult);
+            var marshaller = new UpdateServerCertificateRequestMarshaller();
+            var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServerCertificateRequest,UpdateServerCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5676,10 +5363,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateServerCertificate(UpdateServerCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateServerCertificate(request, callback, state, false);
+            var marshaller = new UpdateServerCertificateRequestMarshaller();
+            var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateServerCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateServerCertificate operation.
@@ -5691,21 +5380,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateServerCertificateResult from IdentityManagementService.</returns>
         public  UpdateServerCertificateResponse EndUpdateServerCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateServerCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateServerCertificate(UpdateServerCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateServerCertificateRequestMarshaller();
-            var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateServerCertificateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateSigningCertificate
-
 
         /// <summary>
         /// Changes the status of the specified signing certificate from active to disabled, or
@@ -5738,8 +5418,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateSigningCertificate(request, null, null, true);
-            return EndUpdateSigningCertificate(asyncResult);
+            var marshaller = new UpdateSigningCertificateRequestMarshaller();
+            var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSigningCertificateRequest,UpdateSigningCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5756,10 +5438,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateSigningCertificate(UpdateSigningCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateSigningCertificate(request, callback, state, false);
+            var marshaller = new UpdateSigningCertificateRequestMarshaller();
+            var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSigningCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateSigningCertificate operation.
@@ -5771,21 +5455,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateSigningCertificateResult from IdentityManagementService.</returns>
         public  UpdateSigningCertificateResponse EndUpdateSigningCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateSigningCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateSigningCertificate(UpdateSigningCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateSigningCertificateRequestMarshaller();
-            var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateSigningCertificateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateUser
-
 
         /// <summary>
         /// Updates the name and/or the path of the specified user.
@@ -5816,8 +5491,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateUser(request, null, null, true);
-            return EndUpdateUser(asyncResult);
+            var marshaller = new UpdateUserRequestMarshaller();
+            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5834,10 +5511,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateUser(request, callback, state, false);
+            var marshaller = new UpdateUserRequestMarshaller();
+            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateUser operation.
@@ -5849,21 +5528,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UpdateUserResult from IdentityManagementService.</returns>
         public  UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateUserResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateUserRequestMarshaller();
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateUserResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UploadServerCertificate
-
 
         /// <summary>
         /// Uploads a server certificate entity for the AWS account. The server certificate entity
@@ -5896,8 +5566,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeUploadServerCertificate(request, null, null, true);
-            return EndUploadServerCertificate(asyncResult);
+            var marshaller = new UploadServerCertificateRequestMarshaller();
+            var unmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UploadServerCertificateRequest,UploadServerCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -5914,10 +5586,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUploadServerCertificate(UploadServerCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeUploadServerCertificate(request, callback, state, false);
+            var marshaller = new UploadServerCertificateRequestMarshaller();
+            var unmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UploadServerCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UploadServerCertificate operation.
@@ -5929,21 +5603,12 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UploadServerCertificateResult from IdentityManagementService.</returns>
         public  UploadServerCertificateResponse EndUploadServerCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< UploadServerCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUploadServerCertificate(UploadServerCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UploadServerCertificateRequestMarshaller();
-            var unmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UploadServerCertificateResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UploadSigningCertificate
-
 
         /// <summary>
         /// Uploads an X.509 signing certificate and associates it with the specified user. Some
@@ -5986,8 +5651,10 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request)
         {
-            IAsyncResult asyncResult = invokeUploadSigningCertificate(request, null, null, true);
-            return EndUploadSigningCertificate(asyncResult);
+            var marshaller = new UploadSigningCertificateRequestMarshaller();
+            var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UploadSigningCertificateRequest,UploadSigningCertificateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -6004,10 +5671,12 @@ namespace Amazon.IdentityManagement
         ///         operation.</returns>
         public IAsyncResult BeginUploadSigningCertificate(UploadSigningCertificateRequest request, AsyncCallback callback, object state)
         {
-            return invokeUploadSigningCertificate(request, callback, state, false);
+            var marshaller = new UploadSigningCertificateRequestMarshaller();
+            var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UploadSigningCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UploadSigningCertificate operation.
@@ -6019,15 +5688,7 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  UploadSigningCertificateResult from IdentityManagementService.</returns>
         public  UploadSigningCertificateResponse EndUploadSigningCertificate(IAsyncResult asyncResult)
         {
-            return endOperation< UploadSigningCertificateResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUploadSigningCertificate(UploadSigningCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UploadSigningCertificateRequestMarshaller();
-            var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UploadSigningCertificateResponse>(asyncResult);
         }
 
         #endregion

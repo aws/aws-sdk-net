@@ -12,38 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// Returns the objects or data listed below if successful. Otherwise, returns an error.
     /// </summary>
     public partial class DescribeTrailsResult : AmazonWebServiceResponse
     {
-        
-        private List<Trail> trailList = new List<Trail>();
-
+        private List<Trail> _trailList = new List<Trail>();
 
         /// <summary>
+        /// Gets and sets the property TrailList. 
+        /// <para>
         /// The list of trails.
-        ///  
+        /// </para>
         /// </summary>
         public List<Trail> TrailList
         {
-            get { return this.trailList; }
-            set { this.trailList = value; }
+            get { return this._trailList; }
+            set { this._trailList = value; }
         }
 
         // Check to see if TrailList property is set
         internal bool IsSetTrailList()
         {
-            return this.trailList.Count > 0;
+            return this._trailList != null && this._trailList.Count > 0; 
         }
+
     }
 }

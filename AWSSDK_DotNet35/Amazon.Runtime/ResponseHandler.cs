@@ -6,7 +6,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.Runtime
 {
-    public delegate void ResponseEventHandler(object sender, ResponseEventArgs args);
+    public delegate void ResponseEventHandler(object sender, ResponseEventArgs e);
 
     public class ResponseEventArgs : EventArgs
     {

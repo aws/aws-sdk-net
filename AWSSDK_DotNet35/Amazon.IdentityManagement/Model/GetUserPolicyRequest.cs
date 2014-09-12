@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,21 @@ namespace Amazon.IdentityManagement.Model
         private string _policyName;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetUserPolicyRequest() { }
+
+        /// <summary>
+        /// Instantiates GetUserPolicyRequest with the parameterized properties
+        /// </summary>
+        /// <param name="userName">Name of the user who the policy is associated with.</param>
+        /// <param name="policyName">Name of the policy document to get.</param>
+        public GetUserPolicyRequest(string userName, string policyName)
+        {
+            _userName = userName;
+            _policyName = policyName;
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyName. 
@@ -52,7 +71,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._policyName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

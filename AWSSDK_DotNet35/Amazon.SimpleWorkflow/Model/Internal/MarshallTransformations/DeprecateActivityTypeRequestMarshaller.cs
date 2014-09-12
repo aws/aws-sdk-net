@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,65 +33,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Deprecate Activity Type Request Marshaller
+    /// DeprecateActivityType Request Marshaller
     /// </summary>       
-    internal class DeprecateActivityTypeRequestMarshaller : IMarshaller<IRequest, DeprecateActivityTypeRequest> 
+    public class DeprecateActivityTypeRequestMarshaller : IMarshaller<IRequest, DeprecateActivityTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeprecateActivityTypeRequest deprecateActivityTypeRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeprecateActivityTypeRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deprecateActivityTypeRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(DeprecateActivityTypeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.DeprecateActivityType";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deprecateActivityTypeRequest != null && deprecateActivityTypeRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActivityType())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(deprecateActivityTypeRequest.Domain);
+                    context.Writer.WritePropertyName("activityType");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ActivityTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ActivityType, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (deprecateActivityTypeRequest != null) 
+                if(publicRequest.IsSetDomain())
                 {
-                    ActivityType activityType = deprecateActivityTypeRequest.ActivityType;
-                    if (activityType != null)
-                    {
-                        writer.WritePropertyName("activityType");
-                        writer.WriteObjectStart();
-                        if (activityType != null && activityType.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(activityType.Name);
-                        }
-                        if (activityType != null && activityType.IsSetVersion()) 
-                        {
-                            writer.WritePropertyName("version");
-                            writer.Write(activityType.Version);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

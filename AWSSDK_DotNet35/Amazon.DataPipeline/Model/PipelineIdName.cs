@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,79 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains the name and identifier of a pipeline.</para>
+    /// Contains the name and identifier of a pipeline.
     /// </summary>
-    public class PipelineIdName
+    public partial class PipelineIdName
     {
-        
-        private string id;
-        private string name;
+        private string _id;
+        private string _name;
 
         /// <summary>
-        /// Identifier of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <c>df-297EG78HU43EEXAMPLE</c>.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Identifier of the pipeline that was assigned by AWS Data Pipeline. This is a string
+        /// of the form <code>df-297EG78HU43EEXAMPLE</code>.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
         /// <summary>
-        /// Name of the pipeline.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the pipeline.
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
+
     }
 }

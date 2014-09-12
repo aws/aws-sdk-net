@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedInstancesId Unmarshaller
-     /// </summary>
-    internal class ReservedInstancesIdUnmarshaller : IUnmarshaller<ReservedInstancesId, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesId, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedInstancesId Object
+    /// </summary>  
+    public class ReservedInstancesIdUnmarshaller : IUnmarshaller<ReservedInstancesId, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesId, JsonUnmarshallerContext>
     {
-        public ReservedInstancesId Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedInstancesId Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedInstancesId reservedInstancesId = new ReservedInstancesId();
+            ReservedInstancesId unmarshalledObject = new ReservedInstancesId();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("reservedInstancesId", targetDepth))
                     {
-                        reservedInstancesId.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedInstancesId;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedInstancesId;
+            return unmarshalledObject;
         }
 
-        public ReservedInstancesId Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedInstancesId Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedInstancesIdUnmarshaller instance;
 
-        public static ReservedInstancesIdUnmarshaller GetInstance() 
+        private static ReservedInstancesIdUnmarshaller _instance = new ReservedInstancesIdUnmarshaller();        
+
+        public static ReservedInstancesIdUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedInstancesIdUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

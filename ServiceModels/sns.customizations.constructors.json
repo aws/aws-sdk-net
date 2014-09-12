@@ -1,0 +1,146 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "SetSubscriptionAttributesRequest" : {
+                "constructorForms" : [
+                    [
+                        "SubscriptionArn",
+                        "AttributeName",
+                        "AttributeValue"
+                    ]
+                ]
+            },
+            "GetSubscriptionAttributesRequest" : {
+                "constructorForms" : [
+                    [
+                        "SubscriptionArn"
+                    ]
+                ]
+            },
+            "SubscribeRequest"                 : {
+                "constructorForms" : [
+                    [
+                        "TopicArn",
+                        "Protocol",
+                        "Endpoint"
+                    ]
+                ]
+            },
+            "Subscription"                     : {
+                "constructorForms" : [
+                ]
+            },
+            "AddPermissionRequest"             : {
+                "constructorForms" : [
+                    [
+                        "TopicArn",
+                        "Label",
+                        "AWSAccountId",
+                        "ActionName"
+                    ]
+                ]
+            },
+            "GetTopicAttributesRequest"        : {
+                "constructorForms" : [
+                    [
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "RemovePermissionRequest"          : {
+                "constructorForms" : [
+                    [
+                        "TopicArn",
+                        "Label"
+                    ]
+                ]
+            },
+            "ListTopicsRequest"                : {
+                "constructorForms" : [
+                    [
+                        "NextToken"
+                    ]
+                ]
+            },
+            "ConfirmSubscriptionRequest"       : {
+                "constructorForms" : [
+                    [
+                        "TopicArn",
+                        "Token"
+                    ],
+                    [
+                        "TopicArn",
+                        "Token",
+                        "AuthenticateOnUnsubscribe"
+                    ]
+                ]
+            },
+            "Topic"                            : {
+                "constructorForms" : [
+                ]
+            },
+            "SetTopicAttributesRequest"        : {
+                "constructorForms" : [
+                    [
+                        "TopicArn",
+                        "AttributeName",
+                        "AttributeValue"
+                    ]
+                ]
+            },
+            "CreateTopicRequest"               : {
+                "constructorForms" : [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "DeleteTopicRequest"               : {
+                "constructorForms" : [
+                    [
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "UnsubscribeRequest"               : {
+                "constructorForms" : [
+                    [
+                        "SubscriptionArn"
+                    ]
+                ]
+            },
+            "PublishRequest"                   : {
+                "constructorForms" : [
+                    [
+                        "TopicArn",
+                        "Message"
+                    ],
+                    [
+                        "TopicArn",
+                        "Message",
+                        "Subject"
+                    ]
+                ]
+            },
+            "ListSubscriptionsRequest"         : {
+                "constructorForms" : [
+                    [
+                        "NextToken"
+                    ]
+                ]
+            },
+            "ListSubscriptionsByTopicRequest"  : {
+                "constructorForms" : [
+                    [
+                        "TopicArn"
+                    ],
+                    [
+                        "TopicArn",
+                        "NextToken"
+                    ]
+                ]
+            }
+        }
+    }
+}

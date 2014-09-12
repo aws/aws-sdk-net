@@ -12,55 +12,54 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Route53.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DeleteHostedZone operation
-    /// </summary>
-    internal class DeleteHostedZoneResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DeleteHostedZone operation
+    /// </summary>  
+    public class DeleteHostedZoneResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            DeleteHostedZoneResponse response = new DeleteHostedZoneResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context,response);
-                    break;
-                }
-            }
-                 
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DeleteHostedZoneResponse response)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
+            DeleteHostedZoneResponse response = new DeleteHostedZoneResponse();
+            UnmarshallResult(context,response);
             
+            return response;
+        }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteHostedZoneResponse response)
+        {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+                   targetDepth += 1;
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("ChangeInfo", targetDepth))
                     {
-                        response.ChangeInfo = ChangeInfoUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ChangeInfoUnmarshaller.Instance;
+                        response.ChangeInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -69,50 +68,46 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-                            
-
-
+          
             return;
         }
-        
+  
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PriorRequestNotComplete"))
-            {
-                return new PriorRequestNotCompleteException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("HostedZoneNotEmpty"))
             {
                 return new HostedZoneNotEmptyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
-            {
-                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
+            {
+                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PriorRequestNotComplete"))
+            {
+                return new PriorRequestNotCompleteException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DeleteHostedZoneResponseUnmarshaller instance;
 
-        public static DeleteHostedZoneResponseUnmarshaller GetInstance()
+        private static DeleteHostedZoneResponseUnmarshaller _instance = new DeleteHostedZoneResponseUnmarshaller();        
+
+        internal static DeleteHostedZoneResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DeleteHostedZoneResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DeleteHostedZoneResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

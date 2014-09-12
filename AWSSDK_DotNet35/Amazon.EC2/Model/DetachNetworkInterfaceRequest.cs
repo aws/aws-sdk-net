@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,46 +29,48 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachNetworkInterface operation.
-    /// <para>Detaches a network interface from an instance.</para>
+    /// Detaches a network interface from an instance.
     /// </summary>
     public partial class DetachNetworkInterfaceRequest : AmazonEC2Request
     {
-        private string attachmentId;
-        private bool? force;
-
+        private string _attachmentId;
+        private bool? _force;
 
         /// <summary>
+        /// Gets and sets the property AttachmentId. 
+        /// <para>
         /// The ID of the attachment.
-        ///  
+        /// </para>
         /// </summary>
         public string AttachmentId
         {
-            get { return this.attachmentId; }
-            set { this.attachmentId = value; }
+            get { return this._attachmentId; }
+            set { this._attachmentId = value; }
         }
 
         // Check to see if AttachmentId property is set
         internal bool IsSetAttachmentId()
         {
-            return this.attachmentId != null;
+            return this._attachmentId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
         /// Specifies whether to force a detachment.
-        ///  
+        /// </para>
         /// </summary>
         public bool Force
         {
-            get { return this.force ?? default(bool); }
-            set { this.force = value; }
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
         }
 
         // Check to see if Force property is set
         internal bool IsSetForce()
         {
-            return this.force.HasValue;
+            return this._force.HasValue; 
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,24 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+
+using System;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Returns information about the PollForDecisionTask response and response metadata.
+    /// Configuration for accessing Amazon PollForDecisionTask service
     /// </summary>
-    public class PollForDecisionTaskResponse : PollForDecisionTaskResult
+    public partial class PollForDecisionTaskResponse : PollForDecisionTaskResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the PollForDecisionTaskResult property.
-        /// Contains the result of a successful invocation of the PollForDecisionTask
-        /// action.
-        /// 
+        /// Represents the output of a PollForDecisionTask operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the PollForDecisionTaskResult class are now available on the PollForDecisionTaskResponse class. You should use the properties on PollForDecisionTaskResponse instead of accessing them through PollForDecisionTaskResult.")]
         public PollForDecisionTaskResult PollForDecisionTaskResult
         {
@@ -40,4 +40,3 @@ namespace Amazon.SimpleWorkflow.Model
         }
     }
 }
-    

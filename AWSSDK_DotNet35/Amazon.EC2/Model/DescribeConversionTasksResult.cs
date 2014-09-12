@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeConversionTasksResult : AmazonWebServiceResponse
     {
-        
-        private List<ConversionTask> conversionTasks = new List<ConversionTask>();
-
+        private List<ConversionTask> _conversionTasks = new List<ConversionTask>();
 
         /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property ConversionTasks.
         /// </summary>
         public List<ConversionTask> ConversionTasks
         {
-            get { return this.conversionTasks; }
-            set { this.conversionTasks = value; }
+            get { return this._conversionTasks; }
+            set { this._conversionTasks = value; }
         }
 
         // Check to see if ConversionTasks property is set
         internal bool IsSetConversionTasks()
         {
-            return this.conversionTasks.Count > 0;
+            return this._conversionTasks != null && this._conversionTasks.Count > 0; 
         }
+
     }
 }

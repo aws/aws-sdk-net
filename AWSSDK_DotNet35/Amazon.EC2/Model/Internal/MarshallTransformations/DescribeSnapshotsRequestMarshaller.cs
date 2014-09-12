@@ -12,89 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Snapshots Request Marshaller
+    /// DescribeSnapshots Request Marshaller
     /// </summary>       
-    public class DescribeSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeSnapshotsRequest>
+    public class DescribeSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeSnapshotsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeSnapshotsRequest describeSnapshotsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeSnapshotsRequest, "AmazonEC2");
+            return this.Marshall((DescribeSnapshotsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeSnapshotsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeSnapshots");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeSnapshotsRequest != null)
-            {
-                List<string> snapshotIdsList = describeSnapshotsRequest.SnapshotIds;
 
-                int snapshotIdsListIndex = 1;
-                foreach (string snapshotIdsListValue in snapshotIdsList)
-                { 
-                    request.Parameters.Add("SnapshotId." + snapshotIdsListIndex, StringUtils.FromString(snapshotIdsListValue));
-                    snapshotIdsListIndex++;
-                }
-            }
-            if (describeSnapshotsRequest != null)
+            if(publicRequest != null)
             {
-                List<string> ownerIdsList = describeSnapshotsRequest.OwnerIds;
-
-                int ownerIdsListIndex = 1;
-                foreach (string ownerIdsListValue in ownerIdsList)
-                { 
-                    request.Parameters.Add("Owner." + ownerIdsListIndex, StringUtils.FromString(ownerIdsListValue));
-                    ownerIdsListIndex++;
-                }
-            }
-            if (describeSnapshotsRequest != null)
-            {
-                List<string> restorableByUserIdsList = describeSnapshotsRequest.RestorableByUserIds;
-
-                int restorableByUserIdsListIndex = 1;
-                foreach (string restorableByUserIdsListValue in restorableByUserIdsList)
-                { 
-                    request.Parameters.Add("RestorableBy." + restorableByUserIdsListIndex, StringUtils.FromString(restorableByUserIdsListValue));
-                    restorableByUserIdsListIndex++;
-                }
-            }
-
-            if (describeSnapshotsRequest != null)
-            {
-                List<Filter> filtersList = describeSnapshotsRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetFilters())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetOwnerIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OwnerIds)
+                    {
+                        request.Parameters.Add("Owner" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRestorableByUserIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RestorableByUserIds)
+                    {
+                        request.Parameters.Add("RestorableBy" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetSnapshotIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SnapshotIds)
+                    {
+                        request.Parameters.Add("SnapshotId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

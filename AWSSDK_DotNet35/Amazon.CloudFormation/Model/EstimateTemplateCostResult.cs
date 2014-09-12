@@ -12,38 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The output for a EstimateTemplateCost action.</para>
+    /// The output for a <a>EstimateTemplateCost</a> action.
     /// </summary>
     public partial class EstimateTemplateCostResult : AmazonWebServiceResponse
     {
-        
-        private string url;
-
+        private string _url;
 
         /// <summary>
-        /// An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.
-        ///  
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// An AWS Simple Monthly Calculator URL with a query string that describes the resources
+        /// required to run the template.
+        /// </para>
         /// </summary>
         public string Url
         {
-            get { return this.url; }
-            set { this.url = value; }
+            get { return this._url; }
+            set { this._url = value; }
         }
 
         // Check to see if Url property is set
         internal bool IsSetUrl()
         {
-            return this.url != null;
+            return this._url != null;
         }
+
     }
 }

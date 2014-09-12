@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeSnapshots response and response metadata.
+    /// Configuration for accessing Amazon DescribeSnapshots service
     /// </summary>
     public partial class DescribeSnapshotsResponse : DescribeSnapshotsResult
     {
         /// <summary>
         /// Gets and sets the DescribeSnapshotsResult property.
-        /// 
+        /// Represents the output of a DescribeSnapshots operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeSnapshotsResult class are now available on the DescribeSnapshotsResponse class. You should use the properties on DescribeSnapshotsResponse instead of accessing them through DescribeSnapshotsResult.")]
         public DescribeSnapshotsResult DescribeSnapshotsResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

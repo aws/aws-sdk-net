@@ -12,68 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeInstanceStatus operation
-    /// </summary>
-    internal class DescribeInstanceStatusResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for DescribeInstanceStatus operation
+    /// </summary>  
+    public class DescribeInstanceStatusResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeInstanceStatusResponse response = new DescribeInstanceStatusResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("instanceStatusSet/item", targetDepth))
                     {
-                        response.InstanceStatuses.Add(InstanceStatusUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InstanceStatusUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.InstanceStatuses.Add(item);
                         continue;
                     }
                     if (context.TestExpression("nextToken", targetDepth))
                     {
-                        response.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeInstanceStatusResponseUnmarshaller instance;
+        private static DescribeInstanceStatusResponseUnmarshaller _instance = new DescribeInstanceStatusResponseUnmarshaller();        
 
-        public static DescribeInstanceStatusResponseUnmarshaller GetInstance()
+        internal static DescribeInstanceStatusResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeInstanceStatusResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeInstanceStatusResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -39,7 +39,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Expiration", targetDepth))
                     {
-                        rulesItem.Expiration = ExpirationUnmarshaller.GetInstance().Unmarshall(context);
+                        rulesItem.Expiration = ExpirationUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -63,19 +63,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Transition", targetDepth))
                     {
-                        rulesItem.Transition = TransitionUnmarshaller.GetInstance().Unmarshall(context);
+                        rulesItem.Transition = TransitionUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionTransition", targetDepth))
                     {
-                        rulesItem.NoncurrentVersionTransition = LifecycleRuleNoncurrentVersionTransitionUnmarshaller.GetInstance().Unmarshall(context);
+                        rulesItem.NoncurrentVersionTransition = LifecycleRuleNoncurrentVersionTransitionUnmarshaller.Instance.Unmarshall(context);
 
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionExpiration", targetDepth))
                     {
-                        rulesItem.NoncurrentVersionExpiration = LifecycleRuleNoncurrentVersionExpirationUnmarshaller.GetInstance().Unmarshall(context);
+                        rulesItem.NoncurrentVersionExpiration = LifecycleRuleNoncurrentVersionExpirationUnmarshaller.Instance.Unmarshall(context);
 
                         continue;
                     }
@@ -96,14 +96,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static RulesItemUnmarshaller instance;
+        private static RulesItemUnmarshaller _instance;
 
-        public static RulesItemUnmarshaller GetInstance() 
+        public static RulesItemUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new RulesItemUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new RulesItemUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

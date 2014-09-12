@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,59 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains Availability Zone information. </para> <para> This data type is used as an element in the following data type:
-    /// <ul>
-    /// <li> OrderableDBInstanceOption </li>
+    /// Contains Availability Zone information. 
     /// 
-    /// </ul>
+    ///  
+    /// <para>
+    ///  This data type is used as an element in the following data type: <ul> <li><a>OrderableDBInstanceOption</a></li>
+    /// </ul> 
     /// </para>
     /// </summary>
-    public class AvailabilityZone
+    public partial class AvailabilityZone
     {
-        
-        private string name;
-        private bool? provisionedIopsCapable;
-
+        private string _name;
+        private bool? _provisionedIopsCapable;
 
         /// <summary>
-        /// The name of the availability zone.
-        ///  
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the availability zone. 
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// True indicates the availability zone is capable of provisioned IOPs.
-        ///  
+        /// Gets and sets the property ProvisionedIopsCapable. 
+        /// <para>
+        ///  True indicates the availability zone is capable of provisioned IOPs. 
+        /// </para>
         /// </summary>
         public bool ProvisionedIopsCapable
         {
-            get { return this.provisionedIopsCapable ?? default(bool); }
-            set { this.provisionedIopsCapable = value; }
+            get { return this._provisionedIopsCapable.GetValueOrDefault(); }
+            set { this._provisionedIopsCapable = value; }
         }
 
         // Check to see if ProvisionedIopsCapable property is set
         internal bool IsSetProvisionedIopsCapable()
         {
-            return this.provisionedIopsCapable.HasValue;
+            return this._provisionedIopsCapable.HasValue; 
         }
+
     }
 }

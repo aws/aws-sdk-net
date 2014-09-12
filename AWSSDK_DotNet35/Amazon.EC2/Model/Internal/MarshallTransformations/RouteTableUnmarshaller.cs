@@ -12,93 +12,107 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   RouteTable Unmarshaller
-     /// </summary>
-    internal class RouteTableUnmarshaller : IUnmarshaller<RouteTable, XmlUnmarshallerContext>, IUnmarshaller<RouteTable, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for RouteTable Object
+    /// </summary>  
+    public class RouteTableUnmarshaller : IUnmarshaller<RouteTable, XmlUnmarshallerContext>, IUnmarshaller<RouteTable, JsonUnmarshallerContext>
     {
-        public RouteTable Unmarshall(XmlUnmarshallerContext context) 
+        public RouteTable Unmarshall(XmlUnmarshallerContext context)
         {
-            RouteTable routeTable = new RouteTable();
+            RouteTable unmarshalledObject = new RouteTable();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("routeTableId", targetDepth))
-                    {
-                        routeTable.RouteTableId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        routeTable.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("routeSet/item", targetDepth))
-                    {
-                        routeTable.Routes.Add(RouteUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
                     if (context.TestExpression("associationSet/item", targetDepth))
                     {
-                        routeTable.Associations.Add(RouteTableAssociationUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        routeTable.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = RouteTableAssociationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Associations.Add(item);
                         continue;
                     }
                     if (context.TestExpression("propagatingVgwSet/item", targetDepth))
                     {
-                        routeTable.PropagatingVgws.Add(PropagatingVgwUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = PropagatingVgwUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PropagatingVgws.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("routeSet/item", targetDepth))
+                    {
+                        var unmarshaller = RouteUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Routes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("routeTableId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return routeTable;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return routeTable;
+            return unmarshalledObject;
         }
 
-        public RouteTable Unmarshall(JsonUnmarshallerContext context) 
+        public RouteTable Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static RouteTableUnmarshaller instance;
 
-        public static RouteTableUnmarshaller GetInstance() 
+        private static RouteTableUnmarshaller _instance = new RouteTableUnmarshaller();        
+
+        public static RouteTableUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new RouteTableUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,126 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains pipeline metadata.</para>
+    /// Contains pipeline metadata.
     /// </summary>
-    public class PipelineDescription
+    public partial class PipelineDescription
     {
-        
-        private string pipelineId;
-        private string name;
-        private List<Field> fields = new List<Field>();
-        private string description;
+        private string _description;
+        private List<Field> _fields = new List<Field>();
+        private string _name;
+        private string _pipelineId;
 
         /// <summary>
-        /// The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <c>df-297EG78HU43EEXAMPLE</c>.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string PipelineId
-        {
-            get { return this.pipelineId; }
-            set { this.pipelineId = value; }
-        }
-
-        // Check to see if PipelineId property is set
-        internal bool IsSetPipelineId()
-        {
-            return this.pipelineId != null;
-        }
-
-        /// <summary>
-        /// Name of the pipeline.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.
-        ///  
-        /// </summary>
-        public List<Field> Fields
-        {
-            get { return this.fields; }
-            set { this.fields = value; }
-        }
-
-        // Check to see if Fields property is set
-        internal bool IsSetFields()
-        {
-            return this.fields.Count > 0;
-        }
-
-        /// <summary>
         /// Description of the pipeline.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Fields. 
+        /// <para>
+        /// A list of read-only fields that contain metadata about the pipeline: @userId, @accountId,
+        /// and @pipelineState.
+        /// </para>
+        /// </summary>
+        public List<Field> Fields
+        {
+            get { return this._fields; }
+            set { this._fields = value; }
+        }
+
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
+        {
+            return this._fields != null && this._fields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of the pipeline.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineId. 
+        /// <para>
+        /// The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of
+        /// the form <code>df-297EG78HU43EEXAMPLE</code>.
+        /// </para>
+        /// </summary>
+        public string PipelineId
+        {
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
+        }
+
+        // Check to see if PipelineId property is set
+        internal bool IsSetPipelineId()
+        {
+            return this._pipelineId != null;
+        }
+
     }
 }

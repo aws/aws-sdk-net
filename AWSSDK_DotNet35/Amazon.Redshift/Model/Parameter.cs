@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.Redshift.Model
         private string _parameterValue;
         private string _source;
 
-
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
@@ -55,7 +58,6 @@ namespace Amazon.Redshift.Model
         {
             return this._allowedValues != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DataType. 
@@ -75,7 +77,6 @@ namespace Amazon.Redshift.Model
             return this._dataType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -93,7 +94,6 @@ namespace Amazon.Redshift.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property IsModifiable. 
@@ -115,7 +115,6 @@ namespace Amazon.Redshift.Model
             return this._isModifiable.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MinimumEngineVersion. 
         /// <para>
@@ -133,7 +132,6 @@ namespace Amazon.Redshift.Model
         {
             return this._minimumEngineVersion != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ParameterName. 
@@ -153,7 +151,6 @@ namespace Amazon.Redshift.Model
             return this._parameterName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
@@ -171,7 +168,6 @@ namespace Amazon.Redshift.Model
         {
             return this._parameterValue != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Source. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DisassociateElasticIp Request Marshaller
     /// </summary>       
-    public class DisassociateElasticIpRequestMarshaller : IMarshaller<IRequest, DisassociateElasticIpRequest> 
+    public class DisassociateElasticIpRequestMarshaller : IMarshaller<IRequest, DisassociateElasticIpRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DisassociateElasticIpRequest)input);
+        }
+
         public IRequest Marshall(DisassociateElasticIpRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,10 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetElasticIp())
                 {
-                    writer.WritePropertyName("ElasticIp");
-                    writer.Write(publicRequest.ElasticIp);
+                    context.Writer.WritePropertyName("ElasticIp");
+                    context.Writer.Write(publicRequest.ElasticIp);
                 }
 
         

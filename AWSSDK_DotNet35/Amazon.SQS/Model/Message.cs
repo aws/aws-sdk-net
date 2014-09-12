@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,6 +40,10 @@ namespace Amazon.SQS.Model
         private string _messageId;
         private string _receiptHandle;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Message() { }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -59,7 +67,6 @@ namespace Amazon.SQS.Model
             return this._attributes != null && this._attributes.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
@@ -78,7 +85,6 @@ namespace Amazon.SQS.Model
             return this._body != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MD5OfBody. 
         /// <para>
@@ -96,7 +102,6 @@ namespace Amazon.SQS.Model
         {
             return this._mD5OfBody != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MD5OfMessageAttributes. 
@@ -118,7 +123,6 @@ namespace Amazon.SQS.Model
             return this._mD5OfMessageAttributes != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
@@ -139,7 +143,6 @@ namespace Amazon.SQS.Model
             return this._messageAttributes != null && this._messageAttributes.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
@@ -158,7 +161,6 @@ namespace Amazon.SQS.Model
         {
             return this._messageId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReceiptHandle. 

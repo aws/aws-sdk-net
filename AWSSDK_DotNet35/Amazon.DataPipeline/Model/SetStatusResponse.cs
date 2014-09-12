@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Returns information about the SetStatus response metadata.
-    /// The SetStatus operation has a void result type.
+    /// Configuration for accessing Amazon SetStatus service
     /// </summary>
-    public partial class SetStatusResponse : AmazonWebServiceResponse
+    public partial class SetStatusResponse : SetStatusResult
     {
+        /// <summary>
+        /// Gets and sets the SetStatusResult property.
+        /// Represents the output of a SetStatus operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SetStatusResult class are now available on the SetStatusResponse class. You should use the properties on SetStatusResponse instead of accessing them through SetStatusResult.")]
+        public SetStatusResult SetStatusResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

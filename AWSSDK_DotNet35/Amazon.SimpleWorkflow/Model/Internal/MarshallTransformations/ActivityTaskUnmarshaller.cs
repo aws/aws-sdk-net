@@ -12,84 +12,98 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTask Object
+    /// </summary>  
+    public class ActivityTaskUnmarshaller : IUnmarshaller<ActivityTask, XmlUnmarshallerContext>, IUnmarshaller<ActivityTask, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTaskUnmarshaller
-      /// </summary>
-      internal class ActivityTaskUnmarshaller : IUnmarshaller<ActivityTask, XmlUnmarshallerContext>, IUnmarshaller<ActivityTask, JsonUnmarshallerContext>
-      {
         ActivityTask IUnmarshaller<ActivityTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTask Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTask activityTask = new ActivityTask();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTask unmarshalledObject = new ActivityTask();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("taskToken", targetDepth))
-              {
-                activityTask.TaskToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityId", targetDepth))
-              {
-                activityTask.ActivityId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                activityTask.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecution", targetDepth))
-              {
-                activityTask.WorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityType", targetDepth))
-              {
-                activityTask.ActivityType = ActivityTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("input", targetDepth))
-              {
-                activityTask.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("activityId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActivityId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityType", targetDepth))
+                {
+                    var unmarshaller = ActivityTypeUnmarshaller.Instance;
+                    unmarshalledObject.ActivityType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("input", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecution", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTask;
+            return unmarshalledObject;
         }
 
-        private static ActivityTaskUnmarshaller instance;
-        public static ActivityTaskUnmarshaller GetInstance()
+
+        private static ActivityTaskUnmarshaller _instance = new ActivityTaskUnmarshaller();        
+
+        public static ActivityTaskUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTaskUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

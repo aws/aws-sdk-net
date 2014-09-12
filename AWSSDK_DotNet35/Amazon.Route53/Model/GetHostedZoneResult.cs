@@ -12,55 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type containing information about the specified hosted zone.</para>
+    /// A complex type containing information about the specified hosted zone.
     /// </summary>
     public partial class GetHostedZoneResult : AmazonWebServiceResponse
     {
-        
-        private HostedZone hostedZone;
-        private DelegationSet delegationSet;
-
+        private HostedZone _hostedZone;
+        private DelegationSet _delegationSet;
 
         /// <summary>
+        /// Gets and sets the property HostedZone. 
+        /// <para>
         /// A complex type that contains the information about the specified hosted zone.
-        ///  
+        /// </para>
         /// </summary>
         public HostedZone HostedZone
         {
-            get { return this.hostedZone; }
-            set { this.hostedZone = value; }
+            get { return this._hostedZone; }
+            set { this._hostedZone = value; }
         }
 
         // Check to see if HostedZone property is set
         internal bool IsSetHostedZone()
         {
-            return this.hostedZone != null;
+            return this._hostedZone != null;
         }
 
         /// <summary>
-        /// A complex type that contains information about the name servers for the specified hosted zone.
-        ///  
+        /// Gets and sets the property DelegationSet. 
+        /// <para>
+        /// A complex type that contains information about the name servers for the specified
+        /// hosted zone.
+        /// </para>
         /// </summary>
         public DelegationSet DelegationSet
         {
-            get { return this.delegationSet; }
-            set { this.delegationSet = value; }
+            get { return this._delegationSet; }
+            set { this._delegationSet = value; }
         }
 
         // Check to see if DelegationSet property is set
         internal bool IsSetDelegationSet()
         {
-            return this.delegationSet != null;
+            return this._delegationSet != null;
         }
+
     }
 }

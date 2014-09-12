@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,50 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains the output from the CreatePipeline action.</para>
+    /// Contains the output from the <a>CreatePipeline</a> action.
     /// </summary>
     public partial class CreatePipelineResult : AmazonWebServiceResponse
     {
-        
-        private string pipelineId;
+        private string _pipelineId;
 
         /// <summary>
-        /// The ID that AWS Data Pipeline assigns the newly created pipeline. The ID is a string of the form: df-06372391ZG65EXAMPLE.
-        ///  
+        /// Gets and sets the property PipelineId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The ID that AWS Data Pipeline assigns the newly created pipeline. The ID is a string
+        /// of the form: df-06372391ZG65EXAMPLE.
         /// </para>
         /// </summary>
         public string PipelineId
         {
-            get { return this.pipelineId; }
-            set { this.pipelineId = value; }
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
         }
 
         // Check to see if PipelineId property is set
         internal bool IsSetPipelineId()
         {
-            return this.pipelineId != null;
+            return this._pipelineId != null;
         }
+
     }
 }

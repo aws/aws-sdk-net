@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _interlaced;
         private string _key;
         private string _resolution;
-
 
         /// <summary>
         /// Gets and sets the property AspectRatio. 
@@ -67,7 +70,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._aspectRatio != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
@@ -96,7 +98,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._container != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property FrameRate. 
@@ -130,7 +131,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._frameRate != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Interlaced. 
         /// <para>
@@ -161,7 +161,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._interlaced != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
@@ -188,7 +187,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._key != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Resolution. 

@@ -13,18 +13,22 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.ElasticTranscoder.Model;
 
 namespace Amazon.ElasticTranscoder
 {
     /// <summary>
-    /// Implementation for accessing ElasticTranscoder
+    /// Interface for accessing ElasticTranscoder
     ///
     /// AWS Elastic Transcoder Service        
     /// <para>
@@ -36,7 +40,6 @@ namespace Amazon.ElasticTranscoder
 
         
         #region  CancelJob
-
 
         /// <summary>
         /// The CancelJob operation cancels an unfinished job.
@@ -87,7 +90,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  CreateJob
-
 
         /// <summary>
         /// When you create a job, Elastic Transcoder returns JSON data that includes the values
@@ -143,7 +145,6 @@ namespace Amazon.ElasticTranscoder
         
         #region  CreatePipeline
 
-
         /// <summary>
         /// The CreatePipeline operation creates a pipeline with settings that you specify.
         /// </summary>
@@ -188,7 +189,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  CreatePreset
-
 
         /// <summary>
         /// The CreatePreset operation creates a preset with settings that you specify.
@@ -247,7 +247,6 @@ namespace Amazon.ElasticTranscoder
         
         #region  DeletePipeline
 
-
         /// <summary>
         /// The DeletePipeline operation removes a pipeline.
         /// 
@@ -300,7 +299,6 @@ namespace Amazon.ElasticTranscoder
         
         #region  DeletePreset
 
-
         /// <summary>
         /// The DeletePreset operation removes a preset that you've added in an AWS region.
         /// 
@@ -347,7 +345,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ListJobsByPipeline
-
 
         /// <summary>
         /// The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
@@ -396,7 +393,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ListJobsByStatus
-
 
         /// <summary>
         /// The ListJobsByStatus operation gets a list of jobs that have a specified status. The
@@ -559,7 +555,6 @@ namespace Amazon.ElasticTranscoder
         
         #region  ReadJob
 
-
         /// <summary>
         /// The ReadJob operation returns detailed information about a job.
         /// </summary>
@@ -600,7 +595,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ReadPipeline
-
 
         /// <summary>
         /// The ReadPipeline operation gets detailed information about a pipeline.
@@ -643,7 +637,6 @@ namespace Amazon.ElasticTranscoder
         
         #region  ReadPreset
 
-
         /// <summary>
         /// The ReadPreset operation gets detailed information about a preset.
         /// </summary>
@@ -684,7 +677,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  TestRole
-
 
         /// <summary>
         /// The TestRole operation tests the IAM role used to create the pipeline.
@@ -736,7 +728,6 @@ namespace Amazon.ElasticTranscoder
         
         #region  UpdatePipeline
 
-
         /// <summary>
         /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
         ///                <important>When you change pipeline settings, your changes take effect
@@ -785,7 +776,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  UpdatePipelineNotifications
-
 
         /// <summary>
         /// With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification
@@ -838,7 +828,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  UpdatePipelineStatus
-
 
         /// <summary>
         /// The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline

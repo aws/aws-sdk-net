@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     ///<summary>
-    /// AmazonCloudSearch exception
+    /// CloudSearch exception
     /// </summary>
     public class ResourceNotFoundException : AmazonCloudSearchException 
     {
@@ -45,6 +49,5 @@ namespace Amazon.CloudSearch_2011_02_01.Model
         public ResourceNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

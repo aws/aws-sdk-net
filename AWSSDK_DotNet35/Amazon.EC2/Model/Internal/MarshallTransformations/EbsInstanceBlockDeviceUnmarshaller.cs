@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EbsInstanceBlockDevice Unmarshaller
-     /// </summary>
-    internal class EbsInstanceBlockDeviceUnmarshaller : IUnmarshaller<EbsInstanceBlockDevice, XmlUnmarshallerContext>, IUnmarshaller<EbsInstanceBlockDevice, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EbsInstanceBlockDevice Object
+    /// </summary>  
+    public class EbsInstanceBlockDeviceUnmarshaller : IUnmarshaller<EbsInstanceBlockDevice, XmlUnmarshallerContext>, IUnmarshaller<EbsInstanceBlockDevice, JsonUnmarshallerContext>
     {
-        public EbsInstanceBlockDevice Unmarshall(XmlUnmarshallerContext context) 
+        public EbsInstanceBlockDevice Unmarshall(XmlUnmarshallerContext context)
         {
-            EbsInstanceBlockDevice ebsInstanceBlockDevice = new EbsInstanceBlockDevice();
+            EbsInstanceBlockDevice unmarshalledObject = new EbsInstanceBlockDevice();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("volumeId", targetDepth))
-                    {
-                        ebsInstanceBlockDevice.VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        ebsInstanceBlockDevice.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("attachTime", targetDepth))
                     {
-                        ebsInstanceBlockDevice.AttachTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.AttachTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("deleteOnTermination", targetDepth))
                     {
-                        ebsInstanceBlockDevice.DeleteOnTermination = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("volumeId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return ebsInstanceBlockDevice;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return ebsInstanceBlockDevice;
+            return unmarshalledObject;
         }
 
-        public EbsInstanceBlockDevice Unmarshall(JsonUnmarshallerContext context) 
+        public EbsInstanceBlockDevice Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EbsInstanceBlockDeviceUnmarshaller instance;
 
-        public static EbsInstanceBlockDeviceUnmarshaller GetInstance() 
+        private static EbsInstanceBlockDeviceUnmarshaller _instance = new EbsInstanceBlockDeviceUnmarshaller();        
+
+        public static EbsInstanceBlockDeviceUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EbsInstanceBlockDeviceUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

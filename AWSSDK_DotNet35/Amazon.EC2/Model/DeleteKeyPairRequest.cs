@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,43 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteKeyPair operation.
-    /// <para>Deletes the specified key pair, by removing the public key from Amazon EC2.</para>
+    /// Deletes the specified key pair, by removing the public key from Amazon EC2.
     /// </summary>
     public partial class DeleteKeyPairRequest : AmazonEC2Request
     {
-        private string keyName;
-
+        private string _keyName;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteKeyPairRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteKeyPairRequest with the parameterized properties
+        /// </summary>
+        /// <param name="keyName">The name of the key pair.</param>
+        public DeleteKeyPairRequest(string keyName)
+        {
+            _keyName = keyName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
         /// The name of the key pair.
-        ///  
+        /// </para>
         /// </summary>
         public string KeyName
         {
-            get { return this.keyName; }
-            set { this.keyName = value; }
+            get { return this._keyName; }
+            set { this._keyName = value; }
         }
 
         // Check to see if KeyName property is set
         internal bool IsSetKeyName()
         {
-            return this.keyName != null;
+            return this._keyName != null;
         }
 
     }
 }
-    

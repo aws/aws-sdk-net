@@ -12,94 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GlobalSecondaryIndexDescription Object
+    /// </summary>  
+    public class GlobalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<GlobalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<GlobalSecondaryIndexDescription, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// GlobalSecondaryIndexDescriptionUnmarshaller
-      /// </summary>
-      internal class GlobalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<GlobalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<GlobalSecondaryIndexDescription, JsonUnmarshallerContext>
-      {
         GlobalSecondaryIndexDescription IUnmarshaller<GlobalSecondaryIndexDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public GlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            GlobalSecondaryIndexDescription globalSecondaryIndexDescription = new GlobalSecondaryIndexDescription();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            GlobalSecondaryIndexDescription unmarshalledObject = new GlobalSecondaryIndexDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("IndexName", targetDepth))
-              {
-                globalSecondaryIndexDescription.IndexName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("KeySchema", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<KeySchemaElement,KeySchemaElementUnmarshaller>(
-                    KeySchemaElementUnmarshaller.GetInstance());                  
-                globalSecondaryIndexDescription.KeySchema = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Projection", targetDepth))
-              {
-                globalSecondaryIndexDescription.Projection = ProjectionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("IndexStatus", targetDepth))
-              {
-                globalSecondaryIndexDescription.IndexStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ProvisionedThroughput", targetDepth))
-              {
-                globalSecondaryIndexDescription.ProvisionedThroughput = ProvisionedThroughputDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("IndexSizeBytes", targetDepth))
-              {
-                globalSecondaryIndexDescription.IndexSizeBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ItemCount", targetDepth))
-              {
-                globalSecondaryIndexDescription.ItemCount = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("IndexName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexSizeBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.IndexSizeBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ItemCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeySchema", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
+                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Projection", targetDepth))
+                {
+                    var unmarshaller = ProjectionUnmarshaller.Instance;
+                    unmarshalledObject.Projection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProvisionedThroughput", targetDepth))
+                {
+                    var unmarshaller = ProvisionedThroughputDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return globalSecondaryIndexDescription;
+            return unmarshalledObject;
         }
 
-        private static GlobalSecondaryIndexDescriptionUnmarshaller instance;
-        public static GlobalSecondaryIndexDescriptionUnmarshaller GetInstance()
+
+        private static GlobalSecondaryIndexDescriptionUnmarshaller _instance = new GlobalSecondaryIndexDescriptionUnmarshaller();        
+
+        public static GlobalSecondaryIndexDescriptionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new GlobalSecondaryIndexDescriptionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

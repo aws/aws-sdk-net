@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Grant", targetDepth + 1))
                     {
-                        loggingEnabled.Grants.Add(GrantUnmarshaller.GetInstance().Unmarshall(context));
+                        loggingEnabled.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -72,15 +72,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static LoggingEnabledUnmarshaller instance;
+        private static LoggingEnabledUnmarshaller _instance;
 
-        public static LoggingEnabledUnmarshaller GetInstance() 
+        public static LoggingEnabledUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new LoggingEnabledUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new LoggingEnabledUnmarshaller();
+                }
+                return _instance;
+            }
         }
+
     }
 }
     

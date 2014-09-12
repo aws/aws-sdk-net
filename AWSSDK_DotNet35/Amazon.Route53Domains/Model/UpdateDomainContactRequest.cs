@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.Route53Domains.Model
         private string _domainName;
         private ContactDetail _registrantContact;
         private ContactDetail _techContact;
-
 
         /// <summary>
         /// Gets and sets the property AdminContact. 
@@ -77,7 +80,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._adminContact != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -114,7 +116,6 @@ namespace Amazon.Route53Domains.Model
             return this._domainName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RegistrantContact. 
         /// <para>
@@ -148,7 +149,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._registrantContact != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TechContact. 

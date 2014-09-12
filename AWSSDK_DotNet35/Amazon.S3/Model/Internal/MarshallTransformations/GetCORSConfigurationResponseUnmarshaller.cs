@@ -62,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (response.Configuration == null)
                             response.Configuration = new CORSConfiguration();
 
-                        response.Configuration.Rules.Add(CORSRuleUnmarshaller.GetInstance().Unmarshall(context));
+                        response.Configuration.Rules.Add(CORSRuleUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -80,22 +80,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
 
-        private static GetCORSConfigurationResponseUnmarshaller instance;
+        private static GetCORSConfigurationResponseUnmarshaller _instance;
 
-        public static GetCORSConfigurationResponseUnmarshaller GetInstance()
+        public static GetCORSConfigurationResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-                instance = new GetCORSConfigurationResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetCORSConfigurationResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
+
     }
 }
     

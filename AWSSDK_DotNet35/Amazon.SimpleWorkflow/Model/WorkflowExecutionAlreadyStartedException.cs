@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleWorkflow.Model
 {
     ///<summary>
-    /// AmazonSimpleWorkflow exception
+    /// SimpleWorkflow exception
     /// </summary>
     public class WorkflowExecutionAlreadyStartedException : AmazonSimpleWorkflowException 
     {
@@ -45,6 +49,5 @@ namespace Amazon.SimpleWorkflow.Model
         public WorkflowExecutionAlreadyStartedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

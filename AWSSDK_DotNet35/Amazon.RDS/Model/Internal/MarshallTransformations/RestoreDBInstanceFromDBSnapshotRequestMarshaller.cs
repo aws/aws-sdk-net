@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,105 +12,115 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Restore D B Instance From D B Snapshot Request Marshaller
+    /// RestoreDBInstanceFromDBSnapshot Request Marshaller
     /// </summary>       
-    public class RestoreDBInstanceFromDBSnapshotRequestMarshaller : IMarshaller<IRequest, RestoreDBInstanceFromDBSnapshotRequest>
+    public class RestoreDBInstanceFromDBSnapshotRequestMarshaller : IMarshaller<IRequest, RestoreDBInstanceFromDBSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
+            return this.Marshall((RestoreDBInstanceFromDBSnapshotRequest)input);
+        }
+    
+        public IRequest Marshall(RestoreDBInstanceFromDBSnapshotRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "RestoreDBInstanceFromDBSnapshot");
             request.Parameters.Add("Version", "2013-09-09");
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBInstanceIdentifier));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBSnapshotIdentifier())
-            {
-                request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBSnapshotIdentifier));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBInstanceClass())
-            {
-                request.Parameters.Add("DBInstanceClass", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBInstanceClass));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetPort())
-            {
-                request.Parameters.Add("Port", StringUtils.FromInt(restoreDBInstanceFromDBSnapshotRequest.Port));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.AvailabilityZone));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBSubnetGroupName())
-            {
-                request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBSubnetGroupName));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetMultiAZ())
-            {
-                request.Parameters.Add("MultiAZ", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.MultiAZ));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetPubliclyAccessible())
-            {
-                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.PubliclyAccessible));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetAutoMinorVersionUpgrade())
-            {
-                request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.AutoMinorVersionUpgrade));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetLicenseModel())
-            {
-                request.Parameters.Add("LicenseModel", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.LicenseModel));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBName())
-            {
-                request.Parameters.Add("DBName", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBName));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetEngine())
-            {
-                request.Parameters.Add("Engine", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.Engine));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetIops())
-            {
-                request.Parameters.Add("Iops", StringUtils.FromInt(restoreDBInstanceFromDBSnapshotRequest.Iops));
-            }
-            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetOptionGroupName())
-            {
-                request.Parameters.Add("OptionGroupName", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.OptionGroupName));
-            }
 
-            if (restoreDBInstanceFromDBSnapshotRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = restoreDBInstanceFromDBSnapshotRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
+                }
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetDBInstanceClass())
+                {
+                    request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
+                }
+                if(publicRequest.IsSetDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetDBName())
+                {
+                    request.Parameters.Add("DBName", StringUtils.FromString(publicRequest.DBName));
+                }
+                if(publicRequest.IsSetDBSnapshotIdentifier())
+                {
+                    request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
+                }
+                if(publicRequest.IsSetDBSubnetGroupName())
+                {
+                    request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
+                }
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
+                if(publicRequest.IsSetIops())
+                {
+                    request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
+                }
+                if(publicRequest.IsSetLicenseModel())
+                {
+                    request.Parameters.Add("LicenseModel", StringUtils.FromString(publicRequest.LicenseModel));
+                }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
+                if(publicRequest.IsSetOptionGroupName())
+                {
+                    request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
+                }
+                if(publicRequest.IsSetPort())
+                {
+                    request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-
-                    tagsListIndex++;
                 }
             }
-
             return request;
         }
     }

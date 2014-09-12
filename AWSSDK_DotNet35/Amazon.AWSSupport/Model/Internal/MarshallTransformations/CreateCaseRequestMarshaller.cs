@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateCase Request Marshaller
     /// </summary>       
-    public class CreateCaseRequestMarshaller : IMarshaller<IRequest, CreateCaseRequest> 
+    public class CreateCaseRequestMarshaller : IMarshaller<IRequest, CreateCaseRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateCaseRequest)input);
+        }
+
         public IRequest Marshall(CreateCaseRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,63 +56,64 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttachmentSetId())
                 {
-                    writer.WritePropertyName("attachmentSetId");
-                    writer.Write(publicRequest.AttachmentSetId);
+                    context.Writer.WritePropertyName("attachmentSetId");
+                    context.Writer.Write(publicRequest.AttachmentSetId);
                 }
 
                 if(publicRequest.IsSetCategoryCode())
                 {
-                    writer.WritePropertyName("categoryCode");
-                    writer.Write(publicRequest.CategoryCode);
+                    context.Writer.WritePropertyName("categoryCode");
+                    context.Writer.Write(publicRequest.CategoryCode);
                 }
 
                 if(publicRequest.IsSetCcEmailAddresses())
                 {
-                    writer.WritePropertyName("ccEmailAddresses");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("ccEmailAddresses");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
                     {
-                        writer.Write(publicRequestCcEmailAddressesListValue);
+                            context.Writer.Write(publicRequestCcEmailAddressesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetCommunicationBody())
                 {
-                    writer.WritePropertyName("communicationBody");
-                    writer.Write(publicRequest.CommunicationBody);
+                    context.Writer.WritePropertyName("communicationBody");
+                    context.Writer.Write(publicRequest.CommunicationBody);
                 }
 
                 if(publicRequest.IsSetIssueType())
                 {
-                    writer.WritePropertyName("issueType");
-                    writer.Write(publicRequest.IssueType);
+                    context.Writer.WritePropertyName("issueType");
+                    context.Writer.Write(publicRequest.IssueType);
                 }
 
                 if(publicRequest.IsSetLanguage())
                 {
-                    writer.WritePropertyName("language");
-                    writer.Write(publicRequest.Language);
+                    context.Writer.WritePropertyName("language");
+                    context.Writer.Write(publicRequest.Language);
                 }
 
                 if(publicRequest.IsSetServiceCode())
                 {
-                    writer.WritePropertyName("serviceCode");
-                    writer.Write(publicRequest.ServiceCode);
+                    context.Writer.WritePropertyName("serviceCode");
+                    context.Writer.Write(publicRequest.ServiceCode);
                 }
 
                 if(publicRequest.IsSetSeverityCode())
                 {
-                    writer.WritePropertyName("severityCode");
-                    writer.Write(publicRequest.SeverityCode);
+                    context.Writer.WritePropertyName("severityCode");
+                    context.Writer.Write(publicRequest.SeverityCode);
                 }
 
                 if(publicRequest.IsSetSubject())
                 {
-                    writer.WritePropertyName("subject");
-                    writer.Write(publicRequest.Subject);
+                    context.Writer.WritePropertyName("subject");
+                    context.Writer.Write(publicRequest.Subject);
                 }
 
         

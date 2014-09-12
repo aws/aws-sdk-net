@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,10 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+
+
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
@@ -27,24 +34,12 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.S3
 {
     /// <summary>
-    /// Implementation for accessing AmazonS3.
-    /// 
+    /// Implementation for accessing S3
+    ///
     /// 
     /// </summary>
-	public partial class AmazonS3Client : AmazonWebServiceClient, Amazon.S3.IAmazonS3
+    public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
-
-        S3Signer signer = new S3Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -63,7 +58,7 @@ namespace Amazon.S3
         ///
         /// </summary>
         public AmazonS3Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config()) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's
@@ -82,7 +77,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonS3Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's
@@ -99,9 +94,9 @@ namespace Amazon.S3
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonS3 Configuration Object</param>
+        /// <param name="config">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(AmazonS3Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with AWS Credentials
@@ -118,7 +113,7 @@ namespace Amazon.S3
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonS3Client(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonS3Config(){RegionEndpoint=region})
+            : this(credentials, new AmazonS3Config{RegionEndpoint = region})
         {
         }
 
@@ -129,7 +124,7 @@ namespace Amazon.S3
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(AWSCredentials credentials, AmazonS3Config clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -156,13 +151,13 @@ namespace Amazon.S3
 
         /// <summary>
         /// Constructs AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonS3Client Configuration object.
+        /// AmazonS3Client Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, AmazonS3Config clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -185,49 +180,78 @@ namespace Amazon.S3
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonS3Config(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonS3Config{RegionEndpoint = region})
         {
         }
 
         /// <summary>
         /// Constructs AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonS3Client Configuration object.
+        /// AmazonS3Client Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonS3Config clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
         #endregion
 
- 
-        /// <summary>
-        /// <para>Aborts a multipart upload.</para>
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method on
-        /// AmazonS3.</param>
-		public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
         {
-            var task = AbortMultipartUploadAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return new S3Signer();
+        }    
+
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.S3.Internal.AmazonS3PreMarshallHandler());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.S3.Internal.AmazonS3PostMarshallHandler());
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3ResponseHandler());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3.Internal.AmazonS3ExceptionHandler());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorHandler>(new Amazon.Runtime.Internal.RedirectHandler());
+        }    
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
-          
+
+        #endregion
+
+        
+        #region  AbortMultipartUpload
+
+        /// <summary>
+        /// Aborts a multipart upload.
+        /// 
+        ///  
+        /// <para>
+        /// To verify that all parts have been removed, so you don't get charged for the part
+        /// storage, you should call the List Parts operation and ensure the parts list is empty.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
+        /// 
+        /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        {
+            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
+
+            return Invoke<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, unmarshaller);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload operation.</param>
@@ -235,38 +259,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
-            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  CompleteMultipartUpload
+
         /// <summary>
-        /// <para>Completes a multipart upload by assembling previously uploaded parts.</para>
+        /// Completes a multipart upload by assembling previously uploaded parts.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CompleteMultipartUpload service method, as returned by AmazonS3.</returns>
-		public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var task = CompleteMultipartUploadAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CompleteMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload operation.</param>
@@ -274,37 +296,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
-            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  CopyObject
+
         /// <summary>
-        /// <para>Creates a copy of an object that is already stored in Amazon S3.</para>
+        /// Creates a copy of an object that is already stored in Amazon S3.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CopyObject service method, as returned by AmazonS3.</returns>
-		public CopyObjectResponse CopyObject(CopyObjectRequest request)
+        /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        public CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
-            var task = CopyObjectAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CopyObjectRequestMarshaller();
+            var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
+
+            return Invoke<CopyObjectRequest,CopyObjectResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the CopyObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyObject operation.</param>
@@ -312,37 +333,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyObjectRequestMarshaller();
-            var unmarshaller = CopyObjectResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CopyObjectRequest, CopyObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyObjectRequest,CopyObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  CopyPart
+
         /// <summary>
-        /// <para>Uploads a part by copying data from an existing object as data source.</para>
+        /// Uploads a part by copying data from an existing object as data source.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CopyPart service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the CopyPart service method, as returned by AmazonS3.</returns>
-		public CopyPartResponse CopyPart(CopyPartRequest request)
+        /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        public CopyPartResponse CopyPart(CopyPartRequest request)
         {
-            var task = CopyPartAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new CopyPartRequestMarshaller();
+            var unmarshaller = CopyPartResponseUnmarshaller.Instance;
+
+            return Invoke<CopyPartRequest,CopyPartResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the CopyPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.CopyPart"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyPart operation.</param>
@@ -350,36 +370,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyPartRequestMarshaller();
-            var unmarshaller = CopyPartResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CopyPartRequest, CopyPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CopyPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyPartRequest,CopyPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteBucket
+
         /// <summary>
-        /// <para>Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket
-        /// itself can be deleted.</para>
+        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// in the bucket must be deleted before the bucket itself can be deleted.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method on AmazonS3.</param>
-		public DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
+        /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        public DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var task = DeleteBucketAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteBucketRequestMarshaller();
+            var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketRequest,DeleteBucketResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucket"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket operation.</param>
@@ -387,36 +408,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketRequestMarshaller();
-            var unmarshaller = DeleteBucketResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteBucketRequest, DeleteBucketResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketRequest,DeleteBucketResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteBucketPolicy
+
         /// <summary>
-        /// <para>Deletes the policy from the bucket.</para>
+        /// Deletes the policy from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method on
-        /// AmazonS3.</param>
-		public DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
+        /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        public DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var task = DeleteBucketPolicyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteBucketPolicyRequestMarshaller();
+            var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketPolicyRequest,DeleteBucketPolicyResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketPolicy"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy operation.</param>
@@ -424,36 +445,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketPolicyRequestMarshaller();
-            var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteBucketPolicyRequest, DeleteBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketPolicyRequest,DeleteBucketPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteBucketTagging
+
         /// <summary>
-        /// <para>Deletes the tags from the bucket.</para>
+        /// Deletes the tags from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method on
-        /// AmazonS3.</param>
-		public DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
+        /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        public DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var task = DeleteBucketTaggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteBucketTaggingRequestMarshaller();
+            var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketTaggingRequest,DeleteBucketTaggingResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketTagging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging operation.</param>
@@ -461,36 +482,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketTaggingRequestMarshaller();
-            var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteBucketTaggingRequest, DeleteBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketTaggingRequest,DeleteBucketTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteBucketWebsite
+
         /// <summary>
-        /// <para>This operation removes the website configuration from the bucket.</para>
+        /// This operation removes the website configuration from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method on
-        /// AmazonS3.</param>
-		public DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
+        /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        public DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
-            var task = DeleteBucketWebsiteAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteBucketWebsiteRequestMarshaller();
+            var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketWebsiteRequest,DeleteBucketWebsiteResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite operation.</param>
@@ -498,36 +519,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketWebsiteRequestMarshaller();
-            var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteBucketWebsiteRequest, DeleteBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketWebsiteRequest,DeleteBucketWebsiteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteCORSConfiguration
+
         /// <summary>
-        /// <para>Deletes the cors configuration information set for the bucket.</para>
+        /// Deletes the cors configuration information set for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method on
-        /// AmazonS3.</param>
-		public DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
+        /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        public DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
-            var task = DeleteCORSConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteCORSConfigurationRequestMarshaller();
+            var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCORSConfigurationRequest,DeleteCORSConfigurationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteCORSConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration operation.</param>
@@ -535,36 +556,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCORSConfigurationRequestMarshaller();
-            var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteCORSConfigurationRequest, DeleteCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCORSConfigurationRequest,DeleteCORSConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteLifecycleConfiguration
+
         /// <summary>
-        /// <para>Deletes the lifecycle configuration from the bucket.</para>
+        /// Deletes the lifecycle configuration from the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method on
-        /// AmazonS3.</param>
-		public DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
+        /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        public DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
-            var task = DeleteLifecycleConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
+            var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLifecycleConfigurationRequest,DeleteLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration operation.</param>
@@ -572,38 +593,38 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
-            var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteLifecycleConfigurationRequest, DeleteLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLifecycleConfigurationRequest,DeleteLifecycleConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteObject
+
         /// <summary>
-        /// <para>Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object.
-        /// If there isn''t a null version, Amazon S3 does not remove any objects.</para>
+        /// Removes the null version (if there is one) of an object and inserts a delete marker,
+        /// which becomes the latest version of the object. If there isn't a null version, Amazon
+        /// S3 does not remove any objects.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the DeleteObject service method, as returned by AmazonS3.</returns>
-		public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var task = DeleteObjectAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteObjectRequestMarshaller();
+            var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject operation.</param>
@@ -611,38 +632,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteObjectRequestMarshaller();
-            var unmarshaller = DeleteObjectResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteObjectRequest, DeleteObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  DeleteObjects
+
         /// <summary>
-        /// <para>This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000
-        /// keys.</para>
+        /// This operation enables you to delete multiple objects from a bucket using a single
+        /// HTTP request. You may specify up to 1000 keys.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the DeleteObjects service method, as returned by AmazonS3.</returns>
-		public DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
+        /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        public DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
-            var task = DeleteObjectsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteObjectsRequestMarshaller();
+            var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteObjectsRequest,DeleteObjectsResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.DeleteObjects"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects operation.</param>
@@ -650,37 +670,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteObjectsRequestMarshaller();
-            var unmarshaller = DeleteObjectsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteObjectsRequest, DeleteObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteObjectsRequest,DeleteObjectsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetACL
+
         /// <summary>
-        /// <para>Returns the access control list (ACL) of an object.</para>
+        /// Gets the access control policy for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetACL service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by AmazonS3.</returns>
-		public GetACLResponse GetACL(GetACLRequest request)
+        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        public GetACLResponse GetACL(GetACLRequest request)
         {
-            var task = GetACLAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetACLRequestMarshaller();
+            var unmarshaller = GetACLResponseUnmarshaller.Instance;
+
+            return Invoke<GetACLRequest,GetACLResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetACL"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetACL operation.</param>
@@ -688,38 +707,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetACLResponse> GetACLAsync(GetACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetACLRequestMarshaller();
-            var unmarshaller = GetACLResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetACLRequest, GetACLResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetACLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetACLRequest,GetACLResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketLocation
+
         /// <summary>
-        /// <para>Returns the region the bucket resides in.</para>
+        /// Returns the region the bucket resides in.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketLocation service method, as returned by AmazonS3.</returns>
-		public GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
+        /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        public GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
-            var task = GetBucketLocationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketLocationRequestMarshaller();
+            var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketLocationRequest,GetBucketLocationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLocation operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLocation"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation operation.</param>
@@ -727,39 +744,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketLocationRequestMarshaller();
-            var unmarshaller = GetBucketLocationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketLocationRequest, GetBucketLocationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketLocationRequest,GetBucketLocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketLogging
+
         /// <summary>
-        /// <para>Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the
-        /// bucket owner.</para>
+        /// Returns the logging status of a bucket and the permissions users have to view and
+        /// modify that status. To use GET, you must be the bucket owner.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketLogging service method, as returned by AmazonS3.</returns>
-		public GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
+        /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        public GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
-            var task = GetBucketLoggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketLoggingRequestMarshaller();
+            var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketLoggingRequest,GetBucketLoggingResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketLogging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging operation.</param>
@@ -767,38 +782,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketLoggingRequestMarshaller();
-            var unmarshaller = GetBucketLoggingResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketLoggingRequest, GetBucketLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketLoggingRequest,GetBucketLoggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketNotification
+
         /// <summary>
-        /// <para>Return the notification configuration of a bucket.</para>
+        /// Return the notification configuration of a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketNotification service method, as returned by AmazonS3.</returns>
-		public GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
+        /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        public GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
-            var task = GetBucketNotificationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketNotificationRequestMarshaller();
+            var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketNotificationRequest,GetBucketNotificationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketNotification"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification operation.</param>
@@ -806,38 +819,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketNotificationRequestMarshaller();
-            var unmarshaller = GetBucketNotificationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketNotificationRequest, GetBucketNotificationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketNotificationRequest,GetBucketNotificationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketPolicy
+
         /// <summary>
-        /// <para>Returns the policy of a specified bucket.</para>
+        /// Returns the policy of a specified bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketPolicy service method, as returned by AmazonS3.</returns>
-		public GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
+        /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        public GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var task = GetBucketPolicyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketPolicyRequestMarshaller();
+            var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketPolicyRequest,GetBucketPolicyResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketPolicy"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy operation.</param>
@@ -845,38 +856,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketPolicyRequestMarshaller();
-            var unmarshaller = GetBucketPolicyResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketPolicyRequest, GetBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketPolicyRequest,GetBucketPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketRequestPayment
+
         /// <summary>
-        /// <para>Returns the request payment configuration of a bucket.</para>
+        /// Returns the request payment configuration of a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketRequestPayment service method, as returned by AmazonS3.</returns>
-		public GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
+        /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        public GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
-            var task = GetBucketRequestPaymentAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketRequestPaymentRequestMarshaller();
+            var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketRequestPaymentRequest,GetBucketRequestPaymentResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketRequestPayment"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment operation.</param>
@@ -884,38 +893,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketRequestPaymentRequestMarshaller();
-            var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketRequestPaymentRequest, GetBucketRequestPaymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketRequestPaymentRequest,GetBucketRequestPaymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketTagging
+
         /// <summary>
-        /// <para>Returns the tag set associated with the bucket.</para>
+        /// Returns the tag set associated with the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketTagging service method, as returned by AmazonS3.</returns>
-		public GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
+        /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        public GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var task = GetBucketTaggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketTaggingRequestMarshaller();
+            var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketTaggingRequest,GetBucketTaggingResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketTagging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging operation.</param>
@@ -923,38 +930,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketTaggingRequestMarshaller();
-            var unmarshaller = GetBucketTaggingResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketTaggingRequest, GetBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketTaggingRequest,GetBucketTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketVersioning
+
         /// <summary>
-        /// <para>Returns the versioning state of a bucket.</para>
+        /// Returns the versioning state of a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketVersioning service method, as returned by AmazonS3.</returns>
-		public GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
+        /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        public GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var task = GetBucketVersioningAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketVersioningRequestMarshaller();
+            var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketVersioningRequest,GetBucketVersioningResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketVersioning"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning operation.</param>
@@ -962,38 +967,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketVersioningRequestMarshaller();
-            var unmarshaller = GetBucketVersioningResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketVersioningRequest, GetBucketVersioningResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketVersioningRequest,GetBucketVersioningResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetBucketWebsite
+
         /// <summary>
-        /// <para>Returns the website configuration for a bucket.</para>
+        /// Returns the website configuration for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetBucketWebsite service method, as returned by AmazonS3.</returns>
-		public GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
+        /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        public GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
-            var task = GetBucketWebsiteAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetBucketWebsiteRequestMarshaller();
+            var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketWebsiteRequest,GetBucketWebsiteResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite operation.</param>
@@ -1001,37 +1004,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketWebsiteRequestMarshaller();
-            var unmarshaller = GetBucketWebsiteResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetBucketWebsiteRequest, GetBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketWebsiteRequest,GetBucketWebsiteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetCORSConfiguration
+
         /// <summary>
-        /// <para>Returns the cors configuration for the bucket.</para>
+        /// Returns the cors configuration for the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetCORSConfiguration service method, as returned by AmazonS3.</returns>
-		public GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
+        /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        public GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
-            var task = GetCORSConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetCORSConfigurationRequestMarshaller();
+            var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCORSConfigurationRequest,GetCORSConfigurationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetCORSConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration operation.</param>
@@ -1039,38 +1041,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCORSConfigurationRequestMarshaller();
-            var unmarshaller = GetCORSConfigurationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetCORSConfigurationRequest, GetCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCORSConfigurationRequest,GetCORSConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetLifecycleConfiguration
+
         /// <summary>
-        /// <para>Returns the lifecycle configuration information set on the bucket.</para>
+        /// Returns the lifecycle configuration information set on the bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by AmazonS3.</returns>
-		public GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
+        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        public GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
-            var task = GetLifecycleConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetLifecycleConfigurationRequestMarshaller();
+            var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetLifecycleConfigurationRequest,GetLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration operation.</param>
@@ -1078,37 +1078,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLifecycleConfigurationRequestMarshaller();
-            var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetLifecycleConfigurationRequest, GetLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLifecycleConfigurationRequest,GetLifecycleConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetObject
+
         /// <summary>
-        /// <para>Retrieves objects from Amazon S3.</para>
+        /// Retrieves objects from Amazon S3.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetObject service method, as returned by AmazonS3.</returns>
-		public GetObjectResponse GetObject(GetObjectRequest request)
+        /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        public GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var task = GetObjectAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetObjectRequestMarshaller();
+            var unmarshaller = GetObjectResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectRequest,GetObjectResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObject operation.</param>
@@ -1116,40 +1115,38 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectRequestMarshaller();
-            var unmarshaller = GetObjectResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetObjectRequest, GetObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetObjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectRequest,GetObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetObjectMetadata
+
         /// <summary>
-        /// Returns information about a specified object.
+        /// The HEAD operation retrieves metadata from an object without returning the object
+        /// itself. This operation is useful if you're only interested in an object's metadata.
+        /// To use HEAD, you must have READ access to the object.
         /// </summary>
-        /// <remarks>
-        /// Retrieves information about a specific object or object size, without actually fetching the object itself.
-        /// This is useful if you're only interested in the object metadata, and don't want to waste bandwidth on the object data.
-        /// The response is identical to the GetObject response, except that there is no response body.
-        /// </remarks>
-        /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method on AmazonS3.</param>
-        /// <returns>The response from the HeadObject service method, as returned by AmazonS3.</returns>
-		public GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        public GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
-            var task = GetObjectMetadataAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetObjectMetadataRequestMarshaller();
+            var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectMetadataRequest,GetObjectMetadataResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectMetadata operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectMetadata"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata operation.</param>
@@ -1157,38 +1154,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectMetadataRequestMarshaller();
-            var unmarshaller = GetObjectMetadataResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetObjectMetadataRequest, GetObjectMetadataResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectMetadataRequest,GetObjectMetadataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  GetObjectTorrent
+
         /// <summary>
-        /// <para>Return torrent files from a bucket.</para>
+        /// Return torrent files from a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the GetObjectTorrent service method, as returned by AmazonS3.</returns>
-		public GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
+        /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        public GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
-            var task = GetObjectTorrentAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetObjectTorrentRequestMarshaller();
+            var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectTorrentRequest,GetObjectTorrentResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectTorrent operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.GetObjectTorrent"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent operation.</param>
@@ -1196,45 +1191,82 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectTorrentRequestMarshaller();
-            var unmarshaller = GetObjectTorrentResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetObjectTorrentRequest, GetObjectTorrentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectTorrentRequest,GetObjectTorrentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  HeadBucket
+
         /// <summary>
-        /// <para>Initiates a multipart upload and returns an upload ID.</para>
+        /// This operation is useful to determine if a bucket exists and you have permission to
+        /// access it.
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method on
-        /// AmazonS3.</param>
+        /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// 
-        /// <returns>The response from the InitiateMultipartUpload service method, as returned by AmazonS3.</returns>
-		public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
+        internal HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
-            var task = InitiateMultipartUploadAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new HeadBucketRequestMarshaller();
+            var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
+
+            return Invoke<HeadBucketRequest,HeadBucketResponse>(request, marshaller, unmarshaller);
         }
-          
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the HeadBucket operation.
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the HeadBucket operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        internal Task<HeadBucketResponse> HeadBucketAsync(HeadBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new HeadBucketRequestMarshaller();
+            var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
+
+            return InvokeAsync<HeadBucketRequest,HeadBucketResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InitiateMultipartUpload
+
+        /// <summary>
+        /// Initiates a multipart upload and returns an upload ID.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
+        /// 
+        /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        {
+            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
+
+            return Invoke<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, unmarshaller);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.InitiateMultipartUpload"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload operation.</param>
@@ -1242,37 +1274,46 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
-            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  ListBuckets
+
         /// <summary>
-        /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
+        /// Returns a list of all buckets owned by the authenticated sender of the request.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListBuckets service method, as returned by AmazonS3.</returns>
-		public ListBucketsResponse ListBuckets(ListBucketsRequest request)
+        /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        public ListBucketsResponse ListBuckets()
         {
-            var task = ListBucketsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            return ListBuckets(new ListBucketsRequest());
         }
-          
+
+        /// <summary>
+        /// Returns a list of all buckets owned by the authenticated sender of the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
+        /// 
+        /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        public ListBucketsResponse ListBuckets(ListBucketsRequest request)
+        {
+            var marshaller = new ListBucketsRequestMarshaller();
+            var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketsRequest,ListBucketsResponse>(request, marshaller, unmarshaller);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListBuckets operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListBuckets"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets operation.</param>
@@ -1280,49 +1321,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBucketsRequestMarshaller();
-            var unmarshaller = ListBucketsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListBucketsRequest, ListBucketsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBucketsRequest,ListBucketsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  ListMultipartUploads
+
         /// <summary>
-        /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
+        /// This operation lists in-progress multipart uploads.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
-        /// 
-        /// <returns>The response from the ListBuckets service method, as returned by AmazonS3.</returns>
-		public ListBucketsResponse ListBuckets()
+        /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            return this.ListBuckets(new ListBucketsRequest());
+            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, unmarshaller);
         }
- 
-        /// <summary>
-        /// <para>This operation lists in-progress multipart uploads.</para>
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListMultipartUploads service method, as returned by AmazonS3.</returns>
-		public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
-        {
-            var task = ListMultipartUploadsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListMultipartUploads"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads operation.</param>
@@ -1330,38 +1358,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
-            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  ListObjects
+
         /// <summary>
-        /// <para>Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a
-        /// subset of the objects in a bucket.</para>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListObjects service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListObjects service method, as returned by AmazonS3.</returns>
-		public ListObjectsResponse ListObjects(ListObjectsRequest request)
+        /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        public ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
-            var task = ListObjectsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListObjectsRequestMarshaller();
+            var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectsRequest,ListObjectsResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListObjects"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListObjects operation.</param>
@@ -1369,37 +1396,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectsRequestMarshaller();
-            var unmarshaller = ListObjectsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListObjectsRequest, ListObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListObjectsRequest,ListObjectsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  ListParts
+
         /// <summary>
-        /// <para>Lists the parts that have been uploaded for a specific multipart upload.</para>
+        /// Lists the parts that have been uploaded for a specific multipart upload.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListParts service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListParts service method, as returned by AmazonS3.</returns>
-		public ListPartsResponse ListParts(ListPartsRequest request)
+        /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        public ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var task = ListPartsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListPartsRequestMarshaller();
+            var unmarshaller = ListPartsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPartsRequest,ListPartsResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListParts"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListParts operation.</param>
@@ -1407,38 +1433,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPartsRequestMarshaller();
-            var unmarshaller = ListPartsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListPartsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPartsRequest,ListPartsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  ListVersions
+
         /// <summary>
-        /// <para>Returns metadata about all of the versions of objects in a bucket.</para>
+        /// Returns metadata about all of the versions of objects in a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method on
-        /// AmazonS3.</param>
-        /// 
-        /// <returns>The response from the ListVersions service method, as returned by AmazonS3.</returns>
-		public ListVersionsResponse ListVersions(ListVersionsRequest request)
+        /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        public ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var task = ListVersionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListVersionsRequestMarshaller();
+            var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVersionsRequest,ListVersionsResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVersions operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.ListVersions"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVersions operation.</param>
@@ -1446,35 +1470,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVersionsRequestMarshaller();
-            var unmarshaller = ListVersionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListVersionsRequest, ListVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVersionsRequest,ListVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutACL
+
         /// <summary>
-        /// <para>uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket</para>
+        /// Sets the permissions on a bucket using access control lists (ACL).
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutObjectAcl service method on AmazonS3.</param>
-		public PutACLResponse PutACL(PutACLRequest request)
+        /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        public PutACLResponse PutACL(PutACLRequest request)
         {
-            var task = PutACLAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutACLRequestMarshaller();
+            var unmarshaller = PutACLResponseUnmarshaller.Instance;
+
+            return Invoke<PutACLRequest,PutACLResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutACL"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutACL operation.</param>
@@ -1482,37 +1507,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutACLResponse> PutACLAsync(PutACLRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutACLResponse> PutACLAsync(PutACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutACLRequestMarshaller();
-            var unmarshaller = PutACLResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutACLRequest, PutACLResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutACLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutACLRequest,PutACLResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucket
+
         /// <summary>
-        /// <para>Creates a new bucket.</para>
+        /// Creates a new bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucket service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the PutBucket service method, as returned by AmazonS3.</returns>
-		public PutBucketResponse PutBucket(PutBucketRequest request)
+        /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        public PutBucketResponse PutBucket(PutBucketRequest request)
         {
-            var task = PutBucketAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketRequestMarshaller();
+            var unmarshaller = PutBucketResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketRequest,PutBucketResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucket"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucket operation.</param>
@@ -1520,37 +1544,38 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketRequestMarshaller();
-            var unmarshaller = PutBucketResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketRequest, PutBucketResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketRequest,PutBucketResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketLogging
+
         /// <summary>
-        /// <para>Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the
-        /// logging status of a bucket, you must be the bucket owner.</para>
+        /// Set the logging parameters for a bucket and to specify permissions for who can view
+        /// and modify the logging parameters. To set the logging status of a bucket, you must
+        /// be the bucket owner.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method on
-        /// AmazonS3.</param>
-		public PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
+        /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        public PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
-            var task = PutBucketLoggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketLoggingRequestMarshaller();
+            var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketLoggingRequest,PutBucketLoggingResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketLogging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging operation.</param>
@@ -1558,36 +1583,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketLoggingRequestMarshaller();
-            var unmarshaller = PutBucketLoggingResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketLoggingRequest, PutBucketLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketLoggingRequest,PutBucketLoggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketNotification
+
         /// <summary>
-        /// <para>Enables notifications of specified events for a bucket.</para>
+        /// Enables notifications of specified events for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method on
-        /// AmazonS3.</param>
-		public PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
+        /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        public PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
-            var task = PutBucketNotificationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketNotificationRequestMarshaller();
+            var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketNotificationRequest,PutBucketNotificationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketNotification"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification operation.</param>
@@ -1595,36 +1620,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketNotificationRequestMarshaller();
-            var unmarshaller = PutBucketNotificationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketNotificationRequest, PutBucketNotificationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketNotificationRequest,PutBucketNotificationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketPolicy
+
         /// <summary>
-        /// <para>Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.</para>
+        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
+        /// request completely replaces it.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method on
-        /// AmazonS3.</param>
-		public PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
+        /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        public PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var task = PutBucketPolicyAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketPolicyRequestMarshaller();
+            var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketPolicyRequest,PutBucketPolicyResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketPolicy"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy operation.</param>
@@ -1632,38 +1658,39 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketPolicyRequestMarshaller();
-            var unmarshaller = PutBucketPolicyResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketPolicyRequest, PutBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketPolicyRequest,PutBucketPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketRequestPayment
+
         /// <summary>
-        /// <para>Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This
-        /// configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the
-        /// download.</para>
+        /// Sets the request payment configuration for a bucket. By default, the bucket owner
+        /// pays for downloads from the bucket. This configuration parameter enables the bucket
+        /// owner (only) to specify that the person requesting the download will be charged for
+        /// the download.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method on
-        /// AmazonS3.</param>
-		public PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
+        /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        public PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
-            var task = PutBucketRequestPaymentAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketRequestPaymentRequestMarshaller();
+            var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketRequestPaymentRequest,PutBucketRequestPaymentResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketRequestPayment"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment operation.</param>
@@ -1671,36 +1698,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketRequestPaymentRequestMarshaller();
-            var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketRequestPaymentRequest, PutBucketRequestPaymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketRequestPaymentRequest,PutBucketRequestPaymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketTagging
+
         /// <summary>
-        /// <para>Sets the tags for a bucket.</para>
+        /// Sets the tags for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method on
-        /// AmazonS3.</param>
-		public PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
+        /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        public PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var task = PutBucketTaggingAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketTaggingRequestMarshaller();
+            var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketTaggingRequest,PutBucketTaggingResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketTagging"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging operation.</param>
@@ -1708,36 +1735,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketTaggingRequestMarshaller();
-            var unmarshaller = PutBucketTaggingResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketTaggingRequest, PutBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketTaggingRequest,PutBucketTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketVersioning
+
         /// <summary>
-        /// <para>Puts the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.</para>
+        /// Sets the versioning state of an existing bucket. To set the versioning state, you
+        /// must be the bucket owner.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method on
-        /// AmazonS3.</param>
-		public PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
+        /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        public PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var task = PutBucketVersioningAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketVersioningRequestMarshaller();
+            var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketVersioningRequest,PutBucketVersioningResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketVersioning"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning operation.</param>
@@ -1745,36 +1773,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketVersioningRequestMarshaller();
-            var unmarshaller = PutBucketVersioningResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketVersioningRequest, PutBucketVersioningResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketVersioningRequest,PutBucketVersioningResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutBucketWebsite
+
         /// <summary>
-        /// <para>Set the website configuration for a bucket.</para>
+        /// Set the website configuration for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method on
-        /// AmazonS3.</param>
-		public PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
+        /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        public PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
-            var task = PutBucketWebsiteAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutBucketWebsiteRequestMarshaller();
+            var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketWebsiteRequest,PutBucketWebsiteResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutBucketWebsite"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite operation.</param>
@@ -1782,35 +1810,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketWebsiteRequestMarshaller();
-            var unmarshaller = PutBucketWebsiteResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutBucketWebsiteRequest, PutBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketWebsiteRequest,PutBucketWebsiteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutCORSConfiguration
+
         /// <summary>
-        /// <para>Sets the cors configuration for a bucket.</para>
+        /// Sets the cors configuration for a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method on AmazonS3.</param>
-		public PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
+        /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        public PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
-            var task = PutCORSConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutCORSConfigurationRequestMarshaller();
+            var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutCORSConfigurationRequest,PutCORSConfigurationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutCORSConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration operation.</param>
@@ -1818,36 +1847,37 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutCORSConfigurationRequestMarshaller();
-            var unmarshaller = PutCORSConfigurationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutCORSConfigurationRequest, PutCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutCORSConfigurationRequest,PutCORSConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutLifecycleConfiguration
+
         /// <summary>
-        /// <para>Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.</para>
+        /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
+        /// it replaces it.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method on
-        /// AmazonS3.</param>
-		public PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
+        /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        public PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
-            var task = PutLifecycleConfigurationAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutLifecycleConfigurationRequestMarshaller();
+            var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutLifecycleConfigurationRequest,PutLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutLifecycleConfiguration"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration operation.</param>
@@ -1855,37 +1885,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLifecycleConfigurationRequestMarshaller();
-            var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutLifecycleConfigurationRequest, PutLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutLifecycleConfigurationRequest,PutLifecycleConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  PutObject
+
         /// <summary>
-        /// <para>Adds an object to a bucket.</para>
+        /// Adds an object to a bucket.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutObject service method on AmazonS3.</param>
-        /// 
-        /// <returns>The response from the PutObject service method, as returned by AmazonS3.</returns>
-		public PutObjectResponse PutObject(PutObjectRequest request)
+        /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        public PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var task = PutObjectAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new PutObjectRequestMarshaller();
+            var unmarshaller = PutObjectResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectRequest,PutObjectResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.PutObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutObject operation.</param>
@@ -1893,35 +1922,36 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutObjectRequestMarshaller();
-            var unmarshaller = PutObjectResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, PutObjectRequest, PutObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = PutObjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutObjectRequest,PutObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  RestoreObject
+
         /// <summary>
-        /// <para>Restores an archived copy of an object back into Amazon S3</para>
+        /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method on AmazonS3.</param>
-		public RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        public RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
-            var task = RestoreObjectAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new RestoreObjectRequestMarshaller();
+            var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreObjectRequest,RestoreObjectResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.RestoreObject"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject operation.</param>
@@ -1929,44 +1959,44 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreObjectRequestMarshaller();
-            var unmarshaller = RestoreObjectResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, RestoreObjectRequest, RestoreObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreObjectRequest,RestoreObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
- 
+
+        #endregion
+        
+        #region  UploadPart
+
         /// <summary>
-        /// <para>Uploads a part in a multipart upload.</para>
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort
-        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you
-        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you
-        /// for their storage.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">Container for the necessary parameters to execute the UploadPart service method on AmazonS3.</param>
+        /// Uploads a part in a multipart upload.
         /// 
-        /// <returns>The response from the UploadPart service method, as returned by AmazonS3.</returns>
-		public UploadPartResponse UploadPart(UploadPartRequest request)
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
+        /// 
+        /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        public UploadPartResponse UploadPart(UploadPartRequest request)
         {
-            var task = UploadPartAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new UploadPartRequestMarshaller();
+            var unmarshaller = UploadPartResponseUnmarshaller.Instance;
+
+            return Invoke<UploadPartRequest,UploadPartResponse>(request, marshaller, unmarshaller);
         }
-          
+
         /// <summary>
         /// Initiates the asynchronous execution of the UploadPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.UploadPart"/>
+        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadPart operation.</param>
@@ -1974,11 +2004,16 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadPartRequestMarshaller();
-            var unmarshaller = UploadPartResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UploadPartRequest, UploadPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = UploadPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UploadPartRequest,UploadPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
+
+        #endregion
+        
     }
 }

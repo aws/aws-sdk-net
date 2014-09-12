@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.ElasticMapReduce.Model
         private string _publicIpAddress;
         private InstanceStatus _status;
 
-
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
         /// <para>
@@ -54,7 +57,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._ec2InstanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -74,7 +76,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
@@ -92,7 +93,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._privateDnsName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
@@ -112,7 +112,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._privateIpAddress != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PublicDnsName. 
         /// <para>
@@ -131,7 +130,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._publicDnsName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PublicIpAddress. 
         /// <para>
@@ -149,7 +147,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._publicIpAddress != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

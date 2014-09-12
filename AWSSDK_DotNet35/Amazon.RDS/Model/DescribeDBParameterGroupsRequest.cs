@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,85 +29,112 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBParameterGroups operation.
-    /// <para> Returns a list of <c>DBParameterGroup</c> descriptions. If a <c>DBParameterGroupName</c> is specified, the list will contain only the
-    /// description of the specified DB parameter group. </para>
+    /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
+    /// is specified, the list will contain only the description of the specified DB parameter
+    /// group.
     /// </summary>
     public partial class DescribeDBParameterGroupsRequest : AmazonRDSRequest
     {
-        private string dBParameterGroupName;
-        private List<Filter> filters = new List<Filter>();
-        private int? maxRecords;
-        private string marker;
-
+        private string _dBParameterGroupName;
+        private List<Filter> _filters = new List<Filter>();
+        private string _marker;
+        private int? _maxRecords;
 
         /// <summary>
-        /// The name of a specific DB parameter group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-        /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeDBParameterGroupsRequest() { }
+
+        /// <summary>
+        /// Gets and sets the property DBParameterGroupName. 
+        /// <para>
+        ///  The name of a specific DB parameter group to return details for. 
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
+        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// </ul>
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this.dBParameterGroupName; }
-            set { this.dBParameterGroupName = value; }
+            get { return this._dBParameterGroupName; }
+            set { this._dBParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this.dBParameterGroupName != null;
+            return this._dBParameterGroupName != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
         /// This parameter is not currently supported.
-        ///  
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a pagination
-        /// token called a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20,
-        /// maximum 100
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional pagination token provided by a previous <c>DescribeDBParameterGroups</c> request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///  An optional pagination token provided by a previous <code>DescribeDBParameterGroups</code>
+        /// request. If this parameter is specified, the response includes only records beyond
+        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///  The maximum number of records to include in the response. If more records exist than
+        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
+        /// included in the response so that the remaining results may be retrieved. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20, maximum 100
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
         }
 
     }
 }
-    

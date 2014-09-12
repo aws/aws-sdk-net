@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTypeInfo Object
+    /// </summary>  
+    public class ActivityTypeInfoUnmarshaller : IUnmarshaller<ActivityTypeInfo, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTypeInfoUnmarshaller
-      /// </summary>
-      internal class ActivityTypeInfoUnmarshaller : IUnmarshaller<ActivityTypeInfo, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeInfo, JsonUnmarshallerContext>
-      {
         ActivityTypeInfo IUnmarshaller<ActivityTypeInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTypeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTypeInfo activityTypeInfo = new ActivityTypeInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTypeInfo unmarshalledObject = new ActivityTypeInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("activityType", targetDepth))
-              {
-                activityTypeInfo.ActivityType = ActivityTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("status", targetDepth))
-              {
-                activityTypeInfo.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("description", targetDepth))
-              {
-                activityTypeInfo.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("creationDate", targetDepth))
-              {
-                activityTypeInfo.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("deprecationDate", targetDepth))
-              {
-                activityTypeInfo.DeprecationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("activityType", targetDepth))
+                {
+                    var unmarshaller = ActivityTypeUnmarshaller.Instance;
+                    unmarshalledObject.ActivityType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("creationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deprecationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeprecationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTypeInfo;
+            return unmarshalledObject;
         }
 
-        private static ActivityTypeInfoUnmarshaller instance;
-        public static ActivityTypeInfoUnmarshaller GetInstance()
+
+        private static ActivityTypeInfoUnmarshaller _instance = new ActivityTypeInfoUnmarshaller();        
+
+        public static ActivityTypeInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTypeInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,58 +29,75 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlacementGroup operation.
-    /// <para>Creates a placement group that you launch cluster instances into. You must give the group a name that's unique within the scope of
-    /// your account.</para> <para>For more information about placement groups and cluster instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html" >Cluster Instances</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Creates a placement group that you launch cluster instances into. You must give the
+    /// group a name that's unique within the scope of your account.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about placement groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreatePlacementGroupRequest : AmazonEC2Request
     {
-        private string groupName;
-        private PlacementStrategy strategy;
-
+        private string _groupName;
+        private PlacementStrategy _strategy;
 
         /// <summary>
-        /// A name for the placement group. Constraints: Up to 255 ASCII characters
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreatePlacementGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates CreatePlacementGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="groupName">A name for the placement group. Constraints: Up to 255 ASCII characters</param>
+        /// <param name="strategy">The placement strategy.</param>
+        public CreatePlacementGroupRequest(string groupName, PlacementStrategy strategy)
+        {
+            _groupName = groupName;
+            _strategy = strategy;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// A name for the placement group.
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints: Up to 255 ASCII characters
+        /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
 
         /// <summary>
-        /// The placement strategy.
-        ///  
+        /// Gets and sets the property Strategy. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>cluster</description>
-        ///     </item>
-        /// </list>
+        /// The placement strategy.
         /// </para>
         /// </summary>
         public PlacementStrategy Strategy
         {
-            get { return this.strategy; }
-            set { this.strategy = value; }
+            get { return this._strategy; }
+            set { this._strategy = value; }
         }
 
         // Check to see if Strategy property is set
         internal bool IsSetStrategy()
         {
-            return this.strategy != null;
+            return this._strategy != null;
         }
 
     }
 }
-    

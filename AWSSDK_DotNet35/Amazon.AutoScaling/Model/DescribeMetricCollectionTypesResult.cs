@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.AutoScaling.Model
         private List<MetricGranularityType> _granularities = new List<MetricGranularityType>();
         private List<MetricCollectionType> _metrics = new List<MetricCollectionType>();
 
-
         /// <summary>
         /// Gets and sets the property Granularities. 
         /// <para>
@@ -49,7 +52,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._granularities != null && this._granularities.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Metrics. 

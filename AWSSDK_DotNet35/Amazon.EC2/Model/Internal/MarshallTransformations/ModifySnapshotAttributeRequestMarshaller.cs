@@ -12,106 +12,108 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Snapshot Attribute Request Marshaller
+    /// ModifySnapshotAttribute Request Marshaller
     /// </summary>       
-    public class ModifySnapshotAttributeRequestMarshaller : IMarshaller<IRequest, ModifySnapshotAttributeRequest>
+    public class ModifySnapshotAttributeRequestMarshaller : IMarshaller<IRequest, ModifySnapshotAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(modifySnapshotAttributeRequest, "AmazonEC2");
+            return this.Marshall((ModifySnapshotAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(ModifySnapshotAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ModifySnapshotAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (modifySnapshotAttributeRequest != null && modifySnapshotAttributeRequest.IsSetSnapshotId())
-            {
-                request.Parameters.Add("SnapshotId", StringUtils.FromString(modifySnapshotAttributeRequest.SnapshotId));
-            }
-            if (modifySnapshotAttributeRequest != null && modifySnapshotAttributeRequest.IsSetAttribute())
-            {
-                request.Parameters.Add("Attribute", StringUtils.FromString(modifySnapshotAttributeRequest.Attribute));
-            }
-            if (modifySnapshotAttributeRequest != null && modifySnapshotAttributeRequest.IsSetOperationType())
-            {
-                request.Parameters.Add("OperationType", StringUtils.FromString(modifySnapshotAttributeRequest.OperationType));
-            }
-            if (modifySnapshotAttributeRequest != null)
-            {
-                List<string> userIdsList = modifySnapshotAttributeRequest.UserIds;
 
-                int userIdsListIndex = 1;
-                foreach (string userIdsListValue in userIdsList)
-                { 
-                    request.Parameters.Add("UserId." + userIdsListIndex, StringUtils.FromString(userIdsListValue));
-                    userIdsListIndex++;
-                }
-            }
-            if (modifySnapshotAttributeRequest != null)
+            if(publicRequest != null)
             {
-                List<string> groupNamesList = modifySnapshotAttributeRequest.GroupNames;
-
-                int groupNamesListIndex = 1;
-                foreach (string groupNamesListValue in groupNamesList)
-                { 
-                    request.Parameters.Add("UserGroup." + groupNamesListIndex, StringUtils.FromString(groupNamesListValue));
-                    groupNamesListIndex++;
-                }
-            }
-            if (modifySnapshotAttributeRequest != null)
-            {
-                CreateVolumePermissionModifications createVolumePermission = modifySnapshotAttributeRequest.CreateVolumePermission;
-
-                if (createVolumePermission != null)
+                if(publicRequest.IsSetAttribute())
                 {
-                    List<CreateVolumePermission> addList = createVolumePermission.Add;
-                    int addListIndex = 1;
-                    foreach (CreateVolumePermission addListValue in addList)
+                    request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
+                }
+                if(publicRequest.IsSetCreateVolumePermission())
+                {
+                    if(publicRequest.CreateVolumePermission.IsSetAdd())
                     {
-                        if (addListValue != null && addListValue.IsSetUserId())
+                        int publicRequestCreateVolumePermissionlistValueIndex = 1;
+                        foreach(var publicRequestCreateVolumePermissionlistValue in publicRequest.CreateVolumePermission.Add)
                         {
-                            request.Parameters.Add("CreateVolumePermission.Add." + addListIndex + ".UserId", StringUtils.FromString(addListValue.UserId));
+                            if(publicRequestCreateVolumePermissionlistValue.IsSetGroup())
+                            {
+                                request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
+                            }
+                            if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
+                            {
+                                request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
+                            }
+                            publicRequestCreateVolumePermissionlistValueIndex++;
                         }
-                        if (addListValue != null && addListValue.IsSetGroup())
+                    }
+                    if(publicRequest.CreateVolumePermission.IsSetRemove())
+                    {
+                        int publicRequestCreateVolumePermissionlistValueIndex = 1;
+                        foreach(var publicRequestCreateVolumePermissionlistValue in publicRequest.CreateVolumePermission.Remove)
                         {
-                            request.Parameters.Add("CreateVolumePermission.Add." + addListIndex + ".Group", StringUtils.FromString(addListValue.Group));
+                            if(publicRequestCreateVolumePermissionlistValue.IsSetGroup())
+                            {
+                                request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
+                            }
+                            if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
+                            {
+                                request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
+                            }
+                            publicRequestCreateVolumePermissionlistValueIndex++;
                         }
-
-                        addListIndex++;
                     }
                 }
-
-                if (createVolumePermission != null)
+                if(publicRequest.IsSetGroupNames())
                 {
-                    List<CreateVolumePermission> removeList = createVolumePermission.Remove;
-                    int removeListIndex = 1;
-                    foreach (CreateVolumePermission removeListValue in removeList)
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.GroupNames)
                     {
-                        if (removeListValue != null && removeListValue.IsSetUserId())
-                        {
-                            request.Parameters.Add("CreateVolumePermission.Remove." + removeListIndex + ".UserId", StringUtils.FromString(removeListValue.UserId));
-                        }
-                        if (removeListValue != null && removeListValue.IsSetGroup())
-                        {
-                            request.Parameters.Add("CreateVolumePermission.Remove." + removeListIndex + ".Group", StringUtils.FromString(removeListValue.Group));
-                        }
-
-                        removeListIndex++;
+                        request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetOperationType())
+                {
+                    request.Parameters.Add("OperationType", StringUtils.FromString(publicRequest.OperationType));
+                }
+                if(publicRequest.IsSetSnapshotId())
+                {
+                    request.Parameters.Add("SnapshotId", StringUtils.FromString(publicRequest.SnapshotId));
+                }
+                if(publicRequest.IsSetUserIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.UserIds)
+                    {
+                        request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
                 }
             }
-
             return request;
         }
     }

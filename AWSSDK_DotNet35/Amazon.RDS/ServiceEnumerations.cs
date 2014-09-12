@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,30 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.RDS
 {
 
-
-    /// <summary>Apply Method
+    /// <summary>
+    /// Constants used for properties of type ApplyMethod.
     /// </summary>
     public class ApplyMethod : ConstantClass
     {
 
-
-       /// <summary>Constant Immediate for ApplyMethod
-       /// </summary>
+        /// <summary>
+        /// Constant Immediate for ApplyMethod
+        /// </summary>
         public static readonly ApplyMethod Immediate = new ApplyMethod("immediate");
-    
-
-       /// <summary>Constant PendingReboot for ApplyMethod
-       /// </summary>
+        /// <summary>
+        /// Constant PendingReboot for ApplyMethod
+        /// </summary>
         public static readonly ApplyMethod PendingReboot = new ApplyMethod("pending-reboot");
-    
 
         /// <summary>
         /// Default Constructor
@@ -60,33 +62,30 @@ namespace Amazon.RDS
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Source Type
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass
     {
 
-
-       /// <summary>Constant DbInstance for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant DbInstance for SourceType
+        /// </summary>
         public static readonly SourceType DbInstance = new SourceType("db-instance");
-    
-
-       /// <summary>Constant DbParameterGroup for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant DbParameterGroup for SourceType
+        /// </summary>
         public static readonly SourceType DbParameterGroup = new SourceType("db-parameter-group");
-    
-
-       /// <summary>Constant DbSecurityGroup for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant DbSecurityGroup for SourceType
+        /// </summary>
         public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");
-    
-
-       /// <summary>Constant DbSnapshot for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant DbSnapshot for SourceType
+        /// </summary>
         public static readonly SourceType DbSnapshot = new SourceType("db-snapshot");
-    
 
         /// <summary>
         /// Default Constructor
@@ -111,7 +110,5 @@ namespace Amazon.RDS
             return FindValue(value);
         }
     }
-    
 
 }
-        

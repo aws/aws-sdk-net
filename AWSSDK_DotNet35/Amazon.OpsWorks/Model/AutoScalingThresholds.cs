@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.OpsWorks.Model
         private double? _memoryThreshold;
         private int? _thresholdsWaitTime;
 
-
         /// <summary>
         /// Gets and sets the property CpuThreshold. 
         /// <para>
@@ -54,7 +57,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._cpuThreshold.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property IgnoreMetricsTime. 
@@ -80,7 +82,6 @@ namespace Amazon.OpsWorks.Model
             return this._ignoreMetricsTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
@@ -98,7 +99,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceCount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadThreshold. 
@@ -119,7 +119,6 @@ namespace Amazon.OpsWorks.Model
             return this._loadThreshold.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MemoryThreshold. 
         /// <para>
@@ -137,7 +136,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._memoryThreshold.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ThresholdsWaitTime. 

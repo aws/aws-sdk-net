@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _instanceGroupIds = new List<string>();
         private string _jobFlowId;
 
-
         /// <summary>
         /// Gets and sets the property InstanceGroupIds. 
         /// <para>
@@ -49,7 +52,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceGroupIds != null && this._instanceGroupIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property JobFlowId. 

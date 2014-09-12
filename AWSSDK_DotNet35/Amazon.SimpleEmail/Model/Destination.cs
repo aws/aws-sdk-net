@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,6 +45,19 @@ namespace Amazon.SimpleEmail.Model
         private List<string> _ccAddresses = new List<string>();
         private List<string> _toAddresses = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Destination() { }
+
+        /// <summary>
+        /// Instantiates Destination with the parameterized properties
+        /// </summary>
+        /// <param name="toAddresses">The To: field(s) of the message.</param>
+        public Destination(List<string> toAddresses)
+        {
+            _toAddresses = toAddresses;
+        }
 
         /// <summary>
         /// Gets and sets the property BccAddresses. 
@@ -60,7 +77,6 @@ namespace Amazon.SimpleEmail.Model
             return this._bccAddresses != null && this._bccAddresses.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CcAddresses. 
         /// <para>
@@ -78,7 +94,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._ccAddresses != null && this._ccAddresses.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ToAddresses. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,16 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// 
+    /// Describes a tag applied to a resource in an environment.
     /// </summary>
     public partial class Tag
     {
         private string _key;
         private string _value;
 
-
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key of the tag.
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -47,9 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._key != null;
         }
 
-
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the tag.
+        /// </para>
         /// </summary>
         public string Value
         {

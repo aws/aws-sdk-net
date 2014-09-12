@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateMaintenanceStartTime response and response metadata.
+    /// Configuration for accessing Amazon UpdateMaintenanceStartTime service
     /// </summary>
-    public class UpdateMaintenanceStartTimeResponse : UpdateMaintenanceStartTimeResult
+    public partial class UpdateMaintenanceStartTimeResponse : UpdateMaintenanceStartTimeResult
     {
         /// <summary>
         /// Gets and sets the UpdateMaintenanceStartTimeResult property.
-        /// A JSON object containing the of the gateway whose maintenance start time is updated.
+        /// Represents the output of a UpdateMaintenanceStartTime operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateMaintenanceStartTimeResult class are now available on the UpdateMaintenanceStartTimeResponse class. You should use the properties on UpdateMaintenanceStartTimeResponse instead of accessing them through UpdateMaintenanceStartTimeResult.")]
         public UpdateMaintenanceStartTimeResult UpdateMaintenanceStartTimeResult
@@ -40,4 +40,3 @@ namespace Amazon.StorageGateway.Model
         }
     }
 }
-    

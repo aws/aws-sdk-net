@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,6 +45,25 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _supportedProducts = new List<string>();
         private bool? _visibleToAllUsers;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public JobFlowDetail() { }
+
+        /// <summary>
+        /// Instantiates JobFlowDetail with the parameterized properties
+        /// </summary>
+        /// <param name="jobFlowId">The job flow identifier.</param>
+        /// <param name="name">The name of the job flow.</param>
+        /// <param name="executionStatusDetail">Describes the execution status of the job flow.</param>
+        /// <param name="instances">Describes the Amazon EC2 instances of the job flow.</param>
+        public JobFlowDetail(string jobFlowId, string name, JobFlowExecutionStatusDetail executionStatusDetail, JobFlowInstancesDetail instances)
+        {
+            _jobFlowId = jobFlowId;
+            _name = name;
+            _executionStatusDetail = executionStatusDetail;
+            _instances = instances;
+        }
 
         /// <summary>
         /// Gets and sets the property AmiVersion. 
@@ -64,7 +87,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._amiVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property BootstrapActions. 
         /// <para>
@@ -82,7 +104,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ExecutionStatusDetail. 
@@ -102,7 +123,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._executionStatusDetail != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
@@ -121,7 +141,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instances != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property JobFlowId. 
         /// <para>
@@ -139,7 +158,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._jobFlowId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property JobFlowRole. 
@@ -160,7 +178,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._jobFlowRole != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
@@ -179,7 +196,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._logUri != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -197,7 +213,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ServiceRole. 
@@ -218,7 +233,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._serviceRole != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Steps. 
         /// <para>
@@ -236,7 +250,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._steps != null && this._steps.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SupportedProducts. 
@@ -256,7 +269,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._supportedProducts != null && this._supportedProducts.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 

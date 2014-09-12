@@ -12,37 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the new provisioned throughput settings to apply to a global secondary index.</para>
+    /// Represents the new provisioned throughput settings to apply to a global secondary
+    /// index.
     /// </summary>
     public partial class GlobalSecondaryIndexUpdate
     {
-        
-        private UpdateGlobalSecondaryIndexAction update;
-
+        private UpdateGlobalSecondaryIndexAction _update;
 
         /// <summary>
-        /// The name of a global secondary index, along with the updated provisioned throughput settings that are to be applied to that index.
-        ///  
+        /// Gets and sets the property Update. 
+        /// <para>
+        /// The name of a global secondary index, along with the updated provisioned throughput
+        /// settings that are to be      applied to that index.
+        /// </para>
         /// </summary>
         public UpdateGlobalSecondaryIndexAction Update
         {
-            get { return this.update; }
-            set { this.update = value; }
+            get { return this._update; }
+            set { this._update = value; }
         }
 
         // Check to see if Update property is set
         internal bool IsSetUpdate()
         {
-            return this.update != null;
+            return this._update != null;
         }
+
     }
 }

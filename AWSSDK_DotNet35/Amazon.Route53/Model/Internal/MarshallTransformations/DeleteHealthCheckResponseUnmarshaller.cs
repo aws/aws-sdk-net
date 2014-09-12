@@ -12,96 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Route53.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DeleteHealthCheck operation
-    /// </summary>
-    internal class DeleteHealthCheckResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DeleteHealthCheck operation
+    /// </summary>  
+    public class DeleteHealthCheckResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DeleteHealthCheckResponse response = new DeleteHealthCheckResponse();
             
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context,response);
-                    break;
-                }
-            }
-                 
-                        
             return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DeleteHealthCheckResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
+        }        
+  
 
-
-            return;
-        }
-        
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHealthCheck"))
-            {
-                return new NoSuchHealthCheckException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("HealthCheckInUse"))
             {
                 return new HealthCheckInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHealthCheck"))
+            {
+                return new NoSuchHealthCheckException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DeleteHealthCheckResponseUnmarshaller instance;
 
-        public static DeleteHealthCheckResponseUnmarshaller GetInstance()
+        private static DeleteHealthCheckResponseUnmarshaller _instance = new DeleteHealthCheckResponseUnmarshaller();        
+
+        internal static DeleteHealthCheckResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DeleteHealthCheckResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DeleteHealthCheckResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

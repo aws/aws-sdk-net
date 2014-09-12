@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the AttachInternetGateway response metadata.
-    /// The AttachInternetGateway operation has a void result type.
+    /// Configuration for accessing Amazon AttachInternetGateway service
     /// </summary>
-    public partial class AttachInternetGatewayResponse : AmazonWebServiceResponse
+    public partial class AttachInternetGatewayResponse : AttachInternetGatewayResult
     {
+        /// <summary>
+        /// Gets and sets the AttachInternetGatewayResult property.
+        /// Represents the output of a AttachInternetGateway operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AttachInternetGatewayResult class are now available on the AttachInternetGatewayResponse class. You should use the properties on AttachInternetGatewayResponse instead of accessing them through AttachInternetGatewayResult.")]
+        public AttachInternetGatewayResult AttachInternetGatewayResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

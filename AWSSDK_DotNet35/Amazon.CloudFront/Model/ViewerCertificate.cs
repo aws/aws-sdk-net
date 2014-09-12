@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,12 +36,11 @@ namespace Amazon.CloudFront.Model
         private string _iAMCertificateId;
         private SSLSupportMethod _sSLSupportMethod;
 
-
         /// <summary>
         /// Gets and sets the property CloudFrontDefaultCertificate. If you want viewers to use
-        /// HTTPS to request your objects and you're using the CloudFront domain name     of your
+        /// HTTPS to request your objects and you're using the CloudFront domain name of your
         /// distribution in your object URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-        ///    set to true. Omit this value if you are setting an IAMCertificateId.
+        /// set to true. Omit this value if you are setting an IAMCertificateId.
         /// </summary>
         public bool CloudFrontDefaultCertificate
         {
@@ -51,13 +54,11 @@ namespace Amazon.CloudFront.Model
             return this._cloudFrontDefaultCertificate.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property IAMCertificateId. If you want viewers to use HTTPS to request
-        /// your objects and you're using an    alternate domain name in your object URLs (for
-        /// example, https://example.com/logo.jpg),     specify the IAM certificate identifier
-        /// of the custom viewer certificate for this distribution.     Specify either this value
-        /// or CloudFrontDefaultCertificate.
+        /// your objects and you're using an alternate domain name in your object URLs (for example,
+        /// https://example.com/logo.jpg), specify the IAM certificate identifier of the custom
+        /// viewer certificate for this distribution. Specify either this value or CloudFrontDefaultCertificate.
         /// </summary>
         public string IAMCertificateId
         {
@@ -71,17 +72,16 @@ namespace Amazon.CloudFront.Model
             return this._iAMCertificateId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SSLSupportMethod. If you specify a value for IAMCertificateId,
-        /// you must also specify how you want CloudFront     to serve HTTPS requests. Valid values
-        /// are vip and sni-only. If you specify vip, CloudFront uses     dedicated IP addresses
-        /// for your content and can respond to HTTPS requests from any viewer.     However, you
-        /// must request permission to use this feature, and you incur additional monthly    
-        /// charges. If you specify sni-only, CloudFront can only respond to HTTPS requests from
-        ///     viewers that support Server Name Indication (SNI). All modern browsers support
-        /// SNI,     but some browsers still in use don't support SNI. Do not specify a value
-        /// for SSLSupportMethod if you     specified true for CloudFrontDefaultCertificate.
+        /// you must also specify how you want CloudFront to serve HTTPS requests. Valid values
+        /// are vip and sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+        /// your content and can respond to HTTPS requests from any viewer. However, you must
+        /// request permission to use this feature, and you incur additional monthly charges.
+        /// If you specify sni-only, CloudFront can only respond to HTTPS requests from viewers
+        /// that support Server Name Indication (SNI). All modern browsers support SNI, but some
+        /// browsers still in use don't support SNI. Do not specify a value for SSLSupportMethod
+        /// if you specified true for CloudFrontDefaultCertificate.
         /// </summary>
         public SSLSupportMethod SSLSupportMethod
         {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,72 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   RecurringCharge Unmarshaller
-     /// </summary>
-    internal class RecurringChargeUnmarshaller : IUnmarshaller<RecurringCharge, XmlUnmarshallerContext>, IUnmarshaller<RecurringCharge, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for RecurringCharge Object
+    /// </summary>  
+    public class RecurringChargeUnmarshaller : IUnmarshaller<RecurringCharge, XmlUnmarshallerContext>, IUnmarshaller<RecurringCharge, JsonUnmarshallerContext>
     {
-        public RecurringCharge Unmarshall(XmlUnmarshallerContext context) 
+        public RecurringCharge Unmarshall(XmlUnmarshallerContext context)
         {
-            RecurringCharge recurringCharge = new RecurringCharge();
+            RecurringCharge unmarshalledObject = new RecurringCharge();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("RecurringChargeAmount", targetDepth))
                     {
-                        recurringCharge.RecurringChargeAmount = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.RecurringChargeAmount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RecurringChargeFrequency", targetDepth))
                     {
-                        recurringCharge.RecurringChargeFrequency = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RecurringChargeFrequency = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return recurringCharge;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return recurringCharge;
+            return unmarshalledObject;
         }
 
-        public RecurringCharge Unmarshall(JsonUnmarshallerContext context) 
+        public RecurringCharge Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static RecurringChargeUnmarshaller instance;
 
-        public static RecurringChargeUnmarshaller GetInstance() 
+        private static RecurringChargeUnmarshaller _instance = new RecurringChargeUnmarshaller();        
+
+        public static RecurringChargeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new RecurringChargeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

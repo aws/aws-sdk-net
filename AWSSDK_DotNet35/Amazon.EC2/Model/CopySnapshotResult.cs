@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CopySnapshotResult : AmazonWebServiceResponse
     {
-        
-        private string snapshotId;
-
+        private string _snapshotId;
 
         /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
         /// The ID of the new snapshot.
-        ///  
+        /// </para>
         /// </summary>
         public string SnapshotId
         {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
         }
 
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;
+            return this._snapshotId != null;
         }
+
     }
 }

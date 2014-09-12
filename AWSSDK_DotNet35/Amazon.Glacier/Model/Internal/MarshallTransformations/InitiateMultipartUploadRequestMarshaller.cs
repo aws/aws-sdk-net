@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,45 +33,36 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Initiate Multipart Upload Request Marshaller
+    /// InitiateMultipartUpload Request Marshaller
     /// </summary>       
-    internal class InitiateMultipartUploadRequestMarshaller : IMarshaller<IRequest, InitiateMultipartUploadRequest> 
+    public class InitiateMultipartUploadRequestMarshaller : IMarshaller<IRequest, InitiateMultipartUploadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(InitiateMultipartUploadRequest initiateMultipartUploadRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((InitiateMultipartUploadRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(initiateMultipartUploadRequest, "AmazonGlacier");
-            string target = "Glacier.InitiateMultipartUpload";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+        public IRequest Marshall(InitiateMultipartUploadRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            if(initiateMultipartUploadRequest.IsSetArchiveDescription())
-                request.Headers.Add("x-amz-archive-description", StringUtils.FromString(initiateMultipartUploadRequest.ArchiveDescription));
 
-            
-            if(initiateMultipartUploadRequest.IsSetPartSize())
-                request.Headers.Add("x-amz-part-size", StringUtils.FromLong(initiateMultipartUploadRequest.PartSize));
-
-            
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads"; 
-            if(initiateMultipartUploadRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(initiateMultipartUploadRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(initiateMultipartUploadRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(initiateMultipartUploadRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+        
+            if(publicRequest.IsSetArchiveDescription())
+                request.Headers["x-amz-archive-description"] = publicRequest.ArchiveDescription;
+        
+            if(publicRequest.IsSetPartSize())
+                request.Headers["x-amz-part-size"] = Amazon.Runtime.Internal.Util.StringUtils.FromLong(publicRequest.PartSize);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

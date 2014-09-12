@@ -12,71 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The Output data type.</para>
+    /// The Output data type.
     /// </summary>
     public partial class Output
     {
-        
-        private string outputKey;
-        private string outputValue;
-        private string description;
-
+        private string _description;
+        private string _outputKey;
+        private string _outputValue;
 
         /// <summary>
-        /// The key associated with the output.
-        ///  
-        /// </summary>
-        public string OutputKey
-        {
-            get { return this.outputKey; }
-            set { this.outputKey = value; }
-        }
-
-        // Check to see if OutputKey property is set
-        internal bool IsSetOutputKey()
-        {
-            return this.outputKey != null;
-        }
-
-        /// <summary>
-        /// The value associated with the output.
-        ///  
-        /// </summary>
-        public string OutputValue
-        {
-            get { return this.outputValue; }
-            set { this.outputValue = value; }
-        }
-
-        // Check to see if OutputValue property is set
-        internal bool IsSetOutputValue()
-        {
-            return this.outputValue != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// User defined description associated with the output.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property OutputKey. 
+        /// <para>
+        /// The key associated with the output.
+        /// </para>
+        /// </summary>
+        public string OutputKey
+        {
+            get { return this._outputKey; }
+            set { this._outputKey = value; }
+        }
+
+        // Check to see if OutputKey property is set
+        internal bool IsSetOutputKey()
+        {
+            return this._outputKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputValue. 
+        /// <para>
+        /// The value associated with the output.
+        /// </para>
+        /// </summary>
+        public string OutputValue
+        {
+            get { return this._outputValue; }
+            set { this._outputValue = value; }
+        }
+
+        // Check to see if OutputValue property is set
+        internal bool IsSetOutputValue()
+        {
+            return this._outputValue != null;
+        }
+
     }
 }

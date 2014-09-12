@@ -12,348 +12,362 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for HistoryEvent Object
+    /// </summary>  
+    public class HistoryEventUnmarshaller : IUnmarshaller<HistoryEvent, XmlUnmarshallerContext>, IUnmarshaller<HistoryEvent, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// HistoryEventUnmarshaller
-      /// </summary>
-      internal class HistoryEventUnmarshaller : IUnmarshaller<HistoryEvent, XmlUnmarshallerContext>, IUnmarshaller<HistoryEvent, JsonUnmarshallerContext>
-      {
         HistoryEvent IUnmarshaller<HistoryEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public HistoryEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            HistoryEvent historyEvent = new HistoryEvent();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            HistoryEvent unmarshalledObject = new HistoryEvent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("eventTimestamp", targetDepth))
-              {
-                historyEvent.EventTimestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("eventType", targetDepth))
-              {
-                historyEvent.EventType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("eventId", targetDepth))
-              {
-                historyEvent.EventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionStartedEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionStartedEventAttributes = WorkflowExecutionStartedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionCompletedEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionCompletedEventAttributes = WorkflowExecutionCompletedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("completeWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.CompleteWorkflowExecutionFailedEventAttributes = CompleteWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionFailedEventAttributes = WorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("failWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.FailWorkflowExecutionFailedEventAttributes = FailWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionTimedOutEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionTimedOutEventAttributes = WorkflowExecutionTimedOutEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionCanceledEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionCanceledEventAttributes = WorkflowExecutionCanceledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("cancelWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.CancelWorkflowExecutionFailedEventAttributes = CancelWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionContinuedAsNewEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionContinuedAsNewEventAttributes = WorkflowExecutionContinuedAsNewEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("continueAsNewWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.ContinueAsNewWorkflowExecutionFailedEventAttributes = ContinueAsNewWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionTerminatedEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionTerminatedEventAttributes = WorkflowExecutionTerminatedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionCancelRequestedEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionCancelRequestedEventAttributes = WorkflowExecutionCancelRequestedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskScheduledEventAttributes", targetDepth))
-              {
-                historyEvent.DecisionTaskScheduledEventAttributes = DecisionTaskScheduledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskStartedEventAttributes", targetDepth))
-              {
-                historyEvent.DecisionTaskStartedEventAttributes = DecisionTaskStartedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventAttributes", targetDepth))
-              {
-                historyEvent.DecisionTaskCompletedEventAttributes = DecisionTaskCompletedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskTimedOutEventAttributes", targetDepth))
-              {
-                historyEvent.DecisionTaskTimedOutEventAttributes = DecisionTaskTimedOutEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskScheduledEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskScheduledEventAttributes = ActivityTaskScheduledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskStartedEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskStartedEventAttributes = ActivityTaskStartedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskCompletedEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskCompletedEventAttributes = ActivityTaskCompletedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskFailedEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskFailedEventAttributes = ActivityTaskFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskTimedOutEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskTimedOutEventAttributes = ActivityTaskTimedOutEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskCanceledEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskCanceledEventAttributes = ActivityTaskCanceledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("activityTaskCancelRequestedEventAttributes", targetDepth))
-              {
-                historyEvent.ActivityTaskCancelRequestedEventAttributes = ActivityTaskCancelRequestedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowExecutionSignaledEventAttributes", targetDepth))
-              {
-                historyEvent.WorkflowExecutionSignaledEventAttributes = WorkflowExecutionSignaledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("markerRecordedEventAttributes", targetDepth))
-              {
-                historyEvent.MarkerRecordedEventAttributes = MarkerRecordedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("recordMarkerFailedEventAttributes", targetDepth))
-              {
-                historyEvent.RecordMarkerFailedEventAttributes = RecordMarkerFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("timerStartedEventAttributes", targetDepth))
-              {
-                historyEvent.TimerStartedEventAttributes = TimerStartedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("timerFiredEventAttributes", targetDepth))
-              {
-                historyEvent.TimerFiredEventAttributes = TimerFiredEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("timerCanceledEventAttributes", targetDepth))
-              {
-                historyEvent.TimerCanceledEventAttributes = TimerCanceledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startChildWorkflowExecutionInitiatedEventAttributes", targetDepth))
-              {
-                historyEvent.StartChildWorkflowExecutionInitiatedEventAttributes = StartChildWorkflowExecutionInitiatedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childWorkflowExecutionStartedEventAttributes", targetDepth))
-              {
-                historyEvent.ChildWorkflowExecutionStartedEventAttributes = ChildWorkflowExecutionStartedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childWorkflowExecutionCompletedEventAttributes", targetDepth))
-              {
-                historyEvent.ChildWorkflowExecutionCompletedEventAttributes = ChildWorkflowExecutionCompletedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.ChildWorkflowExecutionFailedEventAttributes = ChildWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childWorkflowExecutionTimedOutEventAttributes", targetDepth))
-              {
-                historyEvent.ChildWorkflowExecutionTimedOutEventAttributes = ChildWorkflowExecutionTimedOutEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childWorkflowExecutionCanceledEventAttributes", targetDepth))
-              {
-                historyEvent.ChildWorkflowExecutionCanceledEventAttributes = ChildWorkflowExecutionCanceledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childWorkflowExecutionTerminatedEventAttributes", targetDepth))
-              {
-                historyEvent.ChildWorkflowExecutionTerminatedEventAttributes = ChildWorkflowExecutionTerminatedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("signalExternalWorkflowExecutionInitiatedEventAttributes", targetDepth))
-              {
-                historyEvent.SignalExternalWorkflowExecutionInitiatedEventAttributes = SignalExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("externalWorkflowExecutionSignaledEventAttributes", targetDepth))
-              {
-                historyEvent.ExternalWorkflowExecutionSignaledEventAttributes = ExternalWorkflowExecutionSignaledEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("signalExternalWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.SignalExternalWorkflowExecutionFailedEventAttributes = SignalExternalWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("externalWorkflowExecutionCancelRequestedEventAttributes", targetDepth))
-              {
-                historyEvent.ExternalWorkflowExecutionCancelRequestedEventAttributes = ExternalWorkflowExecutionCancelRequestedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("requestCancelExternalWorkflowExecutionInitiatedEventAttributes", targetDepth))
-              {
-                historyEvent.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes = RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("requestCancelExternalWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.RequestCancelExternalWorkflowExecutionFailedEventAttributes = RequestCancelExternalWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("scheduleActivityTaskFailedEventAttributes", targetDepth))
-              {
-                historyEvent.ScheduleActivityTaskFailedEventAttributes = ScheduleActivityTaskFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("requestCancelActivityTaskFailedEventAttributes", targetDepth))
-              {
-                historyEvent.RequestCancelActivityTaskFailedEventAttributes = RequestCancelActivityTaskFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startTimerFailedEventAttributes", targetDepth))
-              {
-                historyEvent.StartTimerFailedEventAttributes = StartTimerFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("cancelTimerFailedEventAttributes", targetDepth))
-              {
-                historyEvent.CancelTimerFailedEventAttributes = CancelTimerFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startChildWorkflowExecutionFailedEventAttributes", targetDepth))
-              {
-                historyEvent.StartChildWorkflowExecutionFailedEventAttributes = StartChildWorkflowExecutionFailedEventAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("activityTaskCanceledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskCanceledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskCanceledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityTaskCancelRequestedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskCancelRequestedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskCancelRequestedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityTaskCompletedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskCompletedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskCompletedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityTaskFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityTaskScheduledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskScheduledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskScheduledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityTaskStartedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskStartedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskStartedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("activityTaskTimedOutEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ActivityTaskTimedOutEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ActivityTaskTimedOutEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cancelTimerFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = CancelTimerFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.CancelTimerFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cancelWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = CancelWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.CancelWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childWorkflowExecutionCanceledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ChildWorkflowExecutionCanceledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ChildWorkflowExecutionCanceledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childWorkflowExecutionCompletedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ChildWorkflowExecutionCompletedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ChildWorkflowExecutionCompletedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ChildWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ChildWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childWorkflowExecutionStartedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ChildWorkflowExecutionStartedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ChildWorkflowExecutionStartedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childWorkflowExecutionTerminatedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ChildWorkflowExecutionTerminatedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ChildWorkflowExecutionTerminatedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childWorkflowExecutionTimedOutEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ChildWorkflowExecutionTimedOutEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ChildWorkflowExecutionTimedOutEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("completeWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = CompleteWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.CompleteWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("continueAsNewWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ContinueAsNewWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ContinueAsNewWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskCompletedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = DecisionTaskCompletedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskScheduledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = DecisionTaskScheduledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskScheduledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskStartedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = DecisionTaskStartedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskStartedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskTimedOutEventAttributes", targetDepth))
+                {
+                    var unmarshaller = DecisionTaskTimedOutEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskTimedOutEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("externalWorkflowExecutionCancelRequestedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ExternalWorkflowExecutionCancelRequestedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ExternalWorkflowExecutionCancelRequestedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("externalWorkflowExecutionSignaledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ExternalWorkflowExecutionSignaledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ExternalWorkflowExecutionSignaledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("failWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = FailWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.FailWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("markerRecordedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = MarkerRecordedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.MarkerRecordedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordMarkerFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = RecordMarkerFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.RecordMarkerFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requestCancelActivityTaskFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = RequestCancelActivityTaskFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.RequestCancelActivityTaskFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requestCancelExternalWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = RequestCancelExternalWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.RequestCancelExternalWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requestCancelExternalWorkflowExecutionInitiatedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scheduleActivityTaskFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ScheduleActivityTaskFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleActivityTaskFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signalExternalWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = SignalExternalWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.SignalExternalWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signalExternalWorkflowExecutionInitiatedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = SignalExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.SignalExternalWorkflowExecutionInitiatedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startChildWorkflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = StartChildWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.StartChildWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startChildWorkflowExecutionInitiatedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = StartChildWorkflowExecutionInitiatedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.StartChildWorkflowExecutionInitiatedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startTimerFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = StartTimerFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.StartTimerFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timerCanceledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = TimerCanceledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.TimerCanceledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timerFiredEventAttributes", targetDepth))
+                {
+                    var unmarshaller = TimerFiredEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.TimerFiredEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timerStartedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = TimerStartedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.TimerStartedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionCanceledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionCanceledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionCanceledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionCancelRequestedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionCancelRequestedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionCancelRequestedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionCompletedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionCompletedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionCompletedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionContinuedAsNewEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionContinuedAsNewEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionContinuedAsNewEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionSignaledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionSignaledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionSignaledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionStartedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionStartedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionStartedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionTerminatedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionTerminatedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionTerminatedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecutionTimedOutEventAttributes", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionTimedOutEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionTimedOutEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return historyEvent;
+            return unmarshalledObject;
         }
 
-        private static HistoryEventUnmarshaller instance;
-        public static HistoryEventUnmarshaller GetInstance()
+
+        private static HistoryEventUnmarshaller _instance = new HistoryEventUnmarshaller();        
+
+        public static HistoryEventUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new HistoryEventUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

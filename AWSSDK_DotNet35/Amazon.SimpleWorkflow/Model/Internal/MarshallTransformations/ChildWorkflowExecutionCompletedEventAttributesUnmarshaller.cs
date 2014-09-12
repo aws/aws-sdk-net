@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ChildWorkflowExecutionCompletedEventAttributes Object
+    /// </summary>  
+    public class ChildWorkflowExecutionCompletedEventAttributesUnmarshaller : IUnmarshaller<ChildWorkflowExecutionCompletedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ChildWorkflowExecutionCompletedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ChildWorkflowExecutionCompletedEventAttributesUnmarshaller
-      /// </summary>
-      internal class ChildWorkflowExecutionCompletedEventAttributesUnmarshaller : IUnmarshaller<ChildWorkflowExecutionCompletedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ChildWorkflowExecutionCompletedEventAttributes, JsonUnmarshallerContext>
-      {
         ChildWorkflowExecutionCompletedEventAttributes IUnmarshaller<ChildWorkflowExecutionCompletedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ChildWorkflowExecutionCompletedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ChildWorkflowExecutionCompletedEventAttributes childWorkflowExecutionCompletedEventAttributes = new ChildWorkflowExecutionCompletedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ChildWorkflowExecutionCompletedEventAttributes unmarshalledObject = new ChildWorkflowExecutionCompletedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("workflowExecution", targetDepth))
-              {
-                childWorkflowExecutionCompletedEventAttributes.WorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("workflowType", targetDepth))
-              {
-                childWorkflowExecutionCompletedEventAttributes.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("result", targetDepth))
-              {
-                childWorkflowExecutionCompletedEventAttributes.Result = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("initiatedEventId", targetDepth))
-              {
-                childWorkflowExecutionCompletedEventAttributes.InitiatedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                childWorkflowExecutionCompletedEventAttributes.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("initiatedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.InitiatedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("result", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowExecution", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowType", targetDepth))
+                {
+                    var unmarshaller = WorkflowTypeUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return childWorkflowExecutionCompletedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static ChildWorkflowExecutionCompletedEventAttributesUnmarshaller instance;
-        public static ChildWorkflowExecutionCompletedEventAttributesUnmarshaller GetInstance()
+
+        private static ChildWorkflowExecutionCompletedEventAttributesUnmarshaller _instance = new ChildWorkflowExecutionCompletedEventAttributesUnmarshaller();        
+
+        public static ChildWorkflowExecutionCompletedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ChildWorkflowExecutionCompletedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

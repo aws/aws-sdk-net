@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -133,7 +137,6 @@ namespace Amazon.SecurityToken.Model
         private string _serialNumber;
         private string _tokenCode;
 
-
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
@@ -153,7 +156,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._durationSeconds.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ExternalId. 
@@ -179,7 +181,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._externalId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Policy. 
@@ -210,7 +211,6 @@ namespace Amazon.SecurityToken.Model
             return this._policy != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
@@ -228,7 +228,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._roleArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RoleSessionName. 
@@ -248,7 +247,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._roleSessionName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SerialNumber. 
@@ -272,7 +270,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._serialNumber != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TokenCode. 

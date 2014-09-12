@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<LBCookieStickinessPolicy> _lBCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
         private List<string> _otherPolicies = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Policies() { }
 
         /// <summary>
         /// Gets and sets the property AppCookieStickinessPolicies. 
@@ -52,7 +60,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._appCookieStickinessPolicies != null && this._appCookieStickinessPolicies.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LBCookieStickinessPolicies. 
         /// <para>
@@ -71,7 +78,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._lBCookieStickinessPolicies != null && this._lBCookieStickinessPolicies.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property OtherPolicies. 

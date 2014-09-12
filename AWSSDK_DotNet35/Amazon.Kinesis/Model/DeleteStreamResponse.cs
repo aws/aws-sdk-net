@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Returns information about the DeleteStream response metadata.
-    /// The DeleteStream operation has a void result type.
+    /// Configuration for accessing Amazon DeleteStream service
     /// </summary>
-    public partial class DeleteStreamResponse : AmazonWebServiceResponse
+    public partial class DeleteStreamResponse : DeleteStreamResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteStreamResult property.
+        /// Represents the output of a DeleteStream operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteStreamResult class are now available on the DeleteStreamResponse class. You should use the properties on DeleteStreamResponse instead of accessing them through DeleteStreamResult.")]
+        public DeleteStreamResult DeleteStreamResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

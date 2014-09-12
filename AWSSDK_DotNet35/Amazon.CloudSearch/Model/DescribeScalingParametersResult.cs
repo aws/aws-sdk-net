@@ -12,39 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DescribeScalingParameters</c> request. Contains the scaling parameters configured for the domain specified in the
-    /// request.</para>
+    /// The result of a <code>DescribeScalingParameters</code> request. Contains the scaling
+    /// parameters configured for the domain specified in the request.
     /// </summary>
     public partial class DescribeScalingParametersResult : AmazonWebServiceResponse
     {
-        
-        private ScalingParametersStatus scalingParameters;
-
+        private ScalingParametersStatus _scalingParameters;
 
         /// <summary>
-        /// The status and configuration of a search domain's scaling parameters.
-        ///  
+        /// Gets and sets the property ScalingParameters.
         /// </summary>
         public ScalingParametersStatus ScalingParameters
         {
-            get { return this.scalingParameters; }
-            set { this.scalingParameters = value; }
+            get { return this._scalingParameters; }
+            set { this._scalingParameters = value; }
         }
 
         // Check to see if ScalingParameters property is set
         internal bool IsSetScalingParameters()
         {
-            return this.scalingParameters != null;
+            return this._scalingParameters != null;
         }
+
     }
 }

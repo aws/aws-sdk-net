@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -30,7 +34,6 @@ namespace Amazon.ElasticTranscoder.Model
     {
         private List<Artwork> _artwork = new List<Artwork>();
         private string _mergePolicy;
-
 
         /// <summary>
         /// Gets and sets the property Artwork. 
@@ -51,7 +54,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._artwork != null && this._artwork.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property MergePolicy. 

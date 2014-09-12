@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.CloudFront.Model
         private Invalidation _invalidation;
         private string _location;
 
-
         /// <summary>
         /// Gets and sets the property Invalidation. The invalidation's information.
         /// </summary>
@@ -46,7 +49,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._invalidation != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Location. The fully qualified URI of the distribution and

@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceExportDetails Unmarshaller
-     /// </summary>
-    internal class InstanceExportDetailsUnmarshaller : IUnmarshaller<InstanceExportDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceExportDetails, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceExportDetails Object
+    /// </summary>  
+    public class InstanceExportDetailsUnmarshaller : IUnmarshaller<InstanceExportDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceExportDetails, JsonUnmarshallerContext>
     {
-        public InstanceExportDetails Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceExportDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceExportDetails instanceExportDetails = new InstanceExportDetails();
+            InstanceExportDetails unmarshalledObject = new InstanceExportDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("instanceId", targetDepth))
                     {
-                        instanceExportDetails.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetEnvironment", targetDepth))
                     {
-                        instanceExportDetails.TargetEnvironment = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetEnvironment = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceExportDetails;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceExportDetails;
+            return unmarshalledObject;
         }
 
-        public InstanceExportDetails Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceExportDetails Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceExportDetailsUnmarshaller instance;
 
-        public static InstanceExportDetailsUnmarshaller GetInstance() 
+        private static InstanceExportDetailsUnmarshaller _instance = new InstanceExportDetailsUnmarshaller();        
+
+        public static InstanceExportDetailsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceExportDetailsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

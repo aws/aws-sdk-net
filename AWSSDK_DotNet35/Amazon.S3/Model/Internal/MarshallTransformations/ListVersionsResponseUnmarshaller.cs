@@ -95,13 +95,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Version", targetDepth))
                     {
-                        response.Versions.Add(VersionsItemUnmarshaller.GetInstance().Unmarshall(context));
+                        response.Versions.Add(VersionsItemUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
                     if (context.TestExpression("DeleteMarker", targetDepth))
                     {
-                        var version = VersionsItemUnmarshaller.GetInstance().Unmarshall(context);
+                        var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
                         version.IsDeleteMarker = true;
                         response.Versions.Add(version);
                             
@@ -127,7 +127,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CommonPrefixes", targetDepth))
                     {
-                        var prefix = CommonPrefixesItemUnmarshaller.GetInstance().Unmarshall(context);
+                        var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
 
                         if (prefix != null)
                             response.CommonPrefixes.Add(prefix);
@@ -148,22 +148,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
         
-        private static ListVersionsResponseUnmarshaller instance;
+        private static ListVersionsResponseUnmarshaller _instance;
 
-        public static ListVersionsResponseUnmarshaller GetInstance()
+        public static ListVersionsResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new ListVersionsResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new ListVersionsResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
+
     }
 }
     

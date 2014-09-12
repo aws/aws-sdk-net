@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _attributeName;
         private string _attributeValue;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public PolicyAttribute() { }
+
+        /// <summary>
+        /// Instantiates PolicyAttribute with the parameterized properties
+        /// </summary>
+        /// <param name="attributeName"> The name of the attribute associated with the policy. </param>
+        /// <param name="attributeValue"> The value of the attribute associated with the policy. </param>
+        public PolicyAttribute(string attributeName, string attributeValue)
+        {
+            _attributeName = attributeName;
+            _attributeValue = attributeValue;
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -50,7 +69,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._attributeName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AttributeValue. 

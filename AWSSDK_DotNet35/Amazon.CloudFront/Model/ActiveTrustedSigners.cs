@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that lists the AWS accounts, if any,    that you included in the TrustedSigners
-    /// complex    type for the default cache behavior or for any of the    other cache behaviors
-    /// for this distribution. These are    accounts that you want to allow to create signed
-    /// URLs    for private content.
+    /// A complex type that lists the AWS accounts, if any, that you included in the TrustedSigners
+    /// complex type for the default cache behavior or for any of the other cache behaviors
+    /// for this distribution. These are accounts that you want to allow to create signed
+    /// URLs for private content.
     /// </summary>
     public partial class ActiveTrustedSigners
     {
@@ -35,6 +39,19 @@ namespace Amazon.CloudFront.Model
         private List<Signer> _items = new List<Signer>();
         private int? _quantity;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ActiveTrustedSigners() { }
+
+        /// <summary>
+        /// Instantiates ActiveTrustedSigners with the parameterized properties
+        /// </summary>
+        /// <param name="items">A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.</param>
+        public ActiveTrustedSigners(List<Signer> items)
+        {
+            _items = items;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. Each active trusted signer.
@@ -51,12 +68,11 @@ namespace Amazon.CloudFront.Model
             return this._enabled.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Items. A complex type that contains one Signer complex
-        ///    type for each unique trusted signer that is specified in    the TrustedSigners
-        /// complex type, including trusted    signers in the default cache behavior and in all
-        /// of the    other cache behaviors.
+        /// type for each unique trusted signer that is specified in the TrustedSigners complex
+        /// type, including trusted signers in the default cache behavior and in all of the other
+        /// cache behaviors.
         /// </summary>
         public List<Signer> Items
         {
@@ -70,11 +86,10 @@ namespace Amazon.CloudFront.Model
             return this._items != null && this._items.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Quantity. The number of unique trusted signers included
-        /// in all    cache behaviors. For example, if three cache    behaviors all list the same
-        /// three AWS accounts, the    value of Quantity for ActiveTrustedSigners will    be 3.
+        /// in all cache behaviors. For example, if three cache behaviors all list the same three
+        /// AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
         /// </summary>
         public int Quantity
         {

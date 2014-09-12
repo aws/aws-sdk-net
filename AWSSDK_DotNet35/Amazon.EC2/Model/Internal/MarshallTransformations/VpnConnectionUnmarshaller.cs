@@ -12,117 +12,130 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpnConnection Unmarshaller
-     /// </summary>
-    internal class VpnConnectionUnmarshaller : IUnmarshaller<VpnConnection, XmlUnmarshallerContext>, IUnmarshaller<VpnConnection, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpnConnection Object
+    /// </summary>  
+    public class VpnConnectionUnmarshaller : IUnmarshaller<VpnConnection, XmlUnmarshallerContext>, IUnmarshaller<VpnConnection, JsonUnmarshallerContext>
     {
-        public VpnConnection Unmarshall(XmlUnmarshallerContext context) 
+        public VpnConnection Unmarshall(XmlUnmarshallerContext context)
         {
-            VpnConnection vpnConnection = new VpnConnection();
+            VpnConnection unmarshalledObject = new VpnConnection();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("vpnConnectionId", targetDepth))
-                    {
-                        vpnConnection.VpnConnectionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        vpnConnection.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("customerGatewayConfiguration", targetDepth))
                     {
-                        vpnConnection.CustomerGatewayConfiguration = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("type", targetDepth))
-                    {
-                        vpnConnection.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerGatewayConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("customerGatewayId", targetDepth))
                     {
-                        vpnConnection.CustomerGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vpnGatewayId", targetDepth))
-                    {
-                        vpnConnection.VpnGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        vpnConnection.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vgwTelemetry/item", targetDepth))
-                    {
-                        vpnConnection.VgwTelemetry.Add(VgwTelemetryUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("options", targetDepth))
                     {
-                        vpnConnection.Options = VpnConnectionOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = VpnConnectionOptionsUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("routes/item", targetDepth))
                     {
-                        vpnConnection.Routes.Add(VpnStaticRouteUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = VpnStaticRouteUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Routes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("type", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vgwTelemetry/item", targetDepth))
+                    {
+                        var unmarshaller = VgwTelemetryUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.VgwTelemetry.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpnConnectionId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpnConnectionId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpnGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpnGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpnConnection;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpnConnection;
+            return unmarshalledObject;
         }
 
-        public VpnConnection Unmarshall(JsonUnmarshallerContext context) 
+        public VpnConnection Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpnConnectionUnmarshaller instance;
 
-        public static VpnConnectionUnmarshaller GetInstance() 
+        private static VpnConnectionUnmarshaller _instance = new VpnConnectionUnmarshaller();        
+
+        public static VpnConnectionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpnConnectionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

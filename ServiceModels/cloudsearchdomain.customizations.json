@@ -1,0 +1,9 @@
+{ 
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addAfter", "newType":"Amazon.CloudSearchDomain.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"},
+			{"operation":"addBefore", "newType":"Amazon.CloudSearchDomain.Internal.ValidationResponseHandler", "targetType":"Amazon.Runtime.Internal.Unmarshaller"},
+			{"operation":"addBefore", "newType":"Amazon.CloudSearchDomain.Internal.ProcessExceptionHandler", "targetType":"Amazon.Runtime.Internal.Unmarshaller"}
+		]
+	}
+}

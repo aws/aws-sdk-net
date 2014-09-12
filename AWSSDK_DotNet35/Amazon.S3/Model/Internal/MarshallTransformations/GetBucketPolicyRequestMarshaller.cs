@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get BucketName Policy Request Marshaller
     /// </summary>       
-    public class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest>
-    {
+    public class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketPolicyRequest)input);
+		}
+
         public IRequest Marshall(GetBucketPolicyRequest getBucketPolicyRequest)
         {
             IRequest request = new DefaultRequest(getBucketPolicyRequest, "AmazonS3");

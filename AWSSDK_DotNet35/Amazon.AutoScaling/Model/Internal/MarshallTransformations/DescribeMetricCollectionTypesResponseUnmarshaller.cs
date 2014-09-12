@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -98,7 +102,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static DescribeMetricCollectionTypesResponseUnmarshaller _instance = new DescribeMetricCollectionTypesResponseUnmarshaller();        
 
         internal static DescribeMetricCollectionTypesResponseUnmarshaller GetInstance()

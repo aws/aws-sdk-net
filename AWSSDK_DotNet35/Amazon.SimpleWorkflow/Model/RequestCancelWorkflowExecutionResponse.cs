@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Returns information about the RequestCancelWorkflowExecution response metadata.
-    /// The RequestCancelWorkflowExecution operation has a void result type.
+    /// Configuration for accessing Amazon RequestCancelWorkflowExecution service
     /// </summary>
-    public partial class RequestCancelWorkflowExecutionResponse : AmazonWebServiceResponse
+    public partial class RequestCancelWorkflowExecutionResponse : RequestCancelWorkflowExecutionResult
     {
+        /// <summary>
+        /// Gets and sets the RequestCancelWorkflowExecutionResult property.
+        /// Represents the output of a RequestCancelWorkflowExecution operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the RequestCancelWorkflowExecutionResult class are now available on the RequestCancelWorkflowExecutionResponse class. You should use the properties on RequestCancelWorkflowExecutionResponse instead of accessing them through RequestCancelWorkflowExecutionResult.")]
+        public RequestCancelWorkflowExecutionResult RequestCancelWorkflowExecutionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

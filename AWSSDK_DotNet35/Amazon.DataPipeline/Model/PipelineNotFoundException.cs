@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.DataPipeline.Model
 {
     ///<summary>
-    /// AmazonDataPipeline exception
+    /// DataPipeline exception
     /// </summary>
     public class PipelineNotFoundException : AmazonDataPipelineException 
     {
@@ -45,6 +49,5 @@ namespace Amazon.DataPipeline.Model
         public PipelineNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

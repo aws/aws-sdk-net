@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,6 +44,25 @@ namespace Amazon.IdentityManagement.Model
         private StatusType _status;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AccessKey() { }
+
+        /// <summary>
+        /// Instantiates AccessKey with the parameterized properties
+        /// </summary>
+        /// <param name="userName">Name of the user the key is associated with.</param>
+        /// <param name="accessKeyId">The ID for this access key.</param>
+        /// <param name="status">The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</param>
+        /// <param name="secretAccessKey">The secret key used to sign requests.</param>
+        public AccessKey(string userName, string accessKeyId, StatusType status, string secretAccessKey)
+        {
+            _userName = userName;
+            _accessKeyId = accessKeyId;
+            _status = status;
+            _secretAccessKey = secretAccessKey;
+        }
 
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
@@ -59,7 +82,6 @@ namespace Amazon.IdentityManagement.Model
             return this._accessKeyId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
@@ -77,7 +99,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._createDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property SecretAccessKey. 
@@ -97,7 +118,6 @@ namespace Amazon.IdentityManagement.Model
             return this._secretAccessKey != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
@@ -116,7 +136,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Kinesis.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Kinesis.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Shard Object
+    /// </summary>  
+    public class ShardUnmarshaller : IUnmarshaller<Shard, XmlUnmarshallerContext>, IUnmarshaller<Shard, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ShardUnmarshaller
-      /// </summary>
-      internal class ShardUnmarshaller : IUnmarshaller<Shard, XmlUnmarshallerContext>, IUnmarshaller<Shard, JsonUnmarshallerContext>
-      {
         Shard IUnmarshaller<Shard, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Shard Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Shard shard = new Shard();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Shard unmarshalledObject = new Shard();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("ShardId", targetDepth))
-              {
-                shard.ShardId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ParentShardId", targetDepth))
-              {
-                shard.ParentShardId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AdjacentParentShardId", targetDepth))
-              {
-                shard.AdjacentParentShardId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("HashKeyRange", targetDepth))
-              {
-                shard.HashKeyRange = HashKeyRangeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SequenceNumberRange", targetDepth))
-              {
-                shard.SequenceNumberRange = SequenceNumberRangeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("AdjacentParentShardId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdjacentParentShardId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HashKeyRange", targetDepth))
+                {
+                    var unmarshaller = HashKeyRangeUnmarshaller.Instance;
+                    unmarshalledObject.HashKeyRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParentShardId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentShardId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SequenceNumberRange", targetDepth))
+                {
+                    var unmarshaller = SequenceNumberRangeUnmarshaller.Instance;
+                    unmarshalledObject.SequenceNumberRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShardId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShardId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return shard;
+            return unmarshalledObject;
         }
 
-        private static ShardUnmarshaller instance;
-        public static ShardUnmarshaller GetInstance()
+
+        private static ShardUnmarshaller _instance = new ShardUnmarshaller();        
+
+        public static ShardUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ShardUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

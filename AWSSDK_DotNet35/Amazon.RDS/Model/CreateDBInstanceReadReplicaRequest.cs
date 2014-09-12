@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,215 +29,311 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// <para> Creates a DB instance that acts as a read replica of a source DB instance. </para> <para> All read replica DB instances are created
-    /// as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are
-    /// inherited from the source DB instance, except as specified below. </para> <para><b>IMPORTANT:</b> The source DB instance must have backup
-    /// retention enabled. </para>
+    /// Creates a DB instance that acts as a read replica of a source DB instance. 
+    /// 
+    ///  
+    /// <para>
+    ///  All read replica DB instances are created as Single-AZ deployments with backups disabled.
+    /// All other DB instance attributes (including DB security groups and DB parameter groups)
+    /// are inherited from the source DB instance, except as specified below. 
+    /// </para>
+    ///  <important> 
+    /// <para>
+    ///  The source DB instance must have backup retention enabled. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateDBInstanceReadReplicaRequest : AmazonRDSRequest
     {
-        private string dBInstanceIdentifier;
-        private string sourceDBInstanceIdentifier;
-        private string dBInstanceClass;
-        private string availabilityZone;
-        private int? port;
-        private bool? autoMinorVersionUpgrade;
-        private int? iops;
-        private string optionGroupName;
-        private bool? publiclyAccessible;
-        private List<Tag> tags = new List<Tag>();
-        private string dBSubnetGroupName;
-
+        private bool? _autoMinorVersionUpgrade;
+        private string _availabilityZone;
+        private string _dBInstanceClass;
+        private string _dBInstanceIdentifier;
+        private string _dBSubnetGroupName;
+        private int? _iops;
+        private string _optionGroupName;
+        private int? _port;
+        private bool? _publiclyAccessible;
+        private string _sourceDBInstanceIdentifier;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// The DB instance identifier of the read replica. This is the unique key that identifies a DB instance. This parameter is stored as a
-        /// lowercase string.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string DBInstanceIdentifier
-        {
-            get { return this.dBInstanceIdentifier; }
-            set { this.dBInstanceIdentifier = value; }
-        }
-
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
-        {
-            return this.dBInstanceIdentifier != null;
-        }
+        public CreateDBInstanceReadReplicaRequest() { }
 
         /// <summary>
-        /// The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.
-        /// Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if
-        /// the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be
-        /// greater than 0.</li> </ul>
-        ///  
+        /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
-        public string SourceDBInstanceIdentifier
+        /// <param name="dbInstanceIdentifier"> The DB instance identifier of the read replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </param>
+        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> </ul></param>
+        public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
-            get { return this.sourceDBInstanceIdentifier; }
-            set { this.sourceDBInstanceIdentifier = value; }
-        }
-
-        // Check to see if SourceDBInstanceIdentifier property is set
-        internal bool IsSetSourceDBInstanceIdentifier()
-        {
-            return this.sourceDBInstanceIdentifier != null;
+            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
         }
 
         /// <summary>
-        /// The compute and memory capacity of the read replica. Valid Values: <c>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
-        /// |db.m2.2xlarge | db.m2.4xlarge</c> Default: Inherits from the source DB instance.
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        ///  Indicates that minor engine upgrades will be applied automatically to the read replica
+        /// during the maintenance window. 
+        /// </para>
         ///  
-        /// </summary>
-        public string DBInstanceClass
-        {
-            get { return this.dBInstanceClass; }
-            set { this.dBInstanceClass = value; }
-        }
-
-        // Check to see if DBInstanceClass property is set
-        internal bool IsSetDBInstanceClass()
-        {
-            return this.dBInstanceClass != null;
-        }
-
-        /// <summary>
-        /// The Amazon EC2 Availability Zone that the read replica will be created in. Default: A random, system-chosen Availability Zone in the
-        /// endpoint's region. Example: <c>us-east-1d</c>
-        ///  
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this.availabilityZone != null;
-        }
-
-        /// <summary>
-        /// The port number that the DB instance uses for connections. Default: Inherits from the source DB instance Valid Values: <c>1150-65535</c>
-        ///  
-        /// </summary>
-        public int Port
-        {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
-        }
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this.port.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates that minor engine upgrades will be applied automatically to the read replica during the maintenance window. Default: Inherits from
-        /// the source DB instance
-        ///  
+        /// <para>
+        /// Default: Inherits from the source DB instance
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
-            get { return this.autoMinorVersionUpgrade ?? default(bool); }
-            set { this.autoMinorVersionUpgrade = value; }
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
         }
 
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///  The Amazon EC2 Availability Zone that the read replica will be created in. 
+        /// </para>
         ///  
+        /// <para>
+        ///  Default: A random, system-chosen Availability Zone in the endpoint's region. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Example: <code>us-east-1d</code> 
+        /// </para>
         /// </summary>
-        public int Iops
+        public string AvailabilityZone
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
-        // Check to see if Iops property is set
-        internal bool IsSetIops()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.iops.HasValue;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
-        /// The option group the DB instance will be associated with. If omitted, the default option group for the engine specified will be used.
+        /// Gets and sets the property DBInstanceClass. 
+        /// <para>
+        ///  The compute and memory capacity of the read replica. 
+        /// </para>
         ///  
+        /// <para>
+        ///  Valid Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
+        /// |db.m2.2xlarge | db.m2.4xlarge</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Inherits from the source DB instance.
+        /// </para>
         /// </summary>
-        public string OptionGroupName
+        public string DBInstanceClass
         {
-            get { return this.optionGroupName; }
-            set { this.optionGroupName = value; }
+            get { return this._dBInstanceClass; }
+            set { this._dBInstanceClass = value; }
         }
 
-        // Check to see if OptionGroupName property is set
-        internal bool IsSetOptionGroupName()
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
         {
-            return this.optionGroupName != null;
+            return this._dBInstanceClass != null;
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
-        /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
-        /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
-        /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
-        /// part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet
-        /// group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
-        ///  
+        /// Gets and sets the property DBInstanceIdentifier. 
+        /// <para>
+        ///  The DB instance identifier of the read replica. This is the unique key that identifies
+        /// a DB instance. This parameter is stored as a lowercase string. 
+        /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public string DBInstanceIdentifier
         {
-            get { return this.publiclyAccessible ?? default(bool); }
-            set { this.publiclyAccessible = value; }
+            get { return this._dBInstanceIdentifier; }
+            set { this._dBInstanceIdentifier = value; }
         }
 
-        // Check to see if PubliclyAccessible property is set
-        internal bool IsSetPubliclyAccessible()
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.publiclyAccessible.HasValue;
-        }
-
-        /// <summary>
-        /// A list of tags.
-        ///  
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this.tags; }
-            set { this.tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this.tags.Count > 0;
+            return this._dBInstanceIdentifier != null;
         }
 
         /// <summary>
-        /// A DB Subnet Group to associate with this DB Instance in case of a cross region read replica. If there is no DB Subnet Group, then it is a
-        /// non-VPC DB instance. Constraints: All the cross region read replicas that share the source instance should lie within the same VPC.
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        /// A DB Subnet Group to associate with this DB Instance in case of a cross region read
+        /// replica.
+        /// </para>
         ///  
+        /// <para>
+        /// If there is no DB Subnet Group, then it is a non-VPC DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Constraints: All the cross region read replicas that share the source instance should
+        /// lie within the same VPC. 
+        /// </para>
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this.dBSubnetGroupName; }
-            set { this.dBSubnetGroupName = value; }
+            get { return this._dBSubnetGroupName; }
+            set { this._dBSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this.dBSubnetGroupName != null;
+            return this._dBSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        ///  The amount of Provisioned IOPS (input/output operations per second) to be initially
+        /// allocated for the DB instance. 
+        /// </para>
+        /// </summary>
+        public int Iops
+        {
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        ///  The option group the DB instance will be associated with. If omitted, the default
+        /// option group for the engine specified will be used. 
+        /// </para>
+        /// </summary>
+        public string OptionGroupName
+        {
+            get { return this._optionGroupName; }
+            set { this._optionGroupName = value; }
+        }
+
+        // Check to see if OptionGroupName property is set
+        internal bool IsSetOptionGroupName()
+        {
+            return this._optionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  The port number that the DB instance uses for connections. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Inherits from the source DB instance
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>1150-65535</code>
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        ///  Specifies the accessibility options for the DB instance. A value of true specifies
+        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
+        /// a public IP address. A value of false specifies an internal instance with a DNS name
+        /// that resolves to a private IP address. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: The default behavior varies depending on whether a VPC has been requested
+        /// or not. The following list shows the default behavior in each case. 
+        /// </para>
+        ///  <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> 
+        /// <para>
+        ///  If no DB subnet group has been specified as part of the request and the PubliclyAccessible
+        /// value has not been set, the DB instance will be publicly accessible. If a specific
+        /// DB subnet group has been specified as part of the request and the PubliclyAccessible
+        /// value has not been set, the DB instance will be private. 
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDBInstanceIdentifier. 
+        /// <para>
+        ///  The identifier of the DB instance that will act as the source for the read replica.
+        /// Each DB instance can have up to five read replicas. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify
+        /// a DB instance that is a read replica only if the source is running MySQL 5.6.</li>
+        /// <li>The specified DB instance must have automatic backups enabled, its backup retention
+        /// period must be greater than 0.</li> </ul>
+        /// </summary>
+        public string SourceDBInstanceIdentifier
+        {
+            get { return this._sourceDBInstanceIdentifier; }
+            set { this._sourceDBInstanceIdentifier = value; }
+        }
+
+        // Check to see if SourceDBInstanceIdentifier property is set
+        internal bool IsSetSourceDBInstanceIdentifier()
+        {
+            return this._sourceDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,64 +33,70 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Trail Request Marshaller
+    /// UpdateTrail Request Marshaller
     /// </summary>       
-    internal class UpdateTrailRequestMarshaller : IMarshaller<IRequest, UpdateTrailRequest> 
+    public class UpdateTrailRequestMarshaller : IMarshaller<IRequest, UpdateTrailRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UpdateTrailRequest updateTrailRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UpdateTrailRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(updateTrailRequest, "AmazonCloudTrail");
-            string target = "CloudTrail_20131101.UpdateTrail";
+        public IRequest Marshall(UpdateTrailRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
+            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateTrailRequest != null && updateTrailRequest.IsSetName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludeGlobalServiceEvents())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(updateTrailRequest.Name);
-                }
-                if (updateTrailRequest != null && updateTrailRequest.IsSetS3BucketName()) 
-                {
-                    writer.WritePropertyName("S3BucketName");
-                    writer.Write(updateTrailRequest.S3BucketName);
-                }
-                if (updateTrailRequest != null && updateTrailRequest.IsSetS3KeyPrefix()) 
-                {
-                    writer.WritePropertyName("S3KeyPrefix");
-                    writer.Write(updateTrailRequest.S3KeyPrefix);
-                }
-                if (updateTrailRequest != null && updateTrailRequest.IsSetSnsTopicName()) 
-                {
-                    writer.WritePropertyName("SnsTopicName");
-                    writer.Write(updateTrailRequest.SnsTopicName);
-                }
-                if (updateTrailRequest != null && updateTrailRequest.IsSetIncludeGlobalServiceEvents()) 
-                {
-                    writer.WritePropertyName("IncludeGlobalServiceEvents");
-                    writer.Write(updateTrailRequest.IncludeGlobalServiceEvents);
+                    context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
+                    context.Writer.Write(publicRequest.IncludeGlobalServiceEvents);
                 }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetS3BucketName())
+                {
+                    context.Writer.WritePropertyName("S3BucketName");
+                    context.Writer.Write(publicRequest.S3BucketName);
+                }
+
+                if(publicRequest.IsSetS3KeyPrefix())
+                {
+                    context.Writer.WritePropertyName("S3KeyPrefix");
+                    context.Writer.Write(publicRequest.S3KeyPrefix);
+                }
+
+                if(publicRequest.IsSetSnsTopicName())
+                {
+                    context.Writer.WritePropertyName("SnsTopicName");
+                    context.Writer.Write(publicRequest.SnsTopicName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

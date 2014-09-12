@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -30,7 +34,6 @@ namespace Amazon.ElasticTranscoder.Model
     {
         private string _duration;
         private string _startTime;
-
 
         /// <summary>
         /// Gets and sets the property Duration. 
@@ -57,7 +60,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._duration != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StartTime. 

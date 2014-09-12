@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// <summary>
     /// RefreshTrustedAdvisorCheck Request Marshaller
     /// </summary>       
-    public class RefreshTrustedAdvisorCheckRequestMarshaller : IMarshaller<IRequest, RefreshTrustedAdvisorCheckRequest> 
+    public class RefreshTrustedAdvisorCheckRequestMarshaller : IMarshaller<IRequest, RefreshTrustedAdvisorCheckRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((RefreshTrustedAdvisorCheckRequest)input);
+        }
+
         public IRequest Marshall(RefreshTrustedAdvisorCheckRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
@@ -47,10 +56,11 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCheckId())
                 {
-                    writer.WritePropertyName("checkId");
-                    writer.Write(publicRequest.CheckId);
+                    context.Writer.WritePropertyName("checkId");
+                    context.Writer.Write(publicRequest.CheckId);
                 }
 
         

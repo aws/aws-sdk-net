@@ -12,46 +12,60 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains the value of the <c>Value</c> element for the current resource record set.</para>
+    /// A complex type that contains the value of the <code>Value</code> element for the current
+    /// resource record set.
     /// </summary>
     public partial class ResourceRecord
     {
-        
-        private string value;
-
+        private string _value;
 
         /// <summary>
-        /// The value of the <c>Value</c> element for the current resource record set.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ResourceRecord() { }
+
+        /// <summary>
+        /// Instantiates ResourceRecord with the parameterized properties
+        /// </summary>
+        /// <param name="value">The value of the <code>Value</code> element for the current resource record set.</param>
+        public ResourceRecord(string value)
+        {
+            _value = value;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 4000</description>
-        ///     </item>
-        /// </list>
+        /// The value of the <code>Value</code> element for the current resource record set.
         /// </para>
         /// </summary>
         public string Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;
+            return this._value != null;
         }
+
     }
 }

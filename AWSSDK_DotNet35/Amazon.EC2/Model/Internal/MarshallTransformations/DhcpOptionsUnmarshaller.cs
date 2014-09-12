@@ -12,75 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DhcpOptions Unmarshaller
-     /// </summary>
-    internal class DhcpOptionsUnmarshaller : IUnmarshaller<DhcpOptions, XmlUnmarshallerContext>, IUnmarshaller<DhcpOptions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DhcpOptions Object
+    /// </summary>  
+    public class DhcpOptionsUnmarshaller : IUnmarshaller<DhcpOptions, XmlUnmarshallerContext>, IUnmarshaller<DhcpOptions, JsonUnmarshallerContext>
     {
-        public DhcpOptions Unmarshall(XmlUnmarshallerContext context) 
+        public DhcpOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            DhcpOptions dhcpOptions = new DhcpOptions();
+            DhcpOptions unmarshalledObject = new DhcpOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("dhcpOptionsId", targetDepth))
-                    {
-                        dhcpOptions.DhcpOptionsId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("dhcpConfigurationSet/item", targetDepth))
                     {
-                        dhcpOptions.DhcpConfigurations.Add(DhcpConfigurationUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = DhcpConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DhcpConfigurations.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("dhcpOptionsId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        dhcpOptions.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return dhcpOptions;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return dhcpOptions;
+            return unmarshalledObject;
         }
 
-        public DhcpOptions Unmarshall(JsonUnmarshallerContext context) 
+        public DhcpOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DhcpOptionsUnmarshaller instance;
 
-        public static DhcpOptionsUnmarshaller GetInstance() 
+        private static DhcpOptionsUnmarshaller _instance = new DhcpOptionsUnmarshaller();        
+
+        public static DhcpOptionsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DhcpOptionsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

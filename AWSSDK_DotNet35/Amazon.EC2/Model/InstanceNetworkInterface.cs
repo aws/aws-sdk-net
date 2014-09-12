@@ -12,250 +12,273 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a network interface.</para>
+    /// Describes a network interface.
     /// </summary>
     public partial class InstanceNetworkInterface
     {
-        
-        private string networkInterfaceId;
-        private string subnetId;
-        private string vpcId;
-        private string description;
-        private string ownerId;
-        private NetworkInterfaceStatus status;
-        private string privateIpAddress;
-        private string privateDnsName;
-        private bool? sourceDestCheck;
-        private List<GroupIdentifier> groups = new List<GroupIdentifier>();
-        private InstanceNetworkInterfaceAttachment attachment;
-        private InstanceNetworkInterfaceAssociation association;
-        private List<InstancePrivateIpAddress> privateIpAddresses = new List<InstancePrivateIpAddress>();
-
+        private InstanceNetworkInterfaceAssociation _association;
+        private InstanceNetworkInterfaceAttachment _attachment;
+        private string _description;
+        private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
+        private string _networkInterfaceId;
+        private string _ownerId;
+        private string _privateDnsName;
+        private string _privateIpAddress;
+        private List<InstancePrivateIpAddress> _privateIpAddresses = new List<InstancePrivateIpAddress>();
+        private bool? _sourceDestCheck;
+        private NetworkInterfaceStatus _status;
+        private string _subnetId;
+        private string _vpcId;
 
         /// <summary>
-        /// The ID of the network interface.
-        ///  
-        /// </summary>
-        public string NetworkInterfaceId
-        {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
-        }
-
-        // Check to see if NetworkInterfaceId property is set
-        internal bool IsSetNetworkInterfaceId()
-        {
-            return this.networkInterfaceId != null;
-        }
-
-        /// <summary>
-        /// The ID of the subnet.
-        ///  
-        /// </summary>
-        public string SubnetId
-        {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
-        }
-
-        // Check to see if SubnetId property is set
-        internal bool IsSetSubnetId()
-        {
-            return this.subnetId != null;
-        }
-
-        /// <summary>
-        /// The ID of the VPC.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// The description.
-        ///  
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The ID of the AWS account that created the network interface.
-        ///  
-        /// </summary>
-        public string OwnerId
-        {
-            get { return this.ownerId; }
-            set { this.ownerId = value; }
-        }
-
-        // Check to see if OwnerId property is set
-        internal bool IsSetOwnerId()
-        {
-            return this.ownerId != null;
-        }
-
-        /// <summary>
-        /// The status of the network interface.
-        ///  
+        /// Gets and sets the property Association. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>available, attaching, in-use, detaching</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public NetworkInterfaceStatus Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The IP address of the network interface within the subnet.
-        ///  
-        /// </summary>
-        public string PrivateIpAddress
-        {
-            get { return this.privateIpAddress; }
-            set { this.privateIpAddress = value; }
-        }
-
-        // Check to see if PrivateIpAddress property is set
-        internal bool IsSetPrivateIpAddress()
-        {
-            return this.privateIpAddress != null;
-        }
-
-        /// <summary>
-        /// The private DNS name.
-        ///  
-        /// </summary>
-        public string PrivateDnsName
-        {
-            get { return this.privateDnsName; }
-            set { this.privateDnsName = value; }
-        }
-
-        // Check to see if PrivateDnsName property is set
-        internal bool IsSetPrivateDnsName()
-        {
-            return this.privateDnsName != null;
-        }
-
-        /// <summary>
-        /// Indicates whether to validate network traffic to or from this network interface.
-        ///  
-        /// </summary>
-        public bool SourceDestCheck
-        {
-            get { return this.sourceDestCheck ?? default(bool); }
-            set { this.sourceDestCheck = value; }
-        }
-
-        // Check to see if SourceDestCheck property is set
-        internal bool IsSetSourceDestCheck()
-        {
-            return this.sourceDestCheck.HasValue;
-        }
-
-        /// <summary>
-        /// One or more security groups.
-        ///  
-        /// </summary>
-        public List<GroupIdentifier> Groups
-        {
-            get { return this.groups; }
-            set { this.groups = value; }
-        }
-
-        // Check to see if Groups property is set
-        internal bool IsSetGroups()
-        {
-            return this.groups.Count > 0;
-        }
-
-        /// <summary>
-        /// The network interface attachment.
-        ///  
-        /// </summary>
-        public InstanceNetworkInterfaceAttachment Attachment
-        {
-            get { return this.attachment; }
-            set { this.attachment = value; }
-        }
-
-        // Check to see if Attachment property is set
-        internal bool IsSetAttachment()
-        {
-            return this.attachment != null;
-        }
-
-        /// <summary>
         /// The association information for an Elastic IP associated with the network interface.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceNetworkInterfaceAssociation Association
         {
-            get { return this.association; }
-            set { this.association = value; }
+            get { return this._association; }
+            set { this._association = value; }
         }
 
         // Check to see if Association property is set
         internal bool IsSetAssociation()
         {
-            return this.association != null;
+            return this._association != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Attachment. 
+        /// <para>
+        /// The network interface attachment.
+        /// </para>
+        /// </summary>
+        public InstanceNetworkInterfaceAttachment Attachment
+        {
+            get { return this._attachment; }
+            set { this._attachment = value; }
+        }
+
+        // Check to see if Attachment property is set
+        internal bool IsSetAttachment()
+        {
+            return this._attachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// One or more security groups.
+        /// </para>
+        /// </summary>
+        public List<GroupIdentifier> Groups
+        {
+            get { return this._groups; }
+            set { this._groups = value; }
+        }
+
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that created the network interface.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsName. 
+        /// <para>
+        /// The private DNS name.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsName
+        {
+            get { return this._privateDnsName; }
+            set { this._privateDnsName = value; }
+        }
+
+        // Check to see if PrivateDnsName property is set
+        internal bool IsSetPrivateDnsName()
+        {
+            return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// The IP address of the network interface within the subnet.
+        /// </para>
+        /// </summary>
+        public string PrivateIpAddress
+        {
+            get { return this._privateIpAddress; }
+            set { this._privateIpAddress = value; }
+        }
+
+        // Check to see if PrivateIpAddress property is set
+        internal bool IsSetPrivateIpAddress()
+        {
+            return this._privateIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddresses. 
+        /// <para>
         /// The private IP addresses associated with the network interface.
-        ///  
+        /// </para>
         /// </summary>
         public List<InstancePrivateIpAddress> PrivateIpAddresses
         {
-            get { return this.privateIpAddresses; }
-            set { this.privateIpAddresses = value; }
+            get { return this._privateIpAddresses; }
+            set { this._privateIpAddresses = value; }
         }
 
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this.privateIpAddresses.Count > 0;
+            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SourceDestCheck. 
+        /// <para>
+        /// Indicates whether to validate network traffic to or from this network interface.
+        /// </para>
+        /// </summary>
+        public bool SourceDestCheck
+        {
+            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            set { this._sourceDestCheck = value; }
+        }
+
+        // Check to see if SourceDestCheck property is set
+        internal bool IsSetSourceDestCheck()
+        {
+            return this._sourceDestCheck.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the network interface.
+        /// </para>
+        /// </summary>
+        public NetworkInterfaceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

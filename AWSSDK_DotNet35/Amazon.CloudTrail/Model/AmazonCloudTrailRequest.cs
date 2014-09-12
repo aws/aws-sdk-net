@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.CloudTrail
 {
     /// <summary>
-    /// Base class for AmazonCloudTrail operation requests.
+    /// Base class for CloudTrail operation requests.
     /// </summary>
     public partial class AmazonCloudTrailRequest : AmazonWebServiceRequest
     {
     }
 }
-    

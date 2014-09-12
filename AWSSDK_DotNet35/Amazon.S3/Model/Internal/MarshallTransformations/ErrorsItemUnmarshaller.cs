@@ -78,14 +78,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static ErrorsItemUnmarshaller instance;
+        private static ErrorsItemUnmarshaller _instance;
 
-        public static ErrorsItemUnmarshaller GetInstance() 
+        public static ErrorsItemUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ErrorsItemUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ErrorsItemUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

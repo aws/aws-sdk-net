@@ -12,65 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for RecordActivityTaskHeartbeat operation
+    /// </summary>  
+    public class RecordActivityTaskHeartbeatResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for RecordActivityTaskHeartbeat operation
-      /// </summary>
-      internal class RecordActivityTaskHeartbeatResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          RecordActivityTaskHeartbeatResponse response = new RecordActivityTaskHeartbeatResponse();
-          
-          UnmarshallResult(context,response);          
-          
-          return response;
-        }        
-        
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,RecordActivityTaskHeartbeatResponse response)
-        {                   
-          response.ActivityTaskStatus = ActivityTaskStatusUnmarshaller.GetInstance().Unmarshall(context);
-          return;
-        }
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-          {
-            return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
-          {
-            return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonSimpleWorkflowException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            RecordActivityTaskHeartbeatResponse response = new RecordActivityTaskHeartbeatResponse();
+
+            response.ActivityTaskStatus = ActivityTaskStatusUnmarshaller.Instance.Unmarshall(context);
+
+            return response;
         }
 
-        private static RecordActivityTaskHeartbeatResponseUnmarshaller instance;
-        public static RecordActivityTaskHeartbeatResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new RecordActivityTaskHeartbeatResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedFault"))
+            {
+                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceFault"))
+            {
+                return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonSimpleWorkflowException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static RecordActivityTaskHeartbeatResponseUnmarshaller _instance = new RecordActivityTaskHeartbeatResponseUnmarshaller();        
+
+        internal static RecordActivityTaskHeartbeatResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static RecordActivityTaskHeartbeatResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

@@ -39,13 +39,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Condition", targetDepth))
                     {
-                        routingRule.Condition = RoutingRuleConditionUnmarshaller.GetInstance().Unmarshall(context);
+                        routingRule.Condition = RoutingRuleConditionUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
                     if (context.TestExpression("Redirect", targetDepth))
                     {
-                        routingRule.Redirect = RoutingRuleRedirectUnmarshaller.GetInstance().Unmarshall(context);
+                        routingRule.Redirect = RoutingRuleRedirectUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -66,14 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static RoutingRuleUnmarshaller instance;
+        private static RoutingRuleUnmarshaller _instance;
 
-        public static RoutingRuleUnmarshaller GetInstance() 
+        public static RoutingRuleUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new RoutingRuleUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new RoutingRuleUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

@@ -1,0 +1,137 @@
+﻿<#@ template language="C#" inherits="BaseRequestMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+
+	AddCommonUsingStatements();
+#>
+using ThirdParty.Json.LitJson;
+
+namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+	/// <summary>
+	/// <#=this.Structure.Name #> Marshaller
+	/// </summary>       
+	public class <#=this.Structure.Name #>Marshaller : IRequestMarshaller<<#=this.Structure.Name #>, JsonMarshallerContext> 
+	{
+		public void Marshall(<#=this.Structure.Name #> requestObject, JsonMarshallerContext context)
+		{
+<#
+    ProcessMembers(0, "requestObject", this.Structure.Members);
+#>
+		}
+
+		public readonly static <#=this.Structure.Name #>Marshaller Instance = new <#=this.Structure.Name #>Marshaller();
+
+	}
+}
+
+<#+
+	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
+	{
+		foreach(var member in members)
+		{			
+#>
+<#=new string(' ', level * 4)#>            if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>            {
+<#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
+<#+
+			if(member.IsStructure || member.IsList || member.IsMap)
+			{
+				this.ProcessStructure(level, variableName + "." + member.PropertyName, member.Shape);
+			}
+            else if(!string.IsNullOrEmpty(member.CustomMarshallerTransformation))
+            {
+#>
+<#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"#>);
+<#+
+            }
+			else if(member.IsMemoryStream)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.Write(StringUtils.FromMemoryStream(<#=variableName + "." + member.PropertyName#>));
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.Write(<#=variableName + "." + member.PropertyName#>);
+<#+
+			}
+#>
+<#=new string(' ', level * 4)#>            }
+
+<#+
+		}
+	}
+
+    protected void ProcessRequestPayloadMember(int level, string variableName, Shape structure)
+    {
+#>
+
+<#=new string(' ', level * 4)#>                var marshaller = <#=structure.Name#>Marshaller.Instance;
+<#=new string(' ', level * 4)#>                marshaller.Marshall(<#=variableName#>, context);
+<#+
+    }
+
+	protected void ProcessStructure(int level, string variableName, Shape structure)
+	{
+			string flatVariableName = variableName.Replace(".", "");
+
+			if(structure.IsList)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteArrayStart();
+<#=new string(' ', level * 4)#>                foreach(var <#=flatVariableName#>ListValue in <#=variableName#>)
+<#=new string(' ', level * 4)#>                {
+<#+ 
+				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
+#>
+<#=new string(' ', level * 4)#>                }
+<#=new string(' ', level * 4)#>                context.Writer.WriteArrayEnd();
+<#+
+			}
+			else if(structure.IsMap)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteObjectStart();
+<#=new string(' ', level * 4)#>                foreach (var <#=flatVariableName#>Kvp in <#=variableName#>)
+<#=new string(' ', level * 4)#>                {
+<#=new string(' ', level * 4)#>                    context.Writer.WritePropertyName(<#=flatVariableName#>Kvp.Key);
+<#=new string(' ', level * 4)#>                    var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
+
+<#+ 
+				ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
+#>
+<#=new string(' ', level * 4)#>                }
+<#=new string(' ', level * 4)#>                context.Writer.WriteObjectEnd();
+<#+
+			}
+			else if(structure.IsStructure)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteObjectStart();
+
+<#=new string(' ', level * 4)#>                var marshaller = <#=structure.Name#>Marshaller.Instance;
+<#=new string(' ', level * 4)#>                marshaller.Marshall(<#=variableName#>, context);
+
+<#=new string(' ', level * 4)#>                context.Writer.WriteObjectEnd();
+<#+
+			}
+			else if(structure.IsMemoryStream)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.Write(StringUtils.FromMemoryStream(<#=variableName#>));
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.Write(<#=variableName#>);
+<#+
+			}
+	}
+#>

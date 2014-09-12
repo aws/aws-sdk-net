@@ -12,78 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for UploadArchive operation
+    /// </summary>  
+    public class UploadArchiveResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for UploadArchive operation
-      /// </summary>
-      internal class UploadArchiveResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UploadArchiveResponse response = new UploadArchiveResponse();       
-          
+            UploadArchiveResponse response = new UploadArchiveResponse();
 
-            if (context.ResponseData.GetHeaderValue("Location") != null)
-                response.Location = context.ResponseData.GetHeaderValue("Location");
-            if (context.ResponseData.GetHeaderValue("x-amz-sha256-tree-hash") != null)
+            if (context.ResponseData.IsHeaderPresent("x-amz-archive-id"))
+                response.ArchiveId = context.ResponseData.GetHeaderValue("x-amz-archive-id");
+            if (context.ResponseData.IsHeaderPresent("x-amz-sha256-tree-hash"))
                 response.Checksum = context.ResponseData.GetHeaderValue("x-amz-sha256-tree-hash");
-            if (context.ResponseData.GetHeaderValue("x-amz-archive-id") != null)
-                response.ArchiveId = context.ResponseData.GetHeaderValue("x-amz-archive-id");           
+            if (context.ResponseData.IsHeaderPresent("Location"))
+                response.Location = context.ResponseData.GetHeaderValue("Location");
+
             return response;
-        }                        
-        
+        }
+
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
-          {
-            return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
-          {
-            return new RequestTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
-          {
-            return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
-          {
-            return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
+            {
+                return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
+            {
+                return new RequestTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+            {
+                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UploadArchiveResponseUnmarshaller instance;
-        public static UploadArchiveResponseUnmarshaller GetInstance()
+        private static UploadArchiveResponseUnmarshaller _instance = new UploadArchiveResponseUnmarshaller();        
+
+        internal static UploadArchiveResponseUnmarshaller GetInstance()
         {
-          if (instance == null)
-          {
-            instance = new UploadArchiveResponseUnmarshaller();
-          }
-          return instance;
+            return _instance;
         }
-  
-      }
+        public static UploadArchiveResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

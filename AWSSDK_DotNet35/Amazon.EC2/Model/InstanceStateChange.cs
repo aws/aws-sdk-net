@@ -12,71 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an instance state change.</para>
+    /// Describes an instance state change.
     /// </summary>
     public partial class InstanceStateChange
     {
-        
-        private string instanceId;
-        private InstanceState currentState;
-        private InstanceState previousState;
-
+        private InstanceState _currentState;
+        private string _instanceId;
+        private InstanceState _previousState;
 
         /// <summary>
-        /// The ID of the instance.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CurrentState. 
+        /// <para>
         /// The current state of the instance.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceState CurrentState
         {
-            get { return this.currentState; }
-            set { this.currentState = value; }
+            get { return this._currentState; }
+            set { this._currentState = value; }
         }
 
         // Check to see if CurrentState property is set
         internal bool IsSetCurrentState()
         {
-            return this.currentState != null;
+            return this._currentState != null;
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousState. 
+        /// <para>
         /// The previous state of the instance.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceState PreviousState
         {
-            get { return this.previousState; }
-            set { this.previousState = value; }
+            get { return this._previousState; }
+            set { this._previousState = value; }
         }
 
         // Check to see if PreviousState property is set
         internal bool IsSetPreviousState()
         {
-            return this.previousState != null;
+            return this._previousState != null;
         }
+
     }
 }

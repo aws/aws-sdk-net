@@ -31,11 +31,14 @@ namespace Amazon.Util
         public const string IfMatchHeader = "If-Match";
         public const string IfNoneMatchHeader = "If-None-Match";
         public const string IfUnmodifiedSinceHeader = "If-Unmodified-Since";
+        public const string ContentRangeHeader = "Content-Range";
         public const string ContentTypeHeader = "Content-Type";
         public const string ContentLengthHeader = "Content-Length";
         public const string ContentMD5Header = "Content-MD5";
         public const string ContentEncodingHeader = "Content-Encoding";
+        public const string ContentDispositionHeader = "Content-Disposition";
         public const string ETagHeader = "ETag";
+        public const string Expires = "Expires";
         public const string AuthorizationHeader = "Authorization";
         public const string HostHeader = "host";
         public const string UserAgentHeader = "User-Agent";

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,6 +41,19 @@ namespace Amazon.IdentityManagement.Model
         private string _newServerCertificateName;
         private string _serverCertificateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateServerCertificateRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateServerCertificateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="serverCertificateName">The name of the server certificate that you want to update.</param>
+        public UpdateServerCertificateRequest(string serverCertificateName)
+        {
+            _serverCertificateName = serverCertificateName;
+        }
 
         /// <summary>
         /// Gets and sets the property NewPath. 
@@ -57,7 +74,6 @@ namespace Amazon.IdentityManagement.Model
             return this._newPath != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NewServerCertificateName. 
         /// <para>
@@ -76,7 +92,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._newServerCertificateName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ServerCertificateName. 

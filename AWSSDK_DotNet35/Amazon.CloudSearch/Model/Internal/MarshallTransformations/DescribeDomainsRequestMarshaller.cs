@@ -12,41 +12,52 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Domains Request Marshaller
+    /// DescribeDomains Request Marshaller
     /// </summary>       
-    public class DescribeDomainsRequestMarshaller : IMarshaller<IRequest, DescribeDomainsRequest>
+    public class DescribeDomainsRequestMarshaller : IMarshaller<IRequest, DescribeDomainsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeDomainsRequest describeDomainsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeDomainsRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeDomainsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeDomainsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DescribeDomains");
             request.Parameters.Add("Version", "2013-01-01");
-            if (describeDomainsRequest != null)
-            {
-                List<string> domainNamesList = describeDomainsRequest.DomainNames;
 
-                int domainNamesListIndex = 1;
-                foreach (string domainNamesListValue in domainNamesList)
-                { 
-                    request.Parameters.Add("DomainNames.member." + domainNamesListIndex, StringUtils.FromString(domainNamesListValue));
-                    domainNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.DomainNames)
+                    {
+                        request.Parameters.Add("DomainNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

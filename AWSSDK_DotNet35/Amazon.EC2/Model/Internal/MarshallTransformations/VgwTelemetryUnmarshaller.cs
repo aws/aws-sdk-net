@@ -12,87 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VgwTelemetry Unmarshaller
-     /// </summary>
-    internal class VgwTelemetryUnmarshaller : IUnmarshaller<VgwTelemetry, XmlUnmarshallerContext>, IUnmarshaller<VgwTelemetry, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VgwTelemetry Object
+    /// </summary>  
+    public class VgwTelemetryUnmarshaller : IUnmarshaller<VgwTelemetry, XmlUnmarshallerContext>, IUnmarshaller<VgwTelemetry, JsonUnmarshallerContext>
     {
-        public VgwTelemetry Unmarshall(XmlUnmarshallerContext context) 
+        public VgwTelemetry Unmarshall(XmlUnmarshallerContext context)
         {
-            VgwTelemetry vgwTelemetry = new VgwTelemetry();
+            VgwTelemetry unmarshalledObject = new VgwTelemetry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("outsideIpAddress", targetDepth))
+                    if (context.TestExpression("acceptedRouteCount", targetDepth))
                     {
-                        vgwTelemetry.OutsideIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        vgwTelemetry.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.AcceptedRouteCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lastStatusChange", targetDepth))
                     {
-                        vgwTelemetry.LastStatusChange = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastStatusChange = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("outsideIpAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutsideIpAddress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("statusMessage", targetDepth))
                     {
-                        vgwTelemetry.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("acceptedRouteCount", targetDepth))
-                    {
-                        vgwTelemetry.AcceptedRouteCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vgwTelemetry;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vgwTelemetry;
+            return unmarshalledObject;
         }
 
-        public VgwTelemetry Unmarshall(JsonUnmarshallerContext context) 
+        public VgwTelemetry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VgwTelemetryUnmarshaller instance;
 
-        public static VgwTelemetryUnmarshaller GetInstance() 
+        private static VgwTelemetryUnmarshaller _instance = new VgwTelemetryUnmarshaller();        
+
+        public static VgwTelemetryUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VgwTelemetryUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

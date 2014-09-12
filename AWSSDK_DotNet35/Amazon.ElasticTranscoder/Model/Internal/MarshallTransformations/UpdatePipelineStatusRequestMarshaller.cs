@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdatePipelineStatus Request Marshaller
     /// </summary>       
-    public class UpdatePipelineStatusRequestMarshaller : IMarshaller<IRequest, UpdatePipelineStatusRequest> 
+    public class UpdatePipelineStatusRequestMarshaller : IMarshaller<IRequest, UpdatePipelineStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdatePipelineStatusRequest)input);
+        }
+
         public IRequest Marshall(UpdatePipelineStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
@@ -46,10 +55,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetStatus())
                 {
-                    writer.WritePropertyName("Status");
-                    writer.Write(publicRequest.Status);
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
                 }
 
         

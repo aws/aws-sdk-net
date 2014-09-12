@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,162 +33,65 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Batch Get Item Request Marshaller
+    /// BatchGetItem Request Marshaller
     /// </summary>       
-    internal class BatchGetItemRequestMarshaller : IMarshaller<IRequest, BatchGetItemRequest> 
+    public class BatchGetItemRequestMarshaller : IMarshaller<IRequest, BatchGetItemRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(BatchGetItemRequest batchGetItemRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((BatchGetItemRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(batchGetItemRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(BatchGetItemRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.BatchGetItem";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (batchGetItemRequest != null) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetRequestItems())
                 {
-                    if (batchGetItemRequest.RequestItems != null && batchGetItemRequest.RequestItems.Count > 0)
+                    context.Writer.WritePropertyName("RequestItems");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestRequestItemsKvp in publicRequest.RequestItems)
                     {
-                        writer.WritePropertyName("RequestItems");
-                        writer.WriteObjectStart();
-                        foreach (string batchGetItemRequestRequestItemsKey in batchGetItemRequest.RequestItems.Keys)
-                        {
-                            KeysAndAttributes requestItemsListValue;
-                            bool requestItemsListValueHasValue = batchGetItemRequest.RequestItems.TryGetValue(batchGetItemRequestRequestItemsKey, out requestItemsListValue);
-                            writer.WritePropertyName(batchGetItemRequestRequestItemsKey);
+                        context.Writer.WritePropertyName(publicRequestRequestItemsKvp.Key);
+                        var publicRequestRequestItemsValue = publicRequestRequestItemsKvp.Value;
 
-                            writer.WriteObjectStart();
+                        context.Writer.WriteObjectStart();
 
-                            if (requestItemsListValue != null && requestItemsListValue.Keys != null && requestItemsListValue.Keys.Count > 0)
-                            {
-                                List<Dictionary<string,AttributeValue>> keysList = requestItemsListValue.Keys;
-                                writer.WritePropertyName("Keys");
-                                writer.WriteArrayStart();
+                        var marshaller = KeysAndAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRequestItemsValue, context);
 
-                                foreach (Dictionary<string,AttributeValue> keysListValue in keysList) 
-                                {
-                                    writer.WriteObjectStart();
-                                    foreach (KeyValuePair<string, AttributeValue> memberListValue in keysListValue)
-                                    {
-                                        if (memberListValue.Key != null)
-                                        {
-                                            writer.WritePropertyName(memberListValue.Key);
-
-                                                writer.WriteObjectStart();
-                                                if (memberListValue.Value != null && memberListValue.Value.IsSetS()) 
-                                                {
-                                                    writer.WritePropertyName("S");
-                                                    writer.Write(memberListValue.Value.S);
-                                                }
-                                                if (memberListValue.Value != null && memberListValue.Value.IsSetN()) 
-                                                {
-                                                    writer.WritePropertyName("N");
-                                                    writer.Write(memberListValue.Value.N);
-                                                }
-                                                if (memberListValue.Value != null && memberListValue.Value.IsSetB()) 
-                                                {
-                                                    writer.WritePropertyName("B");
-                                                    writer.Write(StringUtils.FromMemoryStream(memberListValue.Value.B));
-                                                }
-
-                                                if (memberListValue.Value != null && memberListValue.Value.SS != null && memberListValue.Value.SS.Count > 0) 
-                                                {
-                                                    List<string> sSList = memberListValue.Value.SS;
-                                                    writer.WritePropertyName("SS");
-                                                    writer.WriteArrayStart();
-
-                                                    foreach (string sSListValue in sSList) 
-                                                    { 
-                                                        writer.Write(StringUtils.FromString(sSListValue));
-                                                    }
-
-                                                    writer.WriteArrayEnd();
-                                                }
-
-                                                if (memberListValue.Value != null && memberListValue.Value.NS != null && memberListValue.Value.NS.Count > 0) 
-                                                {
-                                                    List<string> nSList = memberListValue.Value.NS;
-                                                    writer.WritePropertyName("NS");
-                                                    writer.WriteArrayStart();
-
-                                                    foreach (string nSListValue in nSList) 
-                                                    { 
-                                                        writer.Write(StringUtils.FromString(nSListValue));
-                                                    }
-
-                                                    writer.WriteArrayEnd();
-                                                }
-
-                                                if (memberListValue.Value != null && memberListValue.Value.BS != null && memberListValue.Value.BS.Count > 0) 
-                                                {
-                                                    List<MemoryStream> bSList = memberListValue.Value.BS;
-                                                    writer.WritePropertyName("BS");
-                                                    writer.WriteArrayStart();
-
-                                                    foreach (MemoryStream bSListValue in bSList) 
-                                                    { 
-                                                        writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                                    }
-
-                                                    writer.WriteArrayEnd();
-                                                }
-                                                writer.WriteObjectEnd();
-                                        }
-                                    }
-                                    writer.WriteObjectEnd();
-                                }
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (requestItemsListValue != null && requestItemsListValue.AttributesToGet != null && requestItemsListValue.AttributesToGet.Count > 0) 
-                            {
-                                List<string> attributesToGetList = requestItemsListValue.AttributesToGet;
-                                writer.WritePropertyName("AttributesToGet");
-                                writer.WriteArrayStart();
-
-                                foreach (string attributesToGetListValue in attributesToGetList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(attributesToGetListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-                            if (requestItemsListValue != null && requestItemsListValue.IsSetConsistentRead()) 
-                            {
-                                writer.WritePropertyName("ConsistentRead");
-                                writer.Write(requestItemsListValue.ConsistentRead);
-                            }
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                }
-                if (batchGetItemRequest != null && batchGetItemRequest.IsSetReturnConsumedCapacity()) 
-                {
-                    writer.WritePropertyName("ReturnConsumedCapacity");
-                    writer.Write(batchGetItemRequest.ReturnConsumedCapacity);
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReturnConsumedCapacity())
+                {
+                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

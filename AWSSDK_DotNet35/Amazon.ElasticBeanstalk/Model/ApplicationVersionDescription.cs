@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private S3Location _sourceBundle;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ApplicationVersionDescription() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -54,7 +62,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
@@ -72,7 +79,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._dateCreated.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DateUpdated. 
@@ -92,7 +98,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._dateUpdated.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -111,11 +116,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceBundle. 
         /// <para>
-        ///          The location where the source bundle is located for this version.      
+        ///  The location where the source bundle is located for this version. 
         /// </para>
         /// </summary>
         public S3Location SourceBundle
@@ -130,12 +134,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._sourceBundle != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///          A label uniquely identifying the version for the associated         application.
-        ///      
+        ///  A label uniquely identifying the version for the associated application. 
         /// </para>
         /// </summary>
         public string VersionLabel

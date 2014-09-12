@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,17 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains information about the objects that you    want to invalidate.
+    /// A complex type that contains information about the objects that you want to invalidate.
     /// </summary>
     public partial class Paths
     {
         private List<string> _items = new List<string>();
         private int? _quantity;
 
-
         /// <summary>
         /// Gets and sets the property Items. A complex type that contains a list of the objects
-        /// that you want to    invalidate.
+        /// that you want to invalidate.
         /// </summary>
         public List<string> Items
         {
@@ -47,7 +50,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._items != null && this._items.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Quantity. The number of objects that you want to invalidate.

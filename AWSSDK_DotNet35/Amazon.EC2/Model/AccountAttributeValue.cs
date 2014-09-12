@@ -12,37 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a value of an account attribute.</para>
+    /// Describes a value of an account attribute.
     /// </summary>
     public partial class AccountAttributeValue
     {
-        
-        private string attributeValue;
-
+        private string _attributeValue;
 
         /// <summary>
+        /// Gets and sets the property AttributeValue. 
+        /// <para>
         /// The value.
-        ///  
+        /// </para>
         /// </summary>
         public string AttributeValue
         {
-            get { return this.attributeValue; }
-            set { this.attributeValue = value; }
+            get { return this._attributeValue; }
+            set { this._attributeValue = value; }
         }
 
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;
+            return this._attributeValue != null;
         }
+
     }
 }

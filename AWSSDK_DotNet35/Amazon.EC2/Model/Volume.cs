@@ -12,226 +12,233 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a volume.</para>
+    /// Describes a volume.
     /// </summary>
     public partial class Volume
     {
-        
-        private string volumeId;
-        private int? size;
-        private string snapshotId;
-        private string availabilityZone;
-        private VolumeState state;
-        private DateTime? createTime;
-        private List<VolumeAttachment> attachments = new List<VolumeAttachment>();
-        private List<Tag> tags = new List<Tag>();
-        private VolumeType volumeType;
-        private int? iops;
-        private bool? encrypted;
-
+        private List<VolumeAttachment> _attachments = new List<VolumeAttachment>();
+        private string _availabilityZone;
+        private DateTime? _createTime;
+        private bool? _encrypted;
+        private int? _iops;
+        private int? _size;
+        private string _snapshotId;
+        private VolumeState _state;
+        private List<Tag> _tags = new List<Tag>();
+        private string _volumeId;
+        private VolumeType _volumeType;
 
         /// <summary>
-        /// The ID of the volume.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
-
-        /// <summary>
-        /// The size of the volume, in GiBs.
-        ///  
-        /// </summary>
-        public int Size
-        {
-            get { return this.size ?? default(int); }
-            set { this.size = value; }
-        }
-
-        // Check to see if Size property is set
-        internal bool IsSetSize()
-        {
-            return this.size.HasValue;
-        }
-
-        /// <summary>
-        /// The snapshot from which the volume was created, if applicable.
-        ///  
-        /// </summary>
-        public string SnapshotId
-        {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
-        }
-
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
-        {
-            return this.snapshotId != null;
-        }
-
-        /// <summary>
-        /// The Availability Zone for the volume.
-        ///  
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this.availabilityZone != null;
-        }
-
-        /// <summary>
-        /// The volume state.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>creating, available, in-use, deleting, deleted, error</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public VolumeState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
-        /// The time stamp when volume creation was initiated.
-        ///  
-        /// </summary>
-        public DateTime CreateTime
-        {
-            get { return this.createTime ?? default(DateTime); }
-            set { this.createTime = value; }
-        }
-
-        // Check to see if CreateTime property is set
-        internal bool IsSetCreateTime()
-        {
-            return this.createTime.HasValue;
-        }
-
-        /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Attachments.
         /// </summary>
         public List<VolumeAttachment> Attachments
         {
-            get { return this.attachments; }
-            set { this.attachments = value; }
+            get { return this._attachments; }
+            set { this._attachments = value; }
         }
 
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this.attachments.Count > 0;
+            return this._attachments != null && this._attachments.Count > 0; 
         }
 
         /// <summary>
-        /// Any tags assigned to the volume.
-        ///  
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this.tags; }
-            set { this.tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this.tags.Count > 0;
-        }
-
-        /// <summary>
-        /// The volume type. This can be <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, or <c>standard</c>
-        /// for Magnetic volumes.
-        ///  
+        /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>standard, io1, gp2</description>
-        ///     </item>
-        /// </list>
+        /// The Availability Zone for the volume.
         /// </para>
         /// </summary>
-        public VolumeType VolumeType
+        public string AvailabilityZone
         {
-            get { return this.volumeType; }
-            set { this.volumeType = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
-        // Check to see if VolumeType property is set
-        internal bool IsSetVolumeType()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.volumeType != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
-        /// The number of I/O operations per second (IOPS) that the volume supports.
-        ///  
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// The time stamp when volume creation was initiated.
+        /// </para>
         /// </summary>
-        public int Iops
+        public DateTime CreateTime
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
         }
 
-        // Check to see if Iops property is set
-        internal bool IsSetIops()
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
         {
-            return this.iops.HasValue;
+            return this._createTime.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
         /// Indicates whether the volume is encrypted.
-        ///  
+        /// </para>
         /// </summary>
         public bool Encrypted
         {
-            get { return this.encrypted ?? default(bool); }
-            set { this.encrypted = value; }
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
         }
 
         // Check to see if Encrypted property is set
         internal bool IsSetEncrypted()
         {
-            return this.encrypted.HasValue;
+            return this._encrypted.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The number of I/O operations per second (IOPS) that the volume supports.
+        /// </para>
+        /// </summary>
+        public int Iops
+        {
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The size of the volume, in GiBs.
+        /// </para>
+        /// </summary>
+        public int Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The snapshot from which the volume was created, if applicable.
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The volume state.
+        /// </para>
+        /// </summary>
+        public VolumeState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the volume.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type. This can be <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code>
+        /// for Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic volumes.
+        /// </para>
+        /// </summary>
+        public VolumeType VolumeType
+        {
+            get { return this._volumeType; }
+            set { this._volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this._volumeType != null;
+        }
+
     }
 }

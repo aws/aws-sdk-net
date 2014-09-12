@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAlarmsForMetric response and response metadata.
+    /// Configuration for accessing Amazon DescribeAlarmsForMetric service
     /// </summary>
-    public class DescribeAlarmsForMetricResponse : DescribeAlarmsForMetricResult
+    public partial class DescribeAlarmsForMetricResponse : DescribeAlarmsForMetricResult
     {
         /// <summary>
         /// Gets and sets the DescribeAlarmsForMetricResult property.
-        /// The output for the DescribeAlarmsForMetric action.
+        /// Represents the output of a DescribeAlarmsForMetric operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAlarmsForMetricResult class are now available on the DescribeAlarmsForMetricResponse class. You should use the properties on DescribeAlarmsForMetricResponse instead of accessing them through DescribeAlarmsForMetricResult.")]
         public DescribeAlarmsForMetricResult DescribeAlarmsForMetricResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudWatch.Model
         }
     }
 }
-    

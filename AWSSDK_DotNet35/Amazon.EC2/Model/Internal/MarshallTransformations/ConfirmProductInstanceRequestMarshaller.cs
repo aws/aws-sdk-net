@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Confirm Product Instance Request Marshaller
+    /// ConfirmProductInstance Request Marshaller
     /// </summary>       
-    public class ConfirmProductInstanceRequestMarshaller : IMarshaller<IRequest, ConfirmProductInstanceRequest>
+    public class ConfirmProductInstanceRequestMarshaller : IMarshaller<IRequest, ConfirmProductInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ConfirmProductInstanceRequest confirmProductInstanceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(confirmProductInstanceRequest, "AmazonEC2");
+            return this.Marshall((ConfirmProductInstanceRequest)input);
+        }
+    
+        public IRequest Marshall(ConfirmProductInstanceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ConfirmProductInstance");
             request.Parameters.Add("Version", "2014-06-15");
-            if (confirmProductInstanceRequest != null && confirmProductInstanceRequest.IsSetProductCode())
-            {
-                request.Parameters.Add("ProductCode", StringUtils.FromString(confirmProductInstanceRequest.ProductCode));
-            }
-            if (confirmProductInstanceRequest != null && confirmProductInstanceRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(confirmProductInstanceRequest.InstanceId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetProductCode())
+                {
+                    request.Parameters.Add("ProductCode", StringUtils.FromString(publicRequest.ProductCode));
+                }
+            }
             return request;
         }
     }

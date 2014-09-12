@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AnalysisOptions Unmarshaller
-     /// </summary>
-    internal class AnalysisOptionsUnmarshaller : IUnmarshaller<AnalysisOptions, XmlUnmarshallerContext>, IUnmarshaller<AnalysisOptions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AnalysisOptions Object
+    /// </summary>  
+    public class AnalysisOptionsUnmarshaller : IUnmarshaller<AnalysisOptions, XmlUnmarshallerContext>, IUnmarshaller<AnalysisOptions, JsonUnmarshallerContext>
     {
-        public AnalysisOptions Unmarshall(XmlUnmarshallerContext context) 
+        public AnalysisOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            AnalysisOptions analysisOptions = new AnalysisOptions();
+            AnalysisOptions unmarshalledObject = new AnalysisOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Synonyms", targetDepth))
+                    if (context.TestExpression("AlgorithmicStemming", targetDepth))
                     {
-                        analysisOptions.Synonyms = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Stopwords", targetDepth))
-                    {
-                        analysisOptions.Stopwords = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AlgorithmicStemming = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StemmingDictionary", targetDepth))
                     {
-                        analysisOptions.StemmingDictionary = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StemmingDictionary = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AlgorithmicStemming", targetDepth))
+                    if (context.TestExpression("Stopwords", targetDepth))
                     {
-                        analysisOptions.AlgorithmicStemming = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Stopwords = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Synonyms", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Synonyms = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return analysisOptions;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return analysisOptions;
+            return unmarshalledObject;
         }
 
-        public AnalysisOptions Unmarshall(JsonUnmarshallerContext context) 
+        public AnalysisOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static AnalysisOptionsUnmarshaller instance;
 
-        public static AnalysisOptionsUnmarshaller GetInstance() 
+        private static AnalysisOptionsUnmarshaller _instance = new AnalysisOptionsUnmarshaller();        
+
+        public static AnalysisOptionsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new AnalysisOptionsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

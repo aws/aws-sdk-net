@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,93 +12,100 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeEngineDefaultParameters operation
-    /// </summary>
-    internal class DescribeEngineDefaultParametersResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeEngineDefaultParameters operation
+    /// </summary>  
+    public class DescribeEngineDefaultParametersResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeEngineDefaultParametersResponse response = new DescribeEngineDefaultParametersResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                
                 if (context.IsStartElement)
-                {
-                    
+                {                    
                     if(context.TestExpression("DescribeEngineDefaultParametersResult", 2))
                     {
-                        UnmarshallResult(context,response);                    
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
-                
             }
-                
 
             return response;
         }
-        
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeEngineDefaultParametersResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeEngineDefaultParametersResponse response)
         {
+            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("EngineDefaults", targetDepth))
+
+                    if ( context.TestExpression("EngineDefaults", targetDepth))
                     {
-                        response.EngineDefaults = EngineDefaultsUnmarshaller.GetInstance().Unmarshall(context);
+                        response.EngineDefaults = EngineDefaultsUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
+                } 
+           }
+
+            return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeEngineDefaultParametersResponseUnmarshaller instance;
+        private static DescribeEngineDefaultParametersResponseUnmarshaller _instance = new DescribeEngineDefaultParametersResponseUnmarshaller();        
 
-        public static DescribeEngineDefaultParametersResponseUnmarshaller GetInstance()
+        internal static DescribeEngineDefaultParametersResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeEngineDefaultParametersResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeEngineDefaultParametersResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

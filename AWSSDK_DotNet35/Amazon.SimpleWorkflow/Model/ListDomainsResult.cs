@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the ListDomains action.
+    /// Contains the response data from the ListDomains operation.
     /// </summary>
     public partial class ListDomainsResult : AmazonWebServiceResponse
     {
-        private DomainInfos domainInfosValue;
+        private DomainInfos _domainInfos;
 
-        /// <summary>
-        /// Gets and sets the ListDomainsResult property.
-        /// Contains the result of a successful invocation of the ListDomains
-        /// action.
-        /// </summary>
+        // Gets and sets the DomainInfos member
         public DomainInfos DomainInfos
         {
-            get { return this.domainInfosValue; }
-            set { this.domainInfosValue = value; }
+            get { return this._domainInfos; }
+            set { this._domainInfos = value; }
+        }
+
+        // Check to see if DomainInfos property is set
+        internal bool IsSetDomainInfos()
+        {
+            return this._domainInfos != null;
         }
     }
 }
-    

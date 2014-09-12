@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Service Access Policies Request Marshaller
+    /// UpdateServiceAccessPolicies Request Marshaller
     /// </summary>       
-    public class UpdateServiceAccessPoliciesRequestMarshaller : IMarshaller<IRequest, UpdateServiceAccessPoliciesRequest>
+    public class UpdateServiceAccessPoliciesRequestMarshaller : IMarshaller<IRequest, UpdateServiceAccessPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(updateServiceAccessPoliciesRequest, "AmazonCloudSearch");
+            return this.Marshall((UpdateServiceAccessPoliciesRequest)input);
+        }
+    
+        public IRequest Marshall(UpdateServiceAccessPoliciesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch_2011_02_01");
             request.Parameters.Add("Action", "UpdateServiceAccessPolicies");
             request.Parameters.Add("Version", "2011-02-01");
-            if (updateServiceAccessPoliciesRequest != null && updateServiceAccessPoliciesRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(updateServiceAccessPoliciesRequest.DomainName));
-            }
-            if (updateServiceAccessPoliciesRequest != null && updateServiceAccessPoliciesRequest.IsSetAccessPolicies())
-            {
-                request.Parameters.Add("AccessPolicies", StringUtils.FromString(updateServiceAccessPoliciesRequest.AccessPolicies));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAccessPolicies())
+                {
+                    request.Parameters.Add("AccessPolicies", StringUtils.FromString(publicRequest.AccessPolicies));
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+            }
             return request;
         }
     }

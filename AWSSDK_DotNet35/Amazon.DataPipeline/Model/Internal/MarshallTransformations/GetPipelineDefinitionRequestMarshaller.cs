@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Pipeline Definition Request Marshaller
+    /// GetPipelineDefinition Request Marshaller
     /// </summary>       
-    internal class GetPipelineDefinitionRequestMarshaller : IMarshaller<IRequest, GetPipelineDefinitionRequest> 
+    public class GetPipelineDefinitionRequestMarshaller : IMarshaller<IRequest, GetPipelineDefinitionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(GetPipelineDefinitionRequest getPipelineDefinitionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((GetPipelineDefinitionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(getPipelineDefinitionRequest, "AmazonDataPipeline");
+        public IRequest Marshall(GetPipelineDefinitionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.GetPipelineDefinition";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (getPipelineDefinitionRequest != null && getPipelineDefinitionRequest.IsSetPipelineId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPipelineId())
                 {
-                    writer.WritePropertyName("pipelineId");
-                    writer.Write(getPipelineDefinitionRequest.PipelineId);
-                }
-                if (getPipelineDefinitionRequest != null && getPipelineDefinitionRequest.IsSetVersion()) 
-                {
-                    writer.WritePropertyName("version");
-                    writer.Write(getPipelineDefinitionRequest.Version);
+                    context.Writer.WritePropertyName("pipelineId");
+                    context.Writer.Write(publicRequest.PipelineId);
                 }
 
+                if(publicRequest.IsSetVersion())
+                {
+                    context.Writer.WritePropertyName("version");
+                    context.Writer.Write(publicRequest.Version);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeDBParameters operation
-    /// </summary>
-    internal class DescribeDBParametersResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeDBParameters operation
+    /// </summary>  
+    public class DescribeDBParametersResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeDBParametersResponse response = new DescribeDBParametersResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeDBParametersResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeDBParametersResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeDBParametersResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,57 +71,53 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Parameters/Parameter", targetDepth))
-                    {
-                        response.Parameters.Add(ParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        response.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("Parameters/Parameter", targetDepth))
+                    {
+                        var unmarshaller = ParameterUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Parameters.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBParameterGroupNotFound"))
             {
                 return new DBParameterGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeDBParametersResponseUnmarshaller instance;
+        private static DescribeDBParametersResponseUnmarshaller _instance = new DescribeDBParametersResponseUnmarshaller();        
 
-        public static DescribeDBParametersResponseUnmarshaller GetInstance()
+        internal static DescribeDBParametersResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeDBParametersResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeDBParametersResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

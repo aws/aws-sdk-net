@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.Model.Internal.MarshallTransformations;
@@ -84,19 +88,8 @@ namespace Amazon.SecurityToken
     ///        CloudTrail User Guide</a>.
     /// </para>
     /// </summary>
-    public partial class AmazonSecurityTokenServiceClient : AmazonWebServiceClient, IAmazonSecurityTokenService
+    public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -115,7 +108,7 @@ namespace Amazon.SecurityToken
         ///
         /// </summary>
         public AmazonSecurityTokenServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
@@ -134,7 +127,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecurityTokenServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
@@ -153,7 +146,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="config">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AmazonSecurityTokenServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials
@@ -181,7 +174,7 @@ namespace Amazon.SecurityToken
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AWSCredentials credentials, AmazonSecurityTokenServiceConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -214,7 +207,7 @@ namespace Amazon.SecurityToken
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSecurityTokenServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -250,15 +243,33 @@ namespace Amazon.SecurityToken
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonSecurityTokenServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AssumeRole
-
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -373,8 +384,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
-            IAsyncResult asyncResult = invokeAssumeRole(request, null, null, true);
-            return EndAssumeRole(asyncResult);
+            var marshaller = new AssumeRoleRequestMarshaller();
+            var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -391,10 +404,12 @@ namespace Amazon.SecurityToken
         ///         operation.</returns>
         public IAsyncResult BeginAssumeRole(AssumeRoleRequest request, AsyncCallback callback, object state)
         {
-            return invokeAssumeRole(request, callback, state, false);
+            var marshaller = new AssumeRoleRequestMarshaller();
+            var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssumeRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssumeRole operation.
@@ -406,21 +421,12 @@ namespace Amazon.SecurityToken
         /// <returns>Returns a  AssumeRoleResult from SecurityTokenService.</returns>
         public  AssumeRoleResponse EndAssumeRole(IAsyncResult asyncResult)
         {
-            return endOperation< AssumeRoleResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAssumeRole(AssumeRoleRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AssumeRoleRequestMarshaller();
-            var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AssumeRoleResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AssumeRoleWithSAML
-
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -515,8 +521,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
-            IAsyncResult asyncResult = invokeAssumeRoleWithSAML(request, null, null, true);
-            return EndAssumeRoleWithSAML(asyncResult);
+            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -533,10 +541,12 @@ namespace Amazon.SecurityToken
         ///         operation.</returns>
         public IAsyncResult BeginAssumeRoleWithSAML(AssumeRoleWithSAMLRequest request, AsyncCallback callback, object state)
         {
-            return invokeAssumeRoleWithSAML(request, callback, state, false);
+            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssumeRoleWithSAMLRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssumeRoleWithSAML operation.
@@ -548,21 +558,12 @@ namespace Amazon.SecurityToken
         /// <returns>Returns a  AssumeRoleWithSAMLResult from SecurityTokenService.</returns>
         public  AssumeRoleWithSAMLResponse EndAssumeRoleWithSAML(IAsyncResult asyncResult)
         {
-            return endOperation< AssumeRoleWithSAMLResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAssumeRoleWithSAML(AssumeRoleWithSAMLRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
-            var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AssumeRoleWithSAMLResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AssumeRoleWithWebIdentity
-
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -676,8 +677,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
-            IAsyncResult asyncResult = invokeAssumeRoleWithWebIdentity(request, null, null, true);
-            return EndAssumeRoleWithWebIdentity(asyncResult);
+            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -694,10 +697,12 @@ namespace Amazon.SecurityToken
         ///         operation.</returns>
         public IAsyncResult BeginAssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request, AsyncCallback callback, object state)
         {
-            return invokeAssumeRoleWithWebIdentity(request, callback, state, false);
+            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssumeRoleWithWebIdentityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssumeRoleWithWebIdentity operation.
@@ -709,21 +714,12 @@ namespace Amazon.SecurityToken
         /// <returns>Returns a  AssumeRoleWithWebIdentityResult from SecurityTokenService.</returns>
         public  AssumeRoleWithWebIdentityResponse EndAssumeRoleWithWebIdentity(IAsyncResult asyncResult)
         {
-            return endOperation< AssumeRoleWithWebIdentityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
-            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AssumeRoleWithWebIdentityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DecodeAuthorizationMessage
-
 
         /// <summary>
         /// Decodes additional information about the authorization status of a request from an
@@ -767,8 +763,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
-            IAsyncResult asyncResult = invokeDecodeAuthorizationMessage(request, null, null, true);
-            return EndDecodeAuthorizationMessage(asyncResult);
+            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
+
+            return Invoke<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -785,10 +783,12 @@ namespace Amazon.SecurityToken
         ///         operation.</returns>
         public IAsyncResult BeginDecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request, AsyncCallback callback, object state)
         {
-            return invokeDecodeAuthorizationMessage(request, callback, state, false);
+            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DecodeAuthorizationMessageRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DecodeAuthorizationMessage operation.
@@ -800,21 +800,12 @@ namespace Amazon.SecurityToken
         /// <returns>Returns a  DecodeAuthorizationMessageResult from SecurityTokenService.</returns>
         public  DecodeAuthorizationMessageResponse EndDecodeAuthorizationMessage(IAsyncResult asyncResult)
         {
-            return endOperation< DecodeAuthorizationMessageResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
-            var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DecodeAuthorizationMessageResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetFederationToken
-
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -914,8 +905,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            IAsyncResult asyncResult = invokeGetFederationToken(request, null, null, true);
-            return EndGetFederationToken(asyncResult);
+            var marshaller = new GetFederationTokenRequestMarshaller();
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -932,10 +925,12 @@ namespace Amazon.SecurityToken
         ///         operation.</returns>
         public IAsyncResult BeginGetFederationToken(GetFederationTokenRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetFederationToken(request, callback, state, false);
+            var marshaller = new GetFederationTokenRequestMarshaller();
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetFederationTokenRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetFederationToken operation.
@@ -947,15 +942,7 @@ namespace Amazon.SecurityToken
         /// <returns>Returns a  GetFederationTokenResult from SecurityTokenService.</returns>
         public  GetFederationTokenResponse EndGetFederationToken(IAsyncResult asyncResult)
         {
-            return endOperation< GetFederationTokenResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetFederationToken(GetFederationTokenRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetFederationTokenRequestMarshaller();
-            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetFederationTokenResponse>(asyncResult);
         }
 
         #endregion
@@ -1062,8 +1049,10 @@ namespace Amazon.SecurityToken
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
         public GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
-            IAsyncResult asyncResult = invokeGetSessionToken(request, null, null, true);
-            return EndGetSessionToken(asyncResult);
+            var marshaller = new GetSessionTokenRequestMarshaller();
+            var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1080,10 +1069,12 @@ namespace Amazon.SecurityToken
         ///         operation.</returns>
         public IAsyncResult BeginGetSessionToken(GetSessionTokenRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetSessionToken(request, callback, state, false);
+            var marshaller = new GetSessionTokenRequestMarshaller();
+            var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetSessionTokenRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSessionToken operation.
@@ -1095,15 +1086,7 @@ namespace Amazon.SecurityToken
         /// <returns>Returns a  GetSessionTokenResult from SecurityTokenService.</returns>
         public  GetSessionTokenResponse EndGetSessionToken(IAsyncResult asyncResult)
         {
-            return endOperation< GetSessionTokenResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetSessionToken(GetSessionTokenRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetSessionTokenRequestMarshaller();
-            var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetSessionTokenResponse>(asyncResult);
         }
 
         #endregion

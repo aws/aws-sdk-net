@@ -12,39 +12,50 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type containing the response for the request.</para>
+    /// A complex type containing the response for the request.
     /// </summary>
     public partial class ChangeResourceRecordSetsResult : AmazonWebServiceResponse
     {
-        
-        private ChangeInfo changeInfo;
-
+        private ChangeInfo _changeInfo;
 
         /// <summary>
-        /// A complex type that contains information about changes made to your hosted zone. This element contains an ID that you use when performing a
-        /// <a>GetChange</a> action to get detailed information about the change.
+        /// Gets and sets the property ChangeInfo. 
+        /// <para>
+        /// A complex type that contains information about changes made to your hosted zone.
+        /// </para>
         ///  
+        /// <para>
+        /// This element contains an ID that you use when performing a <a>GetChange</a> action
+        /// to get detailed information about the change.
+        /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo
         {
-            get { return this.changeInfo; }
-            set { this.changeInfo = value; }
+            get { return this._changeInfo; }
+            set { this._changeInfo = value; }
         }
 
         // Check to see if ChangeInfo property is set
         internal bool IsSetChangeInfo()
         {
-            return this.changeInfo != null;
+            return this._changeInfo != null;
         }
+
     }
 }

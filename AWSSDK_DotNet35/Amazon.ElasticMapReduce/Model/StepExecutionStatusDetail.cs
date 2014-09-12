@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,21 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? _startDateTime;
         private StepExecutionState _state;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public StepExecutionStatusDetail() { }
+
+        /// <summary>
+        /// Instantiates StepExecutionStatusDetail with the parameterized properties
+        /// </summary>
+        /// <param name="state">The state of the job flow step.</param>
+        /// <param name="creationDateTime">The creation date and time of the step.</param>
+        public StepExecutionStatusDetail(StepExecutionState state, DateTime creationDateTime)
+        {
+            _state = state;
+            _creationDateTime = creationDateTime;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -53,7 +72,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._creationDateTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EndDateTime. 
         /// <para>
@@ -71,7 +89,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._endDateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LastStateChangeReason. 
@@ -91,7 +108,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._lastStateChangeReason != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StartDateTime. 
         /// <para>
@@ -109,7 +125,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._startDateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property State. 

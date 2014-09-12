@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  ConfirmProductInstance response and response metadata.
+    /// Configuration for accessing Amazon ConfirmProductInstance service
     /// </summary>
     public partial class ConfirmProductInstanceResponse : ConfirmProductInstanceResult
     {
         /// <summary>
         /// Gets and sets the ConfirmProductInstanceResult property.
-        /// 
+        /// Represents the output of a ConfirmProductInstance operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ConfirmProductInstanceResult class are now available on the ConfirmProductInstanceResponse class. You should use the properties on ConfirmProductInstanceResponse instead of accessing them through ConfirmProductInstanceResult.")]
         public ConfirmProductInstanceResult ConfirmProductInstanceResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

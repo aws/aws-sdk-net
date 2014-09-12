@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,68 +33,69 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe V T L Devices Request Marshaller
+    /// DescribeVTLDevices Request Marshaller
     /// </summary>       
-    internal class DescribeVTLDevicesRequestMarshaller : IMarshaller<IRequest, DescribeVTLDevicesRequest> 
+    public class DescribeVTLDevicesRequestMarshaller : IMarshaller<IRequest, DescribeVTLDevicesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeVTLDevicesRequest describeVTLDevicesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeVTLDevicesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeVTLDevicesRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DescribeVTLDevicesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DescribeVTLDevices";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeVTLDevicesRequest != null && describeVTLDevicesRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGatewayARN())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(describeVTLDevicesRequest.GatewayARN);
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
                 }
 
-                if (describeVTLDevicesRequest != null && describeVTLDevicesRequest.VTLDeviceARNs != null && describeVTLDevicesRequest.VTLDeviceARNs.Count > 0) 
+                if(publicRequest.IsSetLimit())
                 {
-                    List<string> vTLDeviceARNsList = describeVTLDevicesRequest.VTLDeviceARNs;
-                    writer.WritePropertyName("VTLDeviceARNs");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
+                }
 
-                    foreach (string vTLDeviceARNsListValue in vTLDeviceARNsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(vTLDeviceARNsListValue));
+                if(publicRequest.IsSetMarker())
+                {
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
+
+                if(publicRequest.IsSetVTLDeviceARNs())
+                {
+                    context.Writer.WritePropertyName("VTLDeviceARNs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVTLDeviceARNsListValue in publicRequest.VTLDeviceARNs)
+                    {
+                            context.Writer.Write(publicRequestVTLDeviceARNsListValue);
                     }
-
-                    writer.WriteArrayEnd();
-                }
-                if (describeVTLDevicesRequest != null && describeVTLDevicesRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(describeVTLDevicesRequest.Marker);
-                }
-                if (describeVTLDevicesRequest != null && describeVTLDevicesRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(describeVTLDevicesRequest.Limit);
+                    context.Writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

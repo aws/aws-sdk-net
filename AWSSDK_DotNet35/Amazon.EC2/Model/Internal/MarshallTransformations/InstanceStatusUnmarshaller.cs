@@ -12,93 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceStatus Unmarshaller
-     /// </summary>
-    internal class InstanceStatusUnmarshaller : IUnmarshaller<InstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<InstanceStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceStatus Object
+    /// </summary>  
+    public class InstanceStatusUnmarshaller : IUnmarshaller<InstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<InstanceStatus, JsonUnmarshallerContext>
     {
-        public InstanceStatus Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceStatus instanceStatus = new InstanceStatus();
+            InstanceStatus unmarshalledObject = new InstanceStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        instanceStatus.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        instanceStatus.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("eventsSet/item", targetDepth))
                     {
-                        instanceStatus.Events.Add(InstanceStatusEventUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InstanceStatusEventUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Events.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceState", targetDepth))
                     {
-                        instanceStatus.InstanceState = InstanceStateUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("systemStatus", targetDepth))
-                    {
-                        instanceStatus.SystemStatus = InstanceStatusSummaryUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceStateUnmarshaller.Instance;
+                        unmarshalledObject.InstanceState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceStatus", targetDepth))
                     {
-                        instanceStatus.Status = InstanceStatusSummaryUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceStatusSummaryUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("systemStatus", targetDepth))
+                    {
+                        var unmarshaller = InstanceStatusSummaryUnmarshaller.Instance;
+                        unmarshalledObject.SystemStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceStatus;
+            return unmarshalledObject;
         }
 
-        public InstanceStatus Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceStatusUnmarshaller instance;
 
-        public static InstanceStatusUnmarshaller GetInstance() 
+        private static InstanceStatusUnmarshaller _instance = new InstanceStatusUnmarshaller();        
+
+        public static InstanceStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -48,6 +52,21 @@ namespace Amazon.IdentityManagement.Model
         private StatusType _status;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateSigningCertificateRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
+        /// </summary>
+        /// <param name="certificateId">The ID of the signing certificate you want to update.</param>
+        /// <param name="status">The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.</param>
+        public UpdateSigningCertificateRequest(string certificateId, StatusType status)
+        {
+            _certificateId = certificateId;
+            _status = status;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -66,7 +85,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._certificateId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -87,7 +105,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

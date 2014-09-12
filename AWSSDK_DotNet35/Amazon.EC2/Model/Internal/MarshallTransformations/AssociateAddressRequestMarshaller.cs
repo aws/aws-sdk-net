@@ -12,54 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Associate Address Request Marshaller
+    /// AssociateAddress Request Marshaller
     /// </summary>       
-    public class AssociateAddressRequestMarshaller : IMarshaller<IRequest, AssociateAddressRequest>
+    public class AssociateAddressRequestMarshaller : IMarshaller<IRequest, AssociateAddressRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(AssociateAddressRequest associateAddressRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(associateAddressRequest, "AmazonEC2");
+            return this.Marshall((AssociateAddressRequest)input);
+        }
+    
+        public IRequest Marshall(AssociateAddressRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "AssociateAddress");
             request.Parameters.Add("Version", "2014-06-15");
-            if (associateAddressRequest != null && associateAddressRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(associateAddressRequest.InstanceId));
-            }
-            if (associateAddressRequest != null && associateAddressRequest.IsSetPublicIp())
-            {
-                request.Parameters.Add("PublicIp", StringUtils.FromString(associateAddressRequest.PublicIp));
-            }
-            if (associateAddressRequest != null && associateAddressRequest.IsSetAllocationId())
-            {
-                request.Parameters.Add("AllocationId", StringUtils.FromString(associateAddressRequest.AllocationId));
-            }
-            if (associateAddressRequest != null && associateAddressRequest.IsSetNetworkInterfaceId())
-            {
-                request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(associateAddressRequest.NetworkInterfaceId));
-            }
-            if (associateAddressRequest != null && associateAddressRequest.IsSetPrivateIpAddress())
-            {
-                request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(associateAddressRequest.PrivateIpAddress));
-            }
-            if (associateAddressRequest != null && associateAddressRequest.IsSetAllowReassociation())
-            {
-                request.Parameters.Add("AllowReassociation", StringUtils.FromBool(associateAddressRequest.AllowReassociation));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAllocationId())
+                {
+                    request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
+                }
+                if(publicRequest.IsSetAllowReassociation())
+                {
+                    request.Parameters.Add("AllowReassociation", StringUtils.FromBool(publicRequest.AllowReassociation));
+                }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetNetworkInterfaceId())
+                {
+                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
+                }
+                if(publicRequest.IsSetPrivateIpAddress())
+                {
+                    request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));
+                }
+                if(publicRequest.IsSetPublicIp())
+                {
+                    request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
+                }
+            }
             return request;
         }
     }

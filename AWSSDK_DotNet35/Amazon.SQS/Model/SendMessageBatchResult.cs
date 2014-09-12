@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.SQS.Model
         private List<BatchResultErrorEntry> _failed = new List<BatchResultErrorEntry>();
         private List<SendMessageBatchResultEntry> _successful = new List<SendMessageBatchResultEntry>();
 
-
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.SQS.Model
         {
             return this._failed != null && this._failed.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Successful. 

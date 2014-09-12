@@ -12,45 +12,56 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Unassign Private Ip Addresses Request Marshaller
+    /// UnassignPrivateIpAddresses Request Marshaller
     /// </summary>       
-    public class UnassignPrivateIpAddressesRequestMarshaller : IMarshaller<IRequest, UnassignPrivateIpAddressesRequest>
+    public class UnassignPrivateIpAddressesRequestMarshaller : IMarshaller<IRequest, UnassignPrivateIpAddressesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(unassignPrivateIpAddressesRequest, "AmazonEC2");
+            return this.Marshall((UnassignPrivateIpAddressesRequest)input);
+        }
+    
+        public IRequest Marshall(UnassignPrivateIpAddressesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "UnassignPrivateIpAddresses");
             request.Parameters.Add("Version", "2014-06-15");
-            if (unassignPrivateIpAddressesRequest != null && unassignPrivateIpAddressesRequest.IsSetNetworkInterfaceId())
-            {
-                request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(unassignPrivateIpAddressesRequest.NetworkInterfaceId));
-            }
-            if (unassignPrivateIpAddressesRequest != null)
-            {
-                List<string> privateIpAddressesList = unassignPrivateIpAddressesRequest.PrivateIpAddresses;
 
-                int privateIpAddressesListIndex = 1;
-                foreach (string privateIpAddressesListValue in privateIpAddressesList)
-                { 
-                    request.Parameters.Add("PrivateIpAddress." + privateIpAddressesListIndex, StringUtils.FromString(privateIpAddressesListValue));
-                    privateIpAddressesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNetworkInterfaceId())
+                {
+                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
+                }
+                if(publicRequest.IsSetPrivateIpAddresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PrivateIpAddresses)
+                    {
+                        request.Parameters.Add("PrivateIpAddress" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

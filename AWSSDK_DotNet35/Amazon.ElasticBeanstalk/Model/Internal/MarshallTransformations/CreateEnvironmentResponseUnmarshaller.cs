@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -182,7 +186,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return new AmazonElasticBeanstalkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static CreateEnvironmentResponseUnmarshaller _instance = new CreateEnvironmentResponseUnmarshaller();        
 
         internal static CreateEnvironmentResponseUnmarshaller GetInstance()

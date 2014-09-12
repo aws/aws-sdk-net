@@ -12,39 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of an <c>IndexDocuments</c> request. Contains the status of the indexing operation, including the fields being
-    /// indexed.</para>
+    /// The result of an <code>IndexDocuments</code> request. Contains the status of the indexing
+    /// operation, including the fields being indexed.
     /// </summary>
     public partial class IndexDocumentsResult : AmazonWebServiceResponse
     {
-        
-        private List<string> fieldNames = new List<string>();
-
+        private List<string> _fieldNames = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property FieldNames. 
+        /// <para>
         /// The names of the fields that are currently being indexed.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> FieldNames
         {
-            get { return this.fieldNames; }
-            set { this.fieldNames = value; }
+            get { return this._fieldNames; }
+            set { this._fieldNames = value; }
         }
 
         // Check to see if FieldNames property is set
         internal bool IsSetFieldNames()
         {
-            return this.fieldNames.Count > 0;
+            return this._fieldNames != null && this._fieldNames.Count > 0; 
         }
+
     }
 }

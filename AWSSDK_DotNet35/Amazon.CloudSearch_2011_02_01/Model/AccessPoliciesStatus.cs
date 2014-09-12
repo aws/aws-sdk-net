@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,60 +12,59 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>A <c>PolicyDocument</c> that specifies access policies for the search domain's services, and the current status of those
-    /// policies.</para>
+    /// A <code>PolicyDocument</code> that specifies access policies for the search domain's
+    /// services, and the current status of those policies.
     /// </summary>
-    public class AccessPoliciesStatus
+    public partial class AccessPoliciesStatus
     {
-        
-        private string options;
-        private OptionStatus status;
-
+        private string _options;
+        private OptionStatus _status;
 
         /// <summary>
-        /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
-        /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy
-        /// document is 100 KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource":
-        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
-        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { "aws:SourceIp":
-        /// ["203.0.113.1/32"] } }} ] }</c>
-        ///  
+        /// Gets and sets the property Options.
         /// </summary>
         public string Options
         {
-            get { return this.options; }
-            set { this.options = value; }
+            get { return this._options; }
+            set { this._options = value; }
         }
 
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;
+            return this._options != null;
         }
 
         /// <summary>
-        /// The status of an option, including when it was last updated and whether it is actively in use for searches.
-        ///  
+        /// Gets and sets the property Status.
         /// </summary>
         public OptionStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTaskCanceledEventAttributes Object
+    /// </summary>  
+    public class ActivityTaskCanceledEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskCanceledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskCanceledEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTaskCanceledEventAttributesUnmarshaller
-      /// </summary>
-      internal class ActivityTaskCanceledEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskCanceledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskCanceledEventAttributes, JsonUnmarshallerContext>
-      {
         ActivityTaskCanceledEventAttributes IUnmarshaller<ActivityTaskCanceledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTaskCanceledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTaskCanceledEventAttributes activityTaskCanceledEventAttributes = new ActivityTaskCanceledEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTaskCanceledEventAttributes unmarshalledObject = new ActivityTaskCanceledEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("details", targetDepth))
-              {
-                activityTaskCanceledEventAttributes.Details = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("scheduledEventId", targetDepth))
-              {
-                activityTaskCanceledEventAttributes.ScheduledEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                activityTaskCanceledEventAttributes.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("latestCancelRequestedEventId", targetDepth))
-              {
-                activityTaskCanceledEventAttributes.LatestCancelRequestedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("details", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestCancelRequestedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LatestCancelRequestedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scheduledEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTaskCanceledEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static ActivityTaskCanceledEventAttributesUnmarshaller instance;
-        public static ActivityTaskCanceledEventAttributesUnmarshaller GetInstance()
+
+        private static ActivityTaskCanceledEventAttributesUnmarshaller _instance = new ActivityTaskCanceledEventAttributesUnmarshaller();        
+
+        public static ActivityTaskCanceledEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTaskCanceledEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

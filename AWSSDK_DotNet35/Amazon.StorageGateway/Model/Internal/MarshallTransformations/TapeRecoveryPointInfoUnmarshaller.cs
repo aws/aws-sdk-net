@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TapeRecoveryPointInfo Object
+    /// </summary>  
+    public class TapeRecoveryPointInfoUnmarshaller : IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<TapeRecoveryPointInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TapeRecoveryPointInfoUnmarshaller
-      /// </summary>
-      internal class TapeRecoveryPointInfoUnmarshaller : IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<TapeRecoveryPointInfo, JsonUnmarshallerContext>
-      {
         TapeRecoveryPointInfo IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TapeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TapeRecoveryPointInfo tapeRecoveryPointInfo = new TapeRecoveryPointInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TapeRecoveryPointInfo unmarshalledObject = new TapeRecoveryPointInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TapeARN", targetDepth))
-              {
-                tapeRecoveryPointInfo.TapeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TapeRecoveryPointTime", targetDepth))
-              {
-                tapeRecoveryPointInfo.TapeRecoveryPointTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TapeSizeInBytes", targetDepth))
-              {
-                tapeRecoveryPointInfo.TapeSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TapeStatus", targetDepth))
-              {
-                tapeRecoveryPointInfo.TapeStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("TapeARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TapeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeRecoveryPointTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.TapeRecoveryPointTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TapeStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TapeStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return tapeRecoveryPointInfo;
+            return unmarshalledObject;
         }
 
-        private static TapeRecoveryPointInfoUnmarshaller instance;
-        public static TapeRecoveryPointInfoUnmarshaller GetInstance()
+
+        private static TapeRecoveryPointInfoUnmarshaller _instance = new TapeRecoveryPointInfoUnmarshaller();        
+
+        public static TapeRecoveryPointInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TapeRecoveryPointInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

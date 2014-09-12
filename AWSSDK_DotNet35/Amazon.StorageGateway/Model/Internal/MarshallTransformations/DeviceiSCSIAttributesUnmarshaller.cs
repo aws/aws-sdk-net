@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DeviceiSCSIAttributes Object
+    /// </summary>  
+    public class DeviceiSCSIAttributesUnmarshaller : IUnmarshaller<DeviceiSCSIAttributes, XmlUnmarshallerContext>, IUnmarshaller<DeviceiSCSIAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DeviceiSCSIAttributesUnmarshaller
-      /// </summary>
-      internal class DeviceiSCSIAttributesUnmarshaller : IUnmarshaller<DeviceiSCSIAttributes, XmlUnmarshallerContext>, IUnmarshaller<DeviceiSCSIAttributes, JsonUnmarshallerContext>
-      {
         DeviceiSCSIAttributes IUnmarshaller<DeviceiSCSIAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DeviceiSCSIAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DeviceiSCSIAttributes deviceiSCSIAttributes = new DeviceiSCSIAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DeviceiSCSIAttributes unmarshalledObject = new DeviceiSCSIAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TargetARN", targetDepth))
-              {
-                deviceiSCSIAttributes.TargetARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NetworkInterfaceId", targetDepth))
-              {
-                deviceiSCSIAttributes.NetworkInterfaceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NetworkInterfacePort", targetDepth))
-              {
-                deviceiSCSIAttributes.NetworkInterfacePort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ChapEnabled", targetDepth))
-              {
-                deviceiSCSIAttributes.ChapEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("ChapEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ChapEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkInterfaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkInterfacePort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterfacePort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return deviceiSCSIAttributes;
+            return unmarshalledObject;
         }
 
-        private static DeviceiSCSIAttributesUnmarshaller instance;
-        public static DeviceiSCSIAttributesUnmarshaller GetInstance()
+
+        private static DeviceiSCSIAttributesUnmarshaller _instance = new DeviceiSCSIAttributesUnmarshaller();        
+
+        public static DeviceiSCSIAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DeviceiSCSIAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

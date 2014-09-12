@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Placement Group Request Marshaller
+    /// CreatePlacementGroup Request Marshaller
     /// </summary>       
-    public class CreatePlacementGroupRequestMarshaller : IMarshaller<IRequest, CreatePlacementGroupRequest>
+    public class CreatePlacementGroupRequestMarshaller : IMarshaller<IRequest, CreatePlacementGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreatePlacementGroupRequest createPlacementGroupRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createPlacementGroupRequest, "AmazonEC2");
+            return this.Marshall((CreatePlacementGroupRequest)input);
+        }
+    
+        public IRequest Marshall(CreatePlacementGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreatePlacementGroup");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createPlacementGroupRequest != null && createPlacementGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(createPlacementGroupRequest.GroupName));
-            }
-            if (createPlacementGroupRequest != null && createPlacementGroupRequest.IsSetStrategy())
-            {
-                request.Parameters.Add("Strategy", StringUtils.FromString(createPlacementGroupRequest.Strategy));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+                if(publicRequest.IsSetStrategy())
+                {
+                    request.Parameters.Add("Strategy", StringUtils.FromString(publicRequest.Strategy));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,50 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains the output from the EvaluateExpression action.</para>
+    /// Contains the output from the <a>EvaluateExpression</a> action.
     /// </summary>
     public partial class EvaluateExpressionResult : AmazonWebServiceResponse
     {
-        
-        private string evaluatedExpression;
+        private string _evaluatedExpression;
 
         /// <summary>
-        /// The evaluated expression.
-        ///  
+        /// Gets and sets the property EvaluatedExpression. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 20971520</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The evaluated expression.
         /// </para>
         /// </summary>
         public string EvaluatedExpression
         {
-            get { return this.evaluatedExpression; }
-            set { this.evaluatedExpression = value; }
+            get { return this._evaluatedExpression; }
+            set { this._evaluatedExpression = value; }
         }
 
         // Check to see if EvaluatedExpression property is set
         internal bool IsSetEvaluatedExpression()
         {
-            return this.evaluatedExpression != null;
+            return this._evaluatedExpression != null;
         }
+
     }
 }

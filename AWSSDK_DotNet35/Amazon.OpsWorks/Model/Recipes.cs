@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -47,7 +51,6 @@ namespace Amazon.OpsWorks.Model
         private List<string> _shutdown = new List<string>();
         private List<string> _undeploy = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property Configure. 
         /// <para>
@@ -65,7 +68,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._configure != null && this._configure.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Deploy. 
@@ -85,7 +87,6 @@ namespace Amazon.OpsWorks.Model
             return this._deploy != null && this._deploy.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Setup. 
         /// <para>
@@ -104,7 +105,6 @@ namespace Amazon.OpsWorks.Model
             return this._setup != null && this._setup.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Shutdown. 
         /// <para>
@@ -122,7 +122,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._shutdown != null && this._shutdown.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Undeploy. 

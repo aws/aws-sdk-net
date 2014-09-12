@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,19 @@ namespace Amazon.IdentityManagement.Model
         private bool? _passwordResetRequired;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateLoginProfileRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateLoginProfileRequest with the parameterized properties
+        /// </summary>
+        /// <param name="userName">Name of the user whose password you want to update.</param>
+        public UpdateLoginProfileRequest(string userName)
+        {
+            _userName = userName;
+        }
 
         /// <summary>
         /// Gets and sets the property Password. 
@@ -52,7 +69,6 @@ namespace Amazon.IdentityManagement.Model
             return this._password != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PasswordResetRequired. 
         /// <para>
@@ -70,7 +86,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._passwordResetRequired.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

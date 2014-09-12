@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ScalingParametersStatus Unmarshaller
-     /// </summary>
-    internal class ScalingParametersStatusUnmarshaller : IUnmarshaller<ScalingParametersStatus, XmlUnmarshallerContext>, IUnmarshaller<ScalingParametersStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ScalingParametersStatus Object
+    /// </summary>  
+    public class ScalingParametersStatusUnmarshaller : IUnmarshaller<ScalingParametersStatus, XmlUnmarshallerContext>, IUnmarshaller<ScalingParametersStatus, JsonUnmarshallerContext>
     {
-        public ScalingParametersStatus Unmarshall(XmlUnmarshallerContext context) 
+        public ScalingParametersStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            ScalingParametersStatus scalingParametersStatus = new ScalingParametersStatus();
+            ScalingParametersStatus unmarshalledObject = new ScalingParametersStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Options", targetDepth))
                     {
-                        scalingParametersStatus.Options = ScalingParametersUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ScalingParametersUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        scalingParametersStatus.Status = OptionStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = OptionStatusUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return scalingParametersStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return scalingParametersStatus;
+            return unmarshalledObject;
         }
 
-        public ScalingParametersStatus Unmarshall(JsonUnmarshallerContext context) 
+        public ScalingParametersStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ScalingParametersStatusUnmarshaller instance;
 
-        public static ScalingParametersStatusUnmarshaller GetInstance() 
+        private static ScalingParametersStatusUnmarshaller _instance = new ScalingParametersStatusUnmarshaller();        
+
+        public static ScalingParametersStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ScalingParametersStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

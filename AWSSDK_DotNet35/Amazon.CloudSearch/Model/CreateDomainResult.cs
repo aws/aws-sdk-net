@@ -12,38 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>CreateDomainRequest</c> . Contains the status of a newly created domain.</para>
+    /// The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created
+    /// domain.
     /// </summary>
     public partial class CreateDomainResult : AmazonWebServiceResponse
     {
-        
-        private DomainStatus domainStatus;
-
+        private DomainStatus _domainStatus;
 
         /// <summary>
-        /// The current status of the search domain.
-        ///  
+        /// Gets and sets the property DomainStatus.
         /// </summary>
         public DomainStatus DomainStatus
         {
-            get { return this.domainStatus; }
-            set { this.domainStatus = value; }
+            get { return this._domainStatus; }
+            set { this._domainStatus = value; }
         }
 
         // Check to see if DomainStatus property is set
         internal bool IsSetDomainStatus()
         {
-            return this.domainStatus != null;
+            return this._domainStatus != null;
         }
+
     }
 }

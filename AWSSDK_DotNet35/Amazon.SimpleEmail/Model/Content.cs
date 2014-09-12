@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -39,6 +43,19 @@ namespace Amazon.SimpleEmail.Model
         private string _charset;
         private string _data;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Content() { }
+
+        /// <summary>
+        /// Instantiates Content with the parameterized properties
+        /// </summary>
+        /// <param name="data">The textual data of the content.</param>
+        public Content(string data)
+        {
+            _data = data;
+        }
 
         /// <summary>
         /// Gets and sets the property Charset. 
@@ -57,7 +74,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._charset != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Data. 

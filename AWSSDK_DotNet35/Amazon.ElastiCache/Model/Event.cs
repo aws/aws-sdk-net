@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,10 @@ namespace Amazon.ElastiCache.Model
         private string _sourceIdentifier;
         private SourceType _sourceType;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Event() { }
 
         /// <summary>
         /// Gets and sets the property Date. 
@@ -54,7 +62,6 @@ namespace Amazon.ElastiCache.Model
             return this._date.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
@@ -72,7 +79,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._message != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
@@ -92,7 +98,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._sourceIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SourceType. 

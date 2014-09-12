@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,13 +29,13 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateConfigurationSettings operation.
-    /// Takes a set of configuration settings and either a configuration        
-    /// template or environment, and determines whether those values are valid.        
+    /// Takes a set of configuration settings and either a configuration template or environment,
+    /// and determines whether those values are valid. 
     /// 
-    ///       
+    ///  
     /// <para>
-    ///          This action returns a list of messages indicating any errors or warnings
-    ///         associated         with the selection of option values.        
+    ///  This action returns a list of messages indicating any errors or warnings associated
+    /// with the selection of option values. 
     /// </para>
     /// </summary>
     public partial class ValidateConfigurationSettingsRequest : AmazonElasticBeanstalkRequest
@@ -41,12 +45,27 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private string _templateName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ValidateConfigurationSettingsRequest() { }
+
+        /// <summary>
+        /// Instantiates ValidateConfigurationSettingsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName"> The name of the application that the configuration template or environment belongs to. </param>
+        /// <param name="optionSettings"> A list of the options and desired values to evaluate. </param>
+        public ValidateConfigurationSettingsRequest(string applicationName, List<ConfigurationOptionSetting> optionSettings)
+        {
+            _applicationName = applicationName;
+            _optionSettings = optionSettings;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application that the configuration template or environment
-        ///         belongs to.        
+        ///  The name of the application that the configuration template or environment belongs
+        /// to. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -61,15 +80,14 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///          The name of the environment to validate the settings against.        
+        ///  The name of the environment to validate the settings against. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You cannot specify both this and a configuration template name.        
+        ///  Condition: You cannot specify both this and a configuration template name. 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -84,11 +102,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///          A list of the options and desired values to evaluate.        
+        ///  A list of the options and desired values to evaluate. 
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -103,15 +120,14 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///          The name of the configuration template to validate the settings against.        
+        ///  The name of the configuration template to validate the settings against. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Condition: You cannot specify both this and an environment name.        
+        ///  Condition: You cannot specify both this and an environment name. 
         /// </para>
         /// </summary>
         public string TemplateName

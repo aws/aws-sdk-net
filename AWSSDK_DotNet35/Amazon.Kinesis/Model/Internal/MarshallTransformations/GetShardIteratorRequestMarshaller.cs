@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,59 +33,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Shard Iterator Request Marshaller
+    /// GetShardIterator Request Marshaller
     /// </summary>       
-    internal class GetShardIteratorRequestMarshaller : IMarshaller<IRequest, GetShardIteratorRequest> 
+    public class GetShardIteratorRequestMarshaller : IMarshaller<IRequest, GetShardIteratorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(GetShardIteratorRequest getShardIteratorRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((GetShardIteratorRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(getShardIteratorRequest, "AmazonKinesis");
+        public IRequest Marshall(GetShardIteratorRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.GetShardIterator";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (getShardIteratorRequest != null && getShardIteratorRequest.IsSetStreamName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetShardId())
                 {
-                    writer.WritePropertyName("StreamName");
-                    writer.Write(getShardIteratorRequest.StreamName);
-                }
-                if (getShardIteratorRequest != null && getShardIteratorRequest.IsSetShardId()) 
-                {
-                    writer.WritePropertyName("ShardId");
-                    writer.Write(getShardIteratorRequest.ShardId);
-                }
-                if (getShardIteratorRequest != null && getShardIteratorRequest.IsSetShardIteratorType()) 
-                {
-                    writer.WritePropertyName("ShardIteratorType");
-                    writer.Write(getShardIteratorRequest.ShardIteratorType);
-                }
-                if (getShardIteratorRequest != null && getShardIteratorRequest.IsSetStartingSequenceNumber()) 
-                {
-                    writer.WritePropertyName("StartingSequenceNumber");
-                    writer.Write(getShardIteratorRequest.StartingSequenceNumber);
+                    context.Writer.WritePropertyName("ShardId");
+                    context.Writer.Write(publicRequest.ShardId);
                 }
 
+                if(publicRequest.IsSetShardIteratorType())
+                {
+                    context.Writer.WritePropertyName("ShardIteratorType");
+                    context.Writer.Write(publicRequest.ShardIteratorType);
+                }
+
+                if(publicRequest.IsSetStartingSequenceNumber())
+                {
+                    context.Writer.WritePropertyName("StartingSequenceNumber");
+                    context.Writer.Write(publicRequest.StartingSequenceNumber);
+                }
+
+                if(publicRequest.IsSetStreamName())
+                {
+                    context.Writer.WritePropertyName("StreamName");
+                    context.Writer.Write(publicRequest.StreamName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

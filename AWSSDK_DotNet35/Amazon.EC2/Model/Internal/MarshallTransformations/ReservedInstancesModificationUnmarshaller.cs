@@ -12,111 +12,123 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedInstancesModification Unmarshaller
-     /// </summary>
-    internal class ReservedInstancesModificationUnmarshaller : IUnmarshaller<ReservedInstancesModification, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesModification, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedInstancesModification Object
+    /// </summary>  
+    public class ReservedInstancesModificationUnmarshaller : IUnmarshaller<ReservedInstancesModification, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesModification, JsonUnmarshallerContext>
     {
-        public ReservedInstancesModification Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedInstancesModification Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedInstancesModification reservedInstancesModification = new ReservedInstancesModification();
+            ReservedInstancesModification unmarshalledObject = new ReservedInstancesModification();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("reservedInstancesModificationId", targetDepth))
+                    if (context.TestExpression("clientToken", targetDepth))
                     {
-                        reservedInstancesModification.ReservedInstancesModificationId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("reservedInstancesSet/item", targetDepth))
-                    {
-                        reservedInstancesModification.ReservedInstancesIds.Add(ReservedInstancesIdUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("modificationResultSet/item", targetDepth))
-                    {
-                        reservedInstancesModification.ModificationResults.Add(ReservedInstancesModificationResultUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("createDate", targetDepth))
                     {
-                        reservedInstancesModification.CreateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("updateDate", targetDepth))
-                    {
-                        reservedInstancesModification.UpdateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("effectiveDate", targetDepth))
                     {
-                        reservedInstancesModification.EffectiveDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EffectiveDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("modificationResultSet/item", targetDepth))
+                    {
+                        var unmarshaller = ReservedInstancesModificationResultUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ModificationResults.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("reservedInstancesSet/item", targetDepth))
+                    {
+                        var unmarshaller = ReservedInstancesIdUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ReservedInstancesIds.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("reservedInstancesModificationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedInstancesModificationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("status", targetDepth))
                     {
-                        reservedInstancesModification.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("statusMessage", targetDepth))
                     {
-                        reservedInstancesModification.StatusMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("clientToken", targetDepth))
+                    if (context.TestExpression("updateDate", targetDepth))
                     {
-                        reservedInstancesModification.ClientToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.UpdateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedInstancesModification;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedInstancesModification;
+            return unmarshalledObject;
         }
 
-        public ReservedInstancesModification Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedInstancesModification Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedInstancesModificationUnmarshaller instance;
 
-        public static ReservedInstancesModificationUnmarshaller GetInstance() 
+        private static ReservedInstancesModificationUnmarshaller _instance = new ReservedInstancesModificationUnmarshaller();        
+
+        public static ReservedInstancesModificationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedInstancesModificationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

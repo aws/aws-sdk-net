@@ -1,0 +1,381 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "UpdateServerCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "ServerCertificateName"
+                    ]
+                ]
+            },
+            "GetUserPolicyRequest"           : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "ListServerCertificatesRequest"  : {
+                "constructorForms" : [
+                ]
+            },
+            "GetGroupRequest"                : {
+                "constructorForms" : [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "ListAccessKeysRequest"          : {
+                "constructorForms" : [
+                ]
+            },
+            "UpdateUserRequest"              : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "DeleteGroupRequest"             : {
+                "constructorForms" : [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "AccessKeyMetadata"              : {
+                "constructorForms" : [
+                ]
+            },
+            "CreateLoginProfileRequest"      : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "Password"
+                    ]
+                ]
+            },
+            "UpdateLoginProfileRequest"      : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "DeactivateMFADeviceRequest"     : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "SerialNumber"
+                    ]
+                ]
+            },
+            "AccessKey"                      : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "AccessKeyId",
+                        "Status",
+                        "SecretAccessKey"
+                    ]
+                ]
+            },
+            "UpdateAccessKeyRequest"         : {
+                "constructorForms" : [
+                    [
+                        "AccessKeyId",
+                        "Status"
+                    ]
+                ]
+            },
+            "DeleteUserPolicyRequest"        : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "GetServerCertificateRequest"    : {
+                "constructorForms" : [
+                    [
+                        "ServerCertificateName"
+                    ]
+                ]
+            },
+            "ServerCertificateMetadata"      : {
+                "constructorForms" : [
+                    [
+                        "Path",
+                        "ServerCertificateName",
+                        "ServerCertificateId",
+                        "Arn"
+                    ]
+                ]
+            },
+            "ListMFADevicesRequest"          : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "DeleteServerCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "ServerCertificateName"
+                    ]
+                ]
+            },
+            "AddUserToGroupRequest"          : {
+                "constructorForms" : [
+                    [
+                        "GroupName",
+                        "UserName"
+                    ]
+                ]
+            },
+            "Group"                          : {
+                "constructorForms" : [
+                    [
+                        "Path",
+                        "GroupName",
+                        "GroupId",
+                        "Arn",
+                        "CreateDate"
+                    ]
+                ]
+            },
+            "PutUserPolicyRequest"           : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "PolicyName",
+                        "PolicyDocument"
+                    ]
+                ]
+            },
+            "DeleteLoginProfileRequest"      : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "CreateAccountAliasRequest"      : {
+                "constructorForms" : [
+                    [
+                        "AccountAlias"
+                    ]
+                ]
+            },
+            "CreateUserRequest"              : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "UploadServerCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "ServerCertificateName",
+                        "CertificateBody",
+                        "PrivateKey"
+                    ]
+                ]
+            },
+            "GetUserRequest"                 : {
+                "constructorForms" : [
+                ]
+            },
+            "RemoveUserFromGroupRequest"     : {
+                "constructorForms" : [
+                    [
+                        "GroupName",
+                        "UserName"
+                    ]
+                ]
+            },
+            "ListUsersRequest"               : {
+                "constructorForms" : [
+                ]
+            },
+            "User"                           : {
+                "constructorForms" : [
+                    [
+                        "Path",
+                        "UserName",
+                        "UserId",
+                        "Arn",
+                        "CreateDate"
+                    ]
+                ]
+            },
+            "GetLoginProfileRequest"         : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "ListSigningCertificatesRequest" : {
+                "constructorForms" : [
+                ]
+            },
+            "UpdateSigningCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "CertificateId",
+                        "Status"
+                    ]
+                ]
+            },
+            "DeleteUserRequest"               : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "ListGroupsForUserRequest"        : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "PutGroupPolicyRequest"           : {
+                "constructorForms" : [
+                    [
+                        "GroupName",
+                        "PolicyName",
+                        "PolicyDocument"
+                    ]
+                ]
+            },
+            "CreateAccessKeyRequest"          : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteGroupPolicyRequest"        : {
+                "constructorForms" : [
+                    [
+                        "GroupName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "GetGroupPolicyRequest"           : {
+                "constructorForms" : [
+                    [
+                        "GroupName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "DeleteAccessKeyRequest"          : {
+                "constructorForms" : [
+                    [
+                        "AccessKeyId"
+                    ]
+                ]
+            },
+            "ListUserPoliciesRequest"         : {
+                "constructorForms" : [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "ServerCertificate"               : {
+                "constructorForms" : [
+                    [
+                        "ServerCertificateMetadata",
+                        "CertificateBody"
+                    ]
+                ]
+            },
+            "ListAccountAliasesRequest"       : {
+                "constructorForms" : [
+                ]
+            },
+            "DeleteAccountAliasRequest"       : {
+                "constructorForms" : [
+                    [
+                        "AccountAlias"
+                    ]
+                ]
+            },
+            "SigningCertificate"              : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "CertificateId",
+                        "CertificateBody",
+                        "Status"
+                    ]
+                ]
+            },
+            "UpdateGroupRequest"              : {
+                "constructorForms" : [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "CreateGroupRequest"              : {
+                "constructorForms" : [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "DeleteSigningCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "CertificateId"
+                    ]
+                ]
+            },
+            "ListGroupPoliciesRequest"        : {
+                "constructorForms" : [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "MFADevice"                       : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "SerialNumber",
+                        "EnableDate"
+                    ]
+                ]
+            },
+            "UploadSigningCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "CertificateBody"
+                    ]
+                ]
+            },
+            "ListGroupsRequest"               : {
+                "constructorForms" : [
+                ]
+            },
+            "LoginProfile"                    : {
+                "constructorForms" : [
+                    [
+                        "UserName",
+                        "CreateDate"
+                    ]
+                ]
+            }
+        }
+    }
+}

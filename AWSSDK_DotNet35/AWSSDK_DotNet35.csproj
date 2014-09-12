@@ -57,7 +57,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\AWSSDK.xml</DocumentationFile>
     <UseVSHostingProcess>true</UseVSHostingProcess>
-    <NoWarn>419,1591</NoWarn>
+    <NoWarn>419,1570,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
@@ -74,7 +74,7 @@
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <DebugSymbols>true</DebugSymbols>
     <NoWarn>419,1591</NoWarn>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
@@ -161,7 +161,22 @@
     <Compile Include="Amazon.CognitoSync\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.CloudFormation\*.cs">
+    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudFormation\IAmazonCloudFormation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudFormation\ServiceEnumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudFormation\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.CloudFormation\Model\*.cs">
@@ -212,6 +227,9 @@
     <Compile Include="Amazon.CloudSearchDomain\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudSearchDomain\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudTrail\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -257,9 +275,25 @@
     <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDBv2\*.cs">
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDBv2\DynamoDBAsync.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDBv2\ServiceEnumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDBv2\Internal\DynamoDBRetryPolicy.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -275,14 +309,16 @@
     <Compile Include="Amazon.EC2\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.EC2\Import\ImportCleanup.cs" />
     <Compile Include="Amazon.EC2\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.EC2\Import\DiskImageImporter.cs">
+    <Compile Include="Amazon.EC2\Import\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.EC2\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Util\*.cs">
@@ -307,6 +343,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.ElasticLoadBalancing\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.ElasticLoadBalancing\Model\*.cs">
@@ -336,6 +375,7 @@
     <Compile Include="Amazon.Glacier\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Glacier\Internal\ProcessRequestHandler.cs" />
     <Compile Include="Amazon.Glacier\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -402,9 +442,8 @@
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Route53\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.Route53\*.cs" />
+    <Compile Include="Amazon.Route53\Internal\*.cs" />
     <Compile Include="Amazon.Route53\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -420,6 +459,7 @@
     <Compile Include="Amazon.Route53Domains\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\AmazonServiceClient.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\NullSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\PersistenceManager.cs" />
@@ -427,6 +467,49 @@
     <Compile Include="Amazon.Runtime\Internal\Settings\SettingsConstants.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\UserCrypto.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\CustomMarshallTransformations.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Transform\IRequestMarshaller.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\ILogger.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\WebExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\HttpErrorResponseException.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\HttpHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\Marshaller.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\RedirectHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\Signer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\Unmarshaller.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\HttpWebRequestFactory.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\IHttpRequestFactory.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\DefaultRetryPolicy.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\RetryPolicy.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\RuntimeAsyncResult.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\Contexts.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\IPipelineHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\PipelineHandler.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\RuntimePipeline.cs" />
+    <Compile Include="Amazon.S3\Encryption\Internal\SetupDecryptionHandler.cs" />
+    <Compile Include="Amazon.S3\Encryption\Internal\SetupEncryptionHandler.cs" />
+    <Compile Include="Amazon.S3\Encryption\Internal\UserAgentHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3ExceptionHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3PostMarshallHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3PreMarshallHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3ResponseHandler.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionExpirationUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
@@ -482,15 +565,29 @@
     <Compile Include="Amazon.SimpleWorkflow\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.SQS\*.cs">
+    <Compile Include="Amazon.SQS\AmazonSQSClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SQS\AmazonSQSConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SQS\AmazonSQSException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SQS\IAmazonSQS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SQS\ServiceEnumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SQS\Internal\ProcessRequestHandler.cs" />
     <Compile Include="Amazon.SQS\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.SQS\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SQS\Internal\ValidationResponseHandler.cs" />
     <Compile Include="Amazon.SQS\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -851,7 +948,7 @@
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceRequest.cs" />
     <Compile Include="Amazon.Runtime\AWSCredentials.bcl35.cs" />
-    <Compile Include="Amazon.Runtime\Internal\AmazonWebServiceRequest.bcl35.cs" />
+    <Compile Include="Amazon.Runtime\Internal\AmazonWebServiceRequest.bcl.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceResponse.cs" />
     <Compile Include="Amazon.Runtime\AWSCredentials.cs" />
     <Compile Include="Amazon.Runtime\ClientConfig.bcl.cs" />
@@ -1014,6 +1111,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

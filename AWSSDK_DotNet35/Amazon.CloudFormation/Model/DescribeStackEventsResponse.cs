@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeStackEvents response and response metadata.
+    /// Configuration for accessing Amazon DescribeStackEvents service
     /// </summary>
     public partial class DescribeStackEventsResponse : DescribeStackEventsResult
     {
         /// <summary>
         /// Gets and sets the DescribeStackEventsResult property.
-        /// The output for a DescribeStackEvents action.
+        /// Represents the output of a DescribeStackEvents operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeStackEventsResult class are now available on the DescribeStackEventsResponse class. You should use the properties on DescribeStackEventsResponse instead of accessing them through DescribeStackEventsResult.")]
         public DescribeStackEventsResult DescribeStackEventsResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudFormation.Model
         }
     }
 }
-    

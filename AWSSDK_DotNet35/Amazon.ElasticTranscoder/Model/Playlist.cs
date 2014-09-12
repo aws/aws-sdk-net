@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _status;
         private string _statusDetail;
 
-
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
@@ -56,7 +59,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._format != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -81,7 +83,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._name != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OutputKeys. 
         /// <para>
@@ -103,7 +104,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._outputKeys != null && this._outputKeys.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
@@ -121,7 +121,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StatusDetail. 

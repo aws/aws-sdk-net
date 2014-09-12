@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,33 +29,58 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootInstances operation.
-    /// <para>Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified
-    /// instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</para>
-    /// <para>If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</para> <para>For more
-    /// information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html" >Getting Console
-    /// Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Requests a reboot of one or more instances. This operation is asynchronous; it only
+    /// queues a request to reboot the specified instances. The operation succeeds if the
+    /// instances are valid and belong to you. Requests to reboot terminated instances are
+    /// ignored.
+    /// 
+    ///  
+    /// <para>
+    /// If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2
+    /// performs a hard reboot.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
+    /// Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud
+    /// User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RebootInstancesRequest : AmazonEC2Request
     {
-        private List<string> instanceIds = new List<string>();
-
+        private List<string> _instanceIds = new List<string>();
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RebootInstancesRequest() { }
+
+        /// <summary>
+        /// Instantiates RebootInstancesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="instanceIds">One or more instance IDs.</param>
+        public RebootInstancesRequest(List<string> instanceIds)
+        {
+            _instanceIds = instanceIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
         /// One or more instance IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
 
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
 
     }
 }
-    

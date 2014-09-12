@@ -22,8 +22,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Object Torrent Request Marshaller
     /// </summary>       
-    public class GetObjectTorrentRequestMarshaller : IMarshaller<IRequest, GetObjectTorrentRequest>
-    {
+    public class GetObjectTorrentRequestMarshaller : IMarshaller<IRequest, GetObjectTorrentRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetObjectTorrentRequest)input);
+		}
+
         public IRequest Marshall(GetObjectTorrentRequest getObjectTorrentRequest)
         {
             IRequest request = new DefaultRequest(getObjectTorrentRequest, "AmazonS3");

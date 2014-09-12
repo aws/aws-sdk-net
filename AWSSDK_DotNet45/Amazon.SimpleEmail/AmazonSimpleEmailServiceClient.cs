@@ -13,11 +13,16 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
+
 
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.SimpleEmail.Model.Internal.MarshallTransformations;
@@ -41,19 +46,8 @@ namespace Amazon.SimpleEmail
     /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and
     /// Amazon SES</a>             in the Amazon SES Developer Guide.         </note>
     /// </summary>
-    public partial class AmazonSimpleEmailServiceClient : AmazonWebServiceClient, IAmazonSimpleEmailService
+    public partial class AmazonSimpleEmailServiceClient : AmazonServiceClient, IAmazonSimpleEmailService
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -72,7 +66,7 @@ namespace Amazon.SimpleEmail
         ///
         /// </summary>
         public AmazonSimpleEmailServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials loaded from the application's
@@ -91,7 +85,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleEmailServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials loaded from the application's
@@ -110,7 +104,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// <param name="config">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AmazonSimpleEmailServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with AWS Credentials
@@ -138,7 +132,7 @@ namespace Amazon.SimpleEmail
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AWSCredentials credentials, AmazonSimpleEmailServiceConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -171,7 +165,7 @@ namespace Amazon.SimpleEmail
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSimpleEmailServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -207,15 +201,33 @@ namespace Amazon.SimpleEmail
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonSimpleEmailServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }    
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  DeleteIdentity
-
 
         /// <summary>
         /// Deletes the specified identity (email address or domain) from the list of verified
@@ -231,16 +243,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the DeleteIdentity service method, as returned by SimpleEmailService.</returns>
         public DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request)
         {
-            var task = DeleteIdentityAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteIdentityRequestMarshaller();
+            var unmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentityRequest,DeleteIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -253,17 +259,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIdentityResponse> DeleteIdentityAsync(DeleteIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteIdentityResponse> DeleteIdentityAsync(DeleteIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIdentityRequestMarshaller();
             var unmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteIdentityRequest, DeleteIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteIdentityRequest,DeleteIdentityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  DeleteVerifiedEmailAddress
-
 
         /// <summary>
         /// Deletes the specified email address from the list of verified addresses.
@@ -280,16 +287,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the DeleteVerifiedEmailAddress service method, as returned by SimpleEmailService.</returns>
         public DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
         {
-            var task = DeleteVerifiedEmailAddressAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
+            var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVerifiedEmailAddressRequest,DeleteVerifiedEmailAddressResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -302,17 +303,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
             var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DeleteVerifiedEmailAddressRequest,DeleteVerifiedEmailAddressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  GetIdentityDkimAttributes
-
 
         /// <summary>
         /// Returns the current status of Easy DKIM signing for an entity. For domain name   
@@ -346,16 +348,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by SimpleEmailService.</returns>
         public GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request)
         {
-            var task = GetIdentityDkimAttributesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityDkimAttributesRequest,GetIdentityDkimAttributesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -368,17 +364,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIdentityDkimAttributesResponse> GetIdentityDkimAttributesAsync(GetIdentityDkimAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetIdentityDkimAttributesResponse> GetIdentityDkimAttributesAsync(GetIdentityDkimAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
             var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetIdentityDkimAttributesRequest,GetIdentityDkimAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  GetIdentityNotificationAttributes
-
 
         /// <summary>
         /// Given a list of verified identities (email addresses and/or domains), returns a structure
@@ -400,16 +397,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the GetIdentityNotificationAttributes service method, as returned by SimpleEmailService.</returns>
         public GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
         {
-            var task = GetIdentityNotificationAttributesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityNotificationAttributesRequest,GetIdentityNotificationAttributesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -422,17 +413,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIdentityNotificationAttributesResponse> GetIdentityNotificationAttributesAsync(GetIdentityNotificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetIdentityNotificationAttributesResponse> GetIdentityNotificationAttributesAsync(GetIdentityNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
             var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetIdentityNotificationAttributesRequest,GetIdentityNotificationAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  GetIdentityVerificationAttributes
-
 
         /// <summary>
         /// Given a list of identities (email addresses and/or domains), returns the verification
@@ -448,16 +440,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the GetIdentityVerificationAttributes service method, as returned by SimpleEmailService.</returns>
         public GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request)
         {
-            var task = GetIdentityVerificationAttributesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityVerificationAttributesRequest,GetIdentityVerificationAttributesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -470,11 +456,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIdentityVerificationAttributesResponse> GetIdentityVerificationAttributesAsync(GetIdentityVerificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetIdentityVerificationAttributesResponse> GetIdentityVerificationAttributesAsync(GetIdentityVerificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
             var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetIdentityVerificationAttributesRequest,GetIdentityVerificationAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -509,16 +497,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
         public GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request)
         {
-            var task = GetSendQuotaAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetSendQuotaRequestMarshaller();
+            var unmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<GetSendQuotaRequest,GetSendQuotaResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -531,11 +513,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSendQuotaResponse> GetSendQuotaAsync(GetSendQuotaRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetSendQuotaResponse> GetSendQuotaAsync(GetSendQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSendQuotaRequestMarshaller();
             var unmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetSendQuotaRequest, GetSendQuotaResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetSendQuotaRequest,GetSendQuotaResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -580,16 +564,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
         public GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request)
         {
-            var task = GetSendStatisticsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetSendStatisticsRequestMarshaller();
+            var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSendStatisticsRequest,GetSendStatisticsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -602,11 +580,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSendStatisticsResponse> GetSendStatisticsAsync(GetSendStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetSendStatisticsResponse> GetSendStatisticsAsync(GetSendStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSendStatisticsRequestMarshaller();
             var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetSendStatisticsRequest, GetSendStatisticsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetSendStatisticsRequest,GetSendStatisticsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -643,16 +623,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
         public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
-            var task = ListIdentitiesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListIdentitiesRequestMarshaller();
+            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -665,11 +639,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -708,16 +684,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
         public ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request)
         {
-            var task = ListVerifiedEmailAddressesAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
+            var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -730,17 +700,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
             var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  SendEmail
-
 
         /// <summary>
         /// Composes an email message based on input data, and then immediately queues the message
@@ -781,16 +752,10 @@ namespace Amazon.SimpleEmail
         /// </exception>
         public SendEmailResponse SendEmail(SendEmailRequest request)
         {
-            var task = SendEmailAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SendEmailRequestMarshaller();
+            var unmarshaller = SendEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendEmailRequest,SendEmailResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -803,17 +768,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendEmailRequestMarshaller();
             var unmarshaller = SendEmailResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SendEmailRequest, SendEmailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SendEmailRequest,SendEmailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  SendRawEmail
-
 
         /// <summary>
         /// Sends an email message, with header and content specified by the client. The     
@@ -863,16 +829,10 @@ namespace Amazon.SimpleEmail
         /// </exception>
         public SendRawEmailResponse SendRawEmail(SendRawEmailRequest request)
         {
-            var task = SendRawEmailAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SendRawEmailRequestMarshaller();
+            var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendRawEmailRequest,SendRawEmailResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -885,17 +845,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SendRawEmailResponse> SendRawEmailAsync(SendRawEmailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SendRawEmailResponse> SendRawEmailAsync(SendRawEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendRawEmailRequestMarshaller();
             var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SendRawEmailRequest, SendRawEmailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SendRawEmailRequest,SendRawEmailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  SetIdentityDkimEnabled
-
 
         /// <summary>
         /// Enables or disables Easy DKIM signing of email sent from an identity:
@@ -927,16 +888,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by SimpleEmailService.</returns>
         public SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request)
         {
-            var task = SetIdentityDkimEnabledAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityDkimEnabledRequest,SetIdentityDkimEnabledResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -949,17 +904,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetIdentityDkimEnabledResponse> SetIdentityDkimEnabledAsync(SetIdentityDkimEnabledRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SetIdentityDkimEnabledResponse> SetIdentityDkimEnabledAsync(SetIdentityDkimEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
             var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SetIdentityDkimEnabledRequest,SetIdentityDkimEnabledResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  SetIdentityFeedbackForwardingEnabled
-
 
         /// <summary>
         /// Given an identity (email address or domain), enables or disables whether Amazon SES
@@ -984,16 +940,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the SetIdentityFeedbackForwardingEnabled service method, as returned by SimpleEmailService.</returns>
         public SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request)
         {
-            var task = SetIdentityFeedbackForwardingEnabledAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1006,17 +956,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetIdentityFeedbackForwardingEnabledResponse> SetIdentityFeedbackForwardingEnabledAsync(SetIdentityFeedbackForwardingEnabledRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SetIdentityFeedbackForwardingEnabledResponse> SetIdentityFeedbackForwardingEnabledAsync(SetIdentityFeedbackForwardingEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  SetIdentityNotificationTopic
-
 
         /// <summary>
         /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
@@ -1040,16 +991,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the SetIdentityNotificationTopic service method, as returned by SimpleEmailService.</returns>
         public SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request)
         {
-            var task = SetIdentityNotificationTopicAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
+            var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityNotificationTopicRequest,SetIdentityNotificationTopicResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1062,17 +1007,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
             var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SetIdentityNotificationTopicRequest,SetIdentityNotificationTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  VerifyDomainDkim
-
 
         /// <summary>
         /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
@@ -1103,16 +1049,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the VerifyDomainDkim service method, as returned by SimpleEmailService.</returns>
         public VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request)
         {
-            var task = VerifyDomainDkimAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new VerifyDomainDkimRequestMarshaller();
+            var unmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyDomainDkimRequest,VerifyDomainDkimResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1125,17 +1065,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<VerifyDomainDkimResponse> VerifyDomainDkimAsync(VerifyDomainDkimRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<VerifyDomainDkimResponse> VerifyDomainDkimAsync(VerifyDomainDkimRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new VerifyDomainDkimRequestMarshaller();
             var unmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
-            return Invoke<IRequest, VerifyDomainDkimRequest, VerifyDomainDkimResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<VerifyDomainDkimRequest,VerifyDomainDkimResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  VerifyDomainIdentity
-
 
         /// <summary>
         /// Verifies a domain.
@@ -1150,16 +1091,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the VerifyDomainIdentity service method, as returned by SimpleEmailService.</returns>
         public VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request)
         {
-            var task = VerifyDomainIdentityAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new VerifyDomainIdentityRequestMarshaller();
+            var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyDomainIdentityRequest,VerifyDomainIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1172,17 +1107,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<VerifyDomainIdentityResponse> VerifyDomainIdentityAsync(VerifyDomainIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<VerifyDomainIdentityResponse> VerifyDomainIdentityAsync(VerifyDomainIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new VerifyDomainIdentityRequestMarshaller();
             var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
-            return Invoke<IRequest, VerifyDomainIdentityRequest, VerifyDomainIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<VerifyDomainIdentityRequest,VerifyDomainIdentityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  VerifyEmailAddress
-
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message to be 
@@ -1200,16 +1136,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the VerifyEmailAddress service method, as returned by SimpleEmailService.</returns>
         public VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
         {
-            var task = VerifyEmailAddressAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new VerifyEmailAddressRequestMarshaller();
+            var unmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyEmailAddressRequest,VerifyEmailAddressResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1222,17 +1152,18 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<VerifyEmailAddressResponse> VerifyEmailAddressAsync(VerifyEmailAddressRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<VerifyEmailAddressResponse> VerifyEmailAddressAsync(VerifyEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new VerifyEmailAddressRequestMarshaller();
             var unmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
-            return Invoke<IRequest, VerifyEmailAddressRequest, VerifyEmailAddressResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<VerifyEmailAddressRequest,VerifyEmailAddressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  VerifyEmailIdentity
-
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message       
@@ -1248,16 +1179,10 @@ namespace Amazon.SimpleEmail
         /// <returns>The response from the VerifyEmailIdentity service method, as returned by SimpleEmailService.</returns>
         public VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request)
         {
-            var task = VerifyEmailIdentityAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new VerifyEmailIdentityRequestMarshaller();
+            var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyEmailIdentityRequest,VerifyEmailIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1270,11 +1195,13 @@ namespace Amazon.SimpleEmail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new VerifyEmailIdentityRequestMarshaller();
             var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
-            return Invoke<IRequest, VerifyEmailIdentityRequest, VerifyEmailIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<VerifyEmailIdentityRequest,VerifyEmailIdentityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

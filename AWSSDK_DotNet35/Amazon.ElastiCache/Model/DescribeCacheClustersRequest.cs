@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -65,6 +69,10 @@ namespace Amazon.ElastiCache.Model
         private int? _maxRecords;
         private bool? _showCacheNodeInfo;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeCacheClustersRequest() { }
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
@@ -85,7 +93,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheClusterId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
@@ -105,7 +112,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxRecords. 
@@ -134,7 +140,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._maxRecords.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ShowCacheNodeInfo. 

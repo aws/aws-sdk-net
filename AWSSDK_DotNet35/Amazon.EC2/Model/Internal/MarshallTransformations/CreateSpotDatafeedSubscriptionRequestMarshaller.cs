@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Spot Datafeed Subscription Request Marshaller
+    /// CreateSpotDatafeedSubscription Request Marshaller
     /// </summary>       
-    public class CreateSpotDatafeedSubscriptionRequestMarshaller : IMarshaller<IRequest, CreateSpotDatafeedSubscriptionRequest>
+    public class CreateSpotDatafeedSubscriptionRequestMarshaller : IMarshaller<IRequest, CreateSpotDatafeedSubscriptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createSpotDatafeedSubscriptionRequest, "AmazonEC2");
+            return this.Marshall((CreateSpotDatafeedSubscriptionRequest)input);
+        }
+    
+        public IRequest Marshall(CreateSpotDatafeedSubscriptionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateSpotDatafeedSubscription");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createSpotDatafeedSubscriptionRequest != null && createSpotDatafeedSubscriptionRequest.IsSetBucket())
-            {
-                request.Parameters.Add("Bucket", StringUtils.FromString(createSpotDatafeedSubscriptionRequest.Bucket));
-            }
-            if (createSpotDatafeedSubscriptionRequest != null && createSpotDatafeedSubscriptionRequest.IsSetPrefix())
-            {
-                request.Parameters.Add("Prefix", StringUtils.FromString(createSpotDatafeedSubscriptionRequest.Prefix));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetBucket())
+                {
+                    request.Parameters.Add("Bucket", StringUtils.FromString(publicRequest.Bucket));
+                }
+                if(publicRequest.IsSetPrefix())
+                {
+                    request.Parameters.Add("Prefix", StringUtils.FromString(publicRequest.Prefix));
+                }
+            }
             return request;
         }
     }

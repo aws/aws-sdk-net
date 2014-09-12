@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ReplaceRoute operation
-    /// </summary>
-    internal class ReplaceRouteResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for ReplaceRoute operation
+    /// </summary>  
+    public class ReplaceRouteResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ReplaceRouteResponse response = new ReplaceRouteResponse();
-            
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
-                
+                if (context.IsStartElement || context.IsAttribute)
+                {
+
+                } 
             }
-                
 
             return response;
         }
-        
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ReplaceRouteResponseUnmarshaller instance;
+        private static ReplaceRouteResponseUnmarshaller _instance = new ReplaceRouteResponseUnmarshaller();        
 
-        public static ReplaceRouteResponseUnmarshaller GetInstance()
+        internal static ReplaceRouteResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new ReplaceRouteResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static ReplaceRouteResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.AutoScaling.Model
         private ScalingActivityStatusCode _statusCode;
         private string _statusMessage;
 
-
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
@@ -59,7 +62,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._activityId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -79,7 +81,6 @@ namespace Amazon.AutoScaling.Model
             return this._autoScalingGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Cause. 
         /// <para>
@@ -97,7 +98,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._cause != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -117,7 +117,6 @@ namespace Amazon.AutoScaling.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
@@ -136,7 +135,6 @@ namespace Amazon.AutoScaling.Model
             return this._details != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
@@ -154,7 +152,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._endTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Progress. 
@@ -175,7 +172,6 @@ namespace Amazon.AutoScaling.Model
             return this._progress.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
@@ -194,7 +190,6 @@ namespace Amazon.AutoScaling.Model
             return this._startTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
@@ -212,7 +207,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._statusCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StatusMessage. 

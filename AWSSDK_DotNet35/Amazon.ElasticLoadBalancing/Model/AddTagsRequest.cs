@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -44,7 +48,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> _loadBalancerNames = new List<string>();
         private List<Tag> _tags = new List<Tag>();
 
-
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
@@ -63,7 +66,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Tags. 

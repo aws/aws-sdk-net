@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,57 +29,71 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshotAttribute operation.
-    /// <para>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more
-    /// information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html" >Amazon EBS
-    /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Describes the specified attribute of the specified snapshot. You can specify only
+    /// one attribute at a time.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about Amazon EBS snapshots, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+    /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeSnapshotAttributeRequest : AmazonEC2Request
     {
-        private string snapshotId;
-        private SnapshotAttributeName attribute;
-
+        private SnapshotAttributeName _attribute;
+        private string _snapshotId;
 
         /// <summary>
-        /// The ID of the Amazon EBS snapshot.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string SnapshotId
-        {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
-        }
+        public DescribeSnapshotAttributeRequest() { }
 
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
+        /// <summary>
+        /// Instantiates DescribeSnapshotAttributeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
+        /// <param name="attribute">The snapshot attribute you would like to view.</param>
+        public DescribeSnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute)
         {
-            return this.snapshotId != null;
+            _snapshotId = snapshotId;
+            _attribute = attribute;
         }
 
         /// <summary>
-        /// The snapshot attribute you would like to view.
-        ///  
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>productCodes, createVolumePermission</description>
-        ///     </item>
-        /// </list>
+        /// The snapshot attribute you would like to view.
         /// </para>
         /// </summary>
         public SnapshotAttributeName Attribute
         {
-            get { return this.attribute; }
-            set { this.attribute = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
         // Check to see if Attribute property is set
         internal bool IsSetAttribute()
         {
-            return this.attribute != null;
+            return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The ID of the Amazon EBS snapshot.
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
         }
 
     }
 }
-    

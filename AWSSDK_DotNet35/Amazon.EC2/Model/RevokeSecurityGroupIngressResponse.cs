@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the RevokeSecurityGroupIngress response metadata.
-    /// The RevokeSecurityGroupIngress operation has a void result type.
+    /// Configuration for accessing Amazon RevokeSecurityGroupIngress service
     /// </summary>
-    public partial class RevokeSecurityGroupIngressResponse : AmazonWebServiceResponse
+    public partial class RevokeSecurityGroupIngressResponse : RevokeSecurityGroupIngressResult
     {
+        /// <summary>
+        /// Gets and sets the RevokeSecurityGroupIngressResult property.
+        /// Represents the output of a RevokeSecurityGroupIngress operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the RevokeSecurityGroupIngressResult class are now available on the RevokeSecurityGroupIngressResponse class. You should use the properties on RevokeSecurityGroupIngressResponse instead of accessing them through RevokeSecurityGroupIngressResult.")]
+        public RevokeSecurityGroupIngressResult RevokeSecurityGroupIngressResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

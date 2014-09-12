@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ResourceRecord Unmarshaller
-     /// </summary>
-    internal class ResourceRecordUnmarshaller : IUnmarshaller<ResourceRecord, XmlUnmarshallerContext>, IUnmarshaller<ResourceRecord, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ResourceRecord Object
+    /// </summary>  
+    public class ResourceRecordUnmarshaller : IUnmarshaller<ResourceRecord, XmlUnmarshallerContext>
     {
-        public ResourceRecord Unmarshall(XmlUnmarshallerContext context) 
+        public ResourceRecord Unmarshall(XmlUnmarshallerContext context)
         {
-            ResourceRecord resourceRecord = new ResourceRecord();
+            ResourceRecord unmarshalledObject = new ResourceRecord();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,36 +52,27 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Value", targetDepth))
                     {
-                        resourceRecord.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return resourceRecord;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static ResourceRecordUnmarshaller _instance = new ResourceRecordUnmarshaller();        
+
+        public static ResourceRecordUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return resourceRecord;
-        }
-
-        public ResourceRecord Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static ResourceRecordUnmarshaller instance;
-
-        public static ResourceRecordUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new ResourceRecordUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

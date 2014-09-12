@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteEnvironmentConfiguration Request Marshaller
     /// </summary>       
-    public class DeleteEnvironmentConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteEnvironmentConfigurationRequest>
+    public class DeleteEnvironmentConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteEnvironmentConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeleteEnvironmentConfigurationRequest)input);
+        }
+    
         public IRequest Marshall(DeleteEnvironmentConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");

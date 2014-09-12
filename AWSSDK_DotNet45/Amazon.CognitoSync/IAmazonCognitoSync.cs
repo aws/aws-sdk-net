@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,18 +12,25 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.CognitoSync.Model;
 
 namespace Amazon.CognitoSync
 {
     /// <summary>
-    /// Implementation for accessing CognitoSync
-    /// 
-    /// Amazon Cognito Sync
+    /// Interface for accessing CognitoSync
+    ///
+    /// Amazon Cognito Sync 
     /// <para>
     /// Amazon Cognito Sync provides an AWS service and client library that enable cross-device
     /// syncing of application-related user data. High-level client libraries are available
@@ -35,9 +42,11 @@ namespace Amazon.CognitoSync
     /// identity.
     /// </para>
     /// </summary>
-	public partial interface IAmazonCognitoSync : IDisposable
+    public partial interface IAmazonCognitoSync : IDisposable
     {
- 
+
+        
+        #region  DeleteDataset
 
         /// <summary>
         /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
@@ -47,23 +56,23 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
         /// <returns>The response from the DeleteDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
-		DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
+        DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.DeleteDataset"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset operation.</param>
@@ -71,8 +80,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDataset
 
         /// <summary>
         /// Gets metadata about a dataset by identity and dataset name.
@@ -80,23 +92,23 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
         /// <returns>The response from the DescribeDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
-		DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
+        DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.DescribeDataset"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset operation.</param>
@@ -104,8 +116,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeIdentityPoolUsage
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
@@ -113,23 +128,23 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
-		DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request);
+        DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityPoolUsage"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage operation.</param>
@@ -137,8 +152,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(DescribeIdentityPoolUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(DescribeIdentityPoolUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeIdentityUsage
 
         /// <summary>
         /// Gets usage information for an identity, including number of datasets and data usage.
@@ -146,23 +164,23 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
-		DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request);
+        DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityUsage"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage operation.</param>
@@ -170,8 +188,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDatasets
 
         /// <summary>
         /// Lists datasets for an identity.
@@ -179,20 +200,20 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
         /// <returns>The response from the ListDatasets service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-		ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
+        ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDatasets operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.ListDatasets"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets operation.</param>
@@ -200,8 +221,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIdentityPoolUsage
 
         /// <summary>
         /// Gets a list of identity pools registered with Cognito.
@@ -209,20 +233,20 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage service method.</param>
         /// 
         /// <returns>The response from the ListIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-		ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request);
+        ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.ListIdentityPoolUsage"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage operation.</param>
@@ -230,8 +254,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListIdentityPoolUsageResponse> ListIdentityPoolUsageAsync(ListIdentityPoolUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListIdentityPoolUsageResponse> ListIdentityPoolUsageAsync(ListIdentityPoolUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRecords
 
         /// <summary>
         /// Gets paginated records, optionally changed after a particular sync count for a dataset
@@ -240,23 +267,23 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
         /// 
         /// <returns>The response from the ListRecords service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
-		ListRecordsResponse ListRecords(ListRecordsRequest request);
+        ListRecordsResponse ListRecords(ListRecordsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRecords operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.ListRecords"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListRecords operation.</param>
@@ -264,8 +291,11 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListRecordsResponse> ListRecordsAsync(ListRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListRecordsResponse> ListRecordsAsync(ListRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRecords
 
         /// <summary>
         /// Posts updates to records and add and delete records for a dataset and user.
@@ -273,33 +303,33 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>
         /// 
         /// <returns>The response from the UpdateRecords service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+        /// <exception cref="InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+        /// <exception cref="InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.LimitExceededException">
+        /// <exception cref="LimitExceededException">
         /// Thrown when the limit on the number of objects or operations has been exceeded.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// <exception cref="NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceConflictException">
+        /// <exception cref="ResourceConflictException">
         /// Thrown if an update can't be applied because the resource was changed by another call
         /// and this would result in a conflict.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// <exception cref="ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// <exception cref="TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
-		UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request);
+        UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRecords operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync.UpdateRecords"/>
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords operation.</param>
@@ -307,6 +337,9 @@ namespace Amazon.CognitoSync
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateRecordsResponse> UpdateRecordsAsync(UpdateRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateRecordsResponse> UpdateRecordsAsync(UpdateRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

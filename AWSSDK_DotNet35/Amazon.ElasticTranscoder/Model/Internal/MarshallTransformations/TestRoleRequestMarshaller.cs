@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// <summary>
     /// TestRole Request Marshaller
     /// </summary>       
-    public class TestRoleRequestMarshaller : IMarshaller<IRequest, TestRoleRequest> 
+    public class TestRoleRequestMarshaller : IMarshaller<IRequest, TestRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((TestRoleRequest)input);
+        }
+
         public IRequest Marshall(TestRoleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
@@ -45,33 +54,34 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetInputBucket())
                 {
-                    writer.WritePropertyName("InputBucket");
-                    writer.Write(publicRequest.InputBucket);
+                    context.Writer.WritePropertyName("InputBucket");
+                    context.Writer.Write(publicRequest.InputBucket);
                 }
 
                 if(publicRequest.IsSetOutputBucket())
                 {
-                    writer.WritePropertyName("OutputBucket");
-                    writer.Write(publicRequest.OutputBucket);
+                    context.Writer.WritePropertyName("OutputBucket");
+                    context.Writer.Write(publicRequest.OutputBucket);
                 }
 
                 if(publicRequest.IsSetRole())
                 {
-                    writer.WritePropertyName("Role");
-                    writer.Write(publicRequest.Role);
+                    context.Writer.WritePropertyName("Role");
+                    context.Writer.Write(publicRequest.Role);
                 }
 
                 if(publicRequest.IsSetTopics())
                 {
-                    writer.WritePropertyName("Topics");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Topics");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestTopicsListValue in publicRequest.Topics)
                     {
-                        writer.Write(publicRequestTopicsListValue);
+                            context.Writer.Write(publicRequestTopicsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

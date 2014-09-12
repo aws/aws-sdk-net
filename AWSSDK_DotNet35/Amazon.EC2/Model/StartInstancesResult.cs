@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class StartInstancesResult : AmazonWebServiceResponse
     {
-        
-        private List<InstanceStateChange> startingInstances = new List<InstanceStateChange>();
-
+        private List<InstanceStateChange> _startingInstances = new List<InstanceStateChange>();
 
         /// <summary>
+        /// Gets and sets the property StartingInstances. 
+        /// <para>
         /// Information about one or more started instances.
-        ///  
+        /// </para>
         /// </summary>
         public List<InstanceStateChange> StartingInstances
         {
-            get { return this.startingInstances; }
-            set { this.startingInstances = value; }
+            get { return this._startingInstances; }
+            set { this._startingInstances = value; }
         }
 
         // Check to see if StartingInstances property is set
         internal bool IsSetStartingInstances()
         {
-            return this.startingInstances.Count > 0;
+            return this._startingInstances != null && this._startingInstances.Count > 0; 
         }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.AWSSupport.Model
         private List<string> _metadata = new List<string>();
         private string _name;
 
-
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
@@ -52,7 +55,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._category != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -73,7 +75,6 @@ namespace Amazon.AWSSupport.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
@@ -91,7 +92,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -114,7 +114,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._metadata != null && this._metadata.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 

@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Expression Unmarshaller
-     /// </summary>
-    internal class ExpressionUnmarshaller : IUnmarshaller<Expression, XmlUnmarshallerContext>, IUnmarshaller<Expression, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Expression Object
+    /// </summary>  
+    public class ExpressionUnmarshaller : IUnmarshaller<Expression, XmlUnmarshallerContext>, IUnmarshaller<Expression, JsonUnmarshallerContext>
     {
-        public Expression Unmarshall(XmlUnmarshallerContext context) 
+        public Expression Unmarshall(XmlUnmarshallerContext context)
         {
-            Expression expression = new Expression();
+            Expression unmarshalledObject = new Expression();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("ExpressionName", targetDepth))
                     {
-                        expression.ExpressionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExpressionName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ExpressionValue", targetDepth))
                     {
-                        expression.ExpressionValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExpressionValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return expression;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return expression;
+            return unmarshalledObject;
         }
 
-        public Expression Unmarshall(JsonUnmarshallerContext context) 
+        public Expression Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ExpressionUnmarshaller instance;
 
-        public static ExpressionUnmarshaller GetInstance() 
+        private static ExpressionUnmarshaller _instance = new ExpressionUnmarshaller();        
+
+        public static ExpressionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ExpressionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

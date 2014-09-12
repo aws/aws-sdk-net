@@ -1,0 +1,33 @@
+﻿HTTP/1.1 200 OK
+x-amz-id-2: TFD+oMfRT5nVXm81tex2+Uh8R/VZRaztjPALzXknR7IC3RGfVPhpuiiHMtL0fFKF
+x-amz-request-id: 357B62B8E32948B9
+Date: Mon, 23 Jun 2014 03:31:12 GMT
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Server: AmazonS3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+	<Owner>
+		<ID>123456789</ID>
+		<DisplayName>test-account</DisplayName>
+	</Owner>
+	<Buckets>
+		<Bucket>
+			<Name>Bucket1</Name>
+			<CreationDate>2014-04-18T17:56:06.000Z</CreationDate>
+		</Bucket>
+		<Bucket>
+			<Name>Bucket2</Name>
+			<CreationDate>2014-06-05T23:18:53.000Z</CreationDate>
+		</Bucket>
+		<Bucket>
+			<Name>Bucket3</Name>
+			<CreationDate>2014-06-05T23:18:53.000Z</CreationDate>
+		</Bucket>
+		<Bucket>
+			<Name>Bucket4</Name>
+			<CreationDate>2014-06-05T23:18:53.000Z</CreationDate>
+		</Bucket>
+	</Buckets>
+</ListAllMyBucketsResult>

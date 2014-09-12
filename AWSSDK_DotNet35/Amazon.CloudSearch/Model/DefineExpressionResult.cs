@@ -12,38 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c>DefineExpression</c> request. Contains the status of the newly-configured expression.</para>
+    /// The result of a <code>DefineExpression</code> request. Contains the status of the
+    /// newly-configured expression.
     /// </summary>
     public partial class DefineExpressionResult : AmazonWebServiceResponse
     {
-        
-        private ExpressionStatus expression;
-
+        private ExpressionStatus _expression;
 
         /// <summary>
-        /// The value of an <c>Expression</c> and its current status.
-        ///  
+        /// Gets and sets the property Expression.
         /// </summary>
         public ExpressionStatus Expression
         {
-            get { return this.expression; }
-            set { this.expression = value; }
+            get { return this._expression; }
+            set { this._expression = value; }
         }
 
         // Check to see if Expression property is set
         internal bool IsSetExpression()
         {
-            return this.expression != null;
+            return this._expression != null;
         }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,67 +29,85 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpcPeeringConnection operation.
-    /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
-    /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
-    /// of the peer VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days,
-    /// after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping CIDR
-    /// blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+    /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
+    /// a peer VPC with which to create the connection. The peer VPC can belong to another
+    /// AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.
+    /// 
+    ///  
+    /// <para>
+    /// The owner of the peer VPC must accept the peering request to activate the peering
+    /// connection. The VPC peering connection request expires after 7 days, after which it
+    /// cannot be accepted or rejected.
+    /// </para>
+    ///  
+    /// <para>
+    /// A <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping CIDR
+    /// blocks results in the VPC peering connection having a status of <code>failed</code>.
+    /// </para>
     /// </summary>
     public partial class CreateVpcPeeringConnectionRequest : AmazonEC2Request
     {
-        private string vpcId;
-        private string peerVpcId;
-        private string peerOwnerId;
-
-
-        /// <summary>
-        /// The ID of the requester VPC.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
+        private string _peerOwnerId;
+        private string _peerVpcId;
+        private string _vpcId;
 
         /// <summary>
-        /// The ID of the VPC with which you are creating the VPC peering connection.
+        /// Gets and sets the property PeerOwnerId. 
+        /// <para>
+        /// The AWS account ID of the owner of the peer VPC.
+        /// </para>
         ///  
-        /// </summary>
-        public string PeerVpcId
-        {
-            get { return this.peerVpcId; }
-            set { this.peerVpcId = value; }
-        }
-
-        // Check to see if PeerVpcId property is set
-        internal bool IsSetPeerVpcId()
-        {
-            return this.peerVpcId != null;
-        }
-
-        /// <summary>
-        /// The AWS account ID of the owner of the peer VPC. Default: Your AWS account ID
-        ///  
+        /// <para>
+        /// Default: Your AWS account ID
+        /// </para>
         /// </summary>
         public string PeerOwnerId
         {
-            get { return this.peerOwnerId; }
-            set { this.peerOwnerId = value; }
+            get { return this._peerOwnerId; }
+            set { this._peerOwnerId = value; }
         }
 
         // Check to see if PeerOwnerId property is set
         internal bool IsSetPeerOwnerId()
         {
-            return this.peerOwnerId != null;
+            return this._peerOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerVpcId. 
+        /// <para>
+        /// The ID of the VPC with which you are creating the VPC peering connection.
+        /// </para>
+        /// </summary>
+        public string PeerVpcId
+        {
+            get { return this._peerVpcId; }
+            set { this._peerVpcId = value; }
+        }
+
+        // Check to see if PeerVpcId property is set
+        internal bool IsSetPeerVpcId()
+        {
+            return this._peerVpcId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the requester VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }
 }
-    

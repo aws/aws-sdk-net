@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,87 +29,146 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstances operation.
-    /// <para>Describes one or more of the Reserved Instances that you purchased.</para> <para>For more information about Reserved Instances, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html" >Reserved Instances</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Describes one or more of the Reserved Instances that you purchased.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeReservedInstancesRequest : AmazonEC2Request
     {
-        private List<string> reservedInstancesIds = new List<string>();
-        private List<Filter> filters = new List<Filter>();
-        private OfferingTypeValues offeringType;
-
-
-        /// <summary>
-        /// One or more Reserved Instance IDs. Default: Describes all your Reserved Instances, or only those otherwise specified.
-        ///  
-        /// </summary>
-        public List<string> ReservedInstancesIds
-        {
-            get { return this.reservedInstancesIds; }
-            set { this.reservedInstancesIds = value; }
-        }
-
-        // Check to see if ReservedInstancesIds property is set
-        internal bool IsSetReservedInstancesIds()
-        {
-            return this.reservedInstancesIds.Count > 0;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private OfferingTypeValues _offeringType;
+        private List<string> _reservedInstancesIds = new List<string>();
 
         /// <summary>
-        /// One or more filters. <ul> <li> <c>availability-zone</c> - The Availability Zone where the Reserved Instance can be used. </li> <li>
-        /// <c>duration</c> - The duration of the Reserved Instance (one year or three years), in seconds (<c>31536000</c> | <c>94608000</c>). </li>
-        /// <li> <c>end</c> - The time when the Reserved Instance expires. </li> <li> <c>fixed-price</c> - The purchase price of the Reserved Instance
-        /// (for example, 9800.0). </li> <li> <c>instance-type</c> - The instance type on which the Reserved Instance can be used. </li> <li>
-        /// <c>product-description</c> - The product description of the Reserved Instance (<c>Linux/UNIX</c> | <c>Linux/UNIX (Amazon VPC)</c> |
-        /// <c>Windows</c> | <c>Windows (Amazon VPC)</c>). </li> <li> <c>reserved-instances-id</c> - The ID of the Reserved Instance. </li> <li>
-        /// <c>start</c> - The time at which the Reserved Instance purchase request was placed. </li> <li> <c>state</c> - The state of the Reserved
-        /// Instance (<c>pending-payment</c> | <c>active</c> | <c>payment-failed</c> | <c>retired</c>). </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> -
-        /// The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a tag assigned to the resource. This
-        /// filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-        /// "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
-        /// (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i>
-        /// filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter.
-        /// </li> <li> <c>usage-price</c> - The usage price of the Reserved Instance, per hour (for example, 0.84). </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>availability-zone</code> - The Availability Zone where the Reserved Instance
+        /// can be used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>duration</code> - The duration of the Reserved Instance (one year or three years),
+        /// in seconds (<code>31536000</code> | <code>94608000</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>end</code> - The time when the Reserved Instance expires.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>fixed-price</code> - The purchase price of the Reserved Instance (for example,
+        /// 9800.0).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>instance-type</code> - The instance type on which the Reserved Instance can
+        /// be used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>product-description</code> - The product description of the Reserved Instance
+        /// (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Windows</code>
+        /// | <code>Windows (Amazon VPC)</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>reserved-instances-id</code> - The ID of the Reserved Instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>start</code> - The time at which the Reserved Instance purchase request was
+        /// placed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>state</code> - The state of the Reserved Instance (<code>pending-payment</code>
+        /// | <code>active</code> | <code>payment-failed</code> | <code>retired</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        /// to the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
+        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
+        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
+        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
+        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
+        /// filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        /// is independent of the <code>tag-key</code> filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for
+        /// example, 0.84).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>
-        /// The Reserved Instance offering type.
-        ///  
+        /// Gets and sets the property OfferingType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Heavy Utilization, Medium Utilization, Light Utilization</description>
-        ///     </item>
-        /// </list>
+        /// The Reserved Instance offering type.
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType
         {
-            get { return this.offeringType; }
-            set { this.offeringType = value; }
+            get { return this._offeringType; }
+            set { this._offeringType = value; }
         }
 
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;
+            return this._offeringType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesIds. 
+        /// <para>
+        /// One or more Reserved Instance IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Describes all your Reserved Instances, or only those otherwise specified.
+        /// </para>
+        /// </summary>
+        public List<string> ReservedInstancesIds
+        {
+            get { return this._reservedInstancesIds; }
+            set { this._reservedInstancesIds = value; }
+        }
+
+        // Check to see if ReservedInstancesIds property is set
+        internal bool IsSetReservedInstancesIds()
+        {
+            return this._reservedInstancesIds != null && this._reservedInstancesIds.Count > 0; 
         }
 
     }
 }
-    

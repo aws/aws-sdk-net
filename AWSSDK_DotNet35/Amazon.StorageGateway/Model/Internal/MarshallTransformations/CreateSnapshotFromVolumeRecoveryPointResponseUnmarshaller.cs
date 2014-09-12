@@ -12,81 +12,90 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CreateSnapshotFromVolumeRecoveryPoint operation
+    /// </summary>  
+    public class CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for CreateSnapshotFromVolumeRecoveryPoint operation
-      /// </summary>
-      internal class CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateSnapshotFromVolumeRecoveryPointResponse response = new CreateSnapshotFromVolumeRecoveryPointResponse();       
-          
+            CreateSnapshotFromVolumeRecoveryPointResponse response = new CreateSnapshotFromVolumeRecoveryPointResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("SnapshotId", targetDepth))
-              {
-                response.SnapshotId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeARN", targetDepth))
-              {
-                response.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
-              {
-                response.VolumeRecoveryPointTime = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("SnapshotId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SnapshotId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VolumeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VolumeRecoveryPointTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
-          {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException"))
-          {
-            return new InvalidGatewayRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller instance;
-        public static CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
+            {
+                return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException"))
+            {
+                return new InvalidGatewayRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller _instance = new CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller();        
+
+        internal static CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

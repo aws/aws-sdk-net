@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for UploadListElement Object
+    /// </summary>  
+    public class UploadListElementUnmarshaller : IUnmarshaller<UploadListElement, XmlUnmarshallerContext>, IUnmarshaller<UploadListElement, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// UploadListElementUnmarshaller
-      /// </summary>
-      internal class UploadListElementUnmarshaller : IUnmarshaller<UploadListElement, XmlUnmarshallerContext>, IUnmarshaller<UploadListElement, JsonUnmarshallerContext>
-      {
         UploadListElement IUnmarshaller<UploadListElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public UploadListElement Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            UploadListElement uploadListElement = new UploadListElement();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            UploadListElement unmarshalledObject = new UploadListElement();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("MultipartUploadId", targetDepth))
-              {
-                uploadListElement.MultipartUploadId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VaultARN", targetDepth))
-              {
-                uploadListElement.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ArchiveDescription", targetDepth))
-              {
-                uploadListElement.ArchiveDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PartSizeInBytes", targetDepth))
-              {
-                uploadListElement.PartSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreationDate", targetDepth))
-              {
-                uploadListElement.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("ArchiveDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ArchiveDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MultipartUploadId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MultipartUploadId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PartSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.PartSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VaultARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VaultARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return uploadListElement;
+            return unmarshalledObject;
         }
 
-        private static UploadListElementUnmarshaller instance;
-        public static UploadListElementUnmarshaller GetInstance()
+
+        private static UploadListElementUnmarshaller _instance = new UploadListElementUnmarshaller();        
+
+        public static UploadListElementUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new UploadListElementUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

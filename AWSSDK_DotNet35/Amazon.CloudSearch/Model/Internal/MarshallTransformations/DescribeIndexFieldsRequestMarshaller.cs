@@ -12,49 +12,60 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Index Fields Request Marshaller
+    /// DescribeIndexFields Request Marshaller
     /// </summary>       
-    public class DescribeIndexFieldsRequestMarshaller : IMarshaller<IRequest, DescribeIndexFieldsRequest>
+    public class DescribeIndexFieldsRequestMarshaller : IMarshaller<IRequest, DescribeIndexFieldsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeIndexFieldsRequest describeIndexFieldsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeIndexFieldsRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeIndexFieldsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeIndexFieldsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DescribeIndexFields");
             request.Parameters.Add("Version", "2013-01-01");
-            if (describeIndexFieldsRequest != null && describeIndexFieldsRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeIndexFieldsRequest.DomainName));
-            }
-            if (describeIndexFieldsRequest != null)
-            {
-                List<string> fieldNamesList = describeIndexFieldsRequest.FieldNames;
 
-                int fieldNamesListIndex = 1;
-                foreach (string fieldNamesListValue in fieldNamesList)
-                { 
-                    request.Parameters.Add("FieldNames.member." + fieldNamesListIndex, StringUtils.FromString(fieldNamesListValue));
-                    fieldNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDeployed())
+                {
+                    request.Parameters.Add("Deployed", StringUtils.FromBool(publicRequest.Deployed));
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetFieldNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.FieldNames)
+                    {
+                        request.Parameters.Add("FieldNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describeIndexFieldsRequest != null && describeIndexFieldsRequest.IsSetDeployed())
-            {
-                request.Parameters.Add("Deployed", StringUtils.FromBool(describeIndexFieldsRequest.Deployed));
-            }
-
             return request;
         }
     }

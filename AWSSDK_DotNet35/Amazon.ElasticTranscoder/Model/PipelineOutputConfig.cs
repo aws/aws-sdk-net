@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _bucket;
         private List<Permission> _permissions = new List<Permission>();
         private string _storageClass;
-
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -63,7 +66,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._bucket != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Permissions. 
@@ -99,7 +101,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._permissions != null && this._permissions.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property StorageClass. 

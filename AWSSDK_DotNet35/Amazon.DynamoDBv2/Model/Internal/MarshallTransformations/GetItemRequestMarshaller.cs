@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,143 +33,88 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Item Request Marshaller
+    /// GetItem Request Marshaller
     /// </summary>       
-    internal class GetItemRequestMarshaller : IMarshaller<IRequest, GetItemRequest> 
+    public class GetItemRequestMarshaller : IMarshaller<IRequest, GetItemRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(GetItemRequest getItemRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((GetItemRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(getItemRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(GetItemRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.GetItem";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (getItemRequest != null && getItemRequest.IsSetTableName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributesToGet())
                 {
-                    writer.WritePropertyName("TableName");
-                    writer.Write(getItemRequest.TableName);
-                }
-                if (getItemRequest != null) 
-                {
-                    if (getItemRequest.Key != null && getItemRequest.Key.Count > 0)
+                    context.Writer.WritePropertyName("AttributesToGet");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributesToGetListValue in publicRequest.AttributesToGet)
                     {
-                        writer.WritePropertyName("Key");
-                        writer.WriteObjectStart();
-                        foreach (string getItemRequestKeyKey in getItemRequest.Key.Keys)
-                        {
-                            AttributeValue keyListValue;
-                            bool keyListValueHasValue = getItemRequest.Key.TryGetValue(getItemRequestKeyKey, out keyListValue);
-                            writer.WritePropertyName(getItemRequestKeyKey);
-
-                            writer.WriteObjectStart();
-                            if (keyListValue != null && keyListValue.IsSetS()) 
-                            {
-                                writer.WritePropertyName("S");
-                                writer.Write(keyListValue.S);
-                            }
-                            if (keyListValue != null && keyListValue.IsSetN()) 
-                            {
-                                writer.WritePropertyName("N");
-                                writer.Write(keyListValue.N);
-                            }
-                            if (keyListValue != null && keyListValue.IsSetB()) 
-                            {
-                                writer.WritePropertyName("B");
-                                writer.Write(StringUtils.FromMemoryStream(keyListValue.B));
-                            }
-
-                            if (keyListValue != null && keyListValue.SS != null && keyListValue.SS.Count > 0) 
-                            {
-                                List<string> sSList = keyListValue.SS;
-                                writer.WritePropertyName("SS");
-                                writer.WriteArrayStart();
-
-                                foreach (string sSListValue in sSList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(sSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (keyListValue != null && keyListValue.NS != null && keyListValue.NS.Count > 0) 
-                            {
-                                List<string> nSList = keyListValue.NS;
-                                writer.WritePropertyName("NS");
-                                writer.WriteArrayStart();
-
-                                foreach (string nSListValue in nSList) 
-                                { 
-                                    writer.Write(StringUtils.FromString(nSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-
-                            if (keyListValue != null && keyListValue.BS != null && keyListValue.BS.Count > 0) 
-                            {
-                                List<MemoryStream> bSList = keyListValue.BS;
-                                writer.WritePropertyName("BS");
-                                writer.WriteArrayStart();
-
-                                foreach (MemoryStream bSListValue in bSList) 
-                                { 
-                                    writer.Write(StringUtils.FromMemoryStream(bSListValue));
-                                }
-
-                                writer.WriteArrayEnd();
-                            }
-                            writer.WriteObjectEnd();
-                        }
-                        writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestAttributesToGetListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (getItemRequest != null && getItemRequest.AttributesToGet != null && getItemRequest.AttributesToGet.Count > 0) 
+                if(publicRequest.IsSetConsistentRead())
                 {
-                    List<string> attributesToGetList = getItemRequest.AttributesToGet;
-                    writer.WritePropertyName("AttributesToGet");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("ConsistentRead");
+                    context.Writer.Write(publicRequest.ConsistentRead);
+                }
 
-                    foreach (string attributesToGetListValue in attributesToGetList) 
-                    { 
-                        writer.Write(StringUtils.FromString(attributesToGetListValue));
+                if(publicRequest.IsSetKey())
+                {
+                    context.Writer.WritePropertyName("Key");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestKeyKvp in publicRequest.Key)
+                    {
+                        context.Writer.WritePropertyName(publicRequestKeyKvp.Key);
+                        var publicRequestKeyValue = publicRequestKeyKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestKeyValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-
-                    writer.WriteArrayEnd();
-                }
-                if (getItemRequest != null && getItemRequest.IsSetConsistentRead()) 
-                {
-                    writer.WritePropertyName("ConsistentRead");
-                    writer.Write(getItemRequest.ConsistentRead);
-                }
-                if (getItemRequest != null && getItemRequest.IsSetReturnConsumedCapacity()) 
-                {
-                    writer.WritePropertyName("ReturnConsumedCapacity");
-                    writer.Write(getItemRequest.ReturnConsumedCapacity);
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReturnConsumedCapacity())
+                {
+                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
+                }
+
+                if(publicRequest.IsSetTableName())
+                {
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

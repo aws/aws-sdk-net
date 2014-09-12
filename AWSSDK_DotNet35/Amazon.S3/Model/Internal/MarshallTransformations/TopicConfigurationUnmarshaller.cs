@@ -66,15 +66,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static TopicConfigurationUnmarshaller instance;
+        private static TopicConfigurationUnmarshaller _instance;
 
-        public static TopicConfigurationUnmarshaller GetInstance() 
+        public static TopicConfigurationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TopicConfigurationUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TopicConfigurationUnmarshaller();
+                }
+                return _instance;
+            }
         }
+
     }
 }
     

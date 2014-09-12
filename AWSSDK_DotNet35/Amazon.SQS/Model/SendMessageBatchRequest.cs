@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -67,6 +71,21 @@ namespace Amazon.SQS.Model
         private List<SendMessageBatchRequestEntry> _entries = new List<SendMessageBatchRequestEntry>();
         private string _queueUrl;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SendMessageBatchRequest() { }
+
+        /// <summary>
+        /// Instantiates SendMessageBatchRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="entries">A list of <a>SendMessageBatchRequestEntry</a> items.</param>
+        public SendMessageBatchRequest(string queueUrl, List<SendMessageBatchRequestEntry> entries)
+        {
+            _queueUrl = queueUrl;
+            _entries = entries;
+        }
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -85,7 +104,6 @@ namespace Amazon.SQS.Model
         {
             return this._entries != null && this._entries.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 

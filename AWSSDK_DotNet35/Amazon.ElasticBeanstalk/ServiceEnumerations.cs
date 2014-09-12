@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;
@@ -158,6 +162,10 @@ namespace Amazon.ElasticBeanstalk
     public class EnvironmentInfoType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Bundle for EnvironmentInfoType
+        /// </summary>
+        public static readonly EnvironmentInfoType Bundle = new EnvironmentInfoType("bundle");
         /// <summary>
         /// Constant Tail for EnvironmentInfoType
         /// </summary>

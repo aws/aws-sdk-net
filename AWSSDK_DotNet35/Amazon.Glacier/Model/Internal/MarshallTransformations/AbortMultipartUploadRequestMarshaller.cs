@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,39 +33,30 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Abort Multipart Upload Request Marshaller
+    /// AbortMultipartUpload Request Marshaller
     /// </summary>       
-    internal class AbortMultipartUploadRequestMarshaller : IMarshaller<IRequest, AbortMultipartUploadRequest> 
+    public class AbortMultipartUploadRequestMarshaller : IMarshaller<IRequest, AbortMultipartUploadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(AbortMultipartUploadRequest abortMultipartUploadRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((AbortMultipartUploadRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(abortMultipartUploadRequest, "AmazonGlacier");
-            string target = "Glacier.AbortMultipartUpload";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(AbortMultipartUploadRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
-            if(abortMultipartUploadRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(abortMultipartUploadRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(abortMultipartUploadRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(abortMultipartUploadRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(abortMultipartUploadRequest.IsSetUploadId())
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(abortMultipartUploadRequest.UploadId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{uploadId}", publicRequest.IsSetUploadId() ? StringUtils.FromString(publicRequest.UploadId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,93 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IndexField Unmarshaller
-     /// </summary>
-    internal class IndexFieldUnmarshaller : IUnmarshaller<IndexField, XmlUnmarshallerContext>, IUnmarshaller<IndexField, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IndexField Object
+    /// </summary>  
+    public class IndexFieldUnmarshaller : IUnmarshaller<IndexField, XmlUnmarshallerContext>, IUnmarshaller<IndexField, JsonUnmarshallerContext>
     {
-        public IndexField Unmarshall(XmlUnmarshallerContext context) 
+        public IndexField Unmarshall(XmlUnmarshallerContext context)
         {
-            IndexField indexField = new IndexField();
+            IndexField unmarshalledObject = new IndexField();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("IndexFieldName", targetDepth))
                     {
-                        indexField.IndexFieldName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IndexFieldName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IndexFieldType", targetDepth))
                     {
-                        indexField.IndexFieldType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("UIntOptions", targetDepth))
-                    {
-                        indexField.UIntOptions = UIntOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IndexFieldType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LiteralOptions", targetDepth))
                     {
-                        indexField.LiteralOptions = LiteralOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("TextOptions", targetDepth))
-                    {
-                        indexField.TextOptions = TextOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LiteralOptionsUnmarshaller.Instance;
+                        unmarshalledObject.LiteralOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SourceAttributes/member", targetDepth))
                     {
-                        indexField.SourceAttributes.Add(SourceAttributeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = SourceAttributeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SourceAttributes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("TextOptions", targetDepth))
+                    {
+                        var unmarshaller = TextOptionsUnmarshaller.Instance;
+                        unmarshalledObject.TextOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UIntOptions", targetDepth))
+                    {
+                        var unmarshaller = UIntOptionsUnmarshaller.Instance;
+                        unmarshalledObject.UIntOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return indexField;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return indexField;
+            return unmarshalledObject;
         }
 
-        public IndexField Unmarshall(JsonUnmarshallerContext context) 
+        public IndexField Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IndexFieldUnmarshaller instance;
 
-        public static IndexFieldUnmarshaller GetInstance() 
+        private static IndexFieldUnmarshaller _instance = new IndexFieldUnmarshaller();        
+
+        public static IndexFieldUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IndexFieldUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

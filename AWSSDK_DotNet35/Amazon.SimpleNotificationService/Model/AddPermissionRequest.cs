@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,6 +39,25 @@ namespace Amazon.SimpleNotificationService.Model
         private string _label;
         private string _topicArn;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AddPermissionRequest() { }
+
+        /// <summary>
+        /// Instantiates AddPermissionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
+        /// <param name="label">A unique identifier for the new policy statement.</param>
+        /// <param name="awsAccountId">The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up  for this service. </param>
+        /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name.</param>
+        public AddPermissionRequest(string topicArn, string label, List<string> awsAccountId, List<string> actionName)
+        {
+            _topicArn = topicArn;
+            _label = label;
+            _aWSAccountId = awsAccountId;
+            _actionName = actionName;
+        }
 
         /// <summary>
         /// Gets and sets the property ActionName. 
@@ -58,7 +81,6 @@ namespace Amazon.SimpleNotificationService.Model
             return this._actionName != null && this._actionName.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
@@ -79,7 +101,6 @@ namespace Amazon.SimpleNotificationService.Model
             return this._aWSAccountId != null && this._aWSAccountId.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
@@ -97,7 +118,6 @@ namespace Amazon.SimpleNotificationService.Model
         {
             return this._label != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TopicArn. 

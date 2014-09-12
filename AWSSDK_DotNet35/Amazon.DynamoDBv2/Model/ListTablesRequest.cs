@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,70 +29,78 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTables operation.
-    /// <para>Returns an array of table names associated with the current account and endpoint. The output from <i>ListTables</i> is paginated, with
-    /// each page returning a maximum of 100 table names.</para>
+    /// Returns an array of table names associated with the current account and endpoint.
+    /// The output      from <i>ListTables</i> is paginated, with each page returning a maximum
+    /// of 100 table      names.
     /// </summary>
-    public partial class ListTablesRequest : AmazonDynamoDBv2Request
+    public partial class ListTablesRequest : AmazonDynamoDBRequest
     {
-        private string exclusiveStartTableName;
-        private int? limit;
-
+        private string _exclusiveStartTableName;
+        private int? _limit;
 
         /// <summary>
-        /// The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous
-        /// operation, so that you can obtain the next page of results.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ListTablesRequest() { }
+
+        /// <summary>
+        /// Instantiates ListTablesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for  <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page   of results.</param>
+        public ListTablesRequest(string exclusiveStartTableName)
+        {
+            _exclusiveStartTableName = exclusiveStartTableName;
+        }
+
+        /// <summary>
+        /// Instantiates ListTablesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for  <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page   of results.</param>
+        /// <param name="limit"> A maximum number of table names to return. If this parameter is not specified, the limit is   100.</param>
+        public ListTablesRequest(string exclusiveStartTableName, int limit)
+        {
+            _exclusiveStartTableName = exclusiveStartTableName;
+            _limit = limit;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExclusiveStartTableName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
+        /// The first table name that this operation will evaluate. Use the value that was returned
+        /// for        <i>LastEvaluatedTableName</i> in a previous operation, so that you can
+        /// obtain the next page      of results.
         /// </para>
         /// </summary>
         public string ExclusiveStartTableName
         {
-            get { return this.exclusiveStartTableName; }
-            set { this.exclusiveStartTableName = value; }
+            get { return this._exclusiveStartTableName; }
+            set { this._exclusiveStartTableName = value; }
         }
 
         // Check to see if ExclusiveStartTableName property is set
         internal bool IsSetExclusiveStartTableName()
         {
-            return this.exclusiveStartTableName != null;
+            return this._exclusiveStartTableName != null;
         }
 
         /// <summary>
-        /// A maximum number of table names to return. If this parameter is not specified, the limit is 100.
-        ///  
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///  A maximum number of table names to return. If this parameter is not specified, the
+        /// limit is      100.
         /// </para>
         /// </summary>
         public int Limit
         {
-            get { return this.limit ?? default(int); }
-            set { this.limit = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;
+            return this._limit.HasValue; 
         }
 
     }
 }
-    

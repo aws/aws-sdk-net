@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,55 +29,64 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetImageAttribute operation.
-    /// <para>Resets an attribute of an AMI to its default value.</para>
+    /// Resets an attribute of an AMI to its default value.
     /// </summary>
     public partial class ResetImageAttributeRequest : AmazonEC2Request
     {
-        private string imageId;
-        private ResetImageAttributeName attribute;
-
+        private ResetImageAttributeName _attribute;
+        private string _imageId;
 
         /// <summary>
-        /// The ID of the AMI.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string ImageId
-        {
-            get { return this.imageId; }
-            set { this.imageId = value; }
-        }
+        public ResetImageAttributeRequest() { }
 
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
+        /// <summary>
+        /// Instantiates ResetImageAttributeRequest with the parameterized properties
+        /// </summary>
+        /// <param name="imageId">The ID of the AMI.</param>
+        /// <param name="attribute">The attribute to reset (currently you can only reset the launch permission attribute).</param>
+        public ResetImageAttributeRequest(string imageId, ResetImageAttributeName attribute)
         {
-            return this.imageId != null;
+            _imageId = imageId;
+            _attribute = attribute;
         }
 
         /// <summary>
-        /// The attribute to reset (currently you can only reset the launch permission attribute).
-        ///  
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>launchPermission</description>
-        ///     </item>
-        /// </list>
+        /// The attribute to reset (currently you can only reset the launch permission attribute).
         /// </para>
         /// </summary>
         public ResetImageAttributeName Attribute
         {
-            get { return this.attribute; }
-            set { this.attribute = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
         // Check to see if Attribute property is set
         internal bool IsSetAttribute()
         {
-            return this.attribute != null;
+            return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
     }
 }
-    

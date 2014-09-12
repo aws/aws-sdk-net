@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,35 +33,29 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Vault Notifications Request Marshaller
+    /// GetVaultNotifications Request Marshaller
     /// </summary>       
-    internal class GetVaultNotificationsRequestMarshaller : IMarshaller<IRequest, GetVaultNotificationsRequest> 
+    public class GetVaultNotificationsRequestMarshaller : IMarshaller<IRequest, GetVaultNotificationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(GetVaultNotificationsRequest getVaultNotificationsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((GetVaultNotificationsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(getVaultNotificationsRequest, "AmazonGlacier");
-            string target = "Glacier.GetVaultNotifications";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(GetVaultNotificationsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
-            if(getVaultNotificationsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(getVaultNotificationsRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(getVaultNotificationsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(getVaultNotificationsRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

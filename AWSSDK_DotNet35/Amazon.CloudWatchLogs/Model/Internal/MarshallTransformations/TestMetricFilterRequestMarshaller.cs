@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// <summary>
     /// TestMetricFilter Request Marshaller
     /// </summary>       
-    public class TestMetricFilterRequestMarshaller : IMarshaller<IRequest, TestMetricFilterRequest> 
+    public class TestMetricFilterRequestMarshaller : IMarshaller<IRequest, TestMetricFilterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((TestMetricFilterRequest)input);
+        }
+
         public IRequest Marshall(TestMetricFilterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
@@ -47,21 +56,22 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetFilterPattern())
                 {
-                    writer.WritePropertyName("filterPattern");
-                    writer.Write(publicRequest.FilterPattern);
+                    context.Writer.WritePropertyName("filterPattern");
+                    context.Writer.Write(publicRequest.FilterPattern);
                 }
 
                 if(publicRequest.IsSetLogEventMessages())
                 {
-                    writer.WritePropertyName("logEventMessages");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("logEventMessages");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
                     {
-                        writer.Write(publicRequestLogEventMessagesListValue);
+                            context.Writer.Write(publicRequestLogEventMessagesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,7 +53,6 @@ namespace Amazon.AutoScaling.Model
         private string _notificationTargetARN;
         private string _roleARN;
 
-
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
@@ -67,7 +70,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._autoScalingGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DefaultResult. 
@@ -90,7 +92,6 @@ namespace Amazon.AutoScaling.Model
             return this._defaultResult != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property GlobalTimeout. 
         /// <para>
@@ -109,7 +110,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._globalTimeout.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property HeartbeatTimeout. 
@@ -131,7 +131,6 @@ namespace Amazon.AutoScaling.Model
             return this._heartbeatTimeout.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LifecycleHookName. 
         /// <para>
@@ -149,7 +148,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._lifecycleHookName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
@@ -170,7 +168,6 @@ namespace Amazon.AutoScaling.Model
             return this._lifecycleTransition != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NotificationMetadata. 
         /// <para>
@@ -189,7 +186,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._notificationMetadata != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NotificationTargetARN. 
@@ -214,7 +210,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._notificationTargetARN != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RoleARN. 

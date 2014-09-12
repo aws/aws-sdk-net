@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,78 +29,70 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreams operation.
-    /// <para> This operation returns an array of the names of all the streams that are associated with the AWS account making the
-    /// <c>ListStreams</c> request. A given AWS account can have many streams active at one time. </para> <para> The number of streams may be too
-    /// large to return from a single call to <c>ListStreams</c> .
-    /// You can limit the number of returned streams using the <c>Limit</c> parameter. If you do not specify a value for the
-    /// <c>Limit</c> parameter, Amazon Kinesis uses the default limit, which is currently 10.</para> <para> You can detect if there are more streams
-    /// available to list by using the <c>HasMoreStreams</c> flag from the returned output. If there are more streams available, you can request
-    /// more streams by using the name of the last stream returned by the <c>ListStreams</c> request in the <c>ExclusiveStartStreamName</c>
-    /// parameter in a subsequent request to <c>ListStreams</c> .
-    /// The group of stream names returned by the subsequent request is then added to the list. You can continue this process until all
-    /// the stream names have been collected in the list. </para> <para> <c>ListStreams</c> has a limit of 5 transactions per second per
-    /// account.</para>
+    /// Lists your streams.
+    /// 
+    ///  
+    /// <para>
+    ///  The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+    /// You can limit the number of returned streams using the <code>Limit</code> parameter.
+    /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+    /// uses the default limit, which is currently 10.
+    /// </para>
+    ///  
+    /// <para>
+    ///  You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+    /// flag from the returned output. If there are more streams available, you can request
+    /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
+    /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+    /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
+    /// request is then added to the list. You can continue this process until all the stream
+    /// names have been collected in the list. 
+    /// </para>
+    ///  
+    /// <para>
+    /// <code>ListStreams</code> has a limit of 5 transactions per second per account.
+    /// </para>
     /// </summary>
     public partial class ListStreamsRequest : AmazonKinesisRequest
     {
-        private int? limit;
-        private string exclusiveStartStreamName;
-
+        private string _exclusiveStartStreamName;
+        private int? _limit;
 
         /// <summary>
-        /// The maximum number of streams to list.
-        ///  
+        /// Gets and sets the property ExclusiveStartStreamName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 10000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int Limit
-        {
-            get { return this.limit ?? default(int); }
-            set { this.limit = value; }
-        }
-
-        // Check to see if Limit property is set
-        internal bool IsSetLimit()
-        {
-            return this.limit.HasValue;
-        }
-
-        /// <summary>
         /// The name of the stream to start the list with.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string ExclusiveStartStreamName
         {
-            get { return this.exclusiveStartStreamName; }
-            set { this.exclusiveStartStreamName = value; }
+            get { return this._exclusiveStartStreamName; }
+            set { this._exclusiveStartStreamName = value; }
         }
 
         // Check to see if ExclusiveStartStreamName property is set
         internal bool IsSetExclusiveStartStreamName()
         {
-            return this.exclusiveStartStreamName != null;
+            return this._exclusiveStartStreamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of streams to list.
+        /// </para>
+        /// </summary>
+        public int Limit
+        {
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
+        }
+
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
+        {
+            return this._limit.HasValue; 
         }
 
     }
 }
-    

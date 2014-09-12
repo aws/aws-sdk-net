@@ -12,50 +12,63 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Copy Image Request Marshaller
+    /// CopyImage Request Marshaller
     /// </summary>       
-    public class CopyImageRequestMarshaller : IMarshaller<IRequest, CopyImageRequest>
+    public class CopyImageRequestMarshaller : IMarshaller<IRequest, CopyImageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CopyImageRequest copyImageRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(copyImageRequest, "AmazonEC2");
+            return this.Marshall((CopyImageRequest)input);
+        }
+    
+        public IRequest Marshall(CopyImageRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CopyImage");
             request.Parameters.Add("Version", "2014-06-15");
-            if (copyImageRequest != null && copyImageRequest.IsSetSourceRegion())
-            {
-                request.Parameters.Add("SourceRegion", StringUtils.FromString(copyImageRequest.SourceRegion));
-            }
-            if (copyImageRequest != null && copyImageRequest.IsSetSourceImageId())
-            {
-                request.Parameters.Add("SourceImageId", StringUtils.FromString(copyImageRequest.SourceImageId));
-            }
-            if (copyImageRequest != null && copyImageRequest.IsSetName())
-            {
-                request.Parameters.Add("Name", StringUtils.FromString(copyImageRequest.Name));
-            }
-            if (copyImageRequest != null && copyImageRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(copyImageRequest.Description));
-            }
-            if (copyImageRequest != null && copyImageRequest.IsSetClientToken())
-            {
-                request.Parameters.Add("ClientToken", StringUtils.FromString(copyImageRequest.ClientToken));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClientToken())
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetName())
+                {
+                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                }
+                if(publicRequest.IsSetSourceImageId())
+                {
+                    request.Parameters.Add("SourceImageId", StringUtils.FromString(publicRequest.SourceImageId));
+                }
+                if(publicRequest.IsSetSourceRegion())
+                {
+                    request.Parameters.Add("SourceRegion", StringUtils.FromString(publicRequest.SourceRegion));
+                }
+            }
             return request;
         }
     }

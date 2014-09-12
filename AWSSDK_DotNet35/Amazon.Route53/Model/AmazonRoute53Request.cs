@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.Route53
 {
     /// <summary>
-    /// Base class for AmazonRoute53 operation requests.
+    /// Base class for Route53 operation requests.
     /// </summary>
     public partial class AmazonRoute53Request : AmazonWebServiceRequest
     {
     }
 }
-    

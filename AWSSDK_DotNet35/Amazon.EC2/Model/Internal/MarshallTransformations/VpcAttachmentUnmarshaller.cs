@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpcAttachment Unmarshaller
-     /// </summary>
-    internal class VpcAttachmentUnmarshaller : IUnmarshaller<VpcAttachment, XmlUnmarshallerContext>, IUnmarshaller<VpcAttachment, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpcAttachment Object
+    /// </summary>  
+    public class VpcAttachmentUnmarshaller : IUnmarshaller<VpcAttachment, XmlUnmarshallerContext>, IUnmarshaller<VpcAttachment, JsonUnmarshallerContext>
     {
-        public VpcAttachment Unmarshall(XmlUnmarshallerContext context) 
+        public VpcAttachment Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcAttachment vpcAttachment = new VpcAttachment();
+            VpcAttachment unmarshalledObject = new VpcAttachment();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        vpcAttachment.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("state", targetDepth))
                     {
-                        vpcAttachment.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpcAttachment;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpcAttachment;
+            return unmarshalledObject;
         }
 
-        public VpcAttachment Unmarshall(JsonUnmarshallerContext context) 
+        public VpcAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpcAttachmentUnmarshaller instance;
 
-        public static VpcAttachmentUnmarshaller GetInstance() 
+        private static VpcAttachmentUnmarshaller _instance = new VpcAttachmentUnmarshaller();        
+
+        public static VpcAttachmentUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpcAttachmentUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

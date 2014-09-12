@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VolumeInfo Object
+    /// </summary>  
+    public class VolumeInfoUnmarshaller : IUnmarshaller<VolumeInfo, XmlUnmarshallerContext>, IUnmarshaller<VolumeInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VolumeInfoUnmarshaller
-      /// </summary>
-      internal class VolumeInfoUnmarshaller : IUnmarshaller<VolumeInfo, XmlUnmarshallerContext>, IUnmarshaller<VolumeInfo, JsonUnmarshallerContext>
-      {
         VolumeInfo IUnmarshaller<VolumeInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VolumeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VolumeInfo volumeInfo = new VolumeInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VolumeInfo unmarshalledObject = new VolumeInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("VolumeARN", targetDepth))
-              {
-                volumeInfo.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeType", targetDepth))
-              {
-                volumeInfo.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("VolumeARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return volumeInfo;
+            return unmarshalledObject;
         }
 
-        private static VolumeInfoUnmarshaller instance;
-        public static VolumeInfoUnmarshaller GetInstance()
+
+        private static VolumeInfoUnmarshaller _instance = new VolumeInfoUnmarshaller();        
+
+        public static VolumeInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VolumeInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

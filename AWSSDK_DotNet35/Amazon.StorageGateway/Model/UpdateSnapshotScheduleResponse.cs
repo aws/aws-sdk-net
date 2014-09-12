@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateSnapshotSchedule response and response metadata.
+    /// Configuration for accessing Amazon UpdateSnapshotSchedule service
     /// </summary>
-    public class UpdateSnapshotScheduleResponse : UpdateSnapshotScheduleResult
+    public partial class UpdateSnapshotScheduleResponse : UpdateSnapshotScheduleResult
     {
         /// <summary>
         /// Gets and sets the UpdateSnapshotScheduleResult property.
-        /// A JSON object containing the of the updated storage volume.
+        /// Represents the output of a UpdateSnapshotSchedule operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateSnapshotScheduleResult class are now available on the UpdateSnapshotScheduleResponse class. You should use the properties on UpdateSnapshotScheduleResponse instead of accessing them through UpdateSnapshotScheduleResult.")]
         public UpdateSnapshotScheduleResult UpdateSnapshotScheduleResult
@@ -40,4 +40,3 @@ namespace Amazon.StorageGateway.Model
         }
     }
 }
-    

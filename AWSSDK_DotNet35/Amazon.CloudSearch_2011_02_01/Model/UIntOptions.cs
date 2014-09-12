@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,46 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>Options that define a <c>uint</c> field in the search index.</para>
+    /// Options that define a <code>uint</code> field in the search index.
     /// </summary>
-    public class UIntOptions
+    public partial class UIntOptions
     {
-        
-        private int? defaultValue;
-
+        private int? _defaultValue;
 
         /// <summary>
-        /// The default value for an unsigned integer field. Optional.
-        ///  
+        /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - </description>
-        ///     </item>
-        /// </list>
+        /// The default value for an unsigned integer field. Optional.
         /// </para>
         /// </summary>
         public int DefaultValue
         {
-            get { return this.defaultValue ?? default(int); }
-            set { this.defaultValue = value; }
+            get { return this._defaultValue.GetValueOrDefault(); }
+            set { this._defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue.HasValue;
+            return this._defaultValue.HasValue; 
         }
+
     }
 }

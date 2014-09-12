@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,25 @@ namespace Amazon.SecurityToken.Model
         private string _secretAccessKey;
         private string _sessionToken;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Credentials() { }
+
+        /// <summary>
+        /// Instantiates Credentials with the parameterized properties
+        /// </summary>
+        /// <param name="accessKeyId">The access key ID that identifies the temporary security credentials.</param>
+        /// <param name="secretAccessKey">The secret access key that can be used to sign requests.</param>
+        /// <param name="sessionToken">The token that users must pass to the service API to use the temporary credentials.</param>
+        /// <param name="expiration">The date on which the current credentials expire.</param>
+        public Credentials(string accessKeyId, string secretAccessKey, string sessionToken, DateTime expiration)
+        {
+            _accessKeyId = accessKeyId;
+            _secretAccessKey = secretAccessKey;
+            _sessionToken = sessionToken;
+            _expiration = expiration;
+        }
 
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
@@ -52,7 +75,6 @@ namespace Amazon.SecurityToken.Model
             return this._accessKeyId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Expiration. 
         /// <para>
@@ -71,7 +93,6 @@ namespace Amazon.SecurityToken.Model
             return this._expiration.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SecretAccessKey. 
         /// <para>
@@ -89,7 +110,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._secretAccessKey != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SessionToken. 

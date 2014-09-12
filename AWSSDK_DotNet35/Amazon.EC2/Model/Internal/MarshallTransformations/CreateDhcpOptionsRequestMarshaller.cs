@@ -12,56 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Dhcp Options Request Marshaller
+    /// CreateDhcpOptions Request Marshaller
     /// </summary>       
-    public class CreateDhcpOptionsRequestMarshaller : IMarshaller<IRequest, CreateDhcpOptionsRequest>
+    public class CreateDhcpOptionsRequestMarshaller : IMarshaller<IRequest, CreateDhcpOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateDhcpOptionsRequest createDhcpOptionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createDhcpOptionsRequest, "AmazonEC2");
+            return this.Marshall((CreateDhcpOptionsRequest)input);
+        }
+    
+        public IRequest Marshall(CreateDhcpOptionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateDhcpOptions");
             request.Parameters.Add("Version", "2014-06-15");
 
-            if (createDhcpOptionsRequest != null)
+            if(publicRequest != null)
             {
-                List<DhcpConfiguration> dhcpConfigurationsList = createDhcpOptionsRequest.DhcpConfigurations;
-                int dhcpConfigurationsListIndex = 1;
-                foreach (DhcpConfiguration dhcpConfigurationsListValue in dhcpConfigurationsList)
+                if(publicRequest.IsSetDhcpConfigurations())
                 {
-                    if (dhcpConfigurationsListValue != null && dhcpConfigurationsListValue.IsSetKey())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.DhcpConfigurations)
                     {
-                        request.Parameters.Add("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key", StringUtils.FromString(dhcpConfigurationsListValue.Key));
-                    }
-                    if (dhcpConfigurationsListValue != null)
-                    {
-                        List<string> valuesList = dhcpConfigurationsListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("DhcpConfiguration" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("DhcpConfiguration" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    dhcpConfigurationsListIndex++;
                 }
             }
-
             return request;
         }
     }

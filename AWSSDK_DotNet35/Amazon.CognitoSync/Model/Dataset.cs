@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,7 +44,6 @@ namespace Amazon.CognitoSync.Model
         private DateTime? _lastModifiedDate;
         private long? _numRecords;
 
-
         /// <summary>
         /// Gets and sets the property CreationDate. Date.
         /// </summary>
@@ -55,7 +58,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._creationDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DatasetName. A string of up to 128 characters. Allowed
@@ -73,7 +75,6 @@ namespace Amazon.CognitoSync.Model
             return this._datasetName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DataStorage. Total size in bytes of the records in this
         /// dataset.
@@ -89,7 +90,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._dataStorage.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property IdentityId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -107,7 +107,6 @@ namespace Amazon.CognitoSync.Model
             return this._identityId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LastModifiedBy. The device that made the last change to
         /// this dataset.
@@ -124,7 +123,6 @@ namespace Amazon.CognitoSync.Model
             return this._lastModifiedBy != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LastModifiedDate. Date when the dataset was last modified.
         /// </summary>
@@ -139,7 +137,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._lastModifiedDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NumRecords. Number of records in this dataset.

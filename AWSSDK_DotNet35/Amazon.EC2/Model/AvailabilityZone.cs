@@ -12,97 +12,102 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an Availability Zone.</para>
+    /// Describes an Availability Zone.
     /// </summary>
     public partial class AvailabilityZone
     {
-        
-        private string zoneName;
-        private AvailabilityZoneState state;
-        private string regionName;
-        private List<AvailabilityZoneMessage> messages = new List<AvailabilityZoneMessage>();
-
+        private List<AvailabilityZoneMessage> _messages = new List<AvailabilityZoneMessage>();
+        private string _regionName;
+        private AvailabilityZoneState _state;
+        private string _zoneName;
 
         /// <summary>
-        /// The name of the Availability Zone.
-        ///  
-        /// </summary>
-        public string ZoneName
-        {
-            get { return this.zoneName; }
-            set { this.zoneName = value; }
-        }
-
-        // Check to see if ZoneName property is set
-        internal bool IsSetZoneName()
-        {
-            return this.zoneName != null;
-        }
-
-        /// <summary>
-        /// The state of the Availability Zone.
-        ///  
+        /// Gets and sets the property Messages. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>available</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public AvailabilityZoneState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
-        /// The name of the region.
-        ///  
-        /// </summary>
-        public string RegionName
-        {
-            get { return this.regionName; }
-            set { this.regionName = value; }
-        }
-
-        // Check to see if RegionName property is set
-        internal bool IsSetRegionName()
-        {
-            return this.regionName != null;
-        }
-
-        /// <summary>
         /// Any messages about the Availability Zone.
-        ///  
+        /// </para>
         /// </summary>
         public List<AvailabilityZoneMessage> Messages
         {
-            get { return this.messages; }
-            set { this.messages = value; }
+            get { return this._messages; }
+            set { this._messages = value; }
         }
 
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this.messages.Count > 0;
+            return this._messages != null && this._messages.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property RegionName. 
+        /// <para>
+        /// The name of the region.
+        /// </para>
+        /// </summary>
+        public string RegionName
+        {
+            get { return this._regionName; }
+            set { this._regionName = value; }
+        }
+
+        // Check to see if RegionName property is set
+        internal bool IsSetRegionName()
+        {
+            return this._regionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the Availability Zone.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneName. 
+        /// <para>
+        /// The name of the Availability Zone.
+        /// </para>
+        /// </summary>
+        public string ZoneName
+        {
+            get { return this._zoneName; }
+            set { this._zoneName = value; }
+        }
+
+        // Check to see if ZoneName property is set
+        internal bool IsSetZoneName()
+        {
+            return this._zoneName != null;
+        }
+
     }
 }

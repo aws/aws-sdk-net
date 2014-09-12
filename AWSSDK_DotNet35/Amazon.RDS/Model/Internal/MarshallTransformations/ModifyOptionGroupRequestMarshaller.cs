@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,137 +12,138 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Option Group Request Marshaller
+    /// ModifyOptionGroup Request Marshaller
     /// </summary>       
-    public class ModifyOptionGroupRequestMarshaller : IMarshaller<IRequest, ModifyOptionGroupRequest>
+    public class ModifyOptionGroupRequestMarshaller : IMarshaller<IRequest, ModifyOptionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ModifyOptionGroupRequest modifyOptionGroupRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(modifyOptionGroupRequest, "AmazonRDS");
+            return this.Marshall((ModifyOptionGroupRequest)input);
+        }
+    
+        public IRequest Marshall(ModifyOptionGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "ModifyOptionGroup");
             request.Parameters.Add("Version", "2013-09-09");
-            if (modifyOptionGroupRequest != null && modifyOptionGroupRequest.IsSetOptionGroupName())
-            {
-                request.Parameters.Add("OptionGroupName", StringUtils.FromString(modifyOptionGroupRequest.OptionGroupName));
-            }
 
-            if (modifyOptionGroupRequest != null)
+            if(publicRequest != null)
             {
-                List<OptionConfiguration> optionsToIncludeList = modifyOptionGroupRequest.OptionsToInclude;
-                int optionsToIncludeListIndex = 1;
-                foreach (OptionConfiguration optionsToIncludeListValue in optionsToIncludeList)
+                if(publicRequest.IsSetApplyImmediately())
                 {
-                    if (optionsToIncludeListValue != null && optionsToIncludeListValue.IsSetOptionName())
+                    request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
+                }
+                if(publicRequest.IsSetOptionGroupName())
+                {
+                    request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
+                }
+                if(publicRequest.IsSetOptionsToInclude())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionsToInclude)
                     {
-                        request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionName", StringUtils.FromString(optionsToIncludeListValue.OptionName));
-                    }
-                    if (optionsToIncludeListValue != null && optionsToIncludeListValue.IsSetPort())
-                    {
-                        request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".Port", StringUtils.FromInt(optionsToIncludeListValue.Port));
-                    }
-                    if (optionsToIncludeListValue != null)
-                    {
-                        List<string> dBSecurityGroupMembershipsList = optionsToIncludeListValue.DBSecurityGroupMemberships;
-
-                        int dBSecurityGroupMembershipsListIndex = 1;
-                        foreach (string dBSecurityGroupMembershipsListValue in dBSecurityGroupMembershipsList)
-                        { 
-                            request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".DBSecurityGroupMemberships.member." + dBSecurityGroupMembershipsListIndex, StringUtils.FromString(dBSecurityGroupMembershipsListValue));
-                            dBSecurityGroupMembershipsListIndex++;
-                        }
-                    }
-                    if (optionsToIncludeListValue != null)
-                    {
-                        List<string> vpcSecurityGroupMembershipsList = optionsToIncludeListValue.VpcSecurityGroupMemberships;
-
-                        int vpcSecurityGroupMembershipsListIndex = 1;
-                        foreach (string vpcSecurityGroupMembershipsListValue in vpcSecurityGroupMembershipsList)
-                        { 
-                            request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".VpcSecurityGroupMemberships.member." + vpcSecurityGroupMembershipsListIndex, StringUtils.FromString(vpcSecurityGroupMembershipsListValue));
-                            vpcSecurityGroupMembershipsListIndex++;
-                        }
-                    }
-
-                    if (optionsToIncludeListValue != null)
-                    {
-                        List<OptionSetting> optionSettingsList = optionsToIncludeListValue.OptionSettings;
-                        int optionSettingsListIndex = 1;
-                        foreach (OptionSetting optionSettingsListValue in optionSettingsList)
+                        if(publicRequestlistValue.IsSetDBSecurityGroupMemberships())
                         {
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetName())
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.DBSecurityGroupMemberships)
                             {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".Name", StringUtils.FromString(optionSettingsListValue.Name));
+                                request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DBSecurityGroupMemberships" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
                             }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetDefaultValue())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".DefaultValue", StringUtils.FromString(optionSettingsListValue.DefaultValue));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetDescription())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".Description", StringUtils.FromString(optionSettingsListValue.Description));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetApplyType())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".ApplyType", StringUtils.FromString(optionSettingsListValue.ApplyType));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetDataType())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".DataType", StringUtils.FromString(optionSettingsListValue.DataType));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetAllowedValues())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".AllowedValues", StringUtils.FromString(optionSettingsListValue.AllowedValues));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetIsModifiable())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".IsModifiable", StringUtils.FromBool(optionSettingsListValue.IsModifiable));
-                            }
-                            if (optionSettingsListValue != null && optionSettingsListValue.IsSetIsCollection())
-                            {
-                                request.Parameters.Add("OptionsToInclude.member." + optionsToIncludeListIndex + ".OptionSettings.member." + optionSettingsListIndex + ".IsCollection", StringUtils.FromBool(optionSettingsListValue.IsCollection));
-                            }
-
-                            optionSettingsListIndex++;
                         }
+                        if(publicRequestlistValue.IsSetOptionName())
+                        {
+                            request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        if(publicRequestlistValue.IsSetOptionSettings())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.OptionSettings)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetAllowedValues())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValuelistValue.AllowedValues));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetApplyType())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValuelistValue.ApplyType));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetDataType())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValuelistValue.DataType));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetDefaultValue())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "DefaultValue", StringUtils.FromString(publicRequestlistValuelistValue.DefaultValue));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetDescription())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetIsCollection())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "IsCollection", StringUtils.FromBool(publicRequestlistValuelistValue.IsCollection));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetIsModifiable())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValuelistValue.IsModifiable));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetName())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                }
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetPort())
+                        {
+                            request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
+                        }
+                        if(publicRequestlistValue.IsSetVpcSecurityGroupMemberships())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.VpcSecurityGroupMemberships)
+                            {
+                                request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "VpcSecurityGroupMemberships" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    optionsToIncludeListIndex++;
+                }
+                if(publicRequest.IsSetOptionsToRemove())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionsToRemove)
+                    {
+                        request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (modifyOptionGroupRequest != null)
-            {
-                List<string> optionsToRemoveList = modifyOptionGroupRequest.OptionsToRemove;
-
-                int optionsToRemoveListIndex = 1;
-                foreach (string optionsToRemoveListValue in optionsToRemoveList)
-                { 
-                    request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex, StringUtils.FromString(optionsToRemoveListValue));
-                    optionsToRemoveListIndex++;
-                }
-            }
-            if (modifyOptionGroupRequest != null && modifyOptionGroupRequest.IsSetApplyImmediately())
-            {
-                request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(modifyOptionGroupRequest.ApplyImmediately));
-            }
-
             return request;
         }
     }

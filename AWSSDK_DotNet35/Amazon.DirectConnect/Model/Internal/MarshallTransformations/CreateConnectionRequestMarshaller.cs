@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Connection Request Marshaller
+    /// CreateConnection Request Marshaller
     /// </summary>       
-    internal class CreateConnectionRequestMarshaller : IMarshaller<IRequest, CreateConnectionRequest> 
+    public class CreateConnectionRequestMarshaller : IMarshaller<IRequest, CreateConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreateConnectionRequest createConnectionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreateConnectionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createConnectionRequest, "AmazonDirectConnect");
+        public IRequest Marshall(CreateConnectionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.CreateConnection";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createConnectionRequest != null && createConnectionRequest.IsSetLocation()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBandwidth())
                 {
-                    writer.WritePropertyName("location");
-                    writer.Write(createConnectionRequest.Location);
-                }
-                if (createConnectionRequest != null && createConnectionRequest.IsSetBandwidth()) 
-                {
-                    writer.WritePropertyName("bandwidth");
-                    writer.Write(createConnectionRequest.Bandwidth);
-                }
-                if (createConnectionRequest != null && createConnectionRequest.IsSetConnectionName()) 
-                {
-                    writer.WritePropertyName("connectionName");
-                    writer.Write(createConnectionRequest.ConnectionName);
+                    context.Writer.WritePropertyName("bandwidth");
+                    context.Writer.Write(publicRequest.Bandwidth);
                 }
 
+                if(publicRequest.IsSetConnectionName())
+                {
+                    context.Writer.WritePropertyName("connectionName");
+                    context.Writer.Write(publicRequest.ConnectionName);
+                }
+
+                if(publicRequest.IsSetLocation())
+                {
+                    context.Writer.WritePropertyName("location");
+                    context.Writer.Write(publicRequest.Location);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

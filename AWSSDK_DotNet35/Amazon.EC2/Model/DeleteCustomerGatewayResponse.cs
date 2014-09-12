@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteCustomerGateway response metadata.
-    /// The DeleteCustomerGateway operation has a void result type.
+    /// Configuration for accessing Amazon DeleteCustomerGateway service
     /// </summary>
-    public partial class DeleteCustomerGatewayResponse : AmazonWebServiceResponse
+    public partial class DeleteCustomerGatewayResponse : DeleteCustomerGatewayResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteCustomerGatewayResult property.
+        /// Represents the output of a DeleteCustomerGateway operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteCustomerGatewayResult class are now available on the DeleteCustomerGatewayResponse class. You should use the properties on DeleteCustomerGatewayResponse instead of accessing them through DeleteCustomerGatewayResult.")]
+        public DeleteCustomerGatewayResult DeleteCustomerGatewayResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

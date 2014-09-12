@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,7 +53,6 @@ namespace Amazon.AutoScaling.Model
         private List<string> _terminationPolicies = new List<string>();
         private string _vPCZoneIdentifier;
 
-
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
@@ -68,7 +71,6 @@ namespace Amazon.AutoScaling.Model
             return this._autoScalingGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
@@ -86,7 +88,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
@@ -108,7 +109,6 @@ namespace Amazon.AutoScaling.Model
             return this._defaultCooldown.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
@@ -126,7 +126,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._desiredCapacity.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
@@ -149,7 +148,6 @@ namespace Amazon.AutoScaling.Model
             return this._healthCheckGracePeriod.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
@@ -170,7 +168,6 @@ namespace Amazon.AutoScaling.Model
             return this._healthCheckType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
@@ -188,7 +185,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._launchConfigurationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxSize. 
@@ -208,7 +204,6 @@ namespace Amazon.AutoScaling.Model
             return this._maxSize.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
@@ -226,7 +221,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._minSize.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
@@ -247,7 +241,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._placementGroup != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property TerminationPolicies. 
@@ -275,7 +268,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VPCZoneIdentifier. 

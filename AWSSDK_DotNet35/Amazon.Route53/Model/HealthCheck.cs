@@ -12,89 +12,103 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains identifying information about the health check.</para>
+    /// A complex type that contains identifying information about the health check.
     /// </summary>
     public partial class HealthCheck
     {
-        
-        private string id;
-        private string callerReference;
-        private HealthCheckConfig healthCheckConfig;
-
+        private string _id;
+        private string _callerReference;
+        private HealthCheckConfig _healthCheckConfig;
+        private long? _healthCheckVersion;
 
         /// <summary>
-        /// The ID of the specified health check.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 64</description>
-        ///     </item>
-        /// </list>
+        /// The ID of the specified health check.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
         /// <summary>
-        /// A unique string that identifies the request to create the health check.
-        ///  
+        /// Gets and sets the property CallerReference. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
+        /// A unique string that identifies the request to create the health check.
         /// </para>
         /// </summary>
         public string CallerReference
         {
-            get { return this.callerReference; }
-            set { this.callerReference = value; }
+            get { return this._callerReference; }
+            set { this._callerReference = value; }
         }
 
         // Check to see if CallerReference property is set
         internal bool IsSetCallerReference()
         {
-            return this.callerReference != null;
+            return this._callerReference != null;
         }
 
         /// <summary>
+        /// Gets and sets the property HealthCheckConfig. 
+        /// <para>
         /// A complex type that contains the health check configuration.
-        ///  
+        /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
         {
-            get { return this.healthCheckConfig; }
-            set { this.healthCheckConfig = value; }
+            get { return this._healthCheckConfig; }
+            set { this._healthCheckConfig = value; }
         }
 
         // Check to see if HealthCheckConfig property is set
         internal bool IsSetHealthCheckConfig()
         {
-            return this.healthCheckConfig != null;
+            return this._healthCheckConfig != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckVersion. 
+        /// <para>
+        /// The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code>
+        /// to prevent overwriting another change to the health check.
+        /// </para>
+        /// </summary>
+        public long HealthCheckVersion
+        {
+            get { return this._healthCheckVersion.GetValueOrDefault(); }
+            set { this._healthCheckVersion = value; }
+        }
+
+        // Check to see if HealthCheckVersion property is set
+        internal bool IsSetHealthCheckVersion()
+        {
+            return this._healthCheckVersion.HasValue; 
+        }
+
     }
 }

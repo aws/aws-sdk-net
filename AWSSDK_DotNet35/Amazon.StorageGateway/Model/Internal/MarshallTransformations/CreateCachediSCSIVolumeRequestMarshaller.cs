@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,69 +33,76 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cachedi S C S I Volume Request Marshaller
+    /// CreateCachediSCSIVolume Request Marshaller
     /// </summary>       
-    internal class CreateCachediSCSIVolumeRequestMarshaller : IMarshaller<IRequest, CreateCachediSCSIVolumeRequest> 
+    public class CreateCachediSCSIVolumeRequestMarshaller : IMarshaller<IRequest, CreateCachediSCSIVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreateCachediSCSIVolumeRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createCachediSCSIVolumeRequest, "AmazonStorageGateway");
+        public IRequest Marshall(CreateCachediSCSIVolumeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.CreateCachediSCSIVolume";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createCachediSCSIVolumeRequest != null && createCachediSCSIVolumeRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(createCachediSCSIVolumeRequest.GatewayARN);
-                }
-                if (createCachediSCSIVolumeRequest != null && createCachediSCSIVolumeRequest.IsSetVolumeSizeInBytes()) 
-                {
-                    writer.WritePropertyName("VolumeSizeInBytes");
-                    writer.Write(createCachediSCSIVolumeRequest.VolumeSizeInBytes);
-                }
-                if (createCachediSCSIVolumeRequest != null && createCachediSCSIVolumeRequest.IsSetSnapshotId()) 
-                {
-                    writer.WritePropertyName("SnapshotId");
-                    writer.Write(createCachediSCSIVolumeRequest.SnapshotId);
-                }
-                if (createCachediSCSIVolumeRequest != null && createCachediSCSIVolumeRequest.IsSetTargetName()) 
-                {
-                    writer.WritePropertyName("TargetName");
-                    writer.Write(createCachediSCSIVolumeRequest.TargetName);
-                }
-                if (createCachediSCSIVolumeRequest != null && createCachediSCSIVolumeRequest.IsSetNetworkInterfaceId()) 
-                {
-                    writer.WritePropertyName("NetworkInterfaceId");
-                    writer.Write(createCachediSCSIVolumeRequest.NetworkInterfaceId);
-                }
-                if (createCachediSCSIVolumeRequest != null && createCachediSCSIVolumeRequest.IsSetClientToken()) 
-                {
-                    writer.WritePropertyName("ClientToken");
-                    writer.Write(createCachediSCSIVolumeRequest.ClientToken);
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                if(publicRequest.IsSetGatewayARN())
+                {
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
+                }
+
+                if(publicRequest.IsSetNetworkInterfaceId())
+                {
+                    context.Writer.WritePropertyName("NetworkInterfaceId");
+                    context.Writer.Write(publicRequest.NetworkInterfaceId);
+                }
+
+                if(publicRequest.IsSetSnapshotId())
+                {
+                    context.Writer.WritePropertyName("SnapshotId");
+                    context.Writer.Write(publicRequest.SnapshotId);
+                }
+
+                if(publicRequest.IsSetTargetName())
+                {
+                    context.Writer.WritePropertyName("TargetName");
+                    context.Writer.Write(publicRequest.TargetName);
+                }
+
+                if(publicRequest.IsSetVolumeSizeInBytes())
+                {
+                    context.Writer.WritePropertyName("VolumeSizeInBytes");
+                    context.Writer.Write(publicRequest.VolumeSizeInBytes);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

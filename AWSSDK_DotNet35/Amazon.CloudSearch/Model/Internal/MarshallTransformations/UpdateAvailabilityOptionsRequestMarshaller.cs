@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Availability Options Request Marshaller
+    /// UpdateAvailabilityOptions Request Marshaller
     /// </summary>       
-    public class UpdateAvailabilityOptionsRequestMarshaller : IMarshaller<IRequest, UpdateAvailabilityOptionsRequest>
+    public class UpdateAvailabilityOptionsRequestMarshaller : IMarshaller<IRequest, UpdateAvailabilityOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(updateAvailabilityOptionsRequest, "AmazonCloudSearch");
+            return this.Marshall((UpdateAvailabilityOptionsRequest)input);
+        }
+    
+        public IRequest Marshall(UpdateAvailabilityOptionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "UpdateAvailabilityOptions");
             request.Parameters.Add("Version", "2013-01-01");
-            if (updateAvailabilityOptionsRequest != null && updateAvailabilityOptionsRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(updateAvailabilityOptionsRequest.DomainName));
-            }
-            if (updateAvailabilityOptionsRequest != null && updateAvailabilityOptionsRequest.IsSetMultiAZ())
-            {
-                request.Parameters.Add("MultiAZ", StringUtils.FromBool(updateAvailabilityOptionsRequest.MultiAZ));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
+            }
             return request;
         }
     }

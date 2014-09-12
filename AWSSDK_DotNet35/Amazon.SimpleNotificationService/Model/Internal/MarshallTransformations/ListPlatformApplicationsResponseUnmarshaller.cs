@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -109,7 +113,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return new AmazonSimpleNotificationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static ListPlatformApplicationsResponseUnmarshaller _instance = new ListPlatformApplicationsResponseUnmarshaller();        
 
         internal static ListPlatformApplicationsResponseUnmarshaller GetInstance()

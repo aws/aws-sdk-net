@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,60 +33,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Count Pending Decision Tasks Request Marshaller
+    /// CountPendingDecisionTasks Request Marshaller
     /// </summary>       
-    internal class CountPendingDecisionTasksRequestMarshaller : IMarshaller<IRequest, CountPendingDecisionTasksRequest> 
+    public class CountPendingDecisionTasksRequestMarshaller : IMarshaller<IRequest, CountPendingDecisionTasksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CountPendingDecisionTasksRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(countPendingDecisionTasksRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(CountPendingDecisionTasksRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.CountPendingDecisionTasks";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (countPendingDecisionTasksRequest != null && countPendingDecisionTasksRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(countPendingDecisionTasksRequest.Domain);
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
-                if (countPendingDecisionTasksRequest != null) 
+                if(publicRequest.IsSetTaskList())
                 {
-                    TaskList taskList = countPendingDecisionTasksRequest.TaskList;
-                    if (taskList != null)
-                    {
-                        writer.WritePropertyName("taskList");
-                        writer.WriteObjectStart();
-                        if (taskList != null && taskList.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(taskList.Name);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("taskList");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskListMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskList, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

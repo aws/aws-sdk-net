@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,14 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains information about the Amazon S3    bucket from which
-    /// you want CloudFront to get your media files for    distribution.
+    /// A complex type that contains information about the Amazon S3 bucket from which you
+    /// want CloudFront to get your media files for distribution.
     /// </summary>
     public partial class S3Origin
     {
         private string _domainName;
         private string _originAccessIdentity;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public S3Origin() { }
+
+        /// <summary>
+        /// Instantiates S3Origin with the parameterized properties
+        /// </summary>
+        /// <param name="domainName">The DNS name of the S3 origin.</param>
+        public S3Origin(string domainName)
+        {
+            _domainName = domainName;
+        }
+
+        /// <summary>
+        /// Instantiates S3Origin with the parameterized properties
+        /// </summary>
+        /// <param name="domainName">The DNS name of the S3 origin.</param>
+        /// <param name="originAccessIdentity">Your S3 origin's origin access identity.</param>
+        public S3Origin(string domainName, string originAccessIdentity)
+        {
+            _domainName = domainName;
+            _originAccessIdentity = originAccessIdentity;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. The DNS name of the S3 origin.
@@ -47,7 +75,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._domainName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property OriginAccessIdentity. Your S3 origin's origin access identity.

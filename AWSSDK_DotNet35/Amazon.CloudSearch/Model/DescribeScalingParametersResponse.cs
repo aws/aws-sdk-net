@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeScalingParameters response and response metadata.
+    /// Configuration for accessing Amazon DescribeScalingParameters service
     /// </summary>
     public partial class DescribeScalingParametersResponse : DescribeScalingParametersResult
     {
         /// <summary>
         /// Gets and sets the DescribeScalingParametersResult property.
-        /// The result of a DescribeScalingParameters request. Contains the scaling parameters configured for the domain specified in the request.
+        /// Represents the output of a DescribeScalingParameters operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeScalingParametersResult class are now available on the DescribeScalingParametersResponse class. You should use the properties on DescribeScalingParametersResponse instead of accessing them through DescribeScalingParametersResult.")]
         public DescribeScalingParametersResult DescribeScalingParametersResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

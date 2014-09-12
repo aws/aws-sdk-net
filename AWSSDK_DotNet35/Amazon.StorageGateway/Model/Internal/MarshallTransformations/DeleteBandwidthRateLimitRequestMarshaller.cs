@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Bandwidth Rate Limit Request Marshaller
+    /// DeleteBandwidthRateLimit Request Marshaller
     /// </summary>       
-    internal class DeleteBandwidthRateLimitRequestMarshaller : IMarshaller<IRequest, DeleteBandwidthRateLimitRequest> 
+    public class DeleteBandwidthRateLimitRequestMarshaller : IMarshaller<IRequest, DeleteBandwidthRateLimitRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteBandwidthRateLimitRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteBandwidthRateLimitRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DeleteBandwidthRateLimitRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DeleteBandwidthRateLimit";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteBandwidthRateLimitRequest != null && deleteBandwidthRateLimitRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBandwidthType())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(deleteBandwidthRateLimitRequest.GatewayARN);
-                }
-                if (deleteBandwidthRateLimitRequest != null && deleteBandwidthRateLimitRequest.IsSetBandwidthType()) 
-                {
-                    writer.WritePropertyName("BandwidthType");
-                    writer.Write(deleteBandwidthRateLimitRequest.BandwidthType);
+                    context.Writer.WritePropertyName("BandwidthType");
+                    context.Writer.Write(publicRequest.BandwidthType);
                 }
 
+                if(publicRequest.IsSetGatewayARN())
+                {
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

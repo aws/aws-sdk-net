@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.CloudSearchDomain.Model
         private List<Hit> _hit = new List<Hit>();
         private long? _start;
 
-
         /// <summary>
         /// Gets and sets the property Cursor. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._cursor != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Found. 
         /// <para>
@@ -72,7 +74,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._found.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Hit. 
         /// <para>
@@ -90,7 +91,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._hit != null && this._hit.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Start. 

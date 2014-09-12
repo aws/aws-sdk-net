@@ -12,24 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAvailabilityOptions response and response metadata.
+    /// Configuration for accessing Amazon DescribeAvailabilityOptions service
     /// </summary>
     public partial class DescribeAvailabilityOptionsResponse : DescribeAvailabilityOptionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeAvailabilityOptionsResult property.
-        /// The result of a DescribeAvailabilityOptions request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the
-        /// request.
+        /// Represents the output of a DescribeAvailabilityOptions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAvailabilityOptionsResult class are now available on the DescribeAvailabilityOptionsResponse class. You should use the properties on DescribeAvailabilityOptionsResponse instead of accessing them through DescribeAvailabilityOptionsResult.")]
         public DescribeAvailabilityOptionsResult DescribeAvailabilityOptionsResult
@@ -41,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

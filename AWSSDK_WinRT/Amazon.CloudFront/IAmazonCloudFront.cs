@@ -13,18 +13,22 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.CloudFront.Model;
 
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Implementation for accessing CloudFront
+    /// Interface for accessing CloudFront
     ///
     /// 
     /// </summary>
@@ -32,6 +36,7 @@ namespace Amazon.CloudFront
     {
                 
         #region  CreateCloudFrontOriginAccessIdentity
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCloudFrontOriginAccessIdentity operation.
@@ -49,6 +54,7 @@ namespace Amazon.CloudFront
                 
         #region  CreateDistribution
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -64,6 +70,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  CreateInvalidation
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInvalidation operation.
@@ -81,6 +88,7 @@ namespace Amazon.CloudFront
                 
         #region  CreateStreamingDistribution
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -96,6 +104,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  DeleteCloudFrontOriginAccessIdentity
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
@@ -113,6 +122,7 @@ namespace Amazon.CloudFront
                 
         #region  DeleteDistribution
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -128,6 +138,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  DeleteStreamingDistribution
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
@@ -145,6 +156,7 @@ namespace Amazon.CloudFront
                 
         #region  GetCloudFrontOriginAccessIdentity
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentity operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -160,6 +172,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetCloudFrontOriginAccessIdentityConfig
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
@@ -177,6 +190,7 @@ namespace Amazon.CloudFront
                 
         #region  GetDistribution
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -192,6 +206,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetDistributionConfig
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistributionConfig operation.
@@ -209,6 +224,7 @@ namespace Amazon.CloudFront
                 
         #region  GetInvalidation
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetInvalidation operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -224,6 +240,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetStreamingDistribution
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
@@ -241,6 +258,7 @@ namespace Amazon.CloudFront
                 
         #region  GetStreamingDistributionConfig
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -256,6 +274,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  ListCloudFrontOriginAccessIdentities
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListCloudFrontOriginAccessIdentities operation.
@@ -273,6 +292,7 @@ namespace Amazon.CloudFront
                 
         #region  ListDistributions
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDistributions operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -288,6 +308,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  ListInvalidations
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInvalidations operation.
@@ -305,6 +326,7 @@ namespace Amazon.CloudFront
                 
         #region  ListStreamingDistributions
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -320,6 +342,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  UpdateCloudFrontOriginAccessIdentity
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
@@ -337,6 +360,7 @@ namespace Amazon.CloudFront
                 
         #region  UpdateDistribution
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -352,6 +376,7 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  UpdateStreamingDistribution
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStreamingDistribution operation.

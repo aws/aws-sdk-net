@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,75 +29,47 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSuggester operation.
-    /// <para>Deletes a suggester. For more information, see <a
-    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html" >Getting Search Suggestions</a> in the
-    /// <i>Amazon CloudSearch Developer Guide</i> .</para>
+    /// Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
+    /// target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer
+    /// Guide</i>.
     /// </summary>
     public partial class DeleteSuggesterRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private string suggesterName;
-
+        private string _domainName;
+        private string _suggesterName;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property DomainName.
         /// </summary>
         public string DomainName
         {
-            get { return this.domainName; }
-            set { this.domainName = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;
+            return this._domainName != null;
         }
 
         /// <summary>
-        /// Specifies the name of the suggester you want to delete.
-        ///  
+        /// Gets and sets the property SuggesterName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
+        /// Specifies the name of the suggester you want to delete.
         /// </para>
         /// </summary>
         public string SuggesterName
         {
-            get { return this.suggesterName; }
-            set { this.suggesterName = value; }
+            get { return this._suggesterName; }
+            set { this._suggesterName = value; }
         }
 
         // Check to see if SuggesterName property is set
         internal bool IsSetSuggesterName()
         {
-            return this.suggesterName != null;
+            return this._suggesterName != null;
         }
 
     }
 }
-    

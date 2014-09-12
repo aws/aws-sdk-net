@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetOpenIdToken Request Marshaller
     /// </summary>       
-    public class GetOpenIdTokenRequestMarshaller : IMarshaller<IRequest, GetOpenIdTokenRequest> 
+    public class GetOpenIdTokenRequestMarshaller : IMarshaller<IRequest, GetOpenIdTokenRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((GetOpenIdTokenRequest)input);
+        }
+
         public IRequest Marshall(GetOpenIdTokenRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoIdentity");
@@ -47,24 +56,25 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetIdentityId())
                 {
-                    writer.WritePropertyName("IdentityId");
-                    writer.Write(publicRequest.IdentityId);
+                    context.Writer.WritePropertyName("IdentityId");
+                    context.Writer.Write(publicRequest.IdentityId);
                 }
 
                 if(publicRequest.IsSetLogins())
                 {
-                    writer.WritePropertyName("Logins");
-                    writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("Logins");
+                    context.Writer.WriteObjectStart();
                     foreach (var publicRequestLoginsKvp in publicRequest.Logins)
                     {
-                        writer.WritePropertyName(publicRequestLoginsKvp.Key);
+                        context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
                         var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
 
-                        writer.Write(publicRequestLoginsValue);
+                            context.Writer.Write(publicRequestLoginsValue);
                     }
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
         

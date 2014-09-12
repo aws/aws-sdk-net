@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,85 +29,73 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the SetStackPolicy operation.
-    /// <para>Sets a stack policy for a specified stack.</para>
+    /// Sets a stack policy for a specified stack.
     /// </summary>
     public partial class SetStackPolicyRequest : AmazonCloudFormationRequest
     {
-        private string stackName;
-        private string stackPolicyBody;
-        private string stackPolicyURL;
-
+        private string _stackName;
+        private string _stackPolicyBody;
+        private string _stackPolicyURL;
 
         /// <summary>
+        /// Gets and sets the property StackName. 
+        /// <para>
         /// The name or stack ID that you want to associate a policy with.
-        ///  
+        /// </para>
         /// </summary>
         public string StackName
         {
-            get { return this.stackName; }
-            set { this.stackName = value; }
+            get { return this._stackName; }
+            set { this._stackName = value; }
         }
 
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;
+            return this._stackName != null;
         }
 
         /// <summary>
-        /// Structure containing the stack policy body. (For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in
-        /// the AWS CloudFormation User Guide.) You must pass <c>StackPolicyBody</c> or <c>StackPolicyURL</c>. If both are passed, only
-        /// <c>StackPolicyBody</c> is used.
-        ///  
+        /// Gets and sets the property StackPolicyBody. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16384</description>
-        ///     </item>
-        /// </list>
+        /// Structure containing the stack policy body. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+        /// Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can
+        /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// parameter, but not both.
         /// </para>
         /// </summary>
         public string StackPolicyBody
         {
-            get { return this.stackPolicyBody; }
-            set { this.stackPolicyBody = value; }
+            get { return this._stackPolicyBody; }
+            set { this._stackPolicyBody = value; }
         }
 
         // Check to see if StackPolicyBody property is set
         internal bool IsSetStackPolicyBody()
         {
-            return this.stackPolicyBody != null;
+            return this._stackPolicyBody != null;
         }
 
         /// <summary>
-        /// Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region
-        /// as the stack. You must pass <c>StackPolicyBody</c> or <c>StackPolicyURL</c>. If both are passed, only <c>StackPolicyBody</c> is used.
-        ///  
+        /// Gets and sets the property StackPolicyURL. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1350</description>
-        ///     </item>
-        /// </list>
+        /// Location of a file containing the stack policy. The URL must point to a policy (max
+        /// size: 16KB) located in an S3 bucket in the same region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter,
+        /// but not both.
         /// </para>
         /// </summary>
         public string StackPolicyURL
         {
-            get { return this.stackPolicyURL; }
-            set { this.stackPolicyURL = value; }
+            get { return this._stackPolicyURL; }
+            set { this._stackPolicyURL = value; }
         }
 
         // Check to see if StackPolicyURL property is set
         internal bool IsSetStackPolicyURL()
         {
-            return this.stackPolicyURL != null;
+            return this._stackPolicyURL != null;
         }
 
     }
 }
-    

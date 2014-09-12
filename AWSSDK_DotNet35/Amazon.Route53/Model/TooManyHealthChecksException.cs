@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.Route53.Model
 {
     ///<summary>
-    /// AmazonRoute53 exception
+    /// Route53 exception
     /// </summary>
     public class TooManyHealthChecksException : AmazonRoute53Exception 
     {
@@ -45,6 +49,5 @@ namespace Amazon.Route53.Model
         public TooManyHealthChecksException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

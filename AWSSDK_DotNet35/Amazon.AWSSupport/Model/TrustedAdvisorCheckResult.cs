@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.AWSSupport.Model
         private string _status;
         private string _timestamp;
 
-
         /// <summary>
         /// Gets and sets the property CategorySpecificSummary. 
         /// <para>
@@ -55,7 +58,6 @@ namespace Amazon.AWSSupport.Model
             return this._categorySpecificSummary != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CheckId. 
         /// <para>
@@ -73,7 +75,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._checkId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property FlaggedResources. 
@@ -93,7 +94,6 @@ namespace Amazon.AWSSupport.Model
             return this._flaggedResources != null && this._flaggedResources.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ResourcesSummary.
         /// </summary>
@@ -108,7 +108,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._resourcesSummary != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -128,7 +127,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Timestamp. 

@@ -12,38 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeTable</i> operation.</para>
+    /// Represents the output of a <i>DescribeTable</i> operation.
     /// </summary>
     public partial class DescribeTableResult : AmazonWebServiceResponse
     {
-        
-        private TableDescription table;
-
+        private TableDescription _table;
 
         /// <summary>
-        /// Represents the properties of a table.
-        ///  
+        /// Gets and sets the property Table.
         /// </summary>
         public TableDescription Table
         {
-            get { return this.table; }
-            set { this.table = value; }
+            get { return this._table; }
+            set { this._table = value; }
         }
 
         // Check to see if Table property is set
         internal bool IsSetTable()
         {
-            return this.table != null;
+            return this._table != null;
         }
+
     }
 }

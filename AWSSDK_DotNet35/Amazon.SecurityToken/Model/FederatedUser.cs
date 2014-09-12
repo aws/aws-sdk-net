@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.SecurityToken.Model
         private string _arn;
         private string _federatedUserId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public FederatedUser() { }
+
+        /// <summary>
+        /// Instantiates FederatedUser with the parameterized properties
+        /// </summary>
+        /// <param name="federatedUserId">The string that identifies the federated user associated with the credentials, similar to the   unique ID of an IAM user.</param>
+        /// <param name="arn">The ARN that specifies the federated user that is associated with the credentials. For more   information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>. </param>
+        public FederatedUser(string federatedUserId, string arn)
+        {
+            _federatedUserId = federatedUserId;
+            _arn = arn;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -51,7 +70,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._arn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property FederatedUserId. 

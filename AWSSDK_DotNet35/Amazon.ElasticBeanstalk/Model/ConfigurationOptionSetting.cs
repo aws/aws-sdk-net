@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A specification identifying an individual configuration option along with
-    /// its         current value. For a list of possible option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+    /// A specification identifying an individual configuration option along with its current
+    /// value. For a list of possible option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
     /// Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
     /// </summary>
     public partial class ConfigurationOptionSetting
@@ -34,11 +38,28 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _optionName;
         private string _value;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ConfigurationOptionSetting() { }
+
+        /// <summary>
+        /// Instantiates ConfigurationOptionSetting with the parameterized properties
+        /// </summary>
+        /// <param name="awsNamespace"> A unique namespace identifying the option's associated AWS resource. </param>
+        /// <param name="optionName"> The name of the configuration option. </param>
+        /// <param name="value"> The current value for the configuration option. </param>
+        public ConfigurationOptionSetting(string awsNamespace, string optionName, string value)
+        {
+            _namespace = awsNamespace;
+            _optionName = optionName;
+            _value = value;
+        }
 
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///          A unique namespace identifying the option's associated AWS resource.        
+        ///  A unique namespace identifying the option's associated AWS resource. 
         /// </para>
         /// </summary>
         public string Namespace
@@ -53,11 +74,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._namespace != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionName. 
         /// <para>
-        ///          The name of the configuration option.         
+        ///  The name of the configuration option. 
         /// </para>
         /// </summary>
         public string OptionName
@@ -72,11 +92,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._optionName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///          The current value for the configuration option.        
+        ///  The current value for the configuration option. 
         /// </para>
         /// </summary>
         public string Value

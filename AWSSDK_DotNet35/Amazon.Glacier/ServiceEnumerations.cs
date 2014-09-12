@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,30 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.Glacier
 {
 
-
-    /// <summary>Action Code
+    /// <summary>
+    /// Constants used for properties of type ActionCode.
     /// </summary>
     public class ActionCode : ConstantClass
     {
 
-
-       /// <summary>Constant ArchiveRetrieval for ActionCode
-       /// </summary>
+        /// <summary>
+        /// Constant ArchiveRetrieval for ActionCode
+        /// </summary>
         public static readonly ActionCode ArchiveRetrieval = new ActionCode("ArchiveRetrieval");
-    
-
-       /// <summary>Constant InventoryRetrieval for ActionCode
-       /// </summary>
+        /// <summary>
+        /// Constant InventoryRetrieval for ActionCode
+        /// </summary>
         public static readonly ActionCode InventoryRetrieval = new ActionCode("InventoryRetrieval");
-    
 
         /// <summary>
         /// Default Constructor
@@ -60,28 +62,26 @@ namespace Amazon.Glacier
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Status Code
+
+    /// <summary>
+    /// Constants used for properties of type StatusCode.
     /// </summary>
     public class StatusCode : ConstantClass
     {
 
-
-       /// <summary>Constant Failed for StatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant Failed for StatusCode
+        /// </summary>
         public static readonly StatusCode Failed = new StatusCode("Failed");
-    
-
-       /// <summary>Constant InProgress for StatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant InProgress for StatusCode
+        /// </summary>
         public static readonly StatusCode InProgress = new StatusCode("InProgress");
-    
-
-       /// <summary>Constant Succeeded for StatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant Succeeded for StatusCode
+        /// </summary>
         public static readonly StatusCode Succeeded = new StatusCode("Succeeded");
-    
 
         /// <summary>
         /// Default Constructor
@@ -106,7 +106,5 @@ namespace Amazon.Glacier
             return FindValue(value);
         }
     }
-    
 
 }
-        

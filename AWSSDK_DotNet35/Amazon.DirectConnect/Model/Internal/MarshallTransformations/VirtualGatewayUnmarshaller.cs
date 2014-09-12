@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DirectConnect.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DirectConnect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VirtualGateway Object
+    /// </summary>  
+    public class VirtualGatewayUnmarshaller : IUnmarshaller<VirtualGateway, XmlUnmarshallerContext>, IUnmarshaller<VirtualGateway, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VirtualGatewayUnmarshaller
-      /// </summary>
-      internal class VirtualGatewayUnmarshaller : IUnmarshaller<VirtualGateway, XmlUnmarshallerContext>, IUnmarshaller<VirtualGateway, JsonUnmarshallerContext>
-      {
         VirtualGateway IUnmarshaller<VirtualGateway, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VirtualGateway Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VirtualGateway virtualGateway = new VirtualGateway();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VirtualGateway unmarshalledObject = new VirtualGateway();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("virtualGatewayId", targetDepth))
-              {
-                virtualGateway.VirtualGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("virtualGatewayState", targetDepth))
-              {
-                virtualGateway.VirtualGatewayState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("virtualGatewayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VirtualGatewayId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualGatewayState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VirtualGatewayState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return virtualGateway;
+            return unmarshalledObject;
         }
 
-        private static VirtualGatewayUnmarshaller instance;
-        public static VirtualGatewayUnmarshaller GetInstance()
+
+        private static VirtualGatewayUnmarshaller _instance = new VirtualGatewayUnmarshaller();        
+
+        public static VirtualGatewayUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VirtualGatewayUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

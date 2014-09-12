@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for RequestCancelExternalWorkflowExecutionInitiatedEventAttributes Object
+    /// </summary>  
+    public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller : IUnmarshaller<RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller
-      /// </summary>
-      internal class RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller : IUnmarshaller<RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, JsonUnmarshallerContext>
-      {
         RequestCancelExternalWorkflowExecutionInitiatedEventAttributes IUnmarshaller<RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            RequestCancelExternalWorkflowExecutionInitiatedEventAttributes requestCancelExternalWorkflowExecutionInitiatedEventAttributes = new RequestCancelExternalWorkflowExecutionInitiatedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            RequestCancelExternalWorkflowExecutionInitiatedEventAttributes unmarshalledObject = new RequestCancelExternalWorkflowExecutionInitiatedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("workflowId", targetDepth))
-              {
-                requestCancelExternalWorkflowExecutionInitiatedEventAttributes.WorkflowId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("runId", targetDepth))
-              {
-                requestCancelExternalWorkflowExecutionInitiatedEventAttributes.RunId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
-              {
-                requestCancelExternalWorkflowExecutionInitiatedEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("control", targetDepth))
-              {
-                requestCancelExternalWorkflowExecutionInitiatedEventAttributes.Control = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("control", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Control = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return requestCancelExternalWorkflowExecutionInitiatedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller instance;
-        public static RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller GetInstance()
+
+        private static RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller _instance = new RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller();        
+
+        public static RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RequestCancelExternalWorkflowExecutionInitiatedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

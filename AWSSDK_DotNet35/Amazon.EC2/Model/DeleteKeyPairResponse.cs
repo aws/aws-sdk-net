@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteKeyPair response metadata.
-    /// The DeleteKeyPair operation has a void result type.
+    /// Configuration for accessing Amazon DeleteKeyPair service
     /// </summary>
-    public partial class DeleteKeyPairResponse : AmazonWebServiceResponse
+    public partial class DeleteKeyPairResponse : DeleteKeyPairResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteKeyPairResult property.
+        /// Represents the output of a DeleteKeyPair operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteKeyPairResult class are now available on the DeleteKeyPairResponse class. You should use the properties on DeleteKeyPairResponse instead of accessing them through DeleteKeyPairResult.")]
+        public DeleteKeyPairResult DeleteKeyPairResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

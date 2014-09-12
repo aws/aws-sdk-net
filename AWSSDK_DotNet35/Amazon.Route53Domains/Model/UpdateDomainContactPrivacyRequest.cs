@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -28,7 +32,7 @@ namespace Amazon.Route53Domains.Model
     /// This operation updates the specified domain contact's privacy setting. When the privacy
     /// option is enabled, personal information such as postal or email address is hidden
     /// from the results of a public WHOIS query. The privacy services are provided by the
-    /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;lang=en">Gandi
+    /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
     /// privacy features</a>.
     /// 
     ///  
@@ -46,7 +50,6 @@ namespace Amazon.Route53Domains.Model
         private string _domainName;
         private bool? _registrantPrivacy;
         private bool? _techPrivacy;
-
 
         /// <summary>
         /// Gets and sets the property AdminPrivacy. 
@@ -84,7 +87,6 @@ namespace Amazon.Route53Domains.Model
             return this._adminPrivacy.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
@@ -119,7 +121,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._domainName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RegistrantPrivacy. 
@@ -156,7 +157,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._registrantPrivacy.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property TechPrivacy. 

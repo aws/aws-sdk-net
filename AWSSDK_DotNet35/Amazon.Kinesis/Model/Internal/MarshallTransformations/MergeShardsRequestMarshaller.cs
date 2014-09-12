@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Merge Shards Request Marshaller
+    /// MergeShards Request Marshaller
     /// </summary>       
-    internal class MergeShardsRequestMarshaller : IMarshaller<IRequest, MergeShardsRequest> 
+    public class MergeShardsRequestMarshaller : IMarshaller<IRequest, MergeShardsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(MergeShardsRequest mergeShardsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((MergeShardsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(mergeShardsRequest, "AmazonKinesis");
+        public IRequest Marshall(MergeShardsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.MergeShards";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (mergeShardsRequest != null && mergeShardsRequest.IsSetStreamName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdjacentShardToMerge())
                 {
-                    writer.WritePropertyName("StreamName");
-                    writer.Write(mergeShardsRequest.StreamName);
-                }
-                if (mergeShardsRequest != null && mergeShardsRequest.IsSetShardToMerge()) 
-                {
-                    writer.WritePropertyName("ShardToMerge");
-                    writer.Write(mergeShardsRequest.ShardToMerge);
-                }
-                if (mergeShardsRequest != null && mergeShardsRequest.IsSetAdjacentShardToMerge()) 
-                {
-                    writer.WritePropertyName("AdjacentShardToMerge");
-                    writer.Write(mergeShardsRequest.AdjacentShardToMerge);
+                    context.Writer.WritePropertyName("AdjacentShardToMerge");
+                    context.Writer.Write(publicRequest.AdjacentShardToMerge);
                 }
 
+                if(publicRequest.IsSetShardToMerge())
+                {
+                    context.Writer.WritePropertyName("ShardToMerge");
+                    context.Writer.Write(publicRequest.ShardToMerge);
+                }
+
+                if(publicRequest.IsSetStreamName())
+                {
+                    context.Writer.WritePropertyName("StreamName");
+                    context.Writer.Write(publicRequest.StreamName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

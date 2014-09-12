@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Security Group Request Marshaller
+    /// DeleteSecurityGroup Request Marshaller
     /// </summary>       
-    public class DeleteSecurityGroupRequestMarshaller : IMarshaller<IRequest, DeleteSecurityGroupRequest>
+    public class DeleteSecurityGroupRequestMarshaller : IMarshaller<IRequest, DeleteSecurityGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteSecurityGroupRequest deleteSecurityGroupRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteSecurityGroupRequest, "AmazonEC2");
+            return this.Marshall((DeleteSecurityGroupRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteSecurityGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DeleteSecurityGroup");
             request.Parameters.Add("Version", "2014-06-15");
-            if (deleteSecurityGroupRequest != null && deleteSecurityGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(deleteSecurityGroupRequest.GroupName));
-            }
-            if (deleteSecurityGroupRequest != null && deleteSecurityGroupRequest.IsSetGroupId())
-            {
-                request.Parameters.Add("GroupId", StringUtils.FromString(deleteSecurityGroupRequest.GroupId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGroupId())
+                {
+                    request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
+                }
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+            }
             return request;
         }
     }

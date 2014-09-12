@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,7 +53,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _paddingPolicy;
         private string _sizingPolicy;
 
-
         /// <summary>
         /// Gets and sets the property AlbumArtFormat. 
         /// <para>
@@ -67,7 +70,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._albumArtFormat != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InputKey. 
@@ -96,7 +98,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._inputKey != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxHeight. 
         /// <para>
@@ -116,7 +117,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._maxHeight != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxWidth. 
@@ -138,7 +138,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._maxWidth != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PaddingPolicy. 
         /// <para>
@@ -159,7 +158,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._paddingPolicy != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SizingPolicy. 

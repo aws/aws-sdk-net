@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,12 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplicationVersion operation.
-    /// Updates the specified application version to have the specified         properties.
-    ///               
-    /// 
-    ///       <note>         If a property (for example,         <code>description</code>)
-    /// is not provided, the         value remains unchanged. To clear properties,       
-    ///  specify an empty string.      </note>
+    /// Updates the specified application version to have the specified properties.
     /// </summary>
     public partial class UpdateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
@@ -38,16 +37,31 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _description;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public UpdateApplicationVersionRequest() { }
+
+        /// <summary>
+        /// Instantiates UpdateApplicationVersionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="applicationName"> The name of the application associated with this version.   If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="versionLabel">The name of the version to update.  If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
+        public UpdateApplicationVersionRequest(string applicationName, string versionLabel)
+        {
+            _applicationName = applicationName;
+            _versionLabel = versionLabel;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application associated with this version.      
+        ///  The name of the application associated with this version. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no application is found with this name, <code>UpdateApplication</code>
-        /// returns an         <code>InvalidParameterValue</code>         error.      
+        ///  If no application is found with this name, <code>UpdateApplication</code> returns
+        /// an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -61,7 +75,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._applicationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -81,17 +94,15 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
         /// The name of the version to update.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no application version is found with this label, <code>UpdateApplication</code>
-        /// returns         an         <code>InvalidParameterValue</code>         error.     
-        /// 
+        ///  If no application version is found with this label, <code>UpdateApplication</code>
+        /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string VersionLabel

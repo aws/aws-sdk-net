@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ReplaceRoute response metadata.
-    /// The ReplaceRoute operation has a void result type.
+    /// Configuration for accessing Amazon ReplaceRoute service
     /// </summary>
-    public partial class ReplaceRouteResponse : AmazonWebServiceResponse
+    public partial class ReplaceRouteResponse : ReplaceRouteResult
     {
+        /// <summary>
+        /// Gets and sets the ReplaceRouteResult property.
+        /// Represents the output of a ReplaceRoute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ReplaceRouteResult class are now available on the ReplaceRouteResponse class. You should use the properties on ReplaceRouteResponse instead of accessing them through ReplaceRouteResult.")]
+        public ReplaceRouteResult ReplaceRouteResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

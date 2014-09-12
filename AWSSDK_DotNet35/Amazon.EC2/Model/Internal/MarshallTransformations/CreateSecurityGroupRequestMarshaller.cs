@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Security Group Request Marshaller
+    /// CreateSecurityGroup Request Marshaller
     /// </summary>       
-    public class CreateSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateSecurityGroupRequest>
+    public class CreateSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateSecurityGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateSecurityGroupRequest createSecurityGroupRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createSecurityGroupRequest, "AmazonEC2");
+            return this.Marshall((CreateSecurityGroupRequest)input);
+        }
+    
+        public IRequest Marshall(CreateSecurityGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateSecurityGroup");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createSecurityGroupRequest != null && createSecurityGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(createSecurityGroupRequest.GroupName));
-            }
-            if (createSecurityGroupRequest != null && createSecurityGroupRequest.IsSetDescription())
-            {
-                request.Parameters.Add("GroupDescription", StringUtils.FromString(createSecurityGroupRequest.Description));
-            }
-            if (createSecurityGroupRequest != null && createSecurityGroupRequest.IsSetVpcId())
-            {
-                request.Parameters.Add("VpcId", StringUtils.FromString(createSecurityGroupRequest.VpcId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("GroupDescription", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
+                }
+            }
             return request;
         }
     }

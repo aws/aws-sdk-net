@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotsResult : AmazonWebServiceResponse
     {
-        
-        private List<Snapshot> snapshots = new List<Snapshot>();
-
+        private List<Snapshot> _snapshots = new List<Snapshot>();
 
         /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Snapshots.
         /// </summary>
         public List<Snapshot> Snapshots
         {
-            get { return this.snapshots; }
-            set { this.snapshots = value; }
+            get { return this._snapshots; }
+            set { this._snapshots = value; }
         }
 
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this.snapshots.Count > 0;
+            return this._snapshots != null && this._snapshots.Count > 0; 
         }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,71 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Represents an activity type. </para>
+    /// Represents an activity type.
     /// </summary>
-    public class ActivityType
+    public partial class ActivityType
     {
-        
-        private string name;
-        private string version;
+        private string _name;
+        private string _version;
 
         /// <summary>
-        /// The name of this activity. <note>The combination of activity type name and version must be unique within a domain.</note>
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
+        ///  The name of this activity. 
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// The version of this activity. <note>The combination of activity type name and version must be unique with in a domain.</note>
-        ///  
+        /// Gets and sets the property Version. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
+        ///  The version of this activity. 
         /// </para>
         /// </summary>
         public string Version
         {
-            get { return this.version; }
-            set { this.version = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
         // Check to see if Version property is set
         internal bool IsSetVersion()
         {
-            return this.version != null;
+            return this._version != null;
         }
+
     }
 }

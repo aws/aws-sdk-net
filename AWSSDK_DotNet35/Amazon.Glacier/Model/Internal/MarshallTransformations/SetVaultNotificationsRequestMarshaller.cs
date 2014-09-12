@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,66 +33,43 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Vault Notifications Request Marshaller
+    /// SetVaultNotifications Request Marshaller
     /// </summary>       
-    internal class SetVaultNotificationsRequestMarshaller : IMarshaller<IRequest, SetVaultNotificationsRequest> 
+    public class SetVaultNotificationsRequestMarshaller : IMarshaller<IRequest, SetVaultNotificationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(SetVaultNotificationsRequest setVaultNotificationsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((SetVaultNotificationsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(setVaultNotificationsRequest, "AmazonGlacier");
-            string target = "Glacier.SetVaultNotifications";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+        public IRequest Marshall(SetVaultNotificationsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
-            if(setVaultNotificationsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(setVaultNotificationsRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(setVaultNotificationsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(setVaultNotificationsRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setVaultNotificationsRequest.VaultNotificationConfig != null && setVaultNotificationsRequest.VaultNotificationConfig.IsSetSNSTopic()) 
-                {
-                    writer.WritePropertyName("SNSTopic");
-                    writer.Write(setVaultNotificationsRequest.VaultNotificationConfig.SNSTopic);
-                }
+                var context = new JsonMarshallerContext(request, writer);
 
-                if (setVaultNotificationsRequest.VaultNotificationConfig != null && setVaultNotificationsRequest.VaultNotificationConfig.Events != null && setVaultNotificationsRequest.VaultNotificationConfig.Events.Count > 0) 
-                {
-                    List<string> eventsList = setVaultNotificationsRequest.VaultNotificationConfig.Events;
-                    writer.WritePropertyName("Events");
-                    writer.WriteArrayStart();
-
-                    foreach (string eventsListValue in eventsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(eventsListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-
+                var marshaller = VaultNotificationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VaultNotificationConfig, context);
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

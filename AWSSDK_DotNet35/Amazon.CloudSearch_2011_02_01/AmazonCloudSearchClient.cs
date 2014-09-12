@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,8 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+
+
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CloudSearch_2011_02_01.Model;
 using Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations;
@@ -22,31 +28,28 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
-
 namespace Amazon.CloudSearch_2011_02_01
 {
     /// <summary>
-    /// Implementation for accessing AmazonCloudSearch.
+    /// Implementation for accessing CloudSearch
+    ///
+    /// Amazon CloudSearch Configuration Service 
+    /// <para>
+    /// You use the configuration service to create, configure, and manage search domains.
+    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query
+    /// requests are HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter
+    /// named Action.
+    /// </para>
     ///  
-    /// Amazon CloudSearch Configuration Service <para>You use the configuration service to create, configure, and manage search domains.
-    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP
-    /// GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
-    /// cloudsearch. <i>region</i> .amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and
-    /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region" >Regions and Endpoints</a> .</para>
+    /// <para>
+    /// The endpoint for configuration service requests is region-specific: cloudsearch.<i>region</i>.amazonaws.com.
+    /// For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported
+    /// regions and endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region">Regions
+    /// and Endpoints</a>.
+    /// </para>
     /// </summary>
-    public partial class AmazonCloudSearchClient : AmazonWebServiceClient, IAmazonCloudSearch
+    public partial class AmazonCloudSearchClient : AmazonServiceClient, IAmazonCloudSearch
     {
-    AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -58,15 +61,14 @@ namespace Amazon.CloudSearch_2011_02_01
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>
         ///
         /// </summary>
         public AmazonCloudSearchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
@@ -77,8 +79,7 @@ namespace Amazon.CloudSearch_2011_02_01
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>
@@ -86,7 +87,7 @@ namespace Amazon.CloudSearch_2011_02_01
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudSearchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
@@ -97,16 +98,15 @@ namespace Amazon.CloudSearch_2011_02_01
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonCloudSearch Configuration Object</param>
+        /// <param name="config">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(AmazonCloudSearchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with AWS Credentials
@@ -134,7 +134,7 @@ namespace Amazon.CloudSearch_2011_02_01
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(AWSCredentials credentials, AmazonCloudSearchConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -167,7 +167,7 @@ namespace Amazon.CloudSearch_2011_02_01
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudSearchConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -203,1412 +203,1521 @@ namespace Amazon.CloudSearch_2011_02_01
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudSearchConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
         #endregion
 
+        #region Overrides
 
-        #region CreateDomain
-
-        /// <summary>
-        /// <para>Creates a new search domain.</para>
-        /// </summary>
-        /// 
-        /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the CreateDomain service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        public CreateDomainResponse CreateDomain(CreateDomainRequest createDomainRequest)
+        protected override AbstractAWSSigner CreateSigner()
         {
-            IAsyncResult asyncResult = invokeCreateDomain(createDomainRequest, null, null, true);
-            return EndCreateDomain(asyncResult);
+            return new AWS4Signer();
         }
 
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         
+        #region  CreateDomain
+
+        /// <summary>
+        /// Creates a new search domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
+        /// 
+        /// <returns>The response from the CreateDomain service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        public CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        {
+            var marshaller = new CreateDomainRequestMarshaller();
+            var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.CreateDomain"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain operation on AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomain operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomain
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDomain(CreateDomainRequest createDomainRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateDomain(createDomainRequest, callback, state, false);
+            var marshaller = new CreateDomainRequestMarshaller();
+            var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateDomain operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.CreateDomain"/>
+        /// Finishes the asynchronous execution of the  CreateDomain operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
         /// 
-        /// <returns>Returns a CreateDomainResult from AmazonCloudSearch.</returns>
-        public CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDomainResult from CloudSearch.</returns>
+        public  CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
         {
-            return endOperation<CreateDomainResponse>(asyncResult);
+            return EndInvoke<CreateDomainResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeCreateDomain(CreateDomainRequest createDomainRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateDomainRequestMarshaller().Marshall(createDomainRequest);
-            var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DefineIndexField
+        
+        #region  DefineIndexField
 
         /// <summary>
-        /// <para>Configures an <c>IndexField</c> for the search domain. Used to create new fields and modify existing ones. If the field exists, the
-        /// new configuration replaces the old one. You can configure a maximum of 200 index fields.</para>
+        /// Configures an <code>IndexField</code> for the search domain. Used to create new fields
+        /// and modify existing ones. If the field exists, the new configuration replaces the
+        /// old one. You can configure a maximum of 200 index fields.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DefineIndexField service method.</param>
         /// 
-        /// <param name="defineIndexFieldRequest">Container for the necessary parameters to execute the DefineIndexField service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DefineIndexField service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest defineIndexFieldRequest)
+        /// <returns>The response from the DefineIndexField service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
-            IAsyncResult asyncResult = invokeDefineIndexField(defineIndexFieldRequest, null, null, true);
-            return EndDefineIndexField(asyncResult);
-        }
+            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DefineIndexFieldRequest,DefineIndexFieldResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DefineIndexField"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="defineIndexFieldRequest">Container for the necessary parameters to execute the DefineIndexField operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DefineIndexField operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineIndexField
         ///         operation.</returns>
-        public IAsyncResult BeginDefineIndexField(DefineIndexFieldRequest defineIndexFieldRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDefineIndexField(DefineIndexFieldRequest request, AsyncCallback callback, object state)
         {
-            return invokeDefineIndexField(defineIndexFieldRequest, callback, state, false);
+            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DefineIndexFieldRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DefineIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DefineIndexField"/>
+        /// Finishes the asynchronous execution of the  DefineIndexField operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineIndexField.</param>
         /// 
-        /// <returns>Returns a DefineIndexFieldResult from AmazonCloudSearch.</returns>
-        public DefineIndexFieldResponse EndDefineIndexField(IAsyncResult asyncResult)
+        /// <returns>Returns a  DefineIndexFieldResult from CloudSearch.</returns>
+        public  DefineIndexFieldResponse EndDefineIndexField(IAsyncResult asyncResult)
         {
-            return endOperation<DefineIndexFieldResponse>(asyncResult);
+            return EndInvoke<DefineIndexFieldResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDefineIndexField(DefineIndexFieldRequest defineIndexFieldRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DefineIndexFieldRequestMarshaller().Marshall(defineIndexFieldRequest);
-            var unmarshaller = DefineIndexFieldResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DefineRankExpression
+        
+        #region  DefineRankExpression
 
         /// <summary>
-        /// <para>Configures a <c>RankExpression</c> for the search domain. Used to create new rank expressions and modify existing ones. If the
-        /// expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.</para>
+        /// Configures a <code>RankExpression</code> for the search domain. Used to create new
+        /// rank expressions and modify existing ones. If the expression exists, the new configuration
+        /// replaces the old one. You can configure a maximum of 50 rank expressions.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DefineRankExpression service method.</param>
         /// 
-        /// <param name="defineRankExpressionRequest">Container for the necessary parameters to execute the DefineRankExpression service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DefineRankExpression service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public DefineRankExpressionResponse DefineRankExpression(DefineRankExpressionRequest defineRankExpressionRequest)
+        /// <returns>The response from the DefineRankExpression service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DefineRankExpressionResponse DefineRankExpression(DefineRankExpressionRequest request)
         {
-            IAsyncResult asyncResult = invokeDefineRankExpression(defineRankExpressionRequest, null, null, true);
-            return EndDefineRankExpression(asyncResult);
-        }
+            var marshaller = new DefineRankExpressionRequestMarshaller();
+            var unmarshaller = DefineRankExpressionResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DefineRankExpressionRequest,DefineRankExpressionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineRankExpression operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DefineRankExpression"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="defineRankExpressionRequest">Container for the necessary parameters to execute the DefineRankExpression operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DefineRankExpression operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDefineRankExpression operation.</returns>
-        public IAsyncResult BeginDefineRankExpression(DefineRankExpressionRequest defineRankExpressionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineRankExpression
+        ///         operation.</returns>
+        public IAsyncResult BeginDefineRankExpression(DefineRankExpressionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDefineRankExpression(defineRankExpressionRequest, callback, state, false);
+            var marshaller = new DefineRankExpressionRequestMarshaller();
+            var unmarshaller = DefineRankExpressionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DefineRankExpressionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DefineRankExpression operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DefineRankExpression"/>
+        /// Finishes the asynchronous execution of the  DefineRankExpression operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineRankExpression.</param>
         /// 
-        /// <returns>Returns a DefineRankExpressionResult from AmazonCloudSearch.</returns>
-        public DefineRankExpressionResponse EndDefineRankExpression(IAsyncResult asyncResult)
+        /// <returns>Returns a  DefineRankExpressionResult from CloudSearch.</returns>
+        public  DefineRankExpressionResponse EndDefineRankExpression(IAsyncResult asyncResult)
         {
-            return endOperation<DefineRankExpressionResponse>(asyncResult);
+            return EndInvoke<DefineRankExpressionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDefineRankExpression(DefineRankExpressionRequest defineRankExpressionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DefineRankExpressionRequestMarshaller().Marshall(defineRankExpressionRequest);
-            var unmarshaller = DefineRankExpressionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteDomain
+        
+        #region  DeleteDomain
 
         /// <summary>
-        /// <para>Permanently deletes a search domain and all of its data.</para>
+        /// Permanently deletes a search domain and all of its data.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
-        /// <param name="deleteDomainRequest">Container for the necessary parameters to execute the DeleteDomain service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DeleteDomain service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="InternalException"/>
-        public DeleteDomainResponse DeleteDomain(DeleteDomainRequest deleteDomainRequest)
+        /// <returns>The response from the DeleteDomain service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteDomain(deleteDomainRequest, null, null, true);
-            return EndDeleteDomain(asyncResult);
-        }
+            var marshaller = new DeleteDomainRequestMarshaller();
+            var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DeleteDomain"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="deleteDomainRequest">Container for the necessary parameters to execute the DeleteDomain operation on AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDomain(DeleteDomainRequest deleteDomainRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteDomain(deleteDomainRequest, callback, state, false);
+            var marshaller = new DeleteDomainRequestMarshaller();
+            var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteDomain operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DeleteDomain"/>
+        /// Finishes the asynchronous execution of the  DeleteDomain operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
         /// 
-        /// <returns>Returns a DeleteDomainResult from AmazonCloudSearch.</returns>
-        public DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteDomainResult from CloudSearch.</returns>
+        public  DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteDomainResponse>(asyncResult);
+            return EndInvoke<DeleteDomainResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteDomain(DeleteDomainRequest deleteDomainRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteDomainRequestMarshaller().Marshall(deleteDomainRequest);
-            var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteIndexField
+        
+        #region  DeleteIndexField
 
         /// <summary>
-        /// <para>Removes an <c>IndexField</c> from the search domain.</para>
+        /// Removes an <code>IndexField</code> from the search domain.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField service method.</param>
         /// 
-        /// <param name="deleteIndexFieldRequest">Container for the necessary parameters to execute the DeleteIndexField service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DeleteIndexField service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest)
+        /// <returns>The response from the DeleteIndexField service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteIndexField(deleteIndexFieldRequest, null, null, true);
-            return EndDeleteIndexField(asyncResult);
-        }
+            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteIndexFieldRequest,DeleteIndexFieldResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DeleteIndexField"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="deleteIndexFieldRequest">Container for the necessary parameters to execute the DeleteIndexField operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIndexField
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDeleteIndexField(DeleteIndexFieldRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteIndexField(deleteIndexFieldRequest, callback, state, false);
+            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteIndexFieldRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DeleteIndexField"/>
+        /// Finishes the asynchronous execution of the  DeleteIndexField operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIndexField.</param>
         /// 
-        /// <returns>Returns a DeleteIndexFieldResult from AmazonCloudSearch.</returns>
-        public DeleteIndexFieldResponse EndDeleteIndexField(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteIndexFieldResult from CloudSearch.</returns>
+        public  DeleteIndexFieldResponse EndDeleteIndexField(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteIndexFieldResponse>(asyncResult);
+            return EndInvoke<DeleteIndexFieldResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteIndexFieldRequestMarshaller().Marshall(deleteIndexFieldRequest);
-            var unmarshaller = DeleteIndexFieldResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DeleteRankExpression
+        
+        #region  DeleteRankExpression
 
         /// <summary>
-        /// <para>Removes a <c>RankExpression</c> from the search domain.</para>
+        /// Removes a <code>RankExpression</code> from the search domain.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRankExpression service method.</param>
         /// 
-        /// <param name="deleteRankExpressionRequest">Container for the necessary parameters to execute the DeleteRankExpression service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DeleteRankExpression service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest deleteRankExpressionRequest)
+        /// <returns>The response from the DeleteRankExpression service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteRankExpression(deleteRankExpressionRequest, null, null, true);
-            return EndDeleteRankExpression(asyncResult);
-        }
+            var marshaller = new DeleteRankExpressionRequestMarshaller();
+            var unmarshaller = DeleteRankExpressionResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DeleteRankExpressionRequest,DeleteRankExpressionResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRankExpression operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DeleteRankExpression"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="deleteRankExpressionRequest">Container for the necessary parameters to execute the DeleteRankExpression operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRankExpression operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteRankExpression operation.</returns>
-        public IAsyncResult BeginDeleteRankExpression(DeleteRankExpressionRequest deleteRankExpressionRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRankExpression
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteRankExpression(DeleteRankExpressionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteRankExpression(deleteRankExpressionRequest, callback, state, false);
+            var marshaller = new DeleteRankExpressionRequestMarshaller();
+            var unmarshaller = DeleteRankExpressionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteRankExpressionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteRankExpression operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DeleteRankExpression"/>
+        /// Finishes the asynchronous execution of the  DeleteRankExpression operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRankExpression.</param>
         /// 
-        /// <returns>Returns a DeleteRankExpressionResult from AmazonCloudSearch.</returns>
-        public DeleteRankExpressionResponse EndDeleteRankExpression(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteRankExpressionResult from CloudSearch.</returns>
+        public  DeleteRankExpressionResponse EndDeleteRankExpression(IAsyncResult asyncResult)
         {
-            return endOperation<DeleteRankExpressionResponse>(asyncResult);
+            return EndInvoke<DeleteRankExpressionResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDeleteRankExpression(DeleteRankExpressionRequest deleteRankExpressionRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteRankExpressionRequestMarshaller().Marshall(deleteRankExpressionRequest);
-            var unmarshaller = DeleteRankExpressionResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeDefaultSearchField
+        
+        #region  DescribeAvailabilityOptions
 
         /// <summary>
-        /// <para>Gets the default search field configured for the search domain.</para>
+        /// Gets the availability options configured for a domain. By default, shows the configuration
+        /// with any pending changes. Set the <code>Deployed</code> option to <code>true</code>
+        /// to show the active configuration and exclude pending changes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+        /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions service method.</param>
         /// 
-        /// <param name="describeDefaultSearchFieldRequest">Container for the necessary parameters to execute the DescribeDefaultSearchField service
-        ///          method on AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeDefaultSearchField service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeDefaultSearchFieldResponse DescribeDefaultSearchField(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest)
+        /// <returns>The response from the DescribeAvailabilityOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeDefaultSearchField(describeDefaultSearchFieldRequest, null, null, true);
-            return EndDescribeDefaultSearchField(asyncResult);
+            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAvailabilityOptionsRequest,DescribeAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDefaultSearchField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeDefaultSearchField"/>
+        /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeDefaultSearchFieldRequest">Container for the necessary parameters to execute the DescribeDefaultSearchField operation
-        ///          on AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeDefaultSearchField operation.</returns>
-        public IAsyncResult BeginDescribeDefaultSearchField(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailabilityOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDefaultSearchField(describeDefaultSearchFieldRequest, callback, state, false);
+            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAvailabilityOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAvailabilityOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailabilityOptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeAvailabilityOptionsResult from CloudSearch.</returns>
+        public  DescribeAvailabilityOptionsResponse EndDescribeAvailabilityOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAvailabilityOptionsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  DescribeDefaultSearchField
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDefaultSearchField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeDefaultSearchField"/>
+        /// Gets the default search field configured for the search domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultSearchField service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDefaultSearchField service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeDefaultSearchFieldResponse DescribeDefaultSearchField(DescribeDefaultSearchFieldRequest request)
+        {
+            var marshaller = new DescribeDefaultSearchFieldRequestMarshaller();
+            var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDefaultSearchFieldRequest,DescribeDefaultSearchFieldResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDefaultSearchField operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultSearchField operation on AmazonCloudSearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDefaultSearchField
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDefaultSearchField(DescribeDefaultSearchFieldRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeDefaultSearchFieldRequestMarshaller();
+            var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDefaultSearchFieldRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDefaultSearchField operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDefaultSearchField.</param>
         /// 
-        /// <returns>Returns a DescribeDefaultSearchFieldResult from AmazonCloudSearch.</returns>
-        public DescribeDefaultSearchFieldResponse EndDescribeDefaultSearchField(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDefaultSearchFieldResult from CloudSearch.</returns>
+        public  DescribeDefaultSearchFieldResponse EndDescribeDefaultSearchField(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDefaultSearchFieldResponse>(asyncResult);
+            return EndInvoke<DescribeDefaultSearchFieldResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeDefaultSearchField(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDefaultSearchFieldRequestMarshaller().Marshall(describeDefaultSearchFieldRequest);
-            var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeDomains
+        
+        #region  DescribeDomains
 
         /// <summary>
-        /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
-        /// default.</para>
+        /// Gets information about the search domains owned by this account. Can be limited to
+        /// specific domains. Shows all domains by default.
         /// </summary>
         /// 
-        /// <param name="describeDomainsRequest">Container for the necessary parameters to execute the DescribeDomains service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeDomains service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest describeDomainsRequest)
+        /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        public DescribeDomainsResponse DescribeDomains()
         {
-            IAsyncResult asyncResult = invokeDescribeDomains(describeDomainsRequest, null, null, true);
-            return EndDescribeDomains(asyncResult);
+            return DescribeDomains(new DescribeDomainsRequest());
         }
 
-        
+        /// <summary>
+        /// Gets information about the search domains owned by this account. Can be limited to
+        /// specific domains. Shows all domains by default.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomains service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        public DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
+        {
+            var marshaller = new DescribeDomainsRequestMarshaller();
+            var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainsRequest,DescribeDomainsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeDomains"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeDomainsRequest">Container for the necessary parameters to execute the DescribeDomains operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomains operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomains
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeDomains(DescribeDomainsRequest describeDomainsRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginDescribeDomains(DescribeDomainsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeDomains(describeDomainsRequest, callback, state, false);
+            var marshaller = new DescribeDomainsRequestMarshaller();
+            var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDomainsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeDomains operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeDomains"/>
+        /// Finishes the asynchronous execution of the  DescribeDomains operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomains.</param>
         /// 
-        /// <returns>Returns a DescribeDomainsResult from AmazonCloudSearch.</returns>
-        public DescribeDomainsResponse EndDescribeDomains(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeDomainsResult from CloudSearch.</returns>
+        public  DescribeDomainsResponse EndDescribeDomains(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeDomainsResponse>(asyncResult);
+            return EndInvoke<DescribeDomainsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeDomains(DescribeDomainsRequest describeDomainsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeDomainsRequestMarshaller().Marshall(describeDomainsRequest);
-            var unmarshaller = DescribeDomainsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        /// <summary>
-        /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
-        /// default.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeDomains service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeDomainsResponse DescribeDomains()
-        {
-            return DescribeDomains(new DescribeDomainsRequest());
-        }
-        
 
         #endregion
-    
-        #region DescribeIndexFields
+        
+        #region  DescribeIndexFields
 
         /// <summary>
-        /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields
-        /// by default.</para>
+        /// Gets information about the index fields configured for the search domain. Can be limited
+        /// to specific fields by name. Shows all fields by default.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields service method.</param>
         /// 
-        /// <param name="describeIndexFieldsRequest">Container for the necessary parameters to execute the DescribeIndexFields service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeIndexFields service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest)
+        /// <returns>The response from the DescribeIndexFields service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeIndexFields(describeIndexFieldsRequest, null, null, true);
-            return EndDescribeIndexFields(asyncResult);
-        }
+            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeIndexFieldsRequest,DescribeIndexFieldsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeIndexFields"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeIndexFieldsRequest">Container for the necessary parameters to execute the DescribeIndexFields operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeIndexFields operation.</returns>
-        public IAsyncResult BeginDescribeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIndexFields
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeIndexFields(DescribeIndexFieldsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeIndexFields(describeIndexFieldsRequest, callback, state, false);
+            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIndexFieldsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeIndexFields operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeIndexFields"/>
+        /// Finishes the asynchronous execution of the  DescribeIndexFields operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIndexFields.</param>
         /// 
-        /// <returns>Returns a DescribeIndexFieldsResult from AmazonCloudSearch.</returns>
-        public DescribeIndexFieldsResponse EndDescribeIndexFields(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeIndexFieldsResult from CloudSearch.</returns>
+        public  DescribeIndexFieldsResponse EndDescribeIndexFields(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeIndexFieldsResponse>(asyncResult);
+            return EndInvoke<DescribeIndexFieldsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeIndexFieldsRequestMarshaller().Marshall(describeIndexFieldsRequest);
-            var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeRankExpressions
+        
+        #region  DescribeRankExpressions
 
         /// <summary>
-        /// <para>Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank
-        /// expressions by default. </para>
+        /// Gets the rank expressions configured for the search domain. Can be limited to specific
+        /// rank expressions by name. Shows all rank expressions by default.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRankExpressions service method.</param>
         /// 
-        /// <param name="describeRankExpressionsRequest">Container for the necessary parameters to execute the DescribeRankExpressions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeRankExpressions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeRankExpressionsResponse DescribeRankExpressions(DescribeRankExpressionsRequest describeRankExpressionsRequest)
+        /// <returns>The response from the DescribeRankExpressions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeRankExpressionsResponse DescribeRankExpressions(DescribeRankExpressionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeRankExpressions(describeRankExpressionsRequest, null, null, true);
-            return EndDescribeRankExpressions(asyncResult);
-        }
+            var marshaller = new DescribeRankExpressionsRequestMarshaller();
+            var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeRankExpressionsRequest,DescribeRankExpressionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRankExpressions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeRankExpressions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeRankExpressionsRequest">Container for the necessary parameters to execute the DescribeRankExpressions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRankExpressions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeRankExpressions operation.</returns>
-        public IAsyncResult BeginDescribeRankExpressions(DescribeRankExpressionsRequest describeRankExpressionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRankExpressions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeRankExpressions(DescribeRankExpressionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeRankExpressions(describeRankExpressionsRequest, callback, state, false);
+            var marshaller = new DescribeRankExpressionsRequestMarshaller();
+            var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeRankExpressionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeRankExpressions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeRankExpressions"/>
+        /// Finishes the asynchronous execution of the  DescribeRankExpressions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRankExpressions.</param>
         /// 
-        /// <returns>Returns a DescribeRankExpressionsResult from AmazonCloudSearch.</returns>
-        public DescribeRankExpressionsResponse EndDescribeRankExpressions(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeRankExpressionsResult from CloudSearch.</returns>
+        public  DescribeRankExpressionsResponse EndDescribeRankExpressions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeRankExpressionsResponse>(asyncResult);
+            return EndInvoke<DescribeRankExpressionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeRankExpressions(DescribeRankExpressionsRequest describeRankExpressionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeRankExpressionsRequestMarshaller().Marshall(describeRankExpressionsRequest);
-            var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeServiceAccessPolicies
+        
+        #region  DescribeServiceAccessPolicies
 
         /// <summary>
-        /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
+        /// Gets information about the resource-based policies that control access to the domain's
+        /// document and search services.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies service method.</param>
         /// 
-        /// <param name="describeServiceAccessPoliciesRequest">Container for the necessary parameters to execute the DescribeServiceAccessPolicies
-        ///          service method on AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeServiceAccessPolicies service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest)
+        /// <returns>The response from the DescribeServiceAccessPolicies service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeServiceAccessPolicies(describeServiceAccessPoliciesRequest, null, null, true);
-            return EndDescribeServiceAccessPolicies(asyncResult);
-        }
+            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeServiceAccessPoliciesRequest,DescribeServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeServiceAccessPolicies"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeServiceAccessPoliciesRequest">Container for the necessary parameters to execute the DescribeServiceAccessPolicies
-        ///          operation on AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeServiceAccessPolicies operation.</returns>
-        public IAsyncResult BeginDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceAccessPolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeServiceAccessPolicies(describeServiceAccessPoliciesRequest, callback, state, false);
+            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeServiceAccessPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeServiceAccessPolicies"/>
+        /// Finishes the asynchronous execution of the  DescribeServiceAccessPolicies operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceAccessPolicies.</param>
         /// 
-        /// <returns>Returns a DescribeServiceAccessPoliciesResult from AmazonCloudSearch.</returns>
-        public DescribeServiceAccessPoliciesResponse EndDescribeServiceAccessPolicies(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeServiceAccessPoliciesResult from CloudSearch.</returns>
+        public  DescribeServiceAccessPoliciesResponse EndDescribeServiceAccessPolicies(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeServiceAccessPoliciesResponse>(asyncResult);
+            return EndInvoke<DescribeServiceAccessPoliciesResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeServiceAccessPoliciesRequestMarshaller().Marshall(describeServiceAccessPoliciesRequest);
-            var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeStemmingOptions
+        
+        #region  DescribeStemmingOptions
 
         /// <summary>
-        /// <para>Gets the stemming dictionary configured for the search domain.</para>
+        /// Gets the stemming dictionary configured for the search domain.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStemmingOptions service method.</param>
         /// 
-        /// <param name="describeStemmingOptionsRequest">Container for the necessary parameters to execute the DescribeStemmingOptions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeStemmingOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeStemmingOptionsResponse DescribeStemmingOptions(DescribeStemmingOptionsRequest describeStemmingOptionsRequest)
+        /// <returns>The response from the DescribeStemmingOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeStemmingOptionsResponse DescribeStemmingOptions(DescribeStemmingOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStemmingOptions(describeStemmingOptionsRequest, null, null, true);
-            return EndDescribeStemmingOptions(asyncResult);
-        }
+            var marshaller = new DescribeStemmingOptionsRequestMarshaller();
+            var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeStemmingOptionsRequest,DescribeStemmingOptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStemmingOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeStemmingOptions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeStemmingOptionsRequest">Container for the necessary parameters to execute the DescribeStemmingOptions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStemmingOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeStemmingOptions operation.</returns>
-        public IAsyncResult BeginDescribeStemmingOptions(DescribeStemmingOptionsRequest describeStemmingOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStemmingOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStemmingOptions(DescribeStemmingOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStemmingOptions(describeStemmingOptionsRequest, callback, state, false);
+            var marshaller = new DescribeStemmingOptionsRequestMarshaller();
+            var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStemmingOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStemmingOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeStemmingOptions"/>
+        /// Finishes the asynchronous execution of the  DescribeStemmingOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStemmingOptions.</param>
         /// 
-        /// <returns>Returns a DescribeStemmingOptionsResult from AmazonCloudSearch.</returns>
-        public DescribeStemmingOptionsResponse EndDescribeStemmingOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeStemmingOptionsResult from CloudSearch.</returns>
+        public  DescribeStemmingOptionsResponse EndDescribeStemmingOptions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeStemmingOptionsResponse>(asyncResult);
+            return EndInvoke<DescribeStemmingOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeStemmingOptions(DescribeStemmingOptionsRequest describeStemmingOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeStemmingOptionsRequestMarshaller().Marshall(describeStemmingOptionsRequest);
-            var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeStopwordOptions
+        
+        #region  DescribeStopwordOptions
 
         /// <summary>
-        /// <para>Gets the stopwords configured for the search domain.</para>
+        /// Gets the stopwords configured for the search domain.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStopwordOptions service method.</param>
         /// 
-        /// <param name="describeStopwordOptionsRequest">Container for the necessary parameters to execute the DescribeStopwordOptions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeStopwordOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeStopwordOptionsResponse DescribeStopwordOptions(DescribeStopwordOptionsRequest describeStopwordOptionsRequest)
+        /// <returns>The response from the DescribeStopwordOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeStopwordOptionsResponse DescribeStopwordOptions(DescribeStopwordOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeStopwordOptions(describeStopwordOptionsRequest, null, null, true);
-            return EndDescribeStopwordOptions(asyncResult);
-        }
+            var marshaller = new DescribeStopwordOptionsRequestMarshaller();
+            var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeStopwordOptionsRequest,DescribeStopwordOptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStopwordOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeStopwordOptions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeStopwordOptionsRequest">Container for the necessary parameters to execute the DescribeStopwordOptions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStopwordOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeStopwordOptions operation.</returns>
-        public IAsyncResult BeginDescribeStopwordOptions(DescribeStopwordOptionsRequest describeStopwordOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStopwordOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStopwordOptions(DescribeStopwordOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeStopwordOptions(describeStopwordOptionsRequest, callback, state, false);
+            var marshaller = new DescribeStopwordOptionsRequestMarshaller();
+            var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStopwordOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStopwordOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeStopwordOptions"/>
+        /// Finishes the asynchronous execution of the  DescribeStopwordOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStopwordOptions.</param>
         /// 
-        /// <returns>Returns a DescribeStopwordOptionsResult from AmazonCloudSearch.</returns>
-        public DescribeStopwordOptionsResponse EndDescribeStopwordOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeStopwordOptionsResult from CloudSearch.</returns>
+        public  DescribeStopwordOptionsResponse EndDescribeStopwordOptions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeStopwordOptionsResponse>(asyncResult);
+            return EndInvoke<DescribeStopwordOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeStopwordOptions(DescribeStopwordOptionsRequest describeStopwordOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeStopwordOptionsRequestMarshaller().Marshall(describeStopwordOptionsRequest);
-            var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region DescribeSynonymOptions
+        
+        #region  DescribeSynonymOptions
 
         /// <summary>
-        /// <para>Gets the synonym dictionary configured for the search domain.</para>
+        /// Gets the synonym dictionary configured for the search domain.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSynonymOptions service method.</param>
         /// 
-        /// <param name="describeSynonymOptionsRequest">Container for the necessary parameters to execute the DescribeSynonymOptions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeSynonymOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public DescribeSynonymOptionsResponse DescribeSynonymOptions(DescribeSynonymOptionsRequest describeSynonymOptionsRequest)
+        /// <returns>The response from the DescribeSynonymOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public DescribeSynonymOptionsResponse DescribeSynonymOptions(DescribeSynonymOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeSynonymOptions(describeSynonymOptionsRequest, null, null, true);
-            return EndDescribeSynonymOptions(asyncResult);
-        }
+            var marshaller = new DescribeSynonymOptionsRequestMarshaller();
+            var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<DescribeSynonymOptionsRequest,DescribeSynonymOptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSynonymOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeSynonymOptions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="describeSynonymOptionsRequest">Container for the necessary parameters to execute the DescribeSynonymOptions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSynonymOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeSynonymOptions operation.</returns>
-        public IAsyncResult BeginDescribeSynonymOptions(DescribeSynonymOptionsRequest describeSynonymOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSynonymOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeSynonymOptions(DescribeSynonymOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeSynonymOptions(describeSynonymOptionsRequest, callback, state, false);
+            var marshaller = new DescribeSynonymOptionsRequestMarshaller();
+            var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeSynonymOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeSynonymOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.DescribeSynonymOptions"/>
+        /// Finishes the asynchronous execution of the  DescribeSynonymOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSynonymOptions.</param>
         /// 
-        /// <returns>Returns a DescribeSynonymOptionsResult from AmazonCloudSearch.</returns>
-        public DescribeSynonymOptionsResponse EndDescribeSynonymOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  DescribeSynonymOptionsResult from CloudSearch.</returns>
+        public  DescribeSynonymOptionsResponse EndDescribeSynonymOptions(IAsyncResult asyncResult)
         {
-            return endOperation<DescribeSynonymOptionsResponse>(asyncResult);
+            return EndInvoke<DescribeSynonymOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeDescribeSynonymOptions(DescribeSynonymOptionsRequest describeSynonymOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeSynonymOptionsRequestMarshaller().Marshall(describeSynonymOptionsRequest);
-            var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region IndexDocuments
+        
+        #region  IndexDocuments
 
         /// <summary>
-        /// <para>Tells the search domain to start indexing its documents using the latest text processing options and <c>IndexFields</c> . This
-        /// operation must be invoked to make options whose OptionStatus has <c>OptionState</c> of <c>RequiresIndexDocuments</c> visible in search
-        /// results.</para>
+        /// Tells the search domain to start indexing its documents using the latest text processing
+        /// options and <code>IndexFields</code>. This operation must be invoked to make options
+        /// whose <a>OptionStatus</a> has <code>OptionState</code> of <code>RequiresIndexDocuments</code>
+        /// visible in search results.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IndexDocuments service method.</param>
         /// 
-        /// <param name="indexDocumentsRequest">Container for the necessary parameters to execute the IndexDocuments service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the IndexDocuments service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        public IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest indexDocumentsRequest)
+        /// <returns>The response from the IndexDocuments service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
-            IAsyncResult asyncResult = invokeIndexDocuments(indexDocumentsRequest, null, null, true);
-            return EndIndexDocuments(asyncResult);
-        }
+            var marshaller = new IndexDocumentsRequestMarshaller();
+            var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<IndexDocumentsRequest,IndexDocumentsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.IndexDocuments"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="indexDocumentsRequest">Container for the necessary parameters to execute the IndexDocuments operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the IndexDocuments operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIndexDocuments
         ///         operation.</returns>
-        public IAsyncResult BeginIndexDocuments(IndexDocumentsRequest indexDocumentsRequest, AsyncCallback callback, object state)
+        public IAsyncResult BeginIndexDocuments(IndexDocumentsRequest request, AsyncCallback callback, object state)
         {
-            return invokeIndexDocuments(indexDocumentsRequest, callback, state, false);
+            var marshaller = new IndexDocumentsRequestMarshaller();
+            var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<IndexDocumentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the IndexDocuments operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.IndexDocuments"/>
+        /// Finishes the asynchronous execution of the  IndexDocuments operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIndexDocuments.</param>
         /// 
-        /// <returns>Returns a IndexDocumentsResult from AmazonCloudSearch.</returns>
-        public IndexDocumentsResponse EndIndexDocuments(IAsyncResult asyncResult)
+        /// <returns>Returns a  IndexDocumentsResult from CloudSearch.</returns>
+        public  IndexDocumentsResponse EndIndexDocuments(IAsyncResult asyncResult)
         {
-            return endOperation<IndexDocumentsResponse>(asyncResult);
+            return EndInvoke<IndexDocumentsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeIndexDocuments(IndexDocumentsRequest indexDocumentsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new IndexDocumentsRequestMarshaller().Marshall(indexDocumentsRequest);
-            var unmarshaller = IndexDocumentsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region UpdateDefaultSearchField
+        
+        #region  UpdateAvailabilityOptions
 
         /// <summary>
-        /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
-        /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
-        /// </para>
+        /// Configures the availability options for a domain. Enabling the Multi-AZ option expands
+        /// an Amazon CloudSearch domain to an additional Availability Zone in the same Region
+        /// to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ
+        /// option can take about half an hour to become active. For more information, see <a
+        /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+        /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions service method.</param>
         /// 
-        /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField service method
-        ///          on AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateDefaultSearchField service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public UpdateDefaultSearchFieldResponse UpdateDefaultSearchField(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest)
+        /// <returns>The response from the UpdateAvailabilityOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateDefaultSearchField(updateDefaultSearchFieldRequest, null, null, true);
-            return EndUpdateDefaultSearchField(asyncResult);
+            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAvailabilityOptionsRequest,UpdateAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
         }
 
-        
-
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDefaultSearchField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateDefaultSearchField"/>
+        /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndUpdateDefaultSearchField operation.</returns>
-        public IAsyncResult BeginUpdateDefaultSearchField(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAvailabilityOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateDefaultSearchField(updateDefaultSearchFieldRequest, callback, state, false);
+            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAvailabilityOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAvailabilityOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAvailabilityOptions.</param>
+        /// 
+        /// <returns>Returns a  UpdateAvailabilityOptionsResult from CloudSearch.</returns>
+        public  UpdateAvailabilityOptionsResponse EndUpdateAvailabilityOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAvailabilityOptionsResponse>(asyncResult);
+        }
+
+        #endregion
         
+        #region  UpdateDefaultSearchField
 
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateDefaultSearchField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateDefaultSearchField"/>
+        /// Configures the default search field for the search domain. The default search field
+        /// is the text field that is searched when a search request does not specify which fields
+        /// to search. By default, it is configured to include the contents of all of the domain's
+        /// text fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultSearchField service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDefaultSearchField service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public UpdateDefaultSearchFieldResponse UpdateDefaultSearchField(UpdateDefaultSearchFieldRequest request)
+        {
+            var marshaller = new UpdateDefaultSearchFieldRequestMarshaller();
+            var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDefaultSearchFieldRequest,UpdateDefaultSearchFieldResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDefaultSearchField operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultSearchField operation on AmazonCloudSearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDefaultSearchField
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateDefaultSearchField(UpdateDefaultSearchFieldRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateDefaultSearchFieldRequestMarshaller();
+            var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDefaultSearchFieldRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDefaultSearchField operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDefaultSearchField.</param>
         /// 
-        /// <returns>Returns a UpdateDefaultSearchFieldResult from AmazonCloudSearch.</returns>
-        public UpdateDefaultSearchFieldResponse EndUpdateDefaultSearchField(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateDefaultSearchFieldResult from CloudSearch.</returns>
+        public  UpdateDefaultSearchFieldResponse EndUpdateDefaultSearchField(IAsyncResult asyncResult)
         {
-            return endOperation<UpdateDefaultSearchFieldResponse>(asyncResult);
+            return EndInvoke<UpdateDefaultSearchFieldResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeUpdateDefaultSearchField(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateDefaultSearchFieldRequestMarshaller().Marshall(updateDefaultSearchFieldRequest);
-            var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region UpdateServiceAccessPolicies
+        
+        #region  UpdateServiceAccessPolicies
 
         /// <summary>
-        /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
-        /// document is 100 KB.</para>
+        /// Configures the policies that control access to the domain's document and search services.
+        /// The maximum size of an access policy document is 100 KB.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service method.</param>
         /// 
-        /// <param name="updateServiceAccessPoliciesRequest">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service
-        ///          method on AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateServiceAccessPolicies service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest)
+        /// <returns>The response from the UpdateServiceAccessPolicies service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateServiceAccessPolicies(updateServiceAccessPoliciesRequest, null, null, true);
-            return EndUpdateServiceAccessPolicies(asyncResult);
-        }
+            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
 
-        
+            return Invoke<UpdateServiceAccessPoliciesRequest,UpdateServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateServiceAccessPolicies"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="updateServiceAccessPoliciesRequest">Container for the necessary parameters to execute the UpdateServiceAccessPolicies operation
-        ///          on AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndUpdateServiceAccessPolicies operation.</returns>
-        public IAsyncResult BeginUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceAccessPolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateServiceAccessPolicies(updateServiceAccessPoliciesRequest, callback, state, false);
+            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateServiceAccessPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateServiceAccessPolicies"/>
+        /// Finishes the asynchronous execution of the  UpdateServiceAccessPolicies operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceAccessPolicies.</param>
         /// 
-        /// <returns>Returns a UpdateServiceAccessPoliciesResult from AmazonCloudSearch.</returns>
-        public UpdateServiceAccessPoliciesResponse EndUpdateServiceAccessPolicies(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateServiceAccessPoliciesResult from CloudSearch.</returns>
+        public  UpdateServiceAccessPoliciesResponse EndUpdateServiceAccessPolicies(IAsyncResult asyncResult)
         {
-            return endOperation<UpdateServiceAccessPoliciesResponse>(asyncResult);
+            return EndInvoke<UpdateServiceAccessPoliciesResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateServiceAccessPoliciesRequestMarshaller().Marshall(updateServiceAccessPoliciesRequest);
-            var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region UpdateStemmingOptions
+        
+        #region  UpdateStemmingOptions
 
         /// <summary>
-        /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
-        /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
+        /// Configures a stemming dictionary for the search domain. The stemming dictionary is
+        /// used during indexing and when processing search requests. The maximum size of the
+        /// stemming dictionary is 500 KB.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStemmingOptions service method.</param>
         /// 
-        /// <param name="updateStemmingOptionsRequest">Container for the necessary parameters to execute the UpdateStemmingOptions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateStemmingOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public UpdateStemmingOptionsResponse UpdateStemmingOptions(UpdateStemmingOptionsRequest updateStemmingOptionsRequest)
+        /// <returns>The response from the UpdateStemmingOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public UpdateStemmingOptionsResponse UpdateStemmingOptions(UpdateStemmingOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateStemmingOptions(updateStemmingOptionsRequest, null, null, true);
-            return EndUpdateStemmingOptions(asyncResult);
-        }
+            var marshaller = new UpdateStemmingOptionsRequestMarshaller();
+            var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<UpdateStemmingOptionsRequest,UpdateStemmingOptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStemmingOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateStemmingOptions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="updateStemmingOptionsRequest">Container for the necessary parameters to execute the UpdateStemmingOptions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStemmingOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndUpdateStemmingOptions operation.</returns>
-        public IAsyncResult BeginUpdateStemmingOptions(UpdateStemmingOptionsRequest updateStemmingOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStemmingOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateStemmingOptions(UpdateStemmingOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateStemmingOptions(updateStemmingOptionsRequest, callback, state, false);
+            var marshaller = new UpdateStemmingOptionsRequestMarshaller();
+            var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateStemmingOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateStemmingOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateStemmingOptions"/>
+        /// Finishes the asynchronous execution of the  UpdateStemmingOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStemmingOptions.</param>
         /// 
-        /// <returns>Returns a UpdateStemmingOptionsResult from AmazonCloudSearch.</returns>
-        public UpdateStemmingOptionsResponse EndUpdateStemmingOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateStemmingOptionsResult from CloudSearch.</returns>
+        public  UpdateStemmingOptionsResponse EndUpdateStemmingOptions(IAsyncResult asyncResult)
         {
-            return endOperation<UpdateStemmingOptionsResponse>(asyncResult);
+            return EndInvoke<UpdateStemmingOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeUpdateStemmingOptions(UpdateStemmingOptionsRequest updateStemmingOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateStemmingOptionsRequestMarshaller().Marshall(updateStemmingOptionsRequest);
-            var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region UpdateStopwordOptions
+        
+        #region  UpdateStopwordOptions
 
         /// <summary>
-        /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
-        /// of the stopwords dictionary is 10 KB.</para>
+        /// Configures stopwords for the search domain. Stopwords are used during indexing and
+        /// when processing search requests. The maximum size of the stopwords dictionary is 10
+        /// KB.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStopwordOptions service method.</param>
         /// 
-        /// <param name="updateStopwordOptionsRequest">Container for the necessary parameters to execute the UpdateStopwordOptions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateStopwordOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public UpdateStopwordOptionsResponse UpdateStopwordOptions(UpdateStopwordOptionsRequest updateStopwordOptionsRequest)
+        /// <returns>The response from the UpdateStopwordOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public UpdateStopwordOptionsResponse UpdateStopwordOptions(UpdateStopwordOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateStopwordOptions(updateStopwordOptionsRequest, null, null, true);
-            return EndUpdateStopwordOptions(asyncResult);
-        }
+            var marshaller = new UpdateStopwordOptionsRequestMarshaller();
+            var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<UpdateStopwordOptionsRequest,UpdateStopwordOptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStopwordOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateStopwordOptions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="updateStopwordOptionsRequest">Container for the necessary parameters to execute the UpdateStopwordOptions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStopwordOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndUpdateStopwordOptions operation.</returns>
-        public IAsyncResult BeginUpdateStopwordOptions(UpdateStopwordOptionsRequest updateStopwordOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStopwordOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateStopwordOptions(UpdateStopwordOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateStopwordOptions(updateStopwordOptionsRequest, callback, state, false);
+            var marshaller = new UpdateStopwordOptionsRequestMarshaller();
+            var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateStopwordOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateStopwordOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateStopwordOptions"/>
+        /// Finishes the asynchronous execution of the  UpdateStopwordOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStopwordOptions.</param>
         /// 
-        /// <returns>Returns a UpdateStopwordOptionsResult from AmazonCloudSearch.</returns>
-        public UpdateStopwordOptionsResponse EndUpdateStopwordOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateStopwordOptionsResult from CloudSearch.</returns>
+        public  UpdateStopwordOptionsResponse EndUpdateStopwordOptions(IAsyncResult asyncResult)
         {
-            return endOperation<UpdateStopwordOptionsResponse>(asyncResult);
+            return EndInvoke<UpdateStopwordOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeUpdateStopwordOptions(UpdateStopwordOptionsRequest updateStopwordOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateStopwordOptionsRequestMarshaller().Marshall(updateStopwordOptionsRequest);
-            var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
-        #region UpdateSynonymOptions
+        
+        #region  UpdateSynonymOptions
 
         /// <summary>
-        /// <para>Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms
-        /// that occur in text fields. The maximum size of the synonym dictionary is 100 KB. </para>
+        /// Configures a synonym dictionary for the search domain. The synonym dictionary is used
+        /// during indexing to configure mappings for terms that occur in text fields. The maximum
+        /// size of the synonym dictionary is 100 KB.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSynonymOptions service method.</param>
         /// 
-        /// <param name="updateSynonymOptionsRequest">Container for the necessary parameters to execute the UpdateSynonymOptions service method on
-        ///          AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateSynonymOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="BaseException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalException"/>
-        /// <exception cref="InvalidTypeException"/>
-        public UpdateSynonymOptionsResponse UpdateSynonymOptions(UpdateSynonymOptionsRequest updateSynonymOptionsRequest)
+        /// <returns>The response from the UpdateSynonymOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/">Service Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        public UpdateSynonymOptionsResponse UpdateSynonymOptions(UpdateSynonymOptionsRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateSynonymOptions(updateSynonymOptionsRequest, null, null, true);
-            return EndUpdateSynonymOptions(asyncResult);
-        }
+            var marshaller = new UpdateSynonymOptionsRequestMarshaller();
+            var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.Instance;
 
-        
+            return Invoke<UpdateSynonymOptionsRequest,UpdateSynonymOptionsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSynonymOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateSynonymOptions"/>
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
-        /// <param name="updateSynonymOptionsRequest">Container for the necessary parameters to execute the UpdateSynonymOptions operation on
-        ///          AmazonCloudSearch.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSynonymOptions operation on AmazonCloudSearchClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndUpdateSynonymOptions operation.</returns>
-        public IAsyncResult BeginUpdateSynonymOptions(UpdateSynonymOptionsRequest updateSynonymOptionsRequest, AsyncCallback callback, object state)
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSynonymOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateSynonymOptions(UpdateSynonymOptionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateSynonymOptions(updateSynonymOptionsRequest, callback, state, false);
+            var marshaller = new UpdateSynonymOptionsRequestMarshaller();
+            var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateSynonymOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
 
-        
-
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateSynonymOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch.UpdateSynonymOptions"/>
+        /// Finishes the asynchronous execution of the  UpdateSynonymOptions operation.
+        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSynonymOptions.</param>
         /// 
-        /// <returns>Returns a UpdateSynonymOptionsResult from AmazonCloudSearch.</returns>
-        public UpdateSynonymOptionsResponse EndUpdateSynonymOptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateSynonymOptionsResult from CloudSearch.</returns>
+        public  UpdateSynonymOptionsResponse EndUpdateSynonymOptions(IAsyncResult asyncResult)
         {
-            return endOperation<UpdateSynonymOptionsResponse>(asyncResult);
+            return EndInvoke<UpdateSynonymOptionsResponse>(asyncResult);
         }
-        
-        IAsyncResult invokeUpdateSynonymOptions(UpdateSynonymOptionsRequest updateSynonymOptionsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateSynonymOptionsRequestMarshaller().Marshall(updateSynonymOptionsRequest);
-            var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
 
         #endregion
-    
+        
     }
 }
-    

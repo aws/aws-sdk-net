@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Validate Template Request Marshaller
+    /// ValidateTemplate Request Marshaller
     /// </summary>       
-    public class ValidateTemplateRequestMarshaller : IMarshaller<IRequest, ValidateTemplateRequest>
+    public class ValidateTemplateRequestMarshaller : IMarshaller<IRequest, ValidateTemplateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ValidateTemplateRequest validateTemplateRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(validateTemplateRequest, "AmazonCloudFormation");
+            return this.Marshall((ValidateTemplateRequest)input);
+        }
+    
+        public IRequest Marshall(ValidateTemplateRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
             request.Parameters.Add("Action", "ValidateTemplate");
             request.Parameters.Add("Version", "2010-05-15");
-            if (validateTemplateRequest != null && validateTemplateRequest.IsSetTemplateBody())
-            {
-                request.Parameters.Add("TemplateBody", StringUtils.FromString(validateTemplateRequest.TemplateBody));
-            }
-            if (validateTemplateRequest != null && validateTemplateRequest.IsSetTemplateURL())
-            {
-                request.Parameters.Add("TemplateURL", StringUtils.FromString(validateTemplateRequest.TemplateURL));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetTemplateBody())
+                {
+                    request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
+                }
+                if(publicRequest.IsSetTemplateURL())
+                {
+                    request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
+                }
+            }
             return request;
         }
     }

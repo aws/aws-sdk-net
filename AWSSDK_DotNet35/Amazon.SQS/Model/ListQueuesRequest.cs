@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,19 @@ namespace Amazon.SQS.Model
     {
         private string _queueNamePrefix;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ListQueuesRequest() { }
+
+        /// <summary>
+        /// Instantiates ListQueuesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name   begins with the specified string are returned.</param>
+        public ListQueuesRequest(string queueNamePrefix)
+        {
+            _queueNamePrefix = queueNamePrefix;
+        }
 
         /// <summary>
         /// Gets and sets the property QueueNamePrefix. 

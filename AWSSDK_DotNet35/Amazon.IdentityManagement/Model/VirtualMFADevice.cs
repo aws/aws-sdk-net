@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.IdentityManagement.Model
         private string _serialNumber;
         private User _user;
 
-
         /// <summary>
         /// Gets and sets the property Base32StringSeed. 
         /// <para>
@@ -55,7 +58,6 @@ namespace Amazon.IdentityManagement.Model
             return this._base32StringSeed != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnableDate.
         /// </summary>
@@ -70,7 +72,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._enableDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property QRCodePNG. 
@@ -93,7 +94,6 @@ namespace Amazon.IdentityManagement.Model
             return this._qRCodePNG != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
@@ -111,7 +111,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._serialNumber != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property User.

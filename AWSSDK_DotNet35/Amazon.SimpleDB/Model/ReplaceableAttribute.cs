@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,71 +12,94 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ReplaceableAttribute
+    public partial class ReplaceableAttribute
     {
-        
-        private string name;
-        private string value;
-        private bool? replace;
+        private string _name;
+        private bool? _replace;
+        private string _value;
 
         /// <summary>
-        /// The name of the replaceable attribute.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ReplaceableAttribute() { }
+
+        /// <summary>
+        /// Instantiates ReplaceableAttribute with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the replaceable attribute.</param>
+        /// <param name="value">The value of the replaceable attribute.</param>
+        /// <param name="replace">A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.</param>
+        public ReplaceableAttribute(string name, string value, bool replace)
+        {
+            _name = name;
+            _value = value;
+            _replace = replace;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. The name of the replaceable attribute.
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// The value of the replaceable attribute.
-        ///  
-        /// </summary>
-        public string Value
-        {
-            get { return this.value; }
-            set { this.value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this.value != null;
-        }
-
-        /// <summary>
-        /// A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is
-        /// <c>false</c>.
-        ///  
+        /// Gets and sets the property Replace. A flag specifying whether or not to replace the
+        /// attribute/value pair or to add a new attribute/value pair. The default setting is
+        /// <code>false</code>.
         /// </summary>
         public bool Replace
         {
-            get { return this.replace ?? default(bool); }
-            set { this.replace = value; }
+            get { return this._replace.GetValueOrDefault(); }
+            set { this._replace = value; }
         }
 
         // Check to see if Replace property is set
         internal bool IsSetReplace()
         {
-            return this.replace.HasValue;
+            return this._replace.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Value. The value of the replaceable attribute.
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,19 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A regular expression representing a restriction on a string configuration
-    ///         option value.
+    /// A regular expression representing a restriction on a string configuration option
+    /// value.
     /// </summary>
     public partial class OptionRestrictionRegex
     {
         private string _label;
         private string _pattern;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public OptionRestrictionRegex() { }
 
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        ///          A unique name representing this regular expression.        
+        ///  A unique name representing this regular expression. 
         /// </para>
         /// </summary>
         public string Label
@@ -51,12 +59,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._label != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Pattern. 
         /// <para>
-        ///          The regular expression pattern that a string configuration option value with
-        ///         this restriction must match.        
+        ///  The regular expression pattern that a string configuration option value with this
+        /// restriction must match. 
         /// </para>
         /// </summary>
         public string Pattern

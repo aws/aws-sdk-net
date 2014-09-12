@@ -58,6 +58,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope = "type", Target = "Amazon.Redshift.Model.Event", MessageId = "Event")]
 [module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope = "member", Target = "Amazon.SimpleDB.IAmazonSimpleDB.#Select(Amazon.SimpleDB.Model.SelectRequest)", MessageId = "Select")]
 [module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope = "type", Target = "Amazon.ElasticMapReduce.Model.Step", MessageId = "Step")]
+[module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope = "member", Target = "Amazon.Runtime.Internal.Util.ILogger.#Error(System.Exception,System.String,System.Object[])", MessageId = "Error")]
 
 // Identifiers should have correct prefix
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.ElasticMapReduce.Model.ResizeAction", MessageId = "I")]
@@ -68,6 +69,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.IMarshaller`2", MessageId = "T")]
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.ListUnmarshaller`2", MessageId = "T")]
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.KeyValueUnmarshaller`4", MessageId = "T")]
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.IRequestMarshaller`2", MessageId = "T")]
 
 // Identifiers should not contain type names
 [module: SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Scope = "member", Target = "Amazon.DynamoDBv2.DocumentModel.DynamoDBEntry.#AsInt()", MessageId = "int")]
@@ -114,6 +116,8 @@ using System.Diagnostics.CodeAnalysis;
 // Suppressions for exceptions in setters
 [module: SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Scope = "member", Target = "Amazon.ElasticMapReduce.Model.AddInstanceGroup.#get_Args()")]
 [module: SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Scope = "member", Target = "Amazon.ElasticMapReduce.Model.ModifyInstanceGroup.#get_Args()")]
+
+[module: SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses", Scope = "member", Target = "Amazon.Runtime.Internal.HttpRequest.#WriteToRequestBody(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary`2<System.String,System.String>,System.Int32)")]
 
 // Suppressions for DynamoDBContext generic methods
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBContext.#BeginDelete`1(System.Object,Amazon.DynamoDBv2.DataModel.DynamoDBOperationConfig,System.AsyncCallback,System.Object)")]
@@ -206,6 +210,13 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.EC2.Import.DiskImageImporter.#RemoveUploadedArtifacts(System.String,System.Collections.Generic.IEnumerable`1<Amazon.EC2.Util.ImageFilePart>)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.EC2.Import.ImageFileParts.#FetchNextPartForUpload(System.IO.Stream,System.Byte[]&)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.RegionEndpoint.#TryLoadEndpointDefinitionsFromAssemblyDir()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#DontUnescapePathDotsAndSlashes(System.Uri)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#GetResponseCallback(System.IAsyncResult)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#GetRequestStreamCallback(System.IAsyncResult)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.PipelineHandler.#AsyncCallback(Amazon.Runtime.IAsyncExecutionContext)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpErrorResponseExceptionHandler.#HandleSuppressed404(Amazon.Runtime.IExecutionContext,Amazon.Runtime.Internal.Transform.IWebResponseData)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.ErrorHandler.#InvokeAsyncCallback(Amazon.Runtime.IAsyncExecutionContext)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AmazonServiceClient.#DontUnescapePathDotsAndSlashes(System.Uri)")]
 
 // Overflow operations
 [module: SuppressMessage("Microsoft.Usage", "CA2233:OperationsShouldNotOverflow", Scope = "member", Target = "Amazon.DynamoDBv2.AmazonDynamoDBClient.#pauseExponentially(System.Int32)", MessageId = "retries-1")]
@@ -321,6 +332,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImageFilePart.#HeadUrl")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImageFilePart.#DeleteUrl")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImageFilePart.#GetUrl")]
+[module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Model.CopySnapshotRequest.#PresignedUrl")]
 
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#BuildPolicyForSignedUrl(System.String,System.DateTime,System.String,System.DateTime)")]
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#GetCannedSignedURL(Amazon.CloudFront.AmazonCloudFrontUrlSigner+Protocol,System.String,System.IO.FileInfo,System.String,System.String,System.DateTime)")]
@@ -430,10 +442,13 @@ using System.Diagnostics.CodeAnalysis;
 // Do not call overridable methods in constructors
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#.ctor(Amazon.Runtime.AWSCredentials,Amazon.Runtime.ClientConfig,Amazon.Runtime.AbstractWebServiceClient+AuthenticationTypes)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.ClientConfig.#.ctor()")]
+[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.AmazonServiceClient.#.ctor(Amazon.Runtime.AWSCredentials,Amazon.Runtime.ClientConfig)")]
 
 // Events should have before or after prefix
 [module: SuppressMessage("Microsoft.Naming", "CA1713:EventsShouldNotHaveBeforeOrAfterPrefix", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#BeforeRequestEvent")]
 [module: SuppressMessage("Microsoft.Naming", "CA1713:EventsShouldNotHaveBeforeOrAfterPrefix", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#AfterResponseEvent")]
+[module: SuppressMessage("Microsoft.Naming", "CA1713:EventsShouldNotHaveBeforeOrAfterPrefix", Scope = "member", Target = "Amazon.Runtime.AmazonServiceClient.#BeforeRequestEvent")]
+[module: SuppressMessage("Microsoft.Naming", "CA1713:EventsShouldNotHaveBeforeOrAfterPrefix", Scope = "member", Target = "Amazon.Runtime.AmazonServiceClient.#AfterResponseEvent")]
 
 // ISerializable attribute
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.AmazonServiceException")]
@@ -442,6 +457,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.Internal.Auth.SignatureException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.S3.Util.S3PostUploadException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.EC2.Import.DiskImageImporterException")]
+[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.Internal.HttpErrorResponseException")]
 
 // Use generic event handler instances, breaking change
 [module: SuppressMessage("Microsoft.Design", "CA1003:UseGenericEventHandlerInstances", Scope = "type", Target = "Amazon.Runtime.RequestEventHandler")]
@@ -462,3 +478,53 @@ using System.Diagnostics.CodeAnalysis;
 
 // Do not call overridable methods in constructors
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.Internal.Util.EncryptionWrapper.#.ctor()")]
+[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.Internal.Util.DecryptionWrapper.#.ctor()")]
+
+
+// Suppressions for Runtime generic methods
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.RuntimePipeline.#RemoveHandler`1()")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.RuntimePipeline.#AddHandlerAfter`1(Amazon.Runtime.IPipelineHandler)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.RuntimePipeline.#ReplaceHandler`1(Amazon.Runtime.IPipelineHandler)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.RuntimePipeline.#AddHandlerBefore`1(Amazon.Runtime.IPipelineHandler)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.DefaultRetryPolicy.#IsInnerException`1(System.Exception)")]
+
+[module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.DefaultRetryPolicy.#IsInnerException`1(System.Exception,!!0&)", MessageId = "1#")]
+
+// Suppression for methods on IHttpRequest
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetRequestContent()")]
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetResponse()")]
+
+// Suppression for HttpWebRequestResponseData, HttpWebRequestResponseData.ResponseBody is disposed on it's own.
+[module: SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.HttpWebRequestResponseData")]
+
+// Suppressions for SQS QueueUrl param being string.
+
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.ChangeMessageVisibilityRequest.#.ctor(System.String,System.String,System.Int32)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.SendMessageBatchRequest.#.ctor(System.String,System.Collections.Generic.List`1<Amazon.SQS.Model.SendMessageBatchRequestEntry>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.SendMessageRequest.#.ctor(System.String,System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.ChangeMessageVisibilityBatchRequest.#.ctor(System.String,System.Collections.Generic.List`1<Amazon.SQS.Model.ChangeMessageVisibilityBatchRequestEntry>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.SetQueueAttributesRequest.#.ctor(System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.ReceiveMessageRequest.#.ctor(System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.GetQueueAttributesRequest.#.ctor(System.String,System.Collections.Generic.List`1<System.String>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.AddPermissionRequest.#.ctor(System.String,System.String,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.DeleteQueueRequest.#.ctor(System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.DeleteMessageRequest.#.ctor(System.String,System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.RemovePermissionRequest.#.ctor(System.String,System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.Model.DeleteMessageBatchRequest.#.ctor(System.String,System.Collections.Generic.List`1<Amazon.SQS.Model.DeleteMessageBatchRequestEntry>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#SendMessage(System.String,System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#AddPermission(System.String,System.String,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#SendMessageBatch(System.String,System.Collections.Generic.List`1<Amazon.SQS.Model.SendMessageBatchRequestEntry>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#DeleteMessageBatch(System.String,System.Collections.Generic.List`1<Amazon.SQS.Model.DeleteMessageBatchRequestEntry>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#RemovePermission(System.String,System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#ChangeMessageVisibility(System.String,System.String,System.Int32)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#DeleteQueue(System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#ReceiveMessage(System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#GetQueueAttributes(System.String,System.Collections.Generic.List`1<System.String>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#DeleteMessage(System.String,System.String)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#ChangeMessageVisibilityBatch(System.String,System.Collections.Generic.List`1<Amazon.SQS.Model.ChangeMessageVisibilityBatchRequestEntry>)", MessageId = "0#")]
+[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.SQS.IAmazonSQS.#SetQueueAttributes(System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>)", MessageId = "0#")]
+
+// Suppressions for DynamoDB Nested Generic types
+
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.DynamoDBv2.IAmazonDynamoDB.#BatchWriteItem(System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.List`1<Amazon.DynamoDBv2.Model.WriteRequest>>)")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.DynamoDBv2.Model.BatchWriteItemRequest.#.ctor(System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.List`1<Amazon.DynamoDBv2.Model.WriteRequest>>)")]

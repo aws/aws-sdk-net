@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a Reserved Instance offering.</para>
+    /// Describes a Reserved Instance offering.
     /// </summary>
     public partial class PricingDetail
     {
-        
-        private double? price;
-        private int? count;
-
+        private int? _count;
+        private double? _price;
 
         /// <summary>
-        /// The price per instance.
-        ///  
-        /// </summary>
-        public double Price
-        {
-            get { return this.price ?? default(double); }
-            set { this.price = value; }
-        }
-
-        // Check to see if Price property is set
-        internal bool IsSetPrice()
-        {
-            return this.price.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Count. 
+        /// <para>
         /// The number of instances available for the price.
-        ///  
+        /// </para>
         /// </summary>
         public int Count
         {
-            get { return this.count ?? default(int); }
-            set { this.count = value; }
+            get { return this._count.GetValueOrDefault(); }
+            set { this._count = value; }
         }
 
         // Check to see if Count property is set
         internal bool IsSetCount()
         {
-            return this.count.HasValue;
+            return this._count.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Price. 
+        /// <para>
+        /// The price per instance.
+        /// </para>
+        /// </summary>
+        public double Price
+        {
+            get { return this._price.GetValueOrDefault(); }
+            set { this._price = value; }
+        }
+
+        // Check to see if Price property is set
+        internal bool IsSetPrice()
+        {
+            return this._price.HasValue; 
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Bandwidth Rate Limit Request Marshaller
+    /// UpdateBandwidthRateLimit Request Marshaller
     /// </summary>       
-    internal class UpdateBandwidthRateLimitRequestMarshaller : IMarshaller<IRequest, UpdateBandwidthRateLimitRequest> 
+    public class UpdateBandwidthRateLimitRequestMarshaller : IMarshaller<IRequest, UpdateBandwidthRateLimitRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UpdateBandwidthRateLimitRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(updateBandwidthRateLimitRequest, "AmazonStorageGateway");
+        public IRequest Marshall(UpdateBandwidthRateLimitRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.UpdateBandwidthRateLimit";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateBandwidthRateLimitRequest != null && updateBandwidthRateLimitRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAverageDownloadRateLimitInBitsPerSec())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(updateBandwidthRateLimitRequest.GatewayARN);
-                }
-                if (updateBandwidthRateLimitRequest != null && updateBandwidthRateLimitRequest.IsSetAverageUploadRateLimitInBitsPerSec()) 
-                {
-                    writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
-                    writer.Write(updateBandwidthRateLimitRequest.AverageUploadRateLimitInBitsPerSec);
-                }
-                if (updateBandwidthRateLimitRequest != null && updateBandwidthRateLimitRequest.IsSetAverageDownloadRateLimitInBitsPerSec()) 
-                {
-                    writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");
-                    writer.Write(updateBandwidthRateLimitRequest.AverageDownloadRateLimitInBitsPerSec);
+                    context.Writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");
+                    context.Writer.Write(publicRequest.AverageDownloadRateLimitInBitsPerSec);
                 }
 
+                if(publicRequest.IsSetAverageUploadRateLimitInBitsPerSec())
+                {
+                    context.Writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
+                    context.Writer.Write(publicRequest.AverageUploadRateLimitInBitsPerSec);
+                }
+
+                if(publicRequest.IsSetGatewayARN())
+                {
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

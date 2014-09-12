@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -48,7 +52,6 @@ namespace Amazon.OpsWorks.Model
         private bool? _useEbsOptimizedInstances;
         private List<VolumeConfiguration> _volumeConfigurations = new List<VolumeConfiguration>();
 
-
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
@@ -66,7 +69,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._attributes != null && this._attributes.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property AutoAssignElasticIps. 
@@ -88,7 +90,6 @@ namespace Amazon.OpsWorks.Model
             return this._autoAssignElasticIps.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property AutoAssignPublicIps. 
         /// <para>
@@ -109,7 +110,6 @@ namespace Amazon.OpsWorks.Model
             return this._autoAssignPublicIps.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
@@ -127,7 +127,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._createdAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustomInstanceProfileArn. 
@@ -149,7 +148,6 @@ namespace Amazon.OpsWorks.Model
             return this._customInstanceProfileArn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CustomRecipes. 
         /// <para>
@@ -167,7 +165,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._customRecipes != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustomSecurityGroupIds. 
@@ -187,7 +184,6 @@ namespace Amazon.OpsWorks.Model
             return this._customSecurityGroupIds != null && this._customSecurityGroupIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultRecipes.
         /// </summary>
@@ -202,7 +198,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._defaultRecipes != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DefaultSecurityGroupNames. 
@@ -222,7 +217,6 @@ namespace Amazon.OpsWorks.Model
             return this._defaultSecurityGroupNames != null && this._defaultSecurityGroupNames.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EnableAutoHealing. 
         /// <para>
@@ -240,7 +234,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._enableAutoHealing.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property InstallUpdatesOnBoot. 
@@ -264,7 +257,6 @@ namespace Amazon.OpsWorks.Model
             return this._installUpdatesOnBoot.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LayerId. 
         /// <para>
@@ -282,7 +274,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._layerId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -302,7 +293,6 @@ namespace Amazon.OpsWorks.Model
             return this._name != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Packages. 
         /// <para>
@@ -320,7 +310,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._packages != null && this._packages.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Shortname. 
@@ -340,7 +329,6 @@ namespace Amazon.OpsWorks.Model
             return this._shortname != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -358,7 +346,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Type. 
@@ -381,7 +368,6 @@ namespace Amazon.OpsWorks.Model
             return this._type != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property UseEbsOptimizedInstances. 
         /// <para>
@@ -399,7 +385,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._useEbsOptimizedInstances.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VolumeConfigurations. 

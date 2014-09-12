@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.Redshift.Model
         private string _sourceType;
         private string _subscriptionName;
 
-
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
@@ -56,7 +59,6 @@ namespace Amazon.Redshift.Model
         {
             return this._enabled.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EventCategories. 
@@ -81,7 +83,6 @@ namespace Amazon.Redshift.Model
             return this._eventCategories != null && this._eventCategories.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
@@ -105,7 +106,6 @@ namespace Amazon.Redshift.Model
             return this._severity != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
@@ -124,7 +124,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snsTopicArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SourceIds. 
@@ -156,7 +155,6 @@ namespace Amazon.Redshift.Model
             return this._sourceIds != null && this._sourceIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
@@ -182,7 +180,6 @@ namespace Amazon.Redshift.Model
         {
             return this._sourceType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SubscriptionName. 

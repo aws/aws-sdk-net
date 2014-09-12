@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,49 +29,65 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTable operation.
-    /// <para>The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i> request, the specified table is in
-    /// the <c>DELETING</c> state until DynamoDB completes the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a table
-    /// is in <c>CREATING</c> or <c>UPDATING</c> states, then DynamoDB returns a
-    /// <i>ResourceInUseException</i> . If the specified table does not exist, DynamoDB returns a
-    /// <i>ResourceNotFoundException</i> . If table is already in the <c>DELETING</c> state, no error is returned. </para> <para><b>NOTE:</b>
-    /// DynamoDB might continue to accept data read and write operations, such as GetItem and PutItem, on a table in the DELETING state until the
-    /// table deletion is complete. </para> <para>When you delete a table, any indexes on that table are also deleted.</para> <para>Use the
-    /// <i>DescribeTable</i> API to check the status of the table. </para>
+    /// The <i>DeleteTable</i> operation deletes a table and all of its items. After a   
+    ///     <i>DeleteTable</i> request, the specified table is in the <code>DELETING</code>
+    /// state until      DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code>
+    /// state, you can delete      it. If a table is in <code>CREATING</code> or <code>UPDATING</code>
+    /// states, then DynamoDB returns      a <i>ResourceInUseException</i>. If the specified
+    /// table does not exist, DynamoDB returns a        <i>ResourceNotFoundException</i>.
+    /// If table is already in the <code>DELETING</code> state, no      error is returned.
+    /// 
+    /// 
+    ///     <note>      
+    /// <para>
+    /// DynamoDB might continue to accept data read and write operations, such as <i>GetItem</i>
+    /// and          <i>PutItem</i>, on a table in the <code>DELETING</code> state until the
+    /// table deletion is        complete.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// When you delete a table, any indexes on that table are also deleted.
+    /// </para>
+    ///     
+    /// <para>
+    /// Use the <i>DescribeTable</i> API to check the status of the table. 
+    /// </para>
     /// </summary>
-    public partial class DeleteTableRequest : AmazonDynamoDBv2Request
+    public partial class DeleteTableRequest : AmazonDynamoDBRequest
     {
-        private string tableName;
-
+        private string _tableName;
 
         /// <summary>
-        /// The name of the table to delete.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteTableRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteTableRequest with the parameterized properties
+        /// </summary>
+        /// <param name="tableName"> The name of the table to delete.</param>
+        public DeleteTableRequest(string tableName)
+        {
+            _tableName = tableName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the table to delete.
         /// </para>
         /// </summary>
         public string TableName
         {
-            get { return this.tableName; }
-            set { this.tableName = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
         // Check to see if TableName property is set
         internal bool IsSetTableName()
         {
-            return this.tableName != null;
+            return this._tableName != null;
         }
 
     }
 }
-    

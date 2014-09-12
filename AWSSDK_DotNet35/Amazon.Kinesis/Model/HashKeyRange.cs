@@ -12,72 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <para>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</para>
+    /// The range of possible hash key values for the shard, which is a set of ordered contiguous
+    /// positive integers.
     /// </summary>
     public partial class HashKeyRange
     {
-        
-        private string startingHashKey;
-        private string endingHashKey;
-
+        private string _endingHashKey;
+        private string _startingHashKey;
 
         /// <summary>
-        /// The starting hash key of the hash key range.
-        ///  
+        /// Gets and sets the property EndingHashKey. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>0|([1-9]\d{0,38})</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string StartingHashKey
-        {
-            get { return this.startingHashKey; }
-            set { this.startingHashKey = value; }
-        }
-
-        // Check to see if StartingHashKey property is set
-        internal bool IsSetStartingHashKey()
-        {
-            return this.startingHashKey != null;
-        }
-
-        /// <summary>
         /// The ending hash key of the hash key range.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>0|([1-9]\d{0,38})</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string EndingHashKey
         {
-            get { return this.endingHashKey; }
-            set { this.endingHashKey = value; }
+            get { return this._endingHashKey; }
+            set { this._endingHashKey = value; }
         }
 
         // Check to see if EndingHashKey property is set
         internal bool IsSetEndingHashKey()
         {
-            return this.endingHashKey != null;
+            return this._endingHashKey != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property StartingHashKey. 
+        /// <para>
+        /// The starting hash key of the hash key range.
+        /// </para>
+        /// </summary>
+        public string StartingHashKey
+        {
+            get { return this._startingHashKey; }
+            set { this._startingHashKey = value; }
+        }
+
+        // Check to see if StartingHashKey property is set
+        internal bool IsSetStartingHashKey()
+        {
+            return this._startingHashKey != null;
+        }
+
     }
 }

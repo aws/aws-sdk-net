@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,160 +12,165 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions. </para>
+    /// A structure that represents a decision task. Decision tasks are sent to deciders
+    /// in order for them to make decisions.
     /// </summary>
-    public partial class DecisionTask : AmazonWebServiceResponse
+    public partial class DecisionTask
     {
-        
-        private string taskToken;
-        private long? startedEventId;
-        private WorkflowExecution workflowExecution;
-        private WorkflowType workflowType;
-        private List<HistoryEvent> events = new List<HistoryEvent>();
-        private string nextPageToken;
-        private long? previousStartedEventId;
+        private List<HistoryEvent> _events = new List<HistoryEvent>();
+        private string _nextPageToken;
+        private long? _previousStartedEventId;
+        private long? _startedEventId;
+        private string _taskToken;
+        private WorkflowExecution _workflowExecution;
+        private WorkflowType _workflowType;
 
         /// <summary>
-        /// The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the
-        /// system about the task.
-        ///  
+        /// Gets and sets the property Events. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
+        ///  A paginated list of history events of the workflow execution. The decider uses this
+        /// during the processing of the decision task. 
         /// </para>
-        /// </summary>
-        public string TaskToken
-        {
-            get { return this.taskToken; }
-            set { this.taskToken = value; }
-        }
-
-        // Check to see if TaskToken property is set
-        internal bool IsSetTaskToken()
-        {
-            return this.taskToken != null;
-        }
-
-        /// <summary>
-        /// The id of the <c>DecisionTaskStarted</c> event recorded in the history.
-        ///  
-        /// </summary>
-        public long StartedEventId
-        {
-            get { return this.startedEventId ?? default(long); }
-            set { this.startedEventId = value; }
-        }
-
-        // Check to see if StartedEventId property is set
-        internal bool IsSetStartedEventId()
-        {
-            return this.startedEventId.HasValue;
-        }
-
-        /// <summary>
-        /// The workflow execution for which this decision task was created.
-        ///  
-        /// </summary>
-        public WorkflowExecution WorkflowExecution
-        {
-            get { return this.workflowExecution; }
-            set { this.workflowExecution = value; }
-        }
-
-        // Check to see if WorkflowExecution property is set
-        internal bool IsSetWorkflowExecution()
-        {
-            return this.workflowExecution != null;
-        }
-
-        /// <summary>
-        /// The type of the workflow execution for which this decision task was created.
-        ///  
-        /// </summary>
-        public WorkflowType WorkflowType
-        {
-            get { return this.workflowType; }
-            set { this.workflowType = value; }
-        }
-
-        // Check to see if WorkflowType property is set
-        internal bool IsSetWorkflowType()
-        {
-            return this.workflowType != null;
-        }
-
-        /// <summary>
-        /// A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.
-        ///  
         /// </summary>
         public List<HistoryEvent> Events
         {
-            get { return this.events; }
-            set { this.events = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;
+            return this._events != null && this._events.Count > 0; 
         }
 
         /// <summary>
-        /// Returns a value if the results are paginated. To get the next page of results, repeat the request specifying this token and all other
-        /// arguments unchanged.
-        ///  
+        /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 2048</description>
-        ///     </item>
-        /// </list>
+        ///  Returns a value if the results are paginated. To get the next page of results, repeat
+        /// the request specifying this token and all other arguments unchanged. 
         /// </para>
         /// </summary>
         public string NextPageToken
         {
-            get { return this.nextPageToken; }
-            set { this.nextPageToken = value; }
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
         }
 
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;
+            return this._nextPageToken != null;
         }
 
         /// <summary>
-        /// The id of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can
-        /// be used to determine the events in the history new since the last decision task received by the decider.
-        ///  
+        /// Gets and sets the property PreviousStartedEventId. 
+        /// <para>
+        ///  The id of the DecisionTaskStarted event of the previous decision task of this workflow
+        /// execution that was processed by the decider. This can be used to determine the events
+        /// in the history new since the last decision task received by the decider. 
+        /// </para>
         /// </summary>
         public long PreviousStartedEventId
         {
-            get { return this.previousStartedEventId ?? default(long); }
-            set { this.previousStartedEventId = value; }
+            get { return this._previousStartedEventId.GetValueOrDefault(); }
+            set { this._previousStartedEventId = value; }
         }
 
         // Check to see if PreviousStartedEventId property is set
         internal bool IsSetPreviousStartedEventId()
         {
-            return this.previousStartedEventId.HasValue;
+            return this._previousStartedEventId.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property StartedEventId. 
+        /// <para>
+        ///  The id of the <code>DecisionTaskStarted</code> event recorded in the history. 
+        /// </para>
+        /// </summary>
+        public long StartedEventId
+        {
+            get { return this._startedEventId.GetValueOrDefault(); }
+            set { this._startedEventId = value; }
+        }
+
+        // Check to see if StartedEventId property is set
+        internal bool IsSetStartedEventId()
+        {
+            return this._startedEventId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskToken. 
+        /// <para>
+        ///  The opaque string used as a handle on the task. This token is used by workers to
+        /// communicate progress and response information back to the system about the task. 
+        /// </para>
+        /// </summary>
+        public string TaskToken
+        {
+            get { return this._taskToken; }
+            set { this._taskToken = value; }
+        }
+
+        // Check to see if TaskToken property is set
+        internal bool IsSetTaskToken()
+        {
+            return this._taskToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowExecution. 
+        /// <para>
+        ///  The workflow execution for which this decision task was created. 
+        /// </para>
+        /// </summary>
+        public WorkflowExecution WorkflowExecution
+        {
+            get { return this._workflowExecution; }
+            set { this._workflowExecution = value; }
+        }
+
+        // Check to see if WorkflowExecution property is set
+        internal bool IsSetWorkflowExecution()
+        {
+            return this._workflowExecution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowType. 
+        /// <para>
+        ///  The type of the workflow execution for which this decision task was created. 
+        /// </para>
+        /// </summary>
+        public WorkflowType WorkflowType
+        {
+            get { return this._workflowType; }
+            set { this._workflowType = value; }
+        }
+
+        // Check to see if WorkflowType property is set
+        internal bool IsSetWorkflowType()
+        {
+            return this._workflowType != null;
+        }
+
     }
 }

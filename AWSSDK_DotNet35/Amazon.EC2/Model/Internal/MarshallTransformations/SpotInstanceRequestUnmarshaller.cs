@@ -12,153 +12,164 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SpotInstanceRequest Unmarshaller
-     /// </summary>
-    internal class SpotInstanceRequestUnmarshaller : IUnmarshaller<SpotInstanceRequest, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceRequest, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SpotInstanceRequest Object
+    /// </summary>  
+    public class SpotInstanceRequestUnmarshaller : IUnmarshaller<SpotInstanceRequest, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceRequest, JsonUnmarshallerContext>
     {
-        public SpotInstanceRequest Unmarshall(XmlUnmarshallerContext context) 
+        public SpotInstanceRequest Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotInstanceRequest spotInstanceRequest = new SpotInstanceRequest();
+            SpotInstanceRequest unmarshalledObject = new SpotInstanceRequest();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("spotInstanceRequestId", targetDepth))
-                    {
-                        spotInstanceRequest.SpotInstanceRequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("spotPrice", targetDepth))
-                    {
-                        spotInstanceRequest.SpotPrice = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("type", targetDepth))
-                    {
-                        spotInstanceRequest.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        spotInstanceRequest.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("fault", targetDepth))
-                    {
-                        spotInstanceRequest.Fault = SpotInstanceStateFaultUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        spotInstanceRequest.Status = SpotInstanceStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("validFrom", targetDepth))
-                    {
-                        spotInstanceRequest.ValidFrom = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("validUntil", targetDepth))
-                    {
-                        spotInstanceRequest.ValidUntil = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("launchGroup", targetDepth))
-                    {
-                        spotInstanceRequest.LaunchGroup = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("availabilityZoneGroup", targetDepth))
                     {
-                        spotInstanceRequest.AvailabilityZoneGroup = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("launchSpecification", targetDepth))
-                    {
-                        spotInstanceRequest.LaunchSpecification = LaunchSpecificationUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        spotInstanceRequest.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("createTime", targetDepth))
                     {
-                        spotInstanceRequest.CreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("productDescription", targetDepth))
+                    if (context.TestExpression("fault", targetDepth))
                     {
-                        spotInstanceRequest.ProductDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = SpotInstanceStateFaultUnmarshaller.Instance;
+                        unmarshalledObject.Fault = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("tagSet/item", targetDepth))
+                    if (context.TestExpression("instanceId", targetDepth))
                     {
-                        spotInstanceRequest.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("launchedAvailabilityZone", targetDepth))
                     {
-                        spotInstanceRequest.LaunchedAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LaunchedAvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("launchGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LaunchGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("launchSpecification", targetDepth))
+                    {
+                        var unmarshaller = LaunchSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.LaunchSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("productDescription", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ProductDescription = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("spotInstanceRequestId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SpotInstanceRequestId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("spotPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SpotPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = SpotInstanceStatusUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("type", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("validFrom", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ValidFrom = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("validUntil", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return spotInstanceRequest;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return spotInstanceRequest;
+            return unmarshalledObject;
         }
 
-        public SpotInstanceRequest Unmarshall(JsonUnmarshallerContext context) 
+        public SpotInstanceRequest Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SpotInstanceRequestUnmarshaller instance;
 
-        public static SpotInstanceRequestUnmarshaller GetInstance() 
+        private static SpotInstanceRequestUnmarshaller _instance = new SpotInstanceRequestUnmarshaller();        
+
+        public static SpotInstanceRequestUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SpotInstanceRequestUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

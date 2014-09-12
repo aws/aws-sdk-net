@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.AWSSupport.Model
         private List<Communication> _communications = new List<Communication>();
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property Communications. 
         /// <para>
@@ -49,7 +52,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._communications != null && this._communications.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. 

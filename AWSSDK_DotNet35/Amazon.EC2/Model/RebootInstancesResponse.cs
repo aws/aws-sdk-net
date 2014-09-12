@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the RebootInstances response metadata.
-    /// The RebootInstances operation has a void result type.
+    /// Configuration for accessing Amazon RebootInstances service
     /// </summary>
-    public partial class RebootInstancesResponse : AmazonWebServiceResponse
+    public partial class RebootInstancesResponse : RebootInstancesResult
     {
+        /// <summary>
+        /// Gets and sets the RebootInstancesResult property.
+        /// Represents the output of a RebootInstances operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the RebootInstancesResult class are now available on the RebootInstancesResponse class. You should use the properties on RebootInstancesResponse instead of accessing them through RebootInstancesResult.")]
+        public RebootInstancesResult RebootInstancesResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

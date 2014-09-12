@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// SetPermission Request Marshaller
     /// </summary>       
-    public class SetPermissionRequestMarshaller : IMarshaller<IRequest, SetPermissionRequest> 
+    public class SetPermissionRequestMarshaller : IMarshaller<IRequest, SetPermissionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((SetPermissionRequest)input);
+        }
+
         public IRequest Marshall(SetPermissionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,34 +56,35 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAllowSsh())
                 {
-                    writer.WritePropertyName("AllowSsh");
-                    writer.Write(publicRequest.AllowSsh);
+                    context.Writer.WritePropertyName("AllowSsh");
+                    context.Writer.Write(publicRequest.AllowSsh);
                 }
 
                 if(publicRequest.IsSetAllowSudo())
                 {
-                    writer.WritePropertyName("AllowSudo");
-                    writer.Write(publicRequest.AllowSudo);
+                    context.Writer.WritePropertyName("AllowSudo");
+                    context.Writer.Write(publicRequest.AllowSudo);
                 }
 
                 if(publicRequest.IsSetIamUserArn())
                 {
-                    writer.WritePropertyName("IamUserArn");
-                    writer.Write(publicRequest.IamUserArn);
+                    context.Writer.WritePropertyName("IamUserArn");
+                    context.Writer.Write(publicRequest.IamUserArn);
                 }
 
                 if(publicRequest.IsSetLevel())
                 {
-                    writer.WritePropertyName("Level");
-                    writer.Write(publicRequest.Level);
+                    context.Writer.WritePropertyName("Level");
+                    context.Writer.Write(publicRequest.Level);
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

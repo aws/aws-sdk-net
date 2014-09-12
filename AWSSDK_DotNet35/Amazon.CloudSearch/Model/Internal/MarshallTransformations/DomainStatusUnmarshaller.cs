@@ -12,129 +12,139 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DomainStatus Unmarshaller
-     /// </summary>
-    internal class DomainStatusUnmarshaller : IUnmarshaller<DomainStatus, XmlUnmarshallerContext>, IUnmarshaller<DomainStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DomainStatus Object
+    /// </summary>  
+    public class DomainStatusUnmarshaller : IUnmarshaller<DomainStatus, XmlUnmarshallerContext>, IUnmarshaller<DomainStatus, JsonUnmarshallerContext>
     {
-        public DomainStatus Unmarshall(XmlUnmarshallerContext context) 
+        public DomainStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            DomainStatus domainStatus = new DomainStatus();
+            DomainStatus unmarshalledObject = new DomainStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DomainId", targetDepth))
-                    {
-                        domainStatus.DomainId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DomainName", targetDepth))
-                    {
-                        domainStatus.DomainName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("ARN", targetDepth))
                     {
-                        domainStatus.ARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Created", targetDepth))
                     {
-                        domainStatus.Created = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Deleted", targetDepth))
                     {
-                        domainStatus.Deleted = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DocService", targetDepth))
                     {
-                        domainStatus.DocService = ServiceEndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ServiceEndpointUnmarshaller.Instance;
+                        unmarshalledObject.DocService = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SearchService", targetDepth))
+                    if (context.TestExpression("DomainId", targetDepth))
                     {
-                        domainStatus.SearchService = ServiceEndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("RequiresIndexDocuments", targetDepth))
+                    if (context.TestExpression("DomainName", targetDepth))
                     {
-                        domainStatus.RequiresIndexDocuments = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Processing", targetDepth))
                     {
-                        domainStatus.Processing = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Processing = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SearchInstanceType", targetDepth))
+                    if (context.TestExpression("RequiresIndexDocuments", targetDepth))
                     {
-                        domainStatus.SearchInstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SearchPartitionCount", targetDepth))
-                    {
-                        domainStatus.SearchPartitionCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.RequiresIndexDocuments = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SearchInstanceCount", targetDepth))
                     {
-                        domainStatus.SearchInstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SearchInstanceCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SearchInstanceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SearchInstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SearchPartitionCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SearchPartitionCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SearchService", targetDepth))
+                    {
+                        var unmarshaller = ServiceEndpointUnmarshaller.Instance;
+                        unmarshalledObject.SearchService = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return domainStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return domainStatus;
+            return unmarshalledObject;
         }
 
-        public DomainStatus Unmarshall(JsonUnmarshallerContext context) 
+        public DomainStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DomainStatusUnmarshaller instance;
 
-        public static DomainStatusUnmarshaller GetInstance() 
+        private static DomainStatusUnmarshaller _instance = new DomainStatusUnmarshaller();        
+
+        public static DomainStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DomainStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

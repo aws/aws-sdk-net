@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,7 +38,6 @@ namespace Amazon.ElasticTranscoder.Model
         private AudioCodecOptions _codecOptions;
         private string _sampleRate;
 
-
         /// <summary>
         /// Gets and sets the property BitRate. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._bitRate != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Channels. 
@@ -82,7 +84,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._channels != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Codec. 
         /// <para>
@@ -101,7 +102,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._codec != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CodecOptions. 
@@ -130,7 +130,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._codecOptions != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SampleRate. 

@@ -12,40 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.Kinesis
 {
 
-
-    /// <summary>Shard Iterator Type
+    /// <summary>
+    /// Constants used for properties of type ShardIteratorType.
     /// </summary>
     public class ShardIteratorType : ConstantClass
     {
 
-
-       /// <summary>Constant AFTER_SEQUENCE_NUMBER for ShardIteratorType
-       /// </summary>
+        /// <summary>
+        /// Constant AFTER_SEQUENCE_NUMBER for ShardIteratorType
+        /// </summary>
         public static readonly ShardIteratorType AFTER_SEQUENCE_NUMBER = new ShardIteratorType("AFTER_SEQUENCE_NUMBER");
-    
-
-       /// <summary>Constant AT_SEQUENCE_NUMBER for ShardIteratorType
-       /// </summary>
+        /// <summary>
+        /// Constant AT_SEQUENCE_NUMBER for ShardIteratorType
+        /// </summary>
         public static readonly ShardIteratorType AT_SEQUENCE_NUMBER = new ShardIteratorType("AT_SEQUENCE_NUMBER");
-    
-
-       /// <summary>Constant LATEST for ShardIteratorType
-       /// </summary>
+        /// <summary>
+        /// Constant LATEST for ShardIteratorType
+        /// </summary>
         public static readonly ShardIteratorType LATEST = new ShardIteratorType("LATEST");
-    
-
-       /// <summary>Constant TRIM_HORIZON for ShardIteratorType
-       /// </summary>
+        /// <summary>
+        /// Constant TRIM_HORIZON for ShardIteratorType
+        /// </summary>
         public static readonly ShardIteratorType TRIM_HORIZON = new ShardIteratorType("TRIM_HORIZON");
-    
 
         /// <summary>
         /// Default Constructor
@@ -70,33 +70,30 @@ namespace Amazon.Kinesis
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Stream Status
+
+    /// <summary>
+    /// Constants used for properties of type StreamStatus.
     /// </summary>
     public class StreamStatus : ConstantClass
     {
 
-
-       /// <summary>Constant ACTIVE for StreamStatus
-       /// </summary>
+        /// <summary>
+        /// Constant ACTIVE for StreamStatus
+        /// </summary>
         public static readonly StreamStatus ACTIVE = new StreamStatus("ACTIVE");
-    
-
-       /// <summary>Constant CREATING for StreamStatus
-       /// </summary>
+        /// <summary>
+        /// Constant CREATING for StreamStatus
+        /// </summary>
         public static readonly StreamStatus CREATING = new StreamStatus("CREATING");
-    
-
-       /// <summary>Constant DELETING for StreamStatus
-       /// </summary>
+        /// <summary>
+        /// Constant DELETING for StreamStatus
+        /// </summary>
         public static readonly StreamStatus DELETING = new StreamStatus("DELETING");
-    
-
-       /// <summary>Constant UPDATING for StreamStatus
-       /// </summary>
+        /// <summary>
+        /// Constant UPDATING for StreamStatus
+        /// </summary>
         public static readonly StreamStatus UPDATING = new StreamStatus("UPDATING");
-    
 
         /// <summary>
         /// Default Constructor
@@ -121,7 +118,5 @@ namespace Amazon.Kinesis
             return FindValue(value);
         }
     }
-    
 
 }
-        

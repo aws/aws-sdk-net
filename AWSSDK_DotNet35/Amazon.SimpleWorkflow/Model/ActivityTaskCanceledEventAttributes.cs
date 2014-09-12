@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,99 +12,108 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>ActivityTaskCanceled</c> event. </para>
+    /// Provides details of the <code>ActivityTaskCanceled</code> event.
     /// </summary>
-    public class ActivityTaskCanceledEventAttributes
+    public partial class ActivityTaskCanceledEventAttributes
     {
-        
-        private string details;
-        private long? scheduledEventId;
-        private long? startedEventId;
-        private long? latestCancelRequestedEventId;
+        private string _details;
+        private long? _latestCancelRequestedEventId;
+        private long? _scheduledEventId;
+        private long? _startedEventId;
 
         /// <summary>
-        /// Details of the cancellation (if any).
-        ///  
+        /// Gets and sets the property Details. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32768</description>
-        ///     </item>
-        /// </list>
+        ///  Details of the cancellation (if any). 
         /// </para>
         /// </summary>
         public string Details
         {
-            get { return this.details; }
-            set { this.details = value; }
+            get { return this._details; }
+            set { this._details = value; }
         }
 
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;
+            return this._details != null;
         }
 
         /// <summary>
-        /// The id of the <c>ActivityTaskScheduled</c> event that was recorded when this activity task was scheduled. This information can be useful for
-        /// diagnosing problems by tracing back the chain of events leading up to this event.
-        ///  
-        /// </summary>
-        public long ScheduledEventId
-        {
-            get { return this.scheduledEventId ?? default(long); }
-            set { this.scheduledEventId = value; }
-        }
-
-        // Check to see if ScheduledEventId property is set
-        internal bool IsSetScheduledEventId()
-        {
-            return this.scheduledEventId.HasValue;
-        }
-
-        /// <summary>
-        /// The Id of the <c>ActivityTaskStarted</c> event recorded when this activity task was started. This information can be useful for diagnosing
-        /// problems by tracing back the chain of events leading up to this event.
-        ///  
-        /// </summary>
-        public long StartedEventId
-        {
-            get { return this.startedEventId ?? default(long); }
-            set { this.startedEventId = value; }
-        }
-
-        // Check to see if StartedEventId property is set
-        internal bool IsSetStartedEventId()
-        {
-            return this.startedEventId.HasValue;
-        }
-
-        /// <summary>
-        /// If set, contains the Id of the last <c>ActivityTaskCancelRequested</c> event recorded for this activity task. This information can be useful
-        /// for diagnosing problems by tracing back the chain of events leading up to this event.
-        ///  
+        /// Gets and sets the property LatestCancelRequestedEventId. 
+        /// <para>
+        ///  If set, contains the Id of the last <code>ActivityTaskCancelRequested</code> event
+        /// recorded for this activity task. This information can be useful for diagnosing problems
+        /// by tracing back the chain of events leading up to this event. 
+        /// </para>
         /// </summary>
         public long LatestCancelRequestedEventId
         {
-            get { return this.latestCancelRequestedEventId ?? default(long); }
-            set { this.latestCancelRequestedEventId = value; }
+            get { return this._latestCancelRequestedEventId.GetValueOrDefault(); }
+            set { this._latestCancelRequestedEventId = value; }
         }
 
         // Check to see if LatestCancelRequestedEventId property is set
         internal bool IsSetLatestCancelRequestedEventId()
         {
-            return this.latestCancelRequestedEventId.HasValue;
+            return this._latestCancelRequestedEventId.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledEventId. 
+        /// <para>
+        ///  The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// activity task was scheduled. This information can be useful for diagnosing problems
+        /// by tracing back the chain of events leading up to this event. 
+        /// </para>
+        /// </summary>
+        public long ScheduledEventId
+        {
+            get { return this._scheduledEventId.GetValueOrDefault(); }
+            set { this._scheduledEventId = value; }
+        }
+
+        // Check to see if ScheduledEventId property is set
+        internal bool IsSetScheduledEventId()
+        {
+            return this._scheduledEventId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedEventId. 
+        /// <para>
+        ///  The Id of the <code>ActivityTaskStarted</code> event recorded when this activity
+        /// task was started. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event. 
+        /// </para>
+        /// </summary>
+        public long StartedEventId
+        {
+            get { return this._startedEventId.GetValueOrDefault(); }
+            set { this._startedEventId = value; }
+        }
+
+        // Check to see if StartedEventId property is set
+        internal bool IsSetStartedEventId()
+        {
+            return this._startedEventId.HasValue; 
+        }
+
     }
 }

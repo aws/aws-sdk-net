@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateDeployment Request Marshaller
     /// </summary>       
-    public class CreateDeploymentRequestMarshaller : IMarshaller<IRequest, CreateDeploymentRequest> 
+    public class CreateDeploymentRequestMarshaller : IMarshaller<IRequest, CreateDeploymentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateDeploymentRequest)input);
+        }
+
         public IRequest Marshall(CreateDeploymentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,71 +56,51 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAppId())
                 {
-                    writer.WritePropertyName("AppId");
-                    writer.Write(publicRequest.AppId);
+                    context.Writer.WritePropertyName("AppId");
+                    context.Writer.Write(publicRequest.AppId);
                 }
 
                 if(publicRequest.IsSetCommand())
                 {
-                    writer.WritePropertyName("Command");
-                    writer.WriteObjectStart();
-                    if(publicRequest.Command.IsSetArgs())
-                    {
-                        writer.WritePropertyName("Args");
-                        writer.WriteObjectStart();
-                        foreach (var publicRequestCommandArgsKvp in publicRequest.Command.Args)
-                        {
-                            writer.WritePropertyName(publicRequestCommandArgsKvp.Key);
-                            var publicRequestCommandArgsValue = publicRequestCommandArgsKvp.Value;
+                    context.Writer.WritePropertyName("Command");
+                    context.Writer.WriteObjectStart();
 
-                            writer.WriteArrayStart();
-                            foreach(var publicRequestCommandArgsValueListValue in publicRequestCommandArgsValue)
-                            {
-                                writer.Write(publicRequestCommandArgsValueListValue);
-                            }
-                            writer.WriteArrayEnd();
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    var marshaller = DeploymentCommandMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Command, context);
 
-                    if(publicRequest.Command.IsSetName())
-                    {
-                        writer.WritePropertyName("Name");
-                        writer.Write(publicRequest.Command.Name);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetComment())
                 {
-                    writer.WritePropertyName("Comment");
-                    writer.Write(publicRequest.Comment);
+                    context.Writer.WritePropertyName("Comment");
+                    context.Writer.Write(publicRequest.Comment);
                 }
 
                 if(publicRequest.IsSetCustomJson())
                 {
-                    writer.WritePropertyName("CustomJson");
-                    writer.Write(publicRequest.CustomJson);
+                    context.Writer.WritePropertyName("CustomJson");
+                    context.Writer.Write(publicRequest.CustomJson);
                 }
 
                 if(publicRequest.IsSetInstanceIds())
                 {
-                    writer.WritePropertyName("InstanceIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("InstanceIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
                     {
-                        writer.Write(publicRequestInstanceIdsListValue);
+                            context.Writer.Write(publicRequestInstanceIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

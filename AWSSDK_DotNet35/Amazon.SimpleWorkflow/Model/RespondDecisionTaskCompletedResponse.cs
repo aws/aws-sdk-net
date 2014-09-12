@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Returns information about the RespondDecisionTaskCompleted response metadata.
-    /// The RespondDecisionTaskCompleted operation has a void result type.
+    /// Configuration for accessing Amazon RespondDecisionTaskCompleted service
     /// </summary>
-    public partial class RespondDecisionTaskCompletedResponse : AmazonWebServiceResponse
+    public partial class RespondDecisionTaskCompletedResponse : RespondDecisionTaskCompletedResult
     {
+        /// <summary>
+        /// Gets and sets the RespondDecisionTaskCompletedResult property.
+        /// Represents the output of a RespondDecisionTaskCompleted operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the RespondDecisionTaskCompletedResult class are now available on the RespondDecisionTaskCompletedResponse class. You should use the properties on RespondDecisionTaskCompletedResponse instead of accessing them through RespondDecisionTaskCompletedResult.")]
+        public RespondDecisionTaskCompletedResult RespondDecisionTaskCompletedResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

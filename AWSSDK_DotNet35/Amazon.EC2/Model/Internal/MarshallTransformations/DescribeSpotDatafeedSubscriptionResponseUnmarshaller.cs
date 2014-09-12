@@ -12,62 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeSpotDatafeedSubscription operation
-    /// </summary>
-    internal class DescribeSpotDatafeedSubscriptionResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for DescribeSpotDatafeedSubscription operation
+    /// </summary>  
+    public class DescribeSpotDatafeedSubscriptionResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeSpotDatafeedSubscriptionResponse response = new DescribeSpotDatafeedSubscriptionResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("spotDatafeedSubscription", targetDepth))
                     {
-                        response.SpotDatafeedSubscription = SpotDatafeedSubscriptionUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = SpotDatafeedSubscriptionUnmarshaller.Instance;
+                        response.SpotDatafeedSubscription = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeSpotDatafeedSubscriptionResponseUnmarshaller instance;
+        private static DescribeSpotDatafeedSubscriptionResponseUnmarshaller _instance = new DescribeSpotDatafeedSubscriptionResponseUnmarshaller();        
 
-        public static DescribeSpotDatafeedSubscriptionResponseUnmarshaller GetInstance()
+        internal static DescribeSpotDatafeedSubscriptionResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeSpotDatafeedSubscriptionResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeSpotDatafeedSubscriptionResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

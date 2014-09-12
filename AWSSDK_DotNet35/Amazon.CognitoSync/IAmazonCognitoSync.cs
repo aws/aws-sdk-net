@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.CognitoSync.Model;
 
 namespace Amazon.CognitoSync
 {
     /// <summary>
-    /// Implementation for accessing CognitoSync
+    /// Interface for accessing CognitoSync
     ///
     /// Amazon Cognito Sync 
     /// <para>
@@ -40,7 +45,6 @@ namespace Amazon.CognitoSync
 
         
         #region  DeleteDataset
-
 
         /// <summary>
         /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
@@ -94,7 +98,6 @@ namespace Amazon.CognitoSync
         
         #region  DescribeDataset
 
-
         /// <summary>
         /// Gets metadata about a dataset by identity and dataset name.
         /// </summary>
@@ -144,7 +147,6 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  DescribeIdentityPoolUsage
-
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
@@ -196,7 +198,6 @@ namespace Amazon.CognitoSync
         
         #region  DescribeIdentityUsage
 
-
         /// <summary>
         /// Gets usage information for an identity, including number of datasets and data usage.
         /// </summary>
@@ -247,7 +248,6 @@ namespace Amazon.CognitoSync
         
         #region  ListDatasets
 
-
         /// <summary>
         /// Lists datasets for an identity.
         /// </summary>
@@ -295,7 +295,6 @@ namespace Amazon.CognitoSync
         
         #region  ListIdentityPoolUsage
 
-
         /// <summary>
         /// Gets a list of identity pools registered with Cognito.
         /// </summary>
@@ -342,7 +341,6 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  ListRecords
-
 
         /// <summary>
         /// Gets paginated records, optionally changed after a particular sync count for a dataset
@@ -394,7 +392,6 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  UpdateRecords
-
 
         /// <summary>
         /// Posts updates to records and add and delete records for a dataset and user.

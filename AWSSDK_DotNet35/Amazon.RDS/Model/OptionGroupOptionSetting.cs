@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,123 +12,143 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> option group option settings are used to display settings available for each option with their default values and other information.
-    /// These values are used with the DescribeOptionGroupOptions action. </para>
+    /// option group option settings are used to display settings available for each option
+    /// with their default values and other information. These values are used with the DescribeOptionGroupOptions
+    /// action.
     /// </summary>
-    public class OptionGroupOptionSetting
+    public partial class OptionGroupOptionSetting
     {
-        
-        private string settingName;
-        private string settingDescription;
-        private string defaultValue;
-        private string applyType;
-        private string allowedValues;
-        private bool? isModifiable;
-
+        private string _allowedValues;
+        private string _applyType;
+        private string _defaultValue;
+        private bool? _isModifiable;
+        private string _settingDescription;
+        private string _settingName;
 
         /// <summary>
-        /// The name of the option group option.
-        ///  
-        /// </summary>
-        public string SettingName
-        {
-            get { return this.settingName; }
-            set { this.settingName = value; }
-        }
-
-        // Check to see if SettingName property is set
-        internal bool IsSetSettingName()
-        {
-            return this.settingName != null;
-        }
-
-        /// <summary>
-        /// The description of the option group option.
-        ///  
-        /// </summary>
-        public string SettingDescription
-        {
-            get { return this.settingDescription; }
-            set { this.settingDescription = value; }
-        }
-
-        // Check to see if SettingDescription property is set
-        internal bool IsSetSettingDescription()
-        {
-            return this.settingDescription != null;
-        }
-
-        /// <summary>
-        /// The default value for the option group option.
-        ///  
-        /// </summary>
-        public string DefaultValue
-        {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
-        }
-
-        // Check to see if DefaultValue property is set
-        internal bool IsSetDefaultValue()
-        {
-            return this.defaultValue != null;
-        }
-
-        /// <summary>
-        /// The DB engine specific parameter type for the option group option.
-        ///  
-        /// </summary>
-        public string ApplyType
-        {
-            get { return this.applyType; }
-            set { this.applyType = value; }
-        }
-
-        // Check to see if ApplyType property is set
-        internal bool IsSetApplyType()
-        {
-            return this.applyType != null;
-        }
-
-        /// <summary>
-        /// Indicates the acceptable values for the option group option.
-        ///  
+        /// Gets and sets the property AllowedValues. 
+        /// <para>
+        ///  Indicates the acceptable values for the option group option. 
+        /// </para>
         /// </summary>
         public string AllowedValues
         {
-            get { return this.allowedValues; }
-            set { this.allowedValues = value; }
+            get { return this._allowedValues; }
+            set { this._allowedValues = value; }
         }
 
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this.allowedValues != null;
+            return this._allowedValues != null;
         }
 
         /// <summary>
-        /// Boolean value where true indicates that this option group option can be changed from the default value.
-        ///  
+        /// Gets and sets the property ApplyType. 
+        /// <para>
+        ///  The DB engine specific parameter type for the option group option. 
+        /// </para>
+        /// </summary>
+        public string ApplyType
+        {
+            get { return this._applyType; }
+            set { this._applyType = value; }
+        }
+
+        // Check to see if ApplyType property is set
+        internal bool IsSetApplyType()
+        {
+            return this._applyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
+        ///  The default value for the option group option. 
+        /// </para>
+        /// </summary>
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsModifiable. 
+        /// <para>
+        ///  Boolean value where true indicates that this option group option can be changed from
+        /// the default value. 
+        /// </para>
         /// </summary>
         public bool IsModifiable
         {
-            get { return this.isModifiable ?? default(bool); }
-            set { this.isModifiable = value; }
+            get { return this._isModifiable.GetValueOrDefault(); }
+            set { this._isModifiable = value; }
         }
 
         // Check to see if IsModifiable property is set
         internal bool IsSetIsModifiable()
         {
-            return this.isModifiable.HasValue;
+            return this._isModifiable.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SettingDescription. 
+        /// <para>
+        ///  The description of the option group option. 
+        /// </para>
+        /// </summary>
+        public string SettingDescription
+        {
+            get { return this._settingDescription; }
+            set { this._settingDescription = value; }
+        }
+
+        // Check to see if SettingDescription property is set
+        internal bool IsSetSettingDescription()
+        {
+            return this._settingDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SettingName. 
+        /// <para>
+        ///  The name of the option group option. 
+        /// </para>
+        /// </summary>
+        public string SettingName
+        {
+            get { return this._settingName; }
+            set { this._settingName = value; }
+        }
+
+        // Check to see if SettingName property is set
+        internal bool IsSetSettingName()
+        {
+            return this._settingName != null;
+        }
+
     }
 }

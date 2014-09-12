@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetCloudFrontOriginAccessIdentityConfig Request Marshaller
     /// </summary>       
-    public class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest> 
+    public class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((GetCloudFrontOriginAccessIdentityConfigRequest)input);
+        }
+
         public IRequest Marshall(GetCloudFrontOriginAccessIdentityConfigRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");

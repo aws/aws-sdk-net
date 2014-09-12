@@ -12,237 +12,198 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains the health check configuration.</para>
+    /// A complex type that contains the health check configuration.
     /// </summary>
     public partial class HealthCheckConfig
     {
-        
-        private string iPAddress;
-        private int? port;
-        private HealthCheckType type;
-        private string resourcePath;
-        private string fullyQualifiedDomainName;
-        private string searchString;
-        private int? requestInterval;
-        private int? failureThreshold;
-
+        private string _iPAddress;
+        private int? _port;
+        private HealthCheckType _type;
+        private string _resourcePath;
+        private string _fullyQualifiedDomainName;
+        private string _searchString;
+        private int? _requestInterval;
+        private int? _failureThreshold;
 
         /// <summary>
-        /// IP Address of the instance being checked.
-        ///  
+        /// Gets and sets the property IPAddress. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 15</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</description>
-        ///     </item>
-        /// </list>
+        /// IP Address of the instance being checked. 
         /// </para>
         /// </summary>
         public string IPAddress
         {
-            get { return this.iPAddress; }
-            set { this.iPAddress = value; }
+            get { return this._iPAddress; }
+            set { this._iPAddress = value; }
         }
 
         // Check to see if IPAddress property is set
         internal bool IsSetIPAddress()
         {
-            return this.iPAddress != null;
+            return this._iPAddress != null;
         }
 
         /// <summary>
-        /// Port on which connection will be opened to the instance to health check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not
-        /// specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.
-        ///  
+        /// Gets and sets the property Port. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 65535</description>
-        ///     </item>
-        /// </list>
+        /// Port on which connection will be opened to the instance to health check. For HTTP
+        /// and HTTP_STR_MATCH this defaults to 80 if the port is not specified. For HTTPS and
+        /// HTTPS_STR_MATCH this defaults to 443 if the port is not specified.
         /// </para>
         /// </summary>
         public int Port
         {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
         }
 
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;
+            return this._port.HasValue; 
         }
 
         /// <summary>
-        /// The type of health check to be performed. Currently supported types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
-        ///  
+        /// Gets and sets the property Type. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP</description>
-        ///     </item>
-        /// </list>
+        /// The type of health check to be performed. Currently supported types are TCP, HTTP,
+        /// HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
         /// </para>
         /// </summary>
         public HealthCheckType Type
         {
-            get { return this.type; }
-            set { this.type = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this.type != null;
+            return this._type != null;
         }
 
         /// <summary>
-        /// Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
-        /// is issued to the instance on the given port and path.
-        ///  
+        /// Gets and sets the property ResourcePath. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 255</description>
-        ///     </item>
-        /// </list>
+        /// Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH,
+        /// and HTTPS_STR_MATCH health checks, HTTP request is issued to the instance on the given
+        /// port and path.
         /// </para>
         /// </summary>
         public string ResourcePath
         {
-            get { return this.resourcePath; }
-            set { this.resourcePath = value; }
+            get { return this._resourcePath; }
+            set { this._resourcePath = value; }
         }
 
         // Check to see if ResourcePath property is set
         internal bool IsSetResourcePath()
         {
-            return this.resourcePath != null;
+            return this._resourcePath != null;
         }
 
         /// <summary>
-        /// Fully qualified domain name of the instance to be health checked.
-        ///  
+        /// Gets and sets the property FullyQualifiedDomainName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 255</description>
-        ///     </item>
-        /// </list>
+        /// Fully qualified domain name of the instance to be health checked.
         /// </para>
         /// </summary>
         public string FullyQualifiedDomainName
         {
-            get { return this.fullyQualifiedDomainName; }
-            set { this.fullyQualifiedDomainName = value; }
+            get { return this._fullyQualifiedDomainName; }
+            set { this._fullyQualifiedDomainName = value; }
         }
 
         // Check to see if FullyQualifiedDomainName property is set
         internal bool IsSetFullyQualifiedDomainName()
         {
-            return this.fullyQualifiedDomainName != null;
+            return this._fullyQualifiedDomainName != null;
         }
 
         /// <summary>
-        /// A string to search for in the body of a health check response. Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
-        ///  
+        /// Gets and sets the property SearchString. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 255</description>
-        ///     </item>
-        /// </list>
+        /// A string to search for in the body of a health check response. Required for HTTP_STR_MATCH
+        /// and HTTPS_STR_MATCH health checks.
         /// </para>
         /// </summary>
         public string SearchString
         {
-            get { return this.searchString; }
-            set { this.searchString = value; }
+            get { return this._searchString; }
+            set { this._searchString = value; }
         }
 
         // Check to see if SearchString property is set
         internal bool IsSetSearchString()
         {
-            return this.searchString != null;
+            return this._searchString != null;
         }
 
         /// <summary>
-        /// The number of seconds between the time that Route 53 gets a response from your endpoint and the time that it sends the next health-check
-        /// request. Each Route 53 health checker makes requests at this interval. Valid values are 10 and 30. The default value is 30.
+        /// Gets and sets the property RequestInterval. 
+        /// <para>
+        /// The number of seconds between the time that Route 53 gets a response from your endpoint
+        /// and the time that it sends the next health-check request.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>10 - 30</description>
-        ///     </item>
-        /// </list>
+        /// Each Route 53 health checker makes requests at this interval. Valid values are 10
+        /// and 30. The default value is 30.
         /// </para>
         /// </summary>
         public int RequestInterval
         {
-            get { return this.requestInterval ?? default(int); }
-            set { this.requestInterval = value; }
+            get { return this._requestInterval.GetValueOrDefault(); }
+            set { this._requestInterval = value; }
         }
 
         // Check to see if RequestInterval property is set
         internal bool IsSetRequestInterval()
         {
-            return this.requestInterval.HasValue;
+            return this._requestInterval.HasValue; 
         }
 
         /// <summary>
-        /// The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from
-        /// unhealthy to healthy or vice versa. Valid values are integers between 1 and 10. For more information, see "How Amazon Route 53 Determines
-        /// Whether an Endpoint Is Healthy" in the Amazon Route 53 Developer Guide.
+        /// Gets and sets the property FailureThreshold. 
+        /// <para>
+        /// The number of consecutive health checks that an endpoint must pass or fail for Route
+        /// 53 to change the current status of the endpoint from unhealthy to healthy or vice
+        /// versa.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 10</description>
-        ///     </item>
-        /// </list>
+        /// Valid values are integers between 1 and 10. For more information, see "How Amazon
+        /// Route 53 Determines Whether an Endpoint Is Healthy" in the Amazon Route 53 Developer
+        /// Guide.
         /// </para>
         /// </summary>
         public int FailureThreshold
         {
-            get { return this.failureThreshold ?? default(int); }
-            set { this.failureThreshold = value; }
+            get { return this._failureThreshold.GetValueOrDefault(); }
+            set { this._failureThreshold = value; }
         }
 
         // Check to see if FailureThreshold property is set
         internal bool IsSetFailureThreshold()
         {
-            return this.failureThreshold.HasValue;
+            return this._failureThreshold.HasValue; 
         }
+
     }
 }

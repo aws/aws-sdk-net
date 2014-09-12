@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -39,7 +43,6 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _runningInstanceCount;
         private InstanceGroupStatus _status;
 
-
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
@@ -59,7 +62,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._bidPrice != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
@@ -77,7 +79,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._id != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceGroupType. 
@@ -97,7 +98,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceGroupType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
@@ -115,7 +115,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Market. 
@@ -136,7 +135,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._market != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
@@ -154,7 +152,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property RequestedInstanceCount. 
@@ -174,7 +171,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._requestedInstanceCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property RunningInstanceCount. 
         /// <para>
@@ -192,7 +188,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._runningInstanceCount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

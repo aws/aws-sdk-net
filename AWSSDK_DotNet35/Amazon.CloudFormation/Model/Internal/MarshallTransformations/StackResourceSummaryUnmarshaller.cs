@@ -12,93 +12,103 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   StackResourceSummary Unmarshaller
-     /// </summary>
-    internal class StackResourceSummaryUnmarshaller : IUnmarshaller<StackResourceSummary, XmlUnmarshallerContext>, IUnmarshaller<StackResourceSummary, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for StackResourceSummary Object
+    /// </summary>  
+    public class StackResourceSummaryUnmarshaller : IUnmarshaller<StackResourceSummary, XmlUnmarshallerContext>, IUnmarshaller<StackResourceSummary, JsonUnmarshallerContext>
     {
-        public StackResourceSummary Unmarshall(XmlUnmarshallerContext context) 
+        public StackResourceSummary Unmarshall(XmlUnmarshallerContext context)
         {
-            StackResourceSummary stackResourceSummary = new StackResourceSummary();
+            StackResourceSummary unmarshalledObject = new StackResourceSummary();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LogicalResourceId", targetDepth))
                     {
-                        stackResourceSummary.LogicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PhysicalResourceId", targetDepth))
                     {
-                        stackResourceSummary.PhysicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceType", targetDepth))
-                    {
-                        stackResourceSummary.ResourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
-                    {
-                        stackResourceSummary.LastUpdatedTimestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourceStatus", targetDepth))
                     {
-                        stackResourceSummary.ResourceStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourceStatusReason", targetDepth))
                     {
-                        stackResourceSummary.ResourceStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceStatusReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return stackResourceSummary;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return stackResourceSummary;
+            return unmarshalledObject;
         }
 
-        public StackResourceSummary Unmarshall(JsonUnmarshallerContext context) 
+        public StackResourceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static StackResourceSummaryUnmarshaller instance;
 
-        public static StackResourceSummaryUnmarshaller GetInstance() 
+        private static StackResourceSummaryUnmarshaller _instance = new StackResourceSummaryUnmarshaller();        
+
+        public static StackResourceSummaryUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new StackResourceSummaryUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

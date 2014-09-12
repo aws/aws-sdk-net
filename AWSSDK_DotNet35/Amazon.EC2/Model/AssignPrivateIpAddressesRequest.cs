@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,88 +29,105 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssignPrivateIpAddresses operation.
-    /// <para>Assigns one or more secondary private IP addresses to the specified network interface. You can specify one or more specific secondary
-    /// IP addresses, or you can specify the number of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The
-    /// number of secondary IP addresses that you can assign to an instance varies by instance type. For information about instance types, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html" >Instance Types</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i> . For more information about Elastic IP addresses, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP Addresses</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para> <para>AssignPrivateIpAddresses is available only in EC2-VPC.</para>
+    /// Assigns one or more secondary private IP addresses to the specified network interface.
+    /// You can specify one or more specific secondary IP addresses, or you can specify the
+    /// number of secondary IP addresses to be automatically assigned within the subnet's
+    /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
+    /// varies by instance type. For information about instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+    /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
+    /// about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// AssignPrivateIpAddresses is available only in EC2-VPC.
+    /// </para>
     /// </summary>
     public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request
     {
-        private string networkInterfaceId;
-        private List<string> privateIpAddresses = new List<string>();
-        private int? secondaryPrivateIpAddressCount;
-        private bool? allowReassignment;
-
-
-        /// <summary>
-        /// The ID of the network interface.
-        ///  
-        /// </summary>
-        public string NetworkInterfaceId
-        {
-            get { return this.networkInterfaceId; }
-            set { this.networkInterfaceId = value; }
-        }
-
-        // Check to see if NetworkInterfaceId property is set
-        internal bool IsSetNetworkInterfaceId()
-        {
-            return this.networkInterfaceId != null;
-        }
+        private bool? _allowReassignment;
+        private string _networkInterfaceId;
+        private List<string> _privateIpAddresses = new List<string>();
+        private int? _secondaryPrivateIpAddressCount;
 
         /// <summary>
-        /// One or more IP addresses to be assigned as a secondary private IP address to the network interface. If you don't specify an IP address,
-        /// Amazon EC2 automatically selects an IP address within the subnet range.
-        ///  
-        /// </summary>
-        public List<string> PrivateIpAddresses
-        {
-            get { return this.privateIpAddresses; }
-            set { this.privateIpAddresses = value; }
-        }
-
-        // Check to see if PrivateIpAddresses property is set
-        internal bool IsSetPrivateIpAddresses()
-        {
-            return this.privateIpAddresses.Count > 0;
-        }
-
-        /// <summary>
-        /// The number of secondary IP addresses to assign to the network interface.
-        ///  
-        /// </summary>
-        public int SecondaryPrivateIpAddressCount
-        {
-            get { return this.secondaryPrivateIpAddressCount ?? default(int); }
-            set { this.secondaryPrivateIpAddressCount = value; }
-        }
-
-        // Check to see if SecondaryPrivateIpAddressCount property is set
-        internal bool IsSetSecondaryPrivateIpAddressCount()
-        {
-            return this.secondaryPrivateIpAddressCount.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified
-        /// network interface.
-        ///  
+        /// Gets and sets the property AllowReassignment. 
+        /// <para>
+        /// Indicates whether to allow an IP address that is already assigned to another network
+        /// interface or instance to be reassigned to the specified network interface.
+        /// </para>
         /// </summary>
         public bool AllowReassignment
         {
-            get { return this.allowReassignment ?? default(bool); }
-            set { this.allowReassignment = value; }
+            get { return this._allowReassignment.GetValueOrDefault(); }
+            set { this._allowReassignment = value; }
         }
 
         // Check to see if AllowReassignment property is set
         internal bool IsSetAllowReassignment()
         {
-            return this.allowReassignment.HasValue;
+            return this._allowReassignment.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddresses. 
+        /// <para>
+        /// One or more IP addresses to be assigned as a secondary private IP address to the network
+        /// interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify an IP address, Amazon EC2 automatically selects an IP address
+        /// within the subnet range.
+        /// </para>
+        /// </summary>
+        public List<string> PrivateIpAddresses
+        {
+            get { return this._privateIpAddresses; }
+            set { this._privateIpAddresses = value; }
+        }
+
+        // Check to see if PrivateIpAddresses property is set
+        internal bool IsSetPrivateIpAddresses()
+        {
+            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryPrivateIpAddressCount. 
+        /// <para>
+        /// The number of secondary IP addresses to assign to the network interface.
+        /// </para>
+        /// </summary>
+        public int SecondaryPrivateIpAddressCount
+        {
+            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            set { this._secondaryPrivateIpAddressCount = value; }
+        }
+
+        // Check to see if SecondaryPrivateIpAddressCount property is set
+        internal bool IsSetSecondaryPrivateIpAddressCount()
+        {
+            return this._secondaryPrivateIpAddressCount.HasValue; 
         }
 
     }
 }
-    

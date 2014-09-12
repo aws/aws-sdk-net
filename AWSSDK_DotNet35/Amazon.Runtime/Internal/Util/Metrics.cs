@@ -110,7 +110,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Constructs an empty, disabled metrics object
         /// </summary>
-        internal RequestMetrics()
+        public RequestMetrics()
         {
             stopWatch = Stopwatch.StartNew();
             Properties = new Dictionary<Metric, List<object>>();
@@ -345,6 +345,7 @@ namespace Amazon.Runtime.Internal.Util
         CredentialsRequestTime,
         HttpRequestTime,
         ProxyHost,
+        ProxyPort,
         RequestSigningTime,
         RetryPauseTime,
         StringToSign,

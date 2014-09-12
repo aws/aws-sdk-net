@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -44,7 +48,6 @@ namespace Amazon.SQS.Model
         private List<string> _stringListValues = new List<string>();
         private string _stringValue;
 
-
         /// <summary>
         /// Gets and sets the property BinaryListValues. 
         /// <para>
@@ -62,7 +65,6 @@ namespace Amazon.SQS.Model
         {
             return this._binaryListValues != null && this._binaryListValues.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property BinaryValue. 
@@ -82,7 +84,6 @@ namespace Amazon.SQS.Model
         {
             return this._binaryValue != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property DataType. 
@@ -104,7 +105,6 @@ namespace Amazon.SQS.Model
             return this._dataType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property StringListValues. 
         /// <para>
@@ -122,7 +122,6 @@ namespace Amazon.SQS.Model
         {
             return this._stringListValues != null && this._stringListValues.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property StringValue. 

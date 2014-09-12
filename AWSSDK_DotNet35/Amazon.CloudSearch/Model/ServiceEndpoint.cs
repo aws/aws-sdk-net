@@ -12,40 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The endpoint to which service requests can be submitted, including the actual URL prefix for sending requests and the Amazon Resource
-    /// Name (ARN) so the endpoint can be referenced in other API calls such as UpdateServiceAccessPolicies.</para>
+    /// The endpoint to which service requests can be submitted.
     /// </summary>
     public partial class ServiceEndpoint
     {
-        
-        private string endpoint;
-
+        private string _endpoint;
 
         /// <summary>
-        /// The URL to which service requests can be submitted. Includes the API version and path prefix. For example,
-        /// <c>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</c> or
-        /// <c>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</c>.
-        ///  
+        /// Gets and sets the property Endpoint.
         /// </summary>
         public string Endpoint
         {
-            get { return this.endpoint; }
-            set { this.endpoint = value; }
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
         }
 
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;
+            return this._endpoint != null;
         }
+
     }
 }

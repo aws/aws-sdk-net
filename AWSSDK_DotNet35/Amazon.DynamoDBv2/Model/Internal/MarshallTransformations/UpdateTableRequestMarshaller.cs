@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,116 +33,73 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Table Request Marshaller
+    /// UpdateTable Request Marshaller
     /// </summary>       
-    internal class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest> 
+    public class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UpdateTableRequest updateTableRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UpdateTableRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(updateTableRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(UpdateTableRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.UpdateTable";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateTableRequest != null && updateTableRequest.IsSetTableName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
                 {
-                    writer.WritePropertyName("TableName");
-                    writer.Write(updateTableRequest.TableName);
-                }
-
-                if (updateTableRequest != null) 
-                {
-                    ProvisionedThroughput provisionedThroughput = updateTableRequest.ProvisionedThroughput;
-                    if (provisionedThroughput != null)
+                    context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlobalSecondaryIndexUpdatesListValue in publicRequest.GlobalSecondaryIndexUpdates)
                     {
-                        writer.WritePropertyName("ProvisionedThroughput");
-                        writer.WriteObjectStart();
-                        if (provisionedThroughput != null && provisionedThroughput.IsSetReadCapacityUnits()) 
-                        {
-                            writer.WritePropertyName("ReadCapacityUnits");
-                            writer.Write(provisionedThroughput.ReadCapacityUnits);
-                        }
-                        if (provisionedThroughput != null && provisionedThroughput.IsSetWriteCapacityUnits()) 
-                        {
-                            writer.WritePropertyName("WriteCapacityUnits");
-                            writer.Write(provisionedThroughput.WriteCapacityUnits);
-                        }
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GlobalSecondaryIndexUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGlobalSecondaryIndexUpdatesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (updateTableRequest != null && updateTableRequest.GlobalSecondaryIndexUpdates != null && updateTableRequest.GlobalSecondaryIndexUpdates.Count > 0)
+                if(publicRequest.IsSetProvisionedThroughput())
                 {
-                    List<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesList = updateTableRequest.GlobalSecondaryIndexUpdates;
-                    writer.WritePropertyName("GlobalSecondaryIndexUpdates");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("ProvisionedThroughput");
+                    context.Writer.WriteObjectStart();
 
-                    foreach (GlobalSecondaryIndexUpdate globalSecondaryIndexUpdatesListValue in globalSecondaryIndexUpdatesList) 
-                    {
-                        writer.WriteObjectStart();
+                    var marshaller = ProvisionedThroughputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
 
-                        if (globalSecondaryIndexUpdatesListValue != null) 
-                        {
-                            UpdateGlobalSecondaryIndexAction update = globalSecondaryIndexUpdatesListValue.Update;
-                            if (update != null)
-                            {
-                                writer.WritePropertyName("Update");
-                                writer.WriteObjectStart();
-                                if (update != null && update.IsSetIndexName()) 
-                                {
-                                    writer.WritePropertyName("IndexName");
-                                    writer.Write(update.IndexName);
-                                }
-
-                                if (update != null) 
-                                {
-                                    ProvisionedThroughput provisionedThroughput = update.ProvisionedThroughput;
-                                    if (provisionedThroughput != null)
-                                    {
-                                        writer.WritePropertyName("ProvisionedThroughput");
-                                        writer.WriteObjectStart();
-                                        if (provisionedThroughput != null && provisionedThroughput.IsSetReadCapacityUnits()) 
-                                        {
-                                            writer.WritePropertyName("ReadCapacityUnits");
-                                            writer.Write(provisionedThroughput.ReadCapacityUnits);
-                                        }
-                                        if (provisionedThroughput != null && provisionedThroughput.IsSetWriteCapacityUnits()) 
-                                        {
-                                            writer.WritePropertyName("WriteCapacityUnits");
-                                            writer.Write(provisionedThroughput.WriteCapacityUnits);
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTableName())
+                {
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

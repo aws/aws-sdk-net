@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.SecurityToken.Model;
 
 namespace Amazon.SecurityToken
 {
     /// <summary>
-    /// Implementation for accessing SecurityTokenService
+    /// Interface for accessing SecurityTokenService
     ///
     /// AWS Security Token Service    
     /// <para>
@@ -83,7 +88,6 @@ namespace Amazon.SecurityToken
 
         
         #region  AssumeRole
-
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -228,7 +232,6 @@ namespace Amazon.SecurityToken
         
         #region  AssumeRoleWithSAML
 
-
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
         /// via a      SAML authentication response. This operation provides a mechanism for tying
@@ -351,7 +354,6 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  AssumeRoleWithWebIdentity
-
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -495,7 +497,6 @@ namespace Amazon.SecurityToken
         
         #region  DecodeAuthorizationMessage
 
-
         /// <summary>
         /// Decodes additional information about the authorization status of a request from an
         /// encoded      message returned in response to an AWS request. 
@@ -567,7 +568,6 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  GetFederationToken
-
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a

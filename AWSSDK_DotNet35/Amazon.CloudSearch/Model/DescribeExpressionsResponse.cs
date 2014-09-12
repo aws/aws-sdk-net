@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeExpressions response and response metadata.
+    /// Configuration for accessing Amazon DescribeExpressions service
     /// </summary>
     public partial class DescribeExpressionsResponse : DescribeExpressionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeExpressionsResult property.
-        /// The result of a DescribeExpressions request. Contains the expressions configured for the domain specified in the request.
+        /// Represents the output of a DescribeExpressions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeExpressionsResult class are now available on the DescribeExpressionsResponse class. You should use the properties on DescribeExpressionsResponse instead of accessing them through DescribeExpressionsResult.")]
         public DescribeExpressionsResult DescribeExpressionsResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

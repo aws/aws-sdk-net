@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,116 +12,111 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Provides details of the <c>TimerStarted</c> event. </para>
+    /// Provides details of the <code>TimerStarted</code> event.
     /// </summary>
-    public class TimerStartedEventAttributes
+    public partial class TimerStartedEventAttributes
     {
-        
-        private string timerId;
-        private string control;
-        private string startToFireTimeout;
-        private long? decisionTaskCompletedEventId;
+        private string _control;
+        private long? _decisionTaskCompletedEventId;
+        private string _startToFireTimeout;
+        private string _timerId;
 
         /// <summary>
-        /// The unique Id of the timer that was started.
-        ///  
+        /// Gets and sets the property Control. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TimerId
-        {
-            get { return this.timerId; }
-            set { this.timerId = value; }
-        }
-
-        // Check to see if TimerId property is set
-        internal bool IsSetTimerId()
-        {
-            return this.timerId != null;
-        }
-
-        /// <summary>
-        /// Optional data attached to the event that can be used by the decider in subsequent workflow tasks.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32768</description>
-        ///     </item>
-        /// </list>
+        ///  Optional data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks. 
         /// </para>
         /// </summary>
         public string Control
         {
-            get { return this.control; }
-            set { this.control = value; }
+            get { return this._control; }
+            set { this._control = value; }
         }
 
         // Check to see if Control property is set
         internal bool IsSetControl()
         {
-            return this.control != null;
+            return this._control != null;
         }
 
         /// <summary>
-        /// The duration of time after which the timer will fire. The duration is specified in seconds. The valid values are integers greater than or
-        /// equal to 0.
-        ///  
+        /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 8</description>
-        ///     </item>
-        /// </list>
+        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// task that resulted in the <code>StartTimer</code> decision for this activity task.
+        /// This information can be useful for diagnosing problems by tracing back the cause of
+        /// events. 
         /// </para>
-        /// </summary>
-        public string StartToFireTimeout
-        {
-            get { return this.startToFireTimeout; }
-            set { this.startToFireTimeout = value; }
-        }
-
-        // Check to see if StartToFireTimeout property is set
-        internal bool IsSetStartToFireTimeout()
-        {
-            return this.startToFireTimeout != null;
-        }
-
-        /// <summary>
-        /// The id of the <c>DecisionTaskCompleted</c> event corresponding to the decision task that resulted in the <c>StartTimer</c> decision for this
-        /// activity task. This information can be useful for diagnosing problems by tracing back the cause of events.
-        ///  
         /// </summary>
         public long DecisionTaskCompletedEventId
         {
-            get { return this.decisionTaskCompletedEventId ?? default(long); }
-            set { this.decisionTaskCompletedEventId = value; }
+            get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
+            set { this._decisionTaskCompletedEventId = value; }
         }
 
         // Check to see if DecisionTaskCompletedEventId property is set
         internal bool IsSetDecisionTaskCompletedEventId()
         {
-            return this.decisionTaskCompletedEventId.HasValue;
+            return this._decisionTaskCompletedEventId.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property StartToFireTimeout. 
+        /// <para>
+        ///  The duration of time after which the timer will fire. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The duration is specified in seconds. The valid values are integers greater than or
+        /// equal to 0.
+        /// </para>
+        /// </summary>
+        public string StartToFireTimeout
+        {
+            get { return this._startToFireTimeout; }
+            set { this._startToFireTimeout = value; }
+        }
+
+        // Check to see if StartToFireTimeout property is set
+        internal bool IsSetStartToFireTimeout()
+        {
+            return this._startToFireTimeout != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimerId. 
+        /// <para>
+        ///  The unique Id of the timer that was started. 
+        /// </para>
+        /// </summary>
+        public string TimerId
+        {
+            get { return this._timerId; }
+            set { this._timerId = value; }
+        }
+
+        // Check to see if TimerId property is set
+        internal bool IsSetTimerId()
+        {
+            return this._timerId != null;
+        }
+
     }
 }

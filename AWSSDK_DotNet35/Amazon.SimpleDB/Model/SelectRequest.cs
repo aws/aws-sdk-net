@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,69 +29,104 @@ namespace Amazon.SimpleDB.Model
 {
     /// <summary>
     /// Container for the parameters to the Select operation.
-    /// <para> The <c>Select</c> operation returns a set of attributes for <c>ItemNames</c> that match the select expression. <c>Select</c> is
-    /// similar to the standard SQL SELECT statement. </para> <para> The total size of the response cannot exceed 1 MB in total size. Amazon
-    /// SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500
-    /// items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <c>NextToken</c> so the client can access
-    /// the next page of results. </para> <para> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB
-    /// Queries in the Developer Guide. </para>
+    /// The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code>
+    /// that match the select expression. <code>Select</code> is similar to the standard SQL
+    /// SELECT statement. 
+    /// 
+    ///  
+    /// <para>
+    ///  The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB
+    /// automatically adjusts the number of items returned per page to enforce this limit.
+    /// For example, if the client asks to retrieve 2500 items, but each individual item is
+    /// 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code>
+    /// so the client can access the next page of results. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  For information on how to construct select expressions, see Using Select to Create
+    /// Amazon SimpleDB Queries in the Developer Guide. 
+    /// </para>
     /// </summary>
-    public partial class SelectRequest : AmazonWebServiceRequest
+    public partial class SelectRequest : AmazonSimpleDBRequest
     {
-        private string selectExpression;
-        private string nextToken;
-        private bool? consistentRead;
+        private bool? _consistentRead;
+        private string _nextToken;
+        private string _selectExpression;
 
         /// <summary>
-        /// The expression used to query the domain.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string SelectExpression
-        {
-            get { return this.selectExpression; }
-            set { this.selectExpression = value; }
-        }
-
-        // Check to see if SelectExpression property is set
-        internal bool IsSetSelectExpression()
-        {
-            return this.selectExpression != null;
-        }
+        public SelectRequest() { }
 
         /// <summary>
-        /// A string informing Amazon SimpleDB where to start the next list of <c>ItemNames</c>.
-        ///  
+        /// Instantiates SelectRequest with the parameterized properties
         /// </summary>
-        public string NextToken
+        /// <param name="selectExpression">The expression used to query the domain.</param>
+        public SelectRequest(string selectExpression)
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
+            _selectExpression = selectExpression;
         }
 
         /// <summary>
-        /// Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <c>true</c>, any data previously written
-        /// to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately
-        /// before your read.
-        ///  
+        /// Instantiates SelectRequest with the parameterized properties
+        /// </summary>
+        /// <param name="selectExpression">The expression used to query the domain.</param>
+        /// <param name="consistentRead">Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.</param>
+        public SelectRequest(string selectExpression, bool consistentRead)
+        {
+            _selectExpression = selectExpression;
+            _consistentRead = consistentRead;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsistentRead. Determines whether or not strong consistency
+        /// should be enforced when data is read from SimpleDB. If <code>true</code>, any data
+        /// previously written to SimpleDB will be returned. Otherwise, results will be consistent
+        /// eventually, and the client may not see data that was written immediately before your
+        /// read.
         /// </summary>
         public bool ConsistentRead
         {
-            get { return this.consistentRead ?? default(bool); }
-            set { this.consistentRead = value; }
+            get { return this._consistentRead.GetValueOrDefault(); }
+            set { this._consistentRead = value; }
         }
 
         // Check to see if ConsistentRead property is set
         internal bool IsSetConsistentRead()
         {
-            return this.consistentRead.HasValue;
+            return this._consistentRead.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. A string informing Amazon SimpleDB where to
+        /// start the next list of <code>ItemNames</code>.
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectExpression. The expression used to query the domain.
+        /// </summary>
+        public string SelectExpression
+        {
+            get { return this._selectExpression; }
+            set { this._selectExpression = value; }
+        }
+
+        // Check to see if SelectExpression property is set
+        internal bool IsSetSelectExpression()
+        {
+            return this._selectExpression != null;
         }
 
     }
 }
-    

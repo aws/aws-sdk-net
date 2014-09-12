@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTaskStatus Object
+    /// </summary>  
+    public class ActivityTaskStatusUnmarshaller : IUnmarshaller<ActivityTaskStatus, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskStatus, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTaskStatusUnmarshaller
-      /// </summary>
-      internal class ActivityTaskStatusUnmarshaller : IUnmarshaller<ActivityTaskStatus, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskStatus, JsonUnmarshallerContext>
-      {
         ActivityTaskStatus IUnmarshaller<ActivityTaskStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTaskStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTaskStatus activityTaskStatus = new ActivityTaskStatus();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTaskStatus unmarshalledObject = new ActivityTaskStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("cancelRequested", targetDepth))
-              {
-                activityTaskStatus.CancelRequested = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("cancelRequested", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CancelRequested = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTaskStatus;
+            return unmarshalledObject;
         }
 
-        private static ActivityTaskStatusUnmarshaller instance;
-        public static ActivityTaskStatusUnmarshaller GetInstance()
+
+        private static ActivityTaskStatusUnmarshaller _instance = new ActivityTaskStatusUnmarshaller();        
+
+        public static ActivityTaskStatusUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTaskStatusUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

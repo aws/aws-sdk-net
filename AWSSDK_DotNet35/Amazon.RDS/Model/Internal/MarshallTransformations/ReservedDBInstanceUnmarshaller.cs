@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,144 +12,152 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedDBInstance Unmarshaller
-     /// </summary>
-    internal class ReservedDBInstanceUnmarshaller : IUnmarshaller<ReservedDBInstance, XmlUnmarshallerContext>, IUnmarshaller<ReservedDBInstance, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedDBInstance Object
+    /// </summary>  
+    public class ReservedDBInstanceUnmarshaller : IUnmarshaller<ReservedDBInstance, XmlUnmarshallerContext>, IUnmarshaller<ReservedDBInstance, JsonUnmarshallerContext>
     {
-        public ReservedDBInstance Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedDBInstance Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedDBInstance reservedDBInstance = new ReservedDBInstance();
+            ReservedDBInstance unmarshalledObject = new ReservedDBInstance();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ReservedDBInstanceId", targetDepth))
+                    if (context.TestExpression("CurrencyCode", targetDepth))
                     {
-                        reservedDBInstance.ReservedDBInstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ReservedDBInstancesOfferingId", targetDepth))
-                    {
-                        reservedDBInstance.ReservedDBInstancesOfferingId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
-                        reservedDBInstance.DBInstanceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("StartTime", targetDepth))
-                    {
-                        reservedDBInstance.StartTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Duration", targetDepth))
-                    {
-                        reservedDBInstance.Duration = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("FixedPrice", targetDepth))
-                    {
-                        reservedDBInstance.FixedPrice = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("UsagePrice", targetDepth))
-                    {
-                        reservedDBInstance.UsagePrice = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CurrencyCode", targetDepth))
-                    {
-                        reservedDBInstance.CurrencyCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBInstanceClass = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceCount", targetDepth))
                     {
-                        reservedDBInstance.DBInstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DBInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ProductDescription", targetDepth))
+                    if (context.TestExpression("Duration", targetDepth))
                     {
-                        reservedDBInstance.ProductDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("OfferingType", targetDepth))
+                    if (context.TestExpression("FixedPrice", targetDepth))
                     {
-                        reservedDBInstance.OfferingType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MultiAZ", targetDepth))
                     {
-                        reservedDBInstance.MultiAZ = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("State", targetDepth))
+                    if (context.TestExpression("OfferingType", targetDepth))
                     {
-                        reservedDBInstance.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ProductDescription", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ProductDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RecurringCharges/RecurringCharge", targetDepth))
                     {
-                        reservedDBInstance.RecurringCharges.Add(RecurringChargeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = RecurringChargeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RecurringCharges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ReservedDBInstanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedDBInstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReservedDBInstancesOfferingId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedDBInstancesOfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StartTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("State", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UsagePrice", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.UsagePrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedDBInstance;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedDBInstance;
+            return unmarshalledObject;
         }
 
-        public ReservedDBInstance Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedDBInstance Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedDBInstanceUnmarshaller instance;
 
-        public static ReservedDBInstanceUnmarshaller GetInstance() 
+        private static ReservedDBInstanceUnmarshaller _instance = new ReservedDBInstanceUnmarshaller();        
+
+        public static ReservedDBInstanceUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedDBInstanceUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

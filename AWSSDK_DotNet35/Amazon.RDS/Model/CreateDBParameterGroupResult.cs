@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The results from the CreateDBParameterGroup action.
+    /// Contains the result of a successful invocation of the <a>CreateDBParameterGroup</a>
+    /// action. 
+    /// 
+    ///  
+    /// <para>
+    ///  This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a>
+    /// action, and as a response element in the <a>DescribeDBParameterGroups</a> action.
+    /// 
+    /// </para>
     /// </summary>
     public partial class CreateDBParameterGroupResult : AmazonWebServiceResponse
     {
-        private DBParameterGroup dBParameterGroupValue;
+        private DBParameterGroup _response;
 
-        /// <summary>
-        /// Gets and sets the CreateDBParameterGroupResult property.
-        /// Contains the result of a successful invocation of the CreateDBParameterGroup
-        /// action.
-        /// </summary>
         public DBParameterGroup DBParameterGroup
         {
-            get { return this.dBParameterGroupValue; }
-            set { this.dBParameterGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

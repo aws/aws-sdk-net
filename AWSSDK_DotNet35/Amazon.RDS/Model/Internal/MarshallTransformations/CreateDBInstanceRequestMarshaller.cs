@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,159 +12,165 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create D B Instance Request Marshaller
+    /// CreateDBInstance Request Marshaller
     /// </summary>       
-    public class CreateDBInstanceRequestMarshaller : IMarshaller<IRequest, CreateDBInstanceRequest>
+    public class CreateDBInstanceRequestMarshaller : IMarshaller<IRequest, CreateDBInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateDBInstanceRequest createDBInstanceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createDBInstanceRequest, "AmazonRDS");
+            return this.Marshall((CreateDBInstanceRequest)input);
+        }
+    
+        public IRequest Marshall(CreateDBInstanceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "CreateDBInstance");
             request.Parameters.Add("Version", "2013-09-09");
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBName())
-            {
-                request.Parameters.Add("DBName", StringUtils.FromString(createDBInstanceRequest.DBName));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(createDBInstanceRequest.DBInstanceIdentifier));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetAllocatedStorage())
-            {
-                request.Parameters.Add("AllocatedStorage", StringUtils.FromInt(createDBInstanceRequest.AllocatedStorage));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBInstanceClass())
-            {
-                request.Parameters.Add("DBInstanceClass", StringUtils.FromString(createDBInstanceRequest.DBInstanceClass));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetEngine())
-            {
-                request.Parameters.Add("Engine", StringUtils.FromString(createDBInstanceRequest.Engine));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetMasterUsername())
-            {
-                request.Parameters.Add("MasterUsername", StringUtils.FromString(createDBInstanceRequest.MasterUsername));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetMasterUserPassword())
-            {
-                request.Parameters.Add("MasterUserPassword", StringUtils.FromString(createDBInstanceRequest.MasterUserPassword));
-            }
-            if (createDBInstanceRequest != null)
-            {
-                List<string> dBSecurityGroupsList = createDBInstanceRequest.DBSecurityGroups;
 
-                int dBSecurityGroupsListIndex = 1;
-                foreach (string dBSecurityGroupsListValue in dBSecurityGroupsList)
-                { 
-                    request.Parameters.Add("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.FromString(dBSecurityGroupsListValue));
-                    dBSecurityGroupsListIndex++;
-                }
-            }
-            if (createDBInstanceRequest != null)
+            if(publicRequest != null)
             {
-                List<string> vpcSecurityGroupIdsList = createDBInstanceRequest.VpcSecurityGroupIds;
-
-                int vpcSecurityGroupIdsListIndex = 1;
-                foreach (string vpcSecurityGroupIdsListValue in vpcSecurityGroupIdsList)
-                { 
-                    request.Parameters.Add("VpcSecurityGroupIds.member." + vpcSecurityGroupIdsListIndex, StringUtils.FromString(vpcSecurityGroupIdsListValue));
-                    vpcSecurityGroupIdsListIndex++;
-                }
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(createDBInstanceRequest.AvailabilityZone));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBSubnetGroupName())
-            {
-                request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(createDBInstanceRequest.DBSubnetGroupName));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetPreferredMaintenanceWindow())
-            {
-                request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(createDBInstanceRequest.PreferredMaintenanceWindow));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBParameterGroupName())
-            {
-                request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(createDBInstanceRequest.DBParameterGroupName));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetBackupRetentionPeriod())
-            {
-                request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(createDBInstanceRequest.BackupRetentionPeriod));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetPreferredBackupWindow())
-            {
-                request.Parameters.Add("PreferredBackupWindow", StringUtils.FromString(createDBInstanceRequest.PreferredBackupWindow));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetPort())
-            {
-                request.Parameters.Add("Port", StringUtils.FromInt(createDBInstanceRequest.Port));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetMultiAZ())
-            {
-                request.Parameters.Add("MultiAZ", StringUtils.FromBool(createDBInstanceRequest.MultiAZ));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetEngineVersion())
-            {
-                request.Parameters.Add("EngineVersion", StringUtils.FromString(createDBInstanceRequest.EngineVersion));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetAutoMinorVersionUpgrade())
-            {
-                request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(createDBInstanceRequest.AutoMinorVersionUpgrade));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetLicenseModel())
-            {
-                request.Parameters.Add("LicenseModel", StringUtils.FromString(createDBInstanceRequest.LicenseModel));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetIops())
-            {
-                request.Parameters.Add("Iops", StringUtils.FromInt(createDBInstanceRequest.Iops));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetOptionGroupName())
-            {
-                request.Parameters.Add("OptionGroupName", StringUtils.FromString(createDBInstanceRequest.OptionGroupName));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetCharacterSetName())
-            {
-                request.Parameters.Add("CharacterSetName", StringUtils.FromString(createDBInstanceRequest.CharacterSetName));
-            }
-            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetPubliclyAccessible())
-            {
-                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceRequest.PubliclyAccessible));
-            }
-
-            if (createDBInstanceRequest != null)
-            {
-                List<Tag> tagsList = createDBInstanceRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetAllocatedStorage())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("AllocatedStorage", StringUtils.FromInt(publicRequest.AllocatedStorage));
+                }
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
+                {
+                    request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
+                }
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetBackupRetentionPeriod())
+                {
+                    request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
+                }
+                if(publicRequest.IsSetCharacterSetName())
+                {
+                    request.Parameters.Add("CharacterSetName", StringUtils.FromString(publicRequest.CharacterSetName));
+                }
+                if(publicRequest.IsSetDBInstanceClass())
+                {
+                    request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
+                }
+                if(publicRequest.IsSetDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetDBName())
+                {
+                    request.Parameters.Add("DBName", StringUtils.FromString(publicRequest.DBName));
+                }
+                if(publicRequest.IsSetDBParameterGroupName())
+                {
+                    request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(publicRequest.DBParameterGroupName));
+                }
+                if(publicRequest.IsSetDBSecurityGroups())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.DBSecurityGroups)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        request.Parameters.Add("DBSecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                }
+                if(publicRequest.IsSetDBSubnetGroupName())
+                {
+                    request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
+                }
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
+                }
+                if(publicRequest.IsSetIops())
+                {
+                    request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
+                }
+                if(publicRequest.IsSetLicenseModel())
+                {
+                    request.Parameters.Add("LicenseModel", StringUtils.FromString(publicRequest.LicenseModel));
+                }
+                if(publicRequest.IsSetMasterUsername())
+                {
+                    request.Parameters.Add("MasterUsername", StringUtils.FromString(publicRequest.MasterUsername));
+                }
+                if(publicRequest.IsSetMasterUserPassword())
+                {
+                    request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
+                }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
+                if(publicRequest.IsSetOptionGroupName())
+                {
+                    request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
+                }
+                if(publicRequest.IsSetPort())
+                {
+                    request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetPreferredBackupWindow())
+                {
+                    request.Parameters.Add("PreferredBackupWindow", StringUtils.FromString(publicRequest.PreferredBackupWindow));
+                }
+                if(publicRequest.IsSetPreferredMaintenanceWindow())
+                {
+                    request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    tagsListIndex++;
+                }
+                if(publicRequest.IsSetVpcSecurityGroupIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.VpcSecurityGroupIds)
+                    {
+                        request.Parameters.Add("VpcSecurityGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

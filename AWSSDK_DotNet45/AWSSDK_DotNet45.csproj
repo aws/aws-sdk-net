@@ -21,8 +21,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\AWSSDK.XML</DocumentationFile>
-    <NoWarn>419,1591</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>419,1570,1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
@@ -63,13 +63,84 @@
       <LastGenOutput>AWSClientFactory.cs</LastGenOutput>
     </None>
     <None Include="awssdk.dll.snk" />
-    <None Include="ServiceClients.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ServiceClients.cs</LastGenOutput>
-    </None>
     <None Include="SupportServicesList.tt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\AmazonServiceClient.cs">
+      <Link>Amazon.Runtime\AmazonServiceClient.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\ErrorHandler\WebExceptionHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\ErrorHandler\WebExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\Marshaller.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\RedirectHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\RedirectHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\Signer.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\Signer.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\Unmarshaller.cs">
+      <Link>Amazon.Runtime\Pipeline\Handlers\Unmarshaller.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\HttpErrorResponseException.cs">
+      <Link>Amazon.Runtime\Pipeline\HttpErrorResponseException.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\HttpHandler\HttpHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\HttpHandler\HttpHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\HttpHandler\HttpWebRequestFactory.cs">
+      <Link>Amazon.Runtime\Pipeline\HttpHandler\HttpWebRequestFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\HttpHandler\IHttpRequestFactory.cs">
+      <Link>Amazon.Runtime\Pipeline\HttpHandler\IHttpRequestFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\RetryHandler\DefaultRetryPolicy.cs">
+      <Link>Amazon.Runtime\Pipeline\RetryHandler\DefaultRetryPolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\RetryHandler\RetryPolicy.cs">
+      <Link>Amazon.Runtime\Pipeline\RetryHandler\RetryPolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\RuntimeAsyncResult.cs">
+      <Link>Amazon.Runtime\Pipeline\RuntimeAsyncResult.cs</Link>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\AmazonAutoScalingClient.cs" />
     <Compile Include="Amazon.AutoScaling\IAmazonAutoScaling.cs" />
     <Compile Include="Amazon.AWSSupport\AmazonAWSSupportClient.cs" />
@@ -161,6 +232,7 @@
     <Compile Include="Amazon.Runtime\Internal\AsyncRunner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\HttpClientResponseData.cs" />
     <Compile Include="Amazon.Runtime\Internal\WebRequestState.cs" />
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\HttpRequestMessageFactory.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs" />
     <Compile Include="Amazon.S3\IAmazonS3.cs" />
     <Compile Include="Amazon.S3\Model\GetObjectResponse.async.cs" />
@@ -196,11 +268,6 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceClients.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceClients.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\*.cs" Exclude="..\AWSSDK_DotNet35\AWSClientFactory.cs">
@@ -211,7 +278,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\AmazonWebServiceClient.cs;..\AWSSDK_DotNet35\Amazon.Runtime\*.bcl35.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\AmazonServiceClient.cs;..\AWSSDK_DotNet35\Amazon.Runtime\AmazonWebServiceClient.cs;..\AWSSDK_DotNet35\Amazon.Runtime\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*.bcl35.cs">
@@ -220,7 +287,7 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Auth\*">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Transform\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Transform\HttpWebRequestResponseData.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Transform\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\*">
@@ -306,6 +373,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFormation\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudFormation\IAmazonCloudFormation.cs;..\AWSSDK_DotNet35\Amazon.CloudFormation\AmazonCloudFormationClient.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFormation\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFormation\Model\*">
       <Visible>false</Visible>
     </Compile>
@@ -346,6 +416,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\Internal\*.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\Model\Internal\MarshallTransformations\*">
@@ -422,6 +495,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DynamoDBAsync.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Model\*">
       <Visible>false</Visible>
     </Compile>
@@ -449,6 +525,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Import\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Model\Internal\MarshallTransformations\*">
@@ -490,6 +569,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticLoadBalancing\*" Exclude="..\AWSSDK_DotNet35\Amazon.ElasticLoadBalancing\IAmazonElasticLoadBalancing.cs;..\AWSSDK_DotNet35\Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticLoadBalancing\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticLoadBalancing\Model\*">
@@ -543,6 +625,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Internal\*.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Model\Internal\MarshallTransformations\*">
@@ -606,6 +691,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53\Model\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
@@ -626,6 +714,12 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Encryption\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Encryption\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\IO\*">
@@ -712,6 +806,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\Model\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\Util\*">
       <Visible>false</Visible>
     </Compile>
@@ -749,6 +846,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Contexts.cs">
+      <Link>Amazon.Runtime\Pipeline\Contexts.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\IPipelineHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\IPipelineHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\PipelineHandler.cs">
+      <Link>Amazon.Runtime\Pipeline\PipelineHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\RuntimePipeline.cs">
+      <Link>Amazon.Runtime\Pipeline\RuntimePipeline.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />

@@ -59,15 +59,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static CommonPrefixesItemUnmarshaller instance;
+        private static CommonPrefixesItemUnmarshaller _instance;
 
-        public static CommonPrefixesItemUnmarshaller GetInstance() 
+        public static CommonPrefixesItemUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CommonPrefixesItemUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new CommonPrefixesItemUnmarshaller();
+                }
+                return _instance;
+            }
         }
+
     }
 }
     

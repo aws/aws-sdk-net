@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,29 +29,27 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// <para> This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is
-    /// complete. </para>
+    /// This operation cancels a specified job. Only the job owner can cancel it. The operation
+    /// fails if the job has already started or is complete.
     /// </summary>
-    public partial class CancelJobRequest : AmazonWebServiceRequest
+    public partial class CancelJobRequest : AmazonImportExportRequest
     {
-        private string jobId;
+        private string _jobId;
 
         /// <summary>
-        /// A unique identifier which refers to a particular job.
-        ///  
+        /// Gets and sets the property JobId.
         /// </summary>
         public string JobId
         {
-            get { return this.jobId; }
-            set { this.jobId = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;
+            return this._jobId != null;
         }
 
     }
 }
-    

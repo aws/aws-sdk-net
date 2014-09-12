@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,99 +12,110 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DBEngineVersion Unmarshaller
-     /// </summary>
-    internal class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<DBEngineVersion, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DBEngineVersion Object
+    /// </summary>  
+    public class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<DBEngineVersion, JsonUnmarshallerContext>
     {
-        public DBEngineVersion Unmarshall(XmlUnmarshallerContext context) 
+        public DBEngineVersion Unmarshall(XmlUnmarshallerContext context)
         {
-            DBEngineVersion dBEngineVersion = new DBEngineVersion();
+            DBEngineVersion unmarshalledObject = new DBEngineVersion();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Engine", targetDepth))
-                    {
-                        dBEngineVersion.Engine = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        dBEngineVersion.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DBParameterGroupFamily", targetDepth))
-                    {
-                        dBEngineVersion.DBParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("DBEngineDescription", targetDepth))
                     {
-                        dBEngineVersion.DBEngineDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBEngineDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBEngineVersionDescription", targetDepth))
                     {
-                        dBEngineVersion.DBEngineVersionDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBEngineVersionDescription = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBParameterGroupFamily", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBParameterGroupFamily = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DefaultCharacterSet", targetDepth))
                     {
-                        dBEngineVersion.DefaultCharacterSet = CharacterSetUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CharacterSetUnmarshaller.Instance;
+                        unmarshalledObject.DefaultCharacterSet = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Engine", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
                     {
-                        dBEngineVersion.SupportedCharacterSets.Add(CharacterSetUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = CharacterSetUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedCharacterSets.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return dBEngineVersion;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return dBEngineVersion;
+            return unmarshalledObject;
         }
 
-        public DBEngineVersion Unmarshall(JsonUnmarshallerContext context) 
+        public DBEngineVersion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DBEngineVersionUnmarshaller instance;
 
-        public static DBEngineVersionUnmarshaller GetInstance() 
+        private static DBEngineVersionUnmarshaller _instance = new DBEngineVersionUnmarshaller();        
+
+        public static DBEngineVersionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DBEngineVersionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

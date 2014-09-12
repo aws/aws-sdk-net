@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteSuggester response and response metadata.
+    /// Configuration for accessing Amazon DeleteSuggester service
     /// </summary>
     public partial class DeleteSuggesterResponse : DeleteSuggesterResult
     {
         /// <summary>
         /// Gets and sets the DeleteSuggesterResult property.
-        /// The result of a DeleteSuggester request. Contains the status of the deleted suggester.
+        /// Represents the output of a DeleteSuggester operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteSuggesterResult class are now available on the DeleteSuggesterResponse class. You should use the properties on DeleteSuggesterResponse instead of accessing them through DeleteSuggesterResult.")]
         public DeleteSuggesterResult DeleteSuggesterResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

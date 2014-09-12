@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,13 +29,11 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocations operation.
-    /// <para>Returns the list of Direct Connect locations in the current AWS region. These are the locations that may be selected when calling
-    /// CreateConnection or CreateInterconnect.</para>
+    /// Returns the list of AWS Direct Connect locations in the current AWS region. These
+    /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
     /// </summary>
     public partial class DescribeLocationsRequest : AmazonDirectConnectRequest
     {
 
-
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListInstances Request Marshaller
     /// </summary>       
-    public class ListInstancesRequestMarshaller : IMarshaller<IRequest, ListInstancesRequest> 
+    public class ListInstancesRequestMarshaller : IMarshaller<IRequest, ListInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListInstancesRequest)input);
+        }
+
         public IRequest Marshall(ListInstancesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,33 +56,34 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClusterId())
                 {
-                    writer.WritePropertyName("ClusterId");
-                    writer.Write(publicRequest.ClusterId);
+                    context.Writer.WritePropertyName("ClusterId");
+                    context.Writer.Write(publicRequest.ClusterId);
                 }
 
                 if(publicRequest.IsSetInstanceGroupId())
                 {
-                    writer.WritePropertyName("InstanceGroupId");
-                    writer.Write(publicRequest.InstanceGroupId);
+                    context.Writer.WritePropertyName("InstanceGroupId");
+                    context.Writer.Write(publicRequest.InstanceGroupId);
                 }
 
                 if(publicRequest.IsSetInstanceGroupTypes())
                 {
-                    writer.WritePropertyName("InstanceGroupTypes");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("InstanceGroupTypes");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestInstanceGroupTypesListValue in publicRequest.InstanceGroupTypes)
                     {
-                        writer.Write(publicRequestInstanceGroupTypesListValue);
+                            context.Writer.Write(publicRequestInstanceGroupTypesListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetMarker())
                 {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(publicRequest.Marker);
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
                 }
 
         

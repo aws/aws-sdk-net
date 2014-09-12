@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,72 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>Dimension</c> data type further expands on the identity of a metric using a Name, Value pair. </para> <para>For examples that
-    /// use one or more dimensions, see PutMetricData.</para>
+    /// The <code>Dimension</code> data type further expands on the identity of a metric
+    /// using a Name, Value pair. 
+    /// 
+    ///  
+    /// <para>
+    /// For examples that use one or more dimensions, see <a>PutMetricData</a>.
+    /// </para>
     /// </summary>
-    public class Dimension
+    public partial class Dimension
     {
-        
-        private string name;
-        private string value;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// The name of the dimension.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the dimension. 
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// The value representing the dimension measurement
-        ///  
+        /// Gets and sets the property Value. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        ///  The value representing the dimension measurement 
         /// </para>
         /// </summary>
         public string Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;
+            return this._value != null;
         }
+
     }
 }

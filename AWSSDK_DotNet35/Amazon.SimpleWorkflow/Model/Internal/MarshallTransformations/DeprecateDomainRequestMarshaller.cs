@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Deprecate Domain Request Marshaller
+    /// DeprecateDomain Request Marshaller
     /// </summary>       
-    internal class DeprecateDomainRequestMarshaller : IMarshaller<IRequest, DeprecateDomainRequest> 
+    public class DeprecateDomainRequestMarshaller : IMarshaller<IRequest, DeprecateDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeprecateDomainRequest deprecateDomainRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeprecateDomainRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deprecateDomainRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(DeprecateDomainRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.DeprecateDomain";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deprecateDomainRequest != null && deprecateDomainRequest.IsSetName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetName())
                 {
-                    writer.WritePropertyName("name");
-                    writer.Write(deprecateDomainRequest.Name);
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

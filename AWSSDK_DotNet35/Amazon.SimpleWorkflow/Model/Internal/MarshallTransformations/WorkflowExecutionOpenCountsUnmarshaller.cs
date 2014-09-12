@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowExecutionOpenCounts Object
+    /// </summary>  
+    public class WorkflowExecutionOpenCountsUnmarshaller : IUnmarshaller<WorkflowExecutionOpenCounts, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionOpenCounts, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowExecutionOpenCountsUnmarshaller
-      /// </summary>
-      internal class WorkflowExecutionOpenCountsUnmarshaller : IUnmarshaller<WorkflowExecutionOpenCounts, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionOpenCounts, JsonUnmarshallerContext>
-      {
         WorkflowExecutionOpenCounts IUnmarshaller<WorkflowExecutionOpenCounts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowExecutionOpenCounts Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowExecutionOpenCounts workflowExecutionOpenCounts = new WorkflowExecutionOpenCounts();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowExecutionOpenCounts unmarshalledObject = new WorkflowExecutionOpenCounts();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("openActivityTasks", targetDepth))
-              {
-                workflowExecutionOpenCounts.OpenActivityTasks = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("openDecisionTasks", targetDepth))
-              {
-                workflowExecutionOpenCounts.OpenDecisionTasks = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("openTimers", targetDepth))
-              {
-                workflowExecutionOpenCounts.OpenTimers = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("openChildWorkflowExecutions", targetDepth))
-              {
-                workflowExecutionOpenCounts.OpenChildWorkflowExecutions = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("openActivityTasks", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OpenActivityTasks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("openChildWorkflowExecutions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OpenChildWorkflowExecutions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("openDecisionTasks", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OpenDecisionTasks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("openTimers", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OpenTimers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowExecutionOpenCounts;
+            return unmarshalledObject;
         }
 
-        private static WorkflowExecutionOpenCountsUnmarshaller instance;
-        public static WorkflowExecutionOpenCountsUnmarshaller GetInstance()
+
+        private static WorkflowExecutionOpenCountsUnmarshaller _instance = new WorkflowExecutionOpenCountsUnmarshaller();        
+
+        public static WorkflowExecutionOpenCountsUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowExecutionOpenCountsUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

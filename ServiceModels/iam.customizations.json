@@ -1,0 +1,23 @@
+{
+  "noArgOverloads": [
+    "ListUsers",
+    "UpdateAccountPasswordPolicy",
+    "ListRoles",
+    "ListInstanceProfiles",
+    "ListAccessKeys",
+    "GetAccountPasswordPolicy",
+    "DeleteAccountPasswordPolicy",
+    "ListSAMLProviders",
+    "ListAccountAliases",
+    "ListGroups",
+    "ListMFADevices",
+    "ListSigningCertificates",
+    "ListVirtualMFADevices",
+    "GetAccountSummary",
+    "CreateAccessKey",
+    "GetUser",
+    "ListServerCertificates",
+    "GenerateCredentialReport",
+    "GetCredentialReport"
+  ]
+}

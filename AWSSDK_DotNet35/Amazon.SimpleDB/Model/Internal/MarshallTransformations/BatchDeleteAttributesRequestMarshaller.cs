@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleDB.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Batch Delete Attributes Request Marshaller
+    /// BatchDeleteAttributes Request Marshaller
     /// </summary>       
-    public class BatchDeleteAttributesRequestMarshaller : IMarshaller<IRequest, BatchDeleteAttributesRequest>
+    public class BatchDeleteAttributesRequestMarshaller : IMarshaller<IRequest, BatchDeleteAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(BatchDeleteAttributesRequest batchDeleteAttributesRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(batchDeleteAttributesRequest, "AmazonSimpleDB");
+            return this.Marshall((BatchDeleteAttributesRequest)input);
+        }
+    
+        public IRequest Marshall(BatchDeleteAttributesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleDB");
             request.Parameters.Add("Action", "BatchDeleteAttributes");
             request.Parameters.Add("Version", "2009-04-15");
-            if (batchDeleteAttributesRequest != null && batchDeleteAttributesRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(batchDeleteAttributesRequest.DomainName));
-            }
 
-            if (batchDeleteAttributesRequest != null)
+            if(publicRequest != null)
             {
-                List<DeletableItem> itemsList = batchDeleteAttributesRequest.Items;
-                int itemsListIndex = 1;
-                foreach (DeletableItem itemsListValue in itemsList)
+                if(publicRequest.IsSetDomainName())
                 {
-                    if (itemsListValue != null && itemsListValue.IsSetName())
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+                if(publicRequest.IsSetItems())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Items)
                     {
-                        request.Parameters.Add("Item." + itemsListIndex + ".ItemName", StringUtils.FromString(itemsListValue.Name));
-                    }
-
-                    if (itemsListValue != null)
-                    {
-                        List<Attribute> attributesList = itemsListValue.Attributes;
-                        int attributesListIndex = 1;
-                        foreach (Attribute attributesListValue in attributesList)
+                        if(publicRequestlistValue.IsSetAttributes())
                         {
-                            if (attributesListValue != null && attributesListValue.IsSetName())
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Attributes)
                             {
-                                request.Parameters.Add("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name", StringUtils.FromString(attributesListValue.Name));
+                                if(publicRequestlistValuelistValue.IsSetAlternateNameEncoding())
+                                {
+                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateNameEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateNameEncoding));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetAlternateValueEncoding())
+                                {
+                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateValueEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateValueEncoding));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetName())
+                                {
+                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                }
+                                publicRequestlistValuelistValueIndex++;
                             }
-                            if (attributesListValue != null && attributesListValue.IsSetAlternateNameEncoding())
-                            {
-                                request.Parameters.Add("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateNameEncoding", StringUtils.FromString(attributesListValue.AlternateNameEncoding));
-                            }
-                            if (attributesListValue != null && attributesListValue.IsSetValue())
-                            {
-                                request.Parameters.Add("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value", StringUtils.FromString(attributesListValue.Value));
-                            }
-                            if (attributesListValue != null && attributesListValue.IsSetAlternateValueEncoding())
-                            {
-                                request.Parameters.Add("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateValueEncoding", StringUtils.FromString(attributesListValue.AlternateValueEncoding));
-                            }
-
-                            attributesListIndex++;
                         }
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "ItemName", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    itemsListIndex++;
                 }
             }
-
             return request;
         }
     }

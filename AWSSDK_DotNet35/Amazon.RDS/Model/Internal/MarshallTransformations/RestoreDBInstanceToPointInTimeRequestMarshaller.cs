@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,113 +12,123 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Restore D B Instance To Point In Time Request Marshaller
+    /// RestoreDBInstanceToPointInTime Request Marshaller
     /// </summary>       
-    public class RestoreDBInstanceToPointInTimeRequestMarshaller : IMarshaller<IRequest, RestoreDBInstanceToPointInTimeRequest>
+    public class RestoreDBInstanceToPointInTimeRequestMarshaller : IMarshaller<IRequest, RestoreDBInstanceToPointInTimeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
+            return this.Marshall((RestoreDBInstanceToPointInTimeRequest)input);
+        }
+    
+        public IRequest Marshall(RestoreDBInstanceToPointInTimeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "RestoreDBInstanceToPointInTime");
             request.Parameters.Add("Version", "2013-09-09");
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetSourceDBInstanceIdentifier())
-            {
-                request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.SourceDBInstanceIdentifier));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetTargetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("TargetDBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.TargetDBInstanceIdentifier));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetRestoreTime())
-            {
-                request.Parameters.Add("RestoreTime", StringUtils.FromDateTime(restoreDBInstanceToPointInTimeRequest.RestoreTime));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetUseLatestRestorableTime())
-            {
-                request.Parameters.Add("UseLatestRestorableTime", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.UseLatestRestorableTime));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetDBInstanceClass())
-            {
-                request.Parameters.Add("DBInstanceClass", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.DBInstanceClass));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetPort())
-            {
-                request.Parameters.Add("Port", StringUtils.FromInt(restoreDBInstanceToPointInTimeRequest.Port));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.AvailabilityZone));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetDBSubnetGroupName())
-            {
-                request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.DBSubnetGroupName));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetMultiAZ())
-            {
-                request.Parameters.Add("MultiAZ", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.MultiAZ));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetPubliclyAccessible())
-            {
-                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.PubliclyAccessible));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetAutoMinorVersionUpgrade())
-            {
-                request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.AutoMinorVersionUpgrade));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetLicenseModel())
-            {
-                request.Parameters.Add("LicenseModel", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.LicenseModel));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetDBName())
-            {
-                request.Parameters.Add("DBName", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.DBName));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetEngine())
-            {
-                request.Parameters.Add("Engine", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.Engine));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetIops())
-            {
-                request.Parameters.Add("Iops", StringUtils.FromInt(restoreDBInstanceToPointInTimeRequest.Iops));
-            }
-            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetOptionGroupName())
-            {
-                request.Parameters.Add("OptionGroupName", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.OptionGroupName));
-            }
 
-            if (restoreDBInstanceToPointInTimeRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = restoreDBInstanceToPointInTimeRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
+                }
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetDBInstanceClass())
+                {
+                    request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
+                }
+                if(publicRequest.IsSetDBName())
+                {
+                    request.Parameters.Add("DBName", StringUtils.FromString(publicRequest.DBName));
+                }
+                if(publicRequest.IsSetDBSubnetGroupName())
+                {
+                    request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
+                }
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
+                if(publicRequest.IsSetIops())
+                {
+                    request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
+                }
+                if(publicRequest.IsSetLicenseModel())
+                {
+                    request.Parameters.Add("LicenseModel", StringUtils.FromString(publicRequest.LicenseModel));
+                }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
+                if(publicRequest.IsSetOptionGroupName())
+                {
+                    request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
+                }
+                if(publicRequest.IsSetPort())
+                {
+                    request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
+                }
+                if(publicRequest.IsSetRestoreTime())
+                {
+                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTime(publicRequest.RestoreTime));
+                }
+                if(publicRequest.IsSetSourceDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-
-                    tagsListIndex++;
+                }
+                if(publicRequest.IsSetTargetDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("TargetDBInstanceIdentifier", StringUtils.FromString(publicRequest.TargetDBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetUseLatestRestorableTime())
+                {
+                    request.Parameters.Add("UseLatestRestorableTime", StringUtils.FromBool(publicRequest.UseLatestRestorableTime));
                 }
             }
-
             return request;
         }
     }

@@ -1,0 +1,117 @@
+{ 
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addAfter", "newType":"Amazon.Glacier.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}
+		]
+	},
+	"noArgOverloads": [
+		"ListVaults"
+	],
+	"shapeModifiers": {
+        "ListMultipartUploadsInput": {
+            "modify": [
+                {
+                    "marker": { "emitPropertyName": "UploadIdMarker" }
+                }
+            ]
+        },
+	},
+	"dataTypeSwap" : {
+		"GlacierJobDescription" : {
+		  "CreationDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  },
+		  "CompletionDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  }
+		},
+		"DescribeVaultOutput" : {
+		  "CreationDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  },
+		  "LastInventoryDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  }
+		},
+		"GlacierJobDescription" : {
+		  "CreationDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  },
+		  "CompletionDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  }
+		},
+	    "InitiateMultipartUploadInput" : {
+		  "partSize" : {
+		    "Type" : "long",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromLong",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.LongUnmarshaller"
+		  }
+		},
+		"ListJobsInput" : {
+		  "limit" : {
+		    "Type" : "int",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromInt",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.IntUnmarshaller"
+		  },
+		  "completed" : {
+		    "Type" : "bool",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromBool",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.BoolUnmarshaller"
+		  }
+		},
+		"ListMultipartUploadsInput" : {
+		  "limit" : {
+		    "Type" : "int",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromInt",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.IntUnmarshaller"
+		  }
+		},
+		"ListPartsInput" : {
+		  "limit" : {
+		    "Type" : "int",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromInt",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.IntUnmarshaller"
+		  }
+		},
+		"ListPartsOutput" : {
+		  "CreationDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  },
+		  "CompletionDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  }
+		},
+		"ListVaultsInput" : {
+		  "limit" : {
+		    "Type" : "int",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromInt",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.IntUnmarshaller"
+		  }
+		},
+		"UploadListElement" : {
+		  "CreationDate" : {
+		    "Type" : "DateTime",
+			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+		  },
+		}
+	},
+	"generateComplexException" : true
+}

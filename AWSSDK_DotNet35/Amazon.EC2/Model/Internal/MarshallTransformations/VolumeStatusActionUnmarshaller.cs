@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VolumeStatusAction Unmarshaller
-     /// </summary>
-    internal class VolumeStatusActionUnmarshaller : IUnmarshaller<VolumeStatusAction, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusAction, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VolumeStatusAction Object
+    /// </summary>  
+    public class VolumeStatusActionUnmarshaller : IUnmarshaller<VolumeStatusAction, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusAction, JsonUnmarshallerContext>
     {
-        public VolumeStatusAction Unmarshall(XmlUnmarshallerContext context) 
+        public VolumeStatusAction Unmarshall(XmlUnmarshallerContext context)
         {
-            VolumeStatusAction volumeStatusAction = new VolumeStatusAction();
+            VolumeStatusAction unmarshalledObject = new VolumeStatusAction();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("code", targetDepth))
                     {
-                        volumeStatusAction.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("description", targetDepth))
                     {
-                        volumeStatusAction.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("eventType", targetDepth))
-                    {
-                        volumeStatusAction.EventType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("eventId", targetDepth))
                     {
-                        volumeStatusAction.EventId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("eventType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return volumeStatusAction;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return volumeStatusAction;
+            return unmarshalledObject;
         }
 
-        public VolumeStatusAction Unmarshall(JsonUnmarshallerContext context) 
+        public VolumeStatusAction Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VolumeStatusActionUnmarshaller instance;
 
-        public static VolumeStatusActionUnmarshaller GetInstance() 
+        private static VolumeStatusActionUnmarshaller _instance = new VolumeStatusActionUnmarshaller();        
+
+        public static VolumeStatusActionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VolumeStatusActionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,6 +44,25 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? _uploadDate;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SigningCertificate() { }
+
+        /// <summary>
+        /// Instantiates SigningCertificate with the parameterized properties
+        /// </summary>
+        /// <param name="userName">Name of the user the signing certificate is associated with.</param>
+        /// <param name="certificateId">The ID for the signing certificate.</param>
+        /// <param name="certificateBody">The contents of the signing certificate.</param>
+        /// <param name="status">The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</param>
+        public SigningCertificate(string userName, string certificateId, string certificateBody, StatusType status)
+        {
+            _userName = userName;
+            _certificateId = certificateId;
+            _certificateBody = certificateBody;
+            _status = status;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateBody. 
@@ -59,7 +82,6 @@ namespace Amazon.IdentityManagement.Model
             return this._certificateBody != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
@@ -77,7 +99,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._certificateId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -98,7 +119,6 @@ namespace Amazon.IdentityManagement.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property UploadDate. 
         /// <para>
@@ -116,7 +136,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._uploadDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

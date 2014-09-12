@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the GetWorkflowExecutionHistory action.
+    /// Contains the response data from the GetWorkflowExecutionHistory operation.
     /// </summary>
     public partial class GetWorkflowExecutionHistoryResult : AmazonWebServiceResponse
     {
-        private History historyValue;
+        private History _history;
 
-        /// <summary>
-        /// Gets and sets the GetWorkflowExecutionHistoryResult property.
-        /// Contains the result of a successful invocation of the GetWorkflowExecutionHistory
-        /// action.
-        /// </summary>
+        // Gets and sets the History member
         public History History
         {
-            get { return this.historyValue; }
-            set { this.historyValue = value; }
+            get { return this._history; }
+            set { this._history = value; }
+        }
+
+        // Check to see if History property is set
+        internal bool IsSetHistory()
+        {
+            return this._history != null;
         }
     }
 }
-    

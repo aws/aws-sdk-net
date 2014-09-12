@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DataPipeline.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DataPipeline.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ValidationWarning Object
+    /// </summary>  
+    public class ValidationWarningUnmarshaller : IUnmarshaller<ValidationWarning, XmlUnmarshallerContext>, IUnmarshaller<ValidationWarning, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ValidationWarningUnmarshaller
-      /// </summary>
-      internal class ValidationWarningUnmarshaller : IUnmarshaller<ValidationWarning, XmlUnmarshallerContext>, IUnmarshaller<ValidationWarning, JsonUnmarshallerContext>
-      {
         ValidationWarning IUnmarshaller<ValidationWarning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ValidationWarning Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ValidationWarning validationWarning = new ValidationWarning();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ValidationWarning unmarshalledObject = new ValidationWarning();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("id", targetDepth))
-              {
-                validationWarning.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("warnings", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                validationWarning.Warnings = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Warnings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return validationWarning;
+            return unmarshalledObject;
         }
 
-        private static ValidationWarningUnmarshaller instance;
-        public static ValidationWarningUnmarshaller GetInstance()
+
+        private static ValidationWarningUnmarshaller _instance = new ValidationWarningUnmarshaller();        
+
+        public static ValidationWarningUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ValidationWarningUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

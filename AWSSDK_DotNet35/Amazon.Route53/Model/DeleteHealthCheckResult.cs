@@ -12,21 +12,26 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>Empty response for the request.</para>
+    /// Empty response for the request.
     /// </summary>
     public partial class DeleteHealthCheckResult : AmazonWebServiceResponse
     {
-        
 
     }
 }

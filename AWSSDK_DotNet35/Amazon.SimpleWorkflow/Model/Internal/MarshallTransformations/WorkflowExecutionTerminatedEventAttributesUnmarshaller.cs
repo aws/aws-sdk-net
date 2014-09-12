@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowExecutionTerminatedEventAttributes Object
+    /// </summary>  
+    public class WorkflowExecutionTerminatedEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowExecutionTerminatedEventAttributesUnmarshaller
-      /// </summary>
-      internal class WorkflowExecutionTerminatedEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, JsonUnmarshallerContext>
-      {
         WorkflowExecutionTerminatedEventAttributes IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowExecutionTerminatedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowExecutionTerminatedEventAttributes workflowExecutionTerminatedEventAttributes = new WorkflowExecutionTerminatedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowExecutionTerminatedEventAttributes unmarshalledObject = new WorkflowExecutionTerminatedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("reason", targetDepth))
-              {
-                workflowExecutionTerminatedEventAttributes.Reason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("details", targetDepth))
-              {
-                workflowExecutionTerminatedEventAttributes.Details = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("childPolicy", targetDepth))
-              {
-                workflowExecutionTerminatedEventAttributes.ChildPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("cause", targetDepth))
-              {
-                workflowExecutionTerminatedEventAttributes.Cause = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("cause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("childPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChildPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("details", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowExecutionTerminatedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static WorkflowExecutionTerminatedEventAttributesUnmarshaller instance;
-        public static WorkflowExecutionTerminatedEventAttributesUnmarshaller GetInstance()
+
+        private static WorkflowExecutionTerminatedEventAttributesUnmarshaller _instance = new WorkflowExecutionTerminatedEventAttributesUnmarshaller();        
+
+        public static WorkflowExecutionTerminatedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowExecutionTerminatedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

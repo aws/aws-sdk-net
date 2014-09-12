@@ -71,7 +71,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Contents", targetDepth))
                     {
-                        response.S3Objects.Add(ContentsItemUnmarshaller.GetInstance().Unmarshall(context));
+                        response.S3Objects.Add(ContentsItemUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -101,7 +101,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CommonPrefixes", targetDepth))
                     {
-                        var prefix = CommonPrefixesItemUnmarshaller.GetInstance().Unmarshall(context);
+                        var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
 
                         if(prefix != null)
                             response.CommonPrefixes.Add(prefix);
@@ -122,22 +122,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
         
-        private static ListObjectsResponseUnmarshaller instance;
+        private static ListObjectsResponseUnmarshaller _instance;
 
-        public static ListObjectsResponseUnmarshaller GetInstance()
+        public static ListObjectsResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new ListObjectsResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new ListObjectsResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

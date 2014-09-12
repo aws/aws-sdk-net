@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,41 +32,69 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Filter
     {
-        
-        private string name;
-        private List<string> values = new List<string>();
-
+        private string _name;
+        private List<string> _values = new List<string>();
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Filter() { }
+
+        /// <summary>
+        /// Instantiates Filter with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the filter.</param>
+        /// <param name="values">One or more filter values.</param>
+        public Filter(string name, List<string> values)
+        {
+            _name = name;
+            _values = values;
+        }
+
+        /// <summary>
+        /// Instantiates Filter with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the filter.</param>
+        public Filter(string name)
+        {
+            _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
         /// The name of the filter.
-        ///  
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
         /// One or more filter values.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Values
         {
-            get { return this.values; }
-            set { this.values = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this.values.Count > 0;
+            return this._values != null && this._values.Count > 0; 
         }
+
     }
 }

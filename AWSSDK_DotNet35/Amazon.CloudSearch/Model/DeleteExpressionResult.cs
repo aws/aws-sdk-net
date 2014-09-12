@@ -12,38 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c> DeleteExpression </c> request. Specifies the expression being deleted.</para>
+    /// The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression
+    /// being deleted.
     /// </summary>
     public partial class DeleteExpressionResult : AmazonWebServiceResponse
     {
-        
-        private ExpressionStatus expression;
-
+        private ExpressionStatus _expression;
 
         /// <summary>
+        /// Gets and sets the property Expression. 
+        /// <para>
         /// The status of the expression being deleted.
-        ///  
+        /// </para>
         /// </summary>
         public ExpressionStatus Expression
         {
-            get { return this.expression; }
-            set { this.expression = value; }
+            get { return this._expression; }
+            set { this._expression = value; }
         }
 
         // Check to see if Expression property is set
         internal bool IsSetExpression()
         {
-            return this.expression != null;
+            return this._expression != null;
         }
+
     }
 }

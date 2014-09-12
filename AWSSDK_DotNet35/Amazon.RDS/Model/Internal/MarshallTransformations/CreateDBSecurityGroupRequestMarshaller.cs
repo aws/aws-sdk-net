@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,57 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create D B Security Group Request Marshaller
+    /// CreateDBSecurityGroup Request Marshaller
     /// </summary>       
-    public class CreateDBSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateDBSecurityGroupRequest>
+    public class CreateDBSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateDBSecurityGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateDBSecurityGroupRequest createDBSecurityGroupRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createDBSecurityGroupRequest, "AmazonRDS");
+            return this.Marshall((CreateDBSecurityGroupRequest)input);
+        }
+    
+        public IRequest Marshall(CreateDBSecurityGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "CreateDBSecurityGroup");
             request.Parameters.Add("Version", "2013-09-09");
-            if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetDBSecurityGroupName())
-            {
-                request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(createDBSecurityGroupRequest.DBSecurityGroupName));
-            }
-            if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetDBSecurityGroupDescription())
-            {
-                request.Parameters.Add("DBSecurityGroupDescription", StringUtils.FromString(createDBSecurityGroupRequest.DBSecurityGroupDescription));
-            }
 
-            if (createDBSecurityGroupRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = createDBSecurityGroupRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetDBSecurityGroupDescription())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("DBSecurityGroupDescription", StringUtils.FromString(publicRequest.DBSecurityGroupDescription));
+                }
+                if(publicRequest.IsSetDBSecurityGroupName())
+                {
+                    request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(publicRequest.DBSecurityGroupName));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-
-                    tagsListIndex++;
                 }
             }
-
             return request;
         }
     }

@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for History Object
+    /// </summary>  
+    public class HistoryUnmarshaller : IUnmarshaller<History, XmlUnmarshallerContext>, IUnmarshaller<History, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// HistoryUnmarshaller
-      /// </summary>
-      internal class HistoryUnmarshaller : IUnmarshaller<History, XmlUnmarshallerContext>, IUnmarshaller<History, JsonUnmarshallerContext>
-      {
         History IUnmarshaller<History, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public History Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            History history = new History();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            History unmarshalledObject = new History();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("events", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<HistoryEvent,HistoryEventUnmarshaller>(
-                    HistoryEventUnmarshaller.GetInstance());                  
-                history.Events = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("nextPageToken", targetDepth))
-              {
-                history.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("events", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HistoryEvent, HistoryEventUnmarshaller>(HistoryEventUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return history;
+            return unmarshalledObject;
         }
 
-        private static HistoryUnmarshaller instance;
-        public static HistoryUnmarshaller GetInstance()
+
+        private static HistoryUnmarshaller _instance = new HistoryUnmarshaller();        
+
+        public static HistoryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new HistoryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

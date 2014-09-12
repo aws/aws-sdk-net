@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,41 +12,52 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Alarm Actions Request Marshaller
+    /// EnableAlarmActions Request Marshaller
     /// </summary>       
-    public class EnableAlarmActionsRequestMarshaller : IMarshaller<IRequest, EnableAlarmActionsRequest>
+    public class EnableAlarmActionsRequestMarshaller : IMarshaller<IRequest, EnableAlarmActionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(EnableAlarmActionsRequest enableAlarmActionsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(enableAlarmActionsRequest, "AmazonCloudWatch");
+            return this.Marshall((EnableAlarmActionsRequest)input);
+        }
+    
+        public IRequest Marshall(EnableAlarmActionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
             request.Parameters.Add("Action", "EnableAlarmActions");
             request.Parameters.Add("Version", "2010-08-01");
-            if (enableAlarmActionsRequest != null)
-            {
-                List<string> alarmNamesList = enableAlarmActionsRequest.AlarmNames;
 
-                int alarmNamesListIndex = 1;
-                foreach (string alarmNamesListValue in alarmNamesList)
-                { 
-                    request.Parameters.Add("AlarmNames.member." + alarmNamesListIndex, StringUtils.FromString(alarmNamesListValue));
-                    alarmNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAlarmNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AlarmNames)
+                    {
+                        request.Parameters.Add("AlarmNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

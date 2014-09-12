@@ -12,13 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.DynamoDBv2
 {
-
     /// <summary>
     /// Configuration for accessing Amazon DynamoDB service
     /// </summary>
@@ -40,9 +46,7 @@ namespace Amazon.DynamoDBv2
         {
             get
             {
-                
                 return "dynamodb";
-                    
             }
         }
 
@@ -58,5 +62,3 @@ namespace Amazon.DynamoDBv2
         }
     }
 }
-
-    

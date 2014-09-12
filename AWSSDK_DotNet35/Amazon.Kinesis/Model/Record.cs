@@ -12,99 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <para>The unit of data of the Amazon Kinesis stream, which is composed of a sequence number, a partition key, and a data blob.</para>
+    /// The unit of data of the Amazon Kinesis stream, which is composed of a sequence number,
+    /// a partition key, and a data blob.
     /// </summary>
     public partial class Record
     {
-        
-        private string sequenceNumber;
-        private MemoryStream data;
-        private string partitionKey;
-
+        private MemoryStream _data;
+        private string _partitionKey;
+        private string _sequenceNumber;
 
         /// <summary>
-        /// The unique identifier for the record in the Amazon Kinesis stream.
-        ///  
+        /// Gets and sets the property Data. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>0|([1-9]\d{0,128})</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SequenceNumber
-        {
-            get { return this.sequenceNumber; }
-            set { this.sequenceNumber = value; }
-        }
-
-        // Check to see if SequenceNumber property is set
-        internal bool IsSetSequenceNumber()
-        {
-            return this.sequenceNumber != null;
-        }
-
-        /// <summary>
-        /// The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change
-        /// the data in the blob in any way. The maximum size of the data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 51200</description>
-        ///     </item>
-        /// </list>
+        /// The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis
+        /// service, which does not inspect, interpret, or change the data in the blob in any
+        /// way. The maximum size of the data blob (the payload after Base64-decoding) is 50 kilobytes
+        /// (KB) 
         /// </para>
         /// </summary>
         public MemoryStream Data
         {
-            get { return this.data; }
-            set { this.data = value; }
+            get { return this._data; }
+            set { this._data = value; }
         }
 
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this.data != null;
+            return this._data != null;
         }
 
         /// <summary>
-        /// Identifies which shard in the stream the data record is assigned to.
-        ///  
+        /// Gets and sets the property PartitionKey. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        /// </list>
+        /// Identifies which shard in the stream the data record is assigned to.
         /// </para>
         /// </summary>
         public string PartitionKey
         {
-            get { return this.partitionKey; }
-            set { this.partitionKey = value; }
+            get { return this._partitionKey; }
+            set { this._partitionKey = value; }
         }
 
         // Check to see if PartitionKey property is set
         internal bool IsSetPartitionKey()
         {
-            return this.partitionKey != null;
+            return this._partitionKey != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property SequenceNumber. 
+        /// <para>
+        /// The unique identifier for the record in the Amazon Kinesis stream.
+        /// </para>
+        /// </summary>
+        public string SequenceNumber
+        {
+            get { return this._sequenceNumber; }
+            set { this._sequenceNumber = value; }
+        }
+
+        // Check to see if SequenceNumber property is set
+        internal bool IsSetSequenceNumber()
+        {
+            return this._sequenceNumber != null;
+        }
+
     }
 }

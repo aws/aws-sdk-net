@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,39 +33,30 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Job Request Marshaller
+    /// DescribeJob Request Marshaller
     /// </summary>       
-    internal class DescribeJobRequestMarshaller : IMarshaller<IRequest, DescribeJobRequest> 
+    public class DescribeJobRequestMarshaller : IMarshaller<IRequest, DescribeJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeJobRequest describeJobRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeJobRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeJobRequest, "AmazonGlacier");
-            string target = "Glacier.DescribeJob";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(DescribeJobRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}"; 
-            if(describeJobRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(describeJobRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(describeJobRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(describeJobRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(describeJobRequest.IsSetJobId())
-                uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(describeJobRequest.JobId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{jobId}", "" ); 
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{jobId}", publicRequest.IsSetJobId() ? StringUtils.FromString(publicRequest.JobId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

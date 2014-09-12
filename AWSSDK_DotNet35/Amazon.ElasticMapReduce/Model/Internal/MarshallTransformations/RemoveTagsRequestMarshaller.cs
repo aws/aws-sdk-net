@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// RemoveTags Request Marshaller
     /// </summary>       
-    public class RemoveTagsRequestMarshaller : IMarshaller<IRequest, RemoveTagsRequest> 
+    public class RemoveTagsRequestMarshaller : IMarshaller<IRequest, RemoveTagsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((RemoveTagsRequest)input);
+        }
+
         public IRequest Marshall(RemoveTagsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
@@ -47,21 +56,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetResourceId())
                 {
-                    writer.WritePropertyName("ResourceId");
-                    writer.Write(publicRequest.ResourceId);
+                    context.Writer.WritePropertyName("ResourceId");
+                    context.Writer.Write(publicRequest.ResourceId);
                 }
 
                 if(publicRequest.IsSetTagKeys())
                 {
-                    writer.WritePropertyName("TagKeys");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("TagKeys");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
                     {
-                        writer.Write(publicRequestTagKeysListValue);
+                            context.Writer.Write(publicRequestTagKeysListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

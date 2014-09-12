@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,55 +29,49 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcAttribute operation.
-    /// <para>Describes the specified attribute of the specified VPC. You can specify only one attribute at a time.</para>
+    /// Describes the specified attribute of the specified VPC. You can specify only one attribute
+    /// at a time.
     /// </summary>
     public partial class DescribeVpcAttributeRequest : AmazonEC2Request
     {
-        private string vpcId;
-        private VpcAttributeName attribute;
-
-
-        /// <summary>
-        /// The ID of the VPC.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
+        private VpcAttributeName _attribute;
+        private string _vpcId;
 
         /// <summary>
-        /// The VPC attribute.
-        ///  
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>enableDnsSupport, enableDnsHostnames</description>
-        ///     </item>
-        /// </list>
+        /// The VPC attribute.
         /// </para>
         /// </summary>
         public VpcAttributeName Attribute
         {
-            get { return this.attribute; }
-            set { this.attribute = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
         // Check to see if Attribute property is set
         internal bool IsSetAttribute()
         {
-            return this.attribute != null;
+            return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }
 }
-    

@@ -21,14 +21,20 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Put Object Request Marshaller
     /// </summary>       
-    public class PutObjectRequestMarshaller : IMarshaller<IRequest, PutObjectRequest>
-    {
+    public class PutObjectRequestMarshaller : IMarshaller<IRequest, PutObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((PutObjectRequest)input);
+		}
+
         public IRequest Marshall(PutObjectRequest putObjectRequest)
         {
             IRequest request = new DefaultRequest(putObjectRequest, "AmazonS3");

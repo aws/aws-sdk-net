@@ -12,93 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpcPeeringConnection Unmarshaller
-     /// </summary>
-    internal class VpcPeeringConnectionUnmarshaller : IUnmarshaller<VpcPeeringConnection, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnection, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpcPeeringConnection Object
+    /// </summary>  
+    public class VpcPeeringConnectionUnmarshaller : IUnmarshaller<VpcPeeringConnection, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnection, JsonUnmarshallerContext>
     {
-        public VpcPeeringConnection Unmarshall(XmlUnmarshallerContext context) 
+        public VpcPeeringConnection Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcPeeringConnection vpcPeeringConnection = new VpcPeeringConnection();
+            VpcPeeringConnection unmarshalledObject = new VpcPeeringConnection();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("accepterVpcInfo", targetDepth))
                     {
-                        vpcPeeringConnection.AccepterVpcInfo = VpcPeeringConnectionVpcInfoUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = VpcPeeringConnectionVpcInfoUnmarshaller.Instance;
+                        unmarshalledObject.AccepterVpcInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("expirationTime", targetDepth))
                     {
-                        vpcPeeringConnection.ExpirationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("requesterVpcInfo", targetDepth))
                     {
-                        vpcPeeringConnection.RequesterVpcInfo = VpcPeeringConnectionVpcInfoUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = VpcPeeringConnectionVpcInfoUnmarshaller.Instance;
+                        unmarshalledObject.RequesterVpcInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("status", targetDepth))
                     {
-                        vpcPeeringConnection.Status = VpcPeeringConnectionStateReasonUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = VpcPeeringConnectionStateReasonUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        vpcPeeringConnection.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                     if (context.TestExpression("vpcPeeringConnectionId", targetDepth))
                     {
-                        vpcPeeringConnection.VpcPeeringConnectionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcPeeringConnectionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpcPeeringConnection;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpcPeeringConnection;
+            return unmarshalledObject;
         }
 
-        public VpcPeeringConnection Unmarshall(JsonUnmarshallerContext context) 
+        public VpcPeeringConnection Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpcPeeringConnectionUnmarshaller instance;
 
-        public static VpcPeeringConnectionUnmarshaller GetInstance() 
+        private static VpcPeeringConnectionUnmarshaller _instance = new VpcPeeringConnectionUnmarshaller();        
+
+        public static VpcPeeringConnectionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpcPeeringConnectionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

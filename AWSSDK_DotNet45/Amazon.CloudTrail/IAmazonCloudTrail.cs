@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,55 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
+
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.CloudTrail.Model;
 
 namespace Amazon.CloudTrail
 {
     /// <summary>
-    /// Interface for accessing AmazonCloudTrail.
-    /// 
-    /// AWS Cloud Trail <para>This is the CloudTrail API Reference. It provides descriptions of actions, data types, common parameters, and common
-    /// errors for CloudTrail.</para> <para>CloudTrail is a web service that records AWS API calls for your AWS account and delivers log files to an
-    /// Amazon S3 bucket. The recorded information includes the identity of the user, the start time of the AWS API call, the source IP address, the
-    /// request parameters, and the response elements returned by the service.</para> <para><b>NOTE:</b> As an alternative to using the API, you can
-    /// use one of the AWS SDKs, which consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .NET, iOS,
-    /// Android, etc.). The SDKs provide a convenient way to create programmatic access to AWSCloudTrail. For example, the SDKs take care of
-    /// cryptographically signing requests, managing errors, and retrying requests automatically. For information about the AWS SDKs, including how
-    /// to download and install them, see the Tools for Amazon Web Services page. </para> <para>See the CloudTrail User Guide for information about
-    /// the data that is included with each AWS API call listed in the log files.</para>
+    /// Interface for accessing CloudTrail
+    ///
+    /// AWS Cloud Trail 
+    /// <para>
+    /// This is the CloudTrail API Reference. It provides descriptions of actions, data types,
+    /// common parameters, and common errors for CloudTrail.
+    /// </para>
+    ///  
+    /// <para>
+    /// CloudTrail is a web service that records AWS API calls for your AWS account and delivers
+    /// log files to an Amazon S3 bucket. The recorded information includes the identity of
+    /// the user, the start time of the AWS API call, the source IP address, the request parameters,
+    /// and the response elements returned by the service.
+    /// </para>
+    ///  
+    /// <para>
+    /// See the CloudTrail User Guide for information about the data that is included with
+    /// each AWS API call listed in the log files.
+    /// </para>
     /// </summary>
-	public partial interface IAmazonCloudTrail : IDisposable
+    public partial interface IAmazonCloudTrail : IDisposable
     {
- 
+
+        
+        #region  CreateTrail
 
         /// <summary>
-        /// <para>From the command line, use <c>create-subscription</c> . </para> <para>Creates a trail that specifies the settings for delivery of log
-        /// data to an Amazon S3 bucket. </para>
+        /// From the command line, use <code>create-subscription</code>. 
+        /// 
+        ///  
+        /// <para>
+        /// Creates a trail that specifies the settings for delivery of log data to an Amazon
+        /// S3 bucket. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method on
-        /// AmazonCloudTrail.</param>
-        /// 
-        /// <returns>The response from the CreateTrail service method, as returned by AmazonCloudTrail.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudTrail.Model.S3BucketDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3PrefixException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3BucketNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidSnsTopicNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException" />
-		CreateTrailResponse CreateTrail(CreateTrailRequest request);
+        /// <returns>The response from the CreateTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="InsufficientS3BucketPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket is not sufficient.
+        /// </exception>
+        /// <exception cref="InsufficientSnsTopicPolicyException">
+        /// This exception is thrown when the policy on the SNS topic is not sufficient.
+        /// </exception>
+        /// <exception cref="InvalidS3BucketNameException">
+        /// This exception is thrown when the provided S3 bucket name is not valid.
+        /// </exception>
+        /// <exception cref="InvalidS3PrefixException">
+        /// This exception is thrown when the provided S3 prefix is not valid.
+        /// </exception>
+        /// <exception cref="InvalidSnsTopicNameException">
+        /// This exception is thrown when the provided SNS topic name is not valid.
+        /// </exception>
+        /// <exception cref="InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid.
+        /// </exception>
+        /// <exception cref="MaximumNumberOfTrailsExceededException">
+        /// This exception is thrown when the maximum number of trails is reached.
+        /// </exception>
+        /// <exception cref="S3BucketDoesNotExistException">
+        /// This exception is thrown when the specified S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="TrailAlreadyExistsException">
+        /// This exception is thrown when the specified trail already exists.
+        /// </exception>
+        CreateTrailResponse CreateTrail(CreateTrailRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.CreateTrail"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail operation.</param>
@@ -68,25 +105,29 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateTrailResponse> CreateTrailAsync(CreateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateTrailResponse> CreateTrailAsync(CreateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTrail
 
         /// <summary>
-        /// <para>Deletes a trail.</para>
+        /// Deletes a trail.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method on
-        /// AmazonCloudTrail.</param>
-        /// 
-        /// <returns>The response from the DeleteTrail service method, as returned by AmazonCloudTrail.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotFoundException" />
-		DeleteTrailResponse DeleteTrail(DeleteTrailRequest request);
+        /// <returns>The response from the DeleteTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid.
+        /// </exception>
+        /// <exception cref="TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        DeleteTrailResponse DeleteTrail(DeleteTrailRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.DeleteTrail"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail operation.</param>
@@ -94,22 +135,30 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteTrailResponse> DeleteTrailAsync(DeleteTrailRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<DeleteTrailResponse> DeleteTrailAsync(DeleteTrailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTrails
 
         /// <summary>
-        /// <para>Retrieves the settings for some or all trails associated with an account. </para>
+        /// Retrieves the settings for some or all trails associated with an account.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method on
-        /// AmazonCloudTrail.</param>
+        /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        DescribeTrailsResponse DescribeTrails();
+
+        /// <summary>
+        /// Retrieves the settings for some or all trails associated with an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
         /// 
-        /// <returns>The response from the DescribeTrails service method, as returned by AmazonCloudTrail.</returns>
-		DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request);
+        /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.DescribeTrails"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails operation.</param>
@@ -117,34 +166,31 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DescribeTrailsResponse> DescribeTrailsAsync(DescribeTrailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para>Retrieves the settings for some or all trails associated with an account. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the DescribeTrails service method, as returned by AmazonCloudTrail.</returns>
-		DescribeTrailsResponse DescribeTrails();
- 
+        Task<DescribeTrailsResponse> DescribeTrailsAsync(DescribeTrailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTrailStatus
 
         /// <summary>
-        /// <para>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and
-        /// Amazon S3 errors, and start and stop logging times for each trail. </para>
+        /// Returns a JSON-formatted list of information about the specified trail. Fields include
+        /// information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop
+        /// logging times for each trail.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus service method on
-        /// AmazonCloudTrail.</param>
-        /// 
-        /// <returns>The response from the GetTrailStatus service method, as returned by AmazonCloudTrail.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotFoundException" />
-		GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request);
+        /// <returns>The response from the GetTrailStatus service method, as returned by CloudTrail.</returns>
+        /// <exception cref="InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid.
+        /// </exception>
+        /// <exception cref="TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTrailStatus operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.GetTrailStatus"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus operation.</param>
@@ -152,25 +198,29 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartLogging
 
         /// <summary>
-        /// <para>Starts the recording of AWS API calls and log file delivery for a trail.</para>
+        /// Starts the recording of AWS API calls and log file delivery for a trail.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartLogging service method on
-        /// AmazonCloudTrail.</param>
-        /// 
-        /// <returns>The response from the StartLogging service method, as returned by AmazonCloudTrail.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotFoundException" />
-		StartLoggingResponse StartLogging(StartLoggingRequest request);
+        /// <returns>The response from the StartLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid.
+        /// </exception>
+        /// <exception cref="TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        StartLoggingResponse StartLogging(StartLoggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.StartLogging"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartLogging operation.</param>
@@ -178,26 +228,31 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<StartLoggingResponse> StartLoggingAsync(StartLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<StartLoggingResponse> StartLoggingAsync(StartLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopLogging
 
         /// <summary>
-        /// <para>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to
-        /// use this action. You can update a trail without stopping it first. This action is the only way to stop recording.</para>
+        /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
+        /// Under most circumstances, there is no need to use this action. You can update a trail
+        /// without stopping it first. This action is the only way to stop recording.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopLogging service method on
-        /// AmazonCloudTrail.</param>
-        /// 
-        /// <returns>The response from the StopLogging service method, as returned by AmazonCloudTrail.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotFoundException" />
-		StopLoggingResponse StopLogging(StopLoggingRequest request);
+        /// <returns>The response from the StopLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid.
+        /// </exception>
+        /// <exception cref="TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        StopLoggingResponse StopLogging(StopLoggingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.StopLogging"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopLogging operation.</param>
@@ -205,33 +260,55 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<StopLoggingResponse> StopLoggingAsync(StopLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<StopLoggingResponse> StopLoggingAsync(StopLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateTrail
 
         /// <summary>
-        /// <para>From the command line, use <c>update-subscription</c> .</para> <para>Updates the settings that specify delivery of log files. Changes
-        /// to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing
-        /// bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. </para>
+        /// From the command line, use <code>update-subscription</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the settings that specify delivery of log files. Changes to a trail do not
+        /// require stopping the CloudTrail service. Use this action to designate an existing
+        /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
+        /// log files, an IAM policy exists for the bucket. 
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method on
-        /// AmazonCloudTrail.</param>
-        /// 
-        /// <returns>The response from the UpdateTrail service method, as returned by AmazonCloudTrail.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudTrail.Model.S3BucketDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3PrefixException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3BucketNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InvalidSnsTopicNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotFoundException" />
-		UpdateTrailResponse UpdateTrail(UpdateTrailRequest request);
+        /// <returns>The response from the UpdateTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="InsufficientS3BucketPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket is not sufficient.
+        /// </exception>
+        /// <exception cref="InsufficientSnsTopicPolicyException">
+        /// This exception is thrown when the policy on the SNS topic is not sufficient.
+        /// </exception>
+        /// <exception cref="InvalidS3BucketNameException">
+        /// This exception is thrown when the provided S3 bucket name is not valid.
+        /// </exception>
+        /// <exception cref="InvalidS3PrefixException">
+        /// This exception is thrown when the provided S3 prefix is not valid.
+        /// </exception>
+        /// <exception cref="InvalidSnsTopicNameException">
+        /// This exception is thrown when the provided SNS topic name is not valid.
+        /// </exception>
+        /// <exception cref="InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid.
+        /// </exception>
+        /// <exception cref="S3BucketDoesNotExistException">
+        /// This exception is thrown when the specified S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        UpdateTrailResponse UpdateTrail(UpdateTrailRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail.UpdateTrail"/>
+        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail operation.</param>
@@ -239,6 +316,9 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateTrailResponse> UpdateTrailAsync(UpdateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateTrailResponse> UpdateTrailAsync(UpdateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

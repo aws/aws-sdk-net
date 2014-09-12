@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the CreateRoute response metadata.
-    /// The CreateRoute operation has a void result type.
+    /// Configuration for accessing Amazon CreateRoute service
     /// </summary>
-    public partial class CreateRouteResponse : AmazonWebServiceResponse
+    public partial class CreateRouteResponse : CreateRouteResult
     {
+        /// <summary>
+        /// Gets and sets the CreateRouteResult property.
+        /// Represents the output of a CreateRoute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the CreateRouteResult class are now available on the CreateRouteResponse class. You should use the properties on CreateRouteResponse instead of accessing them through CreateRouteResult.")]
+        public CreateRouteResult CreateRouteResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

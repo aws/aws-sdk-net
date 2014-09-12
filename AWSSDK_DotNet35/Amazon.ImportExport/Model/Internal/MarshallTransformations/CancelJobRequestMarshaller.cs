@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ImportExport.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Job Request Marshaller
+    /// CancelJob Request Marshaller
     /// </summary>       
-    public class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest>
+    public class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CancelJobRequest cancelJobRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(cancelJobRequest, "AmazonImportExport");
+            return this.Marshall((CancelJobRequest)input);
+        }
+    
+        public IRequest Marshall(CancelJobRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ImportExport");
             request.Parameters.Add("Action", "CancelJob");
             request.Parameters.Add("Version", "2010-06-01");
-            if (cancelJobRequest != null && cancelJobRequest.IsSetJobId())
-            {
-                request.Parameters.Add("JobId", StringUtils.FromString(cancelJobRequest.JobId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetJobId())
+                {
+                    request.Parameters.Add("JobId", StringUtils.FromString(publicRequest.JobId));
+                }
+            }
             return request;
         }
     }

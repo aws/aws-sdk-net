@@ -12,74 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetPasswordData operation
-    /// </summary>
-    internal class GetPasswordDataResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for GetPasswordData operation
+    /// </summary>  
+    public class GetPasswordDataResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetPasswordDataResponse response = new GetPasswordDataResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
+
                     if (context.TestExpression("instanceId", targetDepth))
                     {
-                        response.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("timestamp", targetDepth))
-                    {
-                        response.Timestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("passwordData", targetDepth))
                     {
-                        response.PasswordData = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.PasswordData = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("timestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.Timestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetPasswordDataResponseUnmarshaller instance;
+        private static GetPasswordDataResponseUnmarshaller _instance = new GetPasswordDataResponseUnmarshaller();        
 
-        public static GetPasswordDataResponseUnmarshaller GetInstance()
+        internal static GetPasswordDataResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetPasswordDataResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetPasswordDataResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

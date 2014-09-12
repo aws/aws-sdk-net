@@ -1,0 +1,13 @@
+
+{
+	"noArgOverloads": [
+		"DescribeStacks",
+		"ListStacks",
+		"ValidateTemplate"
+	],
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addAfter", "newType":"Amazon.CloudFormation.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}
+		]
+	}   
+}

@@ -12,173 +12,199 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a Reserved Instance modification.</para>
+    /// Describes a Reserved Instance modification.
     /// </summary>
     public partial class ReservedInstancesModification
     {
-        
-        private string reservedInstancesModificationId;
-        private List<ReservedInstancesId> reservedInstancesIds = new List<ReservedInstancesId>();
-        private List<ReservedInstancesModificationResult> modificationResults = new List<ReservedInstancesModificationResult>();
-        private DateTime? createDate;
-        private DateTime? updateDate;
-        private DateTime? effectiveDate;
-        private string status;
-        private string statusMessage;
-        private string clientToken;
-
+        private string _clientToken;
+        private DateTime? _createDate;
+        private DateTime? _effectiveDate;
+        private List<ReservedInstancesModificationResult> _modificationResults = new List<ReservedInstancesModificationResult>();
+        private List<ReservedInstancesId> _reservedInstancesIds = new List<ReservedInstancesId>();
+        private string _reservedInstancesModificationId;
+        private string _status;
+        private string _statusMessage;
+        private DateTime? _updateDate;
 
         /// <summary>
-        /// A unique ID for the Reserved Instance modification.
-        ///  
-        /// </summary>
-        public string ReservedInstancesModificationId
-        {
-            get { return this.reservedInstancesModificationId; }
-            set { this.reservedInstancesModificationId = value; }
-        }
-
-        // Check to see if ReservedInstancesModificationId property is set
-        internal bool IsSetReservedInstancesModificationId()
-        {
-            return this.reservedInstancesModificationId != null;
-        }
-
-        /// <summary>
-        /// The IDs of one or more Reserved Instances.
-        ///  
-        /// </summary>
-        public List<ReservedInstancesId> ReservedInstancesIds
-        {
-            get { return this.reservedInstancesIds; }
-            set { this.reservedInstancesIds = value; }
-        }
-
-        // Check to see if ReservedInstancesIds property is set
-        internal bool IsSetReservedInstancesIds()
-        {
-            return this.reservedInstancesIds.Count > 0;
-        }
-
-        /// <summary>
-        /// Contains target configurations along with their corresponding new Reserved Instance IDs.
-        ///  
-        /// </summary>
-        public List<ReservedInstancesModificationResult> ModificationResults
-        {
-            get { return this.modificationResults; }
-            set { this.modificationResults = value; }
-        }
-
-        // Check to see if ModificationResults property is set
-        internal bool IsSetModificationResults()
-        {
-            return this.modificationResults.Count > 0;
-        }
-
-        /// <summary>
-        /// The time when the modification request was created.
-        ///  
-        /// </summary>
-        public DateTime CreateDate
-        {
-            get { return this.createDate ?? default(DateTime); }
-            set { this.createDate = value; }
-        }
-
-        // Check to see if CreateDate property is set
-        internal bool IsSetCreateDate()
-        {
-            return this.createDate.HasValue;
-        }
-
-        /// <summary>
-        /// The time when the modification request was last updated.
-        ///  
-        /// </summary>
-        public DateTime UpdateDate
-        {
-            get { return this.updateDate ?? default(DateTime); }
-            set { this.updateDate = value; }
-        }
-
-        // Check to see if UpdateDate property is set
-        internal bool IsSetUpdateDate()
-        {
-            return this.updateDate.HasValue;
-        }
-
-        /// <summary>
-        /// The time for the modification to become effective.
-        ///  
-        /// </summary>
-        public DateTime EffectiveDate
-        {
-            get { return this.effectiveDate ?? default(DateTime); }
-            set { this.effectiveDate = value; }
-        }
-
-        // Check to see if EffectiveDate property is set
-        internal bool IsSetEffectiveDate()
-        {
-            return this.effectiveDate.HasValue;
-        }
-
-        /// <summary>
-        /// The status of the Reserved Instances modification request.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The reason for the status.
-        ///  
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this.statusMessage; }
-            set { this.statusMessage = value; }
-        }
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this.statusMessage != null;
-        }
-
-        /// <summary>
-        /// A unique, case-sensitive key supplied by the client to ensure that the modification request is idempotent.
-        ///  
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive key supplied by the client to ensure that the modification
+        /// request is idempotent.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
-            get { return this.clientToken; }
-            set { this.clientToken = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this.clientToken != null;
+            return this._clientToken != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The time when the modification request was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreateDate
+        {
+            get { return this._createDate.GetValueOrDefault(); }
+            set { this._createDate = value; }
+        }
+
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveDate. 
+        /// <para>
+        /// The time for the modification to become effective.
+        /// </para>
+        /// </summary>
+        public DateTime EffectiveDate
+        {
+            get { return this._effectiveDate.GetValueOrDefault(); }
+            set { this._effectiveDate = value; }
+        }
+
+        // Check to see if EffectiveDate property is set
+        internal bool IsSetEffectiveDate()
+        {
+            return this._effectiveDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModificationResults. 
+        /// <para>
+        /// Contains target configurations along with their corresponding new Reserved Instance
+        /// IDs.
+        /// </para>
+        /// </summary>
+        public List<ReservedInstancesModificationResult> ModificationResults
+        {
+            get { return this._modificationResults; }
+            set { this._modificationResults = value; }
+        }
+
+        // Check to see if ModificationResults property is set
+        internal bool IsSetModificationResults()
+        {
+            return this._modificationResults != null && this._modificationResults.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesIds. 
+        /// <para>
+        /// The IDs of one or more Reserved Instances.
+        /// </para>
+        /// </summary>
+        public List<ReservedInstancesId> ReservedInstancesIds
+        {
+            get { return this._reservedInstancesIds; }
+            set { this._reservedInstancesIds = value; }
+        }
+
+        // Check to see if ReservedInstancesIds property is set
+        internal bool IsSetReservedInstancesIds()
+        {
+            return this._reservedInstancesIds != null && this._reservedInstancesIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesModificationId. 
+        /// <para>
+        /// A unique ID for the Reserved Instance modification.
+        /// </para>
+        /// </summary>
+        public string ReservedInstancesModificationId
+        {
+            get { return this._reservedInstancesModificationId; }
+            set { this._reservedInstancesModificationId = value; }
+        }
+
+        // Check to see if ReservedInstancesModificationId property is set
+        internal bool IsSetReservedInstancesModificationId()
+        {
+            return this._reservedInstancesModificationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the Reserved Instances modification request.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The reason for the status.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateDate. 
+        /// <para>
+        /// The time when the modification request was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime UpdateDate
+        {
+            get { return this._updateDate.GetValueOrDefault(); }
+            set { this._updateDate = value; }
+        }
+
+        // Check to see if UpdateDate property is set
+        internal bool IsSetUpdateDate()
+        {
+            return this._updateDate.HasValue; 
+        }
+
     }
 }

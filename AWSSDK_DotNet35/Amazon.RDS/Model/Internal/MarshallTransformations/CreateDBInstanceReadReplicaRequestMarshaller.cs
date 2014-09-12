@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,89 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create D B Instance Read Replica Request Marshaller
+    /// CreateDBInstanceReadReplica Request Marshaller
     /// </summary>       
-    public class CreateDBInstanceReadReplicaRequestMarshaller : IMarshaller<IRequest, CreateDBInstanceReadReplicaRequest>
+    public class CreateDBInstanceReadReplicaRequestMarshaller : IMarshaller<IRequest, CreateDBInstanceReadReplicaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createDBInstanceReadReplicaRequest, "AmazonRDS");
+            return this.Marshall((CreateDBInstanceReadReplicaRequest)input);
+        }
+    
+        public IRequest Marshall(CreateDBInstanceReadReplicaRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "CreateDBInstanceReadReplica");
             request.Parameters.Add("Version", "2013-09-09");
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(createDBInstanceReadReplicaRequest.DBInstanceIdentifier));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetSourceDBInstanceIdentifier())
-            {
-                request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(createDBInstanceReadReplicaRequest.SourceDBInstanceIdentifier));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBInstanceClass())
-            {
-                request.Parameters.Add("DBInstanceClass", StringUtils.FromString(createDBInstanceReadReplicaRequest.DBInstanceClass));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(createDBInstanceReadReplicaRequest.AvailabilityZone));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetPort())
-            {
-                request.Parameters.Add("Port", StringUtils.FromInt(createDBInstanceReadReplicaRequest.Port));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetAutoMinorVersionUpgrade())
-            {
-                request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(createDBInstanceReadReplicaRequest.AutoMinorVersionUpgrade));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetIops())
-            {
-                request.Parameters.Add("Iops", StringUtils.FromInt(createDBInstanceReadReplicaRequest.Iops));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetOptionGroupName())
-            {
-                request.Parameters.Add("OptionGroupName", StringUtils.FromString(createDBInstanceReadReplicaRequest.OptionGroupName));
-            }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetPubliclyAccessible())
-            {
-                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceReadReplicaRequest.PubliclyAccessible));
-            }
 
-            if (createDBInstanceReadReplicaRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = createDBInstanceReadReplicaRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
+                }
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetDBInstanceClass())
+                {
+                    request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
+                }
+                if(publicRequest.IsSetDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetDBSubnetGroupName())
+                {
+                    request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
+                }
+                if(publicRequest.IsSetIops())
+                {
+                    request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
+                }
+                if(publicRequest.IsSetOptionGroupName())
+                {
+                    request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
+                }
+                if(publicRequest.IsSetPort())
+                {
+                    request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
+                }
+                if(publicRequest.IsSetSourceDBInstanceIdentifier())
+                {
+                    request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-
-                    tagsListIndex++;
                 }
             }
-            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBSubnetGroupName())
-            {
-                request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(createDBInstanceReadReplicaRequest.DBSubnetGroupName));
-            }
-
             return request;
         }
     }

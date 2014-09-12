@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,46 +29,49 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRoute operation.
-    /// <para>Deletes the specified route from the specified route table.</para>
+    /// Deletes the specified route from the specified route table.
     /// </summary>
     public partial class DeleteRouteRequest : AmazonEC2Request
     {
-        private string routeTableId;
-        private string destinationCidrBlock;
-
-
-        /// <summary>
-        /// The ID of the route table.
-        ///  
-        /// </summary>
-        public string RouteTableId
-        {
-            get { return this.routeTableId; }
-            set { this.routeTableId = value; }
-        }
-
-        // Check to see if RouteTableId property is set
-        internal bool IsSetRouteTableId()
-        {
-            return this.routeTableId != null;
-        }
+        private string _destinationCidrBlock;
+        private string _routeTableId;
 
         /// <summary>
-        /// The CIDR range for the route. The value you specify must match the CIDR for the route exactly.
-        ///  
+        /// Gets and sets the property DestinationCidrBlock. 
+        /// <para>
+        /// The CIDR range for the route. The value you specify must match the CIDR for the route
+        /// exactly.
+        /// </para>
         /// </summary>
         public string DestinationCidrBlock
         {
-            get { return this.destinationCidrBlock; }
-            set { this.destinationCidrBlock = value; }
+            get { return this._destinationCidrBlock; }
+            set { this._destinationCidrBlock = value; }
         }
 
         // Check to see if DestinationCidrBlock property is set
         internal bool IsSetDestinationCidrBlock()
         {
-            return this.destinationCidrBlock != null;
+            return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteTableId. 
+        /// <para>
+        /// The ID of the route table.
+        /// </para>
+        /// </summary>
+        public string RouteTableId
+        {
+            get { return this._routeTableId; }
+            set { this._routeTableId = value; }
+        }
+
+        // Check to see if RouteTableId property is set
+        internal bool IsSetRouteTableId()
+        {
+            return this._routeTableId != null;
         }
 
     }
 }
-    

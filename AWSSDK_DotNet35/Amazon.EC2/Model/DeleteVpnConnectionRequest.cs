@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,50 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpnConnection operation.
-    /// <para>Deletes the specified VPN connection.</para> <para>If you're deleting the VPC and its associated components, we recommend that you
-    /// detach the virtual private gateway from the VPC and delete the VPC before deleting the VPN connection.</para>
+    /// Deletes the specified VPN connection.
+    /// 
+    ///  
+    /// <para>
+    /// If you're deleting the VPC and its associated components, we recommend that you detach
+    /// the virtual private gateway from the VPC and delete the VPC before deleting the VPN
+    /// connection.
+    /// </para>
     /// </summary>
     public partial class DeleteVpnConnectionRequest : AmazonEC2Request
     {
-        private string vpnConnectionId;
-
+        private string _vpnConnectionId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteVpnConnectionRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteVpnConnectionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="vpnConnectionId">The ID of the VPN connection.</param>
+        public DeleteVpnConnectionRequest(string vpnConnectionId)
+        {
+            _vpnConnectionId = vpnConnectionId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnConnectionId. 
+        /// <para>
         /// The ID of the VPN connection.
-        ///  
+        /// </para>
         /// </summary>
         public string VpnConnectionId
         {
-            get { return this.vpnConnectionId; }
-            set { this.vpnConnectionId = value; }
+            get { return this._vpnConnectionId; }
+            set { this._vpnConnectionId = value; }
         }
 
         // Check to see if VpnConnectionId property is set
         internal bool IsSetVpnConnectionId()
         {
-            return this.vpnConnectionId != null;
+            return this._vpnConnectionId != null;
         }
 
     }
 }
-    

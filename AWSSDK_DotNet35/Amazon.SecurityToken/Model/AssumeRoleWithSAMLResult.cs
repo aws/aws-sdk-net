@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.SecurityToken.Model
         private string _subject;
         private string _subjectType;
 
-
         /// <summary>
         /// Gets and sets the property AssumedRoleUser.
         /// </summary>
@@ -53,7 +56,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._assumedRoleUser != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Audience.
@@ -70,7 +72,6 @@ namespace Amazon.SecurityToken.Model
             return this._audience != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Credentials.
         /// </summary>
@@ -85,7 +86,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._credentials != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Issuer.
@@ -102,7 +102,6 @@ namespace Amazon.SecurityToken.Model
             return this._issuer != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NameQualifier.
         /// </summary>
@@ -117,7 +116,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._nameQualifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PackedPolicySize. 
@@ -139,7 +137,6 @@ namespace Amazon.SecurityToken.Model
             return this._packedPolicySize.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Subject.
         /// </summary>
@@ -154,7 +151,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._subject != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SubjectType.

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,64 +33,70 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Record Request Marshaller
+    /// PutRecord Request Marshaller
     /// </summary>       
-    internal class PutRecordRequestMarshaller : IMarshaller<IRequest, PutRecordRequest> 
+    public class PutRecordRequestMarshaller : IMarshaller<IRequest, PutRecordRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(PutRecordRequest putRecordRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((PutRecordRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(putRecordRequest, "AmazonKinesis");
+        public IRequest Marshall(PutRecordRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.PutRecord";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (putRecordRequest != null && putRecordRequest.IsSetStreamName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetData())
                 {
-                    writer.WritePropertyName("StreamName");
-                    writer.Write(putRecordRequest.StreamName);
-                }
-                if (putRecordRequest != null && putRecordRequest.IsSetData()) 
-                {
-                    writer.WritePropertyName("Data");
-                    writer.Write(StringUtils.FromMemoryStream(putRecordRequest.Data));
-                }
-                if (putRecordRequest != null && putRecordRequest.IsSetPartitionKey()) 
-                {
-                    writer.WritePropertyName("PartitionKey");
-                    writer.Write(putRecordRequest.PartitionKey);
-                }
-                if (putRecordRequest != null && putRecordRequest.IsSetExplicitHashKey()) 
-                {
-                    writer.WritePropertyName("ExplicitHashKey");
-                    writer.Write(putRecordRequest.ExplicitHashKey);
-                }
-                if (putRecordRequest != null && putRecordRequest.IsSetSequenceNumberForOrdering()) 
-                {
-                    writer.WritePropertyName("SequenceNumberForOrdering");
-                    writer.Write(putRecordRequest.SequenceNumberForOrdering);
+                    context.Writer.WritePropertyName("Data");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Data));
                 }
 
+                if(publicRequest.IsSetExplicitHashKey())
+                {
+                    context.Writer.WritePropertyName("ExplicitHashKey");
+                    context.Writer.Write(publicRequest.ExplicitHashKey);
+                }
+
+                if(publicRequest.IsSetPartitionKey())
+                {
+                    context.Writer.WritePropertyName("PartitionKey");
+                    context.Writer.Write(publicRequest.PartitionKey);
+                }
+
+                if(publicRequest.IsSetSequenceNumberForOrdering())
+                {
+                    context.Writer.WritePropertyName("SequenceNumberForOrdering");
+                    context.Writer.Write(publicRequest.SequenceNumberForOrdering);
+                }
+
+                if(publicRequest.IsSetStreamName())
+                {
+                    context.Writer.WritePropertyName("StreamName");
+                    context.Writer.Write(publicRequest.StreamName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,64 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// <para> Contains the count of tasks in a task list. </para>
+    /// Contains the count of tasks in a task list.
     /// </summary>
-    public partial class PendingTaskCount : AmazonWebServiceResponse
+    public partial class PendingTaskCount
     {
-        
-        private int? count;
-        private bool? truncated;
+        private int? _count;
+        private bool? _truncated;
 
         /// <summary>
-        /// The number of tasks in the task list.
-        ///  
+        /// Gets and sets the property Count. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - </description>
-        ///     </item>
-        /// </list>
+        ///  The number of tasks in the task list. 
         /// </para>
         /// </summary>
         public int Count
         {
-            get { return this.count ?? default(int); }
-            set { this.count = value; }
+            get { return this._count.GetValueOrDefault(); }
+            set { this._count = value; }
         }
 
         // Check to see if Count property is set
         internal bool IsSetCount()
         {
-            return this.count.HasValue;
+            return this._count.HasValue; 
         }
 
         /// <summary>
-        /// If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated
-        /// value.
-        ///  
+        /// Gets and sets the property Truncated. 
+        /// <para>
+        ///  If set to true, indicates that the actual count was more than the maximum supported
+        /// by this API and the count returned is the truncated value. 
+        /// </para>
         /// </summary>
         public bool Truncated
         {
-            get { return this.truncated ?? default(bool); }
-            set { this.truncated = value; }
+            get { return this._truncated.GetValueOrDefault(); }
+            set { this._truncated = value; }
         }
 
         // Check to see if Truncated property is set
         internal bool IsSetTruncated()
         {
-            return this.truncated.HasValue;
+            return this._truncated.HasValue; 
         }
+
     }
 }

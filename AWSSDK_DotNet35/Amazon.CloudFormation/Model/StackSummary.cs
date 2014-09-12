@@ -12,165 +12,179 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The StackSummary Data Type</para>
+    /// The StackSummary Data Type
     /// </summary>
     public partial class StackSummary
     {
-        
-        private string stackId;
-        private string stackName;
-        private string templateDescription;
-        private DateTime? creationTime;
-        private DateTime? lastUpdatedTime;
-        private DateTime? deletionTime;
-        private StackStatus stackStatus;
-        private string stackStatusReason;
-
+        private DateTime? _creationTime;
+        private DateTime? _deletionTime;
+        private DateTime? _lastUpdatedTime;
+        private string _stackId;
+        private string _stackName;
+        private StackStatus _stackStatus;
+        private string _stackStatusReason;
+        private string _templateDescription;
 
         /// <summary>
-        /// Unique stack identifier.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The name associated with the stack.
-        ///  
-        /// </summary>
-        public string StackName
-        {
-            get { return this.stackName; }
-            set { this.stackName = value; }
-        }
-
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
-        {
-            return this.stackName != null;
-        }
-
-        /// <summary>
-        /// The template description of the template used to create the stack.
-        ///  
-        /// </summary>
-        public string TemplateDescription
-        {
-            get { return this.templateDescription; }
-            set { this.templateDescription = value; }
-        }
-
-        // Check to see if TemplateDescription property is set
-        internal bool IsSetTemplateDescription()
-        {
-            return this.templateDescription != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
         /// The time the stack was created.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreationTime
         {
-            get { return this.creationTime ?? default(DateTime); }
-            set { this.creationTime = value; }
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
         }
 
         // Check to see if CreationTime property is set
         internal bool IsSetCreationTime()
         {
-            return this.creationTime.HasValue;
+            return this._creationTime.HasValue; 
         }
 
         /// <summary>
-        /// The time the stack was last updated. This field will only be returned if the stack has been updated at least once.
-        ///  
-        /// </summary>
-        public DateTime LastUpdatedTime
-        {
-            get { return this.lastUpdatedTime ?? default(DateTime); }
-            set { this.lastUpdatedTime = value; }
-        }
-
-        // Check to see if LastUpdatedTime property is set
-        internal bool IsSetLastUpdatedTime()
-        {
-            return this.lastUpdatedTime.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DeletionTime. 
+        /// <para>
         /// The time the stack was deleted.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime DeletionTime
         {
-            get { return this.deletionTime ?? default(DateTime); }
-            set { this.deletionTime = value; }
+            get { return this._deletionTime.GetValueOrDefault(); }
+            set { this._deletionTime = value; }
         }
 
         // Check to see if DeletionTime property is set
         internal bool IsSetDeletionTime()
         {
-            return this.deletionTime.HasValue;
+            return this._deletionTime.HasValue; 
         }
 
         /// <summary>
-        /// The current status of the stack.
-        ///  
+        /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE</description>
-        ///     </item>
-        /// </list>
+        /// The time the stack was last updated. This field will only be returned if the stack
+        /// has been updated at least once.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedTime
+        {
+            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            set { this._lastUpdatedTime = value; }
+        }
+
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
+        {
+            return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// Unique stack identifier.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackName. 
+        /// <para>
+        /// The name associated with the stack.
+        /// </para>
+        /// </summary>
+        public string StackName
+        {
+            get { return this._stackName; }
+            set { this._stackName = value; }
+        }
+
+        // Check to see if StackName property is set
+        internal bool IsSetStackName()
+        {
+            return this._stackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackStatus. 
+        /// <para>
+        /// The current status of the stack.
         /// </para>
         /// </summary>
         public StackStatus StackStatus
         {
-            get { return this.stackStatus; }
-            set { this.stackStatus = value; }
+            get { return this._stackStatus; }
+            set { this._stackStatus = value; }
         }
 
         // Check to see if StackStatus property is set
         internal bool IsSetStackStatus()
         {
-            return this.stackStatus != null;
+            return this._stackStatus != null;
         }
 
         /// <summary>
+        /// Gets and sets the property StackStatusReason. 
+        /// <para>
         /// Success/Failure message associated with the stack status.
-        ///  
+        /// </para>
         /// </summary>
         public string StackStatusReason
         {
-            get { return this.stackStatusReason; }
-            set { this.stackStatusReason = value; }
+            get { return this._stackStatusReason; }
+            set { this._stackStatusReason = value; }
         }
 
         // Check to see if StackStatusReason property is set
         internal bool IsSetStackStatusReason()
         {
-            return this.stackStatusReason != null;
+            return this._stackStatusReason != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property TemplateDescription. 
+        /// <para>
+        /// The template description of the template used to create the stack.
+        /// </para>
+        /// </summary>
+        public string TemplateDescription
+        {
+            get { return this._templateDescription; }
+            set { this._templateDescription = value; }
+        }
+
+        // Check to see if TemplateDescription property is set
+        internal bool IsSetTemplateDescription()
+        {
+            return this._templateDescription != null;
+        }
+
     }
 }

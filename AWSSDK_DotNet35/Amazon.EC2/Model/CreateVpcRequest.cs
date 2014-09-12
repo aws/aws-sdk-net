@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,63 +29,85 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpc operation.
-    /// <para>Creates a VPC with the specified CIDR block.</para> <para>The smallest VPC you can create uses a /28 netmask (16 IP addresses), and
-    /// the largest uses a /16 netmask (65,536 IP addresses). To help you decide how big to make your VPC, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html" >Your VPC and Subnets</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i> .</para> <para>By default, each instance you launch in the VPC has the default DHCP options, which includes only a
-    /// default DNS server that we provide (AmazonProvidedDNS). For more information about DHCP options, see <a
-    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" >DHCP Options Sets</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i> .</para>
+    /// Creates a VPC with the specified CIDR block.
+    /// 
+    ///  
+    /// <para>
+    /// The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest
+    /// uses a /16 netmask (65,536 IP addresses). To help you decide how big to make your
+    /// VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+    /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, each instance you launch in the VPC has the default DHCP options, which
+    /// includes only a default DNS server that we provide (AmazonProvidedDNS). For more information
+    /// about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+    /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateVpcRequest : AmazonEC2Request
     {
-        private string cidrBlock;
-        private Tenancy instanceTenancy;
-
+        private string _cidrBlock;
+        private Tenancy _instanceTenancy;
 
         /// <summary>
-        /// The network range for the VPC, in CIDR notation. For example, <c>10.0.0.0/16</c>.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateVpcRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateVpcRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cidrBlock">The network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.</param>
+        public CreateVpcRequest(string cidrBlock)
+        {
+            _cidrBlock = cidrBlock;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrBlock. 
+        /// <para>
+        /// The network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+        /// </para>
         /// </summary>
         public string CidrBlock
         {
-            get { return this.cidrBlock; }
-            set { this.cidrBlock = value; }
+            get { return this._cidrBlock; }
+            set { this._cidrBlock = value; }
         }
 
         // Check to see if CidrBlock property is set
         internal bool IsSetCidrBlock()
         {
-            return this.cidrBlock != null;
+            return this._cidrBlock != null;
         }
 
         /// <summary>
-        /// The supported tenancy options for instances launched into the VPC. A value of <c>default</c> means that instances can be launched with any
-        /// tenancy; a value of <c>dedicated</c> means all instances launched into the VPC are launched as dedicated tenancy instances regardless of the
-        /// tenancy assigned to the instance at launch. Dedicated tenancy instances runs on single-tenant hardware. Default: <c>default</c>
+        /// Gets and sets the property InstanceTenancy. 
+        /// <para>
+        /// The supported tenancy options for instances launched into the VPC. A value of <code>default</code>
+        /// means that instances can be launched with any tenancy; a value of <code>dedicated</code>
+        /// means all instances launched into the VPC are launched as dedicated tenancy instances
+        /// regardless of the tenancy assigned to the instance at launch. Dedicated tenancy instances
+        /// runs on single-tenant hardware.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>default, dedicated</description>
-        ///     </item>
-        /// </list>
+        /// Default: <code>default</code>
         /// </para>
         /// </summary>
         public Tenancy InstanceTenancy
         {
-            get { return this.instanceTenancy; }
-            set { this.instanceTenancy = value; }
+            get { return this._instanceTenancy; }
+            set { this._instanceTenancy = value; }
         }
 
         // Check to see if InstanceTenancy property is set
         internal bool IsSetInstanceTenancy()
         {
-            return this.instanceTenancy != null;
+            return this._instanceTenancy != null;
         }
 
     }
 }
-    

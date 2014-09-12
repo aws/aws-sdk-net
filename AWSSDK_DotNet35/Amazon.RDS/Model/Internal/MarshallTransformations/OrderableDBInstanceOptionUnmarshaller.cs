@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,108 +12,116 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   OrderableDBInstanceOption Unmarshaller
-     /// </summary>
-    internal class OrderableDBInstanceOptionUnmarshaller : IUnmarshaller<OrderableDBInstanceOption, XmlUnmarshallerContext>, IUnmarshaller<OrderableDBInstanceOption, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for OrderableDBInstanceOption Object
+    /// </summary>  
+    public class OrderableDBInstanceOptionUnmarshaller : IUnmarshaller<OrderableDBInstanceOption, XmlUnmarshallerContext>, IUnmarshaller<OrderableDBInstanceOption, JsonUnmarshallerContext>
     {
-        public OrderableDBInstanceOption Unmarshall(XmlUnmarshallerContext context) 
+        public OrderableDBInstanceOption Unmarshall(XmlUnmarshallerContext context)
         {
-            OrderableDBInstanceOption orderableDBInstanceOption = new OrderableDBInstanceOption();
+            OrderableDBInstanceOption unmarshalledObject = new OrderableDBInstanceOption();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Engine", targetDepth))
+                    if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
-                        orderableDBInstanceOption.Engine = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        orderableDBInstanceOption.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AvailabilityZoneUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
-                        orderableDBInstanceOption.DBInstanceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBInstanceClass = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Engine", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LicenseModel", targetDepth))
                     {
-                        orderableDBInstanceOption.LicenseModel = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
-                    {
-                        orderableDBInstanceOption.AvailabilityZones.Add(AvailabilityZoneUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MultiAZCapable", targetDepth))
                     {
-                        orderableDBInstanceOption.MultiAZCapable = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReadReplicaCapable", targetDepth))
                     {
-                        orderableDBInstanceOption.ReadReplicaCapable = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ReadReplicaCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Vpc", targetDepth))
                     {
-                        orderableDBInstanceOption.Vpc = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return orderableDBInstanceOption;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return orderableDBInstanceOption;
+            return unmarshalledObject;
         }
 
-        public OrderableDBInstanceOption Unmarshall(JsonUnmarshallerContext context) 
+        public OrderableDBInstanceOption Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static OrderableDBInstanceOptionUnmarshaller instance;
 
-        public static OrderableDBInstanceOptionUnmarshaller GetInstance() 
+        private static OrderableDBInstanceOptionUnmarshaller _instance = new OrderableDBInstanceOptionUnmarshaller();        
+
+        public static OrderableDBInstanceOptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new OrderableDBInstanceOptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

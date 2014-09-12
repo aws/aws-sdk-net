@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PartListElement Object
+    /// </summary>  
+    public class PartListElementUnmarshaller : IUnmarshaller<PartListElement, XmlUnmarshallerContext>, IUnmarshaller<PartListElement, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// PartListElementUnmarshaller
-      /// </summary>
-      internal class PartListElementUnmarshaller : IUnmarshaller<PartListElement, XmlUnmarshallerContext>, IUnmarshaller<PartListElement, JsonUnmarshallerContext>
-      {
         PartListElement IUnmarshaller<PartListElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public PartListElement Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            PartListElement partListElement = new PartListElement();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            PartListElement unmarshalledObject = new PartListElement();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("RangeInBytes", targetDepth))
-              {
-                partListElement.RangeInBytes = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SHA256TreeHash", targetDepth))
-              {
-                partListElement.SHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("RangeInBytes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RangeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SHA256TreeHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SHA256TreeHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return partListElement;
+            return unmarshalledObject;
         }
 
-        private static PartListElementUnmarshaller instance;
-        public static PartListElementUnmarshaller GetInstance()
+
+        private static PartListElementUnmarshaller _instance = new PartListElementUnmarshaller();        
+
+        public static PartListElementUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new PartListElementUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

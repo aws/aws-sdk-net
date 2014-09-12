@@ -101,19 +101,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Part", targetDepth))
                     {
-                        response.Parts.Add(PartDetailUnmarshaller.GetInstance().Unmarshall(context));
+                        response.Parts.Add(PartDetailUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
                     if (context.TestExpression("Initiator", targetDepth))
                     {
-                        response.Initiator = InitiatorUnmarshaller.GetInstance().Unmarshall(context);
+                        response.Initiator = InitiatorUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
                     if (context.TestExpression("Owner", targetDepth))
                     {
-                        response.Owner = OwnerUnmarshaller.GetInstance().Unmarshall(context);
+                        response.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -137,22 +137,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
         
-        private static ListPartsResponseUnmarshaller instance;
+        private static ListPartsResponseUnmarshaller _instance;
 
-        public static ListPartsResponseUnmarshaller GetInstance()
+        public static ListPartsResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new ListPartsResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new ListPartsResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

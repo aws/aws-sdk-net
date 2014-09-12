@@ -12,75 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Volume Status Request Marshaller
+    /// DescribeVolumeStatus Request Marshaller
     /// </summary>       
-    public class DescribeVolumeStatusRequestMarshaller : IMarshaller<IRequest, DescribeVolumeStatusRequest>
+    public class DescribeVolumeStatusRequestMarshaller : IMarshaller<IRequest, DescribeVolumeStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeVolumeStatusRequest describeVolumeStatusRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeVolumeStatusRequest, "AmazonEC2");
+            return this.Marshall((DescribeVolumeStatusRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeVolumeStatusRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeVolumeStatus");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeVolumeStatusRequest != null)
-            {
-                List<string> volumeIdsList = describeVolumeStatusRequest.VolumeIds;
 
-                int volumeIdsListIndex = 1;
-                foreach (string volumeIdsListValue in volumeIdsList)
-                { 
-                    request.Parameters.Add("VolumeId." + volumeIdsListIndex, StringUtils.FromString(volumeIdsListValue));
-                    volumeIdsListIndex++;
-                }
-            }
-
-            if (describeVolumeStatusRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeVolumeStatusRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetFilters())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetMaxResults())
+                {
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetVolumeIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.VolumeIds)
+                    {
+                        request.Parameters.Add("VolumeId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describeVolumeStatusRequest != null && describeVolumeStatusRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeVolumeStatusRequest.NextToken));
-            }
-            if (describeVolumeStatusRequest != null && describeVolumeStatusRequest.IsSetMaxResults())
-            {
-                request.Parameters.Add("MaxResults", StringUtils.FromInt(describeVolumeStatusRequest.MaxResults));
-            }
-
             return request;
         }
     }

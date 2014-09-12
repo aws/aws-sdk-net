@@ -12,38 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>The result of the RunInstances call.</para>
+    /// Contains the response data from the RunInstances operation.
     /// </summary>
     public partial class RunInstancesResult : AmazonWebServiceResponse
     {
-        
-        private Reservation reservation;
+        private Reservation _reservation;
 
-
-        /// <summary>
-        /// One or more reservations.
-        ///  
-        /// </summary>
+        // Gets and sets the Reservation member
         public Reservation Reservation
         {
-            get { return this.reservation; }
-            set { this.reservation = value; }
+            get { return this._reservation; }
+            set { this._reservation = value; }
         }
 
         // Check to see if Reservation property is set
         internal bool IsSetReservation()
         {
-            return this.reservation != null;
+            return this._reservation != null;
         }
     }
 }

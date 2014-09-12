@@ -12,74 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for AllocateAddress operation
-    /// </summary>
-    internal class AllocateAddressResponseUnmarshaller : EC2ResponseUnmarshaller
+    /// Response Unmarshaller for AllocateAddress operation
+    /// </summary>  
+    public class AllocateAddressResponseUnmarshaller : EC2ResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             AllocateAddressResponse response = new AllocateAddressResponse();
-            
-            int targetDepth = 2;
-            while (context.Read())
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+               targetDepth = 2;
+
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    
-                    if (context.TestExpression("publicIp", targetDepth))
+
+                    if (context.TestExpression("allocationId", targetDepth))
                     {
-                        response.PublicIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("domain", targetDepth))
                     {
-                        response.Domain = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Domain = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("allocationId", targetDepth))
+                    if (context.TestExpression("publicIp", targetDepth))
                     {
-                        response.AllocationId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.PublicIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
             }
-                 
-                        
+
             return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static AllocateAddressResponseUnmarshaller instance;
+        private static AllocateAddressResponseUnmarshaller _instance = new AllocateAddressResponseUnmarshaller();        
 
-        public static AllocateAddressResponseUnmarshaller GetInstance()
+        internal static AllocateAddressResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new AllocateAddressResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static AllocateAddressResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,24 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+
+using System;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Returns information about the CreateDBSecurityGroup response and response metadata.
+    /// Configuration for accessing Amazon CreateDBSecurityGroup service
     /// </summary>
-    public class CreateDBSecurityGroupResponse : CreateDBSecurityGroupResult
+    public partial class CreateDBSecurityGroupResponse : CreateDBSecurityGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateDBSecurityGroupResult property.
-        /// Contains the result of a successful invocation of the CreateDBSecurityGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateDBSecurityGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateDBSecurityGroupResult class are now available on the CreateDBSecurityGroupResponse class. You should use the properties on CreateDBSecurityGroupResponse instead of accessing them through CreateDBSecurityGroupResult.")]
         public CreateDBSecurityGroupResult CreateDBSecurityGroupResult
         {
@@ -40,4 +40,3 @@ namespace Amazon.RDS.Model
         }
     }
 }
-    

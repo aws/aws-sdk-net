@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,68 +29,64 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGateways operation.
-    /// <para>This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway
-    /// Amazon Resource Name (ARN).</para> <para>By default, the operation returns a maximum of 100 gateways. This operation supports pagination
-    /// that allows you to optionally reduce the number of gateways returned in a response.</para> <para>If you have more gateways than are returned
-    /// in a response-that is, the response returns only a truncated list of your gateways-the response contains a marker that you can specify in
-    /// your next request to fetch the next page of gateways.</para>
+    /// This operation lists gateways owned by an AWS account in a region specified in the
+    /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+    /// 
+    ///  
+    /// <para>
+    /// By default, the operation returns a maximum of 100 gateways. This operation supports
+    /// pagination that allows you to optionally reduce the number of gateways returned in
+    /// a response.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you have more gateways than are returned in a response-that is, the response returns
+    /// only a truncated list of your gateways-the response contains a marker that you can
+    /// specify in your next request to fetch the next page of gateways.
+    /// </para>
     /// </summary>
     public partial class ListGatewaysRequest : AmazonStorageGatewayRequest
     {
-        private string marker;
-        private int? limit;
-
-
-        /// <summary>
-        /// An opaque string that indicates the position at which to begin the returned list of gateways.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
+        private int? _limit;
+        private string _marker;
 
         /// <summary>
-        /// Specifies that the list of gateways returned be limited to the specified number of items.
-        ///  
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// Specifies that the list of gateways returned be limited to the specified number of
+        /// items.
         /// </para>
         /// </summary>
         public int Limit
         {
-            get { return this.limit ?? default(int); }
-            set { this.limit = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;
+            return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An opaque string that indicates the position at which to begin the returned list of
+        /// gateways.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
         }
 
     }
 }
-    

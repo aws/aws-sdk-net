@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -47,7 +51,6 @@ namespace Amazon.Redshift.Model
         private string _hsmPartitionPassword;
         private string _hsmServerPublicCertificate;
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
@@ -65,7 +68,6 @@ namespace Amazon.Redshift.Model
         {
             return this._description != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmConfigurationIdentifier. 
@@ -85,7 +87,6 @@ namespace Amazon.Redshift.Model
             return this._hsmConfigurationIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HsmIpAddress. 
         /// <para>
@@ -103,7 +104,6 @@ namespace Amazon.Redshift.Model
         {
             return this._hsmIpAddress != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmPartitionName. 
@@ -124,7 +124,6 @@ namespace Amazon.Redshift.Model
             return this._hsmPartitionName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property HsmPartitionPassword. 
         /// <para>
@@ -142,7 +141,6 @@ namespace Amazon.Redshift.Model
         {
             return this._hsmPartitionPassword != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property HsmServerPublicCertificate. 

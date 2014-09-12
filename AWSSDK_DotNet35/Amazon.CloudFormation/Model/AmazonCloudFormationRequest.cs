@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.CloudFormation
 {
     /// <summary>
-    /// Base class for AmazonCloudFormation operation requests.
+    /// Base class for CloudFormation operation requests.
     /// </summary>
     public partial class AmazonCloudFormationRequest : AmazonWebServiceRequest
     {
     }
 }
-    

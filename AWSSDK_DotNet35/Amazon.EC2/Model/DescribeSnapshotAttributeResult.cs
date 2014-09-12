@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,58 +32,63 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotAttributeResult : AmazonWebServiceResponse
     {
-        
-        private string snapshotId;
-        private List<CreateVolumePermission> createVolumePermissions = new List<CreateVolumePermission>();
-        private List<ProductCode> productCodes = new List<ProductCode>();
-
+        private List<CreateVolumePermission> _createVolumePermissions = new List<CreateVolumePermission>();
+        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private string _snapshotId;
 
         /// <summary>
-        /// The ID of the Amazon EBS snapshot.
-        ///  
-        /// </summary>
-        public string SnapshotId
-        {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
-        }
-
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
-        {
-            return this.snapshotId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CreateVolumePermissions. 
+        /// <para>
         /// A list of permissions for creating volumes from the snapshot.
-        ///  
+        /// </para>
         /// </summary>
         public List<CreateVolumePermission> CreateVolumePermissions
         {
-            get { return this.createVolumePermissions; }
-            set { this.createVolumePermissions = value; }
+            get { return this._createVolumePermissions; }
+            set { this._createVolumePermissions = value; }
         }
 
         // Check to see if CreateVolumePermissions property is set
         internal bool IsSetCreateVolumePermissions()
         {
-            return this.createVolumePermissions.Count > 0;
+            return this._createVolumePermissions != null && this._createVolumePermissions.Count > 0; 
         }
 
         /// <summary>
+        /// Gets and sets the property ProductCodes. 
+        /// <para>
         /// A list of product codes.
-        ///  
+        /// </para>
         /// </summary>
         public List<ProductCode> ProductCodes
         {
-            get { return this.productCodes; }
-            set { this.productCodes = value; }
+            get { return this._productCodes; }
+            set { this._productCodes = value; }
         }
 
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this.productCodes.Count > 0;
+            return this._productCodes != null && this._productCodes.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The ID of the Amazon EBS snapshot.
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
+        }
+
     }
 }

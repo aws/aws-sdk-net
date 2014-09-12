@@ -12,54 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DomainConfiguration Object
+    /// </summary>  
+    public class DomainConfigurationUnmarshaller : IUnmarshaller<DomainConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DomainConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DomainConfigurationUnmarshaller
-      /// </summary>
-      internal class DomainConfigurationUnmarshaller : IUnmarshaller<DomainConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DomainConfiguration, JsonUnmarshallerContext>
-      {
         DomainConfiguration IUnmarshaller<DomainConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DomainConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DomainConfiguration domainConfiguration = new DomainConfiguration();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DomainConfiguration unmarshalledObject = new DomainConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("workflowExecutionRetentionPeriodInDays", targetDepth))
-              {
-                domainConfiguration.WorkflowExecutionRetentionPeriodInDays = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("workflowExecutionRetentionPeriodInDays", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowExecutionRetentionPeriodInDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return domainConfiguration;
+            return unmarshalledObject;
         }
 
-        private static DomainConfigurationUnmarshaller instance;
-        public static DomainConfigurationUnmarshaller GetInstance()
+
+        private static DomainConfigurationUnmarshaller _instance = new DomainConfigurationUnmarshaller();        
+
+        public static DomainConfigurationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DomainConfigurationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

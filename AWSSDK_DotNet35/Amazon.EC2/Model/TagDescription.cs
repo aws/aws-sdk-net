@@ -12,97 +12,102 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a tag.</para>
+    /// Describes a tag.
     /// </summary>
     public partial class TagDescription
     {
-        
-        private string resourceId;
-        private ResourceType resourceType;
-        private string key;
-        private string value;
-
+        private string _key;
+        private string _resourceId;
+        private ResourceType _resourceType;
+        private string _value;
 
         /// <summary>
-        /// The ID of the resource. For example, <c>ami-1a2b3c4d</c>.
-        ///  
-        /// </summary>
-        public string ResourceId
-        {
-            get { return this.resourceId; }
-            set { this.resourceId = value; }
-        }
-
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
-        {
-            return this.resourceId != null;
-        }
-
-        /// <summary>
-        /// The type of resource.
-        ///  
+        /// Gets and sets the property Key. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>customer-gateway, dhcp-options, image, instance, internet-gateway, network-acl, network-interface, reserved-instances, route-table, snapshot, spot-instances-request, subnet, security-group, volume, vpc, vpn-connection, vpn-gateway</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public ResourceType ResourceType
-        {
-            get { return this.resourceType; }
-            set { this.resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this.resourceType != null;
-        }
-
-        /// <summary>
         /// The key of the tag.
-        ///  
+        /// </para>
         /// </summary>
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of resource.
+        /// </para>
+        /// </summary>
+        public ResourceType ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
         /// The value of the tag.
-        ///  
+        /// </para>
         /// </summary>
         public string Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;
+            return this._value != null;
         }
+
     }
 }

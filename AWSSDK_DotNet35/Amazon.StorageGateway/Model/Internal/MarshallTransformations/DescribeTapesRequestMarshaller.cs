@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,68 +33,69 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Tapes Request Marshaller
+    /// DescribeTapes Request Marshaller
     /// </summary>       
-    internal class DescribeTapesRequestMarshaller : IMarshaller<IRequest, DescribeTapesRequest> 
+    public class DescribeTapesRequestMarshaller : IMarshaller<IRequest, DescribeTapesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DescribeTapesRequest describeTapesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DescribeTapesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(describeTapesRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DescribeTapesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DescribeTapes";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeTapesRequest != null && describeTapesRequest.IsSetGatewayARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGatewayARN())
                 {
-                    writer.WritePropertyName("GatewayARN");
-                    writer.Write(describeTapesRequest.GatewayARN);
+                    context.Writer.WritePropertyName("GatewayARN");
+                    context.Writer.Write(publicRequest.GatewayARN);
                 }
 
-                if (describeTapesRequest != null && describeTapesRequest.TapeARNs != null && describeTapesRequest.TapeARNs.Count > 0) 
+                if(publicRequest.IsSetLimit())
                 {
-                    List<string> tapeARNsList = describeTapesRequest.TapeARNs;
-                    writer.WritePropertyName("TapeARNs");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
+                }
 
-                    foreach (string tapeARNsListValue in tapeARNsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(tapeARNsListValue));
+                if(publicRequest.IsSetMarker())
+                {
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
+
+                if(publicRequest.IsSetTapeARNs())
+                {
+                    context.Writer.WritePropertyName("TapeARNs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTapeARNsListValue in publicRequest.TapeARNs)
+                    {
+                            context.Writer.Write(publicRequestTapeARNsListValue);
                     }
-
-                    writer.WriteArrayEnd();
-                }
-                if (describeTapesRequest != null && describeTapesRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(describeTapesRequest.Marker);
-                }
-                if (describeTapesRequest != null && describeTapesRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(describeTapesRequest.Limit);
+                    context.Writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

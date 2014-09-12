@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private ScriptBootstrapActionConfig _scriptBootstrapAction;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public BootstrapActionConfig() { }
+
+        /// <summary>
+        /// Instantiates BootstrapActionConfig with the parameterized properties
+        /// </summary>
+        /// <param name="name">The name of the bootstrap action.</param>
+        /// <param name="scriptBootstrapAction">The script run by the bootstrap action.</param>
+        public BootstrapActionConfig(string name, ScriptBootstrapActionConfig scriptBootstrapAction)
+        {
+            _name = name;
+            _scriptBootstrapAction = scriptBootstrapAction;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -49,7 +68,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._name != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ScriptBootstrapAction. 

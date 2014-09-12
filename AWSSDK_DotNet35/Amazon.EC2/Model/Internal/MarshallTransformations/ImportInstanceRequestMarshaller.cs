@@ -12,140 +12,144 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Import Instance Request Marshaller
+    /// ImportInstance Request Marshaller
     /// </summary>       
-    public class ImportInstanceRequestMarshaller : IMarshaller<IRequest, ImportInstanceRequest>
+    public class ImportInstanceRequestMarshaller : IMarshaller<IRequest, ImportInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ImportInstanceRequest importInstanceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(importInstanceRequest, "AmazonEC2");
+            return this.Marshall((ImportInstanceRequest)input);
+        }
+    
+        public IRequest Marshall(ImportInstanceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ImportInstance");
             request.Parameters.Add("Version", "2014-06-15");
-            if (importInstanceRequest != null && importInstanceRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(importInstanceRequest.Description));
-            }
-            if (importInstanceRequest != null)
-            {
-                ImportInstanceLaunchSpecification launchSpecification = importInstanceRequest.LaunchSpecification;
-                if (launchSpecification != null && launchSpecification.IsSetArchitecture())
-                {
-                    request.Parameters.Add("LaunchSpecification.Architecture", StringUtils.FromString(launchSpecification.Architecture));
-                }
-                if (launchSpecification != null)
-                {
-                    List<string> groupNamesList = launchSpecification.GroupNames;
 
-                    int groupNamesListIndex = 1;
-                    foreach (string groupNamesListValue in groupNamesList)
-                    { 
-                        request.Parameters.Add("LaunchSpecification.GroupName." + groupNamesListIndex, StringUtils.FromString(groupNamesListValue));
-                        groupNamesListIndex++;
-                    }
-                }
-                if (launchSpecification != null && launchSpecification.IsSetAdditionalInfo())
-                {
-                    request.Parameters.Add("LaunchSpecification.AdditionalInfo", StringUtils.FromString(launchSpecification.AdditionalInfo));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetUserData())
-                {
-                    request.Parameters.Add("LaunchSpecification.UserData", StringUtils.FromString(launchSpecification.UserData));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetInstanceType())
-                {
-                    request.Parameters.Add("LaunchSpecification.InstanceType", StringUtils.FromString(launchSpecification.InstanceType));
-                }
-                if (launchSpecification != null)
-                {
-                    Placement placement = launchSpecification.Placement;
-                    if (placement != null && placement.IsSetAvailabilityZone())
-                    {
-                        request.Parameters.Add("LaunchSpecification.Placement.AvailabilityZone", StringUtils.FromString(placement.AvailabilityZone));
-                    }
-                    if (placement != null && placement.IsSetGroupName())
-                    {
-                        request.Parameters.Add("LaunchSpecification.Placement.GroupName", StringUtils.FromString(placement.GroupName));
-                    }
-                    if (placement != null && placement.IsSetTenancy())
-                    {
-                        request.Parameters.Add("LaunchSpecification.Placement.Tenancy", StringUtils.FromString(placement.Tenancy));
-                    }
-                }
-                if (launchSpecification != null && launchSpecification.IsSetMonitoring())
-                {
-                    request.Parameters.Add("LaunchSpecification.Monitoring.Enabled", StringUtils.FromBool(launchSpecification.Monitoring));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetSubnetId())
-                {
-                    request.Parameters.Add("LaunchSpecification.SubnetId", StringUtils.FromString(launchSpecification.SubnetId));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetInstanceInitiatedShutdownBehavior())
-                {
-                    request.Parameters.Add("LaunchSpecification.InstanceInitiatedShutdownBehavior", StringUtils.FromString(launchSpecification.InstanceInitiatedShutdownBehavior));
-                }
-                if (launchSpecification != null && launchSpecification.IsSetPrivateIpAddress())
-                {
-                    request.Parameters.Add("LaunchSpecification.PrivateIpAddress", StringUtils.FromString(launchSpecification.PrivateIpAddress));
-                }
-            }
-
-            if (importInstanceRequest != null)
+            if(publicRequest != null)
             {
-                List<DiskImage> diskImagesList = importInstanceRequest.DiskImages;
-                int diskImagesListIndex = 1;
-                foreach (DiskImage diskImagesListValue in diskImagesList)
+                if(publicRequest.IsSetDescription())
                 {
-                    if (diskImagesListValue != null)
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetDiskImages())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.DiskImages)
                     {
-                        DiskImageDetail image = diskImagesListValue.Image;
-                        if (image != null && image.IsSetFormat())
+                        if(publicRequestlistValue.IsSetDescription())
                         {
-                            request.Parameters.Add("DiskImage." + diskImagesListIndex + ".Image.Format", StringUtils.FromString(image.Format));
+                            request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                         }
-                        if (image != null && image.IsSetBytes())
+                        if(publicRequestlistValue.IsSetImage())
                         {
-                            request.Parameters.Add("DiskImage." + diskImagesListIndex + ".Image.Bytes", StringUtils.FromLong(image.Bytes));
+                            if(publicRequestlistValue.Image.IsSetBytes())
+                            {
+                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "Bytes", StringUtils.FromLong(publicRequestlistValue.Image.Bytes));
+                            }
+                            if(publicRequestlistValue.Image.IsSetFormat())
+                            {
+                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "Format", StringUtils.FromString(publicRequestlistValue.Image.Format));
+                            }
+                            if(publicRequestlistValue.Image.IsSetImportManifestUrl())
+                            {
+                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "ImportManifestUrl", StringUtils.FromString(publicRequestlistValue.Image.ImportManifestUrl));
+                            }
                         }
-                        if (image != null && image.IsSetImportManifestUrl())
+                        if(publicRequestlistValue.IsSetVolume())
                         {
-                            request.Parameters.Add("DiskImage." + diskImagesListIndex + ".Image.ImportManifestUrl", StringUtils.FromString(image.ImportManifestUrl));
+                            if(publicRequestlistValue.Volume.IsSetSize())
+                            {
+                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Volume" + "." + "Size", StringUtils.FromLong(publicRequestlistValue.Volume.Size));
+                            }
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetLaunchSpecification())
+                {
+                    if(publicRequest.LaunchSpecification.IsSetAdditionalInfo())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "AdditionalInfo", StringUtils.FromString(publicRequest.LaunchSpecification.AdditionalInfo));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetArchitecture())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "Architecture", StringUtils.FromString(publicRequest.LaunchSpecification.Architecture));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetGroupNames())
+                    {
+                        int publicRequestLaunchSpecificationlistValueIndex = 1;
+                        foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.GroupNames)
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "GroupName" + "." + publicRequestLaunchSpecificationlistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValue));
+                            publicRequestLaunchSpecificationlistValueIndex++;
                         }
                     }
-                    if (diskImagesListValue != null && diskImagesListValue.IsSetDescription())
+                    if(publicRequest.LaunchSpecification.IsSetInstanceInitiatedShutdownBehavior())
                     {
-                        request.Parameters.Add("DiskImage." + diskImagesListIndex + ".Description", StringUtils.FromString(diskImagesListValue.Description));
+                        request.Parameters.Add("LaunchSpecification" + "." + "InstanceInitiatedShutdownBehavior", StringUtils.FromString(publicRequest.LaunchSpecification.InstanceInitiatedShutdownBehavior));
                     }
-                    if (diskImagesListValue != null)
+                    if(publicRequest.LaunchSpecification.IsSetInstanceType())
                     {
-                        VolumeDetail volume = diskImagesListValue.Volume;
-                        if (volume != null && volume.IsSetSize())
+                        request.Parameters.Add("LaunchSpecification" + "." + "InstanceType", StringUtils.FromString(publicRequest.LaunchSpecification.InstanceType));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetMonitoring())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "Monitoring", StringUtils.FromBool(publicRequest.LaunchSpecification.Monitoring));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetPlacement())
+                    {
+                        if(publicRequest.LaunchSpecification.Placement.IsSetAvailabilityZone())
                         {
-                            request.Parameters.Add("DiskImage." + diskImagesListIndex + ".Volume.Size", StringUtils.FromLong(volume.Size));
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZone));
+                        }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetGroupName())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.GroupName));
+                        }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetTenancy())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.Tenancy));
                         }
                     }
-
-                    diskImagesListIndex++;
+                    if(publicRequest.LaunchSpecification.IsSetPrivateIpAddress())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "PrivateIpAddress", StringUtils.FromString(publicRequest.LaunchSpecification.PrivateIpAddress));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetSubnetId())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "SubnetId", StringUtils.FromString(publicRequest.LaunchSpecification.SubnetId));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetUserData())
+                    {
+                        request.Parameters.Add("LaunchSpecification" + "." + "UserData", StringUtils.FromString(publicRequest.LaunchSpecification.UserData));
+                    }
+                }
+                if(publicRequest.IsSetPlatform())
+                {
+                    request.Parameters.Add("Platform", StringUtils.FromString(publicRequest.Platform));
                 }
             }
-            if (importInstanceRequest != null && importInstanceRequest.IsSetPlatform())
-            {
-                request.Parameters.Add("Platform", StringUtils.FromString(importInstanceRequest.Platform));
-            }
-
             return request;
         }
     }

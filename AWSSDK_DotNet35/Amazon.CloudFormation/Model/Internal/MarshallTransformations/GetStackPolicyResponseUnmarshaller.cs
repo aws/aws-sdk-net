@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetStackPolicy operation
-    /// </summary>
-    internal class GetStackPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetStackPolicy operation
+    /// </summary>  
+    public class GetStackPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetStackPolicyResponse response = new GetStackPolicyResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("GetStackPolicyResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetStackPolicyResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetStackPolicyResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,46 +71,42 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("StackPolicyBody", targetDepth))
                     {
-                        response.StackPolicyBody = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.StackPolicyBody = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetStackPolicyResponseUnmarshaller instance;
+        private static GetStackPolicyResponseUnmarshaller _instance = new GetStackPolicyResponseUnmarshaller();        
 
-        public static GetStackPolicyResponseUnmarshaller GetInstance()
+        internal static GetStackPolicyResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetStackPolicyResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetStackPolicyResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

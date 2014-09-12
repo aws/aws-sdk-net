@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,135 +29,174 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBEngineVersions operation.
-    /// <para> Returns a list of the available DB engines. </para>
+    /// Returns a list of the available DB engines.
     /// </summary>
     public partial class DescribeDBEngineVersionsRequest : AmazonRDSRequest
     {
-        private string engine;
-        private string engineVersion;
-        private string dBParameterGroupFamily;
-        private int? maxRecords;
-        private string marker;
-        private bool? defaultOnly;
-        private bool? listSupportedCharacterSets;
-
+        private string _dBParameterGroupFamily;
+        private bool? _defaultOnly;
+        private string _engine;
+        private string _engineVersion;
+        private bool? _listSupportedCharacterSets;
+        private string _marker;
+        private int? _maxRecords;
 
         /// <summary>
-        /// The database engine to return.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
+        public DescribeDBEngineVersionsRequest() { }
 
         /// <summary>
-        /// The database engine version to return. Example: <c>5.1.49</c>
+        /// Gets and sets the property DBParameterGroupFamily. 
+        /// <para>
+        ///  The name of a specific DB parameter group family to return details for. 
+        /// </para>
         ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// The name of a specific DB parameter group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-        /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
+        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// </ul>
         /// </summary>
         public string DBParameterGroupFamily
         {
-            get { return this.dBParameterGroupFamily; }
-            set { this.dBParameterGroupFamily = value; }
+            get { return this._dBParameterGroupFamily; }
+            set { this._dBParameterGroupFamily = value; }
         }
 
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;
+            return this._dBParameterGroupFamily != null;
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more than the <c>MaxRecords</c> value is available, a pagination token called a
-        /// marker is included in the response so that the following results can be retrieved. Default: 100 Constraints: minimum 20, maximum 100
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the
-        /// marker, up to the value specified by <c>MaxRecords</c>.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// Indicates that only the default version of the specified engine or engine and major version combination is returned.
-        ///  
+        /// Gets and sets the property DefaultOnly. 
+        /// <para>
+        ///  Indicates that only the default version of the specified engine or engine and major
+        /// version combination is returned. 
+        /// </para>
         /// </summary>
         public bool DefaultOnly
         {
-            get { return this.defaultOnly ?? default(bool); }
-            set { this.defaultOnly = value; }
+            get { return this._defaultOnly.GetValueOrDefault(); }
+            set { this._defaultOnly = value; }
         }
 
         // Check to see if DefaultOnly property is set
         internal bool IsSetDefaultOnly()
         {
-            return this.defaultOnly.HasValue;
+            return this._defaultOnly.HasValue; 
         }
 
         /// <summary>
-        /// If this parameter is specified, and if the requested engine supports the CharacterSetName parameter for CreateDBInstance, the response
-        /// includes a list of supported character sets for each engine version.
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  The database engine to return. 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        ///  The database engine version to return. 
+        /// </para>
         ///  
+        /// <para>
+        /// Example: <code>5.1.49</code>
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListSupportedCharacterSets. 
+        /// <para>
+        ///  If this parameter is specified, and if the requested engine supports the CharacterSetName
+        /// parameter for CreateDBInstance, the response includes a list of supported character
+        /// sets for each engine version. 
+        /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
         {
-            get { return this.listSupportedCharacterSets ?? default(bool); }
-            set { this.listSupportedCharacterSets = value; }
+            get { return this._listSupportedCharacterSets.GetValueOrDefault(); }
+            set { this._listSupportedCharacterSets = value; }
         }
 
         // Check to see if ListSupportedCharacterSets property is set
         internal bool IsSetListSupportedCharacterSets()
         {
-            return this.listSupportedCharacterSets.HasValue;
+            return this._listSupportedCharacterSets.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///  An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. 
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///  The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
+        /// value is available, a pagination token called a marker is included in the response
+        /// so that the following results can be retrieved. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20, maximum 100
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
         }
 
     }
 }
-    

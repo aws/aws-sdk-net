@@ -1,0 +1,62 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+using System;
+using System.Net;
+using Amazon.Runtime;
+
+namespace <#=this.Config.Namespace#>.Model
+{
+    ///<summary>
+    /// <#= this.Config.BaseName#> exception
+    /// </summary>
+    public class <#=this.Exception.Name#> : Amazon<#=this.Config.BaseName#>Exception 
+    {
+        /// <summary>
+        /// Constructs a new <#=this.Exception.Name#> with the specified error
+        /// message.
+        /// </summary>
+        /// <param name="message">
+        /// Describes the error encountered.
+        /// </param>
+        public <#=this.Exception.Name#>(string message) 
+            : base(message) {}
+          
+        public <#=this.Exception.Name#>(string message, Exception innerException) 
+            : base(message, innerException) {}
+            
+        public <#=this.Exception.Name#>(Exception innerException) 
+            : base(innerException) {}
+            
+        public <#=this.Exception.Name#>(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+
+        public <#=this.Exception.Name#>(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, RequestId, statusCode) {}
+
+<#		
+		if(this.GenerateComplexException)
+		{
+			foreach(var member in Exception.Structure.Members)
+			{
+				if(member.PropertyName.Equals("Message")) continue;
+#>
+		public <#=member.DetermineType()#> <#=member.PropertyName#> { get; set; }
+
+<#
+			}
+		}
+#>
+    }
+}
+
+<#+
+    public ExceptionModel Exception { get; set; }
+
+	public bool GenerateComplexException { get; set; }
+#>

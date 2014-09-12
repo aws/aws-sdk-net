@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeConnections response and response metadata.
+    /// Configuration for accessing Amazon DescribeConnections service
     /// </summary>
-    public class DescribeConnectionsResponse : DescribeConnectionsResult
+    public partial class DescribeConnectionsResponse : DescribeConnectionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeConnectionsResult property.
-        /// A structure containing a list of connections.
+        /// Represents the output of a DescribeConnections operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeConnectionsResult class are now available on the DescribeConnectionsResponse class. You should use the properties on DescribeConnectionsResponse instead of accessing them through DescribeConnectionsResult.")]
         public DescribeConnectionsResult DescribeConnectionsResult
@@ -40,4 +40,3 @@ namespace Amazon.DirectConnect.Model
         }
     }
 }
-    

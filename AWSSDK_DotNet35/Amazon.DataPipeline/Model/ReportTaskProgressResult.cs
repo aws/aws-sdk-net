@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,38 +12,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>Contains the output from the ReportTaskProgress action.</para>
+    /// Contains the output from the ReportTaskProgress action.
     /// </summary>
     public partial class ReportTaskProgressResult : AmazonWebServiceResponse
     {
-        
-        private bool? canceled;
+        private bool? _canceled;
 
         /// <summary>
-        /// If <c>True</c>, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for
-        /// canceled tasks.
-        ///  
+        /// Gets and sets the property Canceled. 
+        /// <para>
+        /// If <code>True</code>, the calling task runner should cancel processing of the task.
+        /// The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.
+        /// </para>
         /// </summary>
         public bool Canceled
         {
-            get { return this.canceled ?? default(bool); }
-            set { this.canceled = value; }
+            get { return this._canceled.GetValueOrDefault(); }
+            set { this._canceled = value; }
         }
 
         // Check to see if Canceled property is set
         internal bool IsSetCanceled()
         {
-            return this.canceled.HasValue;
+            return this._canceled.HasValue; 
         }
+
     }
 }

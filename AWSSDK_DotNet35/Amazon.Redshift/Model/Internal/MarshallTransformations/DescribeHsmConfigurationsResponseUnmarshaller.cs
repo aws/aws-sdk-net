@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -101,7 +105,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-
         private static DescribeHsmConfigurationsResponseUnmarshaller _instance = new DescribeHsmConfigurationsResponseUnmarshaller();        
 
         internal static DescribeHsmConfigurationsResponseUnmarshaller GetInstance()

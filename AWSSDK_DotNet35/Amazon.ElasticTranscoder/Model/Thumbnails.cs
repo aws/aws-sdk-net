@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _paddingPolicy;
         private string _resolution;
         private string _sizingPolicy;
-
 
         /// <summary>
         /// Gets and sets the property AspectRatio. <important>            
@@ -74,7 +77,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._aspectRatio != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
@@ -99,7 +101,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._format != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
@@ -117,7 +118,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._interval != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxHeight. 
@@ -139,7 +139,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._maxHeight != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxWidth. 
         /// <para>
@@ -159,7 +158,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._maxWidth != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PaddingPolicy. 
@@ -181,7 +179,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._paddingPolicy != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Resolution. <important>            
@@ -211,7 +208,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._resolution != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SizingPolicy. 

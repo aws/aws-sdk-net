@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,11 +42,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _solutionStackName;
         private string _templateName;
 
-
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          The name of the application associated with this configuration set.        
+        ///  The name of the application associated with this configuration set. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -57,11 +60,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        ///          The date (in UTC time) when this configuration set was created.        
+        ///  The date (in UTC time) when this configuration set was created. 
         /// </para>
         /// </summary>
         public DateTime DateCreated
@@ -76,11 +78,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._dateCreated.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DateUpdated. 
         /// <para>
-        ///          The date (in UTC time) when this configuration set was last modified.        
+        ///  The date (in UTC time) when this configuration set was last modified. 
         /// </para>
         /// </summary>
         public DateTime DateUpdated
@@ -95,44 +96,38 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._dateUpdated.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DeploymentStatus. 
         /// <para>
-        ///          If this configuration set is associated with an environment, the        
-        ///  <code>DeploymentStatus</code> parameter indicates         the deployment status of
-        /// this configuration set:        
+        ///  If this configuration set is associated with an environment, the <code>DeploymentStatus</code>
+        /// parameter indicates the deployment status of this configuration set: 
         /// </para>
-        ///       <enumValues>         <value name="null">            
+        ///  <enumValues> <value name="null"> 
         /// <para>
-        ///                <code>null</code>: This configuration is not associated with a running
-        ///               environment.            
+        ///  <code>null</code>: This configuration is not associated with a running environment.
+        /// 
         /// </para>
-        ///          </value>         <value name="pending">            
+        ///  </value> <value name="pending"> 
         /// <para>
-        ///                <code>pending</code>: This is a draft configuration that is not deployed
-        ///               to the               associated environment but is in the process of
-        /// deploying.            
+        ///  <code>pending</code>: This is a draft configuration that is not deployed to the associated
+        /// environment but is in the process of deploying. 
         /// </para>
-        ///          </value>         <value name="deployed">            
+        ///  </value> <value name="deployed"> 
         /// <para>
-        ///                <code>deployed</code>: This is the configuration that is currently
-        /// deployed               to the associated running environment.            
+        ///  <code>deployed</code>: This is the configuration that is currently deployed to the
+        /// associated running environment. 
         /// </para>
-        ///          </value>         <value name="failed">            
+        ///  </value> <value name="failed"> 
         /// <para>
-        ///                <code>failed</code>: This is a draft configuration, that          
-        ///     failed to successfully deploy.            
+        ///  <code>failed</code>: This is a draft configuration, that failed to successfully deploy.
+        /// 
         /// </para>
-        ///          </value>      </enumValues>      <ul>         <li>            <code>null</code>:
-        /// This configuration is not associated with a running            environment.      
-        ///   </li>         <li>            <code>pending</code>: This is a draft configuration
-        /// that is not deployed            to the associated environment but is in the process
-        /// of deploying.         </li>         <li>            <code>deployed</code>: This is
-        /// the configuration that is currently deployed            to the associated running
-        /// environment.         </li>         <li>            <code>failed</code>: This is a
-        /// draft configuration that failed to            successfully deploy.         </li> 
-        ///     </ul>
+        ///  </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated
+        /// with a running environment. </li> <li> <code>pending</code>: This is a draft configuration
+        /// that is not deployed to the associated environment but is in the process of deploying.
+        /// </li> <li> <code>deployed</code>: This is the configuration that is currently deployed
+        /// to the associated running environment. </li> <li> <code>failed</code>: This is a draft
+        /// configuration that failed to successfully deploy. </li> </ul>
         /// </summary>
         public ConfigurationDeploymentStatus DeploymentStatus
         {
@@ -146,11 +141,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._deploymentStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///          Describes this configuration set.        
+        ///  Describes this configuration set. 
         /// </para>
         /// </summary>
         public string Description
@@ -165,12 +159,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._description != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///          If not         <code>null</code>, the name of the environment for this configuration
-        /// set.      
+        ///  If not <code>null</code>, the name of the environment for this configuration set.
+        /// 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -185,12 +178,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///          A list of the configuration options and their values in this configuration
-        ///         set.        
+        ///  A list of the configuration options and their values in this configuration set. 
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -205,11 +196,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///          The name of the solution stack this configuration set uses.        
+        ///  The name of the solution stack this configuration set uses. 
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -224,12 +214,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._solutionStackName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///          If not         <code>null</code>, the name of the configuration template
-        /// for this configuration set.      
+        ///  If not <code>null</code>, the name of the configuration template for this configuration
+        /// set. 
         /// </para>
         /// </summary>
         public string TemplateName

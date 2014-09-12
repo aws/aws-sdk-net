@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.Route53
 {
-
     /// <summary>
-    /// Configuration for accessing AmazonRoute53 service
+    /// Configuration for accessing Amazon Route53 service
     /// </summary>
     public partial class AmazonRoute53Config : ClientConfig
     {
@@ -29,7 +35,6 @@ namespace Amazon.Route53
         /// </summary>
         public AmazonRoute53Config()
         {
-            
         }
 
         /// <summary>
@@ -39,9 +44,7 @@ namespace Amazon.Route53
         {
             get
             {
-                
                 return "route53";
-                    
             }
         }
 
@@ -57,5 +60,3 @@ namespace Amazon.Route53
         }
     }
 }
-
-    

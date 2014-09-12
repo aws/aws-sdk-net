@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the attachment of a VPC to an Internet gateway.</para>
+    /// Describes the attachment of a VPC to an Internet gateway.
     /// </summary>
     public partial class InternetGatewayAttachment
     {
-        
-        private string vpcId;
-        private AttachmentStatus state;
-
+        private AttachmentStatus _state;
+        private string _vpcId;
 
         /// <summary>
-        /// The ID of the VPC.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// The current state of the attachment.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>attaching, attached, detaching, detached</description>
-        ///     </item>
-        /// </list>
+        /// The current state of the attachment.
         /// </para>
         /// </summary>
         public AttachmentStatus State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

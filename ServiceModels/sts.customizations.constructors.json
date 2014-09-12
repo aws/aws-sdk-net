@@ -1,0 +1,36 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "GetSessionTokenRequest" : {
+                "constructorForms" : [
+                ]
+            },
+            "FederatedUser"          : {
+                "constructorForms" : [
+                    [
+                        "FederatedUserId",
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetFederationTokenRequest" : {
+                "constructorForms" : [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "Credentials"               : {
+                "constructorForms" : [
+                    [
+                        "AccessKeyId",
+                        "SecretAccessKey",
+                        "SessionToken",
+                        "Expiration"
+                    ]
+                ]
+            }
+        }
+    }
+}

@@ -66,14 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static ExpirationUnmarshaller instance;
+        private static ExpirationUnmarshaller _instance;
 
-        public static ExpirationUnmarshaller GetInstance() 
+        public static ExpirationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ExpirationUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ExpirationUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

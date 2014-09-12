@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -46,6 +50,21 @@ namespace Amazon.ElastiCache.Model
         private string _cacheClusterId;
         private List<string> _cacheNodeIdsToReboot = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RebootCacheClusterRequest() { }
+
+        /// <summary>
+        /// Instantiates RebootCacheClusterRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cacheClusterId">The cache cluster identifier. This parameter is stored as a lowercase string.</param>
+        /// <param name="cacheNodeIdsToReboot">A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</param>
+        public RebootCacheClusterRequest(string cacheClusterId, List<string> cacheNodeIdsToReboot)
+        {
+            _cacheClusterId = cacheClusterId;
+            _cacheNodeIdsToReboot = cacheNodeIdsToReboot;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
@@ -64,7 +83,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheClusterId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheNodeIdsToReboot. 

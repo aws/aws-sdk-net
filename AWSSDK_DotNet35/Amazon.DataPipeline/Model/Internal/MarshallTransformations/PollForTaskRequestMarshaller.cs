@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,70 +33,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Poll For Task Request Marshaller
+    /// PollForTask Request Marshaller
     /// </summary>       
-    internal class PollForTaskRequestMarshaller : IMarshaller<IRequest, PollForTaskRequest> 
+    public class PollForTaskRequestMarshaller : IMarshaller<IRequest, PollForTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(PollForTaskRequest pollForTaskRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((PollForTaskRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(pollForTaskRequest, "AmazonDataPipeline");
+        public IRequest Marshall(PollForTaskRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.PollForTask";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (pollForTaskRequest != null && pollForTaskRequest.IsSetWorkerGroup()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetHostname())
                 {
-                    writer.WritePropertyName("workerGroup");
-                    writer.Write(pollForTaskRequest.WorkerGroup);
-                }
-                if (pollForTaskRequest != null && pollForTaskRequest.IsSetHostname()) 
-                {
-                    writer.WritePropertyName("hostname");
-                    writer.Write(pollForTaskRequest.Hostname);
+                    context.Writer.WritePropertyName("hostname");
+                    context.Writer.Write(publicRequest.Hostname);
                 }
 
-                if (pollForTaskRequest != null) 
+                if(publicRequest.IsSetInstanceIdentity())
                 {
-                    InstanceIdentity instanceIdentity = pollForTaskRequest.InstanceIdentity;
-                    if (instanceIdentity != null)
-                    {
-                        writer.WritePropertyName("instanceIdentity");
-                        writer.WriteObjectStart();
-                        if (instanceIdentity != null && instanceIdentity.IsSetDocument()) 
-                        {
-                            writer.WritePropertyName("document");
-                            writer.Write(instanceIdentity.Document);
-                        }
-                        if (instanceIdentity != null && instanceIdentity.IsSetSignature()) 
-                        {
-                            writer.WritePropertyName("signature");
-                            writer.Write(instanceIdentity.Signature);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("instanceIdentity");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceIdentityMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InstanceIdentity, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWorkerGroup())
+                {
+                    context.Writer.WritePropertyName("workerGroup");
+                    context.Writer.Write(publicRequest.WorkerGroup);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

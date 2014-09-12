@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,68 +29,91 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesListings operation.
-    /// <para>Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.</para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+    /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeReservedInstancesListingsRequest : AmazonEC2Request
     {
-        private string reservedInstancesId;
-        private string reservedInstancesListingId;
-        private List<Filter> filters = new List<Filter>();
-
-
-        /// <summary>
-        /// One or more Reserved Instance IDs.
-        ///  
-        /// </summary>
-        public string ReservedInstancesId
-        {
-            get { return this.reservedInstancesId; }
-            set { this.reservedInstancesId = value; }
-        }
-
-        // Check to see if ReservedInstancesId property is set
-        internal bool IsSetReservedInstancesId()
-        {
-            return this.reservedInstancesId != null;
-        }
+        private List<Filter> _filters = new List<Filter>();
+        private string _reservedInstancesId;
+        private string _reservedInstancesListingId;
 
         /// <summary>
-        /// One or more Reserved Instance Listing IDs.
-        ///  
-        /// </summary>
-        public string ReservedInstancesListingId
-        {
-            get { return this.reservedInstancesListingId; }
-            set { this.reservedInstancesListingId = value; }
-        }
-
-        // Check to see if ReservedInstancesListingId property is set
-        internal bool IsSetReservedInstancesListingId()
-        {
-            return this.reservedInstancesListingId != null;
-        }
-
-        /// <summary>
-        /// One or more filters. <ul> <li> <c>reserved-instances-id</c> - The ID of the Reserved Instances. </li> <li>
-        /// <c>reserved-instances-listing-id</c> - The ID of the Reserved Instances listing. </li> <li> <c>status</c> - The status of the Reserved
-        /// Instance listing (<c>pending</c> | <c>active</c> | <c>cancelled</c> | <c>closed</c>). </li> <li> <c>status-message</c> - The reason for the
-        /// status. </li> </ul>
-        ///  
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>reserved-instances-id</code> - The ID of the Reserved Instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>status</code> - The status of the Reserved Instance listing (<code>pending</code>
+        /// | <code>active</code> | <code>cancelled</code> | <code>closed</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>status-message</code> - The reason for the status.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
-            get { return this.filters; }
-            set { this.filters = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this.filters.Count > 0;
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesId. 
+        /// <para>
+        /// One or more Reserved Instance IDs.
+        /// </para>
+        /// </summary>
+        public string ReservedInstancesId
+        {
+            get { return this._reservedInstancesId; }
+            set { this._reservedInstancesId = value; }
+        }
+
+        // Check to see if ReservedInstancesId property is set
+        internal bool IsSetReservedInstancesId()
+        {
+            return this._reservedInstancesId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedInstancesListingId. 
+        /// <para>
+        /// One or more Reserved Instance Listing IDs.
+        /// </para>
+        /// </summary>
+        public string ReservedInstancesListingId
+        {
+            get { return this._reservedInstancesListingId; }
+            set { this._reservedInstancesListingId = value; }
+        }
+
+        // Check to see if ReservedInstancesListingId property is set
+        internal bool IsSetReservedInstancesListingId()
+        {
+            return this._reservedInstancesListingId != null;
         }
 
     }
 }
-    

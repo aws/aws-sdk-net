@@ -12,50 +12,63 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Copy Snapshot Request Marshaller
+    /// CopySnapshot Request Marshaller
     /// </summary>       
-    public class CopySnapshotRequestMarshaller : IMarshaller<IRequest, CopySnapshotRequest>
+    public class CopySnapshotRequestMarshaller : IMarshaller<IRequest, CopySnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CopySnapshotRequest copySnapshotRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(copySnapshotRequest, "AmazonEC2");
+            return this.Marshall((CopySnapshotRequest)input);
+        }
+    
+        public IRequest Marshall(CopySnapshotRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CopySnapshot");
             request.Parameters.Add("Version", "2014-06-15");
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetSourceRegion())
-            {
-                request.Parameters.Add("SourceRegion", StringUtils.FromString(copySnapshotRequest.SourceRegion));
-            }
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetSourceSnapshotId())
-            {
-                request.Parameters.Add("SourceSnapshotId", StringUtils.FromString(copySnapshotRequest.SourceSnapshotId));
-            }
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(copySnapshotRequest.Description));
-            }
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetDestinationRegion())
-            {
-                request.Parameters.Add("DestinationRegion", StringUtils.FromString(copySnapshotRequest.DestinationRegion));
-            }
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetPresignedUrl())
-            {
-                request.Parameters.Add("PresignedUrl", StringUtils.FromString(copySnapshotRequest.PresignedUrl));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetDestinationRegion())
+                {
+                    request.Parameters.Add("DestinationRegion", StringUtils.FromString(publicRequest.DestinationRegion));
+                }
+                if(publicRequest.IsSetPresignedUrl())
+                {
+                    request.Parameters.Add("PresignedUrl", StringUtils.FromString(publicRequest.PresignedUrl));
+                }
+                if(publicRequest.IsSetSourceRegion())
+                {
+                    request.Parameters.Add("SourceRegion", StringUtils.FromString(publicRequest.SourceRegion));
+                }
+                if(publicRequest.IsSetSourceSnapshotId())
+                {
+                    request.Parameters.Add("SourceSnapshotId", StringUtils.FromString(publicRequest.SourceSnapshotId));
+                }
+            }
             return request;
         }
     }

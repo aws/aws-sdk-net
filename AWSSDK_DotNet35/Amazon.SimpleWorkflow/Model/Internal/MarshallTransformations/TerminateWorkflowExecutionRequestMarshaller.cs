@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,69 +33,76 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Terminate Workflow Execution Request Marshaller
+    /// TerminateWorkflowExecution Request Marshaller
     /// </summary>       
-    internal class TerminateWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, TerminateWorkflowExecutionRequest> 
+    public class TerminateWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, TerminateWorkflowExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((TerminateWorkflowExecutionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(terminateWorkflowExecutionRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(TerminateWorkflowExecutionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.TerminateWorkflowExecution";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (terminateWorkflowExecutionRequest != null && terminateWorkflowExecutionRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChildPolicy())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(terminateWorkflowExecutionRequest.Domain);
-                }
-                if (terminateWorkflowExecutionRequest != null && terminateWorkflowExecutionRequest.IsSetWorkflowId()) 
-                {
-                    writer.WritePropertyName("workflowId");
-                    writer.Write(terminateWorkflowExecutionRequest.WorkflowId);
-                }
-                if (terminateWorkflowExecutionRequest != null && terminateWorkflowExecutionRequest.IsSetRunId()) 
-                {
-                    writer.WritePropertyName("runId");
-                    writer.Write(terminateWorkflowExecutionRequest.RunId);
-                }
-                if (terminateWorkflowExecutionRequest != null && terminateWorkflowExecutionRequest.IsSetReason()) 
-                {
-                    writer.WritePropertyName("reason");
-                    writer.Write(terminateWorkflowExecutionRequest.Reason);
-                }
-                if (terminateWorkflowExecutionRequest != null && terminateWorkflowExecutionRequest.IsSetDetails()) 
-                {
-                    writer.WritePropertyName("details");
-                    writer.Write(terminateWorkflowExecutionRequest.Details);
-                }
-                if (terminateWorkflowExecutionRequest != null && terminateWorkflowExecutionRequest.IsSetChildPolicy()) 
-                {
-                    writer.WritePropertyName("childPolicy");
-                    writer.Write(terminateWorkflowExecutionRequest.ChildPolicy);
+                    context.Writer.WritePropertyName("childPolicy");
+                    context.Writer.Write(publicRequest.ChildPolicy);
                 }
 
+                if(publicRequest.IsSetDetails())
+                {
+                    context.Writer.WritePropertyName("details");
+                    context.Writer.Write(publicRequest.Details);
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
+                if(publicRequest.IsSetReason())
+                {
+                    context.Writer.WritePropertyName("reason");
+                    context.Writer.Write(publicRequest.Reason);
+                }
+
+                if(publicRequest.IsSetRunId())
+                {
+                    context.Writer.WritePropertyName("runId");
+                    context.Writer.Write(publicRequest.RunId);
+                }
+
+                if(publicRequest.IsSetWorkflowId())
+                {
+                    context.Writer.WritePropertyName("workflowId");
+                    context.Writer.Write(publicRequest.WorkflowId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

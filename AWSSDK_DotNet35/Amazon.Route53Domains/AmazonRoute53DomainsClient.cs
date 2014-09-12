@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.Route53Domains.Model;
 using Amazon.Route53Domains.Model.Internal.MarshallTransformations;
@@ -31,19 +35,8 @@ namespace Amazon.Route53Domains
     ///
     /// 
     /// </summary>
-    public partial class AmazonRoute53DomainsClient : AmazonWebServiceClient, IAmazonRoute53Domains
+    public partial class AmazonRoute53DomainsClient : AmazonServiceClient, IAmazonRoute53Domains
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -62,7 +55,7 @@ namespace Amazon.Route53Domains
         ///
         /// </summary>
         public AmazonRoute53DomainsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with the credentials loaded from the application's
@@ -81,7 +74,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53DomainsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with the credentials loaded from the application's
@@ -100,7 +93,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// <param name="config">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(AmazonRoute53DomainsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with AWS Credentials
@@ -128,7 +121,7 @@ namespace Amazon.Route53Domains
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(AWSCredentials credentials, AmazonRoute53DomainsConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -161,7 +154,7 @@ namespace Amazon.Route53Domains
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRoute53DomainsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -197,15 +190,33 @@ namespace Amazon.Route53Domains
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonRoute53DomainsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CheckDomainAvailability
-
 
         /// <summary>
         /// This operation checks the availability of one domain name. You can access this API
@@ -225,8 +236,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
         {
-            IAsyncResult asyncResult = invokeCheckDomainAvailability(request, null, null, true);
-            return EndCheckDomainAvailability(asyncResult);
+            var marshaller = new CheckDomainAvailabilityRequestMarshaller();
+            var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CheckDomainAvailabilityRequest,CheckDomainAvailabilityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -243,10 +256,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginCheckDomainAvailability(CheckDomainAvailabilityRequest request, AsyncCallback callback, object state)
         {
-            return invokeCheckDomainAvailability(request, callback, state, false);
+            var marshaller = new CheckDomainAvailabilityRequestMarshaller();
+            var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CheckDomainAvailabilityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CheckDomainAvailability operation.
@@ -258,21 +273,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  CheckDomainAvailabilityResult from Route53Domains.</returns>
         public  CheckDomainAvailabilityResponse EndCheckDomainAvailability(IAsyncResult asyncResult)
         {
-            return endOperation< CheckDomainAvailabilityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCheckDomainAvailability(CheckDomainAvailabilityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CheckDomainAvailabilityRequestMarshaller();
-            var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CheckDomainAvailabilityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DisableDomainTransferLock
-
 
         /// <summary>
         /// This operation removes the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -301,8 +307,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
         {
-            IAsyncResult asyncResult = invokeDisableDomainTransferLock(request, null, null, true);
-            return EndDisableDomainTransferLock(asyncResult);
+            var marshaller = new DisableDomainTransferLockRequestMarshaller();
+            var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
+
+            return Invoke<DisableDomainTransferLockRequest,DisableDomainTransferLockResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -319,10 +327,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginDisableDomainTransferLock(DisableDomainTransferLockRequest request, AsyncCallback callback, object state)
         {
-            return invokeDisableDomainTransferLock(request, callback, state, false);
+            var marshaller = new DisableDomainTransferLockRequestMarshaller();
+            var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableDomainTransferLockRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableDomainTransferLock operation.
@@ -334,21 +344,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  DisableDomainTransferLockResult from Route53Domains.</returns>
         public  DisableDomainTransferLockResponse EndDisableDomainTransferLock(IAsyncResult asyncResult)
         {
-            return endOperation< DisableDomainTransferLockResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDisableDomainTransferLock(DisableDomainTransferLockRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DisableDomainTransferLockRequestMarshaller();
-            var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DisableDomainTransferLockResponse>(asyncResult);
         }
 
         #endregion
         
         #region  EnableDomainTransferLock
-
 
         /// <summary>
         /// This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -375,8 +376,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
         {
-            IAsyncResult asyncResult = invokeEnableDomainTransferLock(request, null, null, true);
-            return EndEnableDomainTransferLock(asyncResult);
+            var marshaller = new EnableDomainTransferLockRequestMarshaller();
+            var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
+
+            return Invoke<EnableDomainTransferLockRequest,EnableDomainTransferLockResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -393,10 +396,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginEnableDomainTransferLock(EnableDomainTransferLockRequest request, AsyncCallback callback, object state)
         {
-            return invokeEnableDomainTransferLock(request, callback, state, false);
+            var marshaller = new EnableDomainTransferLockRequestMarshaller();
+            var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableDomainTransferLockRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableDomainTransferLock operation.
@@ -408,21 +413,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  EnableDomainTransferLockResult from Route53Domains.</returns>
         public  EnableDomainTransferLockResponse EndEnableDomainTransferLock(IAsyncResult asyncResult)
         {
-            return endOperation< EnableDomainTransferLockResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeEnableDomainTransferLock(EnableDomainTransferLockRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new EnableDomainTransferLockRequestMarshaller();
-            var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<EnableDomainTransferLockResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetDomainDetail
-
 
         /// <summary>
         /// This operation returns detailed information about the domain. The domain's contact
@@ -438,8 +434,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
         {
-            IAsyncResult asyncResult = invokeGetDomainDetail(request, null, null, true);
-            return EndGetDomainDetail(asyncResult);
+            var marshaller = new GetDomainDetailRequestMarshaller();
+            var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainDetailRequest,GetDomainDetailResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -456,10 +454,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginGetDomainDetail(GetDomainDetailRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetDomainDetail(request, callback, state, false);
+            var marshaller = new GetDomainDetailRequestMarshaller();
+            var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDomainDetailRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDomainDetail operation.
@@ -471,21 +471,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  GetDomainDetailResult from Route53Domains.</returns>
         public  GetDomainDetailResponse EndGetDomainDetail(IAsyncResult asyncResult)
         {
-            return endOperation< GetDomainDetailResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetDomainDetail(GetDomainDetailRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetDomainDetailRequestMarshaller();
-            var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetDomainDetailResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetOperationDetail
-
 
         /// <summary>
         /// This operation returns the current status of an operation that is not completed.
@@ -500,8 +491,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
         {
-            IAsyncResult asyncResult = invokeGetOperationDetail(request, null, null, true);
-            return EndGetOperationDetail(asyncResult);
+            var marshaller = new GetOperationDetailRequestMarshaller();
+            var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
+
+            return Invoke<GetOperationDetailRequest,GetOperationDetailResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -518,10 +511,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginGetOperationDetail(GetOperationDetailRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetOperationDetail(request, callback, state, false);
+            var marshaller = new GetOperationDetailRequestMarshaller();
+            var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetOperationDetailRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetOperationDetail operation.
@@ -533,15 +528,7 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  GetOperationDetailResult from Route53Domains.</returns>
         public  GetOperationDetailResponse EndGetOperationDetail(IAsyncResult asyncResult)
         {
-            return endOperation< GetOperationDetailResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetOperationDetail(GetOperationDetailRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetOperationDetailRequestMarshaller();
-            var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetOperationDetailResponse>(asyncResult);
         }
 
         #endregion
@@ -578,8 +565,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            IAsyncResult asyncResult = invokeListDomains(request, null, null, true);
-            return EndListDomains(asyncResult);
+            var marshaller = new ListDomainsRequestMarshaller();
+            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -596,10 +585,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListDomains(request, callback, state, false);
+            var marshaller = new ListDomainsRequestMarshaller();
+            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDomainsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDomains operation.
@@ -611,15 +602,7 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  ListDomainsResult from Route53Domains.</returns>
         public  ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
-            return endOperation< ListDomainsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListDomains(ListDomainsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListDomainsRequestMarshaller();
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListDomainsResponse>(asyncResult);
         }
 
         #endregion
@@ -654,8 +637,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
-            IAsyncResult asyncResult = invokeListOperations(request, null, null, true);
-            return EndListOperations(asyncResult);
+            var marshaller = new ListOperationsRequestMarshaller();
+            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOperationsRequest,ListOperationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -672,10 +657,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeListOperations(request, callback, state, false);
+            var marshaller = new ListOperationsRequestMarshaller();
+            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOperationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListOperations operation.
@@ -687,21 +674,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  ListOperationsResult from Route53Domains.</returns>
         public  ListOperationsResponse EndListOperations(IAsyncResult asyncResult)
         {
-            return endOperation< ListOperationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeListOperations(ListOperationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ListOperationsRequestMarshaller();
-            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ListOperationsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RegisterDomain
-
 
         /// <summary>
         /// This operation registers a domain. Domains are registered by the AWS registrar partner,
@@ -750,8 +728,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
-            IAsyncResult asyncResult = invokeRegisterDomain(request, null, null, true);
-            return EndRegisterDomain(asyncResult);
+            var marshaller = new RegisterDomainRequestMarshaller();
+            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -768,10 +748,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
         {
-            return invokeRegisterDomain(request, callback, state, false);
+            var marshaller = new RegisterDomainRequestMarshaller();
+            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterDomain operation.
@@ -783,21 +765,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  RegisterDomainResult from Route53Domains.</returns>
         public  RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult)
         {
-            return endOperation< RegisterDomainResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RegisterDomainRequestMarshaller();
-            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RegisterDomainResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RetrieveDomainAuthCode
-
 
         /// <summary>
         /// This operation returns the AuthCode for the domain. To transfer a domain to another
@@ -813,8 +786,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
         {
-            IAsyncResult asyncResult = invokeRetrieveDomainAuthCode(request, null, null, true);
-            return EndRetrieveDomainAuthCode(asyncResult);
+            var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
+            var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
+
+            return Invoke<RetrieveDomainAuthCodeRequest,RetrieveDomainAuthCodeResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -831,10 +806,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request, AsyncCallback callback, object state)
         {
-            return invokeRetrieveDomainAuthCode(request, callback, state, false);
+            var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
+            var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RetrieveDomainAuthCodeRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RetrieveDomainAuthCode operation.
@@ -846,21 +823,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  RetrieveDomainAuthCodeResult from Route53Domains.</returns>
         public  RetrieveDomainAuthCodeResponse EndRetrieveDomainAuthCode(IAsyncResult asyncResult)
         {
-            return endOperation< RetrieveDomainAuthCodeResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
-            var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RetrieveDomainAuthCodeResponse>(asyncResult);
         }
 
         #endregion
         
         #region  TransferDomain
-
 
         /// <summary>
         /// This operation transfers a domain from another registrar to Amazon Route 53. Domains
@@ -923,8 +891,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public TransferDomainResponse TransferDomain(TransferDomainRequest request)
         {
-            IAsyncResult asyncResult = invokeTransferDomain(request, null, null, true);
-            return EndTransferDomain(asyncResult);
+            var marshaller = new TransferDomainRequestMarshaller();
+            var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
+
+            return Invoke<TransferDomainRequest,TransferDomainResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -941,10 +911,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginTransferDomain(TransferDomainRequest request, AsyncCallback callback, object state)
         {
-            return invokeTransferDomain(request, callback, state, false);
+            var marshaller = new TransferDomainRequestMarshaller();
+            var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TransferDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TransferDomain operation.
@@ -956,21 +928,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  TransferDomainResult from Route53Domains.</returns>
         public  TransferDomainResponse EndTransferDomain(IAsyncResult asyncResult)
         {
-            return endOperation< TransferDomainResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeTransferDomain(TransferDomainRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new TransferDomainRequestMarshaller();
-            var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<TransferDomainResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateDomainContact
-
 
         /// <summary>
         /// This operation updates the contact information for a particular domain. Information
@@ -1003,8 +966,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateDomainContact(request, null, null, true);
-            return EndUpdateDomainContact(asyncResult);
+            var marshaller = new UpdateDomainContactRequestMarshaller();
+            var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainContactRequest,UpdateDomainContactResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1021,10 +986,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginUpdateDomainContact(UpdateDomainContactRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateDomainContact(request, callback, state, false);
+            var marshaller = new UpdateDomainContactRequestMarshaller();
+            var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDomainContactRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateDomainContact operation.
@@ -1036,27 +1003,18 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  UpdateDomainContactResult from Route53Domains.</returns>
         public  UpdateDomainContactResponse EndUpdateDomainContact(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateDomainContactResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateDomainContact(UpdateDomainContactRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateDomainContactRequestMarshaller();
-            var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateDomainContactResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateDomainContactPrivacy
 
-
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When the privacy
         /// option is enabled, personal information such as postal or email address is hidden
         /// from the results of a public WHOIS query. The privacy services are provided by the
-        /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;lang=en">Gandi
+        /// AWS registrar, Gandi. For more information, see the <a href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
         /// privacy features</a>.
         /// 
         ///  
@@ -1087,8 +1045,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateDomainContactPrivacy(request, null, null, true);
-            return EndUpdateDomainContactPrivacy(asyncResult);
+            var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
+            var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainContactPrivacyRequest,UpdateDomainContactPrivacyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1105,10 +1065,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateDomainContactPrivacy(request, callback, state, false);
+            var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
+            var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDomainContactPrivacyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateDomainContactPrivacy operation.
@@ -1120,21 +1082,12 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  UpdateDomainContactPrivacyResult from Route53Domains.</returns>
         public  UpdateDomainContactPrivacyResponse EndUpdateDomainContactPrivacy(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateDomainContactPrivacyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
-            var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateDomainContactPrivacyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateDomainNameservers
-
 
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified
@@ -1167,8 +1120,10 @@ namespace Amazon.Route53Domains
         /// </exception>
         public UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateDomainNameservers(request, null, null, true);
-            return EndUpdateDomainNameservers(asyncResult);
+            var marshaller = new UpdateDomainNameserversRequestMarshaller();
+            var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainNameserversRequest,UpdateDomainNameserversResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1185,10 +1140,12 @@ namespace Amazon.Route53Domains
         ///         operation.</returns>
         public IAsyncResult BeginUpdateDomainNameservers(UpdateDomainNameserversRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateDomainNameservers(request, callback, state, false);
+            var marshaller = new UpdateDomainNameserversRequestMarshaller();
+            var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDomainNameserversRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateDomainNameservers operation.
@@ -1200,15 +1157,7 @@ namespace Amazon.Route53Domains
         /// <returns>Returns a  UpdateDomainNameserversResult from Route53Domains.</returns>
         public  UpdateDomainNameserversResponse EndUpdateDomainNameservers(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateDomainNameserversResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateDomainNameservers(UpdateDomainNameserversRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateDomainNameserversRequestMarshaller();
-            var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateDomainNameserversResponse>(asyncResult);
         }
 
         #endregion

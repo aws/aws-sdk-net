@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,26 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ConfirmProductInstanceResult : AmazonWebServiceResponse
     {
-        
-        private string ownerId;
-
+        private string _ownerId;
 
         /// <summary>
-        /// The AWS account ID of the instance owner. This is only present if the product code is attached to the instance.
-        ///  
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The AWS account ID of the instance owner. This is only present if the product code
+        /// is attached to the instance.
+        /// </para>
         /// </summary>
         public string OwnerId
         {
-            get { return this.ownerId; }
-            set { this.ownerId = value; }
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
         }
 
         // Check to see if OwnerId property is set
         internal bool IsSetOwnerId()
         {
-            return this.ownerId != null;
+            return this._ownerId != null;
         }
+
     }
 }

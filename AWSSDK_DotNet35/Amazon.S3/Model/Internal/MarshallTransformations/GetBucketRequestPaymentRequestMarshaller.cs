@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Request Payment Request Marshaller
     /// </summary>       
-    public class GetBucketRequestPaymentRequestMarshaller : IMarshaller<IRequest, GetBucketRequestPaymentRequest>
-    {
+    public class GetBucketRequestPaymentRequestMarshaller : IMarshaller<IRequest, GetBucketRequestPaymentRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetBucketRequestPaymentRequest)input);
+		}
+
         public IRequest Marshall(GetBucketRequestPaymentRequest getBucketRequestPaymentRequest)
         {
             IRequest request = new DefaultRequest(getBucketRequestPaymentRequest, "AmazonS3");

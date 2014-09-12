@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? _endDateTime;
         private DateTime? _startDateTime;
 
-
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._creationDateTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EndDateTime. 
         /// <para>
@@ -69,7 +71,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._endDateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property StartDateTime. 

@@ -1,0 +1,62 @@
+﻿<#@ template language="C#" inherits="BaseResponseUnmarshaller"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+using ThirdParty.Json.LitJson;
+
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>, IUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
+    {
+        <#=this.UnmarshallerBaseName #> IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
+
+        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+<#
+    if(this.Structure != null)
+    {
+        foreach (var member in this.Structure.Members)
+        {
+#>
+                if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+                {
+                    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                    unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+<#
+        }
+    }
+#>
+            }
+          
+            return unmarshalledObject;
+        }
+
+
+<#
+    this.AddStructureSingletonMethod();
+#>
+    }
+}

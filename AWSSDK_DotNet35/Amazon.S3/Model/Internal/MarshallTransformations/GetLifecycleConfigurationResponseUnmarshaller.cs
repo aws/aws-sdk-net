@@ -59,7 +59,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Rule", targetDepth))
                     {
-                        response.Configuration.Rules.Add(RulesItemUnmarshaller.GetInstance().Unmarshall(context));
+                        response.Configuration.Rules.Add(RulesItemUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -77,22 +77,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static GetLifecycleConfigurationResponseUnmarshaller instance;
 
-        public static GetLifecycleConfigurationResponseUnmarshaller GetInstance()
+        private static GetLifecycleConfigurationResponseUnmarshaller _instance;
+
+        public static GetLifecycleConfigurationResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetLifecycleConfigurationResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetLifecycleConfigurationResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

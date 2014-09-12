@@ -1,0 +1,183 @@
+﻿<#@ template language="C#" inherits="BaseRequestMarshaller"  #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// <#=this.Operation.Name #> Request Marshaller
+    /// </summary>       
+    public class <#=this.Operation.Name #>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name #>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((<#=this.Operation.Name#>Request)input);
+        }
+    
+        public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
+            request.Parameters.Add("Action", "<#=this.Operation.Name #>");
+            request.Parameters.Add("Version", "<#=this.Config.ServiceModel.APIVersion#>");
+
+            if(publicRequest != null)
+            {
+<#
+    var requestStructure = this.Operation.RequestStructure;
+    if(requestStructure != null)
+        ProcessMembers(0, "",  "publicRequest", requestStructure.Members);
+#>
+            }
+            return request;
+        }
+    }
+}
+
+<#+
+    void ProcessMembers(int level, string parameterContext, string variableName, IEnumerable<Member> members)
+    {
+		string variableNameFragment = variableName.Replace(".", string.Empty);
+        foreach(var member in members)
+        {
+			if (GeneratorHelpers.UseCustomMarshall(member, this.Operation))
+				continue;
+
+			var marshallName = GeneratorHelpers.DetermineAWSQueryMarshallName(member, this.Operation);
+#>
+<#=new string(' ', level * 4)#>                if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>                {
+<#+
+            if(member.IsList )
+            {
+                string context = ComposeContext(parameterContext, marshallName);
+                string listItemContext = ComposeContext(context, 
+				                                        GeneratorHelpers.DetermineAWSQueryListMemberPrefix(member), 
+														variableNameFragment + "listValueIndex", 
+														GeneratorHelpers.DetermineAWSQueryListMemberSuffix(this.Operation, member));
+#>
+<#=new string(' ', level * 4)#>                    int <#=variableNameFragment#>listValueIndex = 1;
+<#=new string(' ', level * 4)#>                    foreach(var <#=variableNameFragment#>listValue in <#=variableName#>.<#=member.PropertyName#>)
+<#=new string(' ', level * 4)#>                    {
+<#+
+                if(member.Shape.ListShape.IsStructure)
+                {
+                    ProcessMembers(level + 2, listItemContext, variableNameFragment + "listValue", member.Shape.ListShape.Members);
+                }
+                else
+                {
+                    #>
+<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, StringUtils.From<#= member.Shape.ListShape.GetPrimitiveType() #>(<#=variableNameFragment#>listValue));
+<#+
+                }
+#>
+<#=new string(' ', level * 4)#>                        <#=variableNameFragment#>listValueIndex++;
+<#=new string(' ', level * 4)#>                    }
+<#+
+            }
+            else if(member.IsMap)
+            {
+                string context = ComposeContext(parameterContext, marshallName);
+                string mapItemContext = ComposeContext(context, member.Shape.IsFlattened ? "" : "entry", "mapIndex");
+                string mapKeyContext = ComposeContext(mapItemContext, member.Shape.KeyMarshallName);
+                string mapValueContext = ComposeContext(mapItemContext, member.Shape.ValueMarshallName);
+#>
+<#=new string(' ', level * 4)#>                    int mapIndex = 1;
+<#=new string(' ', level * 4)#>                    foreach(var key in <#=variableName#>.<#=member.PropertyName#>.Keys)
+<#=new string(' ', level * 4)#>                    {
+<#=new string(' ', level * 4)#>                        <#= member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType() #> value;
+<#=new string(' ', level * 4)#>                        bool hasValue = <#=variableName#>.<#=member.PropertyName#>.TryGetValue(key, out value);
+<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=mapKeyContext#>, StringUtils.From<#= member.Shape.KeyShape.GetPrimitiveType() #>(key));
+<#=new string(' ', level * 4)#>                        if (hasValue)
+<#=new string(' ', level * 4)#>                        {
+<#+
+                if(member.Shape.ValueShape.IsStructure)
+                {
+                    ProcessMembers(level + 3, mapValueContext, "value", member.Shape.ValueShape.Members);
+                }
+                else
+                {
+                    #>
+<#=new string(' ', level * 4)#>                            request.Parameters.Add(<#=mapValueContext#>, StringUtils.From<#= member.Shape.ValueShape.GetPrimitiveType() #>(value));
+<#+
+                }
+#>
+<#=new string(' ', level * 4)#>                        }
+<#=new string(' ', level * 4)#>                        mapIndex++;
+<#=new string(' ', level * 4)#>                    }
+<#+
+            }
+            else if(member.IsStructure)
+            {
+                string context = ComposeContext(parameterContext, marshallName);
+                ProcessMembers(level + 1, context, variableName + "." + member.PropertyName, member.Shape.Members);
+            }
+            else
+            {
+                string context = ComposeContext(parameterContext, marshallName);
+#>
+<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, StringUtils.From<#= member.GetPrimitiveType() #>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+            }
+#>
+<#=new string(' ', level * 4)#>                }
+<#+
+        }
+    }
+
+    string ComposeContext(string context, string marshallName)
+    {
+        return ComposeContext(context, marshallName, null, null);
+    }
+
+    string ComposeContext(string context, string marshallName, string variableName)
+    {
+        return ComposeContext(context, marshallName, variableName, null);
+    }
+
+    string ComposeContext(string context, string marshallName, string variableName, string suffixMember)
+    {
+        string nc = context;
+        if (!string.IsNullOrEmpty(marshallName))
+            nc = AppendText(nc, marshallName);
+        if (!string.IsNullOrEmpty(variableName))
+            nc = AppendVariable(nc, variableName);
+		if (!string.IsNullOrEmpty(suffixMember))
+            nc = AppendText(nc, suffixMember);
+        return nc;
+    }
+
+    private static char quoteChar = '\"';
+    private static string quote = quoteChar.ToString();
+
+    string AppendVariable(string context, string variable)
+    {
+        variable = variable.Trim(quoteChar);
+        return Append(context, variable);
+    }
+
+    string AppendText(string context, string text)
+    {
+        if (!text.StartsWith(quote))
+            text = quote + text;
+        if (!text.EndsWith(quote))
+            text = text + quote;
+        return Append(context, text);
+    }
+
+    string Append(string context, string text)
+    {
+        string nc = context;
+        if (!string.IsNullOrEmpty(nc) && !nc.EndsWith("."))
+            nc += " + \".\" + ";
+        nc += text;
+        return nc;
+    }
+
+
+#>

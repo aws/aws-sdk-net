@@ -23,17 +23,19 @@ namespace Amazon.Runtime.Internal
 {
     internal class StreamReadTracker
     {
-        AmazonWebServiceClient client;
+        object sender;
         EventHandler<StreamTransferProgressArgs> callback;
         long contentLength;
         long totalBytesRead;
         long totalIncrementTransferred;
+        long progressUpdateInterval;
 
-        internal StreamReadTracker(AmazonWebServiceClient client, EventHandler<StreamTransferProgressArgs> callback, long contentLength)
+        internal StreamReadTracker(object sender, EventHandler<StreamTransferProgressArgs> callback, long contentLength, long progressUpdateInterval)
         {
-            this.client = client;
+            this.sender = sender;
             this.callback = callback;
             this.contentLength = contentLength;
+            this.progressUpdateInterval = progressUpdateInterval;
         }
 
         public void ReadProgress(int bytesRead)
@@ -47,14 +49,14 @@ namespace Amazon.Runtime.Internal
                 totalBytesRead += bytesRead;
                 totalIncrementTransferred += bytesRead;
 
-                if (totalIncrementTransferred >= this.client.Config.ProgressUpdateInterval ||
+                if (totalIncrementTransferred >= this.progressUpdateInterval ||
                     totalBytesRead == contentLength)
                 {
 
                     AWSSDKUtils.InvokeInBackground(
                                         callback,
                                         new StreamTransferProgressArgs(totalIncrementTransferred, totalBytesRead, contentLength),
-                                        client);
+                                        sender);
                     totalIncrementTransferred = 0;
                 }
             }

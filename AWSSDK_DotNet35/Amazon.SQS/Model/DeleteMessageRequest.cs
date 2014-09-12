@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -57,6 +61,21 @@ namespace Amazon.SQS.Model
         private string _queueUrl;
         private string _receiptHandle;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteMessageRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteMessageRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="receiptHandle">The receipt handle associated with the message to delete.</param>
+        public DeleteMessageRequest(string queueUrl, string receiptHandle)
+        {
+            _queueUrl = queueUrl;
+            _receiptHandle = receiptHandle;
+        }
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 
@@ -75,7 +94,6 @@ namespace Amazon.SQS.Model
         {
             return this._queueUrl != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReceiptHandle. 

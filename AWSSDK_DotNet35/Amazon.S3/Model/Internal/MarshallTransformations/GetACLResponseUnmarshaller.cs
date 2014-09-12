@@ -61,7 +61,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (null == response.AccessControlList)
                             response.AccessControlList = new S3AccessControlList();
-                        response.AccessControlList.Owner = OwnerUnmarshaller.GetInstance().Unmarshall(context);
+                        response.AccessControlList.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -69,7 +69,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (null == response.AccessControlList)
                             response.AccessControlList = new S3AccessControlList();
-                        response.AccessControlList.Grants.Add(GrantUnmarshaller.GetInstance().Unmarshall(context));
+                        response.AccessControlList.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
@@ -87,22 +87,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
 
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
-        
-        private static GetACLResponseUnmarshaller instance;
 
-        public static GetACLResponseUnmarshaller GetInstance()
+        private static GetACLResponseUnmarshaller _instance;
+
+        public static GetACLResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetACLResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetACLResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

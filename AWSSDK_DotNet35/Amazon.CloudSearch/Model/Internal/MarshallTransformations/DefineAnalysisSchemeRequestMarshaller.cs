@@ -12,66 +12,77 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Define Analysis Scheme Request Marshaller
+    /// DefineAnalysisScheme Request Marshaller
     /// </summary>       
-    public class DefineAnalysisSchemeRequestMarshaller : IMarshaller<IRequest, DefineAnalysisSchemeRequest>
+    public class DefineAnalysisSchemeRequestMarshaller : IMarshaller<IRequest, DefineAnalysisSchemeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DefineAnalysisSchemeRequest defineAnalysisSchemeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(defineAnalysisSchemeRequest, "AmazonCloudSearch");
+            return this.Marshall((DefineAnalysisSchemeRequest)input);
+        }
+    
+        public IRequest Marshall(DefineAnalysisSchemeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DefineAnalysisScheme");
             request.Parameters.Add("Version", "2013-01-01");
-            if (defineAnalysisSchemeRequest != null && defineAnalysisSchemeRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(defineAnalysisSchemeRequest.DomainName));
-            }
-            if (defineAnalysisSchemeRequest != null)
-            {
-                AnalysisScheme analysisScheme = defineAnalysisSchemeRequest.AnalysisScheme;
-                if (analysisScheme != null && analysisScheme.IsSetAnalysisSchemeName())
-                {
-                    request.Parameters.Add("AnalysisScheme.AnalysisSchemeName", StringUtils.FromString(analysisScheme.AnalysisSchemeName));
-                }
-                if (analysisScheme != null && analysisScheme.IsSetAnalysisSchemeLanguage())
-                {
-                    request.Parameters.Add("AnalysisScheme.AnalysisSchemeLanguage", StringUtils.FromString(analysisScheme.AnalysisSchemeLanguage));
-                }
-                if (analysisScheme != null)
-                {
-                    AnalysisOptions analysisOptions = analysisScheme.AnalysisOptions;
-                    if (analysisOptions != null && analysisOptions.IsSetSynonyms())
-                    {
-                        request.Parameters.Add("AnalysisScheme.AnalysisOptions.Synonyms", StringUtils.FromString(analysisOptions.Synonyms));
-                    }
-                    if (analysisOptions != null && analysisOptions.IsSetStopwords())
-                    {
-                        request.Parameters.Add("AnalysisScheme.AnalysisOptions.Stopwords", StringUtils.FromString(analysisOptions.Stopwords));
-                    }
-                    if (analysisOptions != null && analysisOptions.IsSetStemmingDictionary())
-                    {
-                        request.Parameters.Add("AnalysisScheme.AnalysisOptions.StemmingDictionary", StringUtils.FromString(analysisOptions.StemmingDictionary));
-                    }
-                    if (analysisOptions != null && analysisOptions.IsSetAlgorithmicStemming())
-                    {
-                        request.Parameters.Add("AnalysisScheme.AnalysisOptions.AlgorithmicStemming", StringUtils.FromString(analysisOptions.AlgorithmicStemming));
-                    }
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAnalysisScheme())
+                {
+                    if(publicRequest.AnalysisScheme.IsSetAnalysisOptions())
+                    {
+                        if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetAlgorithmicStemming())
+                        {
+                            request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "AlgorithmicStemming", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.AlgorithmicStemming));
+                        }
+                        if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetStemmingDictionary())
+                        {
+                            request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "StemmingDictionary", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.StemmingDictionary));
+                        }
+                        if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetStopwords())
+                        {
+                            request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "Stopwords", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.Stopwords));
+                        }
+                        if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetSynonyms())
+                        {
+                            request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "Synonyms", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.Synonyms));
+                        }
+                    }
+                    if(publicRequest.AnalysisScheme.IsSetAnalysisSchemeLanguage())
+                    {
+                        request.Parameters.Add("AnalysisScheme" + "." + "AnalysisSchemeLanguage", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisSchemeLanguage));
+                    }
+                    if(publicRequest.AnalysisScheme.IsSetAnalysisSchemeName())
+                    {
+                        request.Parameters.Add("AnalysisScheme" + "." + "AnalysisSchemeName", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisSchemeName));
+                    }
+                }
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+            }
             return request;
         }
     }

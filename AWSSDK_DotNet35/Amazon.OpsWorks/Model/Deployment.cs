@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private string _status;
 
-
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
@@ -60,7 +63,6 @@ namespace Amazon.OpsWorks.Model
             return this._appId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Command.
         /// </summary>
@@ -75,7 +77,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._command != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -95,7 +96,6 @@ namespace Amazon.OpsWorks.Model
             return this._comment != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CompletedAt. 
         /// <para>
@@ -114,7 +114,6 @@ namespace Amazon.OpsWorks.Model
             return this._completedAt != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
@@ -132,7 +131,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._createdAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustomJson. 
@@ -163,7 +161,6 @@ namespace Amazon.OpsWorks.Model
             return this._customJson != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
@@ -181,7 +178,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._deploymentId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Duration. 
@@ -201,7 +197,6 @@ namespace Amazon.OpsWorks.Model
             return this._duration.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property IamUserArn. 
         /// <para>
@@ -219,7 +214,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._iamUserArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceIds. 
@@ -239,7 +233,6 @@ namespace Amazon.OpsWorks.Model
             return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
@@ -257,7 +250,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._stackId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

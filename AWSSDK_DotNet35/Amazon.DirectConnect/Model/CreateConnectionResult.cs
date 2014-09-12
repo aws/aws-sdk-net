@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,179 +12,182 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para>A connection represents the physical network connection between the Direct Connect location and the customer.</para>
+    /// A connection represents the physical network connection between the AWS Direct Connect
+    /// location and the customer.
     /// </summary>
     public partial class CreateConnectionResult : AmazonWebServiceResponse
     {
-        
-        private string ownerAccount;
-        private string connectionId;
-        private string connectionName;
-        private ConnectionState connectionState;
-        private string region;
-        private string location;
-        private string bandwidth;
-        private int? vlan;
-        private string partnerName;
-
-        public string OwnerAccount
-        {
-            get { return this.ownerAccount; }
-            set { this.ownerAccount = value; }
-        }
-
-        // Check to see if OwnerAccount property is set
-        internal bool IsSetOwnerAccount()
-        {
-            return this.ownerAccount != null;
-        }
+        private string _bandwidth;
+        private string _connectionId;
+        private string _connectionName;
+        private ConnectionState _connectionState;
+        private string _location;
+        private string _ownerAccount;
+        private string _partnerName;
+        private string _region;
+        private int? _vlan;
 
         /// <summary>
-        /// ID of the connection. Example: dxcon-fg5678gh Default: None
-        ///  
-        /// </summary>
-        public string ConnectionId
-        {
-            get { return this.connectionId; }
-            set { this.connectionId = value; }
-        }
-
-        // Check to see if ConnectionId property is set
-        internal bool IsSetConnectionId()
-        {
-            return this.connectionId != null;
-        }
-
-        /// <summary>
-        /// The name of the connection. Example: "<i>1G Connection to AWS</i>" Default: None
-        ///  
-        /// </summary>
-        public string ConnectionName
-        {
-            get { return this.connectionName; }
-            set { this.connectionName = value; }
-        }
-
-        // Check to see if ConnectionName property is set
-        internal bool IsSetConnectionName()
-        {
-            return this.connectionName != null;
-        }
-
-        /// <summary>
-        /// State of the connection. <ul> <li><b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection
-        /// stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</li> <li><b>Requested</b>:
-        /// The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to
-        /// the customer.</li> <li><b>Pending</b>: The connection has been approved, and is being initialized.</li> <li><b>Available</b>: The network
-        /// link is up, and the connection is ready for use.</li> <li><b>Down</b>: The network link is down.</li> <li><b>Deleted</b>: The connection has
-        /// been deleted.</li> <li><b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the
-        /// end customer.</li> </ul>
+        /// Gets and sets the property Bandwidth. 
+        /// <para>
+        /// Bandwidth of the connection.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ordering, requested, pending, available, down, deleting, deleted, rejected</description>
-        ///     </item>
-        /// </list>
+        /// Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
         /// </para>
-        /// </summary>
-        public ConnectionState ConnectionState
-        {
-            get { return this.connectionState; }
-            set { this.connectionState = value; }
-        }
-
-        // Check to see if ConnectionState property is set
-        internal bool IsSetConnectionState()
-        {
-            return this.connectionState != null;
-        }
-
-        /// <summary>
-        /// The AWS region where the connection is located. Example: us-east-1 Default: None
         ///  
-        /// </summary>
-        public string Region
-        {
-            get { return this.region; }
-            set { this.region = value; }
-        }
-
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
-        {
-            return this.region != null;
-        }
-
-        /// <summary>
-        /// Where the connection is located. Example: EqSV5 Default: None
-        ///  
-        /// </summary>
-        public string Location
-        {
-            get { return this.location; }
-            set { this.location = value; }
-        }
-
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
-        {
-            return this.location != null;
-        }
-
-        /// <summary>
-        /// Bandwidth of the connection. Example: 1Gbps Default: None
-        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public string Bandwidth
         {
-            get { return this.bandwidth; }
-            set { this.bandwidth = value; }
+            get { return this._bandwidth; }
+            set { this._bandwidth = value; }
         }
 
         // Check to see if Bandwidth property is set
         internal bool IsSetBandwidth()
         {
-            return this.bandwidth != null;
+            return this._bandwidth != null;
         }
 
         /// <summary>
-        /// VLAN ID Example: 101
-        ///  
+        /// Gets and sets the property ConnectionId.
         /// </summary>
-        public int Vlan
+        public string ConnectionId
         {
-            get { return this.vlan ?? default(int); }
-            set { this.vlan = value; }
+            get { return this._connectionId; }
+            set { this._connectionId = value; }
         }
 
-        // Check to see if Vlan property is set
-        internal bool IsSetVlan()
+        // Check to see if ConnectionId property is set
+        internal bool IsSetConnectionId()
         {
-            return this.vlan.HasValue;
+            return this._connectionId != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionName.
+        /// </summary>
+        public string ConnectionName
+        {
+            get { return this._connectionName; }
+            set { this._connectionName = value; }
+        }
+
+        // Check to see if ConnectionName property is set
+        internal bool IsSetConnectionName()
+        {
+            return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionState.
+        /// </summary>
+        public ConnectionState ConnectionState
+        {
+            get { return this._connectionState; }
+            set { this._connectionState = value; }
+        }
+
+        // Check to see if ConnectionState property is set
+        internal bool IsSetConnectionState()
+        {
+            return this._connectionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location.
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount.
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartnerName.
+        /// </summary>
         public string PartnerName
         {
-            get { return this.partnerName; }
-            set { this.partnerName = value; }
+            get { return this._partnerName; }
+            set { this._partnerName = value; }
         }
 
         // Check to see if PartnerName property is set
         internal bool IsSetPartnerName()
         {
-            return this.partnerName != null;
+            return this._partnerName != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Region.
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vlan.
+        /// </summary>
+        public int Vlan
+        {
+            get { return this._vlan.GetValueOrDefault(); }
+            set { this._vlan = value; }
+        }
+
+        // Check to see if Vlan property is set
+        internal bool IsSetVlan()
+        {
+            return this._vlan.HasValue; 
+        }
+
     }
 }

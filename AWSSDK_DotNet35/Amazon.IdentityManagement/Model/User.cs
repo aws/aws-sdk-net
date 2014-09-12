@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -52,6 +56,27 @@ namespace Amazon.IdentityManagement.Model
         private string _userId;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public User() { }
+
+        /// <summary>
+        /// Instantiates User with the parameterized properties
+        /// </summary>
+        /// <param name="path">Path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="userName">The name identifying the user.</param>
+        /// <param name="userId">The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="arn">The Amazon Resource Name (ARN) specifying the user. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="createDate">The date when the user was created.</param>
+        public User(string path, string userName, string userId, string arn, DateTime createDate)
+        {
+            _path = path;
+            _userName = userName;
+            _userId = userId;
+            _arn = arn;
+            _createDate = createDate;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -73,7 +98,6 @@ namespace Amazon.IdentityManagement.Model
             return this._arn != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
@@ -91,7 +115,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._createDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -112,7 +135,6 @@ namespace Amazon.IdentityManagement.Model
             return this._path != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
@@ -132,7 +154,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._userId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

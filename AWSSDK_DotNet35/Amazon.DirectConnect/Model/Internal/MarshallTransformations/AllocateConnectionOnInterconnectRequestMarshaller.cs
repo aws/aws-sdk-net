@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,64 +33,70 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Allocate Connection On Interconnect Request Marshaller
+    /// AllocateConnectionOnInterconnect Request Marshaller
     /// </summary>       
-    internal class AllocateConnectionOnInterconnectRequestMarshaller : IMarshaller<IRequest, AllocateConnectionOnInterconnectRequest> 
+    public class AllocateConnectionOnInterconnectRequestMarshaller : IMarshaller<IRequest, AllocateConnectionOnInterconnectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((AllocateConnectionOnInterconnectRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(allocateConnectionOnInterconnectRequest, "AmazonDirectConnect");
+        public IRequest Marshall(AllocateConnectionOnInterconnectRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.AllocateConnectionOnInterconnect";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (allocateConnectionOnInterconnectRequest != null && allocateConnectionOnInterconnectRequest.IsSetBandwidth()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBandwidth())
                 {
-                    writer.WritePropertyName("bandwidth");
-                    writer.Write(allocateConnectionOnInterconnectRequest.Bandwidth);
-                }
-                if (allocateConnectionOnInterconnectRequest != null && allocateConnectionOnInterconnectRequest.IsSetConnectionName()) 
-                {
-                    writer.WritePropertyName("connectionName");
-                    writer.Write(allocateConnectionOnInterconnectRequest.ConnectionName);
-                }
-                if (allocateConnectionOnInterconnectRequest != null && allocateConnectionOnInterconnectRequest.IsSetOwnerAccount()) 
-                {
-                    writer.WritePropertyName("ownerAccount");
-                    writer.Write(allocateConnectionOnInterconnectRequest.OwnerAccount);
-                }
-                if (allocateConnectionOnInterconnectRequest != null && allocateConnectionOnInterconnectRequest.IsSetInterconnectId()) 
-                {
-                    writer.WritePropertyName("interconnectId");
-                    writer.Write(allocateConnectionOnInterconnectRequest.InterconnectId);
-                }
-                if (allocateConnectionOnInterconnectRequest != null && allocateConnectionOnInterconnectRequest.IsSetVlan()) 
-                {
-                    writer.WritePropertyName("vlan");
-                    writer.Write(allocateConnectionOnInterconnectRequest.Vlan);
+                    context.Writer.WritePropertyName("bandwidth");
+                    context.Writer.Write(publicRequest.Bandwidth);
                 }
 
+                if(publicRequest.IsSetConnectionName())
+                {
+                    context.Writer.WritePropertyName("connectionName");
+                    context.Writer.Write(publicRequest.ConnectionName);
+                }
+
+                if(publicRequest.IsSetInterconnectId())
+                {
+                    context.Writer.WritePropertyName("interconnectId");
+                    context.Writer.Write(publicRequest.InterconnectId);
+                }
+
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("ownerAccount");
+                    context.Writer.Write(publicRequest.OwnerAccount);
+                }
+
+                if(publicRequest.IsSetVlan())
+                {
+                    context.Writer.WritePropertyName("vlan");
+                    context.Writer.Write(publicRequest.Vlan);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

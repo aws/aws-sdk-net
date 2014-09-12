@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,120 +12,100 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>Specifies how to trim common words from the beginning of a field to enable title sorting by that field.</para>
+    /// Specifies how to trim common words from the beginning of a field to enable title sorting
+    /// by that field.
     /// </summary>
-    public class SourceDataTrimTitle
+    public partial class SourceDataTrimTitle
     {
-        
-        private string sourceName;
-        private string defaultValue;
-        private string separator;
-        private string language;
-
+        private string _defaultValue;
+        private string _language;
+        private string _separator;
+        private string _sourceName;
 
         /// <summary>
-        /// The name of the document source field to add to this <c>IndexField</c>.
-        ///  
+        /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SourceName
-        {
-            get { return this.sourceName; }
-            set { this.sourceName = value; }
-        }
-
-        // Check to see if SourceName property is set
-        internal bool IsSetSourceName()
-        {
-            return this.sourceName != null;
-        }
-
-        /// <summary>
         /// The default value to use if the source attribute is not specified in a document. Optional.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string DefaultValue
         {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;
+            return this._defaultValue != null;
         }
 
         /// <summary>
-        /// The separator that follows the text to trim.
-        ///  
-        /// </summary>
-        public string Separator
-        {
-            get { return this.separator; }
-            set { this.separator = value; }
-        }
-
-        // Check to see if Separator property is set
-        internal bool IsSetSeparator()
-        {
-            return this.separator != null;
-        }
-
-        /// <summary>
-        /// An <a href="http://tools.ietf.org/html/rfc4646">IETF RFC 4646</a> language code. Only the primary language is considered. English (en) is
-        /// currently the only supported language.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z]{2,8}(?:-[a-zA-Z]{2,8})*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property Language.
         /// </summary>
         public string Language
         {
-            get { return this.language; }
-            set { this.language = value; }
+            get { return this._language; }
+            set { this._language = value; }
         }
 
         // Check to see if Language property is set
         internal bool IsSetLanguage()
         {
-            return this.language != null;
+            return this._language != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Separator. 
+        /// <para>
+        /// The separator that follows the text to trim.
+        /// </para>
+        /// </summary>
+        public string Separator
+        {
+            get { return this._separator; }
+            set { this._separator = value; }
+        }
+
+        // Check to see if Separator property is set
+        internal bool IsSetSeparator()
+        {
+            return this._separator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceName. 
+        /// <para>
+        /// The name of the document source field to add to this <code>IndexField</code>.
+        /// </para>
+        /// </summary>
+        public string SourceName
+        {
+            get { return this._sourceName; }
+            set { this._sourceName = value; }
+        }
+
+        // Check to see if SourceName property is set
+        internal bool IsSetSourceName()
+        {
+            return this._sourceName != null;
+        }
+
     }
 }

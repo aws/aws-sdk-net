@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GroupIdentifier Unmarshaller
-     /// </summary>
-    internal class GroupIdentifierUnmarshaller : IUnmarshaller<GroupIdentifier, XmlUnmarshallerContext>, IUnmarshaller<GroupIdentifier, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GroupIdentifier Object
+    /// </summary>  
+    public class GroupIdentifierUnmarshaller : IUnmarshaller<GroupIdentifier, XmlUnmarshallerContext>, IUnmarshaller<GroupIdentifier, JsonUnmarshallerContext>
     {
-        public GroupIdentifier Unmarshall(XmlUnmarshallerContext context) 
+        public GroupIdentifier Unmarshall(XmlUnmarshallerContext context)
         {
-            GroupIdentifier groupIdentifier = new GroupIdentifier();
+            GroupIdentifier unmarshalledObject = new GroupIdentifier();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("groupName", targetDepth))
-                    {
-                        groupIdentifier.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("groupId", targetDepth))
                     {
-                        groupIdentifier.GroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("groupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return groupIdentifier;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return groupIdentifier;
+            return unmarshalledObject;
         }
 
-        public GroupIdentifier Unmarshall(JsonUnmarshallerContext context) 
+        public GroupIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static GroupIdentifierUnmarshaller instance;
 
-        public static GroupIdentifierUnmarshaller GetInstance() 
+        private static GroupIdentifierUnmarshaller _instance = new GroupIdentifierUnmarshaller();        
+
+        public static GroupIdentifierUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new GroupIdentifierUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

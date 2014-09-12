@@ -1,0 +1,38 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	var supportedServicesInterfaces = new List<string>()
+	{
+        "Amazon.EC2.IAmazonEC2",							
+		"Amazon.Glacier.IAmazonGlacier",							
+        "Amazon.Route53.IAmazonRoute53",
+		"Amazon.S3.IAmazonS3",		
+		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
+	};
+	
+	var supportedFactoryInterfaces = new List<string>()
+	{
+		"Amazon.AutoScaling.IAmazonAutoScaling",
+		"Amazon.CloudFormation.IAmazonCloudFormation",
+		"Amazon.CloudWatch.IAmazonCloudWatch",
+		"Amazon.DynamoDBv2.IAmazonDynamoDB",
+		"Amazon.EC2.IAmazonEC2",
+		"Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk",
+		"Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing",
+		"Amazon.ElasticTranscoder.IAmazonElasticTranscoder",
+		"Amazon.Glacier.IAmazonGlacier",
+		"Amazon.IdentityManagement.IAmazonIdentityManagementService",
+		"Amazon.Kinesis.IAmazonKinesis",		
+		"Amazon.RDS.IAmazonRDS",
+		"Amazon.S3.IAmazonS3",
+		"Amazon.SecurityToken.IAmazonSecurityTokenService",
+		"Amazon.SimpleDB.IAmazonSimpleDB",
+		"Amazon.SimpleEmail.IAmazonSimpleEmailService",
+		"Amazon.SimpleNotificationService.IAmazonSimpleNotificationService",
+		"Amazon.SQS.IAmazonSQS",
+		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
+		"Amazon.CognitoSync.IAmazonCognitoSync"
+	};
+#>

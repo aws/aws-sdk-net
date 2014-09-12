@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.Route53Domains.Model
         private DateTime? _submittedDate;
         private OperationType _type;
 
-
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._domainName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -81,7 +83,6 @@ namespace Amazon.Route53Domains.Model
             return this._message != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
@@ -103,7 +104,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._operationId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -127,7 +127,6 @@ namespace Amazon.Route53Domains.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SubmittedDate. 
         /// <para>
@@ -145,7 +144,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._submittedDate.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Type. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeLayers Request Marshaller
     /// </summary>       
-    public class DescribeLayersRequestMarshaller : IMarshaller<IRequest, DescribeLayersRequest> 
+    public class DescribeLayersRequestMarshaller : IMarshaller<IRequest, DescribeLayersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeLayersRequest)input);
+        }
+
         public IRequest Marshall(DescribeLayersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,21 +56,22 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetLayerIds())
                 {
-                    writer.WritePropertyName("LayerIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("LayerIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
                     {
-                        writer.Write(publicRequestLayerIdsListValue);
+                            context.Writer.Write(publicRequestLayerIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

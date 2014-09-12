@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// <summary>
     /// PutLogEvents Request Marshaller
     /// </summary>       
-    public class PutLogEventsRequestMarshaller : IMarshaller<IRequest, PutLogEventsRequest> 
+    public class PutLogEventsRequestMarshaller : IMarshaller<IRequest, PutLogEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((PutLogEventsRequest)input);
+        }
+
         public IRequest Marshall(PutLogEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
@@ -47,46 +56,39 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetLogEvents())
                 {
-                    writer.WritePropertyName("logEvents");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("logEvents");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestLogEventsListValue in publicRequest.LogEvents)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestLogEventsListValue.IsSetMessage())
-                        {
-                            writer.WritePropertyName("message");
-                            writer.Write(publicRequestLogEventsListValue.Message);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestLogEventsListValue.IsSetTimestamp())
-                        {
-                            writer.WritePropertyName("timestamp");
-                            writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequestLogEventsListValue.Timestamp));
-                        }
+                        var marshaller = InputLogEventMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLogEventsListValue, context);
 
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetLogGroupName())
                 {
-                    writer.WritePropertyName("logGroupName");
-                    writer.Write(publicRequest.LogGroupName);
+                    context.Writer.WritePropertyName("logGroupName");
+                    context.Writer.Write(publicRequest.LogGroupName);
                 }
 
                 if(publicRequest.IsSetLogStreamName())
                 {
-                    writer.WritePropertyName("logStreamName");
-                    writer.Write(publicRequest.LogStreamName);
+                    context.Writer.WritePropertyName("logStreamName");
+                    context.Writer.Write(publicRequest.LogStreamName);
                 }
 
                 if(publicRequest.IsSetSequenceToken())
                 {
-                    writer.WritePropertyName("sequenceToken");
-                    writer.Write(publicRequest.SequenceToken);
+                    context.Writer.WritePropertyName("sequenceToken");
+                    context.Writer.Write(publicRequest.SequenceToken);
                 }
 
         

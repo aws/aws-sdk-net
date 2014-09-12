@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         private int? _instancePort;
         private List<string> _policyNames = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property InstancePort. 
         /// <para>
@@ -50,7 +53,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._instancePort.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PolicyNames. 

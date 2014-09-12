@@ -12,93 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CustomerGateway Unmarshaller
-     /// </summary>
-    internal class CustomerGatewayUnmarshaller : IUnmarshaller<CustomerGateway, XmlUnmarshallerContext>, IUnmarshaller<CustomerGateway, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CustomerGateway Object
+    /// </summary>  
+    public class CustomerGatewayUnmarshaller : IUnmarshaller<CustomerGateway, XmlUnmarshallerContext>, IUnmarshaller<CustomerGateway, JsonUnmarshallerContext>
     {
-        public CustomerGateway Unmarshall(XmlUnmarshallerContext context) 
+        public CustomerGateway Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomerGateway customerGateway = new CustomerGateway();
+            CustomerGateway unmarshalledObject = new CustomerGateway();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("bgpAsn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BgpAsn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("customerGatewayId", targetDepth))
                     {
-                        customerGateway.CustomerGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        customerGateway.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("type", targetDepth))
-                    {
-                        customerGateway.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipAddress", targetDepth))
                     {
-                        customerGateway.IpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("bgpAsn", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
-                        customerGateway.BgpAsn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        customerGateway.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("type", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return customerGateway;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return customerGateway;
+            return unmarshalledObject;
         }
 
-        public CustomerGateway Unmarshall(JsonUnmarshallerContext context) 
+        public CustomerGateway Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CustomerGatewayUnmarshaller instance;
 
-        public static CustomerGatewayUnmarshaller GetInstance() 
+        private static CustomerGatewayUnmarshaller _instance = new CustomerGatewayUnmarshaller();        
+
+        public static CustomerGatewayUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CustomerGatewayUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

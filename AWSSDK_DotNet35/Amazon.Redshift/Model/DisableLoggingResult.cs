@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -35,7 +39,6 @@ namespace Amazon.Redshift.Model
         private bool? _loggingEnabled;
         private string _s3KeyPrefix;
 
-
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
@@ -53,7 +56,6 @@ namespace Amazon.Redshift.Model
         {
             return this._bucketName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LastFailureMessage. 
@@ -73,7 +75,6 @@ namespace Amazon.Redshift.Model
             return this._lastFailureMessage != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LastFailureTime. 
         /// <para>
@@ -91,7 +92,6 @@ namespace Amazon.Redshift.Model
         {
             return this._lastFailureTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LastSuccessfulDeliveryTime. 
@@ -111,7 +111,6 @@ namespace Amazon.Redshift.Model
             return this._lastSuccessfulDeliveryTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LoggingEnabled. 
         /// <para>
@@ -129,7 +128,6 @@ namespace Amazon.Redshift.Model
         {
             return this._loggingEnabled.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 

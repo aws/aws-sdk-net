@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CognitoSync.Model
         private int? _maxResults;
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property MaxResults. The maximum number of results to be returned.
         /// </summary>
@@ -47,7 +50,6 @@ namespace Amazon.CognitoSync.Model
         {
             return this._maxResults.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. A pagination token for obtaining the next page

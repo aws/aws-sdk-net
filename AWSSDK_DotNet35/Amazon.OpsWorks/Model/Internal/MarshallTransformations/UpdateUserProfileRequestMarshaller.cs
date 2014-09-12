@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateUserProfile Request Marshaller
     /// </summary>       
-    public class UpdateUserProfileRequestMarshaller : IMarshaller<IRequest, UpdateUserProfileRequest> 
+    public class UpdateUserProfileRequestMarshaller : IMarshaller<IRequest, UpdateUserProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateUserProfileRequest)input);
+        }
+
         public IRequest Marshall(UpdateUserProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,28 +56,29 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAllowSelfManagement())
                 {
-                    writer.WritePropertyName("AllowSelfManagement");
-                    writer.Write(publicRequest.AllowSelfManagement);
+                    context.Writer.WritePropertyName("AllowSelfManagement");
+                    context.Writer.Write(publicRequest.AllowSelfManagement);
                 }
 
                 if(publicRequest.IsSetIamUserArn())
                 {
-                    writer.WritePropertyName("IamUserArn");
-                    writer.Write(publicRequest.IamUserArn);
+                    context.Writer.WritePropertyName("IamUserArn");
+                    context.Writer.Write(publicRequest.IamUserArn);
                 }
 
                 if(publicRequest.IsSetSshPublicKey())
                 {
-                    writer.WritePropertyName("SshPublicKey");
-                    writer.Write(publicRequest.SshPublicKey);
+                    context.Writer.WritePropertyName("SshPublicKey");
+                    context.Writer.Write(publicRequest.SshPublicKey);
                 }
 
                 if(publicRequest.IsSetSshUsername())
                 {
-                    writer.WritePropertyName("SshUsername");
-                    writer.Write(publicRequest.SshUsername);
+                    context.Writer.WritePropertyName("SshUsername");
+                    context.Writer.Write(publicRequest.SshUsername);
                 }
 
         

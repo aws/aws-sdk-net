@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -51,7 +55,6 @@ namespace Amazon.AWSSupport.Model
         private int? _maxResults;
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property AfterTime. 
         /// <para>
@@ -70,7 +73,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._afterTime != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property BeforeTime. 
@@ -91,7 +93,6 @@ namespace Amazon.AWSSupport.Model
             return this._beforeTime != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CaseId. 
         /// <para>
@@ -111,7 +112,6 @@ namespace Amazon.AWSSupport.Model
             return this._caseId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
@@ -129,7 +129,6 @@ namespace Amazon.AWSSupport.Model
         {
             return this._maxResults.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. 

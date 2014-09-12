@@ -39,7 +39,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Grantee", targetDepth))
                     {
-                        grant.Grantee = GranteeUnmarshaller.GetInstance().Unmarshall(context);
+                        grant.Grantee = GranteeUnmarshaller.Instance.Unmarshall(context);
                             
                         continue;
                     }
@@ -66,14 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static GrantUnmarshaller instance;
+        private static GrantUnmarshaller _instance;
 
-        public static GrantUnmarshaller GetInstance() 
+        public static GrantUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new GrantUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GrantUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

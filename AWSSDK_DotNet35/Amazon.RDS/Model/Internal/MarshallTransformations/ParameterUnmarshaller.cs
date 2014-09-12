@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,117 +12,127 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Parameter Unmarshaller
-     /// </summary>
-    internal class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext>, IUnmarshaller<Parameter, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Parameter Object
+    /// </summary>  
+    public class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext>, IUnmarshaller<Parameter, JsonUnmarshallerContext>
     {
-        public Parameter Unmarshall(XmlUnmarshallerContext context) 
+        public Parameter Unmarshall(XmlUnmarshallerContext context)
         {
-            Parameter parameter = new Parameter();
+            Parameter unmarshalledObject = new Parameter();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ParameterName", targetDepth))
-                    {
-                        parameter.ParameterName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ParameterValue", targetDepth))
-                    {
-                        parameter.ParameterValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        parameter.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Source", targetDepth))
-                    {
-                        parameter.Source = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ApplyType", targetDepth))
-                    {
-                        parameter.ApplyType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DataType", targetDepth))
-                    {
-                        parameter.DataType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("AllowedValues", targetDepth))
                     {
-                        parameter.AllowedValues = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("IsModifiable", targetDepth))
-                    {
-                        parameter.IsModifiable = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MinimumEngineVersion", targetDepth))
-                    {
-                        parameter.MinimumEngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ApplyMethod", targetDepth))
                     {
-                        parameter.ApplyMethod = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplyMethod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ApplyType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplyType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DataType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IsModifiable", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsModifiable = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinimumEngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MinimumEngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ParameterName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ParameterValue", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Source", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return parameter;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return parameter;
+            return unmarshalledObject;
         }
 
-        public Parameter Unmarshall(JsonUnmarshallerContext context) 
+        public Parameter Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ParameterUnmarshaller instance;
 
-        public static ParameterUnmarshaller GetInstance() 
+        private static ParameterUnmarshaller _instance = new ParameterUnmarshaller();        
+
+        public static ParameterUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ParameterUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

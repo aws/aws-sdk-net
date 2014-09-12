@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class DescribeLoadBalancerPolicyTypesRequest : AmazonElasticLoadBalancingRequest
     {
         private List<string> _policyTypeNames = new List<string>();
-
 
         /// <summary>
         /// Gets and sets the property PolicyTypeNames. 

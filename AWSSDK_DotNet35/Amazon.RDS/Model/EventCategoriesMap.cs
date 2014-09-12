@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,54 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para>Contains the results of a successful invocation of the DescribeEventCategories action.</para>
+    /// Contains the results of a successful invocation of the <a>DescribeEventCategories</a>
+    /// action.
     /// </summary>
-    public class EventCategoriesMap
+    public partial class EventCategoriesMap
     {
-        
-        private string sourceType;
-        private List<string> eventCategories = new List<string>();
-
+        private List<string> _eventCategories = new List<string>();
+        private string _sourceType;
 
         /// <summary>
-        /// The source type that the returned categories belong to
-        ///  
-        /// </summary>
-        public string SourceType
-        {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this.sourceType != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EventCategories. 
+        /// <para>
         /// The event categories for the specified source type
-        ///  
+        /// </para>
         /// </summary>
         public List<string> EventCategories
         {
-            get { return this.eventCategories; }
-            set { this.eventCategories = value; }
+            get { return this._eventCategories; }
+            set { this._eventCategories = value; }
         }
 
         // Check to see if EventCategories property is set
         internal bool IsSetEventCategories()
         {
-            return this.eventCategories.Count > 0;
+            return this._eventCategories != null && this._eventCategories.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The source type that the returned categories belong to
+        /// </para>
+        /// </summary>
+        public string SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
+
     }
 }

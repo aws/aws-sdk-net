@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,110 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// <para>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value ( <c>StringValue</c>
-    /// ) or a reference to another object ( <c>RefValue</c> ) but not as both.</para>
+    /// A key-value pair that describes a property of a pipeline object. The value is specified
+    /// as either a string value (<code>StringValue</code>) or a reference to another object
+    /// (<code>RefValue</code>) but not as both.
     /// </summary>
-    public class Field
+    public partial class Field
     {
-        
-        private string key;
-        private string stringValue;
-        private string refValue;
+        private string _key;
+        private string _refValue;
+        private string _stringValue;
 
         /// <summary>
-        /// The field identifier.
-        ///  
+        /// Gets and sets the property Key. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The field identifier.
         /// </para>
         /// </summary>
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// The field value, expressed as a String.
-        ///  
+        /// Gets and sets the property RefValue. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10240</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string StringValue
-        {
-            get { return this.stringValue; }
-            set { this.stringValue = value; }
-        }
-
-        // Check to see if StringValue property is set
-        internal bool IsSetStringValue()
-        {
-            return this.stringValue != null;
-        }
-
-        /// <summary>
         /// The field value, expressed as the identifier of another object.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string RefValue
         {
-            get { return this.refValue; }
-            set { this.refValue = value; }
+            get { return this._refValue; }
+            set { this._refValue = value; }
         }
 
         // Check to see if RefValue property is set
         internal bool IsSetRefValue()
         {
-            return this.refValue != null;
+            return this._refValue != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property StringValue. 
+        /// <para>
+        /// The field value, expressed as a String.
+        /// </para>
+        /// </summary>
+        public string StringValue
+        {
+            get { return this._stringValue; }
+            set { this._stringValue = value; }
+        }
+
+        // Check to see if StringValue property is set
+        internal bool IsSetStringValue()
+        {
+            return this._stringValue != null;
+        }
+
     }
 }

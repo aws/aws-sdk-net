@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Password Data Request Marshaller
+    /// GetPasswordData Request Marshaller
     /// </summary>       
-    public class GetPasswordDataRequestMarshaller : IMarshaller<IRequest, GetPasswordDataRequest>
+    public class GetPasswordDataRequestMarshaller : IMarshaller<IRequest, GetPasswordDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(GetPasswordDataRequest getPasswordDataRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(getPasswordDataRequest, "AmazonEC2");
+            return this.Marshall((GetPasswordDataRequest)input);
+        }
+    
+        public IRequest Marshall(GetPasswordDataRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "GetPasswordData");
             request.Parameters.Add("Version", "2014-06-15");
-            if (getPasswordDataRequest != null && getPasswordDataRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(getPasswordDataRequest.InstanceId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+            }
             return request;
         }
     }

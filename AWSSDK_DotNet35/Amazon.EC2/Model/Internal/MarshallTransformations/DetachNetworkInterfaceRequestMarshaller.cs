@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Detach Network Interface Request Marshaller
+    /// DetachNetworkInterface Request Marshaller
     /// </summary>       
-    public class DetachNetworkInterfaceRequestMarshaller : IMarshaller<IRequest, DetachNetworkInterfaceRequest>
+    public class DetachNetworkInterfaceRequestMarshaller : IMarshaller<IRequest, DetachNetworkInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DetachNetworkInterfaceRequest detachNetworkInterfaceRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(detachNetworkInterfaceRequest, "AmazonEC2");
+            return this.Marshall((DetachNetworkInterfaceRequest)input);
+        }
+    
+        public IRequest Marshall(DetachNetworkInterfaceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DetachNetworkInterface");
             request.Parameters.Add("Version", "2014-06-15");
-            if (detachNetworkInterfaceRequest != null && detachNetworkInterfaceRequest.IsSetAttachmentId())
-            {
-                request.Parameters.Add("AttachmentId", StringUtils.FromString(detachNetworkInterfaceRequest.AttachmentId));
-            }
-            if (detachNetworkInterfaceRequest != null && detachNetworkInterfaceRequest.IsSetForce())
-            {
-                request.Parameters.Add("Force", StringUtils.FromBool(detachNetworkInterfaceRequest.Force));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttachmentId())
+                {
+                    request.Parameters.Add("AttachmentId", StringUtils.FromString(publicRequest.AttachmentId));
+                }
+                if(publicRequest.IsSetForce())
+                {
+                    request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
+                }
+            }
             return request;
         }
     }

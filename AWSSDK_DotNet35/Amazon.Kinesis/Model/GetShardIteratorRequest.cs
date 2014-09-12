@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,147 +29,148 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the GetShardIterator operation.
-    /// <para>This operation returns a shard iterator in <c>ShardIterator</c> . The shard iterator specifies the position in the shard from which
-    /// you want to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in
-    /// a shard. A sequence number is the identifier associated with every record ingested in the Amazon Kinesis stream. The sequence number is
-    /// assigned by the Amazon Kinesis service when a record is put into the stream. </para> <para>You must specify the shard iterator type in the
-    /// <c>GetShardIterator</c> request. For example, you can set the <c>ShardIteratorType</c> parameter to read exactly from the position denoted
-    /// by a specific sequence number by using the AT_SEQUENCE_NUMBER shard iterator type, or right after the sequence number by using the
-    /// AFTER_SEQUENCE_NUMBER shard iterator type, using sequence numbers returned by earlier PutRecord, GetRecords or DescribeStream requests. You
-    /// can specify the shard iterator type TRIM_HORIZON in the request to cause <c>ShardIterator</c> to point to the last untrimmed record in the
-    /// shard in the system, which is the oldest data record in the shard. Or you can point to just after the most recent record in the shard, by
-    /// using the shard iterator type LATEST, so that you always read the most recent data in the shard. </para> <para> <b>Note:</b> Each shard
-    /// iterator expires five minutes after it is returned to the requester.</para> <para>When you repeatedly read from an Amazon Kinesis stream use
-    /// a GetShardIterator request to get the first shard iterator to to use in your first <c>GetRecords</c> request and then use the shard iterator
-    /// returned by the <c>GetRecords</c> request in <c>NextShardIterator</c> for subsequent reads. A new shard iterator is returned by every
-    /// <c>GetRecords</c> request in <c>NextShardIterator</c> ,
-    /// which you use in the <c>ShardIterator</c> parameter of the next <c>GetRecords</c> request. </para> <para>If a
-    /// <c>GetShardIterator</c> request is made too often, you will receive a <c>ProvisionedThroughputExceededException</c> .
-    /// For more information about throughput limits, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis
-    /// Developer Guide</a> . </para> <para> <c>GetShardIterator</c> can return <c>null</c> for its <c>ShardIterator</c> to indicate that the shard
-    /// has been closed and that the requested iterator will return no more data. A shard can be closed by a SplitShard or MergeShards
-    /// operation.</para> <para> <c>GetShardIterator</c> has a limit of 5 transactions per second per account per open shard.</para>
+    /// Gets a shard iterator in <code>ShardIterator</code>. The shard iterator specifies
+    /// the position in the shard from which you want to start reading data records sequentially.
+    /// A shard iterator specifies this position using the sequence number of a data record
+    /// in a shard. A sequence number is the identifier associated with every record ingested
+    /// in the Amazon Kinesis stream. The sequence number is assigned when a record is put
+    /// into the stream. 
+    /// 
+    ///  
+    /// <para>
+    /// You must specify the shard iterator type. For example, you can set the <code>ShardIteratorType</code>
+    /// parameter to read exactly from the position denoted by a specific sequence number
+    /// by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type, or right after the
+    /// sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type,
+    /// using sequence numbers returned by earlier <a>PutRecord</a>, <a>GetRecords</a> or
+    /// <a>DescribeStream</a> requests. You can specify the shard iterator type TRIM_HORIZON
+    /// in the request to cause <code>ShardIterator</code> to point to the last untrimmed
+    /// record in the shard in the system, which is the oldest data record in the shard. Or
+    /// you can point to just after the most recent record in the shard, by using the shard
+    /// iterator type LATEST, so that you always read the most recent data in the shard. 
+    /// </para>
+    ///  
+    /// <para>
+    /// <b>Note:</b> Each shard iterator expires five minutes after it is returned to the
+    /// requester.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you repeatedly read from an Amazon Kinesis stream use a <a>GetShardIterator</a>
+    /// request to get the first shard iterator to to use in your first <code>GetRecords</code>
+    /// request and then use the shard iterator returned by the <code>GetRecords</code> request
+    /// in <code>NextShardIterator</code> for subsequent reads. A new shard iterator is returned
+    /// by every <code>GetRecords</code> request in <code>NextShardIterator</code>, which
+    /// you use in the <code>ShardIterator</code> parameter of the next <code>GetRecords</code>
+    /// request. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If a <code>GetShardIterator</code> request is made too often, you will receive a <code>ProvisionedThroughputExceededException</code>.
+    /// For more information about throughput limits, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/">Amazon
+    /// Kinesis Developer Guide</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// <code>GetShardIterator</code> can return <code>null</code> for its <code>ShardIterator</code>
+    /// to indicate that the shard has been closed and that the requested iterator will return
+    /// no more data. A shard can be closed by <a>SplitShard</a> or <a>MergeShards</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// <code>GetShardIterator</code> has a limit of 5 transactions per second per account
+    /// per open shard.
+    /// </para>
     /// </summary>
     public partial class GetShardIteratorRequest : AmazonKinesisRequest
     {
-        private string streamName;
-        private string shardId;
-        private ShardIteratorType shardIteratorType;
-        private string startingSequenceNumber;
-
+        private string _shardId;
+        private ShardIteratorType _shardIteratorType;
+        private string _startingSequenceNumber;
+        private string _streamName;
 
         /// <summary>
-        /// The name of the stream.
-        ///  
+        /// Gets and sets the property ShardId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string StreamName
-        {
-            get { return this.streamName; }
-            set { this.streamName = value; }
-        }
-
-        // Check to see if StreamName property is set
-        internal bool IsSetStreamName()
-        {
-            return this.streamName != null;
-        }
-
-        /// <summary>
         /// The shard ID of the shard to get the iterator for.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-zA-Z0-9_.-]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string ShardId
         {
-            get { return this.shardId; }
-            set { this.shardId = value; }
+            get { return this._shardId; }
+            set { this._shardId = value; }
         }
 
         // Check to see if ShardId property is set
         internal bool IsSetShardId()
         {
-            return this.shardId != null;
+            return this._shardId != null;
         }
 
         /// <summary>
-        /// Determines how the shard iterator is used to start reading data records from the shard. The following are the valid shard iterator types:
-        /// <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER
-        /// - Start reading right after the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start reading at the last untrimmed
-        /// record in the shard in the system, which is the oldest data record in the shard.</li> <li>LATEST - Start reading just after the most recent
-        /// record in the shard, so that you always read the most recent data in the shard.</li> </ul>
+        /// Gets and sets the property ShardIteratorType. 
+        /// <para>
+        /// Determines how the shard iterator is used to start reading data records from the shard.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST</description>
-        ///     </item>
-        /// </list>
+        /// The following are the valid shard iterator types:
         /// </para>
+        ///  <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by
+        /// a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after
+        /// the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start
+        /// reading at the last untrimmed record in the shard in the system, which is the oldest
+        /// data record in the shard.</li> <li>LATEST - Start reading just after the most recent
+        /// record in the shard, so that you always read the most recent data in the shard.</li>
+        /// </ul>
         /// </summary>
         public ShardIteratorType ShardIteratorType
         {
-            get { return this.shardIteratorType; }
-            set { this.shardIteratorType = value; }
+            get { return this._shardIteratorType; }
+            set { this._shardIteratorType = value; }
         }
 
         // Check to see if ShardIteratorType property is set
         internal bool IsSetShardIteratorType()
         {
-            return this.shardIteratorType != null;
+            return this._shardIteratorType != null;
         }
 
         /// <summary>
-        /// The sequence number of the data record in the shard from which to start reading from.
-        ///  
+        /// Gets and sets the property StartingSequenceNumber. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>0|([1-9]\d{0,128})</description>
-        ///     </item>
-        /// </list>
+        /// The sequence number of the data record in the shard from which to start reading from.
         /// </para>
         /// </summary>
         public string StartingSequenceNumber
         {
-            get { return this.startingSequenceNumber; }
-            set { this.startingSequenceNumber = value; }
+            get { return this._startingSequenceNumber; }
+            set { this._startingSequenceNumber = value; }
         }
 
         // Check to see if StartingSequenceNumber property is set
         internal bool IsSetStartingSequenceNumber()
         {
-            return this.startingSequenceNumber != null;
+            return this._startingSequenceNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamName. 
+        /// <para>
+        /// The name of the stream.
+        /// </para>
+        /// </summary>
+        public string StreamName
+        {
+            get { return this._streamName; }
+            set { this._streamName = value; }
+        }
+
+        // Check to see if StreamName property is set
+        internal bool IsSetStreamName()
+        {
+            return this._streamName != null;
         }
 
     }
 }
-    

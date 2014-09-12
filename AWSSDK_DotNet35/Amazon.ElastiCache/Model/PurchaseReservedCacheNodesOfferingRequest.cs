@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.ElastiCache.Model
         private int? _cacheNodeCount;
         private string _reservedCacheNodeId;
         private string _reservedCacheNodesOfferingId;
-
 
         /// <summary>
         /// Gets and sets the property CacheNodeCount. 
@@ -57,7 +60,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheNodeCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ReservedCacheNodeId. 
         /// <para>
@@ -79,7 +81,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._reservedCacheNodeId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReservedCacheNodesOfferingId. 

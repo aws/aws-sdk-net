@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,73 +12,104 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for SetAlarmState operation
-    /// </summary>
-    internal class SetAlarmStateResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for SetAlarmState operation
+    /// </summary>  
+    public class SetAlarmStateResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             SetAlarmStateResponse response = new SetAlarmStateResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                
                 if (context.IsStartElement)
-                {
+                {                    
+                    if(context.TestExpression("SetAlarmStateResult", 2))
+                    {
+                        UnmarshallResult(context, response);                        
+                        continue;
+                    }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
-                
             }
-                
 
             return response;
         }
-        
-        
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, SetAlarmStateResponse response)
+        {
+            
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
+            while (context.ReadAtDepth(originalDepth))
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+
+                } 
+           }
+
+            return;
+        }
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFormat"))
             {
                 return new InvalidFormatException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static SetAlarmStateResponseUnmarshaller instance;
+        private static SetAlarmStateResponseUnmarshaller _instance = new SetAlarmStateResponseUnmarshaller();        
 
-        public static SetAlarmStateResponseUnmarshaller GetInstance()
+        internal static SetAlarmStateResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new SetAlarmStateResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static SetAlarmStateResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

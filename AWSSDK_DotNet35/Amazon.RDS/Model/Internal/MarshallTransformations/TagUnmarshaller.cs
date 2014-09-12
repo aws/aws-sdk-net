@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Tag Unmarshaller
-     /// </summary>
-    internal class TagUnmarshaller : IUnmarshaller<Tag, XmlUnmarshallerContext>, IUnmarshaller<Tag, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Tag Object
+    /// </summary>  
+    public class TagUnmarshaller : IUnmarshaller<Tag, XmlUnmarshallerContext>, IUnmarshaller<Tag, JsonUnmarshallerContext>
     {
-        public Tag Unmarshall(XmlUnmarshallerContext context) 
+        public Tag Unmarshall(XmlUnmarshallerContext context)
         {
-            Tag tag = new Tag();
+            Tag unmarshalledObject = new Tag();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Key", targetDepth))
                     {
-                        tag.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Value", targetDepth))
                     {
-                        tag.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return tag;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return tag;
+            return unmarshalledObject;
         }
 
-        public Tag Unmarshall(JsonUnmarshallerContext context) 
+        public Tag Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static TagUnmarshaller instance;
 
-        public static TagUnmarshaller GetInstance() 
+        private static TagUnmarshaller _instance = new TagUnmarshaller();        
+
+        public static TagUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TagUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

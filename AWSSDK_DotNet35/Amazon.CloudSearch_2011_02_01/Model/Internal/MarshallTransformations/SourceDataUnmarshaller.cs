@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SourceData Unmarshaller
-     /// </summary>
-    internal class SourceDataUnmarshaller : IUnmarshaller<SourceData, XmlUnmarshallerContext>, IUnmarshaller<SourceData, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SourceData Object
+    /// </summary>  
+    public class SourceDataUnmarshaller : IUnmarshaller<SourceData, XmlUnmarshallerContext>, IUnmarshaller<SourceData, JsonUnmarshallerContext>
     {
-        public SourceData Unmarshall(XmlUnmarshallerContext context) 
+        public SourceData Unmarshall(XmlUnmarshallerContext context)
         {
-            SourceData sourceData = new SourceData();
+            SourceData unmarshalledObject = new SourceData();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SourceName", targetDepth))
-                    {
-                        sourceData.SourceName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        sourceData.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sourceData;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return sourceData;
+            return unmarshalledObject;
         }
 
-        public SourceData Unmarshall(JsonUnmarshallerContext context) 
+        public SourceData Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SourceDataUnmarshaller instance;
 
-        public static SourceDataUnmarshaller GetInstance() 
+        private static SourceDataUnmarshaller _instance = new SourceDataUnmarshaller();        
+
+        public static SourceDataUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SourceDataUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

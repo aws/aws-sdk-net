@@ -23,8 +23,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Object Request Marshaller
     /// </summary>       
-    public class DeleteObjectRequestMarshaller : IMarshaller<IRequest, DeleteObjectRequest>
-    {
+    public class DeleteObjectRequestMarshaller : IMarshaller<IRequest, DeleteObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((DeleteObjectRequest)input);
+		}
+
         public IRequest Marshall(DeleteObjectRequest deleteObjectRequest)
         {
             IRequest request = new DefaultRequest(deleteObjectRequest, "AmazonS3");

@@ -12,78 +12,89 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Replace Network Acl Entry Request Marshaller
+    /// ReplaceNetworkAclEntry Request Marshaller
     /// </summary>       
-    public class ReplaceNetworkAclEntryRequestMarshaller : IMarshaller<IRequest, ReplaceNetworkAclEntryRequest>
+    public class ReplaceNetworkAclEntryRequestMarshaller : IMarshaller<IRequest, ReplaceNetworkAclEntryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(replaceNetworkAclEntryRequest, "AmazonEC2");
+            return this.Marshall((ReplaceNetworkAclEntryRequest)input);
+        }
+    
+        public IRequest Marshall(ReplaceNetworkAclEntryRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ReplaceNetworkAclEntry");
             request.Parameters.Add("Version", "2014-06-15");
-            if (replaceNetworkAclEntryRequest != null && replaceNetworkAclEntryRequest.IsSetNetworkAclId())
-            {
-                request.Parameters.Add("NetworkAclId", StringUtils.FromString(replaceNetworkAclEntryRequest.NetworkAclId));
-            }
-            if (replaceNetworkAclEntryRequest != null && replaceNetworkAclEntryRequest.IsSetRuleNumber())
-            {
-                request.Parameters.Add("RuleNumber", StringUtils.FromInt(replaceNetworkAclEntryRequest.RuleNumber));
-            }
-            if (replaceNetworkAclEntryRequest != null && replaceNetworkAclEntryRequest.IsSetProtocol())
-            {
-                request.Parameters.Add("Protocol", StringUtils.FromString(replaceNetworkAclEntryRequest.Protocol));
-            }
-            if (replaceNetworkAclEntryRequest != null && replaceNetworkAclEntryRequest.IsSetRuleAction())
-            {
-                request.Parameters.Add("RuleAction", StringUtils.FromString(replaceNetworkAclEntryRequest.RuleAction));
-            }
-            if (replaceNetworkAclEntryRequest != null && replaceNetworkAclEntryRequest.IsSetEgress())
-            {
-                request.Parameters.Add("Egress", StringUtils.FromBool(replaceNetworkAclEntryRequest.Egress));
-            }
-            if (replaceNetworkAclEntryRequest != null && replaceNetworkAclEntryRequest.IsSetCidrBlock())
-            {
-                request.Parameters.Add("CidrBlock", StringUtils.FromString(replaceNetworkAclEntryRequest.CidrBlock));
-            }
-            if (replaceNetworkAclEntryRequest != null)
-            {
-                IcmpTypeCode icmpTypeCode = replaceNetworkAclEntryRequest.IcmpTypeCode;
-                if (icmpTypeCode != null && icmpTypeCode.IsSetType())
-                {
-                    request.Parameters.Add("Icmp.Type", StringUtils.FromInt(icmpTypeCode.Type));
-                }
-                if (icmpTypeCode != null && icmpTypeCode.IsSetCode())
-                {
-                    request.Parameters.Add("Icmp.Code", StringUtils.FromInt(icmpTypeCode.Code));
-                }
-            }
-            if (replaceNetworkAclEntryRequest != null)
-            {
-                PortRange portRange = replaceNetworkAclEntryRequest.PortRange;
-                if (portRange != null && portRange.IsSetFrom())
-                {
-                    request.Parameters.Add("PortRange.From", StringUtils.FromInt(portRange.From));
-                }
-                if (portRange != null && portRange.IsSetTo())
-                {
-                    request.Parameters.Add("PortRange.To", StringUtils.FromInt(portRange.To));
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCidrBlock())
+                {
+                    request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
+                }
+                if(publicRequest.IsSetEgress())
+                {
+                    request.Parameters.Add("Egress", StringUtils.FromBool(publicRequest.Egress));
+                }
+                if(publicRequest.IsSetIcmpTypeCode())
+                {
+                    if(publicRequest.IcmpTypeCode.IsSetCode())
+                    {
+                        request.Parameters.Add("Icmp" + "." + "Code", StringUtils.FromInt(publicRequest.IcmpTypeCode.Code));
+                    }
+                    if(publicRequest.IcmpTypeCode.IsSetType())
+                    {
+                        request.Parameters.Add("Icmp" + "." + "Type", StringUtils.FromInt(publicRequest.IcmpTypeCode.Type));
+                    }
+                }
+                if(publicRequest.IsSetNetworkAclId())
+                {
+                    request.Parameters.Add("NetworkAclId", StringUtils.FromString(publicRequest.NetworkAclId));
+                }
+                if(publicRequest.IsSetPortRange())
+                {
+                    if(publicRequest.PortRange.IsSetFrom())
+                    {
+                        request.Parameters.Add("PortRange" + "." + "From", StringUtils.FromInt(publicRequest.PortRange.From));
+                    }
+                    if(publicRequest.PortRange.IsSetTo())
+                    {
+                        request.Parameters.Add("PortRange" + "." + "To", StringUtils.FromInt(publicRequest.PortRange.To));
+                    }
+                }
+                if(publicRequest.IsSetProtocol())
+                {
+                    request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
+                }
+                if(publicRequest.IsSetRuleAction())
+                {
+                    request.Parameters.Add("RuleAction", StringUtils.FromString(publicRequest.RuleAction));
+                }
+                if(publicRequest.IsSetRuleNumber())
+                {
+                    request.Parameters.Add("RuleNumber", StringUtils.FromInt(publicRequest.RuleNumber));
+                }
+            }
             return request;
         }
     }

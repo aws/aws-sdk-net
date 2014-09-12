@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,44 +33,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Tape Archive Request Marshaller
+    /// DeleteTapeArchive Request Marshaller
     /// </summary>       
-    internal class DeleteTapeArchiveRequestMarshaller : IMarshaller<IRequest, DeleteTapeArchiveRequest> 
+    public class DeleteTapeArchiveRequestMarshaller : IMarshaller<IRequest, DeleteTapeArchiveRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(DeleteTapeArchiveRequest deleteTapeArchiveRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((DeleteTapeArchiveRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(deleteTapeArchiveRequest, "AmazonStorageGateway");
+        public IRequest Marshall(DeleteTapeArchiveRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
             string target = "StorageGateway_20130630.DeleteTapeArchive";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteTapeArchiveRequest != null && deleteTapeArchiveRequest.IsSetTapeARN()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetTapeARN())
                 {
-                    writer.WritePropertyName("TapeARN");
-                    writer.Write(deleteTapeArchiveRequest.TapeARN);
+                    context.Writer.WritePropertyName("TapeARN");
+                    context.Writer.Write(publicRequest.TapeARN);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

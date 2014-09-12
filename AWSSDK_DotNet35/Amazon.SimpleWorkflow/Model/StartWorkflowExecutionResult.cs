@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the StartWorkflowExecution action.
+    /// Contains the response data from the StartWorkflowExecution operation.
     /// </summary>
     public partial class StartWorkflowExecutionResult : AmazonWebServiceResponse
     {
-        private Run runValue;
+        private Run _run;
 
-        /// <summary>
-        /// Gets and sets the StartWorkflowExecutionResult property.
-        /// Contains the result of a successful invocation of the StartWorkflowExecution
-        /// action.
-        /// </summary>
+        // Gets and sets the Run member
         public Run Run
         {
-            get { return this.runValue; }
-            set { this.runValue = value; }
+            get { return this._run; }
+            set { this._run = value; }
+        }
+
+        // Check to see if Run property is set
+        internal bool IsSetRun()
+        {
+            return this._run != null;
         }
     }
 }
-    

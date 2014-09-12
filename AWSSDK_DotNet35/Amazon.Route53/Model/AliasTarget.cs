@@ -12,98 +12,129 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para> <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.</para> <para>For more
-    /// information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html" >Creating Alias
-    /// Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i> </para> <para>. </para>
+    /// <i>Alias resource record sets only:</i> Information about the domain to which you
+    /// are redirecting traffic.
+    /// 
+    ///  
+    /// <para>
+    /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+    /// Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i>
+    /// </para>
+    /// .
     /// </summary>
     public partial class AliasTarget
     {
-        
-        private string hostedZoneId;
-        private string dNSName;
-        private bool? evaluateTargetHealth;
-
+        private string _hostedZoneId;
+        private string _dNSName;
+        private bool? _evaluateTargetHealth;
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information and an example, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AliasTarget() { }
+
+        /// <summary>
+        /// Instantiates AliasTarget with the parameterized properties
+        /// </summary>
+        /// <param name="hostedZoneId"><i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i>.</param>
+        /// <param name="dnsName"><i>Alias resource record sets only:</i> The external DNS name associated with the AWS Resource. For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i>.</param>
+        public AliasTarget(string hostedZoneId, string dnsName)
+        {
+            _hostedZoneId = hostedZoneId;
+            _dNSName = dnsName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS
+        /// resource.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 32</description>
-        ///     </item>
-        /// </list>
+        /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+        /// Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i>
         /// </para>
+        /// .
         /// </summary>
         public string HostedZoneId
         {
-            get { return this.hostedZoneId; }
-            set { this.hostedZoneId = value; }
+            get { return this._hostedZoneId; }
+            set { this._hostedZoneId = value; }
         }
 
         // Check to see if HostedZoneId property is set
         internal bool IsSetHostedZoneId()
         {
-            return this.hostedZoneId != null;
+            return this._hostedZoneId != null;
         }
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The external DNS name associated with the AWS Resource. For more information and an example, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.
+        /// Gets and sets the property DNSName. 
+        /// <para>
+        /// <i>Alias resource record sets only:</i> The external DNS name associated with the
+        /// AWS Resource.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
+        /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+        /// Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i>
         /// </para>
+        /// .
         /// </summary>
         public string DNSName
         {
-            get { return this.dNSName; }
-            set { this.dNSName = value; }
+            get { return this._dNSName; }
+            set { this._dNSName = value; }
         }
 
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;
+            return this._dNSName != null;
         }
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> A boolean value that indicates whether this Resource Record Set should respect the health status of
-        /// any health checks associated with the ALIAS target record which it is linked to. For more information and an example, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.
+        /// Gets and sets the property EvaluateTargetHealth. 
+        /// <para>
+        /// <i>Alias resource record sets only:</i> A boolean value that indicates whether this
+        /// Resource Record Set should respect the health status of any health checks associated
+        /// with the ALIAS target record which it is linked to.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+        /// Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i>
+        /// </para>
+        /// .
         /// </summary>
         public bool EvaluateTargetHealth
         {
-            get { return this.evaluateTargetHealth ?? default(bool); }
-            set { this.evaluateTargetHealth = value; }
+            get { return this._evaluateTargetHealth.GetValueOrDefault(); }
+            set { this._evaluateTargetHealth = value; }
         }
 
         // Check to see if EvaluateTargetHealth property is set
         internal bool IsSetEvaluateTargetHealth()
         {
-            return this.evaluateTargetHealth.HasValue;
+            return this._evaluateTargetHealth.HasValue; 
         }
+
     }
 }

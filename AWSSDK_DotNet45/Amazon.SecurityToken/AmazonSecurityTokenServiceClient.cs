@@ -13,11 +13,16 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
+
 
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.Model.Internal.MarshallTransformations;
@@ -86,19 +91,8 @@ namespace Amazon.SecurityToken
     ///        CloudTrail User Guide</a>.
     /// </para>
     /// </summary>
-    public partial class AmazonSecurityTokenServiceClient : AmazonWebServiceClient, IAmazonSecurityTokenService
+    public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -117,7 +111,7 @@ namespace Amazon.SecurityToken
         ///
         /// </summary>
         public AmazonSecurityTokenServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
@@ -136,7 +130,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecurityTokenServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
@@ -155,7 +149,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="config">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AmazonSecurityTokenServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials
@@ -183,7 +177,7 @@ namespace Amazon.SecurityToken
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AWSCredentials credentials, AmazonSecurityTokenServiceConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -216,7 +210,7 @@ namespace Amazon.SecurityToken
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSecurityTokenServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -252,15 +246,33 @@ namespace Amazon.SecurityToken
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonSecurityTokenServiceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }    
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AssumeRole
-
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -375,16 +387,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
-            var task = AssumeRoleAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AssumeRoleRequestMarshaller();
+            var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -397,17 +403,18 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssumeRoleRequestMarshaller();
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  AssumeRoleWithSAML
-
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -502,16 +509,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
-            var task = AssumeRoleWithSAMLAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -524,17 +525,18 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AssumeRoleWithSAMLRequest, AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  AssumeRoleWithWebIdentity
-
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -648,16 +650,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
-            var task = AssumeRoleWithWebIdentityAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -670,17 +666,18 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
-            return Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  DecodeAuthorizationMessage
-
 
         /// <summary>
         /// Decodes additional information about the authorization status of a request from an
@@ -724,16 +721,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
-            var task = DecodeAuthorizationMessageAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
+
+            return Invoke<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -746,17 +737,18 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DecodeAuthorizationMessageRequest, DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  GetFederationToken
-
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -856,16 +848,10 @@ namespace Amazon.SecurityToken
         /// </exception>
         public GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var task = GetFederationTokenAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetFederationTokenRequestMarshaller();
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -878,11 +864,13 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFederationTokenRequestMarshaller();
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
@@ -989,16 +977,10 @@ namespace Amazon.SecurityToken
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
         public GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
-            var task = GetSessionTokenAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new GetSessionTokenRequestMarshaller();
+            var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1011,11 +993,13 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSessionTokenRequestMarshaller();
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

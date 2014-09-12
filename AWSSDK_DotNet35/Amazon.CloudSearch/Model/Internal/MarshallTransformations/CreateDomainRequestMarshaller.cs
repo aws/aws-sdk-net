@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Domain Request Marshaller
+    /// CreateDomain Request Marshaller
     /// </summary>       
-    public class CreateDomainRequestMarshaller : IMarshaller<IRequest, CreateDomainRequest>
+    public class CreateDomainRequestMarshaller : IMarshaller<IRequest, CreateDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateDomainRequest createDomainRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createDomainRequest, "AmazonCloudSearch");
+            return this.Marshall((CreateDomainRequest)input);
+        }
+    
+        public IRequest Marshall(CreateDomainRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "CreateDomain");
             request.Parameters.Add("Version", "2013-01-01");
-            if (createDomainRequest != null && createDomainRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(createDomainRequest.DomainName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+            }
             return request;
         }
     }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,7 +53,6 @@ namespace Amazon.OpsWorks.Model
         private string _os;
         private string _sshKeyName;
 
-
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
@@ -69,7 +72,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._amiId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Architecture. 
@@ -91,7 +93,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._architecture != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property AutoScalingType. 
@@ -116,7 +117,6 @@ namespace Amazon.OpsWorks.Model
             return this._autoScalingType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
@@ -135,7 +135,6 @@ namespace Amazon.OpsWorks.Model
             return this._ebsOptimized.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
@@ -153,7 +152,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._hostname != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstallUpdatesOnBoot. 
@@ -178,7 +176,6 @@ namespace Amazon.OpsWorks.Model
             return this._installUpdatesOnBoot.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -196,7 +193,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -219,7 +215,6 @@ namespace Amazon.OpsWorks.Model
             return this._instanceType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LayerIds. 
         /// <para>
@@ -237,7 +232,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._layerIds != null && this._layerIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Os. 
@@ -267,7 +261,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._os != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SshKeyName. 

@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.AWSSupport.Model;
 using Amazon.AWSSupport.Model.Internal.MarshallTransformations;
@@ -79,19 +83,8 @@ namespace Amazon.AWSSupport
     /// Advisor for results of checks on your resources. 
     /// </para>
     /// </summary>
-    public partial class AmazonAWSSupportClient : AmazonWebServiceClient, IAmazonAWSSupport
+    public partial class AmazonAWSSupportClient : AmazonServiceClient, IAmazonAWSSupport
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -110,7 +103,7 @@ namespace Amazon.AWSSupport
         ///
         /// </summary>
         public AmazonAWSSupportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
@@ -129,7 +122,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAWSSupportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
@@ -148,7 +141,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// <param name="config">The AmazonAWSSupportClient Configuration Object</param>
         public AmazonAWSSupportClient(AmazonAWSSupportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonAWSSupportClient with AWS Credentials
@@ -176,7 +169,7 @@ namespace Amazon.AWSSupport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonAWSSupportClient Configuration Object</param>
         public AmazonAWSSupportClient(AWSCredentials credentials, AmazonAWSSupportConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -209,7 +202,7 @@ namespace Amazon.AWSSupport
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonAWSSupportClient Configuration Object</param>
         public AmazonAWSSupportClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAWSSupportConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -245,15 +238,33 @@ namespace Amazon.AWSSupport
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonAWSSupportClient Configuration Object</param>
         public AmazonAWSSupportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonAWSSupportConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AddAttachmentsToSet
-
 
         /// <summary>
         /// Adds one or more attachments to an attachment set. If an <code>AttachmentSetId</code>
@@ -293,8 +304,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request)
         {
-            IAsyncResult asyncResult = invokeAddAttachmentsToSet(request, null, null, true);
-            return EndAddAttachmentsToSet(asyncResult);
+            var marshaller = new AddAttachmentsToSetRequestMarshaller();
+            var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
+
+            return Invoke<AddAttachmentsToSetRequest,AddAttachmentsToSetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -311,10 +324,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginAddAttachmentsToSet(AddAttachmentsToSetRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddAttachmentsToSet(request, callback, state, false);
+            var marshaller = new AddAttachmentsToSetRequestMarshaller();
+            var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddAttachmentsToSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddAttachmentsToSet operation.
@@ -326,21 +341,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  AddAttachmentsToSetResult from AWSSupport.</returns>
         public  AddAttachmentsToSetResponse EndAddAttachmentsToSet(IAsyncResult asyncResult)
         {
-            return endOperation< AddAttachmentsToSetResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddAttachmentsToSet(AddAttachmentsToSetRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddAttachmentsToSetRequestMarshaller();
-            var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddAttachmentsToSetResponse>(asyncResult);
         }
 
         #endregion
         
         #region  AddCommunicationToCase
-
 
         /// <summary>
         /// Adds additional customer communication to an AWS Support case. You use the <code>CaseId</code>
@@ -376,8 +382,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
         {
-            IAsyncResult asyncResult = invokeAddCommunicationToCase(request, null, null, true);
-            return EndAddCommunicationToCase(asyncResult);
+            var marshaller = new AddCommunicationToCaseRequestMarshaller();
+            var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
+
+            return Invoke<AddCommunicationToCaseRequest,AddCommunicationToCaseResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -394,10 +402,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginAddCommunicationToCase(AddCommunicationToCaseRequest request, AsyncCallback callback, object state)
         {
-            return invokeAddCommunicationToCase(request, callback, state, false);
+            var marshaller = new AddCommunicationToCaseRequestMarshaller();
+            var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddCommunicationToCaseRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddCommunicationToCase operation.
@@ -409,21 +419,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  AddCommunicationToCaseResult from AWSSupport.</returns>
         public  AddCommunicationToCaseResponse EndAddCommunicationToCase(IAsyncResult asyncResult)
         {
-            return endOperation< AddCommunicationToCaseResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAddCommunicationToCase(AddCommunicationToCaseRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AddCommunicationToCaseRequestMarshaller();
-            var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AddCommunicationToCaseResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateCase
-
 
         /// <summary>
         /// Creates a new case in the AWS Support Center. This operation is modeled on the behavior
@@ -482,8 +483,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateCase(request, null, null, true);
-            return EndCreateCase(asyncResult);
+            var marshaller = new CreateCaseRequestMarshaller();
+            var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCaseRequest,CreateCaseResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -500,10 +503,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginCreateCase(CreateCaseRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateCase(request, callback, state, false);
+            var marshaller = new CreateCaseRequestMarshaller();
+            var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateCaseRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCase operation.
@@ -515,21 +520,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  CreateCaseResult from AWSSupport.</returns>
         public  CreateCaseResponse EndCreateCase(IAsyncResult asyncResult)
         {
-            return endOperation< CreateCaseResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateCase(CreateCaseRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateCaseRequestMarshaller();
-            var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateCaseResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeAttachment
-
 
         /// <summary>
         /// Returns the attachment that has the specified ID. Attachment IDs are generated by
@@ -552,8 +548,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeAttachment(request, null, null, true);
-            return EndDescribeAttachment(asyncResult);
+            var marshaller = new DescribeAttachmentRequestMarshaller();
+            var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAttachmentRequest,DescribeAttachmentResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -570,10 +568,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeAttachment(DescribeAttachmentRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeAttachment(request, callback, state, false);
+            var marshaller = new DescribeAttachmentRequestMarshaller();
+            var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAttachmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAttachment operation.
@@ -585,21 +585,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeAttachmentResult from AWSSupport.</returns>
         public  DescribeAttachmentResponse EndDescribeAttachment(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAttachmentResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeAttachment(DescribeAttachmentRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAttachmentRequestMarshaller();
-            var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAttachmentResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeCases
-
 
         /// <summary>
         /// Returns a list of cases that you specify by passing one or more case IDs. In addition,
@@ -630,8 +621,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCases(request, null, null, true);
-            return EndDescribeCases(asyncResult);
+            var marshaller = new DescribeCasesRequestMarshaller();
+            var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCasesRequest,DescribeCasesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -648,10 +641,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCases(DescribeCasesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCases(request, callback, state, false);
+            var marshaller = new DescribeCasesRequestMarshaller();
+            var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCasesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCases operation.
@@ -663,21 +658,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeCasesResult from AWSSupport.</returns>
         public  DescribeCasesResponse EndDescribeCases(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCasesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCases(DescribeCasesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCasesRequestMarshaller();
-            var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCasesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeCommunications
-
 
         /// <summary>
         /// Returns communications (and attachments) for one or more support cases. You can use
@@ -709,8 +695,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCommunications(request, null, null, true);
-            return EndDescribeCommunications(asyncResult);
+            var marshaller = new DescribeCommunicationsRequestMarshaller();
+            var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCommunicationsRequest,DescribeCommunicationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -727,10 +715,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCommunications(DescribeCommunicationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCommunications(request, callback, state, false);
+            var marshaller = new DescribeCommunicationsRequestMarshaller();
+            var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCommunicationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCommunications operation.
@@ -742,15 +732,7 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeCommunicationsResult from AWSSupport.</returns>
         public  DescribeCommunicationsResponse EndDescribeCommunications(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCommunicationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCommunications(DescribeCommunicationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCommunicationsRequestMarshaller();
-            var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCommunicationsResponse>(asyncResult);
         }
 
         #endregion
@@ -807,8 +789,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeServices(request, null, null, true);
-            return EndDescribeServices(asyncResult);
+            var marshaller = new DescribeServicesRequestMarshaller();
+            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -825,10 +809,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeServices(request, callback, state, false);
+            var marshaller = new DescribeServicesRequestMarshaller();
+            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeServicesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeServices operation.
@@ -840,15 +826,7 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeServicesResult from AWSSupport.</returns>
         public  DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeServicesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeServicesRequestMarshaller();
-            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeServicesResponse>(asyncResult);
         }
 
         #endregion
@@ -883,8 +861,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeSeverityLevels(request, null, null, true);
-            return EndDescribeSeverityLevels(asyncResult);
+            var marshaller = new DescribeSeverityLevelsRequestMarshaller();
+            var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSeverityLevelsRequest,DescribeSeverityLevelsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -901,10 +881,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeSeverityLevels(DescribeSeverityLevelsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeSeverityLevels(request, callback, state, false);
+            var marshaller = new DescribeSeverityLevelsRequestMarshaller();
+            var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeSeverityLevelsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeSeverityLevels operation.
@@ -916,21 +898,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeSeverityLevelsResult from AWSSupport.</returns>
         public  DescribeSeverityLevelsResponse EndDescribeSeverityLevels(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeSeverityLevelsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeSeverityLevels(DescribeSeverityLevelsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeSeverityLevelsRequestMarshaller();
-            var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeSeverityLevelsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeTrustedAdvisorCheckRefreshStatuses
-
 
         /// <summary>
         /// Returns the refresh status of the Trusted Advisor checks that have the specified check
@@ -944,8 +917,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTrustedAdvisorCheckRefreshStatuses(request, null, null, true);
-            return EndDescribeTrustedAdvisorCheckRefreshStatuses(asyncResult);
+            var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustedAdvisorCheckRefreshStatusesRequest,DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -962,10 +937,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTrustedAdvisorCheckRefreshStatuses(request, callback, state, false);
+            var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTrustedAdvisorCheckRefreshStatusesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTrustedAdvisorCheckRefreshStatuses operation.
@@ -977,21 +954,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeTrustedAdvisorCheckRefreshStatusesResult from AWSSupport.</returns>
         public  DescribeTrustedAdvisorCheckRefreshStatusesResponse EndDescribeTrustedAdvisorCheckRefreshStatuses(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTrustedAdvisorCheckRefreshStatusesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
-            var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTrustedAdvisorCheckRefreshStatusesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeTrustedAdvisorCheckResult
-
 
         /// <summary>
         /// Returns the results of the Trusted Advisor check that has the specified check ID.
@@ -1020,8 +988,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTrustedAdvisorCheckResult(request, null, null, true);
-            return EndDescribeTrustedAdvisorCheckResult(asyncResult);
+            var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustedAdvisorCheckResultRequest,DescribeTrustedAdvisorCheckResultResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1038,10 +1008,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTrustedAdvisorCheckResult(request, callback, state, false);
+            var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTrustedAdvisorCheckResultRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTrustedAdvisorCheckResult operation.
@@ -1053,21 +1025,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeTrustedAdvisorCheckResultResult from AWSSupport.</returns>
         public  DescribeTrustedAdvisorCheckResultResponse EndDescribeTrustedAdvisorCheckResult(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTrustedAdvisorCheckResultResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
-            var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTrustedAdvisorCheckResultResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeTrustedAdvisorChecks
-
 
         /// <summary>
         /// Returns information about all available Trusted Advisor checks, including name, ID,
@@ -1083,8 +1046,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTrustedAdvisorChecks(request, null, null, true);
-            return EndDescribeTrustedAdvisorChecks(asyncResult);
+            var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustedAdvisorChecksRequest,DescribeTrustedAdvisorChecksResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1101,10 +1066,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTrustedAdvisorChecks(request, callback, state, false);
+            var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTrustedAdvisorChecksRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTrustedAdvisorChecks operation.
@@ -1116,21 +1083,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeTrustedAdvisorChecksResult from AWSSupport.</returns>
         public  DescribeTrustedAdvisorChecksResponse EndDescribeTrustedAdvisorChecks(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTrustedAdvisorChecksResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
-            var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTrustedAdvisorChecksResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeTrustedAdvisorCheckSummaries
-
 
         /// <summary>
         /// Returns the summaries of the results of the Trusted Advisor checks that have the specified
@@ -1149,8 +1107,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTrustedAdvisorCheckSummaries(request, null, null, true);
-            return EndDescribeTrustedAdvisorCheckSummaries(asyncResult);
+            var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustedAdvisorCheckSummariesRequest,DescribeTrustedAdvisorCheckSummariesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1167,10 +1127,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTrustedAdvisorCheckSummaries(request, callback, state, false);
+            var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
+            var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTrustedAdvisorCheckSummariesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTrustedAdvisorCheckSummaries operation.
@@ -1182,21 +1144,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  DescribeTrustedAdvisorCheckSummariesResult from AWSSupport.</returns>
         public  DescribeTrustedAdvisorCheckSummariesResponse EndDescribeTrustedAdvisorCheckSummaries(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTrustedAdvisorCheckSummariesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
-            var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTrustedAdvisorCheckSummariesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RefreshTrustedAdvisorCheck
-
 
         /// <summary>
         /// Requests a refresh of the Trusted Advisor check that has the specified check ID. Check
@@ -1220,8 +1173,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
         {
-            IAsyncResult asyncResult = invokeRefreshTrustedAdvisorCheck(request, null, null, true);
-            return EndRefreshTrustedAdvisorCheck(asyncResult);
+            var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
+            var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
+
+            return Invoke<RefreshTrustedAdvisorCheckRequest,RefreshTrustedAdvisorCheckResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1238,10 +1193,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request, AsyncCallback callback, object state)
         {
-            return invokeRefreshTrustedAdvisorCheck(request, callback, state, false);
+            var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
+            var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RefreshTrustedAdvisorCheckRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RefreshTrustedAdvisorCheck operation.
@@ -1253,21 +1210,12 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  RefreshTrustedAdvisorCheckResult from AWSSupport.</returns>
         public  RefreshTrustedAdvisorCheckResponse EndRefreshTrustedAdvisorCheck(IAsyncResult asyncResult)
         {
-            return endOperation< RefreshTrustedAdvisorCheckResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
-            var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RefreshTrustedAdvisorCheckResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ResolveCase
-
 
         /// <summary>
         /// Takes a <code>CaseId</code> and returns the initial state of the case along with the
@@ -1284,8 +1232,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         public ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
         {
-            IAsyncResult asyncResult = invokeResolveCase(request, null, null, true);
-            return EndResolveCase(asyncResult);
+            var marshaller = new ResolveCaseRequestMarshaller();
+            var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
+
+            return Invoke<ResolveCaseRequest,ResolveCaseResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1302,10 +1252,12 @@ namespace Amazon.AWSSupport
         ///         operation.</returns>
         public IAsyncResult BeginResolveCase(ResolveCaseRequest request, AsyncCallback callback, object state)
         {
-            return invokeResolveCase(request, callback, state, false);
+            var marshaller = new ResolveCaseRequestMarshaller();
+            var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResolveCaseRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ResolveCase operation.
@@ -1317,15 +1269,7 @@ namespace Amazon.AWSSupport
         /// <returns>Returns a  ResolveCaseResult from AWSSupport.</returns>
         public  ResolveCaseResponse EndResolveCase(IAsyncResult asyncResult)
         {
-            return endOperation< ResolveCaseResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeResolveCase(ResolveCaseRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ResolveCaseRequestMarshaller();
-            var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ResolveCaseResponse>(asyncResult);
         }
 
         #endregion

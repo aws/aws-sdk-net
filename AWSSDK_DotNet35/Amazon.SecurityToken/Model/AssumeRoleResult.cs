@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.SecurityToken.Model
         private AssumedRoleUser _assumedRoleUser;
         private Credentials _credentials;
         private int? _packedPolicySize;
-
 
         /// <summary>
         /// Gets and sets the property AssumedRoleUser. 
@@ -56,7 +59,6 @@ namespace Amazon.SecurityToken.Model
             return this._assumedRoleUser != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
@@ -75,7 +77,6 @@ namespace Amazon.SecurityToken.Model
         {
             return this._credentials != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PackedPolicySize. 

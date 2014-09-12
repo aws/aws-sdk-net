@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeServiceErrors Request Marshaller
     /// </summary>       
-    public class DescribeServiceErrorsRequestMarshaller : IMarshaller<IRequest, DescribeServiceErrorsRequest> 
+    public class DescribeServiceErrorsRequestMarshaller : IMarshaller<IRequest, DescribeServiceErrorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeServiceErrorsRequest)input);
+        }
+
         public IRequest Marshall(DescribeServiceErrorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,27 +56,28 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetInstanceId())
                 {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(publicRequest.InstanceId);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
                 if(publicRequest.IsSetServiceErrorIds())
                 {
-                    writer.WritePropertyName("ServiceErrorIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("ServiceErrorIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestServiceErrorIdsListValue in publicRequest.ServiceErrorIds)
                     {
-                        writer.Write(publicRequestServiceErrorIdsListValue);
+                            context.Writer.Write(publicRequestServiceErrorIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -62,6 +66,23 @@ namespace Amazon.SimpleEmail.Model
         private string _returnPath;
         private string _source;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SendEmailRequest() { }
+
+        /// <summary>
+        /// Instantiates SendEmailRequest with the parameterized properties
+        /// </summary>
+        /// <param name="source">The identity's email address.     By default, the string must be 7-bit ASCII. If the text must contain any other characters,    then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string.    MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.    For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.  </param>
+        /// <param name="destination">The destination for this email, composed of To:, CC:, and BCC: fields.</param>
+        /// <param name="message">The message to be sent.</param>
+        public SendEmailRequest(string source, Destination destination, Message message)
+        {
+            _source = source;
+            _destination = destination;
+            _message = message;
+        }
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -81,7 +102,6 @@ namespace Amazon.SimpleEmail.Model
             return this._destination != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
@@ -99,7 +119,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._message != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReplyToAddresses. 
@@ -119,7 +138,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._replyToAddresses != null && this._replyToAddresses.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ReturnPath. 
@@ -142,7 +160,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._returnPath != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Source. 

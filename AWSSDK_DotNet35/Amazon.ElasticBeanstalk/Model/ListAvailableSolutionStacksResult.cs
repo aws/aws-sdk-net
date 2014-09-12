@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,19 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A         list of available AWS Elastic Beanstalk         solution stacks.
+    /// A list of available AWS Elastic Beanstalk solution stacks.
     /// </summary>
     public partial class ListAvailableSolutionStacksResult : AmazonWebServiceResponse
     {
         private List<SolutionStackDescription> _solutionStackDetails = new List<SolutionStackDescription>();
         private List<string> _solutionStacks = new List<string>();
 
-
         /// <summary>
         /// Gets and sets the property SolutionStackDetails. 
         /// <para>
-        ///          A list of available solution stacks and their <a>SolutionStackDescription</a>.
-        ///      
+        ///  A list of available solution stacks and their <a>SolutionStackDescription</a>. 
         /// </para>
         /// </summary>
         public List<SolutionStackDescription> SolutionStackDetails
@@ -51,11 +53,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._solutionStackDetails != null && this._solutionStackDetails.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SolutionStacks. 
         /// <para>
-        ///          A list of available solution stacks.        
+        ///  A list of available solution stacks. 
         /// </para>
         /// </summary>
         public List<string> SolutionStacks

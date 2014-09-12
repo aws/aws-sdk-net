@@ -37,6 +37,11 @@ namespace Amazon.Util
             {
             }
 
+            public override Type BaseType
+            {
+                get { return this._type.BaseType; }
+            }
+
             public override FieldInfo GetField(string name)
             {
                 return this._type.GetField(name);

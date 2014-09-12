@@ -1,0 +1,6 @@
+{
+  "noArgOverloads": [
+    "DescribeDomains",
+	"ListDomainNames"
+  ]
+}

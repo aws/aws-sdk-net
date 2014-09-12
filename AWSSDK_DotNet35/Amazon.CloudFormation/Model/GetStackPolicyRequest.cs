@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,30 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStackPolicy operation.
-    /// <para>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</para>
+    /// Returns the stack policy for a specified stack. If a stack doesn't have a policy,
+    /// a null value is returned.
     /// </summary>
     public partial class GetStackPolicyRequest : AmazonCloudFormationRequest
     {
-        private string stackName;
-
+        private string _stackName;
 
         /// <summary>
+        /// Gets and sets the property StackName. 
+        /// <para>
         /// The name or stack ID that is associated with the stack whose policy you want to get.
-        ///  
+        /// </para>
         /// </summary>
         public string StackName
         {
-            get { return this.stackName; }
-            set { this.stackName = value; }
+            get { return this._stackName; }
+            set { this._stackName = value; }
         }
 
         // Check to see if StackName property is set
         internal bool IsSetStackName()
         {
-            return this.stackName != null;
+            return this._stackName != null;
         }
 
     }
 }
-    

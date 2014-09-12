@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,98 +29,151 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateConnectionOnInterconnect operation.
-    /// <para>Creates a hosted connection on an interconnect.</para> <para>Allocates a VLAN number and a specified amount of bandwidth for use by a
-    /// hosted connection on the given interconnect.</para>
+    /// Creates a hosted connection on an interconnect.
+    /// 
+    ///  
+    /// <para>
+    /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
+    /// on the given interconnect.
+    /// </para>
     /// </summary>
     public partial class AllocateConnectionOnInterconnectRequest : AmazonDirectConnectRequest
     {
-        private string bandwidth;
-        private string connectionName;
-        private string ownerAccount;
-        private string interconnectId;
-        private int? vlan;
-
+        private string _bandwidth;
+        private string _connectionName;
+        private string _interconnectId;
+        private string _ownerAccount;
+        private int? _vlan;
 
         /// <summary>
-        /// Bandwidth of the connection. Example: 1Gbps Default: None
+        /// Gets and sets the property Bandwidth. 
+        /// <para>
+        /// Bandwidth of the connection.
+        /// </para>
         ///  
+        /// <para>
+        /// Example: "<i>500Mbps</i>"
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public string Bandwidth
         {
-            get { return this.bandwidth; }
-            set { this.bandwidth = value; }
+            get { return this._bandwidth; }
+            set { this._bandwidth = value; }
         }
 
         // Check to see if Bandwidth property is set
         internal bool IsSetBandwidth()
         {
-            return this.bandwidth != null;
+            return this._bandwidth != null;
         }
 
         /// <summary>
-        /// Name of the provisioned connection. Example: "<i>500M Connection to AWS</i>" Default: None
+        /// Gets and sets the property ConnectionName. 
+        /// <para>
+        /// Name of the provisioned connection.
+        /// </para>
         ///  
+        /// <para>
+        /// Example: "<i>500M Connection to AWS</i>"
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public string ConnectionName
         {
-            get { return this.connectionName; }
-            set { this.connectionName = value; }
+            get { return this._connectionName; }
+            set { this._connectionName = value; }
         }
 
         // Check to see if ConnectionName property is set
         internal bool IsSetConnectionName()
         {
-            return this.connectionName != null;
+            return this._connectionName != null;
         }
 
         /// <summary>
-        /// Numeric account Id of the customer for whom the connection will be provisioned. Example: 123443215678 Default: None
+        /// Gets and sets the property InterconnectId. 
+        /// <para>
+        /// ID of the interconnect on which the connection will be provisioned.
+        /// </para>
         ///  
-        /// </summary>
-        public string OwnerAccount
-        {
-            get { return this.ownerAccount; }
-            set { this.ownerAccount = value; }
-        }
-
-        // Check to see if OwnerAccount property is set
-        internal bool IsSetOwnerAccount()
-        {
-            return this.ownerAccount != null;
-        }
-
-        /// <summary>
-        /// ID of the interconnect on which the connection will be provisioned. Example: dxcon-456abc78 Default: None
+        /// <para>
+        /// Example: dxcon-456abc78
+        /// </para>
         ///  
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public string InterconnectId
         {
-            get { return this.interconnectId; }
-            set { this.interconnectId = value; }
+            get { return this._interconnectId; }
+            set { this._interconnectId = value; }
         }
 
         // Check to see if InterconnectId property is set
         internal bool IsSetInterconnectId()
         {
-            return this.interconnectId != null;
+            return this._interconnectId != null;
         }
 
         /// <summary>
-        /// The dedicated VLAN provisioned to the connection. Example: 101 Default: None
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// Numeric account Id of the customer for whom the connection will be provisioned.
+        /// </para>
         ///  
+        /// <para>
+        /// Example: 123443215678
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vlan. 
+        /// <para>
+        /// The dedicated VLAN provisioned to the connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: 101
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public int Vlan
         {
-            get { return this.vlan ?? default(int); }
-            set { this.vlan = value; }
+            get { return this._vlan.GetValueOrDefault(); }
+            set { this._vlan = value; }
         }
 
         // Check to see if Vlan property is set
         internal bool IsSetVlan()
         {
-            return this.vlan.HasValue;
+            return this._vlan.HasValue; 
         }
 
     }
 }
-    

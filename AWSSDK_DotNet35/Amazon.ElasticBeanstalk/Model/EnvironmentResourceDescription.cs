@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,12 +40,15 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<Queue> _queues = new List<Queue>();
         private List<Trigger> _triggers = new List<Trigger>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public EnvironmentResourceDescription() { }
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
-        ///          The         <code>AutoScalingGroups</code>         used by this environment.
-        ///      
+        ///  The <code>AutoScalingGroups</code> used by this environment. 
         /// </para>
         /// </summary>
         public List<AutoScalingGroup> AutoScalingGroups
@@ -55,7 +62,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
@@ -75,7 +81,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
@@ -93,7 +98,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._instances != null && this._instances.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LaunchConfigurations. 
@@ -113,7 +117,6 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._launchConfigurations != null && this._launchConfigurations.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
@@ -132,11 +135,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._loadBalancers != null && this._loadBalancers.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        ///          The queues used by this environment.      
+        ///  The queues used by this environment. 
         /// </para>
         /// </summary>
         public List<Queue> Queues
@@ -151,12 +153,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._queues != null && this._queues.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        ///          The         <code>AutoScaling</code>         triggers in use by this environment.
-        ///      
+        ///  The <code>AutoScaling</code> triggers in use by this environment. 
         /// </para>
         /// </summary>
         public List<Trigger> Triggers

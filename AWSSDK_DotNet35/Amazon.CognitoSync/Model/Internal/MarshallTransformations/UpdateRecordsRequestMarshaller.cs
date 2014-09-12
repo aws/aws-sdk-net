@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateRecords Request Marshaller
     /// </summary>       
-    public class UpdateRecordsRequestMarshaller : IMarshaller<IRequest, UpdateRecordsRequest> 
+    public class UpdateRecordsRequestMarshaller : IMarshaller<IRequest, UpdateRecordsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateRecordsRequest)input);
+        }
+
         public IRequest Marshall(UpdateRecordsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");
@@ -44,59 +53,34 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{IdentityId}", publicRequest.IsSetIdentityId() ? StringUtils.FromString(publicRequest.IdentityId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", publicRequest.IsSetIdentityPoolId() ? StringUtils.FromString(publicRequest.IdentityPoolId) : string.Empty);
         
-            if(publicRequest.IsSetClientContext())     
+            if(publicRequest.IsSetClientContext())
                 request.Headers["x-amz-Client-Context"] = publicRequest.ClientContext;
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetRecordPatches())
                 {
-                    writer.WritePropertyName("RecordPatches");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("RecordPatches");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestRecordPatchesListValue in publicRequest.RecordPatches)
                     {
-                        writer.WriteObjectStart();
-                        if(publicRequestRecordPatchesListValue.IsSetDeviceLastModifiedDate())
-                        {
-                            writer.WritePropertyName("DeviceLastModifiedDate");
-                            writer.Write(publicRequestRecordPatchesListValue.DeviceLastModifiedDate);
-                        }
+                        context.Writer.WriteObjectStart();
 
-                        if(publicRequestRecordPatchesListValue.IsSetKey())
-                        {
-                            writer.WritePropertyName("Key");
-                            writer.Write(publicRequestRecordPatchesListValue.Key);
-                        }
+                        var marshaller = RecordPatchMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRecordPatchesListValue, context);
 
-                        if(publicRequestRecordPatchesListValue.IsSetOp())
-                        {
-                            writer.WritePropertyName("Op");
-                            writer.Write(publicRequestRecordPatchesListValue.Op);
-                        }
-
-                        if(publicRequestRecordPatchesListValue.IsSetSyncCount())
-                        {
-                            writer.WritePropertyName("SyncCount");
-                            writer.Write(publicRequestRecordPatchesListValue.SyncCount);
-                        }
-
-                        if(publicRequestRecordPatchesListValue.IsSetValue())
-                        {
-                            writer.WritePropertyName("Value");
-                            writer.Write(publicRequestRecordPatchesListValue.Value);
-                        }
-
-                        writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetSyncSessionToken())
                 {
-                    writer.WritePropertyName("SyncSessionToken");
-                    writer.Write(publicRequest.SyncSessionToken);
+                    context.Writer.WritePropertyName("SyncSessionToken");
+                    context.Writer.Write(publicRequest.SyncSessionToken);
                 }
 
         

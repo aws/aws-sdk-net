@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,6 +40,25 @@ namespace Amazon.CloudWatchLogs.Model
         private string _logGroupName;
         private List<MetricTransformation> _metricTransformations = new List<MetricTransformation>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public PutMetricFilterRequest() { }
+
+        /// <summary>
+        /// Instantiates PutMetricFilterRequest with the parameterized properties
+        /// </summary>
+        /// <param name="logGroupName">Sets the PutMetricFilterRequest LogGroupName property</param>
+        /// <param name="filterName">Sets the PutMetricFilterRequest FilterName property</param>
+        /// <param name="filterPattern">Sets the PutMetricFilterRequest FilterPattern property</param>
+        /// <param name="metricTransformations">Sets the PutMetricFilterRequest MetricTransformations property</param>
+        public PutMetricFilterRequest(string logGroupName, string filterName, string filterPattern, List<MetricTransformation> metricTransformations)
+        {
+            _logGroupName = logGroupName;
+            _filterName = filterName;
+            _filterPattern = filterPattern;
+            _metricTransformations = metricTransformations;
+        }
 
         /// <summary>
         /// Gets and sets the property FilterName.
@@ -52,7 +75,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._filterName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property FilterPattern.
         /// </summary>
@@ -68,7 +90,6 @@ namespace Amazon.CloudWatchLogs.Model
             return this._filterPattern != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LogGroupName.
         /// </summary>
@@ -83,7 +104,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._logGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MetricTransformations.

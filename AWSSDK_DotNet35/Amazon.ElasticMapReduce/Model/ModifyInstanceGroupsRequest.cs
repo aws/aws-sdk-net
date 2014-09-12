@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,19 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private List<InstanceGroupModifyConfig> _instanceGroups = new List<InstanceGroupModifyConfig>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ModifyInstanceGroupsRequest() { }
+
+        /// <summary>
+        /// Instantiates ModifyInstanceGroupsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="instanceGroups">Instance groups to change.</param>
+        public ModifyInstanceGroupsRequest(List<InstanceGroupModifyConfig> instanceGroups)
+        {
+            _instanceGroups = instanceGroups;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceGroups. 

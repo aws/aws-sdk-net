@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -38,7 +42,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         {
             DeleteInstanceResponse response = new DeleteInstanceResponse();
 
- 
 
             return response;
         }

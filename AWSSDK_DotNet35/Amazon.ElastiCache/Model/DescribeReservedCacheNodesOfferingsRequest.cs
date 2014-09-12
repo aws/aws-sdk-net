@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.ElastiCache.Model
         private string _productDescription;
         private string _reservedCacheNodesOfferingId;
 
-
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheNodeType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Duration. 
@@ -82,7 +84,6 @@ namespace Amazon.ElastiCache.Model
             return this._duration != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
@@ -102,7 +103,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxRecords. 
@@ -132,7 +132,6 @@ namespace Amazon.ElastiCache.Model
             return this._maxRecords.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
@@ -157,7 +156,6 @@ namespace Amazon.ElastiCache.Model
             return this._offeringType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
@@ -176,7 +174,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._productDescription != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ReservedCacheNodesOfferingId. 

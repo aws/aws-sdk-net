@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.OpsWorks.Model
         private List<string> _subnetIds = new List<string>();
         private string _vpcId;
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.OpsWorks.Model
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
@@ -75,7 +77,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._dnsName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceIds. 
@@ -96,7 +97,6 @@ namespace Amazon.OpsWorks.Model
             return this._ec2InstanceIds != null && this._ec2InstanceIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ElasticLoadBalancerName. 
         /// <para>
@@ -114,7 +114,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._elasticLoadBalancerName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LayerId. 
@@ -134,7 +133,6 @@ namespace Amazon.OpsWorks.Model
             return this._layerId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
@@ -152,7 +150,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._region != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StackId. 
@@ -172,7 +169,6 @@ namespace Amazon.OpsWorks.Model
             return this._stackId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
@@ -190,7 +186,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcId. 

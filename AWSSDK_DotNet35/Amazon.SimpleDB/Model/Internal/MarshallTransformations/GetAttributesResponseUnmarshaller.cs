@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.SimpleDB.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetAttributes operation
-    /// </summary>
-    internal class GetAttributesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetAttributes operation
+    /// </summary>  
+    public class GetAttributesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetAttributesResponse response = new GetAttributesResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("GetAttributesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetAttributesResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetAttributesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,61 +71,55 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("Attribute", targetDepth))
                     {
-                        response.Attributes.Add(AttributeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AttributeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Attributes.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchDomain"))
-            {
-                return new NoSuchDomainException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameter"))
             {
                 return new MissingParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchDomain"))
+            {
+                return new NoSuchDomainException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonSimpleDBException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetAttributesResponseUnmarshaller instance;
+        private static GetAttributesResponseUnmarshaller _instance = new GetAttributesResponseUnmarshaller();        
 
-        public static GetAttributesResponseUnmarshaller GetInstance()
+        internal static GetAttributesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetAttributesResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetAttributesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

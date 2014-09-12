@@ -12,71 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a disk image.</para>
+    /// Describes a disk image.
     /// </summary>
     public partial class DiskImage
     {
-        
-        private DiskImageDetail image;
-        private string description;
-        private VolumeDetail volume;
-
+        private string _description;
+        private DiskImageDetail _image;
+        private VolumeDetail _volume;
 
         /// <summary>
-        /// 
-        ///  
-        /// </summary>
-        public DiskImageDetail Image
-        {
-            get { return this.image; }
-            set { this.image = value; }
-        }
-
-        // Check to see if Image property is set
-        internal bool IsSetImage()
-        {
-            return this.image != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Description.
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Image.
+        /// </summary>
+        public DiskImageDetail Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Volume.
         /// </summary>
         public VolumeDetail Volume
         {
-            get { return this.volume; }
-            set { this.volume = value; }
+            get { return this._volume; }
+            set { this._volume = value; }
         }
 
         // Check to see if Volume property is set
         internal bool IsSetVolume()
         {
-            return this.volume != null;
+            return this._volume != null;
         }
+
     }
 }

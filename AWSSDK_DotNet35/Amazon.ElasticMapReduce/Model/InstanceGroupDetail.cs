@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -43,6 +47,29 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? _startDateTime;
         private InstanceGroupState _state;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public InstanceGroupDetail() { }
+
+        /// <summary>
+        /// Instantiates InstanceGroupDetail with the parameterized properties
+        /// </summary>
+        /// <param name="instanceRole">Instance group role in the cluster </param>
+        /// <param name="instanceType">Amazon EC2 Instance type.</param>
+        /// <param name="instanceRequestCount">Target number of instances to run in the instance group. </param>
+        /// <param name="instanceRunningCount">Actual count of running instances. </param>
+        /// <param name="state">State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</param>
+        /// <param name="creationDateTime">The date/time the instance group was created. </param>
+        public InstanceGroupDetail(InstanceRoleType instanceRole, string instanceType, int instanceRequestCount, int instanceRunningCount, InstanceGroupState state, DateTime creationDateTime)
+        {
+            _instanceRole = instanceRole;
+            _instanceType = instanceType;
+            _instanceRequestCount = instanceRequestCount;
+            _instanceRunningCount = instanceRunningCount;
+            _state = state;
+            _creationDateTime = creationDateTime;
+        }
 
         /// <summary>
         /// Gets and sets the property BidPrice. 
@@ -63,7 +90,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._bidPrice != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
@@ -81,7 +107,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._creationDateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property EndDateTime. 
@@ -101,7 +126,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._endDateTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceGroupId. 
         /// <para>
@@ -119,7 +143,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceGroupId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceRequestCount. 
@@ -139,7 +162,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceRequestCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceRole. 
         /// <para>
@@ -157,7 +179,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceRole != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property InstanceRunningCount. 
@@ -177,7 +198,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._instanceRunningCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
@@ -195,7 +215,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LastStateChangeReason. 
@@ -215,7 +234,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._lastStateChangeReason != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Market. 
         /// <para>
@@ -233,7 +251,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._market != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -253,7 +270,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._name != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReadyDateTime. 
         /// <para>
@@ -272,7 +288,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._readyDateTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property StartDateTime. 
         /// <para>
@@ -290,7 +305,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._startDateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property State. 

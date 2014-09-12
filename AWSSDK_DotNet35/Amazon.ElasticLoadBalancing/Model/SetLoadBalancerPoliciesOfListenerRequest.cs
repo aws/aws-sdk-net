@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,23 @@ namespace Amazon.ElasticLoadBalancing.Model
         private int? _loadBalancerPort;
         private List<string> _policyNames = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SetLoadBalancerPoliciesOfListenerRequest() { }
+
+        /// <summary>
+        /// Instantiates SetLoadBalancerPoliciesOfListenerRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        /// <param name="loadBalancerPort"> The external port of the load balancer to associate the policy. </param>
+        /// <param name="policyNames"> List of policies to be associated with the listener. If the list is empty, the current policy is removed from the listener. </param>
+        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames)
+        {
+            _loadBalancerName = loadBalancerName;
+            _loadBalancerPort = loadBalancerPort;
+            _policyNames = policyNames;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
@@ -53,7 +74,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._loadBalancerName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LoadBalancerPort. 
         /// <para>
@@ -71,7 +91,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerPort.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property PolicyNames. 

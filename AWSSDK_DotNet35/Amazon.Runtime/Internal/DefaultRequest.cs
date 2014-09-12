@@ -354,5 +354,48 @@ namespace Amazon.Runtime.Internal
             get;
             set;
         }
+
+		/// <summary>
+        /// Checks if the request stream can be rewinded.
+        /// </summary>
+        /// <returns>Returns true if the request stream can be rewinded ,
+        /// else false.</returns>
+        public bool IsRequestStreamRewindable()
+        {
+            var stream = this.ContentStream;
+            // Retries may not be possible with a stream
+            if (stream != null)
+            {
+                // Pull out the underlying non-wrapper stream
+                stream = WrapperStream.GetNonWrapperBaseStream(stream);
+
+                // Retry is possible if stream is seekable
+                return stream.CanSeek;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Returns true if the request can contain a request body, else false.
+        /// </summary>
+        /// <returns>Returns true if the currect request can contain a request body, else false.</returns>
+        public bool MayContainRequestBody()
+        {
+            return !this.UseQueryString &&
+                (this.HttpMethod == "POST" ||
+                 this.HttpMethod == "PUT");
+        }
+
+        /// <summary>
+        /// Returns true if the request has a body, else false.
+        /// </summary>
+        /// <returns>Returns true if the request has a body, else false.</returns>
+        public bool HasRequestBody()
+        {
+            return (this.HttpMethod == "POST" ||
+                    this.HttpMethod == "PUT") &&
+                ((this.Content != null) ||
+                        this.ContentStream != null);
+        }
     }
 }

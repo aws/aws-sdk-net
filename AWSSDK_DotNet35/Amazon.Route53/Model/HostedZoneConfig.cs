@@ -12,48 +12,54 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, you can omit the
-    /// <c>HostedZoneConfig</c> and <c>Comment</c> elements from the XML document.</para>
+    /// A complex type that contains an optional comment about your hosted zone. If you don't
+    /// want to specify a comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+    /// elements from the XML document.
     /// </summary>
     public partial class HostedZoneConfig
     {
-        
-        private string comment;
-
+        private string _comment;
 
         /// <summary>
-        /// An optional comment about your hosted zone. If you don't want to specify a comment, you can omit the <c>HostedZoneConfig</c> and
-        /// <c>Comment</c> elements from the XML document.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public HostedZoneConfig() { }
+
+        /// <summary>
+        /// Gets and sets the property Comment. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
+        /// An optional comment about your hosted zone. If you don't want to specify a comment,
+        /// you can omit the <code>HostedZoneConfig</code> and <code>Comment</code> elements from
+        /// the XML document.
         /// </para>
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
+            return this._comment != null;
         }
+
     }
 }

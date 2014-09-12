@@ -12,67 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Route53.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for CreateHostedZone operation
-    /// </summary>
-    internal class CreateHostedZoneResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for CreateHostedZone operation
+    /// </summary>  
+    public class CreateHostedZoneResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            CreateHostedZoneResponse response = new CreateHostedZoneResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context,response);
-                    break;
-                }
-            }
-                 
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,CreateHostedZoneResponse response)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
+            CreateHostedZoneResponse response = new CreateHostedZoneResponse();
+            UnmarshallResult(context,response);
+            if (context.ResponseData.IsHeaderPresent("Location"))
+                response.Location = context.ResponseData.GetHeaderValue("Location");
             
+            return response;
+        }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateHostedZoneResponse response)
+        {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+                   targetDepth += 1;
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("HostedZone", targetDepth))
                     {
-                        response.HostedZone = HostedZoneUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = HostedZoneUnmarshaller.Instance;
+                        response.HostedZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ChangeInfo", targetDepth))
                     {
-                        response.ChangeInfo = ChangeInfoUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ChangeInfoUnmarshaller.Instance;
+                        response.ChangeInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DelegationSet", targetDepth))
                     {
-                        response.DelegationSet = DelegationSetUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DelegationSetUnmarshaller.Instance;
+                        response.DelegationSet = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -81,59 +82,50 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-                
-
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent("Location"))
-                response.Location = responseData.GetHeaderValue("Location");            
-
-
+          
             return;
         }
-        
+  
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyHostedZones"))
-            {
-                return new TooManyHostedZonesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("DelegationSetNotAvailable"))
             {
                 return new DelegationSetNotAvailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainName"))
-            {
-                return new InvalidDomainNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
-            {
-                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("HostedZoneAlreadyExists"))
             {
                 return new HostedZoneAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainName"))
+            {
+                return new InvalidDomainNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
+            {
+                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyHostedZones"))
+            {
+                return new TooManyHostedZonesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static CreateHostedZoneResponseUnmarshaller instance;
 
-        public static CreateHostedZoneResponseUnmarshaller GetInstance()
+        private static CreateHostedZoneResponseUnmarshaller _instance = new CreateHostedZoneResponseUnmarshaller();        
+
+        internal static CreateHostedZoneResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new CreateHostedZoneResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static CreateHostedZoneResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

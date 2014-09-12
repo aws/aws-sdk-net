@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -39,7 +43,6 @@ namespace Amazon.AutoScaling.Model
         private string _policyName;
         private int? _scalingAdjustment;
 
-
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
@@ -66,7 +69,6 @@ namespace Amazon.AutoScaling.Model
             return this._adjustmentType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
@@ -84,7 +86,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._autoScalingGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Cooldown. 
@@ -109,7 +110,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._cooldown.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property MinAdjustmentStep. 
@@ -137,7 +137,6 @@ namespace Amazon.AutoScaling.Model
             return this._minAdjustmentStep.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
@@ -155,7 +154,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this._policyName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ScalingAdjustment. 

@@ -12,63 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a volume status.</para>
+    /// Describes a volume status.
     /// </summary>
     public partial class VolumeStatusDetails
     {
-        
-        private VolumeStatusName name;
-        private string status;
-
+        private VolumeStatusName _name;
+        private string _status;
 
         /// <summary>
-        /// The name of the volume status.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>io-enabled, io-performance</description>
-        ///     </item>
-        /// </list>
+        /// The name of the volume status.
         /// </para>
         /// </summary>
         public VolumeStatusName Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
         /// The intended status of the volume status.
-        ///  
+        /// </para>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

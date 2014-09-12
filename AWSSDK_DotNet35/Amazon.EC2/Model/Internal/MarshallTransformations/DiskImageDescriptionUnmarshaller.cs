@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DiskImageDescription Unmarshaller
-     /// </summary>
-    internal class DiskImageDescriptionUnmarshaller : IUnmarshaller<DiskImageDescription, XmlUnmarshallerContext>, IUnmarshaller<DiskImageDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DiskImageDescription Object
+    /// </summary>  
+    public class DiskImageDescriptionUnmarshaller : IUnmarshaller<DiskImageDescription, XmlUnmarshallerContext>, IUnmarshaller<DiskImageDescription, JsonUnmarshallerContext>
     {
-        public DiskImageDescription Unmarshall(XmlUnmarshallerContext context) 
+        public DiskImageDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            DiskImageDescription diskImageDescription = new DiskImageDescription();
+            DiskImageDescription unmarshalledObject = new DiskImageDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("format", targetDepth))
+                    if (context.TestExpression("checksum", targetDepth))
                     {
-                        diskImageDescription.Format = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Checksum = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("size", targetDepth))
+                    if (context.TestExpression("format", targetDepth))
                     {
-                        diskImageDescription.Size = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("importManifestUrl", targetDepth))
                     {
-                        diskImageDescription.ImportManifestUrl = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImportManifestUrl = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("checksum", targetDepth))
+                    if (context.TestExpression("size", targetDepth))
                     {
-                        diskImageDescription.Checksum = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return diskImageDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return diskImageDescription;
+            return unmarshalledObject;
         }
 
-        public DiskImageDescription Unmarshall(JsonUnmarshallerContext context) 
+        public DiskImageDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static DiskImageDescriptionUnmarshaller instance;
 
-        public static DiskImageDescriptionUnmarshaller GetInstance() 
+        private static DiskImageDescriptionUnmarshaller _instance = new DiskImageDescriptionUnmarshaller();        
+
+        public static DiskImageDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new DiskImageDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

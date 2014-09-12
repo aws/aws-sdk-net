@@ -12,67 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Internet Gateways Request Marshaller
+    /// DescribeInternetGateways Request Marshaller
     /// </summary>       
-    public class DescribeInternetGatewaysRequestMarshaller : IMarshaller<IRequest, DescribeInternetGatewaysRequest>
+    public class DescribeInternetGatewaysRequestMarshaller : IMarshaller<IRequest, DescribeInternetGatewaysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeInternetGatewaysRequest describeInternetGatewaysRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeInternetGatewaysRequest, "AmazonEC2");
+            return this.Marshall((DescribeInternetGatewaysRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeInternetGatewaysRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeInternetGateways");
             request.Parameters.Add("Version", "2014-06-15");
-            if (describeInternetGatewaysRequest != null)
-            {
-                List<string> internetGatewayIdsList = describeInternetGatewaysRequest.InternetGatewayIds;
 
-                int internetGatewayIdsListIndex = 1;
-                foreach (string internetGatewayIdsListValue in internetGatewayIdsList)
-                { 
-                    request.Parameters.Add("InternetGatewayId." + internetGatewayIdsListIndex, StringUtils.FromString(internetGatewayIdsListValue));
-                    internetGatewayIdsListIndex++;
-                }
-            }
-
-            if (describeInternetGatewaysRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeInternetGatewaysRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetFilters())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filter." + filtersListIndex + ".Name", StringUtils.FromString(filtersListValue.Name));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> valuesList = filtersListValue.Values;
-
-                        int valuesListIndex = 1;
-                        foreach (string valuesListValue in valuesList)
-                        { 
-                            request.Parameters.Add("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.FromString(valuesListValue));
-                            valuesListIndex++;
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetInternetGatewayIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.InternetGatewayIds)
+                    {
+                        request.Parameters.Add("InternetGatewayId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

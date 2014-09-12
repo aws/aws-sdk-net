@@ -37,6 +37,11 @@ namespace Amazon.Util
             {
                 this._typeInfo = type.GetTypeInfo();
             }
+			
+			public override Type BaseType
+            {
+                get { return this._typeInfo.BaseType; }
+            }
 
             public override Type GetInterface(string name)
             {
@@ -65,7 +70,23 @@ namespace Amazon.Util
 
             public override MemberInfo[] GetMembers()
             {
-                return this._typeInfo.DeclaredMembers.ToArray();
+                List<MemberInfo> members = new List<MemberInfo>();
+                foreach(var item in this._type.GetRuntimeProperties())
+                {
+                    members.Add(item);
+                }
+
+                foreach (var item in this._type.GetRuntimeFields())
+                {
+                    members.Add(item);
+                }
+
+                foreach (var item in this._type.GetRuntimeMethods())
+                {
+                    members.Add(item);
+                }
+
+                return members.ToArray();
             }
 
             public override bool IsClass

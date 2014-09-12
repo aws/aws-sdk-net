@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteSecurityGroup response metadata.
-    /// The DeleteSecurityGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteSecurityGroup service
     /// </summary>
-    public partial class DeleteSecurityGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteSecurityGroupResponse : DeleteSecurityGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteSecurityGroupResult property.
+        /// Represents the output of a DeleteSecurityGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteSecurityGroupResult class are now available on the DeleteSecurityGroupResponse class. You should use the properties on DeleteSecurityGroupResponse instead of accessing them through DeleteSecurityGroupResult.")]
+        public DeleteSecurityGroupResult DeleteSecurityGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

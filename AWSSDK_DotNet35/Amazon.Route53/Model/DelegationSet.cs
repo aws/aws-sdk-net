@@ -12,47 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// <para>A complex type that contains name server information.</para>
+    /// A complex type that contains name server information.
     /// </summary>
     public partial class DelegationSet
     {
-        
-        private List<string> nameServers = new List<string>();
-
+        private List<string> _nameServers = new List<string>();
 
         /// <summary>
-        /// A complex type that contains the authoritative name servers for the hosted zone. Use the method provided by your domain registrar to add an
-        /// NS record to your domain for each <c>NameServer</c> that is assigned to your hosted zone.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DelegationSet() { }
+
+        /// <summary>
+        /// Instantiates DelegationSet with the parameterized properties
+        /// </summary>
+        /// <param name="nameServers">A complex type that contains the authoritative name servers for the hosted zone. Use the method provided by your domain registrar to add an NS record to your domain for each <code>NameServer</code> that is assigned to your hosted zone.</param>
+        public DelegationSet(List<string> nameServers)
+        {
+            _nameServers = nameServers;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NameServers. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// A complex type that contains the authoritative name servers for the hosted zone. Use
+        /// the method provided by your domain registrar to add an NS record to your domain for
+        /// each <code>NameServer</code> that is assigned to your hosted zone.
         /// </para>
         /// </summary>
         public List<string> NameServers
         {
-            get { return this.nameServers; }
-            set { this.nameServers = value; }
+            get { return this._nameServers; }
+            set { this._nameServers = value; }
         }
 
         // Check to see if NameServers property is set
         internal bool IsSetNameServers()
         {
-            return this.nameServers.Count > 0;
+            return this._nameServers != null && this._nameServers.Count > 0; 
         }
+
     }
 }

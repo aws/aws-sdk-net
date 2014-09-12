@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Alarms For Metric Request Marshaller
+    /// DescribeAlarmsForMetric Request Marshaller
     /// </summary>       
-    public class DescribeAlarmsForMetricRequestMarshaller : IMarshaller<IRequest, DescribeAlarmsForMetricRequest>
+    public class DescribeAlarmsForMetricRequestMarshaller : IMarshaller<IRequest, DescribeAlarmsForMetricRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeAlarmsForMetricRequest, "AmazonCloudWatch");
+            return this.Marshall((DescribeAlarmsForMetricRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeAlarmsForMetricRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
             request.Parameters.Add("Action", "DescribeAlarmsForMetric");
             request.Parameters.Add("Version", "2010-08-01");
-            if (describeAlarmsForMetricRequest != null && describeAlarmsForMetricRequest.IsSetMetricName())
-            {
-                request.Parameters.Add("MetricName", StringUtils.FromString(describeAlarmsForMetricRequest.MetricName));
-            }
-            if (describeAlarmsForMetricRequest != null && describeAlarmsForMetricRequest.IsSetNamespace())
-            {
-                request.Parameters.Add("Namespace", StringUtils.FromString(describeAlarmsForMetricRequest.Namespace));
-            }
-            if (describeAlarmsForMetricRequest != null && describeAlarmsForMetricRequest.IsSetStatistic())
-            {
-                request.Parameters.Add("Statistic", StringUtils.FromString(describeAlarmsForMetricRequest.Statistic));
-            }
 
-            if (describeAlarmsForMetricRequest != null)
+            if(publicRequest != null)
             {
-                List<Dimension> dimensionsList = describeAlarmsForMetricRequest.Dimensions;
-                int dimensionsListIndex = 1;
-                foreach (Dimension dimensionsListValue in dimensionsList)
+                if(publicRequest.IsSetDimensions())
                 {
-                    if (dimensionsListValue != null && dimensionsListValue.IsSetName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Dimensions)
                     {
-                        request.Parameters.Add("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.FromString(dimensionsListValue.Name));
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (dimensionsListValue != null && dimensionsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.FromString(dimensionsListValue.Value));
-                    }
-
-                    dimensionsListIndex++;
+                }
+                if(publicRequest.IsSetMetricName())
+                {
+                    request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
+                }
+                if(publicRequest.IsSetNamespace())
+                {
+                    request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
+                }
+                if(publicRequest.IsSetPeriod())
+                {
+                    request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
+                }
+                if(publicRequest.IsSetStatistic())
+                {
+                    request.Parameters.Add("Statistic", StringUtils.FromString(publicRequest.Statistic));
+                }
+                if(publicRequest.IsSetUnit())
+                {
+                    request.Parameters.Add("Unit", StringUtils.FromString(publicRequest.Unit));
                 }
             }
-            if (describeAlarmsForMetricRequest != null && describeAlarmsForMetricRequest.IsSetPeriod())
-            {
-                request.Parameters.Add("Period", StringUtils.FromInt(describeAlarmsForMetricRequest.Period));
-            }
-            if (describeAlarmsForMetricRequest != null && describeAlarmsForMetricRequest.IsSetUnit())
-            {
-                request.Parameters.Add("Unit", StringUtils.FromString(describeAlarmsForMetricRequest.Unit));
-            }
-
             return request;
         }
     }

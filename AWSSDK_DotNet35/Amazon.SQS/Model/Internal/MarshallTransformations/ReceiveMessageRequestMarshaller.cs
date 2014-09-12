@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReceiveMessage Request Marshaller
     /// </summary>       
-    public class ReceiveMessageRequestMarshaller : IMarshaller<IRequest, ReceiveMessageRequest>
+    public class ReceiveMessageRequestMarshaller : IMarshaller<IRequest, ReceiveMessageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ReceiveMessageRequest)input);
+        }
+    
         public IRequest Marshall(ReceiveMessageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");

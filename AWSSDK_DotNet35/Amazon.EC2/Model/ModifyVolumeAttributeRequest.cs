@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,49 +29,61 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVolumeAttribute operation.
-    /// <para>Modifies a volume attribute.</para> <para>By default, all I/O operations for the volume are suspended when the data on the volume is
-    /// determined to be potentially inconsistent, to prevent undetectable, latent data corruption. The I/O access to the volume can be resumed by
-    /// first enabling I/O access and then checking the data consistency on your volume.</para> <para>You can change the default behavior to resume
-    /// I/O operations. We recommend that you change this only for boot volumes or for volumes that are stateless or disposable.</para>
+    /// Modifies a volume attribute.
+    /// 
+    ///  
+    /// <para>
+    /// By default, all I/O operations for the volume are suspended when the data on the volume
+    /// is determined to be potentially inconsistent, to prevent undetectable, latent data
+    /// corruption. The I/O access to the volume can be resumed by first enabling I/O access
+    /// and then checking the data consistency on your volume.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can change the default behavior to resume I/O operations. We recommend that you
+    /// change this only for boot volumes or for volumes that are stateless or disposable.
+    /// </para>
     /// </summary>
     public partial class ModifyVolumeAttributeRequest : AmazonEC2Request
     {
-        private string volumeId;
-        private bool? autoEnableIO;
-
-
-        /// <summary>
-        /// The ID of the volume.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
+        private bool? _autoEnableIO;
+        private string _volumeId;
 
         /// <summary>
+        /// Gets and sets the property AutoEnableIO. 
+        /// <para>
         /// Indicates whether the volume should be auto-enabled for I/O operations.
-        ///  
+        /// </para>
         /// </summary>
         public bool AutoEnableIO
         {
-            get { return this.autoEnableIO ?? default(bool); }
-            set { this.autoEnableIO = value; }
+            get { return this._autoEnableIO.GetValueOrDefault(); }
+            set { this._autoEnableIO = value; }
         }
 
         // Check to see if AutoEnableIO property is set
         internal bool IsSetAutoEnableIO()
         {
-            return this.autoEnableIO.HasValue;
+            return this._autoEnableIO.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
         }
 
     }
 }
-    

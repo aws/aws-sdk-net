@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IPRange Unmarshaller
-     /// </summary>
-    internal class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext>, IUnmarshaller<IPRange, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IPRange Object
+    /// </summary>  
+    public class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext>, IUnmarshaller<IPRange, JsonUnmarshallerContext>
     {
-        public IPRange Unmarshall(XmlUnmarshallerContext context) 
+        public IPRange Unmarshall(XmlUnmarshallerContext context)
         {
-            IPRange iPRange = new IPRange();
+            IPRange unmarshalledObject = new IPRange();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        iPRange.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CIDRIP", targetDepth))
                     {
-                        iPRange.CIDRIP = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CIDRIP = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return iPRange;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return iPRange;
+            return unmarshalledObject;
         }
 
-        public IPRange Unmarshall(JsonUnmarshallerContext context) 
+        public IPRange Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IPRangeUnmarshaller instance;
 
-        public static IPRangeUnmarshaller GetInstance() 
+        private static IPRangeUnmarshaller _instance = new IPRangeUnmarshaller();        
+
+        public static IPRangeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IPRangeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

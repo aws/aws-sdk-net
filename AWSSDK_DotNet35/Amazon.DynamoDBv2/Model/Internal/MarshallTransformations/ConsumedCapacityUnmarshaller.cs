@@ -12,86 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.DynamoDBv2.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ConsumedCapacity Object
+    /// </summary>  
+    public class ConsumedCapacityUnmarshaller : IUnmarshaller<ConsumedCapacity, XmlUnmarshallerContext>, IUnmarshaller<ConsumedCapacity, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ConsumedCapacityUnmarshaller
-      /// </summary>
-      internal class ConsumedCapacityUnmarshaller : IUnmarshaller<ConsumedCapacity, XmlUnmarshallerContext>, IUnmarshaller<ConsumedCapacity, JsonUnmarshallerContext>
-      {
         ConsumedCapacity IUnmarshaller<ConsumedCapacity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ConsumedCapacity Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ConsumedCapacity consumedCapacity = new ConsumedCapacity();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ConsumedCapacity unmarshalledObject = new ConsumedCapacity();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TableName", targetDepth))
-              {
-                consumedCapacity.TableName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CapacityUnits", targetDepth))
-              {
-                consumedCapacity.CapacityUnits = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Table", targetDepth))
-              {
-                consumedCapacity.Table = CapacityUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,Capacity,StringUnmarshaller,CapacityUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),CapacityUnmarshaller.GetInstance());               
-                consumedCapacity.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,Capacity,StringUnmarshaller,CapacityUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),CapacityUnmarshaller.GetInstance());               
-                consumedCapacity.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("CapacityUnits", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.CapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller>(StringUnmarshaller.Instance, CapacityUnmarshaller.Instance);
+                    unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller>(StringUnmarshaller.Instance, CapacityUnmarshaller.Instance);
+                    unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Table", targetDepth))
+                {
+                    var unmarshaller = CapacityUnmarshaller.Instance;
+                    unmarshalledObject.Table = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TableName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return consumedCapacity;
+            return unmarshalledObject;
         }
 
-        private static ConsumedCapacityUnmarshaller instance;
-        public static ConsumedCapacityUnmarshaller GetInstance()
+
+        private static ConsumedCapacityUnmarshaller _instance = new ConsumedCapacityUnmarshaller();        
+
+        public static ConsumedCapacityUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ConsumedCapacityUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

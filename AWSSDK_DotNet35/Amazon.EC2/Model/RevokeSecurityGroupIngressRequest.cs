@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,67 +29,97 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupIngress operation.
-    /// <para>Removes one or more ingress rules from a security group. The values that you specify in the revoke request (for example, ports) must
-    /// match the existing rule's values for the rule to be removed.</para> <para>Each rule consists of the protocol and the CIDR range or source
-    /// security group. For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must
-    /// also specify the ICMP type and code.</para> <para>Rule changes are propagated to instances within the security group as quickly as possible.
-    /// However, a small delay might occur.</para>
+    /// Removes one or more ingress rules from a security group. The values that you specify
+    /// in the revoke request (for example, ports) must match the existing rule's values for
+    /// the rule to be removed.
+    /// 
+    ///  
+    /// <para>
+    /// Each rule consists of the protocol and the CIDR range or source security group. For
+    /// the TCP and UDP protocols, you must also specify the destination port or range of
+    /// ports. For the ICMP protocol, you must also specify the ICMP type and code.
+    /// </para>
+    ///  
+    /// <para>
+    /// Rule changes are propagated to instances within the security group as quickly as possible.
+    /// However, a small delay might occur.
+    /// </para>
     /// </summary>
     public partial class RevokeSecurityGroupIngressRequest : AmazonEC2Request
     {
-        private string groupName;
-        private string groupId;
-        private List<IpPermission> ipPermissions = new List<IpPermission>();
-
+        private string _groupId;
+        private string _groupName;
+        private List<IpPermission> _ipPermissions = new List<IpPermission>();
 
         /// <summary>
-        /// [EC2-Classic, default VPC] The name of the security group.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string GroupName
-        {
-            get { return this.groupName; }
-            set { this.groupName = value; }
-        }
+        public RevokeSecurityGroupIngressRequest() { }
 
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
+        /// <summary>
+        /// Instantiates RevokeSecurityGroupIngressRequest with the parameterized properties
+        /// </summary>
+        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
+        /// <param name="ipPermissions"></param>
+        public RevokeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
         {
-            return this.groupName != null;
+            _groupName = groupName;
+            _ipPermissions = ipPermissions;
         }
 
         /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
         /// The ID of the security group.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupId
         {
-            get { return this.groupId; }
-            set { this.groupId = value; }
+            get { return this._groupId; }
+            set { this._groupId = value; }
         }
 
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this.groupId != null;
+            return this._groupId != null;
         }
 
         /// <summary>
-        /// <p/>
-        ///  
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// [EC2-Classic, default VPC] The name of the security group.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpPermissions. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions
         {
-            get { return this.ipPermissions; }
-            set { this.ipPermissions = value; }
+            get { return this._ipPermissions; }
+            set { this._ipPermissions = value; }
         }
 
         // Check to see if IpPermissions property is set
         internal bool IsSetIpPermissions()
         {
-            return this.ipPermissions.Count > 0;
+            return this._ipPermissions != null && this._ipPermissions.Count > 0; 
         }
 
     }
 }
-    

@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Bundle Task Request Marshaller
+    /// CancelBundleTask Request Marshaller
     /// </summary>       
-    public class CancelBundleTaskRequestMarshaller : IMarshaller<IRequest, CancelBundleTaskRequest>
+    public class CancelBundleTaskRequestMarshaller : IMarshaller<IRequest, CancelBundleTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CancelBundleTaskRequest cancelBundleTaskRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(cancelBundleTaskRequest, "AmazonEC2");
+            return this.Marshall((CancelBundleTaskRequest)input);
+        }
+    
+        public IRequest Marshall(CancelBundleTaskRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CancelBundleTask");
             request.Parameters.Add("Version", "2014-06-15");
-            if (cancelBundleTaskRequest != null && cancelBundleTaskRequest.IsSetBundleId())
-            {
-                request.Parameters.Add("BundleId", StringUtils.FromString(cancelBundleTaskRequest.BundleId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetBundleId())
+                {
+                    request.Parameters.Add("BundleId", StringUtils.FromString(publicRequest.BundleId));
+                }
+            }
             return request;
         }
     }

@@ -12,117 +12,126 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Register Image Request Marshaller
+    /// RegisterImage Request Marshaller
     /// </summary>       
-    public class RegisterImageRequestMarshaller : IMarshaller<IRequest, RegisterImageRequest>
+    public class RegisterImageRequestMarshaller : IMarshaller<IRequest, RegisterImageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(RegisterImageRequest registerImageRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(registerImageRequest, "AmazonEC2");
+            return this.Marshall((RegisterImageRequest)input);
+        }
+    
+        public IRequest Marshall(RegisterImageRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RegisterImage");
             request.Parameters.Add("Version", "2014-06-15");
-            if (registerImageRequest != null && registerImageRequest.IsSetImageLocation())
-            {
-                request.Parameters.Add("ImageLocation", StringUtils.FromString(registerImageRequest.ImageLocation));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetName())
-            {
-                request.Parameters.Add("Name", StringUtils.FromString(registerImageRequest.Name));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(registerImageRequest.Description));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetArchitecture())
-            {
-                request.Parameters.Add("Architecture", StringUtils.FromString(registerImageRequest.Architecture));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetKernelId())
-            {
-                request.Parameters.Add("KernelId", StringUtils.FromString(registerImageRequest.KernelId));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetRamdiskId())
-            {
-                request.Parameters.Add("RamdiskId", StringUtils.FromString(registerImageRequest.RamdiskId));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetRootDeviceName())
-            {
-                request.Parameters.Add("RootDeviceName", StringUtils.FromString(registerImageRequest.RootDeviceName));
-            }
 
-            if (registerImageRequest != null)
+            if(publicRequest != null)
             {
-                List<BlockDeviceMapping> blockDeviceMappingsList = registerImageRequest.BlockDeviceMappings;
-                int blockDeviceMappingsListIndex = 1;
-                foreach (BlockDeviceMapping blockDeviceMappingsListValue in blockDeviceMappingsList)
+                if(publicRequest.IsSetArchitecture())
                 {
-                    if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetVirtualName())
+                    request.Parameters.Add("Architecture", StringUtils.FromString(publicRequest.Architecture));
+                }
+                if(publicRequest.IsSetBlockDeviceMappings())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
                     {
-                        request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.FromString(blockDeviceMappingsListValue.VirtualName));
+                        if(publicRequestlistValue.IsSetDeviceName())
+                        {
+                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
+                        }
+                        if(publicRequestlistValue.IsSetEbs())
+                        {
+                            if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetEncrypted())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetIops())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetSnapshotId())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetVolumeSize())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetVolumeType())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeType));
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetNoDevice())
+                        {
+                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestlistValue.NoDevice));
+                        }
+                        if(publicRequestlistValue.IsSetVirtualName())
+                        {
+                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetDeviceName())
-                    {
-                        request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.FromString(blockDeviceMappingsListValue.DeviceName));
-                    }
-                    if (blockDeviceMappingsListValue != null)
-                    {
-                        EbsBlockDevice ebs = blockDeviceMappingsListValue.Ebs;
-                        if (ebs != null && ebs.IsSetSnapshotId())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.FromString(ebs.SnapshotId));
-                        }
-                        if (ebs != null && ebs.IsSetVolumeSize())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.FromInt(ebs.VolumeSize));
-                        }
-                        if (ebs != null && ebs.IsSetDeleteOnTermination())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.FromBool(ebs.DeleteOnTermination));
-                        }
-                        if (ebs != null && ebs.IsSetVolumeType())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.FromString(ebs.VolumeType));
-                        }
-                        if (ebs != null && ebs.IsSetIops())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.FromInt(ebs.Iops));
-                        }
-                        if (ebs != null && ebs.IsSetEncrypted())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.FromBool(ebs.Encrypted));
-                        }
-                    }
-                    if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetNoDevice())
-                    {
-                        request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.FromString(blockDeviceMappingsListValue.NoDevice));
-                    }
-
-                    blockDeviceMappingsListIndex++;
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetImageLocation())
+                {
+                    request.Parameters.Add("ImageLocation", StringUtils.FromString(publicRequest.ImageLocation));
+                }
+                if(publicRequest.IsSetKernelId())
+                {
+                    request.Parameters.Add("KernelId", StringUtils.FromString(publicRequest.KernelId));
+                }
+                if(publicRequest.IsSetName())
+                {
+                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                }
+                if(publicRequest.IsSetRamdiskId())
+                {
+                    request.Parameters.Add("RamdiskId", StringUtils.FromString(publicRequest.RamdiskId));
+                }
+                if(publicRequest.IsSetRootDeviceName())
+                {
+                    request.Parameters.Add("RootDeviceName", StringUtils.FromString(publicRequest.RootDeviceName));
+                }
+                if(publicRequest.IsSetSriovNetSupport())
+                {
+                    request.Parameters.Add("SriovNetSupport", StringUtils.FromString(publicRequest.SriovNetSupport));
+                }
+                if(publicRequest.IsSetVirtualizationType())
+                {
+                    request.Parameters.Add("VirtualizationType", StringUtils.FromString(publicRequest.VirtualizationType));
                 }
             }
-            if (registerImageRequest != null && registerImageRequest.IsSetVirtualizationType())
-            {
-                request.Parameters.Add("VirtualizationType", StringUtils.FromString(registerImageRequest.VirtualizationType));
-            }
-            if (registerImageRequest != null && registerImageRequest.IsSetSriovNetSupport())
-            {
-                request.Parameters.Add("SriovNetSupport", StringUtils.FromString(registerImageRequest.SriovNetSupport));
-            }
-
             return request;
         }
     }

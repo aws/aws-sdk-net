@@ -1,0 +1,16 @@
+{
+  "noArgOverloads": [
+    "DescribeDBEngineVersions",
+    "DescribeDBInstances",
+    "DescribeDBParameterGroups",
+    "DescribeDBSecurityGroups",
+    "DescribeDBSnapshots",
+    "DescribeDBSubnetGroups",
+    "DescribeEventCategories",
+    "DescribeEventSubscriptions",
+    "DescribeEvents",
+    "DescribeOptionGroups",
+    "DescribeReservedDBInstances",
+    "DescribeReservedDBInstancesOfferings"
+  ]
+}

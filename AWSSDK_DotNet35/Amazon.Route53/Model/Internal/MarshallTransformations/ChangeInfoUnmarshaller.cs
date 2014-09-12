@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ChangeInfo Unmarshaller
-     /// </summary>
-    internal class ChangeInfoUnmarshaller : IUnmarshaller<ChangeInfo, XmlUnmarshallerContext>, IUnmarshaller<ChangeInfo, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ChangeInfo Object
+    /// </summary>  
+    public class ChangeInfoUnmarshaller : IUnmarshaller<ChangeInfo, XmlUnmarshallerContext>
     {
-        public ChangeInfo Unmarshall(XmlUnmarshallerContext context) 
+        public ChangeInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            ChangeInfo changeInfo = new ChangeInfo();
+            ChangeInfo unmarshalledObject = new ChangeInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,54 +52,45 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        changeInfo.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        changeInfo.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SubmittedAt", targetDepth))
                     {
-                        changeInfo.SubmittedAt = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.SubmittedAt = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Comment", targetDepth))
                     {
-                        changeInfo.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return changeInfo;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static ChangeInfoUnmarshaller _instance = new ChangeInfoUnmarshaller();        
+
+        public static ChangeInfoUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return changeInfo;
-        }
-
-        public ChangeInfo Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static ChangeInfoUnmarshaller instance;
-
-        public static ChangeInfoUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new ChangeInfoUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

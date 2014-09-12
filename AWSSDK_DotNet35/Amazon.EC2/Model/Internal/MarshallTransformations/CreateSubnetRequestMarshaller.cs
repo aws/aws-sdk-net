@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Subnet Request Marshaller
+    /// CreateSubnet Request Marshaller
     /// </summary>       
-    public class CreateSubnetRequestMarshaller : IMarshaller<IRequest, CreateSubnetRequest>
+    public class CreateSubnetRequestMarshaller : IMarshaller<IRequest, CreateSubnetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateSubnetRequest createSubnetRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createSubnetRequest, "AmazonEC2");
+            return this.Marshall((CreateSubnetRequest)input);
+        }
+    
+        public IRequest Marshall(CreateSubnetRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateSubnet");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createSubnetRequest != null && createSubnetRequest.IsSetVpcId())
-            {
-                request.Parameters.Add("VpcId", StringUtils.FromString(createSubnetRequest.VpcId));
-            }
-            if (createSubnetRequest != null && createSubnetRequest.IsSetCidrBlock())
-            {
-                request.Parameters.Add("CidrBlock", StringUtils.FromString(createSubnetRequest.CidrBlock));
-            }
-            if (createSubnetRequest != null && createSubnetRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(createSubnetRequest.AvailabilityZone));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetCidrBlock())
+                {
+                    request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
+                }
+            }
             return request;
         }
     }

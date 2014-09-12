@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.ElasticBeanstalk.Model
         private int? _port;
         private string _protocol;
 
-
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
@@ -49,7 +52,6 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this._port.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Protocol. 

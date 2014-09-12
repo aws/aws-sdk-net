@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,30 +29,32 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the StopLogging operation.
-    /// <para>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to
-    /// use this action. You can update a trail without stopping it first. This action is the only way to stop recording.</para>
+    /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
+    /// Under most circumstances, there is no need to use this action. You can update a trail
+    /// without stopping it first. This action is the only way to stop recording.
     /// </summary>
     public partial class StopLoggingRequest : AmazonCloudTrailRequest
     {
-        private string name;
-
+        private string _name;
 
         /// <summary>
-        /// Communicates to CloudTrail the name of the trail for which to stop logging AWS API calls.
-        ///  
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Communicates to CloudTrail the name of the trail for which to stop logging AWS API
+        /// calls.
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateGatewayInformation response and response metadata.
+    /// Configuration for accessing Amazon UpdateGatewayInformation service
     /// </summary>
-    public class UpdateGatewayInformationResponse : UpdateGatewayInformationResult
+    public partial class UpdateGatewayInformationResponse : UpdateGatewayInformationResult
     {
         /// <summary>
         /// Gets and sets the UpdateGatewayInformationResult property.
-        /// A JSON object containing the of the gateway that was updated.
+        /// Represents the output of a UpdateGatewayInformation operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateGatewayInformationResult class are now available on the UpdateGatewayInformationResponse class. You should use the properties on UpdateGatewayInformationResponse instead of accessing them through UpdateGatewayInformationResult.")]
         public UpdateGatewayInformationResult UpdateGatewayInformationResult
@@ -40,4 +40,3 @@ namespace Amazon.StorageGateway.Model
         }
     }
 }
-    

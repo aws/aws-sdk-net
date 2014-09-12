@@ -12,134 +12,164 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an Amazon EBS block device.</para>
+    /// Describes an Amazon EBS block device.
     /// </summary>
     public partial class EbsBlockDevice
     {
-        
-        private string snapshotId;
-        private int? volumeSize;
-        private bool? deleteOnTermination;
-        private VolumeType volumeType;
-        private int? iops;
-        private bool? encrypted;
-
+        private bool? _deleteOnTermination;
+        private bool? _encrypted;
+        private int? _iops;
+        private string _snapshotId;
+        private int? _volumeSize;
+        private VolumeType _volumeType;
 
         /// <summary>
-        /// The ID of the snapshot.
-        ///  
-        /// </summary>
-        public string SnapshotId
-        {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
-        }
-
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
-        {
-            return this.snapshotId != null;
-        }
-
-        /// <summary>
-        /// The size of the volume, in GiB. Constraints: If the volume type is <c>io1</c>, the minimum size of the volume is 10 GiB. Default: If you're
-        /// creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.
-        ///  
-        /// </summary>
-        public int VolumeSize
-        {
-            get { return this.volumeSize ?? default(int); }
-            set { this.volumeSize = value; }
-        }
-
-        // Check to see if VolumeSize property is set
-        internal bool IsSetVolumeSize()
-        {
-            return this.volumeSize.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
         /// Indicates whether the Amazon EBS volume is deleted on instance termination.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
 
         /// <summary>
-        /// The volume type. <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, and <c>standard</c> for
-        /// Magnetic volumes. Default: <c>standard</c>
-        ///  
+        /// Gets and sets the property Encrypted. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>standard, io1, gp2</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public VolumeType VolumeType
-        {
-            get { return this.volumeType; }
-            set { this.volumeType = value; }
-        }
-
-        // Check to see if VolumeType property is set
-        internal bool IsSetVolumeType()
-        {
-            return this.volumeType != null;
-        }
-
-        /// <summary>
-        /// The number of I/O operations per second (IOPS) that the volume supports. Constraint: Range is 100 to 4000. Condition: Required when the
-        /// volume type is <c>io1</c>; not used with <c>standard</c> or <c>gp2</c> volumes.
-        ///  
-        /// </summary>
-        public int Iops
-        {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
-        }
-
-        // Check to see if Iops property is set
-        internal bool IsSetIops()
-        {
-            return this.iops.HasValue;
-        }
-
-        /// <summary>
         /// Indicates whether the Amazon EBS volume is encrypted.
-        ///  
+        /// </para>
         /// </summary>
         public bool Encrypted
         {
-            get { return this.encrypted ?? default(bool); }
-            set { this.encrypted = value; }
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
         }
 
         // Check to see if Encrypted property is set
         internal bool IsSetEncrypted()
         {
-            return this.encrypted.HasValue;
+            return this._encrypted.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The number of I/O operations per second (IOPS) that the volume supports.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: Range is 100 to 4000.
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition: Required when the volume type is <code>io1</code>; not used with <code>standard</code>
+        /// or <code>gp2</code> volumes.
+        /// </para>
+        /// </summary>
+        public int Iops
+        {
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The ID of the snapshot.
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeSize. 
+        /// <para>
+        /// The size of the volume, in GiB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: If the volume type is <code>io1</code>, the minimum size of the volume
+        /// is 10 GiB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: If you're creating the volume from a snapshot and don't specify a volume
+        /// size, the default is the snapshot size.
+        /// </para>
+        /// </summary>
+        public int VolumeSize
+        {
+            get { return this._volumeSize.GetValueOrDefault(); }
+            set { this._volumeSize = value; }
+        }
+
+        // Check to see if VolumeSize property is set
+        internal bool IsSetVolumeSize()
+        {
+            return this._volumeSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code>
+        /// for Provisioned IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>standard</code>
+        /// </para>
+        /// </summary>
+        public VolumeType VolumeType
+        {
+            get { return this._volumeType; }
+            set { this._volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this._volumeType != null;
+        }
+
     }
 }

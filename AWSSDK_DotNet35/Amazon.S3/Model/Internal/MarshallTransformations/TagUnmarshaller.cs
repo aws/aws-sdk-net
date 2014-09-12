@@ -66,15 +66,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static TagUnmarshaller instance;
+        private static TagUnmarshaller _instance;
 
-        public static TagUnmarshaller GetInstance() 
+        public static TagUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new TagUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TagUnmarshaller();
+                }
+                return _instance;
+            }
         }
+
     }
 }
     

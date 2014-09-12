@@ -12,114 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes the datafeed for a Spot Instance.</para>
+    /// Describes the datafeed for a Spot Instance.
     /// </summary>
     public partial class SpotDatafeedSubscription
     {
-        
-        private string ownerId;
-        private string bucket;
-        private string prefix;
-        private DatafeedSubscriptionState state;
-        private SpotInstanceStateFault fault;
-
+        private string _bucket;
+        private SpotInstanceStateFault _fault;
+        private string _ownerId;
+        private string _prefix;
+        private DatafeedSubscriptionState _state;
 
         /// <summary>
-        /// The AWS account ID of the account.
-        ///  
-        /// </summary>
-        public string OwnerId
-        {
-            get { return this.ownerId; }
-            set { this.ownerId = value; }
-        }
-
-        // Check to see if OwnerId property is set
-        internal bool IsSetOwnerId()
-        {
-            return this.ownerId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Bucket. 
+        /// <para>
         /// The Amazon S3 bucket where the Spot Instance datafeed is located.
-        ///  
+        /// </para>
         /// </summary>
         public string Bucket
         {
-            get { return this.bucket; }
-            set { this.bucket = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
         // Check to see if Bucket property is set
         internal bool IsSetBucket()
         {
-            return this.bucket != null;
+            return this._bucket != null;
         }
 
         /// <summary>
-        /// The prefix that is prepended to datafeed files.
-        ///  
-        /// </summary>
-        public string Prefix
-        {
-            get { return this.prefix; }
-            set { this.prefix = value; }
-        }
-
-        // Check to see if Prefix property is set
-        internal bool IsSetPrefix()
-        {
-            return this.prefix != null;
-        }
-
-        /// <summary>
-        /// The state of the Spot Instance datafeed subscription.
-        ///  
+        /// Gets and sets the property Fault. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Active, Inactive</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public DatafeedSubscriptionState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
         /// The fault codes for the Spot Instance request, if any.
-        ///  
+        /// </para>
         /// </summary>
         public SpotInstanceStateFault Fault
         {
-            get { return this.fault; }
-            set { this.fault = value; }
+            get { return this._fault; }
+            set { this._fault = value; }
         }
 
         // Check to see if Fault property is set
         internal bool IsSetFault()
         {
-            return this.fault != null;
+            return this._fault != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The AWS account ID of the account.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// The prefix that is prepended to datafeed files.
+        /// </para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the Spot Instance datafeed subscription.
+        /// </para>
+        /// </summary>
+        public DatafeedSubscriptionState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
     }
 }

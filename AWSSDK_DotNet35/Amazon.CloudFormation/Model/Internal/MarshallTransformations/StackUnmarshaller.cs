@@ -12,141 +12,156 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFormation.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Stack Unmarshaller
-     /// </summary>
-    internal class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext>, IUnmarshaller<Stack, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Stack Object
+    /// </summary>  
+    public class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext>, IUnmarshaller<Stack, JsonUnmarshallerContext>
     {
-        public Stack Unmarshall(XmlUnmarshallerContext context) 
+        public Stack Unmarshall(XmlUnmarshallerContext context)
         {
-            Stack stack = new Stack();
+            Stack unmarshalledObject = new Stack();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("StackId", targetDepth))
+                    if (context.TestExpression("Capabilities/member", targetDepth))
                     {
-                        stack.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("StackName", targetDepth))
-                    {
-                        stack.StackName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        stack.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Parameters/member", targetDepth))
-                    {
-                        stack.Parameters.Add(ParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Capabilities.Add(item);
                         continue;
                     }
                     if (context.TestExpression("CreationTime", targetDepth))
                     {
-                        stack.CreationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("LastUpdatedTime", targetDepth))
+                    if (context.TestExpression("Description", targetDepth))
                     {
-                        stack.LastUpdatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("StackStatus", targetDepth))
-                    {
-                        stack.StackStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("StackStatusReason", targetDepth))
-                    {
-                        stack.StackStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DisableRollback", targetDepth))
                     {
-                        stack.DisableRollback = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DisableRollback = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastUpdatedTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NotificationARNs/member", targetDepth))
                     {
-                        stack.NotificationARNs.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("TimeoutInMinutes", targetDepth))
-                    {
-                        stack.TimeoutInMinutes = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Capabilities/member", targetDepth))
-                    {
-                        stack.Capabilities.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NotificationARNs.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Outputs/member", targetDepth))
                     {
-                        stack.Outputs.Add(OutputUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = OutputUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Outputs.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Parameters/member", targetDepth))
+                    {
+                        var unmarshaller = ParameterUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Parameters.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackStatusReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackStatusReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
-                        stack.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("TimeoutInMinutes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return stack;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return stack;
+            return unmarshalledObject;
         }
 
-        public Stack Unmarshall(JsonUnmarshallerContext context) 
+        public Stack Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static StackUnmarshaller instance;
 
-        public static StackUnmarshaller GetInstance() 
+        private static StackUnmarshaller _instance = new StackUnmarshaller();        
+
+        public static StackUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new StackUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

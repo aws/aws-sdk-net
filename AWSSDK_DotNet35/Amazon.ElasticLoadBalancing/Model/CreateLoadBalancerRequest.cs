@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -74,6 +78,32 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> _subnets = new List<string>();
         private List<Tag> _tags = new List<Tag>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateLoadBalancerRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateLoadBalancerRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric characters or hyphens. </param>
+        public CreateLoadBalancerRequest(string loadBalancerName)
+        {
+            _loadBalancerName = loadBalancerName;
+        }
+
+        /// <summary>
+        /// Instantiates CreateLoadBalancerRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric characters or hyphens. </param>
+        /// <param name="listeners"> A list of the following tuples: Protocol, LoadBalancerPort, InstanceProtocol, InstancePort, and SSLCertificateId. </param>
+        /// <param name="availabilityZones"> A list of Availability Zones.   At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region as the load balancer. Traffic will be equally distributed across all zones.   You can later add more Availability Zones after the creation of the load balancer by calling <a>EnableAvailabilityZonesForLoadBalancer</a> action. </param>
+        public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones)
+        {
+            _loadBalancerName = loadBalancerName;
+            _listeners = listeners;
+            _availabilityZones = availabilityZones;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -104,7 +134,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
@@ -123,7 +152,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._listeners != null && this._listeners.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
@@ -144,7 +172,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Scheme. 
@@ -176,7 +203,6 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this._scheme != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
@@ -194,7 +220,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Subnets. 
@@ -214,7 +239,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._subnets != null && this._subnets.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Tags. 

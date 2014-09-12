@@ -12,66 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StartTimerFailedEventAttributes Object
+    /// </summary>  
+    public class StartTimerFailedEventAttributesUnmarshaller : IUnmarshaller<StartTimerFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<StartTimerFailedEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StartTimerFailedEventAttributesUnmarshaller
-      /// </summary>
-      internal class StartTimerFailedEventAttributesUnmarshaller : IUnmarshaller<StartTimerFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<StartTimerFailedEventAttributes, JsonUnmarshallerContext>
-      {
         StartTimerFailedEventAttributes IUnmarshaller<StartTimerFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StartTimerFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StartTimerFailedEventAttributes startTimerFailedEventAttributes = new StartTimerFailedEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StartTimerFailedEventAttributes unmarshalledObject = new StartTimerFailedEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("timerId", targetDepth))
-              {
-                startTimerFailedEventAttributes.TimerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("cause", targetDepth))
-              {
-                startTimerFailedEventAttributes.Cause = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
-              {
-                startTimerFailedEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("cause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return startTimerFailedEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static StartTimerFailedEventAttributesUnmarshaller instance;
-        public static StartTimerFailedEventAttributesUnmarshaller GetInstance()
+
+        private static StartTimerFailedEventAttributesUnmarshaller _instance = new StartTimerFailedEventAttributesUnmarshaller();        
+
+        public static StartTimerFailedEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StartTimerFailedEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

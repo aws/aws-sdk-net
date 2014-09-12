@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,50 +12,63 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Revoke D B Security Group Ingress Request Marshaller
+    /// RevokeDBSecurityGroupIngress Request Marshaller
     /// </summary>       
-    public class RevokeDBSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, RevokeDBSecurityGroupIngressRequest>
+    public class RevokeDBSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, RevokeDBSecurityGroupIngressRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
+            return this.Marshall((RevokeDBSecurityGroupIngressRequest)input);
+        }
+    
+        public IRequest Marshall(RevokeDBSecurityGroupIngressRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "RevokeDBSecurityGroupIngress");
             request.Parameters.Add("Version", "2013-09-09");
-            if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetDBSecurityGroupName())
-            {
-                request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.DBSecurityGroupName));
-            }
-            if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetCIDRIP())
-            {
-                request.Parameters.Add("CIDRIP", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.CIDRIP));
-            }
-            if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetEC2SecurityGroupName())
-            {
-                request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.EC2SecurityGroupName));
-            }
-            if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetEC2SecurityGroupId())
-            {
-                request.Parameters.Add("EC2SecurityGroupId", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.EC2SecurityGroupId));
-            }
-            if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetEC2SecurityGroupOwnerId())
-            {
-                request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.EC2SecurityGroupOwnerId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCIDRIP())
+                {
+                    request.Parameters.Add("CIDRIP", StringUtils.FromString(publicRequest.CIDRIP));
+                }
+                if(publicRequest.IsSetDBSecurityGroupName())
+                {
+                    request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(publicRequest.DBSecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupId())
+                {
+                    request.Parameters.Add("EC2SecurityGroupId", StringUtils.FromString(publicRequest.EC2SecurityGroupId));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupName())
+                {
+                    request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(publicRequest.EC2SecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupOwnerId())
+                {
+                    request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(publicRequest.EC2SecurityGroupOwnerId));
+                }
+            }
             return request;
         }
     }

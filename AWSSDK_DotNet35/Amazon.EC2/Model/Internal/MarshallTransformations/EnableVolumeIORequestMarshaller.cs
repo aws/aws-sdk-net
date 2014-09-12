@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Volume I O Request Marshaller
+    /// EnableVolumeIO Request Marshaller
     /// </summary>       
-    public class EnableVolumeIORequestMarshaller : IMarshaller<IRequest, EnableVolumeIORequest>
+    public class EnableVolumeIORequestMarshaller : IMarshaller<IRequest, EnableVolumeIORequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(EnableVolumeIORequest enableVolumeIORequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(enableVolumeIORequest, "AmazonEC2");
+            return this.Marshall((EnableVolumeIORequest)input);
+        }
+    
+        public IRequest Marshall(EnableVolumeIORequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "EnableVolumeIO");
             request.Parameters.Add("Version", "2014-06-15");
-            if (enableVolumeIORequest != null && enableVolumeIORequest.IsSetVolumeId())
-            {
-                request.Parameters.Add("VolumeId", StringUtils.FromString(enableVolumeIORequest.VolumeId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetVolumeId())
+                {
+                    request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
+                }
+            }
             return request;
         }
     }

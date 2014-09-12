@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,53 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// <para>A list of the part sizes of the multipart upload.</para>
+    /// A list of the part sizes of the multipart upload.
     /// </summary>
-    public class PartListElement
+    public partial class PartListElement
     {
-        
-        private string rangeInBytes;
-        private string sHA256TreeHash;
+        private string _rangeInBytes;
+        private string _sHA256TreeHash;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public PartListElement() { }
+
+        /// <summary>
+        /// Gets and sets the property RangeInBytes. 
+        /// <para>
         /// The byte range of a part, inclusive of the upper value of the range.
-        ///  
+        /// </para>
         /// </summary>
         public string RangeInBytes
         {
-            get { return this.rangeInBytes; }
-            set { this.rangeInBytes = value; }
+            get { return this._rangeInBytes; }
+            set { this._rangeInBytes = value; }
         }
 
         // Check to see if RangeInBytes property is set
         internal bool IsSetRangeInBytes()
         {
-            return this.rangeInBytes != null;
+            return this._rangeInBytes != null;
         }
 
         /// <summary>
-        /// The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <c>null</c>.
-        ///  
+        /// Gets and sets the property SHA256TreeHash. 
+        /// <para>
+        /// The SHA256 tree hash value that Amazon Glacier calculated for the part. This field
+        /// is never <code>null</code>.
+        /// </para>
         /// </summary>
         public string SHA256TreeHash
         {
-            get { return this.sHA256TreeHash; }
-            set { this.sHA256TreeHash = value; }
+            get { return this._sHA256TreeHash; }
+            set { this._sHA256TreeHash = value; }
         }
 
         // Check to see if SHA256TreeHash property is set
         internal bool IsSetSHA256TreeHash()
         {
-            return this.sHA256TreeHash != null;
+            return this._sHA256TreeHash != null;
         }
+
     }
 }

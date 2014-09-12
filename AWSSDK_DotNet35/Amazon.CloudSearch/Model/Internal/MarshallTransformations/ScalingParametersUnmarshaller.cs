@@ -12,69 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ScalingParameters Unmarshaller
-     /// </summary>
-    internal class ScalingParametersUnmarshaller : IUnmarshaller<ScalingParameters, XmlUnmarshallerContext>, IUnmarshaller<ScalingParameters, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ScalingParameters Object
+    /// </summary>  
+    public class ScalingParametersUnmarshaller : IUnmarshaller<ScalingParameters, XmlUnmarshallerContext>, IUnmarshaller<ScalingParameters, JsonUnmarshallerContext>
     {
-        public ScalingParameters Unmarshall(XmlUnmarshallerContext context) 
+        public ScalingParameters Unmarshall(XmlUnmarshallerContext context)
         {
-            ScalingParameters scalingParameters = new ScalingParameters();
+            ScalingParameters unmarshalledObject = new ScalingParameters();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("DesiredInstanceType", targetDepth))
                     {
-                        scalingParameters.DesiredInstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DesiredInstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DesiredPartitionCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DesiredPartitionCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DesiredReplicationCount", targetDepth))
                     {
-                        scalingParameters.DesiredReplicationCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DesiredReplicationCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return scalingParameters;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return scalingParameters;
+            return unmarshalledObject;
         }
 
-        public ScalingParameters Unmarshall(JsonUnmarshallerContext context) 
+        public ScalingParameters Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ScalingParametersUnmarshaller instance;
 
-        public static ScalingParametersUnmarshaller GetInstance() 
+        private static ScalingParametersUnmarshaller _instance = new ScalingParametersUnmarshaller();        
+
+        public static ScalingParametersUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ScalingParametersUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

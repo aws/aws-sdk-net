@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTaskTimedOutEventAttributes Object
+    /// </summary>  
+    public class ActivityTaskTimedOutEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskTimedOutEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskTimedOutEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTaskTimedOutEventAttributesUnmarshaller
-      /// </summary>
-      internal class ActivityTaskTimedOutEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskTimedOutEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskTimedOutEventAttributes, JsonUnmarshallerContext>
-      {
         ActivityTaskTimedOutEventAttributes IUnmarshaller<ActivityTaskTimedOutEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTaskTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTaskTimedOutEventAttributes activityTaskTimedOutEventAttributes = new ActivityTaskTimedOutEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTaskTimedOutEventAttributes unmarshalledObject = new ActivityTaskTimedOutEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("timeoutType", targetDepth))
-              {
-                activityTaskTimedOutEventAttributes.TimeoutType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("scheduledEventId", targetDepth))
-              {
-                activityTaskTimedOutEventAttributes.ScheduledEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startedEventId", targetDepth))
-              {
-                activityTaskTimedOutEventAttributes.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("details", targetDepth))
-              {
-                activityTaskTimedOutEventAttributes.Details = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("details", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scheduledEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timeoutType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTaskTimedOutEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static ActivityTaskTimedOutEventAttributesUnmarshaller instance;
-        public static ActivityTaskTimedOutEventAttributesUnmarshaller GetInstance()
+
+        private static ActivityTaskTimedOutEventAttributesUnmarshaller _instance = new ActivityTaskTimedOutEventAttributesUnmarshaller();        
+
+        public static ActivityTaskTimedOutEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTaskTimedOutEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

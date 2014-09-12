@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,24 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+
+using System;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Returns information about the DeleteEventSubscription response and response metadata.
+    /// Configuration for accessing Amazon DeleteEventSubscription service
     /// </summary>
-    public class DeleteEventSubscriptionResponse : DeleteEventSubscriptionResult
+    public partial class DeleteEventSubscriptionResponse : DeleteEventSubscriptionResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteEventSubscriptionResult property.
-        /// Contains the result of a successful invocation of the DeleteEventSubscription
-        /// action.
-        /// 
+        /// Represents the output of a DeleteEventSubscription operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteEventSubscriptionResult class are now available on the DeleteEventSubscriptionResponse class. You should use the properties on DeleteEventSubscriptionResponse instead of accessing them through DeleteEventSubscriptionResult.")]
         public DeleteEventSubscriptionResult DeleteEventSubscriptionResult
         {
@@ -40,4 +40,3 @@ namespace Amazon.RDS.Model
         }
     }
 }
-    

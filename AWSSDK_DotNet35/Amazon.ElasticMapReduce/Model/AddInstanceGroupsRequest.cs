@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.ElasticMapReduce.Model
         private List<InstanceGroupConfig> _instanceGroups = new List<InstanceGroupConfig>();
         private string _jobFlowId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AddInstanceGroupsRequest() { }
+
+        /// <summary>
+        /// Instantiates AddInstanceGroupsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="jobFlowId">Job flow in which to add the instance groups.</param>
+        /// <param name="instanceGroups">Instance Groups to add.</param>
+        public AddInstanceGroupsRequest(string jobFlowId, List<InstanceGroupConfig> instanceGroups)
+        {
+            _jobFlowId = jobFlowId;
+            _instanceGroups = instanceGroups;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceGroups. 
@@ -50,7 +69,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._instanceGroups != null && this._instanceGroups.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property JobFlowId. 

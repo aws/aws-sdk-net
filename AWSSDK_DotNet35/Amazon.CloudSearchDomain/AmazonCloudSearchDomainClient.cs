@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CloudSearchDomain.Model;
 using Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations;
@@ -46,9 +50,24 @@ namespace Amazon.CloudSearchDomain
     /// CloudSearch Developer Guide</a>.
     /// </para>
     /// </summary>
-    public partial class AmazonCloudSearchDomainClient : AmazonWebServiceClient, IAmazonCloudSearchDomain
+    public partial class AmazonCloudSearchDomainClient : AmazonServiceClient, IAmazonCloudSearchDomain
     {
-        AWS4Signer signer = new AWS4Signer();
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudSearchDomain.Internal.ProcessRequestHandler());
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.CloudSearchDomain.Internal.ValidationResponseHandler());
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.CloudSearchDomain.Internal.ProcessExceptionHandler());
+        }    
+
+        #endregion
 
         #region Dispose
 
@@ -59,10 +78,8 @@ namespace Amazon.CloudSearchDomain
 
         #endregion
 
-
         
         #region  Search
-
 
         /// <summary>
         /// Retrieves a list of documents that match the specified search criteria. How you specify
@@ -98,8 +115,10 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public SearchResponse Search(SearchRequest request)
         {
-            IAsyncResult asyncResult = invokeSearch(request, null, null, true);
-            return EndSearch(asyncResult);
+            var marshaller = new SearchRequestMarshaller();
+            var unmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -116,10 +135,12 @@ namespace Amazon.CloudSearchDomain
         ///         operation.</returns>
         public IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state)
         {
-            return invokeSearch(request, callback, state, false);
+            var marshaller = new SearchRequestMarshaller();
+            var unmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SearchRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Search operation.
@@ -131,21 +152,12 @@ namespace Amazon.CloudSearchDomain
         /// <returns>Returns a  SearchResult from CloudSearchDomain.</returns>
         public  SearchResponse EndSearch(IAsyncResult asyncResult)
         {
-            return endOperation< SearchResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSearch(SearchRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SearchRequestMarshaller();
-            var unmarshaller = SearchResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SearchResponse>(asyncResult);
         }
 
         #endregion
         
         #region  Suggest
-
 
         /// <summary>
         /// Retrieves autocomplete suggestions for a partial query string. You can use suggestions
@@ -178,8 +190,10 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public SuggestResponse Suggest(SuggestRequest request)
         {
-            IAsyncResult asyncResult = invokeSuggest(request, null, null, true);
-            return EndSuggest(asyncResult);
+            var marshaller = new SuggestRequestMarshaller();
+            var unmarshaller = SuggestResponseUnmarshaller.Instance;
+
+            return Invoke<SuggestRequest,SuggestResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -196,10 +210,12 @@ namespace Amazon.CloudSearchDomain
         ///         operation.</returns>
         public IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state)
         {
-            return invokeSuggest(request, callback, state, false);
+            var marshaller = new SuggestRequestMarshaller();
+            var unmarshaller = SuggestResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SuggestRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Suggest operation.
@@ -211,21 +227,12 @@ namespace Amazon.CloudSearchDomain
         /// <returns>Returns a  SuggestResult from CloudSearchDomain.</returns>
         public  SuggestResponse EndSuggest(IAsyncResult asyncResult)
         {
-            return endOperation< SuggestResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSuggest(SuggestRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SuggestRequestMarshaller();
-            var unmarshaller = SuggestResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SuggestResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UploadDocuments
-
 
         /// <summary>
         /// Posts a batch of documents to a search domain for indexing. A document batch is a
@@ -262,8 +269,10 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
-            IAsyncResult asyncResult = invokeUploadDocuments(request, null, null, true);
-            return EndUploadDocuments(asyncResult);
+            var marshaller = new UploadDocumentsRequestMarshaller();
+            var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
+
+            return Invoke<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -280,10 +289,12 @@ namespace Amazon.CloudSearchDomain
         ///         operation.</returns>
         public IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state)
         {
-            return invokeUploadDocuments(request, callback, state, false);
+            var marshaller = new UploadDocumentsRequestMarshaller();
+            var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UploadDocumentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UploadDocuments operation.
@@ -295,15 +306,7 @@ namespace Amazon.CloudSearchDomain
         /// <returns>Returns a  UploadDocumentsResult from CloudSearchDomain.</returns>
         public  UploadDocumentsResponse EndUploadDocuments(IAsyncResult asyncResult)
         {
-            return endOperation< UploadDocumentsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UploadDocumentsRequestMarshaller();
-            var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UploadDocumentsResponse>(asyncResult);
         }
 
         #endregion

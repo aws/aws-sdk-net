@@ -12,75 +12,85 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceNetworkInterfaceAssociation Unmarshaller
-     /// </summary>
-    internal class InstanceNetworkInterfaceAssociationUnmarshaller : IUnmarshaller<InstanceNetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterfaceAssociation, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceNetworkInterfaceAssociation Object
+    /// </summary>  
+    public class InstanceNetworkInterfaceAssociationUnmarshaller : IUnmarshaller<InstanceNetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterfaceAssociation, JsonUnmarshallerContext>
     {
-        public InstanceNetworkInterfaceAssociation Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceNetworkInterfaceAssociation Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceNetworkInterfaceAssociation instanceNetworkInterfaceAssociation = new InstanceNetworkInterfaceAssociation();
+            InstanceNetworkInterfaceAssociation unmarshalledObject = new InstanceNetworkInterfaceAssociation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("publicIp", targetDepth))
+                    if (context.TestExpression("ipOwnerId", targetDepth))
                     {
-                        instanceNetworkInterfaceAssociation.PublicIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpOwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("publicDnsName", targetDepth))
                     {
-                        instanceNetworkInterfaceAssociation.PublicDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipOwnerId", targetDepth))
+                    if (context.TestExpression("publicIp", targetDepth))
                     {
-                        instanceNetworkInterfaceAssociation.IpOwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceNetworkInterfaceAssociation;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceNetworkInterfaceAssociation;
+            return unmarshalledObject;
         }
 
-        public InstanceNetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceNetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceNetworkInterfaceAssociationUnmarshaller instance;
 
-        public static InstanceNetworkInterfaceAssociationUnmarshaller GetInstance() 
+        private static InstanceNetworkInterfaceAssociationUnmarshaller _instance = new InstanceNetworkInterfaceAssociationUnmarshaller();        
+
+        public static InstanceNetworkInterfaceAssociationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceNetworkInterfaceAssociationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

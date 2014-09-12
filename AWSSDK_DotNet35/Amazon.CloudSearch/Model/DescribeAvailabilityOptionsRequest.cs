@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,62 +29,54 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAvailabilityOptions operation.
-    /// <para>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the
-    /// <c>Deployed</c> option to <c>true</c> to show the active configuration and exclude pending changes. For more information, see <a
-    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" >Configuring Availability
-    /// Options</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
+    /// Gets the availability options configured for a domain. By default, shows the configuration
+    /// with any pending changes. Set the <code>Deployed</code> option to <code>true</code>
+    /// to show the active configuration and exclude pending changes. For more information,
+    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+    /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
+    /// Developer Guide</i>.
     /// </summary>
     public partial class DescribeAvailabilityOptionsRequest : AmazonCloudSearchRequest
     {
-        private string domainName;
-        private bool? deployed;
-
+        private bool? _deployed;
+        private string _domainName;
 
         /// <summary>
-        /// The name of the domain you want to describe.
-        ///  
+        /// Gets and sets the property Deployed. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 28</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9\-]+</description>
-        ///     </item>
-        /// </list>
+        /// Whether to display the deployed configuration (<code>true</code>) or include any pending
+        /// changes (<code>false</code>). Defaults to <code>false</code>.
         /// </para>
-        /// </summary>
-        public string DomainName
-        {
-            get { return this.domainName; }
-            set { this.domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this.domainName != null;
-        }
-
-        /// <summary>
-        /// Whether to display the deployed configuration (<c>true</c>) or include any pending changes (<c>false</c>). Defaults to <c>false</c>.
-        ///  
         /// </summary>
         public bool Deployed
         {
-            get { return this.deployed ?? default(bool); }
-            set { this.deployed = value; }
+            get { return this._deployed.GetValueOrDefault(); }
+            set { this._deployed = value; }
         }
 
         // Check to see if Deployed property is set
         internal bool IsSetDeployed()
         {
-            return this.deployed.HasValue;
+            return this._deployed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of the domain you want to describe.
+        /// </para>
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
         }
 
     }
 }
-    

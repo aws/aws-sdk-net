@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Kinesis.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Kinesis.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for SequenceNumberRange Object
+    /// </summary>  
+    public class SequenceNumberRangeUnmarshaller : IUnmarshaller<SequenceNumberRange, XmlUnmarshallerContext>, IUnmarshaller<SequenceNumberRange, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// SequenceNumberRangeUnmarshaller
-      /// </summary>
-      internal class SequenceNumberRangeUnmarshaller : IUnmarshaller<SequenceNumberRange, XmlUnmarshallerContext>, IUnmarshaller<SequenceNumberRange, JsonUnmarshallerContext>
-      {
         SequenceNumberRange IUnmarshaller<SequenceNumberRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public SequenceNumberRange Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            SequenceNumberRange sequenceNumberRange = new SequenceNumberRange();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            SequenceNumberRange unmarshalledObject = new SequenceNumberRange();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("StartingSequenceNumber", targetDepth))
-              {
-                sequenceNumberRange.StartingSequenceNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EndingSequenceNumber", targetDepth))
-              {
-                sequenceNumberRange.EndingSequenceNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("EndingSequenceNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndingSequenceNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingSequenceNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartingSequenceNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return sequenceNumberRange;
+            return unmarshalledObject;
         }
 
-        private static SequenceNumberRangeUnmarshaller instance;
-        public static SequenceNumberRangeUnmarshaller GetInstance()
+
+        private static SequenceNumberRangeUnmarshaller _instance = new SequenceNumberRangeUnmarshaller();        
+
+        public static SequenceNumberRangeUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new SequenceNumberRangeUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

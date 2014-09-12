@@ -12,165 +12,178 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a bundle task.</para>
+    /// Describes a bundle task.
     /// </summary>
     public partial class BundleTask
     {
-        
-        private string instanceId;
-        private string bundleId;
-        private BundleTaskState state;
-        private DateTime? startTime;
-        private DateTime? updateTime;
-        private Storage storage;
-        private string progress;
-        private BundleTaskError bundleTaskError;
-
+        private string _bundleId;
+        private BundleTaskError _bundleTaskError;
+        private string _instanceId;
+        private string _progress;
+        private DateTime? _startTime;
+        private BundleTaskState _state;
+        private Storage _storage;
+        private DateTime? _updateTime;
 
         /// <summary>
-        /// The ID of the instance associated with this bundle task.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property BundleId. 
+        /// <para>
         /// The ID for this bundle task.
-        ///  
+        /// </para>
         /// </summary>
         public string BundleId
         {
-            get { return this.bundleId; }
-            set { this.bundleId = value; }
+            get { return this._bundleId; }
+            set { this._bundleId = value; }
         }
 
         // Check to see if BundleId property is set
         internal bool IsSetBundleId()
         {
-            return this.bundleId != null;
+            return this._bundleId != null;
         }
 
         /// <summary>
-        /// The state of the task.
-        ///  
+        /// Gets and sets the property BundleTaskError. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>pending, waiting-for-shutdown, bundling, storing, cancelling, complete, failed</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public BundleTaskState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
-        /// The time this task started.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The time of the most recent update for the task.
-        ///  
-        /// </summary>
-        public DateTime UpdateTime
-        {
-            get { return this.updateTime ?? default(DateTime); }
-            set { this.updateTime = value; }
-        }
-
-        // Check to see if UpdateTime property is set
-        internal bool IsSetUpdateTime()
-        {
-            return this.updateTime.HasValue;
-        }
-
-        /// <summary>
-        /// The Amazon S3 storage locations.
-        ///  
-        /// </summary>
-        public Storage Storage
-        {
-            get { return this.storage; }
-            set { this.storage = value; }
-        }
-
-        // Check to see if Storage property is set
-        internal bool IsSetStorage()
-        {
-            return this.storage != null;
-        }
-
-        /// <summary>
-        /// The level of task completion, as a percent (for example, 20%).
-        ///  
-        /// </summary>
-        public string Progress
-        {
-            get { return this.progress; }
-            set { this.progress = value; }
-        }
-
-        // Check to see if Progress property is set
-        internal bool IsSetProgress()
-        {
-            return this.progress != null;
-        }
-
-        /// <summary>
         /// If the task fails, a description of the error.
-        ///  
+        /// </para>
         /// </summary>
         public BundleTaskError BundleTaskError
         {
-            get { return this.bundleTaskError; }
-            set { this.bundleTaskError = value; }
+            get { return this._bundleTaskError; }
+            set { this._bundleTaskError = value; }
         }
 
         // Check to see if BundleTaskError property is set
         internal bool IsSetBundleTaskError()
         {
-            return this.bundleTaskError != null;
+            return this._bundleTaskError != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance associated with this bundle task.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Progress. 
+        /// <para>
+        /// The level of task completion, as a percent (for example, 20%).
+        /// </para>
+        /// </summary>
+        public string Progress
+        {
+            get { return this._progress; }
+            set { this._progress = value; }
+        }
+
+        // Check to see if Progress property is set
+        internal bool IsSetProgress()
+        {
+            return this._progress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The time this task started.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the task.
+        /// </para>
+        /// </summary>
+        public BundleTaskState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Storage. 
+        /// <para>
+        /// The Amazon S3 storage locations.
+        /// </para>
+        /// </summary>
+        public Storage Storage
+        {
+            get { return this._storage; }
+            set { this._storage = value; }
+        }
+
+        // Check to see if Storage property is set
+        internal bool IsSetStorage()
+        {
+            return this._storage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateTime. 
+        /// <para>
+        /// The time of the most recent update for the task.
+        /// </para>
+        /// </summary>
+        public DateTime UpdateTime
+        {
+            get { return this._updateTime.GetValueOrDefault(); }
+            set { this._updateTime = value; }
+        }
+
+        // Check to see if UpdateTime property is set
+        internal bool IsSetUpdateTime()
+        {
+            return this._updateTime.HasValue; 
+        }
+
     }
 }

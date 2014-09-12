@@ -12,93 +12,105 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VpnGateway Unmarshaller
-     /// </summary>
-    internal class VpnGatewayUnmarshaller : IUnmarshaller<VpnGateway, XmlUnmarshallerContext>, IUnmarshaller<VpnGateway, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VpnGateway Object
+    /// </summary>  
+    public class VpnGatewayUnmarshaller : IUnmarshaller<VpnGateway, XmlUnmarshallerContext>, IUnmarshaller<VpnGateway, JsonUnmarshallerContext>
     {
-        public VpnGateway Unmarshall(XmlUnmarshallerContext context) 
+        public VpnGateway Unmarshall(XmlUnmarshallerContext context)
         {
-            VpnGateway vpnGateway = new VpnGateway();
+            VpnGateway unmarshalledObject = new VpnGateway();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("vpnGatewayId", targetDepth))
+                    if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        vpnGateway.VpnGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))
                     {
-                        vpnGateway.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("type", targetDepth))
-                    {
-                        vpnGateway.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("availabilityZone", targetDepth))
-                    {
-                        vpnGateway.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("attachments/item", targetDepth))
-                    {
-                        vpnGateway.VpcAttachments.Add(VpcAttachmentUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        vpnGateway.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("type", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("attachments/item", targetDepth))
+                    {
+                        var unmarshaller = VpcAttachmentUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.VpcAttachments.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("vpnGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpnGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return vpnGateway;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return vpnGateway;
+            return unmarshalledObject;
         }
 
-        public VpnGateway Unmarshall(JsonUnmarshallerContext context) 
+        public VpnGateway Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static VpnGatewayUnmarshaller instance;
 
-        public static VpnGatewayUnmarshaller GetInstance() 
+        private static VpnGatewayUnmarshaller _instance = new VpnGatewayUnmarshaller();        
+
+        public static VpnGatewayUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new VpnGatewayUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -1,0 +1,36 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+
+using System;
+
+namespace <#=this.Config.Namespace#>.Model
+{
+    /// <summary>
+    /// Configuration for accessing Amazon <#=this.OperationName#> service
+    /// </summary>
+	public partial class <#=this.OperationName#>Response : <#=this.OperationName#>Result
+	{
+        /// <summary>
+        /// Gets and sets the <#=this.OperationName#>Result property.
+        /// Represents the output of a <#=this.OperationName#> operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the <#=this.OperationName#>Result class are now available on the <#=this.OperationName#>Response class. You should use the properties on <#=this.OperationName#>Response instead of accessing them through <#=this.OperationName#>Result.")]
+        public <#=this.OperationName#>Result <#=this.OperationName#>Result
+        {
+            get
+            {
+                return this;
+            }
+        }
+    }
+}
+
+<#+
+    public string OperationName { get; set; }
+#>

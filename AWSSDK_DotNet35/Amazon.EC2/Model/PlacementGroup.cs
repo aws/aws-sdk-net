@@ -12,89 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a placement group.</para>
+    /// Describes a placement group.
     /// </summary>
     public partial class PlacementGroup
     {
-        
-        private string groupName;
-        private PlacementStrategy strategy;
-        private PlacementGroupState state;
-
+        private string _groupName;
+        private PlacementGroupState _state;
+        private PlacementStrategy _strategy;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public PlacementGroup() { }
+
+        /// <summary>
+        /// Instantiates PlacementGroup with the parameterized properties
+        /// </summary>
+        /// <param name="groupName">The name of the placement group.</param>
+        public PlacementGroup(string groupName)
+        {
+            _groupName = groupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
         /// The name of the placement group.
-        ///  
+        /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
 
         /// <summary>
-        /// The placement strategy.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>cluster</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public PlacementStrategy Strategy
-        {
-            get { return this.strategy; }
-            set { this.strategy = value; }
-        }
-
-        // Check to see if Strategy property is set
-        internal bool IsSetStrategy()
-        {
-            return this.strategy != null;
-        }
-
-        /// <summary>
         /// The state of the placement group.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>pending, available, deleting, deleted</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public PlacementGroupState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Strategy. 
+        /// <para>
+        /// The placement strategy.
+        /// </para>
+        /// </summary>
+        public PlacementStrategy Strategy
+        {
+            get { return this._strategy; }
+            set { this._strategy = value; }
+        }
+
+        // Check to see if Strategy property is set
+        internal bool IsSetStrategy()
+        {
+            return this._strategy != null;
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-sync-2014-06-30.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListRecords Request Marshaller
     /// </summary>       
-    public class ListRecordsRequestMarshaller : IMarshaller<IRequest, ListRecordsRequest> 
+    public class ListRecordsRequestMarshaller : IMarshaller<IRequest, ListRecordsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListRecordsRequest)input);
+        }
+
         public IRequest Marshall(ListRecordsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");

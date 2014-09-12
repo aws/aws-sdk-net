@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,30 +29,33 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmConnection operation.
-    /// <para>Confirm the creation of a hosted connection on an interconnect.</para> <para>Upon creation, the hosted connection is initially in the
-    /// 'Ordering' state, and will remain in this state until the owner calls ConfirmConnection to confirm creation of the hosted connection.</para>
+    /// Confirm the creation of a hosted connection on an interconnect.
+    /// 
+    ///  
+    /// <para>
+    /// Upon creation, the hosted connection is initially in the 'Ordering' state, and will
+    /// remain in this state until the owner calls ConfirmConnection to confirm creation of
+    /// the hosted connection.
+    /// </para>
     /// </summary>
     public partial class ConfirmConnectionRequest : AmazonDirectConnectRequest
     {
-        private string connectionId;
-
+        private string _connectionId;
 
         /// <summary>
-        /// ID of the connection. Example: dxcon-fg5678gh Default: None
-        ///  
+        /// Gets and sets the property ConnectionId.
         /// </summary>
         public string ConnectionId
         {
-            get { return this.connectionId; }
-            set { this.connectionId = value; }
+            get { return this._connectionId; }
+            set { this._connectionId = value; }
         }
 
         // Check to see if ConnectionId property is set
         internal bool IsSetConnectionId()
         {
-            return this.connectionId != null;
+            return this._connectionId != null;
         }
 
     }
 }
-    

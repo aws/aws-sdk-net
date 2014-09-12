@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 
@@ -21,8 +22,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// List Buckets Request Marshaller
     /// </summary>       
-    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest>
-    {
+    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((ListBucketsRequest)input);
+		}
+
         public IRequest Marshall(ListBucketsRequest listBucketsRequest)
         {
             IRequest request = new DefaultRequest(listBucketsRequest, "AmazonS3");
@@ -31,7 +37,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
             request.UseQueryString = true;
-            
+
             return request;
         }
     }

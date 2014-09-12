@@ -21,8 +21,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Bucket Lifecycle Request Marshaller
     /// </summary>       
-    public class GetLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, GetLifecycleConfigurationRequest>
-    {
+    public class GetLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, GetLifecycleConfigurationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((GetLifecycleConfigurationRequest)input);
+		}
+
         public IRequest Marshall(GetLifecycleConfigurationRequest getLifecycleConfiguration)
         {
             IRequest request = new DefaultRequest(getLifecycleConfiguration, "AmazonS3");

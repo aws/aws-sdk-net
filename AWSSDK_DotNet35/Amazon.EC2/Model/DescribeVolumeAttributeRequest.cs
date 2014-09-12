@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,57 +29,55 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumeAttribute operation.
-    /// <para>Describes the specified attribute of the specified volume. You can specify only one attribute at a time.</para> <para>For more
-    /// information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html" >Amazon EBS
-    /// Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Describes the specified attribute of the specified volume. You can specify only one
+    /// attribute at a time.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about Amazon EBS volumes, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+    /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeVolumeAttributeRequest : AmazonEC2Request
     {
-        private string volumeId;
-        private VolumeAttributeName attribute;
-
-
-        /// <summary>
-        /// The ID of the volume.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
+        private VolumeAttributeName _attribute;
+        private string _volumeId;
 
         /// <summary>
-        /// The instance attribute.
-        ///  
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>autoEnableIO, productCodes</description>
-        ///     </item>
-        /// </list>
+        /// The instance attribute.
         /// </para>
         /// </summary>
         public VolumeAttributeName Attribute
         {
-            get { return this.attribute; }
-            set { this.attribute = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
         // Check to see if Attribute property is set
         internal bool IsSetAttribute()
         {
-            return this.attribute != null;
+            return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
         }
 
     }
 }
-    

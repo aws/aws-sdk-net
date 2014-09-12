@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.CloudWatchLogs.Model
         private List<LogStream> _logStreams = new List<LogStream>();
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property LogStreams.
         /// </summary>
@@ -46,7 +49,6 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return this._logStreams != null && this._logStreams.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken.

@@ -12,50 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Purchase Reserved Instances Offering Request Marshaller
+    /// PurchaseReservedInstancesOffering Request Marshaller
     /// </summary>       
-    public class PurchaseReservedInstancesOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedInstancesOfferingRequest>
+    public class PurchaseReservedInstancesOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedInstancesOfferingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(purchaseReservedInstancesOfferingRequest, "AmazonEC2");
+            return this.Marshall((PurchaseReservedInstancesOfferingRequest)input);
+        }
+    
+        public IRequest Marshall(PurchaseReservedInstancesOfferingRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "PurchaseReservedInstancesOffering");
             request.Parameters.Add("Version", "2014-06-15");
-            if (purchaseReservedInstancesOfferingRequest != null && purchaseReservedInstancesOfferingRequest.IsSetReservedInstancesOfferingId())
-            {
-                request.Parameters.Add("ReservedInstancesOfferingId", StringUtils.FromString(purchaseReservedInstancesOfferingRequest.ReservedInstancesOfferingId));
-            }
-            if (purchaseReservedInstancesOfferingRequest != null && purchaseReservedInstancesOfferingRequest.IsSetInstanceCount())
-            {
-                request.Parameters.Add("InstanceCount", StringUtils.FromInt(purchaseReservedInstancesOfferingRequest.InstanceCount));
-            }
-            if (purchaseReservedInstancesOfferingRequest != null)
-            {
-                ReservedInstanceLimitPrice limitPrice = purchaseReservedInstancesOfferingRequest.LimitPrice;
-                if (limitPrice != null && limitPrice.IsSetAmount())
-                {
-                    request.Parameters.Add("LimitPrice.Amount", StringUtils.FromDouble(limitPrice.Amount));
-                }
-                if (limitPrice != null && limitPrice.IsSetCurrencyCode())
-                {
-                    request.Parameters.Add("LimitPrice.CurrencyCode", StringUtils.FromString(limitPrice.CurrencyCode));
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstanceCount())
+                {
+                    request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
+                }
+                if(publicRequest.IsSetLimitPrice())
+                {
+                    if(publicRequest.LimitPrice.IsSetAmount())
+                    {
+                        request.Parameters.Add("LimitPrice" + "." + "Amount", StringUtils.FromDouble(publicRequest.LimitPrice.Amount));
+                    }
+                    if(publicRequest.LimitPrice.IsSetCurrencyCode())
+                    {
+                        request.Parameters.Add("LimitPrice" + "." + "CurrencyCode", StringUtils.FromString(publicRequest.LimitPrice.CurrencyCode));
+                    }
+                }
+                if(publicRequest.IsSetReservedInstancesOfferingId())
+                {
+                    request.Parameters.Add("ReservedInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedInstancesOfferingId));
+                }
+            }
             return request;
         }
     }

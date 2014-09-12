@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch_2011_02_01.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   StemmingOptionsStatus Unmarshaller
-     /// </summary>
-    internal class StemmingOptionsStatusUnmarshaller : IUnmarshaller<StemmingOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<StemmingOptionsStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for StemmingOptionsStatus Object
+    /// </summary>  
+    public class StemmingOptionsStatusUnmarshaller : IUnmarshaller<StemmingOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<StemmingOptionsStatus, JsonUnmarshallerContext>
     {
-        public StemmingOptionsStatus Unmarshall(XmlUnmarshallerContext context) 
+        public StemmingOptionsStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            StemmingOptionsStatus stemmingOptionsStatus = new StemmingOptionsStatus();
+            StemmingOptionsStatus unmarshalledObject = new StemmingOptionsStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Options", targetDepth))
                     {
-                        stemmingOptionsStatus.Options = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        stemmingOptionsStatus.Status = OptionStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = OptionStatusUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return stemmingOptionsStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return stemmingOptionsStatus;
+            return unmarshalledObject;
         }
 
-        public StemmingOptionsStatus Unmarshall(JsonUnmarshallerContext context) 
+        public StemmingOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static StemmingOptionsStatusUnmarshaller instance;
 
-        public static StemmingOptionsStatusUnmarshaller GetInstance() 
+        private static StemmingOptionsStatusUnmarshaller _instance = new StemmingOptionsStatusUnmarshaller();        
+
+        public static StemmingOptionsStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new StemmingOptionsStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

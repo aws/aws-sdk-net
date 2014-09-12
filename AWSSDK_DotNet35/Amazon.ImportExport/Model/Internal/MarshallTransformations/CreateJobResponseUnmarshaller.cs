@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ImportExport.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for CreateJob operation
-    /// </summary>
-    internal class CreateJobResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for CreateJob operation
+    /// </summary>  
+    public class CreateJobResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             CreateJobResponse response = new CreateJobResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("CreateJobResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,CreateJobResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateJobResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,141 +71,128 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
+                    if (context.TestExpression("AwsShippingAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AwsShippingAddress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("JobId", targetDepth))
                     {
-                        response.JobId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.JobId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("JobType", targetDepth))
                     {
-                        response.JobType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("AwsShippingAddress", targetDepth))
-                    {
-                        response.AwsShippingAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.JobType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Signature", targetDepth))
                     {
-                        response.Signature = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Signature = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SignatureFileContents", targetDepth))
                     {
-                        response.SignatureFileContents = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SignatureFileContents = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("WarningMessage", targetDepth))
                     {
-                        response.WarningMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.WarningMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedManifestException"))
-            {
-                return new MalformedManifestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAddressException"))
-            {
-                return new InvalidAddressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("BucketPermissionException"))
             {
                 return new BucketPermissionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
-            {
-                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MultipleRegionsException"))
-            {
-                return new MultipleRegionsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterException"))
-            {
-                return new MissingParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFileSystemException"))
-            {
-                return new InvalidFileSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingCustomsException"))
-            {
-                return new MissingCustomsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchBucketException"))
-            {
-                return new NoSuchBucketException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAccessKeyIdException"))
             {
                 return new InvalidAccessKeyIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidManifestFieldException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAddressException"))
             {
-                return new InvalidManifestFieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidAddressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCustomsException"))
             {
                 return new InvalidCustomsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFileSystemException"))
+            {
+                return new InvalidFileSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidManifestFieldException"))
+            {
+                return new InvalidManifestFieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+            {
+                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+            {
+                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedManifestException"))
+            {
+                return new MalformedManifestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingCustomsException"))
+            {
+                return new MissingCustomsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingManifestFieldException"))
             {
                 return new MissingManifestFieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterException"))
+            {
+                return new MissingParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MultipleRegionsException"))
+            {
+                return new MultipleRegionsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchBucketException"))
+            {
+                return new NoSuchBucketException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonImportExportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static CreateJobResponseUnmarshaller instance;
+        private static CreateJobResponseUnmarshaller _instance = new CreateJobResponseUnmarshaller();        
 
-        public static CreateJobResponseUnmarshaller GetInstance()
+        internal static CreateJobResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new CreateJobResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static CreateJobResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

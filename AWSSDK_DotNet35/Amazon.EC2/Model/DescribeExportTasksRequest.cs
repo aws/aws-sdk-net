@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,29 +29,29 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportTasks operation.
-    /// <para>Describes one or more of your export tasks.</para>
+    /// Describes one or more of your export tasks.
     /// </summary>
     public partial class DescribeExportTasksRequest : AmazonEC2Request
     {
-        private List<string> exportTaskIds = new List<string>();
-
+        private List<string> _exportTaskIds = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property ExportTaskIds. 
+        /// <para>
         /// One or more export task IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> ExportTaskIds
         {
-            get { return this.exportTaskIds; }
-            set { this.exportTaskIds = value; }
+            get { return this._exportTaskIds; }
+            set { this._exportTaskIds = value; }
         }
 
         // Check to see if ExportTaskIds property is set
         internal bool IsSetExportTaskIds()
         {
-            return this.exportTaskIds.Count > 0;
+            return this._exportTaskIds != null && this._exportTaskIds.Count > 0; 
         }
 
     }
 }
-    

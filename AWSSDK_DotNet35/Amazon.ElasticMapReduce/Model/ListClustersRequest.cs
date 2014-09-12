@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -38,7 +42,6 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? _createdBefore;
         private string _marker;
 
-
         /// <summary>
         /// Gets and sets the property ClusterStates. 
         /// <para>
@@ -56,7 +59,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._clusterStates != null && this._clusterStates.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -76,7 +78,6 @@ namespace Amazon.ElasticMapReduce.Model
             return this._createdAfter.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
@@ -94,7 +95,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._createdBefore.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Marker. 

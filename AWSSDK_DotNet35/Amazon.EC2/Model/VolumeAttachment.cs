@@ -12,131 +12,140 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes volume attachment details.</para>
+    /// Describes volume attachment details.
     /// </summary>
     public partial class VolumeAttachment
     {
-        
-        private string volumeId;
-        private string instanceId;
-        private string device;
-        private VolumeAttachmentState state;
-        private DateTime? attachTime;
-        private bool? deleteOnTermination;
-
+        private DateTime? _attachTime;
+        private bool? _deleteOnTermination;
+        private string _device;
+        private string _instanceId;
+        private VolumeAttachmentState _state;
+        private string _volumeId;
 
         /// <summary>
-        /// The ID of the volume.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
-
-        /// <summary>
-        /// The ID of the instance.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// The device name.
-        ///  
-        /// </summary>
-        public string Device
-        {
-            get { return this.device; }
-            set { this.device = value; }
-        }
-
-        // Check to see if Device property is set
-        internal bool IsSetDevice()
-        {
-            return this.device != null;
-        }
-
-        /// <summary>
-        /// The attachment state of the volume.
-        ///  
+        /// Gets and sets the property AttachTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>attaching, attached, detaching, detached</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public VolumeAttachmentState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
         /// The time stamp when the attachment initiated.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime AttachTime
         {
-            get { return this.attachTime ?? default(DateTime); }
-            set { this.attachTime = value; }
+            get { return this._attachTime.GetValueOrDefault(); }
+            set { this._attachTime = value; }
         }
 
         // Check to see if AttachTime property is set
         internal bool IsSetAttachTime()
         {
-            return this.attachTime.HasValue;
+            return this._attachTime.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
         /// Indicates whether the Amazon EBS volume is deleted on instance termination.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Device. 
+        /// <para>
+        /// The device name.
+        /// </para>
+        /// </summary>
+        public string Device
+        {
+            get { return this._device; }
+            set { this._device = value; }
+        }
+
+        // Check to see if Device property is set
+        internal bool IsSetDevice()
+        {
+            return this._device != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The attachment state of the volume.
+        /// </para>
+        /// </summary>
+        public VolumeAttachmentState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
     }
 }

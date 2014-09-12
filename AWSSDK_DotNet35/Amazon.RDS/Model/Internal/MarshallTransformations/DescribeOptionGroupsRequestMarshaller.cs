@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Option Groups Request Marshaller
+    /// DescribeOptionGroups Request Marshaller
     /// </summary>       
-    public class DescribeOptionGroupsRequestMarshaller : IMarshaller<IRequest, DescribeOptionGroupsRequest>
+    public class DescribeOptionGroupsRequestMarshaller : IMarshaller<IRequest, DescribeOptionGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeOptionGroupsRequest describeOptionGroupsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeOptionGroupsRequest, "AmazonRDS");
+            return this.Marshall((DescribeOptionGroupsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeOptionGroupsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeOptionGroups");
             request.Parameters.Add("Version", "2013-09-09");
-            if (describeOptionGroupsRequest != null && describeOptionGroupsRequest.IsSetOptionGroupName())
-            {
-                request.Parameters.Add("OptionGroupName", StringUtils.FromString(describeOptionGroupsRequest.OptionGroupName));
-            }
 
-            if (describeOptionGroupsRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeOptionGroupsRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetEngineName())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetFilterName())
+                    request.Parameters.Add("EngineName", StringUtils.FromString(publicRequest.EngineName));
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterName", StringUtils.FromString(filtersListValue.FilterName));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> filterValueList = filtersListValue.FilterValue;
-
-                        int filterValueListIndex = 1;
-                        foreach (string filterValueListValue in filterValueList)
-                        { 
-                            request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterValue.member." + filterValueListIndex, StringUtils.FromString(filterValueListValue));
-                            filterValueListIndex++;
+                        if(publicRequestlistValue.IsSetFilterName())
+                        {
+                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterName", StringUtils.FromString(publicRequestlistValue.FilterName));
                         }
+                        if(publicRequestlistValue.IsSetFilterValue())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.FilterValue)
+                            {
+                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterValue" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetMajorEngineVersion())
+                {
+                    request.Parameters.Add("MajorEngineVersion", StringUtils.FromString(publicRequest.MajorEngineVersion));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetOptionGroupName())
+                {
+                    request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
                 }
             }
-            if (describeOptionGroupsRequest != null && describeOptionGroupsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeOptionGroupsRequest.Marker));
-            }
-            if (describeOptionGroupsRequest != null && describeOptionGroupsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeOptionGroupsRequest.MaxRecords));
-            }
-            if (describeOptionGroupsRequest != null && describeOptionGroupsRequest.IsSetEngineName())
-            {
-                request.Parameters.Add("EngineName", StringUtils.FromString(describeOptionGroupsRequest.EngineName));
-            }
-            if (describeOptionGroupsRequest != null && describeOptionGroupsRequest.IsSetMajorEngineVersion())
-            {
-                request.Parameters.Add("MajorEngineVersion", StringUtils.FromString(describeOptionGroupsRequest.MajorEngineVersion));
-            }
-
             return request;
         }
     }

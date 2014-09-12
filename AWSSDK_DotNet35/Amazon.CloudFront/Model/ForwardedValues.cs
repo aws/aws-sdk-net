@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudFront.Model
         private Headers _headers;
         private bool? _queryString;
 
-
         /// <summary>
         /// Gets and sets the property Cookies. A complex type that specifies how CloudFront handles
         /// cookies.
@@ -49,10 +52,9 @@ namespace Amazon.CloudFront.Model
             return this._cookies != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Headers. A complex type that specifies the Headers, if
-        /// any, that you want CloudFront to vary upon    for this cache behavior.
+        /// any, that you want CloudFront to vary upon for this cache behavior.
         /// </summary>
         public Headers Headers
         {
@@ -66,11 +68,10 @@ namespace Amazon.CloudFront.Model
             return this._headers != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property QueryString. Indicates whether you want CloudFront to forward
-        /// query strings to the    origin that is associated with this cache behavior. If so,
-        /// specify true; if    not, specify false.
+        /// query strings to the origin that is associated with this cache behavior. If so, specify
+        /// true; if not, specify false.
         /// </summary>
         public bool QueryString
         {

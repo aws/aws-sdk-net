@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
 namespace Amazon.CloudSearch
 {
     /// <summary>
-    /// Base class for AmazonCloudSearch operation requests.
+    /// Base class for CloudSearch operation requests.
     /// </summary>
     public partial class AmazonCloudSearchRequest : AmazonWebServiceRequest
     {
     }
 }
-    

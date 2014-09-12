@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The output for the ListMetrics action. </para>
+    /// The output for the <a>ListMetrics</a> action.
     /// </summary>
     public partial class ListMetricsResult : AmazonWebServiceResponse
     {
-        
-        private List<Metric> metrics = new List<Metric>();
-        private string nextToken;
+        private List<Metric> _metrics = new List<Metric>();
+        private string _nextToken;
 
         /// <summary>
-        /// A list of metrics used to generate statistics for an AWS account.
-        ///  
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        ///  A list of metrics used to generate statistics for an AWS account. 
+        /// </para>
         /// </summary>
         public List<Metric> Metrics
         {
-            get { return this.metrics; }
-            set { this.metrics = value; }
+            get { return this._metrics; }
+            set { this._metrics = value; }
         }
 
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;
+            return this._metrics != null && this._metrics.Count > 0; 
         }
 
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A string that marks the start of the next batch of returned results. 
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }

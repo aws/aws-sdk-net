@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,49 +33,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Tables Request Marshaller
+    /// ListTables Request Marshaller
     /// </summary>       
-    internal class ListTablesRequestMarshaller : IMarshaller<IRequest, ListTablesRequest> 
+    public class ListTablesRequestMarshaller : IMarshaller<IRequest, ListTablesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListTablesRequest listTablesRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListTablesRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listTablesRequest, "AmazonDynamoDBv2");
+        public IRequest Marshall(ListTablesRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
             string target = "DynamoDB_20120810.ListTables";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listTablesRequest != null && listTablesRequest.IsSetExclusiveStartTableName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExclusiveStartTableName())
                 {
-                    writer.WritePropertyName("ExclusiveStartTableName");
-                    writer.Write(listTablesRequest.ExclusiveStartTableName);
-                }
-                if (listTablesRequest != null && listTablesRequest.IsSetLimit()) 
-                {
-                    writer.WritePropertyName("Limit");
-                    writer.Write(listTablesRequest.Limit);
+                    context.Writer.WritePropertyName("ExclusiveStartTableName");
+                    context.Writer.Write(publicRequest.ExclusiveStartTableName);
                 }
 
+                if(publicRequest.IsSetLimit())
+                {
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

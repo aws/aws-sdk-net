@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,90 +33,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Private Virtual Interface Request Marshaller
+    /// CreatePrivateVirtualInterface Request Marshaller
     /// </summary>       
-    internal class CreatePrivateVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, CreatePrivateVirtualInterfaceRequest> 
+    public class CreatePrivateVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, CreatePrivateVirtualInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CreatePrivateVirtualInterfaceRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(createPrivateVirtualInterfaceRequest, "AmazonDirectConnect");
+        public IRequest Marshall(CreatePrivateVirtualInterfaceRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
             string target = "OvertureService.CreatePrivateVirtualInterface";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createPrivateVirtualInterfaceRequest != null && createPrivateVirtualInterfaceRequest.IsSetConnectionId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectionId())
                 {
-                    writer.WritePropertyName("connectionId");
-                    writer.Write(createPrivateVirtualInterfaceRequest.ConnectionId);
+                    context.Writer.WritePropertyName("connectionId");
+                    context.Writer.Write(publicRequest.ConnectionId);
                 }
 
-                if (createPrivateVirtualInterfaceRequest != null) 
+                if(publicRequest.IsSetNewPrivateVirtualInterface())
                 {
-                    NewPrivateVirtualInterface newPrivateVirtualInterface = createPrivateVirtualInterfaceRequest.NewPrivateVirtualInterface;
-                    if (newPrivateVirtualInterface != null)
-                    {
-                        writer.WritePropertyName("newPrivateVirtualInterface");
-                        writer.WriteObjectStart();
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetVirtualInterfaceName()) 
-                        {
-                            writer.WritePropertyName("virtualInterfaceName");
-                            writer.Write(newPrivateVirtualInterface.VirtualInterfaceName);
-                        }
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetVlan()) 
-                        {
-                            writer.WritePropertyName("vlan");
-                            writer.Write(newPrivateVirtualInterface.Vlan);
-                        }
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetAsn()) 
-                        {
-                            writer.WritePropertyName("asn");
-                            writer.Write(newPrivateVirtualInterface.Asn);
-                        }
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetAuthKey()) 
-                        {
-                            writer.WritePropertyName("authKey");
-                            writer.Write(newPrivateVirtualInterface.AuthKey);
-                        }
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetAmazonAddress()) 
-                        {
-                            writer.WritePropertyName("amazonAddress");
-                            writer.Write(newPrivateVirtualInterface.AmazonAddress);
-                        }
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetCustomerAddress()) 
-                        {
-                            writer.WritePropertyName("customerAddress");
-                            writer.Write(newPrivateVirtualInterface.CustomerAddress);
-                        }
-                        if (newPrivateVirtualInterface != null && newPrivateVirtualInterface.IsSetVirtualGatewayId()) 
-                        {
-                            writer.WritePropertyName("virtualGatewayId");
-                            writer.Write(newPrivateVirtualInterface.VirtualGatewayId);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("newPrivateVirtualInterface");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NewPrivateVirtualInterfaceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NewPrivateVirtualInterface, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Release Address Request Marshaller
+    /// ReleaseAddress Request Marshaller
     /// </summary>       
-    public class ReleaseAddressRequestMarshaller : IMarshaller<IRequest, ReleaseAddressRequest>
+    public class ReleaseAddressRequestMarshaller : IMarshaller<IRequest, ReleaseAddressRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ReleaseAddressRequest releaseAddressRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(releaseAddressRequest, "AmazonEC2");
+            return this.Marshall((ReleaseAddressRequest)input);
+        }
+    
+        public IRequest Marshall(ReleaseAddressRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ReleaseAddress");
             request.Parameters.Add("Version", "2014-06-15");
-            if (releaseAddressRequest != null && releaseAddressRequest.IsSetPublicIp())
-            {
-                request.Parameters.Add("PublicIp", StringUtils.FromString(releaseAddressRequest.PublicIp));
-            }
-            if (releaseAddressRequest != null && releaseAddressRequest.IsSetAllocationId())
-            {
-                request.Parameters.Add("AllocationId", StringUtils.FromString(releaseAddressRequest.AllocationId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAllocationId())
+                {
+                    request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
+                }
+                if(publicRequest.IsSetPublicIp())
+                {
+                    request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
+                }
+            }
             return request;
         }
     }

@@ -12,108 +12,122 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StorediSCSIVolume Object
+    /// </summary>  
+    public class StorediSCSIVolumeUnmarshaller : IUnmarshaller<StorediSCSIVolume, XmlUnmarshallerContext>, IUnmarshaller<StorediSCSIVolume, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StorediSCSIVolumeUnmarshaller
-      /// </summary>
-      internal class StorediSCSIVolumeUnmarshaller : IUnmarshaller<StorediSCSIVolume, XmlUnmarshallerContext>, IUnmarshaller<StorediSCSIVolume, JsonUnmarshallerContext>
-      {
         StorediSCSIVolume IUnmarshaller<StorediSCSIVolume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StorediSCSIVolume Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StorediSCSIVolume storediSCSIVolume = new StorediSCSIVolume();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StorediSCSIVolume unmarshalledObject = new StorediSCSIVolume();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("VolumeARN", targetDepth))
-              {
-                storediSCSIVolume.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeId", targetDepth))
-              {
-                storediSCSIVolume.VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeType", targetDepth))
-              {
-                storediSCSIVolume.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeStatus", targetDepth))
-              {
-                storediSCSIVolume.VolumeStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeSizeInBytes", targetDepth))
-              {
-                storediSCSIVolume.VolumeSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeProgress", targetDepth))
-              {
-                storediSCSIVolume.VolumeProgress = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeDiskId", targetDepth))
-              {
-                storediSCSIVolume.VolumeDiskId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SourceSnapshotId", targetDepth))
-              {
-                storediSCSIVolume.SourceSnapshotId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PreservedExistingData", targetDepth))
-              {
-                storediSCSIVolume.PreservedExistingData = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeiSCSIAttributes", targetDepth))
-              {
-                storediSCSIVolume.VolumeiSCSIAttributes = VolumeiSCSIAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("PreservedExistingData", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PreservedExistingData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceSnapshotId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceSnapshotId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeDiskId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeDiskId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeiSCSIAttributes", targetDepth))
+                {
+                    var unmarshaller = VolumeiSCSIAttributesUnmarshaller.Instance;
+                    unmarshalledObject.VolumeiSCSIAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeProgress", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.VolumeProgress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VolumeSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return storediSCSIVolume;
+            return unmarshalledObject;
         }
 
-        private static StorediSCSIVolumeUnmarshaller instance;
-        public static StorediSCSIVolumeUnmarshaller GetInstance()
+
+        private static StorediSCSIVolumeUnmarshaller _instance = new StorediSCSIVolumeUnmarshaller();        
+
+        public static StorediSCSIVolumeUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StorediSCSIVolumeUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

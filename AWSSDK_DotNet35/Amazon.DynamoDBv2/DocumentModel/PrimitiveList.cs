@@ -15,9 +15,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
 using System.IO;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -141,6 +143,53 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
 
             return attribute;
+        }
+
+        internal List<Primitive> GetSortedEntries()
+        {
+            var sortedEntries = new List<Primitive>(Entries);
+            sortedEntries.Sort(PrimitiveComparer.Comparer);
+
+            return sortedEntries;
+        }
+
+        private class PrimitiveComparer : IComparer<Primitive>
+        {
+            public int Compare(Primitive x, Primitive y)
+            {
+                if (x.Type != y.Type)
+                    return x.Type.CompareTo(y.Type);
+
+                if (x.Type == DynamoDBEntryType.Numeric || x.Type == DynamoDBEntryType.String)
+                {
+                    return (string.Compare(x.StringValue, y.StringValue, StringComparison.Ordinal));
+                }
+                else if (x.Type == DynamoDBEntryType.Binary)
+                {
+                    byte[] xByteArray = x.Value as byte[];
+                    byte[] yByteArray = y.Value as byte[];
+
+                    if (xByteArray.Length != yByteArray.Length)
+                        return xByteArray.Length.CompareTo(yByteArray.Length);
+
+                    for (int i = 0; i < xByteArray.Length; i++)
+                    {
+                        byte xb = xByteArray[i];
+                        byte yb = yByteArray[i];
+                        int byteCompare = xb.CompareTo(yb);
+                        if (byteCompare != 0)
+                            return byteCompare;
+                    }
+
+                    return 0;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Unknown type of Primitive: " + x.Type);
+                }
+            }
+
+            public static PrimitiveComparer Comparer = new PrimitiveComparer();
         }
 
         #endregion
@@ -319,10 +368,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return list;
         }
 
-        int hashCode = new Random().Next(int.MaxValue);
         public override int GetHashCode()
         {
-            return hashCode;
+            var typeHashCode = this.Type.GetHashCode();
+            var entriesHashCode = 0;
+            foreach(var entry in this.Entries)
+            {
+                // Hash entries in such a way that order doesn't matter
+                entriesHashCode = entriesHashCode ^ entry.GetHashCode();
+            }
+
+            return Hashing.CombineHashes(typeHashCode, entriesHashCode);
         }
 
         public override bool Equals(object obj)
@@ -334,10 +390,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (entryOther.Entries.Count != this.Entries.Count)
                 return false;
 
+            var thisSortedEntries = this.GetSortedEntries();
+            var otherSortedEntries = entryOther.GetSortedEntries();
             for (int i = 0; i < this.Entries.Count; i++)
             {
-                Primitive thisPrim = this[i];
-                Primitive otherPrim = entryOther[i];
+                Primitive thisPrim = thisSortedEntries[i];
+                Primitive otherPrim = otherSortedEntries[i];
 
                 if (thisPrim == null && otherPrim == null)
                     continue;

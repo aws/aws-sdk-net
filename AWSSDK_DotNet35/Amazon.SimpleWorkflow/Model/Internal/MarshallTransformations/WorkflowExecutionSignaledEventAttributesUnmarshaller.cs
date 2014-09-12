@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WorkflowExecutionSignaledEventAttributes Object
+    /// </summary>  
+    public class WorkflowExecutionSignaledEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionSignaledEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WorkflowExecutionSignaledEventAttributesUnmarshaller
-      /// </summary>
-      internal class WorkflowExecutionSignaledEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionSignaledEventAttributes, JsonUnmarshallerContext>
-      {
         WorkflowExecutionSignaledEventAttributes IUnmarshaller<WorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WorkflowExecutionSignaledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes = new WorkflowExecutionSignaledEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WorkflowExecutionSignaledEventAttributes unmarshalledObject = new WorkflowExecutionSignaledEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("signalName", targetDepth))
-              {
-                workflowExecutionSignaledEventAttributes.SignalName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("input", targetDepth))
-              {
-                workflowExecutionSignaledEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("externalWorkflowExecution", targetDepth))
-              {
-                workflowExecutionSignaledEventAttributes.ExternalWorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("externalInitiatedEventId", targetDepth))
-              {
-                workflowExecutionSignaledEventAttributes.ExternalInitiatedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("externalInitiatedEventId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ExternalInitiatedEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("externalWorkflowExecution", targetDepth))
+                {
+                    var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
+                    unmarshalledObject.ExternalWorkflowExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("input", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signalName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SignalName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return workflowExecutionSignaledEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static WorkflowExecutionSignaledEventAttributesUnmarshaller instance;
-        public static WorkflowExecutionSignaledEventAttributesUnmarshaller GetInstance()
+
+        private static WorkflowExecutionSignaledEventAttributesUnmarshaller _instance = new WorkflowExecutionSignaledEventAttributesUnmarshaller();        
+
+        public static WorkflowExecutionSignaledEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WorkflowExecutionSignaledEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

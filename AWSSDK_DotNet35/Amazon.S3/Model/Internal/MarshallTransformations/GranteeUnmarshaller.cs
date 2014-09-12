@@ -82,14 +82,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return null;
         }
 
-        private static GranteeUnmarshaller instance;
+        private static GranteeUnmarshaller _instance;
 
-        public static GranteeUnmarshaller GetInstance() 
+        public static GranteeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new GranteeUnmarshaller();
-
-            return instance;
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GranteeUnmarshaller();
+                }
+                return _instance;
+            }
         }
     }
 }

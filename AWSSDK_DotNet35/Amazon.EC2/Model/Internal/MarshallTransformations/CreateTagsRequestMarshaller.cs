@@ -12,60 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Tags Request Marshaller
+    /// CreateTags Request Marshaller
     /// </summary>       
-    public class CreateTagsRequestMarshaller : IMarshaller<IRequest, CreateTagsRequest>
+    public class CreateTagsRequestMarshaller : IMarshaller<IRequest, CreateTagsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CreateTagsRequest createTagsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(createTagsRequest, "AmazonEC2");
+            return this.Marshall((CreateTagsRequest)input);
+        }
+    
+        public IRequest Marshall(CreateTagsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateTags");
             request.Parameters.Add("Version", "2014-06-15");
-            if (createTagsRequest != null)
-            {
-                List<string> resourcesList = createTagsRequest.Resources;
 
-                int resourcesListIndex = 1;
-                foreach (string resourcesListValue in resourcesList)
-                { 
-                    request.Parameters.Add("ResourceId." + resourcesListIndex, StringUtils.FromString(resourcesListValue));
-                    resourcesListIndex++;
-                }
-            }
-
-            if (createTagsRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = createTagsRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetResources())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Resources)
                     {
-                        request.Parameters.Add("Tag." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        request.Parameters.Add("ResourceId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tag." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    tagsListIndex++;
                 }
             }
-
             return request;
         }
     }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,6 +41,21 @@ namespace Amazon.IdentityManagement.Model
         private string _certificateChain;
         private ServerCertificateMetadata _serverCertificateMetadata;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ServerCertificate() { }
+
+        /// <summary>
+        /// Instantiates ServerCertificate with the parameterized properties
+        /// </summary>
+        /// <param name="serverCertificateMetadata">The meta information of the server certificate, such as its name, path, ID, and ARN.</param>
+        /// <param name="certificateBody">The contents of the public key certificate.</param>
+        public ServerCertificate(ServerCertificateMetadata serverCertificateMetadata, string certificateBody)
+        {
+            _serverCertificateMetadata = serverCertificateMetadata;
+            _certificateBody = certificateBody;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateBody. 
@@ -56,7 +75,6 @@ namespace Amazon.IdentityManagement.Model
             return this._certificateBody != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
@@ -74,7 +92,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._certificateChain != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ServerCertificateMetadata. 

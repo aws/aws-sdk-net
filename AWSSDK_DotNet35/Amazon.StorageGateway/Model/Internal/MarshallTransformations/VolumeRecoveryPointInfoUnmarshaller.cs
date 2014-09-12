@@ -12,72 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VolumeRecoveryPointInfo Object
+    /// </summary>  
+    public class VolumeRecoveryPointInfoUnmarshaller : IUnmarshaller<VolumeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<VolumeRecoveryPointInfo, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VolumeRecoveryPointInfoUnmarshaller
-      /// </summary>
-      internal class VolumeRecoveryPointInfoUnmarshaller : IUnmarshaller<VolumeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<VolumeRecoveryPointInfo, JsonUnmarshallerContext>
-      {
         VolumeRecoveryPointInfo IUnmarshaller<VolumeRecoveryPointInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VolumeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VolumeRecoveryPointInfo volumeRecoveryPointInfo = new VolumeRecoveryPointInfo();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VolumeRecoveryPointInfo unmarshalledObject = new VolumeRecoveryPointInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("VolumeARN", targetDepth))
-              {
-                volumeRecoveryPointInfo.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeSizeInBytes", targetDepth))
-              {
-                volumeRecoveryPointInfo.VolumeSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeUsageInBytes", targetDepth))
-              {
-                volumeRecoveryPointInfo.VolumeUsageInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
-              {
-                volumeRecoveryPointInfo.VolumeRecoveryPointTime = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("VolumeARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeRecoveryPointTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VolumeSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeUsageInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return volumeRecoveryPointInfo;
+            return unmarshalledObject;
         }
 
-        private static VolumeRecoveryPointInfoUnmarshaller instance;
-        public static VolumeRecoveryPointInfoUnmarshaller GetInstance()
+
+        private static VolumeRecoveryPointInfoUnmarshaller _instance = new VolumeRecoveryPointInfoUnmarshaller();        
+
+        public static VolumeRecoveryPointInfoUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VolumeRecoveryPointInfoUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

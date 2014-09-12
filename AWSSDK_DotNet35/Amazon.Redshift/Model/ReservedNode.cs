@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.Redshift.Model
         private string _state;
         private double? _usagePrice;
 
-
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
@@ -59,7 +62,6 @@ namespace Amazon.Redshift.Model
         {
             return this._currencyCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Duration. 
@@ -79,7 +81,6 @@ namespace Amazon.Redshift.Model
             return this._duration.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
@@ -97,7 +98,6 @@ namespace Amazon.Redshift.Model
         {
             return this._fixedPrice.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NodeCount. 
@@ -117,7 +117,6 @@ namespace Amazon.Redshift.Model
             return this._nodeCount.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
@@ -135,7 +134,6 @@ namespace Amazon.Redshift.Model
         {
             return this._nodeType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property OfferingType. 
@@ -156,7 +154,6 @@ namespace Amazon.Redshift.Model
             return this._offeringType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RecurringCharges. 
         /// <para>
@@ -174,7 +171,6 @@ namespace Amazon.Redshift.Model
         {
             return this._recurringCharges != null && this._recurringCharges.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ReservedNodeId. 
@@ -194,7 +190,6 @@ namespace Amazon.Redshift.Model
             return this._reservedNodeId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReservedNodeOfferingId. 
         /// <para>
@@ -212,7 +207,6 @@ namespace Amazon.Redshift.Model
         {
             return this._reservedNodeOfferingId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StartTime. 
@@ -232,7 +226,6 @@ namespace Amazon.Redshift.Model
         {
             return this._startTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property State. 
@@ -260,7 +253,6 @@ namespace Amazon.Redshift.Model
         {
             return this._state != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UsagePrice. 

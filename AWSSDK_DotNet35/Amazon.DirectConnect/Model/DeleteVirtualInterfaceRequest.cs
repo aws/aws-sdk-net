@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,29 +29,26 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVirtualInterface operation.
-    /// <para>Deletes a virtual interface.</para>
+    /// Deletes a virtual interface.
     /// </summary>
     public partial class DeleteVirtualInterfaceRequest : AmazonDirectConnectRequest
     {
-        private string virtualInterfaceId;
-
+        private string _virtualInterfaceId;
 
         /// <summary>
-        /// ID of the virtual interface. Example: dxvif-123dfg56 Default: None
-        ///  
+        /// Gets and sets the property VirtualInterfaceId.
         /// </summary>
         public string VirtualInterfaceId
         {
-            get { return this.virtualInterfaceId; }
-            set { this.virtualInterfaceId = value; }
+            get { return this._virtualInterfaceId; }
+            set { this._virtualInterfaceId = value; }
         }
 
         // Check to see if VirtualInterfaceId property is set
         internal bool IsSetVirtualInterfaceId()
         {
-            return this.virtualInterfaceId != null;
+            return this._virtualInterfaceId != null;
         }
 
     }
 }
-    

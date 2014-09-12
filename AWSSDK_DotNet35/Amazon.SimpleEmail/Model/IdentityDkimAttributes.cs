@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.SimpleEmail.Model
         private List<string> _dkimTokens = new List<string>();
         private VerificationStatus _dkimVerificationStatus;
 
-
         /// <summary>
         /// Gets and sets the property DkimEnabled. 
         /// <para>
@@ -50,7 +53,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._dkimEnabled.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DkimTokens. 
@@ -80,7 +82,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._dkimTokens != null && this._dkimTokens.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property DkimVerificationStatus. 

@@ -12,47 +12,57 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ValidateTemplate operation
-    /// </summary>
-    internal class ValidateTemplateResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ValidateTemplate operation
+    /// </summary>  
+    public class ValidateTemplateResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             ValidateTemplateResponse response = new ValidateTemplateResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("ValidateTemplateResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ValidateTemplateResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ValidateTemplateResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,64 +71,62 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Parameters/member", targetDepth))
-                    {
-                        response.Parameters.Add(TemplateParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        response.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
-                        response.Capabilities.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Capabilities.Add(item);
                         continue;
                     }
                     if (context.TestExpression("CapabilitiesReason", targetDepth))
                     {
-                        response.CapabilitiesReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.CapabilitiesReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Parameters/member", targetDepth))
+                    {
+                        var unmarshaller = TemplateParameterUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Parameters.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ValidateTemplateResponseUnmarshaller instance;
+        private static ValidateTemplateResponseUnmarshaller _instance = new ValidateTemplateResponseUnmarshaller();        
 
-        public static ValidateTemplateResponseUnmarshaller GetInstance()
+        internal static ValidateTemplateResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new ValidateTemplateResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static ValidateTemplateResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

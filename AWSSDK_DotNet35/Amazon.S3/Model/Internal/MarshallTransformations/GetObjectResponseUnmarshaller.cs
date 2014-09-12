@@ -28,7 +28,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetObject operation
     /// </summary>
-    internal class GetObjectResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
@@ -104,22 +104,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             
             return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
         
-        private static GetObjectResponseUnmarshaller instance;
+        private static GetObjectResponseUnmarshaller _instance;
 
-        public static GetObjectResponseUnmarshaller GetInstance()
+        public static GetObjectResponseUnmarshaller Instance
         {
-            if (instance == null) 
+            get
             {
-               instance = new GetObjectResponseUnmarshaller();
+                if (_instance == null)
+                {
+                    _instance = new GetObjectResponseUnmarshaller();
+                }
+                return _instance;
             }
-            return instance;
         }
-    
     }
 }
     

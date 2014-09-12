@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,44 +29,39 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePipeline operation.
-    /// <para> Permanently deletes a pipeline, its pipeline definition and its run history. You cannot query or restore a deleted pipeline. AWS Data
-    /// Pipeline will attempt to cancel instances associated with the pipeline that are currently being processed by task runners. Deleting a
-    /// pipeline cannot be undone. </para> <para> To temporarily pause a pipeline instead of deleting it, call SetStatus with the status set to
-    /// Pause on individual components. Components that are paused by SetStatus can be resumed. </para>
+    /// Permanently deletes a pipeline, its pipeline definition and its run history. You
+    /// cannot query or restore a deleted pipeline. AWS Data Pipeline will attempt to cancel
+    /// instances associated with the pipeline that are currently being processed by task
+    /// runners. Deleting a pipeline cannot be undone. 
+    /// 
+    ///  
+    /// <para>
+    ///  To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
+    /// the status set to Pause on individual components. Components that are paused by <a>SetStatus</a>
+    /// can be resumed. 
+    /// </para>
     /// </summary>
-    public partial class DeletePipelineRequest : AmazonWebServiceRequest
+    public partial class DeletePipelineRequest : AmazonDataPipelineRequest
     {
-        private string pipelineId;
+        private string _pipelineId;
 
         /// <summary>
-        /// The identifier of the pipeline to be deleted.
-        ///  
+        /// Gets and sets the property PipelineId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The identifier of the pipeline to be deleted.
         /// </para>
         /// </summary>
         public string PipelineId
         {
-            get { return this.pipelineId; }
-            set { this.pipelineId = value; }
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
         }
 
         // Check to see if PipelineId property is set
         internal bool IsSetPipelineId()
         {
-            return this.pipelineId != null;
+            return this._pipelineId != null;
         }
 
     }
 }
-    

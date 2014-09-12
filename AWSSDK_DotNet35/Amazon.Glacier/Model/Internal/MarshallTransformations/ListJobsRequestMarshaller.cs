@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,69 +33,41 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Jobs Request Marshaller
+    /// ListJobs Request Marshaller
     /// </summary>       
-    internal class ListJobsRequestMarshaller : IMarshaller<IRequest, ListJobsRequest> 
+    public class ListJobsRequestMarshaller : IMarshaller<IRequest, ListJobsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(ListJobsRequest listJobsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((ListJobsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(listJobsRequest, "AmazonGlacier");
-            string target = "Glacier.ListJobs";
-            request.Headers["X-Amz-Target"] = target;
+        public IRequest Marshall(ListJobsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs?marker={marker};limit={limit};completed={completed};statuscode={statuscode}"; 
-            if(listJobsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listJobsRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(listJobsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(listJobsRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(listJobsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listJobsRequest.Limit) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
-            if(listJobsRequest.IsSetMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listJobsRequest.Marker) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
-            if(listJobsRequest.IsSetStatuscode())
-                uriResourcePath = uriResourcePath.Replace("{statuscode}", StringUtils.FromString(listJobsRequest.Statuscode) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{statuscode}", "" ); 
-            if(listJobsRequest.IsSetCompleted())
-                uriResourcePath = uriResourcePath.Replace("{completed}", StringUtils.FromBool(listJobsRequest.Completed) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{completed}", "" ); 
-            int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            string queryString = uriResourcePath.Substring(queryPosition + 1);
-            uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
-        
-            foreach (string s in queryString.Split('&', ';')) 
-            {
-                string[] nameValuePair = s.Split('=');
-                if (nameValuePair.Length == 2) 
-                {
-                    if (nameValuePair[1].Length > 0)
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }
+
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             
+            if (publicRequest.IsSetCompleted())
+                request.Parameters.Add("completed", Amazon.Runtime.Internal.Util.StringUtils.FromBool(publicRequest.Completed));
+            
+            if (publicRequest.IsSetLimit())
+                request.Parameters.Add("limit", Amazon.Runtime.Internal.Util.StringUtils.FromInt(publicRequest.Limit));
+            
+            if (publicRequest.IsSetMarker())
+                request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
+            
+            if (publicRequest.IsSetStatuscode())
+                request.Parameters.Add("statuscode", StringUtils.FromString(publicRequest.Statuscode));
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

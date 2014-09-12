@@ -28,10 +28,11 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
+using Amazon.Runtime.Internal;
 using Amazon.S3.Model;
 using Amazon.Util;
-using System.Threading;
 
 namespace Amazon.S3.Util
 {
@@ -613,11 +614,26 @@ namespace Amazon.S3.Util
             // Continue listing objects and deleting them until the bucket is empty.
             while (listVersionsResponse.IsTruncated);
 
-            // Bucket is empty, delete the bucket.
-            s3Client.DeleteBucket(new DeleteBucketRequest
-            {
-                BucketName = bucketName
-            });
+            const int maxRetries = 10;
+            for (int retries = 1; retries <= maxRetries; retries++)
+            {                
+                try
+                {
+                    // Bucket is empty, delete the bucket.
+                    s3Client.DeleteBucket(new DeleteBucketRequest
+                    {
+                        BucketName = bucketName
+                    });
+                    break;
+                }
+                catch (AmazonS3Exception e)
+                {
+                    if (e.StatusCode != HttpStatusCode.Conflict || retries == maxRetries)
+                        throw;
+                    else
+                        DefaultRetryPolicy.WaitBeforeRetry(retries, 5000);
+                }
+            }
 
             // Signal that the operation is completed.
             asyncCancelableResult.SignalWaitHandleOnCompleted();

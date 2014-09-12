@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,140 +12,166 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
+    /// This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
     /// </summary>
-    public class DBEngineVersion
+    public partial class DBEngineVersion
     {
-        
-        private string engine;
-        private string engineVersion;
-        private string dBParameterGroupFamily;
-        private string dBEngineDescription;
-        private string dBEngineVersionDescription;
-        private CharacterSet defaultCharacterSet;
-        private List<CharacterSet> supportedCharacterSets = new List<CharacterSet>();
-
+        private string _dBEngineDescription;
+        private string _dBEngineVersionDescription;
+        private string _dBParameterGroupFamily;
+        private CharacterSet _defaultCharacterSet;
+        private string _engine;
+        private string _engineVersion;
+        private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
 
         /// <summary>
-        /// The name of the database engine.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
+        public DBEngineVersion() { }
 
         /// <summary>
-        /// The version number of the database engine.
-        ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// The name of the DB parameter group family for the database engine.
-        ///  
-        /// </summary>
-        public string DBParameterGroupFamily
-        {
-            get { return this.dBParameterGroupFamily; }
-            set { this.dBParameterGroupFamily = value; }
-        }
-
-        // Check to see if DBParameterGroupFamily property is set
-        internal bool IsSetDBParameterGroupFamily()
-        {
-            return this.dBParameterGroupFamily != null;
-        }
-
-        /// <summary>
-        /// The description of the database engine.
-        ///  
+        /// Gets and sets the property DBEngineDescription. 
+        /// <para>
+        ///  The description of the database engine. 
+        /// </para>
         /// </summary>
         public string DBEngineDescription
         {
-            get { return this.dBEngineDescription; }
-            set { this.dBEngineDescription = value; }
+            get { return this._dBEngineDescription; }
+            set { this._dBEngineDescription = value; }
         }
 
         // Check to see if DBEngineDescription property is set
         internal bool IsSetDBEngineDescription()
         {
-            return this.dBEngineDescription != null;
+            return this._dBEngineDescription != null;
         }
 
         /// <summary>
-        /// The description of the database engine version.
-        ///  
+        /// Gets and sets the property DBEngineVersionDescription. 
+        /// <para>
+        ///  The description of the database engine version. 
+        /// </para>
         /// </summary>
         public string DBEngineVersionDescription
         {
-            get { return this.dBEngineVersionDescription; }
-            set { this.dBEngineVersionDescription = value; }
+            get { return this._dBEngineVersionDescription; }
+            set { this._dBEngineVersionDescription = value; }
         }
 
         // Check to see if DBEngineVersionDescription property is set
         internal bool IsSetDBEngineVersionDescription()
         {
-            return this.dBEngineVersionDescription != null;
+            return this._dBEngineVersionDescription != null;
         }
 
         /// <summary>
-        /// The default character set for new instances of this engine version, if the <c>CharacterSetName</c> parameter of the CreateDBInstance API is
-        /// not specified.
-        ///  
+        /// Gets and sets the property DBParameterGroupFamily. 
+        /// <para>
+        ///  The name of the DB parameter group family for the database engine. 
+        /// </para>
+        /// </summary>
+        public string DBParameterGroupFamily
+        {
+            get { return this._dBParameterGroupFamily; }
+            set { this._dBParameterGroupFamily = value; }
+        }
+
+        // Check to see if DBParameterGroupFamily property is set
+        internal bool IsSetDBParameterGroupFamily()
+        {
+            return this._dBParameterGroupFamily != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCharacterSet. 
+        /// <para>
+        ///  The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
+        /// parameter of the CreateDBInstance API is not specified. 
+        /// </para>
         /// </summary>
         public CharacterSet DefaultCharacterSet
         {
-            get { return this.defaultCharacterSet; }
-            set { this.defaultCharacterSet = value; }
+            get { return this._defaultCharacterSet; }
+            set { this._defaultCharacterSet = value; }
         }
 
         // Check to see if DefaultCharacterSet property is set
         internal bool IsSetDefaultCharacterSet()
         {
-            return this.defaultCharacterSet != null;
+            return this._defaultCharacterSet != null;
         }
 
         /// <summary>
-        /// A list of the character sets supported by this engine for the <c>CharacterSetName</c> parameter of the CreateDBInstance API.
-        ///  
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  The name of the database engine. 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        ///  The version number of the database engine. 
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedCharacterSets. 
+        /// <para>
+        ///  A list of the character sets supported by this engine for the <code>CharacterSetName</code>
+        /// parameter of the CreateDBInstance API. 
+        /// </para>
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
         {
-            get { return this.supportedCharacterSets; }
-            set { this.supportedCharacterSets = value; }
+            get { return this._supportedCharacterSets; }
+            set { this._supportedCharacterSets = value; }
         }
 
         // Check to see if SupportedCharacterSets property is set
         internal bool IsSetSupportedCharacterSets()
         {
-            return this.supportedCharacterSets.Count > 0;
+            return this._supportedCharacterSets != null && this._supportedCharacterSets.Count > 0; 
         }
+
     }
 }

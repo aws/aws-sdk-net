@@ -13,18 +13,22 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.Redshift.Model;
 
 namespace Amazon.Redshift
 {
     /// <summary>
-    /// Implementation for accessing Redshift
+    /// Interface for accessing Redshift
     ///
     /// Amazon Redshift        <b>Overview</b>        
     /// <para>
@@ -65,6 +69,7 @@ namespace Amazon.Redshift
                 
         #region  AuthorizeClusterSecurityGroupIngress
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeClusterSecurityGroupIngress operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -80,6 +85,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  AuthorizeSnapshotAccess
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSnapshotAccess operation.
@@ -97,6 +103,7 @@ namespace Amazon.Redshift
                 
         #region  CopyClusterSnapshot
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CopyClusterSnapshot operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -112,6 +119,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  CreateCluster
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCluster operation.
@@ -129,6 +137,7 @@ namespace Amazon.Redshift
                 
         #region  CreateClusterParameterGroup
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterParameterGroup operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -144,6 +153,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  CreateClusterSecurityGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSecurityGroup operation.
@@ -161,6 +171,7 @@ namespace Amazon.Redshift
                 
         #region  CreateClusterSnapshot
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSnapshot operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -176,6 +187,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  CreateClusterSubnetGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSubnetGroup operation.
@@ -193,6 +205,7 @@ namespace Amazon.Redshift
                 
         #region  CreateEventSubscription
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -208,6 +221,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  CreateHsmClientCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsmClientCertificate operation.
@@ -225,6 +239,7 @@ namespace Amazon.Redshift
                 
         #region  CreateHsmConfiguration
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsmConfiguration operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -240,6 +255,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DeleteCluster
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCluster operation.
@@ -257,6 +273,7 @@ namespace Amazon.Redshift
                 
         #region  DeleteClusterParameterGroup
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterParameterGroup operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -272,6 +289,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DeleteClusterSecurityGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSecurityGroup operation.
@@ -289,6 +307,7 @@ namespace Amazon.Redshift
                 
         #region  DeleteClusterSnapshot
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSnapshot operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -304,6 +323,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DeleteClusterSubnetGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSubnetGroup operation.
@@ -321,6 +341,7 @@ namespace Amazon.Redshift
                 
         #region  DeleteEventSubscription
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -336,6 +357,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DeleteHsmClientCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsmClientCertificate operation.
@@ -353,6 +375,7 @@ namespace Amazon.Redshift
                 
         #region  DeleteHsmConfiguration
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsmConfiguration operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -368,6 +391,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeClusterParameterGroups
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameterGroups operation.
@@ -385,6 +409,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeClusterParameters
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameters operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -400,6 +425,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeClusters
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusters operation.
@@ -417,6 +443,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeClusterSecurityGroups
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSecurityGroups operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -432,6 +459,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeClusterSnapshots
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSnapshots operation.
@@ -449,6 +477,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeClusterSubnetGroups
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSubnetGroups operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -464,6 +493,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeClusterVersions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterVersions operation.
@@ -481,6 +511,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeDefaultClusterParameters
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDefaultClusterParameters operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -496,6 +527,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeEventCategories
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
@@ -513,6 +545,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeEvents
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -528,6 +561,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeEventSubscriptions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
@@ -545,6 +579,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeHsmClientCertificates
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsmClientCertificates operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -560,6 +595,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeHsmConfigurations
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsmConfigurations operation.
@@ -577,6 +613,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeLoggingStatus
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoggingStatus operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -592,6 +629,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeOrderableClusterOptions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableClusterOptions operation.
@@ -609,6 +647,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeReservedNodeOfferings
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodeOfferings operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -624,6 +663,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DescribeReservedNodes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodes operation.
@@ -641,6 +681,7 @@ namespace Amazon.Redshift
                 
         #region  DescribeResize
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeResize operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -656,6 +697,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  DisableLogging
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableLogging operation.
@@ -673,6 +715,7 @@ namespace Amazon.Redshift
                 
         #region  DisableSnapshotCopy
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableSnapshotCopy operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -688,6 +731,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  EnableLogging
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableLogging operation.
@@ -705,6 +749,7 @@ namespace Amazon.Redshift
                 
         #region  EnableSnapshotCopy
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableSnapshotCopy operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -720,6 +765,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  ModifyCluster
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCluster operation.
@@ -737,6 +783,7 @@ namespace Amazon.Redshift
                 
         #region  ModifyClusterParameterGroup
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterParameterGroup operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -752,6 +799,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  ModifyClusterSubnetGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterSubnetGroup operation.
@@ -769,6 +817,7 @@ namespace Amazon.Redshift
                 
         #region  ModifyEventSubscription
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -784,6 +833,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  ModifySnapshotCopyRetentionPeriod
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotCopyRetentionPeriod operation.
@@ -801,6 +851,7 @@ namespace Amazon.Redshift
                 
         #region  PurchaseReservedNodeOffering
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedNodeOffering operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -816,6 +867,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  RebootCluster
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCluster operation.
@@ -833,6 +885,7 @@ namespace Amazon.Redshift
                 
         #region  ResetClusterParameterGroup
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ResetClusterParameterGroup operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -848,6 +901,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  RestoreFromClusterSnapshot
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreFromClusterSnapshot operation.
@@ -865,6 +919,7 @@ namespace Amazon.Redshift
                 
         #region  RevokeClusterSecurityGroupIngress
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeClusterSecurityGroupIngress operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -881,6 +936,7 @@ namespace Amazon.Redshift
                 
         #region  RevokeSnapshotAccess
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSnapshotAccess operation.
         /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
@@ -896,6 +952,7 @@ namespace Amazon.Redshift
         #endregion
                 
         #region  RotateEncryptionKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RotateEncryptionKey operation.

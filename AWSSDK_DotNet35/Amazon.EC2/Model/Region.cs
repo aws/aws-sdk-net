@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a region.</para>
+    /// Describes a region.
     /// </summary>
     public partial class Region
     {
-        
-        private string regionName;
-        private string endpoint;
-
+        private string _endpoint;
+        private string _regionName;
 
         /// <summary>
-        /// The name of the region.
-        ///  
-        /// </summary>
-        public string RegionName
-        {
-            get { return this.regionName; }
-            set { this.regionName = value; }
-        }
-
-        // Check to see if RegionName property is set
-        internal bool IsSetRegionName()
-        {
-            return this.regionName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
         /// The region service endpoint.
-        ///  
+        /// </para>
         /// </summary>
         public string Endpoint
         {
-            get { return this.endpoint; }
-            set { this.endpoint = value; }
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
         }
 
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;
+            return this._endpoint != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property RegionName. 
+        /// <para>
+        /// The name of the region.
+        /// </para>
+        /// </summary>
+        public string RegionName
+        {
+            get { return this._regionName; }
+            set { this._regionName = value; }
+        }
+
+        // Check to see if RegionName property is set
+        internal bool IsSetRegionName()
+        {
+            return this._regionName != null;
+        }
+
     }
 }

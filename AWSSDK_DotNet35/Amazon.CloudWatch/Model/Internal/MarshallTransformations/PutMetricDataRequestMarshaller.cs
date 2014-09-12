@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,100 +12,106 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Metric Data Request Marshaller
+    /// PutMetricData Request Marshaller
     /// </summary>       
-    public class PutMetricDataRequestMarshaller : IMarshaller<IRequest, PutMetricDataRequest>
+    public class PutMetricDataRequestMarshaller : IMarshaller<IRequest, PutMetricDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(PutMetricDataRequest putMetricDataRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(putMetricDataRequest, "AmazonCloudWatch");
+            return this.Marshall((PutMetricDataRequest)input);
+        }
+    
+        public IRequest Marshall(PutMetricDataRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
             request.Parameters.Add("Action", "PutMetricData");
             request.Parameters.Add("Version", "2010-08-01");
-            if (putMetricDataRequest != null && putMetricDataRequest.IsSetNamespace())
-            {
-                request.Parameters.Add("Namespace", StringUtils.FromString(putMetricDataRequest.Namespace));
-            }
 
-            if (putMetricDataRequest != null)
+            if(publicRequest != null)
             {
-                List<MetricDatum> metricDataList = putMetricDataRequest.MetricData;
-                int metricDataListIndex = 1;
-                foreach (MetricDatum metricDataListValue in metricDataList)
+                if(publicRequest.IsSetMetricData())
                 {
-                    if (metricDataListValue != null && metricDataListValue.IsSetMetricName())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.MetricData)
                     {
-                        request.Parameters.Add("MetricData.member." + metricDataListIndex + ".MetricName", StringUtils.FromString(metricDataListValue.MetricName));
-                    }
-
-                    if (metricDataListValue != null)
-                    {
-                        List<Dimension> dimensionsList = metricDataListValue.Dimensions;
-                        int dimensionsListIndex = 1;
-                        foreach (Dimension dimensionsListValue in dimensionsList)
+                        if(publicRequestlistValue.IsSetDimensions())
                         {
-                            if (dimensionsListValue != null && dimensionsListValue.IsSetName())
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Dimensions)
                             {
-                                request.Parameters.Add("MetricData.member." + metricDataListIndex + ".Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.FromString(dimensionsListValue.Name));
+                                if(publicRequestlistValuelistValue.IsSetName())
+                                {
+                                    request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                }
+                                publicRequestlistValuelistValueIndex++;
                             }
-                            if (dimensionsListValue != null && dimensionsListValue.IsSetValue())
+                        }
+                        if(publicRequestlistValue.IsSetMetricName())
+                        {
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricName", StringUtils.FromString(publicRequestlistValue.MetricName));
+                        }
+                        if(publicRequestlistValue.IsSetStatisticValues())
+                        {
+                            if(publicRequestlistValue.StatisticValues.IsSetMaximum())
                             {
-                                request.Parameters.Add("MetricData.member." + metricDataListIndex + ".Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.FromString(dimensionsListValue.Value));
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StatisticValues" + "." + "Maximum", StringUtils.FromDouble(publicRequestlistValue.StatisticValues.Maximum));
                             }
-
-                            dimensionsListIndex++;
+                            if(publicRequestlistValue.StatisticValues.IsSetMinimum())
+                            {
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StatisticValues" + "." + "Minimum", StringUtils.FromDouble(publicRequestlistValue.StatisticValues.Minimum));
+                            }
+                            if(publicRequestlistValue.StatisticValues.IsSetSampleCount())
+                            {
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StatisticValues" + "." + "SampleCount", StringUtils.FromDouble(publicRequestlistValue.StatisticValues.SampleCount));
+                            }
+                            if(publicRequestlistValue.StatisticValues.IsSetSum())
+                            {
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StatisticValues" + "." + "Sum", StringUtils.FromDouble(publicRequestlistValue.StatisticValues.Sum));
+                            }
                         }
-                    }
-                    if (metricDataListValue != null && metricDataListValue.IsSetTimestamp())
-                    {
-                        request.Parameters.Add("MetricData.member." + metricDataListIndex + ".Timestamp", StringUtils.FromDateTime(metricDataListValue.Timestamp));
-                    }
-                    if (metricDataListValue != null && metricDataListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("MetricData.member." + metricDataListIndex + ".Value", StringUtils.FromDouble(metricDataListValue.Value));
-                    }
-                    if (metricDataListValue != null)
-                    {
-                        StatisticSet statisticValues = metricDataListValue.StatisticValues;
-                        if (statisticValues != null && statisticValues.IsSetSampleCount())
+                        if(publicRequestlistValue.IsSetTimestamp())
                         {
-                            request.Parameters.Add("MetricData.member." + metricDataListIndex + ".StatisticValues.SampleCount", StringUtils.FromDouble(statisticValues.SampleCount));
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTime(publicRequestlistValue.Timestamp));
                         }
-                        if (statisticValues != null && statisticValues.IsSetSum())
+                        if(publicRequestlistValue.IsSetUnit())
                         {
-                            request.Parameters.Add("MetricData.member." + metricDataListIndex + ".StatisticValues.Sum", StringUtils.FromDouble(statisticValues.Sum));
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Unit", StringUtils.FromString(publicRequestlistValue.Unit));
                         }
-                        if (statisticValues != null && statisticValues.IsSetMinimum())
+                        if(publicRequestlistValue.IsSetValue())
                         {
-                            request.Parameters.Add("MetricData.member." + metricDataListIndex + ".StatisticValues.Minimum", StringUtils.FromDouble(statisticValues.Minimum));
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromDouble(publicRequestlistValue.Value));
                         }
-                        if (statisticValues != null && statisticValues.IsSetMaximum())
-                        {
-                            request.Parameters.Add("MetricData.member." + metricDataListIndex + ".StatisticValues.Maximum", StringUtils.FromDouble(statisticValues.Maximum));
-                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (metricDataListValue != null && metricDataListValue.IsSetUnit())
-                    {
-                        request.Parameters.Add("MetricData.member." + metricDataListIndex + ".Unit", StringUtils.FromString(metricDataListValue.Unit));
-                    }
-
-                    metricDataListIndex++;
+                }
+                if(publicRequest.IsSetNamespace())
+                {
+                    request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
                 }
             }
-
             return request;
         }
     }

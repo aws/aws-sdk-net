@@ -12,41 +12,52 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Spot Instance Requests Request Marshaller
+    /// CancelSpotInstanceRequests Request Marshaller
     /// </summary>       
-    public class CancelSpotInstanceRequestsRequestMarshaller : IMarshaller<IRequest, CancelSpotInstanceRequestsRequest>
+    public class CancelSpotInstanceRequestsRequestMarshaller : IMarshaller<IRequest, CancelSpotInstanceRequestsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(cancelSpotInstanceRequestsRequest, "AmazonEC2");
+            return this.Marshall((CancelSpotInstanceRequestsRequest)input);
+        }
+    
+        public IRequest Marshall(CancelSpotInstanceRequestsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CancelSpotInstanceRequests");
             request.Parameters.Add("Version", "2014-06-15");
-            if (cancelSpotInstanceRequestsRequest != null)
-            {
-                List<string> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.SpotInstanceRequestIds;
 
-                int spotInstanceRequestIdsListIndex = 1;
-                foreach (string spotInstanceRequestIdsListValue in spotInstanceRequestIdsList)
-                { 
-                    request.Parameters.Add("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.FromString(spotInstanceRequestIdsListValue));
-                    spotInstanceRequestIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSpotInstanceRequestIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SpotInstanceRequestIds)
+                    {
+                        request.Parameters.Add("SpotInstanceRequestId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

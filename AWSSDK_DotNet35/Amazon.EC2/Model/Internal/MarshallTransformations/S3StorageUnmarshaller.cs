@@ -12,87 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   S3Storage Unmarshaller
-     /// </summary>
-    internal class S3StorageUnmarshaller : IUnmarshaller<S3Storage, XmlUnmarshallerContext>, IUnmarshaller<S3Storage, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for S3Storage Object
+    /// </summary>  
+    public class S3StorageUnmarshaller : IUnmarshaller<S3Storage, XmlUnmarshallerContext>, IUnmarshaller<S3Storage, JsonUnmarshallerContext>
     {
-        public S3Storage Unmarshall(XmlUnmarshallerContext context) 
+        public S3Storage Unmarshall(XmlUnmarshallerContext context)
         {
-            S3Storage s3Storage = new S3Storage();
+            S3Storage unmarshalledObject = new S3Storage();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("aWSAccessKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AWSAccessKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("bucket", targetDepth))
                     {
-                        s3Storage.Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("prefix", targetDepth))
                     {
-                        s3Storage.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("awsAccessKeyId", targetDepth))
-                    {
-                        s3Storage.AWSAccessKeyId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("uploadPolicy", targetDepth))
                     {
-                        s3Storage.UploadPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UploadPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("uploadPolicySignature", targetDepth))
                     {
-                        s3Storage.UploadPolicySignature = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UploadPolicySignature = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return s3Storage;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return s3Storage;
+            return unmarshalledObject;
         }
 
-        public S3Storage Unmarshall(JsonUnmarshallerContext context) 
+        public S3Storage Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static S3StorageUnmarshaller instance;
 
-        public static S3StorageUnmarshaller GetInstance() 
+        private static S3StorageUnmarshaller _instance = new S3StorageUnmarshaller();        
+
+        public static S3StorageUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new S3StorageUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

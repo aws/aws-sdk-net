@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,88 +12,105 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para>Provides a list of status information for a DB instance.</para>
+    /// Provides a list of status information for a DB instance.
     /// </summary>
-    public class DBInstanceStatusInfo
+    public partial class DBInstanceStatusInfo
     {
-        
-        private string statusType;
-        private bool? normal;
-        private string status;
-        private string message;
-
+        private string _message;
+        private bool? _normal;
+        private string _status;
+        private string _statusType;
 
         /// <summary>
-        /// This value is currently "read replication."
-        ///  
-        /// </summary>
-        public string StatusType
-        {
-            get { return this.statusType; }
-            set { this.statusType = value; }
-        }
-
-        // Check to see if StatusType property is set
-        internal bool IsSetStatusType()
-        {
-            return this.statusType != null;
-        }
-
-        /// <summary>
-        /// Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.
-        ///  
-        /// </summary>
-        public bool Normal
-        {
-            get { return this.normal ?? default(bool); }
-            set { this.normal = value; }
-        }
-
-        // Check to see if Normal property is set
-        internal bool IsSetNormal()
-        {
-            return this.normal.HasValue;
-        }
-
-        /// <summary>
-        /// Status of the DB instance. For a StatusType of read replica, the values can be replicating, error, stopped, or terminated.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.
-        ///  
+        /// Gets and sets the property Message. 
+        /// <para>
+        ///  Details of the error if there is an error for the instance. If the instance is not
+        /// in an error state, this value is blank. 
+        /// </para>
         /// </summary>
         public string Message
         {
-            get { return this.message; }
-            set { this.message = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;
+            return this._message != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Normal. 
+        /// <para>
+        ///  Boolean value that is true if the instance is operating normally, or false if the
+        /// instance is in an error state. 
+        /// </para>
+        /// </summary>
+        public bool Normal
+        {
+            get { return this._normal.GetValueOrDefault(); }
+            set { this._normal = value; }
+        }
+
+        // Check to see if Normal property is set
+        internal bool IsSetNormal()
+        {
+            return this._normal.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  Status of the DB instance. For a StatusType of read replica, the values can be replicating,
+        /// error, stopped, or terminated. 
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusType. 
+        /// <para>
+        ///  This value is currently "read replication." 
+        /// </para>
+        /// </summary>
+        public string StatusType
+        {
+            get { return this._statusType; }
+            set { this._statusType = value; }
+        }
+
+        // Check to see if StatusType property is set
+        internal bool IsSetStatusType()
+        {
+            return this._statusType != null;
+        }
+
     }
 }

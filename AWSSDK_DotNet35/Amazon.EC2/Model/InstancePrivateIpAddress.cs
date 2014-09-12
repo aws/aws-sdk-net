@@ -12,88 +12,103 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a private IP address.</para>
+    /// Describes a private IP address.
     /// </summary>
     public partial class InstancePrivateIpAddress
     {
-        
-        private string privateIpAddress;
-        private string privateDnsName;
-        private bool? primary;
-        private InstanceNetworkInterfaceAssociation association;
-
+        private InstanceNetworkInterfaceAssociation _association;
+        private bool? _primary;
+        private string _privateDnsName;
+        private string _privateIpAddress;
 
         /// <summary>
-        /// The private IP address of the network interface.
-        ///  
-        /// </summary>
-        public string PrivateIpAddress
-        {
-            get { return this.privateIpAddress; }
-            set { this.privateIpAddress = value; }
-        }
-
-        // Check to see if PrivateIpAddress property is set
-        internal bool IsSetPrivateIpAddress()
-        {
-            return this.privateIpAddress != null;
-        }
-
-        /// <summary>
-        /// The private DNS name.
-        ///  
-        /// </summary>
-        public string PrivateDnsName
-        {
-            get { return this.privateDnsName; }
-            set { this.privateDnsName = value; }
-        }
-
-        // Check to see if PrivateDnsName property is set
-        internal bool IsSetPrivateDnsName()
-        {
-            return this.privateDnsName != null;
-        }
-
-        /// <summary>
-        /// Indicates whether this IP address is the primary private IP address of the network interface.
-        ///  
-        /// </summary>
-        public bool Primary
-        {
-            get { return this.primary ?? default(bool); }
-            set { this.primary = value; }
-        }
-
-        // Check to see if Primary property is set
-        internal bool IsSetPrimary()
-        {
-            return this.primary.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Association. 
+        /// <para>
         /// The association information for an Elastic IP address for the network interface.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceNetworkInterfaceAssociation Association
         {
-            get { return this.association; }
-            set { this.association = value; }
+            get { return this._association; }
+            set { this._association = value; }
         }
 
         // Check to see if Association property is set
         internal bool IsSetAssociation()
         {
-            return this.association != null;
+            return this._association != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Primary. 
+        /// <para>
+        /// Indicates whether this IP address is the primary private IP address of the network
+        /// interface.
+        /// </para>
+        /// </summary>
+        public bool Primary
+        {
+            get { return this._primary.GetValueOrDefault(); }
+            set { this._primary = value; }
+        }
+
+        // Check to see if Primary property is set
+        internal bool IsSetPrimary()
+        {
+            return this._primary.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsName. 
+        /// <para>
+        /// The private DNS name.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsName
+        {
+            get { return this._privateDnsName; }
+            set { this._privateDnsName = value; }
+        }
+
+        // Check to see if PrivateDnsName property is set
+        internal bool IsSetPrivateDnsName()
+        {
+            return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// The private IP address of the network interface.
+        /// </para>
+        /// </summary>
+        public string PrivateIpAddress
+        {
+            get { return this._privateIpAddress; }
+            set { this._privateIpAddress = value; }
+        }
+
+        // Check to see if PrivateIpAddress property is set
+        internal bool IsSetPrivateIpAddress()
+        {
+            return this._privateIpAddress != null;
+        }
+
     }
 }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -74,6 +78,21 @@ namespace Amazon.SQS.Model
         private List<string> _attributeNames = new List<string>();
         private string _queueUrl;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetQueueAttributesRequest() { }
+
+        /// <summary>
+        /// Instantiates GetQueueAttributesRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="attributeNames">A list of attributes to retrieve information for. </param>
+        public GetQueueAttributesRequest(string queueUrl, List<string> attributeNames)
+        {
+            _queueUrl = queueUrl;
+            _attributeNames = attributeNames;
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeNames. 
@@ -92,7 +111,6 @@ namespace Amazon.SQS.Model
         {
             return this._attributeNames != null && this._attributeNames.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 

@@ -12,42 +12,55 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Vpc Attribute Request Marshaller
+    /// ModifyVpcAttribute Request Marshaller
     /// </summary>       
-    public class ModifyVpcAttributeRequestMarshaller : IMarshaller<IRequest, ModifyVpcAttributeRequest>
+    public class ModifyVpcAttributeRequestMarshaller : IMarshaller<IRequest, ModifyVpcAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ModifyVpcAttributeRequest modifyVpcAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(modifyVpcAttributeRequest, "AmazonEC2");
+            return this.Marshall((ModifyVpcAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(ModifyVpcAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ModifyVpcAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (modifyVpcAttributeRequest != null && modifyVpcAttributeRequest.IsSetVpcId())
-            {
-                request.Parameters.Add("VpcId", StringUtils.FromString(modifyVpcAttributeRequest.VpcId));
-            }
-            if (modifyVpcAttributeRequest != null && modifyVpcAttributeRequest.IsSetEnableDnsSupport())
-            {
-                request.Parameters.Add("EnableDnsSupport.Value", StringUtils.FromBool(modifyVpcAttributeRequest.EnableDnsSupport));
-            }
-            if (modifyVpcAttributeRequest != null && modifyVpcAttributeRequest.IsSetEnableDnsHostnames())
-            {
-                request.Parameters.Add("EnableDnsHostnames.Value", StringUtils.FromBool(modifyVpcAttributeRequest.EnableDnsHostnames));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetEnableDnsHostnames())
+                {
+                    request.Parameters.Add("EnableDnsHostnames.Value", StringUtils.FromBool(publicRequest.EnableDnsHostnames));
+                }
+                if(publicRequest.IsSetEnableDnsSupport())
+                {
+                    request.Parameters.Add("EnableDnsSupport.Value", StringUtils.FromBool(publicRequest.EnableDnsSupport));
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
+                }
+            }
             return request;
         }
     }

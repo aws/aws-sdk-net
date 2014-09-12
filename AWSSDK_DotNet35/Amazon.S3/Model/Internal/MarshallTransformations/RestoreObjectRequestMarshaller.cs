@@ -28,8 +28,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Restore Object Request Marshaller
     /// </summary>       
-    public class RestoreObjectRequestMarshaller : IMarshaller<IRequest, RestoreObjectRequest>
-    {
+    public class RestoreObjectRequestMarshaller : IMarshaller<IRequest, RestoreObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((RestoreObjectRequest)input);
+		}
+
         public IRequest Marshall(RestoreObjectRequest restoreObjectRequest)
         {
             IRequest request = new DefaultRequest(restoreObjectRequest, "AmazonS3");

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,63 +33,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Status Request Marshaller
+    /// SetStatus Request Marshaller
     /// </summary>       
-    internal class SetStatusRequestMarshaller : IMarshaller<IRequest, SetStatusRequest> 
+    public class SetStatusRequestMarshaller : IMarshaller<IRequest, SetStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(SetStatusRequest setStatusRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((SetStatusRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(setStatusRequest, "AmazonDataPipeline");
+        public IRequest Marshall(SetStatusRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
             string target = "DataPipeline.SetStatus";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setStatusRequest != null && setStatusRequest.IsSetPipelineId()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetObjectIds())
                 {
-                    writer.WritePropertyName("pipelineId");
-                    writer.Write(setStatusRequest.PipelineId);
-                }
-
-                if (setStatusRequest != null && setStatusRequest.ObjectIds != null && setStatusRequest.ObjectIds.Count > 0) 
-                {
-                    List<string> objectIdsList = setStatusRequest.ObjectIds;
-                    writer.WritePropertyName("objectIds");
-                    writer.WriteArrayStart();
-
-                    foreach (string objectIdsListValue in objectIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(objectIdsListValue));
+                    context.Writer.WritePropertyName("objectIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestObjectIdsListValue in publicRequest.ObjectIds)
+                    {
+                            context.Writer.Write(publicRequestObjectIdsListValue);
                     }
-
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
-                if (setStatusRequest != null && setStatusRequest.IsSetStatus()) 
+
+                if(publicRequest.IsSetPipelineId())
                 {
-                    writer.WritePropertyName("status");
-                    writer.Write(setStatusRequest.Status);
+                    context.Writer.WritePropertyName("pipelineId");
+                    context.Writer.Write(publicRequest.PipelineId);
                 }
 
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

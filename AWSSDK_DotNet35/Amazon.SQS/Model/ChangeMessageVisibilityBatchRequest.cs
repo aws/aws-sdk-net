@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -49,6 +53,21 @@ namespace Amazon.SQS.Model
         private List<ChangeMessageVisibilityBatchRequestEntry> _entries = new List<ChangeMessageVisibilityBatchRequestEntry>();
         private string _queueUrl;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ChangeMessageVisibilityBatchRequest() { }
+
+        /// <summary>
+        /// Instantiates ChangeMessageVisibilityBatchRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout   must be changed.</param>
+        public ChangeMessageVisibilityBatchRequest(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries)
+        {
+            _queueUrl = queueUrl;
+            _entries = entries;
+        }
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -68,7 +87,6 @@ namespace Amazon.SQS.Model
         {
             return this._entries != null && this._entries.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 

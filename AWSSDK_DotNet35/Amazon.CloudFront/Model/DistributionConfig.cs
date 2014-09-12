@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,6 +46,21 @@ namespace Amazon.CloudFront.Model
         private Restrictions _restrictions;
         private ViewerCertificate _viewerCertificate;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DistributionConfig() { }
+
+        /// <summary>
+        /// Instantiates DistributionConfig with the parameterized properties
+        /// </summary>
+        /// <param name="callerReference">A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of the DistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.</param>
+        /// <param name="enabled">Whether the distribution is enabled to accept end user requests for content.</param>
+        public DistributionConfig(string callerReference, bool enabled)
+        {
+            _callerReference = callerReference;
+            _enabled = enabled;
+        }
 
         /// <summary>
         /// Gets and sets the property Aliases. A complex type that contains information about
@@ -59,7 +78,6 @@ namespace Amazon.CloudFront.Model
             return this._aliases != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheBehaviors. A complex type that contains zero or more
         /// CacheBehavior elements.
@@ -76,17 +94,16 @@ namespace Amazon.CloudFront.Model
             return this._cacheBehaviors != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CallerReference. A unique number that ensures the request
-        /// can't be replayed.    If the CallerReference is new (no matter the content of the
-        /// DistributionConfig object), a new distribution is created.    If the CallerReference
-        /// is a value you already sent in a previous request to create a distribution, and the
-        /// content of the DistributionConfig is identical to the original request (ignoring white
-        /// space),    the response includes the same information returned to the original request.
-        ///    If the CallerReference is a value you already sent in a previous request to create
-        /// a distribution but the content of the DistributionConfig is different from the original
-        /// request,    CloudFront returns a DistributionAlreadyExists error.
+        /// can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig
+        /// object), a new distribution is created. If the CallerReference is a value you already
+        /// sent in a previous request to create a distribution, and the content of the DistributionConfig
+        /// is identical to the original request (ignoring white space), the response includes
+        /// the same information returned to the original request. If the CallerReference is a
+        /// value you already sent in a previous request to create a distribution but the content
+        /// of the DistributionConfig is different from the original request, CloudFront returns
+        /// a DistributionAlreadyExists error.
         /// </summary>
         public string CallerReference
         {
@@ -99,7 +116,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._callerReference != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Comment. Any comments you want to include about the distribution.
@@ -115,7 +131,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._comment != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CustomErrorResponses. A complex type that contains zero
@@ -133,12 +148,11 @@ namespace Amazon.CloudFront.Model
             return this._customErrorResponses != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. A complex type that describes the
-        /// default cache behavior if you do not    specify a CacheBehavior element or if files
-        /// don't match any of the values    of PathPattern in CacheBehavior elements.You must
-        /// create exactly    one default cache behavior.
+        /// default cache behavior if you do not specify a CacheBehavior element or if files don't
+        /// match any of the values of PathPattern in CacheBehavior elements.You must create exactly
+        /// one default cache behavior.
         /// </summary>
         public DefaultCacheBehavior DefaultCacheBehavior
         {
@@ -152,18 +166,16 @@ namespace Amazon.CloudFront.Model
             return this._defaultCacheBehavior != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DefaultRootObject. The object that you want CloudFront
-        /// to return (for example, index.html)    when an end user requests the root URL for
-        /// your distribution    (http://www.example.com) instead of an object in your distribution
-        ///    (http://www.example.com/index.html). Specifying a default root    object avoids
-        /// exposing the contents of your distribution.    If you don't want to specify a default
-        /// root object when you create a    distribution, include an empty DefaultRootObject
-        /// element.    To delete the default root object from an existing distribution, update
-        /// the    distribution configuration and include an empty DefaultRootObject    element.
-        /// To replace the default root object, update the distribution configuration    and specify
-        /// the new object.
+        /// to return (for example, index.html) when an end user requests the root URL for your
+        /// distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/index.html).
+        /// Specifying a default root object avoids exposing the contents of your distribution.
+        /// If you don't want to specify a default root object when you create a distribution,
+        /// include an empty DefaultRootObject element. To delete the default root object from
+        /// an existing distribution, update the distribution configuration and include an empty
+        /// DefaultRootObject element. To replace the default root object, update the distribution
+        /// configuration and specify the new object.
         /// </summary>
         public string DefaultRootObject
         {
@@ -176,7 +188,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._defaultRootObject != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Enabled. Whether the distribution is enabled to accept
@@ -194,7 +205,6 @@ namespace Amazon.CloudFront.Model
             return this._enabled.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Logging. A complex type that controls whether access logs
         /// are written for the distribution.
@@ -210,7 +220,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._logging != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Origins. A complex type that contains information about
@@ -228,7 +237,6 @@ namespace Amazon.CloudFront.Model
             return this._origins != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property PriceClass. A complex type that contains information about
         /// price class for this distribution.
@@ -245,7 +253,6 @@ namespace Amazon.CloudFront.Model
             return this._priceClass != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Restrictions.
         /// </summary>
@@ -260,7 +267,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._restrictions != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ViewerCertificate.

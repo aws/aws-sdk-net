@@ -1,0 +1,7 @@
+﻿HTTP/1.1 304 Not Modified
+x-amz-id-2: MtnU59Uyq8diBu+4sSq4CW4HwfBB1odD4XXUdGyikH3o+InOUiCLoQpRXBySSVQy
+x-amz-request-id: 0B412632179324C8
+Date: Wed, 16 Jul 2014 19:17:30 GMT
+Last-Modified: Wed, 07 May 2014 01:53:09 GMT
+ETag: "54b0c58c7ce9f2a8b551351102ee0938"
+Server: AmazonS3

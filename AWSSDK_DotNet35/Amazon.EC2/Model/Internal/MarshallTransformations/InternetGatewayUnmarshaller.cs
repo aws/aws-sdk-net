@@ -12,75 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InternetGateway Unmarshaller
-     /// </summary>
-    internal class InternetGatewayUnmarshaller : IUnmarshaller<InternetGateway, XmlUnmarshallerContext>, IUnmarshaller<InternetGateway, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InternetGateway Object
+    /// </summary>  
+    public class InternetGatewayUnmarshaller : IUnmarshaller<InternetGateway, XmlUnmarshallerContext>, IUnmarshaller<InternetGateway, JsonUnmarshallerContext>
     {
-        public InternetGateway Unmarshall(XmlUnmarshallerContext context) 
+        public InternetGateway Unmarshall(XmlUnmarshallerContext context)
         {
-            InternetGateway internetGateway = new InternetGateway();
+            InternetGateway unmarshalledObject = new InternetGateway();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("internetGatewayId", targetDepth))
-                    {
-                        internetGateway.InternetGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("attachmentSet/item", targetDepth))
                     {
-                        internetGateway.Attachments.Add(InternetGatewayAttachmentUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InternetGatewayAttachmentUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Attachments.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("internetGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InternetGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        internetGateway.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return internetGateway;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return internetGateway;
+            return unmarshalledObject;
         }
 
-        public InternetGateway Unmarshall(JsonUnmarshallerContext context) 
+        public InternetGateway Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InternetGatewayUnmarshaller instance;
 
-        public static InternetGatewayUnmarshaller GetInstance() 
+        private static InternetGatewayUnmarshaller _instance = new InternetGatewayUnmarshaller();        
+
+        public static InternetGatewayUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InternetGatewayUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

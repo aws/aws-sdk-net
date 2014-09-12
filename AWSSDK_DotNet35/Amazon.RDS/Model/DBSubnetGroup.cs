@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,114 +12,128 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following actions: </para>
-    /// <ul>
-    /// <li> CreateDBSubnetGroup </li>
-    /// <li> ModifyDBSubnetGroup </li>
-    /// <li> DescribeDBSubnetGroups </li>
-    /// <li> DeleteDBSubnetGroup </li>
+    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    /// </ul>
-    /// <para>This data type is used as a response element in the DescribeDBSubnetGroups action.</para>
+    ///  <ul> <li><a>CreateDBSubnetGroup</a></li> <li><a>ModifyDBSubnetGroup</a></li> <li><a>DescribeDBSubnetGroups</a></li>
+    /// <li><a>DeleteDBSubnetGroup</a></li> </ul> 
+    /// <para>
+    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+    /// action.
+    /// </para>
     /// </summary>
-    public partial class DBSubnetGroup : AmazonWebServiceResponse
+    public partial class DBSubnetGroup
     {
-        
-        private string dBSubnetGroupName;
-        private string dBSubnetGroupDescription;
-        private string vpcId;
-        private string subnetGroupStatus;
-        private List<Subnet> subnets = new List<Subnet>();
-
+        private string _dBSubnetGroupDescription;
+        private string _dBSubnetGroupName;
+        private string _subnetGroupStatus;
+        private List<Subnet> _subnets = new List<Subnet>();
+        private string _vpcId;
 
         /// <summary>
-        /// Specifies the name of the DB subnet group.
-        ///  
-        /// </summary>
-        public string DBSubnetGroupName
-        {
-            get { return this.dBSubnetGroupName; }
-            set { this.dBSubnetGroupName = value; }
-        }
-
-        // Check to see if DBSubnetGroupName property is set
-        internal bool IsSetDBSubnetGroupName()
-        {
-            return this.dBSubnetGroupName != null;
-        }
-
-        /// <summary>
-        /// Provides the description of the DB subnet group.
-        ///  
+        /// Gets and sets the property DBSubnetGroupDescription. 
+        /// <para>
+        ///  Provides the description of the DB subnet group. 
+        /// </para>
         /// </summary>
         public string DBSubnetGroupDescription
         {
-            get { return this.dBSubnetGroupDescription; }
-            set { this.dBSubnetGroupDescription = value; }
+            get { return this._dBSubnetGroupDescription; }
+            set { this._dBSubnetGroupDescription = value; }
         }
 
         // Check to see if DBSubnetGroupDescription property is set
         internal bool IsSetDBSubnetGroupDescription()
         {
-            return this.dBSubnetGroupDescription != null;
+            return this._dBSubnetGroupDescription != null;
         }
 
         /// <summary>
-        /// Provides the VpcId of the DB subnet group.
-        ///  
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        ///  Specifies the name of the DB subnet group. 
+        /// </para>
         /// </summary>
-        public string VpcId
+        public string DBSubnetGroupName
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._dBSubnetGroupName; }
+            set { this._dBSubnetGroupName = value; }
         }
 
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
         {
-            return this.vpcId != null;
+            return this._dBSubnetGroupName != null;
         }
 
         /// <summary>
-        /// Provides the status of the DB subnet group.
-        ///  
+        /// Gets and sets the property SubnetGroupStatus. 
+        /// <para>
+        ///  Provides the status of the DB subnet group. 
+        /// </para>
         /// </summary>
         public string SubnetGroupStatus
         {
-            get { return this.subnetGroupStatus; }
-            set { this.subnetGroupStatus = value; }
+            get { return this._subnetGroupStatus; }
+            set { this._subnetGroupStatus = value; }
         }
 
         // Check to see if SubnetGroupStatus property is set
         internal bool IsSetSubnetGroupStatus()
         {
-            return this.subnetGroupStatus != null;
+            return this._subnetGroupStatus != null;
         }
 
         /// <summary>
-        /// Contains a list of <a>Subnet</a> elements.
-        ///  
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///  Contains a list of <a>Subnet</a> elements. 
+        /// </para>
         /// </summary>
         public List<Subnet> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
 
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        ///  Provides the VpcId of the DB subnet group. 
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

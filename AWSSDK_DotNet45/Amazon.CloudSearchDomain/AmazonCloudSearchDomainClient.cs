@@ -13,11 +13,16 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
+
 
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.CloudSearchDomain.Model;
 using Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations;
@@ -48,9 +53,24 @@ namespace Amazon.CloudSearchDomain
     /// CloudSearch Developer Guide</a>.
     /// </para>
     /// </summary>
-    public partial class AmazonCloudSearchDomainClient : AmazonWebServiceClient, IAmazonCloudSearchDomain
+    public partial class AmazonCloudSearchDomainClient : AmazonServiceClient, IAmazonCloudSearchDomain
     {
-        AWS4Signer signer = new AWS4Signer();
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }    
+
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudSearchDomain.Internal.ProcessRequestHandler());
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.CloudSearchDomain.Internal.ValidationResponseHandler());
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.CloudSearchDomain.Internal.ProcessExceptionHandler());
+        }    
+
+        #endregion
 
         #region Dispose
 
@@ -61,10 +81,8 @@ namespace Amazon.CloudSearchDomain
 
         #endregion
 
-
         
         #region  Search
-
 
         /// <summary>
         /// Retrieves a list of documents that match the specified search criteria. How you specify
@@ -100,16 +118,10 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public SearchResponse Search(SearchRequest request)
         {
-            var task = SearchAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SearchRequestMarshaller();
+            var unmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -122,17 +134,18 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SearchResponse> SearchAsync(SearchRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SearchRequest, SearchResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SearchRequest,SearchResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  Suggest
-
 
         /// <summary>
         /// Retrieves autocomplete suggestions for a partial query string. You can use suggestions
@@ -165,16 +178,10 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public SuggestResponse Suggest(SuggestRequest request)
         {
-            var task = SuggestAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new SuggestRequestMarshaller();
+            var unmarshaller = SuggestResponseUnmarshaller.Instance;
+
+            return Invoke<SuggestRequest,SuggestResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -187,17 +194,18 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SuggestResponse> SuggestAsync(SuggestRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
-            return Invoke<IRequest, SuggestRequest, SuggestResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<SuggestRequest,SuggestResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion
         
         #region  UploadDocuments
-
 
         /// <summary>
         /// Posts a batch of documents to a search domain for indexing. A document batch is a
@@ -234,16 +242,10 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
-            var task = UploadDocumentsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
+            var marshaller = new UploadDocumentsRequestMarshaller();
+            var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
+
+            return Invoke<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -256,11 +258,13 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, UploadDocumentsRequest, UploadDocumentsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+
+            return InvokeAsync<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
         }
 
         #endregion

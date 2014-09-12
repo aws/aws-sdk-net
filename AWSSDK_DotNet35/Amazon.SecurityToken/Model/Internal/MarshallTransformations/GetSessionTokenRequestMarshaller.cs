@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetSessionToken Request Marshaller
     /// </summary>       
-    public class GetSessionTokenRequestMarshaller : IMarshaller<IRequest, GetSessionTokenRequest>
+    public class GetSessionTokenRequestMarshaller : IMarshaller<IRequest, GetSessionTokenRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((GetSessionTokenRequest)input);
+        }
+    
         public IRequest Marshall(GetSessionTokenRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");

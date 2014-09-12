@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -69,6 +73,19 @@ namespace Amazon.SimpleEmail.Model
         private RawMessage _rawMessage;
         private string _source;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public SendRawEmailRequest() { }
+
+        /// <summary>
+        /// Instantiates SendRawEmailRequest with the parameterized properties
+        /// </summary>
+        /// <param name="rawMessage">The raw text of the message. The client is responsible for ensuring the following:     <ul>    <li>Message must contain a header and a body, separated by a blank line.</li>    <li>All required header fields must be present.</li>    <li>Each part of a multipart MIME message must be formatted properly.</li>    <li>MIME content types must be among those supported by Amazon SES. For more information, go to the     <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES      Developer Guide</a>.    </li>    <li>Content must be base64-encoded, if MIME requires it.</li>   </ul>  </param>
+        public SendRawEmailRequest(RawMessage rawMessage)
+        {
+            _rawMessage = rawMessage;
+        }
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -87,7 +104,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._destinations != null && this._destinations.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property RawMessage. 
@@ -117,7 +133,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._rawMessage != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Source. 

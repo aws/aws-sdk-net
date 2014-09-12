@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _loadBalancerName;
         private List<int> _loadBalancerPorts = new List<int>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteLoadBalancerListenersRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteLoadBalancerListenersRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
+        /// <param name="loadBalancerPorts"> The client port number(s) of the load balancer listener(s) to be removed. </param>
+        public DeleteLoadBalancerListenersRequest(string loadBalancerName, List<int> loadBalancerPorts)
+        {
+            _loadBalancerName = loadBalancerName;
+            _loadBalancerPorts = loadBalancerPorts;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
@@ -50,7 +69,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._loadBalancerName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadBalancerPorts. 

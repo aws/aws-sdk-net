@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -40,6 +44,19 @@ namespace Amazon.IdentityManagement.Model
         private string _accessKeyId;
         private string _userName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteAccessKeyRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteAccessKeyRequest with the parameterized properties
+        /// </summary>
+        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete.</param>
+        public DeleteAccessKeyRequest(string accessKeyId)
+        {
+            _accessKeyId = accessKeyId;
+        }
 
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
@@ -58,7 +75,6 @@ namespace Amazon.IdentityManagement.Model
         {
             return this._accessKeyId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UserName. 

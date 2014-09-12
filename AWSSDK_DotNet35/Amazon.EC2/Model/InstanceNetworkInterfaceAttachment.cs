@@ -12,114 +12,121 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a network interface attachment.</para>
+    /// Describes a network interface attachment.
     /// </summary>
     public partial class InstanceNetworkInterfaceAttachment
     {
-        
-        private string attachmentId;
-        private int? deviceIndex;
-        private AttachmentStatus status;
-        private DateTime? attachTime;
-        private bool? deleteOnTermination;
-
+        private string _attachmentId;
+        private DateTime? _attachTime;
+        private bool? _deleteOnTermination;
+        private int? _deviceIndex;
+        private AttachmentStatus _status;
 
         /// <summary>
+        /// Gets and sets the property AttachmentId. 
+        /// <para>
         /// The ID of the network interface attachment.
-        ///  
+        /// </para>
         /// </summary>
         public string AttachmentId
         {
-            get { return this.attachmentId; }
-            set { this.attachmentId = value; }
+            get { return this._attachmentId; }
+            set { this._attachmentId = value; }
         }
 
         // Check to see if AttachmentId property is set
         internal bool IsSetAttachmentId()
         {
-            return this.attachmentId != null;
+            return this._attachmentId != null;
         }
 
         /// <summary>
-        /// The index of the device on the instance for the network interface attachment.
-        ///  
-        /// </summary>
-        public int DeviceIndex
-        {
-            get { return this.deviceIndex ?? default(int); }
-            set { this.deviceIndex = value; }
-        }
-
-        // Check to see if DeviceIndex property is set
-        internal bool IsSetDeviceIndex()
-        {
-            return this.deviceIndex.HasValue;
-        }
-
-        /// <summary>
-        /// The attachment state.
-        ///  
+        /// Gets and sets the property AttachTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>attaching, attached, detaching, detached</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public AttachmentStatus Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
         /// The time stamp when the attachment initiated.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime AttachTime
         {
-            get { return this.attachTime ?? default(DateTime); }
-            set { this.attachTime = value; }
+            get { return this._attachTime.GetValueOrDefault(); }
+            set { this._attachTime = value; }
         }
 
         // Check to see if AttachTime property is set
         internal bool IsSetAttachTime()
         {
-            return this.attachTime.HasValue;
+            return this._attachTime.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
         /// Indicates whether the network interface is deleted when the instance is terminated.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property DeviceIndex. 
+        /// <para>
+        /// The index of the device on the instance for the network interface attachment.
+        /// </para>
+        /// </summary>
+        public int DeviceIndex
+        {
+            get { return this._deviceIndex.GetValueOrDefault(); }
+            set { this._deviceIndex = value; }
+        }
+
+        // Check to see if DeviceIndex property is set
+        internal bool IsSetDeviceIndex()
+        {
+            return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The attachment state.
+        /// </para>
+        /// </summary>
+        public AttachmentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

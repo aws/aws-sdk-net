@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSpotDatafeedSubscriptionResult : AmazonWebServiceResponse
     {
-        
-        private SpotDatafeedSubscription spotDatafeedSubscription;
-
+        private SpotDatafeedSubscription _spotDatafeedSubscription;
 
         /// <summary>
+        /// Gets and sets the property SpotDatafeedSubscription. 
+        /// <para>
         /// The Spot Instance datafeed subscription.
-        ///  
+        /// </para>
         /// </summary>
         public SpotDatafeedSubscription SpotDatafeedSubscription
         {
-            get { return this.spotDatafeedSubscription; }
-            set { this.spotDatafeedSubscription = value; }
+            get { return this._spotDatafeedSubscription; }
+            set { this._spotDatafeedSubscription = value; }
         }
 
         // Check to see if SpotDatafeedSubscription property is set
         internal bool IsSetSpotDatafeedSubscription()
         {
-            return this.spotDatafeedSubscription != null;
+            return this._spotDatafeedSubscription != null;
         }
+
     }
 }

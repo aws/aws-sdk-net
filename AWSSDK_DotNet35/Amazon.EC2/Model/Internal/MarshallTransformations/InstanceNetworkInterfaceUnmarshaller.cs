@@ -12,135 +12,147 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceNetworkInterface Unmarshaller
-     /// </summary>
-    internal class InstanceNetworkInterfaceUnmarshaller : IUnmarshaller<InstanceNetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterface, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceNetworkInterface Object
+    /// </summary>  
+    public class InstanceNetworkInterfaceUnmarshaller : IUnmarshaller<InstanceNetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterface, JsonUnmarshallerContext>
     {
-        public InstanceNetworkInterface Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceNetworkInterface Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceNetworkInterface instanceNetworkInterface = new InstanceNetworkInterface();
+            InstanceNetworkInterface unmarshalledObject = new InstanceNetworkInterface();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("networkInterfaceId", targetDepth))
+                    if (context.TestExpression("association", targetDepth))
                     {
-                        instanceNetworkInterface.NetworkInterfaceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("subnetId", targetDepth))
-                    {
-                        instanceNetworkInterface.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        instanceNetworkInterface.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("description", targetDepth))
-                    {
-                        instanceNetworkInterface.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ownerId", targetDepth))
-                    {
-                        instanceNetworkInterface.OwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        instanceNetworkInterface.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("privateIpAddress", targetDepth))
-                    {
-                        instanceNetworkInterface.PrivateIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("privateDnsName", targetDepth))
-                    {
-                        instanceNetworkInterface.PrivateDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("sourceDestCheck", targetDepth))
-                    {
-                        instanceNetworkInterface.SourceDestCheck = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("groupSet/item", targetDepth))
-                    {
-                        instanceNetworkInterface.Groups.Add(GroupIdentifierUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InstanceNetworkInterfaceAssociationUnmarshaller.Instance;
+                        unmarshalledObject.Association = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("attachment", targetDepth))
                     {
-                        instanceNetworkInterface.Attachment = InstanceNetworkInterfaceAttachmentUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InstanceNetworkInterfaceAttachmentUnmarshaller.Instance;
+                        unmarshalledObject.Attachment = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("association", targetDepth))
+                    if (context.TestExpression("description", targetDepth))
                     {
-                        instanceNetworkInterface.Association = InstanceNetworkInterfaceAssociationUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("groupSet/item", targetDepth))
+                    {
+                        var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Groups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("networkInterfaceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateDnsName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateIpAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("privateIpAddressesSet/item", targetDepth))
                     {
-                        instanceNetworkInterface.PrivateIpAddresses.Add(InstancePrivateIpAddressUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InstancePrivateIpAddressUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrivateIpAddresses.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceDestCheck", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("subnetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceNetworkInterface;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceNetworkInterface;
+            return unmarshalledObject;
         }
 
-        public InstanceNetworkInterface Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceNetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceNetworkInterfaceUnmarshaller instance;
 
-        public static InstanceNetworkInterfaceUnmarshaller GetInstance() 
+        private static InstanceNetworkInterfaceUnmarshaller _instance = new InstanceNetworkInterfaceUnmarshaller();        
+
+        public static InstanceNetworkInterfaceUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceNetworkInterfaceUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

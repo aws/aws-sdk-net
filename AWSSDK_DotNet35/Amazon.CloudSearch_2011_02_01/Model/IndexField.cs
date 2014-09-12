@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,149 +12,153 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>Defines a field in the index, including its name, type, and the source of its data. The <c>IndexFieldType</c> indicates which of the
-    /// options will be present. It is invalid to specify options for a type other than the <c>IndexFieldType</c> .</para>
+    /// Defines a field in the index, including its name, type, and the source of its data.
+    /// The <code>IndexFieldType</code> indicates which of the options will be present. It
+    /// is invalid to specify options for a type other than the <code>IndexFieldType</code>.
     /// </summary>
-    public class IndexField
+    public partial class IndexField
     {
-        
-        private string indexFieldName;
-        private IndexFieldType indexFieldType;
-        private UIntOptions uIntOptions;
-        private LiteralOptions literalOptions;
-        private TextOptions textOptions;
-        private List<SourceAttribute> sourceAttributes = new List<SourceAttribute>();
-
+        private string _indexFieldName;
+        private IndexFieldType _indexFieldType;
+        private LiteralOptions _literalOptions;
+        private List<SourceAttribute> _sourceAttributes = new List<SourceAttribute>();
+        private TextOptions _textOptions;
+        private UIntOptions _uIntOptions;
 
         /// <summary>
-        /// The name of a field in the search index. Field names must begin with a letter and can contain the following characters: a-z (lowercase),
-        /// 0-9, and _ (underscore). Uppercase letters and hyphens are not allowed. The names "body", "docid", and "text_relevance" are reserved and
-        /// cannot be specified as field or rank expression names.
-        ///  
+        /// Gets and sets the property IndexFieldName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of a field in the search index. Field names must begin with a letter and
+        /// can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Uppercase
+        /// letters and hyphens are not allowed. The names "body", "docid", and "text_relevance"
+        /// are reserved and cannot be specified as field or rank expression names.
         /// </para>
         /// </summary>
         public string IndexFieldName
         {
-            get { return this.indexFieldName; }
-            set { this.indexFieldName = value; }
+            get { return this._indexFieldName; }
+            set { this._indexFieldName = value; }
         }
 
         // Check to see if IndexFieldName property is set
         internal bool IsSetIndexFieldName()
         {
-            return this.indexFieldName != null;
+            return this._indexFieldName != null;
         }
 
         /// <summary>
-        /// The type of field. Based on this type, exactly one of the <a>UIntOptions</a>, <a>LiteralOptions</a> or <a>TextOptions</a> must be present.
-        ///  
+        /// Gets and sets the property IndexFieldType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>uint, literal, text</description>
-        ///     </item>
-        /// </list>
+        /// The type of field. Based on this type, exactly one of the <a>UIntOptions</a>, <a>LiteralOptions</a>
+        /// or <a>TextOptions</a> must be present.
         /// </para>
         /// </summary>
         public IndexFieldType IndexFieldType
         {
-            get { return this.indexFieldType; }
-            set { this.indexFieldType = value; }
+            get { return this._indexFieldType; }
+            set { this._indexFieldType = value; }
         }
 
         // Check to see if IndexFieldType property is set
         internal bool IsSetIndexFieldType()
         {
-            return this.indexFieldType != null;
+            return this._indexFieldType != null;
         }
 
         /// <summary>
-        /// Options for an unsigned integer field. Present if <c>IndexFieldType</c> specifies the field is of type unsigned integer.
-        ///  
-        /// </summary>
-        public UIntOptions UIntOptions
-        {
-            get { return this.uIntOptions; }
-            set { this.uIntOptions = value; }
-        }
-
-        // Check to see if UIntOptions property is set
-        internal bool IsSetUIntOptions()
-        {
-            return this.uIntOptions != null;
-        }
-
-        /// <summary>
-        /// Options for literal field. Present if <c>IndexFieldType</c> specifies the field is of type literal.
-        ///  
+        /// Gets and sets the property LiteralOptions. 
+        /// <para>
+        /// Options for literal field. Present if <code>IndexFieldType</code> specifies the field
+        /// is of type literal.
+        /// </para>
         /// </summary>
         public LiteralOptions LiteralOptions
         {
-            get { return this.literalOptions; }
-            set { this.literalOptions = value; }
+            get { return this._literalOptions; }
+            set { this._literalOptions = value; }
         }
 
         // Check to see if LiteralOptions property is set
         internal bool IsSetLiteralOptions()
         {
-            return this.literalOptions != null;
+            return this._literalOptions != null;
         }
 
         /// <summary>
-        /// Options for text field. Present if <c>IndexFieldType</c> specifies the field is of type text.
-        ///  
-        /// </summary>
-        public TextOptions TextOptions
-        {
-            get { return this.textOptions; }
-            set { this.textOptions = value; }
-        }
-
-        // Check to see if TextOptions property is set
-        internal bool IsSetTextOptions()
-        {
-            return this.textOptions != null;
-        }
-
-        /// <summary>
-        /// An optional list of source attributes that provide data for this index field. If not specified, the data is pulled from a source attribute
-        /// with the same name as this <c>IndexField</c>. When one or more source attributes are specified, an optional data transformation can be
-        /// applied to the source data when populating the index field. You can configure a maximum of 20 sources for an <c>IndexField</c>.
-        ///  
+        /// Gets and sets the property SourceAttributes. 
+        /// <para>
+        /// An optional list of source attributes that provide data for this index field. If not
+        /// specified, the data is pulled from a source attribute with the same name as this <code>IndexField</code>.
+        /// When one or more source attributes are specified, an optional data transformation
+        /// can be applied to the source data when populating the index field. You can configure
+        /// a maximum of 20 sources for an <code>IndexField</code>.
+        /// </para>
         /// </summary>
         public List<SourceAttribute> SourceAttributes
         {
-            get { return this.sourceAttributes; }
-            set { this.sourceAttributes = value; }
+            get { return this._sourceAttributes; }
+            set { this._sourceAttributes = value; }
         }
 
         // Check to see if SourceAttributes property is set
         internal bool IsSetSourceAttributes()
         {
-            return this.sourceAttributes.Count > 0;
+            return this._sourceAttributes != null && this._sourceAttributes.Count > 0; 
         }
+
+        /// <summary>
+        /// Gets and sets the property TextOptions. 
+        /// <para>
+        /// Options for text field. Present if <code>IndexFieldType</code> specifies the field
+        /// is of type text.
+        /// </para>
+        /// </summary>
+        public TextOptions TextOptions
+        {
+            get { return this._textOptions; }
+            set { this._textOptions = value; }
+        }
+
+        // Check to see if TextOptions property is set
+        internal bool IsSetTextOptions()
+        {
+            return this._textOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UIntOptions. 
+        /// <para>
+        /// Options for an unsigned integer field. Present if <code>IndexFieldType</code> specifies
+        /// the field is of type unsigned integer.
+        /// </para>
+        /// </summary>
+        public UIntOptions UIntOptions
+        {
+            get { return this._uIntOptions; }
+            set { this._uIntOptions = value; }
+        }
+
+        // Check to see if UIntOptions property is set
+        internal bool IsSetUIntOptions()
+        {
+            return this._uIntOptions != null;
+        }
+
     }
 }

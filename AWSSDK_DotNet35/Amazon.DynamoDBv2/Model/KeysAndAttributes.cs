@@ -12,91 +12,96 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</para>
+    /// Represents a set of primary keys and, for each key, the attributes to retrieve from
+    /// the      table.
+    /// 
+    ///     
+    /// <para>
+    /// For each primary key, you must provide <i>all</i> of the key attributes. For example,
+    /// with a      hash type primary key, you only need to specify the hash attribute. For
+    /// a hash-and-range type      primary key, you must specify <i>both</i> the hash attribute
+    /// and the range attribute.
+    /// </para>
     /// </summary>
     public partial class KeysAndAttributes
     {
-        
-        private List<Dictionary<string,AttributeValue>> keys = new List<Dictionary<string,AttributeValue>>();
-        private List<string> attributesToGet = new List<string>();
-        private bool? consistentRead;
-
+        private List<string> _attributesToGet = new List<string>();
+        private bool? _consistentRead;
+        private List<Dictionary<string, AttributeValue>> _keys = new List<Dictionary<string, AttributeValue>>();
 
         /// <summary>
-        /// The primary key attribute values that define the items and the attributes associated with the items.
-        ///  
+        /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public List<Dictionary<string,AttributeValue>> Keys
-        {
-            get { return this.keys; }
-            set { this.keys = value; }
-        }
-
-        // Check to see if Keys property is set
-        internal bool IsSetKeys()
-        {
-            return this.keys.Count > 0;
-        }
-
-        /// <summary>
-        /// One or more attributes to retrieve from the table or index. If no attribute names are specified then all attributes will be returned. If any
-        /// of the specified attributes are not found, they will not appear in the result.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// One or more attributes to retrieve from the table or index. If no attribute names
+        /// are      specified then all attributes will be returned. If any of the specified attributes
+        /// are not      found, they will not appear in the result.
         /// </para>
         /// </summary>
         public List<string> AttributesToGet
         {
-            get { return this.attributesToGet; }
-            set { this.attributesToGet = value; }
+            get { return this._attributesToGet; }
+            set { this._attributesToGet = value; }
         }
 
         // Check to see if AttributesToGet property is set
         internal bool IsSetAttributesToGet()
         {
-            return this.attributesToGet.Count > 0;
+            return this._attributesToGet != null && this._attributesToGet.Count > 0; 
         }
 
         /// <summary>
-        /// The consistency of a read operation. If set to <c>true</c>, then a strongly consistent read is used; otherwise, an eventually consistent
-        /// read is used.
-        ///  
+        /// Gets and sets the property ConsistentRead. 
+        /// <para>
+        /// The consistency of a read operation. If set to <code>true</code>, then a strongly
+        /// consistent      read is used; otherwise, an eventually consistent read is used.
+        /// </para>
         /// </summary>
         public bool ConsistentRead
         {
-            get { return this.consistentRead ?? default(bool); }
-            set { this.consistentRead = value; }
+            get { return this._consistentRead.GetValueOrDefault(); }
+            set { this._consistentRead = value; }
         }
 
         // Check to see if ConsistentRead property is set
         internal bool IsSetConsistentRead()
         {
-            return this.consistentRead.HasValue;
+            return this._consistentRead.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property Keys. 
+        /// <para>
+        /// The primary key attribute values that define the items and the attributes associated
+        /// with the      items.
+        /// </para>
+        /// </summary>
+        public List<Dictionary<string, AttributeValue>> Keys
+        {
+            get { return this._keys; }
+            set { this._keys = value; }
+        }
+
+        // Check to see if Keys property is set
+        internal bool IsSetKeys()
+        {
+            return this._keys != null && this._keys.Count > 0; 
+        }
+
     }
 }

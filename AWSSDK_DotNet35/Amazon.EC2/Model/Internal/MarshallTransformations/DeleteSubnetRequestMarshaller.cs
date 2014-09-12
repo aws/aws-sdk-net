@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Subnet Request Marshaller
+    /// DeleteSubnet Request Marshaller
     /// </summary>       
-    public class DeleteSubnetRequestMarshaller : IMarshaller<IRequest, DeleteSubnetRequest>
+    public class DeleteSubnetRequestMarshaller : IMarshaller<IRequest, DeleteSubnetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DeleteSubnetRequest deleteSubnetRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(deleteSubnetRequest, "AmazonEC2");
+            return this.Marshall((DeleteSubnetRequest)input);
+        }
+    
+        public IRequest Marshall(DeleteSubnetRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DeleteSubnet");
             request.Parameters.Add("Version", "2014-06-15");
-            if (deleteSubnetRequest != null && deleteSubnetRequest.IsSetSubnetId())
-            {
-                request.Parameters.Add("SubnetId", StringUtils.FromString(deleteSubnetRequest.SubnetId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSubnetId())
+                {
+                    request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
+                }
+            }
             return request;
         }
     }

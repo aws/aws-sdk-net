@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.OpsWorks.Model
         private string _volumeId;
         private string _volumeType;
 
-
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
@@ -62,7 +65,6 @@ namespace Amazon.OpsWorks.Model
             return this._availabilityZone != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Device. 
         /// <para>
@@ -80,7 +82,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._device != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Ec2VolumeId. 
@@ -100,7 +101,6 @@ namespace Amazon.OpsWorks.Model
             return this._ec2VolumeId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -118,7 +118,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Iops. 
@@ -138,7 +137,6 @@ namespace Amazon.OpsWorks.Model
             return this._iops.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property MountPoint. 
         /// <para>
@@ -156,7 +154,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._mountPoint != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -176,7 +173,6 @@ namespace Amazon.OpsWorks.Model
             return this._name != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RaidArrayId. 
         /// <para>
@@ -194,7 +190,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._raidArrayId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Region. 
@@ -215,7 +210,6 @@ namespace Amazon.OpsWorks.Model
             return this._region != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
@@ -233,7 +227,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._size.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -253,7 +246,6 @@ namespace Amazon.OpsWorks.Model
             return this._status != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
@@ -271,7 +263,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._volumeId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VolumeType. 

@@ -12,54 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The value of an <c>Expression</c> and its current status.</para>
+    /// The value of an <code>Expression</code> and its current status.
     /// </summary>
     public partial class ExpressionStatus
     {
-        
-        private Expression options;
-        private OptionStatus status;
-
+        private Expression _options;
+        private OptionStatus _status;
 
         /// <summary>
-        /// The expression that is evaluated for sorting or filtering while processing a search request.
-        ///  
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// The expression that is evaluated for sorting while processing a search request.
+        /// </para>
         /// </summary>
         public Expression Options
         {
-            get { return this.options; }
-            set { this.options = value; }
+            get { return this._options; }
+            set { this._options = value; }
         }
 
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;
+            return this._options != null;
         }
 
         /// <summary>
-        /// The status of domain configuration option.
-        ///  
+        /// Gets and sets the property Status.
         /// </summary>
         public OptionStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

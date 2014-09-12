@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a range of ports.</para>
+    /// Describes a range of ports.
     /// </summary>
     public partial class PortRange
     {
-        
-        private int? from;
-        private int? to;
-
+        private int? _from;
+        private int? _to;
 
         /// <summary>
+        /// Gets and sets the property From. 
+        /// <para>
         /// The first port in the range.
-        ///  
+        /// </para>
         /// </summary>
         public int From
         {
-            get { return this.from ?? default(int); }
-            set { this.from = value; }
+            get { return this._from.GetValueOrDefault(); }
+            set { this._from = value; }
         }
 
         // Check to see if From property is set
         internal bool IsSetFrom()
         {
-            return this.from.HasValue;
+            return this._from.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property To. 
+        /// <para>
         /// The last port in the range.
-        ///  
+        /// </para>
         /// </summary>
         public int To
         {
-            get { return this.to ?? default(int); }
-            set { this.to = value; }
+            get { return this._to.GetValueOrDefault(); }
+            set { this._to = value; }
         }
 
         // Check to see if To property is set
         internal bool IsSetTo()
         {
-            return this.to.HasValue;
+            return this._to.HasValue; 
         }
+
     }
 }

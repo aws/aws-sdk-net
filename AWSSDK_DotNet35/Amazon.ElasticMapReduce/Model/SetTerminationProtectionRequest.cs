@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -57,7 +61,6 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _jobFlowIds = new List<string>();
         private bool? _terminationProtected;
 
-
         /// <summary>
         /// Gets and sets the property JobFlowIds. 
         /// <para>
@@ -77,7 +80,6 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this._jobFlowIds != null && this._jobFlowIds.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property TerminationProtected. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,83 +29,122 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachVolume operation.
-    /// <para>Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the instance with the specified device name.</para>
-    /// <para>Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
-    /// Cloud User Guide</i> .</para> <para>For a list of supported device names, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html" >Attaching an Amazon EBS Volume to an Instance</a> . Any
-    /// device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html" >Amazon EC2 Instance Store</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para> <para>If a volume has an AWS Marketplace product code:</para>
-    /// <ul>
-    /// <li>The volume can only be attached as the root device of a stopped instance.</li>
-    /// <li>You must be subscribed to the AWS Marketplace code that is on the volume.</li>
-    /// <li>The configuration (instance type, operating system) of the instance must support that specific AWS Marketplace code. For example, you
-    /// cannot take a volume from a Windows instance and attach it to a Linux instance.</li>
-    /// <li>AWS Marketplace product codes are copied from the volume to the instance.</li>
+    /// Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the
+    /// instance with the specified device name.
     /// 
-    /// </ul>
-    /// <para>For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000"
-    /// >https://aws.amazon.com/marketplace/help/200900000</a> . For more information about how to use the AWS Marketplace, see <a
-    /// href="https://aws.amazon.com/marketplace" >AWS Marketplace</a> .</para> <para>For more information about Amazon EBS volumes, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html" >Attaching Amazon EBS Volumes</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i> .</para>
+    ///  
+    /// <para>
+    /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
+    /// EBS encryption. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For a list of supported device names, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+    /// an Amazon EBS Volume to an Instance</a>. Any device names that aren't reserved for
+    /// instance store volumes can be used for Amazon EBS volumes. For more information, see
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+    /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If a volume has an AWS Marketplace product code:
+    /// </para>
+    ///  <ul> <li>The volume can only be attached as the root device of a stopped instance.</li>
+    /// <li>You must be subscribed to the AWS Marketplace code that is on the volume.</li>
+    /// <li>The configuration (instance type, operating system) of the instance must support
+    /// that specific AWS Marketplace code. For example, you cannot take a volume from a Windows
+    /// instance and attach it to a Linux instance.</li> <li>AWS Marketplace product codes
+    /// are copied from the volume to the instance.</li> </ul> 
+    /// <para>
+    /// For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000">https://aws.amazon.com/marketplace/help/200900000</a>.
+    /// For more information about how to use the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace">AWS
+    /// Marketplace</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+    /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AttachVolumeRequest : AmazonEC2Request
     {
-        private string volumeId;
-        private string instanceId;
-        private string device;
-
+        private string _device;
+        private string _instanceId;
+        private string _volumeId;
 
         /// <summary>
-        /// The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
+        public AttachVolumeRequest() { }
 
         /// <summary>
-        /// The ID of the instance.
-        ///  
+        /// Instantiates AttachVolumeRequest with the parameterized properties
         /// </summary>
-        public string InstanceId
+        /// <param name="volumeId">The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone.</param>
+        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="device">The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</param>
+        public AttachVolumeRequest(string volumeId, string instanceId, string device)
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
+            _volumeId = volumeId;
+            _instanceId = instanceId;
+            _device = device;
         }
 
         /// <summary>
-        /// The device name to expose to the instance (for example, <c>/dev/sdh</c> or <c>xvdh</c>).
-        ///  
+        /// Gets and sets the property Device. 
+        /// <para>
+        /// The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// </para>
         /// </summary>
         public string Device
         {
-            get { return this.device; }
-            set { this.device = value; }
+            get { return this._device; }
+            set { this._device = value; }
         }
 
         // Check to see if Device property is set
         internal bool IsSetDevice()
         {
-            return this.device != null;
+            return this._device != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the Amazon EBS volume. The volume and instance must be within the same Availability
+        /// Zone.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
         }
 
     }
 }
-    

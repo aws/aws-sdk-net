@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,7 +46,6 @@ namespace Amazon.Route53Domains.Model
         private string _phoneNumber;
         private string _state;
         private string _zipCode;
-
 
         /// <summary>
         /// Gets and sets the property AddressLine1. 
@@ -82,7 +85,6 @@ namespace Amazon.Route53Domains.Model
             return this._addressLine1 != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property AddressLine2. 
         /// <para>
@@ -121,7 +123,6 @@ namespace Amazon.Route53Domains.Model
             return this._addressLine2 != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
@@ -159,7 +160,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._city != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ContactType. 
@@ -207,7 +207,6 @@ namespace Amazon.Route53Domains.Model
             return this._contactType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CountryCode. 
         /// <para>
@@ -245,7 +244,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._countryCode != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Email. 
@@ -286,7 +284,6 @@ namespace Amazon.Route53Domains.Model
             return this._email != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ExtraParams. 
         /// <para>
@@ -324,7 +321,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._extraParams != null && this._extraParams.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Fax. 
@@ -365,7 +361,6 @@ namespace Amazon.Route53Domains.Model
             return this._fax != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
@@ -405,7 +400,6 @@ namespace Amazon.Route53Domains.Model
             return this._firstName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
@@ -444,7 +438,6 @@ namespace Amazon.Route53Domains.Model
             return this._lastName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property OrganizationName. 
         /// <para>
@@ -482,7 +475,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._organizationName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
@@ -523,7 +515,6 @@ namespace Amazon.Route53Domains.Model
             return this._phoneNumber != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
@@ -561,7 +552,6 @@ namespace Amazon.Route53Domains.Model
         {
             return this._state != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ZipCode. 

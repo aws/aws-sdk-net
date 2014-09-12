@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.SimpleEmail.Model;
 
 namespace Amazon.SimpleEmail
 {
     /// <summary>
-    /// Implementation for accessing SimpleEmailService
+    /// Interface for accessing SimpleEmailService
     ///
     /// Amazon Simple Email Service        
     /// <para>
@@ -38,7 +43,6 @@ namespace Amazon.SimpleEmail
 
         
         #region  DeleteIdentity
-
 
         /// <summary>
         /// Deletes the specified identity (email address or domain) from the list of verified
@@ -84,7 +88,6 @@ namespace Amazon.SimpleEmail
         
         #region  DeleteVerifiedEmailAddress
 
-
         /// <summary>
         /// Deletes the specified email address from the list of verified addresses.
         /// 
@@ -129,7 +132,6 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  GetIdentityDkimAttributes
-
 
         /// <summary>
         /// Returns the current status of Easy DKIM signing for an entity. For domain name   
@@ -193,7 +195,6 @@ namespace Amazon.SimpleEmail
         
         #region  GetIdentityNotificationAttributes
 
-
         /// <summary>
         /// Given a list of verified identities (email addresses and/or domains), returns a structure
         /// describing identity         notification attributes.
@@ -243,7 +244,6 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  GetIdentityVerificationAttributes
-
 
         /// <summary>
         /// Given a list of identities (email addresses and/or domains), returns the verification
@@ -525,7 +525,6 @@ namespace Amazon.SimpleEmail
         
         #region  SendEmail
 
-
         /// <summary>
         /// Composes an email message based on input data, and then immediately queues the message
         ///            for sending.        
@@ -594,7 +593,6 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  SendRawEmail
-
 
         /// <summary>
         /// Sends an email message, with header and content specified by the client. The     
@@ -674,7 +672,6 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityDkimEnabled
 
-
         /// <summary>
         /// Enables or disables Easy DKIM signing of email sent from an identity:
         /// 
@@ -735,7 +732,6 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityFeedbackForwardingEnabled
 
-
         /// <summary>
         /// Given an identity (email address or domain), enables or disables whether Amazon SES
         /// forwards            bounce and complaint notifications as email. Feedback forwarding
@@ -789,7 +785,6 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityNotificationTopic
 
-
         /// <summary>
         /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
         /// (Amazon SNS) topic to which Amazon SES will publish        bounce, complaint, and/or
@@ -841,7 +836,6 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyDomainDkim
-
 
         /// <summary>
         /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
@@ -902,7 +896,6 @@ namespace Amazon.SimpleEmail
         
         #region  VerifyDomainIdentity
 
-
         /// <summary>
         /// Verifies a domain.
         /// 
@@ -945,7 +938,6 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyEmailAddress
-
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message to be 
@@ -992,7 +984,6 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyEmailIdentity
-
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message       

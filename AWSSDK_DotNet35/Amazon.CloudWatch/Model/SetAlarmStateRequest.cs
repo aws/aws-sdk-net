@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,117 +29,92 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the SetAlarmState operation.
-    /// <para> Temporarily sets the state of an alarm. When the updated <c>StateValue</c> differs from the previous value, the action configured for
-    /// the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to
-    /// its actual state. </para>
+    /// Temporarily sets the state of an alarm. When the updated <code>StateValue</code>
+    /// differs from the previous value, the action configured for the appropriate state is
+    /// invoked. This is not a permanent change. The next periodic alarm check (in about a
+    /// minute) will set the alarm to its actual state.
     /// </summary>
-    public partial class SetAlarmStateRequest : AmazonWebServiceRequest
+    public partial class SetAlarmStateRequest : AmazonCloudWatchRequest
     {
-        private string alarmName;
-        private StateValue stateValue;
-        private string stateReason;
-        private string stateReasonData;
+        private string _alarmName;
+        private string _stateReason;
+        private string _stateReasonData;
+        private StateValue _stateValue;
 
         /// <summary>
-        /// The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters.
-        ///  
+        /// Gets and sets the property AlarmName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        ///  The descriptive name for the alarm. This name must be unique within the user's AWS
+        /// account. The maximum length is 255 characters. 
         /// </para>
         /// </summary>
         public string AlarmName
         {
-            get { return this.alarmName; }
-            set { this.alarmName = value; }
+            get { return this._alarmName; }
+            set { this._alarmName = value; }
         }
 
         // Check to see if AlarmName property is set
         internal bool IsSetAlarmName()
         {
-            return this.alarmName != null;
+            return this._alarmName != null;
         }
 
         /// <summary>
-        /// The value of the state.
-        ///  
+        /// Gets and sets the property StateReason. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>OK, ALARM, INSUFFICIENT_DATA</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public StateValue StateValue
-        {
-            get { return this.stateValue; }
-            set { this.stateValue = value; }
-        }
-
-        // Check to see if StateValue property is set
-        internal bool IsSetStateValue()
-        {
-            return this.stateValue != null;
-        }
-
-        /// <summary>
-        /// The reason that this alarm is set to this specific state (in human-readable text format)
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1023</description>
-        ///     </item>
-        /// </list>
+        ///  The reason that this alarm is set to this specific state (in human-readable text
+        /// format) 
         /// </para>
         /// </summary>
         public string StateReason
         {
-            get { return this.stateReason; }
-            set { this.stateReason = value; }
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
         }
 
         // Check to see if StateReason property is set
         internal bool IsSetStateReason()
         {
-            return this.stateReason != null;
+            return this._stateReason != null;
         }
 
         /// <summary>
-        /// The reason that this alarm is set to this specific state (in machine-readable JSON format)
-        ///  
+        /// Gets and sets the property StateReasonData. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 4000</description>
-        ///     </item>
-        /// </list>
+        ///  The reason that this alarm is set to this specific state (in machine-readable JSON
+        /// format) 
         /// </para>
         /// </summary>
         public string StateReasonData
         {
-            get { return this.stateReasonData; }
-            set { this.stateReasonData = value; }
+            get { return this._stateReasonData; }
+            set { this._stateReasonData = value; }
         }
 
         // Check to see if StateReasonData property is set
         internal bool IsSetStateReasonData()
         {
-            return this.stateReasonData != null;
+            return this._stateReasonData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateValue. 
+        /// <para>
+        ///  The value of the state. 
+        /// </para>
+        /// </summary>
+        public StateValue StateValue
+        {
+            get { return this._stateValue; }
+            set { this._stateValue = value; }
+        }
+
+        // Check to see if StateValue property is set
+        internal bool IsSetStateValue()
+        {
+            return this._stateValue != null;
         }
 
     }
 }
-    

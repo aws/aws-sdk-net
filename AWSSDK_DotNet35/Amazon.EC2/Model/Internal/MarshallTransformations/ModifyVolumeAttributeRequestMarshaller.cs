@@ -12,38 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Volume Attribute Request Marshaller
+    /// ModifyVolumeAttribute Request Marshaller
     /// </summary>       
-    public class ModifyVolumeAttributeRequestMarshaller : IMarshaller<IRequest, ModifyVolumeAttributeRequest>
+    public class ModifyVolumeAttributeRequestMarshaller : IMarshaller<IRequest, ModifyVolumeAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(ModifyVolumeAttributeRequest modifyVolumeAttributeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(modifyVolumeAttributeRequest, "AmazonEC2");
+            return this.Marshall((ModifyVolumeAttributeRequest)input);
+        }
+    
+        public IRequest Marshall(ModifyVolumeAttributeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ModifyVolumeAttribute");
             request.Parameters.Add("Version", "2014-06-15");
-            if (modifyVolumeAttributeRequest != null && modifyVolumeAttributeRequest.IsSetVolumeId())
-            {
-                request.Parameters.Add("VolumeId", StringUtils.FromString(modifyVolumeAttributeRequest.VolumeId));
-            }
-            if (modifyVolumeAttributeRequest != null && modifyVolumeAttributeRequest.IsSetAutoEnableIO())
-            {
-                request.Parameters.Add("AutoEnableIO.Value", StringUtils.FromBool(modifyVolumeAttributeRequest.AutoEnableIO));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoEnableIO())
+                {
+                    request.Parameters.Add("AutoEnableIO.Value", StringUtils.FromBool(publicRequest.AutoEnableIO));
+                }
+                if(publicRequest.IsSetVolumeId())
+                {
+                    request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
+                }
+            }
             return request;
         }
     }

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.SimpleEmail.Model
         private Body _body;
         private Content _subject;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public Message() { }
+
+        /// <summary>
+        /// Instantiates Message with the parameterized properties
+        /// </summary>
+        /// <param name="subject">The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</param>
+        /// <param name="body">The message body.</param>
+        public Message(Content subject, Body body)
+        {
+            _subject = subject;
+            _body = body;
+        }
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -49,7 +68,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._body != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Subject. 

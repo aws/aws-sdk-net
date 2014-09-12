@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.ElastiCache.Model;
 using Amazon.ElastiCache.Model.Internal.MarshallTransformations;
@@ -48,19 +52,8 @@ namespace Amazon.ElastiCache
     /// if a part of their cache runs hot.
     /// </para>
     /// </summary>
-    public partial class AmazonElastiCacheClient : AmazonWebServiceClient, IAmazonElastiCache
+    public partial class AmazonElastiCacheClient : AmazonServiceClient, IAmazonElastiCache
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -79,7 +72,7 @@ namespace Amazon.ElastiCache
         ///
         /// </summary>
         public AmazonElastiCacheClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
@@ -98,7 +91,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
@@ -117,7 +110,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="config">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials
@@ -145,7 +138,7 @@ namespace Amazon.ElastiCache
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(AWSCredentials credentials, AmazonElastiCacheConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -178,7 +171,7 @@ namespace Amazon.ElastiCache
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElastiCacheConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -214,15 +207,33 @@ namespace Amazon.ElastiCache
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElastiCacheConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AuthorizeCacheSecurityGroupIngress
-
 
         /// <summary>
         /// The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to
@@ -251,8 +262,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request)
         {
-            IAsyncResult asyncResult = invokeAuthorizeCacheSecurityGroupIngress(request, null, null, true);
-            return EndAuthorizeCacheSecurityGroupIngress(asyncResult);
+            var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeCacheSecurityGroupIngressRequest,AuthorizeCacheSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -269,10 +282,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            return invokeAuthorizeCacheSecurityGroupIngress(request, callback, state, false);
+            var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AuthorizeCacheSecurityGroupIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AuthorizeCacheSecurityGroupIngress operation.
@@ -284,21 +299,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  AuthorizeCacheSecurityGroupIngressResult from ElastiCache.</returns>
         public  AuthorizeCacheSecurityGroupIngressResponse EndAuthorizeCacheSecurityGroupIngress(IAsyncResult asyncResult)
         {
-            return endOperation< AuthorizeCacheSecurityGroupIngressResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
-            var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AuthorizeCacheSecurityGroupIngressResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CopySnapshot
-
 
         /// <summary>
         /// The <i>CopySnapshot</i> operation makes a copy of an existing snapshot.
@@ -326,8 +332,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeCopySnapshot(request, null, null, true);
-            return EndCopySnapshot(asyncResult);
+            var marshaller = new CopySnapshotRequestMarshaller();
+            var unmarshaller = CopySnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CopySnapshotRequest,CopySnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -344,10 +352,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeCopySnapshot(request, callback, state, false);
+            var marshaller = new CopySnapshotRequestMarshaller();
+            var unmarshaller = CopySnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CopySnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CopySnapshot operation.
@@ -359,21 +369,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CopySnapshotResult from ElastiCache.</returns>
         public  CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult)
         {
-            return endOperation< CopySnapshotResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CopySnapshotRequestMarshaller();
-            var unmarshaller = CopySnapshotResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CopySnapshotResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateCacheCluster
-
 
         /// <summary>
         /// The <i>CreateCacheCluster</i> operation creates a new cache cluster. All nodes in
@@ -429,8 +430,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateCacheCluster(request, null, null, true);
-            return EndCreateCacheCluster(asyncResult);
+            var marshaller = new CreateCacheClusterRequestMarshaller();
+            var unmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCacheClusterRequest,CreateCacheClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -447,10 +450,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCreateCacheCluster(CreateCacheClusterRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateCacheCluster(request, callback, state, false);
+            var marshaller = new CreateCacheClusterRequestMarshaller();
+            var unmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateCacheClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCacheCluster operation.
@@ -462,21 +467,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CreateCacheClusterResult from ElastiCache.</returns>
         public  CreateCacheClusterResponse EndCreateCacheCluster(IAsyncResult asyncResult)
         {
-            return endOperation< CreateCacheClusterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateCacheCluster(CreateCacheClusterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateCacheClusterRequestMarshaller();
-            var unmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateCacheClusterResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateCacheParameterGroup
-
 
         /// <summary>
         /// The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group.
@@ -505,8 +501,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateCacheParameterGroup(request, null, null, true);
-            return EndCreateCacheParameterGroup(asyncResult);
+            var marshaller = new CreateCacheParameterGroupRequestMarshaller();
+            var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCacheParameterGroupRequest,CreateCacheParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -523,10 +521,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCreateCacheParameterGroup(CreateCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateCacheParameterGroup(request, callback, state, false);
+            var marshaller = new CreateCacheParameterGroupRequestMarshaller();
+            var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateCacheParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCacheParameterGroup operation.
@@ -538,21 +538,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CreateCacheParameterGroupResult from ElastiCache.</returns>
         public  CreateCacheParameterGroupResponse EndCreateCacheParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateCacheParameterGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateCacheParameterGroup(CreateCacheParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateCacheParameterGroupRequestMarshaller();
-            var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateCacheParameterGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateCacheSecurityGroup
-
 
         /// <summary>
         /// The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group.
@@ -583,8 +574,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateCacheSecurityGroup(request, null, null, true);
-            return EndCreateCacheSecurityGroup(asyncResult);
+            var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCacheSecurityGroupRequest,CreateCacheSecurityGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -601,10 +594,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateCacheSecurityGroup(request, callback, state, false);
+            var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateCacheSecurityGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCacheSecurityGroup operation.
@@ -616,21 +611,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CreateCacheSecurityGroupResult from ElastiCache.</returns>
         public  CreateCacheSecurityGroupResponse EndCreateCacheSecurityGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateCacheSecurityGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
-            var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateCacheSecurityGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateCacheSubnetGroup
-
 
         /// <summary>
         /// The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.
@@ -661,8 +647,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateCacheSubnetGroup(request, null, null, true);
-            return EndCreateCacheSubnetGroup(asyncResult);
+            var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCacheSubnetGroupRequest,CreateCacheSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -679,10 +667,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateCacheSubnetGroup(request, callback, state, false);
+            var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateCacheSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCacheSubnetGroup operation.
@@ -694,21 +684,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CreateCacheSubnetGroupResult from ElastiCache.</returns>
         public  CreateCacheSubnetGroupResponse EndCreateCacheSubnetGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateCacheSubnetGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
-            var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateCacheSubnetGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateReplicationGroup
-
 
         /// <summary>
         /// The <i>CreateReplicationGroup</i> operation creates a replication group. A replication
@@ -743,8 +724,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateReplicationGroup(request, null, null, true);
-            return EndCreateReplicationGroup(asyncResult);
+            var marshaller = new CreateReplicationGroupRequestMarshaller();
+            var unmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReplicationGroupRequest,CreateReplicationGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -761,10 +744,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCreateReplicationGroup(CreateReplicationGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateReplicationGroup(request, callback, state, false);
+            var marshaller = new CreateReplicationGroupRequestMarshaller();
+            var unmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateReplicationGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateReplicationGroup operation.
@@ -776,21 +761,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CreateReplicationGroupResult from ElastiCache.</returns>
         public  CreateReplicationGroupResponse EndCreateReplicationGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateReplicationGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateReplicationGroup(CreateReplicationGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateReplicationGroupRequestMarshaller();
-            var unmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateReplicationGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateSnapshot
-
 
         /// <summary>
         /// The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a
@@ -836,8 +812,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateSnapshot(request, null, null, true);
-            return EndCreateSnapshot(asyncResult);
+            var marshaller = new CreateSnapshotRequestMarshaller();
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -854,10 +832,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateSnapshot(request, callback, state, false);
+            var marshaller = new CreateSnapshotRequestMarshaller();
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateSnapshot operation.
@@ -869,21 +849,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  CreateSnapshotResult from ElastiCache.</returns>
         public  CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
         {
-            return endOperation< CreateSnapshotResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateSnapshotRequestMarshaller();
-            var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateSnapshotResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteCacheCluster
-
 
         /// <summary>
         /// The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster.
@@ -932,8 +903,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteCacheCluster(request, null, null, true);
-            return EndDeleteCacheCluster(asyncResult);
+            var marshaller = new DeleteCacheClusterRequestMarshaller();
+            var unmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCacheClusterRequest,DeleteCacheClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -950,10 +923,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDeleteCacheCluster(DeleteCacheClusterRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteCacheCluster(request, callback, state, false);
+            var marshaller = new DeleteCacheClusterRequestMarshaller();
+            var unmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteCacheClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteCacheCluster operation.
@@ -965,21 +940,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteCacheClusterResult from ElastiCache.</returns>
         public  DeleteCacheClusterResponse EndDeleteCacheCluster(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteCacheClusterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteCacheCluster(DeleteCacheClusterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteCacheClusterRequestMarshaller();
-            var unmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteCacheClusterResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteCacheParameterGroup
-
 
         /// <summary>
         /// The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter
@@ -1005,8 +971,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteCacheParameterGroup(request, null, null, true);
-            return EndDeleteCacheParameterGroup(asyncResult);
+            var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCacheParameterGroupRequest,DeleteCacheParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1023,10 +991,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteCacheParameterGroup(request, callback, state, false);
+            var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteCacheParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteCacheParameterGroup operation.
@@ -1038,21 +1008,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteCacheParameterGroupResult from ElastiCache.</returns>
         public  DeleteCacheParameterGroupResponse EndDeleteCacheParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteCacheParameterGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
-            var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteCacheParameterGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteCacheSecurityGroup
-
 
         /// <summary>
         /// The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.
@@ -1075,8 +1036,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteCacheSecurityGroup(request, null, null, true);
-            return EndDeleteCacheSecurityGroup(asyncResult);
+            var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCacheSecurityGroupRequest,DeleteCacheSecurityGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1093,10 +1056,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteCacheSecurityGroup(request, callback, state, false);
+            var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteCacheSecurityGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteCacheSecurityGroup operation.
@@ -1108,21 +1073,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteCacheSecurityGroupResult from ElastiCache.</returns>
         public  DeleteCacheSecurityGroupResponse EndDeleteCacheSecurityGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteCacheSecurityGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
-            var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteCacheSecurityGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteCacheSubnetGroup
-
 
         /// <summary>
         /// The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.
@@ -1138,8 +1094,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteCacheSubnetGroup(request, null, null, true);
-            return EndDeleteCacheSubnetGroup(asyncResult);
+            var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCacheSubnetGroupRequest,DeleteCacheSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1156,10 +1114,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteCacheSubnetGroup(request, callback, state, false);
+            var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteCacheSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteCacheSubnetGroup operation.
@@ -1171,21 +1131,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteCacheSubnetGroupResult from ElastiCache.</returns>
         public  DeleteCacheSubnetGroupResponse EndDeleteCacheSubnetGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteCacheSubnetGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
-            var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteCacheSubnetGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteReplicationGroup
-
 
         /// <summary>
         /// The <i>DeleteReplicationGroup</i> operation deletes an existing replication group.
@@ -1239,8 +1190,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteReplicationGroup(request, null, null, true);
-            return EndDeleteReplicationGroup(asyncResult);
+            var marshaller = new DeleteReplicationGroupRequestMarshaller();
+            var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReplicationGroupRequest,DeleteReplicationGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1257,10 +1210,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDeleteReplicationGroup(DeleteReplicationGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteReplicationGroup(request, callback, state, false);
+            var marshaller = new DeleteReplicationGroupRequestMarshaller();
+            var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteReplicationGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteReplicationGroup operation.
@@ -1272,21 +1227,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteReplicationGroupResult from ElastiCache.</returns>
         public  DeleteReplicationGroupResponse EndDeleteReplicationGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteReplicationGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteReplicationGroup(DeleteReplicationGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteReplicationGroupRequestMarshaller();
-            var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteReplicationGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteSnapshot
-
 
         /// <summary>
         /// The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive
@@ -1310,8 +1256,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteSnapshot(request, null, null, true);
-            return EndDeleteSnapshot(asyncResult);
+            var marshaller = new DeleteSnapshotRequestMarshaller();
+            var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSnapshotRequest,DeleteSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1328,10 +1276,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteSnapshot(request, callback, state, false);
+            var marshaller = new DeleteSnapshotRequestMarshaller();
+            var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteSnapshot operation.
@@ -1343,15 +1293,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteSnapshotResult from ElastiCache.</returns>
         public  DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteSnapshotResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteSnapshotRequestMarshaller();
-            var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteSnapshotResponse>(asyncResult);
         }
 
         #endregion
@@ -1456,8 +1398,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCacheClusters(request, null, null, true);
-            return EndDescribeCacheClusters(asyncResult);
+            var marshaller = new DescribeCacheClustersRequestMarshaller();
+            var unmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheClustersRequest,DescribeCacheClustersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1474,10 +1418,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCacheClusters(DescribeCacheClustersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCacheClusters(request, callback, state, false);
+            var marshaller = new DescribeCacheClustersRequestMarshaller();
+            var unmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCacheClustersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCacheClusters operation.
@@ -1489,15 +1435,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeCacheClustersResult from ElastiCache.</returns>
         public  DescribeCacheClustersResponse EndDescribeCacheClusters(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCacheClustersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCacheClusters(DescribeCacheClustersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCacheClustersRequestMarshaller();
-            var unmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCacheClustersResponse>(asyncResult);
         }
 
         #endregion
@@ -1524,8 +1462,10 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
         public DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCacheEngineVersions(request, null, null, true);
-            return EndDescribeCacheEngineVersions(asyncResult);
+            var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheEngineVersionsRequest,DescribeCacheEngineVersionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1542,10 +1482,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCacheEngineVersions(request, callback, state, false);
+            var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
+            var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCacheEngineVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCacheEngineVersions operation.
@@ -1557,15 +1499,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeCacheEngineVersionsResult from ElastiCache.</returns>
         public  DescribeCacheEngineVersionsResponse EndDescribeCacheEngineVersions(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCacheEngineVersionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
-            var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCacheEngineVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1614,8 +1548,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCacheParameterGroups(request, null, null, true);
-            return EndDescribeCacheParameterGroups(asyncResult);
+            var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheParameterGroupsRequest,DescribeCacheParameterGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1632,10 +1568,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCacheParameterGroups(request, callback, state, false);
+            var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCacheParameterGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCacheParameterGroups operation.
@@ -1647,21 +1585,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeCacheParameterGroupsResult from ElastiCache.</returns>
         public  DescribeCacheParameterGroupsResponse EndDescribeCacheParameterGroups(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCacheParameterGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
-            var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCacheParameterGroupsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeCacheParameters
-
 
         /// <summary>
         /// The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for
@@ -1682,8 +1611,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCacheParameters(request, null, null, true);
-            return EndDescribeCacheParameters(asyncResult);
+            var marshaller = new DescribeCacheParametersRequestMarshaller();
+            var unmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheParametersRequest,DescribeCacheParametersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1700,10 +1631,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCacheParameters(DescribeCacheParametersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCacheParameters(request, callback, state, false);
+            var marshaller = new DescribeCacheParametersRequestMarshaller();
+            var unmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCacheParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCacheParameters operation.
@@ -1715,15 +1648,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeCacheParametersResult from ElastiCache.</returns>
         public  DescribeCacheParametersResponse EndDescribeCacheParameters(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCacheParametersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCacheParameters(DescribeCacheParametersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCacheParametersRequestMarshaller();
-            var unmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCacheParametersResponse>(asyncResult);
         }
 
         #endregion
@@ -1772,8 +1697,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCacheSecurityGroups(request, null, null, true);
-            return EndDescribeCacheSecurityGroups(asyncResult);
+            var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheSecurityGroupsRequest,DescribeCacheSecurityGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1790,10 +1717,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCacheSecurityGroups(request, callback, state, false);
+            var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCacheSecurityGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCacheSecurityGroups operation.
@@ -1805,15 +1734,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeCacheSecurityGroupsResult from ElastiCache.</returns>
         public  DescribeCacheSecurityGroupsResponse EndDescribeCacheSecurityGroups(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCacheSecurityGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
-            var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCacheSecurityGroupsResponse>(asyncResult);
         }
 
         #endregion
@@ -1848,8 +1769,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeCacheSubnetGroups(request, null, null, true);
-            return EndDescribeCacheSubnetGroups(asyncResult);
+            var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheSubnetGroupsRequest,DescribeCacheSubnetGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1866,10 +1789,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeCacheSubnetGroups(request, callback, state, false);
+            var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
+            var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCacheSubnetGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCacheSubnetGroups operation.
@@ -1881,21 +1806,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeCacheSubnetGroupsResult from ElastiCache.</returns>
         public  DescribeCacheSubnetGroupsResponse EndDescribeCacheSubnetGroups(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeCacheSubnetGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
-            var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeCacheSubnetGroupsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeEngineDefaultParameters
-
 
         /// <summary>
         /// The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and
@@ -1912,8 +1828,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEngineDefaultParameters(request, null, null, true);
-            return EndDescribeEngineDefaultParameters(asyncResult);
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEngineDefaultParametersRequest,DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1930,10 +1848,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEngineDefaultParameters(request, callback, state, false);
+            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEngineDefaultParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEngineDefaultParameters operation.
@@ -1945,15 +1865,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeEngineDefaultParametersResult from ElastiCache.</returns>
         public  DescribeEngineDefaultParametersResponse EndDescribeEngineDefaultParameters(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeEngineDefaultParametersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
-            var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeEngineDefaultParametersResponse>(asyncResult);
         }
 
         #endregion
@@ -2008,8 +1920,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeEvents(request, null, null, true);
-            return EndDescribeEvents(asyncResult);
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2026,10 +1940,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeEvents(request, callback, state, false);
+            var marshaller = new DescribeEventsRequestMarshaller();
+            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEvents operation.
@@ -2041,15 +1957,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeEventsResult from ElastiCache.</returns>
         public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeEventsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeEventsRequestMarshaller();
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
 
         #endregion
@@ -2096,8 +2004,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeReplicationGroups(request, null, null, true);
-            return EndDescribeReplicationGroups(asyncResult);
+            var marshaller = new DescribeReplicationGroupsRequestMarshaller();
+            var unmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationGroupsRequest,DescribeReplicationGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2114,10 +2024,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeReplicationGroups(DescribeReplicationGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeReplicationGroups(request, callback, state, false);
+            var marshaller = new DescribeReplicationGroupsRequestMarshaller();
+            var unmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeReplicationGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeReplicationGroups operation.
@@ -2129,15 +2041,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeReplicationGroupsResult from ElastiCache.</returns>
         public  DescribeReplicationGroupsResponse EndDescribeReplicationGroups(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeReplicationGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeReplicationGroups(DescribeReplicationGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeReplicationGroupsRequestMarshaller();
-            var unmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeReplicationGroupsResponse>(asyncResult);
         }
 
         #endregion
@@ -2182,8 +2086,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeReservedCacheNodes(request, null, null, true);
-            return EndDescribeReservedCacheNodes(asyncResult);
+            var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedCacheNodesRequest,DescribeReservedCacheNodesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2200,10 +2106,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeReservedCacheNodes(request, callback, state, false);
+            var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeReservedCacheNodesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeReservedCacheNodes operation.
@@ -2215,15 +2123,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeReservedCacheNodesResult from ElastiCache.</returns>
         public  DescribeReservedCacheNodesResponse EndDescribeReservedCacheNodes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeReservedCacheNodesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
-            var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeReservedCacheNodesResponse>(asyncResult);
         }
 
         #endregion
@@ -2268,8 +2168,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeReservedCacheNodesOfferings(request, null, null, true);
-            return EndDescribeReservedCacheNodesOfferings(asyncResult);
+            var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedCacheNodesOfferingsRequest,DescribeReservedCacheNodesOfferingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2286,10 +2188,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeReservedCacheNodesOfferings(request, callback, state, false);
+            var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
+            var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeReservedCacheNodesOfferingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeReservedCacheNodesOfferings operation.
@@ -2301,15 +2205,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeReservedCacheNodesOfferingsResult from ElastiCache.</returns>
         public  DescribeReservedCacheNodesOfferingsResponse EndDescribeReservedCacheNodesOfferings(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeReservedCacheNodesOfferingsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
-            var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeReservedCacheNodesOfferingsResponse>(asyncResult);
         }
 
         #endregion
@@ -2364,8 +2260,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeSnapshots(request, null, null, true);
-            return EndDescribeSnapshots(asyncResult);
+            var marshaller = new DescribeSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2382,10 +2280,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeSnapshots(request, callback, state, false);
+            var marshaller = new DescribeSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeSnapshotsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeSnapshots operation.
@@ -2397,26 +2297,35 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DescribeSnapshotsResult from ElastiCache.</returns>
         public  DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeSnapshotsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeSnapshotsRequestMarshaller();
-            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeSnapshotsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ModifyCacheCluster
 
-
         /// <summary>
         /// The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster.
         /// You can use this operation to change one or more cluster configuration parameters
         /// by specifying the parameters and the new values.
+        /// 
+        ///  
+        /// <para>
+        /// A pending action to modify the number of cache nodes in a cluster during its maintenance
+        /// window, whether by adding or removing nodes in accordance with the scale out architecture,
+        /// is not queued. The customer's latest request to add or remove nodes to the cluster
+        /// overrides any of his or her previous pending actions to modify the number of cache
+        /// nodes in the cluster. For example, a request to remove 2 nodes would override a previous
+        /// pending action to remove 3 nodes. Similarly, a request to add 2 nodes would override
+        /// a previous pending action to remove 3 nodes and vice versa . As cache nodes may now
+        /// be provisioned in different Availability Zones with flexible cache node placement,
+        /// a request to add nodes does not automatically override a previous pending action to
+        /// add nodes. The customer can modify the previous pending action to add more nodes or
+        /// explicitly cancel the pending request and retry the new request. To cancel a pending
+        /// action to modify the number of cache nodes in a cluster, the customer may retry the
+        /// <code>ModifyCacheCluster</code> request by setting <code>NumCacheNodes</code> equal
+        /// to the number of cache nodes currently in the cache cluster. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster service method.</param>
         /// 
@@ -2460,8 +2369,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyCacheCluster(request, null, null, true);
-            return EndModifyCacheCluster(asyncResult);
+            var marshaller = new ModifyCacheClusterRequestMarshaller();
+            var unmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCacheClusterRequest,ModifyCacheClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2478,10 +2389,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginModifyCacheCluster(ModifyCacheClusterRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyCacheCluster(request, callback, state, false);
+            var marshaller = new ModifyCacheClusterRequestMarshaller();
+            var unmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyCacheClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyCacheCluster operation.
@@ -2493,21 +2406,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ModifyCacheClusterResult from ElastiCache.</returns>
         public  ModifyCacheClusterResponse EndModifyCacheCluster(IAsyncResult asyncResult)
         {
-            return endOperation< ModifyCacheClusterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeModifyCacheCluster(ModifyCacheClusterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ModifyCacheClusterRequestMarshaller();
-            var unmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ModifyCacheClusterResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ModifyCacheParameterGroup
-
 
         /// <summary>
         /// The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache
@@ -2533,8 +2437,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyCacheParameterGroup(request, null, null, true);
-            return EndModifyCacheParameterGroup(asyncResult);
+            var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCacheParameterGroupRequest,ModifyCacheParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2551,10 +2457,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyCacheParameterGroup(request, callback, state, false);
+            var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyCacheParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyCacheParameterGroup operation.
@@ -2566,21 +2474,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ModifyCacheParameterGroupResult from ElastiCache.</returns>
         public  ModifyCacheParameterGroupResponse EndModifyCacheParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation< ModifyCacheParameterGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
-            var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ModifyCacheParameterGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ModifyCacheSubnetGroup
-
 
         /// <summary>
         /// The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.
@@ -2603,8 +2502,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyCacheSubnetGroup(request, null, null, true);
-            return EndModifyCacheSubnetGroup(asyncResult);
+            var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCacheSubnetGroupRequest,ModifyCacheSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2621,10 +2522,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyCacheSubnetGroup(request, callback, state, false);
+            var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
+            var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyCacheSubnetGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyCacheSubnetGroup operation.
@@ -2636,21 +2539,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ModifyCacheSubnetGroupResult from ElastiCache.</returns>
         public  ModifyCacheSubnetGroupResponse EndModifyCacheSubnetGroup(IAsyncResult asyncResult)
         {
-            return endOperation< ModifyCacheSubnetGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
-            var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ModifyCacheSubnetGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ModifyReplicationGroup
-
 
         /// <summary>
         /// The <i>ModifyReplicationGroup</i> operation modifies the settings for a replication
@@ -2693,8 +2587,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeModifyReplicationGroup(request, null, null, true);
-            return EndModifyReplicationGroup(asyncResult);
+            var marshaller = new ModifyReplicationGroupRequestMarshaller();
+            var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReplicationGroupRequest,ModifyReplicationGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2711,10 +2607,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginModifyReplicationGroup(ModifyReplicationGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeModifyReplicationGroup(request, callback, state, false);
+            var marshaller = new ModifyReplicationGroupRequestMarshaller();
+            var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyReplicationGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyReplicationGroup operation.
@@ -2726,21 +2624,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ModifyReplicationGroupResult from ElastiCache.</returns>
         public  ModifyReplicationGroupResponse EndModifyReplicationGroup(IAsyncResult asyncResult)
         {
-            return endOperation< ModifyReplicationGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeModifyReplicationGroup(ModifyReplicationGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ModifyReplicationGroupRequestMarshaller();
-            var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ModifyReplicationGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PurchaseReservedCacheNodesOffering
-
 
         /// <summary>
         /// The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved
@@ -2766,8 +2655,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request)
         {
-            IAsyncResult asyncResult = invokePurchaseReservedCacheNodesOffering(request, null, null, true);
-            return EndPurchaseReservedCacheNodesOffering(asyncResult);
+            var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseReservedCacheNodesOfferingRequest,PurchaseReservedCacheNodesOfferingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2784,10 +2675,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginPurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request, AsyncCallback callback, object state)
         {
-            return invokePurchaseReservedCacheNodesOffering(request, callback, state, false);
+            var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
+            var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PurchaseReservedCacheNodesOfferingRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PurchaseReservedCacheNodesOffering operation.
@@ -2799,21 +2692,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  PurchaseReservedCacheNodesOfferingResult from ElastiCache.</returns>
         public  PurchaseReservedCacheNodesOfferingResponse EndPurchaseReservedCacheNodesOffering(IAsyncResult asyncResult)
         {
-            return endOperation< PurchaseReservedCacheNodesOfferingResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
-            var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PurchaseReservedCacheNodesOfferingResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RebootCacheCluster
-
 
         /// <summary>
         /// The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache nodes within
@@ -2843,8 +2727,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request)
         {
-            IAsyncResult asyncResult = invokeRebootCacheCluster(request, null, null, true);
-            return EndRebootCacheCluster(asyncResult);
+            var marshaller = new RebootCacheClusterRequestMarshaller();
+            var unmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RebootCacheClusterRequest,RebootCacheClusterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2861,10 +2747,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginRebootCacheCluster(RebootCacheClusterRequest request, AsyncCallback callback, object state)
         {
-            return invokeRebootCacheCluster(request, callback, state, false);
+            var marshaller = new RebootCacheClusterRequestMarshaller();
+            var unmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RebootCacheClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RebootCacheCluster operation.
@@ -2876,21 +2764,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  RebootCacheClusterResult from ElastiCache.</returns>
         public  RebootCacheClusterResponse EndRebootCacheCluster(IAsyncResult asyncResult)
         {
-            return endOperation< RebootCacheClusterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRebootCacheCluster(RebootCacheClusterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RebootCacheClusterRequestMarshaller();
-            var unmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RebootCacheClusterResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ResetCacheParameterGroup
-
 
         /// <summary>
         /// The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter
@@ -2917,8 +2796,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeResetCacheParameterGroup(request, null, null, true);
-            return EndResetCacheParameterGroup(asyncResult);
+            var marshaller = new ResetCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ResetCacheParameterGroupRequest,ResetCacheParameterGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2935,10 +2816,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginResetCacheParameterGroup(ResetCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeResetCacheParameterGroup(request, callback, state, false);
+            var marshaller = new ResetCacheParameterGroupRequestMarshaller();
+            var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResetCacheParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ResetCacheParameterGroup operation.
@@ -2950,21 +2833,12 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ResetCacheParameterGroupResult from ElastiCache.</returns>
         public  ResetCacheParameterGroupResponse EndResetCacheParameterGroup(IAsyncResult asyncResult)
         {
-            return endOperation< ResetCacheParameterGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeResetCacheParameterGroup(ResetCacheParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ResetCacheParameterGroupRequestMarshaller();
-            var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ResetCacheParameterGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RevokeCacheSecurityGroupIngress
-
 
         /// <summary>
         /// The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache
@@ -2993,8 +2867,10 @@ namespace Amazon.ElastiCache
         /// </exception>
         public RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request)
         {
-            IAsyncResult asyncResult = invokeRevokeCacheSecurityGroupIngress(request, null, null, true);
-            return EndRevokeCacheSecurityGroupIngress(asyncResult);
+            var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeCacheSecurityGroupIngressRequest,RevokeCacheSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3011,10 +2887,12 @@ namespace Amazon.ElastiCache
         ///         operation.</returns>
         public IAsyncResult BeginRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            return invokeRevokeCacheSecurityGroupIngress(request, callback, state, false);
+            var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
+            var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RevokeCacheSecurityGroupIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RevokeCacheSecurityGroupIngress operation.
@@ -3026,15 +2904,7 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  RevokeCacheSecurityGroupIngressResult from ElastiCache.</returns>
         public  RevokeCacheSecurityGroupIngressResponse EndRevokeCacheSecurityGroupIngress(IAsyncResult asyncResult)
         {
-            return endOperation< RevokeCacheSecurityGroupIngressResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
-            var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RevokeCacheSecurityGroupIngressResponse>(asyncResult);
         }
 
         #endregion

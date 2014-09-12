@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Returns information about the DeleteDBSubnetGroup response metadata.
-    /// The DeleteDBSubnetGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteDBSubnetGroup service
     /// </summary>
-    public partial class DeleteDBSubnetGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteDBSubnetGroupResponse : DeleteDBSubnetGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteDBSubnetGroupResult property.
+        /// Represents the output of a DeleteDBSubnetGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteDBSubnetGroupResult class are now available on the DeleteDBSubnetGroupResponse class. You should use the properties on DeleteDBSubnetGroupResponse instead of accessing them through DeleteDBSubnetGroupResult.")]
+        public DeleteDBSubnetGroupResult DeleteDBSubnetGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

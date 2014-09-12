@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,155 +33,112 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Count Closed Workflow Executions Request Marshaller
+    /// CountClosedWorkflowExecutions Request Marshaller
     /// </summary>       
-    internal class CountClosedWorkflowExecutionsRequestMarshaller : IMarshaller<IRequest, CountClosedWorkflowExecutionsRequest> 
+    public class CountClosedWorkflowExecutionsRequestMarshaller : IMarshaller<IRequest, CountClosedWorkflowExecutionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((CountClosedWorkflowExecutionsRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(countClosedWorkflowExecutionsRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(CountClosedWorkflowExecutionsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.CountClosedWorkflowExecutions";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (countClosedWorkflowExecutionsRequest != null && countClosedWorkflowExecutionsRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCloseStatusFilter())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(countClosedWorkflowExecutionsRequest.Domain);
+                    context.Writer.WritePropertyName("closeStatusFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CloseStatusFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CloseStatusFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (countClosedWorkflowExecutionsRequest != null) 
+                if(publicRequest.IsSetCloseTimeFilter())
                 {
-                    ExecutionTimeFilter startTimeFilter = countClosedWorkflowExecutionsRequest.StartTimeFilter;
-                    if (startTimeFilter != null)
-                    {
-                        writer.WritePropertyName("startTimeFilter");
-                        writer.WriteObjectStart();
-                        if (startTimeFilter != null && startTimeFilter.IsSetOldestDate()) 
-                        {
-                            writer.WritePropertyName("oldestDate");
-                            writer.Write(startTimeFilter.OldestDate);
-                        }
-                        if (startTimeFilter != null && startTimeFilter.IsSetLatestDate()) 
-                        {
-                            writer.WritePropertyName("latestDate");
-                            writer.Write(startTimeFilter.LatestDate);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("closeTimeFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExecutionTimeFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CloseTimeFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (countClosedWorkflowExecutionsRequest != null) 
+                if(publicRequest.IsSetDomain())
                 {
-                    ExecutionTimeFilter closeTimeFilter = countClosedWorkflowExecutionsRequest.CloseTimeFilter;
-                    if (closeTimeFilter != null)
-                    {
-                        writer.WritePropertyName("closeTimeFilter");
-                        writer.WriteObjectStart();
-                        if (closeTimeFilter != null && closeTimeFilter.IsSetOldestDate()) 
-                        {
-                            writer.WritePropertyName("oldestDate");
-                            writer.Write(closeTimeFilter.OldestDate);
-                        }
-                        if (closeTimeFilter != null && closeTimeFilter.IsSetLatestDate()) 
-                        {
-                            writer.WritePropertyName("latestDate");
-                            writer.Write(closeTimeFilter.LatestDate);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
-                if (countClosedWorkflowExecutionsRequest != null) 
+                if(publicRequest.IsSetExecutionFilter())
                 {
-                    WorkflowExecutionFilter executionFilter = countClosedWorkflowExecutionsRequest.ExecutionFilter;
-                    if (executionFilter != null)
-                    {
-                        writer.WritePropertyName("executionFilter");
-                        writer.WriteObjectStart();
-                        if (executionFilter != null && executionFilter.IsSetWorkflowId()) 
-                        {
-                            writer.WritePropertyName("workflowId");
-                            writer.Write(executionFilter.WorkflowId);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("executionFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkflowExecutionFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExecutionFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (countClosedWorkflowExecutionsRequest != null) 
+                if(publicRequest.IsSetStartTimeFilter())
                 {
-                    WorkflowTypeFilter typeFilter = countClosedWorkflowExecutionsRequest.TypeFilter;
-                    if (typeFilter != null)
-                    {
-                        writer.WritePropertyName("typeFilter");
-                        writer.WriteObjectStart();
-                        if (typeFilter != null && typeFilter.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(typeFilter.Name);
-                        }
-                        if (typeFilter != null && typeFilter.IsSetVersion()) 
-                        {
-                            writer.WritePropertyName("version");
-                            writer.Write(typeFilter.Version);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("startTimeFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExecutionTimeFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StartTimeFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (countClosedWorkflowExecutionsRequest != null) 
+                if(publicRequest.IsSetTagFilter())
                 {
-                    TagFilter tagFilter = countClosedWorkflowExecutionsRequest.TagFilter;
-                    if (tagFilter != null)
-                    {
-                        writer.WritePropertyName("tagFilter");
-                        writer.WriteObjectStart();
-                        if (tagFilter != null && tagFilter.IsSetTag()) 
-                        {
-                            writer.WritePropertyName("tag");
-                            writer.Write(tagFilter.Tag);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("tagFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TagFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (countClosedWorkflowExecutionsRequest != null) 
+                if(publicRequest.IsSetTypeFilter())
                 {
-                    CloseStatusFilter closeStatusFilter = countClosedWorkflowExecutionsRequest.CloseStatusFilter;
-                    if (closeStatusFilter != null)
-                    {
-                        writer.WritePropertyName("closeStatusFilter");
-                        writer.WriteObjectStart();
-                        if (closeStatusFilter != null && closeStatusFilter.IsSetStatus()) 
-                        {
-                            writer.WritePropertyName("status");
-                            writer.Write(closeStatusFilter.Status);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    context.Writer.WritePropertyName("typeFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkflowTypeFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TypeFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

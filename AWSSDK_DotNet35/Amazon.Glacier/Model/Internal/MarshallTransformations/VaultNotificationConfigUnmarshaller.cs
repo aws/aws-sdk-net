@@ -12,64 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Glacier.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glacier.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VaultNotificationConfig Object
+    /// </summary>  
+    public class VaultNotificationConfigUnmarshaller : IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>, IUnmarshaller<VaultNotificationConfig, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VaultNotificationConfigUnmarshaller
-      /// </summary>
-      internal class VaultNotificationConfigUnmarshaller : IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>, IUnmarshaller<VaultNotificationConfig, JsonUnmarshallerContext>
-      {
         VaultNotificationConfig IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VaultNotificationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VaultNotificationConfig vaultNotificationConfig = new VaultNotificationConfig();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VaultNotificationConfig unmarshalledObject = new VaultNotificationConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("SNSTopic", targetDepth))
-              {
-                vaultNotificationConfig.SNSTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Events", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                vaultNotificationConfig.Events = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Events", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SNSTopic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SNSTopic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return vaultNotificationConfig;
+            return unmarshalledObject;
         }
 
-        private static VaultNotificationConfigUnmarshaller instance;
-        public static VaultNotificationConfigUnmarshaller GetInstance()
+
+        private static VaultNotificationConfigUnmarshaller _instance = new VaultNotificationConfigUnmarshaller();        
+
+        public static VaultNotificationConfigUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VaultNotificationConfigUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

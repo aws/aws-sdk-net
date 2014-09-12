@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -50,7 +54,6 @@ namespace Amazon.ElastiCache.Model
         private string _topicArn;
         private string _vpcId;
 
-
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
@@ -70,7 +73,6 @@ namespace Amazon.ElastiCache.Model
             return this._autoMinorVersionUpgrade.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheClusterCreateTime. 
         /// <para>
@@ -88,7 +90,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheClusterCreateTime.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
@@ -108,7 +109,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheClusterId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
@@ -126,7 +126,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheNodeType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
@@ -146,7 +145,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheParameterGroupName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CacheSubnetGroupName. 
         /// <para>
@@ -164,7 +162,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheSubnetGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Engine. 
@@ -185,7 +182,6 @@ namespace Amazon.ElastiCache.Model
             return this._engine != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
@@ -203,7 +199,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._engineVersion != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NodeSnapshots. 
@@ -223,7 +218,6 @@ namespace Amazon.ElastiCache.Model
             return this._nodeSnapshots != null && this._nodeSnapshots.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
@@ -241,7 +235,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._numCacheNodes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Port. 
@@ -261,7 +254,6 @@ namespace Amazon.ElastiCache.Model
             return this._port.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
@@ -279,7 +271,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._preferredAvailabilityZone != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
@@ -300,7 +291,6 @@ namespace Amazon.ElastiCache.Model
             return this._preferredMaintenanceWindow != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
@@ -319,7 +309,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._snapshotName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
@@ -352,7 +341,6 @@ namespace Amazon.ElastiCache.Model
             return this._snapshotRetentionLimit.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotSource. 
         /// <para>
@@ -371,7 +359,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._snapshotSource != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotStatus. 
@@ -392,7 +379,6 @@ namespace Amazon.ElastiCache.Model
             return this._snapshotStatus != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
@@ -412,7 +398,6 @@ namespace Amazon.ElastiCache.Model
             return this._snapshotWindow != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property TopicArn. 
         /// <para>
@@ -431,7 +416,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._topicArn != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property VpcId. 

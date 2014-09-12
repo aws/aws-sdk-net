@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The results from the ListWorkflowTypes action.
+    /// Contains the response data from the ListWorkflowTypes operation.
     /// </summary>
     public partial class ListWorkflowTypesResult : AmazonWebServiceResponse
     {
-        private WorkflowTypeInfos workflowTypeInfosValue;
+        private WorkflowTypeInfos _workflowTypeInfos;
 
-        /// <summary>
-        /// Gets and sets the ListWorkflowTypesResult property.
-        /// Contains the result of a successful invocation of the ListWorkflowTypes
-        /// action.
-        /// </summary>
+        // Gets and sets the WorkflowTypeInfos member
         public WorkflowTypeInfos WorkflowTypeInfos
         {
-            get { return this.workflowTypeInfosValue; }
-            set { this.workflowTypeInfosValue = value; }
+            get { return this._workflowTypeInfos; }
+            set { this._workflowTypeInfos = value; }
+        }
+
+        // Check to see if WorkflowTypeInfos property is set
+        internal bool IsSetWorkflowTypeInfos()
+        {
+            return this._workflowTypeInfos != null;
         }
     }
 }
-    

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,65 +29,71 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReservedInstances operation.
-    /// <para>Modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic or EC2-VPC) of your Reserved
-    /// Instances. The Reserved Instances to be modified must be identical, except for Availability Zone, network platform, and instance
-    /// type.</para>
+    /// Modifies the Availability Zone, instance count, instance type, or network platform
+    /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
+    /// modified must be identical, except for Availability Zone, network platform, and instance
+    /// type.
     /// </summary>
     public partial class ModifyReservedInstancesRequest : AmazonEC2Request
     {
-        private string clientToken;
-        private List<string> reservedInstancesIds = new List<string>();
-        private List<ReservedInstancesConfiguration> targetConfigurations = new List<ReservedInstancesConfiguration>();
-
+        private string _clientToken;
+        private List<string> _reservedInstancesIds = new List<string>();
+        private List<ReservedInstancesConfiguration> _targetConfigurations = new List<ReservedInstancesConfiguration>();
 
         /// <summary>
-        /// A unique, case-sensitive token you provide to ensure idempotency of your modification request.
-        ///  
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive token you provide to ensure idempotency of your modification
+        /// request.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
-            get { return this.clientToken; }
-            set { this.clientToken = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this.clientToken != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
+        /// Gets and sets the property ReservedInstancesIds. 
+        /// <para>
         /// The IDs of the Reserved Instances to modify.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> ReservedInstancesIds
         {
-            get { return this.reservedInstancesIds; }
-            set { this.reservedInstancesIds = value; }
+            get { return this._reservedInstancesIds; }
+            set { this._reservedInstancesIds = value; }
         }
 
         // Check to see if ReservedInstancesIds property is set
         internal bool IsSetReservedInstancesIds()
         {
-            return this.reservedInstancesIds.Count > 0;
+            return this._reservedInstancesIds != null && this._reservedInstancesIds.Count > 0; 
         }
 
         /// <summary>
+        /// Gets and sets the property TargetConfigurations. 
+        /// <para>
         /// The configuration settings for the Reserved Instances to modify.
-        ///  
+        /// </para>
         /// </summary>
         public List<ReservedInstancesConfiguration> TargetConfigurations
         {
-            get { return this.targetConfigurations; }
-            set { this.targetConfigurations = value; }
+            get { return this._targetConfigurations; }
+            set { this._targetConfigurations = value; }
         }
 
         // Check to see if TargetConfigurations property is set
         internal bool IsSetTargetConfigurations()
         {
-            return this.targetConfigurations.Count > 0;
+            return this._targetConfigurations != null && this._targetConfigurations.Count > 0; 
         }
 
     }
 }
-    

@@ -12,11 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -25,93 +32,74 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ExportToS3TaskSpecification
     {
-        
-        private DiskImageFormat diskImageFormat;
-        private ContainerFormat containerFormat;
-        private string s3Bucket;
-        private string s3Prefix;
-
+        private ContainerFormat _containerFormat;
+        private DiskImageFormat _diskImageFormat;
+        private string _s3Bucket;
+        private string _s3Prefix;
 
         /// <summary>
-        /// 
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>VMDK, RAW, VHD</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public DiskImageFormat DiskImageFormat
-        {
-            get { return this.diskImageFormat; }
-            set { this.diskImageFormat = value; }
-        }
-
-        // Check to see if DiskImageFormat property is set
-        internal bool IsSetDiskImageFormat()
-        {
-            return this.diskImageFormat != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ova</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property ContainerFormat.
         /// </summary>
         public ContainerFormat ContainerFormat
         {
-            get { return this.containerFormat; }
-            set { this.containerFormat = value; }
+            get { return this._containerFormat; }
+            set { this._containerFormat = value; }
         }
 
         // Check to see if ContainerFormat property is set
         internal bool IsSetContainerFormat()
         {
-            return this.containerFormat != null;
+            return this._containerFormat != null;
         }
 
         /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property DiskImageFormat.
+        /// </summary>
+        public DiskImageFormat DiskImageFormat
+        {
+            get { return this._diskImageFormat; }
+            set { this._diskImageFormat = value; }
+        }
+
+        // Check to see if DiskImageFormat property is set
+        internal bool IsSetDiskImageFormat()
+        {
+            return this._diskImageFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Bucket.
         /// </summary>
         public string S3Bucket
         {
-            get { return this.s3Bucket; }
-            set { this.s3Bucket = value; }
+            get { return this._s3Bucket; }
+            set { this._s3Bucket = value; }
         }
 
         // Check to see if S3Bucket property is set
         internal bool IsSetS3Bucket()
         {
-            return this.s3Bucket != null;
+            return this._s3Bucket != null;
         }
 
         /// <summary>
-        /// The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
-        ///  
+        /// Gets and sets the property S3Prefix. 
+        /// <para>
+        /// The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix
+        /// + exportTaskId + '.' + diskImageFormat.
+        /// </para>
         /// </summary>
         public string S3Prefix
         {
-            get { return this.s3Prefix; }
-            set { this.s3Prefix = value; }
+            get { return this._s3Prefix; }
+            set { this._s3Prefix = value; }
         }
 
         // Check to see if S3Prefix property is set
         internal bool IsSetS3Prefix()
         {
-            return this.s3Prefix != null;
+            return this._s3Prefix != null;
         }
+
     }
 }

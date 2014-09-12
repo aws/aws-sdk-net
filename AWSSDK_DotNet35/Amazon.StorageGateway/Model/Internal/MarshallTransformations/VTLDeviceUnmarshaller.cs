@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VTLDevice Object
+    /// </summary>  
+    public class VTLDeviceUnmarshaller : IUnmarshaller<VTLDevice, XmlUnmarshallerContext>, IUnmarshaller<VTLDevice, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VTLDeviceUnmarshaller
-      /// </summary>
-      internal class VTLDeviceUnmarshaller : IUnmarshaller<VTLDevice, XmlUnmarshallerContext>, IUnmarshaller<VTLDevice, JsonUnmarshallerContext>
-      {
         VTLDevice IUnmarshaller<VTLDevice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VTLDevice Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VTLDevice vTLDevice = new VTLDevice();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VTLDevice unmarshalledObject = new VTLDevice();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("VTLDeviceARN", targetDepth))
-              {
-                vTLDevice.VTLDeviceARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VTLDeviceType", targetDepth))
-              {
-                vTLDevice.VTLDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VTLDeviceVendor", targetDepth))
-              {
-                vTLDevice.VTLDeviceVendor = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VTLDeviceProductIdentifier", targetDepth))
-              {
-                vTLDevice.VTLDeviceProductIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DeviceiSCSIAttributes", targetDepth))
-              {
-                vTLDevice.DeviceiSCSIAttributes = DeviceiSCSIAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("DeviceiSCSIAttributes", targetDepth))
+                {
+                    var unmarshaller = DeviceiSCSIAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DeviceiSCSIAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VTLDeviceARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VTLDeviceARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VTLDeviceProductIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VTLDeviceProductIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VTLDeviceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VTLDeviceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VTLDeviceVendor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VTLDeviceVendor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return vTLDevice;
+            return unmarshalledObject;
         }
 
-        private static VTLDeviceUnmarshaller instance;
-        public static VTLDeviceUnmarshaller GetInstance()
+
+        private static VTLDeviceUnmarshaller _instance = new VTLDeviceUnmarshaller();        
+
+        public static VTLDeviceUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VTLDeviceUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.Kinesis.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Kinesis.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for HashKeyRange Object
+    /// </summary>  
+    public class HashKeyRangeUnmarshaller : IUnmarshaller<HashKeyRange, XmlUnmarshallerContext>, IUnmarshaller<HashKeyRange, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// HashKeyRangeUnmarshaller
-      /// </summary>
-      internal class HashKeyRangeUnmarshaller : IUnmarshaller<HashKeyRange, XmlUnmarshallerContext>, IUnmarshaller<HashKeyRange, JsonUnmarshallerContext>
-      {
         HashKeyRange IUnmarshaller<HashKeyRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public HashKeyRange Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            HashKeyRange hashKeyRange = new HashKeyRange();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            HashKeyRange unmarshalledObject = new HashKeyRange();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("StartingHashKey", targetDepth))
-              {
-                hashKeyRange.StartingHashKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EndingHashKey", targetDepth))
-              {
-                hashKeyRange.EndingHashKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("EndingHashKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndingHashKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingHashKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartingHashKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return hashKeyRange;
+            return unmarshalledObject;
         }
 
-        private static HashKeyRangeUnmarshaller instance;
-        public static HashKeyRangeUnmarshaller GetInstance()
+
+        private static HashKeyRangeUnmarshaller _instance = new HashKeyRangeUnmarshaller();        
+
+        public static HashKeyRangeUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new HashKeyRangeUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

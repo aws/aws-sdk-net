@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyReservedInstancesResult : AmazonWebServiceResponse
     {
-        
-        private string reservedInstancesModificationId;
-
+        private string _reservedInstancesModificationId;
 
         /// <summary>
+        /// Gets and sets the property ReservedInstancesModificationId. 
+        /// <para>
         /// The ID for the modification.
-        ///  
+        /// </para>
         /// </summary>
         public string ReservedInstancesModificationId
         {
-            get { return this.reservedInstancesModificationId; }
-            set { this.reservedInstancesModificationId = value; }
+            get { return this._reservedInstancesModificationId; }
+            set { this._reservedInstancesModificationId = value; }
         }
 
         // Check to see if ReservedInstancesModificationId property is set
         internal bool IsSetReservedInstancesModificationId()
         {
-            return this.reservedInstancesModificationId != null;
+            return this._reservedInstancesModificationId != null;
         }
+
     }
 }

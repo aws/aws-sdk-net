@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,22 +29,30 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestEnvironmentInfo operation.
-    /// Initiates a request to compile the specified type of         information
-    /// of the deployed environment.      
+    /// Initiates a request to compile the specified type of information of the deployed
+    /// environment. 
     /// 
-    ///       
+    ///  
     /// <para>
-    ///          Setting the <code>InfoType</code> to <code>tail</code>         compiles the
-    /// last lines from the application server log files of every         Amazon EC2 instance
-    /// in your environment. Use <a>RetrieveEnvironmentInfo</a>         to access the compiled
-    /// information.      
+    ///  Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
+    /// the application server log files of every Amazon EC2 instance in your environment.
+    /// 
     /// </para>
-    ///        
+    ///  
+    /// <para>
+    ///  Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
+    /// server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
+    /// and .NET containers do not support bundle logs. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+    /// </para>
+    ///  
     /// <para>
     /// Related Topics
     /// </para>
-    ///       <ul>                <li>            <a>RetrieveEnvironmentInfo</a>         </li>
-    ///      </ul>
+    ///  <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
     /// </summary>
     public partial class RequestEnvironmentInfoRequest : AmazonElasticBeanstalkRequest
     {
@@ -48,22 +60,35 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private EnvironmentInfoType _infoType;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RequestEnvironmentInfoRequest() { }
+
+        /// <summary>
+        /// Instantiates RequestEnvironmentInfoRequest with the parameterized properties
+        /// </summary>
+        /// <param name="infoType"> The type of information to request. </param>
+        public RequestEnvironmentInfoRequest(EnvironmentInfoType infoType)
+        {
+            _infoType = infoType;
+        }
 
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of the environment of the requested data.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no such environment is found, <code>RequestEnvironmentInfo</code> returns
-        /// an         <code>InvalidParameterValue</code>         error.      
+        ///  If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
+        /// error. 
         /// </para>
-        ///        
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentName, or both. 
-        ///          If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -78,22 +103,21 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// The name of the environment of the requested data.
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          If no such environment is found, <code>RequestEnvironmentInfo</code> returns
-        /// an         <code>InvalidParameterValue</code>         error.      
+        ///  If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
+        /// error. 
         /// </para>
-        ///        
+        ///  
         /// <para>
-        ///          Condition: You must specify either this or an EnvironmentId, or both.   
-        ///        If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error.        
+        ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -108,11 +132,10 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property InfoType. 
         /// <para>
-        ///          The type of information to request.       
+        ///  The type of information to request. 
         /// </para>
         /// </summary>
         public EnvironmentInfoType InfoType

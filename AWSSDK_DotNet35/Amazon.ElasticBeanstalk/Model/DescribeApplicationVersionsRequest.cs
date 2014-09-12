@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,13 +36,16 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _applicationName;
         private List<string> _versionLabels = new List<string>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeApplicationVersionsRequest() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         only include ones that are         associated with the specified application.
-        ///      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
+        /// ones that are associated with the specified application. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -53,12 +60,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabels. 
         /// <para>
-        ///          If specified, restricts the returned descriptions to only include ones  
-        ///       that have the specified version labels.      
+        ///  If specified, restricts the returned descriptions to only include ones that have
+        /// the specified version labels. 
         /// </para>
         /// </summary>
         public List<string> VersionLabels

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -34,6 +38,21 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<ParameterNameValue> _parameterNameValues = new List<ParameterNameValue>();
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ModifyCacheParameterGroupRequest() { }
+
+        /// <summary>
+        /// Instantiates ModifyCacheParameterGroupRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cacheParameterGroupName">The name of the cache parameter group to modify.</param>
+        /// <param name="parameterNameValues">An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</param>
+        public ModifyCacheParameterGroupRequest(string cacheParameterGroupName, List<ParameterNameValue> parameterNameValues)
+        {
+            _cacheParameterGroupName = cacheParameterGroupName;
+            _parameterNameValues = parameterNameValues;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
@@ -52,7 +71,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheParameterGroupName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ParameterNameValues. 

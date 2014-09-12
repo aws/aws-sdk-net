@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.ElastiCache.Model
         private string _state;
         private double? _usagePrice;
 
-
         /// <summary>
         /// Gets and sets the property CacheNodeCount. 
         /// <para>
@@ -59,7 +62,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._cacheNodeCount.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
@@ -79,7 +81,6 @@ namespace Amazon.ElastiCache.Model
             return this._cacheNodeType != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
@@ -97,7 +98,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._duration.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property FixedPrice. 
@@ -117,7 +117,6 @@ namespace Amazon.ElastiCache.Model
             return this._fixedPrice.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
@@ -135,7 +134,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._offeringType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ProductDescription. 
@@ -155,7 +153,6 @@ namespace Amazon.ElastiCache.Model
             return this._productDescription != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property RecurringCharges. 
         /// <para>
@@ -173,7 +170,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._recurringCharges != null && this._recurringCharges.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ReservedCacheNodeId. 
@@ -193,7 +189,6 @@ namespace Amazon.ElastiCache.Model
             return this._reservedCacheNodeId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ReservedCacheNodesOfferingId. 
         /// <para>
@@ -211,7 +206,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._reservedCacheNodesOfferingId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StartTime. 
@@ -231,7 +225,6 @@ namespace Amazon.ElastiCache.Model
             return this._startTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
@@ -249,7 +242,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._state != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property UsagePrice. 

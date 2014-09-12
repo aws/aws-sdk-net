@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// VerifyDomainIdentity Request Marshaller
     /// </summary>       
-    public class VerifyDomainIdentityRequestMarshaller : IMarshaller<IRequest, VerifyDomainIdentityRequest>
+    public class VerifyDomainIdentityRequestMarshaller : IMarshaller<IRequest, VerifyDomainIdentityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((VerifyDomainIdentityRequest)input);
+        }
+    
         public IRequest Marshall(VerifyDomainIdentityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");

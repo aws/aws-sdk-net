@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,445 +29,574 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RunInstances operation.
-    /// <para>Launches the specified number of instances using an AMI for which you have permissions.</para> <para>When you launch an instance, it
-    /// enters the <c>pending</c> state. After the instance is ready for you, it enters the <c>running</c> state. To check the state of your
-    /// instance, call DescribeInstances.</para> <para>If you don't specify a security group when launching an instance, Amazon EC2 uses the default
-    /// security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" >Security
-    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>Linux instances have access to the public key of the key
-    /// pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure
-    /// access without passwords. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key
-    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
-    /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
-    /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
-    /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>T2 instance types can only be launched into a VPC. If you do not have a
-    /// default VPC, or if you do not specify a subnet ID in the request, <c>RunInstances</c> fails.</para> <para>For more information about
-    /// troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An
-    /// Instance Immediately Terminates</a> , and <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting Connecting to Your
-    /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Launches the specified number of instances using an AMI for which you have permissions.
+    /// 
+    ///  
+    /// <para>
+    /// When you launch an instance, it enters the <code>pending</code> state. After the instance
+    /// is ready for you, it enters the <code>running</code> state. To check the state of
+    /// your instance, call <a>DescribeInstances</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you don't specify a security group when launching an instance, Amazon EC2 uses
+    /// the default security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Linux instances have access to the public key of the key pair at boot. You can use
+    /// this key to provide secure access to the instance. Amazon EC2 public images use this
+    /// feature to provide secure access without passwords. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can provide optional user data when launching an instance. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
+    /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If any of the AMIs have a product code attached for which the user has not subscribed,
+    /// <code>RunInstances</code> fails.
+    /// </para>
+    ///  
+    /// <para>
+    /// T2 instance types can only be launched into a VPC. If you do not have a default VPC,
+    /// or if you do not specify a subnet ID in the request, <code>RunInstances</code> fails.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
+    /// To Do If An Instance Immediately Terminates</a>, and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
+    /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RunInstancesRequest : AmazonEC2Request
     {
-        private string imageId;
-        private int? minCount;
-        private int? maxCount;
-        private string keyName;
-        private List<string> securityGroups = new List<string>();
-        private List<string> securityGroupIds = new List<string>();
-        private string userData;
-        private InstanceType instanceType;
-        private Placement placement;
-        private string kernelId;
-        private string ramdiskId;
-        private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
-        private bool? monitoring;
-        private string subnetId;
-        private bool? disableApiTermination;
-        private ShutdownBehavior instanceInitiatedShutdownBehavior;
-        private string privateIpAddress;
-        private string clientToken;
-        private string additionalInfo;
-        private List<InstanceNetworkInterfaceSpecification> networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
-        private IamInstanceProfileSpecification iamInstanceProfile;
-        private bool? ebsOptimized;
-
+        private string _additionalInfo;
+        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private string _clientToken;
+        private bool? _disableApiTermination;
+        private bool? _ebsOptimized;
+        private IamInstanceProfileSpecification _iamInstanceProfile;
+        private string _imageId;
+        private ShutdownBehavior _instanceInitiatedShutdownBehavior;
+        private InstanceType _instanceType;
+        private string _kernelId;
+        private string _keyName;
+        private int? _maxCount;
+        private int? _minCount;
+        private bool? _monitoring;
+        private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
+        private Placement _placement;
+        private string _privateIpAddress;
+        private string _ramdiskId;
+        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroups = new List<string>();
+        private string _subnetId;
+        private string _userData;
 
         /// <summary>
-        /// The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
-        ///  
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
-        public string ImageId
-        {
-            get { return this.imageId; }
-            set { this.imageId = value; }
-        }
-
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
-        {
-            return this.imageId != null;
-        }
+        public RunInstancesRequest() { }
 
         /// <summary>
-        /// The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target
-        /// Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance
-        /// type. For more information about the default limits, and how to request an increase, see <a
-        /// href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the
-        /// Amazon EC2 General FAQ.
-        ///  
+        /// Instantiates RunInstancesRequest with the parameterized properties
         /// </summary>
-        public int MinCount
+        /// <param name="imageId">The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</param>
+        /// <param name="minCount">The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
+        /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
+        public RunInstancesRequest(string imageId, int minCount, int maxCount)
         {
-            get { return this.minCount ?? default(int); }
-            set { this.minCount = value; }
-        }
-
-        // Check to see if MinCount property is set
-        internal bool IsSetMinCount()
-        {
-            return this.minCount.HasValue;
-        }
-
-        /// <summary>
-        /// The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon
-        /// EC2 launches the largest possible number of instances above <c>MinCount</c>. Constraints: Between 1 and the maximum number you're allowed
-        /// for the specified instance type. For more information about the default limits, and how to request an increase, see <a
-        /// href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the
-        /// Amazon EC2 General FAQ.
-        ///  
-        /// </summary>
-        public int MaxCount
-        {
-            get { return this.maxCount ?? default(int); }
-            set { this.maxCount = value; }
-        }
-
-        // Check to see if MaxCount property is set
-        internal bool IsSetMaxCount()
-        {
-            return this.maxCount.HasValue;
+            _imageId = imageId;
+            _minCount = minCount;
+            _maxCount = maxCount;
         }
 
         /// <summary>
-        /// The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> If you launch an
-        /// instance without specifying a key pair, you can't connect to the instance. </important>
-        ///  
-        /// </summary>
-        public string KeyName
-        {
-            get { return this.keyName; }
-            set { this.keyName = value; }
-        }
-
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
-        {
-            return this.keyName != null;
-        }
-
-        /// <summary>
-        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group IDs instead. Default: Amazon
-        /// EC2 uses the default security group.
-        ///  
-        /// </summary>
-        public List<string> SecurityGroups
-        {
-            get { return this.securityGroups; }
-            set { this.securityGroups = value; }
-        }
-
-        // Check to see if SecurityGroups property is set
-        internal bool IsSetSecurityGroups()
-        {
-            return this.securityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>. Default: Amazon EC2 uses the default
-        /// security group.
-        ///  
-        /// </summary>
-        public List<string> SecurityGroupIds
-        {
-            get { return this.securityGroupIds; }
-            set { this.securityGroupIds = value; }
-        }
-
-        // Check to see if SecurityGroupIds property is set
-        internal bool IsSetSecurityGroupIds()
-        {
-            return this.securityGroupIds.Count > 0;
-        }
-
-        /// <summary>
-        /// The Base64-encoded MIME user data for the instances.
-        ///  
-        /// </summary>
-        public string UserData
-        {
-            get { return this.userData; }
-            set { this.userData = value; }
-        }
-
-        // Check to see if UserData property is set
-        internal bool IsSetUserData()
-        {
-            return this.userData != null;
-        }
-
-        /// <summary>
-        /// The instance type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. Default: <c>m1.small</c>
-        ///  
+        /// Gets and sets the property AdditionalInfo. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge</description>
-        ///     </item>
-        /// </list>
+        /// Reserved.
         /// </para>
-        /// </summary>
-        public InstanceType InstanceType
-        {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
-        }
-
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
-        {
-            return this.instanceType != null;
-        }
-
-        /// <summary>
-        /// The placement for the instance.
-        ///  
-        /// </summary>
-        public Placement Placement
-        {
-            get { return this.placement; }
-            set { this.placement = value; }
-        }
-
-        // Check to see if Placement property is set
-        internal bool IsSetPlacement()
-        {
-            return this.placement != null;
-        }
-
-        /// <summary>
-        /// The ID of the kernel. <important> We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image"> PV-GRUB: A New Amazon
-        /// Kernel Image</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </important>
-        ///  
-        /// </summary>
-        public string KernelId
-        {
-            get { return this.kernelId; }
-            set { this.kernelId = value; }
-        }
-
-        // Check to see if KernelId property is set
-        internal bool IsSetKernelId()
-        {
-            return this.kernelId != null;
-        }
-
-        /// <summary>
-        /// The ID of the RAM disk.
-        ///  
-        /// </summary>
-        public string RamdiskId
-        {
-            get { return this.ramdiskId; }
-            set { this.ramdiskId = value; }
-        }
-
-        // Check to see if RamdiskId property is set
-        internal bool IsSetRamdiskId()
-        {
-            return this.ramdiskId != null;
-        }
-
-        /// <summary>
-        /// The block device mapping.
-        ///  
-        /// </summary>
-        public List<BlockDeviceMapping> BlockDeviceMappings
-        {
-            get { return this.blockDeviceMappings; }
-            set { this.blockDeviceMappings = value; }
-        }
-
-        // Check to see if BlockDeviceMappings property is set
-        internal bool IsSetBlockDeviceMappings()
-        {
-            return this.blockDeviceMappings.Count > 0;
-        }
-
-        /// <summary>
-        /// The monitoring for the instance.
-        ///  
-        /// </summary>
-        public bool Monitoring
-        {
-            get { return this.monitoring ?? default(bool); }
-            set { this.monitoring = value; }
-        }
-
-        // Check to see if Monitoring property is set
-        internal bool IsSetMonitoring()
-        {
-            return this.monitoring.HasValue;
-        }
-
-        /// <summary>
-        /// [EC2-VPC] The ID of the subnet to launch the instance into.
-        ///  
-        /// </summary>
-        public string SubnetId
-        {
-            get { return this.subnetId; }
-            set { this.subnetId = value; }
-        }
-
-        // Check to see if SubnetId property is set
-        internal bool IsSetSubnetId()
-        {
-            return this.subnetId != null;
-        }
-
-        /// <summary>
-        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If
-        /// you set this parameter to <c>true</c> and then later want to be able to terminate the instance, you must first change the value of the
-        /// <c>disableApiTermination</c> attribute to <c>false</c> using <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-        /// <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>, you can terminate the instance by running the shutdown command from the
-        /// instance. Default: <c>false</c>
-        ///  
-        /// </summary>
-        public bool DisableApiTermination
-        {
-            get { return this.disableApiTermination ?? default(bool); }
-            set { this.disableApiTermination = value; }
-        }
-
-        // Check to see if DisableApiTermination property is set
-        internal bool IsSetDisableApiTermination()
-        {
-            return this.disableApiTermination.HasValue;
-        }
-
-        /// <summary>
-        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for
-        /// system shutdown). Default: <c>stop</c>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>stop, terminate</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public ShutdownBehavior InstanceInitiatedShutdownBehavior
-        {
-            get { return this.instanceInitiatedShutdownBehavior; }
-            set { this.instanceInitiatedShutdownBehavior = value; }
-        }
-
-        // Check to see if InstanceInitiatedShutdownBehavior property is set
-        internal bool IsSetInstanceInitiatedShutdownBehavior()
-        {
-            return this.instanceInitiatedShutdownBehavior != null;
-        }
-
-        /// <summary>
-        /// [EC2-VPC] The primary IP address. You must specify a value from the IP address range of the subnet. Only one private IP address can be
-        /// designated as primary. Therefore, you can't specify this parameter if <c>PrivateIpAddresses.n.Primary</c> is set to <c>true</c> and
-        /// <c>PrivateIpAddresses.n.PrivateIpAddress</c> is set to an IP address. Default: We select an IP address from the IP address range of the
-        /// subnet.
-        ///  
-        /// </summary>
-        public string PrivateIpAddress
-        {
-            get { return this.privateIpAddress; }
-            set { this.privateIpAddress = value; }
-        }
-
-        // Check to see if PrivateIpAddress property is set
-        internal bool IsSetPrivateIpAddress()
-        {
-            return this.privateIpAddress != null;
-        }
-
-        /// <summary>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>. Constraints: Maximum 64 ASCII characters
-        ///  
-        /// </summary>
-        public string ClientToken
-        {
-            get { return this.clientToken; }
-            set { this.clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this.clientToken != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
         /// </summary>
         public string AdditionalInfo
         {
-            get { return this.additionalInfo; }
-            set { this.additionalInfo = value; }
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
         }
 
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this.additionalInfo != null;
+            return this._additionalInfo != null;
         }
 
         /// <summary>
-        /// One or more network interfaces.
-        ///  
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
+        /// The block device mapping.
+        /// </para>
         /// </summary>
-        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
+        public List<BlockDeviceMapping> BlockDeviceMappings
         {
-            get { return this.networkInterfaces; }
-            set { this.networkInterfaces = value; }
+            get { return this._blockDeviceMappings; }
+            set { this._blockDeviceMappings = value; }
         }
 
-        // Check to see if NetworkInterfaces property is set
-        internal bool IsSetNetworkInterfaces()
+        // Check to see if BlockDeviceMappings property is set
+        internal bool IsSetBlockDeviceMappings()
         {
-            return this.networkInterfaces.Count > 0;
+            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
         }
 
         /// <summary>
-        /// The IAM instance profile.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints: Maximum 64 ASCII characters
+        /// </para>
         /// </summary>
-        public IamInstanceProfileSpecification IamInstanceProfile
+        public string ClientToken
         {
-            get { return this.iamInstanceProfile; }
-            set { this.iamInstanceProfile = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if IamInstanceProfile property is set
-        internal bool IsSetIamInstanceProfile()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this.iamInstanceProfile != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized
-        /// configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional
-        /// usage charges apply when using an EBS-optimized instance. Default: <c>false</c>
+        /// Gets and sets the property DisableApiTermination. 
+        /// <para>
+        /// If you set this parameter to <code>true</code>, you can't terminate the instance using
+        /// the Amazon EC2 console, CLI, or API; otherwise, you can. If you set this parameter
+        /// to <code>true</code> and then later want to be able to terminate the instance, you
+        /// must first change the value of the <code>disableApiTermination</code> attribute to
+        /// <code>false</code> using <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+        /// <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can
+        /// terminate the instance by running the shutdown command from the instance.
+        /// </para>
         ///  
+        /// <para>
+        /// Default: <code>false</code>
+        /// </para>
+        /// </summary>
+        public bool DisableApiTermination
+        {
+            get { return this._disableApiTermination.GetValueOrDefault(); }
+            set { this._disableApiTermination = value; }
+        }
+
+        // Check to see if DisableApiTermination property is set
+        internal bool IsSetDisableApiTermination()
+        {
+            return this._disableApiTermination.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsOptimized. 
+        /// <para>
+        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides
+        /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
+        /// optimal Amazon EBS I/O performance. This optimization isn't available with all instance
+        /// types. Additional usage charges apply when using an EBS-optimized instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code>
+        /// </para>
         /// </summary>
         public bool EbsOptimized
         {
-            get { return this.ebsOptimized ?? default(bool); }
-            set { this.ebsOptimized = value; }
+            get { return this._ebsOptimized.GetValueOrDefault(); }
+            set { this._ebsOptimized = value; }
         }
 
         // Check to see if EbsOptimized property is set
         internal bool IsSetEbsOptimized()
         {
-            return this.ebsOptimized.HasValue;
+            return this._ebsOptimized.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// The IAM instance profile.
+        /// </para>
+        /// </summary>
+        public IamInstanceProfileSpecification IamInstanceProfile
+        {
+            get { return this._iamInstanceProfile; }
+            set { this._iamInstanceProfile = value; }
+        }
+
+        // Check to see if IamInstanceProfile property is set
+        internal bool IsSetIamInstanceProfile()
+        {
+            return this._iamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceInitiatedShutdownBehavior. 
+        /// <para>
+        /// Indicates whether an instance stops or terminates when you initiate shutdown from
+        /// the instance (using the operating system command for system shutdown).
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>stop</code>
+        /// </para>
+        /// </summary>
+        public ShutdownBehavior InstanceInitiatedShutdownBehavior
+        {
+            get { return this._instanceInitiatedShutdownBehavior; }
+            set { this._instanceInitiatedShutdownBehavior = value; }
+        }
+
+        // Check to see if InstanceInitiatedShutdownBehavior property is set
+        internal bool IsSetInstanceInitiatedShutdownBehavior()
+        {
+            return this._instanceInitiatedShutdownBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>m1.small</code>
+        /// </para>
+        /// </summary>
+        public InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KernelId. 
+        /// <para>
+        /// The ID of the kernel.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
+        /// PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string KernelId
+        {
+            get { return this._kernelId; }
+            set { this._kernelId = value; }
+        }
+
+        // Check to see if KernelId property is set
+        internal bool IsSetKernelId()
+        {
+            return this._kernelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
+        /// The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
+        /// <a>ImportKeyPair</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you launch an instance without specifying a key pair, you can't connect to the
+        /// instance.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string KeyName
+        {
+            get { return this._keyName; }
+            set { this._keyName = value; }
+        }
+
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
+        {
+            return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxCount. 
+        /// <para>
+        /// The maximum number of instances to launch. If you specify more instances than Amazon
+        /// EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible
+        /// number of instances above <code>MinCount</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Between 1 and the maximum number you're allowed for the specified instance
+        /// type. For more information about the default limits, and how to request an increase,
+        /// see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+        /// many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.
+        /// </para>
+        /// </summary>
+        public int MaxCount
+        {
+            get { return this._maxCount.GetValueOrDefault(); }
+            set { this._maxCount = value; }
+        }
+
+        // Check to see if MaxCount property is set
+        internal bool IsSetMaxCount()
+        {
+            return this._maxCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinCount. 
+        /// <para>
+        /// The minimum number of instances to launch. If you specify a minimum that is more instances
+        /// than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no
+        /// instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Between 1 and the maximum number you're allowed for the specified instance
+        /// type. For more information about the default limits, and how to request an increase,
+        /// see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+        /// many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.
+        /// </para>
+        /// </summary>
+        public int MinCount
+        {
+            get { return this._minCount.GetValueOrDefault(); }
+            set { this._minCount = value; }
+        }
+
+        // Check to see if MinCount property is set
+        internal bool IsSetMinCount()
+        {
+            return this._minCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Monitoring. 
+        /// <para>
+        /// The monitoring for the instance.
+        /// </para>
+        /// </summary>
+        public bool Monitoring
+        {
+            get { return this._monitoring.GetValueOrDefault(); }
+            set { this._monitoring = value; }
+        }
+
+        // Check to see if Monitoring property is set
+        internal bool IsSetMonitoring()
+        {
+            return this._monitoring.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// One or more network interfaces.
+        /// </para>
+        /// </summary>
+        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The placement for the instance.
+        /// </para>
+        /// </summary>
+        public Placement Placement
+        {
+            get { return this._placement; }
+            set { this._placement = value; }
+        }
+
+        // Check to see if Placement property is set
+        internal bool IsSetPlacement()
+        {
+            return this._placement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// [EC2-VPC] The primary IP address. You must specify a value from the IP address range
+        /// of the subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one private IP address can be designated as primary. Therefore, you can't specify
+        /// this parameter if <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code>
+        /// and <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: We select an IP address from the IP address range of the subnet.
+        /// </para>
+        /// </summary>
+        public string PrivateIpAddress
+        {
+            get { return this._privateIpAddress; }
+            set { this._privateIpAddress = value; }
+        }
+
+        // Check to see if PrivateIpAddress property is set
+        internal bool IsSetPrivateIpAddress()
+        {
+            return this._privateIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RamdiskId. 
+        /// <para>
+        /// The ID of the RAM disk.
+        /// </para>
+        /// </summary>
+        public string RamdiskId
+        {
+            get { return this._ramdiskId; }
+            set { this._ramdiskId = value; }
+        }
+
+        // Check to see if RamdiskId property is set
+        internal bool IsSetRamdiskId()
+        {
+            return this._ramdiskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Amazon EC2 uses the default security group.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC,
+        /// you must use security group IDs instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Amazon EC2 uses the default security group.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// [EC2-VPC] The ID of the subnet to launch the instance into.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserData. 
+        /// <para>
+        /// The Base64-encoded MIME user data for the instances.
+        /// </para>
+        /// </summary>
+        public string UserData
+        {
+            get { return this._userData; }
+            set { this._userData = value; }
+        }
+
+        // Check to see if UserData property is set
+        internal bool IsSetUserData()
+        {
+            return this._userData != null;
         }
 
     }
 }
-    

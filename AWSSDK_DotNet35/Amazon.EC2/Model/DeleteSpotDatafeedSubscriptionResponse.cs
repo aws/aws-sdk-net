@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteSpotDatafeedSubscription response metadata.
-    /// The DeleteSpotDatafeedSubscription operation has a void result type.
+    /// Configuration for accessing Amazon DeleteSpotDatafeedSubscription service
     /// </summary>
-    public partial class DeleteSpotDatafeedSubscriptionResponse : AmazonWebServiceResponse
+    public partial class DeleteSpotDatafeedSubscriptionResponse : DeleteSpotDatafeedSubscriptionResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteSpotDatafeedSubscriptionResult property.
+        /// Represents the output of a DeleteSpotDatafeedSubscription operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteSpotDatafeedSubscriptionResult class are now available on the DeleteSpotDatafeedSubscriptionResponse class. You should use the properties on DeleteSpotDatafeedSubscriptionResponse instead of accessing them through DeleteSpotDatafeedSubscriptionResult.")]
+        public DeleteSpotDatafeedSubscriptionResult DeleteSpotDatafeedSubscriptionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

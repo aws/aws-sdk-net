@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -29,7 +33,6 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class TestMetricFilterResult : AmazonWebServiceResponse
     {
         private List<MetricFilterMatchRecord> _matches = new List<MetricFilterMatchRecord>();
-
 
         /// <summary>
         /// Gets and sets the property Matches.

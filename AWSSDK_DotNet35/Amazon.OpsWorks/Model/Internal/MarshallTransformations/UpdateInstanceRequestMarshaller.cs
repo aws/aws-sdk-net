@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateInstance Request Marshaller
     /// </summary>       
-    public class UpdateInstanceRequestMarshaller : IMarshaller<IRequest, UpdateInstanceRequest> 
+    public class UpdateInstanceRequestMarshaller : IMarshaller<IRequest, UpdateInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateInstanceRequest)input);
+        }
+
         public IRequest Marshall(UpdateInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,75 +56,76 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAmiId())
                 {
-                    writer.WritePropertyName("AmiId");
-                    writer.Write(publicRequest.AmiId);
+                    context.Writer.WritePropertyName("AmiId");
+                    context.Writer.Write(publicRequest.AmiId);
                 }
 
                 if(publicRequest.IsSetArchitecture())
                 {
-                    writer.WritePropertyName("Architecture");
-                    writer.Write(publicRequest.Architecture);
+                    context.Writer.WritePropertyName("Architecture");
+                    context.Writer.Write(publicRequest.Architecture);
                 }
 
                 if(publicRequest.IsSetAutoScalingType())
                 {
-                    writer.WritePropertyName("AutoScalingType");
-                    writer.Write(publicRequest.AutoScalingType);
+                    context.Writer.WritePropertyName("AutoScalingType");
+                    context.Writer.Write(publicRequest.AutoScalingType);
                 }
 
                 if(publicRequest.IsSetEbsOptimized())
                 {
-                    writer.WritePropertyName("EbsOptimized");
-                    writer.Write(publicRequest.EbsOptimized);
+                    context.Writer.WritePropertyName("EbsOptimized");
+                    context.Writer.Write(publicRequest.EbsOptimized);
                 }
 
                 if(publicRequest.IsSetHostname())
                 {
-                    writer.WritePropertyName("Hostname");
-                    writer.Write(publicRequest.Hostname);
+                    context.Writer.WritePropertyName("Hostname");
+                    context.Writer.Write(publicRequest.Hostname);
                 }
 
                 if(publicRequest.IsSetInstallUpdatesOnBoot())
                 {
-                    writer.WritePropertyName("InstallUpdatesOnBoot");
-                    writer.Write(publicRequest.InstallUpdatesOnBoot);
+                    context.Writer.WritePropertyName("InstallUpdatesOnBoot");
+                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot);
                 }
 
                 if(publicRequest.IsSetInstanceId())
                 {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(publicRequest.InstanceId);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
                 if(publicRequest.IsSetInstanceType())
                 {
-                    writer.WritePropertyName("InstanceType");
-                    writer.Write(publicRequest.InstanceType);
+                    context.Writer.WritePropertyName("InstanceType");
+                    context.Writer.Write(publicRequest.InstanceType);
                 }
 
                 if(publicRequest.IsSetLayerIds())
                 {
-                    writer.WritePropertyName("LayerIds");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("LayerIds");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
                     {
-                        writer.Write(publicRequestLayerIdsListValue);
+                            context.Writer.Write(publicRequestLayerIdsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetOs())
                 {
-                    writer.WritePropertyName("Os");
-                    writer.Write(publicRequest.Os);
+                    context.Writer.WritePropertyName("Os");
+                    context.Writer.Write(publicRequest.Os);
                 }
 
                 if(publicRequest.IsSetSshKeyName())
                 {
-                    writer.WritePropertyName("SshKeyName");
-                    writer.Write(publicRequest.SshKeyName);
+                    context.Writer.WritePropertyName("SshKeyName");
+                    context.Writer.Write(publicRequest.SshKeyName);
                 }
 
         

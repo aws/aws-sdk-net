@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,7 +35,6 @@ namespace Amazon.SimpleEmail.Model
         private List<string> _identities = new List<string>();
         private string _nextToken;
 
-
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
@@ -49,7 +52,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this._identities != null && this._identities.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property NextToken. 

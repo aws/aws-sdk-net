@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe D B Snapshots Request Marshaller
+    /// DescribeDBSnapshots Request Marshaller
     /// </summary>       
-    public class DescribeDBSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeDBSnapshotsRequest>
+    public class DescribeDBSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeDBSnapshotsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeDBSnapshotsRequest describeDBSnapshotsRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeDBSnapshotsRequest, "AmazonRDS");
+            return this.Marshall((DescribeDBSnapshotsRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeDBSnapshotsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeDBSnapshots");
             request.Parameters.Add("Version", "2013-09-09");
-            if (describeDBSnapshotsRequest != null && describeDBSnapshotsRequest.IsSetDBInstanceIdentifier())
-            {
-                request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(describeDBSnapshotsRequest.DBInstanceIdentifier));
-            }
-            if (describeDBSnapshotsRequest != null && describeDBSnapshotsRequest.IsSetDBSnapshotIdentifier())
-            {
-                request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(describeDBSnapshotsRequest.DBSnapshotIdentifier));
-            }
-            if (describeDBSnapshotsRequest != null && describeDBSnapshotsRequest.IsSetSnapshotType())
-            {
-                request.Parameters.Add("SnapshotType", StringUtils.FromString(describeDBSnapshotsRequest.SnapshotType));
-            }
 
-            if (describeDBSnapshotsRequest != null)
+            if(publicRequest != null)
             {
-                List<Filter> filtersList = describeDBSnapshotsRequest.Filters;
-                int filtersListIndex = 1;
-                foreach (Filter filtersListValue in filtersList)
+                if(publicRequest.IsSetDBInstanceIdentifier())
                 {
-                    if (filtersListValue != null && filtersListValue.IsSetFilterName())
+                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
+                }
+                if(publicRequest.IsSetDBSnapshotIdentifier())
+                {
+                    request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
+                }
+                if(publicRequest.IsSetFilters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterName", StringUtils.FromString(filtersListValue.FilterName));
-                    }
-                    if (filtersListValue != null)
-                    {
-                        List<string> filterValueList = filtersListValue.FilterValue;
-
-                        int filterValueListIndex = 1;
-                        foreach (string filterValueListValue in filterValueList)
-                        { 
-                            request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterValue.member." + filterValueListIndex, StringUtils.FromString(filterValueListValue));
-                            filterValueListIndex++;
+                        if(publicRequestlistValue.IsSetFilterName())
+                        {
+                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterName", StringUtils.FromString(publicRequestlistValue.FilterName));
                         }
+                        if(publicRequestlistValue.IsSetFilterValue())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.FilterValue)
+                            {
+                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterValue" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    filtersListIndex++;
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetSnapshotType())
+                {
+                    request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
                 }
             }
-            if (describeDBSnapshotsRequest != null && describeDBSnapshotsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeDBSnapshotsRequest.MaxRecords));
-            }
-            if (describeDBSnapshotsRequest != null && describeDBSnapshotsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeDBSnapshotsRequest.Marker));
-            }
-
             return request;
         }
     }

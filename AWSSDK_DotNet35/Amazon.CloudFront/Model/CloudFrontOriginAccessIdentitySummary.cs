@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,6 +36,10 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private string _s3CanonicalUserId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CloudFrontOriginAccessIdentitySummary() { }
 
         /// <summary>
         /// Gets and sets the property Comment. The comment for this origin access identity, as
@@ -49,7 +57,6 @@ namespace Amazon.CloudFront.Model
             return this._comment != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. The ID for the origin access identity. For example:
         /// E74FTE3AJFJ256A.
@@ -66,11 +73,10 @@ namespace Amazon.CloudFront.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property S3CanonicalUserId. The Amazon S3 canonical user ID for
-        /// the origin access identity, which you use when     giving the origin access identity
-        /// read permission to an object in Amazon S3.
+        /// the origin access identity, which you use when giving the origin access identity read
+        /// permission to an object in Amazon S3.
         /// </summary>
         public string S3CanonicalUserId
         {

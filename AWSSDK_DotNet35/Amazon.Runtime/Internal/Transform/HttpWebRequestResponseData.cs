@@ -21,31 +21,36 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Transform
 {
-    internal class HttpWebRequestResponseData : IWebResponseData
+    public class HttpWebRequestResponseData : IWebResponseData
     {
         HttpWebResponse _response;
         string[] _headerNames;
         HashSet<string> _headerNamesSet;
+        HttpWebResponseBody _responseBody;
 
         public HttpWebRequestResponseData(HttpWebResponse response)
         {
             this._response = response;
+            _responseBody = new HttpWebResponseBody(response);
+
+            this.StatusCode = response.StatusCode;
+            this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;
+            this.ContentType = response.ContentType;            
+            this.ContentLength = response.ContentLength;
         }
 
-        public string ContentType
-        {
-            get { return this._response.ContentType; }
-        }
+        public HttpStatusCode StatusCode { get; private set; }
 
-        public Stream OpenResponse()
-        {
-            return this._response.GetResponseStream();
-        }
+        public bool IsSuccessStatusCode { get; private set; }
 
-        public HttpStatusCode StatusCode 
-        {
-            get { return this._response.StatusCode; }
-        }
+        public string ContentType { get; private set; }        
+
+        public long ContentLength { get; private set; }
+        
+        //public Stream OpenResponse()
+        //{
+        //    return this._response.GetResponseStream();
+        //}
 
         public bool IsHeaderPresent(string headerName)
         {
@@ -60,7 +65,7 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 SetHeaderNames();
             }
-            return _headerNames;
+            return _headerNames;            
         }
 
         public string GetHeaderValue(string name)
@@ -75,6 +80,55 @@ namespace Amazon.Runtime.Internal.Transform
             for (int i = 0; i < keys.Count; i++)
                 _headerNames[i] = keys[i];
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
+        }
+
+        public IHttpResponseBody ResponseBody
+        {
+            get { return _responseBody; }
+        }
+    }
+
+    public class HttpWebResponseBody : IHttpResponseBody
+    {
+        HttpWebResponse _response;
+        bool _disposed = false;
+
+        public HttpWebResponseBody(HttpWebResponse response)
+        {
+            _response = response;
+        }
+
+        public Stream OpenResponse()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException("HttpWebResponseBody");
+            
+            return _response.GetResponseStream();
+        }
+#if BCL45 || WIN_RT || WINDOWS_PHONE 
+        public System.Threading.Tasks.Task<Stream> OpenResponseAsync()
+        {            
+            throw new NotSupportedException();
+        }
+#endif
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                if (_response != null)
+                    _response.Close();
+
+                _disposed = true;
+            }
         }
     }
 }

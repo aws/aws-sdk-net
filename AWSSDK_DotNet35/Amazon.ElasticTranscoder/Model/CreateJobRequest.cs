@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -45,7 +49,6 @@ namespace Amazon.ElasticTranscoder.Model
         private string _pipelineId;
         private List<CreateJobPlaylist> _playlists = new List<CreateJobPlaylist>();
 
-
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
@@ -65,7 +68,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._input != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Output.
         /// </summary>
@@ -80,7 +82,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._output != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property OutputKeyPrefix. 
@@ -100,7 +101,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._outputKeyPrefix != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Outputs. 
@@ -122,7 +122,6 @@ namespace Amazon.ElasticTranscoder.Model
             return this._outputs != null && this._outputs.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
@@ -143,7 +142,6 @@ namespace Amazon.ElasticTranscoder.Model
         {
             return this._pipelineId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Playlists. 

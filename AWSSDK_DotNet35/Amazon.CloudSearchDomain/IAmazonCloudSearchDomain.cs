@@ -13,15 +13,20 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
+
 
 using System;
+using System.Collections.Generic;
 
 using Amazon.CloudSearchDomain.Model;
 
 namespace Amazon.CloudSearchDomain
 {
     /// <summary>
-    /// Implementation for accessing CloudSearchDomain
+    /// Interface for accessing CloudSearchDomain
     ///
     /// You use the AmazonCloudSearch2013 API to upload documents to a search domain and search
     /// those documents. 
@@ -45,7 +50,6 @@ namespace Amazon.CloudSearchDomain
 
         
         #region  Search
-
 
         /// <summary>
         /// Retrieves a list of documents that match the specified search criteria. How you specify
@@ -111,7 +115,6 @@ namespace Amazon.CloudSearchDomain
         
         #region  Suggest
 
-
         /// <summary>
         /// Retrieves autocomplete suggestions for a partial query string. You can use suggestions
         /// enable you to display likely matches before users finish typing. In Amazon CloudSearch,
@@ -172,7 +175,6 @@ namespace Amazon.CloudSearchDomain
         #endregion
         
         #region  UploadDocuments
-
 
         /// <summary>
         /// Posts a batch of documents to a search domain for indexing. A document batch is a

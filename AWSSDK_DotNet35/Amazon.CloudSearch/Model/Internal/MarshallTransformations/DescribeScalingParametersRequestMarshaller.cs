@@ -12,34 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudSearch.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Scaling Parameters Request Marshaller
+    /// DescribeScalingParameters Request Marshaller
     /// </summary>       
-    public class DescribeScalingParametersRequestMarshaller : IMarshaller<IRequest, DescribeScalingParametersRequest>
+    public class DescribeScalingParametersRequestMarshaller : IMarshaller<IRequest, DescribeScalingParametersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DescribeScalingParametersRequest describeScalingParametersRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(describeScalingParametersRequest, "AmazonCloudSearch");
+            return this.Marshall((DescribeScalingParametersRequest)input);
+        }
+    
+        public IRequest Marshall(DescribeScalingParametersRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");
             request.Parameters.Add("Action", "DescribeScalingParameters");
             request.Parameters.Add("Version", "2013-01-01");
-            if (describeScalingParametersRequest != null && describeScalingParametersRequest.IsSetDomainName())
-            {
-                request.Parameters.Add("DomainName", StringUtils.FromString(describeScalingParametersRequest.DomainName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDomainName())
+                {
+                    request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
+                }
+            }
             return request;
         }
     }

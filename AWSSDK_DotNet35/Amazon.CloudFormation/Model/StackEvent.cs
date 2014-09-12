@@ -12,201 +12,217 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// <para>The StackEvent data type.</para>
+    /// The StackEvent data type.
     /// </summary>
     public partial class StackEvent
     {
-        
-        private string stackId;
-        private string eventId;
-        private string stackName;
-        private string logicalResourceId;
-        private string physicalResourceId;
-        private string resourceType;
-        private DateTime? timestamp;
-        private ResourceStatus resourceStatus;
-        private string resourceStatusReason;
-        private string resourceProperties;
-
+        private string _eventId;
+        private string _logicalResourceId;
+        private string _physicalResourceId;
+        private string _resourceProperties;
+        private ResourceStatus _resourceStatus;
+        private string _resourceStatusReason;
+        private string _resourceType;
+        private string _stackId;
+        private string _stackName;
+        private DateTime? _timestamp;
 
         /// <summary>
-        /// The unique ID name of the instance of the stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EventId. 
+        /// <para>
         /// The unique ID of this event.
-        ///  
+        /// </para>
         /// </summary>
         public string EventId
         {
-            get { return this.eventId; }
-            set { this.eventId = value; }
+            get { return this._eventId; }
+            set { this._eventId = value; }
         }
 
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this.eventId != null;
+            return this._eventId != null;
         }
 
         /// <summary>
-        /// The name associated with a stack.
-        ///  
-        /// </summary>
-        public string StackName
-        {
-            get { return this.stackName; }
-            set { this.stackName = value; }
-        }
-
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
-        {
-            return this.stackName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property LogicalResourceId. 
+        /// <para>
         /// The logical name of the resource specified in the template.
-        ///  
+        /// </para>
         /// </summary>
         public string LogicalResourceId
         {
-            get { return this.logicalResourceId; }
-            set { this.logicalResourceId = value; }
+            get { return this._logicalResourceId; }
+            set { this._logicalResourceId = value; }
         }
 
         // Check to see if LogicalResourceId property is set
         internal bool IsSetLogicalResourceId()
         {
-            return this.logicalResourceId != null;
+            return this._logicalResourceId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property PhysicalResourceId. 
+        /// <para>
         /// The name or unique identifier associated with the physical instance of the resource.
-        ///  
+        /// </para>
         /// </summary>
         public string PhysicalResourceId
         {
-            get { return this.physicalResourceId; }
-            set { this.physicalResourceId = value; }
+            get { return this._physicalResourceId; }
+            set { this._physicalResourceId = value; }
         }
 
         // Check to see if PhysicalResourceId property is set
         internal bool IsSetPhysicalResourceId()
         {
-            return this.physicalResourceId != null;
+            return this._physicalResourceId != null;
         }
 
         /// <summary>
-        /// Type of resource. (For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS Resource Types Reference</a>
-        /// in the AWS CloudFormation User Guide.)
-        ///  
-        /// </summary>
-        public string ResourceType
-        {
-            get { return this.resourceType; }
-            set { this.resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this.resourceType != null;
-        }
-
-        /// <summary>
-        /// Time the status was updated.
-        ///  
-        /// </summary>
-        public DateTime Timestamp
-        {
-            get { return this.timestamp ?? default(DateTime); }
-            set { this.timestamp = value; }
-        }
-
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
-        {
-            return this.timestamp.HasValue;
-        }
-
-        /// <summary>
-        /// Current status of the resource.
-        ///  
+        /// Gets and sets the property ResourceProperties. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public ResourceStatus ResourceStatus
-        {
-            get { return this.resourceStatus; }
-            set { this.resourceStatus = value; }
-        }
-
-        // Check to see if ResourceStatus property is set
-        internal bool IsSetResourceStatus()
-        {
-            return this.resourceStatus != null;
-        }
-
-        /// <summary>
-        /// Success/failure message associated with the resource.
-        ///  
-        /// </summary>
-        public string ResourceStatusReason
-        {
-            get { return this.resourceStatusReason; }
-            set { this.resourceStatusReason = value; }
-        }
-
-        // Check to see if ResourceStatusReason property is set
-        internal bool IsSetResourceStatusReason()
-        {
-            return this.resourceStatusReason != null;
-        }
-
-        /// <summary>
         /// BLOB of the properties used to create the resource.
-        ///  
+        /// </para>
         /// </summary>
         public string ResourceProperties
         {
-            get { return this.resourceProperties; }
-            set { this.resourceProperties = value; }
+            get { return this._resourceProperties; }
+            set { this._resourceProperties = value; }
         }
 
         // Check to see if ResourceProperties property is set
         internal bool IsSetResourceProperties()
         {
-            return this.resourceProperties != null;
+            return this._resourceProperties != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property ResourceStatus. 
+        /// <para>
+        /// Current status of the resource.
+        /// </para>
+        /// </summary>
+        public ResourceStatus ResourceStatus
+        {
+            get { return this._resourceStatus; }
+            set { this._resourceStatus = value; }
+        }
+
+        // Check to see if ResourceStatus property is set
+        internal bool IsSetResourceStatus()
+        {
+            return this._resourceStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceStatusReason. 
+        /// <para>
+        /// Success/failure message associated with the resource.
+        /// </para>
+        /// </summary>
+        public string ResourceStatusReason
+        {
+            get { return this._resourceStatusReason; }
+            set { this._resourceStatusReason = value; }
+        }
+
+        // Check to see if ResourceStatusReason property is set
+        internal bool IsSetResourceStatusReason()
+        {
+            return this._resourceStatusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Type of resource. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+        /// AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The unique ID name of the instance of the stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackName. 
+        /// <para>
+        /// The name associated with a stack.
+        /// </para>
+        /// </summary>
+        public string StackName
+        {
+            get { return this._stackName; }
+            set { this._stackName = value; }
+        }
+
+        // Check to see if StackName property is set
+        internal bool IsSetStackName()
+        {
+            return this._stackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// Time the status was updated.
+        /// </para>
+        /// </summary>
+        public DateTime Timestamp
+        {
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp.HasValue; 
+        }
+
     }
 }

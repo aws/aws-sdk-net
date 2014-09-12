@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -42,6 +46,19 @@ namespace Amazon.SQS.Model
         private string _queueName;
         private string _queueOwnerAWSAccountId;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetQueueUrlRequest() { }
+
+        /// <summary>
+        /// Instantiates GetQueueUrlRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueName">The name of the queue whose URL must be fetched.    Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</param>
+        public GetQueueUrlRequest(string queueName)
+        {
+            _queueName = queueName;
+        }
 
         /// <summary>
         /// Gets and sets the property QueueName. 
@@ -61,7 +78,6 @@ namespace Amazon.SQS.Model
         {
             return this._queueName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueOwnerAWSAccountId. 

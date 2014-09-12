@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,120 +33,109 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Start Workflow Execution Request Marshaller
+    /// StartWorkflowExecution Request Marshaller
     /// </summary>       
-    internal class StartWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, StartWorkflowExecutionRequest> 
+    public class StartWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, StartWorkflowExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(StartWorkflowExecutionRequest startWorkflowExecutionRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((StartWorkflowExecutionRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(startWorkflowExecutionRequest, "AmazonSimpleWorkflow");
+        public IRequest Marshall(StartWorkflowExecutionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleWorkflow");
             string target = "SimpleWorkflowService.StartWorkflowExecution";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.IsSetDomain()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChildPolicy())
                 {
-                    writer.WritePropertyName("domain");
-                    writer.Write(startWorkflowExecutionRequest.Domain);
-                }
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.IsSetWorkflowId()) 
-                {
-                    writer.WritePropertyName("workflowId");
-                    writer.Write(startWorkflowExecutionRequest.WorkflowId);
+                    context.Writer.WritePropertyName("childPolicy");
+                    context.Writer.Write(publicRequest.ChildPolicy);
                 }
 
-                if (startWorkflowExecutionRequest != null) 
+                if(publicRequest.IsSetDomain())
                 {
-                    WorkflowType workflowType = startWorkflowExecutionRequest.WorkflowType;
-                    if (workflowType != null)
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
+                if(publicRequest.IsSetExecutionStartToCloseTimeout())
+                {
+                    context.Writer.WritePropertyName("executionStartToCloseTimeout");
+                    context.Writer.Write(publicRequest.ExecutionStartToCloseTimeout);
+                }
+
+                if(publicRequest.IsSetInput())
+                {
+                    context.Writer.WritePropertyName("input");
+                    context.Writer.Write(publicRequest.Input);
+                }
+
+                if(publicRequest.IsSetTagList())
+                {
+                    context.Writer.WritePropertyName("tagList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
                     {
-                        writer.WritePropertyName("workflowType");
-                        writer.WriteObjectStart();
-                        if (workflowType != null && workflowType.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(workflowType.Name);
-                        }
-                        if (workflowType != null && workflowType.IsSetVersion()) 
-                        {
-                            writer.WritePropertyName("version");
-                            writer.Write(workflowType.Version);
-                        }
-                        writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestTagListListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if (startWorkflowExecutionRequest != null) 
+                if(publicRequest.IsSetTaskList())
                 {
-                    TaskList taskList = startWorkflowExecutionRequest.TaskList;
-                    if (taskList != null)
-                    {
-                        writer.WritePropertyName("taskList");
-                        writer.WriteObjectStart();
-                        if (taskList != null && taskList.IsSetName()) 
-                        {
-                            writer.WritePropertyName("name");
-                            writer.Write(taskList.Name);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.IsSetInput()) 
-                {
-                    writer.WritePropertyName("input");
-                    writer.Write(startWorkflowExecutionRequest.Input);
-                }
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.IsSetExecutionStartToCloseTimeout()) 
-                {
-                    writer.WritePropertyName("executionStartToCloseTimeout");
-                    writer.Write(startWorkflowExecutionRequest.ExecutionStartToCloseTimeout);
+                    context.Writer.WritePropertyName("taskList");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskListMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskList, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.TagList != null && startWorkflowExecutionRequest.TagList.Count > 0) 
+                if(publicRequest.IsSetTaskStartToCloseTimeout())
                 {
-                    List<string> tagListList = startWorkflowExecutionRequest.TagList;
-                    writer.WritePropertyName("tagList");
-                    writer.WriteArrayStart();
-
-                    foreach (string tagListListValue in tagListList) 
-                    { 
-                        writer.Write(StringUtils.FromString(tagListListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.IsSetTaskStartToCloseTimeout()) 
-                {
-                    writer.WritePropertyName("taskStartToCloseTimeout");
-                    writer.Write(startWorkflowExecutionRequest.TaskStartToCloseTimeout);
-                }
-                if (startWorkflowExecutionRequest != null && startWorkflowExecutionRequest.IsSetChildPolicy()) 
-                {
-                    writer.WritePropertyName("childPolicy");
-                    writer.Write(startWorkflowExecutionRequest.ChildPolicy);
+                    context.Writer.WritePropertyName("taskStartToCloseTimeout");
+                    context.Writer.Write(publicRequest.TaskStartToCloseTimeout);
                 }
 
+                if(publicRequest.IsSetWorkflowId())
+                {
+                    context.Writer.WritePropertyName("workflowId");
+                    context.Writer.Write(publicRequest.WorkflowId);
+                }
+
+                if(publicRequest.IsSetWorkflowType())
+                {
+                    context.Writer.WritePropertyName("workflowType");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkflowTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WorkflowType, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

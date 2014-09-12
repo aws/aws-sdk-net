@@ -12,69 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceMonitoring Unmarshaller
-     /// </summary>
-    internal class InstanceMonitoringUnmarshaller : IUnmarshaller<InstanceMonitoring, XmlUnmarshallerContext>, IUnmarshaller<InstanceMonitoring, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceMonitoring Object
+    /// </summary>  
+    public class InstanceMonitoringUnmarshaller : IUnmarshaller<InstanceMonitoring, XmlUnmarshallerContext>, IUnmarshaller<InstanceMonitoring, JsonUnmarshallerContext>
     {
-        public InstanceMonitoring Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceMonitoring Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceMonitoring instanceMonitoring = new InstanceMonitoring();
+            InstanceMonitoring unmarshalledObject = new InstanceMonitoring();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("instanceId", targetDepth))
                     {
-                        instanceMonitoring.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("monitoring", targetDepth))
                     {
-                        instanceMonitoring.Monitoring = MonitoringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = MonitoringUnmarshaller.Instance;
+                        unmarshalledObject.Monitoring = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceMonitoring;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceMonitoring;
+            return unmarshalledObject;
         }
 
-        public InstanceMonitoring Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceMonitoring Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceMonitoringUnmarshaller instance;
 
-        public static InstanceMonitoringUnmarshaller GetInstance() 
+        private static InstanceMonitoringUnmarshaller _instance = new InstanceMonitoringUnmarshaller();        
+
+        public static InstanceMonitoringUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceMonitoringUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

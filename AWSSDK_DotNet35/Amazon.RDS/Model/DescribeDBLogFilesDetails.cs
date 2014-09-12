@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,71 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para>This data type is used as a response element to DescribeDBLogFiles.</para>
+    /// This data type is used as a response element to <a>DescribeDBLogFiles</a>.
     /// </summary>
-    public class DescribeDBLogFilesDetails
+    public partial class DescribeDBLogFilesDetails
     {
-        
-        private string logFileName;
-        private long? lastWritten;
-        private long? size;
-
+        private long? _lastWritten;
+        private string _logFileName;
+        private long? _size;
 
         /// <summary>
-        /// The name of the log file for the specified DB instance.
-        ///  
-        /// </summary>
-        public string LogFileName
-        {
-            get { return this.logFileName; }
-            set { this.logFileName = value; }
-        }
-
-        // Check to see if LogFileName property is set
-        internal bool IsSetLogFileName()
-        {
-            return this.logFileName != null;
-        }
-
-        /// <summary>
-        /// A POSIX timestamp when the last log entry was written.
-        ///  
+        /// Gets and sets the property LastWritten. 
+        /// <para>
+        ///  A POSIX timestamp when the last log entry was written. 
+        /// </para>
         /// </summary>
         public long LastWritten
         {
-            get { return this.lastWritten ?? default(long); }
-            set { this.lastWritten = value; }
+            get { return this._lastWritten.GetValueOrDefault(); }
+            set { this._lastWritten = value; }
         }
 
         // Check to see if LastWritten property is set
         internal bool IsSetLastWritten()
         {
-            return this.lastWritten.HasValue;
+            return this._lastWritten.HasValue; 
         }
 
         /// <summary>
-        /// The size, in bytes, of the log file for the specified DB instance.
-        ///  
+        /// Gets and sets the property LogFileName. 
+        /// <para>
+        ///  The name of the log file for the specified DB instance. 
+        /// </para>
+        /// </summary>
+        public string LogFileName
+        {
+            get { return this._logFileName; }
+            set { this._logFileName = value; }
+        }
+
+        // Check to see if LogFileName property is set
+        internal bool IsSetLogFileName()
+        {
+            return this._logFileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        ///  The size, in bytes, of the log file for the specified DB instance. 
+        /// </para>
         /// </summary>
         public long Size
         {
-            get { return this.size ?? default(long); }
-            set { this.size = value; }
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
         }
 
         // Check to see if Size property is set
         internal bool IsSetSize()
         {
-            return this.size.HasValue;
+            return this._size.HasValue; 
         }
+
     }
 }

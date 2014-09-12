@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,35 +29,62 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSnapshot operation.
-    /// <para>Deletes the specified snapshot.</para> <para>When you make periodic snapshots of a volume, the snapshots are incremental, and only the
-    /// blocks on the device that have changed since your last snapshot are saved in the new snapshot. When you delete a snapshot, only the data not
-    /// needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all active snapshots will have access to
-    /// all the information needed to restore the volume.</para> <para>You cannot delete a snapshot of the root device of an Amazon EBS volume used
-    /// by a registered AMI. You must first de-register the AMI before you can delete the snapshot.</para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html" >Deleting an Amazon EBS Snapshot</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i> .</para>
+    /// Deletes the specified snapshot.
+    /// 
+    ///  
+    /// <para>
+    /// When you make periodic snapshots of a volume, the snapshots are incremental, and only
+    /// the blocks on the device that have changed since your last snapshot are saved in the
+    /// new snapshot. When you delete a snapshot, only the data not needed for any other snapshot
+    /// is removed. So regardless of which prior snapshots have been deleted, all active snapshots
+    /// will have access to all the information needed to restore the volume.
+    /// </para>
+    ///  
+    /// <para>
+    /// You cannot delete a snapshot of the root device of an Amazon EBS volume used by a
+    /// registered AMI. You must first de-register the AMI before you can delete the snapshot.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+    /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteSnapshotRequest : AmazonEC2Request
     {
-        private string snapshotId;
-
+        private string _snapshotId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DeleteSnapshotRequest() { }
+
+        /// <summary>
+        /// Instantiates DeleteSnapshotRequest with the parameterized properties
+        /// </summary>
+        /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
+        public DeleteSnapshotRequest(string snapshotId)
+        {
+            _snapshotId = snapshotId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
         /// The ID of the Amazon EBS snapshot.
-        ///  
+        /// </para>
         /// </summary>
         public string SnapshotId
         {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
         }
 
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;
+            return this._snapshotId != null;
         }
 
     }
 }
-    

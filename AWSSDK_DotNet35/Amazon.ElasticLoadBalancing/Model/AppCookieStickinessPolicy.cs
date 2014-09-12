@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _cookieName;
         private string _policyName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public AppCookieStickinessPolicy() { }
+
+        /// <summary>
+        /// Instantiates AppCookieStickinessPolicy with the parameterized properties
+        /// </summary>
+        /// <param name="policyName">The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer. </param>
+        /// <param name="cookieName">The name of the application cookie used for stickiness. </param>
+        public AppCookieStickinessPolicy(string policyName, string cookieName)
+        {
+            _policyName = policyName;
+            _cookieName = cookieName;
+        }
 
         /// <summary>
         /// Gets and sets the property CookieName. 
@@ -49,7 +68,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._cookieName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property PolicyName. 

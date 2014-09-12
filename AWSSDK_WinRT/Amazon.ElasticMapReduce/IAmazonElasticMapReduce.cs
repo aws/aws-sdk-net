@@ -13,18 +13,22 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
+ */
+
 
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Amazon.ElasticMapReduce.Model;
 
 namespace Amazon.ElasticMapReduce
 {
     /// <summary>
-    /// Implementation for accessing ElasticMapReduce
+    /// Interface for accessing ElasticMapReduce
     ///
     /// This is the <i>Amazon Elastic MapReduce API Reference</i>. This guide provides descriptions
     /// and         samples of the Amazon Elastic MapReduce APIs.
@@ -42,6 +46,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  AddInstanceGroups
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddInstanceGroups operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -57,6 +62,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  AddJobFlowSteps
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddJobFlowSteps operation.
@@ -74,6 +80,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  AddTags
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -89,6 +96,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  DescribeCluster
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCluster operation.
@@ -106,6 +114,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  DescribeJobFlows
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJobFlows operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -121,6 +130,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  DescribeStep
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStep operation.
@@ -138,6 +148,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  ListBootstrapActions
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListBootstrapActions operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -153,6 +164,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  ListClusters
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListClusters operation.
@@ -170,6 +182,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  ListInstanceGroups
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceGroups operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -185,6 +198,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  ListInstances
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstances operation.
@@ -202,6 +216,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  ListSteps
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListSteps operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -217,6 +232,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  ModifyInstanceGroups
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceGroups operation.
@@ -234,6 +250,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  RemoveTags
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -249,6 +266,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  RunJobFlow
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RunJobFlow operation.
@@ -266,6 +284,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  SetTerminationProtection
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetTerminationProtection operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -282,6 +301,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  SetVisibleToAllUsers
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetVisibleToAllUsers operation.
         /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
@@ -297,6 +317,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
                 
         #region  TerminateJobFlows
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateJobFlows operation.

@@ -23,7 +23,7 @@ using System.Text;
 
 namespace Amazon.CloudSearchDomain
 {
-    public partial class AmazonCloudSearchDomainClient : AmazonWebServiceClient
+    public partial class AmazonCloudSearchDomainClient : AmazonServiceClient
     {
         /// <summary>
         /// Constructs AmazonCloudSearchDomainClient with the credentials loaded from the application's
@@ -42,7 +42,7 @@ namespace Amazon.CloudSearchDomain
         /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonCloudSearchDomainClient(string serviceUrl)
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl }, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl })
         {
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.CloudSearchDomain
         /// </summary>
         /// <param name="config">The AmazonCloudSearchDomainClient Configuration Object</param>
         public AmazonCloudSearchDomainClient(AmazonCloudSearchDomainConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(true), config, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(FallbackCredentialsFactory.GetCredentials(true), config)
         {
         }
 
@@ -84,7 +84,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudSearchDomainClient Configuration Object</param>
         public AmazonCloudSearchDomainClient(AWSCredentials credentials, AmazonCloudSearchDomainConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -107,7 +107,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudSearchDomainClient Configuration Object</param>
         public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudSearchDomainConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -132,57 +132,10 @@ namespace Amazon.CloudSearchDomain
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCloudSearchDomainClient Configuration Object</param>
         public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudSearchDomainConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
         }
 
-#if BCL
-        protected override void ProcessPreRequestHandlers(AmazonWebServiceRequest request)
-        {
-            base.ProcessPreRequestHandlers(request);
 
-            var uploadDocumentsRequest = request as UploadDocumentsRequest;
-            if (uploadDocumentsRequest != null)
-            {
-                if(uploadDocumentsRequest.Documents == null && string.IsNullOrEmpty(uploadDocumentsRequest.FilePath))
-                    throw new ArgumentException("Please specify one of either a Documents or a FilePath to be uploaded.");
-
-                if (uploadDocumentsRequest.Documents != null && !string.IsNullOrEmpty(uploadDocumentsRequest.FilePath))
-                    throw new ArgumentException("Please specify one of either a Documents or a FilePath to be uploaded.");
-
-                if (!string.IsNullOrEmpty(uploadDocumentsRequest.FilePath))
-                {
-                    uploadDocumentsRequest.SetupForFilePath();
-                }
-            }
-        }
-
-        protected override void ProcessResponseHandlers(AmazonWebServiceResponse response, IRequest request, Runtime.Internal.Transform.IWebResponseData webResponseData)
-        {
-            base.ProcessResponseHandlers(response, request, webResponseData);
-            CleanupRequest(request);
-        }
-
-        protected override void ProcessExceptionHandlers(Exception exception, IRequest request)
-        {
-            base.ProcessExceptionHandlers(exception, request);
-            CleanupRequest(request);
-        }
-
-        private static void CleanupRequest(IRequest request)
-        {
-            var uploadDocumentsRequest = request.OriginalRequest as UploadDocumentsRequest;
-
-            if (uploadDocumentsRequest != null)
-            {
-                // If Documents property is set as the underlying stream for FilePath, dispose it.
-                if (uploadDocumentsRequest.Documents != null && !string.IsNullOrEmpty(uploadDocumentsRequest.FilePath))
-                {
-                    uploadDocumentsRequest.Documents.Dispose();
-                    uploadDocumentsRequest.Documents = null;
-                }
-            }
-        }
-#endif
     }
 }

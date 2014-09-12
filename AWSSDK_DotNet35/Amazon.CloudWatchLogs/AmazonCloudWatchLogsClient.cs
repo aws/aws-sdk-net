@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.CloudWatchLogs.Model;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
@@ -69,19 +73,8 @@ namespace Amazon.CloudWatchLogs
     /// Ruby Developer Center</a></li> <li><a href="http://aws.amazon.com/net/">AWS Windows
     /// and .NET Developer Center</a></li> </ul>
     /// </summary>
-    public partial class AmazonCloudWatchLogsClient : AmazonWebServiceClient, IAmazonCloudWatchLogs
+    public partial class AmazonCloudWatchLogsClient : AmazonServiceClient, IAmazonCloudWatchLogs
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -100,7 +93,7 @@ namespace Amazon.CloudWatchLogs
         ///
         /// </summary>
         public AmazonCloudWatchLogsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchLogsConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchLogsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with the credentials loaded from the application's
@@ -119,7 +112,7 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchLogsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchLogsConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchLogsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with the credentials loaded from the application's
@@ -138,7 +131,7 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         /// <param name="config">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(AmazonCloudWatchLogsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with AWS Credentials
@@ -166,7 +159,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(AWSCredentials credentials, AmazonCloudWatchLogsConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -199,7 +192,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudWatchLogsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -235,15 +228,33 @@ namespace Amazon.CloudWatchLogs
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudWatchLogsConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  CreateLogGroup
-
 
         /// <summary>
         /// Creates a new log group with the specified name. The name of the log group must be
@@ -278,8 +289,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLogGroup(request, null, null, true);
-            return EndCreateLogGroup(asyncResult);
+            var marshaller = new CreateLogGroupRequestMarshaller();
+            var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogGroupRequest,CreateLogGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -296,10 +309,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginCreateLogGroup(CreateLogGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLogGroup(request, callback, state, false);
+            var marshaller = new CreateLogGroupRequestMarshaller();
+            var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLogGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLogGroup operation.
@@ -311,21 +326,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  CreateLogGroupResult from CloudWatchLogs.</returns>
         public  CreateLogGroupResponse EndCreateLogGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLogGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLogGroup(CreateLogGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLogGroupRequestMarshaller();
-            var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLogGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLogStream
-
 
         /// <summary>
         /// Creates a new log stream in the specified log group. The name of the log stream must
@@ -356,8 +362,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLogStream(request, null, null, true);
-            return EndCreateLogStream(asyncResult);
+            var marshaller = new CreateLogStreamRequestMarshaller();
+            var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogStreamRequest,CreateLogStreamResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -374,10 +382,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginCreateLogStream(CreateLogStreamRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLogStream(request, callback, state, false);
+            var marshaller = new CreateLogStreamRequestMarshaller();
+            var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLogStreamRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLogStream operation.
@@ -389,21 +399,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  CreateLogStreamResult from CloudWatchLogs.</returns>
         public  CreateLogStreamResponse EndCreateLogStream(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLogStreamResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLogStream(CreateLogStreamRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLogStreamRequestMarshaller();
-            var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLogStreamResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLogGroup
-
 
         /// <summary>
         /// Deletes the log group with the specified name and permanently deletes all the archived
@@ -426,8 +427,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLogGroup(request, null, null, true);
-            return EndDeleteLogGroup(asyncResult);
+            var marshaller = new DeleteLogGroupRequestMarshaller();
+            var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogGroupRequest,DeleteLogGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -444,10 +447,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLogGroup(DeleteLogGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLogGroup(request, callback, state, false);
+            var marshaller = new DeleteLogGroupRequestMarshaller();
+            var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLogGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLogGroup operation.
@@ -459,21 +464,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DeleteLogGroupResult from CloudWatchLogs.</returns>
         public  DeleteLogGroupResponse EndDeleteLogGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLogGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLogGroup(DeleteLogGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLogGroupRequestMarshaller();
-            var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLogGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLogStream
-
 
         /// <summary>
         /// Deletes a log stream and permanently deletes all the archived log events associated
@@ -496,8 +492,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLogStream(request, null, null, true);
-            return EndDeleteLogStream(asyncResult);
+            var marshaller = new DeleteLogStreamRequestMarshaller();
+            var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogStreamRequest,DeleteLogStreamResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -514,10 +512,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLogStream(DeleteLogStreamRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLogStream(request, callback, state, false);
+            var marshaller = new DeleteLogStreamRequestMarshaller();
+            var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLogStreamRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLogStream operation.
@@ -529,21 +529,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DeleteLogStreamResult from CloudWatchLogs.</returns>
         public  DeleteLogStreamResponse EndDeleteLogStream(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLogStreamResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLogStream(DeleteLogStreamRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLogStreamRequestMarshaller();
-            var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLogStreamResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteMetricFilter
-
 
         /// <summary>
         /// Deletes a metric filter associated with the specified log group.
@@ -565,8 +556,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteMetricFilter(request, null, null, true);
-            return EndDeleteMetricFilter(asyncResult);
+            var marshaller = new DeleteMetricFilterRequestMarshaller();
+            var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricFilterRequest,DeleteMetricFilterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -583,10 +576,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDeleteMetricFilter(DeleteMetricFilterRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteMetricFilter(request, callback, state, false);
+            var marshaller = new DeleteMetricFilterRequestMarshaller();
+            var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteMetricFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteMetricFilter operation.
@@ -598,21 +593,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DeleteMetricFilterResult from CloudWatchLogs.</returns>
         public  DeleteMetricFilterResponse EndDeleteMetricFilter(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteMetricFilterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteMetricFilter(DeleteMetricFilterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteMetricFilterRequestMarshaller();
-            var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteMetricFilterResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteRetentionPolicy
-
 
         /// <summary>
         /// Deletes the retention policy of the specified log group. Log events would not expire
@@ -635,8 +621,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteRetentionPolicy(request, null, null, true);
-            return EndDeleteRetentionPolicy(asyncResult);
+            var marshaller = new DeleteRetentionPolicyRequestMarshaller();
+            var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRetentionPolicyRequest,DeleteRetentionPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -653,10 +641,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteRetentionPolicy(request, callback, state, false);
+            var marshaller = new DeleteRetentionPolicyRequestMarshaller();
+            var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteRetentionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteRetentionPolicy operation.
@@ -668,15 +658,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DeleteRetentionPolicyResult from CloudWatchLogs.</returns>
         public  DeleteRetentionPolicyResponse EndDeleteRetentionPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteRetentionPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteRetentionPolicyRequestMarshaller();
-            var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteRetentionPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -731,8 +713,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLogGroups(request, null, null, true);
-            return EndDescribeLogGroups(asyncResult);
+            var marshaller = new DescribeLogGroupsRequestMarshaller();
+            var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLogGroupsRequest,DescribeLogGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -749,10 +733,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLogGroups(DescribeLogGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLogGroups(request, callback, state, false);
+            var marshaller = new DescribeLogGroupsRequestMarshaller();
+            var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLogGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLogGroups operation.
@@ -764,21 +750,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DescribeLogGroupsResult from CloudWatchLogs.</returns>
         public  DescribeLogGroupsResponse EndDescribeLogGroups(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLogGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLogGroups(DescribeLogGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLogGroupsRequestMarshaller();
-            var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLogGroupsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeLogStreams
-
 
         /// <summary>
         /// Returns all the log streams that are associated with the specified log group. The
@@ -806,8 +783,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLogStreams(request, null, null, true);
-            return EndDescribeLogStreams(asyncResult);
+            var marshaller = new DescribeLogStreamsRequestMarshaller();
+            var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLogStreamsRequest,DescribeLogStreamsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -824,10 +803,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLogStreams(DescribeLogStreamsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLogStreams(request, callback, state, false);
+            var marshaller = new DescribeLogStreamsRequestMarshaller();
+            var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLogStreamsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLogStreams operation.
@@ -839,21 +820,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DescribeLogStreamsResult from CloudWatchLogs.</returns>
         public  DescribeLogStreamsResponse EndDescribeLogStreams(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLogStreamsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLogStreams(DescribeLogStreamsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLogStreamsRequestMarshaller();
-            var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLogStreamsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeMetricFilters
-
 
         /// <summary>
         /// Returns all the metrics filters associated with the specified log group. The list
@@ -882,8 +854,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeMetricFilters(request, null, null, true);
-            return EndDescribeMetricFilters(asyncResult);
+            var marshaller = new DescribeMetricFiltersRequestMarshaller();
+            var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricFiltersRequest,DescribeMetricFiltersResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -900,10 +874,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginDescribeMetricFilters(DescribeMetricFiltersRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeMetricFilters(request, callback, state, false);
+            var marshaller = new DescribeMetricFiltersRequestMarshaller();
+            var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeMetricFiltersRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeMetricFilters operation.
@@ -915,21 +891,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DescribeMetricFiltersResult from CloudWatchLogs.</returns>
         public  DescribeMetricFiltersResponse EndDescribeMetricFilters(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeMetricFiltersResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeMetricFilters(DescribeMetricFiltersRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeMetricFiltersRequestMarshaller();
-            var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeMetricFiltersResponse>(asyncResult);
         }
 
         #endregion
         
         #region  GetLogEvents
-
 
         /// <summary>
         /// Retrieves log events from the specified log stream. You can provide an optional time
@@ -960,8 +927,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
         {
-            IAsyncResult asyncResult = invokeGetLogEvents(request, null, null, true);
-            return EndGetLogEvents(asyncResult);
+            var marshaller = new GetLogEventsRequestMarshaller();
+            var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogEventsRequest,GetLogEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -978,10 +947,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginGetLogEvents(GetLogEventsRequest request, AsyncCallback callback, object state)
         {
-            return invokeGetLogEvents(request, callback, state, false);
+            var marshaller = new GetLogEventsRequestMarshaller();
+            var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetLogEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetLogEvents operation.
@@ -993,21 +964,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  GetLogEventsResult from CloudWatchLogs.</returns>
         public  GetLogEventsResponse EndGetLogEvents(IAsyncResult asyncResult)
         {
-            return endOperation< GetLogEventsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeGetLogEvents(GetLogEventsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new GetLogEventsRequestMarshaller();
-            var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<GetLogEventsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutLogEvents
-
 
         /// <summary>
         /// Uploads a batch of log events to the specified log stream. 
@@ -1052,8 +1014,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
         {
-            IAsyncResult asyncResult = invokePutLogEvents(request, null, null, true);
-            return EndPutLogEvents(asyncResult);
+            var marshaller = new PutLogEventsRequestMarshaller();
+            var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
+
+            return Invoke<PutLogEventsRequest,PutLogEventsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1070,10 +1034,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginPutLogEvents(PutLogEventsRequest request, AsyncCallback callback, object state)
         {
-            return invokePutLogEvents(request, callback, state, false);
+            var marshaller = new PutLogEventsRequestMarshaller();
+            var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutLogEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutLogEvents operation.
@@ -1085,21 +1051,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  PutLogEventsResult from CloudWatchLogs.</returns>
         public  PutLogEventsResponse EndPutLogEvents(IAsyncResult asyncResult)
         {
-            return endOperation< PutLogEventsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutLogEvents(PutLogEventsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutLogEventsRequestMarshaller();
-            var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutLogEventsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutMetricFilter
-
 
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
@@ -1126,8 +1083,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
         {
-            IAsyncResult asyncResult = invokePutMetricFilter(request, null, null, true);
-            return EndPutMetricFilter(asyncResult);
+            var marshaller = new PutMetricFilterRequestMarshaller();
+            var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
+
+            return Invoke<PutMetricFilterRequest,PutMetricFilterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1144,10 +1103,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginPutMetricFilter(PutMetricFilterRequest request, AsyncCallback callback, object state)
         {
-            return invokePutMetricFilter(request, callback, state, false);
+            var marshaller = new PutMetricFilterRequestMarshaller();
+            var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutMetricFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutMetricFilter operation.
@@ -1159,21 +1120,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  PutMetricFilterResult from CloudWatchLogs.</returns>
         public  PutMetricFilterResponse EndPutMetricFilter(IAsyncResult asyncResult)
         {
-            return endOperation< PutMetricFilterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutMetricFilter(PutMetricFilterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutMetricFilterRequestMarshaller();
-            var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutMetricFilterResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutRetentionPolicy
-
 
         /// <summary>
         /// Sets the retention of the specified log group. A retention policy allows you to configure
@@ -1196,8 +1148,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokePutRetentionPolicy(request, null, null, true);
-            return EndPutRetentionPolicy(asyncResult);
+            var marshaller = new PutRetentionPolicyRequestMarshaller();
+            var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutRetentionPolicyRequest,PutRetentionPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1214,10 +1168,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginPutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokePutRetentionPolicy(request, callback, state, false);
+            var marshaller = new PutRetentionPolicyRequestMarshaller();
+            var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutRetentionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutRetentionPolicy operation.
@@ -1229,21 +1185,12 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  PutRetentionPolicyResult from CloudWatchLogs.</returns>
         public  PutRetentionPolicyResponse EndPutRetentionPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< PutRetentionPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutRetentionPolicyRequestMarshaller();
-            var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutRetentionPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  TestMetricFilter
-
 
         /// <summary>
         /// Tests the filter pattern of a metric filter against a sample of log event messages.
@@ -1260,8 +1207,10 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         public TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
         {
-            IAsyncResult asyncResult = invokeTestMetricFilter(request, null, null, true);
-            return EndTestMetricFilter(asyncResult);
+            var marshaller = new TestMetricFilterRequestMarshaller();
+            var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
+
+            return Invoke<TestMetricFilterRequest,TestMetricFilterResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1278,10 +1227,12 @@ namespace Amazon.CloudWatchLogs
         ///         operation.</returns>
         public IAsyncResult BeginTestMetricFilter(TestMetricFilterRequest request, AsyncCallback callback, object state)
         {
-            return invokeTestMetricFilter(request, callback, state, false);
+            var marshaller = new TestMetricFilterRequestMarshaller();
+            var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TestMetricFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TestMetricFilter operation.
@@ -1293,15 +1244,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  TestMetricFilterResult from CloudWatchLogs.</returns>
         public  TestMetricFilterResponse EndTestMetricFilter(IAsyncResult asyncResult)
         {
-            return endOperation< TestMetricFilterResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeTestMetricFilter(TestMetricFilterRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new TestMetricFilterRequestMarshaller();
-            var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<TestMetricFilterResponse>(asyncResult);
         }
 
         #endregion

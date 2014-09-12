@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,50 +33,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Upload Multipart Part Request Marshaller
+    /// UploadMultipartPart Request Marshaller
     /// </summary>       
-    internal class UploadMultipartPartRequestMarshaller : IMarshaller<IRequest, UploadMultipartPartRequest> 
+    public class UploadMultipartPartRequestMarshaller : IMarshaller<IRequest, UploadMultipartPartRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(UploadMultipartPartRequest uploadMultipartPartRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((UploadMultipartPartRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(uploadMultipartPartRequest, "AmazonGlacier");
-            string target = "Glacier.UploadMultipartPart";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+        public IRequest Marshall(UploadMultipartPartRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
-            if(uploadMultipartPartRequest.IsSetChecksum())
-                request.Headers.Add("x-amz-sha256-tree-hash", StringUtils.FromString(uploadMultipartPartRequest.Checksum));
 
-            
-            if(uploadMultipartPartRequest.IsSetRange())
-                request.Headers.Add("Content-Range", StringUtils.FromString(uploadMultipartPartRequest.Range));
-
-            
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
-            if(uploadMultipartPartRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(uploadMultipartPartRequest.AccountId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
-            if(uploadMultipartPartRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(uploadMultipartPartRequest.VaultName) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
-            if(uploadMultipartPartRequest.IsSetUploadId())
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(uploadMultipartPartRequest.UploadId) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
+            string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{uploadId}", publicRequest.IsSetUploadId() ? StringUtils.FromString(publicRequest.UploadId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            request.ContentStream =  publicRequest.Body;
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+                publicRequest.Body.Length.ToString(CultureInfo.InvariantCulture);
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+        
+            if(publicRequest.IsSetChecksum())
+                request.Headers["x-amz-sha256-tree-hash"] = publicRequest.Checksum;
+        
+            if(publicRequest.IsSetRange())
+                request.Headers["Content-Range"] = publicRequest.Range;
             request.ResourcePath = uriResourcePath;
-            
-        
-            request.ContentStream = uploadMultipartPartRequest.Body;
-            request.Headers["Content-Type"] = "binary/octet-stream";
-        
 
             return request;
         }
+
+
     }
 }

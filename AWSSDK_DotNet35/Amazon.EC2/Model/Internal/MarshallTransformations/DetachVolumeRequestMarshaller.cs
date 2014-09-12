@@ -12,46 +12,59 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Detach Volume Request Marshaller
+    /// DetachVolume Request Marshaller
     /// </summary>       
-    public class DetachVolumeRequestMarshaller : IMarshaller<IRequest, DetachVolumeRequest>
+    public class DetachVolumeRequestMarshaller : IMarshaller<IRequest, DetachVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        public IRequest Marshall(DetachVolumeRequest detachVolumeRequest)
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            IRequest request = new DefaultRequest(detachVolumeRequest, "AmazonEC2");
+            return this.Marshall((DetachVolumeRequest)input);
+        }
+    
+        public IRequest Marshall(DetachVolumeRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DetachVolume");
             request.Parameters.Add("Version", "2014-06-15");
-            if (detachVolumeRequest != null && detachVolumeRequest.IsSetVolumeId())
-            {
-                request.Parameters.Add("VolumeId", StringUtils.FromString(detachVolumeRequest.VolumeId));
-            }
-            if (detachVolumeRequest != null && detachVolumeRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(detachVolumeRequest.InstanceId));
-            }
-            if (detachVolumeRequest != null && detachVolumeRequest.IsSetDevice())
-            {
-                request.Parameters.Add("Device", StringUtils.FromString(detachVolumeRequest.Device));
-            }
-            if (detachVolumeRequest != null && detachVolumeRequest.IsSetForce())
-            {
-                request.Parameters.Add("Force", StringUtils.FromBool(detachVolumeRequest.Force));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDevice())
+                {
+                    request.Parameters.Add("Device", StringUtils.FromString(publicRequest.Device));
+                }
+                if(publicRequest.IsSetForce())
+                {
+                    request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
+                }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetVolumeId())
+                {
+                    request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
+                }
+            }
             return request;
         }
     }

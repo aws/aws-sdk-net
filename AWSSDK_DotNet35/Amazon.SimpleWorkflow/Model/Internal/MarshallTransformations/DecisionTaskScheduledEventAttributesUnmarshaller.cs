@@ -12,60 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DecisionTaskScheduledEventAttributes Object
+    /// </summary>  
+    public class DecisionTaskScheduledEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskScheduledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<DecisionTaskScheduledEventAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DecisionTaskScheduledEventAttributesUnmarshaller
-      /// </summary>
-      internal class DecisionTaskScheduledEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskScheduledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<DecisionTaskScheduledEventAttributes, JsonUnmarshallerContext>
-      {
         DecisionTaskScheduledEventAttributes IUnmarshaller<DecisionTaskScheduledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DecisionTaskScheduledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DecisionTaskScheduledEventAttributes decisionTaskScheduledEventAttributes = new DecisionTaskScheduledEventAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DecisionTaskScheduledEventAttributes unmarshalledObject = new DecisionTaskScheduledEventAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("taskList", targetDepth))
-              {
-                decisionTaskScheduledEventAttributes.TaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("startToCloseTimeout", targetDepth))
-              {
-                decisionTaskScheduledEventAttributes.StartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("startToCloseTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskList", targetDepth))
+                {
+                    var unmarshaller = TaskListUnmarshaller.Instance;
+                    unmarshalledObject.TaskList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return decisionTaskScheduledEventAttributes;
+            return unmarshalledObject;
         }
 
-        private static DecisionTaskScheduledEventAttributesUnmarshaller instance;
-        public static DecisionTaskScheduledEventAttributesUnmarshaller GetInstance()
+
+        private static DecisionTaskScheduledEventAttributesUnmarshaller _instance = new DecisionTaskScheduledEventAttributesUnmarshaller();        
+
+        public static DecisionTaskScheduledEventAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DecisionTaskScheduledEventAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

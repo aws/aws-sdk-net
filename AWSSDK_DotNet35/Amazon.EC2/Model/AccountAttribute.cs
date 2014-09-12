@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes an account attribute.</para>
+    /// Describes an account attribute.
     /// </summary>
     public partial class AccountAttribute
     {
-        
-        private string attributeName;
-        private List<AccountAttributeValue> attributeValues = new List<AccountAttributeValue>();
-
+        private string _attributeName;
+        private List<AccountAttributeValue> _attributeValues = new List<AccountAttributeValue>();
 
         /// <summary>
+        /// Gets and sets the property AttributeName. 
+        /// <para>
         /// The name of the account attribute.
-        ///  
+        /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
         /// <summary>
+        /// Gets and sets the property AttributeValues. 
+        /// <para>
         /// One or more values for the account attribute.
-        ///  
+        /// </para>
         /// </summary>
         public List<AccountAttributeValue> AttributeValues
         {
-            get { return this.attributeValues; }
-            set { this.attributeValues = value; }
+            get { return this._attributeValues; }
+            set { this._attributeValues = value; }
         }
 
         // Check to see if AttributeValues property is set
         internal bool IsSetAttributeValues()
         {
-            return this.attributeValues.Count > 0;
+            return this._attributeValues != null && this._attributeValues.Count > 0; 
         }
+
     }
 }

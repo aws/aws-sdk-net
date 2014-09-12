@@ -13,9 +13,13 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ */
+
 
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 using Amazon.AutoScaling.Model;
 using Amazon.AutoScaling.Model.Internal.MarshallTransformations;
@@ -85,19 +89,8 @@ namespace Amazon.AutoScaling
     /// and Endpoints</a> in the Amazon Web Services General Reference. 
     /// </para>
     /// </summary>
-    public partial class AmazonAutoScalingClient : AmazonWebServiceClient, IAmazonAutoScaling
+    public partial class AmazonAutoScalingClient : AmazonServiceClient, IAmazonAutoScaling
     {
-        AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -116,7 +109,7 @@ namespace Amazon.AutoScaling
         ///
         /// </summary>
         public AmazonAutoScalingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
@@ -135,7 +128,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAutoScalingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
@@ -154,7 +147,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="config">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Credentials
@@ -182,7 +175,7 @@ namespace Amazon.AutoScaling
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(AWSCredentials credentials, AmazonAutoScalingConfig clientConfig)
-            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig)
         {
         }
 
@@ -215,7 +208,7 @@ namespace Amazon.AutoScaling
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAutoScalingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
         }
 
@@ -251,15 +244,33 @@ namespace Amazon.AutoScaling
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonAutoScalingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
         {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+
+        #endregion
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         #endregion
 
         
         #region  AttachInstances
-
 
         /// <summary>
         /// Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After
@@ -277,8 +288,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the AttachInstances service method, as returned by AutoScaling.</returns>
         public AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeAttachInstances(request, null, null, true);
-            return EndAttachInstances(asyncResult);
+            var marshaller = new AttachInstancesRequestMarshaller();
+            var unmarshaller = AttachInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<AttachInstancesRequest,AttachInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -295,10 +308,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginAttachInstances(AttachInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeAttachInstances(request, callback, state, false);
+            var marshaller = new AttachInstancesRequestMarshaller();
+            var unmarshaller = AttachInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AttachInstances operation.
@@ -310,21 +325,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  AttachInstancesResult from AutoScaling.</returns>
         public  AttachInstancesResponse EndAttachInstances(IAsyncResult asyncResult)
         {
-            return endOperation< AttachInstancesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeAttachInstances(AttachInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new AttachInstancesRequestMarshaller();
-            var unmarshaller = AttachInstancesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<AttachInstancesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CompleteLifecycleAction
-
 
         /// <summary>
         /// Completes the lifecycle action for the associated token initiated under the given
@@ -353,8 +359,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the CompleteLifecycleAction service method, as returned by AutoScaling.</returns>
         public CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
         {
-            IAsyncResult asyncResult = invokeCompleteLifecycleAction(request, null, null, true);
-            return EndCompleteLifecycleAction(asyncResult);
+            var marshaller = new CompleteLifecycleActionRequestMarshaller();
+            var unmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteLifecycleActionRequest,CompleteLifecycleActionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -371,10 +379,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginCompleteLifecycleAction(CompleteLifecycleActionRequest request, AsyncCallback callback, object state)
         {
-            return invokeCompleteLifecycleAction(request, callback, state, false);
+            var marshaller = new CompleteLifecycleActionRequestMarshaller();
+            var unmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CompleteLifecycleActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CompleteLifecycleAction operation.
@@ -386,21 +396,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  CompleteLifecycleActionResult from AutoScaling.</returns>
         public  CompleteLifecycleActionResponse EndCompleteLifecycleAction(IAsyncResult asyncResult)
         {
-            return endOperation< CompleteLifecycleActionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCompleteLifecycleAction(CompleteLifecycleActionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CompleteLifecycleActionRequestMarshaller();
-            var unmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CompleteLifecycleActionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateAutoScalingGroup
-
 
         /// <summary>
         /// Creates a new Auto Scaling group with the specified name and other attributes. When
@@ -419,8 +420,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateAutoScalingGroup(request, null, null, true);
-            return EndCreateAutoScalingGroup(asyncResult);
+            var marshaller = new CreateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutoScalingGroupRequest,CreateAutoScalingGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -437,10 +440,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginCreateAutoScalingGroup(CreateAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateAutoScalingGroup(request, callback, state, false);
+            var marshaller = new CreateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAutoScalingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAutoScalingGroup operation.
@@ -452,21 +457,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  CreateAutoScalingGroupResult from AutoScaling.</returns>
         public  CreateAutoScalingGroupResponse EndCreateAutoScalingGroup(IAsyncResult asyncResult)
         {
-            return endOperation< CreateAutoScalingGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateAutoScalingGroup(CreateAutoScalingGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateAutoScalingGroupRequestMarshaller();
-            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateAutoScalingGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateLaunchConfiguration
-
 
         /// <summary>
         /// Creates a new launch configuration. The launch configuration name must be unique
@@ -486,8 +482,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateLaunchConfiguration(request, null, null, true);
-            return EndCreateLaunchConfiguration(asyncResult);
+            var marshaller = new CreateLaunchConfigurationRequestMarshaller();
+            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLaunchConfigurationRequest,CreateLaunchConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -504,10 +502,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginCreateLaunchConfiguration(CreateLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateLaunchConfiguration(request, callback, state, false);
+            var marshaller = new CreateLaunchConfigurationRequestMarshaller();
+            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLaunchConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLaunchConfiguration operation.
@@ -519,21 +519,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  CreateLaunchConfigurationResult from AutoScaling.</returns>
         public  CreateLaunchConfigurationResponse EndCreateLaunchConfiguration(IAsyncResult asyncResult)
         {
-            return endOperation< CreateLaunchConfigurationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateLaunchConfiguration(CreateLaunchConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateLaunchConfigurationRequestMarshaller();
-            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateLaunchConfigurationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  CreateOrUpdateTags
-
 
         /// <summary>
         /// Creates new tags or updates existing tags for an Auto Scaling group. 
@@ -556,8 +547,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeCreateOrUpdateTags(request, null, null, true);
-            return EndCreateOrUpdateTags(asyncResult);
+            var marshaller = new CreateOrUpdateTagsRequestMarshaller();
+            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOrUpdateTagsRequest,CreateOrUpdateTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -574,10 +567,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginCreateOrUpdateTags(CreateOrUpdateTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeCreateOrUpdateTags(request, callback, state, false);
+            var marshaller = new CreateOrUpdateTagsRequestMarshaller();
+            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateOrUpdateTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateOrUpdateTags operation.
@@ -589,21 +584,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  CreateOrUpdateTagsResult from AutoScaling.</returns>
         public  CreateOrUpdateTagsResponse EndCreateOrUpdateTags(IAsyncResult asyncResult)
         {
-            return endOperation< CreateOrUpdateTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeCreateOrUpdateTags(CreateOrUpdateTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new CreateOrUpdateTagsRequestMarshaller();
-            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<CreateOrUpdateTagsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteAutoScalingGroup
-
 
         /// <summary>
         /// Deletes the specified Auto Scaling group if the group has no instances and no scaling
@@ -622,8 +608,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteAutoScalingGroup(request, null, null, true);
-            return EndDeleteAutoScalingGroup(asyncResult);
+            var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
+            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutoScalingGroupRequest,DeleteAutoScalingGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -640,10 +628,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteAutoScalingGroup(request, callback, state, false);
+            var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
+            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAutoScalingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAutoScalingGroup operation.
@@ -655,21 +645,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeleteAutoScalingGroupResult from AutoScaling.</returns>
         public  DeleteAutoScalingGroupResponse EndDeleteAutoScalingGroup(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteAutoScalingGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteAutoScalingGroupRequestMarshaller();
-            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteAutoScalingGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLaunchConfiguration
-
 
         /// <summary>
         /// Deletes the specified <a>LaunchConfiguration</a>. 
@@ -690,8 +671,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLaunchConfiguration(request, null, null, true);
-            return EndDeleteLaunchConfiguration(asyncResult);
+            var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
+            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchConfigurationRequest,DeleteLaunchConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -708,10 +691,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLaunchConfiguration(request, callback, state, false);
+            var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
+            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLaunchConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLaunchConfiguration operation.
@@ -723,21 +708,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeleteLaunchConfigurationResult from AutoScaling.</returns>
         public  DeleteLaunchConfigurationResponse EndDeleteLaunchConfiguration(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLaunchConfigurationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLaunchConfigurationRequestMarshaller();
-            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLaunchConfigurationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteLifecycleHook
-
 
         /// <summary>
         /// Deletes the specified lifecycle hook. If there are any outstanding lifecycle actions,
@@ -749,8 +725,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DeleteLifecycleHook service method, as returned by AutoScaling.</returns>
         public DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteLifecycleHook(request, null, null, true);
-            return EndDeleteLifecycleHook(asyncResult);
+            var marshaller = new DeleteLifecycleHookRequestMarshaller();
+            var unmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLifecycleHookRequest,DeleteLifecycleHookResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -767,10 +745,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeleteLifecycleHook(DeleteLifecycleHookRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteLifecycleHook(request, callback, state, false);
+            var marshaller = new DeleteLifecycleHookRequestMarshaller();
+            var unmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLifecycleHookRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLifecycleHook operation.
@@ -782,21 +762,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeleteLifecycleHookResult from AutoScaling.</returns>
         public  DeleteLifecycleHookResponse EndDeleteLifecycleHook(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteLifecycleHookResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteLifecycleHook(DeleteLifecycleHookRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteLifecycleHookRequestMarshaller();
-            var unmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteLifecycleHookResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteNotificationConfiguration
-
 
         /// <summary>
         /// Deletes notifications created by <a>PutNotificationConfiguration</a>.
@@ -806,8 +777,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DeleteNotificationConfiguration service method, as returned by AutoScaling.</returns>
         public DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteNotificationConfiguration(request, null, null, true);
-            return EndDeleteNotificationConfiguration(asyncResult);
+            var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
+            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotificationConfigurationRequest,DeleteNotificationConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -824,10 +797,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteNotificationConfiguration(request, callback, state, false);
+            var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
+            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteNotificationConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteNotificationConfiguration operation.
@@ -839,21 +814,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeleteNotificationConfigurationResult from AutoScaling.</returns>
         public  DeleteNotificationConfigurationResponse EndDeleteNotificationConfiguration(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteNotificationConfigurationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
-            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteNotificationConfigurationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeletePolicy
-
 
         /// <summary>
         /// Deletes a policy created by <a>PutScalingPolicy</a>.
@@ -863,8 +829,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DeletePolicy service method, as returned by AutoScaling.</returns>
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeDeletePolicy(request, null, null, true);
-            return EndDeletePolicy(asyncResult);
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -881,10 +849,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeletePolicy(request, callback, state, false);
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeletePolicy operation.
@@ -896,21 +866,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeletePolicyResult from AutoScaling.</returns>
         public  DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult)
         {
-            return endOperation< DeletePolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeletePolicyRequestMarshaller();
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeletePolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteScheduledAction
-
 
         /// <summary>
         /// Deletes a scheduled action previously created using the <a>PutScheduledUpdateGroupAction</a>.
@@ -920,8 +881,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DeleteScheduledAction service method, as returned by AutoScaling.</returns>
         public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteScheduledAction(request, null, null, true);
-            return EndDeleteScheduledAction(asyncResult);
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
+            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledActionRequest,DeleteScheduledActionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -938,10 +901,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteScheduledAction(request, callback, state, false);
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
+            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteScheduledActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteScheduledAction operation.
@@ -953,21 +918,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeleteScheduledActionResult from AutoScaling.</returns>
         public  DeleteScheduledActionResponse EndDeleteScheduledAction(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteScheduledActionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteScheduledActionRequestMarshaller();
-            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteScheduledActionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DeleteTags
-
 
         /// <summary>
         /// Removes the specified tags or a set of tags from a set of resources.
@@ -977,8 +933,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DeleteTags service method, as returned by AutoScaling.</returns>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeDeleteTags(request, null, null, true);
-            return EndDeleteTags(asyncResult);
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -995,10 +953,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDeleteTags(request, callback, state, false);
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteTags operation.
@@ -1010,15 +970,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DeleteTagsResult from AutoScaling.</returns>
         public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
-            return endOperation< DeleteTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DeleteTagsRequestMarshaller();
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DeleteTagsResponse>(asyncResult);
         }
 
         #endregion
@@ -1071,8 +1023,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeAccountLimits service method, as returned by AutoScaling.</returns>
         public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeAccountLimits(request, null, null, true);
-            return EndDescribeAccountLimits(asyncResult);
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1089,10 +1043,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeAccountLimits(request, callback, state, false);
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAccountLimitsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAccountLimits operation.
@@ -1104,15 +1060,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeAccountLimitsResult from AutoScaling.</returns>
         public  DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAccountLimitsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAccountLimitsRequestMarshaller();
-            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAccountLimitsResponse>(asyncResult);
         }
 
         #endregion
@@ -1137,8 +1085,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeAdjustmentTypes(request, null, null, true);
-            return EndDescribeAdjustmentTypes(asyncResult);
+            var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
+            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAdjustmentTypesRequest,DescribeAdjustmentTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1155,10 +1105,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeAdjustmentTypes(request, callback, state, false);
+            var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
+            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAdjustmentTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAdjustmentTypes operation.
@@ -1170,15 +1122,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeAdjustmentTypesResult from AutoScaling.</returns>
         public  DescribeAdjustmentTypesResponse EndDescribeAdjustmentTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAdjustmentTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
-            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAdjustmentTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -1227,8 +1171,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeAutoScalingGroups(request, null, null, true);
-            return EndDescribeAutoScalingGroups(asyncResult);
+            var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoScalingGroupsRequest,DescribeAutoScalingGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1245,10 +1191,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeAutoScalingGroups(request, callback, state, false);
+            var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAutoScalingGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAutoScalingGroups operation.
@@ -1260,15 +1208,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeAutoScalingGroupsResult from AutoScaling.</returns>
         public  DescribeAutoScalingGroupsResponse EndDescribeAutoScalingGroups(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAutoScalingGroupsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAutoScalingGroupsRequestMarshaller();
-            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAutoScalingGroupsResponse>(asyncResult);
         }
 
         #endregion
@@ -1317,8 +1257,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeAutoScalingInstances(request, null, null, true);
-            return EndDescribeAutoScalingInstances(asyncResult);
+            var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoScalingInstancesRequest,DescribeAutoScalingInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1335,10 +1277,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeAutoScalingInstances(request, callback, state, false);
+            var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAutoScalingInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAutoScalingInstances operation.
@@ -1350,15 +1294,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeAutoScalingInstancesResult from AutoScaling.</returns>
         public  DescribeAutoScalingInstancesResponse EndDescribeAutoScalingInstances(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAutoScalingInstancesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAutoScalingInstancesRequestMarshaller();
-            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAutoScalingInstancesResponse>(asyncResult);
         }
 
         #endregion
@@ -1383,8 +1319,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeAutoScalingNotificationTypes(request, null, null, true);
-            return EndDescribeAutoScalingNotificationTypes(asyncResult);
+            var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoScalingNotificationTypesRequest,DescribeAutoScalingNotificationTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1401,10 +1339,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeAutoScalingNotificationTypes(request, callback, state, false);
+            var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
+            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAutoScalingNotificationTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAutoScalingNotificationTypes operation.
@@ -1416,15 +1356,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeAutoScalingNotificationTypesResult from AutoScaling.</returns>
         public  DescribeAutoScalingNotificationTypesResponse EndDescribeAutoScalingNotificationTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeAutoScalingNotificationTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
-            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeAutoScalingNotificationTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -1469,8 +1401,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLaunchConfigurations(request, null, null, true);
-            return EndDescribeLaunchConfigurations(asyncResult);
+            var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLaunchConfigurationsRequest,DescribeLaunchConfigurationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1487,10 +1421,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLaunchConfigurations(request, callback, state, false);
+            var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLaunchConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLaunchConfigurations operation.
@@ -1502,21 +1438,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeLaunchConfigurationsResult from AutoScaling.</returns>
         public  DescribeLaunchConfigurationsResponse EndDescribeLaunchConfigurations(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLaunchConfigurationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLaunchConfigurationsRequestMarshaller();
-            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLaunchConfigurationsResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeLifecycleHooks
-
 
         /// <summary>
         /// Describes the lifecycle hooks that currently belong to the specified Auto Scaling
@@ -1527,8 +1454,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeLifecycleHooks service method, as returned by AutoScaling.</returns>
         public DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLifecycleHooks(request, null, null, true);
-            return EndDescribeLifecycleHooks(asyncResult);
+            var marshaller = new DescribeLifecycleHooksRequestMarshaller();
+            var unmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLifecycleHooksRequest,DescribeLifecycleHooksResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1545,10 +1474,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLifecycleHooks(DescribeLifecycleHooksRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLifecycleHooks(request, callback, state, false);
+            var marshaller = new DescribeLifecycleHooksRequestMarshaller();
+            var unmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLifecycleHooksRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLifecycleHooks operation.
@@ -1560,21 +1491,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeLifecycleHooksResult from AutoScaling.</returns>
         public  DescribeLifecycleHooksResponse EndDescribeLifecycleHooks(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLifecycleHooksResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLifecycleHooks(DescribeLifecycleHooksRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLifecycleHooksRequestMarshaller();
-            var unmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLifecycleHooksResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DescribeLifecycleHookTypes
-
 
         /// <summary>
         /// Describes the available types of lifecycle hooks.
@@ -1584,8 +1506,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeLifecycleHookTypes service method, as returned by AutoScaling.</returns>
         public DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeLifecycleHookTypes(request, null, null, true);
-            return EndDescribeLifecycleHookTypes(asyncResult);
+            var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
+            var unmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLifecycleHookTypesRequest,DescribeLifecycleHookTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1602,10 +1526,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeLifecycleHookTypes(request, callback, state, false);
+            var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
+            var unmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLifecycleHookTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLifecycleHookTypes operation.
@@ -1617,15 +1543,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeLifecycleHookTypesResult from AutoScaling.</returns>
         public  DescribeLifecycleHookTypesResponse EndDescribeLifecycleHookTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeLifecycleHookTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
-            var unmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeLifecycleHookTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -1650,8 +1568,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeMetricCollectionTypes(request, null, null, true);
-            return EndDescribeMetricCollectionTypes(asyncResult);
+            var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
+            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricCollectionTypesRequest,DescribeMetricCollectionTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1668,10 +1588,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeMetricCollectionTypes(request, callback, state, false);
+            var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
+            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeMetricCollectionTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeMetricCollectionTypes operation.
@@ -1683,15 +1605,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeMetricCollectionTypesResult from AutoScaling.</returns>
         public  DescribeMetricCollectionTypesResponse EndDescribeMetricCollectionTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeMetricCollectionTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
-            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeMetricCollectionTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -1724,8 +1638,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeNotificationConfigurations(request, null, null, true);
-            return EndDescribeNotificationConfigurations(asyncResult);
+            var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotificationConfigurationsRequest,DescribeNotificationConfigurationsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1742,10 +1658,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeNotificationConfigurations(request, callback, state, false);
+            var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeNotificationConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeNotificationConfigurations operation.
@@ -1757,15 +1675,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeNotificationConfigurationsResult from AutoScaling.</returns>
         public  DescribeNotificationConfigurationsResponse EndDescribeNotificationConfigurations(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeNotificationConfigurationsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeNotificationConfigurationsRequestMarshaller();
-            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeNotificationConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1802,8 +1712,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribePolicies(request, null, null, true);
-            return EndDescribePolicies(asyncResult);
+            var marshaller = new DescribePoliciesRequestMarshaller();
+            var unmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePoliciesRequest,DescribePoliciesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1820,10 +1732,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribePolicies(DescribePoliciesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribePolicies(request, callback, state, false);
+            var marshaller = new DescribePoliciesRequestMarshaller();
+            var unmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribePolicies operation.
@@ -1835,15 +1749,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribePoliciesResult from AutoScaling.</returns>
         public  DescribePoliciesResponse EndDescribePolicies(IAsyncResult asyncResult)
         {
-            return endOperation< DescribePoliciesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribePolicies(DescribePoliciesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribePoliciesRequestMarshaller();
-            var unmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribePoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -1900,8 +1806,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeScalingActivities(request, null, null, true);
-            return EndDescribeScalingActivities(asyncResult);
+            var marshaller = new DescribeScalingActivitiesRequestMarshaller();
+            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScalingActivitiesRequest,DescribeScalingActivitiesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1918,10 +1826,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeScalingActivities(DescribeScalingActivitiesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeScalingActivities(request, callback, state, false);
+            var marshaller = new DescribeScalingActivitiesRequestMarshaller();
+            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeScalingActivitiesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeScalingActivities operation.
@@ -1933,15 +1843,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeScalingActivitiesResult from AutoScaling.</returns>
         public  DescribeScalingActivitiesResponse EndDescribeScalingActivities(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeScalingActivitiesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeScalingActivities(DescribeScalingActivitiesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeScalingActivitiesRequestMarshaller();
-            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeScalingActivitiesResponse>(asyncResult);
         }
 
         #endregion
@@ -1968,8 +1870,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeScalingProcessTypes(request, null, null, true);
-            return EndDescribeScalingProcessTypes(asyncResult);
+            var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
+            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScalingProcessTypesRequest,DescribeScalingProcessTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -1986,10 +1890,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeScalingProcessTypes(request, callback, state, false);
+            var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
+            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeScalingProcessTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeScalingProcessTypes operation.
@@ -2001,15 +1907,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeScalingProcessTypesResult from AutoScaling.</returns>
         public  DescribeScalingProcessTypesResponse EndDescribeScalingProcessTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeScalingProcessTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
-            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeScalingProcessTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -2042,8 +1940,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeScheduledActions(request, null, null, true);
-            return EndDescribeScheduledActions(asyncResult);
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledActionsRequest,DescribeScheduledActionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2060,10 +1960,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeScheduledActions(DescribeScheduledActionsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeScheduledActions(request, callback, state, false);
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeScheduledActionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeScheduledActions operation.
@@ -2075,15 +1977,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeScheduledActionsResult from AutoScaling.</returns>
         public  DescribeScheduledActionsResponse EndDescribeScheduledActions(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeScheduledActionsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeScheduledActions(DescribeScheduledActionsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeScheduledActionsRequestMarshaller();
-            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeScheduledActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2142,8 +2036,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTags(request, null, null, true);
-            return EndDescribeTags(asyncResult);
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2160,10 +2056,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTags(request, callback, state, false);
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTags operation.
@@ -2175,15 +2073,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeTagsResult from AutoScaling.</returns>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTagsResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTagsRequestMarshaller();
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTagsResponse>(asyncResult);
         }
 
         #endregion
@@ -2208,8 +2098,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
         {
-            IAsyncResult asyncResult = invokeDescribeTerminationPolicyTypes(request, null, null, true);
-            return EndDescribeTerminationPolicyTypes(asyncResult);
+            var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTerminationPolicyTypesRequest,DescribeTerminationPolicyTypesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2226,10 +2118,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDescribeTerminationPolicyTypes(request, callback, state, false);
+            var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
+            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTerminationPolicyTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTerminationPolicyTypes operation.
@@ -2241,21 +2135,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeTerminationPolicyTypesResult from AutoScaling.</returns>
         public  DescribeTerminationPolicyTypesResponse EndDescribeTerminationPolicyTypes(IAsyncResult asyncResult)
         {
-            return endOperation< DescribeTerminationPolicyTypesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
-            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DescribeTerminationPolicyTypesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DetachInstances
-
 
         /// <summary>
         /// Using <code>DetachInstances</code>, you can remove an instance from an Auto Scaling
@@ -2273,8 +2158,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DetachInstances service method, as returned by AutoScaling.</returns>
         public DetachInstancesResponse DetachInstances(DetachInstancesRequest request)
         {
-            IAsyncResult asyncResult = invokeDetachInstances(request, null, null, true);
-            return EndDetachInstances(asyncResult);
+            var marshaller = new DetachInstancesRequestMarshaller();
+            var unmarshaller = DetachInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DetachInstancesRequest,DetachInstancesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2291,10 +2178,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDetachInstances(DetachInstancesRequest request, AsyncCallback callback, object state)
         {
-            return invokeDetachInstances(request, callback, state, false);
+            var marshaller = new DetachInstancesRequestMarshaller();
+            var unmarshaller = DetachInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DetachInstances operation.
@@ -2306,21 +2195,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DetachInstancesResult from AutoScaling.</returns>
         public  DetachInstancesResponse EndDetachInstances(IAsyncResult asyncResult)
         {
-            return endOperation< DetachInstancesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDetachInstances(DetachInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DetachInstancesRequestMarshaller();
-            var unmarshaller = DetachInstancesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DetachInstancesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  DisableMetricsCollection
-
 
         /// <summary>
         /// Disables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code>.
@@ -2331,8 +2211,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DisableMetricsCollection service method, as returned by AutoScaling.</returns>
         public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
         {
-            IAsyncResult asyncResult = invokeDisableMetricsCollection(request, null, null, true);
-            return EndDisableMetricsCollection(asyncResult);
+            var marshaller = new DisableMetricsCollectionRequestMarshaller();
+            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
+
+            return Invoke<DisableMetricsCollectionRequest,DisableMetricsCollectionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2349,10 +2231,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginDisableMetricsCollection(DisableMetricsCollectionRequest request, AsyncCallback callback, object state)
         {
-            return invokeDisableMetricsCollection(request, callback, state, false);
+            var marshaller = new DisableMetricsCollectionRequestMarshaller();
+            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableMetricsCollectionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableMetricsCollection operation.
@@ -2364,21 +2248,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DisableMetricsCollectionResult from AutoScaling.</returns>
         public  DisableMetricsCollectionResponse EndDisableMetricsCollection(IAsyncResult asyncResult)
         {
-            return endOperation< DisableMetricsCollectionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeDisableMetricsCollection(DisableMetricsCollectionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new DisableMetricsCollectionRequestMarshaller();
-            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<DisableMetricsCollectionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  EnableMetricsCollection
-
 
         /// <summary>
         /// Enables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code>.
@@ -2397,8 +2272,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the EnableMetricsCollection service method, as returned by AutoScaling.</returns>
         public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
         {
-            IAsyncResult asyncResult = invokeEnableMetricsCollection(request, null, null, true);
-            return EndEnableMetricsCollection(asyncResult);
+            var marshaller = new EnableMetricsCollectionRequestMarshaller();
+            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
+
+            return Invoke<EnableMetricsCollectionRequest,EnableMetricsCollectionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2415,10 +2292,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginEnableMetricsCollection(EnableMetricsCollectionRequest request, AsyncCallback callback, object state)
         {
-            return invokeEnableMetricsCollection(request, callback, state, false);
+            var marshaller = new EnableMetricsCollectionRequestMarshaller();
+            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableMetricsCollectionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableMetricsCollection operation.
@@ -2430,21 +2309,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  EnableMetricsCollectionResult from AutoScaling.</returns>
         public  EnableMetricsCollectionResponse EndEnableMetricsCollection(IAsyncResult asyncResult)
         {
-            return endOperation< EnableMetricsCollectionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeEnableMetricsCollection(EnableMetricsCollectionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new EnableMetricsCollectionRequestMarshaller();
-            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<EnableMetricsCollectionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  EnterStandby
-
 
         /// <summary>
         /// Move instances in an Auto Scaling group into a Standby mode. 
@@ -2460,8 +2330,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the EnterStandby service method, as returned by AutoScaling.</returns>
         public EnterStandbyResponse EnterStandby(EnterStandbyRequest request)
         {
-            IAsyncResult asyncResult = invokeEnterStandby(request, null, null, true);
-            return EndEnterStandby(asyncResult);
+            var marshaller = new EnterStandbyRequestMarshaller();
+            var unmarshaller = EnterStandbyResponseUnmarshaller.Instance;
+
+            return Invoke<EnterStandbyRequest,EnterStandbyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2478,10 +2350,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginEnterStandby(EnterStandbyRequest request, AsyncCallback callback, object state)
         {
-            return invokeEnterStandby(request, callback, state, false);
+            var marshaller = new EnterStandbyRequestMarshaller();
+            var unmarshaller = EnterStandbyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnterStandbyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnterStandby operation.
@@ -2493,21 +2367,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  EnterStandbyResult from AutoScaling.</returns>
         public  EnterStandbyResponse EndEnterStandby(IAsyncResult asyncResult)
         {
-            return endOperation< EnterStandbyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeEnterStandby(EnterStandbyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new EnterStandbyRequestMarshaller();
-            var unmarshaller = EnterStandbyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<EnterStandbyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ExecutePolicy
-
 
         /// <summary>
         /// Executes the specified policy.
@@ -2521,8 +2386,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
         {
-            IAsyncResult asyncResult = invokeExecutePolicy(request, null, null, true);
-            return EndExecutePolicy(asyncResult);
+            var marshaller = new ExecutePolicyRequestMarshaller();
+            var unmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ExecutePolicyRequest,ExecutePolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2539,10 +2406,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginExecutePolicy(ExecutePolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokeExecutePolicy(request, callback, state, false);
+            var marshaller = new ExecutePolicyRequestMarshaller();
+            var unmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExecutePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ExecutePolicy operation.
@@ -2554,21 +2423,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  ExecutePolicyResult from AutoScaling.</returns>
         public  ExecutePolicyResponse EndExecutePolicy(IAsyncResult asyncResult)
         {
-            return endOperation< ExecutePolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeExecutePolicy(ExecutePolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ExecutePolicyRequestMarshaller();
-            var unmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ExecutePolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ExitStandby
-
 
         /// <summary>
         /// Move an instance out of Standby mode. 
@@ -2585,8 +2445,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the ExitStandby service method, as returned by AutoScaling.</returns>
         public ExitStandbyResponse ExitStandby(ExitStandbyRequest request)
         {
-            IAsyncResult asyncResult = invokeExitStandby(request, null, null, true);
-            return EndExitStandby(asyncResult);
+            var marshaller = new ExitStandbyRequestMarshaller();
+            var unmarshaller = ExitStandbyResponseUnmarshaller.Instance;
+
+            return Invoke<ExitStandbyRequest,ExitStandbyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2603,10 +2465,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginExitStandby(ExitStandbyRequest request, AsyncCallback callback, object state)
         {
-            return invokeExitStandby(request, callback, state, false);
+            var marshaller = new ExitStandbyRequestMarshaller();
+            var unmarshaller = ExitStandbyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExitStandbyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ExitStandby operation.
@@ -2618,21 +2482,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  ExitStandbyResult from AutoScaling.</returns>
         public  ExitStandbyResponse EndExitStandby(IAsyncResult asyncResult)
         {
-            return endOperation< ExitStandbyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeExitStandby(ExitStandbyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ExitStandbyRequestMarshaller();
-            var unmarshaller = ExitStandbyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ExitStandbyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutLifecycleHook
-
 
         /// <summary>
         /// Creates or updates a lifecycle hook for an Auto Scaling Group.
@@ -2670,8 +2525,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request)
         {
-            IAsyncResult asyncResult = invokePutLifecycleHook(request, null, null, true);
-            return EndPutLifecycleHook(asyncResult);
+            var marshaller = new PutLifecycleHookRequestMarshaller();
+            var unmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
+
+            return Invoke<PutLifecycleHookRequest,PutLifecycleHookResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2688,10 +2545,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginPutLifecycleHook(PutLifecycleHookRequest request, AsyncCallback callback, object state)
         {
-            return invokePutLifecycleHook(request, callback, state, false);
+            var marshaller = new PutLifecycleHookRequestMarshaller();
+            var unmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutLifecycleHookRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutLifecycleHook operation.
@@ -2703,21 +2562,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  PutLifecycleHookResult from AutoScaling.</returns>
         public  PutLifecycleHookResponse EndPutLifecycleHook(IAsyncResult asyncResult)
         {
-            return endOperation< PutLifecycleHookResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutLifecycleHook(PutLifecycleHookRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutLifecycleHookRequestMarshaller();
-            var unmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutLifecycleHookResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutNotificationConfiguration
-
 
         /// <summary>
         /// Configures an Auto Scaling group to send notifications when specified events take
@@ -2744,8 +2594,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
         {
-            IAsyncResult asyncResult = invokePutNotificationConfiguration(request, null, null, true);
-            return EndPutNotificationConfiguration(asyncResult);
+            var marshaller = new PutNotificationConfigurationRequestMarshaller();
+            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutNotificationConfigurationRequest,PutNotificationConfigurationResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2762,10 +2614,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginPutNotificationConfiguration(PutNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            return invokePutNotificationConfiguration(request, callback, state, false);
+            var marshaller = new PutNotificationConfigurationRequestMarshaller();
+            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutNotificationConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutNotificationConfiguration operation.
@@ -2777,21 +2631,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  PutNotificationConfigurationResult from AutoScaling.</returns>
         public  PutNotificationConfigurationResponse EndPutNotificationConfiguration(IAsyncResult asyncResult)
         {
-            return endOperation< PutNotificationConfigurationResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutNotificationConfiguration(PutNotificationConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutNotificationConfigurationRequestMarshaller();
-            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutNotificationConfigurationResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutScalingPolicy
-
 
         /// <summary>
         /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
@@ -2808,8 +2653,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
-            IAsyncResult asyncResult = invokePutScalingPolicy(request, null, null, true);
-            return EndPutScalingPolicy(asyncResult);
+            var marshaller = new PutScalingPolicyRequestMarshaller();
+            var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutScalingPolicyRequest,PutScalingPolicyResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2826,10 +2673,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
         {
-            return invokePutScalingPolicy(request, callback, state, false);
+            var marshaller = new PutScalingPolicyRequestMarshaller();
+            var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutScalingPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutScalingPolicy operation.
@@ -2841,21 +2690,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  PutScalingPolicyResult from AutoScaling.</returns>
         public  PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult)
         {
-            return endOperation< PutScalingPolicyResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutScalingPolicyRequestMarshaller();
-            var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutScalingPolicyResponse>(asyncResult);
         }
 
         #endregion
         
         #region  PutScheduledUpdateGroupAction
-
 
         /// <summary>
         /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
@@ -2881,8 +2721,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
         {
-            IAsyncResult asyncResult = invokePutScheduledUpdateGroupAction(request, null, null, true);
-            return EndPutScheduledUpdateGroupAction(asyncResult);
+            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
+            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutScheduledUpdateGroupActionRequest,PutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2899,10 +2741,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginPutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request, AsyncCallback callback, object state)
         {
-            return invokePutScheduledUpdateGroupAction(request, callback, state, false);
+            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
+            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutScheduledUpdateGroupActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutScheduledUpdateGroupAction operation.
@@ -2914,21 +2758,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  PutScheduledUpdateGroupActionResult from AutoScaling.</returns>
         public  PutScheduledUpdateGroupActionResponse EndPutScheduledUpdateGroupAction(IAsyncResult asyncResult)
         {
-            return endOperation< PutScheduledUpdateGroupActionResponse>(asyncResult);
-        }
-
-        IAsyncResult invokePutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
-            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<PutScheduledUpdateGroupActionResponse>(asyncResult);
         }
 
         #endregion
         
         #region  RecordLifecycleActionHeartbeat
-
 
         /// <summary>
         /// Records a heartbeat for the lifecycle action associated with a specific token. This
@@ -2958,8 +2793,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the RecordLifecycleActionHeartbeat service method, as returned by AutoScaling.</returns>
         public RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request)
         {
-            IAsyncResult asyncResult = invokeRecordLifecycleActionHeartbeat(request, null, null, true);
-            return EndRecordLifecycleActionHeartbeat(asyncResult);
+            var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
+            var unmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
+
+            return Invoke<RecordLifecycleActionHeartbeatRequest,RecordLifecycleActionHeartbeatResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -2976,10 +2813,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginRecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request, AsyncCallback callback, object state)
         {
-            return invokeRecordLifecycleActionHeartbeat(request, callback, state, false);
+            var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
+            var unmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RecordLifecycleActionHeartbeatRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RecordLifecycleActionHeartbeat operation.
@@ -2991,21 +2830,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  RecordLifecycleActionHeartbeatResult from AutoScaling.</returns>
         public  RecordLifecycleActionHeartbeatResponse EndRecordLifecycleActionHeartbeat(IAsyncResult asyncResult)
         {
-            return endOperation< RecordLifecycleActionHeartbeatResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeRecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
-            var unmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<RecordLifecycleActionHeartbeatResponse>(asyncResult);
         }
 
         #endregion
         
         #region  ResumeProcesses
-
 
         /// <summary>
         /// Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information
@@ -3017,8 +2847,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the ResumeProcesses service method, as returned by AutoScaling.</returns>
         public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
         {
-            IAsyncResult asyncResult = invokeResumeProcesses(request, null, null, true);
-            return EndResumeProcesses(asyncResult);
+            var marshaller = new ResumeProcessesRequestMarshaller();
+            var unmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeProcessesRequest,ResumeProcessesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3035,10 +2867,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginResumeProcesses(ResumeProcessesRequest request, AsyncCallback callback, object state)
         {
-            return invokeResumeProcesses(request, callback, state, false);
+            var marshaller = new ResumeProcessesRequestMarshaller();
+            var unmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResumeProcessesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ResumeProcesses operation.
@@ -3050,21 +2884,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  ResumeProcessesResult from AutoScaling.</returns>
         public  ResumeProcessesResponse EndResumeProcesses(IAsyncResult asyncResult)
         {
-            return endOperation< ResumeProcessesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeResumeProcesses(ResumeProcessesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new ResumeProcessesRequestMarshaller();
-            var unmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<ResumeProcessesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetDesiredCapacity
-
 
         /// <summary>
         /// Sets the desired size of the specified <a>AutoScalingGroup</a>.
@@ -3078,8 +2903,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
         {
-            IAsyncResult asyncResult = invokeSetDesiredCapacity(request, null, null, true);
-            return EndSetDesiredCapacity(asyncResult);
+            var marshaller = new SetDesiredCapacityRequestMarshaller();
+            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<SetDesiredCapacityRequest,SetDesiredCapacityResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3096,10 +2923,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginSetDesiredCapacity(SetDesiredCapacityRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetDesiredCapacity(request, callback, state, false);
+            var marshaller = new SetDesiredCapacityRequestMarshaller();
+            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetDesiredCapacityRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetDesiredCapacity operation.
@@ -3111,21 +2940,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  SetDesiredCapacityResult from AutoScaling.</returns>
         public  SetDesiredCapacityResponse EndSetDesiredCapacity(IAsyncResult asyncResult)
         {
-            return endOperation< SetDesiredCapacityResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetDesiredCapacity(SetDesiredCapacityRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetDesiredCapacityRequestMarshaller();
-            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetDesiredCapacityResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SetInstanceHealth
-
 
         /// <summary>
         /// Sets the health status of a specified instance that belongs to any of your Auto Scaling
@@ -3142,8 +2962,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the SetInstanceHealth service method, as returned by AutoScaling.</returns>
         public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
         {
-            IAsyncResult asyncResult = invokeSetInstanceHealth(request, null, null, true);
-            return EndSetInstanceHealth(asyncResult);
+            var marshaller = new SetInstanceHealthRequestMarshaller();
+            var unmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
+
+            return Invoke<SetInstanceHealthRequest,SetInstanceHealthResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3160,10 +2982,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginSetInstanceHealth(SetInstanceHealthRequest request, AsyncCallback callback, object state)
         {
-            return invokeSetInstanceHealth(request, callback, state, false);
+            var marshaller = new SetInstanceHealthRequestMarshaller();
+            var unmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetInstanceHealthRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetInstanceHealth operation.
@@ -3175,21 +2999,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  SetInstanceHealthResult from AutoScaling.</returns>
         public  SetInstanceHealthResponse EndSetInstanceHealth(IAsyncResult asyncResult)
         {
-            return endOperation< SetInstanceHealthResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSetInstanceHealth(SetInstanceHealthRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SetInstanceHealthRequestMarshaller();
-            var unmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SetInstanceHealthResponse>(asyncResult);
         }
 
         #endregion
         
         #region  SuspendProcesses
-
 
         /// <summary>
         /// Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process
@@ -3214,8 +3029,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the SuspendProcesses service method, as returned by AutoScaling.</returns>
         public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
         {
-            IAsyncResult asyncResult = invokeSuspendProcesses(request, null, null, true);
-            return EndSuspendProcesses(asyncResult);
+            var marshaller = new SuspendProcessesRequestMarshaller();
+            var unmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
+
+            return Invoke<SuspendProcessesRequest,SuspendProcessesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3232,10 +3049,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginSuspendProcesses(SuspendProcessesRequest request, AsyncCallback callback, object state)
         {
-            return invokeSuspendProcesses(request, callback, state, false);
+            var marshaller = new SuspendProcessesRequestMarshaller();
+            var unmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SuspendProcessesRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SuspendProcesses operation.
@@ -3247,21 +3066,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  SuspendProcessesResult from AutoScaling.</returns>
         public  SuspendProcessesResponse EndSuspendProcesses(IAsyncResult asyncResult)
         {
-            return endOperation< SuspendProcessesResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeSuspendProcesses(SuspendProcessesRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new SuspendProcessesRequestMarshaller();
-            var unmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<SuspendProcessesResponse>(asyncResult);
         }
 
         #endregion
         
         #region  TerminateInstanceInAutoScalingGroup
-
 
         /// <summary>
         /// Terminates the specified instance. Optionally, the desired group size can be adjusted.
@@ -3275,8 +3085,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeTerminateInstanceInAutoScalingGroup(request, null, null, true);
-            return EndTerminateInstanceInAutoScalingGroup(asyncResult);
+            var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
+            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateInstanceInAutoScalingGroupRequest,TerminateInstanceInAutoScalingGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3293,10 +3105,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginTerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeTerminateInstanceInAutoScalingGroup(request, callback, state, false);
+            var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
+            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TerminateInstanceInAutoScalingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TerminateInstanceInAutoScalingGroup operation.
@@ -3308,21 +3122,12 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  TerminateInstanceInAutoScalingGroupResult from AutoScaling.</returns>
         public  TerminateInstanceInAutoScalingGroupResponse EndTerminateInstanceInAutoScalingGroup(IAsyncResult asyncResult)
         {
-            return endOperation< TerminateInstanceInAutoScalingGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeTerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new TerminateInstanceInAutoScalingGroupRequestMarshaller();
-            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<TerminateInstanceInAutoScalingGroupResponse>(asyncResult);
         }
 
         #endregion
         
         #region  UpdateAutoScalingGroup
-
 
         /// <summary>
         /// Updates the configuration for the specified <a>AutoScalingGroup</a>. 
@@ -3343,8 +3148,10 @@ namespace Amazon.AutoScaling
         /// </exception>
         public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
         {
-            IAsyncResult asyncResult = invokeUpdateAutoScalingGroup(request, null, null, true);
-            return EndUpdateAutoScalingGroup(asyncResult);
+            var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutoScalingGroupRequest,UpdateAutoScalingGroupResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
@@ -3361,10 +3168,12 @@ namespace Amazon.AutoScaling
         ///         operation.</returns>
         public IAsyncResult BeginUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            return invokeUpdateAutoScalingGroup(request, callback, state, false);
+            var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
+            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAutoScalingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
         }
-
-
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAutoScalingGroup operation.
@@ -3376,15 +3185,7 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  UpdateAutoScalingGroupResult from AutoScaling.</returns>
         public  UpdateAutoScalingGroupResponse EndUpdateAutoScalingGroup(IAsyncResult asyncResult)
         {
-            return endOperation< UpdateAutoScalingGroupResponse>(asyncResult);
-        }
-
-        IAsyncResult invokeUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request, AsyncCallback callback, object state, bool synchronized)
-        {
-            var marshaller = new UpdateAutoScalingGroupRequestMarshaller();
-            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
-
-            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
+            return EndInvoke<UpdateAutoScalingGroupResponse>(asyncResult);
         }
 
         #endregion

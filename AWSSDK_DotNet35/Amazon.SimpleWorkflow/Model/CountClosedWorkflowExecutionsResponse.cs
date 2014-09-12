@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,24 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+
+using System;
+
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Returns information about the CountClosedWorkflowExecutions response and response metadata.
+    /// Configuration for accessing Amazon CountClosedWorkflowExecutions service
     /// </summary>
-    public class CountClosedWorkflowExecutionsResponse : CountClosedWorkflowExecutionsResult
+    public partial class CountClosedWorkflowExecutionsResponse : CountClosedWorkflowExecutionsResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CountClosedWorkflowExecutionsResult property.
-        /// Contains the result of a successful invocation of the CountClosedWorkflowExecutions
-        /// action.
-        /// 
+        /// Represents the output of a CountClosedWorkflowExecutions operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CountClosedWorkflowExecutionsResult class are now available on the CountClosedWorkflowExecutionsResponse class. You should use the properties on CountClosedWorkflowExecutionsResponse instead of accessing them through CountClosedWorkflowExecutionsResult.")]
         public CountClosedWorkflowExecutionsResult CountClosedWorkflowExecutionsResult
         {
@@ -40,4 +40,3 @@ namespace Amazon.SimpleWorkflow.Model
         }
     }
 }
-    

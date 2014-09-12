@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
+ */
 using System;
 using System.Net;
 using Amazon.Runtime;
@@ -19,7 +23,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudWatch.Model
 {
     ///<summary>
-    /// AmazonCloudWatch exception
+    /// CloudWatch exception
     /// </summary>
     public class InvalidNextTokenException : AmazonCloudWatchException 
     {
@@ -45,6 +49,5 @@ namespace Amazon.CloudWatch.Model
         public InvalidNextTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

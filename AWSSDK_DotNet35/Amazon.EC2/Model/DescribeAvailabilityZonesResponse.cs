@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAvailabilityZones response and response metadata.
+    /// Configuration for accessing Amazon DescribeAvailabilityZones service
     /// </summary>
     public partial class DescribeAvailabilityZonesResponse : DescribeAvailabilityZonesResult
     {
         /// <summary>
         /// Gets and sets the DescribeAvailabilityZonesResult property.
-        /// 
+        /// Represents the output of a DescribeAvailabilityZones operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAvailabilityZonesResult class are now available on the DescribeAvailabilityZonesResponse class. You should use the properties on DescribeAvailabilityZonesResponse instead of accessing them through DescribeAvailabilityZonesResult.")]
         public DescribeAvailabilityZonesResult DescribeAvailabilityZonesResult
@@ -40,4 +40,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-    

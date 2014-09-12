@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.StorageGateway.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.StorageGateway.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VolumeiSCSIAttributes Object
+    /// </summary>  
+    public class VolumeiSCSIAttributesUnmarshaller : IUnmarshaller<VolumeiSCSIAttributes, XmlUnmarshallerContext>, IUnmarshaller<VolumeiSCSIAttributes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VolumeiSCSIAttributesUnmarshaller
-      /// </summary>
-      internal class VolumeiSCSIAttributesUnmarshaller : IUnmarshaller<VolumeiSCSIAttributes, XmlUnmarshallerContext>, IUnmarshaller<VolumeiSCSIAttributes, JsonUnmarshallerContext>
-      {
         VolumeiSCSIAttributes IUnmarshaller<VolumeiSCSIAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VolumeiSCSIAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VolumeiSCSIAttributes volumeiSCSIAttributes = new VolumeiSCSIAttributes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VolumeiSCSIAttributes unmarshalledObject = new VolumeiSCSIAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TargetARN", targetDepth))
-              {
-                volumeiSCSIAttributes.TargetARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NetworkInterfaceId", targetDepth))
-              {
-                volumeiSCSIAttributes.NetworkInterfaceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NetworkInterfacePort", targetDepth))
-              {
-                volumeiSCSIAttributes.NetworkInterfacePort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LunNumber", targetDepth))
-              {
-                volumeiSCSIAttributes.LunNumber = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ChapEnabled", targetDepth))
-              {
-                volumeiSCSIAttributes.ChapEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("ChapEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ChapEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LunNumber", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.LunNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkInterfaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkInterfacePort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterfacePort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return volumeiSCSIAttributes;
+            return unmarshalledObject;
         }
 
-        private static VolumeiSCSIAttributesUnmarshaller instance;
-        public static VolumeiSCSIAttributesUnmarshaller GetInstance()
+
+        private static VolumeiSCSIAttributesUnmarshaller _instance = new VolumeiSCSIAttributesUnmarshaller();        
+
+        public static VolumeiSCSIAttributesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VolumeiSCSIAttributesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

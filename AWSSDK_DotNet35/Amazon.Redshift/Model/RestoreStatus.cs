@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,7 +40,6 @@ namespace Amazon.Redshift.Model
         private long? _snapshotSizeInMegaBytes;
         private string _status;
 
-
         /// <summary>
         /// Gets and sets the property CurrentRestoreRateInMegaBytesPerSecond. 
         /// <para>
@@ -55,7 +58,6 @@ namespace Amazon.Redshift.Model
         {
             return this._currentRestoreRateInMegaBytesPerSecond.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ElapsedTimeInSeconds. 
@@ -76,7 +78,6 @@ namespace Amazon.Redshift.Model
             return this._elapsedTimeInSeconds.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EstimatedTimeToCompletionInSeconds. 
         /// <para>
@@ -95,7 +96,6 @@ namespace Amazon.Redshift.Model
         {
             return this._estimatedTimeToCompletionInSeconds.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property ProgressInMegaBytes. 
@@ -116,7 +116,6 @@ namespace Amazon.Redshift.Model
             return this._progressInMegaBytes.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotSizeInMegaBytes. 
         /// <para>
@@ -135,7 +134,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snapshotSizeInMegaBytes.HasValue; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

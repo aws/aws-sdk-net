@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeStackResources response and response metadata.
+    /// Configuration for accessing Amazon DescribeStackResources service
     /// </summary>
     public partial class DescribeStackResourcesResponse : DescribeStackResourcesResult
     {
         /// <summary>
         /// Gets and sets the DescribeStackResourcesResult property.
-        /// The output for a DescribeStackResources action.
+        /// Represents the output of a DescribeStackResources operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeStackResourcesResult class are now available on the DescribeStackResourcesResponse class. You should use the properties on DescribeStackResourcesResponse instead of accessing them through DescribeStackResourcesResult.")]
         public DescribeStackResourcesResult DescribeStackResourcesResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudFormation.Model
         }
     }
 }
-    

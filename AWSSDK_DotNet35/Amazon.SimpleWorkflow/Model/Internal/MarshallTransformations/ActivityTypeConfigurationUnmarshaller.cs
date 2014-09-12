@@ -12,78 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.SimpleWorkflow.Model;
-    using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+/*
+ * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.SimpleWorkflow.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ActivityTypeConfiguration Object
+    /// </summary>  
+    public class ActivityTypeConfigurationUnmarshaller : IUnmarshaller<ActivityTypeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ActivityTypeConfigurationUnmarshaller
-      /// </summary>
-      internal class ActivityTypeConfigurationUnmarshaller : IUnmarshaller<ActivityTypeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeConfiguration, JsonUnmarshallerContext>
-      {
         ActivityTypeConfiguration IUnmarshaller<ActivityTypeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ActivityTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ActivityTypeConfiguration activityTypeConfiguration = new ActivityTypeConfiguration();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ActivityTypeConfiguration unmarshalledObject = new ActivityTypeConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
-              {
-                activityTypeConfiguration.DefaultTaskStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultTaskHeartbeatTimeout", targetDepth))
-              {
-                activityTypeConfiguration.DefaultTaskHeartbeatTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultTaskList", targetDepth))
-              {
-                activityTypeConfiguration.DefaultTaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultTaskScheduleToStartTimeout", targetDepth))
-              {
-                activityTypeConfiguration.DefaultTaskScheduleToStartTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("defaultTaskScheduleToCloseTimeout", targetDepth))
-              {
-                activityTypeConfiguration.DefaultTaskScheduleToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("defaultTaskHeartbeatTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskHeartbeatTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultTaskList", targetDepth))
+                {
+                    var unmarshaller = TaskListUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultTaskScheduleToCloseTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskScheduleToCloseTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultTaskScheduleToStartTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskScheduleToStartTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskStartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return activityTypeConfiguration;
+            return unmarshalledObject;
         }
 
-        private static ActivityTypeConfigurationUnmarshaller instance;
-        public static ActivityTypeConfigurationUnmarshaller GetInstance()
+
+        private static ActivityTypeConfigurationUnmarshaller _instance = new ActivityTypeConfigurationUnmarshaller();        
+
+        public static ActivityTypeConfigurationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ActivityTypeConfigurationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,33 +29,60 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPasswordData operation.
-    /// <para>Retrieves the encrypted administrator password for an instance running Windows.</para> <para>The Windows password is only generated
-    /// the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on an instance.</para> <para>The
-    /// password is encrypted using the key pair that you specified when you launched the instance. You must provide the corresponding key pair
-    /// file.</para> <para>Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after launching an
-    /// instance before trying to retrieve the generated password.</para>
+    /// Retrieves the encrypted administrator password for an instance running Windows.
+    /// 
+    ///  
+    /// <para>
+    /// The Windows password is only generated the first time an AMI is launched. It is not
+    /// generated for rebundled AMIs or after the password is changed on an instance.
+    /// </para>
+    ///  
+    /// <para>
+    /// The password is encrypted using the key pair that you specified when you launched
+    /// the instance. You must provide the corresponding key pair file.
+    /// </para>
+    ///  
+    /// <para>
+    /// Password generation and encryption takes a few moments. We recommend that you wait
+    /// up to 15 minutes after launching an instance before trying to retrieve the generated
+    /// password.
+    /// </para>
     /// </summary>
     public partial class GetPasswordDataRequest : AmazonEC2Request
     {
-        private string instanceId;
-
+        private string _instanceId;
 
         /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public GetPasswordDataRequest() { }
+
+        /// <summary>
+        /// Instantiates GetPasswordDataRequest with the parameterized properties
+        /// </summary>
+        /// <param name="instanceId">The ID of the Windows instance.</param>
+        public GetPasswordDataRequest(string instanceId)
+        {
+            _instanceId = instanceId;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The ID of the Windows instance.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
     }
 }
-    

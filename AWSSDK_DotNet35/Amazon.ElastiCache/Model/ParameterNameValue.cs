@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -31,6 +35,30 @@ namespace Amazon.ElastiCache.Model
         private string _parameterName;
         private string _parameterValue;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ParameterNameValue() { }
+
+        /// <summary>
+        /// Instantiates ParameterNameValue with the parameterized properties
+        /// </summary>
+        /// <param name="parameterName">The name of the parameter.</param>
+        public ParameterNameValue(string parameterName)
+        {
+            _parameterName = parameterName;
+        }
+
+        /// <summary>
+        /// Instantiates ParameterNameValue with the parameterized properties
+        /// </summary>
+        /// <param name="parameterName">The name of the parameter.</param>
+        /// <param name="parameterValue">The value of the parameter.</param>
+        public ParameterNameValue(string parameterName, string parameterValue)
+        {
+            _parameterName = parameterName;
+            _parameterValue = parameterValue;
+        }
 
         /// <summary>
         /// Gets and sets the property ParameterName. 
@@ -49,7 +77,6 @@ namespace Amazon.ElastiCache.Model
         {
             return this._parameterName != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ParameterValue. 

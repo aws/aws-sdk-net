@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the ModifyImageAttribute response metadata.
-    /// The ModifyImageAttribute operation has a void result type.
+    /// Configuration for accessing Amazon ModifyImageAttribute service
     /// </summary>
-    public partial class ModifyImageAttributeResponse : AmazonWebServiceResponse
+    public partial class ModifyImageAttributeResponse : ModifyImageAttributeResult
     {
+        /// <summary>
+        /// Gets and sets the ModifyImageAttributeResult property.
+        /// Represents the output of a ModifyImageAttribute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ModifyImageAttributeResult class are now available on the ModifyImageAttributeResponse class. You should use the properties on ModifyImageAttributeResponse instead of accessing them through ModifyImageAttributeResult.")]
+        public ModifyImageAttributeResult ModifyImageAttributeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

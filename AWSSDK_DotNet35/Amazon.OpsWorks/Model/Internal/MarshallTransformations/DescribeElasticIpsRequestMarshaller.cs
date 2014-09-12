@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,8 +35,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeElasticIps Request Marshaller
     /// </summary>       
-    public class DescribeElasticIpsRequestMarshaller : IMarshaller<IRequest, DescribeElasticIpsRequest> 
+    public class DescribeElasticIpsRequestMarshaller : IMarshaller<IRequest, DescribeElasticIpsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeElasticIpsRequest)input);
+        }
+
         public IRequest Marshall(DescribeElasticIpsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
@@ -47,27 +56,28 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetInstanceId())
                 {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(publicRequest.InstanceId);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
                 if(publicRequest.IsSetIps())
                 {
-                    writer.WritePropertyName("Ips");
-                    writer.WriteArrayStart();
+                    context.Writer.WritePropertyName("Ips");
+                    context.Writer.WriteArrayStart();
                     foreach(var publicRequestIpsListValue in publicRequest.Ips)
                     {
-                        writer.Write(publicRequestIpsListValue);
+                            context.Writer.Write(publicRequestIpsListValue);
                     }
-                    writer.WriteArrayEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStackId())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(publicRequest.StackId);
+                    context.Writer.WritePropertyName("StackId");
+                    context.Writer.Write(publicRequest.StackId);
                 }
 
         

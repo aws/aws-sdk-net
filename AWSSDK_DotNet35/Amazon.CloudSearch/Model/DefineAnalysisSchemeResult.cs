@@ -12,38 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of a <c> DefineAnalysisScheme </c> request. Contains the status of the newly-configured analysis scheme.</para>
+    /// The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status
+    /// of the newly-configured analysis scheme.
     /// </summary>
     public partial class DefineAnalysisSchemeResult : AmazonWebServiceResponse
     {
-        
-        private AnalysisSchemeStatus analysisScheme;
-
+        private AnalysisSchemeStatus _analysisScheme;
 
         /// <summary>
-        /// The status and configuration of an <c>AnalysisScheme</c>.
-        ///  
+        /// Gets and sets the property AnalysisScheme.
         /// </summary>
         public AnalysisSchemeStatus AnalysisScheme
         {
-            get { return this.analysisScheme; }
-            set { this.analysisScheme = value; }
+            get { return this._analysisScheme; }
+            set { this._analysisScheme = value; }
         }
 
         // Check to see if AnalysisScheme property is set
         internal bool IsSetAnalysisScheme()
         {
-            return this.analysisScheme != null;
+            return this._analysisScheme != null;
         }
+
     }
 }

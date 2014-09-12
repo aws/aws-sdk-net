@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -41,7 +45,6 @@ namespace Amazon.Redshift.Model
         private string _snapshotType;
         private DateTime? _startTime;
 
-
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
@@ -60,7 +63,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -87,7 +89,6 @@ namespace Amazon.Redshift.Model
             return this._endTime.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
@@ -110,7 +111,6 @@ namespace Amazon.Redshift.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxRecords. 
@@ -142,7 +142,6 @@ namespace Amazon.Redshift.Model
             return this._maxRecords.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
@@ -164,7 +163,6 @@ namespace Amazon.Redshift.Model
             return this._ownerAccount != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
@@ -183,7 +181,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snapshotIdentifier != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property SnapshotType. 
@@ -207,7 +204,6 @@ namespace Amazon.Redshift.Model
         {
             return this._snapshotType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property StartTime. 

@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -55,7 +59,6 @@ namespace Amazon.OpsWorks.Model
         private Dictionary<string, string> _tuesday = new Dictionary<string, string>();
         private Dictionary<string, string> _wednesday = new Dictionary<string, string>();
 
-
         /// <summary>
         /// Gets and sets the property Friday. 
         /// <para>
@@ -73,7 +76,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._friday != null && this._friday.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Monday. 
@@ -93,7 +95,6 @@ namespace Amazon.OpsWorks.Model
             return this._monday != null && this._monday.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Saturday. 
         /// <para>
@@ -111,7 +112,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._saturday != null && this._saturday.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Sunday. 
@@ -131,7 +131,6 @@ namespace Amazon.OpsWorks.Model
             return this._sunday != null && this._sunday.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Thursday. 
         /// <para>
@@ -150,7 +149,6 @@ namespace Amazon.OpsWorks.Model
             return this._thursday != null && this._thursday.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Tuesday. 
         /// <para>
@@ -168,7 +166,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._tuesday != null && this._tuesday.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Wednesday. 

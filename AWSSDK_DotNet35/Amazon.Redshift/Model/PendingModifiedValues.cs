@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -37,7 +41,6 @@ namespace Amazon.Redshift.Model
         private string _nodeType;
         private int? _numberOfNodes;
 
-
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.Redshift.Model
             return this._automatedSnapshotRetentionPeriod.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
@@ -76,7 +78,6 @@ namespace Amazon.Redshift.Model
             return this._clusterIdentifier != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
@@ -94,7 +95,6 @@ namespace Amazon.Redshift.Model
         {
             return this._clusterType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
@@ -115,7 +115,6 @@ namespace Amazon.Redshift.Model
             return this._clusterVersion != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
@@ -135,7 +134,6 @@ namespace Amazon.Redshift.Model
             return this._masterUserPassword != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
@@ -153,7 +151,6 @@ namespace Amazon.Redshift.Model
         {
             return this._nodeType != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 

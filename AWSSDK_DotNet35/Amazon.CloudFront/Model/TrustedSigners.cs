@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,17 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies the AWS accounts, if any, that you want    to allow
-    /// to create signed URLs for private content.    If you want to require signed URLs in
-    /// requests for objects in the target    origin that match the PathPattern for this cache
-    /// behavior, specify true    for Enabled, and specify the applicable values for Quantity
-    /// and Items.    For more information, go to Using a Signed URL to Serve Private Content
-    ///    in the Amazon CloudFront Developer Guide.    If you don't want to require signed
-    /// URLs in requests for objects that match    PathPattern, specify false for Enabled
-    /// and 0 for Quantity. Omit    Items.    To add, change, or remove one or more trusted
-    /// signers, change Enabled    to true (if it's currently false), change Quantity as applicable,
-    /// and    specify all of the trusted signers that you want to include in the updated
-    ///    distribution.
+    /// A complex type that specifies the AWS accounts, if any, that you want to allow to
+    /// create signed URLs for private content. If you want to require signed URLs in requests
+    /// for objects in the target origin that match the PathPattern for this cache behavior,
+    /// specify true for Enabled, and specify the applicable values for Quantity and Items.
+    /// For more information, go to Using a Signed URL to Serve Private Content in the Amazon
+    /// CloudFront Developer Guide. If you don't want to require signed URLs in requests for
+    /// objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit
+    /// Items. To add, change, or remove one or more trusted signers, change Enabled to true
+    /// (if it's currently false), change Quantity as applicable, and specify all of the trusted
+    /// signers that you want to include in the updated distribution.
     /// </summary>
     public partial class TrustedSigners
     {
@@ -42,10 +45,23 @@ namespace Amazon.CloudFront.Model
         private List<string> _items = new List<string>();
         private int? _quantity;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public TrustedSigners() { }
+
+        /// <summary>
+        /// Instantiates TrustedSigners with the parameterized properties
+        /// </summary>
+        /// <param name="items">Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.</param>
+        public TrustedSigners(List<string> items)
+        {
+            _items = items;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. Specifies whether you want to require end users
-        /// to use signed URLs to    access the files specified by PathPattern and TargetOriginId.
+        /// to use signed URLs to access the files specified by PathPattern and TargetOriginId.
         /// </summary>
         public bool Enabled
         {
@@ -59,10 +75,9 @@ namespace Amazon.CloudFront.Model
             return this._enabled.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Items. Optional: A complex type that contains trusted signers
-        /// for this cache    behavior. If Quantity is 0, you can omit Items.
+        /// for this cache behavior. If Quantity is 0, you can omit Items.
         /// </summary>
         public List<string> Items
         {
@@ -75,7 +90,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._items != null && this._items.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Quantity. The number of trusted signers for this cache

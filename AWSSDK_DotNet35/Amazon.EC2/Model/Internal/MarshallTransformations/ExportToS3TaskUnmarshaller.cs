@@ -12,81 +12,91 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.EC2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ExportToS3Task Unmarshaller
-     /// </summary>
-    internal class ExportToS3TaskUnmarshaller : IUnmarshaller<ExportToS3Task, XmlUnmarshallerContext>, IUnmarshaller<ExportToS3Task, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ExportToS3Task Object
+    /// </summary>  
+    public class ExportToS3TaskUnmarshaller : IUnmarshaller<ExportToS3Task, XmlUnmarshallerContext>, IUnmarshaller<ExportToS3Task, JsonUnmarshallerContext>
     {
-        public ExportToS3Task Unmarshall(XmlUnmarshallerContext context) 
+        public ExportToS3Task Unmarshall(XmlUnmarshallerContext context)
         {
-            ExportToS3Task exportToS3Task = new ExportToS3Task();
+            ExportToS3Task unmarshalledObject = new ExportToS3Task();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
-               targetDepth += 1;
+               targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("diskImageFormat", targetDepth))
-                    {
-                        exportToS3Task.DiskImageFormat = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("containerFormat", targetDepth))
                     {
-                        exportToS3Task.ContainerFormat = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ContainerFormat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("diskImageFormat", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DiskImageFormat = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("s3Bucket", targetDepth))
                     {
-                        exportToS3Task.S3Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("s3Key", targetDepth))
                     {
-                        exportToS3Task.S3Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3Key = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return exportToS3Task;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return exportToS3Task;
+            return unmarshalledObject;
         }
 
-        public ExportToS3Task Unmarshall(JsonUnmarshallerContext context) 
+        public ExportToS3Task Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ExportToS3TaskUnmarshaller instance;
 
-        public static ExportToS3TaskUnmarshaller GetInstance() 
+        private static ExportToS3TaskUnmarshaller _instance = new ExportToS3TaskUnmarshaller();        
+
+        public static ExportToS3TaskUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ExportToS3TaskUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

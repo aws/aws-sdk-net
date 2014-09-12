@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,50 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the directconnect-2012-10-25.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para>The response received when DeleteInterconnect is called.</para>
+    /// The response received when DeleteInterconnect is called.
     /// </summary>
     public partial class DeleteInterconnectResult : AmazonWebServiceResponse
     {
-        
-        private InterconnectState interconnectState;
-
+        private InterconnectState _interconnectState;
 
         /// <summary>
-        /// State of the interconnect. <ul> <li><b>Requested</b>: The initial state of an interconnect. The interconnect stays in the requested state
-        /// until the Letter of Authorization (LOA) is sent to the customer.</li> <li><b>Pending</b>: The interconnect has been approved, and is being
-        /// initialized.</li> <li><b>Available</b>: The network link is up, and the interconnect is ready for use.</li> <li><b>Down</b>: The network
-        /// link is down.</li> <li><b>Deleted</b>: The interconnect has been deleted.</li> </ul>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>requested, pending, available, down, deleting, deleted</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property InterconnectState.
         /// </summary>
         public InterconnectState InterconnectState
         {
-            get { return this.interconnectState; }
-            set { this.interconnectState = value; }
+            get { return this._interconnectState; }
+            set { this._interconnectState = value; }
         }
 
         // Check to see if InterconnectState property is set
         internal bool IsSetInterconnectState()
         {
-            return this.interconnectState != null;
+            return this._interconnectState != null;
         }
+
     }
 }

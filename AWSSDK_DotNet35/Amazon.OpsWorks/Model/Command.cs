@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -39,7 +43,6 @@ namespace Amazon.OpsWorks.Model
         private string _status;
         private string _type;
 
-
         /// <summary>
         /// Gets and sets the property AcknowledgedAt. 
         /// <para>
@@ -57,7 +60,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._acknowledgedAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CommandId. 
@@ -77,7 +79,6 @@ namespace Amazon.OpsWorks.Model
             return this._commandId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property CompletedAt. 
         /// <para>
@@ -95,7 +96,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._completedAt != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -115,7 +115,6 @@ namespace Amazon.OpsWorks.Model
             return this._createdAt != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
@@ -133,7 +132,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._deploymentId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property ExitCode. 
@@ -153,7 +151,6 @@ namespace Amazon.OpsWorks.Model
             return this._exitCode.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
@@ -171,7 +168,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._instanceId != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property LogUrl. 
@@ -191,7 +187,6 @@ namespace Amazon.OpsWorks.Model
             return this._logUrl != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
@@ -210,7 +205,6 @@ namespace Amazon.OpsWorks.Model
         {
             return this._status != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Type. 

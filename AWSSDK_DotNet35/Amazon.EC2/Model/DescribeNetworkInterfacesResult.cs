@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkInterfacesResult : AmazonWebServiceResponse
     {
-        
-        private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>();
-
+        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
         /// Information about one or more network interfaces.
-        ///  
+        /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces
         {
-            get { return this.networkInterfaces; }
-            set { this.networkInterfaces = value; }
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
         }
 
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this.networkInterfaces.Count > 0;
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
         }
+
     }
 }

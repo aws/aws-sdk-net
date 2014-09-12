@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,15 +35,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest> 
+    public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeleteCloudFrontOriginAccessIdentityRequest)input);
+        }
+
         public IRequest Marshall(DeleteCloudFrontOriginAccessIdentityRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
             string uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
         
-            if(publicRequest.IsSetIfMatch())     
+            if(publicRequest.IsSetIfMatch())
                 request.Headers["If-Match"] = publicRequest.IfMatch;
             uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;

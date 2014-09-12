@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +37,6 @@ namespace Amazon.CloudSearchDomain.Model
         private Hits _hits;
         private SearchStatus _status;
 
-
         /// <summary>
         /// Gets and sets the property Facets. 
         /// <para>
@@ -52,7 +55,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._facets != null && this._facets.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Hits. 
         /// <para>
@@ -70,7 +72,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._hits != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property Status. 

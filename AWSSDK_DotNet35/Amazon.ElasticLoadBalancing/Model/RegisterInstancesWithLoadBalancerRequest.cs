@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -61,6 +65,21 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<Instance> _instances = new List<Instance>();
         private string _loadBalancerName;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RegisterInstancesWithLoadBalancerRequest() { }
+
+        /// <summary>
+        /// Instantiates RegisterInstancesWithLoadBalancerRequest with the parameterized properties
+        /// </summary>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers. </param>
+        /// <param name="instances"> A list of instance IDs that should be registered with the load balancer.</param>
+        public RegisterInstancesWithLoadBalancerRequest(string loadBalancerName, List<Instance> instances)
+        {
+            _loadBalancerName = loadBalancerName;
+            _instances = instances;
+        }
 
         /// <summary>
         /// Gets and sets the property Instances. 
@@ -79,7 +98,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this._instances != null && this._instances.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 

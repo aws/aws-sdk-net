@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -25,48 +29,68 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSpotDatafeedSubscription operation.
-    /// <para>Creates a datafeed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per AWS account.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// Creates a datafeed for Spot Instances, enabling you to view Spot Instance usage logs.
+    /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class CreateSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {
-        private string bucket;
-        private string prefix;
-
+        private string _bucket;
+        private string _prefix;
 
         /// <summary>
-        /// The Amazon S3 bucket in which to store the Spot Instance datafeed. Constraints: Must be a valid bucket associated with your AWS account.
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateSpotDatafeedSubscriptionRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateSpotDatafeedSubscriptionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="bucket">The Amazon S3 bucket in which to store the Spot Instance datafeed. Constraints: Must be a valid bucket associated with your AWS account.</param>
+        public CreateSpotDatafeedSubscriptionRequest(string bucket)
+        {
+            _bucket = bucket;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Bucket. 
+        /// <para>
+        /// The Amazon S3 bucket in which to store the Spot Instance datafeed.
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints: Must be a valid bucket associated with your AWS account.
+        /// </para>
         /// </summary>
         public string Bucket
         {
-            get { return this.bucket; }
-            set { this.bucket = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
         // Check to see if Bucket property is set
         internal bool IsSetBucket()
         {
-            return this.bucket != null;
+            return this._bucket != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
         /// A prefix for the datafeed file names.
-        ///  
+        /// </para>
         /// </summary>
         public string Prefix
         {
-            get { return this.prefix; }
-            set { this.prefix = value; }
+            get { return this._prefix; }
+            set { this._prefix = value; }
         }
 
         // Check to see if Prefix property is set
         internal bool IsSetPrefix()
         {
-            return this.prefix != null;
+            return this._prefix != null;
         }
 
     }
 }
-    

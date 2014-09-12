@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -36,13 +40,16 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? _includeDeleted;
         private string _versionLabel;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeEnvironmentsRequest() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         include only those that are         associated with this application. 
-        ///     
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+        /// only those that are associated with this application. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -57,12 +64,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._applicationName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentIds. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         include only those that have the         specified IDs.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+        /// only those that have the specified IDs. 
         /// </para>
         /// </summary>
         public List<string> EnvironmentIds
@@ -77,12 +83,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentIds != null && this._environmentIds.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property EnvironmentNames. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         include only those that have the         specified names.      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+        /// only those that have the specified names. 
         /// </para>
         /// </summary>
         public List<string> EnvironmentNames
@@ -97,13 +102,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._environmentNames != null && this._environmentNames.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property IncludedDeletedBackTo. 
         /// <para>
-        ///          If specified when         <code>IncludeDeleted</code>         is set to 
-        ///        <code>true</code>,         then environments deleted after this date are displayed.
-        ///      
+        ///  If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments
+        /// deleted after this date are displayed. 
         /// </para>
         /// </summary>
         public DateTime IncludedDeletedBackTo
@@ -118,20 +121,19 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._includedDeletedBackTo.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property IncludeDeleted. 
         /// <para>
-        /// Indicates whether to include deleted environments:      
+        /// Indicates whether to include deleted environments: 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          <code>true</code>: Environments that have been deleted after         <code>IncludedDeletedBackTo</code>
-        ///         are displayed.      
+        ///  <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code>
+        /// are displayed. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          <code>false</code>: Do not include deleted environments.      
+        ///  <code>false</code>: Do not include deleted environments. 
         /// </para>
         /// </summary>
         public bool IncludeDeleted
@@ -146,13 +148,11 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._includeDeleted.HasValue; 
         }
 
-
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
-        /// to         include only those that are         associated with this application version.
-        ///      
+        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+        /// only those that are associated with this application version. 
         /// </para>
         /// </summary>
         public string VersionLabel

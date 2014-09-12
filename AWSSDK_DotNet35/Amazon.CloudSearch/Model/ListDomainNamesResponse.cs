@@ -12,23 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2013-01-01.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Returns information about the  ListDomainNames response and response metadata.
+    /// Configuration for accessing Amazon ListDomainNames service
     /// </summary>
     public partial class ListDomainNamesResponse : ListDomainNamesResult
     {
         /// <summary>
         /// Gets and sets the ListDomainNamesResult property.
-        /// The result of a ListDomainNames request. Contains a list of the domains owned by an account.
+        /// Represents the output of a ListDomainNames operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListDomainNamesResult class are now available on the ListDomainNamesResponse class. You should use the properties on ListDomainNamesResponse instead of accessing them through ListDomainNamesResult.")]
         public ListDomainNamesResult ListDomainNamesResult
@@ -40,4 +40,3 @@ namespace Amazon.CloudSearch.Model
         }
     }
 }
-    

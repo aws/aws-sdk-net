@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +33,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteInstanceProfile Request Marshaller
     /// </summary>       
-    public class DeleteInstanceProfileRequestMarshaller : IMarshaller<IRequest, DeleteInstanceProfileRequest>
+    public class DeleteInstanceProfileRequestMarshaller : IMarshaller<IRequest, DeleteInstanceProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeleteInstanceProfileRequest)input);
+        }
+    
         public IRequest Marshall(DeleteInstanceProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");

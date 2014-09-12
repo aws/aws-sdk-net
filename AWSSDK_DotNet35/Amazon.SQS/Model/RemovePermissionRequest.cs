@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,21 @@ namespace Amazon.SQS.Model
         private string _label;
         private string _queueUrl;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public RemovePermissionRequest() { }
+
+        /// <summary>
+        /// Instantiates RemovePermissionRequest with the parameterized properties
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="label">The identification of the permission to remove. This is the label added with   the <a>AddPermission</a> action.</param>
+        public RemovePermissionRequest(string queueUrl, string label)
+        {
+            _queueUrl = queueUrl;
+            _label = label;
+        }
 
         /// <summary>
         /// Gets and sets the property Label. 
@@ -52,7 +71,6 @@ namespace Amazon.SQS.Model
         {
             return this._label != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 

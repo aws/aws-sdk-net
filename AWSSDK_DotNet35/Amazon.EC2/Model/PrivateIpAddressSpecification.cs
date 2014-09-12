@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describes a secondary private IP address for a network interface.</para>
+    /// Describes a secondary private IP address for a network interface.
     /// </summary>
     public partial class PrivateIpAddressSpecification
     {
-        
-        private string privateIpAddress;
-        private bool? primary;
-
+        private bool? _primary;
+        private string _privateIpAddress;
 
         /// <summary>
-        /// The private IP addresses.
-        ///  
-        /// </summary>
-        public string PrivateIpAddress
-        {
-            get { return this.privateIpAddress; }
-            set { this.privateIpAddress = value; }
-        }
-
-        // Check to see if PrivateIpAddress property is set
-        internal bool IsSetPrivateIpAddress()
-        {
-            return this.privateIpAddress != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Primary. 
+        /// <para>
         /// Indicates whether the private IP address is the primary private IP address.
-        ///  
+        /// </para>
         /// </summary>
         public bool Primary
         {
-            get { return this.primary ?? default(bool); }
-            set { this.primary = value; }
+            get { return this._primary.GetValueOrDefault(); }
+            set { this._primary = value; }
         }
 
         // Check to see if Primary property is set
         internal bool IsSetPrimary()
         {
-            return this.primary.HasValue;
+            return this._primary.HasValue; 
         }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// The private IP addresses.
+        /// </para>
+        /// </summary>
+        public string PrivateIpAddress
+        {
+            get { return this._privateIpAddress; }
+            set { this._privateIpAddress = value; }
+        }
+
+        // Check to see if PrivateIpAddress property is set
+        internal bool IsSetPrivateIpAddress()
+        {
+            return this._privateIpAddress != null;
+        }
+
     }
 }

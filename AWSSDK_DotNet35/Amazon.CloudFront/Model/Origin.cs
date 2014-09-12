@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -24,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that describes the Amazon S3 bucket or the HTTP server    (for example,
-    /// a web server) from which CloudFront gets your files.You    must create at least one
-    /// origin.
+    /// A complex type that describes the Amazon S3 bucket or the HTTP server (for example,
+    /// a web server) from which CloudFront gets your files.You must create at least one origin.
     /// </summary>
     public partial class Origin
     {
@@ -35,11 +38,10 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private S3OriginConfig _s3OriginConfig;
 
-
         /// <summary>
         /// Gets and sets the property CustomOriginConfig. A complex type that contains information
-        /// about a custom origin. If the    origin is an Amazon S3 bucket, use the S3OriginConfig
-        /// element    instead.
+        /// about a custom origin. If the origin is an Amazon S3 bucket, use the S3OriginConfig
+        /// element instead.
         /// </summary>
         public CustomOriginConfig CustomOriginConfig
         {
@@ -53,13 +55,11 @@ namespace Amazon.CloudFront.Model
             return this._customOriginConfig != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property DomainName. Amazon S3 origins: The DNS name of the Amazon
-        /// S3 bucket from    which you want CloudFront to get objects for this origin, for example,
-        ///    myawsbucket.s3.amazonaws.com.    Custom origins: The DNS domain name for the HTTP
-        /// server from which    you want CloudFront to get objects for this origin, for example,
-        ///    www.example.com.
+        /// S3 bucket from which you want CloudFront to get objects for this origin, for example,
+        /// myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the HTTP server
+        /// from which you want CloudFront to get objects for this origin, for example, www.example.com.
         /// </summary>
         public string DomainName
         {
@@ -73,12 +73,11 @@ namespace Amazon.CloudFront.Model
             return this._domainName != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Id. A unique identifier for the origin. The value of Id
-        /// must be unique within    the distribution.    You use the value of Id when you create
-        /// a cache behavior. The Id    identifies the origin that CloudFront routes a request
-        /// to when the request    matches the path pattern for that cache behavior.
+        /// must be unique within the distribution. You use the value of Id when you create a
+        /// cache behavior. The Id identifies the origin that CloudFront routes a request to when
+        /// the request matches the path pattern for that cache behavior.
         /// </summary>
         public string Id
         {
@@ -92,11 +91,10 @@ namespace Amazon.CloudFront.Model
             return this._id != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property S3OriginConfig. A complex type that contains information
-        /// about the Amazon S3 origin. If    the origin is a custom origin, use the CustomOriginConfig
-        /// element    instead.
+        /// about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig
+        /// element instead.
         /// </summary>
         public S3OriginConfig S3OriginConfig
         {

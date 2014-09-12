@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearch-2011-02-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudSearch_2011_02_01.Model
 {
     /// <summary>
-    /// <para>The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.</para>
+    /// The source attribute name and an optional default value to use if a document doesn't
+    /// have an attribute of that name.
     /// </summary>
-    public class SourceData
+    public partial class SourceData
     {
-        
-        private string sourceName;
-        private string defaultValue;
-
+        private string _defaultValue;
+        private string _sourceName;
 
         /// <summary>
-        /// The name of the document source field to add to this <c>IndexField</c>.
-        ///  
+        /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[a-z][a-z0-9_]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SourceName
-        {
-            get { return this.sourceName; }
-            set { this.sourceName = value; }
-        }
-
-        // Check to see if SourceName property is set
-        internal bool IsSetSourceName()
-        {
-            return this.sourceName != null;
-        }
-
-        /// <summary>
         /// The default value to use if the source attribute is not specified in a document. Optional.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 1024</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string DefaultValue
         {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;
+            return this._defaultValue != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property SourceName. 
+        /// <para>
+        /// The name of the document source field to add to this <code>IndexField</code>.
+        /// </para>
+        /// </summary>
+        public string SourceName
+        {
+            get { return this._sourceName; }
+            set { this._sourceName = value; }
+        }
+
+        // Check to see if SourceName property is set
+        internal bool IsSetSourceName()
+        {
+            return this._sourceName != null;
+        }
+
     }
 }

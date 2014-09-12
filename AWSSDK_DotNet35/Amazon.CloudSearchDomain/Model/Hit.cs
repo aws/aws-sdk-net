@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -32,7 +36,6 @@ namespace Amazon.CloudSearchDomain.Model
         private Dictionary<string, string> _highlights = new Dictionary<string, string>();
         private string _id;
 
-
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
@@ -51,7 +54,6 @@ namespace Amazon.CloudSearchDomain.Model
             return this._fields != null && this._fields.Count > 0; 
         }
 
-
         /// <summary>
         /// Gets and sets the property Highlights. 
         /// <para>
@@ -69,7 +71,6 @@ namespace Amazon.CloudSearchDomain.Model
         {
             return this._highlights != null && this._highlights.Count > 0; 
         }
-
 
         /// <summary>
         /// Gets and sets the property Id. 

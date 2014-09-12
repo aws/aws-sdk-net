@@ -12,21 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
+
+using System;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about the DeleteInternetGateway response metadata.
-    /// The DeleteInternetGateway operation has a void result type.
+    /// Configuration for accessing Amazon DeleteInternetGateway service
     /// </summary>
-    public partial class DeleteInternetGatewayResponse : AmazonWebServiceResponse
+    public partial class DeleteInternetGatewayResponse : DeleteInternetGatewayResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteInternetGatewayResult property.
+        /// Represents the output of a DeleteInternetGateway operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteInternetGatewayResult class are now available on the DeleteInternetGatewayResponse class. You should use the properties on DeleteInternetGatewayResponse instead of accessing them through DeleteInternetGatewayResult.")]
+        public DeleteInternetGatewayResult DeleteInternetGatewayResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

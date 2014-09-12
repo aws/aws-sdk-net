@@ -12,21 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Route53.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   HostedZoneConfig Unmarshaller
-     /// </summary>
-    internal class HostedZoneConfigUnmarshaller : IUnmarshaller<HostedZoneConfig, XmlUnmarshallerContext>, IUnmarshaller<HostedZoneConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for HostedZoneConfig Object
+    /// </summary>  
+    public class HostedZoneConfigUnmarshaller : IUnmarshaller<HostedZoneConfig, XmlUnmarshallerContext>
     {
-        public HostedZoneConfig Unmarshall(XmlUnmarshallerContext context) 
+        public HostedZoneConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            HostedZoneConfig hostedZoneConfig = new HostedZoneConfig();
+            HostedZoneConfig unmarshalledObject = new HostedZoneConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,36 +52,27 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Comment", targetDepth))
                     {
-                        hostedZoneConfig.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return hostedZoneConfig;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static HostedZoneConfigUnmarshaller _instance = new HostedZoneConfigUnmarshaller();        
+
+        public static HostedZoneConfigUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return hostedZoneConfig;
-        }
-
-        public HostedZoneConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static HostedZoneConfigUnmarshaller instance;
-
-        public static HostedZoneConfigUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new HostedZoneConfigUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

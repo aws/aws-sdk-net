@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,6 +37,19 @@ namespace Amazon.CloudFront.Model
         private string _marker;
         private string _maxItems;
 
+        /// <summary>
+        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// </summary>
+        public ListInvalidationsRequest() { }
+
+        /// <summary>
+        /// Instantiates ListInvalidationsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="distributionId">The distribution's id.</param>
+        public ListInvalidationsRequest(string distributionId)
+        {
+            _distributionId = distributionId;
+        }
 
         /// <summary>
         /// Gets and sets the property DistributionId. The distribution's id.
@@ -49,15 +66,14 @@ namespace Amazon.CloudFront.Model
             return this._distributionId != null;
         }
 
-
         /// <summary>
         /// Gets and sets the property Marker. Use this parameter when paginating results to indicate
-        /// where to begin in your list of invalidation batches.    Because the results are returned
+        /// where to begin in your list of invalidation batches. Because the results are returned
         /// in decreasing order from most recent to oldest, the most recent results are on the
-        /// first page, the second page will contain earlier results, and so on.    To get the
-        /// next page of results, set the Marker to the value of the NextMarker from the current
-        /// page's response.    This value is the same as the ID of the last invalidation batch
-        /// on that page.
+        /// first page, the second page will contain earlier results, and so on. To get the next
+        /// page of results, set the Marker to the value of the NextMarker from the current page's
+        /// response. This value is the same as the ID of the last invalidation batch on that
+        /// page.
         /// </summary>
         public string Marker
         {
@@ -70,7 +86,6 @@ namespace Amazon.CloudFront.Model
         {
             return this._marker != null;
         }
-
 
         /// <summary>
         /// Gets and sets the property MaxItems. The maximum number of invalidation batches you

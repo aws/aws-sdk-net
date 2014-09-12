@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,54 +33,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Split Shard Request Marshaller
+    /// SplitShard Request Marshaller
     /// </summary>       
-    internal class SplitShardRequestMarshaller : IMarshaller<IRequest, SplitShardRequest> 
+    public class SplitShardRequestMarshaller : IMarshaller<IRequest, SplitShardRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
-        
-
-        public IRequest Marshall(SplitShardRequest splitShardRequest) 
+        public IRequest Marshall(AmazonWebServiceRequest input)
         {
+            return this.Marshall((SplitShardRequest)input);
+        }
 
-            IRequest request = new DefaultRequest(splitShardRequest, "AmazonKinesis");
+        public IRequest Marshall(SplitShardRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
             string target = "Kinesis_20131202.SplitShard";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (splitShardRequest != null && splitShardRequest.IsSetStreamName()) 
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetNewStartingHashKey())
                 {
-                    writer.WritePropertyName("StreamName");
-                    writer.Write(splitShardRequest.StreamName);
-                }
-                if (splitShardRequest != null && splitShardRequest.IsSetShardToSplit()) 
-                {
-                    writer.WritePropertyName("ShardToSplit");
-                    writer.Write(splitShardRequest.ShardToSplit);
-                }
-                if (splitShardRequest != null && splitShardRequest.IsSetNewStartingHashKey()) 
-                {
-                    writer.WritePropertyName("NewStartingHashKey");
-                    writer.Write(splitShardRequest.NewStartingHashKey);
+                    context.Writer.WritePropertyName("NewStartingHashKey");
+                    context.Writer.Write(publicRequest.NewStartingHashKey);
                 }
 
+                if(publicRequest.IsSetShardToSplit())
+                {
+                    context.Writer.WritePropertyName("ShardToSplit");
+                    context.Writer.Write(publicRequest.ShardToSplit);
+                }
+
+                if(publicRequest.IsSetStreamName())
+                {
+                    context.Writer.WritePropertyName("StreamName");
+                    context.Writer.Write(publicRequest.StreamName);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

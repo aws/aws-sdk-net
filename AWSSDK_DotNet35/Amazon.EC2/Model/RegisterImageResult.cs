@@ -12,12 +12,18 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
@@ -26,24 +32,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class RegisterImageResult : AmazonWebServiceResponse
     {
-        
-        private string imageId;
-
+        private string _imageId;
 
         /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
         /// The ID of the newly registered AMI.
-        ///  
+        /// </para>
         /// </summary>
         public string ImageId
         {
-            get { return this.imageId; }
-            set { this.imageId = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
         // Check to see if ImageId property is set
         internal bool IsSetImageId()
         {
-            return this.imageId != null;
+            return this._imageId != null;
         }
+
     }
 }

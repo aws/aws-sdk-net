@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,55 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings actions.
-    /// </para>
+    /// This data type is used as a response element in the <a>DescribeReservedDBInstances</a>
+    /// and <a>DescribeReservedDBInstancesOfferings</a> actions.
     /// </summary>
-    public class RecurringCharge
+    public partial class RecurringCharge
     {
-        
-        private double? recurringChargeAmount;
-        private string recurringChargeFrequency;
-
+        private double? _recurringChargeAmount;
+        private string _recurringChargeFrequency;
 
         /// <summary>
-        /// The amount of the recurring charge.
-        ///  
+        /// Gets and sets the property RecurringChargeAmount. 
+        /// <para>
+        ///  The amount of the recurring charge. 
+        /// </para>
         /// </summary>
         public double RecurringChargeAmount
         {
-            get { return this.recurringChargeAmount ?? default(double); }
-            set { this.recurringChargeAmount = value; }
+            get { return this._recurringChargeAmount.GetValueOrDefault(); }
+            set { this._recurringChargeAmount = value; }
         }
 
         // Check to see if RecurringChargeAmount property is set
         internal bool IsSetRecurringChargeAmount()
         {
-            return this.recurringChargeAmount.HasValue;
+            return this._recurringChargeAmount.HasValue; 
         }
 
         /// <summary>
-        /// The frequency of the recurring charge.
-        ///  
+        /// Gets and sets the property RecurringChargeFrequency. 
+        /// <para>
+        ///  The frequency of the recurring charge. 
+        /// </para>
         /// </summary>
         public string RecurringChargeFrequency
         {
-            get { return this.recurringChargeFrequency; }
-            set { this.recurringChargeFrequency = value; }
+            get { return this._recurringChargeFrequency; }
+            set { this._recurringChargeFrequency = value; }
         }
 
         // Check to see if RecurringChargeFrequency property is set
         internal bool IsSetRecurringChargeFrequency()
         {
-            return this.recurringChargeFrequency != null;
+            return this._recurringChargeFrequency != null;
         }
+
     }
 }

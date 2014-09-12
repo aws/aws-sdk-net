@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -11,6 +11,10 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,96 +29,77 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVolumes operation.
-    /// <para>This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume
-    /// ARNs. If you want additional volume information, use the DescribeStorediSCSIVolumes API.</para> <para>The operation supports pagination. By
-    /// default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <c>Limit</c> field in the body to limit the
-    /// number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You
-    /// can use this Marker value in your subsequent request to retrieve the next set of volumes.</para>
+    /// This operation lists the iSCSI stored volumes of a gateway. Results are sorted by
+    /// volume ARN. The response includes only the volume ARNs. If you want additional volume
+    /// information, use the <a>DescribeStorediSCSIVolumes</a> API.
+    /// 
+    ///  
+    /// <para>
+    /// The operation supports pagination. By default, the operation returns a maximum of
+    /// up to 100 volumes. You can optionally specify the <code>Limit</code> field in the
+    /// body to limit the number of volumes in the response. If the number of volumes returned
+    /// in the response is truncated, the response includes a Marker field. You can use this
+    /// Marker value in your subsequent request to retrieve the next set of volumes.
+    /// </para>
     /// </summary>
     public partial class ListVolumesRequest : AmazonStorageGatewayRequest
     {
-        private string gatewayARN;
-        private string marker;
-        private int? limit;
-
+        private string _gatewayARN;
+        private int? _limit;
+        private string _marker;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
-        /// region.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
         public string GatewayARN
         {
-            get { return this.gatewayARN; }
-            set { this.gatewayARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;
+            return this._gatewayARN != null;
         }
 
         /// <summary>
-        /// A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List
-        /// iSCSI Volumes request.
-        ///  
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// Specifies that the list of volumes returned be limited to the specified number of items.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        /// Specifies that the list of volumes returned be limited to the specified number of
+        /// items.
         /// </para>
         /// </summary>
         public int Limit
         {
-            get { return this.limit ?? default(int); }
-            set { this.limit = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this.limit.HasValue;
+            return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// A string that indicates the position at which to begin the returned list of volumes.
+        /// Obtain the marker from the response of a previous List iSCSI Volumes request.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
         }
 
     }
 }
-    
