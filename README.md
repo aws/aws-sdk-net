@@ -1,4 +1,4 @@
-# AWS SDK for .NET [![Build Status](https://travis-ci.org/aws/aws-sdk-net.png?branch=master)](https://travis-ci.org/aws/aws-sdk-net)
+# AWS SDK for .NET [![Build Status](https://travis-ci.org/wmatveyenko/aws-sdk-net.png?branch=master)](https://travis-ci.org/wmatveyenko/aws-sdk-net)
 
 The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get started in minutes using [NuGet][nuget-info] or by downloading the [AWS SDK for .NET preview zip file][sdk-zip].
 
