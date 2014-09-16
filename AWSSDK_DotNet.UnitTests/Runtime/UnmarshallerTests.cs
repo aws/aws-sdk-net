@@ -41,8 +41,7 @@ namespace AWSSDK.UnitTests
             ((RequestContext)context.RequestContext).Request = new ListBucketsRequestMarshaller().Marshall(request);
             ((RequestContext)context.RequestContext).Unmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
-            var response = MockWebResponse.CreateFromResource("ListBucketsResponse.txt")
-                as HttpWebResponse;
+            var response = GetListBucketsResponse();
             context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
 
             RuntimePipeline.InvokeSync(context);
@@ -52,6 +51,46 @@ namespace AWSSDK.UnitTests
 
             var listBucketsResponse = context.ResponseContext.Response as ListBucketsResponse;
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
+        }
+
+        private static HttpWebResponse GetListBucketsResponse()
+        {
+            var body = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+<ListAllMyBucketsResult xmlns=""http://s3.amazonaws.com/doc/2006-03-01/"">
+    <Owner>
+        <ID>123456789</ID>
+        <DisplayName>test-account</DisplayName>
+    </Owner>
+    <Buckets>
+        <Bucket>
+            <Name>Bucket1</Name>
+            <CreationDate>2014-04-18T17:56:06.000Z</CreationDate>
+        </Bucket>
+        <Bucket>
+            <Name>Bucket2</Name>
+            <CreationDate>2014-06-05T23:18:53.000Z</CreationDate>
+        </Bucket>
+        <Bucket>
+            <Name>Bucket3</Name>
+            <CreationDate>2014-06-05T23:18:53.000Z</CreationDate>
+        </Bucket>
+        <Bucket>
+            <Name>Bucket4</Name>
+            <CreationDate>2014-06-05T23:18:53.000Z</CreationDate>
+        </Bucket>
+    </Buckets>
+</ListAllMyBucketsResult>";
+            var headers = new Dictionary<string, string>();
+            headers["x-amz-request-id"] = "357B62B8E32948B9";
+            headers["x-amz-id-2"] = "TFD+oMfRT5nVXm81tex2+Uh8R/VZRaztjPALzXknR7IC3RGfVPhpuiiHMtL0fFKF";
+            headers["Content-Type"] = "application/xml";
+            headers["Transfer-Encoding"] = "chunked";
+            headers["Date"] = "Mon, 23 Jun 2014 03:31:12 GMT";
+            headers["Server"] = "AmazonS3";
+
+            var response = MockWebResponse.Create(HttpStatusCode.OK, headers, body)
+                as HttpWebResponse;
+            return response;
         }
 
 #if BCL45
@@ -69,8 +108,7 @@ namespace AWSSDK.UnitTests
             ((RequestContext)context.RequestContext).Request = new ListBucketsRequestMarshaller().Marshall(request);
             ((RequestContext)context.RequestContext).Unmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
-            var response = MockWebResponse.CreateFromResource("ListBucketsResponse.txt")
-                as HttpWebResponse;
+            var response = GetListBucketsResponse();
             context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
 
             var listBucketsResponse = await RuntimePipeline.InvokeAsync<ListBucketsResponse>(context);
@@ -95,8 +133,7 @@ namespace AWSSDK.UnitTests
             ((RequestContext)context.RequestContext).Request = new ListBucketsRequestMarshaller().Marshall(request);
             ((RequestContext)context.RequestContext).Unmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
-            var response = MockWebResponse.CreateFromResource("ListBucketsResponse.txt")
-                as HttpWebResponse;
+            var response = GetListBucketsResponse();
             context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
 
             var asyncResult = RuntimePipeline.InvokeAsync(context);

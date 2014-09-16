@@ -62,7 +62,22 @@ namespace AWSSDK.UnitTests
             Tester.Reset();
             Tester.Action = (int callCount) =>
             {
-                var errorResponse = (HttpWebResponse) MockWebResponse.CreateFromResource("404Response.txt");
+                var body = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+<Error>
+    <Code>NoSuchBucket</Code>
+    <Message>The specified bucket does not exist</Message>
+    <BucketName>nonexistentbucket</BucketName>
+    <RequestId>749945D6E23AFF48</RequestId>
+    <HostId>xN4fcAA90mhYmTC8o/SX2jBBunBSrD45cMwLYwAu0LZhcn9HIU/KXwtieQO05beD</HostId>
+</Error>";
+                var headers = new Dictionary<string, string>();
+                headers["x-amz-request-id"]= "749945D6E23AFF48";
+                headers["x-amz-id-2"] ="xN4fcAA90mhYmTC8o/SX2jBBunBSrD45cMwLYwAu0LZhcn9HIU/KXwtieQO05beD";
+                headers["Content-Type"] = "application/xml";
+                headers["Transfer-Encoding"] = "chunked";
+                headers["Date"]= "Mon, 16 Jun 2014 17:34:56 GMT";
+                headers["Server"] = "AmazonS3";
+                var errorResponse = (HttpWebResponse) MockWebResponse.Create(HttpStatusCode.NotFound, headers, body);
                 throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
             };
 
