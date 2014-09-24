@@ -1,6 +1,6 @@
 # AWS SDK for .NET [![Build Status](https://travis-ci.org/aws/aws-sdk-net.png?branch=master)](https://travis-ci.org/aws/aws-sdk-net)
 
-The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get started in minutes using [NuGet][nuget-info] or by downloading the [AWS SDK for .NET preview zip file][sdk-zip].
+The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get started in minutes using [NuGet][nuget-info] or by getting the [source code][sdk-source].
 
 * [API Docs][docs-api]
 * [SDK Homepage][sdk-website]
@@ -22,9 +22,7 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 1. **Sign up for AWS** - Before you begin, you need an AWS account. Please see the [AWS Account and Credentials][docs-signup] section of the developer guide for information about how to create an AWS account and retrieve your AWS credentials.
 1. **Minimum requirements** - To run the SDK you need the **Microsoft .NET Framework 3.5 or later**. For more information about the requirements and optimum settings for the SDK, please see the [.NET Development Environment][docs-signup] section of the developer guide.
 1. **Install the SDK** - Using [NuGet][nuget-info] is the easiest way to add the AWS SDK for .NET to a Visual Studio project.  Simply type the following in the Package Manager Console: 
-`` 
-'Install-Package AWSSDK'
-``
+`` 'Install-Package AWSSDK'``
 1. **Using the SDK** - The best way to become familiar with how to use the SDK is to read the [Developer Guide][docs-guide].
 
 ## Source Layout
@@ -59,6 +57,7 @@ the startup project in the **AWSSDK_DotNet.Core.sln** solution.
 [aws]: http://aws.amazon.com/
 [sdk-website]: http://aws.amazon.com/sdkfornet
 [sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=61
+[sdk-source]: https://github.com/aws/aws-sdk-net
 [sdk-issues]: https://github.com/aws/aws-sdk-net/issues
 [sdk-license]: http://aws.amazon.com/apache2.0/
 [docs-api]: http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html
