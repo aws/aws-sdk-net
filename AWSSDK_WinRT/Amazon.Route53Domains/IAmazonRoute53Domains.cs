@@ -37,7 +37,6 @@ namespace Amazon.Route53Domains
                 
         #region  CheckDomainAvailability
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CheckDomainAvailability operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -53,7 +52,6 @@ namespace Amazon.Route53Domains
         #endregion
                 
         #region  DisableDomainTransferLock
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableDomainTransferLock operation.
@@ -71,7 +69,6 @@ namespace Amazon.Route53Domains
                 
         #region  EnableDomainTransferLock
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the EnableDomainTransferLock operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -87,7 +84,6 @@ namespace Amazon.Route53Domains
         #endregion
                 
         #region  GetDomainDetail
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDomainDetail operation.
@@ -105,7 +101,6 @@ namespace Amazon.Route53Domains
                 
         #region  GetOperationDetail
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetOperationDetail operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -121,7 +116,6 @@ namespace Amazon.Route53Domains
         #endregion
                 
         #region  ListDomains
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
@@ -139,7 +133,6 @@ namespace Amazon.Route53Domains
                 
         #region  ListOperations
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListOperations operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -155,7 +148,6 @@ namespace Amazon.Route53Domains
         #endregion
                 
         #region  RegisterDomain
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
@@ -173,7 +165,6 @@ namespace Amazon.Route53Domains
                 
         #region  RetrieveDomainAuthCode
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveDomainAuthCode operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -189,7 +180,6 @@ namespace Amazon.Route53Domains
         #endregion
                 
         #region  TransferDomain
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the TransferDomain operation.
@@ -207,7 +197,6 @@ namespace Amazon.Route53Domains
                 
         #region  UpdateDomainContact
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDomainContact operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -224,7 +213,6 @@ namespace Amazon.Route53Domains
                 
         #region  UpdateDomainContactPrivacy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDomainContactPrivacy operation.
         /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
@@ -240,7 +228,6 @@ namespace Amazon.Route53Domains
         #endregion
                 
         #region  UpdateDomainNameservers
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDomainNameservers operation.

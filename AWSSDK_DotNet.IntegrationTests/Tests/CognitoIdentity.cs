@@ -168,6 +168,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(poolName, describePoolResult.IdentityPoolName);
         }
 
+        public static void UpdateIdentityPool(string poolId, string poolName, Dictionary<string, string> providers)
+        {
+            var updateRequest = new UpdateIdentityPoolRequest
+            {
+                IdentityPoolName = poolName,
+                IdentityPoolId = poolId,
+                AllowUnauthenticatedIdentities = true,
+            };
+            if (providers != null && providers.Count > 0)
+                updateRequest.SupportedLoginProviders = providers;
+
+            Client.UpdateIdentityPool(updateRequest);
+        }
+
         #endregion
 
         #region Private members

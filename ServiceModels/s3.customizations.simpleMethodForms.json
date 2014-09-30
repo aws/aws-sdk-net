@@ -1,0 +1,352 @@
+{
+    "suppressSimpleMethodExceptionDocs": true,
+    "simpleMethods": {
+        "operations": {
+            "AbortMultipartUpload": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key",
+                        "UploadId"
+                    ]
+                ]
+            },
+            "CopyObject": {
+                "methodForms": [
+                    [
+                        "SourceBucket",
+                        "SourceKey",
+                        "DestinationBucket",
+                        "DestinationKey"
+                    ],
+                    [
+                        "SourceBucket",
+                        "SourceKey",
+                        "SourceVersionId",
+                        "DestinationBucket",
+                        "DestinationKey"
+                    ]
+                ]
+            },
+            "CopyPart": {
+                "methodForms": [
+                    [
+                        "SourceBucket",
+                        "SourceKey",
+                        "DestinationBucket",
+                        "DestinationKey",
+                        "UploadId"
+                    ],
+                    [
+                        "SourceBucket",
+                        "SourceKey",
+                        "SourceVersionId",
+                        "DestinationBucket",
+                        "DestinationKey",
+                        "UploadId"
+                    ]
+                ]
+            },
+            "DeleteBucket": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "DeleteBucketPolicy": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "DeleteBucketTagging": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "DeleteBucketWebsite": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "DeleteCORSConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "DeleteLifecycleConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "DeleteObject": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key"
+                    ],
+                    [
+                        "BucketName",
+                        "Key",
+                        "VersionId"
+                    ]
+                ]
+            },
+            "GetACL": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketLocation": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketLogging": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketNotification": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketPolicy": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketRequestPayment": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketRequestTagging": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketVersioning": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetBucketWebsite": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetCORSConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetLifecycleConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "GetObject": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key"
+                    ],
+                    [
+                        "BucketName",
+                        "Key",
+                        "VersionId"
+                    ]
+                ]
+            },
+            "GetObjectMetadata": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key"
+                    ],
+                    [
+                        "BucketName",
+                        "Key",
+                        "VersionId"
+                    ]
+                ]
+            },
+            "GetObjectTorrent": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key"
+                    ]
+                ]
+            },
+            "InitiateMultipartUpload": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key"
+                    ]
+                ]
+            },
+            "ListMultipartUploads": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ],
+                    [
+                        "BucketName",
+                        "Prefix"
+                    ]
+                ]
+            },
+            "ListObjects": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ],
+                    [
+                        "BucketName",
+                        "Prefix"
+                    ]
+                ]
+            },
+            "ListParts": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key",
+                        "UploadId"
+                    ]
+                ]
+            },
+            "ListVersions": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ],
+                    [
+                        "BucketName",
+                        "Prefix"
+                    ]
+                ]
+            },
+            "PutBucket": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
+            "PutBucketPolicy": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Policy"
+                    ],
+                    [
+                        "BucketName",
+                        "Policy",
+                        "ContentMD5"
+                    ]
+                ]
+            },
+            "PutBucketRequestPayment": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "RequestPaymentConfiguration"
+                    ]
+                ]
+            },
+            "PutBucketTagging": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "TagSet"
+                    ]
+                ]
+            },
+            "PutBucketWebsite": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "WebsiteConfiguration"
+                    ]
+                ]
+            },
+            "PutCORSConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Configuration"
+                    ]
+                ]
+            },
+            "PutLifecycleConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Configuration"
+                    ]
+                ]
+            },
+            "RestoreObject": {
+                "methodForms": [
+                    [
+                        "BucketName",
+                        "Key"
+                    ],
+                    [
+                        "BucketName",
+                        "Key",
+                        "Days"
+                    ],
+                    [
+                        "BucketName",
+                        "Key",
+                        "VersionId"
+                    ],
+                    [
+                        "BucketName",
+                        "Key",
+                        "VersionId",
+                        "Days"
+                    ]
+                ]
+            }
+        }
+    }
+}

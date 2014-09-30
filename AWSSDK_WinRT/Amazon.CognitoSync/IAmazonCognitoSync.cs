@@ -47,7 +47,6 @@ namespace Amazon.CognitoSync
                 
         #region  DeleteDataset
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDataset operation.
         /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
@@ -63,7 +62,6 @@ namespace Amazon.CognitoSync
         #endregion
                 
         #region  DescribeDataset
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDataset operation.
@@ -81,7 +79,6 @@ namespace Amazon.CognitoSync
                 
         #region  DescribeIdentityPoolUsage
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
         /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
@@ -97,7 +94,6 @@ namespace Amazon.CognitoSync
         #endregion
                 
         #region  DescribeIdentityUsage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityUsage operation.
@@ -115,7 +111,6 @@ namespace Amazon.CognitoSync
                 
         #region  ListDatasets
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListDatasets operation.
         /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
@@ -131,7 +126,6 @@ namespace Amazon.CognitoSync
         #endregion
                 
         #region  ListIdentityPoolUsage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
@@ -149,7 +143,6 @@ namespace Amazon.CognitoSync
                 
         #region  ListRecords
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListRecords operation.
         /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
@@ -165,7 +158,6 @@ namespace Amazon.CognitoSync
         #endregion
                 
         #region  UpdateRecords
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRecords operation.

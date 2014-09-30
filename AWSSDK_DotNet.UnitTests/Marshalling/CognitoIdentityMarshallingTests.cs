@@ -175,6 +175,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CognitoIdentity")]
+        public void GetOpenIdTokenForDeveloperIdentityMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetOpenIdTokenForDeveloperIdentityRequest>();
+            var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetOpenIdTokenForDeveloperIdentityRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetOpenIdTokenForDeveloperIdentity").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetOpenIdTokenForDeveloperIdentityResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
         public void ListIdentitiesMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListIdentitiesRequest>();
@@ -226,6 +255,80 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ListIdentityPoolsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListIdentityPoolsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
+        public void LookupDeveloperIdentityMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<LookupDeveloperIdentityRequest>();
+            var marshaller = new LookupDeveloperIdentityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<LookupDeveloperIdentityRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("LookupDeveloperIdentity").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = LookupDeveloperIdentityResponseUnmarshaller.Instance.Unmarshall(context)
+                as LookupDeveloperIdentityResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
+        public void MergeDeveloperIdentitiesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<MergeDeveloperIdentitiesRequest>();
+            var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<MergeDeveloperIdentitiesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("MergeDeveloperIdentities").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = MergeDeveloperIdentitiesResponseUnmarshaller.Instance.Unmarshall(context)
+                as MergeDeveloperIdentitiesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
+        public void UnlinkDeveloperIdentityMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UnlinkDeveloperIdentityRequest>();
+            var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UnlinkDeveloperIdentityRequest>(request,jsonRequest);
+
         }
 
         

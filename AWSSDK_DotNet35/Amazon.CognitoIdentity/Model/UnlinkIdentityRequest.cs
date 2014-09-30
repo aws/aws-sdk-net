@@ -55,7 +55,7 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logins. A set of optional name/value pairs that map provider
+        /// Gets and sets the property Logins. A set of optional name-value pairs that map provider
         /// names to provider tokens.
         /// </summary>
         public Dictionary<string, string> Logins

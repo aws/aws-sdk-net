@@ -54,7 +54,6 @@ namespace Amazon.DirectConnect
                 
         #region  AllocateConnectionOnInterconnect
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AllocateConnectionOnInterconnect operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -70,7 +69,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  AllocatePrivateVirtualInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AllocatePrivateVirtualInterface operation.
@@ -88,7 +86,6 @@ namespace Amazon.DirectConnect
                 
         #region  AllocatePublicVirtualInterface
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AllocatePublicVirtualInterface operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -104,7 +101,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  ConfirmConnection
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmConnection operation.
@@ -122,7 +118,6 @@ namespace Amazon.DirectConnect
                 
         #region  ConfirmPrivateVirtualInterface
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmPrivateVirtualInterface operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -138,7 +133,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  ConfirmPublicVirtualInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmPublicVirtualInterface operation.
@@ -156,7 +150,6 @@ namespace Amazon.DirectConnect
                 
         #region  CreateConnection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateConnection operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -172,7 +165,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  CreateInterconnect
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInterconnect operation.
@@ -190,7 +182,6 @@ namespace Amazon.DirectConnect
                 
         #region  CreatePrivateVirtualInterface
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePrivateVirtualInterface operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -206,7 +197,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  CreatePublicVirtualInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePublicVirtualInterface operation.
@@ -224,7 +214,6 @@ namespace Amazon.DirectConnect
                 
         #region  DeleteConnection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteConnection operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -240,7 +229,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  DeleteInterconnect
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInterconnect operation.
@@ -258,7 +246,6 @@ namespace Amazon.DirectConnect
                 
         #region  DeleteVirtualInterface
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualInterface operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -274,7 +261,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  DescribeConnections
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConnections operation.
@@ -292,7 +278,6 @@ namespace Amazon.DirectConnect
                 
         #region  DescribeConnectionsOnInterconnect
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConnectionsOnInterconnect operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -308,7 +293,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  DescribeInterconnects
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInterconnects operation.
@@ -326,7 +310,6 @@ namespace Amazon.DirectConnect
                 
         #region  DescribeLocations
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLocations operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -343,7 +326,6 @@ namespace Amazon.DirectConnect
                 
         #region  DescribeVirtualGateways
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVirtualGateways operation.
         /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
@@ -359,7 +341,6 @@ namespace Amazon.DirectConnect
         #endregion
                 
         #region  DescribeVirtualInterfaces
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVirtualInterfaces operation.

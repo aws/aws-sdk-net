@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseGenerator : BaseGeneratorBase
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 9 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 9 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 	
     // An object that contains all the information about a service
 	public GeneratorConfig Config { get; set; }
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 16 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 16 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(@"/*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -69,21 +69,21 @@ this.Write(@"/*
         #line default
         #line hidden
         
-        #line 33 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 33 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Path.GetFileName(this.Config.ModelPath)));
 
         
         #line default
         #line hidden
         
-        #line 33 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 33 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service model.\r\n */\r\n");
 
         
         #line default
         #line hidden
         
-        #line 35 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 35 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -95,49 +95,49 @@ this.Write(" service model.\r\n */\r\n");
         #line default
         #line hidden
         
-        #line 41 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 41 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 43 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 43 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// <seealso cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 44 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 44 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".IAmazon");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 44 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 44 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\"/>\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"request\">Cont" +
         "ainer for the necessary parameters to execute the ");
 
@@ -145,14 +145,14 @@ this.Write("\"/>\r\n        /// </summary>\r\n        /// \r\n        /// <param
         #line default
         #line hidden
         
-        #line 47 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 47 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 47 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(@" operation.</param>
         /// <param name=""cancellationToken"">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -164,7 +164,7 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 52 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 52 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -176,49 +176,49 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 58 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 58 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 60 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 60 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 60 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 60 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// <seealso cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 61 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 61 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".IAmazon");
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 61 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 61 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\"/>\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"request\">Cont" +
         "ainer for the necessary parameters to execute the ");
 
@@ -226,28 +226,28 @@ this.Write("\"/>\r\n        /// </summary>\r\n        /// \r\n        /// <param
         #line default
         #line hidden
         
-        #line 64 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 64 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 64 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation on Amazon");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 64 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 64 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(@"Client.</param>
         /// <param name=""callback"">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name=""state"">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -259,21 +259,21 @@ this.Write(@"Client.</param>
         #line default
         #line hidden
         
-        #line 69 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 69 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 69 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 69 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\r\n        ///         operation.</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 71 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -285,49 +285,49 @@ this.Write("\r\n        ///         operation.</returns>\r\n");
         #line default
         #line hidden
         
-        #line 77 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 77 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Finishes the asynchronous execution of the  ");
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 79 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 79 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// <seealso cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 80 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 80 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".IAmazon");
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 80 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 80 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\"/>\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"asyncResult\">" +
         "The IAsyncResult returned by the call to Begin");
 
@@ -335,49 +335,49 @@ this.Write("\"/>\r\n        /// </summary>\r\n        /// \r\n        /// <param
         #line default
         #line hidden
         
-        #line 83 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 83 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 83 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</param>\r\n        /// \r\n        /// <returns>Returns a  ");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 85 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 85 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Result from ");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 85 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 85 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 86 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -390,28 +390,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 93 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 93 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Implementation for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 95 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 95 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 97 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -419,14 +419,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 99 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 99 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 101 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -439,28 +439,28 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 108 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 108 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Interface for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 110 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 110 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 112 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -468,14 +468,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 114 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 114 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 116 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -491,14 +491,14 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 126 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 126 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 128 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -506,14 +506,14 @@ this.Write("    /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 130 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 130 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 132 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -527,14 +527,14 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 140 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 140 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 142 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -542,14 +542,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 144 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 144 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 146 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 146 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -569,14 +569,14 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 160 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 160 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 162 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 162 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -584,14 +584,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 164 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 164 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 166 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 166 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
   if(includeRequest)
     {
 
@@ -599,7 +599,7 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 168 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 168 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"request\">Container for the necessary parameters to execu" +
         "te the ");
 
@@ -607,21 +607,21 @@ this.Write("        /// <param name=\"request\">Container for the necessary para
         #line default
         #line hidden
         
-        #line 169 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 169 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 169 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service method.</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 170 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -629,42 +629,42 @@ this.Write(" service method.</param>\r\n");
         #line default
         #line hidden
         
-        #line 172 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 172 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 174 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 174 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 174 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 174 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 174 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 174 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 174 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 174 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 175 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 175 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         // Skip adding exceptions in the ndoc because we are not generating exceptions from the service model.
         if(this.Config.Namespace != "Amazon.S3")
@@ -686,14 +686,14 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 191 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 191 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 193 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 193 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -701,14 +701,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 195 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 195 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 197 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
   foreach(var item in members)
     {
 
@@ -716,42 +716,42 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 199 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 199 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 200 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 200 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Customizations.SimpleConstructorsModel.CamelCaseParam(item.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 200 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 200 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 200 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 200 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(item.GetParamDocumentationForOperation(operation.Name)));
 
         
         #line default
         #line hidden
         
-        #line 200 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 200 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 201 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 201 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -759,47 +759,50 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 203 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 203 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 205 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 205 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 205 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 205 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 206 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 206 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
-        foreach(var exception in operation.Exceptions)
-        {
-            this.FormatExceptionDocumentation(exception);
-        }
+		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
+		{
+			foreach(var exception in operation.Exceptions)
+			{
+				this.FormatExceptionDocumentation(exception);
+			}
+		}
     }
 
 	public void FormatOperationRequestDocumentation(Operation operation)
@@ -810,28 +813,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 216 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 219 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t/// Container for the parameters to the ");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 221 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 221 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n");
 
         
         #line default
         #line hidden
         
-        #line 219 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 222 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     WriteCommentBlock("	", documentation);
 
@@ -839,14 +842,14 @@ this.Write(" operation.\r\n");
         #line default
         #line hidden
         
-        #line 221 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 224 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 223 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 226 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 	}
 
@@ -860,28 +863,28 @@ this.Write("\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 231 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 234 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <exception cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 235 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 235 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\">\r\n");
 
         
         #line default
         #line hidden
         
-        #line 233 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 236 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -889,14 +892,14 @@ this.Write("\">\r\n");
         #line default
         #line hidden
         
-        #line 235 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 238 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </exception>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 237 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 240 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -908,42 +911,42 @@ this.Write("        /// </exception>\r\n");
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 246 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t///\tReturns information about the ");
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 248 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 248 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" response metadata.\r\n\t///\tThe ");
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 249 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 249 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 251 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 	}
 
@@ -1038,28 +1041,28 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 337 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 340 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Instantiates ");
 
         
         #line default
         #line hidden
         
-        #line 339 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 342 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 339 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 342 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 341 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 344 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         foreach (var member in members)
         {
@@ -1068,42 +1071,42 @@ this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 344 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 347 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 345 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 348 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Customizations.SimpleConstructorsModel.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 345 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 348 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 345 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 348 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetParamDocumentationForConstructor(className)));
 
         
         #line default
         #line hidden
         
-        #line 345 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 348 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 346 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 349 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         }
     }
@@ -1112,7 +1115,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 351 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 354 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     // Generates methods for the client that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1134,70 +1137,70 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 367 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 370 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 368 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 371 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 368 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 371 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 368 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 371 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 368 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 371 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 368 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 371 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 368 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 371 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n            var request = new ");
 
         
         #line default
         #line hidden
         
-        #line 370 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 373 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 370 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 373 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Request();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 371 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 374 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1206,42 +1209,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 374 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("            request.");
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 378 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 378 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 378 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Customizations.SimpleMethodsModel.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 378 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 379 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         
 }
@@ -1250,28 +1253,28 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 379 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 382 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 380 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 383 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 380 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 383 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(request);\r\n        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 383 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 386 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1281,7 +1284,7 @@ this.Write("(request);\r\n        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 389 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 392 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1303,56 +1306,56 @@ this.Write("(request);\r\n        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 405 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 408 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        ");
 
         
         #line default
         #line hidden
         
-        #line 406 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 409 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 406 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 409 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 406 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 409 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 406 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 409 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 406 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 409 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 406 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 409 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(");\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 408 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 411 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1362,7 +1365,7 @@ this.Write(");\r\n\r\n");
         #line default
         #line hidden
         
-        #line 415 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 418 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     // Generates constructors for operation requests that have request members in the parameters for easy creation of requests
     // Only generates them if they are specified in the customizations of the service
@@ -1377,7 +1380,7 @@ this.Write(");\r\n\r\n");
         #line default
         #line hidden
         
-        #line 424 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 427 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Empty constructor used to set  properties inde" +
         "pendently even when a simple constructor is available\r\n        /// </summary>\r\n " +
         "       public ");
@@ -1386,21 +1389,21 @@ this.Write("        /// <summary>\r\n        /// Empty constructor used to set  
         #line default
         #line hidden
         
-        #line 427 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 430 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 427 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 430 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("() { }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 429 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 432 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
             foreach (var form in forms)
             {
@@ -1411,48 +1414,48 @@ this.Write("() { }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 435 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 438 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
  FormatSimpleConstructorDocumentation(className, docMembers); 
         
         #line default
         #line hidden
         
-        #line 435 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 438 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 439 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 439 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 439 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 439 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 438 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 441 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1461,42 +1464,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 441 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 444 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("            ");
 
         
         #line default
         #line hidden
         
-        #line 442 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 442 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 442 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Customizations.SimpleConstructorsModel.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 442 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 443 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 446 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         
 }
@@ -1505,14 +1508,14 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 446 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 449 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 449 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 452 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Master\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
             }
         }

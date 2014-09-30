@@ -124,6 +124,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Util\*" Exclude="..\AWSSDK_DotNet35\Amazon.Util\ProfileManager.cs;..\AWSSDK_DotNet35\Amazon.Util\*.bcl.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.Runtime\Internal\Util\AsyncHelpers.cs">
+      <Visible>false</Visible>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\ThirdParty\Ionic.Zlib\*">
@@ -261,7 +264,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\CognitoAWSCredentials.bcl.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.CognitoIdentity\CognitoAWSCredentials.async.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\*">
@@ -273,6 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoSync\IAmazonCognitoSync.cs;..\AWSSDK_DotNet35\Amazon.CognitoSync\AmazonCognitoSyncClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\*">
@@ -494,7 +503,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\*" Exclude="..\AWSSDK_DotNet35\Amazon.SecurityToken\IAmazonSecurityTokenService.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\*" Exclude="..\AWSSDK_DotNet35\Amazon.SecurityToken\IAmazonSecurityTokenService.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AssumeRoleAWSCredentials.bcl.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.SecurityToken\AssumeRoleAWSCredentials.async.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\Model\*">

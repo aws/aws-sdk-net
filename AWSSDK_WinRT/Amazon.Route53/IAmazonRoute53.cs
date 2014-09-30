@@ -37,7 +37,6 @@ namespace Amazon.Route53
                 
         #region  ChangeResourceRecordSets
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeResourceRecordSets operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -53,7 +52,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  ChangeTagsForResource
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeTagsForResource operation.
@@ -71,7 +69,6 @@ namespace Amazon.Route53
                 
         #region  CreateHealthCheck
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHealthCheck operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -87,7 +84,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  CreateHostedZone
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHostedZone operation.
@@ -105,7 +101,6 @@ namespace Amazon.Route53
                 
         #region  DeleteHealthCheck
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHealthCheck operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -121,7 +116,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  DeleteHostedZone
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHostedZone operation.
@@ -139,7 +133,6 @@ namespace Amazon.Route53
                 
         #region  GetChange
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetChange operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -155,7 +148,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  GetCheckerIpRanges
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCheckerIpRanges operation.
@@ -173,7 +165,6 @@ namespace Amazon.Route53
                 
         #region  GetGeoLocation
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetGeoLocation operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -189,7 +180,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  GetHealthCheck
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheck operation.
@@ -207,7 +197,6 @@ namespace Amazon.Route53
                 
         #region  GetHealthCheckCount
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckCount operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -223,7 +212,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  GetHostedZone
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostedZone operation.
@@ -241,7 +229,6 @@ namespace Amazon.Route53
                 
         #region  ListGeoLocations
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListGeoLocations operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -257,7 +244,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  ListHealthChecks
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListHealthChecks operation.
@@ -275,7 +261,6 @@ namespace Amazon.Route53
                 
         #region  ListHostedZones
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListHostedZones operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -291,7 +276,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  ListResourceRecordSets
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListResourceRecordSets operation.
@@ -309,7 +293,6 @@ namespace Amazon.Route53
                 
         #region  ListTagsForResource
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -326,7 +309,6 @@ namespace Amazon.Route53
                 
         #region  ListTagsForResources
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResources operation.
         /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
@@ -342,7 +324,6 @@ namespace Amazon.Route53
         #endregion
                 
         #region  UpdateHealthCheck
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateHealthCheck operation.

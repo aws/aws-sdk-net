@@ -53,7 +53,6 @@ namespace Amazon.CloudTrail
                 
         #region  CreateTrail
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTrail operation.
         /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
@@ -69,7 +68,6 @@ namespace Amazon.CloudTrail
         #endregion
                 
         #region  DeleteTrail
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTrail operation.
@@ -87,7 +85,6 @@ namespace Amazon.CloudTrail
                 
         #region  DescribeTrails
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
         /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
@@ -103,7 +100,6 @@ namespace Amazon.CloudTrail
         #endregion
                 
         #region  GetTrailStatus
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTrailStatus operation.
@@ -121,7 +117,6 @@ namespace Amazon.CloudTrail
                 
         #region  StartLogging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StartLogging operation.
         /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
@@ -138,7 +133,6 @@ namespace Amazon.CloudTrail
                 
         #region  StopLogging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StopLogging operation.
         /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
@@ -154,7 +148,6 @@ namespace Amazon.CloudTrail
         #endregion
                 
         #region  UpdateTrail
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTrail operation.

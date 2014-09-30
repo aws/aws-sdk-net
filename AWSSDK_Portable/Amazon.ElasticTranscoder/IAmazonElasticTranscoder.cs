@@ -40,7 +40,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  CancelJob
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -56,7 +55,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  CreateJob
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
@@ -74,7 +72,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  CreatePipeline
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -90,7 +87,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  CreatePreset
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePreset operation.
@@ -108,7 +104,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  DeletePipeline
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -124,7 +119,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  DeletePreset
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePreset operation.
@@ -142,7 +136,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  ListJobsByPipeline
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByPipeline operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -158,7 +151,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  ListJobsByStatus
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByStatus operation.
@@ -176,7 +168,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  ListPipelines
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -192,7 +183,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  ListPresets
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPresets operation.
@@ -210,7 +200,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  ReadJob
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ReadJob operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -226,7 +215,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  ReadPipeline
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPipeline operation.
@@ -244,7 +232,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  ReadPreset
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPreset operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -260,7 +247,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  TestRole
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the TestRole operation.
@@ -278,7 +264,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  UpdatePipeline
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipeline operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -295,7 +280,6 @@ namespace Amazon.ElasticTranscoder
                 
         #region  UpdatePipelineNotifications
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineNotifications operation.
         /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
@@ -311,7 +295,6 @@ namespace Amazon.ElasticTranscoder
         #endregion
                 
         #region  UpdatePipelineStatus
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineStatus operation.

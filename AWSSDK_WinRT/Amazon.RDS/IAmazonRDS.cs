@@ -66,7 +66,6 @@ namespace Amazon.RDS
                 
         #region  AddSourceIdentifierToSubscription
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AddSourceIdentifierToSubscription operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -82,7 +81,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  AddTagsToResource
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToResource operation.
@@ -100,7 +98,6 @@ namespace Amazon.RDS
                 
         #region  AuthorizeDBSecurityGroupIngress
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -116,7 +113,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  CopyDBSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyDBSnapshot operation.
@@ -134,7 +130,6 @@ namespace Amazon.RDS
                 
         #region  CreateDBInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstance operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -150,7 +145,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  CreateDBInstanceReadReplica
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstanceReadReplica operation.
@@ -168,7 +162,6 @@ namespace Amazon.RDS
                 
         #region  CreateDBParameterGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBParameterGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -184,7 +177,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  CreateDBSecurityGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSecurityGroup operation.
@@ -202,7 +194,6 @@ namespace Amazon.RDS
                 
         #region  CreateDBSnapshot
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSnapshot operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -218,7 +209,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  CreateDBSubnetGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSubnetGroup operation.
@@ -236,7 +226,6 @@ namespace Amazon.RDS
                 
         #region  CreateEventSubscription
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -252,7 +241,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  CreateOptionGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOptionGroup operation.
@@ -270,7 +258,6 @@ namespace Amazon.RDS
                 
         #region  DeleteDBInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBInstance operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -286,7 +273,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DeleteDBParameterGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBParameterGroup operation.
@@ -304,7 +290,6 @@ namespace Amazon.RDS
                 
         #region  DeleteDBSecurityGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSecurityGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -320,7 +305,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DeleteDBSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSnapshot operation.
@@ -338,7 +322,6 @@ namespace Amazon.RDS
                 
         #region  DeleteDBSubnetGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSubnetGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -354,7 +337,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DeleteEventSubscription
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
@@ -372,7 +354,6 @@ namespace Amazon.RDS
                 
         #region  DeleteOptionGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOptionGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -388,7 +369,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeDBEngineVersions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
@@ -406,7 +386,6 @@ namespace Amazon.RDS
                 
         #region  DescribeDBInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBInstances operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -422,7 +401,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeDBLogFiles
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBLogFiles operation.
@@ -440,7 +418,6 @@ namespace Amazon.RDS
                 
         #region  DescribeDBParameterGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -456,7 +433,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeDBParameters
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameters operation.
@@ -474,7 +450,6 @@ namespace Amazon.RDS
                 
         #region  DescribeDBSecurityGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -490,7 +465,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeDBSnapshots
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
@@ -508,7 +482,6 @@ namespace Amazon.RDS
                 
         #region  DescribeDBSubnetGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -524,7 +497,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeEngineDefaultParameters
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
@@ -542,7 +514,6 @@ namespace Amazon.RDS
                 
         #region  DescribeEventCategories
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -558,7 +529,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeEvents
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -576,7 +546,6 @@ namespace Amazon.RDS
                 
         #region  DescribeEventSubscriptions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -592,7 +561,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeOptionGroupOptions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroupOptions operation.
@@ -610,7 +578,6 @@ namespace Amazon.RDS
                 
         #region  DescribeOptionGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -626,7 +593,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeOrderableDBInstanceOptions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
@@ -644,7 +610,6 @@ namespace Amazon.RDS
                 
         #region  DescribeReservedDBInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -660,7 +625,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  DescribeReservedDBInstancesOfferings
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
@@ -678,7 +642,6 @@ namespace Amazon.RDS
                 
         #region  DownloadDBLogFilePortion
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DownloadDBLogFilePortion operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -694,7 +657,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  ListTagsForResource
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
@@ -712,7 +674,6 @@ namespace Amazon.RDS
                 
         #region  ModifyDBInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBInstance operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -728,7 +689,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  ModifyDBParameterGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBParameterGroup operation.
@@ -746,7 +706,6 @@ namespace Amazon.RDS
                 
         #region  ModifyDBSubnetGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBSubnetGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -762,7 +721,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  ModifyEventSubscription
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
@@ -780,7 +738,6 @@ namespace Amazon.RDS
                 
         #region  ModifyOptionGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyOptionGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -796,7 +753,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  PromoteReadReplica
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PromoteReadReplica operation.
@@ -814,7 +770,6 @@ namespace Amazon.RDS
                 
         #region  PurchaseReservedDBInstancesOffering
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -830,7 +785,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  RebootDBInstance
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootDBInstance operation.
@@ -848,7 +802,6 @@ namespace Amazon.RDS
                 
         #region  RemoveSourceIdentifierFromSubscription
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveSourceIdentifierFromSubscription operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -864,7 +817,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  RemoveTagsFromResource
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
@@ -882,7 +834,6 @@ namespace Amazon.RDS
                 
         #region  ResetDBParameterGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ResetDBParameterGroup operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -898,7 +849,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  RestoreDBInstanceFromDBSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
@@ -916,7 +866,6 @@ namespace Amazon.RDS
                 
         #region  RestoreDBInstanceToPointInTime
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
         /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
@@ -932,7 +881,6 @@ namespace Amazon.RDS
         #endregion
                 
         #region  RevokeDBSecurityGroupIngress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeDBSecurityGroupIngress operation.

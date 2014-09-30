@@ -30,8 +30,13 @@ namespace Amazon.CognitoIdentity.Model
     /// <summary>
     /// Container for the parameters to the GetOpenIdToken operation.
     /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
-    /// from GetId. You can optionally add additional logins for the identity. Supplying multiple
-    /// logins creates an implicit link.
+    /// by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying
+    /// multiple logins creates an implicit link.
+    /// 
+    ///  
+    /// <para>
+    /// The OpenId token is valid for 15 minutes.
+    /// </para>
     /// </summary>
     public partial class GetOpenIdTokenRequest : AmazonCognitoIdentityRequest
     {
@@ -54,7 +59,7 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logins. A set of optional name/value pairs that map provider
+        /// Gets and sets the property Logins. A set of optional name-value pairs that map provider
         /// names to provider tokens.
         /// </summary>
         public Dictionary<string, string> Logins

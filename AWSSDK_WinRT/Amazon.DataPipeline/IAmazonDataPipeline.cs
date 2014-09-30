@@ -78,7 +78,6 @@ namespace Amazon.DataPipeline
                 
         #region  ActivatePipeline
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ActivatePipeline operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -94,7 +93,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  CreatePipeline
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
@@ -112,7 +110,6 @@ namespace Amazon.DataPipeline
                 
         #region  DeletePipeline
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -128,7 +125,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  DescribeObjects
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeObjects operation.
@@ -146,7 +142,6 @@ namespace Amazon.DataPipeline
                 
         #region  DescribePipelines
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePipelines operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -162,7 +157,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  EvaluateExpression
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the EvaluateExpression operation.
@@ -180,7 +174,6 @@ namespace Amazon.DataPipeline
                 
         #region  GetPipelineDefinition
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetPipelineDefinition operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -196,7 +189,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  ListPipelines
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
@@ -214,7 +206,6 @@ namespace Amazon.DataPipeline
                 
         #region  PollForTask
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PollForTask operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -230,7 +221,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  PutPipelineDefinition
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutPipelineDefinition operation.
@@ -248,7 +238,6 @@ namespace Amazon.DataPipeline
                 
         #region  QueryObjects
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the QueryObjects operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -264,7 +253,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  ReportTaskProgress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskProgress operation.
@@ -282,7 +270,6 @@ namespace Amazon.DataPipeline
                 
         #region  ReportTaskRunnerHeartbeat
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskRunnerHeartbeat operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -298,7 +285,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  SetStatus
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStatus operation.
@@ -316,7 +302,6 @@ namespace Amazon.DataPipeline
                 
         #region  SetTaskStatus
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetTaskStatus operation.
         /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
@@ -332,7 +317,6 @@ namespace Amazon.DataPipeline
         #endregion
                 
         #region  ValidatePipelineDefinition
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidatePipelineDefinition operation.

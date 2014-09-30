@@ -30,11 +30,6 @@ namespace <#=this.Config.Namespace#>
 		
 		#region  <#=operation.Name#>
 
-<# 
-        // Adds any simple forms of the operation found in the customizations file
-        AddSimpleClientMethodInterfaces(operation);
- #>
-
 <#AddAsyncDocumentation(operation.Name);#>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, CancellationToken cancellationToken = default(CancellationToken));
 

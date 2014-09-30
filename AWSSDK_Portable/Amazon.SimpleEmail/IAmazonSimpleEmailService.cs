@@ -45,7 +45,6 @@ namespace Amazon.SimpleEmail
                 
         #region  DeleteIdentity
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentity operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -61,7 +60,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  DeleteVerifiedEmailAddress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
@@ -79,7 +77,6 @@ namespace Amazon.SimpleEmail
                 
         #region  GetIdentityDkimAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -95,7 +92,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  GetIdentityNotificationAttributes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityNotificationAttributes operation.
@@ -113,7 +109,6 @@ namespace Amazon.SimpleEmail
                 
         #region  GetIdentityVerificationAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityVerificationAttributes operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -129,7 +124,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  GetSendQuota
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
@@ -147,7 +141,6 @@ namespace Amazon.SimpleEmail
                 
         #region  GetSendStatistics
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -163,7 +156,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  ListIdentities
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
@@ -181,7 +173,6 @@ namespace Amazon.SimpleEmail
                 
         #region  ListVerifiedEmailAddresses
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -197,7 +188,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  SendEmail
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendEmail operation.
@@ -215,7 +205,6 @@ namespace Amazon.SimpleEmail
                 
         #region  SendRawEmail
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SendRawEmail operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -231,7 +220,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  SetIdentityDkimEnabled
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
@@ -249,7 +237,6 @@ namespace Amazon.SimpleEmail
                 
         #region  SetIdentityFeedbackForwardingEnabled
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -265,7 +252,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  SetIdentityNotificationTopic
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityNotificationTopic operation.
@@ -283,7 +269,6 @@ namespace Amazon.SimpleEmail
                 
         #region  VerifyDomainDkim
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -299,7 +284,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  VerifyDomainIdentity
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
@@ -317,7 +301,6 @@ namespace Amazon.SimpleEmail
                 
         #region  VerifyEmailAddress
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
         /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
@@ -333,7 +316,6 @@ namespace Amazon.SimpleEmail
         #endregion
                 
         #region  VerifyEmailIdentity
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailIdentity operation.

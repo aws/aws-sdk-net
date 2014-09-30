@@ -187,6 +187,12 @@
                 }
             ]
         },
+		"ImportInstanceLaunchSpecification": {
+            "modify": [
+				{
+                    "Monitoring": { "locationName": "Monitoring.Enabled" }
+                }            ]
+		},
         "InstanceStatus": {
             "modify": [
                 {

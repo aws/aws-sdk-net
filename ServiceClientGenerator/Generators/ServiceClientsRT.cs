@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+    #line 1 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceClientsRT : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 6 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
     AddLicenseHeader();
 
@@ -39,14 +39,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("\r\n\r\nusing System;\r\nusing System.Runtime.ExceptionServices;\r\nusing System.Threadin" +
                     "g;\r\nusing System.Threading.Tasks;\r\nusing System.Collections.Generic;\r\n\r\nusing ");
             
-            #line 17 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 17 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 18 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -55,35 +55,35 @@ namespace ServiceClientGenerator.Generators
                     "time.Internal;\r\nusing Amazon.Runtime.Internal.Auth;\r\nusing Amazon.Runtime.Intern" +
                     "al.Transform;\r\n\r\nnamespace ");
             
-            #line 24 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 24 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 26 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 26 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
     this.FormatServiceClientDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("    public partial class Amazon");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 27 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client : AmazonServiceClient, IAmazon");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 27 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n        \r\n");
             
-            #line 30 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 30 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
     // Generates generic constructors for the service if enabled in the model
     if(this.Config.GenerateConstructors)
@@ -95,7 +95,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("        #region Constructors\r\n\r\n        /// <summary>\r\n        /// Constructs Ama" +
                     "zon");
             
-            #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 38 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -103,14 +103,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("Client with AWS Credentials\r\n        /// </summary>\r\n        /// <param name=\"cre" +
                     "dentials\">AWS Credentials</param>\r\n        public Amazon");
             
-            #line 41 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 41 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials)\r\n            : this(credentials, new Amazon");
             
-            #line 42 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 42 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -118,7 +118,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 47 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 47 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -127,7 +127,7 @@ namespace ServiceClientGenerator.Generators
                     "dentials\">AWS Credentials</param>\r\n        /// <param name=\"region\">The region t" +
                     "o connect.</param>\r\n        public Amazon");
             
-            #line 51 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 51 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -135,7 +135,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Client(AWSCredentials credentials, RegionEndpoint region)\r\n            : this(cre" +
                     "dentials, new Amazon");
             
-            #line 52 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 52 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -143,14 +143,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 57 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 57 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Credentials and an\r\n        /// Amazon");
             
-            #line 58 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 58 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -159,21 +159,21 @@ namespace ServiceClientGenerator.Generators
                     "edentials\">AWS Credentials</param>\r\n        /// <param name=\"clientConfig\">The A" +
                     "mazon");
             
-            #line 61 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 61 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 62 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 62 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials, Amazon");
             
-            #line 62 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 62 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -181,7 +181,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config clientConfig)\r\n            : base(credentials, clientConfig)\r\n        {\r\n " +
                     "       }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
-            #line 68 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 68 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -190,7 +190,7 @@ namespace ServiceClientGenerator.Generators
                     " /// <param name=\"awsAccessKeyId\">AWS Access Key ID</param>\r\n        /// <param " +
                     "name=\"awsSecretAccessKey\">AWS Secret Access Key</param>\r\n        public Amazon");
             
-            #line 72 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 72 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -198,7 +198,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey)\r\n            : this(awsA" +
                     "ccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 73 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 73 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -206,7 +206,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 78 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 78 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -218,7 +218,7 @@ namespace ServiceClientGenerator.Generators
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 83 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 83 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -226,7 +226,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)\r\n" +
                     "            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 84 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 84 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -234,14 +234,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config() {RegionEndpoint=region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r" +
                     "\n        /// Constructs Amazon");
             
-            #line 89 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 89 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 90 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 90 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -251,21 +251,21 @@ namespace ServiceClientGenerator.Generators
                     "ssKey\">AWS Secret Access Key</param>\r\n        /// <param name=\"clientConfig\">The" +
                     " Amazon");
             
-            #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 94 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 95 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, Amazon");
             
-            #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 95 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -274,7 +274,7 @@ namespace ServiceClientGenerator.Generators
                     "ntConfig)\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs" +
                     " Amazon");
             
-            #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 101 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -286,7 +286,7 @@ namespace ServiceClientGenerator.Generators
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         public Amazon");
             
-            #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 106 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -295,7 +295,7 @@ namespace ServiceClientGenerator.Generators
                     "\n            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new Ama" +
                     "zon");
             
-            #line 107 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 107 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -303,7 +303,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 112 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 112 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -316,7 +316,7 @@ namespace ServiceClientGenerator.Generators
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 118 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 118 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -325,7 +325,7 @@ namespace ServiceClientGenerator.Generators
                     "RegionEndpoint region)\r\n            : this(awsAccessKeyId, awsSecretAccessKey, a" +
                     "wsSessionToken, new Amazon");
             
-            #line 119 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 119 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -333,14 +333,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 124 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 125 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 125 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -352,14 +352,14 @@ namespace ServiceClientGenerator.Generators
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         /// <param name=""clientConfig"">The Amazon");
             
-            #line 130 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 130 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 131 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 131 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -367,7 +367,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, " +
                     "Amazon");
             
-            #line 131 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 131 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -375,7 +375,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Config clientConfig)\r\n            : base(awsAccessKeyId, awsSecretAccessKey, awsS" +
                     "essionToken, clientConfig)\r\n        {\r\n        }\r\n\r\n        #endregion\r\n");
             
-            #line 137 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 137 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
     }
 
@@ -385,14 +385,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("\r\n        #region Overrides\r\n\r\n        protected override AbstractAWSSigner Creat" +
                     "eSigner()\r\n        {\r\n            return new ");
             
-            #line 145 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 145 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)));
             
             #line default
             #line hidden
             this.Write("();\r\n        } \r\n\r\n");
             
-            #line 148 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 148 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
     // Generates overrides for the pipeline if specified in the customizations file
         if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
@@ -404,7 +404,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline" +
                     ")\r\n        {\r\n");
             
-            #line 155 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 155 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
             var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
             foreach(var o in pipelineOverrides.Overrides )
@@ -417,14 +417,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            pipeline.");
             
-            #line 162 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 162 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 163 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 163 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
                 }
                 else
@@ -435,28 +435,28 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            pipeline.");
             
-            #line 168 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 168 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 168 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 168 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.NewType));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 168 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 168 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.ConstructorInput));
             
             #line default
             #line hidden
             this.Write("));\r\n");
             
-            #line 169 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 169 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
                 }
             }
@@ -466,7 +466,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        }\r\n");
             
-            #line 174 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 174 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
         }
 
@@ -477,7 +477,7 @@ namespace ServiceClientGenerator.Generators
                     "d Dispose(bool disposing)\r\n        {\r\n            base.Dispose(disposing);\r\n    " +
                     "    }\r\n\r\n        #endregion\r\n\r\n        ");
             
-            #line 189 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 189 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
     // Creates the method code for each operation in the model
         foreach(var operation in this.Config.ServiceModel.Operations)
@@ -488,14 +488,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\n        #region  ");
             
-            #line 195 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 195 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 197 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 197 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
@@ -505,123 +505,121 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        internal ");
             
-            #line 201 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 201 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 201 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 201 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n            return ");
             
-            #line 203 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 203 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 203 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 203 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request());\r\n        }\r\n");
             
-            #line 205 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 205 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
         }
-        // Adds any simple method forms if they are in the customizations file
-        AddSimpleClientMethods(operation);
 
             
             #line default
             #line hidden
             this.Write("        internal ");
             
-            #line 210 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 208 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 210 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 208 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 210 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 208 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request)\r\n        {\r\n            var marshaller = new ");
             
-            #line 212 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 210 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
             
-            #line 213 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 211 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return Invoke<");
             
-            #line 215 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 213 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 215 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 213 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>(request, marshaller, unmarshaller);\r\n        }\r\n\r\n");
             
-            #line 218 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 216 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 AddAsyncDocumentation(operation.Name);
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 219 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 217 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" Task<");
             
-            #line 219 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 217 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 219 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 217 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 219 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 217 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -629,28 +627,28 @@ AddAsyncDocumentation(operation.Name);
             this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
                     "ancellationToken))\r\n        {\r\n            var marshaller = new ");
             
-            #line 221 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 219 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
             
-            #line 222 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 220 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return InvokeAsync<");
             
-            #line 224 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 222 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 224 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 222 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -658,7 +656,7 @@ AddAsyncDocumentation(operation.Name);
             this.Write("Response>(request, marshaller, \r\n                unmarshaller, cancellationToken)" +
                     ";\r\n        }\r\n\r\n        #endregion\r\n        ");
             
-            #line 229 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
+            #line 227 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\ServiceClientsRT.tt"
 
         }
         

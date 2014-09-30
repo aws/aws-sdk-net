@@ -34,6 +34,7 @@ namespace Amazon.CognitoIdentity.Model
     public partial class UpdateIdentityPoolRequest : AmazonCognitoIdentityRequest
     {
         private bool? _allowUnauthenticatedIdentities;
+        private string _developerProviderName;
         private string _identityPoolId;
         private string _identityPoolName;
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
@@ -52,6 +53,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetAllowUnauthenticatedIdentities()
         {
             return this._allowUnauthenticatedIdentities.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeveloperProviderName. 
+        /// <para>
+        /// The "domain" by which Cognito will refer to your users.
+        /// </para>
+        /// </summary>
+        public string DeveloperProviderName
+        {
+            get { return this._developerProviderName; }
+            set { this._developerProviderName = value; }
+        }
+
+        // Check to see if DeveloperProviderName property is set
+        internal bool IsSetDeveloperProviderName()
+        {
+            return this._developerProviderName != null;
         }
 
         /// <summary>

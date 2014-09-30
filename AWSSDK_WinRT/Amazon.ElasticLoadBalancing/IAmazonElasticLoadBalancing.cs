@@ -80,7 +80,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  AddTags
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -96,7 +95,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  ApplySecurityGroupsToLoadBalancer
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
@@ -114,7 +112,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  AttachLoadBalancerToSubnets
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancerToSubnets operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -130,7 +127,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  ConfigureHealthCheck
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfigureHealthCheck operation.
@@ -148,7 +144,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  CreateAppCookieStickinessPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -164,7 +159,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  CreateLBCookieStickinessPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLBCookieStickinessPolicy operation.
@@ -182,7 +176,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  CreateLoadBalancer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -198,7 +191,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  CreateLoadBalancerListeners
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
@@ -216,7 +208,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  CreateLoadBalancerPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerPolicy operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -232,7 +223,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  DeleteLoadBalancer
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
@@ -250,7 +240,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  DeleteLoadBalancerListeners
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -266,7 +255,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  DeleteLoadBalancerPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerPolicy operation.
@@ -284,7 +272,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  DeregisterInstancesFromLoadBalancer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstancesFromLoadBalancer operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -300,7 +287,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  DescribeInstanceHealth
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceHealth operation.
@@ -318,7 +304,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  DescribeLoadBalancerAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerAttributes operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -334,7 +319,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  DescribeLoadBalancerPolicies
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicies operation.
@@ -352,7 +336,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  DescribeLoadBalancerPolicyTypes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicyTypes operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -368,7 +351,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  DescribeLoadBalancers
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
@@ -386,7 +368,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  DescribeTags
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -402,7 +383,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  DetachLoadBalancerFromSubnets
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancerFromSubnets operation.
@@ -420,7 +400,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  DisableAvailabilityZonesForLoadBalancer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAvailabilityZonesForLoadBalancer operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -436,7 +415,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  EnableAvailabilityZonesForLoadBalancer
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAvailabilityZonesForLoadBalancer operation.
@@ -454,7 +432,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  ModifyLoadBalancerAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyLoadBalancerAttributes operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -470,7 +447,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  RegisterInstancesWithLoadBalancer
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstancesWithLoadBalancer operation.
@@ -488,7 +464,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  RemoveTags
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -504,7 +479,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  SetLoadBalancerListenerSSLCertificate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerListenerSSLCertificate operation.
@@ -522,7 +496,6 @@ namespace Amazon.ElasticLoadBalancing
                 
         #region  SetLoadBalancerPoliciesForBackendServer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesForBackendServer operation.
         /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
@@ -538,7 +511,6 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
                 
         #region  SetLoadBalancerPoliciesOfListener
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesOfListener operation.

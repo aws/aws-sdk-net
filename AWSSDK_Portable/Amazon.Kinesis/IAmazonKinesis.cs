@@ -41,7 +41,6 @@ namespace Amazon.Kinesis
                 
         #region  AddTagsToStream
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToStream operation.
         /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
@@ -57,7 +56,6 @@ namespace Amazon.Kinesis
         #endregion
                 
         #region  CreateStream
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStream operation.
@@ -75,7 +73,6 @@ namespace Amazon.Kinesis
                 
         #region  DeleteStream
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStream operation.
         /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
@@ -91,7 +88,6 @@ namespace Amazon.Kinesis
         #endregion
                 
         #region  DescribeStream
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStream operation.
@@ -109,7 +105,6 @@ namespace Amazon.Kinesis
                 
         #region  GetRecords
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetRecords operation.
         /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
@@ -125,7 +120,6 @@ namespace Amazon.Kinesis
         #endregion
                 
         #region  GetShardIterator
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetShardIterator operation.
@@ -143,7 +137,6 @@ namespace Amazon.Kinesis
                 
         #region  ListStreams
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreams operation.
         /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
@@ -159,7 +152,6 @@ namespace Amazon.Kinesis
         #endregion
                 
         #region  ListTagsForStream
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForStream operation.
@@ -177,7 +169,6 @@ namespace Amazon.Kinesis
                 
         #region  MergeShards
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the MergeShards operation.
         /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
@@ -193,7 +184,6 @@ namespace Amazon.Kinesis
         #endregion
                 
         #region  PutRecord
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecord operation.
@@ -211,7 +201,6 @@ namespace Amazon.Kinesis
                 
         #region  RemoveTagsFromStream
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromStream operation.
         /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
@@ -227,7 +216,6 @@ namespace Amazon.Kinesis
         #endregion
                 
         #region  SplitShard
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SplitShard operation.

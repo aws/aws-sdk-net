@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchSpecification.IsSetMonitoring())
                     {
-                        request.Parameters.Add("LaunchSpecification" + "." + "Monitoring", StringUtils.FromBool(publicRequest.LaunchSpecification.Monitoring));
+                        request.Parameters.Add("LaunchSpecification" + "." + "Monitoring.Enabled", StringUtils.FromBool(publicRequest.LaunchSpecification.Monitoring));
                     }
                     if(publicRequest.LaunchSpecification.IsSetPlacement())
                     {

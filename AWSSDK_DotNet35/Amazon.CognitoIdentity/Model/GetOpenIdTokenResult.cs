@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Token. An OpenID token.
+        /// Gets and sets the property Token. An OpenID token, valid for 15 minutes.
         /// </summary>
         public string Token
         {

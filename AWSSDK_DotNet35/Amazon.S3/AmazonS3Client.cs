@@ -235,6 +235,29 @@ namespace Amazon.S3
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
         /// </para>
         /// </summary>
+        /// <param name="bucketName">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
+        /// <param name="key">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
+        /// <param name="uploadId">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
+        /// 
+        /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        public AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId)
+        {
+            var request = new AbortMultipartUploadRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.UploadId = uploadId;
+            return AbortMultipartUpload(request);
+        }
+
+        /// <summary>
+        /// Aborts a multipart upload.
+        /// 
+        ///  
+        /// <para>
+        /// To verify that all parts have been removed, so you don't get charged for the part
+        /// storage, you should call the List Parts operation and ensure the parts list is empty.
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
@@ -339,6 +362,46 @@ namespace Amazon.S3
         /// <summary>
         /// Creates a copy of an object that is already stored in Amazon S3.
         /// </summary>
+        /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="destinationBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// 
+        /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        public CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey)
+        {
+            var request = new CopyObjectRequest();
+            request.SourceBucket = sourceBucket;
+            request.SourceKey = sourceKey;
+            request.DestinationBucket = destinationBucket;
+            request.DestinationKey = destinationKey;
+            return CopyObject(request);
+        }
+
+        /// <summary>
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// </summary>
+        /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="sourceVersionId">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="destinationBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
+        /// 
+        /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        public CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey)
+        {
+            var request = new CopyObjectRequest();
+            request.SourceBucket = sourceBucket;
+            request.SourceKey = sourceKey;
+            request.SourceVersionId = sourceVersionId;
+            request.DestinationBucket = destinationBucket;
+            request.DestinationKey = destinationKey;
+            return CopyObject(request);
+        }
+
+        /// <summary>
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
@@ -387,6 +450,50 @@ namespace Amazon.S3
         #endregion
         
         #region  CopyPart
+
+        /// <summary>
+        /// Uploads a part by copying data from an existing object as data source.
+        /// </summary>
+        /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="destinationBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// 
+        /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        public CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId)
+        {
+            var request = new CopyPartRequest();
+            request.SourceBucket = sourceBucket;
+            request.SourceKey = sourceKey;
+            request.DestinationBucket = destinationBucket;
+            request.DestinationKey = destinationKey;
+            request.UploadId = uploadId;
+            return CopyPart(request);
+        }
+
+        /// <summary>
+        /// Uploads a part by copying data from an existing object as data source.
+        /// </summary>
+        /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="sourceVersionId">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="destinationBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
+        /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// 
+        /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        public CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId)
+        {
+            var request = new CopyPartRequest();
+            request.SourceBucket = sourceBucket;
+            request.SourceKey = sourceKey;
+            request.SourceVersionId = sourceVersionId;
+            request.DestinationBucket = destinationBucket;
+            request.DestinationKey = destinationKey;
+            request.UploadId = uploadId;
+            return CopyPart(request);
+        }
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source.
@@ -444,6 +551,20 @@ namespace Amazon.S3
         /// Deletes the bucket. All objects (including all object versions and Delete Markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// </summary>
+        /// <param name="bucketName">A property of DeleteBucketRequest used to execute the DeleteBucket service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        public DeleteBucketResponse DeleteBucket(string bucketName)
+        {
+            var request = new DeleteBucketRequest();
+            request.BucketName = bucketName;
+            return DeleteBucket(request);
+        }
+
+        /// <summary>
+        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// in the bucket must be deleted before the bucket itself can be deleted.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
@@ -492,6 +613,19 @@ namespace Amazon.S3
         #endregion
         
         #region  DeleteBucketPolicy
+
+        /// <summary>
+        /// Deletes the policy from the bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of DeleteBucketPolicyRequest used to execute the DeleteBucketPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        public DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName)
+        {
+            var request = new DeleteBucketPolicyRequest();
+            request.BucketName = bucketName;
+            return DeleteBucketPolicy(request);
+        }
 
         /// <summary>
         /// Deletes the policy from the bucket.
@@ -548,6 +682,19 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the tags from the bucket.
         /// </summary>
+        /// <param name="bucketName">A property of DeleteBucketTaggingRequest used to execute the DeleteBucketTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        public DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName)
+        {
+            var request = new DeleteBucketTaggingRequest();
+            request.BucketName = bucketName;
+            return DeleteBucketTagging(request);
+        }
+
+        /// <summary>
+        /// Deletes the tags from the bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
@@ -596,6 +743,19 @@ namespace Amazon.S3
         #endregion
         
         #region  DeleteBucketWebsite
+
+        /// <summary>
+        /// This operation removes the website configuration from the bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of DeleteBucketWebsiteRequest used to execute the DeleteBucketWebsite service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        public DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName)
+        {
+            var request = new DeleteBucketWebsiteRequest();
+            request.BucketName = bucketName;
+            return DeleteBucketWebsite(request);
+        }
 
         /// <summary>
         /// This operation removes the website configuration from the bucket.
@@ -652,6 +812,19 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the cors configuration information set for the bucket.
         /// </summary>
+        /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        public DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName)
+        {
+            var request = new DeleteCORSConfigurationRequest();
+            request.BucketName = bucketName;
+            return DeleteCORSConfiguration(request);
+        }
+
+        /// <summary>
+        /// Deletes the cors configuration information set for the bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
@@ -704,6 +877,19 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the lifecycle configuration from the bucket.
         /// </summary>
+        /// <param name="bucketName">A property of DeleteLifecycleConfigurationRequest used to execute the DeleteLifecycleConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        public DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName)
+        {
+            var request = new DeleteLifecycleConfigurationRequest();
+            request.BucketName = bucketName;
+            return DeleteLifecycleConfiguration(request);
+        }
+
+        /// <summary>
+        /// Deletes the lifecycle configuration from the bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
@@ -752,6 +938,42 @@ namespace Amazon.S3
         #endregion
         
         #region  DeleteObject
+
+        /// <summary>
+        /// Removes the null version (if there is one) of an object and inserts a delete marker,
+        /// which becomes the latest version of the object. If there isn't a null version, Amazon
+        /// S3 does not remove any objects.
+        /// </summary>
+        /// <param name="bucketName">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
+        /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
+        /// 
+        /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        public DeleteObjectResponse DeleteObject(string bucketName, string key)
+        {
+            var request = new DeleteObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            return DeleteObject(request);
+        }
+
+        /// <summary>
+        /// Removes the null version (if there is one) of an object and inserts a delete marker,
+        /// which becomes the latest version of the object. If there isn't a null version, Amazon
+        /// S3 does not remove any objects.
+        /// </summary>
+        /// <param name="bucketName">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
+        /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
+        /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
+        /// 
+        /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        public DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId)
+        {
+            var request = new DeleteObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.VersionId = versionId;
+            return DeleteObject(request);
+        }
 
         /// <summary>
         /// Removes the null version (if there is one) of an object and inserts a delete marker,
@@ -863,6 +1085,19 @@ namespace Amazon.S3
         /// <summary>
         /// Gets the access control policy for the bucket.
         /// </summary>
+        /// <param name="bucketName">A property of GetACLRequest used to execute the GetACL service method.</param>
+        /// 
+        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        public GetACLResponse GetACL(string bucketName)
+        {
+            var request = new GetACLRequest();
+            request.BucketName = bucketName;
+            return GetACL(request);
+        }
+
+        /// <summary>
+        /// Gets the access control policy for the bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
@@ -911,6 +1146,19 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketLocation
+
+        /// <summary>
+        /// Returns the region the bucket resides in.
+        /// </summary>
+        /// <param name="bucketName">A property of GetBucketLocationRequest used to execute the GetBucketLocation service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        public GetBucketLocationResponse GetBucketLocation(string bucketName)
+        {
+            var request = new GetBucketLocationRequest();
+            request.BucketName = bucketName;
+            return GetBucketLocation(request);
+        }
 
         /// <summary>
         /// Returns the region the bucket resides in.
@@ -968,6 +1216,20 @@ namespace Amazon.S3
         /// Returns the logging status of a bucket and the permissions users have to view and
         /// modify that status. To use GET, you must be the bucket owner.
         /// </summary>
+        /// <param name="bucketName">A property of GetBucketLoggingRequest used to execute the GetBucketLogging service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        public GetBucketLoggingResponse GetBucketLogging(string bucketName)
+        {
+            var request = new GetBucketLoggingRequest();
+            request.BucketName = bucketName;
+            return GetBucketLogging(request);
+        }
+
+        /// <summary>
+        /// Returns the logging status of a bucket and the permissions users have to view and
+        /// modify that status. To use GET, you must be the bucket owner.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
@@ -1016,6 +1278,19 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketNotification
+
+        /// <summary>
+        /// Return the notification configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of GetBucketNotificationRequest used to execute the GetBucketNotification service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        public GetBucketNotificationResponse GetBucketNotification(string bucketName)
+        {
+            var request = new GetBucketNotificationRequest();
+            request.BucketName = bucketName;
+            return GetBucketNotification(request);
+        }
 
         /// <summary>
         /// Return the notification configuration of a bucket.
@@ -1072,6 +1347,19 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the policy of a specified bucket.
         /// </summary>
+        /// <param name="bucketName">A property of GetBucketPolicyRequest used to execute the GetBucketPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        public GetBucketPolicyResponse GetBucketPolicy(string bucketName)
+        {
+            var request = new GetBucketPolicyRequest();
+            request.BucketName = bucketName;
+            return GetBucketPolicy(request);
+        }
+
+        /// <summary>
+        /// Returns the policy of a specified bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
@@ -1120,6 +1408,19 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketRequestPayment
+
+        /// <summary>
+        /// Returns the request payment configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of GetBucketRequestPaymentRequest used to execute the GetBucketRequestPayment service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        public GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName)
+        {
+            var request = new GetBucketRequestPaymentRequest();
+            request.BucketName = bucketName;
+            return GetBucketRequestPayment(request);
+        }
 
         /// <summary>
         /// Returns the request payment configuration of a bucket.
@@ -1228,6 +1529,19 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the versioning state of a bucket.
         /// </summary>
+        /// <param name="bucketName">A property of GetBucketVersioningRequest used to execute the GetBucketVersioning service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        public GetBucketVersioningResponse GetBucketVersioning(string bucketName)
+        {
+            var request = new GetBucketVersioningRequest();
+            request.BucketName = bucketName;
+            return GetBucketVersioning(request);
+        }
+
+        /// <summary>
+        /// Returns the versioning state of a bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
@@ -1276,6 +1590,19 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketWebsite
+
+        /// <summary>
+        /// Returns the website configuration for a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of GetBucketWebsiteRequest used to execute the GetBucketWebsite service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        public GetBucketWebsiteResponse GetBucketWebsite(string bucketName)
+        {
+            var request = new GetBucketWebsiteRequest();
+            request.BucketName = bucketName;
+            return GetBucketWebsite(request);
+        }
 
         /// <summary>
         /// Returns the website configuration for a bucket.
@@ -1332,6 +1659,19 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the cors configuration for the bucket.
         /// </summary>
+        /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        public GetCORSConfigurationResponse GetCORSConfiguration(string bucketName)
+        {
+            var request = new GetCORSConfigurationRequest();
+            request.BucketName = bucketName;
+            return GetCORSConfiguration(request);
+        }
+
+        /// <summary>
+        /// Returns the cors configuration for the bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
@@ -1384,6 +1724,19 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the lifecycle configuration information set on the bucket.
         /// </summary>
+        /// <param name="bucketName">A property of GetLifecycleConfigurationRequest used to execute the GetLifecycleConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        public GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName)
+        {
+            var request = new GetLifecycleConfigurationRequest();
+            request.BucketName = bucketName;
+            return GetLifecycleConfiguration(request);
+        }
+
+        /// <summary>
+        /// Returns the lifecycle configuration information set on the bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
@@ -1432,6 +1785,38 @@ namespace Amazon.S3
         #endregion
         
         #region  GetObject
+
+        /// <summary>
+        /// Retrieves objects from Amazon S3.
+        /// </summary>
+        /// <param name="bucketName">A property of GetObjectRequest used to execute the GetObject service method.</param>
+        /// <param name="key">A property of GetObjectRequest used to execute the GetObject service method.</param>
+        /// 
+        /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        public GetObjectResponse GetObject(string bucketName, string key)
+        {
+            var request = new GetObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            return GetObject(request);
+        }
+
+        /// <summary>
+        /// Retrieves objects from Amazon S3.
+        /// </summary>
+        /// <param name="bucketName">A property of GetObjectRequest used to execute the GetObject service method.</param>
+        /// <param name="key">A property of GetObjectRequest used to execute the GetObject service method.</param>
+        /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
+        /// 
+        /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        public GetObjectResponse GetObject(string bucketName, string key, string versionId)
+        {
+            var request = new GetObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.VersionId = versionId;
+            return GetObject(request);
+        }
 
         /// <summary>
         /// Retrieves objects from Amazon S3.
@@ -1490,6 +1875,42 @@ namespace Amazon.S3
         /// itself. This operation is useful if you're only interested in an object's metadata.
         /// To use HEAD, you must have READ access to the object.
         /// </summary>
+        /// <param name="bucketName">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
+        /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        public GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key)
+        {
+            var request = new GetObjectMetadataRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            return GetObjectMetadata(request);
+        }
+
+        /// <summary>
+        /// The HEAD operation retrieves metadata from an object without returning the object
+        /// itself. This operation is useful if you're only interested in an object's metadata.
+        /// To use HEAD, you must have READ access to the object.
+        /// </summary>
+        /// <param name="bucketName">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
+        /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
+        /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
+        /// 
+        /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        public GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key, string versionId)
+        {
+            var request = new GetObjectMetadataRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.VersionId = versionId;
+            return GetObjectMetadata(request);
+        }
+
+        /// <summary>
+        /// The HEAD operation retrieves metadata from an object without returning the object
+        /// itself. This operation is useful if you're only interested in an object's metadata.
+        /// To use HEAD, you must have READ access to the object.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
@@ -1538,6 +1959,21 @@ namespace Amazon.S3
         #endregion
         
         #region  GetObjectTorrent
+
+        /// <summary>
+        /// Return torrent files from a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of GetObjectTorrentRequest used to execute the GetObjectTorrent service method.</param>
+        /// <param name="key">A property of GetObjectTorrentRequest used to execute the GetObjectTorrent service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        public GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key)
+        {
+            var request = new GetObjectTorrentRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            return GetObjectTorrent(request);
+        }
 
         /// <summary>
         /// Return torrent files from a bucket.
@@ -1643,6 +2079,29 @@ namespace Amazon.S3
         #endregion
         
         #region  InitiateMultipartUpload
+
+        /// <summary>
+        /// Initiates a multipart upload and returns an upload ID.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        /// must either complete or abort multipart upload in order to stop getting charged for
+        /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+        /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+        /// </para>
+        /// </summary>
+        /// <param name="bucketName">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
+        /// <param name="key">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
+        /// 
+        /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        public InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key)
+        {
+            var request = new InitiateMultipartUploadRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            return InitiateMultipartUpload(request);
+        }
 
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
@@ -1769,6 +2228,34 @@ namespace Amazon.S3
         /// <summary>
         /// This operation lists in-progress multipart uploads.
         /// </summary>
+        /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
+        /// 
+        /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        public ListMultipartUploadsResponse ListMultipartUploads(string bucketName)
+        {
+            var request = new ListMultipartUploadsRequest();
+            request.BucketName = bucketName;
+            return ListMultipartUploads(request);
+        }
+
+        /// <summary>
+        /// This operation lists in-progress multipart uploads.
+        /// </summary>
+        /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
+        /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix.</param>
+        /// 
+        /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        public ListMultipartUploadsResponse ListMultipartUploads(string bucketName, string prefix)
+        {
+            var request = new ListMultipartUploadsRequest();
+            request.BucketName = bucketName;
+            request.Prefix = prefix;
+            return ListMultipartUploads(request);
+        }
+
+        /// <summary>
+        /// This operation lists in-progress multipart uploads.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -1817,6 +2304,36 @@ namespace Amazon.S3
         #endregion
         
         #region  ListObjects
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of ListObjectsRequest used to execute the ListObjects service method.</param>
+        /// 
+        /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        public ListObjectsResponse ListObjects(string bucketName)
+        {
+            var request = new ListObjectsRequest();
+            request.BucketName = bucketName;
+            return ListObjects(request);
+        }
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of ListObjectsRequest used to execute the ListObjects service method.</param>
+        /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
+        /// 
+        /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        public ListObjectsResponse ListObjects(string bucketName, string prefix)
+        {
+            var request = new ListObjectsRequest();
+            request.BucketName = bucketName;
+            request.Prefix = prefix;
+            return ListObjects(request);
+        }
 
         /// <summary>
         /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
@@ -1874,6 +2391,23 @@ namespace Amazon.S3
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload.
         /// </summary>
+        /// <param name="bucketName">A property of ListPartsRequest used to execute the ListParts service method.</param>
+        /// <param name="key">A property of ListPartsRequest used to execute the ListParts service method.</param>
+        /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
+        /// 
+        /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        public ListPartsResponse ListParts(string bucketName, string key, string uploadId)
+        {
+            var request = new ListPartsRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.UploadId = uploadId;
+            return ListParts(request);
+        }
+
+        /// <summary>
+        /// Lists the parts that have been uploaded for a specific multipart upload.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
@@ -1922,6 +2456,34 @@ namespace Amazon.S3
         #endregion
         
         #region  ListVersions
+
+        /// <summary>
+        /// Returns metadata about all of the versions of objects in a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of ListVersionsRequest used to execute the ListVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        public ListVersionsResponse ListVersions(string bucketName)
+        {
+            var request = new ListVersionsRequest();
+            request.BucketName = bucketName;
+            return ListVersions(request);
+        }
+
+        /// <summary>
+        /// Returns metadata about all of the versions of objects in a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of ListVersionsRequest used to execute the ListVersions service method.</param>
+        /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
+        /// 
+        /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        public ListVersionsResponse ListVersions(string bucketName, string prefix)
+        {
+            var request = new ListVersionsRequest();
+            request.BucketName = bucketName;
+            request.Prefix = prefix;
+            return ListVersions(request);
+        }
 
         /// <summary>
         /// Returns metadata about all of the versions of objects in a bucket.
@@ -2026,6 +2588,19 @@ namespace Amazon.S3
         #endregion
         
         #region  PutBucket
+
+        /// <summary>
+        /// Creates a new bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of PutBucketRequest used to execute the PutBucket service method.</param>
+        /// 
+        /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        public PutBucketResponse PutBucket(string bucketName)
+        {
+            var request = new PutBucketRequest();
+            request.BucketName = bucketName;
+            return PutBucket(request);
+        }
 
         /// <summary>
         /// Creates a new bucket.
@@ -2189,6 +2764,40 @@ namespace Amazon.S3
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
         /// request completely replaces it.
         /// </summary>
+        /// <param name="bucketName">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
+        /// <param name="policy">The bucket policy as a JSON document.</param>
+        /// 
+        /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        public PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy)
+        {
+            var request = new PutBucketPolicyRequest();
+            request.BucketName = bucketName;
+            request.Policy = policy;
+            return PutBucketPolicy(request);
+        }
+
+        /// <summary>
+        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
+        /// request completely replaces it.
+        /// </summary>
+        /// <param name="bucketName">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
+        /// <param name="policy">The bucket policy as a JSON document.</param>
+        /// <param name="contentMD5">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        public PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5)
+        {
+            var request = new PutBucketPolicyRequest();
+            request.BucketName = bucketName;
+            request.Policy = policy;
+            request.ContentMD5 = contentMD5;
+            return PutBucketPolicy(request);
+        }
+
+        /// <summary>
+        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
+        /// request completely replaces it.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
@@ -2244,6 +2853,24 @@ namespace Amazon.S3
         /// owner (only) to specify that the person requesting the download will be charged for
         /// the download.
         /// </summary>
+        /// <param name="bucketName">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
+        /// <param name="requestPaymentConfiguration">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        public PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration)
+        {
+            var request = new PutBucketRequestPaymentRequest();
+            request.BucketName = bucketName;
+            request.RequestPaymentConfiguration = requestPaymentConfiguration;
+            return PutBucketRequestPayment(request);
+        }
+
+        /// <summary>
+        /// Sets the request payment configuration for a bucket. By default, the bucket owner
+        /// pays for downloads from the bucket. This configuration parameter enables the bucket
+        /// owner (only) to specify that the person requesting the download will be charged for
+        /// the download.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
@@ -2292,6 +2919,21 @@ namespace Amazon.S3
         #endregion
         
         #region  PutBucketTagging
+
+        /// <summary>
+        /// Sets the tags for a bucket.
+        /// </summary>
+        /// <param name="bucketName">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        public PutBucketTaggingResponse PutBucketTagging(string bucketName, List<Tag> tagSet)
+        {
+            var request = new PutBucketTaggingRequest();
+            request.BucketName = bucketName;
+            request.TagSet = tagSet;
+            return PutBucketTagging(request);
+        }
 
         /// <summary>
         /// Sets the tags for a bucket.
@@ -2401,6 +3043,21 @@ namespace Amazon.S3
         /// <summary>
         /// Set the website configuration for a bucket.
         /// </summary>
+        /// <param name="bucketName">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
+        /// <param name="websiteConfiguration">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        public PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration)
+        {
+            var request = new PutBucketWebsiteRequest();
+            request.BucketName = bucketName;
+            request.WebsiteConfiguration = websiteConfiguration;
+            return PutBucketWebsite(request);
+        }
+
+        /// <summary>
+        /// Set the website configuration for a bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
@@ -2453,6 +3110,21 @@ namespace Amazon.S3
         /// <summary>
         /// Sets the cors configuration for a bucket.
         /// </summary>
+        /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
+        /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        public PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration)
+        {
+            var request = new PutCORSConfigurationRequest();
+            request.BucketName = bucketName;
+            request.Configuration = configuration;
+            return PutCORSConfiguration(request);
+        }
+
+        /// <summary>
+        /// Sets the cors configuration for a bucket.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
@@ -2501,6 +3173,22 @@ namespace Amazon.S3
         #endregion
         
         #region  PutLifecycleConfiguration
+
+        /// <summary>
+        /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
+        /// it replaces it.
+        /// </summary>
+        /// <param name="bucketName">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
+        /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        public PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration)
+        {
+            var request = new PutLifecycleConfigurationRequest();
+            request.BucketName = bucketName;
+            request.Configuration = configuration;
+            return PutLifecycleConfiguration(request);
+        }
 
         /// <summary>
         /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
@@ -2606,6 +3294,74 @@ namespace Amazon.S3
         #endregion
         
         #region  RestoreObject
+
+        /// <summary>
+        /// Restores an archived copy of an object back into Amazon S3
+        /// </summary>
+        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// 
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        public RestoreObjectResponse RestoreObject(string bucketName, string key)
+        {
+            var request = new RestoreObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            return RestoreObject(request);
+        }
+
+        /// <summary>
+        /// Restores an archived copy of an object back into Amazon S3
+        /// </summary>
+        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// 
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        public RestoreObjectResponse RestoreObject(string bucketName, string key, int days)
+        {
+            var request = new RestoreObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.Days = days;
+            return RestoreObject(request);
+        }
+
+        /// <summary>
+        /// Restores an archived copy of an object back into Amazon S3
+        /// </summary>
+        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="versionId">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// 
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        public RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId)
+        {
+            var request = new RestoreObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.VersionId = versionId;
+            return RestoreObject(request);
+        }
+
+        /// <summary>
+        /// Restores an archived copy of an object back into Amazon S3
+        /// </summary>
+        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="versionId">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// 
+        /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        public RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId, int days)
+        {
+            var request = new RestoreObjectRequest();
+            request.BucketName = bucketName;
+            request.Key = key;
+            request.VersionId = versionId;
+            request.Days = days;
+            return RestoreObject(request);
+        }
 
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3

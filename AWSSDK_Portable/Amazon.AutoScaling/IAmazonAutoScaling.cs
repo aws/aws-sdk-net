@@ -91,7 +91,6 @@ namespace Amazon.AutoScaling
                 
         #region  AttachInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInstances operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -107,7 +106,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  CompleteLifecycleAction
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteLifecycleAction operation.
@@ -125,7 +123,6 @@ namespace Amazon.AutoScaling
                 
         #region  CreateAutoScalingGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAutoScalingGroup operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -141,7 +138,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  CreateLaunchConfiguration
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLaunchConfiguration operation.
@@ -159,7 +155,6 @@ namespace Amazon.AutoScaling
                 
         #region  CreateOrUpdateTags
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOrUpdateTags operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -175,7 +170,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DeleteAutoScalingGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAutoScalingGroup operation.
@@ -193,7 +187,6 @@ namespace Amazon.AutoScaling
                 
         #region  DeleteLaunchConfiguration
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLaunchConfiguration operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -209,7 +202,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DeleteLifecycleHook
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleHook operation.
@@ -227,7 +219,6 @@ namespace Amazon.AutoScaling
                 
         #region  DeleteNotificationConfiguration
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNotificationConfiguration operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -243,7 +234,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DeletePolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicy operation.
@@ -261,7 +251,6 @@ namespace Amazon.AutoScaling
                 
         #region  DeleteScheduledAction
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -277,7 +266,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DeleteTags
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
@@ -295,7 +283,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeAccountLimits
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -311,7 +298,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeAdjustmentTypes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAdjustmentTypes operation.
@@ -329,7 +315,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeAutoScalingGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingGroups operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -345,7 +330,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeAutoScalingInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingInstances operation.
@@ -363,7 +347,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeAutoScalingNotificationTypes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingNotificationTypes operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -379,7 +362,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeLaunchConfigurations
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLaunchConfigurations operation.
@@ -397,7 +379,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeLifecycleHooks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLifecycleHooks operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -413,7 +394,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeLifecycleHookTypes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLifecycleHookTypes operation.
@@ -431,7 +411,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeMetricCollectionTypes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricCollectionTypes operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -447,7 +426,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeNotificationConfigurations
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNotificationConfigurations operation.
@@ -465,7 +443,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribePolicies
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePolicies operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -481,7 +458,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeScalingActivities
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingActivities operation.
@@ -499,7 +475,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeScalingProcessTypes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingProcessTypes operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -515,7 +490,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeScheduledActions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
@@ -533,7 +507,6 @@ namespace Amazon.AutoScaling
                 
         #region  DescribeTags
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -549,7 +522,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DescribeTerminationPolicyTypes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTerminationPolicyTypes operation.
@@ -567,7 +539,6 @@ namespace Amazon.AutoScaling
                 
         #region  DetachInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInstances operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -583,7 +554,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  DisableMetricsCollection
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableMetricsCollection operation.
@@ -601,7 +571,6 @@ namespace Amazon.AutoScaling
                 
         #region  EnableMetricsCollection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMetricsCollection operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -617,7 +586,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  EnterStandby
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnterStandby operation.
@@ -635,7 +603,6 @@ namespace Amazon.AutoScaling
                 
         #region  ExecutePolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ExecutePolicy operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -651,7 +618,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  ExitStandby
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ExitStandby operation.
@@ -669,7 +635,6 @@ namespace Amazon.AutoScaling
                 
         #region  PutLifecycleHook
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleHook operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -685,7 +650,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  PutNotificationConfiguration
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutNotificationConfiguration operation.
@@ -703,7 +667,6 @@ namespace Amazon.AutoScaling
                 
         #region  PutScalingPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutScalingPolicy operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -719,7 +682,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  PutScheduledUpdateGroupAction
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutScheduledUpdateGroupAction operation.
@@ -737,7 +699,6 @@ namespace Amazon.AutoScaling
                 
         #region  RecordLifecycleActionHeartbeat
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RecordLifecycleActionHeartbeat operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -753,7 +714,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  ResumeProcesses
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResumeProcesses operation.
@@ -771,7 +731,6 @@ namespace Amazon.AutoScaling
                 
         #region  SetDesiredCapacity
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetDesiredCapacity operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -787,7 +746,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  SetInstanceHealth
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetInstanceHealth operation.
@@ -805,7 +763,6 @@ namespace Amazon.AutoScaling
                 
         #region  SuspendProcesses
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SuspendProcesses operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -822,7 +779,6 @@ namespace Amazon.AutoScaling
                 
         #region  TerminateInstanceInAutoScalingGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstanceInAutoScalingGroup operation.
         /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling"/>
@@ -838,7 +794,6 @@ namespace Amazon.AutoScaling
         #endregion
                 
         #region  UpdateAutoScalingGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAutoScalingGroup operation.

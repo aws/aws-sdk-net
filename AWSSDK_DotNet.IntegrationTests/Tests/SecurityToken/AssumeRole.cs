@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 ExternalId = clientId.ToString()
             };
 
-            var credentials = new AssumeRoleAWSCredentials(sts, request);
+            var credentials = new STSAssumeRoleAWSCredentials(sts, request);
 
             var client = new AmazonIdentityManagementServiceClient(credentials);
             var response = client.ListRoles();

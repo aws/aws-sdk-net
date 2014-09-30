@@ -53,11 +53,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\DynamoDB\*.cs" />    
+    <Compile Include="Tests\DynamoDB\*.cs" />
     <Compile Include="Utils\*.cs" />
-    <Compile Include=".\Tests\*.cs"/>    
-    <Compile Include=".\Tests\EC2\*.cs"/>    
-    <Compile Include=".\Tests\S3\*.cs"/>    
+    <Compile Include=".\Tests\*.cs" />
+    <Compile Include=".\Tests\EC2\*.cs" />
+    <Compile Include=".\Tests\S3\*.cs" />
     <Compile Include=".\Tests\SecurityToken\*.cs" />
     <Compile Include=".\Tests\IAM\*.cs" />
     <Compile Include=".\Tests\RDS\*.cs" />

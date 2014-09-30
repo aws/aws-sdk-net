@@ -204,10 +204,13 @@
         /// 
         /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.BaseName#>.</returns>
 <#+
-        foreach(var exception in operation.Exceptions)
-        {
-            this.FormatExceptionDocumentation(exception);
-        }
+		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
+		{
+			foreach(var exception in operation.Exceptions)
+			{
+				this.FormatExceptionDocumentation(exception);
+			}
+		}
     }
 
 	public void FormatOperationRequestDocumentation(Operation operation)

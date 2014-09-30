@@ -52,6 +52,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     response.AllowUnauthenticatedIdentities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeveloperProviderName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeveloperProviderName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityPoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

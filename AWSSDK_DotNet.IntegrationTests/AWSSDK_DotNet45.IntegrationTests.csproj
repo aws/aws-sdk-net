@@ -57,6 +57,7 @@
     <Compile Include="Tests\DynamoDB\*.cs" />    
     <Compile Include="Utils\*.cs" />
     <Compile Include=".\Tests\*.cs"/>    
+    <Compile Include=".\Tests\CognitoSync\*.cs"/>    
     <Compile Include=".\Tests\EC2\*.cs"/>    
     <Compile Include=".\Tests\S3\*.cs"/>    
     <Compile Include=".\Tests\SecurityToken\*.cs" />

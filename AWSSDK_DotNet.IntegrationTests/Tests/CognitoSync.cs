@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
+﻿using Amazon;
+using Amazon.CognitoIdentity;
 using Amazon.CognitoSync;
 using Amazon.CognitoSync.Model;
-using Amazon;
-using Amazon.Runtime;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Threading;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -19,16 +18,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public static int MaxResults = 10;
         private string poolName = null;
         private string poolId = null;
-        private string roleName = null;
         private const string policyName = "TestPolicy";
+        private static List<string> roleNames = new List<string>();
+        FacebookUtilities.FacebookCreateUserResponse facebookUser = null;
+        private const string FacebookProvider = "graph.facebook.com";
+
+        // Facebook information required to run Facebook tests
+        public const string FacebookAppId = "999999999999999";
+        public const string FacebookAppSecret = "ffffffffffffffffffffffffffffffff";
+
 
         [TestCleanup]
         public void Cleanup()
         {
             CognitoIdentity.CleanupIdentityPools();
-            if (!string.IsNullOrEmpty(roleName))
+
+            foreach (var roleName in roleNames)
             {
                 DeleteRole(roleName);
+            }
+            roleNames.Clear();
+
+            if (facebookUser != null)
+            {
+                FacebookUtilities.DeleteFacebookUser(facebookUser);
             }
         }
 
@@ -37,6 +50,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.BaseClean();
             BaseClean();
+        }
+
+        [TestMethod]
+        public void CacheTest()
+        {
+            var syncRequestType = typeof(AmazonCognitoSyncRequest);
+            var syncClientType = typeof(AmazonCognitoSyncClient);
+
+            var allTypes = syncClientType.Assembly.GetTypes();
+            var syncRequestTypes = allTypes.Where(t => t != syncRequestType && syncRequestType.IsAssignableFrom(t)).ToList();
+
+            var cacheType = syncClientType.Assembly.GetType("Amazon.CognitoSync.Internal.CognitoCredentialsRetriever+CSRequestCache");
+            var dictionary = cacheType.GetField("requestCache", BindingFlags.Static | BindingFlags.NonPublic).GetValue(null) as System.Collections.IDictionary;
+
+            Assert.AreEqual(syncRequestTypes.Count, dictionary.Count);
+            foreach (var syncRequest in syncRequestTypes)
+            {
+                Assert.IsTrue(dictionary.Contains(syncRequest), "Method cache does not contain EC2 request type {0}", syncRequest.Name);
+            }
         }
 
 
@@ -51,23 +83,150 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreNotEqual(0, usages.Count);
             int usagesCount = usages.Count;
 
-            var identityId = CognitoIdentity.CreateIdentity(poolId, poolName);
-
             usages = GetAllIdentityPoolUsages();
             Assert.IsNotNull(usages);
             Assert.AreNotEqual(0, usages.Count);
             Assert.AreEqual(usagesCount, usages.Count);
 
-            var datasets = GetAllDatasets(poolId, identityId);
-            Assert.AreEqual(0, datasets.Count);
+            // Some operations require an authenticated client
+            CognitoAWSCredentials credentials;
+            using (var authenticatedClient = CreateAuthenticatedClient(poolId, out credentials))
+            {
+                var datasets = GetAllDatasets(Client, poolId, credentials.GetIdentityId());
+                Assert.AreEqual(0, datasets.Count);
 
-            string datasetName = "sample-dataset";
+                datasets = GetAllDatasets(authenticatedClient, poolId, credentials.GetIdentityId());
+                Assert.AreEqual(0, datasets.Count);
 
-            var recordsResult = Client.ListRecords(new ListRecordsRequest
+                string datasetName = "sample-dataset";
+                TestDataCalls(datasetName, authenticatedClient);
+
+                var describeRequest = new DescribeDatasetRequest
+                {
+                    DatasetName = datasetName,
+                    //IdentityId = identityId,
+                    //IdentityPoolId = poolId
+                };
+                var dataset = authenticatedClient.DescribeDataset(describeRequest).Dataset;
+                Assert.IsNotNull(dataset);
+                Assert.AreEqual(datasetName, dataset.DatasetName);
+
+                // Use unauthenticated client to get usage info
+                {
+                    var poolUsage = Client.DescribeIdentityPoolUsage(new DescribeIdentityPoolUsageRequest
+                    {
+                        IdentityPoolId = poolId
+                    }).IdentityPoolUsage;
+                    Assert.IsNotNull(poolUsage.LastModifiedDate);
+
+                    var identityUsage = Client.DescribeIdentityUsage(new DescribeIdentityUsageRequest
+                    {
+                        IdentityId = credentials.GetIdentityId(),
+                        IdentityPoolId = poolId
+                    }).IdentityUsage;
+
+                    Assert.IsNotNull(identityUsage);
+                    Assert.AreEqual(credentials.GetIdentityId(), identityUsage.IdentityId);
+                    Assert.AreEqual(poolId, identityUsage.IdentityPoolId);
+                }
+
+                datasets = GetAllDatasets(authenticatedClient, poolId, credentials.GetIdentityId());
+                Assert.AreEqual(1, datasets.Count);
+
+                authenticatedClient.DeleteDataset(new DeleteDatasetRequest
+                {
+                    DatasetName = datasetName,
+                    IdentityPoolId = poolId,
+                    IdentityId = credentials.GetIdentityId()
+                });
+
+                datasets = GetAllDatasets(authenticatedClient, poolId, credentials.GetIdentityId());
+                Assert.AreEqual(0, datasets.Count);
+
+                AssertExtensions.ExpectException(() => authenticatedClient.DescribeDataset(describeRequest));
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("CognitoSync")]
+        public void CredentialsTests()
+        {
+            CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
+
+            var credentials = GetCognitoCredentials(poolId);
+            using (var client = new Amazon.S3.AmazonS3Client(credentials))
+            {
+                // Retries to handle credentials not being full propagated yet.
+                for (int retries = 0; retries <= 5; retries++ )
+                {
+                    Thread.Sleep(1000 * retries);               
+                    try
+                    {
+                        client.ListBuckets();
+                        break;
+                    }
+                    catch (Amazon.S3.AmazonS3Exception e)
+                    {
+                        if (e.StatusCode == System.Net.HttpStatusCode.Forbidden && retries != 5)
+                            continue;
+                    }
+                }
+            }
+        }
+
+        // This test is disabled.
+        // To run it, put correct information into FacebookAppId and FacebookAppSecret
+        // and uncomment the TestMethod attribute below.
+        //[TestMethod]
+        [TestCategory("CognitoSync")]
+        public void LoginsTests()
+        {
+            CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
+
+            int credentialsChanges = 0;
+            CognitoAWSCredentials credentials;
+            using (var authenticatedClient = CreateAuthenticatedClient(poolId, out credentials))
+            {
+                // Log and count identity changes
+                credentials.IdentityChangedEvent += (sender, args) =>
+                {
+                    credentialsChanges++;
+                    Console.WriteLine("Identity changed: [{0}] => [{1}]", args.OldIdentityId, args.NewIdentityId);
+                };
+
+                string datasetName = "sample-dataset";
+
+                // Test calls using unauthenticated role
+                TestDataCalls(datasetName, authenticatedClient);
+
+                // Configure IdentityPool to support Facebook logins
+                CognitoIdentity.UpdateIdentityPool(poolId, poolName,
+                    new Dictionary<string, string> { { FacebookProvider, FacebookAppId } });
+
+                // Create a Facebook user and supply this information to the credentials
+                facebookUser = FacebookUtilities.CreateFacebookUser(FacebookAppId, FacebookAppSecret);
+                var facebookAccessToken = facebookUser.AccessToken;
+
+                // Logins was updated, clear the current credentials
+                credentials.AddLogin(FacebookProvider, facebookAccessToken);
+
+                // Test calls using authenticated role
+                TestDataCalls(datasetName, authenticatedClient);
+            }
+
+            Assert.AreEqual(2, credentialsChanges);
+        }
+
+        private void TestDataCalls(string datasetName, AmazonCognitoSyncClient authenticatedClient)
+        {
+            var recordsResult = authenticatedClient.ListRecords(new ListRecordsRequest
             {
                 DatasetName = datasetName,
-                IdentityPoolId = poolId,
-                IdentityId = identityId,
+                // When using CognitoAWSCredentials with a client, IdentityPoolId and IdentityId
+                // do not have to be specified
+
+                //IdentityPoolId = poolId,
+                //IdentityId = identityId,
                 MaxResults = 1
             });
             Assert.IsNotNull(recordsResult);
@@ -80,16 +239,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(0, recordsResult.Records.Count);
             Assert.IsFalse(string.IsNullOrEmpty(recordsResult.SyncSessionToken));
 
-            // Some operations require an authenticated client
-            using (var authenticatedClient = CreateAuthenticatedClient(poolId, poolName, identityId, out roleName))
+            string key1 = "key1";
+            var updateRequest = new UpdateRecordsRequest
             {
-                string key1 = "key1";
-                var updateRequest = new UpdateRecordsRequest
-                {
-                    DatasetName = datasetName,
-                    IdentityPoolId = poolId,
-                    IdentityId = identityId,
-                    RecordPatches = new List<RecordPatch>
+                DatasetName = datasetName,
+                //IdentityPoolId = poolId,
+                //IdentityId = identityId,
+                RecordPatches = new List<RecordPatch>
                     {
                         new RecordPatch
                         {
@@ -99,50 +255,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             Value = key1
                         }
                     },
-                    SyncSessionToken = recordsResult.SyncSessionToken
-                };
+                SyncSessionToken = recordsResult.SyncSessionToken
+            };
+            var records = authenticatedClient.UpdateRecords(updateRequest).Records;
+            Assert.AreEqual(1, records.Count);
 
-                // Add retries in case the identity pool is not ready yet.
-                List<Record> records = null;
-                for (int retries = 0; retries < 5 && records == null; retries++)
-                {
-                    Thread.Sleep(1000 * retries);
+            recordsResult = authenticatedClient.ListRecords(new ListRecordsRequest
+            {
+                DatasetName = datasetName,
+                //IdentityPoolId = poolId,
+                //IdentityId = identityId,
+                MaxResults = 1
+            });
+            Assert.IsNotNull(recordsResult);
+            Assert.AreEqual(1, recordsResult.Count);
+            Assert.IsFalse(recordsResult.DatasetDeletedAfterRequestedSyncCount);
+            Assert.IsTrue(recordsResult.DatasetExists);
+            Assert.AreEqual(1, recordsResult.DatasetSyncCount);
+            Assert.AreEqual(0, recordsResult.MergedDatasetNames.Count);
+            Assert.AreEqual(1, recordsResult.Records.Count);
+            Assert.IsFalse(string.IsNullOrEmpty(recordsResult.SyncSessionToken));
 
-                    try
-                    {
-                        records = authenticatedClient.UpdateRecords(updateRequest).Records;
-                    }
-                    catch(AmazonCognitoSyncException e)
-                    {
-                        if (e.StatusCode == System.Net.HttpStatusCode.Forbidden)
-                            continue;
-                        throw;
-                    }
-                }
-                Assert.AreEqual(1, records.Count);
-
-                recordsResult = Client.ListRecords(new ListRecordsRequest
-                {
-                    DatasetName = datasetName,
-                    IdentityPoolId = poolId,
-                    IdentityId = identityId,
-                    MaxResults = 1
-                });
-                Assert.IsNotNull(recordsResult);
-                Assert.AreEqual(1, recordsResult.Count);
-                Assert.IsFalse(recordsResult.DatasetDeletedAfterRequestedSyncCount);
-                Assert.IsTrue(recordsResult.DatasetExists);
-                Assert.AreEqual(1, recordsResult.DatasetSyncCount);
-                Assert.AreEqual(0, recordsResult.MergedDatasetNames.Count);
-                Assert.AreEqual(1, recordsResult.Records.Count);
-                Assert.IsFalse(string.IsNullOrEmpty(recordsResult.SyncSessionToken));
-
-                updateRequest = new UpdateRecordsRequest
-                {
-                    DatasetName = datasetName,
-                    IdentityPoolId = poolId,
-                    IdentityId = identityId,
-                    RecordPatches = new List<RecordPatch>
+            updateRequest = new UpdateRecordsRequest
+            {
+                DatasetName = datasetName,
+                //IdentityPoolId = poolId,
+                //IdentityId = identityId,
+                RecordPatches = new List<RecordPatch>
                     {
                         new RecordPatch
                         {
@@ -152,100 +291,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             Value = key1
                         }
                     },
-                    SyncSessionToken = recordsResult.SyncSessionToken
-                };
-                records = authenticatedClient.UpdateRecords(updateRequest).Records;
-                var allRecords = GetAllRecords(datasetName, poolId, identityId);
-                Assert.AreEqual(1, records.Count);
-            }
-
-            var describeRequest = new DescribeDatasetRequest
-            {
-                DatasetName = datasetName,
-                IdentityId = identityId,
-                IdentityPoolId = poolId
+                SyncSessionToken = recordsResult.SyncSessionToken
             };
-            var dataset = Client.DescribeDataset(describeRequest).Dataset;
-            Assert.IsNotNull(dataset);
-            Assert.AreEqual(datasetName, dataset.DatasetName);
+            records = authenticatedClient.UpdateRecords(updateRequest).Records;
 
-            var poolUsage = Client.DescribeIdentityPoolUsage(new DescribeIdentityPoolUsageRequest
-            {
-                IdentityPoolId = poolId
-            }).IdentityPoolUsage;
-            Assert.IsNotNull(poolUsage.LastModifiedDate);
-
-            var identityUsage = Client.DescribeIdentityUsage(new DescribeIdentityUsageRequest
-            {
-                IdentityId = identityId,
-                IdentityPoolId = poolId
-            }).IdentityUsage;
-
-            Assert.IsNotNull(identityUsage);
-            Assert.AreEqual(identityId, identityUsage.IdentityId);
-            Assert.AreEqual(poolId, identityUsage.IdentityPoolId);
-
-            datasets = GetAllDatasets(poolId, identityId);
-            Assert.AreEqual(1, datasets.Count);
-
-            Client.DeleteDataset(new DeleteDatasetRequest
-            {
-                DatasetName = datasetName,
-                IdentityPoolId = poolId,
-                IdentityId = identityId
-            });
-
-            datasets = GetAllDatasets(poolId, identityId);
-            Assert.AreEqual(0, datasets.Count);
-
-            AssertExtensions.ExpectException(() => Client.DescribeDataset(describeRequest));
+            var allRecords = GetAllRecords(authenticatedClient, datasetName, poolId, identityId: null);
+            Assert.AreEqual(1, records.Count);
         }
 
-        private static AmazonCognitoSyncClient CreateAuthenticatedClient(string poolId, string poolName, string identityId, out string roleName)
+        private static AmazonCognitoSyncClient CreateAuthenticatedClient(string poolId, out CognitoAWSCredentials credentials)
         {
-            string token;
-            using (var cibClient = new Amazon.CognitoIdentity.AmazonCognitoIdentityClient(new AnonymousAWSCredentials()))
-            {
-                var getOpenIdResult = cibClient.GetOpenIdToken(new Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest
-                {
-                    IdentityId = identityId,
-                });
-                token = getOpenIdResult.Token;
-            }
-
-            AWSCredentials credentials = null;
-            using (var stsClient = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient(new AnonymousAWSCredentials()))
-            {
-                string roleArn;
-                PrepareRole("RolePolicy", out roleName, out roleArn);
-
-                // Add retries to allow the roles and identity to propagate
-                for (int retries = 0; retries < 5; retries++)
-                {
-                    Thread.Sleep(1000 * retries);
-                    try
-                    {
-                        var assumeRoleResult = stsClient.AssumeRoleWithWebIdentity(new Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest
-                        {
-                            WebIdentityToken = token,
-                            RoleArn = roleArn,
-                            RoleSessionName = "ProviderSession",
-                        });
-                        credentials = assumeRoleResult.Credentials;
-                        break;
-                    }
-                    catch(Amazon.SecurityToken.AmazonSecurityTokenServiceException e)
-                    {
-                        if (!e.Message.Contains("Not authorized"))
-                            throw;
-                    }
-                }
-            }
+            credentials = GetCognitoCredentials(poolId);
 
             var authenticatedClient = new AmazonCognitoSyncClient(credentials);
             return authenticatedClient;
         }
-        private static void PrepareRole(string rolePolicyName, out string roleName, out string roleArn)
+        private static CognitoAWSCredentials GetCognitoCredentials(string poolId)
+        {
+            string roleArn = PrepareRole();
+
+            CognitoAWSCredentials credentials = new CognitoAWSCredentials(
+                UtilityMethods.AccountId, poolId,
+                roleArn,    // The same role is used for unAuthRoleArn
+                roleArn,    // and authRoleArn
+                AWSConfigs.RegionEndpoint);
+
+            return credentials;
+        }
+        private static string PrepareRole()
         {
             // Assume role policy which accepts OAuth tokens from Google, Facebook or Cognito, and allows AssumeRoleWithWebIdentity action.
             string assumeRolePolicy = @"{
@@ -278,10 +351,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
     ]
 }";
-
+            string roleArn;
             using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
             {
-                roleName = "NetWebIdentityRole" + new Random().Next();
+                string roleName = "NetWebIdentityRole" + new Random().Next();
                 var response = identityClient.CreateRole(new Amazon.IdentityManagement.Model.CreateRoleRequest
                 {
                     AssumeRolePolicyDocument = assumeRolePolicy,
@@ -296,10 +369,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 });
 
                 roleArn = response.Role.Arn;
+                roleNames.Add(roleName);
             }
 
             // Allow time for policy to be configured
             Thread.Sleep(TimeSpan.FromSeconds(5));
+
+            return roleArn;
         }
         private static void DeleteRole(string roleName)
         {
@@ -322,16 +398,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             return GetAllIdentityPoolUsagesHelper().ToList();
         }
-        public static List<Record> GetAllRecords(string datasetName, string poolId, string identityId)
+        public static List<Record> GetAllRecords(IAmazonCognitoSync client, string datasetName, string poolId, string identityId)
         {
-            return GetAllRecordsHelper(datasetName, poolId, identityId).ToList();
+            return GetAllRecordsHelper(client, datasetName, poolId, identityId).ToList();
         }
-        public static List<Dataset> GetAllDatasets(string poolId, string identityId)
+        public static List<Dataset> GetAllDatasets(IAmazonCognitoSync client, string poolId, string identityId)
         {
-            return GetAllDatasetsHelper(poolId, identityId).ToList();
+            return GetAllDatasetsHelper(client, poolId, identityId).ToList();
         }
 
-        private static IEnumerable<Record> GetAllRecordsHelper(string datasetName, string poolId, string identityId)
+        private static IEnumerable<Record> GetAllRecordsHelper(IAmazonCognitoSync client, string datasetName, string poolId, string identityId)
         {
             var request = new ListRecordsRequest
             {
@@ -343,7 +419,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             ListRecordsResult result;
             do
             {
-                result = Client.ListRecords(request);
+                result = client.ListRecords(request);
                 foreach (var record in result.Records)
                 {
                     yield return record;
@@ -367,7 +443,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 request.NextToken = result.NextToken;
             } while (!string.IsNullOrEmpty(result.NextToken));
         }
-        private static IEnumerable<Dataset> GetAllDatasetsHelper(string poolId, string identityId)
+        private static IEnumerable<Dataset> GetAllDatasetsHelper(IAmazonCognitoSync client, string poolId, string identityId)
         {
             var request = new ListDatasetsRequest
             {
@@ -378,7 +454,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             ListDatasetsResult result;
             do
             {
-                result = Client.ListDatasets(request);
+                result = client.ListDatasets(request);
                 foreach (var ds in result.Datasets)
                 {
                     yield return ds;
@@ -387,5 +463,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 request.NextToken = result.NextToken;
             } while (!string.IsNullOrEmpty(result.NextToken));
         }
+
     }
 }

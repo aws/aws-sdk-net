@@ -37,7 +37,6 @@ namespace Amazon.CloudFront
                 
         #region  CreateCloudFrontOriginAccessIdentity
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCloudFrontOriginAccessIdentity operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -53,7 +52,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  CreateDistribution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDistribution operation.
@@ -71,7 +69,6 @@ namespace Amazon.CloudFront
                 
         #region  CreateInvalidation
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInvalidation operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -87,7 +84,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  CreateStreamingDistribution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
@@ -105,7 +101,6 @@ namespace Amazon.CloudFront
                 
         #region  DeleteCloudFrontOriginAccessIdentity
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -121,7 +116,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  DeleteDistribution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDistribution operation.
@@ -139,7 +133,6 @@ namespace Amazon.CloudFront
                 
         #region  DeleteStreamingDistribution
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -155,7 +148,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetCloudFrontOriginAccessIdentity
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentity operation.
@@ -173,7 +165,6 @@ namespace Amazon.CloudFront
                 
         #region  GetCloudFrontOriginAccessIdentityConfig
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -189,7 +180,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetDistribution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistribution operation.
@@ -207,7 +197,6 @@ namespace Amazon.CloudFront
                 
         #region  GetDistributionConfig
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistributionConfig operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -223,7 +212,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetInvalidation
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInvalidation operation.
@@ -241,7 +229,6 @@ namespace Amazon.CloudFront
                 
         #region  GetStreamingDistribution
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -257,7 +244,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  GetStreamingDistributionConfig
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
@@ -275,7 +261,6 @@ namespace Amazon.CloudFront
                 
         #region  ListCloudFrontOriginAccessIdentities
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListCloudFrontOriginAccessIdentities operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -291,7 +276,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  ListDistributions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDistributions operation.
@@ -309,7 +293,6 @@ namespace Amazon.CloudFront
                 
         #region  ListInvalidations
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListInvalidations operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -325,7 +308,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  ListStreamingDistributions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
@@ -343,7 +325,6 @@ namespace Amazon.CloudFront
                 
         #region  UpdateCloudFrontOriginAccessIdentity
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -360,7 +341,6 @@ namespace Amazon.CloudFront
                 
         #region  UpdateDistribution
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDistribution operation.
         /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
@@ -376,7 +356,6 @@ namespace Amazon.CloudFront
         #endregion
                 
         #region  UpdateStreamingDistribution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStreamingDistribution operation.

@@ -228,7 +228,6 @@
     <Compile Include="Amazon.Route53Domains\AmazonRoute53DomainsClient.cs" />
     <Compile Include="Amazon.Route53Domains\IAmazonRoute53Domains.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
-    <Compile Include="Amazon.Runtime\AWSCredentials.async.cs" />
     <Compile Include="Amazon.Runtime\Internal\AsyncRunner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\HttpClientResponseData.cs" />
     <Compile Include="Amazon.Runtime\Internal\WebRequestState.cs" />
@@ -349,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoSync\IAmazonCognitoSync.cs;..\AWSSDK_DotNet35\Amazon.CognitoSync\AmazonCognitoSyncClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\*">

@@ -54,7 +54,6 @@ namespace Amazon.ElastiCache
                 
         #region  AuthorizeCacheSecurityGroupIngress
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeCacheSecurityGroupIngress operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -70,7 +69,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  CopySnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
@@ -88,7 +86,6 @@ namespace Amazon.ElastiCache
                 
         #region  CreateCacheCluster
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheCluster operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -104,7 +101,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  CreateCacheParameterGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheParameterGroup operation.
@@ -122,7 +118,6 @@ namespace Amazon.ElastiCache
                 
         #region  CreateCacheSecurityGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSecurityGroup operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -138,7 +133,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  CreateCacheSubnetGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSubnetGroup operation.
@@ -156,7 +150,6 @@ namespace Amazon.ElastiCache
                 
         #region  CreateReplicationGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReplicationGroup operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -172,7 +165,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  CreateSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -190,7 +182,6 @@ namespace Amazon.ElastiCache
                 
         #region  DeleteCacheCluster
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheCluster operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -206,7 +197,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DeleteCacheParameterGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheParameterGroup operation.
@@ -224,7 +214,6 @@ namespace Amazon.ElastiCache
                 
         #region  DeleteCacheSecurityGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSecurityGroup operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -240,7 +229,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DeleteCacheSubnetGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSubnetGroup operation.
@@ -258,7 +246,6 @@ namespace Amazon.ElastiCache
                 
         #region  DeleteReplicationGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteReplicationGroup operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -274,7 +261,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DeleteSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
@@ -292,7 +278,6 @@ namespace Amazon.ElastiCache
                 
         #region  DescribeCacheClusters
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheClusters operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -308,7 +293,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DescribeCacheEngineVersions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheEngineVersions operation.
@@ -326,7 +310,6 @@ namespace Amazon.ElastiCache
                 
         #region  DescribeCacheParameterGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameterGroups operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -342,7 +325,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DescribeCacheParameters
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameters operation.
@@ -360,7 +342,6 @@ namespace Amazon.ElastiCache
                 
         #region  DescribeCacheSecurityGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSecurityGroups operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -376,7 +357,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DescribeCacheSubnetGroups
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSubnetGroups operation.
@@ -394,7 +374,6 @@ namespace Amazon.ElastiCache
                 
         #region  DescribeEngineDefaultParameters
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -410,7 +389,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DescribeEvents
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -428,7 +406,6 @@ namespace Amazon.ElastiCache
                 
         #region  DescribeReplicationGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReplicationGroups operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -444,7 +421,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DescribeReservedCacheNodes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodes operation.
@@ -462,7 +438,6 @@ namespace Amazon.ElastiCache
                 
         #region  DescribeReservedCacheNodesOfferings
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodesOfferings operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -478,7 +453,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  DescribeSnapshots
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
@@ -496,7 +470,6 @@ namespace Amazon.ElastiCache
                 
         #region  ModifyCacheCluster
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheCluster operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -512,7 +485,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  ModifyCacheParameterGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheParameterGroup operation.
@@ -530,7 +502,6 @@ namespace Amazon.ElastiCache
                 
         #region  ModifyCacheSubnetGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheSubnetGroup operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -546,7 +517,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  ModifyReplicationGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyReplicationGroup operation.
@@ -564,7 +534,6 @@ namespace Amazon.ElastiCache
                 
         #region  PurchaseReservedCacheNodesOffering
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedCacheNodesOffering operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -580,7 +549,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  RebootCacheCluster
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCacheCluster operation.
@@ -598,7 +566,6 @@ namespace Amazon.ElastiCache
                 
         #region  ResetCacheParameterGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCacheParameterGroup operation.
         /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
@@ -614,7 +581,6 @@ namespace Amazon.ElastiCache
         #endregion
                 
         #region  RevokeCacheSecurityGroupIngress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeCacheSecurityGroupIngress operation.

@@ -27,8 +27,6 @@ using System.Configuration;
 using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using System.Globalization;
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
 
 namespace Amazon.Runtime
 {
@@ -520,6 +518,14 @@ namespace Amazon.Runtime
         {
             public ImmutableCredentials Credentials { get; set; }
             public DateTime Expiration { get; set; }
+
+            public CredentialsRefreshState()
+            { }
+            public CredentialsRefreshState(ImmutableCredentials credentials, DateTime expiration)
+            {
+                Credentials = credentials;
+                Expiration = expiration;
+            }
         }
 
 
@@ -620,6 +626,14 @@ namespace Amazon.Runtime
         protected virtual CredentialsRefreshState GenerateNewCredentials()
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.
+        /// </summary>
+        protected void ClearCredentials()
+        {
+            _currentState = null;
         }
 
         #endregion
@@ -884,13 +898,9 @@ namespace Amazon.Runtime
     /// Credentials that are retrieved by invoking AWS Security Token Service
     /// AssumeRole or AssumeRoleWithSAML action.
     /// </summary>
-    public partial class AssumeRoleAWSCredentials : RefreshingAWSCredentials, IDisposable
+    [Obsolete("This class has been moved to the Amazon.SecurityToken namespace since it has a dependency on that service. Please update your code to point to Amazon.SecurityToken.STSAssumeRoleAWSCredentials.")]
+    public class AssumeRoleAWSCredentials : Amazon.SecurityToken.STSAssumeRoleAWSCredentials
     {
-        private IAmazonSecurityTokenService _stsClient;
-        private AssumeRoleRequest _assumeRequest;
-        private AssumeRoleWithSAMLRequest _assumeSamlRequest;
-        private bool _isDisposed = false;
-        private static TimeSpan _defaultPreemptExpiryTime = TimeSpan.FromMinutes(5);
 
         /// <summary>
         /// Instantiates AssumeRoleAWSCredentials which automatically assumes a specified role.
@@ -900,14 +910,9 @@ namespace Amazon.Runtime
         /// Instance of IAmazonSecurityTokenService that will be used to make the AssumeRole service call.
         /// </param>
         /// <param name="assumeRoleRequest">Configuration for the role to assume.</param>
-        public AssumeRoleAWSCredentials(IAmazonSecurityTokenService sts, AssumeRoleRequest assumeRoleRequest)
+        public AssumeRoleAWSCredentials(Amazon.SecurityToken.IAmazonSecurityTokenService sts, Amazon.SecurityToken.Model.AssumeRoleRequest assumeRoleRequest)
+            : base(sts, assumeRoleRequest)
         {
-            if (sts == null) throw new ArgumentNullException("sts");
-            if (assumeRoleRequest == null) throw new ArgumentNullException("assumeRoleRequest");
-
-            _stsClient = sts;
-            _assumeRequest = assumeRoleRequest;
-            PreemptExpiryTime = _defaultPreemptExpiryTime;
         }
 
         /// <summary>
@@ -915,55 +920,11 @@ namespace Amazon.Runtime
         /// The credentials are refreshed before expiration.
         /// </summary>
         /// <param name="assumeRoleWithSamlRequest">Configuration for the SAML role to assume.</param>
-        public AssumeRoleAWSCredentials(AssumeRoleWithSAMLRequest assumeRoleWithSamlRequest)
+        public AssumeRoleAWSCredentials(Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest assumeRoleWithSamlRequest)
+            : base(assumeRoleWithSamlRequest)               
         {
-            if (assumeRoleWithSamlRequest == null) throw new ArgumentNullException("assumeRoleWithSamlRequest");
-
-            _stsClient = new AmazonSecurityTokenServiceClient(new AnonymousAWSCredentials());
-            _assumeSamlRequest = assumeRoleWithSamlRequest;
-            PreemptExpiryTime = _defaultPreemptExpiryTime;
         }
 
-        protected override CredentialsRefreshState GenerateNewCredentials()
-        {
-            Credentials credentials = GetServiceCredentials();
-            return new CredentialsRefreshState
-            {
-                Expiration = credentials.Expiration,
-                Credentials = credentials.GetCredentials()
-            };
-        }
-
-        #region Dispose Pattern Implementation
-
-        /// <summary>
-        /// Implements the Dispose pattern
-        /// </summary>
-        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
-        /// or garbage collected.</param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this._isDisposed)
-            {
-                if (disposing && _stsClient != null)
-                {
-                    _stsClient.Dispose();
-                    _stsClient = null;
-                }
-                this._isDisposed = true;
-            }
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion
     }
 
     /// <summary>

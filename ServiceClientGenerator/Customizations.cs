@@ -517,6 +517,7 @@ namespace ServiceClientGenerator
         public const string MarshallerKey = "Marshaller";
         public const string UnmarshallerKey = "Unmarshaller";
         public const string GenerateComplexExceptionKey = "generateComplexException";
+        public const string SuppressSimpleMethodExceptionDocsKey = "suppressSimpleMethodExceptionDocs";
 
         JsonData _documentRoot;
 
@@ -627,6 +628,24 @@ namespace ServiceClientGenerator
                 return false;
             }
         }
+
+        public bool SuppressSimpleMethodExceptionDocs
+        {
+            get
+            {
+                var flag = _documentRoot[SuppressSimpleMethodExceptionDocsKey];
+                if (flag != null && flag.IsBoolean)
+                {
+                    return (bool)flag;
+                }
+                else if (flag != null && flag.IsString)
+                {
+                    return bool.Parse((string)flag);
+                }
+                return false;
+            }
+        }
+
 
         public bool RetainOriginalMemberOrdering
         {

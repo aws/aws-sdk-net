@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Returned in the response to a GetId request.
+    /// Returned in response to a GetId request.
     /// </summary>
     public partial class GetIdResult : AmazonWebServiceResponse
     {

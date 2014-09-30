@@ -25,15 +25,19 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class CredentialsRetriever : GenericHandler
     {
-        private AWSCredentials _credentials;
-
         /// <summary>
         /// The constructor for CredentialsRetriever.
         /// </summary>
         /// <param name="credentials">An AWSCredentials instance.</param>
         public CredentialsRetriever(AWSCredentials credentials)
         {
-            _credentials = credentials;
+            this.Credentials = credentials;
+        }
+
+        protected AWSCredentials Credentials
+        {
+            get;
+            private set;
         }
 
         /// <summary>
@@ -44,13 +48,11 @@ namespace Amazon.Runtime.Internal
         protected override void PreInvoke(IExecutionContext executionContext)
         {
             ImmutableCredentials ic = null;
-            if (_credentials == null || _credentials is AnonymousAWSCredentials)
-                ic = null;
-            else
+            if (Credentials != null && !(Credentials is AnonymousAWSCredentials))
             {
                 using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {
-                    ic = _credentials.GetCredentials();
+                    ic = Credentials.GetCredentials();
                 }
             }
 

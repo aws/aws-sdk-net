@@ -64,7 +64,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  CheckDNSAvailability
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CheckDNSAvailability operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -80,7 +79,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  CreateApplication
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplication operation.
@@ -98,7 +96,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  CreateApplicationVersion
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplicationVersion operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -114,7 +111,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  CreateConfigurationTemplate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateConfigurationTemplate operation.
@@ -132,7 +128,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  CreateEnvironment
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEnvironment operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -148,7 +143,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  CreateStorageLocation
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorageLocation operation.
@@ -166,7 +160,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  DeleteApplication
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplication operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -182,7 +175,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  DeleteApplicationVersion
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplicationVersion operation.
@@ -200,7 +192,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  DeleteConfigurationTemplate
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteConfigurationTemplate operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -216,7 +207,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  DeleteEnvironmentConfiguration
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEnvironmentConfiguration operation.
@@ -234,7 +224,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  DescribeApplications
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplications operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -250,7 +239,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  DescribeApplicationVersions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplicationVersions operation.
@@ -268,7 +256,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  DescribeConfigurationOptions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationOptions operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -284,7 +271,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  DescribeConfigurationSettings
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationSettings operation.
@@ -302,7 +288,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  DescribeEnvironmentResources
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironmentResources operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -318,7 +303,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  DescribeEnvironments
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironments operation.
@@ -336,7 +320,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  DescribeEvents
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -352,7 +335,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  ListAvailableSolutionStacks
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAvailableSolutionStacks operation.
@@ -370,7 +352,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  RebuildEnvironment
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RebuildEnvironment operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -386,7 +367,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  RequestEnvironmentInfo
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestEnvironmentInfo operation.
@@ -404,7 +384,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  RestartAppServer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RestartAppServer operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -420,7 +399,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  RetrieveEnvironmentInfo
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveEnvironmentInfo operation.
@@ -438,7 +416,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  SwapEnvironmentCNAMEs
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SwapEnvironmentCNAMEs operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -454,7 +431,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  TerminateEnvironment
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateEnvironment operation.
@@ -472,7 +448,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  UpdateApplication
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplication operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -488,7 +463,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  UpdateApplicationVersion
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplicationVersion operation.
@@ -506,7 +480,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  UpdateConfigurationTemplate
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateConfigurationTemplate operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -523,7 +496,6 @@ namespace Amazon.ElasticBeanstalk
                 
         #region  UpdateEnvironment
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateEnvironment operation.
         /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
@@ -539,7 +511,6 @@ namespace Amazon.ElasticBeanstalk
         #endregion
                 
         #region  ValidateConfigurationSettings
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateConfigurationSettings operation.

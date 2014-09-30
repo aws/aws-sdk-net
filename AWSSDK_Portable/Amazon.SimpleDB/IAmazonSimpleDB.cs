@@ -54,7 +54,6 @@ namespace Amazon.SimpleDB
                 
         #region  BatchDeleteAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the BatchDeleteAttributes operation.
         /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
@@ -70,7 +69,6 @@ namespace Amazon.SimpleDB
         #endregion
                 
         #region  BatchPutAttributes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchPutAttributes operation.
@@ -88,7 +86,6 @@ namespace Amazon.SimpleDB
                 
         #region  CreateDomain
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
         /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
@@ -104,7 +101,6 @@ namespace Amazon.SimpleDB
         #endregion
                 
         #region  DeleteAttributes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAttributes operation.
@@ -122,7 +118,6 @@ namespace Amazon.SimpleDB
                 
         #region  DeleteDomain
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
         /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
@@ -138,7 +133,6 @@ namespace Amazon.SimpleDB
         #endregion
                 
         #region  DomainMetadata
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DomainMetadata operation.
@@ -156,7 +150,6 @@ namespace Amazon.SimpleDB
                 
         #region  GetAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetAttributes operation.
         /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
@@ -172,7 +165,6 @@ namespace Amazon.SimpleDB
         #endregion
                 
         #region  ListDomains
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
@@ -190,7 +182,6 @@ namespace Amazon.SimpleDB
                 
         #region  PutAttributes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutAttributes operation.
         /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
@@ -206,7 +197,6 @@ namespace Amazon.SimpleDB
         #endregion
                 
         #region  Select
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the Select operation.

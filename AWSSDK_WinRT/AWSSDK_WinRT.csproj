@@ -203,6 +203,7 @@
     <Compile Include="Amazon.CloudTrail\IAmazonCloudTrail.cs" />
     <Compile Include="Amazon.CloudWatch\AmazonCloudWatchClient.cs" />
     <Compile Include="Amazon.CloudWatch\IAmazonCloudWatch.cs" />
+    <Compile Include="Amazon.CognitoIdentity\CognitoAWSCredentials.async.cs" />
     <Compile Include="Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs" />
     <Compile Include="Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs" />
     <Compile Include="Amazon.CognitoSync\AmazonCognitoSyncClient.cs" />
@@ -251,6 +252,7 @@
     <Compile Include="Amazon.S3\Model\UploadPartRequest.storagefile.cs" />
     <Compile Include="Amazon.S3\TransferUtility\TransferUtilityDownloadRequest.storagefile.cs" />
     <Compile Include="Amazon.S3\TransferUtility\TransferUtilityUploadRequest.storagefile.cs" />
+    <Compile Include="Amazon.SecurityToken\AssumeRoleAWSCredentials.async.cs" />
     <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs" />
     <Compile Include="Amazon.SecurityToken\IAmazonSecurityTokenService.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
@@ -265,6 +267,7 @@
     <Compile Include="Amazon.SQS\IAmazonSQS.cs" />
     <Compile Include="Amazon.StorageGateway\AmazonStorageGatewayClient.cs" />
     <Compile Include="Amazon.StorageGateway\IAmazonStorageGateway.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\AsyncHelpers.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.winrt.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\HashingWrapper.winrt.cs" />
     <Compile Include="Amazon.Util\TypeWrapper.winrt.cs" />
@@ -422,7 +425,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\CognitoAWSCredentials.bcl.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\*">
@@ -434,6 +437,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoSync\IAmazonCognitoSync.cs;..\AWSSDK_DotNet35\Amazon.CognitoSync\AmazonCognitoSyncClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\*">
@@ -720,7 +726,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\*" Exclude="..\AWSSDK_DotNet35\Amazon.SecurityToken\IAmazonSecurityTokenService.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\*" Exclude="..\AWSSDK_DotNet35\Amazon.SecurityToken\IAmazonSecurityTokenService.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AssumeRoleAWSCredentials.bcl.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\Model\*">

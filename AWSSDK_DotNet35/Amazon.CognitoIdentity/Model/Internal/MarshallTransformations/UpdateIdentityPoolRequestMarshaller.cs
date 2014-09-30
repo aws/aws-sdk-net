@@ -63,6 +63,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities);
                 }
 
+                if(publicRequest.IsSetDeveloperProviderName())
+                {
+                    context.Writer.WritePropertyName("DeveloperProviderName");
+                    context.Writer.Write(publicRequest.DeveloperProviderName);
+                }
+
                 if(publicRequest.IsSetIdentityPoolId())
                 {
                     context.Writer.WritePropertyName("IdentityPoolId");

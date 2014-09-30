@@ -104,7 +104,6 @@ namespace Amazon.IdentityManagement
                 
         #region  AddRoleToInstanceProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AddRoleToInstanceProfile operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -120,7 +119,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  AddUserToGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddUserToGroup operation.
@@ -138,7 +136,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ChangePassword
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ChangePassword operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -154,7 +151,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  CreateAccessKey
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccessKey operation.
@@ -172,7 +168,6 @@ namespace Amazon.IdentityManagement
                 
         #region  CreateAccountAlias
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccountAlias operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -188,7 +183,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  CreateGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGroup operation.
@@ -206,7 +200,6 @@ namespace Amazon.IdentityManagement
                 
         #region  CreateInstanceProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -222,7 +215,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  CreateLoginProfile
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoginProfile operation.
@@ -240,7 +232,6 @@ namespace Amazon.IdentityManagement
                 
         #region  CreateRole
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRole operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -256,7 +247,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  CreateSAMLProvider
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSAMLProvider operation.
@@ -274,7 +264,6 @@ namespace Amazon.IdentityManagement
                 
         #region  CreateUser
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUser operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -290,7 +279,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  CreateVirtualMFADevice
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVirtualMFADevice operation.
@@ -308,7 +296,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeactivateMFADevice
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeactivateMFADevice operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -324,7 +311,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteAccessKey
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccessKey operation.
@@ -342,7 +328,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteAccountAlias
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountAlias operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -358,7 +343,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteAccountPasswordPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountPasswordPolicy operation.
@@ -376,7 +360,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroup operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -392,7 +375,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteGroupPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroupPolicy operation.
@@ -410,7 +392,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteInstanceProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -426,7 +407,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteLoginProfile
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoginProfile operation.
@@ -444,7 +424,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteRole
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRole operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -460,7 +439,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteRolePolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRolePolicy operation.
@@ -478,7 +456,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteSAMLProvider
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSAMLProvider operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -494,7 +471,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteServerCertificate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteServerCertificate operation.
@@ -512,7 +488,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteSigningCertificate
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSigningCertificate operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -528,7 +503,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteUser
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUser operation.
@@ -546,7 +520,6 @@ namespace Amazon.IdentityManagement
                 
         #region  DeleteUserPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserPolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -562,7 +535,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  DeleteVirtualMFADevice
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualMFADevice operation.
@@ -580,7 +552,6 @@ namespace Amazon.IdentityManagement
                 
         #region  EnableMFADevice
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMFADevice operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -596,7 +567,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GenerateCredentialReport
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateCredentialReport operation.
@@ -614,7 +584,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetAccountPasswordPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountPasswordPolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -630,7 +599,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GetAccountSummary
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountSummary operation.
@@ -648,7 +616,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetCredentialReport
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetCredentialReport operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -664,7 +631,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GetGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroup operation.
@@ -682,7 +648,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetGroupPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroupPolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -698,7 +663,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GetInstanceProfile
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInstanceProfile operation.
@@ -716,7 +680,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetLoginProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetLoginProfile operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -732,7 +695,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GetRole
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRole operation.
@@ -750,7 +712,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetRolePolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetRolePolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -766,7 +727,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GetSAMLProvider
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSAMLProvider operation.
@@ -784,7 +744,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetServerCertificate
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetServerCertificate operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -800,7 +759,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  GetUser
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetUser operation.
@@ -818,7 +776,6 @@ namespace Amazon.IdentityManagement
                 
         #region  GetUserPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetUserPolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -834,7 +791,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListAccessKeys
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccessKeys operation.
@@ -852,7 +808,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListAccountAliases
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccountAliases operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -868,7 +823,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListGroupPolicies
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupPolicies operation.
@@ -886,7 +840,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroups operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -902,7 +855,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListGroupsForUser
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupsForUser operation.
@@ -920,7 +872,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListInstanceProfiles
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -936,7 +887,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListInstanceProfilesForRole
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfilesForRole operation.
@@ -954,7 +904,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListMFADevices
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListMFADevices operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -970,7 +919,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListRolePolicies
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRolePolicies operation.
@@ -988,7 +936,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListRoles
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListRoles operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1004,7 +951,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListSAMLProviders
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSAMLProviders operation.
@@ -1022,7 +968,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListServerCertificates
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListServerCertificates operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1038,7 +983,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListSigningCertificates
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSigningCertificates operation.
@@ -1056,7 +1000,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListUserPolicies
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListUserPolicies operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1072,7 +1015,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  ListUsers
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListUsers operation.
@@ -1090,7 +1032,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ListVirtualMFADevices
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListVirtualMFADevices operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1106,7 +1047,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  PutGroupPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutGroupPolicy operation.
@@ -1124,7 +1064,6 @@ namespace Amazon.IdentityManagement
                 
         #region  PutRolePolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutRolePolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1140,7 +1079,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  PutUserPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutUserPolicy operation.
@@ -1158,7 +1096,6 @@ namespace Amazon.IdentityManagement
                 
         #region  RemoveRoleFromInstanceProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1174,7 +1111,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  RemoveUserFromGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveUserFromGroup operation.
@@ -1192,7 +1128,6 @@ namespace Amazon.IdentityManagement
                 
         #region  ResyncMFADevice
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ResyncMFADevice operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1208,7 +1143,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  UpdateAccessKey
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccessKey operation.
@@ -1226,7 +1160,6 @@ namespace Amazon.IdentityManagement
                 
         #region  UpdateAccountPasswordPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccountPasswordPolicy operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1242,7 +1175,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  UpdateAssumeRolePolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAssumeRolePolicy operation.
@@ -1260,7 +1192,6 @@ namespace Amazon.IdentityManagement
                 
         #region  UpdateGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGroup operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1276,7 +1207,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  UpdateLoginProfile
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLoginProfile operation.
@@ -1294,7 +1224,6 @@ namespace Amazon.IdentityManagement
                 
         #region  UpdateSAMLProvider
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSAMLProvider operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1310,7 +1239,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  UpdateServerCertificate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServerCertificate operation.
@@ -1328,7 +1256,6 @@ namespace Amazon.IdentityManagement
                 
         #region  UpdateSigningCertificate
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSigningCertificate operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1344,7 +1271,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  UpdateUser
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUser operation.
@@ -1362,7 +1288,6 @@ namespace Amazon.IdentityManagement
                 
         #region  UploadServerCertificate
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UploadServerCertificate operation.
         /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
@@ -1378,7 +1303,6 @@ namespace Amazon.IdentityManagement
         #endregion
                 
         #region  UploadSigningCertificate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadSigningCertificate operation.

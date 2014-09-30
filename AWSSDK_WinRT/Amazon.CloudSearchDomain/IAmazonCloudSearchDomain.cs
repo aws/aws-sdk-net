@@ -52,7 +52,6 @@ namespace Amazon.CloudSearchDomain
                 
         #region  Search
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the Search operation.
         /// <seealso cref="Amazon.CloudSearchDomain.IAmazonCloudSearchDomain"/>
@@ -69,7 +68,6 @@ namespace Amazon.CloudSearchDomain
                 
         #region  Suggest
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the Suggest operation.
         /// <seealso cref="Amazon.CloudSearchDomain.IAmazonCloudSearchDomain"/>
@@ -85,7 +83,6 @@ namespace Amazon.CloudSearchDomain
         #endregion
                 
         #region  UploadDocuments
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDocuments operation.

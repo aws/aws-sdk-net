@@ -37,7 +37,6 @@ namespace Amazon.S3
                 
         #region  AbortMultipartUpload
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -53,7 +52,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  CompleteMultipartUpload
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
@@ -71,7 +69,6 @@ namespace Amazon.S3
                 
         #region  CopyObject
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CopyObject operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -87,7 +84,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  CopyPart
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyPart operation.
@@ -105,7 +101,6 @@ namespace Amazon.S3
                 
         #region  DeleteBucket
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucket operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -121,7 +116,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  DeleteBucketPolicy
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
@@ -139,7 +133,6 @@ namespace Amazon.S3
                 
         #region  DeleteBucketTagging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -155,7 +148,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  DeleteBucketWebsite
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
@@ -173,7 +165,6 @@ namespace Amazon.S3
                 
         #region  DeleteCORSConfiguration
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -189,7 +180,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  DeleteLifecycleConfiguration
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation.
@@ -207,7 +197,6 @@ namespace Amazon.S3
                 
         #region  DeleteObject
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObject operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -223,7 +212,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  DeleteObjects
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObjects operation.
@@ -241,7 +229,6 @@ namespace Amazon.S3
                 
         #region  GetACL
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetACL operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -257,7 +244,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetBucketLocation
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLocation operation.
@@ -275,7 +261,6 @@ namespace Amazon.S3
                 
         #region  GetBucketLogging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLogging operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -291,7 +276,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetBucketNotification
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketNotification operation.
@@ -309,7 +293,6 @@ namespace Amazon.S3
                 
         #region  GetBucketPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketPolicy operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -325,7 +308,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetBucketRequestPayment
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketRequestPayment operation.
@@ -343,7 +325,6 @@ namespace Amazon.S3
                 
         #region  GetBucketTagging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketTagging operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -359,7 +340,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetBucketVersioning
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketVersioning operation.
@@ -377,7 +357,6 @@ namespace Amazon.S3
                 
         #region  GetBucketWebsite
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketWebsite operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -393,7 +372,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetCORSConfiguration
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCORSConfiguration operation.
@@ -411,7 +389,6 @@ namespace Amazon.S3
                 
         #region  GetLifecycleConfiguration
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -427,7 +404,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetObject
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObject operation.
@@ -445,7 +421,6 @@ namespace Amazon.S3
                 
         #region  GetObjectMetadata
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectMetadata operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -461,7 +436,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  GetObjectTorrent
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectTorrent operation.
@@ -479,7 +453,6 @@ namespace Amazon.S3
                 
         #region  InitiateMultipartUpload
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -495,7 +468,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  ListBuckets
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBuckets operation.
@@ -513,7 +485,6 @@ namespace Amazon.S3
                 
         #region  ListMultipartUploads
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -529,7 +500,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  ListObjects
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListObjects operation.
@@ -547,7 +517,6 @@ namespace Amazon.S3
                 
         #region  ListParts
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -563,7 +532,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  ListVersions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVersions operation.
@@ -581,7 +549,6 @@ namespace Amazon.S3
                 
         #region  PutACL
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutACL operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -597,7 +564,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  PutBucket
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucket operation.
@@ -615,7 +581,6 @@ namespace Amazon.S3
                 
         #region  PutBucketLogging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketLogging operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -631,7 +596,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  PutBucketNotification
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketNotification operation.
@@ -649,7 +613,6 @@ namespace Amazon.S3
                 
         #region  PutBucketPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketPolicy operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -665,7 +628,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  PutBucketRequestPayment
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
@@ -683,7 +645,6 @@ namespace Amazon.S3
                 
         #region  PutBucketTagging
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketTagging operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -699,7 +660,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  PutBucketVersioning
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketVersioning operation.
@@ -717,7 +677,6 @@ namespace Amazon.S3
                 
         #region  PutBucketWebsite
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketWebsite operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -733,7 +692,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  PutCORSConfiguration
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
@@ -751,7 +709,6 @@ namespace Amazon.S3
                 
         #region  PutLifecycleConfiguration
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -767,7 +724,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  PutObject
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutObject operation.
@@ -785,7 +741,6 @@ namespace Amazon.S3
                 
         #region  RestoreObject
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreObject operation.
         /// <seealso cref="Amazon.S3.IAmazonS3"/>
@@ -801,7 +756,6 @@ namespace Amazon.S3
         #endregion
                 
         #region  UploadPart
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadPart operation.

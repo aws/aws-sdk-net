@@ -103,7 +103,7 @@ namespace Amazon.Runtime.Internal
             {
                 try
                 {
-                    return await base.InvokeAsync<T>(executionContext);
+                    return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
                 }
                 catch (Exception exception)
                 {

@@ -337,7 +337,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  CountClosedWorkflowExecutions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CountClosedWorkflowExecutions operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -353,7 +352,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  CountOpenWorkflowExecutions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountOpenWorkflowExecutions operation.
@@ -371,7 +369,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  CountPendingActivityTasks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingActivityTasks operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -387,7 +384,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  CountPendingDecisionTasks
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingDecisionTasks operation.
@@ -405,7 +401,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  DeprecateActivityType
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateActivityType operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -421,7 +416,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  DeprecateDomain
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateDomain operation.
@@ -439,7 +433,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  DeprecateWorkflowType
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateWorkflowType operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -455,7 +448,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  DescribeActivityType
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeActivityType operation.
@@ -473,7 +465,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  DescribeDomain
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomain operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -489,7 +480,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  DescribeWorkflowExecution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowExecution operation.
@@ -507,7 +497,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  DescribeWorkflowType
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowType operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -523,7 +512,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  GetWorkflowExecutionHistory
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetWorkflowExecutionHistory operation.
@@ -541,7 +529,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  ListActivityTypes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListActivityTypes operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -557,7 +544,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  ListClosedWorkflowExecutions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListClosedWorkflowExecutions operation.
@@ -575,7 +561,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  ListDomains
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -591,7 +576,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  ListOpenWorkflowExecutions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenWorkflowExecutions operation.
@@ -609,7 +593,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  ListWorkflowTypes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListWorkflowTypes operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -625,7 +608,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  PollForActivityTask
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForActivityTask operation.
@@ -643,7 +625,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  PollForDecisionTask
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PollForDecisionTask operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -659,7 +640,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  RecordActivityTaskHeartbeat
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RecordActivityTaskHeartbeat operation.
@@ -677,7 +657,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  RegisterActivityType
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterActivityType operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -693,7 +672,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  RegisterDomain
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
@@ -711,7 +689,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  RegisterWorkflowType
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterWorkflowType operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -727,7 +704,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  RequestCancelWorkflowExecution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestCancelWorkflowExecution operation.
@@ -745,7 +721,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  RespondActivityTaskCanceled
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCanceled operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -761,7 +736,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  RespondActivityTaskCompleted
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCompleted operation.
@@ -779,7 +753,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  RespondActivityTaskFailed
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskFailed operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -795,7 +768,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  RespondDecisionTaskCompleted
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondDecisionTaskCompleted operation.
@@ -813,7 +785,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  SignalWorkflowExecution
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SignalWorkflowExecution operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -830,7 +801,6 @@ namespace Amazon.SimpleWorkflow
                 
         #region  StartWorkflowExecution
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StartWorkflowExecution operation.
         /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
@@ -846,7 +816,6 @@ namespace Amazon.SimpleWorkflow
         #endregion
                 
         #region  TerminateWorkflowExecution
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkflowExecution operation.

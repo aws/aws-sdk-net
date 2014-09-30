@@ -204,8 +204,6 @@ namespace <#=this.Config.Namespace#>
         }
 <#
         }
-        // Adds any simple method forms if they are in the customizations file
-        AddSimpleClientMethods(operation);
 #>
         internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {

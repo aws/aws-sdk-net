@@ -80,7 +80,6 @@ namespace Amazon.Glacier
                 
         #region  AbortMultipartUpload
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -96,7 +95,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  CompleteMultipartUpload
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
@@ -114,7 +112,6 @@ namespace Amazon.Glacier
                 
         #region  CreateVault
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVault operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -130,7 +127,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  DeleteArchive
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteArchive operation.
@@ -148,7 +144,6 @@ namespace Amazon.Glacier
                 
         #region  DeleteVault
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVault operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -164,7 +159,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  DeleteVaultNotifications
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVaultNotifications operation.
@@ -182,7 +176,6 @@ namespace Amazon.Glacier
                 
         #region  DescribeJob
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJob operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -198,7 +191,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  DescribeVault
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVault operation.
@@ -216,7 +208,6 @@ namespace Amazon.Glacier
                 
         #region  GetJobOutput
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetJobOutput operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -232,7 +223,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  GetVaultNotifications
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetVaultNotifications operation.
@@ -250,7 +240,6 @@ namespace Amazon.Glacier
                 
         #region  InitiateJob
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateJob operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -266,7 +255,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  InitiateMultipartUpload
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
@@ -284,7 +272,6 @@ namespace Amazon.Glacier
                 
         #region  ListJobs
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -300,7 +287,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  ListMultipartUploads
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
@@ -318,7 +304,6 @@ namespace Amazon.Glacier
                 
         #region  ListParts
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -334,7 +319,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  ListVaults
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVaults operation.
@@ -352,7 +336,6 @@ namespace Amazon.Glacier
                 
         #region  SetVaultNotifications
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetVaultNotifications operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -369,7 +352,6 @@ namespace Amazon.Glacier
                 
         #region  UploadArchive
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UploadArchive operation.
         /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
@@ -385,7 +367,6 @@ namespace Amazon.Glacier
         #endregion
                 
         #region  UploadMultipartPart
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadMultipartPart operation.

@@ -83,7 +83,7 @@ namespace Amazon.Runtime.Internal
         {
             await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             // Unmarshall the response
-            await UnmarshallAsync(executionContext);            
+            await UnmarshallAsync(executionContext).ConfigureAwait(false);            
             return (T)executionContext.ResponseContext.Response;
         }
 

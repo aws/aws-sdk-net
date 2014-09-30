@@ -61,7 +61,6 @@ namespace Amazon.StorageGateway
                 
         #region  ActivateGateway
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ActivateGateway operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -77,7 +76,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  AddCache
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddCache operation.
@@ -95,7 +93,6 @@ namespace Amazon.StorageGateway
                 
         #region  AddUploadBuffer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AddUploadBuffer operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -111,7 +108,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  AddWorkingStorage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddWorkingStorage operation.
@@ -129,7 +125,6 @@ namespace Amazon.StorageGateway
                 
         #region  CancelArchival
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CancelArchival operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -145,7 +140,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  CancelRetrieval
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelRetrieval operation.
@@ -163,7 +157,6 @@ namespace Amazon.StorageGateway
                 
         #region  CreateCachediSCSIVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCachediSCSIVolume operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -179,7 +172,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  CreateSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -197,7 +189,6 @@ namespace Amazon.StorageGateway
                 
         #region  CreateSnapshotFromVolumeRecoveryPoint
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotFromVolumeRecoveryPoint operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -213,7 +204,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  CreateStorediSCSIVolume
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorediSCSIVolume operation.
@@ -231,7 +221,6 @@ namespace Amazon.StorageGateway
                 
         #region  CreateTapes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTapes operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -247,7 +236,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DeleteBandwidthRateLimit
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBandwidthRateLimit operation.
@@ -265,7 +253,6 @@ namespace Amazon.StorageGateway
                 
         #region  DeleteChapCredentials
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteChapCredentials operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -281,7 +268,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DeleteGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGateway operation.
@@ -299,7 +285,6 @@ namespace Amazon.StorageGateway
                 
         #region  DeleteSnapshotSchedule
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotSchedule operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -315,7 +300,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DeleteTape
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTape operation.
@@ -333,7 +317,6 @@ namespace Amazon.StorageGateway
                 
         #region  DeleteTapeArchive
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTapeArchive operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -349,7 +332,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DeleteVolume
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
@@ -367,7 +349,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeBandwidthRateLimit
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBandwidthRateLimit operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -383,7 +364,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeCache
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCache operation.
@@ -401,7 +381,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeCachediSCSIVolumes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCachediSCSIVolumes operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -417,7 +396,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeChapCredentials
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeChapCredentials operation.
@@ -435,7 +413,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeGatewayInformation
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeGatewayInformation operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -451,7 +428,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeMaintenanceStartTime
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMaintenanceStartTime operation.
@@ -469,7 +445,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeSnapshotSchedule
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotSchedule operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -485,7 +460,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeStorediSCSIVolumes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStorediSCSIVolumes operation.
@@ -503,7 +477,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeTapeArchives
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeArchives operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -519,7 +492,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeTapeRecoveryPoints
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeRecoveryPoints operation.
@@ -537,7 +509,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeTapes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapes operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -553,7 +524,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeUploadBuffer
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUploadBuffer operation.
@@ -571,7 +541,6 @@ namespace Amazon.StorageGateway
                 
         #region  DescribeVTLDevices
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVTLDevices operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -587,7 +556,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  DescribeWorkingStorage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkingStorage operation.
@@ -605,7 +573,6 @@ namespace Amazon.StorageGateway
                 
         #region  DisableGateway
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DisableGateway operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -621,7 +588,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  ListGateways
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGateways operation.
@@ -639,7 +605,6 @@ namespace Amazon.StorageGateway
                 
         #region  ListLocalDisks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListLocalDisks operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -655,7 +620,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  ListVolumeRecoveryPoints
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeRecoveryPoints operation.
@@ -673,7 +637,6 @@ namespace Amazon.StorageGateway
                 
         #region  ListVolumes
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumes operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -689,7 +652,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  RetrieveTapeArchive
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeArchive operation.
@@ -707,7 +669,6 @@ namespace Amazon.StorageGateway
                 
         #region  RetrieveTapeRecoveryPoint
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeRecoveryPoint operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -723,7 +684,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  ShutdownGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ShutdownGateway operation.
@@ -741,7 +701,6 @@ namespace Amazon.StorageGateway
                 
         #region  StartGateway
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StartGateway operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -757,7 +716,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  UpdateBandwidthRateLimit
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateBandwidthRateLimit operation.
@@ -775,7 +733,6 @@ namespace Amazon.StorageGateway
                 
         #region  UpdateChapCredentials
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateChapCredentials operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -791,7 +748,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  UpdateGatewayInformation
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewayInformation operation.
@@ -809,7 +765,6 @@ namespace Amazon.StorageGateway
                 
         #region  UpdateGatewaySoftwareNow
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -826,7 +781,6 @@ namespace Amazon.StorageGateway
                 
         #region  UpdateMaintenanceStartTime
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMaintenanceStartTime operation.
         /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
@@ -842,7 +796,6 @@ namespace Amazon.StorageGateway
         #endregion
                 
         #region  UpdateSnapshotSchedule
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSnapshotSchedule operation.

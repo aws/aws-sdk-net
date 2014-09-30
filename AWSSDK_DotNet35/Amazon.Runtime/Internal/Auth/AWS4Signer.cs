@@ -318,7 +318,8 @@ namespace Amazon.Runtime.Internal.Auth
         public static string SetRequestBodyHash(IRequest request)
         {
             string computedContentHash = null;
-            if (request.Headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out computedContentHash))
+            var shaHeaderPresent = request.Headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out computedContentHash);
+            if (shaHeaderPresent && !request.UseChunkEncoding)
                 return computedContentHash;
 
             if (request.UseChunkEncoding)
@@ -333,7 +334,15 @@ namespace Amazon.Runtime.Internal.Auth
                     request.Headers[HeaderKeys.ContentLengthHeader]
                         = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength).ToString(CultureInfo.InvariantCulture);
                 }
-                request.Headers[HeaderKeys.ContentEncodingHeader] = AWSChunkedEncoding;
+
+                if (request.Headers.ContainsKey(HeaderKeys.ContentEncodingHeader))
+                {
+                    var originalEncoding = request.Headers[HeaderKeys.ContentEncodingHeader];
+                    request.Headers[HeaderKeys.ContentEncodingHeader] 
+                        = string.Concat(originalEncoding, ", ", AWSChunkedEncoding);
+                }
+                else
+                    request.Headers[HeaderKeys.ContentEncodingHeader] = AWSChunkedEncoding;
             }
             else
             {
@@ -354,7 +363,12 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             if (computedContentHash != null)
-                request.Headers.Add(HeaderKeys.XAmzContentSha256Header, computedContentHash);
+            {
+                if (shaHeaderPresent)
+                    request.Headers[HeaderKeys.XAmzContentSha256Header] = computedContentHash;
+                else
+                    request.Headers.Add(HeaderKeys.XAmzContentSha256Header, computedContentHash);
+            }
 
             return computedContentHash;
         }
@@ -459,8 +473,8 @@ namespace Amazon.Runtime.Internal.Auth
         internal static string DetermineService(ClientConfig clientConfig)
         {
             return !string.IsNullOrEmpty(clientConfig.AuthenticationServiceName) 
-                ? clientConfig.AuthenticationServiceName.ToLower(CultureInfo.InvariantCulture) 
-                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL()).ToLower(CultureInfo.InvariantCulture);
+                ? clientConfig.AuthenticationServiceName 
+                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL());
         }
 
         /// <summary>

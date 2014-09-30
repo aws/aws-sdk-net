@@ -161,6 +161,11 @@ namespace Amazon.CognitoSync
             return new AWS4Signer();
         } 
 
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.CredentialsRetriever>();
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.CognitoSync.Internal.CognitoCredentialsRetriever(this.Credentials));
+        }
 
         #endregion
 

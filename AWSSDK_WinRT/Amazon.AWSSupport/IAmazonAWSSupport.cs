@@ -85,7 +85,6 @@ namespace Amazon.AWSSupport
                 
         #region  AddAttachmentsToSet
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AddAttachmentsToSet operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -101,7 +100,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  AddCommunicationToCase
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddCommunicationToCase operation.
@@ -119,7 +117,6 @@ namespace Amazon.AWSSupport
                 
         #region  CreateCase
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCase operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -135,7 +132,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  DescribeAttachment
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAttachment operation.
@@ -153,7 +149,6 @@ namespace Amazon.AWSSupport
                 
         #region  DescribeCases
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCases operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -169,7 +164,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  DescribeCommunications
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommunications operation.
@@ -187,7 +181,6 @@ namespace Amazon.AWSSupport
                 
         #region  DescribeServices
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServices operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -203,7 +196,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  DescribeSeverityLevels
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSeverityLevels operation.
@@ -221,7 +213,6 @@ namespace Amazon.AWSSupport
                 
         #region  DescribeTrustedAdvisorCheckRefreshStatuses
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckRefreshStatuses operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -237,7 +228,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  DescribeTrustedAdvisorCheckResult
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckResult operation.
@@ -255,7 +245,6 @@ namespace Amazon.AWSSupport
                 
         #region  DescribeTrustedAdvisorChecks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorChecks operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -271,7 +260,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  DescribeTrustedAdvisorCheckSummaries
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckSummaries operation.
@@ -289,7 +277,6 @@ namespace Amazon.AWSSupport
                 
         #region  RefreshTrustedAdvisorCheck
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RefreshTrustedAdvisorCheck operation.
         /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
@@ -305,7 +292,6 @@ namespace Amazon.AWSSupport
         #endregion
                 
         #region  ResolveCase
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResolveCase operation.

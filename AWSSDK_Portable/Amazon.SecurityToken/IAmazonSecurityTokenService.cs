@@ -90,7 +90,6 @@ namespace Amazon.SecurityToken
                 
         #region  AssumeRole
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRole operation.
         /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
@@ -106,7 +105,6 @@ namespace Amazon.SecurityToken
         #endregion
                 
         #region  AssumeRoleWithSAML
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithSAML operation.
@@ -124,7 +122,6 @@ namespace Amazon.SecurityToken
                 
         #region  AssumeRoleWithWebIdentity
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithWebIdentity operation.
         /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
@@ -140,7 +137,6 @@ namespace Amazon.SecurityToken
         #endregion
                 
         #region  DecodeAuthorizationMessage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DecodeAuthorizationMessage operation.
@@ -158,7 +154,6 @@ namespace Amazon.SecurityToken
                 
         #region  GetFederationToken
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetFederationToken operation.
         /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
@@ -174,7 +169,6 @@ namespace Amazon.SecurityToken
         #endregion
                 
         #region  GetSessionToken
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSessionToken operation.

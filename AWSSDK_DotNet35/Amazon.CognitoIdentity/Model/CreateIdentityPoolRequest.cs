@@ -30,11 +30,12 @@ namespace Amazon.CognitoIdentity.Model
     /// <summary>
     /// Container for the parameters to the CreateIdentityPool operation.
     /// Creates a new identity pool. The identity pool is a store of user identity information
-    /// that is specific to your AWS account.
+    /// that is specific to your AWS account. The limit on identity pools is 60 per account.
     /// </summary>
     public partial class CreateIdentityPoolRequest : AmazonCognitoIdentityRequest
     {
         private bool? _allowUnauthenticatedIdentities;
+        private string _developerProviderName;
         private string _identityPoolName;
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
 
@@ -54,6 +55,32 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetAllowUnauthenticatedIdentities()
         {
             return this._allowUnauthenticatedIdentities.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeveloperProviderName. 
+        /// <para>
+        /// The "domain" by which Cognito will refer to your users. This name acts as a placeholder
+        /// that allows your backend and the Cognito service to communicate about the developer
+        /// provider. For the <code>DeveloperProviderName</code>, you can use letters as well
+        /// as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you have set a developer provider name, you cannot change it. Please take care
+        /// in setting this parameter.
+        /// </para>
+        /// </summary>
+        public string DeveloperProviderName
+        {
+            get { return this._developerProviderName; }
+            set { this._developerProviderName = value; }
+        }
+
+        // Check to see if DeveloperProviderName property is set
+        internal bool IsSetDeveloperProviderName()
+        {
+            return this._developerProviderName != null;
         }
 
         /// <summary>

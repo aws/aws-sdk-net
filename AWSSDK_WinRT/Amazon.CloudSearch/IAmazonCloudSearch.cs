@@ -50,7 +50,6 @@ namespace Amazon.CloudSearch
                 
         #region  BuildSuggesters
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the BuildSuggesters operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -66,7 +65,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  CreateDomain
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
@@ -84,7 +82,6 @@ namespace Amazon.CloudSearch
                 
         #region  DefineAnalysisScheme
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DefineAnalysisScheme operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -100,7 +97,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DefineExpression
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineExpression operation.
@@ -118,7 +114,6 @@ namespace Amazon.CloudSearch
                 
         #region  DefineIndexField
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -134,7 +129,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DefineSuggester
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineSuggester operation.
@@ -152,7 +146,6 @@ namespace Amazon.CloudSearch
                 
         #region  DeleteAnalysisScheme
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAnalysisScheme operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -168,7 +161,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DeleteDomain
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
@@ -186,7 +178,6 @@ namespace Amazon.CloudSearch
                 
         #region  DeleteExpression
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteExpression operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -202,7 +193,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DeleteIndexField
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
@@ -220,7 +210,6 @@ namespace Amazon.CloudSearch
                 
         #region  DeleteSuggester
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSuggester operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -236,7 +225,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DescribeAnalysisSchemes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAnalysisSchemes operation.
@@ -254,7 +242,6 @@ namespace Amazon.CloudSearch
                 
         #region  DescribeAvailabilityOptions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -270,7 +257,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DescribeDomains
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
@@ -288,7 +274,6 @@ namespace Amazon.CloudSearch
                 
         #region  DescribeExpressions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExpressions operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -304,7 +289,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DescribeIndexFields
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
@@ -322,7 +306,6 @@ namespace Amazon.CloudSearch
                 
         #region  DescribeScalingParameters
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingParameters operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -338,7 +321,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  DescribeServiceAccessPolicies
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
@@ -356,7 +338,6 @@ namespace Amazon.CloudSearch
                 
         #region  DescribeSuggesters
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSuggesters operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -372,7 +353,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  IndexDocuments
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
@@ -390,7 +370,6 @@ namespace Amazon.CloudSearch
                 
         #region  ListDomainNames
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomainNames operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -406,7 +385,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  UpdateAvailabilityOptions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
@@ -424,7 +402,6 @@ namespace Amazon.CloudSearch
                 
         #region  UpdateScalingParameters
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateScalingParameters operation.
         /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
@@ -440,7 +417,6 @@ namespace Amazon.CloudSearch
         #endregion
                 
         #region  UpdateServiceAccessPolicies
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.

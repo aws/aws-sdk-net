@@ -35,6 +35,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return encodedMD5;
         }
 
+        private static AmazonS3Client CreateHttpClient()
+        {
+            var config = new AmazonS3Config { UseHttp = true };
+            var client = new AmazonS3Client(config);
+
+            return client;
+        }
+
 
         [TestMethod]
         [TestCategory("S3")]
@@ -142,6 +150,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 getObjectMetadataResponse = Client.GetObjectMetadata(getObjectMetadataRequest);
                 Assert.AreEqual(ServerSideEncryptionCustomerMethod.AES256, getObjectMetadataResponse.ServerSideEncryptionCustomerMethod);
+
+                // Test calls against HTTP client, some should fail on the client
+                using (var httpClient = CreateHttpClient())
+                {
+                    getObjectMetadataRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.None;
+                    getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = null;
+                    AssertExtensions.ExpectException(() =>
+                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(AmazonS3Exception));
+
+                    getObjectMetadataRequest.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256;
+                    AssertExtensions.ExpectException(() =>
+                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(AmazonS3Exception));
+
+                    getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = copyBase64Key;
+                    AssertExtensions.ExpectException(() =>
+                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(Amazon.Runtime.AmazonClientException));
+
+                    url = httpClient.GetPreSignedURL(getPresignedUrlRequest);
+                    Assert.IsFalse(string.IsNullOrEmpty(url));
+                }
             }
             finally
             {

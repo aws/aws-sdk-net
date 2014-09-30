@@ -42,7 +42,6 @@ namespace Amazon.EC2
                 
         #region  AcceptVpcPeeringConnection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AcceptVpcPeeringConnection operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -58,7 +57,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  AllocateAddress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AllocateAddress operation.
@@ -76,7 +74,6 @@ namespace Amazon.EC2
                 
         #region  AssignPrivateIpAddresses
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AssignPrivateIpAddresses operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -92,7 +89,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  AssociateAddress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateAddress operation.
@@ -110,7 +106,6 @@ namespace Amazon.EC2
                 
         #region  AssociateDhcpOptions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateDhcpOptions operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -126,7 +121,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  AssociateRouteTable
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateRouteTable operation.
@@ -144,7 +138,6 @@ namespace Amazon.EC2
                 
         #region  AttachInternetGateway
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInternetGateway operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -160,7 +153,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  AttachNetworkInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachNetworkInterface operation.
@@ -178,7 +170,6 @@ namespace Amazon.EC2
                 
         #region  AttachVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVolume operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -194,7 +185,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  AttachVpnGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVpnGateway operation.
@@ -212,7 +202,6 @@ namespace Amazon.EC2
                 
         #region  AuthorizeSecurityGroupEgress
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupEgress operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -228,7 +217,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  AuthorizeSecurityGroupIngress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupIngress operation.
@@ -246,7 +234,6 @@ namespace Amazon.EC2
                 
         #region  BundleInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the BundleInstance operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -262,7 +249,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CancelBundleTask
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelBundleTask operation.
@@ -280,7 +266,6 @@ namespace Amazon.EC2
                 
         #region  CancelConversionTask
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CancelConversionTask operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -296,7 +281,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CancelExportTask
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelExportTask operation.
@@ -314,7 +298,6 @@ namespace Amazon.EC2
                 
         #region  CancelReservedInstancesListing
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CancelReservedInstancesListing operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -330,7 +313,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CancelSpotInstanceRequests
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelSpotInstanceRequests operation.
@@ -348,7 +330,6 @@ namespace Amazon.EC2
                 
         #region  ConfirmProductInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmProductInstance operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -364,7 +345,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CopyImage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyImage operation.
@@ -382,7 +362,6 @@ namespace Amazon.EC2
                 
         #region  CopySnapshot
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -398,7 +377,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateCustomerGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCustomerGateway operation.
@@ -416,7 +394,6 @@ namespace Amazon.EC2
                 
         #region  CreateDhcpOptions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDhcpOptions operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -432,7 +409,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateImage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateImage operation.
@@ -450,7 +426,6 @@ namespace Amazon.EC2
                 
         #region  CreateInstanceExportTask
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceExportTask operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -466,7 +441,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateInternetGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInternetGateway operation.
@@ -484,7 +458,6 @@ namespace Amazon.EC2
                 
         #region  CreateKeyPair
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateKeyPair operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -500,7 +473,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateNetworkAcl
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAcl operation.
@@ -518,7 +490,6 @@ namespace Amazon.EC2
                 
         #region  CreateNetworkAclEntry
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAclEntry operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -534,7 +505,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateNetworkInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkInterface operation.
@@ -552,7 +522,6 @@ namespace Amazon.EC2
                 
         #region  CreatePlacementGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePlacementGroup operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -568,7 +537,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateReservedInstancesListing
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReservedInstancesListing operation.
@@ -586,7 +554,6 @@ namespace Amazon.EC2
                 
         #region  CreateRoute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRoute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -602,7 +569,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateRouteTable
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRouteTable operation.
@@ -620,7 +586,6 @@ namespace Amazon.EC2
                 
         #region  CreateSecurityGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSecurityGroup operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -636,7 +601,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateSnapshot
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -654,7 +618,6 @@ namespace Amazon.EC2
                 
         #region  CreateSpotDatafeedSubscription
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSpotDatafeedSubscription operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -670,7 +633,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateSubnet
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSubnet operation.
@@ -688,7 +650,6 @@ namespace Amazon.EC2
                 
         #region  CreateTags
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTags operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -704,7 +665,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateVolume
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVolume operation.
@@ -722,7 +682,6 @@ namespace Amazon.EC2
                 
         #region  CreateVpc
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpc operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -738,7 +697,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateVpcPeeringConnection
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
@@ -756,7 +714,6 @@ namespace Amazon.EC2
                 
         #region  CreateVpnConnection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnection operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -772,7 +729,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  CreateVpnConnectionRoute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnectionRoute operation.
@@ -790,7 +746,6 @@ namespace Amazon.EC2
                 
         #region  CreateVpnGateway
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnGateway operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -806,7 +761,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteCustomerGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCustomerGateway operation.
@@ -824,7 +778,6 @@ namespace Amazon.EC2
                 
         #region  DeleteDhcpOptions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDhcpOptions operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -840,7 +793,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteInternetGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInternetGateway operation.
@@ -858,7 +810,6 @@ namespace Amazon.EC2
                 
         #region  DeleteKeyPair
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteKeyPair operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -874,7 +825,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteNetworkAcl
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAcl operation.
@@ -892,7 +842,6 @@ namespace Amazon.EC2
                 
         #region  DeleteNetworkAclEntry
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAclEntry operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -908,7 +857,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteNetworkInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkInterface operation.
@@ -926,7 +874,6 @@ namespace Amazon.EC2
                 
         #region  DeletePlacementGroup
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePlacementGroup operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -942,7 +889,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteRoute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRoute operation.
@@ -960,7 +906,6 @@ namespace Amazon.EC2
                 
         #region  DeleteRouteTable
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRouteTable operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -976,7 +921,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteSecurityGroup
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSecurityGroup operation.
@@ -994,7 +938,6 @@ namespace Amazon.EC2
                 
         #region  DeleteSnapshot
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1010,7 +953,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteSpotDatafeedSubscription
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSpotDatafeedSubscription operation.
@@ -1028,7 +970,6 @@ namespace Amazon.EC2
                 
         #region  DeleteSubnet
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSubnet operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1044,7 +985,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteTags
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
@@ -1062,7 +1002,6 @@ namespace Amazon.EC2
                 
         #region  DeleteVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1078,7 +1017,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteVpc
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpc operation.
@@ -1096,7 +1034,6 @@ namespace Amazon.EC2
                 
         #region  DeleteVpcPeeringConnection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1112,7 +1049,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteVpnConnection
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnection operation.
@@ -1130,7 +1066,6 @@ namespace Amazon.EC2
                 
         #region  DeleteVpnConnectionRoute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnectionRoute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1146,7 +1081,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DeleteVpnGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnGateway operation.
@@ -1164,7 +1098,6 @@ namespace Amazon.EC2
                 
         #region  DeregisterImage
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterImage operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1180,7 +1113,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeAccountAttributes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
@@ -1198,7 +1130,6 @@ namespace Amazon.EC2
                 
         #region  DescribeAddresses
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAddresses operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1214,7 +1145,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeAvailabilityZones
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityZones operation.
@@ -1232,7 +1162,6 @@ namespace Amazon.EC2
                 
         #region  DescribeBundleTasks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBundleTasks operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1248,7 +1177,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeConversionTasks
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConversionTasks operation.
@@ -1266,7 +1194,6 @@ namespace Amazon.EC2
                 
         #region  DescribeCustomerGateways
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCustomerGateways operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1282,7 +1209,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeDhcpOptions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDhcpOptions operation.
@@ -1300,7 +1226,6 @@ namespace Amazon.EC2
                 
         #region  DescribeExportTasks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExportTasks operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1316,7 +1241,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeImageAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImageAttribute operation.
@@ -1334,7 +1258,6 @@ namespace Amazon.EC2
                 
         #region  DescribeImages
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImages operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1350,7 +1273,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeInstanceAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceAttribute operation.
@@ -1368,7 +1290,6 @@ namespace Amazon.EC2
                 
         #region  DescribeInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1384,7 +1305,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeInstanceStatus
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceStatus operation.
@@ -1402,7 +1322,6 @@ namespace Amazon.EC2
                 
         #region  DescribeInternetGateways
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInternetGateways operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1418,7 +1337,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeKeyPairs
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKeyPairs operation.
@@ -1436,7 +1354,6 @@ namespace Amazon.EC2
                 
         #region  DescribeNetworkAcls
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkAcls operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1452,7 +1369,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeNetworkInterfaceAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaceAttribute operation.
@@ -1470,7 +1386,6 @@ namespace Amazon.EC2
                 
         #region  DescribeNetworkInterfaces
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaces operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1486,7 +1401,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribePlacementGroups
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePlacementGroups operation.
@@ -1504,7 +1418,6 @@ namespace Amazon.EC2
                 
         #region  DescribeRegions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRegions operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1520,7 +1433,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeReservedInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstances operation.
@@ -1538,7 +1450,6 @@ namespace Amazon.EC2
                 
         #region  DescribeReservedInstancesListings
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesListings operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1554,7 +1465,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeReservedInstancesModifications
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesModifications operation.
@@ -1572,7 +1482,6 @@ namespace Amazon.EC2
                 
         #region  DescribeReservedInstancesOfferings
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesOfferings operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1588,7 +1497,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeRouteTables
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRouteTables operation.
@@ -1606,7 +1514,6 @@ namespace Amazon.EC2
                 
         #region  DescribeSecurityGroups
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSecurityGroups operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1622,7 +1529,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeSnapshotAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotAttribute operation.
@@ -1640,7 +1546,6 @@ namespace Amazon.EC2
                 
         #region  DescribeSnapshots
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1656,7 +1561,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeSpotDatafeedSubscription
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotDatafeedSubscription operation.
@@ -1674,7 +1578,6 @@ namespace Amazon.EC2
                 
         #region  DescribeSpotInstanceRequests
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotInstanceRequests operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1690,7 +1593,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeSpotPriceHistory
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotPriceHistory operation.
@@ -1708,7 +1610,6 @@ namespace Amazon.EC2
                 
         #region  DescribeSubnets
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSubnets operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1724,7 +1625,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeTags
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -1742,7 +1642,6 @@ namespace Amazon.EC2
                 
         #region  DescribeVolumeAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1758,7 +1657,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeVolumes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
@@ -1776,7 +1674,6 @@ namespace Amazon.EC2
                 
         #region  DescribeVolumeStatus
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeStatus operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1792,7 +1689,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeVpcAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcAttribute operation.
@@ -1810,7 +1706,6 @@ namespace Amazon.EC2
                 
         #region  DescribeVpcPeeringConnections
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1826,7 +1721,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeVpcs
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcs operation.
@@ -1844,7 +1738,6 @@ namespace Amazon.EC2
                 
         #region  DescribeVpnConnections
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnConnections operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1860,7 +1753,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DescribeVpnGateways
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnGateways operation.
@@ -1878,7 +1770,6 @@ namespace Amazon.EC2
                 
         #region  DetachInternetGateway
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInternetGateway operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1894,7 +1785,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DetachNetworkInterface
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachNetworkInterface operation.
@@ -1912,7 +1802,6 @@ namespace Amazon.EC2
                 
         #region  DetachVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVolume operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1928,7 +1817,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DetachVpnGateway
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVpnGateway operation.
@@ -1946,7 +1834,6 @@ namespace Amazon.EC2
                 
         #region  DisableVgwRoutePropagation
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DisableVgwRoutePropagation operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1962,7 +1849,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  DisassociateAddress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateAddress operation.
@@ -1980,7 +1866,6 @@ namespace Amazon.EC2
                 
         #region  DisassociateRouteTable
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateRouteTable operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -1996,7 +1881,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  EnableVgwRoutePropagation
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVgwRoutePropagation operation.
@@ -2014,7 +1898,6 @@ namespace Amazon.EC2
                 
         #region  EnableVolumeIO
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVolumeIO operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2030,7 +1913,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  GetConsoleOutput
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetConsoleOutput operation.
@@ -2048,7 +1930,6 @@ namespace Amazon.EC2
                 
         #region  GetPasswordData
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetPasswordData operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2064,7 +1945,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ImportInstance
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportInstance operation.
@@ -2082,7 +1962,6 @@ namespace Amazon.EC2
                 
         #region  ImportKeyPair
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ImportKeyPair operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2098,7 +1977,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ImportVolume
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportVolume operation.
@@ -2116,7 +1994,6 @@ namespace Amazon.EC2
                 
         #region  ModifyImageAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyImageAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2132,7 +2009,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ModifyInstanceAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceAttribute operation.
@@ -2150,7 +2026,6 @@ namespace Amazon.EC2
                 
         #region  ModifyNetworkInterfaceAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyNetworkInterfaceAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2166,7 +2041,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ModifyReservedInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyReservedInstances operation.
@@ -2184,7 +2058,6 @@ namespace Amazon.EC2
                 
         #region  ModifySnapshotAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2200,7 +2073,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ModifySubnetAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySubnetAttribute operation.
@@ -2218,7 +2090,6 @@ namespace Amazon.EC2
                 
         #region  ModifyVolumeAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVolumeAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2234,7 +2105,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ModifyVpcAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVpcAttribute operation.
@@ -2252,7 +2122,6 @@ namespace Amazon.EC2
                 
         #region  MonitorInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the MonitorInstances operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2268,7 +2137,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  PurchaseReservedInstancesOffering
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedInstancesOffering operation.
@@ -2286,7 +2154,6 @@ namespace Amazon.EC2
                 
         #region  RebootInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstances operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2302,7 +2169,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  RegisterImage
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterImage operation.
@@ -2320,7 +2186,6 @@ namespace Amazon.EC2
                 
         #region  RejectVpcPeeringConnection
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RejectVpcPeeringConnection operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2336,7 +2201,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ReleaseAddress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReleaseAddress operation.
@@ -2354,7 +2218,6 @@ namespace Amazon.EC2
                 
         #region  ReplaceNetworkAclAssociation
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclAssociation operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2370,7 +2233,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ReplaceNetworkAclEntry
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclEntry operation.
@@ -2388,7 +2250,6 @@ namespace Amazon.EC2
                 
         #region  ReplaceRoute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRoute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2404,7 +2265,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ReplaceRouteTableAssociation
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRouteTableAssociation operation.
@@ -2422,7 +2282,6 @@ namespace Amazon.EC2
                 
         #region  ReportInstanceStatus
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ReportInstanceStatus operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2438,7 +2297,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  RequestSpotInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestSpotInstances operation.
@@ -2456,7 +2314,6 @@ namespace Amazon.EC2
                 
         #region  ResetImageAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ResetImageAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2472,7 +2329,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ResetInstanceAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetInstanceAttribute operation.
@@ -2490,7 +2346,6 @@ namespace Amazon.EC2
                 
         #region  ResetNetworkInterfaceAttribute
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ResetNetworkInterfaceAttribute operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2506,7 +2361,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  ResetSnapshotAttribute
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetSnapshotAttribute operation.
@@ -2524,7 +2378,6 @@ namespace Amazon.EC2
                 
         #region  RevokeSecurityGroupEgress
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupEgress operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2540,7 +2393,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  RevokeSecurityGroupIngress
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupIngress operation.
@@ -2558,7 +2410,6 @@ namespace Amazon.EC2
                 
         #region  RunInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RunInstances operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2574,7 +2425,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  StartInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstances operation.
@@ -2592,7 +2442,6 @@ namespace Amazon.EC2
                 
         #region  StopInstances
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstances operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2608,7 +2457,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  TerminateInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstances operation.
@@ -2626,7 +2474,6 @@ namespace Amazon.EC2
                 
         #region  UnassignPrivateIpAddresses
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignPrivateIpAddresses operation.
         /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
@@ -2642,7 +2489,6 @@ namespace Amazon.EC2
         #endregion
                 
         #region  UnmonitorInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnmonitorInstances operation.

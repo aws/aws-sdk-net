@@ -87,7 +87,6 @@ namespace Amazon.CloudWatch
                 
         #region  DeleteAlarms
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlarms operation.
         /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
@@ -103,7 +102,6 @@ namespace Amazon.CloudWatch
         #endregion
                 
         #region  DescribeAlarmHistory
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
@@ -121,7 +119,6 @@ namespace Amazon.CloudWatch
                 
         #region  DescribeAlarms
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarms operation.
         /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
@@ -137,7 +134,6 @@ namespace Amazon.CloudWatch
         #endregion
                 
         #region  DescribeAlarmsForMetric
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
@@ -155,7 +151,6 @@ namespace Amazon.CloudWatch
                 
         #region  DisableAlarmActions
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAlarmActions operation.
         /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
@@ -171,7 +166,6 @@ namespace Amazon.CloudWatch
         #endregion
                 
         #region  EnableAlarmActions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAlarmActions operation.
@@ -189,7 +183,6 @@ namespace Amazon.CloudWatch
                 
         #region  GetMetricStatistics
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetMetricStatistics operation.
         /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
@@ -205,7 +198,6 @@ namespace Amazon.CloudWatch
         #endregion
                 
         #region  ListMetrics
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMetrics operation.
@@ -223,7 +215,6 @@ namespace Amazon.CloudWatch
                 
         #region  PutMetricAlarm
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricAlarm operation.
         /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
@@ -240,7 +231,6 @@ namespace Amazon.CloudWatch
                 
         #region  PutMetricData
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricData operation.
         /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
@@ -256,7 +246,6 @@ namespace Amazon.CloudWatch
         #endregion
                 
         #region  SetAlarmState
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetAlarmState operation.

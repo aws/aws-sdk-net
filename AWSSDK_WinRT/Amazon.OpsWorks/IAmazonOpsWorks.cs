@@ -88,7 +88,6 @@ namespace Amazon.OpsWorks
                 
         #region  AssignVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AssignVolume operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -104,7 +103,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  AssociateElasticIp
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateElasticIp operation.
@@ -122,7 +120,6 @@ namespace Amazon.OpsWorks
                 
         #region  AttachElasticLoadBalancer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -138,7 +135,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  CloneStack
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CloneStack operation.
@@ -156,7 +152,6 @@ namespace Amazon.OpsWorks
                 
         #region  CreateApp
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApp operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -172,7 +167,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  CreateDeployment
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
@@ -190,7 +184,6 @@ namespace Amazon.OpsWorks
                 
         #region  CreateInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstance operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -206,7 +199,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  CreateLayer
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLayer operation.
@@ -224,7 +216,6 @@ namespace Amazon.OpsWorks
                 
         #region  CreateStack
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -240,7 +231,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  CreateUserProfile
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUserProfile operation.
@@ -258,7 +248,6 @@ namespace Amazon.OpsWorks
                 
         #region  DeleteApp
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApp operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -274,7 +263,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DeleteInstance
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstance operation.
@@ -292,7 +280,6 @@ namespace Amazon.OpsWorks
                 
         #region  DeleteLayer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLayer operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -308,7 +295,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DeleteStack
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
@@ -326,7 +312,6 @@ namespace Amazon.OpsWorks
                 
         #region  DeleteUserProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserProfile operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -342,7 +327,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DeregisterElasticIp
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
@@ -360,7 +344,6 @@ namespace Amazon.OpsWorks
                 
         #region  DeregisterRdsDbInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterRdsDbInstance operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -376,7 +359,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DeregisterVolume
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterVolume operation.
@@ -394,7 +376,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeApps
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApps operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -410,7 +391,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeCommands
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommands operation.
@@ -428,7 +408,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeDeployments
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeployments operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -444,7 +423,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeElasticIps
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticIps operation.
@@ -462,7 +440,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeElasticLoadBalancers
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -478,7 +455,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
@@ -496,7 +472,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeLayers
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLayers operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -512,7 +487,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeLoadBasedAutoScaling
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
@@ -530,7 +504,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeMyUserProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMyUserProfile operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -546,7 +519,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribePermissions
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePermissions operation.
@@ -564,7 +536,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeRaidArrays
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRaidArrays operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -580,7 +551,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeRdsDbInstances
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRdsDbInstances operation.
@@ -598,7 +568,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeServiceErrors
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -614,7 +583,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeStacks
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
@@ -632,7 +600,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeStackSummary
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackSummary operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -648,7 +615,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeTimeBasedAutoScaling
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTimeBasedAutoScaling operation.
@@ -666,7 +632,6 @@ namespace Amazon.OpsWorks
                 
         #region  DescribeUserProfiles
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUserProfiles operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -682,7 +647,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DescribeVolumes
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
@@ -700,7 +664,6 @@ namespace Amazon.OpsWorks
                 
         #region  DetachElasticLoadBalancer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DetachElasticLoadBalancer operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -716,7 +679,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  DisassociateElasticIp
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
@@ -734,7 +696,6 @@ namespace Amazon.OpsWorks
                 
         #region  GetHostnameSuggestion
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -750,7 +711,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  RebootInstance
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstance operation.
@@ -768,7 +728,6 @@ namespace Amazon.OpsWorks
                 
         #region  RegisterElasticIp
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterElasticIp operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -784,7 +743,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  RegisterRdsDbInstance
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterRdsDbInstance operation.
@@ -802,7 +760,6 @@ namespace Amazon.OpsWorks
                 
         #region  RegisterVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterVolume operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -818,7 +775,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  SetLoadBasedAutoScaling
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBasedAutoScaling operation.
@@ -836,7 +792,6 @@ namespace Amazon.OpsWorks
                 
         #region  SetPermission
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetPermission operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -852,7 +807,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  SetTimeBasedAutoScaling
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
@@ -870,7 +824,6 @@ namespace Amazon.OpsWorks
                 
         #region  StartInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstance operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -886,7 +839,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  StartStack
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartStack operation.
@@ -904,7 +856,6 @@ namespace Amazon.OpsWorks
                 
         #region  StopInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstance operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -920,7 +871,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  StopStack
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopStack operation.
@@ -938,7 +888,6 @@ namespace Amazon.OpsWorks
                 
         #region  UnassignVolume
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignVolume operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -954,7 +903,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  UpdateApp
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApp operation.
@@ -972,7 +920,6 @@ namespace Amazon.OpsWorks
                 
         #region  UpdateElasticIp
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateElasticIp operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -988,7 +935,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  UpdateInstance
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateInstance operation.
@@ -1006,7 +952,6 @@ namespace Amazon.OpsWorks
                 
         #region  UpdateLayer
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLayer operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -1022,7 +967,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  UpdateMyUserProfile
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMyUserProfile operation.
@@ -1040,7 +984,6 @@ namespace Amazon.OpsWorks
                 
         #region  UpdateRdsDbInstance
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRdsDbInstance operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -1056,7 +999,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  UpdateStack
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
@@ -1074,7 +1016,6 @@ namespace Amazon.OpsWorks
                 
         #region  UpdateUserProfile
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUserProfile operation.
         /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
@@ -1090,7 +1031,6 @@ namespace Amazon.OpsWorks
         #endregion
                 
         #region  UpdateVolume
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVolume operation.

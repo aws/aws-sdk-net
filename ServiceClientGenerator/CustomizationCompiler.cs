@@ -19,6 +19,19 @@ namespace ServiceClientGenerator
         /// <param name="modelsPath">The path the to customization models to be compiled</param>
         public static void CompileServiceCustomizations(string modelsPath)
         {
+            if (Directory.Exists("customizations"))
+            {
+                // Cleanup any previous run customization.
+                foreach (var file in Directory.GetFiles("customizations"))
+                {
+                    File.Delete(file);
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory("customizations");
+            }
+
             string[] fileServices = Directory.GetFiles(modelsPath, "*.customizations*.json");
 
             foreach (var file in fileServices)
@@ -26,7 +39,13 @@ namespace ServiceClientGenerator
                 // The name before the .customizations extension
                 // Used to get all files for that service
                 var baseName = file.Substring(file.IndexOf("ServiceModels\\") + "ServiceModels\\".Length, file.IndexOf(".customizations") - Convert.ToInt32(file.IndexOf("ServiceModels\\") + "ServiceModels\\".Length));
-                
+
+                var filePath = "customizations\\" + baseName + ".customizations.json";
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+
                 string[] fileEntries = Directory.GetFiles(modelsPath, baseName + "*.customizations*.json");
 
                 var jsonWriter = new JsonWriter();
@@ -52,18 +71,9 @@ namespace ServiceClientGenerator
                 if (jsonWriter.ToString().Length < 10)
                     continue;
 
-                Directory.CreateDirectory("customizations");
-
-                var filePath = "customizations\\" + baseName + ".customizations.json";
-                if (File.Exists(filePath))
-                {
-                    var existingContent = File.ReadAllText(filePath);
-                    if (string.Equals(existingContent, output))
-                        continue;
-                }
-
+                
                 File.WriteAllText(filePath, output);
-                Console.WriteLine("\tUpdated {0}", baseName + ".customizations.json");
+                Console.WriteLine("\tUpdated {0}", Path.GetFullPath(filePath));
             }
         }
     }

@@ -41,6 +41,26 @@ namespace Amazon.EC2.Internal
             var request = executionContext.RequestContext.OriginalRequest;
             var config = executionContext.RequestContext.ClientConfig;
 
+            var runInstancesRequest = request as RunInstancesRequest;
+            if (runInstancesRequest != null)
+            {
+                if (runInstancesRequest.IsSetBlockDeviceMappings())
+                {
+                    var mappings = runInstancesRequest.BlockDeviceMappings;
+                    foreach(var mapping in mappings)
+                    {
+                        if (mapping.IsSetEbs())
+                        {
+                            var ebs = mapping.Ebs;
+                            if (ebs.IsSetSnapshotId() &&
+                                ebs.IsSetEncrypted() &&
+                                ebs.Encrypted == false)
+                                ebs.ClearEncryptedFlag();
+                        }
+                    }
+                }
+            }
+
             var copySnapshotRequest = request as CopySnapshotRequest;
             if (copySnapshotRequest != null)
             {

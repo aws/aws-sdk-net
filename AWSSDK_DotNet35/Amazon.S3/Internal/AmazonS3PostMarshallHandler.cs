@@ -24,6 +24,8 @@ using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
 using System.Text.RegularExpressions;
+using Amazon.Util;
+using System.Globalization;
 
 namespace Amazon.S3.Internal
 {
@@ -50,11 +52,12 @@ namespace Amazon.S3.Internal
             // addressing
             var bucketIsDnsCompatible = IsDnsCompatibleBucketName(bucketName);
             var ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
+            var isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
 
             if (!s3Config.ForcePathStyle && bucketIsDnsCompatible)
             {
                 // If using HTTPS, bucketName cannot contain a period
-                if (string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase) || bucketName.IndexOf('.') < 0)
+                if (isHttp || bucketName.IndexOf('.') < 0)
                 {
                     // Add bucket to host
                     ub.Host = string.Concat(bucketName, ".", ub.Host);
@@ -71,7 +74,33 @@ namespace Amazon.S3.Internal
                     request.CanonicalResourcePrefix = canonicalBucketName;
                 }
             }
+
+            // Some parameters should not be sent over HTTP, just HTTPS
+            if (isHttp)
+            {
+                ValidateHttpsOnlyHeaders(request);
+            }
         }
+
+        private static void ValidateHttpsOnlyHeaders(IRequest request)
+        {
+            var foundHttpsOnlyHeaders = request.Headers
+                .Where(kvp => !string.IsNullOrEmpty(kvp.Value) && httpsOnlyHeaders.Contains(kvp.Key))
+                .Select(kvp => kvp.Key)
+                .ToArray();
+            if (foundHttpsOnlyHeaders.Length > 0)
+            {
+                string message = string.Format(CultureInfo.InvariantCulture,
+                    "Request contains headers which can only be transmitted over HTTPS: {0}",
+                    string.Join(", ", foundHttpsOnlyHeaders));
+                throw new AmazonClientException(message);
+            }
+        }
+
+        private static HashSet<string> httpsOnlyHeaders = new HashSet<string>
+        {
+            HeaderKeys.XAmzSSECustomerKeyHeader
+        };
 
         private static char[] separators = new char[] { '/', '?' };
         // Gets the bucket name from resource path

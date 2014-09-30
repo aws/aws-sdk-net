@@ -42,7 +42,6 @@ namespace Amazon.ImportExport
                 
         #region  CancelJob
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
         /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
@@ -58,7 +57,6 @@ namespace Amazon.ImportExport
         #endregion
                 
         #region  CreateJob
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
@@ -76,7 +74,6 @@ namespace Amazon.ImportExport
                 
         #region  GetStatus
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetStatus operation.
         /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
@@ -93,7 +90,6 @@ namespace Amazon.ImportExport
                 
         #region  ListJobs
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
         /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
@@ -109,7 +105,6 @@ namespace Amazon.ImportExport
         #endregion
                 
         #region  UpdateJob
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateJob operation.

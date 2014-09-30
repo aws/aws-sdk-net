@@ -62,7 +62,6 @@ namespace Amazon.CloudFormation
                 
         #region  CancelUpdateStack
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -78,7 +77,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  CreateStack
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
@@ -96,7 +94,6 @@ namespace Amazon.CloudFormation
                 
         #region  DeleteStack
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -112,7 +109,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  DescribeStackEvents
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
@@ -130,7 +126,6 @@ namespace Amazon.CloudFormation
                 
         #region  DescribeStackResource
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -146,7 +141,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  DescribeStackResources
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
@@ -164,7 +158,6 @@ namespace Amazon.CloudFormation
                 
         #region  DescribeStacks
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -180,7 +173,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  EstimateTemplateCost
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
@@ -198,7 +190,6 @@ namespace Amazon.CloudFormation
                 
         #region  GetStackPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the GetStackPolicy operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -214,7 +205,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  GetTemplate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
@@ -232,7 +222,6 @@ namespace Amazon.CloudFormation
                 
         #region  ListStackResources
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -248,7 +237,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  ListStacks
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
@@ -266,7 +254,6 @@ namespace Amazon.CloudFormation
                 
         #region  SetStackPolicy
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the SetStackPolicy operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -283,7 +270,6 @@ namespace Amazon.CloudFormation
                 
         #region  UpdateStack
 
-
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
         /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
@@ -299,7 +285,6 @@ namespace Amazon.CloudFormation
         #endregion
                 
         #region  ValidateTemplate
-
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.
