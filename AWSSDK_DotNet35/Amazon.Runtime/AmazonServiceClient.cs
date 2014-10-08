@@ -119,7 +119,8 @@ namespace Amazon.Runtime
                     Marshaller = marshaller,
                     OriginalRequest = request,
                     Signer = Signer,
-                    Unmarshaller = unmarshaller
+                    Unmarshaller = unmarshaller,
+                    IsAsync = false
                 },
                 new ResponseContext()
             );
@@ -143,7 +144,8 @@ namespace Amazon.Runtime
                     Marshaller = marshaller,
                     OriginalRequest = request,
                     Signer = Signer,
-                    Unmarshaller = unmarshaller
+                    Unmarshaller = unmarshaller,
+                    IsAsync = true
                 },
                 new ResponseContext()
             ) { CancellationToken = cancellationToken };
@@ -166,7 +168,8 @@ namespace Amazon.Runtime
                     Signer = Signer,
                     Unmarshaller = unmarshaller,
                     Callback = callback,
-                    State = state
+                    State = state,
+                    IsAsync = true
                 },
                 new AsyncResponseContext()
             );

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateNetworkAclEntry service
-    /// </summary>
-    public partial class CreateNetworkAclEntryResponse : CreateNetworkAclEntryResult
+    public partial class CreateNetworkAclEntryResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateNetworkAclEntryResult property.
-        /// Represents the output of a CreateNetworkAclEntry operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateNetworkAclEntryResult class are now available on the CreateNetworkAclEntryResponse class. You should use the properties on CreateNetworkAclEntryResponse instead of accessing them through CreateNetworkAclEntryResult.")]
-        public CreateNetworkAclEntryResult CreateNetworkAclEntryResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

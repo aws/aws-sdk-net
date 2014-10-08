@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateStream service
-    /// </summary>
-    public partial class CreateStreamResponse : CreateStreamResult
+    public partial class CreateStreamResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateStreamResult property.
-        /// Represents the output of a CreateStream operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateStreamResult class are now available on the CreateStreamResponse class. You should use the properties on CreateStreamResponse instead of accessing them through CreateStreamResult.")]
-        public CreateStreamResult CreateStreamResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
+        private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
         private string _instanceType;
@@ -99,6 +100,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this._ebsOptimized.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Groups.
+        /// </summary>
+        public List<GroupIdentifier> Groups
+        {
+            get { return this._groups; }
+            set { this._groups = value; }
+        }
+
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this._groups != null && this._groups.Count > 0; 
         }
 
         /// <summary>

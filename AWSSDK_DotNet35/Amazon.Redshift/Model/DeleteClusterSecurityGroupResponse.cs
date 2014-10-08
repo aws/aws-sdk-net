@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteClusterSecurityGroup service
-    /// </summary>
-    public partial class DeleteClusterSecurityGroupResponse : DeleteClusterSecurityGroupResult
+    public partial class DeleteClusterSecurityGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteClusterSecurityGroupResult property.
-        /// Represents the output of a DeleteClusterSecurityGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteClusterSecurityGroupResult class are now available on the DeleteClusterSecurityGroupResponse class. You should use the properties on DeleteClusterSecurityGroupResponse instead of accessing them through DeleteClusterSecurityGroupResult.")]
-        public DeleteClusterSecurityGroupResult DeleteClusterSecurityGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

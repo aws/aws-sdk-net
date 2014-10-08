@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RespondActivityTaskCanceled service
-    /// </summary>
-    public partial class RespondActivityTaskCanceledResponse : RespondActivityTaskCanceledResult
+    public partial class RespondActivityTaskCanceledResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RespondActivityTaskCanceledResult property.
-        /// Represents the output of a RespondActivityTaskCanceled operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RespondActivityTaskCanceledResult class are now available on the RespondActivityTaskCanceledResponse class. You should use the properties on RespondActivityTaskCanceledResponse instead of accessing them through RespondActivityTaskCanceledResult.")]
-        public RespondActivityTaskCanceledResult RespondActivityTaskCanceledResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

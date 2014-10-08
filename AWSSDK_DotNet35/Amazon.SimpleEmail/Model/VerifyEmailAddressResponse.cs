@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleEmail.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon VerifyEmailAddress service
-    /// </summary>
-    public partial class VerifyEmailAddressResponse : VerifyEmailAddressResult
+    public partial class VerifyEmailAddressResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the VerifyEmailAddressResult property.
-        /// Represents the output of a VerifyEmailAddress operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the VerifyEmailAddressResult class are now available on the VerifyEmailAddressResponse class. You should use the properties on VerifyEmailAddressResponse instead of accessing them through VerifyEmailAddressResult.")]
-        public VerifyEmailAddressResult VerifyEmailAddressResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

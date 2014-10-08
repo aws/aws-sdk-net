@@ -261,7 +261,7 @@ namespace Amazon.SessionProvider
         {
             try
             {
-                this._table = Table.LoadTable(this._ddbClient, this._tableName, Table.DynamoDBConsumer.SessionStateProvider);
+                this._table = Table.LoadTable(this._ddbClient, this._tableName, Table.DynamoDBConsumer.SessionStateProvider, DynamoDBEntryConversion.V1);
             }
             catch (ResourceNotFoundException) { }
 
@@ -672,7 +672,7 @@ namespace Amazon.SessionProvider
         /// <param name="tableName">The table to search.</param>
         public static void DeleteExpiredSessions(IAmazonDynamoDB dbClient, string tableName)
         {
-            Table table = Table.LoadTable(dbClient, tableName, Table.DynamoDBConsumer.SessionStateProvider);
+            Table table = Table.LoadTable(dbClient, tableName, Table.DynamoDBConsumer.SessionStateProvider, DynamoDBEntryConversion.V1);
 
 
             ScanFilter filter = new ScanFilter();
@@ -769,7 +769,7 @@ namespace Amazon.SessionProvider
                     isActive = true;
             }
 
-            Table table = Table.LoadTable(this._ddbClient, this._tableName, Table.DynamoDBConsumer.SessionStateProvider);
+            Table table = Table.LoadTable(this._ddbClient, this._tableName, Table.DynamoDBConsumer.SessionStateProvider, DynamoDBEntryConversion.V1);
             return table;
         }
 

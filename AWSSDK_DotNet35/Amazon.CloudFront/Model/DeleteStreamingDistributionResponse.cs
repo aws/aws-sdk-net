@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteStreamingDistribution service
-    /// </summary>
-    public partial class DeleteStreamingDistributionResponse : DeleteStreamingDistributionResult
+    public partial class DeleteStreamingDistributionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteStreamingDistributionResult property.
-        /// Represents the output of a DeleteStreamingDistribution operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteStreamingDistributionResult class are now available on the DeleteStreamingDistributionResponse class. You should use the properties on DeleteStreamingDistributionResponse instead of accessing them through DeleteStreamingDistributionResult.")]
-        public DeleteStreamingDistributionResult DeleteStreamingDistributionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon EnableVgwRoutePropagation service
-    /// </summary>
-    public partial class EnableVgwRoutePropagationResponse : EnableVgwRoutePropagationResult
+    public partial class EnableVgwRoutePropagationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the EnableVgwRoutePropagationResult property.
-        /// Represents the output of a EnableVgwRoutePropagation operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the EnableVgwRoutePropagationResult class are now available on the EnableVgwRoutePropagationResponse class. You should use the properties on EnableVgwRoutePropagationResponse instead of accessing them through EnableVgwRoutePropagationResult.")]
-        public EnableVgwRoutePropagationResult EnableVgwRoutePropagationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

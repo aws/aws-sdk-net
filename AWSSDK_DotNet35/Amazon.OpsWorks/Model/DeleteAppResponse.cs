@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteApp service
-    /// </summary>
-    public partial class DeleteAppResponse : DeleteAppResult
+    public partial class DeleteAppResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteAppResult property.
-        /// Represents the output of a DeleteApp operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteAppResult class are now available on the DeleteAppResponse class. You should use the properties on DeleteAppResponse instead of accessing them through DeleteAppResult.")]
-        public DeleteAppResult DeleteAppResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

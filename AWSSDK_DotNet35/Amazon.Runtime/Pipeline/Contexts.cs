@@ -34,6 +34,7 @@ namespace Amazon.Runtime
 
         IRequest Request { get; set; }
         bool IsSigned { get; set; }
+        bool IsAsync { get; }
         int Retries { get; set; }
     }
 
@@ -88,6 +89,7 @@ namespace Amazon.Runtime.Internal
         public ClientConfig ClientConfig { get; set; }
         public int Retries { get; set; }
         public bool IsSigned { get; set; }
+        public bool IsAsync { get; set; }
         public AmazonWebServiceRequest OriginalRequest { get; set; }
         public IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; set; }
         public ResponseUnmarshaller Unmarshaller { get; set; }

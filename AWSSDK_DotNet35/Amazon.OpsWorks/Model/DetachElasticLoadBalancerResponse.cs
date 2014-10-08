@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DetachElasticLoadBalancer service
-    /// </summary>
-    public partial class DetachElasticLoadBalancerResponse : DetachElasticLoadBalancerResult
+    public partial class DetachElasticLoadBalancerResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DetachElasticLoadBalancerResult property.
-        /// Represents the output of a DetachElasticLoadBalancer operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DetachElasticLoadBalancerResult class are now available on the DetachElasticLoadBalancerResponse class. You should use the properties on DetachElasticLoadBalancerResponse instead of accessing them through DetachElasticLoadBalancerResult.")]
-        public DetachElasticLoadBalancerResult DetachElasticLoadBalancerResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

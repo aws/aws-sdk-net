@@ -15,9 +15,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
-using System.IO;
+using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -25,7 +28,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// A collection of attribute key-value pairs that defines
     /// an item in DynamoDB.
     /// </summary>
-    public class Document : IDictionary<string, DynamoDBEntry>
+    public class Document : DynamoDBEntry, IDictionary<string, DynamoDBEntry>
     {
         #region Private/internal members
 
@@ -175,21 +178,57 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.currentValues.ContainsKey(attributeName);
         }
 
+        /// <summary>
+        /// Returns a new instance of Document where all unconverted .NET types
+        /// are converted to DynamoDBEntry types using a specific conversion.
+        /// </summary>
+        /// <param name="conversion"></param>
+        /// <returns></returns>
+        public Document ForceConversion(DynamoDBEntryConversion conversion)
+        {
+            Document doc = new Document();
+            foreach(var kvp in this)
+            {
+                string name = kvp.Key;
+                DynamoDBEntry entry = kvp.Value;
+
+                var unconvertedEntry = entry as UnconvertedDynamoDBEntry;
+                if (unconvertedEntry != null)
+                    entry = unconvertedEntry.Convert(conversion);
+
+                doc[name] = entry;
+            }
+
+            return doc;
+        }
+
         #endregion
 
         #region DynamoDB conversion
 
         /// <summary>
         /// Creates a map of attribute names mapped to AttributeValue objects.
+        /// Converts .NET types using the conversion specified by AWSConfigs.DynamoDBConfig.ConversionSchema
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, AttributeValue> ToAttributeMap()
         {
+            return ToAttributeMap(DynamoDBEntryConversion.CurrentConversion);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to AttributeValue objects.
+        /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <returns></returns>
+        public Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion)
+        {
+            if (conversion == null) throw new ArgumentNullException("conversion");
             Dictionary<string, AttributeValue> ret = new Dictionary<string, AttributeValue>();
 
             foreach (var attribute in currentValues)
             {
-                AttributeValue value = attribute.Value.ConvertToAttributeValue();
+                AttributeValue value = attribute.Value.ConvertToAttributeValue(new AttributeConversionConfig(conversion));
                 if (value != null)
                 {
                     ret.Add(attribute.Key, value);
@@ -205,11 +244,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap()
         {
+            return ToExpectedAttributeMap(DynamoDBEntryConversion.CurrentConversion);
+        }
+        /// <summary>
+        /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
+        /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <returns></returns>
+        public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion)
+        {
+            if (conversion == null) throw new ArgumentNullException("conversion");
             Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
 
             foreach (var attribute in currentValues)
             {
-                ret.Add(attribute.Key, attribute.Value.ConvertToExpectedAttributeValue());
+                ret.Add(attribute.Key, attribute.Value.ConvertToExpectedAttributeValue(new AttributeConversionConfig(conversion)));
             }
 
             return ret;
@@ -222,13 +271,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(bool changedAttributesOnly)
         {
+            return ToAttributeUpdateMap(DynamoDBEntryConversion.CurrentConversion, changedAttributesOnly);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to AttributeValueUpdate objects.
+        /// </summary>
+        /// <param name="changedAttributesOnly">If true, only attributes that have been changed will be in the map.</param>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <returns></returns>
+        public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(DynamoDBEntryConversion conversion, bool changedAttributesOnly)
+        {
+            if (conversion == null) throw new ArgumentNullException("conversion");
             Dictionary<string, AttributeValueUpdate> ret = new Dictionary<string, AttributeValueUpdate>();
 
             foreach (var attribute in currentValues)
             {
-                if (!changedAttributesOnly || this.IsAttributeChanged(attribute.Key))
+                string name = attribute.Key;
+                DynamoDBEntry value = attribute.Value;
+
+                if (!changedAttributesOnly || this.IsAttributeChanged(name))
                 {
-                    ret.Add(attribute.Key, attribute.Value.ConvertToAttributeUpdateValue());
+                    ret.Add(name, value.ConvertToAttributeUpdateValue(new AttributeConversionConfig(conversion)));
                 }
             }
 
@@ -242,6 +306,150 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<String> GetAttributeNames()
         {
             return new List<string>(this.currentValues.Keys);
+        }
+
+        #endregion
+
+        #region Attribute to DynamoDBEntry conversion
+
+        internal static DynamoDBEntry AttributeValueToDynamoDBEntry(AttributeValue attributeValue)
+        {
+            Primitive primitive;
+            if (TryToPrimitive(attributeValue, out primitive))
+                return primitive;
+
+            PrimitiveList primitiveList;
+            if (TryToPrimitiveList(attributeValue, out primitiveList))
+                return primitiveList;
+
+            DynamoDBBool ddbBool;
+            if (TryToDynamoDBBool(attributeValue, out ddbBool))
+                return ddbBool;
+
+            DynamoDBNull ddbNull;
+            if (TryToDynamoDBNull(attributeValue, out ddbNull))
+                return ddbNull;
+
+            DynamoDBList ddbList;
+            if (TryToDynamoDBList(attributeValue, out ddbList))
+                return ddbList;
+
+            Document document;
+            if (TryToDocument(attributeValue, out document))
+                return document;
+
+            return null;
+        }
+
+        private static bool TryToPrimitiveList(AttributeValue attributeValue, out PrimitiveList primitiveList)
+        {
+            primitiveList = null;
+            Primitive primitive;
+
+            if (attributeValue.IsSetSS())
+            {
+                primitiveList = new PrimitiveList(DynamoDBEntryType.String);
+                foreach (string item in attributeValue.SS)
+                {
+                    primitive = new Primitive(item);
+                    primitiveList.Add(primitive);
+                }
+            }
+            else if (attributeValue.IsSetNS())
+            {
+                primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric);
+                foreach (string item in attributeValue.NS)
+                {
+                    primitive = new Primitive(item, true);
+                    primitiveList.Add(primitive);
+                }
+            }
+            else if (attributeValue.IsSetBS())
+            {
+                primitiveList = new PrimitiveList(DynamoDBEntryType.Binary);
+                foreach (MemoryStream item in attributeValue.BS)
+                {
+                    primitive = new Primitive(item);
+                    primitiveList.Add(primitive);
+                }
+            }
+
+            return (primitiveList != null);
+        }
+
+        private static bool TryToPrimitive(AttributeValue attributeValue, out Primitive primitive)
+        {
+            primitive = null;
+            if (attributeValue.IsSetS())
+            {
+                primitive = new Primitive(attributeValue.S);
+            }
+            else if (attributeValue.IsSetN())
+            {
+                primitive = new Primitive(attributeValue.N, true);
+            }
+            else if (attributeValue.IsSetB())
+            {
+                primitive = new Primitive(attributeValue.B);
+            }
+
+            return (primitive != null);
+        }
+
+        private static bool TryToDynamoDBBool(AttributeValue attributeValue, out DynamoDBBool ddbBool)
+        {
+            ddbBool = null;
+            if (attributeValue.IsSetBOOL())
+            {
+                ddbBool = new DynamoDBBool(attributeValue.BOOL);
+            }
+            return (ddbBool != null);
+        }
+
+        private static bool TryToDynamoDBNull(AttributeValue attributeValue, out DynamoDBNull ddbNull)
+        {
+            ddbNull = null;
+            if (attributeValue.IsSetNULL())
+            {
+                ddbNull = new DynamoDBNull();
+            }
+            return (ddbNull != null);
+        }
+
+        private static bool TryToDynamoDBList(AttributeValue attributeValue, out DynamoDBList list)
+        {
+            list = null;
+
+            if (attributeValue.IsSetL())
+            {
+                var items = attributeValue.L;
+                var entries = items.Select(AttributeValueToDynamoDBEntry);
+                list = new DynamoDBList(entries);
+            }
+
+            return (list != null);
+        }
+
+        private static bool TryToDocument(AttributeValue attributeValue, out Document document)
+        {
+            document = null;
+            
+            if (attributeValue.IsSetM())
+            {
+                document = new Document();
+
+                var items = attributeValue.M;
+                foreach(var kvp in items)
+                {
+                    var name = kvp.Key;
+                    var value = kvp.Value;
+
+                    var entry = AttributeValueToDynamoDBEntry(value);
+                    document[name] = entry;
+                }
+            }
+
+            return (document != null);
         }
 
         #endregion
@@ -274,60 +482,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             doc.CommitChanges();
             return doc;
         }
-
-        internal static DynamoDBEntry AttributeValueToDynamoDBEntry(AttributeValue attributeValue)
-        {
-            Primitive primitive = null;
-            if (attributeValue.S != null)
-            {
-                primitive = new Primitive(attributeValue.S);
-            }
-            else if (attributeValue.N != null)
-            {
-                primitive = new Primitive(attributeValue.N, true);
-            }
-            else if (attributeValue.B != null)
-            {
-                primitive = new Primitive(attributeValue.B);
-            }
-            if (primitive != null)
-                return primitive;
-
-            PrimitiveList primitiveList = null;
-            if (attributeValue.SS != null && attributeValue.SS.Count != 0)
-            {
-                primitiveList = new PrimitiveList(DynamoDBEntryType.String);
-                foreach (string item in attributeValue.SS)
-                {
-                    primitive = new Primitive(item);
-                    primitiveList.Add(primitive);
-                }
-            }
-            else if (attributeValue.NS != null && attributeValue.NS.Count != 0)
-            {
-                primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric);
-                foreach (string item in attributeValue.NS)
-                {
-                    primitive = new Primitive(item, true);
-                    primitiveList.Add(primitive);
-                }
-            }
-            else if (attributeValue.BS != null && attributeValue.BS.Count != 0)
-            {
-                primitiveList = new PrimitiveList(DynamoDBEntryType.Binary);
-                foreach (MemoryStream item in attributeValue.BS)
-                {
-                    primitive = new Primitive(item);
-                    primitiveList.Add(primitive);
-                }
-            }
-
-            if (primitiveList != null)
-                return primitiveList;
-
-            return null;
-        }
-
+        
         #endregion
 
         #region IDictionary<string,DynamoDBEntry> Members
@@ -419,6 +574,80 @@ namespace Amazon.DynamoDBv2.DocumentModel
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return currentValues.GetEnumerator();
+        }
+
+        #endregion
+
+        #region DynamoDBEntry overrides
+
+        internal override AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig)
+        {
+            var map = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+            foreach(var item in currentValues)
+            {
+                var key = item.Key;
+                var entry = item.Value;
+                AttributeValue entryAttributeValue;
+                using (conversionConfig.CRT.Track(entry))
+                {
+                    entryAttributeValue = entry.ConvertToAttributeValue(conversionConfig);
+                }
+
+                if (entryAttributeValue != null)
+                {
+                    map[key] = entryAttributeValue;
+                }
+            }
+
+            return new AttributeValue { M = map };
+        }
+
+        public override object Clone()
+        {
+            var doc = new Document(this);
+            return doc;
+        }
+
+        #endregion
+
+        #region Overrides
+
+        public override bool Equals(object obj)
+        {
+            var otherDocument = obj as Document;
+            if (otherDocument == null)
+                return false;
+
+            if (Keys.Count != otherDocument.Keys.Count)
+                return false;
+
+            foreach(var key in Keys)
+            {
+                if (!otherDocument.ContainsKey(key))
+                    return false;
+
+                var a = this[key];
+                var b = otherDocument[key];
+
+                if (!a.Equals(b))
+                    return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 0;
+            foreach(var kvp in this)
+            {
+                string key = kvp.Key;
+                DynamoDBEntry entry = kvp.Value;
+
+                hashCode = Hashing.CombineHashes(hashCode, key.GetHashCode(), entry.GetHashCode());
+            }
+
+            return hashCode;
         }
 
         #endregion

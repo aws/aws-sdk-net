@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon UpdateAssumeRolePolicy service
-    /// </summary>
-    public partial class UpdateAssumeRolePolicyResponse : UpdateAssumeRolePolicyResult
+    public partial class UpdateAssumeRolePolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UpdateAssumeRolePolicyResult property.
-        /// Represents the output of a UpdateAssumeRolePolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UpdateAssumeRolePolicyResult class are now available on the UpdateAssumeRolePolicyResponse class. You should use the properties on UpdateAssumeRolePolicyResponse instead of accessing them through UpdateAssumeRolePolicyResult.")]
-        public UpdateAssumeRolePolicyResult UpdateAssumeRolePolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

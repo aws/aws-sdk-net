@@ -52,21 +52,21 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property AttributeDefinitions. 
         /// <para>
         /// An array of <i>AttributeDefinition</i> objects. Each of these objects describes one
-        /// attribute      in the table and index key schema.
+        /// attribute in the table and index key schema.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Each <i>AttributeDefinition</i> object in this array is composed of:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>AttributeName</i> - The name of the attribute.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>AttributeType</i> - The data type for the attribute.
         /// </para>
-        ///       </li>    </ul>
+        ///  </li> </ul>
         /// </summary>
         public List<AttributeDefinition> AttributeDefinitions
         {
@@ -103,94 +103,92 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalSecondaryIndexes. 
         /// <para>
         /// The global secondary indexes, if any, on the table. Each index is scoped to a given
-        /// hash key value. Each      element is composed of:
+        /// hash key value. Each element is composed of:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>IndexName</i> - The name of the global secondary index.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>IndexSizeBytes</i> - The total size of the global secondary index, in bytes. DynamoDB
-        /// updates this value approximately every six      hours. Recent changes might not be
-        /// reflected in this value.      
+        /// updates this value approximately every six hours. Recent changes might not be reflected
+        /// in this value. 
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>IndexStatus</i> - The current status of the global secondary index:
         /// </para>
-        ///         <ul>          <li>            
+        ///  <ul> <li> 
         /// <para>
         /// <i>CREATING</i> - The index is being created.
         /// </para>
-        ///           </li>          <li>            
+        ///  </li> <li> 
         /// <para>
         /// <i>UPDATING</i> - The index is being updated.
         /// </para>
-        ///           </li>          <li>            
+        ///  </li> <li> 
         /// <para>
         /// <i>DELETING</i> - The index is being deleted.
         /// </para>
-        ///           </li>          <li>            
+        ///  </li> <li> 
         /// <para>
         /// <i>ACTIVE</i> - The index is ready for use.
         /// </para>
-        ///           </li>        </ul>      </li>      <li>        
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// <i>ItemCount</i> - The number of items in the global secondary index. DynamoDB updates
-        /// this value approximately every six      hours. Recent changes might not be reflected
-        /// in this value.      
+        /// this value approximately every six hours. Recent changes might not be reflected in
+        /// this value. 
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
-        /// the          key schema must be between 1 and 255 characters (inclusive). The key
-        /// schema must begin          with the same hash key attribute as the table.
+        /// the key schema must be between 1 and 255 characters (inclusive). The key schema must
+        /// begin with the same hash key attribute as the table.
         /// </para>
-        ///       </li>      <li>         
+        ///  </li> <li> 
         /// <para>
-        /// <i>Projection</i> - Specifies          attributes that are copied (projected) from
-        /// the table into the index. These are in          addition to the primary key attributes
-        /// and index key          attributes, which are automatically projected. Each       
-        ///   attribute specification is composed of:
+        /// <i>Projection</i> - Specifies attributes that are copied (projected) from the table
+        /// into the index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each attribute specification is composed
+        /// of:
         /// </para>
-        ///         <ul>          <li>            
+        ///  <ul> <li> 
         /// <para>
-        /// <i>ProjectionType</i> - One              of the following:
+        /// <i>ProjectionType</i> - One of the following:
         /// </para>
-        ///             <ul>              <li>                
+        ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the  
-        ///                index.
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
-        ///               </li>              <li>                
+        ///  </li> <li> 
         /// <para>
         /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        ///                  index. The list of projected attributes are                  in <i>NonKeyAttributes</i>.
+        /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
-        ///               </li>              <li>                
+        ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the            
-        ///      index.
+        /// <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
-        ///               </li>            </ul>          </li>          <li>            
+        ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are 
-        ///              projected into the secondary index. The total count of attributes specified
-        /// in <i>NonKeyAttributes</i>, summed across all of the secondary indexes, must not exceed
-        /// 20. If you project the same attribute into two different indexes, this counts as two
-        /// distinct attributes when determining the total.
+        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
+        /// into the secondary index. The total count of attributes specified in <i>NonKeyAttributes</i>,
+        /// summed across all of the secondary indexes, must not exceed 20. If you project the
+        /// same attribute into two different indexes, this counts as two distinct attributes
+        /// when determining the total.
         /// </para>
-        ///           </li>        </ul> </li>      <li>        
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// <i>ProvisionedThroughput</i> - The provisioned throughput settings for the global
-        /// secondary index,          consisting of read and write capacity units, along with
-        /// data about increases and          decreases. 
+        /// secondary index, consisting of read and write capacity units, along with data about
+        /// increases and decreases. 
         /// </para>
-        ///       </li>    </ul>    
+        ///  </li> </ul> 
         /// <para>
         /// If the table is in the <code>DELETING</code> state, no information about indexes will
-        /// be      returned.
+        /// be returned.
         /// </para>
         /// </summary>
         public List<GlobalSecondaryIndexDescription> GlobalSecondaryIndexes
@@ -209,7 +207,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ItemCount. 
         /// <para>
         /// The number of items in the specified table. DynamoDB updates this value approximately
-        /// every six      hours. Recent changes might not be reflected in this value.      
+        /// every six hours. Recent changes might not be reflected in this value. 
         /// </para>
         /// </summary>
         public long ItemCount
@@ -229,19 +227,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The primary key structure for the table. Each <i>KeySchemaElement</i> consists of:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>AttributeName</i> - The name of the attribute.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>KeyType</i> - The key type for the attribute. Can be either <code>HASH</code> or
-        ///            <code>RANGE</code>.
+        /// <code>RANGE</code>.
         /// </para>
-        ///       </li>    </ul>    
+        ///  </li> </ul> 
         /// <para>
         /// For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-        /// Key</a> in the      Amazon DynamoDB Developer Guide.
+        /// Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<KeySchemaElement> KeySchema
@@ -260,70 +258,68 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property LocalSecondaryIndexes. 
         /// <para>
         /// Represents one or more local secondary indexes on the table. Each index is scoped
-        /// to a given hash key value.      Tables with one or more local secondary indexes are
-        /// subject to an item collection size limit, where the amount      of data within a given
-        /// item collection cannot exceed 10 GB. Each element is composed of:
+        /// to a given hash key value. Tables with one or more local secondary indexes are subject
+        /// to an item collection size limit, where the amount of data within a given item collection
+        /// cannot exceed 10 GB. Each element is composed of:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>IndexName</i> - The name of the local secondary index.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
-        /// the          key schema must be between 1 and 255 characters (inclusive). The key
-        /// schema must begin          with the same hash key attribute as the table.
+        /// the key schema must be between 1 and 255 characters (inclusive). The key schema must
+        /// begin with the same hash key attribute as the table.
         /// </para>
-        ///       </li>      <li>         
+        ///  </li> <li> 
         /// <para>
-        /// <i>Projection</i> - Specifies          attributes that are copied (projected) from
-        /// the table into the index. These are in          addition to the primary key attributes
-        /// and index key          attributes, which are automatically projected. Each       
-        ///   attribute specification is composed of:
+        /// <i>Projection</i> - Specifies attributes that are copied (projected) from the table
+        /// into the index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each attribute specification is composed
+        /// of:
         /// </para>
-        ///         <ul>          <li>            
+        ///  <ul> <li> 
         /// <para>
-        /// <i>ProjectionType</i> - One              of the following:
+        /// <i>ProjectionType</i> - One of the following:
         /// </para>
-        ///             <ul>              <li>                
+        ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the  
-        ///                index.
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
-        ///               </li>              <li>                
+        ///  </li> <li> 
         /// <para>
         /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        ///                  index. The list of projected attributes are                  in <i>NonKeyAttributes</i>.
+        /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
-        ///               </li>              <li>                
+        ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the            
-        ///      index.
+        /// <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
-        ///               </li>            </ul>          </li>          <li>            
+        ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are 
-        ///              projected into the secondary index. The total count of attributes specified
-        /// in <i>NonKeyAttributes</i>, summed across all of the secondary indexes, must not exceed
-        /// 20. If you project the same attribute into two different indexes, this counts as two
-        /// distinct attributes when determining the total.
+        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
+        /// into the secondary index. The total count of attributes specified in <i>NonKeyAttributes</i>,
+        /// summed across all of the secondary indexes, must not exceed 20. If you project the
+        /// same attribute into two different indexes, this counts as two distinct attributes
+        /// when determining the total.
         /// </para>
-        ///           </li>        </ul> </li>      <li>        
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// <i>IndexSizeBytes</i> - Represents the total size of the index, in bytes. DynamoDB
-        /// updates          this value approximately every six hours. Recent changes might not
-        /// be reflected in this          value.
-        /// </para>
-        ///       </li>      <li>        
-        /// <para>
-        /// <i>ItemCount</i> - Represents the number of items in the index. DynamoDB updates this
-        /// value          approximately every six hours. Recent changes might not be reflected
+        /// updates this value approximately every six hours. Recent changes might not be reflected
         /// in this value.
         /// </para>
-        ///       </li>    </ul>    
+        ///  </li> <li> 
+        /// <para>
+        /// <i>ItemCount</i> - Represents the number of items in the index. DynamoDB updates this
+        /// value approximately every six hours. Recent changes might not be reflected in this
+        /// value.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If the table is in the <code>DELETING</code> state, no information about indexes will
-        /// be      returned.
+        /// be returned.
         /// </para>
         /// </summary>
         public List<LocalSecondaryIndexDescription> LocalSecondaryIndexes
@@ -342,7 +338,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ProvisionedThroughput. 
         /// <para>
         /// The provisioned throughput settings for the table, consisting of read and write capacity
-        ///      units, along with data about increases and decreases.
+        /// units, along with data about increases and decreases.
         /// </para>
         /// </summary>
         public ProvisionedThroughputDescription ProvisionedThroughput
@@ -379,7 +375,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TableSizeBytes. 
         /// <para>
         /// The total size of the specified table, in bytes. DynamoDB updates this value approximately
-        /// every six      hours. Recent changes might not be reflected in this value.      
+        /// every six hours. Recent changes might not be reflected in this value. 
         /// </para>
         /// </summary>
         public long TableSizeBytes
@@ -399,26 +395,26 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The current state of the table:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>CREATING</i> - The table is being created, as the result of a <i>CreateTable</i>
-        ///          operation.
+        /// operation.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>UPDATING</i> - The table is being updated, as the result of an <i>UpdateTable</i>
-        ///          operation.
+        /// operation.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>DELETING</i> - The table is being deleted, as the result of a <i>DeleteTable</i>
-        ///          operation.
+        /// operation.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>ACTIVE</i> - The table is ready for use.
         /// </para>
-        ///       </li>    </ul>
+        ///  </li> </ul>
         /// </summary>
         public TableStatus TableStatus
         {

@@ -38,14 +38,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property LastEvaluatedTableName. 
         /// <para>
-        /// The name of the last table in the current page of results. Use this value as the 
-        ///       <i>ExclusiveStartTableName</i> in a new request to obtain the next page of results,
-        /// until      all the table names are returned.
+        /// The name of the last table in the current page of results. Use this value as the <i>ExclusiveStartTableName</i>
+        /// in a new request to obtain the next page of results, until all the table names are
+        /// returned.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this
-        /// means that      there are no more table names to be retrieved.
+        /// means that there are no more table names to be retrieved.
         /// </para>
         /// </summary>
         public string LastEvaluatedTableName
@@ -64,13 +64,13 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TableNames. 
         /// <para>
         /// The names of the tables associated with the current account at the current endpoint.
-        /// The      maximum size of this array is 100. 
+        /// The maximum size of this array is 100. 
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
-        /// as the        <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i>
-        /// request and      obtain the next page of results.
+        /// as the <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i>
+        /// request and obtain the next page of results.
         /// </para>
         /// </summary>
         public List<string> TableNames

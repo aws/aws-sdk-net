@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteSnapshot service
-    /// </summary>
-    public partial class DeleteSnapshotResponse : DeleteSnapshotResult
+    public partial class DeleteSnapshotResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteSnapshotResult property.
-        /// Represents the output of a DeleteSnapshot operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteSnapshotResult class are now available on the DeleteSnapshotResponse class. You should use the properties on DeleteSnapshotResponse instead of accessing them through DeleteSnapshotResult.")]
-        public DeleteSnapshotResult DeleteSnapshotResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RespondActivityTaskCompleted service
-    /// </summary>
-    public partial class RespondActivityTaskCompletedResponse : RespondActivityTaskCompletedResult
+    public partial class RespondActivityTaskCompletedResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RespondActivityTaskCompletedResult property.
-        /// Represents the output of a RespondActivityTaskCompleted operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RespondActivityTaskCompletedResult class are now available on the RespondActivityTaskCompletedResponse class. You should use the properties on RespondActivityTaskCompletedResponse instead of accessing them through RespondActivityTaskCompletedResult.")]
-        public RespondActivityTaskCompletedResult RespondActivityTaskCompletedResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

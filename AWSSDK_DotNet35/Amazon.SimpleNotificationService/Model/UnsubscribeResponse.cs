@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon Unsubscribe service
-    /// </summary>
-    public partial class UnsubscribeResponse : UnsubscribeResult
+    public partial class UnsubscribeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UnsubscribeResult property.
-        /// Represents the output of a Unsubscribe operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UnsubscribeResult class are now available on the UnsubscribeResponse class. You should use the properties on UnsubscribeResponse instead of accessing them through UnsubscribeResult.")]
-        public UnsubscribeResult UnsubscribeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property IndexSizeBytes. 
         /// <para>
         /// The total size of the specified index, in bytes. DynamoDB updates this value approximately
-        /// every six      hours. Recent changes might not be reflected in this value.      
+        /// every six hours. Recent changes might not be reflected in this value. 
         /// </para>
         /// </summary>
         public long IndexSizeBytes
@@ -82,26 +82,26 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The current state of the global secondary index:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>CREATING</i> - The index is being created, as the result of a <i>CreateTable</i>
-        /// or            <i>UpdateTable</i> operation.
+        /// or <i>UpdateTable</i> operation.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>UPDATING</i> - The index is being updated, as the result of a <i>CreateTable</i>
-        /// or            <i>UpdateTable</i> operation.
+        /// or <i>UpdateTable</i> operation.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>DELETING</i> - The index is being deleted, as the result of a <i>DeleteTable</i>
-        ///          operation.
+        /// operation.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>ACTIVE</i> - The index is ready for use.
         /// </para>
-        ///       </li>    </ul>
+        ///  </li> </ul>
         /// </summary>
         public IndexStatus IndexStatus
         {
@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ItemCount. 
         /// <para>
         /// The number of items in the specified index. DynamoDB updates this value approximately
-        /// every six      hours. Recent changes might not be reflected in this value.      
+        /// every six hours. Recent changes might not be reflected in this value. 
         /// </para>
         /// </summary>
         public long ItemCount
@@ -138,7 +138,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property KeySchema. 
         /// <para>
         /// The complete key schema for the global secondary index, consisting of one or more
-        /// pairs of attribute names and      key types (<code>HASH</code> or <code>RANGE</code>).
+        /// pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
         /// </para>
         /// </summary>
         public List<KeySchemaElement> KeySchema

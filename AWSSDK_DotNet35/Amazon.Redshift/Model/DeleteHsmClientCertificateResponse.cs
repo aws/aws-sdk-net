@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteHsmClientCertificate service
-    /// </summary>
-    public partial class DeleteHsmClientCertificateResponse : DeleteHsmClientCertificateResult
+    public partial class DeleteHsmClientCertificateResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteHsmClientCertificateResult property.
-        /// Represents the output of a DeleteHsmClientCertificate operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteHsmClientCertificateResult class are now available on the DeleteHsmClientCertificateResponse class. You should use the properties on DeleteHsmClientCertificateResponse instead of accessing them through DeleteHsmClientCertificateResult.")]
-        public DeleteHsmClientCertificateResult DeleteHsmClientCertificateResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteRolePolicy service
-    /// </summary>
-    public partial class DeleteRolePolicyResponse : DeleteRolePolicyResult
+    public partial class DeleteRolePolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteRolePolicyResult property.
-        /// Represents the output of a DeleteRolePolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteRolePolicyResult class are now available on the DeleteRolePolicyResponse class. You should use the properties on DeleteRolePolicyResponse instead of accessing them through DeleteRolePolicyResult.")]
-        public DeleteRolePolicyResult DeleteRolePolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

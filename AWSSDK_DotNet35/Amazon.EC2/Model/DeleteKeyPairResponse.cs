@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteKeyPair service
-    /// </summary>
-    public partial class DeleteKeyPairResponse : DeleteKeyPairResult
+    public partial class DeleteKeyPairResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteKeyPairResult property.
-        /// Represents the output of a DeleteKeyPair operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteKeyPairResult class are now available on the DeleteKeyPairResponse class. You should use the properties on DeleteKeyPairResponse instead of accessing them through DeleteKeyPairResult.")]
-        public DeleteKeyPairResult DeleteKeyPairResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

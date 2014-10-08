@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteEndpoint service
-    /// </summary>
-    public partial class DeleteEndpointResponse : DeleteEndpointResult
+    public partial class DeleteEndpointResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteEndpointResult property.
-        /// Represents the output of a DeleteEndpoint operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteEndpointResult class are now available on the DeleteEndpointResponse class. You should use the properties on DeleteEndpointResponse instead of accessing them through DeleteEndpointResult.")]
-        public DeleteEndpointResult DeleteEndpointResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

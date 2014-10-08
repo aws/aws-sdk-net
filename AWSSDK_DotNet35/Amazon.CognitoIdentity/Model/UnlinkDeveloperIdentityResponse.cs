@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CognitoIdentity.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon UnlinkDeveloperIdentity service
-    /// </summary>
-    public partial class UnlinkDeveloperIdentityResponse : UnlinkDeveloperIdentityResult
+    public partial class UnlinkDeveloperIdentityResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UnlinkDeveloperIdentityResult property.
-        /// Represents the output of a UnlinkDeveloperIdentity operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UnlinkDeveloperIdentityResult class are now available on the UnlinkDeveloperIdentityResponse class. You should use the properties on UnlinkDeveloperIdentityResponse instead of accessing them through UnlinkDeveloperIdentityResult.")]
-        public UnlinkDeveloperIdentityResult UnlinkDeveloperIdentityResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AttachInternetGateway service
-    /// </summary>
-    public partial class AttachInternetGatewayResponse : AttachInternetGatewayResult
+    public partial class AttachInternetGatewayResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AttachInternetGatewayResult property.
-        /// Represents the output of a AttachInternetGateway operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AttachInternetGatewayResult class are now available on the AttachInternetGatewayResponse class. You should use the properties on AttachInternetGatewayResponse instead of accessing them through AttachInternetGatewayResult.")]
-        public AttachInternetGatewayResult AttachInternetGatewayResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

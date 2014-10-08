@@ -21,10 +21,142 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDB")]
         public void TestContext()
         {
-            TestHashObjects();
-            TestHashRangeObjects();
-            TestOtherContextOperations();
-            TestBatchOperations();
+            foreach (var conversion in new DynamoDBEntryConversion [] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            {
+                // Cleanup existing data
+                CleanupTables();
+                // Recreate context
+                CreateContext(conversion);
+
+                TestContextConversions();
+
+                TestHashObjects();
+                TestHashRangeObjects();
+                TestOtherContextOperations();
+                TestBatchOperations();
+            }
+        }
+
+        private void TestContextConversions()
+        {
+            var conversionV1 = DynamoDBEntryConversion.V1;
+            var conversionV2 = DynamoDBEntryConversion.V2;
+
+            Product product = new Product
+            {
+                Id = 1,
+                Name = "CloudSpotter",
+                CompanyName = "CloudsAreGrate",
+                Price = 1200,
+                TagSet = new HashSet<string> { "Prod", "1.0" },
+                CurrentStatus = Status.Active,
+                InternalId = "T1000",
+                IsPublic = true,
+                AlwaysN = true,
+                Rating = 4,
+                Components = new List<string> { "Code", "Coffee" },
+                KeySizes = new List<byte> { 16, 64, 128 },
+                CompanyInfo = new CompanyInfo
+                {
+                    Name = "MyCloud",
+                    Founded = new DateTime(1994, 7, 6),
+                    Revenue = 9001
+                }
+            };
+
+            {
+                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                VerifyConversions(docV1, docV2);
+            }
+
+            {
+                using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
+                using (var contextV2 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV2 }))
+                {
+                    var docV1 = contextV1.ToDocument(product);
+                    var docV2 = contextV2.ToDocument(product);
+                    VerifyConversions(docV1, docV2);
+                }
+            }
+
+            {
+                using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
+                {
+                    contextV1.Save(product);
+                    contextV1.Save(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                }
+            }
+
+            // Introduce a circular reference and try to serialize
+            {
+                product.CompanyInfo = new CompanyInfo
+                {
+                    Name = "MyCloud",
+                    Founded = new DateTime(1994, 7, 6),
+                    Revenue = 9001,
+                    MostPopularProduct = product
+                };
+                AssertExtensions.ExpectException(() => Context.ToDocument(product), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(() => Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 }), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(() => Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 }), typeof(InvalidOperationException));
+
+                // Remove circular dependence
+                product.CompanyInfo.MostPopularProduct = new Product
+                {
+                    Id = 3,
+                    Name = "CloudDebugger",
+                    CompanyName = "CloudsAreGrate",
+                    Price = 9000,
+                    TagSet = new HashSet<string> { "Test" },
+                };
+
+                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                VerifyConversions(docV1, docV2);
+            }
+
+            // Introduce circular reference in a Document and try to deserialize
+            {
+                // Normal serialization
+                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                VerifyConversions(docV1, docV2);
+
+                // Add circular references
+                docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
+                docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV2;
+                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 }));
+                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 }));
+
+                // Remove circular references
+                docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = null;
+                docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;                
+                var prod1 = Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 });
+                var prod2 = Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 });
+            }
+
+        }
+
+        private static void VerifyConversions(Document docV1, Document docV2)
+        {
+            Assert.AreEqual(1, docV1["Id"].AsInt());
+            Assert.AreEqual("CloudSpotter", docV1["Product"].AsString());
+            Assert.IsNotNull(docV1["Components"].AsPrimitiveList());
+            Assert.IsNotNull(docV1["IsPublic"].AsPrimitive());
+            Assert.IsNotNull(docV1["Tags"].AsPrimitiveList());
+            Assert.IsNotNull(docV1["CompanyInfo"] as Document);
+            Assert.IsNotNull(docV1["KeySizes"].AsPrimitiveList());
+
+            Assert.AreEqual(1, docV2["Id"].AsInt());
+            Assert.AreEqual("CloudSpotter", docV2["Product"].AsString());
+            Assert.IsNull(docV2["Components"].AsPrimitiveList());
+            Assert.IsNotNull(docV2["Components"].AsDynamoDBList());
+            Assert.IsNull(docV2["IsPublic"].AsPrimitive());
+            Assert.IsNotNull(docV2["IsPublic"].AsDynamoDBBool());
+            Assert.IsNotNull(docV2["Tags"].AsPrimitiveList());
+            Assert.IsNotNull(docV2["CompanyInfo"] as Document);
+            Assert.IsNotNull(docV2["KeySizes"].AsPrimitiveList());
         }
 
         private void TestHashObjects()
@@ -36,32 +168,74 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Name = "CloudSpotter",
                 CompanyName = "CloudsAreGrate",
                 Price = 1200,
-                TagSet = new List<string> { "Prod", "1.0" },
+                TagSet = new HashSet<string> { "Prod", "1.0" },
                 CurrentStatus = Status.Active,
-                InternalId = "T1000"
+                InternalId = "T1000",
+                IsPublic = true,
+                AlwaysN = true,
+                Rating = 4,
+                Components = new List<string> { "Code", "Coffee" },
+                KeySizes = new List<byte> { 16, 64, 128 },
+                CompanyInfo = new CompanyInfo
+                {
+                    Name = "MyCloud",
+                    Founded = new DateTime(1994, 7, 6),
+                    Revenue = 9001
+                }
             };
             Context.Save(product);
+
+            // Test conversion
+            var doc = Context.ToDocument(product);
+            Assert.IsNotNull(doc["Tags"].AsPrimitiveList());
+            //if (DynamoDBEntryConversion.Schema == DynamoDBEntryConversion.ConversionSchema.V1)
+            //    Assert.IsNotNull(doc["Components"].AsPrimitiveList());
+            //else
+            //    Assert.IsNotNull(doc["Components"].AsDynamoDBList());
+            Assert.IsTrue(
+                doc["Components"].AsPrimitiveList() != null ||
+                doc["Components"].AsDynamoDBList() != null);
+            Assert.IsNotNull(doc["CompanyInfo"].AsDocument());
 
             // Load item
             Product retrieved = Context.Load<Product>(1);
             Assert.AreEqual(product.Id, retrieved.Id);
             Assert.AreEqual(product.TagSet.Count, retrieved.TagSet.Count);
+            Assert.AreEqual(product.Components.Count, retrieved.Components.Count);
             Assert.IsNull(retrieved.InternalId);
             Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
+            Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
+            Assert.AreEqual(product.Rating, retrieved.Rating);
+            Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
+            Assert.IsNotNull(retrieved.CompanyInfo);
+            Assert.AreEqual(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
+            Assert.AreEqual(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
+            Assert.AreNotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
 
             // Create and save new item
             product.Id++;
             product.Price = 94;
             product.TagSet = null;
+            product.Components = null;
             product.CurrentStatus = Status.Upcoming;
+            product.IsPublic = false;
+            product.AlwaysN = false;
+            product.Rating = null;
+            product.KeySizes = null;
             Context.Save(product);
 
             // Load new item
             retrieved = Context.Load<Product>(product);
             Assert.AreEqual(product.Id, retrieved.Id);
             Assert.IsNull(retrieved.TagSet);
+            Assert.IsNull(retrieved.Components);
             Assert.IsNull(retrieved.InternalId);
-
+            Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
+            Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
+            Assert.AreEqual(product.AlwaysN, retrieved.AlwaysN);
+            Assert.AreEqual(product.Rating, retrieved.Rating);
+            Assert.IsNull(retrieved.KeySizes);
+            
             // Enumerate all products and save their Ids
             List<int> productIds = new List<int>();
             IEnumerable<Product> products = Context.Scan<Product>();
@@ -81,7 +255,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             products = Context.Query<Product>(
                 product.CompanyName,            // Hash-key for the index is Company
                 QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-                new object[] { 90 },           // condition is against a numerical value
+                new object[] { 90 },            // condition is against a numerical value
                 new DynamoDBOperationConfig     // Configure the index to use
                 {
                     IndexName = "GlobalIndex",
@@ -119,7 +293,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Name = "CloudDebugger",
                 CompanyName = "CloudsAreGrate",
                 Price = 9000,
-                TagSet = new List<string> { "Test" },
+                TagSet = new HashSet<string> { "Test" },
             };
             Context.Save(vp);
 
@@ -238,6 +412,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }).ToList();
             Assert.AreEqual(1, employees.Count);
+
+
+            // -------------------------------------------
+
 
             //Product product = new Product
             //{
@@ -469,11 +647,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
             public string CompanyName { get; set; }
 
+            public CompanyInfo CompanyInfo { get; set; }
+
             [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
             public int Price { get; set; }
 
             [DynamoDBProperty("Tags")]
-            public List<string> TagSet { get; set; }
+            public HashSet<string> TagSet { get; set; }
 
             public MemoryStream Data { get; set; }
 
@@ -482,6 +662,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBIgnore]
             public string InternalId { get; set; }
+
+            public bool IsPublic { get; set; }
+
+            //[DynamoDBProperty(Converter = typeof(BoolAsNConverter))]
+            public bool AlwaysN { get; set; }
+
+            public int? Rating { get; set; }
+
+            public List<string> Components { get; set; }
+
+            //[DynamoDBProperty(Converter = typeof(SetPropertyConverter<List<byte>,byte>))]
+            [DynamoDBProperty(Converter = typeof(ListToSetPropertyConverter<byte>))]
+            public List<byte> KeySizes { get; set; }
+        }
+
+        public class CompanyInfo
+        {
+            public string Name { get; set; }
+            public DateTime Founded { get; set; }
+            public Product MostPopularProduct { get; set; }
+
+            [DynamoDBIgnore]
+            public decimal Revenue { get; set; }
         }
 
         /// <summary>

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatchLogs.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateLogGroup service
-    /// </summary>
-    public partial class CreateLogGroupResponse : CreateLogGroupResult
+    public partial class CreateLogGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateLogGroupResult property.
-        /// Represents the output of a CreateLogGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateLogGroupResult class are now available on the CreateLogGroupResponse class. You should use the properties on CreateLogGroupResponse instead of accessing them through CreateLogGroupResult.")]
-        public CreateLogGroupResult CreateLogGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

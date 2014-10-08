@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteApplicationVersion service
-    /// </summary>
-    public partial class DeleteApplicationVersionResponse : DeleteApplicationVersionResult
+    public partial class DeleteApplicationVersionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteApplicationVersionResult property.
-        /// Represents the output of a DeleteApplicationVersion operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteApplicationVersionResult class are now available on the DeleteApplicationVersionResponse class. You should use the properties on DeleteApplicationVersionResponse instead of accessing them through DeleteApplicationVersionResult.")]
-        public DeleteApplicationVersionResult DeleteApplicationVersionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AttachInstances service
-    /// </summary>
-    public partial class AttachInstancesResponse : AttachInstancesResult
+    public partial class AttachInstancesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AttachInstancesResult property.
-        /// Represents the output of a AttachInstances operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AttachInstancesResult class are now available on the AttachInstancesResponse class. You should use the properties on AttachInstancesResponse instead of accessing them through AttachInstancesResult.")]
-        public AttachInstancesResult AttachInstancesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

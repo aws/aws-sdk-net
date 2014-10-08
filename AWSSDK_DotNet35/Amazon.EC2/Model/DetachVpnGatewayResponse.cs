@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DetachVpnGateway service
-    /// </summary>
-    public partial class DetachVpnGatewayResponse : DetachVpnGatewayResult
+    public partial class DetachVpnGatewayResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DetachVpnGatewayResult property.
-        /// Represents the output of a DetachVpnGateway operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DetachVpnGatewayResult class are now available on the DetachVpnGatewayResponse class. You should use the properties on DetachVpnGatewayResponse instead of accessing them through DetachVpnGatewayResult.")]
-        public DetachVpnGatewayResult DetachVpnGatewayResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

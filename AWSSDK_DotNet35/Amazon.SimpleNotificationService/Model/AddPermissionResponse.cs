@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AddPermission service
-    /// </summary>
-    public partial class AddPermissionResponse : AddPermissionResult
+    public partial class AddPermissionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AddPermissionResult property.
-        /// Represents the output of a AddPermission operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AddPermissionResult class are now available on the AddPermissionResponse class. You should use the properties on AddPermissionResponse instead of accessing them through AddPermissionResult.")]
-        public AddPermissionResult AddPermissionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

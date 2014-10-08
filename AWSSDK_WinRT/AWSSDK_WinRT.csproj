@@ -478,6 +478,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Internal\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Conversion\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Model\*">
       <Visible>false</Visible>
     </Compile>

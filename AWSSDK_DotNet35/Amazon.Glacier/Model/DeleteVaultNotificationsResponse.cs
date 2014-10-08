@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteVaultNotifications service
-    /// </summary>
-    public partial class DeleteVaultNotificationsResponse : DeleteVaultNotificationsResult
+    public partial class DeleteVaultNotificationsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteVaultNotificationsResult property.
-        /// Represents the output of a DeleteVaultNotifications operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteVaultNotificationsResult class are now available on the DeleteVaultNotificationsResponse class. You should use the properties on DeleteVaultNotificationsResponse instead of accessing them through DeleteVaultNotificationsResult.")]
-        public DeleteVaultNotificationsResult DeleteVaultNotificationsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ModifyImageAttribute service
-    /// </summary>
-    public partial class ModifyImageAttributeResponse : ModifyImageAttributeResult
+    public partial class ModifyImageAttributeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ModifyImageAttributeResult property.
-        /// Represents the output of a ModifyImageAttribute operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ModifyImageAttributeResult class are now available on the ModifyImageAttributeResponse class. You should use the properties on ModifyImageAttributeResponse instead of accessing them through ModifyImageAttributeResult.")]
-        public ModifyImageAttributeResult ModifyImageAttributeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

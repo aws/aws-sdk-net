@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AbortMultipartUpload service
-    /// </summary>
-    public partial class AbortMultipartUploadResponse : AbortMultipartUploadResult
+    public partial class AbortMultipartUploadResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AbortMultipartUploadResult property.
-        /// Represents the output of a AbortMultipartUpload operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AbortMultipartUploadResult class are now available on the AbortMultipartUploadResponse class. You should use the properties on AbortMultipartUploadResponse instead of accessing them through AbortMultipartUploadResult.")]
-        public AbortMultipartUploadResult AbortMultipartUploadResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

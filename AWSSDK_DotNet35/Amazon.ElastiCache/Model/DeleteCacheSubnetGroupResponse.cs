@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteCacheSubnetGroup service
-    /// </summary>
-    public partial class DeleteCacheSubnetGroupResponse : DeleteCacheSubnetGroupResult
+    public partial class DeleteCacheSubnetGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteCacheSubnetGroupResult property.
-        /// Represents the output of a DeleteCacheSubnetGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteCacheSubnetGroupResult class are now available on the DeleteCacheSubnetGroupResponse class. You should use the properties on DeleteCacheSubnetGroupResponse instead of accessing them through DeleteCacheSubnetGroupResult.")]
-        public DeleteCacheSubnetGroupResult DeleteCacheSubnetGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

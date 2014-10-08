@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DisassociateElasticIp service
-    /// </summary>
-    public partial class DisassociateElasticIpResponse : DisassociateElasticIpResult
+    public partial class DisassociateElasticIpResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DisassociateElasticIpResult property.
-        /// Represents the output of a DisassociateElasticIp operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DisassociateElasticIpResult class are now available on the DisassociateElasticIpResponse class. You should use the properties on DisassociateElasticIpResponse instead of accessing them through DisassociateElasticIpResult.")]
-        public DisassociateElasticIpResult DisassociateElasticIpResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

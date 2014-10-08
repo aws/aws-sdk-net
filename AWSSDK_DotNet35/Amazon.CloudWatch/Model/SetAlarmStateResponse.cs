@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetAlarmState service
-    /// </summary>
-    public partial class SetAlarmStateResponse : SetAlarmStateResult
+    public partial class SetAlarmStateResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetAlarmStateResult property.
-        /// Represents the output of a SetAlarmState operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetAlarmStateResult class are now available on the SetAlarmStateResponse class. You should use the properties on SetAlarmStateResponse instead of accessing them through SetAlarmStateResult.")]
-        public SetAlarmStateResult SetAlarmStateResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

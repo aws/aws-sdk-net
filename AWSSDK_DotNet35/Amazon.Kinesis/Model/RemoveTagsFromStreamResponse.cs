@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RemoveTagsFromStream service
-    /// </summary>
-    public partial class RemoveTagsFromStreamResponse : RemoveTagsFromStreamResult
+    public partial class RemoveTagsFromStreamResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RemoveTagsFromStreamResult property.
-        /// Represents the output of a RemoveTagsFromStream operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RemoveTagsFromStreamResult class are now available on the RemoveTagsFromStreamResponse class. You should use the properties on RemoveTagsFromStreamResponse instead of accessing them through RemoveTagsFromStreamResult.")]
-        public RemoveTagsFromStreamResult RemoveTagsFromStreamResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

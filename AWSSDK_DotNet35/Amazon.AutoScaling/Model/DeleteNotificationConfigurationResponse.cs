@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteNotificationConfiguration service
-    /// </summary>
-    public partial class DeleteNotificationConfigurationResponse : DeleteNotificationConfigurationResult
+    public partial class DeleteNotificationConfigurationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteNotificationConfigurationResult property.
-        /// Represents the output of a DeleteNotificationConfiguration operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteNotificationConfigurationResult class are now available on the DeleteNotificationConfigurationResponse class. You should use the properties on DeleteNotificationConfigurationResponse instead of accessing them through DeleteNotificationConfigurationResult.")]
-        public DeleteNotificationConfigurationResult DeleteNotificationConfigurationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

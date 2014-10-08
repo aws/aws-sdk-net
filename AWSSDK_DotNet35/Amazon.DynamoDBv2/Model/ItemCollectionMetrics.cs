@@ -28,10 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Information about item collections, if any, that were affected by the operation. 
-    ///       <i>ItemCollectionMetrics</i> is only returned if it was asked for in the request.
-    /// If the      table does not have any local secondary indexes, this information is not
-    /// returned in the response.
+    /// Information about item collections, if any, that were affected by the operation. <i>ItemCollectionMetrics</i>
+    /// is only returned if the request asked for it. If the table does not have any local
+    /// secondary indexes, this information is not returned in the response.
     /// </summary>
     public partial class ItemCollectionMetrics
     {
@@ -41,8 +40,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ItemCollectionKey. 
         /// <para>
-        /// The hash key value of the item collection. This is the same as the hash key of the
-        /// item.
+        /// The hash key value of the item collection. This value is the same as the hash key
+        /// of the item.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ItemCollectionKey
@@ -60,16 +59,16 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property SizeEstimateRangeGB. 
         /// <para>
-        /// An estimate of item collection size, measured in gigabytes. This is a two-element
-        /// array      containing a lower bound and an upper bound for the estimate. The estimate
-        /// includes the size      of all the items in the table, plus the size of all attributes
-        /// projected into all of the      local secondary indexes on that table. Use this estimate
-        /// to measure whether a local secondary index is approaching its size      limit.
+        /// An estimate of item collection size, in gigabytes. This value is a two-element array
+        /// containing a lower bound and an upper bound for the estimate. The estimate includes
+        /// the size of all the items in the table, plus the size of all attributes projected
+        /// into all of the local secondary indexes on that table. Use this estimate to measure
+        /// whether a local secondary index is approaching its size limit.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// The estimate is subject to change over time; therefore, do not rely on the precision
-        /// or      accuracy of the estimate.
+        /// or accuracy of the estimate.
         /// </para>
         /// </summary>
         public List<double> SizeEstimateRangeGB

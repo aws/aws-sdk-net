@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SplitShard service
-    /// </summary>
-    public partial class SplitShardResponse : SplitShardResult
+    public partial class SplitShardResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SplitShardResult property.
-        /// Represents the output of a SplitShard operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SplitShardResult class are now available on the SplitShardResponse class. You should use the properties on SplitShardResponse instead of accessing them through SplitShardResult.")]
-        public SplitShardResult SplitShardResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

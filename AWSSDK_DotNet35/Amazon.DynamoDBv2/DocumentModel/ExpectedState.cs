@@ -18,6 +18,7 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.Model;
 using System.IO;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -67,12 +68,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Values = new List<Primitive>(values);
         }
 
+        /// <summary>
+        /// Converts this ExpectedValue instance to Amazon.DynamoDBv2.Model.ExpectedAttributeValue
+        /// This call will use the conversion specified by AWSConfigs.DynamoDBConfig.ConversionSchema
+        /// </summary>
+        /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
+        public ExpectedAttributeValue ToExpectedAttributeValue()
+        {
+            return ToExpectedAttributeValue(DynamoDBEntryConversion.CurrentConversion);
+        }
 
         /// <summary>
         /// Converts this ExpectedValue instance to Amazon.DynamoDBv2.Model.ExpectedAttributeValue
         /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
-        public ExpectedAttributeValue ToExpectedAttributeValue()
+        public ExpectedAttributeValue ToExpectedAttributeValue(DynamoDBEntryConversion conversion)
         {
             var eav = new ExpectedAttributeValue();
 
@@ -80,7 +91,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 eav.ComparisonOperator = EnumMapper.Convert(this.Comparison);
                 foreach (var val in this.Values)
-                    eav.AttributeValueList.Add(val.ConvertToAttributeValue());
+                    eav.AttributeValueList.Add(val.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion)));
             }
             else
                 eav.Exists = this.Exists;
@@ -138,9 +149,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
+        /// This call will use the conversion specified by AWSConfigs.DynamoDBConfig.ConversionSchema
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap()
+        {
+            return ToExpectedAttributeMap(DynamoDBEntryConversion.CurrentConversion);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
+        /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <returns></returns>
+        public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion)
         {
             Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
 
@@ -148,7 +170,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 string attributeName = kvp.Key;
                 ExpectedValue expectedValue = kvp.Value;
-                ExpectedAttributeValue eav = expectedValue.ToExpectedAttributeValue();
+                ExpectedAttributeValue eav = expectedValue.ToExpectedAttributeValue(conversion);
                 ret[attributeName] = eav;
             }
 

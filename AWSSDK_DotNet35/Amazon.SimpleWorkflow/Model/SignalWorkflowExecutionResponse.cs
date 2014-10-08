@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SignalWorkflowExecution service
-    /// </summary>
-    public partial class SignalWorkflowExecutionResponse : SignalWorkflowExecutionResult
+    public partial class SignalWorkflowExecutionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SignalWorkflowExecutionResult property.
-        /// Represents the output of a SignalWorkflowExecution operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SignalWorkflowExecutionResult class are now available on the SignalWorkflowExecutionResponse class. You should use the properties on SignalWorkflowExecutionResponse instead of accessing them through SignalWorkflowExecutionResult.")]
-        public SignalWorkflowExecutionResult SignalWorkflowExecutionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

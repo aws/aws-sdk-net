@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AddRoleToInstanceProfile service
-    /// </summary>
-    public partial class AddRoleToInstanceProfileResponse : AddRoleToInstanceProfileResult
+    public partial class AddRoleToInstanceProfileResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AddRoleToInstanceProfileResult property.
-        /// Represents the output of a AddRoleToInstanceProfile operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AddRoleToInstanceProfileResult class are now available on the AddRoleToInstanceProfileResponse class. You should use the properties on AddRoleToInstanceProfileResponse instead of accessing them through AddRoleToInstanceProfileResult.")]
-        public AddRoleToInstanceProfileResult AddRoleToInstanceProfileResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

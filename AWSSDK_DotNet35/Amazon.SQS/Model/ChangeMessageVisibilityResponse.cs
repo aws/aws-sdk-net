@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ChangeMessageVisibility service
-    /// </summary>
-    public partial class ChangeMessageVisibilityResponse : ChangeMessageVisibilityResult
+    public partial class ChangeMessageVisibilityResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ChangeMessageVisibilityResult property.
-        /// Represents the output of a ChangeMessageVisibility operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ChangeMessageVisibilityResult class are now available on the ChangeMessageVisibilityResponse class. You should use the properties on ChangeMessageVisibilityResponse instead of accessing them through ChangeMessageVisibilityResult.")]
-        public ChangeMessageVisibilityResult ChangeMessageVisibilityResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

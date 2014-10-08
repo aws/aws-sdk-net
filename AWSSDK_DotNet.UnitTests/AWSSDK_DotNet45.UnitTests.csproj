@@ -91,6 +91,7 @@
     <Compile Include="TestTools\RequestValidator.cs" />
     <Compile Include="TestTools\RestJsonValidator.cs" />
     <Compile Include="TestTools\RestXmlValidator.cs" />
+    <Compile Include="TestTools\TypeCircularReference.cs" />
     <Compile Include="TestTools\WebResponseData.cs" />
     <Compile Include="TestTools\XmlSampleGenerator.cs" />
     <Compile Include="TestTools\XmlSampleGeneratorTests.cs" />

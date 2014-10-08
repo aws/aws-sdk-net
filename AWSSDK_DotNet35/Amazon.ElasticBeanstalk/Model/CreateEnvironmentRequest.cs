@@ -294,10 +294,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: If not specified, AWS Elastic Beanstalk attempts to launch the <?oxy_delete
-        /// author="brussard" timestamp="20131030T145730-0700" content="most recently created
-        /// application version"><?oxy_insert_start author="brussard" timestamp="20131030T145730-0700">sample
-        /// application in the container<?oxy_insert_end>. 
+        ///  Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application
+        /// in the container. 
         /// </para>
         /// </summary>
         public string VersionLabel

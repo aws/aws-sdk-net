@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteServerCertificate service
-    /// </summary>
-    public partial class DeleteServerCertificateResponse : DeleteServerCertificateResult
+    public partial class DeleteServerCertificateResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteServerCertificateResult property.
-        /// Represents the output of a DeleteServerCertificate operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteServerCertificateResult class are now available on the DeleteServerCertificateResponse class. You should use the properties on DeleteServerCertificateResponse instead of accessing them through DeleteServerCertificateResult.")]
-        public DeleteServerCertificateResult DeleteServerCertificateResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

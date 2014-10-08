@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon StartStack service
-    /// </summary>
-    public partial class StartStackResponse : StartStackResult
+    public partial class StartStackResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the StartStackResult property.
-        /// Represents the output of a StartStack operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the StartStackResult class are now available on the StartStackResponse class. You should use the properties on StartStackResponse instead of accessing them through StartStackResult.")]
-        public StartStackResult StartStackResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

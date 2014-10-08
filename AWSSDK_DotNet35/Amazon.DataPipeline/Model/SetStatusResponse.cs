@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetStatus service
-    /// </summary>
-    public partial class SetStatusResponse : SetStatusResult
+    public partial class SetStatusResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetStatusResult property.
-        /// Represents the output of a SetStatus operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetStatusResult class are now available on the SetStatusResponse class. You should use the properties on SetStatusResponse instead of accessing them through SetStatusResult.")]
-        public SetStatusResult SetStatusResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

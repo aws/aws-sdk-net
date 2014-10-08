@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleDB.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateDomain service
-    /// </summary>
-    public partial class CreateDomainResponse : CreateDomainResult
+    public partial class CreateDomainResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateDomainResult property.
-        /// Represents the output of a CreateDomain operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateDomainResult class are now available on the CreateDomainResponse class. You should use the properties on CreateDomainResponse instead of accessing them through CreateDomainResult.")]
-        public CreateDomainResult CreateDomainResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

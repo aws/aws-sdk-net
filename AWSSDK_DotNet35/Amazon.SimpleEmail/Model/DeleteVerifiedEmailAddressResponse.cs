@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleEmail.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteVerifiedEmailAddress service
-    /// </summary>
-    public partial class DeleteVerifiedEmailAddressResponse : DeleteVerifiedEmailAddressResult
+    public partial class DeleteVerifiedEmailAddressResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteVerifiedEmailAddressResult property.
-        /// Represents the output of a DeleteVerifiedEmailAddress operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteVerifiedEmailAddressResult class are now available on the DeleteVerifiedEmailAddressResponse class. You should use the properties on DeleteVerifiedEmailAddressResponse instead of accessing them through DeleteVerifiedEmailAddressResult.")]
-        public DeleteVerifiedEmailAddressResult DeleteVerifiedEmailAddressResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

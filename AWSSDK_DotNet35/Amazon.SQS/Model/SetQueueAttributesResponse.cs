@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetQueueAttributes service
-    /// </summary>
-    public partial class SetQueueAttributesResponse : SetQueueAttributesResult
+    public partial class SetQueueAttributesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetQueueAttributesResult property.
-        /// Represents the output of a SetQueueAttributes operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetQueueAttributesResult class are now available on the SetQueueAttributesResponse class. You should use the properties on SetQueueAttributesResponse instead of accessing them through SetQueueAttributesResult.")]
-        public SetQueueAttributesResult SetQueueAttributesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

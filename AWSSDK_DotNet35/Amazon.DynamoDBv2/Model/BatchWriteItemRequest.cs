@@ -30,34 +30,28 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the BatchWriteItem operation.
     /// The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more
-    /// tables. A      single call to <i>BatchWriteItem</i> can write up to 1 MB of data,
-    /// which can      comprise as many as 25 put or delete requests. Individual items   
-    ///   to be written can be as large as 64 KB.
+    /// tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of data, which
+    /// can comprise as many as 25 put or delete requests. Individual items to be written
+    /// can be as large as 400 KB.
     /// 
-    ///     <note>      
+    ///  
     /// <para>
-    /// <i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i>
-    ///        API.
+    /// The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i>
+    /// are atomic; however <i>BatchWriteItem</i> as a whole is not. If any requested operations
+    /// fail because the table's provisioned throughput is exceeded or an internal processing
+    /// failure occurs, the failed operations are returned in the <i>UnprocessedItems</i>
+    /// response parameter. You can investigate and optionally resend the requests. Typically,
+    /// you would call <i>BatchWriteItem</i> in a loop. Each iteration would check for unprocessed
+    /// items and submit a new <i>BatchWriteItem</i> request with those unprocessed items
+    /// until all items have been processed.
     /// </para>
-    ///     </note>    
-    /// <para>
-    /// The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in      
-    ///  <i>BatchWriteItem</i> are atomic; however <i>BatchWriteItem</i> as a whole is not.
-    /// If any      requested operations fail because the table's provisioned throughput is
-    /// exceeded or an      internal processing failure occurs, the failed operations are
-    /// returned in the        <i>UnprocessedItems</i> response parameter. You can investigate
-    /// and optionally resend the      requests. Typically, you would call <i>BatchWriteItem</i>
-    /// in a loop. Each iteration would      check for unprocessed items and submit a new
-    /// <i>BatchWriteItem</i> request with those      unprocessed items until all items have
-    /// been processed.
-    /// </para>
-    ///     
+    ///  
     /// <para>
     /// Note that if <i>none</i> of the items can be processed due to insufficient provisioned
-    ///      throughput on all of the tables in the request, then <i>BatchGetItem</i> will
-    /// throw a        <i>ProvisionedThroughputExceededException</i>.
+    /// throughput on all of the tables in the request, then <i>BatchWriteItem</i> will return
+    /// a <i>ProvisionedThroughputExceededException</i>.
     /// </para>
-    ///     <important>
+    ///  <important> 
     /// <para>
     /// If DynamoDB returns any unprocessed items, you should retry the batch operation on
     /// those items. However, <i>we strongly recommend that you use an exponential backoff
@@ -66,65 +60,68 @@ namespace Amazon.DynamoDBv2.Model
     /// the batch operation using exponential backoff, the individual requests in the batch
     /// are much more likely to succeed.
     /// </para>
-    ///       
+    ///  
     /// <para>
     /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
-    /// Operations and Error Handling</a> in the Amazon DynamoDB Developer Guide.
+    /// Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
-    /// </important>        
+    ///  </important> 
     /// <para>
     /// With <i>BatchWriteItem</i>, you can efficiently write or delete large amounts of data,
-    /// such      as from Amazon Elastic MapReduce (EMR), or copy data from another database
-    /// into DynamoDB. In      order to improve performance with these large-scale operations,
-    /// <i>BatchWriteItem</i> does not      behave in the same way as individual <i>PutItem</i>
-    /// and <i>DeleteItem</i> calls would For      example, you cannot specify conditions
-    /// on individual put and delete requests, and        <i>BatchWriteItem</i> does not return
-    /// deleted items in the response.
+    /// such as from Amazon Elastic MapReduce (EMR), or copy data from another database into
+    /// DynamoDB. In order to improve performance with these large-scale operations, <i>BatchWriteItem</i>
+    /// does not behave in the same way as individual <i>PutItem</i> and <i>DeleteItem</i>
+    /// calls would For example, you cannot specify conditions on individual put and delete
+    /// requests, and <i>BatchWriteItem</i> does not return deleted items in the response.
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// If you use a programming language that supports concurrency, such as Java, you can
-    /// use      threads to write items in parallel. Your application must include the necessary
-    /// logic to      manage the threads. With languages that don't support threading, such
-    /// as PHP, you must update      or delete the specified items one at a time. In both
-    /// situations, <i>BatchWriteItem</i>      provides an alternative where the API performs
-    /// the specified put and delete operations in      parallel, giving you the power of
-    /// the thread pool approach without having to introduce      complexity into your application.
+    /// use threads to write items in parallel. Your application must include the necessary
+    /// logic to manage the threads. With languages that don't support threading, such as
+    /// PHP, you must update or delete the specified items one at a time. In both situations,
+    /// <i>BatchWriteItem</i> provides an alternative where the API performs the specified
+    /// put and delete operations in parallel, giving you the power of the thread pool approach
+    /// without having to introduce complexity into your application.
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// Parallel processing reduces latency, but each specified put and delete request consumes
-    /// the      same number of write capacity units whether it is processed in parallel or
-    /// not. Delete      operations on nonexistent items consume one write capacity unit.
+    /// the same number of write capacity units whether it is processed in parallel or not.
+    /// Delete operations on nonexistent items consume one write capacity unit.
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// If one or more of the following is true, DynamoDB rejects the entire batch write operation:
     /// </para>
-    ///     <ul>      <li>        
+    ///  <ul> <li> 
     /// <para>
     /// One or more tables specified in the <i>BatchWriteItem</i> request does not exist.
     /// </para>
-    ///       </li>      <li>        
+    ///  </li> <li> 
     /// <para>
     /// Primary key attributes specified on an item in the request do not match those in the
-    ///          corresponding table's primary key schema.
+    /// corresponding table's primary key schema.
     /// </para>
-    ///       </li>      <li>        
+    ///  </li> <li> 
     /// <para>
     /// You try to perform multiple operations on the same item in the same <i>BatchWriteItem</i>
-    ///          request. For example, you cannot put and delete the same item in the same
-    ///            <i>BatchWriteItem</i> request. 
+    /// request. For example, you cannot put and delete the same item in the same <i>BatchWriteItem</i>
+    /// request. 
     /// </para>
-    ///       </li>      <li>        
+    ///  </li> <li> 
     /// <para>
-    /// The total request size exceeds 1 MB.
+    /// There are more than 25 requests in the batch.
     /// </para>
-    ///       </li>      <li>        
+    ///  </li> <li> 
     /// <para>
-    /// Any individual item in a batch exceeds 64 KB.
+    /// Any individual item in a batch exceeds 400 KB.
     /// </para>
-    ///       </li>    </ul>
+    ///  </li> <li> 
+    /// <para>
+    /// The total request size exceeds 16 MB.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class BatchWriteItemRequest : AmazonDynamoDBRequest
     {
@@ -140,7 +137,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates BatchWriteItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed  (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the   following: <ul>   <li>  <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The    item to be deleted is identified by a <i>Key</i> subelement:  <ul>    <li>   <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item.     Each entry in this map consists of an attribute name and an attribute value. For each     primary key, you must provide <i>all</i> of the key attributes. For example, with a     hash type primary key, you only need to specify the hash attribute. For a     hash-and-range type primary key, you must specify <i>both</i> the hash attribute and     the range attribute.    </li>  </ul>   </li>   <li>  <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to    be put is identified by an <i>Item</i> subelement:  <ul>    <li>   <i>Item</i> - A map of attributes and their values. Each entry in this map consists     of an attribute name and an attribute value. Attribute values must not be null; string     and binary type attributes must have lengths greater than zero; and set type     attributes must not be empty. Requests that contain empty values will be rejected with     a <i>ValidationException</i>.   If you specify any attributes that are part of an index key, then the data types for     those attributes must match those of the schema in the table's attribute     definition.    </li>  </ul>   </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following: <ul> <li> <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is identified by a <i>Key</i> subelement: <ul> <li> <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify <i>both</i> the hash attribute and the range attribute. </li> </ul> </li> <li> <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by an <i>Item</i> subelement: <ul> <li> <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         public BatchWriteItemRequest(Dictionary<string, List<WriteRequest>> requestItems)
         {
             _requestItems = requestItems;
@@ -150,43 +147,41 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property RequestItems. 
         /// <para>
         /// A map of one or more table names and, for each table, a list of operations to be performed
-        ///        (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists
-        /// of the      following:
+        /// (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the
+        /// following:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item.
-        /// The          item to be deleted is identified by a <i>Key</i> subelement:
+        /// The item to be deleted is identified by a <i>Key</i> subelement:
         /// </para>
-        ///         <ul>          <li>            
+        ///  <ul> <li> 
         /// <para>
         /// <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item.
-        ///              Each entry in this map consists of an attribute name and an attribute
-        /// value. For each              primary key, you must provide <i>all</i> of the key attributes.
-        /// For example, with a              hash type primary key, you only need to specify the
-        /// hash attribute. For a              hash-and-range type primary key, you must specify
-        /// <i>both</i> the hash attribute and              the range attribute.
+        /// Each entry in this map consists of an attribute name and an attribute value. For each
+        /// primary key, you must provide <i>all</i> of the key attributes. For example, with
+        /// a hash type primary key, you only need to specify the hash attribute. For a hash-and-range
+        /// type primary key, you must specify <i>both</i> the hash attribute and the range attribute.
         /// </para>
-        ///           </li>        </ul>      </li>      <li>        
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The
-        /// item to          be put is identified by an <i>Item</i> subelement:
+        /// item to be put is identified by an <i>Item</i> subelement:
         /// </para>
-        ///         <ul>          <li>            
+        ///  <ul> <li> 
         /// <para>
         /// <i>Item</i> - A map of attributes and their values. Each entry in this map consists
-        ///              of an attribute name and an attribute value. Attribute values must not
-        /// be null; string              and binary type attributes must have lengths greater
-        /// than zero; and set type              attributes must not be empty. Requests that contain
-        /// empty values will be rejected with              a <i>ValidationException</i>.
+        /// of an attribute name and an attribute value. Attribute values must not be null; string
+        /// and binary type attributes must have lengths greater than zero; and set type attributes
+        /// must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i>
+        /// exception.
         /// </para>
-        ///             
+        ///  
         /// <para>
         /// If you specify any attributes that are part of an index key, then the data types for
-        ///              those attributes must match those of the schema in the table's attribute
-        ///              definition.
+        /// those attributes must match those of the schema in the table's attribute definition.
         /// </para>
-        ///           </li>        </ul>      </li>    </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, List<WriteRequest>> RequestItems
         {
@@ -218,9 +213,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnItemCollectionMetrics. 
         /// <para>
-        /// If set to <code>SIZE</code>, statistics about item collections, if any, that were
-        /// modified during      the operation are returned in the response. If set to <code>NONE</code>
-        /// (the default), no statistics are returned.
+        /// A value that if set to <code>SIZE</code>, the response includes statistics about item
+        /// collections, if any, that were modified during the operation are returned in the response.
+        /// If set to <code>NONE</code> (the default), no statistics are returned.
         /// </para>
         /// </summary>
         public ReturnItemCollectionMetrics ReturnItemCollectionMetrics

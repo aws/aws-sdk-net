@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon StopStack service
-    /// </summary>
-    public partial class StopStackResponse : StopStackResult
+    public partial class StopStackResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the StopStackResult property.
-        /// Represents the output of a StopStack operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the StopStackResult class are now available on the StopStackResponse class. You should use the properties on StopStackResponse instead of accessing them through StopStackResult.")]
-        public StopStackResult StopStackResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

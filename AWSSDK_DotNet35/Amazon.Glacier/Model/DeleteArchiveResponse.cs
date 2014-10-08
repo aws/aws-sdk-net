@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteArchive service
-    /// </summary>
-    public partial class DeleteArchiveResponse : DeleteArchiveResult
+    public partial class DeleteArchiveResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteArchiveResult property.
-        /// Represents the output of a DeleteArchive operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteArchiveResult class are now available on the DeleteArchiveResponse class. You should use the properties on DeleteArchiveResponse instead of accessing them through DeleteArchiveResult.")]
-        public DeleteArchiveResult DeleteArchiveResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RebootInstances service
-    /// </summary>
-    public partial class RebootInstancesResponse : RebootInstancesResult
+    public partial class RebootInstancesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RebootInstancesResult property.
-        /// Represents the output of a RebootInstances operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RebootInstancesResult class are now available on the RebootInstancesResponse class. You should use the properties on RebootInstancesResponse instead of accessing them through RebootInstancesResult.")]
-        public RebootInstancesResult RebootInstancesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

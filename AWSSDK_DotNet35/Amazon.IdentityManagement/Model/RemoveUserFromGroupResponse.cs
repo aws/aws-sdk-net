@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RemoveUserFromGroup service
-    /// </summary>
-    public partial class RemoveUserFromGroupResponse : RemoveUserFromGroupResult
+    public partial class RemoveUserFromGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RemoveUserFromGroupResult property.
-        /// Represents the output of a RemoveUserFromGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RemoveUserFromGroupResult class are now available on the RemoveUserFromGroupResponse class. You should use the properties on RemoveUserFromGroupResponse instead of accessing them through RemoveUserFromGroupResult.")]
-        public RemoveUserFromGroupResult RemoveUserFromGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

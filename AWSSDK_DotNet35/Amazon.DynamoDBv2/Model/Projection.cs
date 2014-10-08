@@ -29,8 +29,8 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents attributes that are copied (projected) from the table into an index. These
-    /// are in      addition to the primary key attributes and index key attributes, which
-    /// are automatically      projected.
+    /// are in addition to the primary key attributes and index key attributes, which are
+    /// automatically projected.
     /// </summary>
     public partial class Projection
     {
@@ -42,12 +42,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Represents the non-key attribute names which will be projected into the index.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across
-        /// all of the local secondary indexes,      must not exceed 20. If you project the same
-        /// attribute into two      different indexes, this counts as two distinct attributes
-        /// when determining the total.
+        /// all of the local secondary indexes, must not exceed 20. If you project the same attribute
+        /// into two different indexes, this counts as two distinct attributes when determining
+        /// the total.
         /// </para>
         /// </summary>
         public List<string> NonKeyAttributes
@@ -67,21 +67,20 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The set of attributes that are projected into the index:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the  
-        ///        index.
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index.          The list of projected attributes are in <i>NonKeyAttributes</i>.
+        /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
-        ///       </li>    </ul>
+        ///  </li> </ul>
         /// </summary>
         public ProjectionType ProjectionType
         {

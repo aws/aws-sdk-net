@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteMessage service
-    /// </summary>
-    public partial class DeleteMessageResponse : DeleteMessageResult
+    public partial class DeleteMessageResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteMessageResult property.
-        /// Represents the output of a DeleteMessage operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteMessageResult class are now available on the DeleteMessageResponse class. You should use the properties on DeleteMessageResponse instead of accessing them through DeleteMessageResult.")]
-        public DeleteMessageResult DeleteMessageResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutNotificationConfiguration service
-    /// </summary>
-    public partial class PutNotificationConfigurationResponse : PutNotificationConfigurationResult
+    public partial class PutNotificationConfigurationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutNotificationConfigurationResult property.
-        /// Represents the output of a PutNotificationConfiguration operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutNotificationConfigurationResult class are now available on the PutNotificationConfigurationResponse class. You should use the properties on PutNotificationConfigurationResponse instead of accessing them through PutNotificationConfigurationResult.")]
-        public PutNotificationConfigurationResult PutNotificationConfigurationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

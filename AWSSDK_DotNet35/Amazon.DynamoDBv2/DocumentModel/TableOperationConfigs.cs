@@ -23,12 +23,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Configuration for the Table.PutItem operation
     /// </summary>
-    public class PutItemOperationConfig
+    public class PutItemOperationConfig : IConditionalOperationConfig
     {
         /// <summary>
+        /// The expression that is evaluated before the put is performed. If the expression evaluates to false the put
+        /// will fail and a ConditionalCheckFailedException exception will be thrown.
+        /// </summary>
+        public Expression ConditionalExpression { get; set; }
+
+        /// <summary>
         /// The expected state of data in DynamoDB.
-        /// Note: setting both Expected and ExpectedState is not supported and
-        /// will result in an exception being thrown.
         /// 
         /// For the operation to succeed, the data in DynamoDB must match the conditions
         /// specified in the ExpectedState.
@@ -37,8 +41,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Document representing the expected state of data in DynamoDB.
-        /// Note: setting both Expected and ExpectedState is not supported and
-        /// will result in an exception being thrown.
         /// 
         /// For the operation to succeed, the data in DynamoDB must be equal
         /// to the attributes in Expected. If an attribute in Expected
@@ -74,12 +76,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Configuration for the Table.UpdateItem operation
     /// </summary>
-    public class UpdateItemOperationConfig
+    public class UpdateItemOperationConfig : IConditionalOperationConfig
     {
         /// <summary>
+        /// The expression that is evaluated before the update is performed. If the expression evaluates to false the update
+        /// will fail and a ConditionalCheckFailedException exception will be thrown.
+        /// </summary>
+        public Expression ConditionalExpression { get; set; }
+
+        /// <summary>
         /// The expected state of data in DynamoDB.
-        /// Note: setting both Expected and ExpectedState is not supported and
-        /// will result in an exception being thrown.
         /// 
         /// For the operation to succeed, the data in DynamoDB must match the conditions
         /// specified in the ExpectedState.
@@ -88,8 +94,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Document representing the expected state of data in DynamoDB.
-        /// Note: setting both Expected and ExpectedState is not supported and
-        /// will result in an exception being thrown.
         /// 
         /// For the operation to succeed, the data in DynamoDB must be equal
         /// to the attributes in Expected. If an attribute in Expected
@@ -106,12 +110,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Configuration for the Table.DeleteItem operation
     /// </summary>
-    public class DeleteItemOperationConfig
+    public class DeleteItemOperationConfig : IConditionalOperationConfig
     {
         /// <summary>
+        /// The expression that is evaluated before the delete is performed. If the expression evaluates to false the delete
+        /// will fail and a ConditionalCheckFailedException exception will be thrown.
+        /// </summary>
+        public Expression ConditionalExpression { get; set; }
+
+        /// <summary>
         /// The expected state of data in DynamoDB.
-        /// Note: setting both Expected and ExpectedState is not supported and
-        /// will result in an exception being thrown.
         /// 
         /// For the operation to succeed, the data in DynamoDB must match the conditions
         /// specified in the ExpectedState.
@@ -120,8 +128,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Document representing the expected state of data in DynamoDB.
-        /// Note: setting both Expected and ExpectedState is not supported and
-        /// will result in an exception being thrown.
         /// 
         /// For the operation to succeed, the data in DynamoDB must be equal
         /// to the attributes in Expected. If an attribute in Expected
@@ -164,6 +170,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// for matching conditions.
         /// </summary>
         public int Limit { get; set; }
+
+        /// <summary>
+        /// The expression that is evaluated for each item. Only items that pass the expression are returned.
+        /// </summary>
+        public Expression FilterExpression { get; set; }
 
         /// <summary>
         /// Filter for the search operation
@@ -249,6 +260,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
+        /// The expression that is evaluated for each item. Only items that pass the expression are returned.
+        /// </summary>
+        public Expression FilterExpression { get; set; }
+
+        /// <summary>
         /// Filter for the search operation
         /// </summary>
         public QueryFilter Filter { get; set; }
@@ -298,5 +314,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Default value is AND.
         /// </summary>
         public ConditionalOperatorValues ConditionalOperator { get; set; }
+    }
+
+    /// <summary>
+    /// Interface for operations that support conditional behavior.
+    /// </summary>
+    interface IConditionalOperationConfig
+    {
+        /// <summary>
+        /// An expression that is evaluated before the operation. If the expression evaluates to false then the operation
+        /// will fail with a ConditionalCheckFailedException exception.
+        /// </summary>
+        Expression ConditionalExpression { get; set; }
+
+
+        /// <summary>
+        /// The expected state of data in DynamoDB.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must match the conditions
+        /// specified in the ExpectedState.
+        /// </summary>
+        ExpectedState ExpectedState { get; set; }
+
+        /// <summary>
+        /// Document representing the expected state of data in DynamoDB.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must be equal
+        /// to the attributes in Expected. If an attribute in Expected
+        /// is set to null, that attribute must not be preset on the item in DynamoDB.
+        /// </summary>
+        Document Expected { get; set; }
     }
 }

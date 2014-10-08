@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon EnableMFADevice service
-    /// </summary>
-    public partial class EnableMFADeviceResponse : EnableMFADeviceResult
+    public partial class EnableMFADeviceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the EnableMFADeviceResult property.
-        /// Represents the output of a EnableMFADevice operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the EnableMFADeviceResult class are now available on the EnableMFADeviceResponse class. You should use the properties on EnableMFADeviceResponse instead of accessing them through EnableMFADeviceResult.")]
-        public EnableMFADeviceResult EnableMFADeviceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

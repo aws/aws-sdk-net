@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon UpdateInstance service
-    /// </summary>
-    public partial class UpdateInstanceResponse : UpdateInstanceResult
+    public partial class UpdateInstanceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UpdateInstanceResult property.
-        /// Represents the output of a UpdateInstance operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UpdateInstanceResult class are now available on the UpdateInstanceResponse class. You should use the properties on UpdateInstanceResponse instead of accessing them through UpdateInstanceResult.")]
-        public UpdateInstanceResult UpdateInstanceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

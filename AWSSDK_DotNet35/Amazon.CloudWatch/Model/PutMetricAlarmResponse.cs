@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutMetricAlarm service
-    /// </summary>
-    public partial class PutMetricAlarmResponse : PutMetricAlarmResult
+    public partial class PutMetricAlarmResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutMetricAlarmResult property.
-        /// Represents the output of a PutMetricAlarm operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutMetricAlarmResult class are now available on the PutMetricAlarmResponse class. You should use the properties on PutMetricAlarmResponse instead of accessing them through PutMetricAlarmResult.")]
-        public PutMetricAlarmResult PutMetricAlarmResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

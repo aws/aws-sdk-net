@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteAccountPasswordPolicy service
-    /// </summary>
-    public partial class DeleteAccountPasswordPolicyResponse : DeleteAccountPasswordPolicyResult
+    public partial class DeleteAccountPasswordPolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteAccountPasswordPolicyResult property.
-        /// Represents the output of a DeleteAccountPasswordPolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteAccountPasswordPolicyResult class are now available on the DeleteAccountPasswordPolicyResponse class. You should use the properties on DeleteAccountPasswordPolicyResponse instead of accessing them through DeleteAccountPasswordPolicyResult.")]
-        public DeleteAccountPasswordPolicyResult DeleteAccountPasswordPolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

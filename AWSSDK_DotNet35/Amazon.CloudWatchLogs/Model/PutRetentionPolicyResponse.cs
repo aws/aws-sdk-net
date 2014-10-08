@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatchLogs.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutRetentionPolicy service
-    /// </summary>
-    public partial class PutRetentionPolicyResponse : PutRetentionPolicyResult
+    public partial class PutRetentionPolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutRetentionPolicyResult property.
-        /// Represents the output of a PutRetentionPolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutRetentionPolicyResult class are now available on the PutRetentionPolicyResponse class. You should use the properties on PutRetentionPolicyResponse instead of accessing them through PutRetentionPolicyResult.")]
-        public PutRetentionPolicyResult PutRetentionPolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

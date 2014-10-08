@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteGroup service
-    /// </summary>
-    public partial class DeleteGroupResponse : DeleteGroupResult
+    public partial class DeleteGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteGroupResult property.
-        /// Represents the output of a DeleteGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteGroupResult class are now available on the DeleteGroupResponse class. You should use the properties on DeleteGroupResponse instead of accessing them through DeleteGroupResult.")]
-        public DeleteGroupResult DeleteGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

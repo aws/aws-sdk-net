@@ -10,6 +10,8 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
+using ThirdParty.Json.LitJson;
+using System.Xml;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -20,55 +22,99 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDB")]
         public void TestTableOperations()
         {
-            Table hashTable;
-            Table hashRangeTable;
-            LoadTables(out hashTable, out hashRangeTable);
+            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            {
+                // Clear tables
+                CleanupTables();
 
-            // Scan the tables to confirm they are empty
-            var items = hashTable.Scan(new ScanFilter()).GetRemaining();
-            Assert.AreEqual(0, items.Count);
-            items = hashRangeTable.Scan(new ScanFilter()).GetRemaining();
-            Assert.AreEqual(0, items.Count);
+                Table hashTable;
+                Table hashRangeTable;
 
-            // Test operations on hash-key table
-            TestHashTable(hashTable);
+                // Load tables using provided conversion schema
+                LoadTables(conversion, out hashTable, out hashRangeTable);
 
-            // Test operations on hash-and-range-key table
-            TestHashRangeTable(hashRangeTable);
+                // Test operations on hash-key table
+                TestHashTable(hashTable, conversion);
 
-            // Test large batch writes and gets
-            TestLargeBatchOperations(hashTable);
+                // Test operations on hash-and-range-key table
+                TestHashRangeTable(hashRangeTable, conversion);
+
+                // Test large batch writes and gets
+                TestLargeBatchOperations(hashTable);
+
+                // Test expressions for delete
+                TestExpressionsOnDelete(hashTable);
+
+                // Test expressions for query
+                TestExpressionsOnQuery(hashRangeTable);
+
+                // Test expressions for scan
+                TestExpressionsOnScan(hashRangeTable);
+            }
         }
 
-        private void TestHashTable(Table hashTable)
+        private void TestHashTable(Table hashTable, DynamoDBEntryConversion conversion)
         {
             // Put an item
             Document doc = new Document();
             doc["Id"] = 1;
             doc["Product"] = "CloudSpotter";
             doc["Company"] = "CloudsAreGrate";
+            doc["IsPublic"] = true;
             doc["Price"] = 1200;
-            doc["Tags"] = new List<string> { "Prod", "1.0" };
+            doc["Tags"] = new HashSet<string> { "Prod", "1.0" };
+            doc["Aliases"] = new List<string> { "CS", "Magic" };
+            doc["Garbage"] = "asdf";
+            Assert.AreEqual("asdf", doc["Garbage"].AsString());
             hashTable.PutItem(doc);
 
             // Get the item by hash key
             Document retrieved = hashTable.GetItem(1);
-            Assert.IsTrue(AreValuesEqual(doc, retrieved));
+            Assert.IsFalse(AreValuesEqual(doc, retrieved));
+            var convertedDoc = doc.ForceConversion(conversion);
+            Assert.IsTrue(AreValuesEqual(convertedDoc, retrieved));
+
             // Get the item by document
             retrieved = hashTable.GetItem(doc);
-            Assert.IsTrue(AreValuesEqual(doc, retrieved));
+            // Verify retrieved document
+            Assert.IsTrue(AreValuesEqual(convertedDoc, retrieved, conversion));
+            var tagsRetrieved = retrieved["Tags"];
+            Assert.IsTrue(tagsRetrieved is PrimitiveList);
+            Assert.AreEqual(2, tagsRetrieved.AsPrimitiveList().Entries.Count);
+            // Test bool storage for different conversions
+            var isPublicRetrieved = retrieved["IsPublic"];
+            if (conversion == DynamoDBEntryConversion.V1)
+                Assert.AreEqual("1", isPublicRetrieved.AsPrimitive().Value as string);
+            else
+                Assert.IsTrue(isPublicRetrieved is DynamoDBBool);
+            // Test HashSet<string> storage for different conversions
+            var aliasesRetrieved = retrieved["Aliases"];
+            if (conversion == DynamoDBEntryConversion.V1)
+                Assert.AreEqual(2, aliasesRetrieved.AsPrimitiveList().Entries.Count);
+            else
+                Assert.AreEqual(2, aliasesRetrieved.AsDynamoDBList().Entries.Count);
 
             // Update the item
             doc["Tags"] = new List<string> { "Prod", "1.0", "2.0" };
+            // Delete the Garbage attribute
+            doc["Garbage"] = null;
+            Assert.IsNull(doc["Garbage"].AsString());
             hashTable.UpdateItem(doc);
             retrieved = hashTable.GetItem(1);
-            Assert.IsTrue(AreValuesEqual(doc, retrieved));
+            Assert.IsFalse(AreValuesEqual(doc, retrieved, conversion));
+            doc.Remove("Garbage");
+            Assert.IsTrue(AreValuesEqual(doc, retrieved, conversion));
 
-            // Create new item
-            Document doc2 = Document.FromAttributeMap(doc.ToAttributeMap());
+            // Create new, circularly-referencing item            
+            Document doc2 = doc.ForceConversion(conversion);
             doc2["Id"] = doc2["Id"].AsInt() + 1;
             doc2["Price"] = 94;
             doc2["Tags"] = null;
+            doc2["IsPublic"] = false;
+            doc2["Parent"] = doc2;
+            AssertExtensions.ExpectException(() => hashTable.UpdateItem(doc2));
+            // Remove circular reference and save new item
+            doc2.Remove("Parent");
             hashTable.UpdateItem(doc2);
 
             // Scan the hash-key table
@@ -145,7 +191,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             items = hashTable.Scan(new ScanFilter()).GetRemaining();
             Assert.AreEqual(0, items.Count);
         }
-        private void TestHashRangeTable(Table hashRangeTable)
+        private void TestHashRangeTable(Table hashRangeTable, DynamoDBEntryConversion conversion)
         {
             // Put an item
             Document doc1 = new Document();
@@ -153,8 +199,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc1["Age"] = 31;
             doc1["Company"] = "Big River";
             doc1["Score"] = 120;
+            doc1["IsTester"] = true;
             doc1["Manager"] = "Barbara";
-            doc1["Aliases"] = new List<string> { "Al", "Steve" };
+            doc1["Aliases"] = new HashSet<string> { "Al", "Steve" };
+            doc1["PastManagers"] = new List<string> { "Carl", "Karl" };
             hashRangeTable.PutItem(doc1);
 
             // Update a non-existent item creates the item
@@ -163,8 +211,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc2["Age"] = 30;
             doc2["Company"] = "Big River";
             doc2["Score"] = 94;
+            doc1["IsTester"] = false;
             doc2["Manager"] = "Barbara";
-            doc2["Aliases"] = new List<string> { "Charles" };
+            doc2["Aliases"] = new HashSet<string> { "Charles" };
             hashRangeTable.UpdateItem(doc2);
 
             // Save more items
@@ -172,25 +221,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc3["Name"] = "Diane";
             doc3["Age"] = 40;
             doc3["Company"] = "Madeira";
+            doc1["IsTester"] = true;
             doc3["Score"] = 140;
             doc3["Manager"] = "Eva";
             hashRangeTable.UpdateItem(doc3);
-            var oldDoc3 = Document.FromAttributeMap(doc3.ToAttributeMap());
+            var oldDoc3 = doc3.Clone() as Document;
 
             // Changing the range key will force a creation of a new item
             doc3["Age"] = 24;
             doc3["Score"] = 101;
             hashRangeTable.UpdateItem(doc3);
 
-            // Get items
+            // Get item
             var retrieved = hashRangeTable.GetItem("Alan", 31);
-            Assert.IsTrue(AreValuesEqual(doc1, retrieved));
+            // Verify retrieved document
+            Assert.IsTrue(AreValuesEqual(doc1, retrieved, conversion));
+            var tagsRetrieved = retrieved["Aliases"];
+            Assert.IsTrue(tagsRetrieved is PrimitiveList);
+            Assert.AreEqual(2, tagsRetrieved.AsPrimitiveList().Entries.Count);
+            // Test bool storage for different conversions
+            var isTesterRetrieved = retrieved["IsTester"];
+            if (conversion == DynamoDBEntryConversion.V1)
+                Assert.AreEqual("1", isTesterRetrieved.AsPrimitive().Value as string);
+            else
+                Assert.IsTrue(isTesterRetrieved is DynamoDBBool);
+            // Test HashSet<string> storage for different conversions
+            var pastManagersRetrieved = retrieved["PastManagers"];
+            if (conversion == DynamoDBEntryConversion.V1)
+                Assert.AreEqual(2, pastManagersRetrieved.AsPrimitiveList().Entries.Count);
+            else
+                Assert.AreEqual(2, pastManagersRetrieved.AsDynamoDBList().Entries.Count);
+
+            // Get item using GetItem overloads that expect a key in different ways
             retrieved = hashRangeTable.GetItem(doc2);
-            Assert.IsTrue(AreValuesEqual(doc2, retrieved));
+            Assert.IsTrue(AreValuesEqual(doc2, retrieved, conversion));
             retrieved = hashRangeTable.GetItem(oldDoc3, new GetItemOperationConfig { ConsistentRead = true });
-            Assert.IsTrue(AreValuesEqual(oldDoc3, retrieved));
+            Assert.IsTrue(AreValuesEqual(oldDoc3, retrieved, conversion));
             retrieved = hashRangeTable.GetItem("Diane", 24, new GetItemOperationConfig { ConsistentRead = true });
-            Assert.IsTrue(AreValuesEqual(doc3, retrieved));
+            Assert.IsTrue(AreValuesEqual(doc3, retrieved, conversion));
 
             // Scan the hash-and-range-key table
             var items = hashRangeTable.Scan(new ScanFilter()).GetRemaining();
@@ -251,7 +319,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
             batchWrite.Execute();
 
-            Thread.Sleep(100); // Wait for the eventual consistence of the batch add to catch up.
+            Thread.Sleep(TimeSpan.FromSeconds(1)); // Wait for the eventual consistence of the batch add to catch up.
            
             // Scan table, but retrieve only keys
             var ids = hashTable.Scan(new ScanOperationConfig
@@ -281,52 +349,196 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, items.Count);
         }
 
-        private bool AreValuesEqual(Document docA, Document docB)
+        private void TestExpressionsOnDelete(Table hashTable)
         {
-            if (object.ReferenceEquals(docA, docB))
-                return true;
-            if (docA.Count != docB.Count)
-                return false;
-            if (docA.Keys.Count != docB.Keys.Count)
-                return false;
-            if (docA.Keys.Except(docB.Keys).Count() > 0)
-                return false;
-            foreach (var key in docA.Keys)
+            Document doc1 = new Document();
+            doc1["Id"] = 13;
+            doc1["Price"] = 6;
+            hashTable.PutItem(doc1);
+
+            Expression expression = new Expression();
+            expression.ExpressionStatement = "Price > :price";
+            expression.ExpressionAttributeValues[":price"] = 7;
+
+            DeleteItemOperationConfig config = new DeleteItemOperationConfig();
+            config.ConditionalExpression = expression;
+
+            Assert.IsFalse(hashTable.TryDeleteItem(doc1, config));
+
+            expression.ExpressionAttributeValues[":price"] = 4;
+            Assert.IsTrue(hashTable.TryDeleteItem(doc1, config));
+        }
+
+        private void TestExpressionsOnQuery(Table hashRangeTable)
+        {
+            Document doc1 = new Document();
+            doc1["Name"] = "Gunnar";
+            doc1["Age"] = 77;
+            doc1["Job"] = "Retired";
+            hashRangeTable.PutItem(doc1);
+
+            Document doc2 = new Document();
+            doc2["Name"] = "Gunnar";
+            doc2["Age"] = 45;
+            doc2["Job"] = "Electrician";
+            hashRangeTable.PutItem(doc2);
+
+            Expression expression = new Expression();
+            expression.ExpressionStatement = "Job = :job";
+            expression.ExpressionAttributeValues[":job"] = "Retired";
+
+            var search = hashRangeTable.Query("Gunnar", expression);
+
+            var docs = search.GetRemaining();
+            Assert.AreEqual(1, docs.Count);
+            Assert.AreEqual(77, docs[0]["Age"].AsInt());
+
+            hashRangeTable.DeleteItem(doc1);
+            hashRangeTable.DeleteItem(doc2);
+        }
+
+        private void TestExpressionsOnScan(Table hashRangeTable)
+        {
+            ClearTable(hashRangeTableName);
+
+            Document doc1 = new Document();
+            doc1["Name"] = "Lewis";
+            doc1["Age"] = 6;
+            doc1["School"] = "Elementary";
+            hashRangeTable.PutItem(doc1);
+
+            Document doc2 = new Document();
+            doc2["Name"] = "Frida";
+            doc2["Age"] = 3;
+            doc2["School"] = "Preschool";
+            hashRangeTable.PutItem(doc2);
+
+            Expression expression = new Expression();
+            expression.ExpressionStatement = "Age > :age";
+            expression.ExpressionAttributeValues[":age"] = 5;
+
+            var search = hashRangeTable.Scan(expression);
+
+            var docs = search.GetRemaining();
+            Assert.AreEqual(1, docs.Count);
+            Assert.AreEqual("Elementary", docs[0]["School"].AsString());
+
+            hashRangeTable.DeleteItem(doc1);
+            hashRangeTable.DeleteItem(doc2);
+        }
+
+
+        private bool AreValuesEqual(Document docA, Document docB, DynamoDBEntryConversion conversion = null)
+        {
+            if (conversion != null)
             {
-                var a = docA[key];
-                var b = docB[key];
-
-                var aPrimitive = a.AsPrimitive();
-                var bPrimitive = b.AsPrimitive();
-                if (aPrimitive != null || bPrimitive != null)
-                {
-                    if (aPrimitive == null || bPrimitive == null)
-                        return false;
-
-                    if (!aPrimitive.Equals(bPrimitive))
-                        return false;
-                }
-
-                var aList = a.AsPrimitiveList();
-                var bList = b.AsPrimitiveList();
-                if (aList != null || bList != null)
-                {
-                    if (aList == null || bList == null)
-                        return false;
-
-                    if (!aList.Equals(bList))
-                        return false;
-                }
+                docA = docA.ForceConversion(conversion);
+                docB = docB.ForceConversion(conversion);
             }
 
-            return true;
+            if (object.ReferenceEquals(docA, docB))
+                return true;
+            return docA.Equals(docB);
+            //if (docA.Count != docB.Count)
+            //    return false;
+            //if (docA.Keys.Count != docB.Keys.Count)
+            //    return false;
+            //if (docA.Keys.Except(docB.Keys).Count() > 0)
+            //    return false;
+            //foreach (var key in docA.Keys)
+            //{
+            //    var aEntry = docA[key];
+            //    var bEntry = docB[key];
+            //    bool equal;
+            //    if (!TryTestEntryEquality(aEntry, bEntry, out equal))
+            //        Assert.Fail("Key {0} not tested", key);
+            //    if (!equal)
+            //        return false;
+            //}
+
+            //return true;
         }
-        private void LoadTables(out Table hashTable, out Table hashRangeTable)
+        //private bool TryTestEntryEquality(DynamoDBEntry aEntry, DynamoDBEntry bEntry, out bool equal)
+        //{
+        //    bool tested = false;
+
+        //    {
+        //        var a = aEntry.AsPrimitive();
+        //        var b = bEntry.AsPrimitive();
+        //        if (a != null || b != null)
+        //        {
+        //            if (a == null || b == null)
+        //                equal = false;
+        //            else if (!a.Equals(b))
+        //                equal = false;
+
+        //            tested = true;
+        //        }
+        //    }
+
+        //    {
+        //        var a = aEntry.AsPrimitiveList();
+        //        var b = bEntry.AsPrimitiveList();
+        //        if (a != null || b != null)
+        //        {
+        //            if (a == null || b == null)
+        //                equal = false;
+        //            else if (!a.Equals(b))
+        //                equal = false;
+
+        //            tested = true;
+        //        }
+        //    }
+
+        //    {
+        //        var a = aEntry.AsDynamoDBBool();
+        //        var b = bEntry.AsDynamoDBBool();
+        //        if (a != null || b != null)
+        //        {
+        //            if (a == null || b == null)
+        //                equal = false;
+        //            else if (a.Value != b.Value)
+        //                equal = false;
+
+        //            tested = true;
+        //        }
+        //    }
+
+        //    {
+        //        var a = aEntry.AsDynamoDBNull();
+        //        var b = bEntry.AsDynamoDBNull();
+        //        if (a != null || b != null)
+        //        {
+        //            if (a == null || b == null)
+        //                equal = false;
+
+        //            tested = true;
+        //        }
+        //    }
+
+
+        //    //{
+        //    //    var a = aEntry.AsDynamoDBList();
+        //    //    var b = bEntry.AsDynamoDBList();
+        //    //    if (a != null || b != null)
+        //    //    {
+        //    //        if (a == null || b == null)
+        //    //            equal = false;
+
+        //    //        if (a.Equals()
+
+        //    //        tested = true;
+        //    //    }
+        //    //}
+
+        //    return tested;
+        //}
+        private void LoadTables(DynamoDBEntryConversion conversion, out Table hashTable, out Table hashRangeTable)
         {
             // Load table using TryLoadTable API
             hashTable = null;
-            Assert.IsFalse(Table.TryLoadTable(Client, "FakeHashTableThatShouldNotExist", out hashTable));
-            Assert.IsTrue(Table.TryLoadTable(Client, hashTableName, out hashTable));
+            Assert.IsFalse(Table.TryLoadTable(Client, "FakeHashTableThatShouldNotExist", conversion, out hashTable));
+            Assert.IsTrue(Table.TryLoadTable(Client, hashTableName, conversion, out hashTable));
 
             Assert.IsNotNull(hashTable);
             Assert.AreEqual(hashTableName, hashTable.TableName);
@@ -341,8 +553,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, hashTable.LocalSecondaryIndexNames.Count);
 
             // Load table using LoadTable API (may throw an exception)
-            AssertExtensions.ExpectException(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist"));
-            hashRangeTable = Table.LoadTable(Client, hashRangeTableName);
+            AssertExtensions.ExpectException(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist", conversion));
+            hashRangeTable = Table.LoadTable(Client, hashRangeTableName, conversion);
             Assert.IsNotNull(hashRangeTable);
             Assert.AreEqual(hashRangeTableName, hashRangeTable.TableName);
             Assert.AreEqual(5, hashRangeTable.Attributes.Count);

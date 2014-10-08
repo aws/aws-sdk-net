@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DisassociateAddress service
-    /// </summary>
-    public partial class DisassociateAddressResponse : DisassociateAddressResult
+    public partial class DisassociateAddressResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DisassociateAddressResult property.
-        /// Represents the output of a DisassociateAddress operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DisassociateAddressResult class are now available on the DisassociateAddressResponse class. You should use the properties on DisassociateAddressResponse instead of accessing them through DisassociateAddressResult.")]
-        public DisassociateAddressResult DisassociateAddressResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

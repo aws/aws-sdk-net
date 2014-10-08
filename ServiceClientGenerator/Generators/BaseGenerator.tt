@@ -276,24 +276,18 @@
             .Replace("</function>","")
             .Trim();
 
-        Action<string, string> removeSnippets = ((startToken, endToken) => 
-            {
-                int startPos = documentation.IndexOf(startToken);
-                while(startPos != -1)
-                {
-                    int closePos = documentation.IndexOf(endToken, startPos);
-                    documentation = documentation.Substring(0, startPos) + documentation.Substring(closePos + endToken.Length);
-
-                    startPos = documentation.IndexOf(startToken);
-                }
-            });
-
+        
         // Remove examples because these will be wire protocol examples
-        removeSnippets("<examples>", "</examples>");
+        documentation = RemoveSnippets(documentation, "<examples>", "</examples>");
 
         // Remove commented out documentation
-        removeSnippets("<!--", "-->");
+        documentation = RemoveSnippets(documentation, "<!--", "-->");
 
+		documentation = RemoveSnippets(documentation, "<!--", "-->");
+
+		documentation = RemoveSnippets(documentation, "<?oxy_delete",">");
+		documentation = RemoveSnippets(documentation, "<?oxy_insert_start",">");
+		documentation = RemoveSnippets(documentation, "<?oxy_insert_end",">");
 
         // Remove the first para tags since it just be the first paragraph in the summary.
         // This also helps clean up documentation that only contains one para block.
@@ -332,6 +326,20 @@
 
         return sb.ToString().Trim();
     }
+
+	private string RemoveSnippets(string documentation, string startToken, string endToken)	
+    {
+        int startPos = documentation.IndexOf(startToken);
+        while(startPos != -1)
+        { 
+            int closePos = documentation.IndexOf(endToken, startPos);
+            documentation = documentation.Substring(0, startPos) + documentation.Substring(closePos + endToken.Length);
+
+            startPos = documentation.IndexOf(startToken);
+        }
+		return documentation;
+    }
+
 
     // Generates the comment block for simple constructors, each member is added as a param tag with the shape's documentation or
     // a generic comment if no documentation is found

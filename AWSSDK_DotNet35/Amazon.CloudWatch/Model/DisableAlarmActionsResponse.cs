@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DisableAlarmActions service
-    /// </summary>
-    public partial class DisableAlarmActionsResponse : DisableAlarmActionsResult
+    public partial class DisableAlarmActionsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DisableAlarmActionsResult property.
-        /// Represents the output of a DisableAlarmActions operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DisableAlarmActionsResult class are now available on the DisableAlarmActionsResponse class. You should use the properties on DisableAlarmActionsResponse instead of accessing them through DisableAlarmActionsResult.")]
-        public DisableAlarmActionsResult DisableAlarmActionsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

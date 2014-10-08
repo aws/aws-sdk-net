@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AssociateDhcpOptions service
-    /// </summary>
-    public partial class AssociateDhcpOptionsResponse : AssociateDhcpOptionsResult
+    public partial class AssociateDhcpOptionsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AssociateDhcpOptionsResult property.
-        /// Represents the output of a AssociateDhcpOptions operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AssociateDhcpOptionsResult class are now available on the AssociateDhcpOptionsResponse class. You should use the properties on AssociateDhcpOptionsResponse instead of accessing them through AssociateDhcpOptionsResult.")]
-        public AssociateDhcpOptionsResult AssociateDhcpOptionsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

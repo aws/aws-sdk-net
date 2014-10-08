@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteHsmConfiguration service
-    /// </summary>
-    public partial class DeleteHsmConfigurationResponse : DeleteHsmConfigurationResult
+    public partial class DeleteHsmConfigurationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteHsmConfigurationResult property.
-        /// Represents the output of a DeleteHsmConfiguration operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteHsmConfigurationResult class are now available on the DeleteHsmConfigurationResponse class. You should use the properties on DeleteHsmConfigurationResponse instead of accessing them through DeleteHsmConfigurationResult.")]
-        public DeleteHsmConfigurationResult DeleteHsmConfigurationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

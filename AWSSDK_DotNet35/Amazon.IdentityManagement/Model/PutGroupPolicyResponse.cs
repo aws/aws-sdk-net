@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutGroupPolicy service
-    /// </summary>
-    public partial class PutGroupPolicyResponse : PutGroupPolicyResult
+    public partial class PutGroupPolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutGroupPolicyResult property.
-        /// Represents the output of a PutGroupPolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutGroupPolicyResult class are now available on the PutGroupPolicyResponse class. You should use the properties on PutGroupPolicyResponse instead of accessing them through PutGroupPolicyResult.")]
-        public PutGroupPolicyResult PutGroupPolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

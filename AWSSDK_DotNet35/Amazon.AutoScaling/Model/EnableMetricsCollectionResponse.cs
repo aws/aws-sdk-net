@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon EnableMetricsCollection service
-    /// </summary>
-    public partial class EnableMetricsCollectionResponse : EnableMetricsCollectionResult
+    public partial class EnableMetricsCollectionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the EnableMetricsCollectionResult property.
-        /// Represents the output of a EnableMetricsCollection operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the EnableMetricsCollectionResult class are now available on the EnableMetricsCollectionResponse class. You should use the properties on EnableMetricsCollectionResponse instead of accessing them through EnableMetricsCollectionResult.")]
-        public EnableMetricsCollectionResult EnableMetricsCollectionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

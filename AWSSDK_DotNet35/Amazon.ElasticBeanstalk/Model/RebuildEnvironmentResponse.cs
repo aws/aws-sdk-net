@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RebuildEnvironment service
-    /// </summary>
-    public partial class RebuildEnvironmentResponse : RebuildEnvironmentResult
+    public partial class RebuildEnvironmentResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RebuildEnvironmentResult property.
-        /// Represents the output of a RebuildEnvironment operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RebuildEnvironmentResult class are now available on the RebuildEnvironmentResponse class. You should use the properties on RebuildEnvironmentResponse instead of accessing them through RebuildEnvironmentResult.")]
-        public RebuildEnvironmentResult RebuildEnvironmentResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

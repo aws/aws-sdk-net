@@ -20,6 +20,7 @@ using System.Linq;
 using Amazon.DynamoDBv2.Model;
 using System.IO;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -28,6 +29,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public class PrimitiveList : DynamoDBEntry, IEquatable<PrimitiveList>
     {
+        //private static DynamoDBEntryConversion conversion = CreateConversion();
+        //private static DynamoDBEntryConversion CreateConversion()
+        //{
+        //    var conversion = new DynamoDBEntryConversion();
+        //    conversion.AddConverter(new PrimitiveCollectionConverterV1());
+
+        //    return conversion;
+        //}
+
+        private static DynamoDBEntryConversion V1Conversion = DynamoDBEntryConversion.V1;
+
         #region Constructors
 
         /// <summary>
@@ -48,6 +60,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             Entries = new List<Primitive>();
             Type = type;
+        }
+
+        internal PrimitiveList(IEnumerable<Primitive> primitives)
+            : this()
+        {
+            DynamoDBEntryType? listType = null;
+            foreach (var primitive in primitives)
+            {
+                listType = primitive.Type;
+                Entries.Add(primitive);
+            }
+            Type = listType.GetValueOrDefault(DynamoDBEntryType.String);
         }
 
         #endregion
@@ -103,7 +127,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal conversion methods
 
-        internal override AttributeValue ConvertToAttributeValue()
+        internal override AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig)
         {
             if (Entries == null || Entries.Count == 0)
                 return null;
@@ -154,7 +178,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         private class PrimitiveComparer : IComparer<Primitive>
-        {
+            {
             public int Compare(Primitive x, Primitive y)
             {
                 if (x.Type != y.Type)
@@ -179,12 +203,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         int byteCompare = xb.CompareTo(yb);
                         if (byteCompare != 0)
                             return byteCompare;
-                    }
+            }
 
                     return 0;
-                }
+        }
                 else
-                {
+        {
                     throw new InvalidOperationException("Unknown type of Primitive: " + x.Type);
                 }
             }
@@ -194,15 +218,42 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #endregion
 
-
         #region Explicit and Implicit conversions
 
+        #region Primitive-PrimitiveList conversions
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to Primitive[]
+        /// </summary>
+        /// <returns>Primitive[] value of this object</returns>
+        public override Primitive[] AsArrayOfPrimitive()
+        {
+            return AsListOfPrimitive().ToArray();
+        }
+        /// <summary>
+        /// Implicitly convert Primitive[] to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">Primitive[] data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator PrimitiveList(Primitive[] data)
+        {
+            return (PrimitiveList)(data.ToList());
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to Primitive[]
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>Primitive[] value of DynamoDBEntry</returns>
+        public static explicit operator Primitive[](PrimitiveList p)
+        {
+            return p.AsArrayOfPrimitive();
+        }
 
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;Primitive&gt;
         /// </summary>
         /// <returns>List&lt;Primitive&gt; value of this object</returns>
-        public override List<Primitive> AsListOfPrimitives()
+        public override List<Primitive> AsListOfPrimitive()
         {
             return Entries;
         }
@@ -213,16 +264,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>PrimitiveList representing the data</returns>
         public static implicit operator PrimitiveList(List<Primitive> data)
         {
-            PrimitiveList primitiveList = new PrimitiveList();
-            DynamoDBEntryType? listType = null;
-            foreach (var primitive in data)
-            {
-                listType = primitive.Type;
-                primitiveList.Entries.Add(primitive);
-            }
-            primitiveList.Type = listType.GetValueOrDefault(DynamoDBEntryType.String);
-
-            return primitiveList;
+            return new PrimitiveList(data);
         }
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;Primitive&gt;
@@ -231,10 +273,65 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;Primitive&gt; value of PrimitiveList</returns>
         public static explicit operator List<Primitive>(PrimitiveList p)
         {
-            return p.AsListOfPrimitives();
+            return p.AsListOfPrimitive();
         }
 
+        /// <summary>
+        /// Explicitly convert PrimitiveList to HashSet&lt;Primitive&gt;
+        /// </summary>
+        /// <returns>HashSet&lt;Primitive&gt; value of this object</returns>
+        public override HashSet<Primitive> AsHashSetOfPrimitive()
+        {
+            return new HashSet<Primitive>(Entries, PrimitiveEqualityComparer.Default);
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;Primitive&gt; to PrimitiveList
+        /// </summary>
+        /// <param name="data">HashSet&lt;Primitive&gt; data to convert</param>
+        /// <returns>PrimitiveList representing the data</returns>
+        public static implicit operator PrimitiveList(HashSet<Primitive> data)
+        {
+            return new PrimitiveList(data);
+        }
+        /// <summary>
+        /// Explicitly convert PrimitiveList to HashSet&lt;Primitive&gt;
+        /// </summary>
+        /// <param name="p">PrimitiveList to convert</param>
+        /// <returns>HashSet&lt;Primitive&gt; value of PrimitiveList</returns>
+        public static explicit operator HashSet<Primitive>(PrimitiveList p)
+        {
+            return p.AsHashSetOfPrimitive();
+        }
 
+        #endregion
+
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to String[]
+        /// </summary>
+        /// <returns>String[] value of this object</returns>
+        public override String[] AsArrayOfString()
+        {
+            return AsListOfString().ToArray();
+        }
+        /// <summary>
+        /// Implicitly convert String[] to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">String[] data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator PrimitiveList(String[] data)
+        {
+            return V1Conversion.ConvertToEntry<String[]>(data).ToPrimitiveList();
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to String[]
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>String[] value of DynamoDBEntry</returns>
+        public static explicit operator String[](PrimitiveList p)
+        {
+            return p.AsArrayOfString();
+        }
 
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;String&gt;
@@ -242,12 +339,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;String&gt; value of this object</returns>
         public override List<String> AsListOfString()
         {
-            List<String> ret = new List<String>();
-            foreach (var entry in Entries)
-            {
-                ret.Add(entry);
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<List<String>>(this);
         }
         /// <summary>
         /// Implicitly convert List&lt;String&gt; to PrimitiveList
@@ -256,12 +348,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>PrimitiveList representing the data</returns>
         public static implicit operator PrimitiveList(List<String> data)
         {
-            PrimitiveList pl = new PrimitiveList();
-            foreach (string entry in data)
-            {
-                pl.Entries.Add(entry);
-            }
-            return pl;
+            return V1Conversion.ConvertToEntry<List<String>>(data).ToPrimitiveList();
+
         }
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;String&gt;
@@ -273,6 +361,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return p.AsListOfString();
         }
 
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;String&gt;
+        /// </summary>
+        /// <returns>List&lt;String&gt; value of this object</returns>
+        public override HashSet<String> AsHashSetOfString()
+        {
+            return V1Conversion.ConvertFromEntry<HashSet<String>>(this);
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;String&gt; to PrimitiveList
+        /// </summary>
+        /// <param name="data">HashSet&lt;String&gt; data to convert</param>
+        /// <returns>PrimitiveList representing the data</returns>
+        public static implicit operator PrimitiveList(HashSet<String> data)
+        {
+            return V1Conversion.ConvertToEntry<HashSet<String>>(data).ToPrimitiveList();
+        }
+        /// <summary>
+        /// Explicitly convert PrimitiveList to HashSet&lt;String&gt;
+        /// </summary>
+        /// <param name="p">PrimitiveList to convert</param>
+        /// <returns>HashSet&lt;String&gt; value of PrimitiveList</returns>
+        public static explicit operator HashSet<String>(PrimitiveList p)
+        {
+            return p.AsHashSetOfString();
+        }
 
 
         /// <summary>
@@ -281,12 +395,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;byte[]&gt; value of this object</returns>
         public override List<byte[]> AsListOfByteArray()
         {
-            List<byte[]> ret = new List<byte[]>();
-            foreach (Primitive entry in Entries)
-            {
-                ret.Add(entry.AsByteArray());
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<List<byte[]>>(this);
         }
         /// <summary>
         /// Implicitly convert List&lt;byte[]&gt; to PrimitiveList
@@ -295,12 +404,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>PrimitiveList representing the data</returns>
         public static implicit operator PrimitiveList(List<byte[]> data)
         {
-            PrimitiveList pl = new PrimitiveList(DynamoDBEntryType.Binary);
-            foreach (byte[] entry in data)
-            {
-                pl.Entries.Add(entry);
-            }
-            return pl;
+            return V1Conversion.ConvertToEntry<List<byte[]>>(data).ToPrimitiveList();
         }
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;byte[]&gt;
@@ -312,6 +416,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return p.AsListOfByteArray();
         }
 
+        /// <summary>
+        /// Explicitly convert PrimitiveList to HashSet&lt;byte[]&gt;
+        /// </summary>
+        /// <returns>HashSet&lt;byte[]&gt; value of this object</returns>
+        public override HashSet<byte[]> AsHashSetOfByteArray()
+        {
+            return V1Conversion.ConvertFromEntry<HashSet<byte[]>>(this);
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;byte[]&gt; to PrimitiveList
+        /// </summary>
+        /// <param name="data">HashSet&lt;byte[]&gt; data to convert</param>
+        /// <returns>PrimitiveList representing the data</returns>
+        public static implicit operator PrimitiveList(HashSet<byte[]> data)
+        {
+            return V1Conversion.ConvertToEntry<HashSet<byte[]>>(data).ToPrimitiveList();
+        }
+        /// <summary>
+        /// Explicitly convert PrimitiveList to HashSet&lt;byte[]&gt;
+        /// </summary>
+        /// <param name="p">PrimitiveList to convert</param>
+        /// <returns>HashSet&lt;byte[]&gt; value of PrimitiveList</returns>
+        public static explicit operator HashSet<byte[]>(PrimitiveList p)
+        {
+            return V1Conversion.ConvertFromEntry<HashSet<byte[]>>(p);
+        }
 
 
         /// <summary>
@@ -320,12 +450,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;MemoryStream&gt; value of this object</returns>
         public override List<MemoryStream> AsListOfMemoryStream()
         {
-            List<MemoryStream> ret = new List<MemoryStream>();
-            foreach (var entry in Entries)
-            {
-                ret.Add(new MemoryStream(entry.AsByteArray()));
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<List<MemoryStream>>(this);
         }
         /// <summary>
         /// Implicitly convert List&lt;MemoryStream&gt; to PrimitiveList
@@ -334,12 +459,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>PrimitiveList representing the data</returns>
         public static implicit operator PrimitiveList(List<MemoryStream> data)
         {
-            PrimitiveList pl = new PrimitiveList(DynamoDBEntryType.Binary);
-            foreach (MemoryStream entry in data)
-            {
-                pl.Entries.Add(entry.ToArray());
-            }
-            return pl;
+            return V1Conversion.ConvertToEntry<List<MemoryStream>>(data).ToPrimitiveList();
         }
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;MemoryStream&gt;

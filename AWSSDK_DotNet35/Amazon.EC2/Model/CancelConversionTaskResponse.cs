@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CancelConversionTask service
-    /// </summary>
-    public partial class CancelConversionTaskResponse : CancelConversionTaskResult
+    public partial class CancelConversionTaskResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CancelConversionTaskResult property.
-        /// Represents the output of a CancelConversionTask operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CancelConversionTaskResult class are now available on the CancelConversionTaskResponse class. You should use the properties on CancelConversionTaskResponse instead of accessing them through CancelConversionTaskResult.")]
-        public CancelConversionTaskResult CancelConversionTaskResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

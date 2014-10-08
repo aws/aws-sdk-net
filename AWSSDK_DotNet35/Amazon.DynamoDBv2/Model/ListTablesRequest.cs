@@ -30,8 +30,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the ListTables operation.
     /// Returns an array of table names associated with the current account and endpoint.
-    /// The output      from <i>ListTables</i> is paginated, with each page returning a maximum
-    /// of 100 table      names.
+    /// The output from <i>ListTables</i> is paginated, with each page returning a maximum
+    /// of 100 table names.
     /// </summary>
     public partial class ListTablesRequest : AmazonDynamoDBRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ListTablesRequest with the parameterized properties
         /// </summary>
-        /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for  <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page   of results.</param>
+        /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</param>
         public ListTablesRequest(string exclusiveStartTableName)
         {
             _exclusiveStartTableName = exclusiveStartTableName;
@@ -55,8 +55,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ListTablesRequest with the parameterized properties
         /// </summary>
-        /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for  <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page   of results.</param>
-        /// <param name="limit"> A maximum number of table names to return. If this parameter is not specified, the limit is   100.</param>
+        /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</param>
+        /// <param name="limit"> A maximum number of table names to return. If this parameter is not specified, the limit is 100.</param>
         public ListTablesRequest(string exclusiveStartTableName, int limit)
         {
             _exclusiveStartTableName = exclusiveStartTableName;
@@ -67,8 +67,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExclusiveStartTableName. 
         /// <para>
         /// The first table name that this operation will evaluate. Use the value that was returned
-        /// for        <i>LastEvaluatedTableName</i> in a previous operation, so that you can
-        /// obtain the next page      of results.
+        /// for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain
+        /// the next page of results.
         /// </para>
         /// </summary>
         public string ExclusiveStartTableName
@@ -87,7 +87,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Limit. 
         /// <para>
         ///  A maximum number of table names to return. If this parameter is not specified, the
-        /// limit is      100.
+        /// limit is 100.
         /// </para>
         /// </summary>
         public int Limit

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteLayer service
-    /// </summary>
-    public partial class DeleteLayerResponse : DeleteLayerResult
+    public partial class DeleteLayerResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteLayerResult property.
-        /// Represents the output of a DeleteLayer operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteLayerResult class are now available on the DeleteLayerResponse class. You should use the properties on DeleteLayerResponse instead of accessing them through DeleteLayerResult.")]
-        public DeleteLayerResult DeleteLayerResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

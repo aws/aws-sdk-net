@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteLoginProfile service
-    /// </summary>
-    public partial class DeleteLoginProfileResponse : DeleteLoginProfileResult
+    public partial class DeleteLoginProfileResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteLoginProfileResult property.
-        /// Represents the output of a DeleteLoginProfile operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteLoginProfileResult class are now available on the DeleteLoginProfileResponse class. You should use the properties on DeleteLoginProfileResponse instead of accessing them through DeleteLoginProfileResult.")]
-        public DeleteLoginProfileResult DeleteLoginProfileResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

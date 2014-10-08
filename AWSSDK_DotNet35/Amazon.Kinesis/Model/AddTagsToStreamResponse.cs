@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AddTagsToStream service
-    /// </summary>
-    public partial class AddTagsToStreamResponse : AddTagsToStreamResult
+    public partial class AddTagsToStreamResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AddTagsToStreamResult property.
-        /// Represents the output of a AddTagsToStream operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AddTagsToStreamResult class are now available on the AddTagsToStreamResponse class. You should use the properties on AddTagsToStreamResponse instead of accessing them through AddTagsToStreamResult.")]
-        public AddTagsToStreamResult AddTagsToStreamResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

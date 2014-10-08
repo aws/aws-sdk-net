@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ModifyInstanceGroups service
-    /// </summary>
-    public partial class ModifyInstanceGroupsResponse : ModifyInstanceGroupsResult
+    public partial class ModifyInstanceGroupsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ModifyInstanceGroupsResult property.
-        /// Represents the output of a ModifyInstanceGroups operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ModifyInstanceGroupsResult class are now available on the ModifyInstanceGroupsResponse class. You should use the properties on ModifyInstanceGroupsResponse instead of accessing them through ModifyInstanceGroupsResult.")]
-        public ModifyInstanceGroupsResult ModifyInstanceGroupsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

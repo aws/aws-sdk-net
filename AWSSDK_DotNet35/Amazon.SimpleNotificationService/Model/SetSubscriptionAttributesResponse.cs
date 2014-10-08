@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetSubscriptionAttributes service
-    /// </summary>
-    public partial class SetSubscriptionAttributesResponse : SetSubscriptionAttributesResult
+    public partial class SetSubscriptionAttributesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetSubscriptionAttributesResult property.
-        /// Represents the output of a SetSubscriptionAttributes operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetSubscriptionAttributesResult class are now available on the SetSubscriptionAttributesResponse class. You should use the properties on SetSubscriptionAttributesResponse instead of accessing them through SetSubscriptionAttributesResult.")]
-        public SetSubscriptionAttributesResult SetSubscriptionAttributesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

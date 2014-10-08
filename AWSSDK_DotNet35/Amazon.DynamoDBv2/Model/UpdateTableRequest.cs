@@ -30,28 +30,28 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the UpdateTable operation.
     /// Updates the provisioned throughput for the given table. Setting the throughput for
-    /// a table      helps you manage performance and is part of the provisioned throughput
-    /// feature of DynamoDB.
+    /// a table helps you manage performance and is part of the provisioned throughput feature
+    /// of DynamoDB.
     /// 
-    ///     
+    ///  
     /// <para>
     /// The provisioned throughput values can be upgraded or downgraded based on the maximums
-    /// and      minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-    /// section in the      Amazon DynamoDB Developer Guide.
+    /// and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+    /// section in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// The table must be in the <code>ACTIVE</code> state for this operation to succeed.
-    ///        <i>UpdateTable</i> is an asynchronous operation; while executing the operation,
-    /// the table is      in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
-    /// state, the      table still has the provisioned throughput from before the call. The
-    /// new provisioned      throughput setting is in effect only when the table returns to
-    /// the <code>ACTIVE</code> state      after the <i>UpdateTable</i> operation. 
+    /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
+    /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
+    /// state, the table still has the provisioned throughput from before the call. The new
+    /// provisioned throughput setting is in effect only when the table returns to the <code>ACTIVE</code>
+    /// state after the <i>UpdateTable</i> operation. 
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// You cannot add, modify or delete indexes using <i>UpdateTable</i>. Indexes can only
-    /// be      defined at table creation time.
+    /// be defined at table creation time.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
@@ -80,7 +80,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalSecondaryIndexUpdates. 
         /// <para>
         /// An array of one or more global secondary indexes on the table, together with provisioned
-        /// throughput settings      for each index.
+        /// throughput settings for each index.
         /// </para>
         /// </summary>
         public List<GlobalSecondaryIndexUpdate> GlobalSecondaryIndexUpdates

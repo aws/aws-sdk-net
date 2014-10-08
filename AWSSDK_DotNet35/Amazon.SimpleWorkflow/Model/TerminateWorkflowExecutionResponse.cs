@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon TerminateWorkflowExecution service
-    /// </summary>
-    public partial class TerminateWorkflowExecutionResponse : TerminateWorkflowExecutionResult
+    public partial class TerminateWorkflowExecutionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the TerminateWorkflowExecutionResult property.
-        /// Represents the output of a TerminateWorkflowExecution operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the TerminateWorkflowExecutionResult class are now available on the TerminateWorkflowExecutionResponse class. You should use the properties on TerminateWorkflowExecutionResponse instead of accessing them through TerminateWorkflowExecutionResult.")]
-        public TerminateWorkflowExecutionResult TerminateWorkflowExecutionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

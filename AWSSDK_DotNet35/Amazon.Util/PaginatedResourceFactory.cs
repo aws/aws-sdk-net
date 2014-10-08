@@ -40,7 +40,7 @@ namespace Amazon.Util
             (object client, string methodName, object request, string tokenRequestPropertyPath, string tokenResponsePropertyPath, string itemListPropertyPath)
         {
             ITypeInfo clientType = TypeFactory.GetTypeInfo(client.GetType());
-            MethodInfo fetcherMethod = clientType.GetMethod(methodName);
+            MethodInfo fetcherMethod = clientType.GetMethod(methodName, new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(RequestType)) });
 
             Type funcType = GetFuncType<RequestType, ResponseType>();
             Func<RequestType, ResponseType> call = (req) =>
@@ -241,16 +241,12 @@ namespace Amazon.Util
                 throw new ArgumentException("PaginatedResourceInfo.Client needs to be set.");
             }
 
-            //MethodName exists on Client and takes one arguement.
+            //MethodName exists on Client and takes one argument of the declared request type
             Type clientType = Client.GetType();
-            MethodInfo mi = TypeFactory.GetTypeInfo(clientType).GetMethod(MethodName);
+            MethodInfo mi = TypeFactory.GetTypeInfo(clientType).GetMethod(MethodName, new ITypeInfo[] { TypeFactory.GetTypeInfo(Request.GetType()) });
             if (mi == null)
             {
                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "{0} has no method called {1}", clientType.Name, MethodName));
-            }
-            if (mi.GetParameters().Length != 1)
-            {
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "{1} on {0} has incompatable signiture", clientType.Name, MethodName));
             }
 
             //Request is valid type.

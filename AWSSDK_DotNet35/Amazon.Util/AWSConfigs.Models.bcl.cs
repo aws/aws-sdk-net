@@ -102,7 +102,11 @@ namespace Amazon.Util
     {
         internal void Configure(DynamoDBSection section)
         {
-            Context.Configure(section.Context);
+            if (section.ElementInformation.IsPresent)
+            {
+                ConversionSchema = section.ConversionSchema;
+                Context.Configure(section.Context);
+            }
         }
     }
 

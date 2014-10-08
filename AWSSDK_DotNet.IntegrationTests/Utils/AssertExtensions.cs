@@ -39,5 +39,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
             Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
         }
+
+        public static void ExpectException(Action action, Type exceptionType, string exceptionMessage)
+        {
+            bool gotException = false;
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.GetType(), exceptionType);
+                Assert.AreEqual(e.Message, exceptionMessage);
+                gotException = true;
+            }
+
+            Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
+        }
     }
 }

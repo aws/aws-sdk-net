@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteInstance service
-    /// </summary>
-    public partial class DeleteInstanceResponse : DeleteInstanceResult
+    public partial class DeleteInstanceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteInstanceResult property.
-        /// Represents the output of a DeleteInstance operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteInstanceResult class are now available on the DeleteInstanceResponse class. You should use the properties on DeleteInstanceResponse instead of accessing them through DeleteInstanceResult.")]
-        public DeleteInstanceResult DeleteInstanceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

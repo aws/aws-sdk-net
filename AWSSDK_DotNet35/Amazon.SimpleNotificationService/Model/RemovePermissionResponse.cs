@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RemovePermission service
-    /// </summary>
-    public partial class RemovePermissionResponse : RemovePermissionResult
+    public partial class RemovePermissionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RemovePermissionResult property.
-        /// Represents the output of a RemovePermission operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RemovePermissionResult class are now available on the RemovePermissionResponse class. You should use the properties on RemovePermissionResponse instead of accessing them through RemovePermissionResult.")]
-        public RemovePermissionResult RemovePermissionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ResyncMFADevice service
-    /// </summary>
-    public partial class ResyncMFADeviceResponse : ResyncMFADeviceResult
+    public partial class ResyncMFADeviceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ResyncMFADeviceResult property.
-        /// Represents the output of a ResyncMFADevice operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ResyncMFADeviceResult class are now available on the ResyncMFADeviceResponse class. You should use the properties on ResyncMFADeviceResponse instead of accessing them through ResyncMFADeviceResult.")]
-        public ResyncMFADeviceResult ResyncMFADeviceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleDB.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteDomain service
-    /// </summary>
-    public partial class DeleteDomainResponse : DeleteDomainResult
+    public partial class DeleteDomainResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteDomainResult property.
-        /// Represents the output of a DeleteDomain operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteDomainResult class are now available on the DeleteDomainResponse class. You should use the properties on DeleteDomainResponse instead of accessing them through DeleteDomainResult.")]
-        public DeleteDomainResult DeleteDomainResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

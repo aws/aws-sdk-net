@@ -74,6 +74,20 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConsistentRead);
                 }
 
+                if(publicRequest.IsSetExpressionAttributeNames())
+                {
+                    context.Writer.WritePropertyName("ExpressionAttributeNames");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExpressionAttributeNamesKvp in publicRequest.ExpressionAttributeNames)
+                    {
+                        context.Writer.WritePropertyName(publicRequestExpressionAttributeNamesKvp.Key);
+                        var publicRequestExpressionAttributeNamesValue = publicRequestExpressionAttributeNamesKvp.Value;
+
+                            context.Writer.Write(publicRequestExpressionAttributeNamesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKey())
                 {
                     context.Writer.WritePropertyName("Key");
@@ -91,6 +105,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetProjectionExpression())
+                {
+                    context.Writer.WritePropertyName("ProjectionExpression");
+                    context.Writer.Write(publicRequest.ProjectionExpression);
                 }
 
                 if(publicRequest.IsSetReturnConsumedCapacity())

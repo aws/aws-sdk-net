@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the AttachInternetGateway operation.
     /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
     /// and the VPC. For more information about your VPC and Internet gateway, see the <a
-    /// href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
     /// Cloud User Guide</a>.
     /// </summary>
     public partial class AttachInternetGatewayRequest : AmazonEC2Request

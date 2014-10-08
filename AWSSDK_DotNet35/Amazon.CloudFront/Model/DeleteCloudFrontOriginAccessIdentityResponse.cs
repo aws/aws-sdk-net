@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteCloudFrontOriginAccessIdentity service
-    /// </summary>
-    public partial class DeleteCloudFrontOriginAccessIdentityResponse : DeleteCloudFrontOriginAccessIdentityResult
+    public partial class DeleteCloudFrontOriginAccessIdentityResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteCloudFrontOriginAccessIdentityResult property.
-        /// Represents the output of a DeleteCloudFrontOriginAccessIdentity operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteCloudFrontOriginAccessIdentityResult class are now available on the DeleteCloudFrontOriginAccessIdentityResponse class. You should use the properties on DeleteCloudFrontOriginAccessIdentityResponse instead of accessing them through DeleteCloudFrontOriginAccessIdentityResult.")]
-        public DeleteCloudFrontOriginAccessIdentityResult DeleteCloudFrontOriginAccessIdentityResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

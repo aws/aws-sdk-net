@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeletePolicy service
-    /// </summary>
-    public partial class DeletePolicyResponse : DeletePolicyResult
+    public partial class DeletePolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeletePolicyResult property.
-        /// Represents the output of a DeletePolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeletePolicyResult class are now available on the DeletePolicyResponse class. You should use the properties on DeletePolicyResponse instead of accessing them through DeletePolicyResult.")]
-        public DeletePolicyResult DeletePolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

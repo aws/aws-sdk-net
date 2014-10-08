@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents the provisioned throughput settings for the table, consisting of read and
-    /// write      capacity units, along with data about increases and decreases.
+    /// write capacity units, along with data about increases and decreases.
     /// </summary>
     public partial class ProvisionedThroughputDescription
     {
@@ -79,8 +79,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property NumberOfDecreasesToday. 
         /// <para>
         /// The number of provisioned throughput decreases for this table during this UTC calendar
-        /// day.      For current maximums on provisioned throughput decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-        /// in the Amazon DynamoDB Developer Guide.
+        /// day. For current maximums on provisioned throughput decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public long NumberOfDecreasesToday
@@ -99,9 +99,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a        <i>ThrottlingException</i>. Eventually consistent reads require less
-        /// effort than strongly      consistent reads, so a setting of 50 <i>ReadCapacityUnits</i>
-        /// per second provides 100      eventually consistent <i>ReadCapacityUnits</i> per second.
+        /// returns a <i>ThrottlingException</i>. Eventually consistent reads require less effort
+        /// than strongly consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per second
+        /// provides 100 eventually consistent <i>ReadCapacityUnits</i> per second.
         /// </para>
         /// </summary>
         public long ReadCapacityUnits
@@ -119,8 +119,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a       
-        /// <i>ThrottlingException</i>.
+        /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
         /// </para>
         /// </summary>
         public long WriteCapacityUnits

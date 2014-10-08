@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteDhcpOptions service
-    /// </summary>
-    public partial class DeleteDhcpOptionsResponse : DeleteDhcpOptionsResult
+    public partial class DeleteDhcpOptionsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteDhcpOptionsResult property.
-        /// Represents the output of a DeleteDhcpOptions operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteDhcpOptionsResult class are now available on the DeleteDhcpOptionsResponse class. You should use the properties on DeleteDhcpOptionsResponse instead of accessing them through DeleteDhcpOptionsResult.")]
-        public DeleteDhcpOptionsResult DeleteDhcpOptionsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

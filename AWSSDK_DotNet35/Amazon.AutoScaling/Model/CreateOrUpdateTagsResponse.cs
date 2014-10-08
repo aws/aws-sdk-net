@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateOrUpdateTags service
-    /// </summary>
-    public partial class CreateOrUpdateTagsResponse : CreateOrUpdateTagsResult
+    public partial class CreateOrUpdateTagsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateOrUpdateTagsResult property.
-        /// Represents the output of a CreateOrUpdateTags operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateOrUpdateTagsResult class are now available on the CreateOrUpdateTagsResponse class. You should use the properties on CreateOrUpdateTagsResponse instead of accessing them through CreateOrUpdateTagsResult.")]
-        public CreateOrUpdateTagsResult CreateOrUpdateTagsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteInternetGateway service
-    /// </summary>
-    public partial class DeleteInternetGatewayResponse : DeleteInternetGatewayResult
+    public partial class DeleteInternetGatewayResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteInternetGatewayResult property.
-        /// Represents the output of a DeleteInternetGateway operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteInternetGatewayResult class are now available on the DeleteInternetGatewayResponse class. You should use the properties on DeleteInternetGatewayResponse instead of accessing them through DeleteInternetGatewayResult.")]
-        public DeleteInternetGatewayResult DeleteInternetGatewayResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

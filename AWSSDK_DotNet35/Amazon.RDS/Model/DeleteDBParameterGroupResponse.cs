@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteDBParameterGroup service
-    /// </summary>
-    public partial class DeleteDBParameterGroupResponse : DeleteDBParameterGroupResult
+    public partial class DeleteDBParameterGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteDBParameterGroupResult property.
-        /// Represents the output of a DeleteDBParameterGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteDBParameterGroupResult class are now available on the DeleteDBParameterGroupResponse class. You should use the properties on DeleteDBParameterGroupResponse instead of accessing them through DeleteDBParameterGroupResult.")]
-        public DeleteDBParameterGroupResult DeleteDBParameterGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

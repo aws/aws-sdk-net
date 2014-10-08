@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon EnableVolumeIO service
-    /// </summary>
-    public partial class EnableVolumeIOResponse : EnableVolumeIOResult
+    public partial class EnableVolumeIOResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the EnableVolumeIOResult property.
-        /// Represents the output of a EnableVolumeIO operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the EnableVolumeIOResult class are now available on the EnableVolumeIOResponse class. You should use the properties on EnableVolumeIOResponse instead of accessing them through EnableVolumeIOResult.")]
-        public EnableVolumeIOResult EnableVolumeIOResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

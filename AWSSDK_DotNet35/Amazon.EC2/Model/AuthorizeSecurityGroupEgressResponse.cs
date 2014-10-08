@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AuthorizeSecurityGroupEgress service
-    /// </summary>
-    public partial class AuthorizeSecurityGroupEgressResponse : AuthorizeSecurityGroupEgressResult
+    public partial class AuthorizeSecurityGroupEgressResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AuthorizeSecurityGroupEgressResult property.
-        /// Represents the output of a AuthorizeSecurityGroupEgress operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AuthorizeSecurityGroupEgressResult class are now available on the AuthorizeSecurityGroupEgressResponse class. You should use the properties on AuthorizeSecurityGroupEgressResponse instead of accessing them through AuthorizeSecurityGroupEgressResult.")]
-        public AuthorizeSecurityGroupEgressResult AuthorizeSecurityGroupEgressResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

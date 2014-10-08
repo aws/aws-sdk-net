@@ -49,6 +49,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return PutItemHelper(doc, config, false);
         }
 
+        /// <summary>
+        /// Puts a document into DynamoDB, using specified configs.
+        /// </summary>
+        /// <param name="doc">Document to save.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if put was successful or false if the condition in the config was not met.</returns>
+        public bool TryPutItem(Document doc, PutItemOperationConfig config)
+        {
+            try
+            {
+                PutItemHelper(doc, config, false);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         #endregion
 
 
@@ -175,6 +194,27 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return UpdateHelper(doc, MakeKey(doc), config, false);
         }
+
+        /// <summary>
+        /// Update a document in DynamoDB, using specified config.
+        /// </summary>
+        /// <param name="doc">Document to update.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if updated or false if the condition in the config was not met.</returns>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
+        public bool TryUpdateItem(Document doc, UpdateItemOperationConfig config)
+        {
+            try
+            {
+                UpdateHelper(doc, MakeKey(doc), config, false);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Update a document in DynamoDB, with a key to identify the
         /// document, and using the specified config.
@@ -188,6 +228,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return UpdateHelper(doc, MakeKey(key), config, false);
         }
+
+        /// <summary>
+        /// Update a document in DynamoDB, with a key to identify the
+        /// document, and using the specified config.
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if updated or false if the condition in the config was not met.</returns>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
+        public bool TryUpdateItem(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config)
+        {
+            try
+            {
+                UpdateHelper(doc, MakeKey(key), config, false);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Update a document in DynamoDB, with a hash primary key to identify the
         /// document, and using the specified config.
@@ -201,6 +264,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return UpdateHelper(doc, MakeKey(hashKey, null), config, false);
         }
+
+        /// <summary>
+        /// Update a document in DynamoDB, with a hash primary key to identify the
+        /// document, and using the specified config.
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if updated or false if the condition in the config was not met.</returns>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
+        public bool TryUpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config)
+        {
+            try
+            {
+                UpdateHelper(doc, MakeKey(hashKey, null), config, false);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Update a document in DynamoDB, with a hash-and-range primary key to identify
         /// the document, and using the specified config.
@@ -216,6 +302,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, false);
         }
 
+        /// <summary>
+        /// Update a document in DynamoDB, with a hash-and-range primary key to identify
+        /// the document, and using the specified config.
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if updated or false if the condition in the config was not met.</returns>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
+        public bool TryUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
+        {
+            try
+            {
+                UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, false);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         #endregion
 
 
@@ -229,6 +338,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             DeleteHelper(MakeKey(document), null, false);
         }
+
+
         /// <summary>
         /// Delete a document in DynamoDB, identified by a hash primary key.
         /// </summary>
@@ -258,6 +369,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Delete a document in DynamoDB, using specified configs.
         /// </summary>
+        /// <exception cref="T:Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">If the condition set on the config fails.</exception>
         /// <param name="document">Document to delete.</param>
         /// <param name="config">Configuration to use.</param>
         /// <returns>Null or old attributes, depending on config.</returns>
@@ -265,10 +377,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return DeleteHelper(MakeKey(document), config, false);
         }
+
+        /// <summary>
+        /// Delete a document in DynamoDB, using specified configs.
+        /// </summary>
+        /// <param name="document">Document to delete.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if deleted or false if the condition in the config was not met.</returns>
+        public bool TryDeleteItem(Document document, DeleteItemOperationConfig config)
+        {
+            try
+            {
+                DeleteItem(document, config);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Delete a document in DynamoDB, identified by a hash primary key,
         /// using specified configs.
         /// </summary>
+        /// <exception cref="T:Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">If the condition set on the config fails.</exception>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="config">Configuration to use.</param>
         /// <returns>Null or old attributes, depending on config.</returns>
@@ -276,10 +409,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return DeleteHelper(MakeKey(hashKey, null), config, false);
         }
+
+        /// <summary>
+        /// Delete a document in DynamoDB, identified by a hash primary key,
+        /// using specified configs.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if deleted or false if the condition in the config was not met.</returns>
+        public bool TryDeleteItem(Primitive hashKey, DeleteItemOperationConfig config)
+        {
+            try
+            {
+                DeleteItem(hashKey, config);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Delete a document in DynamoDB, identified by hash-and-range primary key,
         /// using the specified configs.
         /// </summary>
+        /// <exception cref="T:Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">If the condition set on the config fails.</exception>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="rangeKey">Range key element of the document.</param>
         /// <param name="config">Configuration to use.</param>
@@ -288,15 +443,57 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return DeleteHelper(MakeKey(hashKey, rangeKey), config, false);
         }
+
+        /// <summary>
+        /// Delete a document in DynamoDB, identified by hash-and-range primary key,
+        /// using the specified configs.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if deleted or false if the condition in the config was not met.</returns>
+        public bool TryDeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config)
+        {
+            try
+            {
+                DeleteItem(hashKey, rangeKey, config);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Delete a document in DynamoDB, identified by a key, using specified configs.
         /// </summary>
+        /// <exception cref="T:Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">If the condition set on the config fails.</exception>
         /// <param name="key">Key of the document.</param>
         /// <param name="config">Configuration to use.</param>
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config)
         {
             return DeleteHelper(MakeKey(key), config, false);
+        }
+
+        /// <summary>
+        /// Delete a document in DynamoDB, identified by a key, using specified configs.
+        /// </summary>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>True if deleted or false if the condition in the config was not met.</returns>
+        public bool TryDeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config)
+        {
+            try
+            {
+                DeleteHelper(MakeKey(key), config, false);
+                return true;
+            }
+            catch (ConditionalCheckFailedException)
+            {
+                return false;
+            }
         }
 
         #endregion

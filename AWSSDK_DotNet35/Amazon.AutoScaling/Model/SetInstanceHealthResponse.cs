@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetInstanceHealth service
-    /// </summary>
-    public partial class SetInstanceHealthResponse : SetInstanceHealthResult
+    public partial class SetInstanceHealthResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetInstanceHealthResult property.
-        /// Represents the output of a SetInstanceHealth operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetInstanceHealthResult class are now available on the SetInstanceHealthResponse class. You should use the properties on SetInstanceHealthResponse instead of accessing them through SetInstanceHealthResult.")]
-        public SetInstanceHealthResult SetInstanceHealthResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

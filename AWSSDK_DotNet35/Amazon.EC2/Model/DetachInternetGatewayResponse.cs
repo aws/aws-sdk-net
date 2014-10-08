@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DetachInternetGateway service
-    /// </summary>
-    public partial class DetachInternetGatewayResponse : DetachInternetGatewayResult
+    public partial class DetachInternetGatewayResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DetachInternetGatewayResult property.
-        /// Represents the output of a DetachInternetGateway operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DetachInternetGatewayResult class are now available on the DetachInternetGatewayResponse class. You should use the properties on DetachInternetGatewayResponse instead of accessing them through DetachInternetGatewayResult.")]
-        public DetachInternetGatewayResult DetachInternetGatewayResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

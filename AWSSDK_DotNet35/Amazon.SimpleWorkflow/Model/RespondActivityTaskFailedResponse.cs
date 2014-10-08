@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RespondActivityTaskFailed service
-    /// </summary>
-    public partial class RespondActivityTaskFailedResponse : RespondActivityTaskFailedResult
+    public partial class RespondActivityTaskFailedResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RespondActivityTaskFailedResult property.
-        /// Represents the output of a RespondActivityTaskFailed operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RespondActivityTaskFailedResult class are now available on the RespondActivityTaskFailedResponse class. You should use the properties on RespondActivityTaskFailedResponse instead of accessing them through RespondActivityTaskFailedResult.")]
-        public RespondActivityTaskFailedResult RespondActivityTaskFailedResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

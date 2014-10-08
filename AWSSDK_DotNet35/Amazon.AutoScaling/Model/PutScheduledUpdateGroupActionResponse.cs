@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutScheduledUpdateGroupAction service
-    /// </summary>
-    public partial class PutScheduledUpdateGroupActionResponse : PutScheduledUpdateGroupActionResult
+    public partial class PutScheduledUpdateGroupActionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutScheduledUpdateGroupActionResult property.
-        /// Represents the output of a PutScheduledUpdateGroupAction operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutScheduledUpdateGroupActionResult class are now available on the PutScheduledUpdateGroupActionResponse class. You should use the properties on PutScheduledUpdateGroupActionResponse instead of accessing them through PutScheduledUpdateGroupActionResult.")]
-        public PutScheduledUpdateGroupActionResult PutScheduledUpdateGroupActionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -18,6 +18,8 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.Model;
 using System.IO;
+using System.Globalization;
+using Amazon.Util;
 
 #if (WIN_RT || WINDOWS_PHONE)
 using Amazon.MissingTypes;
@@ -27,21 +29,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
 {
 
     /// <summary>
-    /// Enumerator describing type of DynamoDB data
-    /// </summary>
-    public enum DynamoDBEntryType { String, Numeric, Binary }
-
-    /// <summary>
     /// Abstract class representing an arbitrary DynamoDB attribute value
     /// </summary>
     public abstract class DynamoDBEntry : ICloneable
     {
+        internal class AttributeConversionConfig
+        {
+            public CircularReferenceTracking CRT { get; private set; }
+            public DynamoDBEntryConversion Conversion { get; private set; }
+
+            public AttributeConversionConfig(DynamoDBEntryConversion conversion)
+            {
+                Conversion = conversion;
+                CRT = new CircularReferenceTracking();
+            }
+        }
+
         #region Internal conversion methods
 
-        internal abstract AttributeValue ConvertToAttributeValue();
-        internal ExpectedAttributeValue ConvertToExpectedAttributeValue()
+        internal abstract AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig);
+        internal ExpectedAttributeValue ConvertToExpectedAttributeValue(AttributeConversionConfig conversionConfig)
         {
-            AttributeValue attributeValue = ConvertToAttributeValue();
+            AttributeValue attributeValue = ConvertToAttributeValue(conversionConfig);
 
             ExpectedAttributeValue expectedAttribute = new ExpectedAttributeValue();
             if (attributeValue == null)
@@ -56,9 +65,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return expectedAttribute;
         }
-        internal AttributeValueUpdate ConvertToAttributeUpdateValue()
+        internal AttributeValueUpdate ConvertToAttributeUpdateValue(AttributeConversionConfig conversionConfig)
         {
-            AttributeValue attributeValue = ConvertToAttributeValue();
+            AttributeValue attributeValue = ConvertToAttributeValue(conversionConfig);
 
             AttributeValueUpdate attributeUpdate = new AttributeValueUpdate();
             if (attributeValue == null)
@@ -93,16 +102,111 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Convert DynamoDBEntry to PrimitiveList
         /// </summary>
         /// <returns>
-        /// AsPrimitiveList if DynamoDBEntry is of AsPrimitiveList type; otherwise null
+        /// PrimitiveList if DynamoDBEntry is of PrimitiveList type; otherwise null
         /// </returns>
         public PrimitiveList AsPrimitiveList()
         {
             return (this as PrimitiveList);
         }
 
+        /// <summary>
+        /// Convert DynamoDBEntry to DynamoDBList
+        /// </summary>
+        /// <returns>
+        /// DynamoDBList if DynamoDBEntry is of DynamoDBList type; otherwise null
+        /// </returns>
+        public DynamoDBList AsDynamoDBList()
+        {
+            return (this as DynamoDBList);
+        }
+
+        /// <summary>
+        /// Convert DynamoDBEntry to DynamoDBBool
+        /// </summary>
+        /// <returns>
+        /// DynamoDBBool if DynamoDBEntry is of DynamoDBBool type; otherwise null
+        /// </returns>
+        public DynamoDBBool AsDynamoDBBool()
+        {
+            return (this as DynamoDBBool);
+        }
+
+        /// <summary>
+        /// Convert DynamoDBEntry to DynamoDBNull
+        /// </summary>
+        /// <returns>
+        /// DynamoDBNull if DynamoDBEntry is of DynamoDBNull type; otherwise null
+        /// </returns>
+        public DynamoDBNull AsDynamoDBNull()
+        {
+            return (this as DynamoDBNull);
+        }
+
+        /// <summary>
+        /// Convert DynamoDBEntry to Document
+        /// </summary>
+        /// <returns>
+        /// Document if DynamoDBEntry is of Document type; otherwise null
+        /// </returns>
+        public Document AsDocument()
+        {
+            return (this as Document);
+        }
+
         #endregion
 
-        #region Explicit and Implicit conversions
+        #region Subclass conversion and validation
+
+        internal DynamoDBEntry ToConvertedEntry(DynamoDBEntryConversion conversion)
+        {
+            var unconverted = this as UnconvertedDynamoDBEntry;
+            if (unconverted == null)
+                return this;
+            else
+                return unconverted.Convert(conversion);
+        }
+
+        internal Primitive ToPrimitive()
+        {
+            return Validate(AsPrimitive());
+        }
+
+        internal PrimitiveList ToPrimitiveList()
+        {
+            return Validate(AsPrimitiveList());
+        }
+
+        internal DynamoDBList ToDynamoDBList()
+        {
+            return Validate(AsDynamoDBList());
+        }
+
+        internal DynamoDBBool ToDynamoDBBool()
+        {
+            return Validate(AsDynamoDBBool());
+        }
+
+        internal DynamoDBNull ToDynamoDBNull()
+        {
+            return Validate(AsDynamoDBNull());
+        }
+
+        internal Document ToDocument()
+        {
+            return Validate(AsDocument());
+        }
+
+        private T Validate<T>(T item)
+        {
+            if (item == null)
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to cast {0} as {1}", GetType().FullName, typeof(T).FullName));
+            return item;
+        }
+
+        #endregion
+
+        #region Explicit and Implicit conversions, base types
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Boolean
@@ -119,8 +223,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Boolean data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Boolean
@@ -131,8 +234,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsBoolean();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Byte
@@ -149,8 +250,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Byte data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Byte
@@ -161,8 +261,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsByte();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to SByte
@@ -181,8 +279,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(SByte data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to SByte
@@ -194,8 +291,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsSByte();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to UInt16
@@ -214,8 +309,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(UInt16 data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to UInt16
@@ -227,8 +321,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsUShort();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Int16
@@ -245,8 +337,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Int16 data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Int16
@@ -257,8 +348,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsShort();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to UInt32
@@ -277,8 +366,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(UInt32 data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to UInt32
@@ -290,8 +378,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsUInt();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Int32
@@ -308,8 +394,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Int32 data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Int32
@@ -320,8 +405,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsInt();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to UInt64
@@ -340,8 +423,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(UInt64 data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to UInt64
@@ -353,8 +435,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsULong();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Int64
@@ -371,8 +451,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Int64 data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Int64
@@ -383,8 +462,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsLong();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Single
@@ -401,8 +478,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Single data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Single
@@ -413,8 +489,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsSingle();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Double
@@ -431,8 +505,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Double data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Double
@@ -443,8 +516,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsDouble();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Decimal
@@ -461,8 +532,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Decimal data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Decimal
@@ -473,8 +543,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsDecimal();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Char
@@ -491,8 +559,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Char data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Char
@@ -503,8 +570,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsChar();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to String
@@ -521,8 +586,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(String data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to String
@@ -533,8 +597,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsString();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to DateTime
@@ -551,8 +613,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(DateTime data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to DateTime
@@ -563,8 +624,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsDateTime();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Guid
@@ -581,8 +640,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(Guid data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to Guid
@@ -593,8 +651,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsGuid();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to byte[]
@@ -611,8 +667,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(byte[] data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to byte[]
@@ -623,8 +678,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return p.AsByteArray();
         }
-
-
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to MemoryStream
@@ -641,8 +694,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(MemoryStream data)
         {
-            Primitive p = data;
-            return p;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to MemoryStream
@@ -654,13 +706,68 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return p.AsMemoryStream();
         }
 
+        #endregion
 
+        #region Explicit and Implicit conversions, lists and sets
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to DynamoDBEntry[]
+        /// </summary>
+        /// <returns>DynamoDBEntry[] value of this object</returns>
+        public virtual DynamoDBEntry[] AsArrayOfDynamoDBEntry()
+        {
+            return AsListOfDynamoDBEntry().ToArray();
+        }
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;DynamoDBEntry&gt;
+        /// </summary>
+        /// <returns>List&lt;DynamoDBEntry&gt; value of this object</returns>
+        public virtual List<DynamoDBEntry> AsListOfDynamoDBEntry()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;DynamoDBEntry&gt;
+        /// </summary>
+        /// <returns>HashSet&lt;DynamoDBEntry&gt; value of this object</returns>
+        public virtual HashSet<DynamoDBEntry> AsHashSetOfDynamoDBEntry()
+        {
+            throw new InvalidCastException();
+        }
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to Primitive[]
+        /// </summary>
+        /// <returns>Primitive[] value of this object</returns>
+        public virtual Primitive[] AsArrayOfPrimitive()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert Primitive[] to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">Primitive[] data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(Primitive[] data)
+        {
+            return new UnconvertedDynamoDBEntry(data);
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to Primitive[]
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>Primitive[] value of DynamoDBEntry</returns>
+        public static explicit operator Primitive[](DynamoDBEntry p)
+        {
+            return p.AsArrayOfPrimitive();
+        }
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;Primitive&gt;
         /// </summary>
         /// <returns>List&lt;Primitive&gt; value of this object</returns>
-        public virtual List<Primitive> AsListOfPrimitives()
+        public virtual List<Primitive> AsListOfPrimitive()
         {
             throw new InvalidCastException();
         }
@@ -671,8 +778,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(List<Primitive> data)
         {
-            PrimitiveList pl = data;
-            return pl;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;Primitive&gt;
@@ -681,10 +787,63 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;Primitive&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<Primitive>(DynamoDBEntry p)
         {
-            return p.AsListOfPrimitives();
+            return p.AsListOfPrimitive();
+        }
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;Primitive&gt;
+        /// </summary>
+        /// <returns>HashSet&lt;Primitive&gt; value of this object</returns>
+        public virtual HashSet<Primitive> AsHashSetOfPrimitive()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;Primitive&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">HashSet&lt;Primitive&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(HashSet<Primitive> data)
+        {
+            return new UnconvertedDynamoDBEntry(data);
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;Primitive&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>HashSet&lt;Primitive&gt; value of DynamoDBEntry</returns>
+        public static explicit operator HashSet<Primitive>(DynamoDBEntry p)
+        {
+            return p.AsHashSetOfPrimitive();
         }
 
 
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to String[]
+        /// </summary>
+        /// <returns>String[] value of this object</returns>
+        public virtual String[] AsArrayOfString()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert String[] to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">String[] data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(String[] data)
+        {
+            return new UnconvertedDynamoDBEntry(data);
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to String[]
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>String[] value of DynamoDBEntry</returns>
+        public static explicit operator String[](DynamoDBEntry p)
+        {
+            return p.AsArrayOfString();
+        }
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;String&gt;
@@ -701,8 +860,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(List<String> data)
         {
-            PrimitiveList pl = data;
-            return pl;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;String&gt;
@@ -714,7 +872,33 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return p.AsListOfString();
         }
 
-        
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;String&gt;
+        /// </summary>
+        /// <returns>List&lt;String&gt; value of this object</returns>
+        public virtual HashSet<String> AsHashSetOfString()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;String&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">HashSet&lt;String&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(HashSet<String> data)
+        {
+            return new UnconvertedDynamoDBEntry(data);
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;String&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>HashSet&lt;String&gt; value of DynamoDBEntry</returns>
+        public static explicit operator HashSet<String>(DynamoDBEntry p)
+        {
+            return p.AsHashSetOfString();
+        }
+
 
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;byte[]&gt;
@@ -731,8 +915,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(List<byte[]> data)
         {
-            PrimitiveList pl = data;
-            return pl;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;byte[]&gt;
@@ -744,6 +927,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return p.AsListOfByteArray();
         }
 
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;byte[]&gt;
+        /// </summary>
+        /// <returns>HashSet&lt;byte[]&gt; value of this object</returns>
+        public virtual HashSet<byte[]> AsHashSetOfByteArray()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;byte[]&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">HashSet&lt;byte[]&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(HashSet<byte[]> data)
+        {
+            return new UnconvertedDynamoDBEntry(data);
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;byte[]&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>HashSet&lt;byte[]&gt; value of DynamoDBEntry</returns>
+        public static explicit operator HashSet<byte[]>(DynamoDBEntry p)
+        {
+            return p.AsHashSetOfByteArray();
+        }
 
 
         /// <summary>
@@ -761,8 +970,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(List<MemoryStream> data)
         {
-            PrimitiveList pl = data;
-            return pl;
+            return new UnconvertedDynamoDBEntry(data);
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;MemoryStream&gt;
@@ -774,9 +982,190 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return p.AsListOfMemoryStream();
         }
 
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;MemoryStream&gt;
+        /// </summary>
+        /// <returns>HashSet&lt;MemoryStream&gt; value of this object</returns>
+        public virtual HashSet<MemoryStream> AsHashSetOfMemoryStream()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert HashSet&lt;MemoryStream&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">HashSet&lt;MemoryStream&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(HashSet<MemoryStream> data)
+        {
+            return new UnconvertedDynamoDBEntry(data);
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to HashSet&lt;MemoryStream&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>HashSet&lt;MemoryStream&gt; value of DynamoDBEntry</returns>
+        public static explicit operator HashSet<MemoryStream>(DynamoDBEntry p)
+        {
+            return p.AsHashSetOfMemoryStream();
+        }
+
         #endregion
 
+        #region Abstract methods
+
         public abstract object Clone();
+
+        #endregion
     }
 
+    /// <summary>
+    /// A DynamoDBEntry holding an unconverted object.
+    /// The entry is converted to a converted DynamoDBEntry either by the
+    /// consuming Document or Table.
+    /// </summary>
+    internal class UnconvertedDynamoDBEntry : DynamoDBEntry
+    {
+        private object Value;
+        private Type ValueType;
+
+        public UnconvertedDynamoDBEntry(object value)
+        {
+            if (value == null)
+                throw new ArgumentNullException("value");
+
+            Value = value;
+            ValueType = value.GetType();
+        }
+
+        internal override AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig)
+        {
+            using (conversionConfig.CRT.Track(Value))
+            {
+                var convertedEntry = Convert(conversionConfig.Conversion);
+                return convertedEntry.ConvertToAttributeValue(conversionConfig);
+            }
+        }
+
+        public DynamoDBEntry Convert(DynamoDBEntryConversion conversion)
+        {
+            var convertedEntry = conversion.ConvertToEntry(ValueType, Value);
+            return convertedEntry;
+        }
+
+        public override object Clone()
+        {
+            return new UnconvertedDynamoDBEntry(Value);
+        }
+
+        #region Conversion overrides - Convert.ChangeType
+
+        public override bool AsBoolean()
+        {
+            return (bool)System.Convert.ChangeType(Value, typeof(bool), CultureInfo.InvariantCulture);
+        }
+        public override byte AsByte()
+        {
+            return (byte)System.Convert.ChangeType(Value, typeof(byte), CultureInfo.InvariantCulture);
+        }
+        public override string AsString()
+        {
+            return System.Convert.ChangeType(Value, typeof(string), CultureInfo.InvariantCulture) as string;
+        }
+        public override char AsChar()
+        {
+            return (char)System.Convert.ChangeType(Value, typeof(char), CultureInfo.InvariantCulture);
+        }
+        public override DateTime AsDateTime()
+        {
+            return (DateTime)System.Convert.ChangeType(Value, typeof(DateTime), CultureInfo.InvariantCulture);
+        }
+        public override decimal AsDecimal()
+        {
+            return (decimal)System.Convert.ChangeType(Value, typeof(decimal), CultureInfo.InvariantCulture);
+        }
+        public override double AsDouble()
+        {
+            return (double)System.Convert.ChangeType(Value, typeof(double), CultureInfo.InvariantCulture);
+        }
+        public override int AsInt()
+        {
+            return (int)System.Convert.ChangeType(Value, typeof(int), CultureInfo.InvariantCulture);
+        }
+        public override long AsLong()
+        {
+            return (long)System.Convert.ChangeType(Value, typeof(long), CultureInfo.InvariantCulture);
+        }
+        public override sbyte AsSByte()
+        {
+            return (sbyte)System.Convert.ChangeType(Value, typeof(sbyte), CultureInfo.InvariantCulture);
+        }
+        public override short AsShort()
+        {
+            return (short)System.Convert.ChangeType(Value, typeof(short), CultureInfo.InvariantCulture);
+        }
+        public override float AsSingle()
+        {
+            return (float)System.Convert.ChangeType(Value, typeof(float), CultureInfo.InvariantCulture);
+        }
+        public override uint AsUInt()
+        {
+            return (uint)System.Convert.ChangeType(Value, typeof(uint), CultureInfo.InvariantCulture);
+        }
+        public override ulong AsULong()
+        {
+            return (ulong)System.Convert.ChangeType(Value, typeof(ulong), CultureInfo.InvariantCulture);
+        }
+        public override ushort AsUShort()
+        {
+            return (ushort)System.Convert.ChangeType(Value, typeof(ushort), CultureInfo.InvariantCulture);
+        }
+
+        public override string[] AsArrayOfString()
+        {
+            return base.AsArrayOfString();
+        }
+
+        #endregion
+
+        #region Conversion overrides - Cast
+
+        public override byte[] AsByteArray()
+        {
+            return (byte[])Value;
+        }
+        public override Guid AsGuid()
+        {
+            return (Guid)Value;
+        }
+        public override MemoryStream AsMemoryStream()
+        {
+            return (MemoryStream)Value;
+        }
+        public override List<string> AsListOfString()
+        {
+            return (List<string>)Value;
+        }
+        public override HashSet<byte[]> AsHashSetOfByteArray()
+        {
+            return (HashSet<byte[]>)Value;
+        }
+        public override HashSet<MemoryStream> AsHashSetOfMemoryStream()
+        {
+            return (HashSet<MemoryStream>)Value;
+        }
+        public override HashSet<string> AsHashSetOfString()
+        {
+            return (HashSet<string>)Value;
+        }
+        public override List<byte[]> AsListOfByteArray()
+        {
+            return (List<byte[]>)Value;
+        }
+        public override List<MemoryStream> AsListOfMemoryStream()
+        {
+            return (List<MemoryStream>)Value;
+        } 
+
+        #endregion
+    }
 }

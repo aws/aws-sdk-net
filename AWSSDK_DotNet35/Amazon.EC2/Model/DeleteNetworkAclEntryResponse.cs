@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteNetworkAclEntry service
-    /// </summary>
-    public partial class DeleteNetworkAclEntryResponse : DeleteNetworkAclEntryResult
+    public partial class DeleteNetworkAclEntryResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteNetworkAclEntryResult property.
-        /// Represents the output of a DeleteNetworkAclEntry operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteNetworkAclEntryResult class are now available on the DeleteNetworkAclEntryResponse class. You should use the properties on DeleteNetworkAclEntryResponse instead of accessing them through DeleteNetworkAclEntryResult.")]
-        public DeleteNetworkAclEntryResult DeleteNetworkAclEntryResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

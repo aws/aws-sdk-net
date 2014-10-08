@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RegisterRdsDbInstance service
-    /// </summary>
-    public partial class RegisterRdsDbInstanceResponse : RegisterRdsDbInstanceResult
+    public partial class RegisterRdsDbInstanceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RegisterRdsDbInstanceResult property.
-        /// Represents the output of a RegisterRdsDbInstance operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RegisterRdsDbInstanceResult class are now available on the RegisterRdsDbInstanceResponse class. You should use the properties on RegisterRdsDbInstanceResponse instead of accessing them through RegisterRdsDbInstanceResult.")]
-        public RegisterRdsDbInstanceResult RegisterRdsDbInstanceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

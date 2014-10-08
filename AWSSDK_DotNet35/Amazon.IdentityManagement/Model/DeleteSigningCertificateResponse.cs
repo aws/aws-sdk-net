@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteSigningCertificate service
-    /// </summary>
-    public partial class DeleteSigningCertificateResponse : DeleteSigningCertificateResult
+    public partial class DeleteSigningCertificateResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteSigningCertificateResult property.
-        /// Represents the output of a DeleteSigningCertificate operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteSigningCertificateResult class are now available on the DeleteSigningCertificateResponse class. You should use the properties on DeleteSigningCertificateResponse instead of accessing them through DeleteSigningCertificateResult.")]
-        public DeleteSigningCertificateResult DeleteSigningCertificateResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

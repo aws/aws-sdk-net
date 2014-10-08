@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon TerminateJobFlows service
-    /// </summary>
-    public partial class TerminateJobFlowsResponse : TerminateJobFlowsResult
+    public partial class TerminateJobFlowsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the TerminateJobFlowsResult property.
-        /// Represents the output of a TerminateJobFlows operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the TerminateJobFlowsResult class are now available on the TerminateJobFlowsResponse class. You should use the properties on TerminateJobFlowsResponse instead of accessing them through TerminateJobFlowsResult.")]
-        public TerminateJobFlowsResult TerminateJobFlowsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

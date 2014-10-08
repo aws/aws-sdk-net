@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatchLogs.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteLogGroup service
-    /// </summary>
-    public partial class DeleteLogGroupResponse : DeleteLogGroupResult
+    public partial class DeleteLogGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteLogGroupResult property.
-        /// Represents the output of a DeleteLogGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteLogGroupResult class are now available on the DeleteLogGroupResponse class. You should use the properties on DeleteLogGroupResponse instead of accessing them through DeleteLogGroupResult.")]
-        public DeleteLogGroupResult DeleteLogGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

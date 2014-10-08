@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ResumeProcesses service
-    /// </summary>
-    public partial class ResumeProcessesResponse : ResumeProcessesResult
+    public partial class ResumeProcessesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ResumeProcessesResult property.
-        /// Represents the output of a ResumeProcesses operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ResumeProcessesResult class are now available on the ResumeProcessesResponse class. You should use the properties on ResumeProcessesResponse instead of accessing them through ResumeProcessesResult.")]
-        public ResumeProcessesResult ResumeProcessesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon UnassignVolume service
-    /// </summary>
-    public partial class UnassignVolumeResponse : UnassignVolumeResult
+    public partial class UnassignVolumeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UnassignVolumeResult property.
-        /// Represents the output of a UnassignVolume operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UnassignVolumeResult class are now available on the UnassignVolumeResponse class. You should use the properties on UnassignVolumeResponse instead of accessing them through UnassignVolumeResult.")]
-        public UnassignVolumeResult UnassignVolumeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

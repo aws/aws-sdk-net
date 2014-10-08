@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the capacity units consumed by an operation. The data returned includes
-    /// the total      provisioned throughput consumed, along with statistics for the table
-    /// and any indexes involved      in the operation. <i>ConsumedCapacity</i> is only returned
-    /// if it was asked for in the request.      For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-    ///        Throughput</a> in the Amazon DynamoDB Developer Guide.
+    /// The capacity units consumed by an operation. The data returned includes the total
+    /// provisioned throughput consumed, along with statistics for the table and any indexes
+    /// involved in the operation. <i>ConsumedCapacity</i> is only returned if the request
+    /// asked for it. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </summary>
     public partial class ConsumedCapacity
     {

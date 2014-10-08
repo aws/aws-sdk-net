@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeregisterVolume service
-    /// </summary>
-    public partial class DeregisterVolumeResponse : DeregisterVolumeResult
+    public partial class DeregisterVolumeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeregisterVolumeResult property.
-        /// Represents the output of a DeregisterVolume operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeregisterVolumeResult class are now available on the DeregisterVolumeResponse class. You should use the properties on DeregisterVolumeResponse instead of accessing them through DeregisterVolumeResult.")]
-        public DeregisterVolumeResult DeregisterVolumeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

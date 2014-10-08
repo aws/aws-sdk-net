@@ -22,6 +22,8 @@ using System.Text;
 
 using Amazon.Util;
 using System.Globalization;
+using System.Collections;
+using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -29,28 +31,51 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Type methods
 
+        private static readonly Type[] primitiveTypesArray = new Type[]
+        {
+            typeof(Boolean),
+            typeof(Byte),
+            typeof(Char),
+            typeof(DateTime),
+            typeof(Decimal),
+            typeof(Double),
+            typeof(int),
+            typeof(long),
+            typeof(SByte),
+            typeof(short),
+            typeof(Single),
+            typeof(String),
+            typeof(uint),
+            typeof(ulong),
+            typeof(ushort),
+            typeof(Guid),
+            typeof(byte[]),
+            typeof(MemoryStream),
+            typeof(Primitive)
+        };
+
+        public static readonly IEnumerable<Type> PrimitiveTypes = new HashSet<Type>(primitiveTypesArray);
+        private static readonly HashSet<ITypeInfo> PrimitiveTypeInfos = new HashSet<ITypeInfo>(primitiveTypesArray
+            .Select(p => TypeFactory.GetTypeInfo(p)));
+
         public static bool IsPrimitive(Type type)
         {
             var typeWrapper = TypeFactory.GetTypeInfo(type);
-            return (
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[]))) ||
-                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream))));
+            return PrimitiveTypeInfos.Any(ti => typeWrapper.IsAssignableFrom(ti));
+        }
+        public static bool IsPrimitive<T>()
+        {
+            return IsPrimitive(typeof(T));
+        }
+        public static void ValidatePrimitiveType(Type type)
+        {
+            if (!Utils.IsPrimitive(type))
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    "{0} is not a supported Primitive type", type.FullName));
+        }
+        public static void ValidatePrimitiveType<T>()
+        {
+            ValidatePrimitiveType(typeof(T));
         }
 
         public static void ValidateVersionType(Type memberType)
@@ -69,6 +94,59 @@ namespace Amazon.DynamoDBv2.DataModel
                 return;
             }
             throw new InvalidOperationException("Version property must be of primitive, numeric, integer, nullable type (e.g. int?, long?, byte?)");
+        }
+
+        public static Type GetPrimitiveElementType(Type collectionType)
+        {
+            var elementType = Utils.GetElementType(collectionType);
+
+            if (elementType != null)
+            {
+                Utils.ValidatePrimitiveType(elementType);
+                return elementType;
+            }
+
+            throw new InvalidOperationException("Unable to determine element type");
+        }
+        public static Type GetElementType(Type collectionType)
+        {
+            var elementType = collectionType.GetElementType();
+
+            if (elementType == null)
+            {
+                var collectionTypeInfo = TypeFactory.GetTypeInfo(collectionType);
+                var genericArguments = collectionTypeInfo.GetGenericArguments();
+                if (genericArguments != null && genericArguments.Length == 1)
+                    elementType = genericArguments[0];
+            }
+
+            // elementType may be null at this point, meaning that the collectionType isn't a collectionType
+            return elementType;
+        }
+
+        public static bool ItemsToCollection(Type targetType, IEnumerable<object> items, out object result)
+        {
+            result = Utils.Instantiate(targetType);
+
+            var ilist = result as IList;
+            if (ilist != null)
+            {
+                foreach (var item in items)
+                    ilist.Add(item);
+                return true;
+            }
+
+            var targetTypeInfo = TypeFactory.GetTypeInfo(targetType);
+            var addMethod = targetTypeInfo.GetMethod("Add");
+            if (addMethod != null)
+            {
+                foreach (var item in items)
+                    addMethod.Invoke(result, new object[] { item });
+                return true;
+            }
+
+            result = null;
+            return false;
         }
 
         #endregion

@@ -41,19 +41,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The write capacity units consumed by the operation.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Each element consists of:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>TableName</i> - The table that consumed the provisioned throughput.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>CapacityUnits</i> - The total number of capacity units consumed.
         /// </para>
-        ///       </li>    </ul>
+        ///  </li> </ul>
         /// </summary>
         public List<ConsumedCapacity> ConsumedCapacity
         {
@@ -71,8 +71,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Responses. 
         /// <para>
         /// A map of table name to a list of items. Each object in <i>Responses</i> consists of
-        /// a table      name, along with a map of attribute data consisting of the data type
-        /// and attribute value.
+        /// a table name, along with a map of attribute data consisting of the data type and attribute
+        /// value.
         /// </para>
         /// </summary>
         public Dictionary<string, List<Dictionary<string, AttributeValue>>> Responses
@@ -91,35 +91,35 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property UnprocessedKeys. 
         /// <para>
         /// A map of tables and their respective keys that were not processed with the current
-        /// response.      The <i>UnprocessedKeys</i> value is in the same form as <i>RequestItems</i>,
-        /// so the value can      be provided directly to a subsequent <i>BatchGetItem</i> operation.
-        /// For more information, see        <i>RequestItems</i> in the Request Parameters section.
+        /// response. The <i>UnprocessedKeys</i> value is in the same form as <i>RequestItems</i>,
+        /// so the value can be provided directly to a subsequent <i>BatchGetItem</i> operation.
+        /// For more information, see <i>RequestItems</i> in the Request Parameters section.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Each element consists of:
         /// </para>
-        ///     <ul>      <li>        
+        ///  <ul> <li> 
         /// <para>
         /// <i>Keys</i> - An array of primary key attribute values that define specific items
-        /// in the          table.
+        /// in the table.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>AttributesToGet</i> - One or more attributes to be retrieved from the table or
-        /// index.          By default, all attributes are returned. If a specified attribute
-        /// is not found, it does          not appear in the result.
+        /// index. By default, all attributes are returned. If a specified attribute is not found,
+        /// it does not appear in the result.
         /// </para>
-        ///       </li>      <li>        
+        ///  </li> <li> 
         /// <para>
         /// <i>ConsistentRead</i> - The consistency of a read operation. If set to <code>true</code>,
-        ///          then a strongly consistent read is used; otherwise, an eventually consistent
-        /// read is          used.
+        /// then a strongly consistent read is used; otherwise, an eventually consistent read
+        /// is used.
         /// </para>
-        ///       </li>    </ul>    
+        ///  </li> </ul> 
         /// <para>
-        /// If there are no unprocessed keys remaining, the response contains an empty       
-        /// <i>UnprocessedKeys</i> map.
+        /// If there are no unprocessed keys remaining, the response contains an empty <i>UnprocessedKeys</i>
+        /// map.
         /// </para>
         /// </summary>
         public Dictionary<string, KeysAndAttributes> UnprocessedKeys

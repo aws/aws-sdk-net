@@ -20,7 +20,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            RemoveCreatedTables();
+            if (!ReuseTables)
+                RemoveCreatedTables();
+
             BaseClean();
             if (Context != null)
                 Context.Dispose();
@@ -29,13 +31,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
+            // TODO: remove before shipping
+            Client = new AmazonDynamoDBClient(new AmazonDynamoDBConfig
+            {
+                RegionEndpoint = Amazon.RegionEndpoint.APNortheast1
+            });
+
             CreateTestTables();
 
             // Since tables have a variable prefix, configure the prefix for the process
             AWSConfigs.DynamoDBConfig.Context.TableNamePrefix = TableNamePrefix;
 
             // Construct single context object to use for all operations
-            Context = new DynamoDBContext(Client);
+            CreateContext(DynamoDBEntryConversion.V1);
         }
 
         [TestCleanup]
@@ -43,6 +51,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             ClearTable(hashTableName);
             ClearTable(hashRangeTableName);
+        }
+
+        public static void CreateContext(DynamoDBEntryConversion conversion)
+        {
+            var config = new DynamoDBContextConfig
+            {
+                //IgnoreNullValues = true
+                Conversion = conversion
+            };
+            Context = new DynamoDBContext(Client, config);
         }
 
         public static string hashTableName;
@@ -53,15 +71,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public static int MaxItemSize = 65 * 1024;
         public static int MaxBatchSize = 25;
 
+        /// <summary>
+        /// Setting this value to true will configure the tests to not
+        /// delete the tables after the test has finished.
+        /// </summary>
+        public const bool ReuseTables = true;
         public const int DefaultReadCapacity = 50;
         public const int DefaultWriteCapacity = 50;
+
         public const int ScanLimit = 1;
-        public static readonly string TableNamePrefix = "DotNetTests-" + DateTime.Now.ToFileTime() + "-";
+        public static readonly string BaseTableNamePrefix = "DotNetTests";
+        public static readonly string TableNamePrefix = BaseTableNamePrefix + "-" +
+            (ReuseTables ? string.Empty : + DateTime.Now.ToFileTime() + "-");
         public static List<string> CreatedTables = new List<string>();
 
         public static void ClearTable(string tableName)
         {
-            var table = Table.LoadTable(Client, tableName);
+            var table = Table.LoadTable(Client, tableName, DynamoDBEntryConversion.V1);
             var keyNames = table.Keys.Keys.ToList();
             
             // Retrieve all keys
@@ -82,22 +108,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public static void CreateTestTables()
         {
-            // Create hash-key table with global index
             hashTableName = TableNamePrefix + "HashTable";
-            Client.CreateTable(new CreateTableRequest
+            hashRangeTableName = TableNamePrefix + "HashRangeTable";
+            bool createHashTable = true;
+            bool createHashRangeTable = true;
+
+            if (ReuseTables)
             {
-                TableName = hashTableName,
-                AttributeDefinitions = new List<AttributeDefinition>
+                if (GetStatus(hashTableName) != null)
+                {
+                    WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+                    createHashTable = false;
+                }
+                if (GetStatus(hashRangeTableName) != null)
+                {
+                    WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+                    createHashRangeTable = false;
+                }
+            }
+
+            if (createHashTable)
+            {
+                // Create hash-key table with global index
+                Client.CreateTable(new CreateTableRequest
+                {
+                    TableName = hashTableName,
+                    AttributeDefinitions = new List<AttributeDefinition>
                 {
                     new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
                     new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
                     new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
                 },
-                KeySchema = new List<KeySchemaElement>
+                    KeySchema = new List<KeySchemaElement>
                 {
                     new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
                 },
-                GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
                 {
                     new GlobalSecondaryIndex
                     {
@@ -111,19 +157,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Projection = new Projection { ProjectionType = ProjectionType.ALL }
                     }
                 },
-                ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
-            });
-            CreatedTables.Add(hashTableName);
+                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                });
+                CreatedTables.Add(hashTableName);
 
-            // Wait for table to be ready
-            WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+                // Wait for table to be ready
+                WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+            }
 
-            // Create hash-and-range-key table with local and global indexes
-            hashRangeTableName = TableNamePrefix + "HashRangeTable";
-            Client.CreateTable(new CreateTableRequest
+            if (createHashRangeTable)
             {
-                TableName = hashRangeTableName,
-                AttributeDefinitions = new List<AttributeDefinition>
+                // Create hash-and-range-key table with local and global indexes
+                Client.CreateTable(new CreateTableRequest
+                {
+                    TableName = hashRangeTableName,
+                    AttributeDefinitions = new List<AttributeDefinition>
                 {
                     new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
                     new AttributeDefinition { AttributeName = "Age", AttributeType = ScalarAttributeType.N },
@@ -131,12 +179,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new AttributeDefinition { AttributeName = "Score", AttributeType = ScalarAttributeType.N },
                     new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
                 },
-                KeySchema = new List<KeySchemaElement>
+                    KeySchema = new List<KeySchemaElement>
                 {
                     new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
                     new KeySchemaElement { AttributeName = "Age", KeyType = KeyType.RANGE }
                 },
-                GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
                 {
                     new GlobalSecondaryIndex
                     {
@@ -150,7 +198,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Projection = new Projection { ProjectionType = ProjectionType.ALL }
                     }
                 },
-                LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
+                    LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
                 {
                     new LocalSecondaryIndex
                     {
@@ -167,12 +215,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 },
-                ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
-            });
-            CreatedTables.Add(hashRangeTableName);
+                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                });
+                CreatedTables.Add(hashRangeTableName);
 
-            // Wait for table to be ready
-            WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+                // Wait for table to be ready
+                WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+            }
         }
         public static void RemoveCreatedTables()
         {

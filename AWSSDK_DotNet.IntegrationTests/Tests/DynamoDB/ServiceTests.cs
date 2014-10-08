@@ -203,7 +203,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Company", new AttributeValue { S = "CloudsAreGrate" } },
                 { "Tags", new AttributeValue { SS = new List<string> { "Prod", "1.0" } } },
                 { "Seller", new AttributeValue { S = "Big River" } },
-                { "Price", new AttributeValue { N = "900" } }
+                { "Price", new AttributeValue { N = "900" } },
+                { "Null", new AttributeValue { NULL = true } },
             });
 
             // Get item

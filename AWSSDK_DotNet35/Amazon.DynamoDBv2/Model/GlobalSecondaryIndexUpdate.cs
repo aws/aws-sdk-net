@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Update. 
         /// <para>
         /// The name of a global secondary index, along with the updated provisioned throughput
-        /// settings that are to be      applied to that index.
+        /// settings that are to be applied to that index.
         /// </para>
         /// </summary>
         public UpdateGlobalSecondaryIndexAction Update

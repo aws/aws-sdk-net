@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about Amazon EBS snapshots, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+    /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
     /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>

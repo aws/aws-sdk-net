@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ExecutePolicy service
-    /// </summary>
-    public partial class ExecutePolicyResponse : ExecutePolicyResult
+    public partial class ExecutePolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ExecutePolicyResult property.
-        /// Represents the output of a ExecutePolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ExecutePolicyResult class are now available on the ExecutePolicyResponse class. You should use the properties on ExecutePolicyResponse instead of accessing them through ExecutePolicyResult.")]
-        public ExecutePolicyResult ExecutePolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

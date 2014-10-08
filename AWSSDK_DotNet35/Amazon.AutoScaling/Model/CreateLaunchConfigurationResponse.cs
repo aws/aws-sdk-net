@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateLaunchConfiguration service
-    /// </summary>
-    public partial class CreateLaunchConfigurationResponse : CreateLaunchConfigurationResult
+    public partial class CreateLaunchConfigurationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateLaunchConfigurationResult property.
-        /// Represents the output of a CreateLaunchConfiguration operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateLaunchConfigurationResult class are now available on the CreateLaunchConfigurationResponse class. You should use the properties on CreateLaunchConfigurationResponse instead of accessing them through CreateLaunchConfigurationResult.")]
-        public CreateLaunchConfigurationResult CreateLaunchConfigurationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

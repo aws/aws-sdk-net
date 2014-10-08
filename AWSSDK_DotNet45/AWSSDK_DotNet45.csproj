@@ -509,6 +509,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\BatchGet.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\BatchWrite.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\Context.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\IDynamoDBContext.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\BatchGet.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\BatchWrite.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\Context.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\IDynamoDBContext.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\AsyncSearch.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Conversion\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Util\*">
       <Visible>false</Visible>
     </Compile>

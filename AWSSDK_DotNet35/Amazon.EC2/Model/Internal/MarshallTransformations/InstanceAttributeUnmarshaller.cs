@@ -68,6 +68,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("groupSet/item", targetDepth))
+                    {
+                        var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Groups.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("instanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

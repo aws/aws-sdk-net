@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon UpdateServerCertificate service
-    /// </summary>
-    public partial class UpdateServerCertificateResponse : UpdateServerCertificateResult
+    public partial class UpdateServerCertificateResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UpdateServerCertificateResult property.
-        /// Represents the output of a UpdateServerCertificate operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UpdateServerCertificateResult class are now available on the UpdateServerCertificateResponse class. You should use the properties on UpdateServerCertificateResponse instead of accessing them through UpdateServerCertificateResult.")]
-        public UpdateServerCertificateResult UpdateServerCertificateResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

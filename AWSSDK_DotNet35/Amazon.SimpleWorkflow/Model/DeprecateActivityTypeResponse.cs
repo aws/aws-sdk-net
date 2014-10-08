@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeprecateActivityType service
-    /// </summary>
-    public partial class DeprecateActivityTypeResponse : DeprecateActivityTypeResult
+    public partial class DeprecateActivityTypeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeprecateActivityTypeResult property.
-        /// Represents the output of a DeprecateActivityType operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeprecateActivityTypeResult class are now available on the DeprecateActivityTypeResponse class. You should use the properties on DeprecateActivityTypeResponse instead of accessing them through DeprecateActivityTypeResult.")]
-        public DeprecateActivityTypeResult DeprecateActivityTypeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

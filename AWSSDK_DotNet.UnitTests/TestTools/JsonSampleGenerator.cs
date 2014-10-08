@@ -16,6 +16,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         ServiceModel _model;
         Shape _rootStructure;
+        TypeCircularReference<string> _tcr;
 
         public JsonSampleGenerator(ServiceModel model, Shape rootStructure)
         {
@@ -25,6 +26,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         public string Execute()
         {
+            this._tcr = new TypeCircularReference<string>();
             JsonWriter writer = new JsonWriter();
             writer.PrettyPrint = true;
 
@@ -68,6 +70,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private void WriteStructure(JsonWriter writer, Shape structure)
         {
+            var pushed = this._tcr.Push(structure.Name);
+            if (!pushed)
+                return;
 
             if (structure.Payload != null)
             {
@@ -97,15 +102,23 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
 
             writer.WriteObjectEnd();
+
+            if (pushed)
+                this._tcr.Pop();
         }
 
         private void WriteArray(JsonWriter writer, Shape array)
         {
+
             writer.WriteArrayStart();
 
-            for (int i = 0; i < array.Name.Length % 5 + 2; i++)
+            var listShape = array.ListShape;
+            if (!listShape.IsStructure || !this._tcr.Contains(listShape.Name))
             {
-                Write(writer, array.ListShape);
+                for (int i = 0; i < array.Name.Length % 5 + 2; i++)
+                {
+                    Write(writer, listShape);
+                }
             }
 
             writer.WriteArrayEnd();
@@ -113,12 +126,17 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private void WriteMap(JsonWriter writer, Shape map)
         {
+
             writer.WriteObjectStart();
 
-            for (int i = 0; i < map.Name.Length % 5 + 2; i++)
+            var mapShape = map.ValueShape;
+            if (!mapShape.IsStructure || !this._tcr.Contains(mapShape.Name))
             {
-                writer.WritePropertyName("key" + i);
-                Write(writer, map.ValueShape);
+                for (int i = 0; i < map.Name.Length % 5 + 2; i++)
+                {
+                    writer.WritePropertyName("key" + i);
+                    Write(writer, map.ValueShape);
+                }
             }
 
             writer.WriteObjectEnd();

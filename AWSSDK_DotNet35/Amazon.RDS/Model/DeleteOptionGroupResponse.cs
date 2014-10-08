@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteOptionGroup service
-    /// </summary>
-    public partial class DeleteOptionGroupResponse : DeleteOptionGroupResult
+    public partial class DeleteOptionGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteOptionGroupResult property.
-        /// Represents the output of a DeleteOptionGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteOptionGroupResult class are now available on the DeleteOptionGroupResponse class. You should use the properties on DeleteOptionGroupResponse instead of accessing them through DeleteOptionGroupResult.")]
-        public DeleteOptionGroupResult DeleteOptionGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetVaultNotifications service
-    /// </summary>
-    public partial class SetVaultNotificationsResponse : SetVaultNotificationsResult
+    public partial class SetVaultNotificationsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetVaultNotificationsResult property.
-        /// Represents the output of a SetVaultNotifications operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetVaultNotificationsResult class are now available on the SetVaultNotificationsResponse class. You should use the properties on SetVaultNotificationsResponse instead of accessing them through SetVaultNotificationsResult.")]
-        public SetVaultNotificationsResult SetVaultNotificationsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

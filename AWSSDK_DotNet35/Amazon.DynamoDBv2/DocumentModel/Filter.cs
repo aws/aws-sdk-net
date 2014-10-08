@@ -15,8 +15,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -27,7 +29,58 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Private members
 
-        internal Dictionary<string, Condition> Conditions = new Dictionary<string, Condition>();
+        protected class FilterCondition
+        {
+            public List<AttributeValue> AttributeValues { get; private set; }
+            public List<DynamoDBEntry> DynamoDBEntries { get; private set; }
+            public ComparisonOperator ComparisonOperator { get; private set; }
+
+            public FilterCondition(ComparisonOperator comparisonOperator, List<AttributeValue> attributeValues)
+            {
+                ComparisonOperator = comparisonOperator;
+                AttributeValues = attributeValues;
+            }
+            public FilterCondition(ComparisonOperator comparisonOperator, List<DynamoDBEntry> dynamoDBEntries)
+            {
+                ComparisonOperator = comparisonOperator;
+                DynamoDBEntries = dynamoDBEntries;
+            }
+            public FilterCondition(Condition condition)
+                : this(condition.ComparisonOperator, condition.AttributeValueList)
+            { }
+
+            public Condition ToCondition(DynamoDBEntryConversion conversion)
+            {
+                var attributeValues = AttributeValues;
+                if (attributeValues == null)
+                {
+                    attributeValues = new List<AttributeValue>();
+                    foreach(var entry in DynamoDBEntries)
+                    {
+                        var attributeValue = entry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion));
+                        attributeValues.Add(attributeValue);
+                    }
+                }
+
+                var condition = new Condition
+                {
+                    ComparisonOperator = ComparisonOperator,
+                    AttributeValueList = attributeValues
+                };
+                return condition;
+            }
+        }
+
+        protected Dictionary<string, FilterCondition> Conditions { get; private set; }
+
+        #endregion
+
+        #region Constructor
+
+        public Filter()
+        {
+            Conditions = new Dictionary<string, FilterCondition>(StringComparer.Ordinal);
+        }
 
         #endregion
 
@@ -35,11 +88,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Converts filter to a map of conditions
+        /// This call will use the conversion specified by AWSConfigs.DynamoDBConfig.ConversionSchema
         /// </summary>
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions()
         {
-            return new Dictionary<string, Condition>(Conditions);
+            return ToConditions(DynamoDBEntryConversion.CurrentConversion);
+        }
+
+        /// <summary>
+        /// Converts filter to a map of conditions
+        /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <returns>Map from attribute name to condition</returns>
+        public Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion)
+        {
+            var dic = new Dictionary<string, Condition>();
+            foreach(var kvp in Conditions)
+            {
+                string name = kvp.Key;
+                FilterCondition fc = kvp.Value;
+                Condition condition = fc.ToCondition(conversion);
+
+                dic[name] = condition;
+            }
+
+            return dic;
         }
 
         /// <summary>
@@ -50,35 +124,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static Filter FromConditions(Dictionary<string, Condition> conditions)
         {
             Filter ret = new Filter();
-            ret.Conditions = conditions;
+            foreach(var kvp in conditions)
+            {
+                string name = kvp.Key;
+                Condition condition = kvp.Value;
+                ret.Conditions.Add(name, new FilterCondition(condition));
+            }
             return ret;
         }
-        /// <summary>
-        /// Implicitly converts Filter to map of conditions
-        /// </summary>
-        /// <param name="f">Filter to convert</param>
-        /// <returns>Map from attribute name to condition</returns>
-        public static implicit operator Dictionary<string, Condition>(Filter f)
-        {
-            return f.ToConditions();
-        }
-        /// <summary>
-        /// Implicitly converts map of conditions to Filter
-        /// </summary>
-        /// <param name="conditions">Map from attribute name to condition</param>
-        /// <returns>Equivalent Filter</returns>
-        public static implicit operator Filter(Dictionary<string, Condition> conditions)
-        {
-            return Filter.FromConditions(conditions);
-        }
 
-        // Creates a list of AttributeValues from a list of Primitives
-        protected static List<AttributeValue> ConvertToAttributeValues(params DynamoDBEntry[] values)
+        // Creates a list of AttributeValues from a list of DynamoDBEntry items
+        protected static List<AttributeValue> ConvertToAttributeValues(DynamoDBEntryConversion conversion, params DynamoDBEntry[] values)
         {
             List<AttributeValue> attributes = new List<AttributeValue>();
             foreach (DynamoDBEntry value in values)
             {
-                AttributeValue nativeValue = value.ConvertToAttributeValue();
+                AttributeValue nativeValue = value.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion));
                 if (nativeValue != null)
                 {
                     attributes.Add(nativeValue);
@@ -102,7 +163,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="condition">Condition to be added</param>
         public void AddCondition(string attributeName, Condition condition)
         {
-            Conditions[attributeName] = condition;
+            Conditions[attributeName] = new FilterCondition(condition);
+        }
+
+        protected void AddCondition(string attributeName, ComparisonOperator comparisonOperator, List<DynamoDBEntry> values)
+        {
+            Conditions[attributeName] = new FilterCondition(comparisonOperator, values);
+        }
+
+        protected void AddCondition(string attributeName, FilterCondition filterCondition)
+        {
+            Conditions[attributeName] = filterCondition;
         }
 
         /// <summary>
@@ -122,6 +193,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public class ScanFilter : Filter
     {
+        public ScanFilter()
+            : base()
+        { }
+
         /// <summary>
         /// Adds a condition for a specified attribute that consists
         /// of an operator and any number of AttributeValues.
@@ -147,11 +222,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="values">Values to compare to</param>
         public void AddCondition(string attributeName, ScanOperator op, params DynamoDBEntry[] values)
         {
-            AddCondition(attributeName, new Condition
-            {
-                ComparisonOperator = EnumMapper.Convert(op),
-                AttributeValueList = ConvertToAttributeValues(values)
-            });
+            ComparisonOperator comparisonOperator = EnumMapper.Convert(op);
+            AddCondition(attributeName, comparisonOperator, values.ToList());
         }
     }
 
@@ -163,7 +235,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Constructs an empty QueryFilter instance
         /// </summary>
-        public QueryFilter() { }
+        public QueryFilter()
+            : base()
+        { }
 
         /// <summary>
         /// Constructs an instance of QueryFilter with a single condition.
@@ -195,7 +269,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             foreach (var kvp in baseFilter.Conditions)
             {
                 string key = kvp.Key;
-                Condition condition = kvp.Value;
+                FilterCondition condition = kvp.Value;
 
                 AddCondition(key, condition);
             }
@@ -226,11 +300,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="values">Values to compare to</param>
         public void AddCondition(string keyAttributeName, QueryOperator op, params DynamoDBEntry[] values)
         {
-            AddCondition(keyAttributeName, new Condition
-            {
-                ComparisonOperator = EnumMapper.Convert(op),
-                AttributeValueList = ConvertToAttributeValues(values)
-            });
+            ComparisonOperator comparisonOperator = EnumMapper.Convert(op);
+            AddCondition(keyAttributeName, comparisonOperator, values.ToList());
         }
 
         /// <summary>
@@ -258,11 +329,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="values">Values to compare to</param>
         public void AddCondition(string nonKeyAttributeName, ScanOperator op, params DynamoDBEntry[] values)
         {
-            AddCondition(nonKeyAttributeName, new Condition
-            {
-                ComparisonOperator = EnumMapper.Convert(op),
-                AttributeValueList = ConvertToAttributeValues(values)
-            });
+            ComparisonOperator comparisonOperator= EnumMapper.Convert(op);
+            AddCondition(nonKeyAttributeName, comparisonOperator, values.ToList());
         }
     }
 }

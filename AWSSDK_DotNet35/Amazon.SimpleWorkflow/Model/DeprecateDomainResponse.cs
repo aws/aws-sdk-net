@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeprecateDomain service
-    /// </summary>
-    public partial class DeprecateDomainResponse : DeprecateDomainResult
+    public partial class DeprecateDomainResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeprecateDomainResult property.
-        /// Represents the output of a DeprecateDomain operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeprecateDomainResult class are now available on the DeprecateDomainResponse class. You should use the properties on DeprecateDomainResponse instead of accessing them through DeprecateDomainResult.")]
-        public DeprecateDomainResult DeprecateDomainResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -29,26 +29,19 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTable operation.
-    /// The <i>DeleteTable</i> operation deletes a table and all of its items. After a   
-    ///     <i>DeleteTable</i> request, the specified table is in the <code>DELETING</code>
-    /// state until      DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code>
-    /// state, you can delete      it. If a table is in <code>CREATING</code> or <code>UPDATING</code>
-    /// states, then DynamoDB returns      a <i>ResourceInUseException</i>. If the specified
-    /// table does not exist, DynamoDB returns a        <i>ResourceNotFoundException</i>.
-    /// If table is already in the <code>DELETING</code> state, no      error is returned.
+    /// The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i>
+    /// request, the specified table is in the <code>DELETING</code> state until DynamoDB
+    /// completes the deletion. If the table is in the <code>ACTIVE</code> state, you can
+    /// delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code> states,
+    /// then DynamoDB returns a <i>ResourceInUseException</i>. If the specified table does
+    /// not exist, DynamoDB returns a <i>ResourceNotFoundException</i>. If table is already
+    /// in the <code>DELETING</code> state, no error is returned. 
     /// 
-    /// 
-    ///     <note>      
-    /// <para>
-    /// DynamoDB might continue to accept data read and write operations, such as <i>GetItem</i>
-    /// and          <i>PutItem</i>, on a table in the <code>DELETING</code> state until the
-    /// table deletion is        complete.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// When you delete a table, any indexes on that table are also deleted.
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// Use the <i>DescribeTable</i> API to check the status of the table. 
     /// </para>

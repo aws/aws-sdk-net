@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetLoadBasedAutoScaling service
-    /// </summary>
-    public partial class SetLoadBasedAutoScalingResponse : SetLoadBasedAutoScalingResult
+    public partial class SetLoadBasedAutoScalingResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetLoadBasedAutoScalingResult property.
-        /// Represents the output of a SetLoadBasedAutoScaling operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetLoadBasedAutoScalingResult class are now available on the SetLoadBasedAutoScalingResponse class. You should use the properties on SetLoadBasedAutoScalingResponse instead of accessing them through SetLoadBasedAutoScalingResult.")]
-        public SetLoadBasedAutoScalingResult SetLoadBasedAutoScalingResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

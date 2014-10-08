@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateAccountAlias service
-    /// </summary>
-    public partial class CreateAccountAliasResponse : CreateAccountAliasResult
+    public partial class CreateAccountAliasResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateAccountAliasResult property.
-        /// Represents the output of a CreateAccountAlias operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateAccountAliasResult class are now available on the CreateAccountAliasResponse class. You should use the properties on CreateAccountAliasResponse instead of accessing them through CreateAccountAliasResult.")]
-        public CreateAccountAliasResult CreateAccountAliasResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

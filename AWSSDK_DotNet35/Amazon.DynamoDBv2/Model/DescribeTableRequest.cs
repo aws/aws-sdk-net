@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the DescribeTable operation.
     /// Returns information about the table, including the current status of the table, when
-    /// it was      created, the primary key schema, and any indexes on the table.
+    /// it was created, the primary key schema, and any indexes on the table.
     /// </summary>
     public partial class DescribeTableRequest : AmazonDynamoDBRequest
     {

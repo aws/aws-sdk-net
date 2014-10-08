@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ResetImageAttribute service
-    /// </summary>
-    public partial class ResetImageAttributeResponse : ResetImageAttributeResult
+    public partial class ResetImageAttributeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ResetImageAttributeResult property.
-        /// Represents the output of a ResetImageAttribute operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ResetImageAttributeResult class are now available on the ResetImageAttributeResponse class. You should use the properties on ResetImageAttributeResponse instead of accessing them through ResetImageAttributeResult.")]
-        public ResetImageAttributeResult ResetImageAttributeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

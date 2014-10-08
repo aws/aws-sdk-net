@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteVpc service
-    /// </summary>
-    public partial class DeleteVpcResponse : DeleteVpcResult
+    public partial class DeleteVpcResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteVpcResult property.
-        /// Represents the output of a DeleteVpc operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteVpcResult class are now available on the DeleteVpcResponse class. You should use the properties on DeleteVpcResponse instead of accessing them through DeleteVpcResult.")]
-        public DeleteVpcResult DeleteVpcResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

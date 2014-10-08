@@ -66,10 +66,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConsistentRead = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExpressionAttributeNames", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.ExpressionAttributeNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Keys", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Dictionary<string, AttributeValue>, DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>(new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance));
                     unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProjectionExpression", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProjectionExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatchLogs.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteRetentionPolicy service
-    /// </summary>
-    public partial class DeleteRetentionPolicyResponse : DeleteRetentionPolicyResult
+    public partial class DeleteRetentionPolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteRetentionPolicyResult property.
-        /// Represents the output of a DeleteRetentionPolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteRetentionPolicyResult class are now available on the DeleteRetentionPolicyResponse class. You should use the properties on DeleteRetentionPolicyResponse instead of accessing them through DeleteRetentionPolicyResult.")]
-        public DeleteRetentionPolicyResult DeleteRetentionPolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

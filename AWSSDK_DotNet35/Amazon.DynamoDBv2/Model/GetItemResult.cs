@@ -53,8 +53,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Item. 
         /// <para>
-        /// A map of attribute names to <i>AttributeValue</i> objects, as specified by       
-        /// <i>AttributesToGet</i>.
+        /// A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Item

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ReportInstanceStatus service
-    /// </summary>
-    public partial class ReportInstanceStatusResponse : ReportInstanceStatusResult
+    public partial class ReportInstanceStatusResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ReportInstanceStatusResult property.
-        /// Represents the output of a ReportInstanceStatus operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ReportInstanceStatusResult class are now available on the ReportInstanceStatusResponse class. You should use the properties on ReportInstanceStatusResponse instead of accessing them through ReportInstanceStatusResult.")]
-        public ReportInstanceStatusResult ReportInstanceStatusResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteVpnConnectionRoute service
-    /// </summary>
-    public partial class DeleteVpnConnectionRouteResponse : DeleteVpnConnectionRouteResult
+    public partial class DeleteVpnConnectionRouteResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteVpnConnectionRouteResult property.
-        /// Represents the output of a DeleteVpnConnectionRoute operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteVpnConnectionRouteResult class are now available on the DeleteVpnConnectionRouteResponse class. You should use the properties on DeleteVpnConnectionRouteResponse instead of accessing them through DeleteVpnConnectionRouteResult.")]
-        public DeleteVpnConnectionRouteResult DeleteVpnConnectionRouteResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

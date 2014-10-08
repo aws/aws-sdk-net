@@ -437,7 +437,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             foreach (var batch in batches)
             {
-                string tableName = batch.TargetTable.TableName;
+                var table = batch.TargetTable;
+                var tableName = table.TableName;
+                var conversion = table.Conversion;
+
                 if (result.ContainsKey(tableName))
                     throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
 
@@ -460,7 +463,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         {
                             WriteRequest = new WriteRequest
                             {
-                                PutRequest = new PutRequest { Item = toPut.ToAttributeMap() }
+                                PutRequest = new PutRequest { Item = toPut.ToAttributeMap(conversion) }
                             },
                             Document = toPut
                         });

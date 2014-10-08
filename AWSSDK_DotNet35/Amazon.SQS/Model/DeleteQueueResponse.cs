@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteQueue service
-    /// </summary>
-    public partial class DeleteQueueResponse : DeleteQueueResult
+    public partial class DeleteQueueResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteQueueResult property.
-        /// Represents the output of a DeleteQueue operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteQueueResult class are now available on the DeleteQueueResponse class. You should use the properties on DeleteQueueResponse instead of accessing them through DeleteQueueResult.")]
-        public DeleteQueueResult DeleteQueueResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

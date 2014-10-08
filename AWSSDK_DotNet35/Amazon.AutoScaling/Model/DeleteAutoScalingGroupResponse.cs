@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteAutoScalingGroup service
-    /// </summary>
-    public partial class DeleteAutoScalingGroupResponse : DeleteAutoScalingGroupResult
+    public partial class DeleteAutoScalingGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteAutoScalingGroupResult property.
-        /// Represents the output of a DeleteAutoScalingGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteAutoScalingGroupResult class are now available on the DeleteAutoScalingGroupResponse class. You should use the properties on DeleteAutoScalingGroupResponse instead of accessing them through DeleteAutoScalingGroupResult.")]
-        public DeleteAutoScalingGroupResult DeleteAutoScalingGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

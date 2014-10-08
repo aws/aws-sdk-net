@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about your VPC and Internet gateway, see the <a href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon
+    /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
     /// Virtual Private Cloud User Guide</a>.
     /// </para>
     /// </summary>

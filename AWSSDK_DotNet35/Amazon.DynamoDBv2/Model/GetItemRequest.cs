@@ -30,22 +30,23 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the GetItem operation.
     /// The <i>GetItem</i> operation returns a set of attributes for the item with the given
-    /// primary      key. If there is no matching item, <i>GetItem</i> does not return any
-    /// data.
+    /// primary key. If there is no matching item, <i>GetItem</i> does not return any data.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <i>GetItem</i> provides an eventually consistent read by default. If your application
-    ///      requires a strongly consistent read, set <i>ConsistentRead</i> to <code>true</code>.
-    /// Although      a strongly consistent read might take more time than an eventually consistent
-    /// read, it always      returns the last updated value.
+    /// requires a strongly consistent read, set <i>ConsistentRead</i> to <code>true</code>.
+    /// Although a strongly consistent read might take more time than an eventually consistent
+    /// read, it always returns the last updated value.
     /// </para>
     /// </summary>
     public partial class GetItemRequest : AmazonDynamoDBRequest
     {
         private List<string> _attributesToGet = new List<string>();
         private bool? _consistentRead;
+        private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
         private Dictionary<string, AttributeValue> _key = new Dictionary<string, AttributeValue>();
+        private string _projectionExpression;
         private ReturnConsumedCapacity _returnConsumedCapacity;
         private string _tableName;
 
@@ -58,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of   the item to retrieve. For the primary key, you must provide <i>all</i> of the attributes. For example, with a hash   type primary key, you only need to specify the hash attribute. For a hash-and-range type   primary key, you must specify <i>both</i> the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key)
         {
             _tableName = tableName;
@@ -69,8 +70,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of   the item to retrieve. For the primary key, you must provide <i>all</i> of the attributes. For example, with a hash   type primary key, you only need to specify the hash attribute. For a hash-and-range type   primary key, you must specify <i>both</i> the hash attribute and the range attribute.</param>
-        /// <param name="consistentRead">If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, eventually   consistent reads are used.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
+        /// <param name="consistentRead">A value that if set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
         {
             _tableName = tableName;
@@ -79,16 +80,27 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttributesToGet. 
+        /// Gets and sets the property AttributesToGet. <important>
         /// <para>
-        /// The names of one or more attributes to retrieve.  If no attribute      names are specified,
-        /// then all attributes will be returned. If      any of the requested attributes are
-        /// not found, they will not      appear in the result.
+        /// There is a newer parameter available. Use <i>ProjectionExpression</i> instead. Note
+        /// that if you use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
+        /// time, DynamoDB will return a <i>ValidationException</i> exception.
         /// </para>
-        ///       
+        ///  
+        /// <para>
+        /// This parameter allows you to retrieve lists or maps; however, it cannot retrieve individual
+        /// list or map elements.
+        /// </para>
+        /// </important> 
+        /// <para>
+        /// The names of one or more attributes to retrieve. If no attribute names are specified,
+        /// then all attributes will be returned. If any of the requested attributes are not found,
+        /// they will not appear in the result.
+        /// </para>
+        ///  
         /// <para>
         /// Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption.
-        ///       DynamoDB determines capacity units consumed based on item size, not on the amount
+        /// DynamoDB determines capacity units consumed based on item size, not on the amount
         /// of data that is returned to an application.
         /// </para>
         /// </summary>
@@ -107,8 +119,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsistentRead. 
         /// <para>
-        /// If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise,
-        /// eventually      consistent reads are used.
+        /// A value that if set to <code>true</code>, then the operation uses strongly consistent
+        /// reads; otherwise, eventually consistent reads are used.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -124,17 +136,74 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpressionAttributeNames. 
+        /// <para>
+        /// One or more substitution tokens for simplifying complex expressions. The following
+        /// are some use cases for an <i>ExpressionAttributeNames</i> value:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To shorten an attribute name that is very long or unwieldy in an expression.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a placeholder for repeating occurrences of an attribute name in an expression.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To prevent special characters in an attribute name from being misinterpreted in an
+        /// expression.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Use the <b>#</b> character in an expression to dereference an attribute name. For
+        /// example, consider the following expression:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// <code>order.customerInfo.LastName = "Smith" OR order.customerInfo.LastName = "Jones"</code>
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// Now suppose that you specified the following for <i>ExpressionAttributeNames</i>:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// <code>{"n":"order.customerInfo.LastName"}</code>
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// The expression can now be simplified as follows:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// <code>#n = "Smith" OR #n = "Jones"</code>
+        /// </para>
+        /// </li></ul>
+        /// </summary>
+        public Dictionary<string, string> ExpressionAttributeNames
+        {
+            get { return this._expressionAttributeNames; }
+            set { this._expressionAttributeNames = value; }
+        }
+
+        // Check to see if ExpressionAttributeNames property is set
+        internal bool IsSetExpressionAttributeNames()
+        {
+            return this._expressionAttributeNames != null && this._expressionAttributeNames.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
         /// A map of attribute names to <i>AttributeValue</i> objects, representing the primary
-        /// key of      the item to retrieve.
+        /// key of the item to retrieve.
         /// </para>
-        ///     
+        ///  
         /// <para>
-        /// For the primary key, you must provide <i>all</i> of the attributes. For example, with
-        /// a hash      type primary key, you only need to specify the hash attribute. For a hash-and-range
-        /// type      primary key, you must specify <i>both</i> the hash attribute and the range
-        /// attribute.
+        /// For the primary key, you must provide all of the attributes. For example, with a hash
+        /// type primary key, you only need to specify the hash attribute. For a hash-and-range
+        /// type primary key, you must specify both the hash attribute and the range attribute.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Key
@@ -147,6 +216,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetKey()
         {
             return this._key != null && this._key.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectionExpression. 
+        /// <para>
+        /// One or more attributes to retrieve from the table. These attributes can include scalars,
+        /// sets, or elements of a JSON document. The attributes in the expression must be separated
+        /// by commas.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no attribute names are specified, then all attributes will be returned. If any
+        /// of the requested attributes are not found, they will not appear in the result.
+        /// </para>
+        /// </summary>
+        public string ProjectionExpression
+        {
+            get { return this._projectionExpression; }
+            set { this._projectionExpression = value; }
+        }
+
+        // Check to see if ProjectionExpression property is set
+        internal bool IsSetProjectionExpression()
+        {
+            return this._projectionExpression != null;
         }
 
         /// <summary>

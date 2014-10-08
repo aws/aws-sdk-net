@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteClusterParameterGroup service
-    /// </summary>
-    public partial class DeleteClusterParameterGroupResponse : DeleteClusterParameterGroupResult
+    public partial class DeleteClusterParameterGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteClusterParameterGroupResult property.
-        /// Represents the output of a DeleteClusterParameterGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteClusterParameterGroupResult class are now available on the DeleteClusterParameterGroupResponse class. You should use the properties on DeleteClusterParameterGroupResponse instead of accessing them through DeleteClusterParameterGroupResult.")]
-        public DeleteClusterParameterGroupResult DeleteClusterParameterGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

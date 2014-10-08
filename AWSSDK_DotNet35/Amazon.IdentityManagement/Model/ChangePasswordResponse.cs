@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ChangePassword service
-    /// </summary>
-    public partial class ChangePasswordResponse : ChangePasswordResult
+    public partial class ChangePasswordResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ChangePasswordResult property.
-        /// Represents the output of a ChangePassword operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ChangePasswordResult class are now available on the ChangePasswordResponse class. You should use the properties on ChangePasswordResponse instead of accessing them through ChangePasswordResult.")]
-        public ChangePasswordResult ChangePasswordResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

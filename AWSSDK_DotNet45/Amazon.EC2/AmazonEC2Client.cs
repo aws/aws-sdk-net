@@ -545,7 +545,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
         /// and the VPC. For more information about your VPC and Internet gateway, see the <a
-        /// href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
+        /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
         /// Cloud User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
@@ -1475,7 +1475,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -1492,7 +1492,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.&awsdomain;/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -5000,7 +5000,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5082,7 +5082,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5137,7 +5137,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5502,7 +5502,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5545,7 +5545,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5561,7 +5561,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.&awsdomain;/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

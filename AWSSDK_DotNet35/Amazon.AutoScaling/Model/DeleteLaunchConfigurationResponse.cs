@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteLaunchConfiguration service
-    /// </summary>
-    public partial class DeleteLaunchConfigurationResponse : DeleteLaunchConfigurationResult
+    public partial class DeleteLaunchConfigurationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteLaunchConfigurationResult property.
-        /// Represents the output of a DeleteLaunchConfiguration operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteLaunchConfigurationResult class are now available on the DeleteLaunchConfigurationResponse class. You should use the properties on DeleteLaunchConfigurationResponse instead of accessing them through DeleteLaunchConfigurationResult.")]
-        public DeleteLaunchConfigurationResult DeleteLaunchConfigurationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteAlarms service
-    /// </summary>
-    public partial class DeleteAlarmsResponse : DeleteAlarmsResult
+    public partial class DeleteAlarmsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteAlarmsResult property.
-        /// Represents the output of a DeleteAlarms operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteAlarmsResult class are now available on the DeleteAlarmsResponse class. You should use the properties on DeleteAlarmsResponse instead of accessing them through DeleteAlarmsResult.")]
-        public DeleteAlarmsResult DeleteAlarmsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

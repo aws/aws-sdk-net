@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteCustomerGateway service
-    /// </summary>
-    public partial class DeleteCustomerGatewayResponse : DeleteCustomerGatewayResult
+    public partial class DeleteCustomerGatewayResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteCustomerGatewayResult property.
-        /// Represents the output of a DeleteCustomerGateway operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteCustomerGatewayResult class are now available on the DeleteCustomerGatewayResponse class. You should use the properties on DeleteCustomerGatewayResponse instead of accessing them through DeleteCustomerGatewayResult.")]
-        public DeleteCustomerGatewayResult DeleteCustomerGatewayResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

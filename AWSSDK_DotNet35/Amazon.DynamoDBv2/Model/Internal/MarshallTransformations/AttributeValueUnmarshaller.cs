@@ -60,10 +60,28 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.B = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BOOL", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.BOOL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BS", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MemoryStream, MemoryStreamUnmarshaller>(MemoryStreamUnmarshaller.Instance);
                     unmarshalledObject.BS = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("L", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttributeValue, AttributeValueUnmarshaller>(AttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.L = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("M", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.M = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("N", targetDepth))
@@ -76,6 +94,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NS = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NULL", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.NULL = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S", targetDepth))

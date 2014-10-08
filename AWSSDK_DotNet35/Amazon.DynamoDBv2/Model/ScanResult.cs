@@ -58,13 +58,13 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The number of items in the response.
         /// </para>
-        ///     
+        ///  
         /// <para>
-        /// If you used a <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
-        /// items returned <i>after</i> the filter was applied, and <i>ScannedCount</i> is the
-        /// number of matching items <i>before</i> the filter was applied.
+        /// If you set <i>ScanFilter</i> in the request, then <i>Count</i> is the number of items
+        /// returned after the filter was applied, and <i>ScannedCount</i> is the number of matching
+        /// items before the filter was applied.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// If you did not use a filter in the request, then <i>Count</i> is the same as <i>ScannedCount</i>.
         /// </para>
@@ -85,7 +85,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// An array of item attributes that match the scan criteria. Each element in this array
-        /// consists      of an attribute name and the value for that attribute.
+        /// consists of an attribute name and the value for that attribute.
         /// </para>
         /// </summary>
         public List<Dictionary<string, AttributeValue>> Items
@@ -103,20 +103,20 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property LastEvaluatedKey. 
         /// <para>
-        /// The primary key of the item where the operation      stopped, inclusive of the previous
-        /// result set. Use this value to      start a new operation, excluding this value in
-        /// the new      request.
+        /// The primary key of the item where the operation stopped, inclusive of the previous
+        /// result set. Use this value to start a new operation, excluding this value in the new
+        /// request.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed
         /// and there is no more data to be retrieved.
         /// </para>
-        ///     
+        ///  
         /// <para>
-        /// If <i>LastEvaluatedKey</i> is not empty, this does not necessarily mean that there
-        /// is more data in the result set. The only way to know when you have reached the end
-        /// of the result set is when <i>LastEvaluatedKey</i> is empty.
+        /// If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is
+        /// more data in the result set. The only way to know when you have reached the end of
+        /// the result set is when <i>LastEvaluatedKey</i> is empty.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> LastEvaluatedKey
@@ -134,12 +134,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ScannedCount. 
         /// <para>
-        /// The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is applied. A high
-        ///        <i>ScannedCount</i> value with few, or no, <i>Count</i> results indicates an
-        /// inefficient        <i>Scan</i> operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-        /// and ScannedCount</a> in the      Amazon DynamoDB Developer Guide.
+        /// The number of items evaluated, before any <i>ScanFilter</i> is applied. A high <i>ScannedCount</i>
+        /// value with few, or no, <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+        /// and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// If you did not use a filter in the request, then <i>ScannedCount</i> is the same as
         /// <i>Count</i>.

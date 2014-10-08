@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteCacheParameterGroup service
-    /// </summary>
-    public partial class DeleteCacheParameterGroupResponse : DeleteCacheParameterGroupResult
+    public partial class DeleteCacheParameterGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteCacheParameterGroupResult property.
-        /// Represents the output of a DeleteCacheParameterGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteCacheParameterGroupResult class are now available on the DeleteCacheParameterGroupResponse class. You should use the properties on DeleteCacheParameterGroupResponse instead of accessing them through DeleteCacheParameterGroupResult.")]
-        public DeleteCacheParameterGroupResult DeleteCacheParameterGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

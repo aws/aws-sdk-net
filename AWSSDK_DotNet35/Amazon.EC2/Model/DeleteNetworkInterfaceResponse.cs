@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteNetworkInterface service
-    /// </summary>
-    public partial class DeleteNetworkInterfaceResponse : DeleteNetworkInterfaceResult
+    public partial class DeleteNetworkInterfaceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteNetworkInterfaceResult property.
-        /// Represents the output of a DeleteNetworkInterface operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteNetworkInterfaceResult class are now available on the DeleteNetworkInterfaceResponse class. You should use the properties on DeleteNetworkInterfaceResponse instead of accessing them through DeleteNetworkInterfaceResult.")]
-        public DeleteNetworkInterfaceResult DeleteNetworkInterfaceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeletePlatformApplication service
-    /// </summary>
-    public partial class DeletePlatformApplicationResponse : DeletePlatformApplicationResult
+    public partial class DeletePlatformApplicationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeletePlatformApplicationResult property.
-        /// Represents the output of a DeletePlatformApplication operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeletePlatformApplicationResult class are now available on the DeletePlatformApplicationResponse class. You should use the properties on DeletePlatformApplicationResponse instead of accessing them through DeletePlatformApplicationResult.")]
-        public DeletePlatformApplicationResult DeletePlatformApplicationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

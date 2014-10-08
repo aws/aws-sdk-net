@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteEnvironmentConfiguration service
-    /// </summary>
-    public partial class DeleteEnvironmentConfigurationResponse : DeleteEnvironmentConfigurationResult
+    public partial class DeleteEnvironmentConfigurationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteEnvironmentConfigurationResult property.
-        /// Represents the output of a DeleteEnvironmentConfiguration operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteEnvironmentConfigurationResult class are now available on the DeleteEnvironmentConfigurationResponse class. You should use the properties on DeleteEnvironmentConfigurationResponse instead of accessing them through DeleteEnvironmentConfigurationResult.")]
-        public DeleteEnvironmentConfigurationResult DeleteEnvironmentConfigurationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

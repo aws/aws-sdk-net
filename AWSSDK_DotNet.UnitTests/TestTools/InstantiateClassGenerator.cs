@@ -19,14 +19,17 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     /// </summary>
     public class InstantiateClassGenerator
     {
+        
         public static T Execute<T>() where T : new()
         {
             var rootObject = new T();
-            InstantiateProperties(rootObject);
+            TypeCircularReference<Type> tcr = new TypeCircularReference<Type>();
+            InstantiateProperties(tcr, rootObject);
             return rootObject;
         }
 
-        private static void InstantiateProperties(object owningObject)
+
+        private static void InstantiateProperties(TypeCircularReference<Type> tcr, object owningObject)
         {
             foreach (var info in owningObject.GetType().GetProperties())
             {
@@ -34,83 +37,105 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     continue;
 
                 var type = info.PropertyType;
-                var propertyValue = InstantiateType(type);
+                var propertyValue = InstantiateType(tcr, type);
                 info.SetMethod.Invoke(owningObject, new object[] { propertyValue });
             }
         }
 
-        private static object InstantiateType(Type type)
+        private static object InstantiateType(TypeCircularReference<Type> tcr, Type type)
         {
-            if(type == typeof(string))
+            bool pushed = false;
+            if (!type.FullName.StartsWith("System"))
             {
-                return "Test_Value";
+                pushed = tcr.Push(type);
+                if (!pushed)
+                    return null;
             }
-            else if (type == typeof(bool))
+
+            try
             {
-                return true;
-            }
-            else if (type == typeof(int))
-            {
-                return int.MaxValue;
-            }
-            else if (type == typeof(long))
-            {
-                return long.MaxValue;
-            }
-            else if (type == typeof(double))
-            {
-                return double.MaxValue;
-            }
-            else if (type == typeof(DateTime))
-            {
-                return Constants.DEFAULT_DATE;
-            }
-            else if (type == typeof(MemoryStream))
-            {
-                return new MemoryStream(Constants.DEFAULT_BLOB);
-            }
-            else if (type.BaseType.FullName == "Amazon.Runtime.ConstantClass")
-            {
-                var value = type.GetFields()[0].GetValue(null);
-                return value;
-            }
-            else if (type == typeof(Stream))
-            {
-                return new MemoryStream(Constants.DEFAULT_BLOB);
-            }
-            else if (type.BaseType.FullName == "System.MulticastDelegate")
-            {
-                return null; // Event Handlers
-            }
-            else
-            {
-                var value = Activator.CreateInstance(type);
-                if (type.GetInterface("System.Collections.IList") != null)
+                if (type == typeof(string))
                 {
-                    var list = value as System.Collections.IList;
-                    var listType = type.GenericTypeArguments[0];
-                    // Add some variability to the length to the array 
-                    for (int i = 0; i < (1 + listType.FullName.Length % 5); i++)
-                    {
-                        list.Add(InstantiateType(listType));
-                    }
+                    return "Test_Value";
                 }
-                else if (type.GetInterface("System.Collections.IDictionary") != null)
+                else if (type == typeof(bool))
                 {
-                    var map = value as System.Collections.IDictionary;
-                    var valueType = type.GenericTypeArguments[1];
-                    // Add some variability to the length to the array 
-                    for (int i = 0; i < (1 + valueType.FullName.Length % 5); i++)
-                    {
-                        map.Add("key" + i, InstantiateType(valueType));
-                    }
+                    return true;
+                }
+                else if (type == typeof(int))
+                {
+                    return int.MaxValue;
+                }
+                else if (type == typeof(long))
+                {
+                    return long.MaxValue;
+                }
+                else if (type == typeof(double))
+                {
+                    return double.MaxValue;
+                }
+                else if (type == typeof(DateTime))
+                {
+                    return Constants.DEFAULT_DATE;
+                }
+                else if (type == typeof(MemoryStream))
+                {
+                    return new MemoryStream(Constants.DEFAULT_BLOB);
+                }
+                else if (type.BaseType.FullName == "Amazon.Runtime.ConstantClass")
+                {
+                    var value = type.GetFields()[0].GetValue(null);
+                    return value;
+                }
+                else if (type == typeof(Stream))
+                {
+                    return new MemoryStream(Constants.DEFAULT_BLOB);
+                }
+                else if (type.BaseType.FullName == "System.MulticastDelegate")
+                {
+                    return null; // Event Handlers
                 }
                 else
                 {
-                    InstantiateProperties(value);
-                }
+                    var value = Activator.CreateInstance(type);
+                    if (type.GetInterface("System.Collections.IList") != null)
+                    {
+                        var list = value as System.Collections.IList;
+                        var listType = type.GenericTypeArguments[0];
+                        if (!tcr.Contains(listType))
+                        {
+                            // Add some variability to the length to the array 
+                            for (int i = 0; i < (1 + listType.FullName.Length % 5); i++)
+                            {
+                                list.Add(InstantiateType(tcr, listType));
+                            }
+                        }
+                    }
+                    else if (type.GetInterface("System.Collections.IDictionary") != null)
+                    {
+                        var map = value as System.Collections.IDictionary;
+                        var valueType = type.GenericTypeArguments[1];
+                        if (!tcr.Contains(valueType))
+                        {
+                            // Add some variability to the length to the array 
+                            for (int i = 0; i < (1 + valueType.FullName.Length % 5); i++)
+                            {
+                                map.Add("key" + i, InstantiateType(tcr, valueType));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        InstantiateProperties(tcr, value);
+                    }
 
-                return value;
+                    return value;
+                }
+            }
+            finally
+            {
+                if (pushed)
+                    tcr.Pop();
             }
         }
 
@@ -193,7 +218,6 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 if (type.GetInterface("System.Collections.IList") != null)
                 {
                     var list = propertyValue as System.Collections.IList;
-                    Assert.IsTrue(list.Count > 0, "List not filled for " + propertyName);
 
                     var listType = type.GenericTypeArguments[0];
                     foreach(var item in list)
@@ -204,7 +228,6 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 else if (type.GetInterface("System.Collections.IDictionary") != null)
                 {
                     var map = propertyValue as System.Collections.IDictionary;
-                    Assert.IsTrue(map.Count > 0, "Dictionary not filled for " + propertyName);
 
                     var valueType = type.GenericTypeArguments[1];
                     foreach(var key in map.Keys)

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Kinesis.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteStream service
-    /// </summary>
-    public partial class DeleteStreamResponse : DeleteStreamResult
+    public partial class DeleteStreamResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteStreamResult property.
-        /// Represents the output of a DeleteStream operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteStreamResult class are now available on the DeleteStreamResponse class. You should use the properties on DeleteStreamResponse instead of accessing them through DeleteStreamResult.")]
-        public DeleteStreamResult DeleteStreamResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

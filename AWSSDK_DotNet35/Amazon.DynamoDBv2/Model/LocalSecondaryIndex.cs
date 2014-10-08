@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property KeySchema. 
         /// <para>
         /// The complete key schema for the local secondary index, consisting of one or more pairs
-        /// of attribute names and      key types (<code>HASH</code> or <code>RANGE</code>).
+        /// of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
         /// </para>
         /// </summary>
         public List<KeySchemaElement> KeySchema

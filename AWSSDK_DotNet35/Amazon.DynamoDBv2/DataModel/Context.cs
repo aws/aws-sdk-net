@@ -240,13 +240,13 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (value == null) return;
 
-            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorage storage = ObjectToItemStorage<T>(value, false, currentConfig);
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorage storage = ObjectToItemStorage<T>(value, false, flatConfig);
             if (storage == null) return;
 
-            Table table = GetTargetTable(storage.Config, currentConfig);
+            Table table = GetTargetTable(storage.Config, flatConfig);
             if (
-                (currentConfig.SkipVersionCheck.HasValue && currentConfig.SkipVersionCheck.Value)
+                (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
             {
                 table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), null, isAsync);
@@ -260,7 +260,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     table.MakeKey(storage.Document),
                     new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None },
                     isAsync);
-                PopulateInstance(storage, value);
+                PopulateInstance(storage, value, flatConfig);
             }
         }
 
@@ -301,14 +301,14 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            Key key = MakeKey(hashKey, rangeKey, storageConfig);
+            Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
             return LoadHelper<T>(key, flatConfig, storageConfig, isAsync);
         }
         private T LoadHelper<T>(T keyObject, DynamoDBOperationConfig operationConfig, bool isAsync)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            Key key = MakeKey<T>(keyObject, storageConfig);
+            Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
             return LoadHelper<T>(key, flatConfig, storageConfig, isAsync);
         }
         private T LoadHelper<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, bool isAsync)
@@ -323,7 +323,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = table.GetItemHelper(key, getConfig, isAsync);
 
-            T instance = DocumentToObject<T>(storage);
+            T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
         }
 
@@ -360,7 +360,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = document;
-            T instance = DocumentToObject<T>(storage);
+            T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
         }
 
@@ -412,7 +412,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
-            Key key = MakeKey(hashKey, rangeKey, storageConfig);
+            Key key = MakeKey(hashKey, rangeKey, storageConfig, config);
 
             Table table = GetTargetTable(storageConfig, config);
             table.DeleteHelper(key, null, isAsync);

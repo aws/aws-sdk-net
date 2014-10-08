@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetDesiredCapacity service
-    /// </summary>
-    public partial class SetDesiredCapacityResponse : SetDesiredCapacityResult
+    public partial class SetDesiredCapacityResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetDesiredCapacityResult property.
-        /// Represents the output of a SetDesiredCapacity operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetDesiredCapacityResult class are now available on the SetDesiredCapacityResponse class. You should use the properties on SetDesiredCapacityResponse instead of accessing them through SetDesiredCapacityResult.")]
-        public SetDesiredCapacityResult SetDesiredCapacityResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

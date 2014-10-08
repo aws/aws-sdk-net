@@ -30,11 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
     /// Creates an application that has one configuration template named <code>default</code>
-    /// and no application versions. 
-    /// 
-    ///  <?oxy_delete author="brussard" timestamp="20131024T142047-0700" content="&lt;note&gt;
-    /// The &lt;code&gt;default&lt;/code&gt; configuration template is for a 32-bit version
-    /// of the Amazon Linux operating system running the Tomcat 6 application container. &lt;/note&gt;">
+    /// and no application versions.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonElasticBeanstalkRequest
     {

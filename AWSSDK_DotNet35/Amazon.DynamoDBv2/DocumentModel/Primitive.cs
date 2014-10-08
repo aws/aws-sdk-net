@@ -20,14 +20,27 @@ using System.IO;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
-    /// A DynamoDBEntry that represents a primitive DynamoDB type
+    /// Enumerator describing type of DynamoDB data in a Primitive or PrimitiveList
+    /// </summary>
+    public enum DynamoDBEntryType { String, Numeric, Binary }
+
+    /// <summary>
+    /// A DynamoDBEntry that represents a scalar DynamoDB type
     /// </summary>
     public class Primitive : DynamoDBEntry, IEquatable<Primitive>
     {
+        #region Private members
+
+        private static DynamoDBEntryConversion V1Conversion = DynamoDBEntryConversion.V1;
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -102,7 +115,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal conversion methods
 
-        internal override AttributeValue ConvertToAttributeValue()
+        internal override AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig)
         {
             if (this.Value == null)
                 return null;
@@ -147,12 +160,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Boolean value of this object</returns>
         public override Boolean AsBoolean()
         {
-            if (string.IsNullOrEmpty(StringValue))
-            {
-                throw new InvalidCastException();
-            }
-            Boolean ret = !string.Equals("0", StringValue, StringComparison.OrdinalIgnoreCase);
-            return ret;
+            return V1Conversion.ConvertFromEntry<Boolean>(this);
         }
         /// <summary>
         /// Implicitly convert Boolean to Primitive
@@ -161,10 +169,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Boolean data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data ? "1" : "0";
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Boolean>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Boolean
@@ -184,12 +189,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Byte value of this object</returns>
         public override Byte AsByte()
         {
-            Byte ret = 0;
-            if (!Byte.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Byte>(this);
         }
         /// <summary>
         /// Implicitly convert Byte to Primitive
@@ -198,10 +198,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Byte data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Byte>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Byte
@@ -222,12 +219,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public override SByte AsSByte()
         {
-            SByte ret = 0;
-            if (!SByte.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<SByte>(this);
         }
         /// <summary>
         /// Implicitly convert SByte to Primitive
@@ -237,10 +229,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator Primitive(SByte data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<SByte>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to SByte
@@ -262,12 +251,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public override UInt16 AsUShort()
         {
-            UInt16 ret = 0;
-            if (!UInt16.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<UInt16>(this);
         }
         /// <summary>
         /// Implicitly convert UInt16 to Primitive
@@ -277,10 +261,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator Primitive(UInt16 data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<UInt16>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to UInt16
@@ -301,12 +282,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Int16 value of this object</returns>
         public override Int16 AsShort()
         {
-            Int16 ret = 0;
-            if (!Int16.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Int16>(this);
         }
         /// <summary>
         /// Implicitly convert Int16 to Primitive
@@ -315,10 +291,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Int16 data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Int16>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Int16
@@ -339,12 +312,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public override UInt32 AsUInt()
         {
-            UInt32 ret = 0;
-            if (!UInt32.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<UInt32>(this);
         }
         /// <summary>
         /// Implicitly convert UInt32 to Primitive
@@ -354,10 +322,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator Primitive(UInt32 data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<UInt32>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to UInt32
@@ -378,12 +343,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Int32 value of this object</returns>
         public override Int32 AsInt()
         {
-            Int32 ret = 0;
-            if (!Int32.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Int32>(this);
         }
         /// <summary>
         /// Implicitly convert Int32 to Primitive
@@ -392,10 +352,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Int32 data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Int32>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Int32
@@ -416,12 +373,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public override UInt64 AsULong()
         {
-            UInt64 ret = 0;
-            if (!UInt64.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<UInt64>(this);
         }
         /// <summary>
         /// Implicitly convert UInt64 to Primitive
@@ -431,10 +383,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static implicit operator Primitive(UInt64 data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<UInt64>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to UInt64
@@ -455,12 +404,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Int64 value of this object</returns>
         public override Int64 AsLong()
         {
-            Int64 ret = 0;
-            if (!Int64.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Int64>(this);
         }
         /// <summary>
         /// Implicitly convert Int64 to Primitive
@@ -469,10 +413,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Int64 data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Int64>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Int64
@@ -492,12 +433,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Single value of this object</returns>
         public override Single AsSingle()
         {
-            Single ret = 0;
-            if (!Single.TryParse(StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Single>(this);
         }
         /// <summary>
         /// Implicitly convert Single to Primitive
@@ -506,10 +442,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Single data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("r", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Single>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Single
@@ -529,12 +462,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Double value of this object</returns>
         public override Double AsDouble()
         {
-            Double ret = 0;
-            if (!Double.TryParse(StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Double>(this);
         }
         /// <summary>
         /// Implicitly convert Double to Primitive
@@ -543,10 +471,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Double data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("r", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Double>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Double
@@ -566,12 +491,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Decimal value of this object</returns>
         public override Decimal AsDecimal()
         {
-            Decimal ret = 0;
-            if (!Decimal.TryParse(StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Decimal>(this);
         }
         /// <summary>
         /// Implicitly convert Decimal to Primitive
@@ -580,10 +500,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Decimal data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString("g", CultureInfo.InvariantCulture);
-            ret.Type = DynamoDBEntryType.Numeric;
-            return ret;
+            return V1Conversion.ConvertToEntry<Decimal>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Decimal
@@ -603,12 +520,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Char value of this object</returns>
         public override Char AsChar()
         {
-            Char ret = '0';
-            if (!Char.TryParse(StringValue, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<Char>(this);
         }
         /// <summary>
         /// Implicitly convert Char to Primitive
@@ -617,9 +529,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Char data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data.ToString();
-            return ret;
+            return V1Conversion.ConvertToEntry<Char>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Char
@@ -639,7 +549,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>String value of this object</returns>
         public override String AsString()
         {
-            return StringValue;
+            return V1Conversion.ConvertFromEntry<String>(this);
         }
         /// <summary>
         /// Implicitly convert String to Primitive
@@ -648,9 +558,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(String data)
         {
-            Primitive ret = new Primitive();
-            ret.Value = data;
-            return ret;
+            return V1Conversion.ConvertToEntry<String>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to String
@@ -670,12 +578,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DateTime value of this object</returns>
         public override DateTime AsDateTime()
         {
-            DateTime ret;
-            if (!DateTime.TryParseExact(StringValue, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out ret))
-            {
-                throw new InvalidCastException();
-            }
-            return ret;
+            return V1Conversion.ConvertFromEntry<DateTime>(this);
         }
         /// <summary>
         /// Implicitly convert DateTime to Primitive
@@ -684,10 +587,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(DateTime data)
         {
-            Primitive ret = new Primitive();
-            DateTime utc = data.ToUniversalTime();
-            ret.Value = utc.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
-            return ret;
+            return V1Conversion.ConvertToEntry<DateTime>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to DateTime
@@ -707,8 +607,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Guid value of this object</returns>
         public override Guid AsGuid()
         {
-            Guid ret = new Guid(StringValue);
-            return ret;
+            return V1Conversion.ConvertFromEntry<Guid>(this);
         }
         /// <summary>
         /// Implicitly convert Guid to Primitive
@@ -717,8 +616,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(Guid data)
         {
-            Primitive ret = data.ToString();
-            return ret;
+            return V1Conversion.ConvertToEntry<Guid>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to Guid
@@ -738,8 +636,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>byte[] value of this object</returns>
         public override byte[] AsByteArray()
         {
-            byte[] ret = (byte[])Value;
-            return ret;
+            return V1Conversion.ConvertFromEntry<byte[]>(this);
         }
         /// <summary>
         /// Implicitly convert byte[] to Primitive
@@ -748,8 +645,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(byte[] data)
         {
-            Primitive ret = new Primitive(data, DynamoDBEntryType.Binary);
-            return ret;
+            return V1Conversion.ConvertToEntry<byte[]>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to byte[]
@@ -769,8 +665,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>MemoryStream value of this object</returns>
         public override MemoryStream AsMemoryStream()
         {
-            MemoryStream ret = new MemoryStream((byte[])Value);
-            return ret;
+            return V1Conversion.ConvertFromEntry<MemoryStream>(this);
         }
         /// <summary>
         /// Implicitly convert MemoryStream to Primitive
@@ -779,8 +674,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive representing the data</returns>
         public static implicit operator Primitive(MemoryStream data)
         {
-            Primitive ret = new Primitive(data.ToArray(), DynamoDBEntryType.Binary);
-            return ret;
+            return V1Conversion.ConvertToEntry<MemoryStream>(data).AsPrimitive();
         }
         /// <summary>
         /// Explicitly convert Primitive to MemoryStream
@@ -796,6 +690,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public overrides
 
+        public override string ToString()
+        {
+            if (this.Value == null)
+                return string.Empty;
+
+            return this.Value.ToString();
+        }
+
         public override object Clone()
         {
             return new Primitive(this.Value, this.Type);
@@ -806,17 +708,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var typeHashCode = this.Type.GetHashCode();
             var valueHashCode = 0;
 
-            if (this.Type == DynamoDBEntryType.Numeric || this.Type == DynamoDBEntryType.String)
-                valueHashCode = this.Value.GetHashCode();
-            else
+            if (this.Value != null)
             {
-                var bytes = this.Value as byte[];
-                if (bytes != null)
+                if (this.Type == DynamoDBEntryType.Numeric || this.Type == DynamoDBEntryType.String)
+                    valueHashCode = this.Value.GetHashCode();
+                else if (this.Type == DynamoDBEntryType.Binary)
                 {
-                    for (int i = 0; i < bytes.Length; i++)
+                    var bytes = this.Value as byte[];
+                    if (bytes != null)
                     {
-                        byte b = bytes[i];
-                        valueHashCode = Hashing.CombineHashes(valueHashCode, b.GetHashCode());
+                        for (int i = 0; i < bytes.Length; i++)
+                        {
+                            byte b = bytes[i];
+                            valueHashCode = Hashing.CombineHashes(valueHashCode, b.GetHashCode());
+                        }
                     }
                 }
             }
@@ -868,5 +773,65 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         #endregion
+    }
+
+    internal class PrimitiveEqualityComparer : IEqualityComparer<Primitive>
+    {
+        public static readonly PrimitiveEqualityComparer Default = new PrimitiveEqualityComparer();
+
+        public bool Equals(Primitive x, Primitive y)
+        {
+            if (x == null || y == null)
+                return (x == y);
+
+            return x.Equals(y);
+        }
+
+        public int GetHashCode(Primitive obj)
+        {
+            if (obj == null)
+                return 0;
+
+            return obj.GetHashCode();
+        }
+    }
+
+    internal class PrimitiveComparer : IComparer<Primitive>
+    {
+        public int Compare(Primitive x, Primitive y)
+        {
+            if (x.Type != y.Type)
+                return x.Type.CompareTo(y.Type);
+
+            if (x.Type == DynamoDBEntryType.Numeric || x.Type == DynamoDBEntryType.String)
+            {
+                return (string.Compare(x.StringValue, y.StringValue, StringComparison.Ordinal));
+            }
+            else if (x.Type == DynamoDBEntryType.Binary)
+            {
+                byte[] xByteArray = x.Value as byte[];
+                byte[] yByteArray = y.Value as byte[];
+
+                if (xByteArray.Length != yByteArray.Length)
+                    return xByteArray.Length.CompareTo(yByteArray.Length);
+
+                for (int i = 0; i < xByteArray.Length; i++)
+                {
+                    byte xb = xByteArray[i];
+                    byte yb = yByteArray[i];
+                    int byteCompare = xb.CompareTo(yb);
+                    if (byteCompare != 0)
+                        return byteCompare;
+                }
+
+                return 0;
+            }
+            else
+            {
+                throw new InvalidOperationException("Unknown type of Primitive: " + x.Type);
+            }
+        }
+
+        public static PrimitiveComparer Default = new PrimitiveComparer();
     }
 }

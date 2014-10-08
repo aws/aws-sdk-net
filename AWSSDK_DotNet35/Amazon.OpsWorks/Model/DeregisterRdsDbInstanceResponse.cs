@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeregisterRdsDbInstance service
-    /// </summary>
-    public partial class DeregisterRdsDbInstanceResponse : DeregisterRdsDbInstanceResult
+    public partial class DeregisterRdsDbInstanceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeregisterRdsDbInstanceResult property.
-        /// Represents the output of a DeregisterRdsDbInstance operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeregisterRdsDbInstanceResult class are now available on the DeregisterRdsDbInstanceResponse class. You should use the properties on DeregisterRdsDbInstanceResponse instead of accessing them through DeregisterRdsDbInstanceResult.")]
-        public DeregisterRdsDbInstanceResult DeregisterRdsDbInstanceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

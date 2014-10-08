@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RequestCancelWorkflowExecution service
-    /// </summary>
-    public partial class RequestCancelWorkflowExecutionResponse : RequestCancelWorkflowExecutionResult
+    public partial class RequestCancelWorkflowExecutionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RequestCancelWorkflowExecutionResult property.
-        /// Represents the output of a RequestCancelWorkflowExecution operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RequestCancelWorkflowExecutionResult class are now available on the RequestCancelWorkflowExecutionResponse class. You should use the properties on RequestCancelWorkflowExecutionResponse instead of accessing them through RequestCancelWorkflowExecutionResult.")]
-        public RequestCancelWorkflowExecutionResult RequestCancelWorkflowExecutionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

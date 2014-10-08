@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ResetSnapshotAttribute service
-    /// </summary>
-    public partial class ResetSnapshotAttributeResponse : ResetSnapshotAttributeResult
+    public partial class ResetSnapshotAttributeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ResetSnapshotAttributeResult property.
-        /// Represents the output of a ResetSnapshotAttribute operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ResetSnapshotAttributeResult class are now available on the ResetSnapshotAttributeResponse class. You should use the properties on ResetSnapshotAttributeResponse instead of accessing them through ResetSnapshotAttributeResult.")]
-        public ResetSnapshotAttributeResult ResetSnapshotAttributeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

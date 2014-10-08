@@ -31,6 +31,8 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 
 namespace Amazon
 {
@@ -263,6 +265,7 @@ namespace Amazon
     internal class DynamoDBSection : WritableConfigurationElement
     {
         private const string contextKey = "dynamoDBContext";
+        private const string conversionKey = "conversionSchema";
 
         [ConfigurationProperty(contextKey)]
         public DynamoDBContextSection Context
@@ -270,6 +273,14 @@ namespace Amazon
             get { return (DynamoDBContextSection)this[contextKey]; }
             set { this[contextKey] = value; }
         }
+
+        [ConfigurationProperty(conversionKey)]
+        public ConversionSchema ConversionSchema
+        {
+            get { return (ConversionSchema)this[conversionKey]; }
+            set { this[conversionKey] = value; }
+        }
+
     }
 
     /// <summary>

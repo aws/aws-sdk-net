@@ -124,7 +124,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key of the item to get</param>
         public void AddKey(object hashKey, object rangeKey)
         {
-            Key key = DynamoDBContext.MakeKey(hashKey, rangeKey, ItemStorageConfig);
+            Key key = Context.MakeKey(hashKey, rangeKey, ItemStorageConfig, Config);
             Keys.Add(key);
         }
 
@@ -134,7 +134,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="keyObject">Object key of the item to get</param>
         public void AddKey(T keyObject)
         {
-            Key key = DynamoDBContext.MakeKey(keyObject, ItemStorageConfig);
+            Key key = Context.MakeKey(keyObject, ItemStorageConfig, Config);
             Keys.Add(key);
         }
 

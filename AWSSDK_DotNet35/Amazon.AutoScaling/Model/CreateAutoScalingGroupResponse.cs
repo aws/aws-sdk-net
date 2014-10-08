@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon CreateAutoScalingGroup service
-    /// </summary>
-    public partial class CreateAutoScalingGroupResponse : CreateAutoScalingGroupResult
+    public partial class CreateAutoScalingGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the CreateAutoScalingGroupResult property.
-        /// Represents the output of a CreateAutoScalingGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the CreateAutoScalingGroupResult class are now available on the CreateAutoScalingGroupResponse class. You should use the properties on CreateAutoScalingGroupResponse instead of accessing them through CreateAutoScalingGroupResult.")]
-        public CreateAutoScalingGroupResult CreateAutoScalingGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

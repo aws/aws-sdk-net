@@ -13,11 +13,25 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace Amazon.Runtime.Internal.Util
 {
     internal static partial class Extensions
     {
+        internal static Type[] GetTypes(this Assembly self)
+        {
+            List<Type> types = new List<Type>();
+            var definedTypes = self.DefinedTypes;
+            foreach (var t in definedTypes)
+            {
+                var type = t.AsType();
+                types.Add(type);
+            }
+            return types.ToArray();
+        }
+
         internal static string ToString(this string self, IFormatProvider formatProvider)
         {
             return self;
@@ -34,6 +48,16 @@ namespace Amazon.Runtime.Internal.Util
         internal static string ToString(this bool self, IFormatProvider formatProvider)
         {
             return self.ToString();
+        }
+
+        internal static string ToString(this char self, IFormatProvider formatProvider)
+        {
+            return self.ToString();
+        }
+
+        internal static string ToString(this Guid self, string format, IFormatProvider formatProvider)
+        {
+            return self.ToString(format);
         }
     }
 }

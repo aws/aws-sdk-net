@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon AddTagsToResource service
-    /// </summary>
-    public partial class AddTagsToResourceResponse : AddTagsToResourceResult
+    public partial class AddTagsToResourceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the AddTagsToResourceResult property.
-        /// Represents the output of a AddTagsToResource operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the AddTagsToResourceResult class are now available on the AddTagsToResourceResponse class. You should use the properties on AddTagsToResourceResponse instead of accessing them through AddTagsToResourceResult.")]
-        public AddTagsToResourceResult AddTagsToResourceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

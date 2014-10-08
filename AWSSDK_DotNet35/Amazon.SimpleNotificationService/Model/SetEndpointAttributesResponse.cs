@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetEndpointAttributes service
-    /// </summary>
-    public partial class SetEndpointAttributesResponse : SetEndpointAttributesResult
+    public partial class SetEndpointAttributesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetEndpointAttributesResult property.
-        /// Represents the output of a SetEndpointAttributes operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetEndpointAttributesResult class are now available on the SetEndpointAttributesResponse class. You should use the properties on SetEndpointAttributesResponse instead of accessing them through SetEndpointAttributesResult.")]
-        public SetEndpointAttributesResult SetEndpointAttributesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

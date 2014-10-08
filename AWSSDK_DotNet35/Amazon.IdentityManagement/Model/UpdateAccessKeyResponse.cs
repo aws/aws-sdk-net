@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon UpdateAccessKey service
-    /// </summary>
-    public partial class UpdateAccessKeyResponse : UpdateAccessKeyResult
+    public partial class UpdateAccessKeyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the UpdateAccessKeyResult property.
-        /// Represents the output of a UpdateAccessKey operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the UpdateAccessKeyResult class are now available on the UpdateAccessKeyResponse class. You should use the properties on UpdateAccessKeyResponse instead of accessing them through UpdateAccessKeyResult.")]
-        public UpdateAccessKeyResult UpdateAccessKeyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

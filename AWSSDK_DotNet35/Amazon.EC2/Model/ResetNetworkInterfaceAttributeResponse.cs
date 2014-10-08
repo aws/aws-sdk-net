@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon ResetNetworkInterfaceAttribute service
-    /// </summary>
-    public partial class ResetNetworkInterfaceAttributeResponse : ResetNetworkInterfaceAttributeResult
+    public partial class ResetNetworkInterfaceAttributeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the ResetNetworkInterfaceAttributeResult property.
-        /// Represents the output of a ResetNetworkInterfaceAttribute operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the ResetNetworkInterfaceAttributeResult class are now available on the ResetNetworkInterfaceAttributeResponse class. You should use the properties on ResetNetworkInterfaceAttributeResponse instead of accessing them through ResetNetworkInterfaceAttributeResult.")]
-        public ResetNetworkInterfaceAttributeResult ResetNetworkInterfaceAttributeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

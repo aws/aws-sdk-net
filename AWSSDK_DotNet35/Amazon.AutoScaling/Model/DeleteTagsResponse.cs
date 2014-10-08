@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteTags service
-    /// </summary>
-    public partial class DeleteTagsResponse : DeleteTagsResult
+    public partial class DeleteTagsResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteTagsResult property.
-        /// Represents the output of a DeleteTags operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteTagsResult class are now available on the DeleteTagsResponse class. You should use the properties on DeleteTagsResponse instead of accessing them through DeleteTagsResult.")]
-        public DeleteTagsResult DeleteTagsResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutRolePolicy service
-    /// </summary>
-    public partial class PutRolePolicyResponse : PutRolePolicyResult
+    public partial class PutRolePolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutRolePolicyResult property.
-        /// Represents the output of a PutRolePolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutRolePolicyResult class are now available on the PutRolePolicyResponse class. You should use the properties on PutRolePolicyResponse instead of accessing them through PutRolePolicyResult.")]
-        public PutRolePolicyResult PutRolePolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

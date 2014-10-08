@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteConfigurationTemplate service
-    /// </summary>
-    public partial class DeleteConfigurationTemplateResponse : DeleteConfigurationTemplateResult
+    public partial class DeleteConfigurationTemplateResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteConfigurationTemplateResult property.
-        /// Represents the output of a DeleteConfigurationTemplate operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteConfigurationTemplateResult class are now available on the DeleteConfigurationTemplateResponse class. You should use the properties on DeleteConfigurationTemplateResponse instead of accessing them through DeleteConfigurationTemplateResult.")]
-        public DeleteConfigurationTemplateResult DeleteConfigurationTemplateResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

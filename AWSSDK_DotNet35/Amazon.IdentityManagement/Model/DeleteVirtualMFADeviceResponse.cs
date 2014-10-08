@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteVirtualMFADevice service
-    /// </summary>
-    public partial class DeleteVirtualMFADeviceResponse : DeleteVirtualMFADeviceResult
+    public partial class DeleteVirtualMFADeviceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteVirtualMFADeviceResult property.
-        /// Represents the output of a DeleteVirtualMFADevice operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteVirtualMFADeviceResult class are now available on the DeleteVirtualMFADeviceResponse class. You should use the properties on DeleteVirtualMFADeviceResponse instead of accessing them through DeleteVirtualMFADeviceResult.")]
-        public DeleteVirtualMFADeviceResult DeleteVirtualMFADeviceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CognitoIdentity.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteIdentityPool service
-    /// </summary>
-    public partial class DeleteIdentityPoolResponse : DeleteIdentityPoolResult
+    public partial class DeleteIdentityPoolResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteIdentityPoolResult property.
-        /// Represents the output of a DeleteIdentityPool operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteIdentityPoolResult class are now available on the DeleteIdentityPoolResponse class. You should use the properties on DeleteIdentityPoolResponse instead of accessing them through DeleteIdentityPoolResult.")]
-        public DeleteIdentityPoolResult DeleteIdentityPoolResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

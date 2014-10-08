@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteVolume service
-    /// </summary>
-    public partial class DeleteVolumeResponse : DeleteVolumeResult
+    public partial class DeleteVolumeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteVolumeResult property.
-        /// Represents the output of a DeleteVolume operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteVolumeResult class are now available on the DeleteVolumeResponse class. You should use the properties on DeleteVolumeResponse instead of accessing them through DeleteVolumeResult.")]
-        public DeleteVolumeResult DeleteVolumeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleDB.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteAttributes service
-    /// </summary>
-    public partial class DeleteAttributesResponse : DeleteAttributesResult
+    public partial class DeleteAttributesResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteAttributesResult property.
-        /// Represents the output of a DeleteAttributes operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteAttributesResult class are now available on the DeleteAttributesResponse class. You should use the properties on DeleteAttributesResponse instead of accessing them through DeleteAttributesResult.")]
-        public DeleteAttributesResult DeleteAttributesResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

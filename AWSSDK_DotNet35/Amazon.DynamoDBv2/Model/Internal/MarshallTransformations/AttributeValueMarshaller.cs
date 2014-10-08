@@ -45,6 +45,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromMemoryStream(requestObject.B));
             }
 
+            if(requestObject.IsSetBOOL())
+            {
+                context.Writer.WritePropertyName("BOOL");
+                context.Writer.Write(requestObject.BOOL);
+            }
+
             if(requestObject.IsSetBS())
             {
                 context.Writer.WritePropertyName("BS");
@@ -54,6 +60,41 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(StringUtils.FromMemoryStream(requestObjectBSListValue));
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetL())
+            {
+                context.Writer.WritePropertyName("L");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLListValue in requestObject.L)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AttributeValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetM())
+            {
+                context.Writer.WritePropertyName("M");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectMKvp in requestObject.M)
+                {
+                    context.Writer.WritePropertyName(requestObjectMKvp.Key);
+                    var requestObjectMValue = requestObjectMKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AttributeValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetN())
@@ -71,6 +112,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectNSListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNULL())
+            {
+                context.Writer.WritePropertyName("NULL");
+                context.Writer.Write(requestObject.NULL);
             }
 
             if(requestObject.IsSetS())

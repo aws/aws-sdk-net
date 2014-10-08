@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteUser service
-    /// </summary>
-    public partial class DeleteUserResponse : DeleteUserResult
+    public partial class DeleteUserResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteUserResult property.
-        /// Represents the output of a DeleteUser operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteUserResult class are now available on the DeleteUserResponse class. You should use the properties on DeleteUserResponse instead of accessing them through DeleteUserResult.")]
-        public DeleteUserResult DeleteUserResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatchLogs.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon PutMetricFilter service
-    /// </summary>
-    public partial class PutMetricFilterResponse : PutMetricFilterResult
+    public partial class PutMetricFilterResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the PutMetricFilterResult property.
-        /// Represents the output of a PutMetricFilter operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the PutMetricFilterResult class are now available on the PutMetricFilterResponse class. You should use the properties on PutMetricFilterResponse instead of accessing them through PutMetricFilterResult.")]
-        public PutMetricFilterResult PutMetricFilterResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

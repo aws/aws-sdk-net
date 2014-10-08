@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleWorkflow.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RegisterWorkflowType service
-    /// </summary>
-    public partial class RegisterWorkflowTypeResponse : RegisterWorkflowTypeResult
+    public partial class RegisterWorkflowTypeResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RegisterWorkflowTypeResult property.
-        /// Represents the output of a RegisterWorkflowType operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RegisterWorkflowTypeResult class are now available on the RegisterWorkflowTypeResponse class. You should use the properties on RegisterWorkflowTypeResponse instead of accessing them through RegisterWorkflowTypeResult.")]
-        public RegisterWorkflowTypeResult RegisterWorkflowTypeResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

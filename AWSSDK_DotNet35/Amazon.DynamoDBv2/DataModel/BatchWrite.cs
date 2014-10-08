@@ -110,7 +110,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (item == null) return;
 
-            ItemStorage storage = DynamoDBContext.ObjectToItemStorage<T>(item, false, true, StorageConfig);
+            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: false, ignoreNullValues: true);
             if (storage == null) return;
             DocumentBatch.AddDocumentToPut(storage.Document);
         }
@@ -142,7 +142,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (item == null) return;
 
-            ItemStorage storage = DynamoDBContext.ObjectToItemStorage<T>(item, true, true, StorageConfig);
+            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: true, ignoreNullValues: true);
             if (storage == null) return;
             DocumentBatch.AddItemToDelete(storage.Document);
         }
@@ -165,7 +165,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key of the item to delete</param>
         public void AddDeleteKey(object hashKey, object rangeKey)
         {
-            DocumentBatch.AddKeyToDelete(DynamoDBContext.MakeKey(hashKey, rangeKey, StorageConfig));
+            DocumentBatch.AddKeyToDelete(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config));
         }
 
         #endregion

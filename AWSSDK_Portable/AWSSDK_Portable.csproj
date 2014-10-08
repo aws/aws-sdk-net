@@ -333,6 +333,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Conversion\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DocumentModel\*.Async.cs">
       <Visible>false</Visible>
     </Compile>

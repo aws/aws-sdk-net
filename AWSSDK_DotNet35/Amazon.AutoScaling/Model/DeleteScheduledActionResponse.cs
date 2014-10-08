@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteScheduledAction service
-    /// </summary>
-    public partial class DeleteScheduledActionResponse : DeleteScheduledActionResult
+    public partial class DeleteScheduledActionResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteScheduledActionResult property.
-        /// Represents the output of a DeleteScheduledAction operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteScheduledActionResult class are now available on the DeleteScheduledActionResponse class. You should use the properties on DeleteScheduledActionResponse instead of accessing them through DeleteScheduledActionResult.")]
-        public DeleteScheduledActionResult DeleteScheduledActionResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

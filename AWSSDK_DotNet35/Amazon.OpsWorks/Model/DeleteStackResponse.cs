@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteStack service
-    /// </summary>
-    public partial class DeleteStackResponse : DeleteStackResult
+    public partial class DeleteStackResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteStackResult property.
-        /// Represents the output of a DeleteStack operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteStackResult class are now available on the DeleteStackResponse class. You should use the properties on DeleteStackResponse instead of accessing them through DeleteStackResult.")]
-        public DeleteStackResult DeleteStackResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

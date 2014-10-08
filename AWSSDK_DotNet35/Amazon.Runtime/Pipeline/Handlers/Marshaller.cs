@@ -35,8 +35,8 @@ namespace Amazon.Runtime.Internal
             requestContext.Request = requestContext.Marshaller.Marshall(
                 executionContext.RequestContext.OriginalRequest);
 
-            requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent; 
-            // +" " + (asyncResult.CompletedSynchronously ? "ClientSync" : "ClientAsync");
+            requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
 
             var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);
             if (method != "GET" && method != "DELETE" && method != "HEAD")

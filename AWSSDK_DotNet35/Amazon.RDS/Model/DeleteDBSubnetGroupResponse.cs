@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeleteDBSubnetGroup service
-    /// </summary>
-    public partial class DeleteDBSubnetGroupResponse : DeleteDBSubnetGroupResult
+    public partial class DeleteDBSubnetGroupResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeleteDBSubnetGroupResult property.
-        /// Represents the output of a DeleteDBSubnetGroup operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeleteDBSubnetGroupResult class are now available on the DeleteDBSubnetGroupResponse class. You should use the properties on DeleteDBSubnetGroupResponse instead of accessing them through DeleteDBSubnetGroupResult.")]
-        public DeleteDBSubnetGroupResult DeleteDBSubnetGroupResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

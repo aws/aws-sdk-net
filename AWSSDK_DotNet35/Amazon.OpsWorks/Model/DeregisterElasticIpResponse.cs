@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeregisterElasticIp service
-    /// </summary>
-    public partial class DeregisterElasticIpResponse : DeregisterElasticIpResult
+    public partial class DeregisterElasticIpResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeregisterElasticIpResult property.
-        /// Represents the output of a DeregisterElasticIp operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeregisterElasticIpResult class are now available on the DeregisterElasticIpResponse class. You should use the properties on DeregisterElasticIpResponse instead of accessing them through DeregisterElasticIpResult.")]
-        public DeregisterElasticIpResult DeregisterElasticIpResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

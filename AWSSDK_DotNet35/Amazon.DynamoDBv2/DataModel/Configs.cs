@@ -18,6 +18,8 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -54,6 +56,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBContextConfig()
         {
             TableNamePrefix = AWSConfigs.DynamoDBConfig.Context.TableNamePrefix;
+            Conversion = DynamoDBEntryConversion.CurrentConversion;
         }
 
         /// <summary>
@@ -84,6 +87,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// interpreted as directives to delete the specific attribute.
         /// </summary>
         public bool? IgnoreNullValues { get; set; }
+
+        /// <summary>
+        /// Conversion specification which controls how conversion between
+        /// .NET and DynamoDB types happens.
+        /// </summary>
+        public DynamoDBEntryConversion Conversion { get; set; }
     }
 
     /// <summary>
@@ -259,13 +268,15 @@ namespace Amazon.DynamoDBv2.DataModel
             BackwardQuery = null,
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
+            Conversion = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
             ConsistentRead = null,
             SkipVersionCheck = null,
             TableNamePrefix = null,
-            IgnoreNullValues = null
+            IgnoreNullValues = null,
+            Conversion = null
         };
 
         public DynamoDBFlatConfig(DynamoDBOperationConfig operationConfig, DynamoDBContextConfig contextConfig)
@@ -288,6 +299,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
+            DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
@@ -298,6 +310,9 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = indexName;
             QueryFilter = queryFilter;
             ConditionalOperator = conditionalOperator;
+            Conversion = conversion;
+
+            State = new OperationState();
         }
 
         /// <summary>
@@ -364,8 +379,31 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public List<ScanCondition> QueryFilter { get; set; }
 
+        /// <summary>
+        /// Conversion specification which controls how conversion between
+        /// .NET and DynamoDB types happens.
+        /// </summary>
+        public DynamoDBEntryConversion Conversion { get; set; }
+
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
 
+        // State of the operation using this config
+        internal OperationState State { get; private set; }
+
+        public class OperationState
+        {
+            private CircularReferenceTracking referenceTracking;
+
+            public OperationState()
+            {
+                referenceTracking = new CircularReferenceTracking();
+            }
+
+            public CircularReferenceTracking.Tracker Track(object target)
+            {
+                return referenceTracking.Track(target);
+            }
+        }
     }
 }

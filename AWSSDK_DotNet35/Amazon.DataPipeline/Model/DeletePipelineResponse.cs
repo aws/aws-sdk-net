@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DataPipeline.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeletePipeline service
-    /// </summary>
-    public partial class DeletePipelineResponse : DeletePipelineResult
+    public partial class DeletePipelineResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeletePipelineResult property.
-        /// Represents the output of a DeletePipeline operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeletePipelineResult class are now available on the DeletePipelineResponse class. You should use the properties on DeletePipelineResponse instead of accessing them through DeletePipelineResult.")]
-        public DeletePipelineResult DeletePipelineResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

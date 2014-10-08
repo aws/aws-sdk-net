@@ -94,6 +94,11 @@ namespace Amazon.Util
                 get { return this._typeInfo.IsClass; }
             }
 
+            public override bool IsValueType
+            {
+                get { return this._typeInfo.IsValueType; }
+            }
+
             public override bool IsInterface
             {
                 get { return this._typeInfo.IsInterface; }

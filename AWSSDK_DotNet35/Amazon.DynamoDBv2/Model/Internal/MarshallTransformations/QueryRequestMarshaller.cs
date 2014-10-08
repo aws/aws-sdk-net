@@ -99,6 +99,45 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExpressionAttributeNames())
+                {
+                    context.Writer.WritePropertyName("ExpressionAttributeNames");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExpressionAttributeNamesKvp in publicRequest.ExpressionAttributeNames)
+                    {
+                        context.Writer.WritePropertyName(publicRequestExpressionAttributeNamesKvp.Key);
+                        var publicRequestExpressionAttributeNamesValue = publicRequestExpressionAttributeNamesKvp.Value;
+
+                            context.Writer.Write(publicRequestExpressionAttributeNamesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetExpressionAttributeValues())
+                {
+                    context.Writer.WritePropertyName("ExpressionAttributeValues");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestExpressionAttributeValuesKvp in publicRequest.ExpressionAttributeValues)
+                    {
+                        context.Writer.WritePropertyName(publicRequestExpressionAttributeValuesKvp.Key);
+                        var publicRequestExpressionAttributeValuesValue = publicRequestExpressionAttributeValuesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExpressionAttributeValuesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetFilterExpression())
+                {
+                    context.Writer.WritePropertyName("FilterExpression");
+                    context.Writer.Write(publicRequest.FilterExpression);
+                }
+
                 if(publicRequest.IsSetIndexName())
                 {
                     context.Writer.WritePropertyName("IndexName");
@@ -128,6 +167,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Limit");
                     context.Writer.Write(publicRequest.Limit);
+                }
+
+                if(publicRequest.IsSetProjectionExpression())
+                {
+                    context.Writer.WritePropertyName("ProjectionExpression");
+                    context.Writer.Write(publicRequest.ProjectionExpression);
                 }
 
                 if(publicRequest.IsSetQueryFilter())

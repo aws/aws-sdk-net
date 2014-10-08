@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon RemoveRoleFromInstanceProfile service
-    /// </summary>
-    public partial class RemoveRoleFromInstanceProfileResponse : RemoveRoleFromInstanceProfileResult
+    public partial class RemoveRoleFromInstanceProfileResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the RemoveRoleFromInstanceProfileResult property.
-        /// Represents the output of a RemoveRoleFromInstanceProfile operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the RemoveRoleFromInstanceProfileResult class are now available on the RemoveRoleFromInstanceProfileResponse class. You should use the properties on RemoveRoleFromInstanceProfileResponse instead of accessing them through RemoveRoleFromInstanceProfileResult.")]
-        public RemoveRoleFromInstanceProfileResult RemoveRoleFromInstanceProfileResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

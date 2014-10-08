@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeregisterImage service
-    /// </summary>
-    public partial class DeregisterImageResponse : DeregisterImageResult
+    public partial class DeregisterImageResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeregisterImageResult property.
-        /// Represents the output of a DeregisterImage operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeregisterImageResult class are now available on the DeregisterImageResponse class. You should use the properties on DeregisterImageResponse instead of accessing them through DeregisterImageResult.")]
-        public DeregisterImageResult DeregisterImageResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

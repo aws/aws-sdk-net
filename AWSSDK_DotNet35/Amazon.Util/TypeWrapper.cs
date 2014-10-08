@@ -60,6 +60,7 @@ namespace Amazon.Util
         bool IsEnum {get;}
 
         bool IsClass { get; }
+        bool IsValueType { get; }
 
         bool IsInterface { get; }
         bool IsAbstract { get; }
@@ -148,6 +149,7 @@ namespace Amazon.Util
             public abstract bool IsInterface { get; }
             public abstract bool IsAbstract { get; }
             public abstract bool IsEnum { get; }
+            public abstract bool IsValueType { get; }
             public abstract ConstructorInfo GetConstructor(ITypeInfo[] paramTypes);
 
             public abstract object[] GetCustomAttributes(bool inherit);

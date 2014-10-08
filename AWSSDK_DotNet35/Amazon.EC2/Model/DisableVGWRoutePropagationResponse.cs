@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DisableVgwRoutePropagation service
-    /// </summary>
-    public partial class DisableVgwRoutePropagationResponse : DisableVgwRoutePropagationResult
+    public partial class DisableVgwRoutePropagationResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DisableVgwRoutePropagationResult property.
-        /// Represents the output of a DisableVgwRoutePropagation operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DisableVgwRoutePropagationResult class are now available on the DisableVgwRoutePropagationResponse class. You should use the properties on DisableVgwRoutePropagationResponse instead of accessing them through DisableVgwRoutePropagationResult.")]
-        public DisableVgwRoutePropagationResult DisableVgwRoutePropagationResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

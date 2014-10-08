@@ -17,6 +17,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
                 return client;
             }
+            set
+            {
+                client = value;
+            }
         }
 
         public static void BaseClean()

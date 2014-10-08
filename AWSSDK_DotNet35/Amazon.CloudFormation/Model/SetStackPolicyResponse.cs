@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon SetStackPolicy service
-    /// </summary>
-    public partial class SetStackPolicyResponse : SetStackPolicyResult
+    public partial class SetStackPolicyResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the SetStackPolicyResult property.
-        /// Represents the output of a SetStackPolicy operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the SetStackPolicyResult class are now available on the SetStackPolicyResponse class. You should use the properties on SetStackPolicyResponse instead of accessing them through SetStackPolicyResult.")]
-        public SetStackPolicyResult SetStackPolicyResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

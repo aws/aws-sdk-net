@@ -16,27 +16,19 @@
 /*
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
-
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>
-    /// Configuration for accessing Amazon DeactivateMFADevice service
-    /// </summary>
-    public partial class DeactivateMFADeviceResponse : DeactivateMFADeviceResult
+    public partial class DeactivateMFADeviceResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Gets and sets the DeactivateMFADeviceResult property.
-        /// Represents the output of a DeactivateMFADevice operation.
-        /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the DeactivateMFADeviceResult class are now available on the DeactivateMFADeviceResponse class. You should use the properties on DeactivateMFADeviceResponse instead of accessing them through DeactivateMFADeviceResult.")]
-        public DeactivateMFADeviceResult DeactivateMFADeviceResult
-        {
-            get
-            {
-                return this;
-            }
-        }
+
     }
 }

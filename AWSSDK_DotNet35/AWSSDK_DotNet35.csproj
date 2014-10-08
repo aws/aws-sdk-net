@@ -285,6 +285,8 @@
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDBv2\Conversion\*.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\*.cs" />
     <Compile Include="Amazon.DynamoDBv2\DynamoDBAsync.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -302,9 +304,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDBv2\DataModel\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDBv2\DocumentModel\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\*.cs">
@@ -1017,6 +1016,7 @@
     <Compile Include="Amazon.Util\AWSConfigs.Models.bcl.cs" />
     <Compile Include="Amazon.Util\AWSConfigs.Models.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.bcl.cs" />
+    <Compile Include="Amazon.Util\ReferenceTracking.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.bcl.cs" />
     <Compile Include="Amazon.Util\HeaderKeys.cs" />

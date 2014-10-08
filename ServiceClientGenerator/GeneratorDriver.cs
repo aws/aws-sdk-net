@@ -163,7 +163,9 @@ namespace ServiceClientGenerator
                 // if the operation has a suppressed result modification, use the structure generator to emit
                 // an empty xxxxResponse class, derived from AmazonWebServiceResponse
                 suppressResultGeneration =
+                    operation.ResponseStructure == null ||
                     this.config.ServiceModel.Customizations.ResultGenerationSuppressions.Contains(operation.Name);
+
                 if (suppressResultGeneration)
                 {
                     var responseGenerator = new StructureGenerator
@@ -173,7 +175,8 @@ namespace ServiceClientGenerator
                         Operation = operation
                     };
                     this.ExecuteGenerator(responseGenerator, responseGenerator.ClassName + ".cs", "Model");
-                    this.processedStructures.Add(operation.ResponseStructure.Name);
+                    if (operation.ResponseStructure != null)
+                        this.processedStructures.Add(operation.ResponseStructure.Name);
                 }
                 else
                 {
