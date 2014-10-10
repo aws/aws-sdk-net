@@ -56,6 +56,10 @@ namespace Amazon.DynamoDBv2.DataModel
             MemberType = Utils.GetType(member);
             PropertyName = member.Name;
         }
+        public SimplePropertyStorage(Type memberType)
+        {
+            MemberType = memberType;
+        }
     }
 
     /// <summary>

@@ -333,7 +333,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         // DynamoDBEntry <--> Object
-        private object FromDynamoDBEntry(PropertyStorage propertyStorage, DynamoDBEntry entry, DynamoDBFlatConfig flatConfig)
+        private object FromDynamoDBEntry(SimplePropertyStorage propertyStorage, DynamoDBEntry entry, DynamoDBFlatConfig flatConfig)
         {
             var converter = propertyStorage.Converter;
             if (converter != null)
@@ -352,17 +352,61 @@ namespace Amazon.DynamoDBv2.DataModel
                     return DeserializeFromDocument(document, targetType, flatConfig);
                 }
 
+                object output;
+                DynamoDBList list = entry as DynamoDBList;
+                if (list != null &&
+                    TryFromList(targetType, list, flatConfig, out output))
+                {
+                    return output;
+                }
+
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Unable to convert DynamoDB entry [{0}] of type {1} to property {2} of type {3}",
                     entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName));
             }
         }
+        private bool TryFromList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        {
+            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
+            if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
+                !Utils.ImplementsInterface(targetType, typeof(IList))) ||
+                !Utils.CanInstantiate(targetType))
+            {
+                output = null;
+                return false;
+            }
 
-        private DynamoDBEntry ToDynamoDBEntry(PropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig)
+            var elementType = targetTypeWrapper.GetGenericArguments()[0];
+            var collection = Utils.Instantiate(targetType);
+            IList ilist = collection as IList;
+            bool useIListInterface = ilist != null;
+            var propertyStorage = new SimplePropertyStorage(elementType);
+
+            MethodInfo collectionAdd = null;
+            if (!useIListInterface)
+            {
+                collectionAdd = targetTypeWrapper.GetMethod("Add");
+            }
+
+            foreach (DynamoDBEntry entry in list.Entries)
+            {
+                var item = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+
+                if (useIListInterface)
+                    ilist.Add(item);
+                else
+                    collectionAdd.Invoke(collection, new object[] { item });
+            }
+
+            output = collection;
+            return true;
+        }
+
+        private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig)
         {
             return ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: false);
         }
-        private DynamoDBEntry ToDynamoDBEntry(PropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList)
+        private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList)
         {
             if (value == null)
                 return null;
@@ -389,7 +433,46 @@ namespace Amazon.DynamoDBv2.DataModel
             if (conversion.HasConverter(type))
                 return conversion.ConvertToEntry(type, value);
             else
+            {
+                DynamoDBList list;
+                if (TryToList(value, type, flatConfig, out list))
+                    return list;
+
                 return SerializeToDocument(value, type, flatConfig);
+            }
+        }
+        private bool TryToList(object value, Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
+        {
+            var typeWrapper = TypeFactory.GetTypeInfo(type);
+            if (!Utils.ImplementsInterface(type, typeof(ICollection<>)))
+            {
+                output = null;
+                return false;
+            }
+
+            IEnumerable enumerable = value as IEnumerable;
+
+            // Strings are collections of chars, don't treat them as collections
+            if (enumerable == null || value is string)
+            {
+                output = null;
+                return false;
+            }
+
+            Type elementType = typeWrapper.GetGenericArguments()[0];
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType);
+            output = new DynamoDBList();
+            foreach (var item in enumerable)
+            {
+                DynamoDBEntry entry;
+                if (item == null)
+                    entry = DynamoDBNull.Null;
+                else
+                    entry = ToDynamoDBEntry(propertyStorage, item, flatConfig);
+
+                output.Add(entry);
+            }
+            return true;
         }
         private bool TryToScalar(object value, Type type, DynamoDBFlatConfig flatConfig, ref DynamoDBEntry entry)
         {

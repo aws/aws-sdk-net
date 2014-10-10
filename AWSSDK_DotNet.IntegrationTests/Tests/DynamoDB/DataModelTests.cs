@@ -180,7 +180,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     Name = "MyCloud",
                     Founded = new DateTime(1994, 7, 6),
-                    Revenue = 9001
+                    Revenue = 9001,
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 12, Name = "CloudDebugger" },
+                        new Product { Id = 13, Name = "CloudDebuggerTester" }
+                    }
                 }
             };
             Context.Save(product);
@@ -211,6 +216,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
             Assert.AreEqual(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
             Assert.AreNotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
+            Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
+
+            // Try saving circularly-referencing object
+            product.CompanyInfo.AllProducts.Add(product);
+            AssertExtensions.ExpectException(() => Context.Save(product));
+            product.CompanyInfo.AllProducts.RemoveAt(2);
 
             // Create and save new item
             product.Id++;
@@ -682,6 +695,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public string Name { get; set; }
             public DateTime Founded { get; set; }
             public Product MostPopularProduct { get; set; }
+            public List<Product> AllProducts { get; set; }
 
             [DynamoDBIgnore]
             public decimal Revenue { get; set; }
