@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  Name of the workflow type. This field is required. 
+        /// Name of the workflow type. This field is required.
         /// </para>
         /// </summary>
         public string Name
@@ -57,7 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        ///  Version of the workflow type. 
+        /// Version of the workflow type.
         /// </para>
         /// </summary>
         public string Version

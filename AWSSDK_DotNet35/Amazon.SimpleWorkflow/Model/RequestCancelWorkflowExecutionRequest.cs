@@ -34,7 +34,6 @@ namespace Amazon.SimpleWorkflow.Model
     /// requests the cancellation of the workflow execution as a whole. It is up to the decider
     /// to take appropriate actions when it receives an execution history with this event.
     /// 
-    /// 
     ///  
     /// <para>
     /// <b>Access Control</b>
@@ -64,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow execution to cancel. 
+        ///  The name of the domain containing the workflow execution to cancel.
         /// </para>
         /// </summary>
         public string Domain
@@ -82,7 +81,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  The runId of the workflow execution to cancel. 
+        ///  The runId of the workflow execution to cancel.
         /// </para>
         /// </summary>
         public string RunId
@@ -100,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The workflowId of the workflow execution to cancel. 
+        ///  The workflowId of the workflow execution to cancel.
         /// </para>
         /// </summary>
         public string WorkflowId

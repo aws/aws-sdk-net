@@ -42,6 +42,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Test large batch writes and gets
                 TestLargeBatchOperations(hashTable);
 
+                // Test expressions for update
+                TestExpressionUpdate(hashTable);
+
+                // Test expressions for put
+                TestExpressionPut(hashTable);
+
                 // Test expressions for delete
                 TestExpressionsOnDelete(hashTable);
 
@@ -425,6 +431,95 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             hashRangeTable.DeleteItem(doc1);
             hashRangeTable.DeleteItem(doc2);
+        }
+
+        private void TestExpressionPut(Table hashTable)
+        {
+            Document doc = new Document();
+
+            doc["Id"] = DateTime.Now.Ticks;
+            doc["name"] = "condition-form";
+            hashTable.PutItem(doc);
+
+            Expression expression = new Expression
+            {
+                ExpressionStatement = "attribute_not_exists(referencecounter) or referencecounter = :cond1",
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                        {
+                            {":cond1", 0}
+                        }
+            };
+            PutItemOperationConfig config = new PutItemOperationConfig
+            {
+                ConditionalExpression = expression
+            };
+
+            doc["update-test"] = 1;
+            Assert.IsTrue(hashTable.TryPutItem(doc, config));
+
+            doc["referencecounter"] = 0;
+            hashTable.UpdateItem(doc);
+
+            doc["update-test"] = null;
+            Assert.IsTrue(hashTable.TryPutItem(doc, config));
+
+            // Make sure removing attributes works
+            doc = hashTable.GetItem(doc);
+            Assert.IsFalse(doc.Contains("update-test"));
+
+            doc["referencecounter"] = 1;
+            hashTable.UpdateItem(doc);
+
+            doc["update-test"] = 3;
+            Assert.IsFalse(hashTable.TryPutItem(doc, config));
+
+            hashTable.DeleteItem(doc);
+        }
+
+        private void TestExpressionUpdate(Table hashTable)
+        {
+            Document doc = new Document();
+
+            doc["Id"] = DateTime.Now.Ticks;
+            doc["name"] = "condition-form";
+            hashTable.PutItem(doc);
+
+            Expression expression = new Expression
+            {
+                ExpressionStatement = "attribute_not_exists(referencecounter) or referencecounter = :cond1",
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                        {
+                            {":cond1", 0}
+                        }
+            };
+            UpdateItemOperationConfig config = new UpdateItemOperationConfig
+            {
+                ConditionalExpression = expression
+            };
+
+            doc["update-test"] = 1;
+            Assert.IsTrue(hashTable.TryUpdateItem(doc, config));
+
+            doc["referencecounter"] = 0;
+            hashTable.UpdateItem(doc);
+
+            doc["update-test"] = null;
+            Assert.IsTrue(hashTable.TryUpdateItem(doc, config));
+
+            // Make sure removing attributes works
+            doc = hashTable.GetItem(doc);
+            Assert.IsFalse(doc.Contains("update-test"));
+
+            doc["referencecounter"] = 1;
+            hashTable.UpdateItem(doc);
+
+            doc["update-test"] = 3;
+            Assert.IsFalse(hashTable.TryUpdateItem(doc, config));
+
+            doc = hashTable.GetItem(doc);
+            Assert.IsFalse(doc.Contains("update-test"));
+
+            hashTable.DeleteItem(doc);
         }
 
 

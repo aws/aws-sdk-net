@@ -32,7 +32,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated,
     /// you cannot create new executions of that type. Executions that were started before
     /// the type was deprecated will continue to run. A deprecated workflow type may still
-    /// be used when calling visibility actions. 
+    /// be used when calling visibility actions.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain in which the workflow type is registered. 
+        /// The name of the domain in which the workflow type is registered.
         /// </para>
         /// </summary>
         public string Domain
@@ -83,7 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        ///  The workflow type to deprecate. 
+        /// The workflow type to deprecate.
         /// </para>
         /// </summary>
         public WorkflowType WorkflowType

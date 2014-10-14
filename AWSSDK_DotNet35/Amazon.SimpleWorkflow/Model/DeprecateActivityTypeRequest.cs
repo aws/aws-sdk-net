@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the DeprecateActivityType operation.
     /// Deprecates the specified <i>activity type</i>. After an activity type has been deprecated,
     /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
-    /// before the type was deprecated will continue to run. 
+    /// before the type was deprecated will continue to run.
     /// 
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        ///  The activity type to deprecate. 
+        /// The activity type to deprecate.
         /// </para>
         /// </summary>
         public ActivityType ActivityType
@@ -82,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain in which the activity type is registered. 
+        /// The name of the domain in which the activity type is registered.
         /// </para>
         /// </summary>
         public string Domain

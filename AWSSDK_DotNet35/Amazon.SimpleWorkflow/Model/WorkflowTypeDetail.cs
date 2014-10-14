@@ -38,8 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        ///  Configuration settings of the workflow type registered through <a>RegisterWorkflowType</a>
-        /// 
+        /// Configuration settings of the workflow type registered through <a>RegisterWorkflowType</a>
         /// </para>
         /// </summary>
         public WorkflowTypeConfiguration Configuration
@@ -57,17 +56,17 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TypeInfo. 
         /// <para>
-        ///  General information about the workflow type. 
+        /// General information about the workflow type.
         /// </para>
         ///  
         /// <para>
-        ///  The status of the workflow type (returned in the WorkflowTypeInfo structure) can
-        /// be one of the following. 
+        /// The status of the workflow type (returned in the WorkflowTypeInfo structure) can be
+        /// one of the following.
         /// </para>
         ///  <ul> <li> <b>REGISTERED</b>: The type is registered and available. Workers supporting
-        /// this type should be running. </li> <li> <b>DEPRECATED</b>: The type was deprecated
+        /// this type should be running.</li> <li> <b>DEPRECATED</b>: The type was deprecated
         /// using <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers supporting
-        /// this type running. You cannot create new workflow executions of this type. </li> </ul>
+        /// this type running. You cannot create new workflow executions of this type.</li> </ul>
         /// </summary>
         public WorkflowTypeInfo TypeInfo
         {

@@ -185,7 +185,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     {
                         new Product { Id = 12, Name = "CloudDebugger" },
                         new Product { Id = 13, Name = "CloudDebuggerTester" }
+                    },
+                    CompetitorProducts = new Dictionary<string, List<Product>>
+                    {
+                        {
+                            "CloudsAreOK",
+                            new List<Product>
+                            {
+                                new Product { Id = 90, Name = "CloudSpotter RipOff" },
+                                new Product { Id = 100, Name = "CloudDebugger RipOff" },
+                            }
+                        },
+                        {
+                            "CloudsAreBetter",
+                            new List<Product>
+                            {
+                                new Product { Id = 92, Name = "CloudSpotter RipOff 2" },
+                                new Product { Id = 102, Name = "CloudDebugger RipOff 3" },
+                            }
+                        },
                     }
+                },
+                Map = new Dictionary<string, string>
+                {
+                    { "a", "1" },
+                    { "b", "2" }
                 }
             };
             Context.Save(product);
@@ -219,6 +243,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
             Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
             Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
+            Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
+            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
+            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Key);
+            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count);
+            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Key);
+            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count);
+
 
             // Try saving circularly-referencing object
             product.CompanyInfo.AllProducts.Add(product);
@@ -688,6 +719,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             //[DynamoDBProperty(Converter = typeof(SetPropertyConverter<List<byte>,byte>))]
             [DynamoDBProperty(Converter = typeof(ListToSetPropertyConverter<byte>))]
             public List<byte> KeySizes { get; set; }
+
+            public Dictionary<string, string> Map { get; set; }
         }
 
         public class CompanyInfo
@@ -696,6 +729,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public DateTime Founded { get; set; }
             public Product MostPopularProduct { get; set; }
             public List<Product> AllProducts { get; set; }
+            public Dictionary<string, List<Product>> CompetitorProducts { get; set; }
 
             [DynamoDBIgnore]
             public decimal Revenue { get; set; }

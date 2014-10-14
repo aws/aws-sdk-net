@@ -30,25 +30,44 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Container for the parameters to the CountClosedWorkflowExecutions operation.
     /// Returns the number of closed workflow executions within the given domain that meet
-    /// the specified filtering criteria. 
+    /// the specified filtering criteria.
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    /// <strong>Access Control</strong>
     /// </para>
     ///  
     /// <para>
     /// You can use IAM policies to control this action's access to Amazon SWF resources as
     /// follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-    /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to call this action.</li> <li>Constrain the following parameters by
-    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagFilter.tag</code>:
-    /// String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li> <code>typeFilter.name</code>:
-    /// String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li> <code>typeFilter.version</code>:
-    /// String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li>
-    /// </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// Use a <code>Resource</code> element with the domain name to limit the action to only
+    /// specified domains.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Constrain the following parameters by using a <code>Condition</code> element with
+    /// the appropriate keys.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
@@ -69,9 +88,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CloseStatusFilter. 
         /// <para>
-        ///  If specified, only workflow executions that match this close status are counted.
-        /// This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.
-        /// 
+        /// If specified, only workflow executions that match this close status are counted. This
+        /// filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.
         /// </para>
         /// </summary>
         public CloseStatusFilter CloseStatusFilter
@@ -89,8 +107,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CloseTimeFilter. 
         /// <para>
-        ///  If specified, only workflow executions that meet the close time criteria of the filter
-        /// are counted. 
+        /// If specified, only workflow executions that meet the close time criteria of the filter
+        /// are counted.
         /// </para>
         /// </summary>
         public ExecutionTimeFilter CloseTimeFilter
@@ -108,7 +126,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow executions to count. 
+        /// The name of the domain containing the workflow executions to count.
         /// </para>
         /// </summary>
         public string Domain
@@ -126,8 +144,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionFilter. 
         /// <para>
-        ///  If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted. 
+        /// If specified, only workflow executions matching the <code>WorkflowId</code> in the
+        /// filter are counted.
         /// </para>
         /// </summary>
         public WorkflowExecutionFilter ExecutionFilter
@@ -145,8 +163,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartTimeFilter. 
         /// <para>
-        ///  If specified, only workflow executions that meet the start time criteria of the filter
-        /// are counted. 
+        /// If specified, only workflow executions that meet the start time criteria of the filter
+        /// are counted.
         /// </para>
         /// </summary>
         public ExecutionTimeFilter StartTimeFilter
@@ -164,8 +182,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TagFilter. 
         /// <para>
-        ///  If specified, only executions that have a tag that matches the filter are counted.
-        /// 
+        /// If specified, only executions that have a tag that matches the filter are counted.
         /// </para>
         /// </summary>
         public TagFilter TagFilter
@@ -183,7 +200,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TypeFilter. 
         /// <para>
-        ///  If specified, indicates the type of the workflow executions to be counted. 
+        /// If specified, indicates the type of the workflow executions to be counted.
         /// </para>
         /// </summary>
         public WorkflowTypeFilter TypeFilter

@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the DescribeActivityType operation.
     /// Returns information about the specified activity type. This includes configuration
     /// settings provided at registration time as well as other general information about
-    /// the type. 
+    /// the type.
     /// 
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        ///  The activity type to describe. 
+        /// The activity type to describe.
         /// </para>
         /// </summary>
         public ActivityType ActivityType
@@ -82,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain in which the activity type is registered. 
+        /// The name of the domain in which the activity type is registered.
         /// </para>
         /// </summary>
         public string Domain

@@ -37,7 +37,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>

@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// will fire after the specified delay and record a <code>TimerFired</code> event.</li>
     /// </ul> 
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>Decision Failure</b>
+    ///  <b>Decision Failure</b> 
     /// </para>
     ///  
     /// <para>
@@ -87,7 +87,6 @@ namespace Amazon.SimpleWorkflow.Model
     /// One of the following events might be added to the history to indicate an error. The
     /// event attribute's <b>cause</b> parameter indicates the cause. If <b>cause</b> is set
     /// to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions.
-    /// 
     /// </para>
     ///  <ul> <li> <b>ScheduleActivityTaskFailed</b> a ScheduleActivityTask decision failed.
     /// This could happen if the activity type specified in the decision is not registered,
@@ -120,20 +119,20 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>How to Code a Decision</b>
+    ///  <b>How to Code a Decision</b> 
     /// </para>
     ///  
     /// <para>
     ///  You code a decision by first setting the decision type field to one of the above
     /// decision values, and then set the corresponding attributes field shown below: 
     /// </para>
-    ///  <ul> <li><a>ScheduleActivityTaskDecisionAttributes</a></li> <li><a>RequestCancelActivityTaskDecisionAttributes</a></li>
-    /// <li><a>CompleteWorkflowExecutionDecisionAttributes</a></li> <li><a>FailWorkflowExecutionDecisionAttributes</a></li>
-    /// <li><a>CancelWorkflowExecutionDecisionAttributes</a></li> <li><a>ContinueAsNewWorkflowExecutionDecisionAttributes</a></li>
-    /// <li><a>RecordMarkerDecisionAttributes</a></li> <li><a>StartTimerDecisionAttributes</a></li>
-    /// <li><a>CancelTimerDecisionAttributes</a></li> <li><a>SignalExternalWorkflowExecutionDecisionAttributes</a></li>
-    /// <li><a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a></li> <li><a>StartChildWorkflowExecutionDecisionAttributes</a></li>
-    /// </ul>
+    ///  <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a>
+    /// </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a> </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a>
+    /// </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a> </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a>
+    /// </li> <li> <a>RecordMarkerDecisionAttributes</a> </li> <li> <a>StartTimerDecisionAttributes</a>
+    /// </li> <li> <a>CancelTimerDecisionAttributes</a> </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a>
+    /// </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li>
+    /// <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
     /// </summary>
     public partial class Decision
     {

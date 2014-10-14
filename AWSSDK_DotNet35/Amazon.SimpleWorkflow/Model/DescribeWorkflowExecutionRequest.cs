@@ -30,7 +30,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Container for the parameters to the DescribeWorkflowExecution operation.
     /// Returns information about the specified workflow execution including its type and
-    /// some statistics. 
+    /// some statistics.
     /// 
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow execution. 
+        /// The name of the domain containing the workflow execution.
         /// </para>
         /// </summary>
         public string Domain
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Execution. 
         /// <para>
-        ///  The workflow execution to describe. 
+        /// The workflow execution to describe.
         /// </para>
         /// </summary>
         public WorkflowExecution Execution

@@ -38,9 +38,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  The token for the next page of type information. If set then the list consists of
+        /// The token for the next page of type information. If set then the list consists of
         /// more than one page. You can retrieve the next page by repeating the request (that
-        /// returned the structure) with the this token and all other arguments unchanged. 
+        /// returned the structure) with the this token and all other arguments unchanged.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -58,7 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TypeInfos. 
         /// <para>
-        ///  The list of workflow type information. 
+        /// The list of workflow type information.
         /// </para>
         /// </summary>
         public List<WorkflowTypeInfo> TypeInfos

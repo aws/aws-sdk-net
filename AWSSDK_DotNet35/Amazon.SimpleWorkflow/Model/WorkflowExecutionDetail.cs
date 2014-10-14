@@ -78,9 +78,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LatestActivityTaskTimestamp. 
         /// <para>
-        ///  The time when the last activity task was scheduled for this workflow execution. You
+        /// The time when the last activity task was scheduled for this workflow execution. You
         /// can use this information to determine if the workflow has not made progress for an
-        /// unusually long period of time and might require a corrective action. 
+        /// unusually long period of time and might require a corrective action.
         /// </para>
         /// </summary>
         public DateTime LatestActivityTaskTimestamp
@@ -98,9 +98,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LatestExecutionContext. 
         /// <para>
-        ///  The latest executionContext provided by the decider for this workflow execution.
-        /// A decider can provide an executionContext, which is a free form string, when closing
-        /// a decision task using <a>RespondDecisionTaskCompleted</a>. 
+        /// The latest executionContext provided by the decider for this workflow execution. A
+        /// decider can provide an executionContext, which is a free form string, when closing
+        /// a decision task using <a>RespondDecisionTaskCompleted</a>.
         /// </para>
         /// </summary>
         public string LatestExecutionContext
@@ -118,8 +118,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenCounts. 
         /// <para>
-        ///  The number of tasks for this workflow execution. This includes open and closed tasks
-        /// of all types. 
+        /// The number of tasks for this workflow execution. This includes open and closed tasks
+        /// of all types.
         /// </para>
         /// </summary>
         public WorkflowExecutionOpenCounts OpenCounts

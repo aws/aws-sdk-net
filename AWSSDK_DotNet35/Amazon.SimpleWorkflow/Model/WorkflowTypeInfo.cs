@@ -41,7 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        ///  The date when this type was registered. 
+        /// The date when this type was registered.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -59,8 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DeprecationDate. 
         /// <para>
-        ///  If the type is in deprecated state, then it is set to the date when the type was
-        /// deprecated. 
+        /// If the type is in deprecated state, then it is set to the date when the type was deprecated.
         /// </para>
         /// </summary>
         public DateTime DeprecationDate
@@ -78,7 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the type registered through <a>RegisterWorkflowType</a>. 
+        /// The description of the type registered through <a>RegisterWorkflowType</a>.
         /// </para>
         /// </summary>
         public string Description
@@ -96,7 +95,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current status of the workflow type. 
+        /// The current status of the workflow type.
         /// </para>
         /// </summary>
         public RegistrationStatus Status
@@ -114,7 +113,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        ///  The workflow type this information is about. 
+        /// The workflow type this information is about.
         /// </para>
         /// </summary>
         public WorkflowType WorkflowType

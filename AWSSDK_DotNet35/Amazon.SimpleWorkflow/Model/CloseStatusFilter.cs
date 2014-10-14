@@ -37,8 +37,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The close status that must match the close status of an execution for it to meet
-        /// the criteria of this filter. This field is required. 
+        /// The close status that must match the close status of an execution for it to meet the
+        /// criteria of this filter. This field is required.
         /// </para>
         /// </summary>
         public CloseStatus Status

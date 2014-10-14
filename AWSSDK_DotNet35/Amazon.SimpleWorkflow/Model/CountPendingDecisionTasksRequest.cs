@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the CountPendingDecisionTasks operation.
     /// Returns the estimated number of decision tasks in the specified task list. The count
     /// returned is an approximation and is not guaranteed to be exact. If you specify a task
-    /// list that no decision task was ever scheduled in then 0 will be returned. 
+    /// list that no decision task was ever scheduled in then 0 will be returned.
     /// 
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the task list. 
+        /// The name of the domain that contains the task list.
         /// </para>
         /// </summary>
         public string Domain
@@ -80,7 +80,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  The name of the task list. 
+        /// The name of the task list.
         /// </para>
         /// </summary>
         public TaskList TaskList

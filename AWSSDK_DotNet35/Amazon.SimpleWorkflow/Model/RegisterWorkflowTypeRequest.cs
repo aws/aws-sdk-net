@@ -39,9 +39,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <important> If the type already exists, then a <code>TypeAlreadyExists</code> fault
     /// is returned. You cannot change the configuration settings of a workflow type once
-    /// it is registered and it must be registered as a new version. </important> 
+    /// it is registered and it must be registered as a new version.</important> 
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultChildPolicy. 
         /// <para>
-        ///  If set, specifies the default policy to use for the child workflow executions when
+        /// If set, specifies the default policy to use for the child workflow executions when
         /// a workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a>
         /// action explicitly or due to an expired timeout. This default can be overridden when
         /// starting a workflow execution using the <a>StartWorkflowExecution</a> action or the
@@ -104,17 +104,17 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultExecutionStartToCloseTimeout. 
         /// <para>
-        ///  If set, specifies the default maximum duration for executions of this workflow type.
+        /// If set, specifies the default maximum duration for executions of this workflow type.
         /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a>
-        /// Action or <code>StartChildWorkflowExecution</code> <a>Decision</a>. 
+        /// Action or <code>StartChildWorkflowExecution</code> <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        ///  The duration is specified in seconds. The valid values are integers greater than
-        /// or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
+        /// The duration is specified in seconds. The valid values are integers greater than or
+        /// equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
         /// specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there
         /// is a one-year max limit on the time that a workflow execution can run. Exceeding this
-        /// limit will always cause the workflow execution to time out. 
+        /// limit will always cause the workflow execution to time out.
         /// </para>
         /// </summary>
         public string DefaultExecutionStartToCloseTimeout
@@ -132,10 +132,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskList. 
         /// <para>
-        ///  If set, specifies the default task list to use for scheduling decision tasks for
-        /// executions of this workflow type. This default is used only if a task list is not
-        /// provided when starting the execution through the <a>StartWorkflowExecution</a> Action
-        /// or <code>StartChildWorkflowExecution</code> <a>Decision</a>. 
+        /// If set, specifies the default task list to use for scheduling decision tasks for executions
+        /// of this workflow type. This default is used only if a task list is not provided when
+        /// starting the execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.
         /// </para>
         /// </summary>
         public TaskList DefaultTaskList
@@ -180,7 +180,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Textual description of the workflow type. 
+        /// Textual description of the workflow type.
         /// </para>
         /// </summary>
         public string Description
@@ -223,7 +223,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public string Name
@@ -248,7 +248,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public string Version

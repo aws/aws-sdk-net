@@ -29,8 +29,8 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// Container for the parameters to the CountOpenWorkflowExecutions operation.
-    /// Returns the number of open workflow executions within the given domain that meet
-    /// the specified filtering criteria. 
+    /// Returns the number of open workflow executions within the given domain that meet the
+    /// specified filtering criteria.
     /// 
     ///  
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow executions to count. 
+        /// The name of the domain containing the workflow executions to count.
         /// </para>
         /// </summary>
         public string Domain
@@ -85,8 +85,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionFilter. 
         /// <para>
-        ///  If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted. 
+        /// If specified, only workflow executions matching the <code>WorkflowId</code> in the
+        /// filter are counted.
         /// </para>
         /// </summary>
         public WorkflowExecutionFilter ExecutionFilter
@@ -104,8 +104,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartTimeFilter. 
         /// <para>
-        ///  Specifies the start time criteria that workflow executions must meet in order to
-        /// be counted. 
+        /// Specifies the start time criteria that workflow executions must meet in order to be
+        /// counted.
         /// </para>
         /// </summary>
         public ExecutionTimeFilter StartTimeFilter
@@ -123,8 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TagFilter. 
         /// <para>
-        ///  If specified, only executions that have a tag that matches the filter are counted.
-        /// 
+        /// If specified, only executions that have a tag that matches the filter are counted.
         /// </para>
         /// </summary>
         public TagFilter TagFilter
@@ -142,7 +141,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TypeFilter. 
         /// <para>
-        ///  Specifies the type of the workflow executions to be counted. 
+        /// Specifies the type of the workflow executions to be counted.
         /// </para>
         /// </summary>
         public WorkflowTypeFilter TypeFilter

@@ -29,11 +29,11 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// Container for the parameters to the DeprecateDomain operation.
-    /// Deprecates the specified domain. After a domain has been deprecated it cannot be
-    /// used to create new workflow executions or register new types. However, you can still
-    /// use visibility actions on this domain. Deprecating a domain also deprecates all activity
+    /// Deprecates the specified domain. After a domain has been deprecated it cannot be used
+    /// to create new workflow executions or register new types. However, you can still use
+    /// visibility actions on this domain. Deprecating a domain also deprecates all activity
     /// and workflow types registered in the domain. Executions that were started before the
-    /// domain was deprecated will continue to run. 
+    /// domain was deprecated will continue to run.
     /// 
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the domain to deprecate. 
+        /// The name of the domain to deprecate.
         /// </para>
         /// </summary>
         public string Name

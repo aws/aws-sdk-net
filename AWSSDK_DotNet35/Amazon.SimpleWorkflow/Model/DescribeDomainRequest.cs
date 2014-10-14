@@ -31,7 +31,6 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the DescribeDomain operation.
     /// Returns information about the specified domain including description and status.
     /// 
-    /// 
     ///  
     /// <para>
     /// <b>Access Control</b>
@@ -59,7 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the domain to describe. 
+        /// The name of the domain to describe.
         /// </para>
         /// </summary>
         public string Name

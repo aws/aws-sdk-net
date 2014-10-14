@@ -32,11 +32,11 @@ namespace Amazon.SimpleWorkflow.Model
     /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution
     /// history and creates a decision task for the workflow execution identified by the given
     /// domain, workflowId and runId. The event is recorded with the specified user defined
-    /// signalName and input (if provided). 
+    /// signalName and input (if provided).
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow execution to signal. 
+        ///  The name of the domain containing the workflow execution to signal.
         /// </para>
         /// </summary>
         public string Domain
@@ -84,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property Input. 
         /// <para>
         ///  Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-        /// workflow execution's history. 
+        /// workflow execution's history.
         /// </para>
         /// </summary>
         public string Input
@@ -102,7 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  The runId of the workflow execution to signal. 
+        ///  The runId of the workflow execution to signal.
         /// </para>
         /// </summary>
         public string RunId
@@ -120,7 +120,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property SignalName. 
         /// <para>
-        ///  The name of the signal. This name must be meaningful to the target workflow. 
+        ///  The name of the signal. This name must be meaningful to the target workflow.
         /// </para>
         /// </summary>
         public string SignalName
@@ -138,7 +138,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The workflowId of the workflow execution to signal. 
+        ///  The workflowId of the workflow execution to signal.
         /// </para>
         /// </summary>
         public string WorkflowId

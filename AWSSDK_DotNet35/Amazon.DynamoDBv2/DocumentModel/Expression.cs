@@ -102,35 +102,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void ApplyExpression(ScanRequest request, DynamoDBEntryConversion conversion)
         {
             request.FilterExpression = this.ExpressionStatement;
-            request.ExpressionAttributeNames = this.ExpressionAttributeNames;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             request.ExpressionAttributeValues = this.ConvertToAttributeValues(conversion);
         }
 
         internal void ApplyExpression(QueryRequest request, DynamoDBEntryConversion conversion)
         {
             request.FilterExpression = this.ExpressionStatement;
-            request.ExpressionAttributeNames = this.ExpressionAttributeNames;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             request.ExpressionAttributeValues = this.ConvertToAttributeValues(conversion);
         }
 
         internal void ApplyExpression(DeleteItemRequest request, DynamoDBEntryConversion conversion)
         {
             request.ConditionExpression = this.ExpressionStatement;
-            request.ExpressionAttributeNames = this.ExpressionAttributeNames;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             request.ExpressionAttributeValues = this.ConvertToAttributeValues(conversion);
         }
 
         internal void ApplyExpression(PutItemRequest request, DynamoDBEntryConversion conversion)
         {
             request.ConditionExpression = this.ExpressionStatement;
-            request.ExpressionAttributeNames = this.ExpressionAttributeNames;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             request.ExpressionAttributeValues = this.ConvertToAttributeValues(conversion);
         }
 
         internal void ApplyExpression(UpdateItemRequest request, DynamoDBEntryConversion conversion)
         {
             request.ConditionExpression = this.ExpressionStatement;
-            request.ExpressionAttributeNames = this.ExpressionAttributeNames;
+            request.ExpressionAttributeNames = new Dictionary<string,string>(this.ExpressionAttributeNames);
             request.ExpressionAttributeValues = this.ConvertToAttributeValues(conversion);
         }
     }

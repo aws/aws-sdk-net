@@ -32,7 +32,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// deny permission to specify this decision.</li> <li>Constrain the following parameters
     /// by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagList.member.N</code>:
     /// TBD</li> <li> <code>taskList</code>:String constraint. The key is "swf:taskList.name".</li>
-    /// <li> <code>workflowType.name</code>: String constraint. The key is “swf:workflowType.name”.</li>
-    /// <li> <code>workflowType.version</code>: String constraint. The key is “swf:workflowType.version”.</li>
+    /// <li> <code>workflowType.name</code>: String constraint. The key is "swf:workflowType.name".</li>
+    /// <li> <code>workflowType.version</code>: String constraint. The key is "swf:workflowType.version".</li>
     /// </ul> </li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
@@ -188,7 +188,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public TaskList TaskList
@@ -239,7 +239,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public string WorkflowId

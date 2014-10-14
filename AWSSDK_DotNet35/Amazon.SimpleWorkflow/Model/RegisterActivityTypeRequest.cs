@@ -36,7 +36,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// exists in the domain. You cannot change any configuration settings of the type after
     /// its registration, and it must be registered as a new version. </important> 
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -244,7 +244,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public string Name
@@ -269,7 +269,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public string Version

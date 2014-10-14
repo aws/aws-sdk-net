@@ -32,12 +32,12 @@ namespace Amazon.SimpleWorkflow.Model
     /// Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the
     /// workflow execution identified by the given domain, runId, and workflowId. The child
     /// policy, registered with the workflow type or specified when starting this execution,
-    /// is applied to any open child workflow executions of this workflow execution. 
+    /// is applied to any open child workflow executions of this workflow execution.
     /// 
     ///  <important> If the identified workflow execution was in progress, it is terminated
-    /// immediately. </important> 
+    /// immediately.</important> 
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
@@ -93,7 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  Optional details for terminating the workflow execution. 
+        ///  Optional details for terminating the workflow execution.
         /// </para>
         /// </summary>
         public string Details
@@ -111,7 +111,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The domain of the workflow execution to terminate. 
+        ///  The domain of the workflow execution to terminate.
         /// </para>
         /// </summary>
         public string Domain
@@ -129,7 +129,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        ///  An optional descriptive reason for terminating the workflow execution. 
+        ///  An optional descriptive reason for terminating the workflow execution.
         /// </para>
         /// </summary>
         public string Reason
@@ -147,7 +147,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  The runId of the workflow execution to terminate. 
+        ///  The runId of the workflow execution to terminate.
         /// </para>
         /// </summary>
         public string RunId
@@ -165,7 +165,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The workflowId of the workflow execution to terminate. 
+        ///  The workflowId of the workflow execution to terminate.
         /// </para>
         /// </summary>
         public string WorkflowId

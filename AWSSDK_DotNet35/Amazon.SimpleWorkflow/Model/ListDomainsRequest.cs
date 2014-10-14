@@ -35,7 +35,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
     /// to only specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*"</code>,
-    /// where “AccountID" is the account ID, with no dashes.</li> <li>Use an <code>Action</code>
+    /// where "AccountID" is the account ID, with no dashes.</li> <li>Use an <code>Action</code>
     /// element to allow or deny permission to call this action.</li> <li>You cannot use an
     /// IAM policy to constrain this action's parameters.</li> </ul> 
     /// <para>

@@ -31,12 +31,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            // TODO: remove before shipping
-            Client = new AmazonDynamoDBClient(new AmazonDynamoDBConfig
-            {
-                RegionEndpoint = Amazon.RegionEndpoint.APNortheast1
-            });
-
             CreateTestTables();
 
             // Since tables have a variable prefix, configure the prefix for the process

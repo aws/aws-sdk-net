@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Paginated representation of a workflow history for a workflow execution. This is
-    /// the up to date, complete and authoritative record of the events related to all tasks
-    /// and events in the life of the workflow execution.
+    /// Paginated representation of a workflow history for a workflow execution. This is the
+    /// up to date, complete and authoritative record of the events related to all tasks and
+    /// events in the life of the workflow execution.
     /// </summary>
     public partial class History
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        ///  The list of history events. 
+        /// The list of history events.
         /// </para>
         /// </summary>
         public List<HistoryEvent> Events
@@ -58,9 +58,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  The token for the next page. If set, the history consists of more than one page and
+        /// The token for the next page. If set, the history consists of more than one page and
         /// the next page can be retrieved by repeating the request with this token and all other
-        /// arguments unchanged. 
+        /// arguments unchanged.
         /// </para>
         /// </summary>
         public string NextPageToken

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Event within a workflow execution. A history event can be one of these types: 
+    /// Event within a workflow execution. A history event can be one of these types:
     /// 
     ///  <ul> <li> <b>WorkflowExecutionStarted</b>: The workflow execution was started. </li>
     /// <li> <b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful

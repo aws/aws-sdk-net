@@ -37,7 +37,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The workflowId to pass of match the criteria of this filter. 
+        /// The workflowId to pass of match the criteria of this filter.
         /// </para>
         /// </summary>
         public string WorkflowId

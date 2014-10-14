@@ -346,13 +346,16 @@ namespace Amazon.DynamoDBv2.DataModel
                 return conversion.ConvertFromEntry(targetType, entry);
             else
             {
+                object output;
                 Document document = entry as Document;
                 if (document != null)
                 {
+                    if (TryFromMap(targetType, document, flatConfig, out output))
+                        return output;
+
                     return DeserializeFromDocument(document, targetType, flatConfig);
                 }
 
-                object output;
                 DynamoDBList list = entry as DynamoDBList;
                 if (list != null &&
                     TryFromList(targetType, list, flatConfig, out output))
@@ -401,6 +404,33 @@ namespace Amazon.DynamoDBv2.DataModel
             output = collection;
             return true;
         }
+        private bool TryFromMap(Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
+        {
+            output = null;
+
+            if (!Utils.CanInstantiate(targetType))
+                return false;
+
+            Type valueType;
+            if (!IsSupportedDictionaryType(targetType, out valueType))
+                return false;
+
+            var dictionary = Utils.Instantiate(targetType);
+            var idictionary = dictionary as IDictionary;
+            var propertyStorage = new SimplePropertyStorage(valueType);
+
+            foreach (var kvp in map)
+            {
+                var key = kvp.Key;
+                var entry = kvp.Value;
+
+                var item = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+                idictionary.Add(key, item);
+            }
+
+            output = dictionary;
+            return true;
+        }
 
         private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig)
         {
@@ -434,12 +464,49 @@ namespace Amazon.DynamoDBv2.DataModel
                 return conversion.ConvertToEntry(type, value);
             else
             {
+                Document map;
+                if (TryToMap(value, type, flatConfig, out map))
+                    return map;
+
                 DynamoDBList list;
                 if (TryToList(value, type, flatConfig, out list))
                     return list;
 
                 return SerializeToDocument(value, type, flatConfig);
             }
+        }
+        private bool TryToMap(object value, Type type, DynamoDBFlatConfig flatConfig, out Document output)
+        {
+            output = null;
+
+            ITypeInfo typeWrapper;
+            Type keyType, valueType;
+            if (!IsSupportedDictionaryType(type, out typeWrapper, out keyType, out valueType))
+                return false;
+
+            var idictionary = value as IDictionary;
+            if (idictionary == null)
+                return false;
+
+            output = new Document();
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType);
+
+            foreach (object keyValue in idictionary.Keys)
+            {
+                object item = idictionary[keyValue];
+                string key = keyValue as string;
+                if (key == null)
+                    continue;
+
+                DynamoDBEntry entry;
+                if (item == null)
+                    entry = DynamoDBNull.Null;
+                else
+                    entry = ToDynamoDBEntry(propertyStorage, item, flatConfig);
+
+                output[key] = entry;
+            }
+            return true;
         }
         private bool TryToList(object value, Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
         {
@@ -508,6 +575,34 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             return false;
+        }
+
+        private static bool IsSupportedDictionaryType(Type type, out Type valueType)
+        {
+            ITypeInfo typeWrapper;
+            Type keyType;
+            return IsSupportedDictionaryType(type, out typeWrapper, out keyType, out valueType);
+        }
+        private static bool IsSupportedDictionaryType(Type type, out ITypeInfo typeWrapper, out Type keyType, out Type valueType)
+        {
+            keyType = valueType = null;
+            typeWrapper = null;
+
+            // Type must implement both IDictionary<TKey,TValue> and IDictionary
+            if (!(Utils.ImplementsInterface(type, typeof(IDictionary<,>)) &&
+                 Utils.ImplementsInterface(type, typeof(IDictionary))))
+                return false;
+
+            typeWrapper = TypeFactory.GetTypeInfo(type);
+            var genericArguments = typeWrapper.GetGenericArguments();
+            if (genericArguments.Length != 2)
+                return false;
+            keyType = genericArguments[0];
+            valueType = genericArguments[1];
+            if (keyType != typeof(string) || valueType == typeof(object))
+                return false;
+
+            return true;
         }
 
         // Deserializes a given Document to instance of targetType

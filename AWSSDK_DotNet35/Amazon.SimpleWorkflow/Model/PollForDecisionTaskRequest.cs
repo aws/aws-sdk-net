@@ -33,24 +33,24 @@ namespace Amazon.SimpleWorkflow.Model
     /// A decision task may be returned for any open workflow execution that is using the
     /// specified task list. The task includes a paginated view of the history of the workflow
     /// execution. The decider should use the workflow type and the history to determine how
-    /// to properly handle the task. 
+    /// to properly handle the task.
     /// 
     ///  
     /// <para>
-    ///  This action initiates a long poll, where the service holds the HTTP connection open
+    /// This action initiates a long poll, where the service holds the HTTP connection open
     /// and responds as soon a task becomes available. If no decision task is available in
     /// the specified task list before the timeout of 60 seconds expires, an empty result
     /// is returned. An empty result, in this context, means that a DecisionTask is returned,
-    /// but that the value of taskToken is an empty string. 
+    /// but that the value of taskToken is an empty string.
     /// </para>
-    ///  <important> Deciders should set their client side socket timeout to at least 70 seconds
-    /// (10 seconds higher than the timeout). </important> <important> Because the number
-    /// of workflow history events for a single workflow execution might be very large, the
-    /// result returned might be split up across a number of pages. To retrieve subsequent
-    /// pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code>
+    ///  <important>Deciders should set their client side socket timeout to at least 70 seconds
+    /// (10 seconds higher than the timeout).</important> <important>Because the number of
+    /// workflow history events for a single workflow execution might be very large, the result
+    /// returned might be split up across a number of pages. To retrieve subsequent pages,
+    /// make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code>
     /// returned by the initial call. Note that you do <b>not</b> call <code>GetWorkflowExecutionHistory</code>
     /// with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code>
-    /// again. </important> 
+    /// again.</important> 
     /// <para>
     /// <b>Access Control</b>
     /// </para>
@@ -121,11 +121,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
-        ///  The maximum number of history events returned in each page. The default is 100, but
+        /// The maximum number of history events returned in each page. The default is 100, but
         /// the caller can override this value to a page size <i>smaller</i> than the default.
         /// You cannot specify a page size greater than 100. Note that the number of events may
         /// be less than the maxiumum page size, in which case, the returned page will have fewer
-        /// results than the maximumPageSize specified. 
+        /// results than the maximumPageSize specified.
         /// </para>
         /// </summary>
         public int MaximumPageSize
@@ -164,9 +164,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ReverseOrder. 
         /// <para>
-        ///  When set to <code>true</code>, returns the events in reverse order. By default the
+        /// When set to <code>true</code>, returns the events in reverse order. By default the
         /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-        /// events. 
+        /// events.
         /// </para>
         /// </summary>
         public bool ReverseOrder
@@ -191,7 +191,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public TaskList TaskList

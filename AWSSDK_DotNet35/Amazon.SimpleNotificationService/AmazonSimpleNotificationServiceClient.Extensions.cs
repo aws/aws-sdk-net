@@ -48,9 +48,7 @@ namespace Amazon.SimpleNotificationService
         /// 	"Statement" : [{
         /// 	    "Sid" : "topic-subscription-arn:aws:sns:us-west-2:599109622955:myTopic",
         /// 		"Effect" : "Allow",
-        /// 		"Principal" : {
-        /// 			"AWS":["*"]
-        /// 		},
+        /// 		"Principal" : "*",
         /// 		"Action" : ["sqs:SendMessage"],
         /// 		"Resource":["arn:aws:sqs:us-west-2:599109622955:myQueue"],
         /// 		"Condition" : {

@@ -40,7 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultChildPolicy. 
         /// <para>
-        ///  The optional default policy to use for the child workflow executions when a workflow
+        /// The optional default policy to use for the child workflow executions when a workflow
         /// execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a>
         /// action explicitly or due to an expired timeout. This default can be overridden when
         /// starting a workflow execution using the <a>StartWorkflowExecution</a> action or the
@@ -50,7 +50,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  <ul> <li> <b>TERMINATE:</b> the child executions will be terminated.</li> <li> <b>REQUEST_CANCEL:</b>
         /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
         /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
+        /// receives an execution history with this event.</li> <li> <b>ABANDON:</b> no action
         /// will be taken. The child executions will continue to run.</li> </ul>
         /// </summary>
         public ChildPolicy DefaultChildPolicy
@@ -68,10 +68,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultExecutionStartToCloseTimeout. 
         /// <para>
-        ///  The optional default maximum duration, specified when registering the workflow type,
+        /// The optional default maximum duration, specified when registering the workflow type,
         /// for executions of this workflow type. This default can be overridden when starting
         /// a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>. 
+        /// <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
@@ -95,10 +95,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskList. 
         /// <para>
-        ///  The optional default task list, specified when registering the workflow type, for
+        /// The optional default task list, specified when registering the workflow type, for
         /// decisions tasks scheduled for workflow executions of this type. This default can be
         /// overridden when starting a workflow execution using the <a>StartWorkflowExecution</a>
-        /// action or the <code>StartChildWorkflowExecution</code> <a>Decision</a>. 
+        /// action or the <code>StartChildWorkflowExecution</code> <a>Decision</a>.
         /// </para>
         /// </summary>
         public TaskList DefaultTaskList
@@ -116,13 +116,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskStartToCloseTimeout. 
         /// <para>
-        ///  The optional default maximum duration, specified when registering the workflow type,
+        /// The optional default maximum duration, specified when registering the workflow type,
         /// that a decision task for executions of this workflow type might take before returning
         /// completion or failure. If the task does not close in the specified time then the task
         /// is automatically timed out and rescheduled. If the decider eventually reports a completion
         /// or failure, it is ignored. This default can be overridden when starting a workflow
         /// execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>. 
+        /// <a>Decision</a>.
         /// </para>
         ///  
         /// <para>

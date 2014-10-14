@@ -30,305 +30,24 @@ namespace Amazon.SimpleWorkflow
     ///
     /// Amazon Simple Workflow Service 
     /// <para>
-    ///  The Amazon Simple Workflow Service API Reference is intended for programmers who
-    /// need detailed information about the Amazon SWF actions and data types. 
+    /// The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications
+    /// that use Amazon's cloud to coordinate work across distributed components. In Amazon
+    /// SWF, a <i>task</i> represents a logical unit of work that is performed by a component
+    /// of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies,
+    /// scheduling, and concurrency in accordance with the logical flow of the application.
     /// </para>
     ///  
     /// <para>
-    ///  For an broader overview of the Amazon SWF programming model, please go to the <a
-    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer
-    /// Guide</a>. 
+    /// Amazon SWF gives you full control over implementing tasks and coordinating them without
+    /// worrying about underlying complexities such as tracking their progress and maintaining
+    /// their state.
     /// </para>
     ///  
     /// <para>
-    /// This section provides an overview of Amazon SWF actions.
+    /// This documentation serves as reference only. For a broader overview of the Amazon
+    /// SWF programming model, see the <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon
+    /// SWF Developer Guide</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// <b>Action Categories</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// The Amazon SWF actions can be grouped into the following major categories.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Actions related to Activities
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Actions related to Deciders
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Actions related to Workflow Executions
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Actions related to Administration
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Actions related to Visibility
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Actions related to Activities</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// The following are actions that are performed by activity workers:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_PollForActivityTask.html" title="PollForActivityTask">PollForActivityTask</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_RespondActivityTaskCompleted.html" title="RespondActivityTaskCompleted">RespondActivityTaskCompleted</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_RespondActivityTaskFailed.html" title="RespondActivityTaskFailed">RespondActivityTaskFailed</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_RespondActivityTaskCanceled.html" title="RespondActivityTaskCanceled">RespondActivityTaskCanceled</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_RecordActivityTaskHeartbeat.html" title="RecordActivityTaskHeartbeat">RecordActivityTaskHeartbeat</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Activity workers use the <a href="API_PollForActivityTask.html" title="PollForActivityTask">PollForActivityTask</a>
-    /// to get new activity tasks. After a worker receives an activity task from Amazon SWF,
-    /// it performs the task and responds using <a href="API_RespondActivityTaskCompleted.html"
-    /// title="RespondActivityTaskCompleted">RespondActivityTaskCompleted</a> if successful
-    /// or <a href="API_RespondActivityTaskFailed.html" title="RespondActivityTaskFailed">RespondActivityTaskFailed</a>
-    /// if unsuccessful. 
-    /// </para>
-    ///  
-    /// <para>
-    /// <b>Actions related to Deciders</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// The following are actions that are performed by deciders:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_PollForDecisionTask.html" title="PollForDecisionTask">PollForDecisionTask</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_RespondDecisionTaskCompleted.html" title="RespondDecisionTaskCompleted">RespondDecisionTaskCompleted</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Deciders use <a href="API_PollForDecisionTask.html" title="PollForDecisionTask">PollForDecisionTask</a>
-    /// to get decision tasks. After a decider receives a decision task from Amazon SWF, it
-    /// examines its workflow execution history and decides what to do next. It calls <a href="API_RespondDecisionTaskCompleted.html"
-    /// title="RespondDecisionTaskCompleted">RespondDecisionTaskCompleted</a>to complete the
-    /// decision task and provide zero or more next decisions. 
-    /// </para>
-    ///  
-    /// <para>
-    /// <b>Actions related to Workflow Executions</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// The following actions operate on a workflow execution:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_RequestCancelWorkflowExecution.html" title="RequestCancelWorkflowExecution">RequestCancelWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_StartWorkflowExecution.html" title="StartWorkflowExecution">StartWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_SignalWorkflowExecution.html" title="SignalWorkflowExecution">SignalWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_TerminateWorkflowExecution.html" title="TerminateWorkflowExecution">TerminateWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Actions related to Administration</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// Although you can perform administrative tasks from the Amazon SWF console, you can
-    /// use the actions in this section to automate functions or build your own administrative
-    /// tools. 
-    /// </para>
-    ///  
-    /// <para>
-    /// <b>Activity Management</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_RegisterActivityType.html" title="RegisterActivityType">RegisterActivityType</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_DeprecateActivityType.html" title="DeprecateActivityType">DeprecateActivityType</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Workflow Management</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_RegisterWorkflowType.html" title="RegisterWorkflowType">RegisterWorkflowType</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_DeprecateWorkflowType.html" title="DeprecateWorkflowType">DeprecateWorkflowType</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Domain Management</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_RegisterDomain.html" title="RegisterDomain">RegisterDomain</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_DeprecateDomain.html" title="DeprecateDomain">DeprecateDomain</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Workflow Execution Management</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_RequestCancelWorkflowExecution.html" title="RequestCancelWorkflowExecution">RequestCancelWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_TerminateWorkflowExecution.html" title="TerminateWorkflowExecution">TerminateWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Visibility Actions</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// Although you can perform visibility actions from the Amazon SWF console, you can use
-    /// the actions in this section to build your own console or administrative tools. 
-    /// </para>
-    ///  <ul> </ul> 
-    /// <para>
-    /// <b>Activity Visibility</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_ListActivityTypes.html" title="ListActivities">ListActivityTypes</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_DescribeActivityType.html" title="DescribeActivityType">DescribeActivity</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Workflow Visibility</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_ListWorkflowTypes.html" title="ListWorkflowTypes">ListWorkflowTypes</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_DescribeWorkflowType.html" title="DescribeWorkflowType">DescribeWorkflowType</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Workflow Execution Visibility</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_DescribeWorkflowExecution.html" title="DescribeWorkflowExecution">DescribeWorkflowExecution</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_ListOpenWorkflowExecutions.html" title="ListOpenWorkflowExecutions">ListOpenWorkflowExecutions</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_ListClosedWorkflowExecutions.html" title="ListClosedWorkflowExecutions">ListClosedWorkflowExecutions</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_CountOpenWorkflowExecutions.html" title="CountOpenWorkflowExecutions">CountOpenWorkflowExecutions</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_CountClosedWorkflowExecutions.html" title="CountClosedWorkflowExecutions">CountClosedWorkflowExecutions</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_GetWorkflowExecutionHistory.html" title="GetWorkflowExecutionHistory">GetWorkflowExecutionHistory</a>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Domain Visibility</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_ListDomains.html" title="ListDomains">ListDomains</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_DescribeDomain.html" title="DescribeDomain">DescribeDomain</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// <b>Task List Visibility</b>
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="API_CountPendingActivityTasks.html" title="CountPendingActivityTasks">CountPendingActivityTasks</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="API_CountPendingDecisionTasks.html" title="CountPendingDecisionTasks">CountPendingDecisionTasks</a>
-    /// 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonSimpleWorkflow : IDisposable
     {
@@ -338,25 +57,44 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Returns the number of closed workflow executions within the given domain that meet
-        /// the specified filtering criteria. 
+        /// the specified filtering criteria.
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        /// <strong>Access Control</strong>
         /// </para>
         ///  
         /// <para>
         /// You can use IAM policies to control this action's access to Amazon SWF resources as
         /// follows:
         /// </para>
-        ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
-        /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-        /// deny permission to call this action.</li> <li>Constrain the following parameters by
-        /// using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagFilter.tag</code>:
-        /// String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li> <code>typeFilter.name</code>:
-        /// String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li> <code>typeFilter.version</code>:
-        /// String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Use a <code>Resource</code> element with the domain name to limit the action to only
+        /// specified domains.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Constrain the following parameters by using a <code>Condition</code> element with
+        /// the appropriate keys.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller does not have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
@@ -408,8 +146,8 @@ namespace Amazon.SimpleWorkflow
         #region  CountOpenWorkflowExecutions
 
         /// <summary>
-        /// Returns the number of open workflow executions within the given domain that meet
-        /// the specified filtering criteria. 
+        /// Returns the number of open workflow executions within the given domain that meet the
+        /// specified filtering criteria.
         /// 
         ///  
         /// <para>
@@ -481,7 +219,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns the estimated number of activity tasks in the specified task list. The count
         /// returned is an approximation and is not guaranteed to be exact. If you specify a task
-        /// list that no activity task was ever scheduled in then 0 will be returned. 
+        /// list that no activity task was ever scheduled in then 0 will be returned.
         /// 
         ///  
         /// <para>
@@ -550,7 +288,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns the estimated number of decision tasks in the specified task list. The count
         /// returned is an approximation and is not guaranteed to be exact. If you specify a task
-        /// list that no decision task was ever scheduled in then 0 will be returned. 
+        /// list that no decision task was ever scheduled in then 0 will be returned.
         /// 
         ///  
         /// <para>
@@ -619,7 +357,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Deprecates the specified <i>activity type</i>. After an activity type has been deprecated,
         /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
-        /// before the type was deprecated will continue to run. 
+        /// before the type was deprecated will continue to run.
         /// 
         ///  
         /// <para>
@@ -691,11 +429,11 @@ namespace Amazon.SimpleWorkflow
         #region  DeprecateDomain
 
         /// <summary>
-        /// Deprecates the specified domain. After a domain has been deprecated it cannot be
-        /// used to create new workflow executions or register new types. However, you can still
-        /// use visibility actions on this domain. Deprecating a domain also deprecates all activity
+        /// Deprecates the specified domain. After a domain has been deprecated it cannot be used
+        /// to create new workflow executions or register new types. However, you can still use
+        /// visibility actions on this domain. Deprecating a domain also deprecates all activity
         /// and workflow types registered in the domain. Executions that were started before the
-        /// domain was deprecated will continue to run. 
+        /// domain was deprecated will continue to run.
         /// 
         ///  
         /// <para>
@@ -767,7 +505,7 @@ namespace Amazon.SimpleWorkflow
         /// Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated,
         /// you cannot create new executions of that type. Executions that were started before
         /// the type was deprecated will continue to run. A deprecated workflow type may still
-        /// be used when calling visibility actions. 
+        /// be used when calling visibility actions.
         /// 
         ///  
         /// <para>
@@ -841,7 +579,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns information about the specified activity type. This includes configuration
         /// settings provided at registration time as well as other general information about
-        /// the type. 
+        /// the type.
         /// 
         ///  
         /// <para>
@@ -912,7 +650,6 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns information about the specified domain including description and status.
         /// 
-        /// 
         ///  
         /// <para>
         /// <b>Access Control</b>
@@ -978,7 +715,7 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Returns information about the specified workflow execution including its type and
-        /// some statistics. 
+        /// some statistics.
         /// 
         ///  
         /// <para>
@@ -1046,7 +783,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns information about the specified <i>workflow type</i>. This includes configuration
         /// settings specified when the type was registered and other information such as creation
-        /// date, current status, etc. 
+        /// date, current status, etc.
         /// 
         ///  
         /// <para>
@@ -1121,7 +858,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1191,7 +928,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1259,7 +996,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1331,7 +1068,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1340,7 +1077,7 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
         /// to only specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*"</code>,
-        /// where “AccountID" is the account ID, with no dashes.</li> <li>Use an <code>Action</code>
+        /// where "AccountID" is the account ID, with no dashes.</li> <li>Use an <code>Action</code>
         /// element to allow or deny permission to call this action.</li> <li>You cannot use an
         /// IAM policy to constrain this action's parameters.</li> </ul> 
         /// <para>
@@ -1395,7 +1132,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1467,7 +1204,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1542,7 +1279,7 @@ namespace Amazon.SimpleWorkflow
         /// (10 seconds higher than the maximum time service may hold the poll request). </important>
         /// 
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1614,24 +1351,24 @@ namespace Amazon.SimpleWorkflow
         /// A decision task may be returned for any open workflow execution that is using the
         /// specified task list. The task includes a paginated view of the history of the workflow
         /// execution. The decider should use the workflow type and the history to determine how
-        /// to properly handle the task. 
+        /// to properly handle the task.
         /// 
         ///  
         /// <para>
-        ///  This action initiates a long poll, where the service holds the HTTP connection open
+        /// This action initiates a long poll, where the service holds the HTTP connection open
         /// and responds as soon a task becomes available. If no decision task is available in
         /// the specified task list before the timeout of 60 seconds expires, an empty result
         /// is returned. An empty result, in this context, means that a DecisionTask is returned,
-        /// but that the value of taskToken is an empty string. 
+        /// but that the value of taskToken is an empty string.
         /// </para>
-        ///  <important> Deciders should set their client side socket timeout to at least 70 seconds
-        /// (10 seconds higher than the timeout). </important> <important> Because the number
-        /// of workflow history events for a single workflow execution might be very large, the
-        /// result returned might be split up across a number of pages. To retrieve subsequent
-        /// pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code>
+        ///  <important>Deciders should set their client side socket timeout to at least 70 seconds
+        /// (10 seconds higher than the timeout).</important> <important>Because the number of
+        /// workflow history events for a single workflow execution might be very large, the result
+        /// returned might be split up across a number of pages. To retrieve subsequent pages,
+        /// make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code>
         /// returned by the initial call. Note that you do <b>not</b> call <code>GetWorkflowExecutionHistory</code>
         /// with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code>
-        /// again. </important> 
+        /// again.</important> 
         /// <para>
         /// <b>Access Control</b>
         /// </para>
@@ -1707,16 +1444,16 @@ namespace Amazon.SimpleWorkflow
         /// the <code>details</code> parameter. This action can also be used by the worker as
         /// a mechanism to check if cancellation is being requested for the activity task. If
         /// a cancellation is being attempted for the specified task, then the boolean <code>cancelRequested</code>
-        /// flag returned by the service is set to <code>true</code>. 
+        /// flag returned by the service is set to <code>true</code>.
         /// 
         ///  
         /// <para>
-        ///  This action resets the <code>taskHeartbeatTimeout</code> clock. The <code>taskHeartbeatTimeout</code>
+        /// This action resets the <code>taskHeartbeatTimeout</code> clock. The <code>taskHeartbeatTimeout</code>
         /// is specified in <a>RegisterActivityType</a>. 
         /// </para>
         ///  
         /// <para>
-        ///  This action does not in itself create an event in the workflow execution history.
+        /// This action does not in itself create an event in the workflow execution history.
         /// However, if the task times out, the workflow execution history will contain a <code>ActivityTaskTimedOut</code>
         /// event that contains the information from the last heartbeat generated by the activity
         /// worker. 
@@ -1726,7 +1463,7 @@ namespace Amazon.SimpleWorkflow
         /// respond with <a>RespondActivityTaskCanceled</a>. Otherwise, it should ignore the cancellation
         /// request. </important> 
         /// <para>
-        /// <b>Access Control</b>
+        /// <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1795,7 +1532,7 @@ namespace Amazon.SimpleWorkflow
         /// exists in the domain. You cannot change any configuration settings of the type after
         /// its registration, and it must be registered as a new version. </important> 
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -1870,7 +1607,7 @@ namespace Amazon.SimpleWorkflow
         #region  RegisterDomain
 
         /// <summary>
-        /// Registers a new domain. 
+        /// Registers a new domain.
         /// 
         ///  
         /// <para>
@@ -1891,10 +1628,6 @@ namespace Amazon.SimpleWorkflow
         /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
         /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain service method.</param>
@@ -1955,9 +1688,9 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <important> If the type already exists, then a <code>TypeAlreadyExists</code> fault
         /// is returned. You cannot change the configuration settings of a workflow type once
-        /// it is registered and it must be registered as a new version. </important> 
+        /// it is registered and it must be registered as a new version.</important> 
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -2037,7 +1770,6 @@ namespace Amazon.SimpleWorkflow
         /// requests the cancellation of the workflow execution as a whole. It is up to the decider
         /// to take appropriate actions when it receives an execution history with this event.
         /// 
-        /// 
         ///  
         /// <para>
         /// <b>Access Control</b>
@@ -2104,22 +1836,22 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
         /// <code>taskToken</code> was successfully canceled. Additional <code>details</code>
-        /// can be optionally provided using the <code>details</code> argument. 
+        /// can be optionally provided using the <code>details</code> argument.
         /// 
         ///  
         /// <para>
-        ///  These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code>
-        /// event added to the workflow history. 
+        /// These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code>
+        /// event added to the workflow history.
         /// </para>
-        ///  <important> Only use this operation if the <code>canceled</code> flag of a <a>RecordActivityTaskHeartbeat</a>
-        /// request returns <code>true</code> and if the activity can be safely undone or abandoned.
-        /// </important> 
+        ///  <important>Only use this operation if the <code>canceled</code> flag of a <a>RecordActivityTaskHeartbeat</a>
+        /// request returns <code>true</code> and if the activity can be safely undone or abandoned.</important>
+        /// 
         /// <para>
         ///  A task is considered open from the time that it is scheduled until it is closed.
         /// Therefore a task is reported as open while a worker is processing it. A task is closed
         /// after it has been specified in a call to <a>RespondActivityTaskCompleted</a>, RespondActivityTaskCanceled,
         /// <a>RespondActivityTaskFailed</a>, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
-        /// out</a>. 
+        /// out</a>.
         /// </para>
         ///  
         /// <para>
@@ -2188,22 +1920,22 @@ namespace Amazon.SimpleWorkflow
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
         /// <code>taskToken</code> completed successfully with a <code>result</code> (if provided).
         /// The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in
-        /// the workflow history. 
+        /// the workflow history.
         /// 
         ///  <important> If the requested task does not complete successfully, use <a>RespondActivityTaskFailed</a>
         /// instead. If the worker finds that the task is canceled through the <code>canceled</code>
         /// flag returned by <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean
-        /// up and then call <a>RespondActivityTaskCanceled</a>. </important> 
+        /// up and then call <a>RespondActivityTaskCanceled</a>.</important> 
         /// <para>
         ///  A task is considered open from the time that it is scheduled until it is closed.
         /// Therefore a task is reported as open while a worker is processing it. A task is closed
         /// after it has been specified in a call to RespondActivityTaskCompleted, <a>RespondActivityTaskCanceled</a>,
         /// <a>RespondActivityTaskFailed</a>, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
-        /// out</a>. 
+        /// out</a>.
         /// </para>
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b> 
         /// </para>
         ///  
         /// <para>
@@ -2268,7 +2000,7 @@ namespace Amazon.SimpleWorkflow
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
         /// <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code>
         /// and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added
-        /// to the workflow history. 
+        /// to the workflow history.
         /// 
         ///  
         /// <para>
@@ -2276,11 +2008,11 @@ namespace Amazon.SimpleWorkflow
         /// Therefore a task is reported as open while a worker is processing it. A task is closed
         /// after it has been specified in a call to <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>,
         /// RespondActivityTaskFailed, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
-        /// out</a>. 
+        /// out</a>.
         /// </para>
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b>
         /// </para>
         ///  
         /// <para>
@@ -2344,17 +2076,17 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Used by deciders to tell the service that the <a>DecisionTask</a> identified by the
         /// <code>taskToken</code> has successfully completed. The <code>decisions</code> argument
-        /// specifies the list of decisions made while processing the task. 
+        /// specifies the list of decisions made while processing the task.
         /// 
         ///  
         /// <para>
         ///  A <code>DecisionTaskCompleted</code> event is added to the workflow history. The
         /// <code>executionContext</code> specified is attached to the event in the workflow execution
-        /// history. 
+        /// history.
         /// </para>
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b>
         /// </para>
         ///  
         /// <para>
@@ -2414,11 +2146,11 @@ namespace Amazon.SimpleWorkflow
         /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution
         /// history and creates a decision task for the workflow execution identified by the given
         /// domain, workflowId and runId. The event is recorded with the specified user defined
-        /// signalName and input (if provided). 
+        /// signalName and input (if provided).
         /// 
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b>
         /// </para>
         ///  
         /// <para>
@@ -2481,7 +2213,7 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Starts an execution of the workflow type in the specified domain using the provided
-        /// <code>workflowId</code> and input data. 
+        /// <code>workflowId</code> and input data.
         /// 
         ///  
         /// <para>
@@ -2489,7 +2221,7 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b>
         /// </para>
         ///  
         /// <para>
@@ -2578,12 +2310,12 @@ namespace Amazon.SimpleWorkflow
         /// Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the
         /// workflow execution identified by the given domain, runId, and workflowId. The child
         /// policy, registered with the workflow type or specified when starting this execution,
-        /// is applied to any open child workflow executions of this workflow execution. 
+        /// is applied to any open child workflow executions of this workflow execution.
         /// 
         ///  <important> If the identified workflow execution was in progress, it is terminated
-        /// immediately. </important> 
+        /// immediately.</important> 
         /// <para>
-        /// <b>Access Control</b>
+        ///  <b>Access Control</b>
         /// </para>
         ///  
         /// <para>

@@ -32,7 +32,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -43,9 +43,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
     /// deny permission to specify this decision.</li> <li>Constrain the following parameters
     /// by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>activityType.name</code>:
-    /// String constraint. The key is “swf:activityType.name”.</li> <li> <code>activityType.version</code>:
-    /// String constraint. The key is “swf:activityType.version”.</li> <li> <code>taskList</code>:
-    /// String constraint. The key is “swf:taskList.name”.</li> </ul> </li> </ul> 
+    /// String constraint. The key is "swf:activityType.name".</li> <li> <code>activityType.version</code>:
+    /// String constraint. The key is "swf:activityType.version".</li> <li> <code>taskList</code>:
+    /// String constraint. The key is "swf:taskList.name".</li> </ul> </li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
@@ -76,7 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public string ActivityId
@@ -263,7 +263,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain
-        /// the literal string &quot;arn&quot;.
+        /// the literal string quotarnquot.
         /// </para>
         /// </summary>
         public TaskList TaskList

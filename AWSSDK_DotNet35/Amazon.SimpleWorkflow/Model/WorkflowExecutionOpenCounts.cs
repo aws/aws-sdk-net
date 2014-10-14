@@ -41,7 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenActivityTasks. 
         /// <para>
-        ///  The count of activity tasks whose status is OPEN. 
+        /// The count of activity tasks whose status is OPEN.
         /// </para>
         /// </summary>
         public int OpenActivityTasks
@@ -59,7 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenChildWorkflowExecutions. 
         /// <para>
-        ///  The count of child workflow executions whose status is OPEN. 
+        /// The count of child workflow executions whose status is OPEN.
         /// </para>
         /// </summary>
         public int OpenChildWorkflowExecutions
@@ -77,8 +77,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenDecisionTasks. 
         /// <para>
-        ///  The count of decision tasks whose status is OPEN. A workflow execution can have at
-        /// most one open decision task. 
+        /// The count of decision tasks whose status is OPEN. A workflow execution can have at
+        /// most one open decision task.
         /// </para>
         /// </summary>
         public int OpenDecisionTasks
@@ -96,7 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OpenTimers. 
         /// <para>
-        ///  The count of timers started by this workflow execution that have not fired yet. 
+        /// The count of timers started by this workflow execution that have not fired yet.
         /// </para>
         /// </summary>
         public int OpenTimers

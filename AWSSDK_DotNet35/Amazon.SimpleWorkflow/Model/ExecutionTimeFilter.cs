@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// Used to filter the workflow executions in visibility APIs by various time-based rules.
     /// Each parameter, if specified, defines a rule that must be satisfied by each returned
     /// query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix
-    /// Time format</a>. For example: "oldestDate": 1325376070.
+    /// Time format</a>. For example: <code>"oldestDate": 1325376070.</code>
     /// </summary>
     public partial class ExecutionTimeFilter
     {
@@ -41,7 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LatestDate. 
         /// <para>
-        ///  Specifies the latest start or close date and time to return. 
+        /// Specifies the latest start or close date and time to return.
         /// </para>
         /// </summary>
         public DateTime LatestDate
@@ -59,7 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property OldestDate. 
         /// <para>
-        ///  Specifies the oldest start or close date and time to return. 
+        /// Specifies the oldest start or close date and time to return.
         /// </para>
         /// </summary>
         public DateTime OldestDate

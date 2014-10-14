@@ -35,7 +35,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    /// <b>Access Control</b>
+    ///  <b>Access Control</b> 
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow execution. 
+        /// The name of the domain containing the workflow execution.
         /// </para>
         /// </summary>
         public string Domain
@@ -82,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Execution. 
         /// <para>
-        ///  Specifies the workflow execution for which to return the history. 
+        /// Specifies the workflow execution for which to return the history.
         /// </para>
         /// </summary>
         public WorkflowExecution Execution
@@ -106,7 +106,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// a page size <i>smaller</i> than the default. You cannot specify a page size larger
         /// than 100. Note that the number of events may be less than the maxiumum page size,
         /// in which case, the returned page will have fewer results than the maximumPageSize
-        /// specified. 
+        /// specified.
         /// </para>
         /// </summary>
         public int MaximumPageSize
